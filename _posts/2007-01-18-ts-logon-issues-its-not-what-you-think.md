@@ -6,8 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/uncategorized/ts-logon-issues-its-not-what-you-think
 permalink: /ts-logon-issues-its-not-what-you-think/
-aktt_notify_twitter:
-  - 'yes'
 categories:
   - Microsoft
 tags:
@@ -26,4 +24,4 @@ Fixing the licensing issue fixes the logon issue and I can logon to the server r
 The Citrix support site has detailed documents on troubleshooting Terminal Server logon issues, far better than anything I could find on the Microsoft support site:
 
   * [CTX106920 - Error: You do not have access to logon to this Session....](http://support.citrix.com/article/CTX106920)
-  * [CTX564283 - Troubleshooting 1003 and 1004 Terminal Server Licensing Errors](http://support.citrix.com/article/CTX564283)</u></span>
+  * [CTX564283 - Troubleshooting 1003 and 1004 Terminal Server Licensing Errors](http://support.citrix.com/article/CTX564283)

@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img class="wlDisabledImage" style="margin: 0px 0px 5px 10px; display: inline; border-width: 0px;" title="AppV-FAQ-Logo" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="AppV-FAQ-Logo" width="121" height="116" align="right" border="0" />Wikipedia describes [Application Virtualization](http://en.wikipedia.org/wiki/Application_virtualization) as:
+<img class="wlDisabledImage" style="margin: 0px 0px 5px 10px; display: inline; border-width: 0px;" title="AppV-FAQ-Logo" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="AppV-FAQ-Logo" width="121" height="116" align="right" border="0" />Wikipedia describes [Application Virtualization](http://en.wikipedia.org/wiki/Application_virtualization) as:
 
 > Application virtualization is an umbrella term that describes software technologies that improve portability, manageability and compatibility of applications by encapsulating them from the underlying operating system on which they are executed. A fully virtualized application is not installed in the traditional sense[1], although it is still executed as if it is. The application is fooled at runtime into believing that it is directly interfacing with the original operating system and all the resources managed by it, when in reality it is not. In this context, the term "virtualization" refers to the artefact being encapsulated (application), which is quite different to its meaning in hardware virtualization, where it refers to the artefact being abstracted (physical hardware).
 
@@ -43,7 +43,7 @@ Application Virtualisation has a number of benefits over traditional method of a
 <table width="650" border="0" cellspacing="0" cellpadding="4">
   <tr>
     <td valign="top" width="290">
-      <img class="wlDisabledImage" style="margin: 0px; display: inline; border: 0px;" title="techoverview-grid-3_thumb" src="http://stealthpuppy.com/wp-content/uploads/2010/06/techoverviewgrid3_thumb.jpg" alt="techoverview-grid-3_thumb" width="280" height="215" border="0" />
+      <img class="wlDisabledImage" style="margin: 0px; display: inline; border: 0px;" title="techoverview-grid-3_thumb" src="https://stealthpuppy.com/wp-content/uploads/2010/06/techoverviewgrid3_thumb.jpg" alt="techoverview-grid-3_thumb" width="280" height="215" border="0" />
     </td>
     
     <td valign="top">
@@ -53,7 +53,7 @@ Application Virtualisation has a number of benefits over traditional method of a
   
   <tr>
     <td valign="top" width="290">
-      <img class="wlDisabledImage" style="margin: 0px; display: inline; border: 0px;" title="techoverview-grid-2_thumb" src="http://stealthpuppy.com/wp-content/uploads/2010/06/techoverviewgrid2_thumb.jpg" alt="techoverview-grid-2_thumb" width="280" height="275" border="0" />
+      <img class="wlDisabledImage" style="margin: 0px; display: inline; border: 0px;" title="techoverview-grid-2_thumb" src="https://stealthpuppy.com/wp-content/uploads/2010/06/techoverviewgrid2_thumb.jpg" alt="techoverview-grid-2_thumb" width="280" height="275" border="0" />
     </td>
     
     <td valign="top">
@@ -63,7 +63,7 @@ Application Virtualisation has a number of benefits over traditional method of a
   
   <tr>
     <td valign="top" width="290">
-      <img class="wlDisabledImage" style="display: inline; border: 0px;" title="techoverview-grid-1_thumb" src="http://stealthpuppy.com/wp-content/uploads/2010/06/techoverviewgrid1_thumb.jpg" alt="techoverview-grid-1_thumb" width="280" height="275" border="0" />
+      <img class="wlDisabledImage" style="display: inline; border: 0px;" title="techoverview-grid-1_thumb" src="https://stealthpuppy.com/wp-content/uploads/2010/06/techoverviewgrid1_thumb.jpg" alt="techoverview-grid-1_thumb" width="280" height="275" border="0" />
     </td>
     
     <td valign="top">

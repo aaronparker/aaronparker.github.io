@@ -15,7 +15,7 @@ tags:
   - Performance
   - USB
 ---
-<img border="0" alt="HardDiskPerformance" align="left" src="http://stealthpuppy.com/wp-content/uploads/2008/04/harddiskperformance.png" width="140" height="128" /> I've just purchased a new SATA-based external hard drive to use with demos and I thought I would share some details about the performance gain over my older ATA-based hard disk.
+<img border="0" alt="HardDiskPerformance" align="left" src="https://stealthpuppy.com/wp-content/uploads/2008/04/harddiskperformance.png" width="140" height="128" /> I've just purchased a new SATA-based external hard drive to use with demos and I thought I would share some details about the performance gain over my older ATA-based hard disk.
 
 I've been doing a few demonstrations of Microsoft SoftGrid using VMware Workstation on my laptop with an external USB attached hard drive and I've also got a couple of user group presentations coming up. So I wanted to squeeze some better disk performance out of this setup because every second counts during demos.
 
@@ -36,15 +36,15 @@ To power this drive I have to connect the included USB power lead. I'm not sure 
 
 To test the performance of my disk setup, I've used [HD Tune](http://www.hdtune.com/) because they offer a free version and it's easy to use. I tested the performance of my original hard disk ([Seagate Momentus 5400.3 80GB ATA/100 5400RPM 16MB 2.5"](http://www.seagate.com/ww/v/index.jsp?locale=en-US&name=Momentus_5400.3_80_GB&vgnextoid=c83f99f4fa74c010VgnVCM100000dd04090aRCRD&vgnextchannel=b450d3a0140fc010VgnVCM100000dd04090aRCRD&reqPage=Model)) connected to this laptop via USB. The result stays consistent right up until the end of the test:
 
-<img border="0" alt="Orignal disk performance over USB" src="http://stealthpuppy.com/wp-content/uploads/2008/04/originaldiskperf.png" width="551" height="450" /> &#160;
+<img border="0" alt="Orignal disk performance over USB" src="https://stealthpuppy.com/wp-content/uploads/2008/04/originaldiskperf.png" width="551" height="450" /> &#160;
 
 When I performed the same test on a desktop machine the throughput was about 5MBps higher and was consistent to 100%. This is the performance of the new hard disk over a USB connection:
 
-<img border="0" alt="New disk performance over USB" src="http://stealthpuppy.com/wp-content/uploads/2008/04/perfusb.png" width="551" height="450" /> &#160;
+<img border="0" alt="New disk performance over USB" src="https://stealthpuppy.com/wp-content/uploads/2008/04/perfusb.png" width="551" height="450" /> &#160;
 
 And the performance of the same hard disk over an eSATA connection using the Belkin ExpressCard:
 
-<img border="0" alt="New disk performance over eSATA" src="http://stealthpuppy.com/wp-content/uploads/2008/04/perfesata.png" width="551" height="450" /> &#160;
+<img border="0" alt="New disk performance over eSATA" src="https://stealthpuppy.com/wp-content/uploads/2008/04/perfesata.png" width="551" height="450" /> &#160;
 
 Overall I'm pretty happy with the performance of the new disk. It more than doubles the performance of my older disk yet still in a portable package and my VMs feel much much snappier.
 

@@ -14,7 +14,7 @@ tags:
   - Adobe
 ---
 <p class="alert">
-  For an Adobe Reader 9 version of this post, go <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">here</a>. For an Adobe Reader 8.x version of this post, go <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-81">here</a>
+  For an Adobe Reader 9 version of this post, go <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">here</a>. For an Adobe Reader 8.x version of this post, go <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-81">here</a>
 </p>
 
 Now that [Adobe Reader 8 has been released](http://www.adobe.com/products/acrobat/readstep2.html) and the setup routine has changed slightly, we'll have to jump through hoops again to get this new version deployed. Here are a few things that I've found in regards to deployment in a corporate environment:
@@ -49,7 +49,7 @@ or
   * There are no ads in the toolbar as in previous versions;
   * It includes nice new fancy 256 x 256 pixel icons (click each one for a larger view):
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.225.Reader.png" /><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.226.PDFFile.png" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.225.Reader.png" /><img border="0" src="https://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.226.PDFFile.png" /> 
 
 There are a lot of things left to find and I'll update this post as I find them.
 

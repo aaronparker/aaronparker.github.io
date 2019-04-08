@@ -18,11 +18,11 @@ How did Windows users get into this mess in the first place? This can be summed 
 
 So what does UAC actually mean to the end-user? UAC gives us the best of both worlds, it allows us to run as a limited user and protect Windows from malicious software yet still allows administrative access when required. Now it's not implemented in the same manner as something like [sudo](http://en.wikipedia.org/wiki/Sudo) but it still does the job. When logging onto a Windows Vista machine as an administrator, Windows does not grant the user's session a token for performing administrative tasks until UAC kicks in and elevates the user. This can be demonstrated with everyone's favourite word processing application - Notepad. The image below shows the privileges Notepad has when running with limited user privileges (check out the lower list box).
 
-![](http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.95.NotepadAsUser.PNG) 
+![](https://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.95.NotepadAsUser.PNG) 
 
 The screenshot below shows Notepad run with elevated privileges after running as administrator. As you can see Notepad now has many more access privileges and therefore the ability to have complete access to the operating system.
 
-![](http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.96.NotepadAsAdministrator.PNG) 
+![](https://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.96.NotepadAsAdministrator.PNG) 
 
 Fortunately there are a couple of methods that can be used to make life with UAC easier whilst still reaping the benefits of what UAC has to offer.
 
@@ -34,8 +34,8 @@ Now this one will require returning to your command line roots or learning how t
 
 This will result in a Command Prompt window with the text "Administrator" in the title bar. Using the second option is easy, just open the properties of the Command Prompt shortcut, click Advanced and place a tick in the checkbox labelled "Run as administrator". Click on the screenshots below to see the shortcut properties and the resulting Command Prompt in more detail:
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.93.RunAsAdministrator.PNG" />  
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.94.AdministratorCommandPrompt.PNG" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.93.RunAsAdministrator.PNG" />  
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.94.AdministratorCommandPrompt.PNG" /> 
 
 The benefit of the approach is that applications launched via the elevated command prompt will also be elevated.
 
@@ -48,7 +48,7 @@ Most of the frustrations with UAC will stem from the requirement to click the UA
 
 The following screenshot shows this option:
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.92.SeperateProcess.PNG" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.92.SeperateProcess.PNG" /> 
 
 Now you can right click a Windows Explorer shortcut and choose 'Run as administrator' to elevate that window to perform administrative tasks from that single window without multiple UAC prompts.
 

@@ -17,18 +17,18 @@ categories:
 tags:
   - Windows 7
 ---
-In addition to the [new Start Menu customisation options available in build 7048](http://stealthpuppy.com/windows/start-menu-in-windows-7-7048), build 7057 introduces a very subtle change when using the Windows 7 Basic theme. The links on the right-hand side of the Start Menu gain a faux glass look, which gives the Start Menu a little more consistency across the Basic and Aero themes.
+In addition to the [new Start Menu customisation options available in build 7048](https://stealthpuppy.com/windows/start-menu-in-windows-7-7048), build 7057 introduces a very subtle change when using the Windows 7 Basic theme. The links on the right-hand side of the Start Menu gain a faux glass look, which gives the Start Menu a little more consistency across the Basic and Aero themes.
 
 Here's a side-by-side comparison:
 
 <table border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td valign="top">
-      <img class="alignleft size-full wp-image-1015" title="7048 Start Menu" src="http://stealthpuppy.com/wp-content/uploads/2009/03/7048-startmenu1.png" alt="7048 Start Menu" width="152" height="554" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/7048-startmenu1.png 152w, https://stealthpuppy.com/wp-content/uploads/2009/03/7048-startmenu1-82x300.png 82w" sizes="(max-width: 152px) 100vw, 152px" />
+      <img class="alignleft size-full wp-image-1015" title="7048 Start Menu" src="https://stealthpuppy.com/wp-content/uploads/2009/03/7048-startmenu1.png" alt="7048 Start Menu" width="152" height="554" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/7048-startmenu1.png 152w, https://stealthpuppy.com/wp-content/uploads/2009/03/7048-startmenu1-82x300.png 82w" sizes="(max-width: 152px) 100vw, 152px" />
     </td>
     
     <td valign="top">
-      <img class="alignleft size-full wp-image-1016" title="7057 Start Menu" src="http://stealthpuppy.com/wp-content/uploads/2009/03/7057-startmenu.png" alt="7057 Start Menu" width="412" height="520" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/7057-startmenu.png 412w, https://stealthpuppy.com/wp-content/uploads/2009/03/7057-startmenu-237x300.png 237w" sizes="(max-width: 412px) 100vw, 412px" />
+      <img class="alignleft size-full wp-image-1016" title="7057 Start Menu" src="https://stealthpuppy.com/wp-content/uploads/2009/03/7057-startmenu.png" alt="7057 Start Menu" width="412" height="520" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/7057-startmenu.png 412w, https://stealthpuppy.com/wp-content/uploads/2009/03/7057-startmenu-237x300.png 237w" sizes="(max-width: 412px) 100vw, 412px" />
     </td>
   </tr>
 </table>

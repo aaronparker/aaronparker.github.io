@@ -6,8 +6,6 @@ author: Aaron Parker
 layout: post
 guid: 'http://blog.stealthpuppy.com/uncategorized/windows-server-2003-sp2-what%e2%80%99s-in-it-for-terminal-servers'
 permalink: '/windows-server-2003-sp2-what%e2%80%99s-in-it-for-terminal-servers/'
-aktt_notify_twitter:
-  - 'yes'
 categories:
   - Microsoft
 tags:
@@ -15,7 +13,7 @@ tags:
 ---
 Now that [Service Pack 2 for Windows Server 2003](http://www.microsoft.com/technet/windowsserver/sp2.mspx) has been released, I thought that I would take a brief look at what's new for Terminal Servers:
 
-**New Features** 
+## New Features
 
 Microsoft have a page that details [ten reasons to install Windows Server 2003 SP2](http://www.microsoft.com/technet/windowsserver/sp2/top-reasons.mspx), here's some of the highlights that I think are great for Terminal Server environments:
 
@@ -24,7 +22,7 @@ Microsoft have a page that details [ten reasons to install Windows Server 2003 S
   * [IPsec management updates](http://support.microsoft.com/kb/914841): Updates to IPsec in Windows that makes it easier to implement [server and domain isolation](http://www.microsoft.com/sdisolation).
   * Microsoft Management Console 3.0: Updates the MMC to the same version included with Windows Server 2003 R2.
 
-**Updates** 
+## Updates
 
 Microsoft has a complete [list of updates in SP2](http://support.microsoft.com/kb/914962/en-us) and 19 of them are Terminal Server specific:
 
@@ -54,7 +52,7 @@ There are also 12 Intellimirror updates, two of which I had experienced in my mo
   * [Users experience an 11-second delay in folder redirection when a Windows Server 2003 SP1-based computer that is running Terminal Services uses mandatory profiles](http://support.microsoft.com/kb/919614/)
   * [You may experience a 20-second delay when you try to access a redirected folder by logging on to a Windows Server 2003 Service Pack 1-based computer or to a Windows XP Service Pack 2-based computer](http://support.microsoft.com/kb/899409/)
 
-So there are plenty of reasons to deploy Service Pack 2 including [two years worth of security updates](http://www.microsoft.com/technet/windowsserver/sp2/security-bulletins.mspx). For those of us who use unattended setups to deploy Terminal Servers, I recommend updating your source and redeploying your machines from scratch rather than update in place. For everyone else, Microsoft has [details for deployment](http://technet2.microsoft.com/WindowsServer/en/library/ed5382af-e819-4d33-ace0-225d31b7ab751033.mspx?mfr=true) up on TechNet; <strike>just remember that you will have to remove </strike>[<strike>Internet Explorer 7 before you install Service Pack 2</strike>](http://technet2.microsoft.com/WindowsServer/en/library/ed5382af-e819-4d33-ace0-225d31b7ab751033.mspx?mfr=true) (you [don't need to uninstall IE7](http://blogs.msdn.com/ie/archive/2007/03/15/windows-server-2003-service-pack-2-released.aspx) before installing Service Pack 2).
+So there are plenty of reasons to deploy Service Pack 2 including [two years worth of security updates](http://www.microsoft.com/technet/windowsserver/sp2/security-bulletins.mspx). For those of us who use unattended setups to deploy Terminal Servers, I recommend updating your source and redeploying your machines from scratch rather than update in place. For everyone else, Microsoft has [details for deployment](http://technet2.microsoft.com/WindowsServer/en/library/ed5382af-e819-4d33-ace0-225d31b7ab751033.mspx?mfr=true) up on TechNet;[Internet Explorer 7 before you install Service Pack 2](http://technet2.microsoft.com/WindowsServer/en/library/ed5382af-e819-4d33-ace0-225d31b7ab751033.mspx?mfr=true) (you [don't need to uninstall IE7](http://blogs.msdn.com/ie/archive/2007/03/15/windows-server-2003-service-pack-2-released.aspx) before installing Service Pack 2).
 
 [Windows Server 2003 Service Pack 2 x86](http://www.microsoft.com/downloads/details.aspx?FamilyId=95AC1610-C232-4644-B828-C55EEC605D55)
 

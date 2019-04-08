@@ -16,9 +16,9 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline" align="right" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" />
+<img style="margin: 0px 0px 5px 10px; display: inline" align="right" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" />
 
-The [current versions of App-V](http://stealthpuppy.com/virtualisation/app-v-faq-5-what-are-the-current-versions-of-app-v) have similar dependencies; however there are some differences with the newer 4.6 client. Of course the main dependency of the App-V Client [is Windows itself](http://stealthpuppy.com/virtualisation/app-v-faq-10-does-app-v-allow-me-to-run-applications-on-linux-or-mac-os).
+The [current versions of App-V](https://stealthpuppy.com/virtualisation/app-v-faq-5-what-are-the-current-versions-of-app-v) have similar dependencies; however there are some differences with the newer 4.6 client. Of course the main dependency of the App-V Client [is Windows itself](https://stealthpuppy.com/virtualisation/app-v-faq-10-does-app-v-allow-me-to-run-applications-on-linux-or-mac-os).
 
 ### App-V 4.5
 

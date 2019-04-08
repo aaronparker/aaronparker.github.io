@@ -14,7 +14,7 @@ tags:
   - App-V
   - QuickTime
 ---
-_<img style="margin: 0px 10px 10px 0px; display: inline; border: 0px;" title="QuickTime App-V box" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime011.png" border="0" alt="QuickTime App-V box" width="149" height="145" align="left" /> Updated 04/05/2010_
+_<img style="margin: 0px 10px 10px 0px; display: inline; border: 0px;" title="QuickTime App-V box" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime011.png" border="0" alt="QuickTime App-V box" width="149" height="145" align="left" /> Updated 04/05/2010_
 
 Here’s how to create a custom Apple QuickTime 7.x installation for virtualisation. This post specifically deals with virtualising QuickTime with Microsoft App-V, but the general process should be similar for any application virtualisation product.
 
@@ -41,7 +41,7 @@ Before I look at setting preferences, I'll address automating the installation o
 
 Download the QuickTime installer (without iTunes), available from the [Apple web site](http://www.apple.com/quicktime/download/) (7.6.6 at the time of writing). Extract this file to obtain the included Windows Installer files.
 
-<img style="display: inline; border: 0px;" title="Extracted QuickTime installer" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime02.png" border="0" alt="Extracted QuickTime installer" width="660" height="230" /> 
+<img style="display: inline; border: 0px;" title="Extracted QuickTime installer" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime02.png" border="0" alt="Extracted QuickTime installer" width="660" height="230" /> 
 
 Automating the installation of QuickTime is very simple once you know how. An excellent source for finding that information is at [AppDeploy.com](http://www.appdeploy.com/packages/detail.asp?id=520). The installation script I have created does not use custom transforms and will perform the following basic steps:
 
@@ -64,23 +64,23 @@ There are a number of settings that you should consider in your QuickTime packag
 
 File type associations – don’t forget to prevent QuickTime from attempting to re-associate file types at launch. Selecting Yes here, will capture the default file types.
 
-<img style="display: inline; border: 0px;" title="QuickTime file type associate" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime03.png" border="0" alt="QuickTime file type associate" width="429" height="160" /> 
+<img style="display: inline; border: 0px;" title="QuickTime file type associate" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime03.png" border="0" alt="QuickTime file type associate" width="429" height="160" /> 
 
 When the player starts, open _Edit / Preferences / Player Preferences_ and prevent the Content Guide from displaying at application start.
 
-<img style="display: inline; border: 0px;" title="QuickTime Player Preferences" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime04.png" border="0" alt="QuickTime Player Preferences" width="390" height="486" /> 
+<img style="display: inline; border: 0px;" title="QuickTime Player Preferences" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime04.png" border="0" alt="QuickTime Player Preferences" width="390" height="486" /> 
 
 Open _Edit / Preferences / QuickTime Preferences_ to star the QuickTime Control Panel. You may want to prevent movies from playing automatically. Useful for the HD videos that may take some time to download.
 
-<img style="display: inline; border: 0px;" title="QuickTime Preferences Browser" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime05.png" border="0" alt="QuickTime Preferences Browser" width="426" height="564" /> 
+<img style="display: inline; border: 0px;" title="QuickTime Preferences Browser" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime05.png" border="0" alt="QuickTime Preferences Browser" width="426" height="564" /> 
 
 Prevent QuickTime from checking for updates on launch. When virtualising it would also be useful to prevent access to this control with a 3rd party tool such as AppSense Environment Manager (or hack the DLL with [Resource Explorer](http://www.wilsonc.demon.co.uk/d10resourceeditor.htm) yourself).
 
-<img style="display: inline; border: 0px;" title="QuickTime Preferences Update" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime06.png" border="0" alt="QuickTime Preferences Update" width="426" height="564" /> 
+<img style="display: inline; border: 0px;" title="QuickTime Preferences Update" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime06.png" border="0" alt="QuickTime Preferences Update" width="426" height="564" /> 
 
 The QuickTime notification area icon should be disabled by default, but check that here:
 
-<img style="display: inline; border: 0px;" title="QuickTime Preferences Advanced" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime07.png" border="0" alt="QuickTime Preferences Advanced" width="426" height="564" /> 
+<img style="display: inline; border: 0px;" title="QuickTime Preferences Advanced" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime07.png" border="0" alt="QuickTime Preferences Advanced" width="426" height="564" /> 
 
 If you configure QuickTime via a standard installation, you can automate this process by copying the preferences files to the correct locations during installation.
 

@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -113,9 +113,9 @@ So this appeared to be an issue with the permissions on database access for the 
 
 <p>Far more appealing don’t you think? A little ‘Microsofty’ I know, but much better. On graphics too, don’t forget that the Access Gateway only handles GIF files; don’t use PNGs like I did.</p>
 
-<p>The upgrade of the Access Gateway appliance itself was very straightforward. I made a backup of the configuration and then uploaded the 4.5 upgrade. After a reboot, I uploaded the 4.5.1 hotfix and it looked good â€“ just as expected. I then connected the Access Gateway to my new AAC farm and then thought that all was well until I ran into the dreaded ‘<a href="http://www.google.com/search?hl=en&amp;rls=com.microsoft%3Aen-AU&amp;q=%22protocol+driver+error%22+site%3Asupport.citrix.com">Protocol Driver Error</a>’.</p>
+<p>The upgrade of the Access Gateway appliance itself was very straightforward. I made a backup of the configuration and then uploaded the 4.5 upgrade. After a reboot, I uploaded the 4.5.1 hotfix and it looked good €“ just as expected. I then connected the Access Gateway to my new AAC farm and then thought that all was well until I ran into the dreaded ‘<a href="http://www.google.com/search?hl=en&amp;rls=com.microsoft%3Aen-AU&amp;q=%22protocol+driver+error%22+site%3Asupport.citrix.com">Protocol Driver Error</a>’.</p>
 
-<p>What I’d missed was adding the Secure Ticket Authorities to the Access Gateway properties (through Gateway Appliances properties / Secure Ticket Authority option). Something so simple that cost me about Â½ hour of my time chasing my tail. What have I learnt from this? 1. Blog about it so I won’t forget for next time and 2. Use a checklist when installing the Access Gateway.</p>
+<p>What I’d missed was adding the Secure Ticket Authorities to the Access Gateway properties (through Gateway Appliances properties / Secure Ticket Authority option). Something so simple that cost me about ½ hour of my time chasing my tail. What have I learnt from this? 1. Blog about it so I won’t forget for next time and 2. Use a checklist when installing the Access Gateway.</p>
 
 <p>Now all that I’m left with is a ‘500 Internal Server Error’ when I restart the AAC services but that can wait for another time.</p>
 

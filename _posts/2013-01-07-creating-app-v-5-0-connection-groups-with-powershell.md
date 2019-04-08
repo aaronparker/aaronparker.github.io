@@ -87,10 +87,10 @@ PS C:\> Get-AppvClientPackage -Name Adobe* | New-AppvConnectionGroupFile -Displa
 Creates a Connection Group file named 'AdobeApps.xml' with a display name of 'Adobe Apps' from packages passed via the pipeline from Get-AppvClientPackage.
 
 .NOTES  
-See http://stealthpuppy.com/ for support information.
+See https://stealthpuppy.com/ for support information.
 
 .LINK  
-http://stealthpuppy.com/code/creating-app-v-5-0-connection-groups-with-powershell/  
+https://stealthpuppy.com/code/creating-app-v-5-0-connection-groups-with-powershell/  
 #>
 
 [CmdletBinding(SupportsShouldProcess=$True)]  

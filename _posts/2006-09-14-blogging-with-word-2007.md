@@ -17,7 +17,7 @@ Having issues getting Word 2007 to register your blog provider? You may receive 
 
 Check out the following screen shot for an example, and note the missing R in register 😉
 
-![](http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.108.OfficeBlogError.JPG) 
+![](https://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.108.OfficeBlogError.JPG) 
 
 In my case, we are behind a proxy server that authenticates access to the Internet. By bypassing the proxy I was able to get Word to successfully register the account. Now this worked for me because my blog is on a server that is on our internal network. If your blog is on an external server, you'll have to ensure that you can get to that server unauthenticated.
 

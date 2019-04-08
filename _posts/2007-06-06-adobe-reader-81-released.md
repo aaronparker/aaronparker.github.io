@@ -13,6 +13,6 @@ categories:
 tags:
   - Adobe
 ---
-Adobe have released version 8.1 of Reader that includes [updates for Office 2007 and Windows Vista](http://itsvista.com/2007/06/acrobat-updated-to-integrate-with-vista-and-office/), including preview in Outlook 2007. I'll update my Adobe Reader deployment tools as soon as I can, <strike>however I don't see any reason why </strike>[<strike>my existing transform files</strike>](http://stealthpuppy.com/deployment/disable-adobe-updater-with-adobe-customization-wizard-8)<strike> won't work with this version</strike> my existing transform files won't work with this version, so expect updates soon. If you are looking to download the latest version here is the direct download link:
+Adobe have released version 8.1 of Reader that includes [updates for Office 2007 and Windows Vista](http://itsvista.com/2007/06/acrobat-updated-to-integrate-with-vista-and-office/), including preview in Outlook 2007. I'll update my Adobe Reader deployment tools as soon as I can, <strike>however I don't see any reason why </strike>[<strike>my existing transform files</strike>](https://stealthpuppy.com/deployment/disable-adobe-updater-with-adobe-customization-wizard-8)<strike> won't work with this version</strike> my existing transform files won't work with this version, so expect updates soon. If you are looking to download the latest version here is the direct download link:
 
 [http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/enu/AdbeRdr810\_en\_US.exe](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/enu/AdbeRdr810_en_US.exe)

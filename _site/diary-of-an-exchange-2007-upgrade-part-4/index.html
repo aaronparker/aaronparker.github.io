@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -48,15 +48,15 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p><img align="left" width="82" src="http://stealthpuppy.com/wp-content/uploads/2007/05/exchange1.png" height="82" style="width: 82px; height: 82px" />Dear Diary,</p>
 
-<p>I’ve fixed the <a href="http://stealthpuppy.com/exchange/diary-of-an-exchange-2007-upgrade-part-3">issue I was having with the Majority Node Set cluster</a> - it pays to check your information againstÂ more than one source. This particular issue was caused by disabling <em>Client for Microsoft Networks</em> and <em>File and Printer Sharing for Microsoft Networks</em> on the heartbeat/private network adapater on each node in the cluster.</p>
+<p>I’ve fixed the <a href="http://stealthpuppy.com/exchange/diary-of-an-exchange-2007-upgrade-part-3">issue I was having with the Majority Node Set cluster</a> - it pays to check your information against more than one source. This particular issue was caused by disabling <em>Client for Microsoft Networks</em> and <em>File and Printer Sharing for Microsoft Networks</em> on the heartbeat/private network adapater on each node in the cluster.</p>
 
 <p>You would normally do this on a standard quorum cluster, however because a Majority Node Cluster does not use shared storage, each node needs to view cluster information via a UNC path on the other node or nodes. The following error was recorded in the cluster log file (C:WINDOWSCLUSTERcluster.log):</p>
 
 <blockquote>
-  <p>000003bc.000007ec::2007/05/26-02:14:31.082 ERRÂ  Majority Node Set <Majority Node="" Set="">: CreateTreeConnection(10.10.12.2878350f8-22f8-49ca-90ca-8d3d361df536$) returned 0xc00000be hdl 0xffffffff</Majority></p>
+  <p>000003bc.000007ec::2007/05/26-02:14:31.082 ERR  Majority Node Set <Majority Node="" Set="">: CreateTreeConnection(10.10.12.2878350f8-22f8-49ca-90ca-8d3d361df536$) returned 0xc00000be hdl 0xffffffff</Majority></p>
 </blockquote>
 
-<p>Re-enabling those items on the network connection, immediately got the cluster back up and running. You can read more about configuration network connectionsÂ for a CCR cluster onÂ TechNet:Â <a href="http://technet.microsoft.com/en-us/library/aa997910.aspx">How to Configure Network Connections for Cluster Continuous Replication</a></p>
+<p>Re-enabling those items on the network connection, immediately got the cluster back up and running. You can read more about configuration network connections for a CCR cluster on TechNet: <a href="http://technet.microsoft.com/en-us/library/aa997910.aspx">How to Configure Network Connections for Cluster Continuous Replication</a></p>
 
 <p>I’ve also now got the Exchange cluster up and running. The <a href="http://msexchangeteam.com/archive/2007/01/18/432264.aspx">installation experience</a> has been simplified since previous versions of Exchange and is now a no brainer. Installing the active and passive nodes is just a matter of selecting the Active or Passive Clustered Mailbox Role during installation.</p>
 

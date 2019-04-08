@@ -13,4 +13,4 @@ It’s been a busy December, so it’s been a bit quiet around here and by the t
 
 I’m going to leave you with [this little gem from Garfield minus Garfield](http://garfieldminusgarfield.net/post/65761782), it made me chuckle…
 
-<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="SantaClausiswatchingyou" border="0" alt="SantaClausiswatchingyou" src="http://stealthpuppy.com/wp-content/uploads/2008/12/santaclausiswatchingyou.png" width="500" height="145" />
+<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="SantaClausiswatchingyou" border="0" alt="SantaClausiswatchingyou" src="https://stealthpuppy.com/wp-content/uploads/2008/12/santaclausiswatchingyou.png" width="500" height="145" />

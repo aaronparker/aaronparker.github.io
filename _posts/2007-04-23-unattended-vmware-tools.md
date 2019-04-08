@@ -18,7 +18,7 @@ Here's how to create an unattended installation of VMware Tools which I've aimed
 
 When installing a [Terminal Server on VMware Server or ESX](http://virtrix.blogspot.com/2007/03/vmware-best-practices-for-deploying.html), you need to ensure you do not install the memory control driver. To do this we need to create a custom transform file. I found the easiest way to do this was with Wise InstallTailor, unfortunately this tool is no longer available for free, so here's a copy of the transform that I've created, which prevents the Memory Control Driver, Shared Folders and Guest SDK features from installing:
 
-[Transform for VMware Tools for Terminal Servers](http://stealthpuppy.com/wp-content/uploads/2007/04/VMwareTools-TerminalServer.mst)
+[Transform for VMware Tools for Terminal Servers](https://stealthpuppy.com/wp-content/uploads/2007/04/VMwareTools-TerminalServer.mst)
 
 ### Enabling Hardware Acceleration
 

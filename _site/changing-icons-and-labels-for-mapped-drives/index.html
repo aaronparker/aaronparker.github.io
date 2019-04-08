@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -53,7 +53,7 @@
 <p>This is a machine level registry change and supports changing the icon for all drive types. Only the label for local drives can be change here, network drives must be changed via HKCU. This type of label will not take effect if a label (using the LABEL command or via Explorer) already exists on the drive. This example will change the drive icon and label for drive V.</p>
 
 <p class="code">
-  [quickcode:noclick][HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\DriveIcons\V\DefaultIcon]<br /> @=&#8221;C:\\WINDOWS\\SYSTEM32\\SHELL32.DLL,8&#8243;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\DriveIcons\V\DefaultLabel]<br /> @=&#8221;Local Drive&#8221;[/quickcode]
+  [quickcode:noclick][HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\DriveIcons\V\DefaultIcon]<br /> @="C:\\WINDOWS\\SYSTEM32\\SHELL32.DLL,8&#8243;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\DriveIcons\V\DefaultLabel]<br /> @="Local Drive"[/quickcode]
 </p>
 
 <p><strong>Change Network Drive Labels</strong></p>
@@ -61,7 +61,7 @@
 <p>This registry change must be done in HKEY_CURRENT_USER and supports network drives only, i.e. UNC mapped or RDP/ICA mapped drives. Replace backslashes with the # symbol. This example add the label “Common Data” to the drive mapped to \SERVER\Share regardless of the actual drive letter mapped.</p>
 
 <p class="code">
-  [quickcode:noclick]HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2\##SERVER#Share]<br /> &#8220;_LabelFromReg&#8221;=&#8221;Common Data&#8221;[/quickcode]
+  [quickcode:noclick]HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2\##SERVER#Share]<br /> "_LabelFromReg"="Common Data"[/quickcode]
 </p>
 
   </div><a class="u-url" href="/changing-icons-and-labels-for-mapped-drives/" hidden></a>

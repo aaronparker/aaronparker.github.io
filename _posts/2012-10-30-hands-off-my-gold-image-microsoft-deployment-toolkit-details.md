@@ -20,7 +20,7 @@ tags:
   - PVS
   - XenApp
 ---
-After the corresponding [Geek Speak talk at Citrix Synergy in Barcelona](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy), I posted an article on automating a XenApp deployment and capture into Provisioning Services via the [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx) (MDT): [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation.](http://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/)
+After the corresponding [Geek Speak talk at Citrix Synergy in Barcelona](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy), I posted an article on automating a XenApp deployment and capture into Provisioning Services via the [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx) (MDT): [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation.](https://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/)
 
 In a series of blog posts I'll cover some of the steps in more detail - first up is configuring the MDT deployment share. I won't cover setting up a share here, so if you're new to MDT, I suggest starting at the [MDT home page on TechNet](http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx) where you'll find various resources on using MDT.
 
@@ -77,4 +77,4 @@ To control the creation (or not) of the BitLocker boot partition, a combination
 
 The end of CustomSettings.ini (under machine specific configurations, is a sample heading for a target computer. Target computers are best identified by their UUID. This allows the MDT task sequence to match the machine it's running on against the properties set in CustomSettings.ini.
 
-In the next article, I'll cover some specifics around [the task sequence used to deploy Windows, install XenApp and capture the PVS image](http://stealthpuppy.com/deployment/hands-off-my-gold-image-the-task-sequence/). In the meantime if you want to get more detail on this approach email me at aaron (at) stealthpuppy.com.
+In the next article, I'll cover some specifics around [the task sequence used to deploy Windows, install XenApp and capture the PVS image](https://stealthpuppy.com/deployment/hands-off-my-gold-image-the-task-sequence/). In the meantime if you want to get more detail on this approach email me at aaron (at) stealthpuppy.com.

@@ -43,6 +43,6 @@ Disabling the user interface elements to these update preferences and launch poi
 
 If it is working correctly, you should see something like this (before and after):
 
-<img style="display: inline; border: 0px;" title="FirefoxOptions" src="http://stealthpuppy.com/wp-content/uploads/2010/03/FirefoxOptions.png" border="0" alt="FirefoxOptions" width="660" height="501" /> 
+<img style="display: inline; border: 0px;" title="FirefoxOptions" src="https://stealthpuppy.com/wp-content/uploads/2010/03/FirefoxOptions.png" border="0" alt="FirefoxOptions" width="660" height="501" /> 
 
 This method is not completely fool-proof (the modified files all exist in the user profile and are thus writeable) but it should stop users from unwittingly attempting to update Firefox and allow you to control when updates are deployed.

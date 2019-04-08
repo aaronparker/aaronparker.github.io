@@ -20,7 +20,7 @@ tags:
   - PVS
   - XenApp
 ---
-If you've been following along so far you'll have read my follow up coverage of  my (and co-host, [Jonathan Eyton-Williams](https://twitter.com/jonathanew)) [Geek Speak talk at Citrix Synergy in Barcelona](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy), with  [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation](http://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/) and [Hands off my gold image – Microsoft Deployment Toolkit details](http://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/). In this article I'll cover the task sequence that deploys Windows Server, installs XenApp and captures the image into PVS.
+If you've been following along so far you'll have read my follow up coverage of  my (and co-host, [Jonathan Eyton-Williams](https://twitter.com/jonathanew)) [Geek Speak talk at Citrix Synergy in Barcelona](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy), with  [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation](https://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/) and [Hands off my gold image – Microsoft Deployment Toolkit details](https://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/). In this article I'll cover the task sequence that deploys Windows Server, installs XenApp and captures the image into PVS.
 
 Task sequences in the Microsoft Deployment Toolkit (MDT) are core of what makes MDT tick. Think of a task sequence as the steps that will deploy and configure Windows. Note that there is no post-deployment management with MDT, as there is no agent (that's what ConfigMgr is for).
 
@@ -38,15 +38,15 @@ The download that I have supplied ([download id="58&#8243; format="3&#8243;]) in
 
 Re-open the task sequence properties and you should see something like this:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="XenApp-PVS-TaskSequence-Final" src="http://stealthpuppy.com/wp-content/uploads/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png" alt="XenApp-PVS-TaskSequence-Final" width="660" height="337" border="0" />](http://stealthpuppy.com/wp-content/uploads/2012/11/XenApp-PVS-TaskSequence-Final.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="XenApp-PVS-TaskSequence-Final" src="https://stealthpuppy.com/wp-content/uploads/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png" alt="XenApp-PVS-TaskSequence-Final" width="660" height="337" border="0" />](https://stealthpuppy.com/wp-content/uploads/2012/11/XenApp-PVS-TaskSequence-Final.png)
 
 Importing the supplied pre-configured task sequence into your own Deployment Share, will result in some errors because the task sequence will reference applications and operating systems that either don't exist in your Deployment Share or have different names.
 
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-Errors" src="http://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-Errors.png" alt="MDT-TS-Errors" width="416" height="152" border="0" /> 
+<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-Errors" src="https://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-Errors.png" alt="MDT-TS-Errors" width="416" height="152" border="0" /> 
 
 For example, after I've imported this task sequence, I need to fix the reference to the Windows Server 2008 R2 SP1 source files:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-FixOS" src="http://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-FixOS_thumb.png" alt="MDT-TS-FixOS" width="660" height="325" border="0" />](http://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-FixOS.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-FixOS" src="https://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-FixOS_thumb.png" alt="MDT-TS-FixOS" width="660" height="325" border="0" />](https://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-FixOS.png)
 
 The download also includes the scripts/applications referenced by the task sequence, so you'll need to ensure they exist in your Deployment Share before fixing the task sequence.
 
@@ -66,7 +66,7 @@ Here's a rough breakdown of what the task sequence is doing:
   8. Install some additional XenApp related components including hotfixes, Receiver, the Offline Plugin etc
   9. Install core applications using an Application Bundle (this might include Office, Reader, Flash etc)
  10. Run a Windows Update task again once the dependencies and applications have been deployed
- 11. Prepare and capture the image into PVS using [custom properties](http://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/). This might install and configure the EdgeSight Agent, but will install XenConvert, prep the image and then perform a capture
+ 11. Prepare and capture the image into PVS using [custom properties](https://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/). This might install and configure the EdgeSight Agent, but will install XenConvert, prep the image and then perform a capture
 
 # About Unattend.xml
 
@@ -81,10 +81,10 @@ The included unattend.xml has configuration items applied to two [configuration 
   * [specialize](http://technet.microsoft.com/en-us/library/cc722130(v=ws.10).aspx); and
   * [oobeSystem](http://technet.microsoft.com/en-us/library/cc748990(v=ws.10).aspx)
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="unattend-xml" src="http://stealthpuppy.com/wp-content/uploads/2012/11/unattend-xml_thumb.png" alt="unattend-xml" width="660" height="365" border="0" />](http://stealthpuppy.com/wp-content/uploads/2012/11/unattend-xml.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="unattend-xml" src="https://stealthpuppy.com/wp-content/uploads/2012/11/unattend-xml_thumb.png" alt="unattend-xml" width="660" height="365" border="0" />](https://stealthpuppy.com/wp-content/uploads/2012/11/unattend-xml.png)
 
 Together the task sequence and unattend.xml create what should be a fairly clean (and importantly, repeatable) deployment of a XenApp server.
 
 In the last article of this series, I'll discuss some of the included scripts, but as always, if you'd like to ask some specific questions, email me - aaron (at) stealthpuppy.com.
 
-Next up: [Hands off my gold image – The Scripts](http://stealthpuppy.com/deployment/hands-off-my-gold-image-the-scripts/)
+Next up: [Hands off my gold image – The Scripts](https://stealthpuppy.com/deployment/hands-off-my-gold-image-the-scripts/)

@@ -4,7 +4,7 @@ title: 'Hands off my gold image! – Video: PowerShell, MDT, Atlantis ILIO and X
 date: 2013-05-26T21:36:26+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=3305
+guid: https://stealthpuppy.com/?p=3305
 permalink: /hands-off-my-gold-image-video-powershell-mdt-atlantis-ilio-and-xendesktop-deployment/
 dsq_thread_id:
   - "1323007668"
@@ -25,6 +25,6 @@ Using PowerShell to drive vSphere, MDT, [Atlantis ILIO](http://atlantiscomputing
 
 Here's a flow chart that gives an overview of what the script does:
 
-[<img class="alignnone  wp-image-3306" alt="PowerShell-vSphere-MDT-ILIO-XenDesktop" src="http://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop.png" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />](http://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop.png)
+[<img class="alignnone  wp-image-3306" alt="PowerShell-vSphere-MDT-ILIO-XenDesktop" src="https://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop.png" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />](https://stealthpuppy.com/wp-content/uploads/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop.png)
 
 The video is available in HD resolution (720) so you can see the full details.

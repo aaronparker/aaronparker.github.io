@@ -32,7 +32,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="left" />
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="left" />
 
 No, unfortunately you cannot use App-V to virtualise Internet Explorer today. Other application virtualisation solutions such as [VMware ThinApp](http://blogs.vmware.com/thinapp/2010/06/internet-explorer-6on-windows-7.html), [Symantec Workspace Virtualization](http://www.symantec.com/connect/articles/running-ie6-ie7-and-ie8-side-side-using-symantec-workspace-virtualization), and [InstallFree Bridge](http://www.installfree.com/solutions/virtual-internet-explorer/) can virtualise Internet Explorer, so why can’t App-V?
 
@@ -62,7 +62,7 @@ Microsoft does provide developers with tools for running the Internet Explorer 6
 
 There are some other ways that you could consider for delivering older versions of Internet Explorer:
 
-  * [RemoteApp](http://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces) – Internet Explorer can be published from Windows XP or Windows Vista using RemoteApp. The older operating systems could be running in a local or remote virtual machine.
+  * [RemoteApp](https://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces) – Internet Explorer can be published from Windows XP or Windows Vista using RemoteApp. The older operating systems could be running in a local or remote virtual machine.
   * [VMware Workstation](http://www.vmware.com/products/workstation/) – Unity mode can be used to provide a seamless Internet Explorer on the host operating system.
   * [Oracle VirtualBox](http://www.virtualbox.org) – VirtualBox also offers a seamless window mode.
 

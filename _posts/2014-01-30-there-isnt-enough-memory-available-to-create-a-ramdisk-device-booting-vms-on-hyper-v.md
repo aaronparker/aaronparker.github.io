@@ -4,7 +4,7 @@ title: '"There isn’t enough memory available to create a ramdisk device" booti
 date: 2014-01-30T12:38:22+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=3553
+guid: https://stealthpuppy.com/?p=3553
 permalink: /there-isnt-enough-memory-available-to-create-a-ramdisk-device-booting-vms-on-hyper-v/
 dsq_thread_id:
   - "2195003334"
@@ -23,7 +23,7 @@ Booting a virtual machine under Windows Server 2012 R2 Hyper-V may result in the
 > There isn’t enough memory available to create a ramdisk device.  
 > Error code: 0x0000017
 
-[<img class="alignnone size-full wp-image-3554" alt="There isn’t enough memory available to create a ramdisk device" src="http://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory.png" width="1024" height="768" srcset="https://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory-150x112.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory-300x225.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory-624x468.png 624w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory.png)
+[<img class="alignnone size-full wp-image-3554" alt="There isn’t enough memory available to create a ramdisk device" src="https://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory.png" width="1024" height="768" srcset="https://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory-150x112.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory-300x225.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory-624x468.png 624w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2014/01/NotEnoughMemory.png)
 
 Thankfully, the error message is pretty self explanatory.
 
@@ -31,4 +31,4 @@ Booting a standard Windows ISO does not result in the above error, but in this p
 
 The VM is configured with [dynamic memory](http://technet.microsoft.com/en-us/library/hh831766.aspx) enabled and the default startup RAM size of 512Mb. This issue is easily remedied by increasing the startup RAM size. The minimum RAM size can then still be configured for 512Mb, if required.
 
-[<img class="alignnone size-full wp-image-3556" alt="DynamicMemory" src="http://stealthpuppy.com/wp-content/uploads/2014/01/DynamicMemory.png" width="451" height="344" srcset="https://stealthpuppy.com/wp-content/uploads/2014/01/DynamicMemory.png 451w, https://stealthpuppy.com/wp-content/uploads/2014/01/DynamicMemory-150x114.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/01/DynamicMemory-300x228.png 300w" sizes="(max-width: 451px) 100vw, 451px" />](http://stealthpuppy.com/wp-content/uploads/2014/01/DynamicMemory.png)
+[<img class="alignnone size-full wp-image-3556" alt="DynamicMemory" src="https://stealthpuppy.com/wp-content/uploads/2014/01/DynamicMemory.png" width="451" height="344" srcset="https://stealthpuppy.com/wp-content/uploads/2014/01/DynamicMemory.png 451w, https://stealthpuppy.com/wp-content/uploads/2014/01/DynamicMemory-150x114.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/01/DynamicMemory-300x228.png 300w" sizes="(max-width: 451px) 100vw, 451px" />](https://stealthpuppy.com/wp-content/uploads/2014/01/DynamicMemory.png)

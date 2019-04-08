@@ -67,10 +67,10 @@ PS C:\> $VM | Get-vSphereVMUUID
 Retrieves the UUID from a VM piped to this function.
 
 .NOTES  
-See http://stealthpuppy.com/ for support information.
+See https://stealthpuppy.com/ for support information.
 
 .LINK  
-http://stealthpuppy.com/code/retrieving-a-vms-uuid-from-vsphere/
+https://stealthpuppy.com/code/retrieving-a-vms-uuid-from-vsphere/
 
 #>
 

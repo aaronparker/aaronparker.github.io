@@ -11,7 +11,7 @@ categories:
 ---
 Because I haven’t been posting much I thought it might be time for a Friday funny instead. [Dugie](http://blog.windowsvirtualization.com/) e-mailed me this one last night and it made be chuckle:
 
-<img style="display: inline" title="awesomepc6" src="http://stealthpuppy.com/wp-content/uploads/2008/09/awesomepc6.jpg" border="0" alt="awesomepc6" width="463" height="385" /> 
+<img style="display: inline" title="awesomepc6" src="https://stealthpuppy.com/wp-content/uploads/2008/09/awesomepc6.jpg" border="0" alt="awesomepc6" width="463" height="385" /> 
 
  
 

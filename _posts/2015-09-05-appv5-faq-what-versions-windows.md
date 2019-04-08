@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: What versions of Windows is App-V 5 supported on?'
 date: 2015-09-05T21:14:43+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=4080
+guid: https://stealthpuppy.com/?p=4080
 permalink: /appv5-faq-what-versions-windows/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -71,4 +71,4 @@ More details on the full system requirements for Application Virtualization 5 ar
 
 ## Previously
 
-  * [App-V 4.x FAQ: What are the system requirements for App-V?](http://stealthpuppy.com/app-v-faq-6-what-are-the-system-requirements-for-app-v/)
+  * [App-V 4.x FAQ: What are the system requirements for App-V?](https://stealthpuppy.com/app-v-faq-6-what-are-the-system-requirements-for-app-v/)

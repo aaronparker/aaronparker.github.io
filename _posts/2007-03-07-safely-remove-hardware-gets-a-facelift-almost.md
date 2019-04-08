@@ -17,19 +17,19 @@ There are quite a few design choices in Windows Vista that have me baffled, espe
 
 In Windows Vista there are two ways to prepare a device for removal before actually physically disconnecting the device. The first method, which has carried over from earlier versions of Windows, is to right click on the Safely Remove Hardware icon in the tray and then click the device to remove. Like this:
 
-<img border="0" width="500" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1095.RemoveHardwareMenu.png" height="98" style="width: 500px; height: 98px" /> 
+<img border="0" width="500" src="https://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1095.RemoveHardwareMenu.png" height="98" style="width: 500px; height: 98px" /> 
 
 Once Windows has finished flushing the file system cache, the following dialog is displayed to let you know that you can remove the device:
 
-<img border="0" width="410" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1096.SafeToRemoveHardware.png" height="184" style="width: 410px; height: 184px" /> 
+<img border="0" width="410" src="https://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1096.SafeToRemoveHardware.png" height="184" style="width: 410px; height: 184px" /> 
 
 The problem with this approach is this dialog is a little in-your-face and you must respond to it with a mouse click. Surely a balloon notification would be a more pleasant experience? Well, let's see what we get when you use the second method to safely remove a device. This method is accessed via the right-click menu on a device such as a USB hard drive in My Computer:
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1093.Computer.png" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1093.Computer.png" /> 
 
 This results in a balloon notification in the tray, far more elegant than a popup dialog box:
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1094.RemoveHardwareBaloon.png" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1094.RemoveHardwareBaloon.png" /> 
 
 <a target="_blank" href="http://www.stealthpuppy.com/photos/images/images/1096/original.aspx"></a>
 

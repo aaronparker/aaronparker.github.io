@@ -21,10 +21,10 @@ Because I'm a neat freak when it comes to file systems I don't like having stuff
 
 Before:
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/02/1000.14.971.Intel3.png" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/02/1000.14.971.Intel3.png" /> 
 
 After:
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/02/1000.14.972.Intel2.png" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/02/1000.14.972.Intel2.png" /> 
 
 Surely the file does not need to be created at runtime and surely it doesn't need to exist in this location? I tested again after copying the DLL to the SYSTEM32 folder and guess what? It worked just as well. Someone over at Intel needs a slap on the wrist.

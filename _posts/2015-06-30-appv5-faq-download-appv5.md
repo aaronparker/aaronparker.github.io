@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: Where Can I Download App-V 5.0?'
 date: 2015-06-30T08:00:12+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=3995
+guid: https://stealthpuppy.com/?p=3995
 permalink: /appv5-faq-download-appv5/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -47,4 +47,4 @@ No evaluation version of App-V or MDOP appears to exist; however the following e
 
 # Previously
 
-  * [App-V 4.x FAQ: Where can I download App-V?](http://stealthpuppy.com/virtualisation/app-v-faq-4-where-can-i-download-app-v)
+  * [App-V 4.x FAQ: Where can I download App-V?](https://stealthpuppy.com/virtualisation/app-v-faq-4-where-can-i-download-app-v)

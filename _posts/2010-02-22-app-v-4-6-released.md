@@ -31,17 +31,17 @@ Microsoft Application Virtualisation 4.6 (RTM) has been made available, which yo
 
 [Application Virtualization Application Listing Tool](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=5da48313-cf6d-445d-af97-594f194ac759) – This tool will give you information on running virtual applications, which looks like this:
 
-<img style="display: inline; border-width: 0px;" title="ListApps" src="http://stealthpuppy.com/wp-content/uploads/2010/02/ListApps.png" border="0" alt="ListApps" width="660" height="292" /> 
+<img style="display: inline; border-width: 0px;" title="ListApps" src="https://stealthpuppy.com/wp-content/uploads/2010/02/ListApps.png" border="0" alt="ListApps" width="660" height="292" /> 
 
 [Microsoft Application Virtualization SFT View](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=26d8bfe3-02dd-4073-95f8-594bbb12933a) – SFT View loads a driver that automatically mounts SFT files as read-only folders (you will see a corresponding .dir folder for each SFT). This is an easy way to see into the SFT file and might be useful for performing virus scanning if the tool was installed on the servers hosting your Content share.
 
-[<img style="display: inline; border-width: 0px;" title="SFTDir" src="http://stealthpuppy.com/wp-content/uploads/2010/02/SFTDir_thumb.png" border="0" alt="SFTDir" width="660" height="282" />](http://stealthpuppy.com/wp-content/uploads/2010/02/SFTDir.png)
+[<img style="display: inline; border-width: 0px;" title="SFTDir" src="https://stealthpuppy.com/wp-content/uploads/2010/02/SFTDir_thumb.png" border="0" alt="SFTDir" width="660" height="282" />](https://stealthpuppy.com/wp-content/uploads/2010/02/SFTDir.png)
 
 [Application Virtualization Client Log Parser Utility](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=72876c60-3a87-4705-b722-f73eb56219bf) – This tools has been previously available and is an excellent troubleshooting resource. You can find some information on using this tool here [Getting to Grips with the App-V Client Log Parser Utility (Launch Times)](http://blogs.technet.com/virtualworld/archive/2009/04/20/getting-to-grips-with-the-app-v-client-log-parser-utility-launch-times.aspx) and here [Getting to Grips with the App-V Client Log Parser Utility (Error Codes)](http://blogs.technet.com/virtualworld/archive/2009/04/20/getting-to-grips-with-the-app-v-client-log-parser-utility-error-codes.aspx)
 
 [Application Virtualization Cache Configuration Tool](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=5e7089fa-c6ab-4150-8562-3b5bc14cd881) – If you need to change the client cache size post install, this is the tool to automate that process with.
 
-<img style="display: inline; border-width: 0px;" title="CacheSize" src="http://stealthpuppy.com/wp-content/uploads/2010/02/CacheSize.png" border="0" alt="CacheSize" width="660" height="203" /> 
+<img style="display: inline; border-width: 0px;" title="CacheSize" src="https://stealthpuppy.com/wp-content/uploads/2010/02/CacheSize.png" border="0" alt="CacheSize" width="660" height="203" /> 
 
 [Application Virtualization Dynamic Suite Composition Tool](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=daa898df-455f-438a-aa2a-421f05894098) – Not much looks to have changed with this tool. Use it to create package dependencies without have to edit an OSD file. There’s an example of how the tool is used in [this video](http://download.microsoft.com/download/C/C/4/CC49D1B1-DCDE-4F03-8A28-B11D0949A672/Use_Dynamic_Suiting.wmv).
 

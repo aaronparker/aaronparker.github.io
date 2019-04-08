@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: What is Microsoft Application Virtualization 5?'
 date: 2015-06-09T13:51:07+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=3977
+guid: https://stealthpuppy.com/?p=3977
 permalink: /appv5-faq-what-is-appv5/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -16,7 +16,7 @@ categories:
 tags:
   - App-V
 ---
-_This article is part of the [Microsoft Application Virtualization 5 FAQ series](http://stealthpuppy.com/appv5-faqs/)._
+_This article is part of the [Microsoft Application Virtualization 5 FAQ series](https://stealthpuppy.com/appv5-faqs/)._
 
 Microsoft Application Virtualization (App-V) is an application delivery solution that enables applications to be delivered to and executed on a Windows instance without being installed.
 
@@ -44,4 +44,4 @@ Designing and implementing App-V requires understanding your application portfol
 
 ## Previously
 
-  * [App-V 4.x FAQ: What is Microsoft Application Virtualization?](http://stealthpuppy.com/virtualisation/app-v-faq-2-what-is-microsoft-application-virtualization)
+  * [App-V 4.x FAQ: What is Microsoft Application Virtualization?](https://stealthpuppy.com/virtualisation/app-v-faq-2-what-is-microsoft-application-virtualization)

@@ -17,7 +17,7 @@ categories:
 tags:
   - Adobe Reader
 ---
-[<img class="alignright size-full wp-image-2848" style="margin-left: 5px; margin-right: 5px;" title="ReaderXI-Installer" src="http://stealthpuppy.com/wp-content/uploads/2012/10/ReaderXI-Installer.png" alt="" width="128" height="128" />Adobe Reader XI](http://get.adobe.com/reader/) is now available and along with this release comes some interesting tools for deployment:
+[<img class="alignright size-full wp-image-2848" style="margin-left: 5px; margin-right: 5px;" title="ReaderXI-Installer" src="https://stealthpuppy.com/wp-content/uploads/2012/10/ReaderXI-Installer.png" alt="" width="128" height="128" />Adobe Reader XI](http://get.adobe.com/reader/) is now available and along with this release comes some interesting tools for deployment:
 
   * Citrix XenApp enhancements for better performance (it's not clear whether this specifically XenApp or RDS enhancements. Hopefully this means reduced memory requirements)
   * New App-V support, including a Package Accelerator (presumably this is App-V 4.6, not 5.0)
@@ -31,12 +31,12 @@ There's a full list of new features in this blog post: [Announcing Adobe Reader
 
 # Customisation
 
-Customisation of Reader XI with the Adobe Customization Wizard XI is the same approach as previous versions and I have a comprehensive post on [deploying Adobe Reader X](http://stealthpuppy.com/deployment/deploying-adobe-reader-x/) which will largely apply to XI, but Adobe does have customisation and deployment documentation available:
+Customisation of Reader XI with the Adobe Customization Wizard XI is the same approach as previous versions and I have a comprehensive post on [deploying Adobe Reader X](https://stealthpuppy.com/deployment/deploying-adobe-reader-x/) which will largely apply to XI, but Adobe does have customisation and deployment documentation available:
 
   * [Enterprise Toolkit for Acrobat Products](http://www.adobe.com/devnet-docs/acrobatetk/#)
   * [Adobe Customization Wizard XI documentation](http://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/Customization%20Wizard%2011%20for%20Windows.pdf)
 
-The [Adobe Customization Wizard XI for Windows](http://www.adobe.com/support/downloads/thankyou.jsp?ftpID=5515&fileID=5526) is now available and the administration experience does not change massively (or at all) from [previous versions](http://stealthpuppy.com/deployment/deploying-adobe-reader-x/).
+The [Adobe Customization Wizard XI for Windows](http://www.adobe.com/support/downloads/thankyou.jsp?ftpID=5515&fileID=5526) is now available and the administration experience does not change massively (or at all) from [previous versions](https://stealthpuppy.com/deployment/deploying-adobe-reader-x/).
 
 Extracting Reader XI from the installer is the same as previous versions - run the following command:
 
@@ -101,7 +101,7 @@ To deploy Reader in your environment, you would continue to use the same approac
 
 Whilst the Group Policy management support is great and way overdue, there's currently only a handful of settings - don't expect the same level of policy configuration that we get with Microsoft Office. It remains to be seen whether more will be required in production environments.
 
-<img title="ReaderXI-GroupPolicy" src="http://stealthpuppy.com/wp-content/uploads/2012/10/ReaderXI-GroupPolicy.png" alt="" width="440" height="165" /> 
+<img title="ReaderXI-GroupPolicy" src="https://stealthpuppy.com/wp-content/uploads/2012/10/ReaderXI-GroupPolicy.png" alt="" width="440" height="165" /> 
 
 # Finally..
 

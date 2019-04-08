@@ -67,7 +67,7 @@ The second time around these errors were gone, however I found that when selecti
 
 Now that I had AAC up and running, I configured a logon point, some resources and access policy and customised the awful, awful graphics Citrix have added to 4.5. Here's what I whipped up:
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1177.AccessGateway.gif" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1177.AccessGateway.gif" /> 
 
 Far more appealing don't you think? A little 'Microsofty' I know, but much better. On graphics too, don't forget that the Access Gateway only handles GIF files; don't use PNGs like I did.
 

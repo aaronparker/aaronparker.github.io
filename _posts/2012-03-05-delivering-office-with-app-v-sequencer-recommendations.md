@@ -82,7 +82,7 @@ Create a new virtual machine with the following virtual hardware:
   * Add NICs, a sound card, USB hubs, COM & LPT ports as required
   * 2 x vDisks – use fixed size disks if you have the space. Fixed size disks will offer better IO performance. Additionally the App-V 4.6 SP1 Sequencer can automatically create a Q: drive if none already exists; however a second vDisk is a better approach.
 
-<img class="alignleft" style="margin-right: 10px;" src="http://stealthpuppy.com/wp-content/uploads/2012/02/021412_1854_DeliveringO1.png" alt="" width="48" height="48" align="left" /> If no secondary partition exists, the Sequencer setup will create a substituted drive letter for the virtual drive. A known issue exists where this configuration can cause an issue with new and upgraded packages because the Sequencer resolves the full path instead of the substituted drive letter.
+<img class="alignleft" style="margin-right: 10px;" src="https://stealthpuppy.com/wp-content/uploads/2012/02/021412_1854_DeliveringO1.png" alt="" width="48" height="48" align="left" /> If no secondary partition exists, the Sequencer setup will create a substituted drive letter for the virtual drive. A known issue exists where this configuration can cause an issue with new and upgraded packages because the Sequencer resolves the full path instead of the substituted drive letter.
 
 This issue looks to be fixed with [Hotfix 3 for the 4.6 SP1 Sequencer](http://support.microsoft.com/kb/2571168); however it is still recommended that you create a second vDisk, rather than let setup create the drive for you.
 
@@ -95,7 +95,7 @@ Windows XP Professional or Windows 7 Enterprise editions are recommended for cli
       * Service Pack deployment is recommended via a slipstreamed Windows ISO (that is the ISO with the latest service pack integrated into it)
   * Install the hypervisor tools or additions to install drivers and services required by the hypervisor to support the VM correctly
   * Enable Windows Firewall including the File and Printer Sharing rule to prevent remote PCs from connecting to the virtual machine
-  * Active Windows inside the VM. A KMS will be make this simple; however if you are using a MAK key provided by your TechNet or MSDN subscription, this article is recommended reading: [Managing product activation with a TechNet subscription](http://stealthpuppy.com/general/managing-product-activation-with-a-technet-subscription-and-msdn-too/)
+  * Active Windows inside the VM. A KMS will be make this simple; however if you are using a MAK key provided by your TechNet or MSDN subscription, this article is recommended reading: [Managing product activation with a TechNet subscription](https://stealthpuppy.com/general/managing-product-activation-with-a-technet-subscription-and-msdn-too/)
   * Disable System Restore on Windows XP or System Protection on Windows 7
   * Disable Windows Defender on Windows 7 (or disable the service)
   * If deploying Windows 7, leave the following Optional Components enabled: 
@@ -205,7 +205,7 @@ Windows XP Professional or Windows 7 Enterprise editions are recommended for cli
 
 Additional pre-requisites should only be installed when required by an application. For example, if Office is a pre-requisite of another application (such as SAP products or a plug-in) only install Office when sequencing that application.
 
-<img class="alignleft" style="margin-right: 10px;" src="http://stealthpuppy.com/wp-content/uploads/2012/02/021412_1854_DeliveringO2.png" alt="" width="48" height="48" align="left" /> At this point you will have a VM that can be used as a sequencing environment as well as an App-V client. It is highly recommended that you create two VMs based on this environment so that you have a second VM to perform testing of packages to confirm that the sequenced applications work at runtime.
+<img class="alignleft" style="margin-right: 10px;" src="https://stealthpuppy.com/wp-content/uploads/2012/02/021412_1854_DeliveringO2.png" alt="" width="48" height="48" align="left" /> At this point you will have a VM that can be used as a sequencing environment as well as an App-V client. It is highly recommended that you create two VMs based on this environment so that you have a second VM to perform testing of packages to confirm that the sequenced applications work at runtime.
 
 # Sequencer
 

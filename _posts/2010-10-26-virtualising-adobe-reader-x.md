@@ -15,7 +15,7 @@ categories:
 tags:
   - Adobe Reader
 ---
-[<img style="background-image: none; margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 10px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ReaderXVirtualise" src="http://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise_thumb.png" alt="ReaderXVirtualise" width="128" height="124" align="right" border="0" />](http://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise.png)This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.
+[<img style="background-image: none; margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 10px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ReaderXVirtualise" src="https://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise_thumb.png" alt="ReaderXVirtualise" width="128" height="124" align="right" border="0" />](https://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise.png)This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.
 
 ### Don't Virtualize Reader
 
@@ -25,7 +25,7 @@ If you are using a virtualisation solution that isolates an application from o
 
 _Internet Explorer_: if Reader is isolated from Windows, Internet Explorer will be able to download PDFs which can then be opened with the virtualised Reader; however IE will have no knowledge of any application that is handling the PDF file type or MIME type. Launching Reader inside IE or viewing a PDF [embedded in a web page](http://blogs.adobe.com/pdfdevjunkie/2007/08/using_the_html_embed_tag_to_di.html) will not be possible.
 
-<img title="ComparingReaderInstallTypes" src="http://stealthpuppy.com/wp-content/uploads/2010/10/ComparingReaderInstallTypes.png" alt="" width="660" height="241" /> 
+<img title="ComparingReaderInstallTypes" src="https://stealthpuppy.com/wp-content/uploads/2010/10/ComparingReaderInstallTypes.png" alt="" width="660" height="241" /> 
 
 You could solve this my launching Internet Explorer inside the Reader package, but this will require covering all of the ways a user can launch Internet Explorer. If you do that, what happens when you want IE to launch inside the environment of another package? App-V doesn't handle integration with these entry points elegantly today.
 
@@ -37,7 +37,7 @@ In most cases I do not recommend virtualizing Reader – your mileage may vary, 
 
 If I haven't convinced you that virtualizing Reader is more trouble that it's worth, then here's how to do it:
 
-I've previously covered [how to create a customised deployment of Reader X](http://stealthpuppy.com/deployment/deploying-adobe-reader-x/) to suit your environment. If you have read that article yet, I recommend that you do before proceeding further. Automating the installation and configuration of Reader during sequencing will make it easier to re-create the package and will simplify documentation.
+I've previously covered [how to create a customised deployment of Reader X](https://stealthpuppy.com/deployment/deploying-adobe-reader-x/) to suit your environment. If you have read that article yet, I recommend that you do before proceeding further. Automating the installation and configuration of Reader during sequencing will make it easier to re-create the package and will simplify documentation.
 
 Here's my recommendations for settings that you should configure when creating a transform to install Reader during sequencing:
 
@@ -79,7 +79,7 @@ I have provided here a copy of the App-V 4.6 SP1 Package Template which includes
 
 There is one issue though – the Adobe Reader Protected Mode doesn't like running under App-V. During the monitoring phase the application may not launch on first run and on the second launch the following dialog box will be displayed:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AdobeReaderProtectedModePrompt" src="http://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderProtectedModePrompt_thumb.png" alt="AdobeReaderProtectedModePrompt" width="660" height="232" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AdobeReaderProtectedModePrompt" src="https://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderProtectedModePrompt_thumb.png" alt="AdobeReaderProtectedModePrompt" width="660" height="232" border="0" /> 
 
 Choosing the option 'Always open with Protected Mode disabled' will save the setting in HKCU in the Registry, but until a fix is found (either by Adobe or Microsoft) you can disable Protected Mode using the following Registry key:
 

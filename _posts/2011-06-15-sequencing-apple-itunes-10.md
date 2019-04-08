@@ -21,7 +21,7 @@ tags:
   - iTunes
   - QuickTime
 ---
-<a href="http://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/attachment/itunes10/" rel="attachment wp-att-2279"><img class="alignright size-full wp-image-2279" style="margin-left: 5px; margin-right: 5px;" title="iTunes10" src="http://stealthpuppy.com/wp-content/uploads/2011/06/iTunes10.png" alt="iTunes 10 icon" width="128" height="128" /></a>Here’s a nut I’ve been trying to crack for some time – successfully virtualizing Apple iTunes with App-V. I think a combination of iTunes 10 and App-V 4.6 SP1 did the trick. Here’s how to do it.
+<a href="https://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/attachment/itunes10/" rel="attachment wp-att-2279"><img class="alignright size-full wp-image-2279" style="margin-left: 5px; margin-right: 5px;" title="iTunes10" src="https://stealthpuppy.com/wp-content/uploads/2011/06/iTunes10.png" alt="iTunes 10 icon" width="128" height="128" /></a>Here’s a nut I’ve been trying to crack for some time – successfully virtualizing Apple iTunes with App-V. I think a combination of iTunes 10 and App-V 4.6 SP1 did the trick. Here’s how to do it.
 
 # What you lose by virtualizing iTunes
 
@@ -65,7 +65,7 @@ These same steps will need to be followed on the App-V client computer that will
 
 iTunes is a excellent example of an application written by developers who appear to have absolutely no idea about how Windows profiles work. Take a look at the size of the _AppData\Roaming\Apple Computer_ folder in my profile on an existing computer with iTunes installed:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="09AppData" src="http://stealthpuppy.com/wp-content/uploads/2011/06/09AppData_thumb.png" alt="09AppData" width="377" height="302" border="0" />](http://stealthpuppy.com/wp-content/uploads/2011/06/09AppData.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="09AppData" src="https://stealthpuppy.com/wp-content/uploads/2011/06/09AppData_thumb.png" alt="09AppData" width="377" height="302" border="0" />](https://stealthpuppy.com/wp-content/uploads/2011/06/09AppData.png)
 
 With logs, a back-up of two devices and two copies of iOS 4.3.3 (one for an iPhone and one for an iPad), this folder is a whopping 8.41 GB and contains over 17000 files. Just imagine enabling Roaming Profiles with that in your profile – that’s a lot of coffee waiting for logon to complete.
 
@@ -181,7 +181,7 @@ To sequence iTunes, follow the basic outline here:
 
 6. First Run tasks
 
-  * QuickTime – follow the recommendations for configuration in this article: [Virtualising Apple QuickTime 7.x](http://stealthpuppy.com/virtualisation/sequencing-apple-quicktime-7x/)
+  * QuickTime – follow the recommendations for configuration in this article: [Virtualising Apple QuickTime 7.x](https://stealthpuppy.com/virtualisation/sequencing-apple-quicktime-7x/)
   * iTunes – iTunes will prompt to make itself the default for media files – set this if required and be sure to disable the option 'Warn me if iTunes is not the default player for audio files'
 
 7. Customize shortcuts
@@ -201,11 +201,11 @@ There are a few post-sequencing tasks to perform:
 
 **AppData**: Check that Merge with Local has been applied to folders captured in AppData correctly. The image below shows the _Apple Computer_ and _Apple Computer\iTunes_ folders have been set to Merge with Local. If the pre-sequence steps that create the AppData folder structure are followed (or you are excluding AppData), then no manual action should be required.
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="06AppDataMerge" src="http://stealthpuppy.com/wp-content/uploads/2011/06/06AppDataMerge.png" alt="06AppDataMerge" width="660" height="392" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="06AppDataMerge" src="https://stealthpuppy.com/wp-content/uploads/2011/06/06AppDataMerge.png" alt="06AppDataMerge" width="660" height="392" border="0" /> 
 
 Add a script to the iTunes OSD file to create the AppData folder structure that should exist on the real file system:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="iTunesScriptBody" src="http://stealthpuppy.com/wp-content/uploads/2011/06/iTunesScriptBody_thumb.png" alt="iTunesScriptBody" width="660" height="242" border="0" />](http://stealthpuppy.com/wp-content/uploads/2011/06/iTunesScriptBody.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="iTunesScriptBody" src="https://stealthpuppy.com/wp-content/uploads/2011/06/iTunesScriptBody_thumb.png" alt="iTunesScriptBody" width="660" height="242" border="0" />](https://stealthpuppy.com/wp-content/uploads/2011/06/iTunesScriptBody.png)
 
 For an example of what to add to the OSD file, download the example here:
 
@@ -215,15 +215,15 @@ For an example of what to add to the OSD file, download the example here:
 
 **iPod Service**: Set the _iPod Service_ to Automatic. This will ensure that the service is ready as soon as iTunes starts.
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="07iPodService" src="http://stealthpuppy.com/wp-content/uploads/2011/06/07iPodService.png" alt="07iPodService" width="660" height="392" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="07iPodService" src="https://stealthpuppy.com/wp-content/uploads/2011/06/07iPodService.png" alt="07iPodService" width="660" height="392" border="0" /> 
 
 **Child Processes**: when iTunes launches, several processes with also be started – AppleMobileDeviceHelper.exe, distnoted.exe (both installed instead of in the iTunes package), iPodService.exe and mDNSResponder.exe (The iPod and Bonjour services respectively).
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="10ProcExp" src="http://stealthpuppy.com/wp-content/uploads/2011/06/10ProcExp_thumb.png" alt="10ProcExp" width="660" height="211" border="0" />](http://stealthpuppy.com/wp-content/uploads/2011/06/10ProcExp.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="10ProcExp" src="https://stealthpuppy.com/wp-content/uploads/2011/06/10ProcExp_thumb.png" alt="10ProcExp" width="660" height="211" border="0" />](https://stealthpuppy.com/wp-content/uploads/2011/06/10ProcExp.png)
 
 On occasion these processes may remain running after iTunes has exited, if this is the case (and you may have already seen this behaviour when building the Primary Feature block) set TERMINATECHILDREN to True in the iTunes OSD.
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="iTunesTerminateChildren" src="http://stealthpuppy.com/wp-content/uploads/2011/06/iTunesTerminateChildren.png" alt="iTunesTerminateChildren" width="660" height="231" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="iTunesTerminateChildren" src="https://stealthpuppy.com/wp-content/uploads/2011/06/iTunesTerminateChildren.png" alt="iTunesTerminateChildren" width="660" height="231" border="0" /> 
 
 **Compression**: The package should weigh in at around 290Mb, so depending on your deployment method you could compress it to save bandwidth.
 
@@ -231,11 +231,11 @@ On occasion these processes may remain running after iTunes has exited, if this 
 
 Deploying the iTunes package will require the deployment of Apple Application Support and Apple Mobile Device Support to the client computers first. Without Apple Application Support the following will be the result of launching iTunes:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="NoAppleAppSupport" src="http://stealthpuppy.com/wp-content/uploads/2011/06/NoAppleAppSupport_thumb.png" alt="NoAppleAppSupport" width="510" height="260" border="0" />](http://stealthpuppy.com/wp-content/uploads/2011/06/NoAppleAppSupport.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="NoAppleAppSupport" src="https://stealthpuppy.com/wp-content/uploads/2011/06/NoAppleAppSupport_thumb.png" alt="NoAppleAppSupport" width="510" height="260" border="0" />](https://stealthpuppy.com/wp-content/uploads/2011/06/NoAppleAppSupport.png)
 
 While I've been able to test iTunes successfully running on an App-V Client, there appears (at this stage at least) to be only one issue – when plugging in a mobile device, the following error is displayed, twice:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppleMobileDeviceService" src="http://stealthpuppy.com/wp-content/uploads/2011/06/AppleMobileDeviceService.png" alt="This iPhone cannot be used because the Apple Mobile Device service is not started" width="421" height="162" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppleMobileDeviceService" src="https://stealthpuppy.com/wp-content/uploads/2011/06/AppleMobileDeviceService.png" alt="This iPhone cannot be used because the Apple Mobile Device service is not started" width="421" height="162" border="0" /> 
 
 Although iTunes reports this error and I can confirm that the service is started (it's running natively, not within the package), once acknowledged device sync works anyway. I've tested with LOCALINTERACTIONALLOWED which hasn't helped. I'll update this post if I find a solution.
 

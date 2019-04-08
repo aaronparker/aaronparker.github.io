@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -49,7 +49,7 @@
     <p>I’ll file this under “Stupid Things I Didn’t Know”. Citrix Presentation Server relies on the PATH variable for core components to run. I was adding to the PATH variable, in a scripted build after the CPS install and before a reboot, with a command like this:</p>
 
 <p class="console">
-  C:\REG ADD &#8220;HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#8221; /v Path /d &#8220;%PATH%;%ProgramFiles%\Sysinternals&#8221; /f
+  C:\REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /d "%PATH%;%ProgramFiles%\Sysinternals" /f
 </p>
 
 <p>Unfortunately, that additions to the PATH that the CPS Setup program has added aren’t seen because I’m calling all this from the same session of CMD.EXE. After a reboot the server would not load the logon dialog and show this error instead:</p>

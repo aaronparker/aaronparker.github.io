@@ -4,7 +4,7 @@ title: 3 Months with the Microsoft Surface 3
 date: 2015-09-07T19:03:17+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=4087
+guid: https://stealthpuppy.com/?p=4087
 permalink: /microsoft-surface-3-review/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -64,7 +64,7 @@ A device of this type makes a lot of sense with a touch screen either in tablet 
 
 A few times now the touch screen has gone haywire as shown in the graphic below. I'm not sure whether this is a hardware or software issue, as I think this has only started since the post-RTM builds of Windows 10.
 
-<figure id="attachment_4101" aria-describedby="caption-attachment-4101" style="width: 640px" class="wp-caption alignnone"><img class="size-full wp-image-4101" src="http://stealthpuppy.com/wp-content/uploads/2015/09/Windows10-Jitter.gif" alt="Touch in Windows 10 on the Surface 3 going haywire" width="640" height="360" /><figcaption id="caption-attachment-4101" class="wp-caption-text">Touch in Windows 10 on the Surface 3 going haywire*
+<figure id="attachment_4101" aria-describedby="caption-attachment-4101" style="width: 640px" class="wp-caption alignnone"><img class="size-full wp-image-4101" src="https://stealthpuppy.com/wp-content/uploads/2015/09/Windows10-Jitter.gif" alt="Touch in Windows 10 on the Surface 3 going haywire" width="640" height="360" /><figcaption id="caption-attachment-4101" class="wp-caption-text">Touch in Windows 10 on the Surface 3 going haywire*
 
 The screen itself is awesome - it has a 1920&#215;1280 resolution in a 10.1&#8243; screen, so the pixel density is very high. Windows runs best at 150% scaling which works out well even for most desktop applications.
 
@@ -74,7 +74,7 @@ In short, the hardware is beautiful, a extra USB port would be nice and the keyb
 
 There's nothing installed on the Surface that differentiates it from other Windows 8.1/10 tablets, so from a software perspective you get all of the same operating system features and application software as any other Windows device. There is a Universal Surface app which provides you an overview of the device's features and from there you can calibrate touch and the pen and a couple of other settings. One the best features of the Surface from a software perspective is that you get just Windows and none of the extra unnecessary crap that typically comes with 3rd party hardware.
 
-<figure id="attachment_4109" aria-describedby="caption-attachment-4109" style="width: 1920px" class="wp-caption alignnone">[<img class="wp-image-4109 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app.png" alt="I have no idea what this feature does." width="1920" height="1280" srcset="https://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app.png 1920w, https://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app-150x100.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app-300x200.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app-1024x683.png 1024w" sizes="(max-width: 1920px) 100vw, 1920px" />](http://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app.png)<figcaption id="caption-attachment-4109" class="wp-caption-text">I have no idea what this feature does.*
+<figure id="attachment_4109" aria-describedby="caption-attachment-4109" style="width: 1920px" class="wp-caption alignnone">[<img class="wp-image-4109 size-full" src="https://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app.png" alt="I have no idea what this feature does." width="1920" height="1280" srcset="https://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app.png 1920w, https://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app-150x100.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app-300x200.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app-1024x683.png 1024w" sizes="(max-width: 1920px) 100vw, 1920px" />](https://stealthpuppy.com/wp-content/uploads/2015/09/Surface-app.png)<figcaption id="caption-attachment-4109" class="wp-caption-text">I have no idea what this feature does.*
 
 ## What I Use
 
@@ -90,7 +90,7 @@ Windows 10 has certainly improved since the first public beta and I'm now runnin
 
 Continuum is a pretty cool feature that with the changes in the Start menu and the way that Windows 10 handles Windows Store / Universal apps in desktop vs. tablet mode, works very well. This feature certainly improved as the Windows 10 builds have improved - it consistently switches between modes with adding or removing the keyboard. Desktop mode makes sense on a larger screen, I find that on the Surface 10&#8243; screen that I can often stick with tablet mode even with the keyboard attached.
 
-<figure id="attachment_4112" aria-describedby="caption-attachment-4112" style="width: 1920px" class="wp-caption alignnone">[<img class="wp-image-4112 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction.png" alt="Continuum in action" width="1920" height="1280" srcset="https://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction.png 1920w, https://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction-150x100.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction-300x200.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction-1024x683.png 1024w" sizes="(max-width: 1920px) 100vw, 1920px" />](http://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction.png)<figcaption id="caption-attachment-4112" class="wp-caption-text">Continuum in action*
+<figure id="attachment_4112" aria-describedby="caption-attachment-4112" style="width: 1920px" class="wp-caption alignnone">[<img class="wp-image-4112 size-full" src="https://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction.png" alt="Continuum in action" width="1920" height="1280" srcset="https://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction.png 1920w, https://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction-150x100.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction-300x200.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction-1024x683.png 1024w" sizes="(max-width: 1920px) 100vw, 1920px" />](https://stealthpuppy.com/wp-content/uploads/2015/09/ContinuumInAction.png)<figcaption id="caption-attachment-4112" class="wp-caption-text">Continuum in action*
 
 ## Cortana
 

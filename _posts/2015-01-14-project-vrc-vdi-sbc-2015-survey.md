@@ -4,7 +4,7 @@ title: 'Participate in the Project VRC "State of the VDI and SBC union 2015" sur
 date: 2015-01-14T22:00:07+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=3796
+guid: https://stealthpuppy.com/?p=3796
 permalink: /project-vrc-vdi-sbc-2015-survey/
 dsq_thread_id:
   - "3419252966"

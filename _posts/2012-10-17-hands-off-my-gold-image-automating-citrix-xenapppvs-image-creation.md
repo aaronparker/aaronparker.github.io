@@ -20,7 +20,7 @@ tags:
   - PVS
   - XenApp
 ---
-<img class="alignright size-full wp-image-2861" title="hands-off" src="http://stealthpuppy.com/wp-content/uploads/2012/10/hands-off.png" alt="" width="256" height="247" srcset="https://stealthpuppy.com/wp-content/uploads/2012/10/hands-off.png 256w, https://stealthpuppy.com/wp-content/uploads/2012/10/hands-off-150x144.png 150w" sizes="(max-width: 256px) 100vw, 256px" />Citrix Provisioning Services is a great solution for the rapid deployment of Windows workloads from a master image. However, rapid deployment is not a replacement for a consistent, repeatable method of creating that master image.
+<img class="alignright size-full wp-image-2861" title="hands-off" src="https://stealthpuppy.com/wp-content/uploads/2012/10/hands-off.png" alt="" width="256" height="247" srcset="https://stealthpuppy.com/wp-content/uploads/2012/10/hands-off.png 256w, https://stealthpuppy.com/wp-content/uploads/2012/10/hands-off-150x144.png 150w" sizes="(max-width: 256px) 100vw, 256px" />Citrix Provisioning Services is a great solution for the rapid deployment of Windows workloads from a master image. However, rapid deployment is not a replacement for a consistent, repeatable method of creating that master image.
 
 Today I covered this in my talk at Citrix Synergy, along with my colleague [Jonathan Eyton-Williams](https://twitter.com/jonathanew) - "[Hands off my gold image!](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy)". This article will show you how to automate the deployment of a Windows image from bare metal to a finalised PVS image. This is part of an approach that we use for deployment within [Kelway](http://www.kelway.co.uk).
 
@@ -108,4 +108,4 @@ So that you don't need to reinvent the wheel completely, I've made available her
 
 Hopefully this is enough to get you started. In some future posts I'll discuss some of these steps in more detail. If you'd like to know some more detail before then, contact me at: aaron (at) stealthpuppy.com
 
-Next up: [Hands off my gold image – Microsoft Deployment Toolkit details](http://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/)
+Next up: [Hands off my gold image – Microsoft Deployment Toolkit details](https://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/)

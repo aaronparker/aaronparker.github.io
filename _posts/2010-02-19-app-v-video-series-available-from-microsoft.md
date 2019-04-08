@@ -69,7 +69,7 @@ categories:
 tags:
   - App-V
 ---
-<img style="margin: 0px 0px 10px 10px; display: inline" title="SoftGrid Closed Box" border="0" alt="SoftGrid Closed Box" align="right" src="http://stealthpuppy.com/wp-content/uploads/2008/12/softgridclosedbox.png" width="96" height="96" /> 
+<img style="margin: 0px 0px 10px 10px; display: inline" title="SoftGrid Closed Box" border="0" alt="SoftGrid Closed Box" align="right" src="https://stealthpuppy.com/wp-content/uploads/2008/12/softgridclosedbox.png" width="96" height="96" /> 
 
 Microsoft has made available a set of 11 videos on App-V. These are mainly introductory, but are still worth watching even if you’ve been working with App-V for some time.
 

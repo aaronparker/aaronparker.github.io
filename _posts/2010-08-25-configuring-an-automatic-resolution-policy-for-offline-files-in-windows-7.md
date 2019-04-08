@@ -25,7 +25,7 @@ Laptops will need to cache the network location so that users can access their a
 
 The problem with this approach is that when the laptop synchronises the folder, the user may need to resolve file conflicts and is presented with a dialog box that looks something like this:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Offline Files Resolve Conflict" src="http://stealthpuppy.com/wp-content/uploads/2010/08/OfflineFilesResolveConflict_thumb.png" border="0" alt="Offline Files Resolve Conflict" width="498" height="429" />](http://stealthpuppy.com/wp-content/uploads/2010/08/OfflineFilesResolveConflict.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Offline Files Resolve Conflict" src="https://stealthpuppy.com/wp-content/uploads/2010/08/OfflineFilesResolveConflict_thumb.png" border="0" alt="Offline Files Resolve Conflict" width="498" height="429" />](https://stealthpuppy.com/wp-content/uploads/2010/08/OfflineFilesResolveConflict.png)
 
 Most users are not going to know which option they should choose (and they certainly aren’t going to [read the help](http://windows.microsoft.com/en-us/windows-vista/Resolving-sync-conflicts-frequently-asked-questions)). How many will know what the _UsrVol\_sftfs\_v.tmp_ file is? I’d like to avoid this scenario as often as I can.
 
@@ -49,7 +49,7 @@ The possible values for SyncConflictHandling and a description of each value is 
 
 When added to the Registry, it will look something like this:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="SyncConflictHandling" src="http://stealthpuppy.com/wp-content/uploads/2010/08/SyncConflictHandling_thumb1.png" border="0" alt="SyncConflictHandling" width="660" height="173" />](http://stealthpuppy.com/wp-content/uploads/2010/08/SyncConflictHandling1.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="SyncConflictHandling" src="https://stealthpuppy.com/wp-content/uploads/2010/08/SyncConflictHandling_thumb1.png" border="0" alt="SyncConflictHandling" width="660" height="173" />](https://stealthpuppy.com/wp-content/uploads/2010/08/SyncConflictHandling1.png)
 
 To test that the policy is working update a file at multiple locations when the file is offline (for example, delete the file in one location, but make changes to it in the other location). Connect back to the network and initiate a synchronisation operation (via Sync Centre) for the network share. Windows will trigger a conflict in the synchronisation process when it synchronises the file. Your policy should kick in and Sync Centre should automatically handle the conflict.
 
@@ -69,7 +69,7 @@ To deploy the policy you could use a script or a tool such as Group Policy Prefe
   6. Enter a numeric value from 0 to 7 (1 or 2 would be most common)
   7. Repeat for each share you want to manage
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GPPrefReg" src="http://stealthpuppy.com/wp-content/uploads/2010/08/GPPrefReg_thumb.png" border="0" alt="GPPrefReg" width="404" height="448" />](http://stealthpuppy.com/wp-content/uploads/2010/08/GPPrefReg.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GPPrefReg" src="https://stealthpuppy.com/wp-content/uploads/2010/08/GPPrefReg_thumb.png" border="0" alt="GPPrefReg" width="404" height="448" />](https://stealthpuppy.com/wp-content/uploads/2010/08/GPPrefReg.png)
 
 Continuing the App-V User Data Directory as my example, I've hosted this on a network share and I want to ensure that the laptop copy always wins any conflict resolution. Therefore I'm using a value of 1 to ensure that in the event of changes on both the laptop and another machine, the changes on the laptop will be written back to the network.
 

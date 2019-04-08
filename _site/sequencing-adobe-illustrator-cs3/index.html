@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -52,7 +52,7 @@
 
 <p>Before sequencing Illustrator, you will need to obtain the <a href="http://www.adobe.com/aboutadobe/openoptions/">volume license version of the media</a> so that you won’t have to worry about activation. If you use standard media that requires activation the application will refuse to run on your SoftGrid/MAV client machines.</p>
 
-<p>When sequencing Illustrator CS3 you will run into errors as the Sequencer is going through the post-monitoring phase. You will see the sequencer fail and report “<code class="highlighter-rouge">SystemGuard download failed (error code 53256)</code>“.</p>
+<p>When sequencing Illustrator CS3 you will run into errors as the Sequencer is going through the post-monitoring phase. You will see the sequencer fail and report “<code class="highlighter-rouge">SystemGuard download failed (error code 53256)</code>”.</p>
 
 <p>J.C. Hornbeck has <a href="http://blogs.technet.com/softgrid/archive/2007/12/03/microsoft-application-virtualization-sequencing-adobe-cs3.aspx">posted a solution that involves editing DLL files</a> directly to fix their manifests. My solution, which does not involve hacking the files is to create manifest files for these DLLs and copy them to the installation folder just after installing the application. These are standard XML files that the Sequencer will read and then process the DLLs using <a href="http://blogs.technet.com/softgrid/archive/2007/10/25/update-error-53256-sequencing-adobe-cs3.aspx">UTF-8 instead of their native UTF-16</a>.</p>
 

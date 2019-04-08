@@ -36,7 +36,7 @@ I have three main rules that I apply to OU structure:
 
 Organisational unit structure will differ for every organisation, however if you apply these guidelines to application deployment, here's all that you need to create:
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1368.OrganisationalUnitStructure.png" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1368.OrganisationalUnitStructure.png" /> 
 
 **DNS** 
 
@@ -50,7 +50,7 @@ How do we get around this? [Distributed File System](http://www.microsoft.com/wi
 
 Another great thing about DFS is that you can take advantage of your AD sites - DFS is site aware. If you have a copy of your application share close to your workstations they will pull the installation from a local server rather than across a WAN link. For example, if we have a DFS path **\company.localPublicApplications** that points to **\SERVER1Apps** at site A and **\SERVER2Apps** at site B, workstations at site B will connect to **\SERVER2Apps** when Group Policy is applied to deploy applications.
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1360.DFS.png" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1360.DFS.png" /> 
 
 A third advantage to using DFS is replication. With Windows 2000 and Windows Server 2003 you can use DFS to replicate your applications from a 'master' copy to your other sites, thus keeping them in sync. DFS Replication released as [a feature of Windows Server 2003 R2](http://technet2.microsoft.com/windowsserver/en/library/d3afe6ee-3083-4950-a093-8ab748651b761033.mspx?mfr=true) is a huge improvement over the older FRS based replication method and provides the ability to replicate only the changes within files, making replication more efficient.
 

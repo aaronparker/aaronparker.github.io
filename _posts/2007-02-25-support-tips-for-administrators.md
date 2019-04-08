@@ -17,7 +17,7 @@ Being a project engineer for an outsourcing company, much of my time is spent wo
 
 **Ctrl + C** to copy the text in a dialog box. Yes it's true; you can copy the text straight out of a dialog box. So you can turn this:
 
-<img border="0" width="352" src="http://stealthpuppy.com/wp-content/uploads/2007/02/1000.14.1032.notepad.png" height="191" style="width: 352px; height: 191px" /> 
+<img border="0" width="352" src="https://stealthpuppy.com/wp-content/uploads/2007/02/1000.14.1032.notepad.png" height="191" style="width: 352px; height: 191px" /> 
 
 into this:
 

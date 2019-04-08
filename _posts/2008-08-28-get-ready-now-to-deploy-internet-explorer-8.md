@@ -15,9 +15,9 @@ Unless you're hell bent on deploying Firefox in your corporate environment (and 
 
   * [Compatibility View mode](http://blogs.msdn.com/ie/archive/2008/08/27/introducing-compatibility-view.aspx) will ensure those internal web applications don't break. Intranet sites are displayed Compatibility View mode by default. 
 
-<img title="CompatibilityViewSettings" border="0" alt="CompatibilityViewSettings" src="http://stealthpuppy.com/wp-content/uploads/2008/08/compatibilityviewsettings.png" width="341" height="373" /> 
+<img title="CompatibilityViewSettings" border="0" alt="CompatibilityViewSettings" src="https://stealthpuppy.com/wp-content/uploads/2008/08/compatibilityviewsettings.png" width="341" height="373" /> 
 
-  * It's also really simple for users to enable Compatibility View with the Compatibility View button<img title="CompatibilityViewButton" border="0" alt="CompatibilityViewButton" src="http://stealthpuppy.com/wp-content/uploads/2008/08/compatibilityviewbutton.png" width="26" height="24" /> 
+  * It's also really simple for users to enable Compatibility View with the Compatibility View button<img title="CompatibilityViewButton" border="0" alt="CompatibilityViewButton" src="https://stealthpuppy.com/wp-content/uploads/2008/08/compatibilityviewbutton.png" width="26" height="24" /> 
   * There are more than 100 new Group Policy settings added for Internet Explorer 8 
   * DEP is turned on by default for Internet Explorer 8. DEP helps to [improve security for ActiveX controls](http://arstechnica.com/news.ars/post/20080511-ie8-to-boost-activex-security-on-vista.html) 
   * You can enforce the [SmartScreen Filter](http://blogs.msdn.com/ie/archive/2008/07/02/ie8-security-part-iii-smartscreen-filter.aspx) to block access to malicious sites and downloads. Great for those laptop users accessing the Internet outside of your network 

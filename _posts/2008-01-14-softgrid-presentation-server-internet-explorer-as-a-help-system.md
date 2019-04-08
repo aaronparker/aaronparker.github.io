@@ -14,7 +14,7 @@ tags:
   - Presentation-Server
   - SoftGrid
 ---
-<img border="0" alt="internetexplorer-softgridbox" align="left" src="http://stealthpuppy.com/wp-content/uploads/2008/05/internetexplorer-softgridbox.png" width="142" height="128" /> If you're deploying applications on Citrix Presentation Server via Application Virtualisation/SoftGrid, you may run into issues with applications that utilise a local HTML based help system. These applications will generally launch Internet Explorer as the viewer and in our case, we've found that IE is launched outside of the protected environment and thus never sees the help content located inside the environment.
+<img border="0" alt="internetexplorer-softgridbox" align="left" src="https://stealthpuppy.com/wp-content/uploads/2008/05/internetexplorer-softgridbox.png" width="142" height="128" /> If you're deploying applications on Citrix Presentation Server via Application Virtualisation/SoftGrid, you may run into issues with applications that utilise a local HTML based help system. These applications will generally launch Internet Explorer as the viewer and in our case, we've found that IE is launched outside of the protected environment and thus never sees the help content located inside the environment.
 
 This behaviour only happens inside an ICA session and does not occur in an RDP session or on the console. Exactly why Internet Explorer is executed outside the environment but it has something to do with WFSHELL.EXE being the calling process.
 
@@ -34,6 +34,6 @@ Citrix Presentation Server implements some changes to the system during install 
                             
                             Fortunately through a little bit of digging around and testing, I've found that by adding the following registry entry to your OSD files will execute Internet Explorer directly and keep the process within the protected environment, allowing the user to view Help:
                             
-                            [<img border="0" alt="SoftGridIEReg" src="http://stealthpuppy.com/wp-content/uploads/2008/05/softgridiereg-thumb.png" width="733" height="77" />](http://stealthpuppy.com/wp-content/uploads/2008/05/softgridiereg1.png) 
+                            [<img border="0" alt="SoftGridIEReg" src="https://stealthpuppy.com/wp-content/uploads/2008/05/softgridiereg-thumb.png" width="733" height="77" />](https://stealthpuppy.com/wp-content/uploads/2008/05/softgridiereg1.png) 
                             
                             (I've had to use an image here because WordPress keeps formatting the code)

@@ -29,7 +29,7 @@ Hide OgTags:
 categories:
   - Applications
 ---
-<a href="http://stealthpuppy.com/general/looking-for-adobe-flash-player-download-links/attachment/487/" rel="attachment wp-att-487"><img class="alignright size-full wp-image-487" title="Flash logo" src="http://stealthpuppy.com/wp-content/uploads/2008/02/adobeflash.png" alt="Flash logo" width="112" height="108" /></a>
+<a href="https://stealthpuppy.com/general/looking-for-adobe-flash-player-download-links/attachment/487/" rel="attachment wp-att-487"><img class="alignright size-full wp-image-487" title="Flash logo" src="https://stealthpuppy.com/wp-content/uploads/2008/02/adobeflash.png" alt="Flash logo" width="112" height="108" /></a>
 
 <span style="color: #ff0000;">Update</span> [November 2011]: Adobe has released Flash Player 11 in both 32-bit and 64-bit packages. The links below will only  provide you with Flash Player 10. To obtain the installers for Flash Player 11, see the following articles:
 
@@ -60,4 +60,4 @@ To deploy Shockwave Player silently, follow this guide: [Silent installation an
 
 If you're unsure which installer to download, grab the MSI installers. If you are downloading the players to distribute them in your corporate network you must [obtain a license from Adobe](http://www.adobe.com/licensing/) before doing so.
 
-Here's a link to the original [unattend install script for these players](http://stealthpuppy.com/unattended/unattended-install-adobe-flash-and-shockwave-players) that started this and here's [how to uninstall Flash Player](http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_14157&sliceId=2) if you're having issues updating to the lastest version.
+Here's a link to the original [unattend install script for these players](https://stealthpuppy.com/unattended/unattended-install-adobe-flash-and-shockwave-players) that started this and here's [how to uninstall Flash Player](http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_14157&sliceId=2) if you're having issues updating to the lastest version.

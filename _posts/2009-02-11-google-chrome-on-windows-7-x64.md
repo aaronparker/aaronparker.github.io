@@ -29,4 +29,4 @@ To get Chome working you'll need to add switches to your Chrome shortcut. Most p
 
 [code]C:\Users\Aaron\AppData\Local\Google\Chrome\Application\chrome.exe -no-sandbox -in-process-plugins[/code]
 
-<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Google Chrome Properties" src="http://stealthpuppy.com/wp-content/uploads/2009/02/googlechromeproperties.png" border="0" alt="Google Chrome Properties" width="409" height="480" />
+<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="Google Chrome Properties" src="https://stealthpuppy.com/wp-content/uploads/2009/02/googlechromeproperties.png" border="0" alt="Google Chrome Properties" width="409" height="480" />

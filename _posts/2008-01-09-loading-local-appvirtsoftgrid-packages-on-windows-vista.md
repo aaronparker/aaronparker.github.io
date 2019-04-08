@@ -11,7 +11,7 @@ categories:
 tags:
   - SoftGrid
 ---
-<img src="http://stealthpuppy.com/wp-content/uploads/2008/02/windowsvista-softgridbox.png" align="left" alt="windowsvista-softgridbox.png" />Testing applications inside the Microsoft Application Virtualisation (SoftGrid) bubble, from local packages (i.e. not streamed from the server) on Windows Vista requires a configuration change due to User Account Control. If you attempt to load an application from a local OSD file, you will receive the following error:
+<img src="https://stealthpuppy.com/wp-content/uploads/2008/02/windowsvista-softgridbox.png" align="left" alt="windowsvista-softgridbox.png" />Testing applications inside the Microsoft Application Virtualisation (SoftGrid) bubble, from local packages (i.e. not streamed from the server) on Windows Vista requires a configuration change due to User Account Control. If you attempt to load an application from a local OSD file, you will receive the following error:
 
 > The SoftGrid Client could not load the application you requested.  
 > You are not authorized to perform the requested operation. You must have 'Add applications' permissions.  
@@ -27,6 +27,6 @@ An alternative method is to elevate an Explorer window and then load the applica
 
 You might think this long-winded but it works pretty well. I have noticed however that attempting to launch the application from the same elevated Explorer window results in the application hanging at launch. Quite odd.
 
-Finally, you have a third option available to you now - update to [the latest SoftGrid client](http://support.microsoft.com/kb/941408) and package your application with the [MSI Utility for Microsoft Application Virtualization](http://stealthpuppy.com/off-site-news/msi-utility-for-microsoft-application-virtualization-available), then load the application via Windows Installer. Note, to do this you will need to set the following registry DWORD value to 0, when using version 4.2.x and [this method](http://stealthpuppy.com/virtualisation/enable-streaming-from-file-in-softgrid-45) when using version 4.5.
+Finally, you have a third option available to you now - update to [the latest SoftGrid client](http://support.microsoft.com/kb/941408) and package your application with the [MSI Utility for Microsoft Application Virtualization](https://stealthpuppy.com/off-site-news/msi-utility-for-microsoft-application-virtualization-available), then load the application via Windows Installer. Note, to do this you will need to set the following registry DWORD value to 0, when using version 4.2.x and [this method](https://stealthpuppy.com/virtualisation/enable-streaming-from-file-in-softgrid-45) when using version 4.5.
 
 [quickcode:noclick]HKLM\SOFTWARE\Softricity\SoftGrid Client\CurrentVersion\Configuration\RequireAuthorizationIfCached[/quickcode]

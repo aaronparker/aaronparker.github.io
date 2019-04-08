@@ -20,7 +20,7 @@ tags:
   - App-V
   - Firefox
 ---
-<img style="background-image: none; float: right; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" src="http://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" alt="" align="right" border="0" />It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little preparation. Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization](http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features.
+<img style="background-image: none; float: right; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" src="https://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" alt="" align="right" border="0" />It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little preparation. Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization](https://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features.
 
 # User Experience
 
@@ -33,7 +33,7 @@ There are a couple of features that should be disabled when running Firefox unde
   * Automatic updates for Firefox – _Options / Advanced / Update / Firefox updates._ Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
   * _Mozilla Maintenance Service_ - [Firefox installs an updater service](http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service) that allows updating whilst avoiding UAC prompts. This service should be disabled or not installed
 
-Read the article [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization](http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) for full details on removing these options during installation.
+Read the article [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization](https://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) for full details on removing these options during installation.
 
 # Managing the Firefox profile
 
@@ -82,9 +82,9 @@ Automating this process as much as possible will create a cleaner package and ma
 
 Before sequencing, copy all of the required files into the sequencing VM, which should like something like this:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="AppVFirefoxSetupFolder" src="http://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb.png" alt="AppVFirefoxSetupFolder" width="660" height="253" border="0" />](http://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="AppVFirefoxSetupFolder" src="https://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb.png" alt="AppVFirefoxSetupFolder" width="660" height="253" border="0" />](https://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder.png)
 
-For a walkthrough of the sequencing process, using the installation script outlined in [the Firefox deployment article](http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/), see the following screenshots:
+For a walkthrough of the sequencing process, using the installation script outlined in [the Firefox deployment article](https://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/), see the following screenshots:
 
 [nggallery id=3]
 

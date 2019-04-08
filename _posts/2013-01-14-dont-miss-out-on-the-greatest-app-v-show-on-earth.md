@@ -17,7 +17,7 @@ categories:
 tags:
   - App-V
 ---
-<img class="size-full wp-image-542 alignleft" alt="softgridpresentation.png" src="http://stealthpuppy.com/wp-content/uploads/2008/04/softgridpresentation.png" width="128" height="128" />
+<img class="size-full wp-image-542 alignleft" alt="softgridpresentation.png" src="https://stealthpuppy.com/wp-content/uploads/2008/04/softgridpresentation.png" width="128" height="128" />
 
 February 8<sup>th</sup> 2013 is the date for the <a href="http://www.amiando.com/appvug2013.html?page=795419" target="_blank">2<sup>nd</sup> European App-V User Group Conference</a>, which will take place at <a href="http://goo.gl/maps/6zkzc" target="_blank">Microsoft Netherlands HQ</a> (right next to Schiphol Airport).
 

@@ -20,9 +20,9 @@ tags:
   - PVS
   - XenApp
 ---
-<img class="alignright size-full wp-image-2946" style="margin: 5px;" title="HandsOff" src="http://stealthpuppy.com/wp-content/uploads/2012/11/HandsOff.jpg" alt="" width="125" height="127" />This is the last article in a series that covers in more detail the approach to automating XenApp and PVS image creation, from my [Geek Speak talk at Citrix Synergy in Barcelona - Hands off my gold image.](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy)
+<img class="alignright size-full wp-image-2946" style="margin: 5px;" title="HandsOff" src="https://stealthpuppy.com/wp-content/uploads/2012/11/HandsOff.jpg" alt="" width="125" height="127" />This is the last article in a series that covers in more detail the approach to automating XenApp and PVS image creation, from my [Geek Speak talk at Citrix Synergy in Barcelona - Hands off my gold image.](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy)
 
-The first article gives an overview of the approach - [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation](http://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/) and you can find more detail in [Hands off my gold image – Microsoft Deployment Toolkit details](http://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/) and [Hands off my gold image – The Task Sequence](http://stealthpuppy.com/deployment/hands-off-my-gold-image-the-task-sequence/). In this article I'll briefly cover the scripts referenced in the task sequence.
+The first article gives an overview of the approach - [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation](https://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/) and you can find more detail in [Hands off my gold image – Microsoft Deployment Toolkit details](https://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/) and [Hands off my gold image – The Task Sequence](https://stealthpuppy.com/deployment/hands-off-my-gold-image-the-task-sequence/). In this article I'll briefly cover the scripts referenced in the task sequence.
 
 # Approach to Scripting
 

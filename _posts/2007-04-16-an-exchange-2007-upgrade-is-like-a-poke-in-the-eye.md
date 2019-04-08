@@ -13,7 +13,7 @@ categories:
 tags:
   - Exchange
 ---
-<img align="left" src="http://stealthpuppy.com/wp-content/uploads/2007/04/exchange.png" />I've upgraded our internal Exchange organisation over the last week and I've got to say Exchange 2007 is a completely different ball game. Now for seasoned Exchange architects and administrators a lot of the Exchange 2007 upgrade process is probably not new, but for those of us who don't look after Exchange full time it's a steep learning curve. The biggest challenges for me have been around the new Exchange Management Shell. I think the implementation of PowerShell as the basis for all Exchange management is a good thing €“ there's nothing like being able to paste the exact command line into your change log. However there's been a couple of issue that I've got with Exchange 2007:
+<img align="left" src="https://stealthpuppy.com/wp-content/uploads/2007/04/exchange.png" />I've upgraded our internal Exchange organisation over the last week and I've got to say Exchange 2007 is a completely different ball game. Now for seasoned Exchange architects and administrators a lot of the Exchange 2007 upgrade process is probably not new, but for those of us who don't look after Exchange full time it's a steep learning curve. The biggest challenges for me have been around the new Exchange Management Shell. I think the implementation of PowerShell as the basis for all Exchange management is a good thing €“ there's nothing like being able to paste the exact command line into your change log. However there's been a couple of issue that I've got with Exchange 2007:
 
   1. The lack of detailed command line examples; and
   2. The stuff that's been removed from the GUI since Exchange 2003.
@@ -26,11 +26,11 @@ Here's an example. After upgrading to Exchange Server 2007, you need to upgrade 
 
 Note that command doesn't actually upgrade the policy, it recreates it. Why there isn't and upgrade option I don't know. So what happens when you want to "upgrade" a custom e-mail policy? Well you can use the wizard to create a new policy, but what do you do when you need to create a policy that uses a custom attribute (i.e. and LDAP query). In Exchange 2003 there was a nice GUI that you could use to construct the LDAP query:
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1298.ExchangeRecipients.png" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1298.ExchangeRecipients.png" /> 
 
 Now in Exchange 2007 there is no query builder, instead you get just this:
 
-<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1299.Exchange2007CustomAttribute.png" /> 
+<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1299.Exchange2007CustomAttribute.png" /> 
 
 Then check out the documentation on the [Set-EmailAddressPolicy](http://technet.microsoft.com/en-us/library/bb124517.aspx) command. There's actually no detail there about what a custom attribute is let alone a link to how to create one. How's that for a kick in the teeth?
 

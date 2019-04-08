@@ -14,7 +14,7 @@ tags:
   - Adobe
   - SoftGrid
 ---
-<img align="left" src="http://stealthpuppy.com/wp-content/uploads/2008/02/bonjour-softgridbox.png" alt="bonjour-softgridbox.png" />The Adobe CS3 products include the [Apple Bonjour](http://www.apple.com/macosx/technology/bonjour.html) service for use with the [Adobe Version Cue](http://www.adobe.com/products/creativesuite/versioncue/) server. You can view information on this implementation here: [Adobe Creative Suite 3 and Creative Suite 3 components install Bonjour (Windows)](http://www.adobe.com/go/kb400982)
+<img align="left" src="https://stealthpuppy.com/wp-content/uploads/2008/02/bonjour-softgridbox.png" alt="bonjour-softgridbox.png" />The Adobe CS3 products include the [Apple Bonjour](http://www.apple.com/macosx/technology/bonjour.html) service for use with the [Adobe Version Cue](http://www.adobe.com/products/creativesuite/versioncue/) server. You can view information on this implementation here: [Adobe Creative Suite 3 and Creative Suite 3 components install Bonjour (Windows)](http://www.adobe.com/go/kb400982)
 
 > When you install any edition of the Adobe Creative Suite 3 family or a Creative Suite 3 component on Windows, Bonjour for Windows is installed as a service on the machine. Bonjour is Apple's open source implementation of zero-configuration networking software. It is used by Adobe Version Cue CS3 client applications to dynamically discover Version Cue Servers on the local network.
 

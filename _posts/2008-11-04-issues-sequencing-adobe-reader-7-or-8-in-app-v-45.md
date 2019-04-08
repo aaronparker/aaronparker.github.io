@@ -22,6 +22,6 @@ So why are scripted installations important? Here's my three top reasons:
   2. Scripted installs, in turn, make documentation easier. Rather than building a process illustrated by screen shots, a script will fill out that document in far more detail.
   3. Finally, a scripted installation will also make sequencing faster. No having to type commands or click through Explorer windows.
 
-In the case of Adobe Reader, if you've used my articles on deploying [Reader 8](http://stealthpuppy.com/deployment/deploying-adobe-reader-81) and [Reader 9](http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows) via a custom transform and script, you won't have issues and should be able to sequence those applications successfully.
+In the case of Adobe Reader, if you've used my articles on deploying [Reader 8](https://stealthpuppy.com/deployment/deploying-adobe-reader-81) and [Reader 9](https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows) via a custom transform and script, you won't have issues and should be able to sequence those applications successfully.
 
 OK, shameless plug there 😛

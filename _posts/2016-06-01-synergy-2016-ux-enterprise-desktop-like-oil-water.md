@@ -4,7 +4,7 @@ title: 'Citrix Synergy 2016: UX and the Enterprise Desktop like Oil and Water'
 date: 2016-06-01T12:13:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=4529
+guid: https://stealthpuppy.com/?p=4529
 permalink: /synergy-2016-ux-enterprise-desktop-like-oil-water/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -18,13 +18,13 @@ tags:
   - Citrix Synergy
   - Performance
 ---
-I had the pleasure recently to present a session at [Citrix Synergy](http://www.citrixsynergy.com) 2016 in Las Vegas with [Helge Klein](https://helgeklein.com/) (of [uberAgent](https://uberagent.com/) and UPM fame) on enterprise desktop performance in a session titled: [SYN239](https://citrix.g2planet.com/citrixsynergy2016/public_session_view.php?agenda_session_id=259): UX and the enterprise desktop: like oil and water?. We've previously presented on [performance related topics with folder redirection](http://stealthpuppy.com/synergy-2015-replay/), and this year we wanted to take a wider look at performance on an enterprise desktop and how user experience is affected.
+I had the pleasure recently to present a session at [Citrix Synergy](http://www.citrixsynergy.com) 2016 in Las Vegas with [Helge Klein](https://helgeklein.com/) (of [uberAgent](https://uberagent.com/) and UPM fame) on enterprise desktop performance in a session titled: [SYN239](https://citrix.g2planet.com/citrixsynergy2016/public_session_view.php?agenda_session_id=259): UX and the enterprise desktop: like oil and water?. We've previously presented on [performance related topics with folder redirection](https://stealthpuppy.com/synergy-2015-replay/), and this year we wanted to take a wider look at performance on an enterprise desktop and how user experience is affected.
 
 # Session Overview
 
 This session covers our testing in turning a vanilla Windows installation, which performs well, into a typical enterprise desktop, where performance usually suffers. We covered a number of scenarios, that resulted in a significant reduction in performance:
 
-<figure id="attachment_4532" aria-describedby="caption-attachment-4532" style="width: 1024px" class="wp-caption alignnone"><img class="size-large wp-image-4532" src="http://stealthpuppy.com/wp-content/uploads/2016/06/31xPerformance-1024x576.png" alt="31x performance reduction from vanilla to an enterprise desktop" width="1024" height="576" srcset="https://stealthpuppy.com/wp-content/uploads/2016/06/31xPerformance-1024x576.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/06/31xPerformance-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/06/31xPerformance-300x169.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/06/31xPerformance-768x432.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption id="caption-attachment-4532" class="wp-caption-text">31x performance reduction from vanilla Windows to an enterprise desktop*</figure>
+<figure id="attachment_4532" aria-describedby="caption-attachment-4532" style="width: 1024px" class="wp-caption alignnone"><img class="size-large wp-image-4532" src="https://stealthpuppy.com/wp-content/uploads/2016/06/31xPerformance-1024x576.png" alt="31x performance reduction from vanilla to an enterprise desktop" width="1024" height="576" srcset="https://stealthpuppy.com/wp-content/uploads/2016/06/31xPerformance-1024x576.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/06/31xPerformance-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/06/31xPerformance-300x169.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/06/31xPerformance-768x432.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption id="caption-attachment-4532" class="wp-caption-text">31x performance reduction from vanilla Windows to an enterprise desktop*</figure>
 
 The full video of the 45-minute session is available on [YouTube](https://www.youtube.com/watch?v=8TpXl80fkKQ) and embedded below.
 

@@ -26,7 +26,7 @@ Here's a couple of new Group Policy white papers released to the Microsoft Downl
 
 > This white paper introduces Group Policy preferences, a feature new in Microsoft Windows Server 2008, and describes how you can use Group Policy preferences to better deploy and manage operating system and application settings. Group Policy preferences enable information technology professionals to configure, deploy, and manage operating system and application settings they previously were not able to manage using Group Policy. Examples include mapped drives, scheduled tasks, and Start menu settings. For many types of operating system and application settings, using Group Policy preferences is a better alternative to configuring them in Windows images or using logon scripts.
 
-I've previouly written about the free [DesktopStandard PolicyMaker Registry Extension](http://stealthpuppy.com/group-policy/why-are-you-still-writing-adm-templates), but unfortunately it appears that this tool is no longer available for download.
+I've previouly written about the free [DesktopStandard PolicyMaker Registry Extension](https://stealthpuppy.com/group-policy/why-are-you-still-writing-adm-templates), but unfortunately it appears that this tool is no longer available for download.
 
 **UPDATE**: There is also [a video available on the Windows Vista Enterprise site](http://www.microsoft.com/windows/products/windowsvista/editions/enterprise/videos/agpm.asx) for an overview of Advanced Group Policy Management and there are guides available on TechNet:
 

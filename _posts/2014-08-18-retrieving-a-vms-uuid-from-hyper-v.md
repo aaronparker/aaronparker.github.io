@@ -4,7 +4,7 @@ title: 'Retrieving a VM's UUID from Hyper-V'
 date: 2014-08-18T12:15:13+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=3642
+guid: https://stealthpuppy.com/?p=3642
 permalink: /retrieving-a-vms-uuid-from-hyper-v/
 dsq_thread_id:
   - "2937041857"
@@ -14,7 +14,7 @@ tags:
   - Hyper-V
   - MDT
 ---
-I've previously posted about retrieving the [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) from [a virtual machine hosted on vSphere](http://stealthpuppy.com/retrieving-a-vms-uuid-from-vsphere/). UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here's how to obtain the UUID from a virtual machine hosted on Hyper-V.
+I've previously posted about retrieving the [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) from [a virtual machine hosted on vSphere](https://stealthpuppy.com/retrieving-a-vms-uuid-from-vsphere/). UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here's how to obtain the UUID from a virtual machine hosted on Hyper-V.
 
 Just like with vSphere, the UUID isn't a property of the virtual machine that can be queried directly. We need to go via WMI to query the target virtual machine. Note that in this function, I'm using [version 2 of the Root\Virtualization WMI namespace](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/05/30/the-v2-wmi-namespace-in-hyper-v-on-windows-8.aspx) (root\virtualization\v2. This means the function as written, will [only work on Windows 8 and Windows Server 2012](http://msdn.microsoft.com/en-us/library/hh850319(v=vs.85)) (and above). If you want to use this function on earlier versions of Hyper-V, remove the "\v2" from the namespace.
 
@@ -70,10 +70,10 @@ Function Get-HypervVMUUID {
             This command retrieves the UUIDs from the all of the virtual machines on the local host.
  
         .NOTES
-            http://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/ for support information.
+            https://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/ for support information.
  
         .LINK
-            http://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/
+            https://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/
     #>
     [cmdletbinding(SupportsShouldProcess=$True)]
     param(

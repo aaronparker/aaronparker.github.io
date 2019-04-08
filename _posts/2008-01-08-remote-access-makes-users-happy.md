@@ -23,4 +23,4 @@ Being involved in remote access solutions for many years I find this very intere
 
 I like to think I've learnt how to stop saying No and how to say Yes and I do enjoy taking an interest in the user experience. Steve Richards is [impressed with this initiative](http://steves.seasidelife.com/2008/01/08/mobile-users-are-happier/) too.
 
-Don't forget proper [identity](http://stealthpuppy.com/remote-access/access-gateway-vs-secure-gateway-part-1-a-case-of-mistaken-identity) and [authentication](http://stealthpuppy.com/isa-server/strengthening-owa-authentication-with-isa-2006-and-rsa-securid) and you too can say Yes to your users.
+Don't forget proper [identity](https://stealthpuppy.com/remote-access/access-gateway-vs-secure-gateway-part-1-a-case-of-mistaken-identity) and [authentication](https://stealthpuppy.com/isa-server/strengthening-owa-authentication-with-isa-2006-and-rsa-securid) and you too can say Yes to your users.

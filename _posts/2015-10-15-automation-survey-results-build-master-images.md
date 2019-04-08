@@ -4,7 +4,7 @@ title: 'OS Automation Survey Results - How Do You Build Master Images?'
 date: 2015-10-15T22:31:25+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=4171
+guid: https://stealthpuppy.com/?p=4171
 permalink: /automation-survey-results-build-master-images/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -22,7 +22,7 @@ tags:
   - XenApp
   - XenDesktop
 ---
-Previously we've looked at [which hypervisors are in use](http://stealthpuppy.com/automation-survey-results-hypervisor/) and the [virtual desktop solutions deployed on those hypervisors](http://stealthpuppy.com/automation-survey-results-vdi-platforms/), so now we'll take a look at how organisations are building their master images.
+Previously we've looked at [which hypervisors are in use](https://stealthpuppy.com/automation-survey-results-hypervisor/) and the [virtual desktop solutions deployed on those hypervisors](https://stealthpuppy.com/automation-survey-results-vdi-platforms/), so now we'll take a look at how organisations are building their master images.
 
 # Building A Master Image
 
@@ -38,7 +38,7 @@ In this survey we've concentrated on how organisations are building their master
 
 Although we had 724 good responses, on this question 705 people responded to it, and here's what we got:
 
-<figure id="attachment_4173" aria-describedby="caption-attachment-4173" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4173" src="http://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-1024x558.png" alt="Breakdown of how respondents are building master images" width="1024" height="558" srcset="https://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-1024x558.png 1024w, https://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-150x82.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-300x163.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages.png)<figcaption id="caption-attachment-4173" class="wp-caption-text">Breakdown of how respondents are building master images*
+<figure id="attachment_4173" aria-describedby="caption-attachment-4173" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4173" src="https://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-1024x558.png" alt="Breakdown of how respondents are building master images" width="1024" height="558" srcset="https://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-1024x558.png 1024w, https://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-150x82.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-300x163.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages.png)<figcaption id="caption-attachment-4173" class="wp-caption-text">Breakdown of how respondents are building master images*
 
 For the chart I've simplified the responses, so here's what we actually asked in the survey:
 
@@ -48,7 +48,7 @@ For the chart I've simplified the responses, so here's what we actually asked in
 
 This means that over 75% of respondents are utilising some form of automation and I would read from this, that with roughly 52% of organisations leaving some manual tasks, that getting to 100% is either too time consuming so not worth the effort, or perhaps some tasks can't be automated.
 
-<figure id="attachment_3331" aria-describedby="caption-attachment-3331" style="width: 720px" class="wp-caption alignnone"><img class="wp-image-3331 size-full" src="http://stealthpuppy.com/wp-content/uploads/2013/05/Slide12.png" alt="Slide12" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" /><figcaption id="caption-attachment-3331" class="wp-caption-text">xkcd sums the problem up nicely.*
+<figure id="attachment_3331" aria-describedby="caption-attachment-3331" style="width: 720px" class="wp-caption alignnone"><img class="wp-image-3331 size-full" src="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12.png" alt="Slide12" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" /><figcaption id="caption-attachment-3331" class="wp-caption-text">xkcd sums the problem up nicely.*
 
 What we didn't ask is what are the blockers to automation - so perhaps if we get to run the survey again, this is question that we can pose to get some idea.
 
@@ -60,7 +60,7 @@ So what type of number is 23.5% of respondents using a completely manual process
 
 On average, the larger the environment the more that automation is leveraged. This could be due to the ability to invest more time into automation, more resources and/or skill sets around automation or perhaps even the use of third party products. Clearly the barrier to automation needs to drop further.
 
-23.5% is about what I expected for manual deployments - [the last time I ran a survey like this](http://stealthpuppy.com/hands-off-my-gold-image-a-recap-from-citrix-synergy-2013/), I saw manual builds at 26%, so a slight improvement over the past couple of years. 76.5% of organisations using some type of automation is really great to see.
+23.5% is about what I expected for manual deployments - [the last time I ran a survey like this](https://stealthpuppy.com/hands-off-my-gold-image-a-recap-from-citrix-synergy-2013/), I saw manual builds at 26%, so a slight improvement over the past couple of years. 76.5% of organisations using some type of automation is really great to see.
 
 I will say this: VDI should not be treated as a panacea for desktop deployments - VDI doesn't improve desktop management in and of itself, it just gets your poor quality images out faster.
 

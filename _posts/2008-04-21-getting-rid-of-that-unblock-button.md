@@ -13,7 +13,7 @@ tags:
 ---
 I actually don't mind UAC at all, but this button is really annoying:
 
-<img border="0" alt="FilePropertiesUnblock" src="http://stealthpuppy.com/wp-content/uploads/2008/04/filepropertiesunblock.png" width="451" height="337" /> 
+<img border="0" alt="FilePropertiesUnblock" src="https://stealthpuppy.com/wp-content/uploads/2008/04/filepropertiesunblock.png" width="451" height="337" /> 
 
 You will usually see this on the properties of files you have downloaded from the Internet but it also manifests itself in other file copies too, such as copying a ZIP file to a server. The inbuilt Windows ZIP tool won't open ZIP files marked like this at all, even if you click Unblock.
 

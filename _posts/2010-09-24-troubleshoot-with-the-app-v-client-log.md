@@ -16,11 +16,11 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="right" />If you have successfully virtualised an application, imported the package into the Management Server but you are having issues publishing the package, streaming the application or getting it to launch, the first place to start is the [the App-V client log](http://technet.microsoft.com/en-us/library/cc817165.aspx).
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="right" />If you have successfully virtualised an application, imported the package into the Management Server but you are having issues publishing the package, streaming the application or getting it to launch, the first place to start is the [the App-V client log](http://technet.microsoft.com/en-us/library/cc817165.aspx).
 
 The client log settings are managed in the Application Virtualization Client console (SFTCMC.MSC) – start the console and the logging settings can be viewed on the General tab:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ClientProperties" src="http://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties_thumb.png" border="0" alt="ClientProperties" width="414" height="479" />](http://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ClientProperties" src="https://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties_thumb.png" border="0" alt="ClientProperties" width="414" height="479" />](https://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties.png)
 
 There are actually two places to which the the client will log errors – the Application event log (shown in the image under _System Log Level_) and the client log file; however the log file is generally the easiest to use when troubleshooting because it's a flat text file.
 
@@ -36,7 +36,7 @@ To get more information out of the client, enable verbose mode, which will enabl
 
 Resetting the log will rename the existing file and start a new one:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="LogLocation" src="http://stealthpuppy.com/wp-content/uploads/2010/09/LogLocation.png" border="0" alt="LogLocation" width="660" height="200" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="LogLocation" src="https://stealthpuppy.com/wp-content/uploads/2010/09/LogLocation.png" border="0" alt="LogLocation" width="660" height="200" /> 
 
 **Note**: once you have finished troubleshooting, don't forget to set the logging level back to _Information_.
 
@@ -82,7 +82,7 @@ The app manager could not create an application from '\\domain.local\Public\Apps
 
 If check the actual location of the OSD file, I can see that the package is not in the correct path (its actually located at \\domain.local\Public\Apps\Adobe\AdobeReader9_x86):
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="OSDLocation" src="http://stealthpuppy.com/wp-content/uploads/2010/09/OSDLocation_thumb.png" border="0" alt="OSDLocation" width="660" height="200" />](http://stealthpuppy.com/wp-content/uploads/2010/09/OSDLocation.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="OSDLocation" src="https://stealthpuppy.com/wp-content/uploads/2010/09/OSDLocation_thumb.png" border="0" alt="OSDLocation" width="660" height="200" />](https://stealthpuppy.com/wp-content/uploads/2010/09/OSDLocation.png)
 
 To fix this issue, I need to update the application properties in the App-V Management console, I can then refresh the client again and the application will be published correctly.
 
@@ -90,7 +90,7 @@ To fix this issue, I need to update the application properties in the App-V Mana
 
 This was a very simple example and the fix was quite obvious. In all cases though, the client log will include an error code – the same code will often be displayed in a dialog box:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ClientError" src="http://stealthpuppy.com/wp-content/uploads/2010/09/ClientError_thumb.png" border="0" alt="ClientError" width="466" height="244" />](http://stealthpuppy.com/wp-content/uploads/2010/09/ClientError.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ClientError" src="https://stealthpuppy.com/wp-content/uploads/2010/09/ClientError_thumb.png" border="0" alt="ClientError" width="466" height="244" />](https://stealthpuppy.com/wp-content/uploads/2010/09/ClientError.png)
 
 If the problem is not immediately apparent in the log, start looking for a solution by using the error code. Falko Gräfe has an excellent article that explains [how to interpret these error codes](http://www.kirx.org/app-v/read/error-codes-en.html). In most cases, there will be [an associated Microsoft knowledgebase article](http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code) that should give a solution for the error.
 

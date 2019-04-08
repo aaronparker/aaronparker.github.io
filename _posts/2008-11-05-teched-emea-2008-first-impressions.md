@@ -13,7 +13,7 @@ categories:
 tags:
   - TechEd EMEA 2008
 ---
-<img style="border-right-width: 0px; margin: 0px 15px 0px 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="teched-2008-logo" src="http://stealthpuppy.com/wp-content/uploads/2008/11/teched2008logo.jpg" border="0" alt="teched-2008-logo" width="156" height="80" align="left" />After experiencing some initial troubles with Internet access from my hotel room, I might be able to start posting some pieces from Tech∙Ed here in Barcelona. Some of these might be out of chronological order, but first up here's a general odds and ends from my first few days here:
+<img style="border-right-width: 0px; margin: 0px 15px 0px 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="teched-2008-logo" src="https://stealthpuppy.com/wp-content/uploads/2008/11/teched2008logo.jpg" border="0" alt="teched-2008-logo" width="156" height="80" align="left" />After experiencing some initial troubles with Internet access from my hotel room, I might be able to start posting some pieces from Tech∙Ed here in Barcelona. Some of these might be out of chronological order, but first up here's a general odds and ends from my first few days here:
 
  
 

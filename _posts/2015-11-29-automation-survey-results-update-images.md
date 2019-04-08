@@ -4,7 +4,7 @@ title: 'OS Automation Survey Results - How Often Are Master Images Updated?'
 date: 2015-11-29T18:28:13+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=4209
+guid: https://stealthpuppy.com/?p=4209
 permalink: /automation-survey-results-update-images/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -20,13 +20,13 @@ tags:
   - XenApp
   - XenDesktop
 ---
-Now that we've covered the main questions in the survey - [which hypervisors are in use](http://stealthpuppy.com/automation-survey-results-hypervisor/), the [VDI solutions are run on those hypervisors](http://stealthpuppy.com/automation-survey-results-vdi-platforms/), [how master images are built](http://stealthpuppy.com/automation-survey-results-build-master-images/), [the automation solutions used to build images](http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/) and the [solutions used to deliver images to SBC and VDI environments](http://stealthpuppy.com/automation-survey-results-deliver-images/), we'll take a short look at how often master images are updated.
+Now that we've covered the main questions in the survey - [which hypervisors are in use](https://stealthpuppy.com/automation-survey-results-hypervisor/), the [VDI solutions are run on those hypervisors](https://stealthpuppy.com/automation-survey-results-vdi-platforms/), [how master images are built](https://stealthpuppy.com/automation-survey-results-build-master-images/), [the automation solutions used to build images](http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/) and the [solutions used to deliver images to SBC and VDI environments](https://stealthpuppy.com/automation-survey-results-deliver-images/), we'll take a short look at how often master images are updated.
 
 # Updating Master Images
 
 Here are the results for how often master images are updated based on 501 responses to this question:
 
-<figure id="attachment_4211" aria-describedby="caption-attachment-4211" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4211" src="http://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-1024x603.png" alt="How often master images are updated" width="1024" height="603" srcset="https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-1024x603.png 1024w, https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-150x88.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-300x177.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated.png)<figcaption id="caption-attachment-4211" class="wp-caption-text">How often master images are updated*</figure>
+<figure id="attachment_4211" aria-describedby="caption-attachment-4211" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4211" src="https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-1024x603.png" alt="How often master images are updated" width="1024" height="603" srcset="https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-1024x603.png 1024w, https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-150x88.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-300x177.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated.png)<figcaption id="caption-attachment-4211" class="wp-caption-text">How often master images are updated*</figure>
 
 Monthly patching is ideal and the majority of organisations appear to be standardising on monthly updates. Adding those respondents who patch every 2 months, 62.7% of organisations patch quite regularly.
 

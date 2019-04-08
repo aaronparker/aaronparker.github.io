@@ -20,9 +20,9 @@ tags:
   - PowerShell
   - Profiles
 ---
-[<img class="size-full wp-image-2624 alignnone" title="Delete by Cari McGee" src="http://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell.png" alt="Delete by Cari McGee" width="640" height="317" srcset="https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell.png 640w, https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell-150x74.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell-300x148.png 300w" sizes="(max-width: 640px) 100vw, 640px" />](http://www.flickr.com/photos/pleeker/5379549514/)
+[<img class="size-full wp-image-2624 alignnone" title="Delete by Cari McGee" src="https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell.png" alt="Delete by Cari McGee" width="640" height="317" srcset="https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell.png 640w, https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell-150x74.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell-300x148.png 300w" sizes="(max-width: 640px) 100vw, 640px" />](http://www.flickr.com/photos/pleeker/5379549514/)
 
-I recently posted a script for removing unnecessary files and pruning files based on their age, which can be used at logoff to keep profile sizes manageable - [Reducing Profile Size with a Profile Clean Up Script](http://stealthpuppy.com/user-virtualization/profile-clean-up-script/).
+I recently posted a script for removing unnecessary files and pruning files based on their age, which can be used at logoff to keep profile sizes manageable - [Reducing Profile Size with a Profile Clean Up Script](https://stealthpuppy.com/user-virtualization/profile-clean-up-script/).
 
 [Andrew Morgan](http://andrewmorgan.ie/about-2/) ([@andyjmorgan](http://twitter.com/andyjmorgan)) has kindly translated my very basic VBscript to PowerShell. This can be used as a standalone script or the function (_remove-itembyage_) could be integrated into your own scripts and has the added benefit of in-built help and the ability to run silently.
 
@@ -73,10 +73,10 @@ For example, you could use the script to delete all .log or temporary files belo
         This command searches the $cookies directory, for files older than 10 days and end with txt or log extensions, then deletes them without a report.
 
         .NOTES
-        http://stealthpuppy.com/user-virtualization/profile-clean-up-script-powershell-edition/ for support information.
+        https://stealthpuppy.com/user-virtualization/profile-clean-up-script-powershell-edition/ for support information.
 
         .LINK
-        http://stealthpuppy.com/user-virtualization/profile-clean-up-script-powershell-edition/
+        https://stealthpuppy.com/user-virtualization/profile-clean-up-script-powershell-edition/
     #&gt;
 
     [cmdletbinding(SupportsShouldProcess = $True)]

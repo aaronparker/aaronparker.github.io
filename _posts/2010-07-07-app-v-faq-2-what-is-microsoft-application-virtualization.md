@@ -17,7 +17,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-[<img class="wlDisabledImage" style="margin: 0px 10px 5px 0px; display: inline; border-width: 0px;" title="AppV-FAQ-Logo" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo1.png" alt="AppV-FAQ-Logo" width="121" height="116" align="left" border="0" />Microsoft Application Virtualization](http://www.microsoft.com/windows/enterprise/products/mdop/app-v.aspx) (App-V) is Microsoft’s entry into the application virtualisation space. Originally developed by Softricity, who were bought by Microsoft in 2006, App-V is now an integral part of Microsoft application delivery offerings.
+[<img class="wlDisabledImage" style="margin: 0px 10px 5px 0px; display: inline; border-width: 0px;" title="AppV-FAQ-Logo" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo1.png" alt="AppV-FAQ-Logo" width="121" height="116" align="left" border="0" />Microsoft Application Virtualization](http://www.microsoft.com/windows/enterprise/products/mdop/app-v.aspx) (App-V) is Microsoft’s entry into the application virtualisation space. Originally developed by Softricity, who were bought by Microsoft in 2006, App-V is now an integral part of Microsoft application delivery offerings.
 
 Microsoft Application Virtualization (App-V) can make applications available to end user computers without having to install the applications directly on those computers. This is made possible through a process known as sequencing the application, which enables each application to run in its own self-contained virtual environment on the client computer. The sequenced applications are isolated from each other. This eliminates application conflicts, but the applications can still interact with the client computer.<sup>1</sup>
 
@@ -40,7 +40,7 @@ Microsoft App-V components include the [App-V Sequencer](http://technet.microsof
 
 The image below gives you an overview of all of the App-V components (an actual implementation of App-V will generally include a subset of these components). Click for a larger view:
 
-[<img class="wlDisabledImage" style="display: inline; border-width: 0px;" title="Microsoft Application Virtualisation components" src="http://stealthpuppy.com/wp-content/uploads/2010/06/MicrosoftApplicationVirtualisationComponents_thumb.png" alt="Microsoft Application Virtualisation components" width="660" height="528" border="0" />](http://stealthpuppy.com/wp-content/uploads/2010/06/MicrosoftApplicationVirtualisationComponents.png)
+[<img class="wlDisabledImage" style="display: inline; border-width: 0px;" title="Microsoft Application Virtualisation components" src="https://stealthpuppy.com/wp-content/uploads/2010/06/MicrosoftApplicationVirtualisationComponents_thumb.png" alt="Microsoft Application Virtualisation components" width="660" height="528" border="0" />](https://stealthpuppy.com/wp-content/uploads/2010/06/MicrosoftApplicationVirtualisationComponents.png)
 
 Sources and Links to more information about App-V:
 

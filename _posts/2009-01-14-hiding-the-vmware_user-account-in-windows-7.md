@@ -15,7 +15,7 @@ tags:
 ---
 Installing VMware Server or Workstation on Windows 7 will leave the \_\_vmware\_user\\_\_ account showing on the logon screen, which does not happen in earlier versions of Windows.
 
-<img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="Windows7LogonScreen" src="http://stealthpuppy.com/wp-content/uploads/2009/01/windows7logonscreen.png" border="0" alt="Windows7LogonScreen" width="550" height="413" /> 
+<img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="Windows7LogonScreen" src="https://stealthpuppy.com/wp-content/uploads/2009/01/windows7logonscreen.png" border="0" alt="Windows7LogonScreen" width="550" height="413" /> 
 
 If you want to hide this account, it’s a simple registry value addition:
 

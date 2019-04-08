@@ -4,7 +4,7 @@ title: Install-VisualCRedistributables.ps1 – Now with ConfigMgr Support!
 date: 2017-05-08T23:25:28+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=5441
+guid: https://stealthpuppy.com/?p=5441
 permalink: /visual-c-redistributable-installer-configmgr/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -18,7 +18,7 @@ tags:
   - PowerShell
   - Visual C++ Redistributable
 ---
-I recently [posted an article](http://stealthpuppy.com/visual-c-redistributable-installer/) on a script I've written for downloading and installing the Microsoft [Visual C++ Redistributables](https://github.com/aaronparker/Install-VisualCRedistributables). Thanks to [Cornelius Schuchardt](https://twitter.com/techdecline), the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).
+I recently [posted an article](https://stealthpuppy.com/visual-c-redistributable-installer/) on a script I've written for downloading and installing the Microsoft [Visual C++ Redistributables](https://github.com/aaronparker/Install-VisualCRedistributables). Thanks to [Cornelius Schuchardt](https://twitter.com/techdecline), the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).
 
 Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you can [download from the releases page](https://github.com/aaronparker/Install-VisualCRedistributables/releases) and includes the following updates:
 

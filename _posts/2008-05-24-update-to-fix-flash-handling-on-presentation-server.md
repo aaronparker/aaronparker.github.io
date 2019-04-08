@@ -13,7 +13,7 @@ tags:
   - Presentation-Server
   - XenApp
 ---
-Yay, great news - [Citrix has released](http://community.citrix.com/display/~derekt/2008/05/23/New+HRP+enhances+Flash+version+support) an update to fix the [handling of Adobe Flash](http://stealthpuppy.com/terminal-server/updating-flash-on-presentation-server-consider-speedflash-first) versions for Presentation Server 4.0. This has currently been released as part of the [latest hotfix rollup for Presentation Server 4.0](http://support.citrix.com/article/CTX116264#speedscreen).
+Yay, great news - [Citrix has released](http://community.citrix.com/display/~derekt/2008/05/23/New+HRP+enhances+Flash+version+support) an update to fix the [handling of Adobe Flash](https://stealthpuppy.com/terminal-server/updating-flash-on-presentation-server-consider-speedflash-first) versions for Presentation Server 4.0. This has currently been released as part of the [latest hotfix rollup for Presentation Server 4.0](http://support.citrix.com/article/CTX116264#speedscreen).
 
 For Presentation Server on Windows Server 2003 and above, this means that the SpeedFlash feature that accelerates the display of Flash is no longer version dependant. We'll be able to update Flash now without losing the acceleration support.
 

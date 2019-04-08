@@ -12,9 +12,9 @@ tags:
   - Cluster
   - Exchange
 ---
-<img align="left" width="82" src="http://stealthpuppy.com/wp-content/uploads/2007/05/exchange1.png" height="82" style="width: 82px; height: 82px" />Dear Diary,
+<img align="left" width="82" src="https://stealthpuppy.com/wp-content/uploads/2007/05/exchange1.png" height="82" style="width: 82px; height: 82px" />Dear Diary,
 
-I've fixed the [issue I was having with the Majority Node Set cluster](http://stealthpuppy.com/exchange/diary-of-an-exchange-2007-upgrade-part-3) - it pays to check your information against more than one source. This particular issue was caused by disabling _Client for Microsoft Networks_ and _File and Printer Sharing for Microsoft Networks_ on the heartbeat/private network adapater on each node in the cluster.
+I've fixed the [issue I was having with the Majority Node Set cluster](https://stealthpuppy.com/exchange/diary-of-an-exchange-2007-upgrade-part-3) - it pays to check your information against more than one source. This particular issue was caused by disabling _Client for Microsoft Networks_ and _File and Printer Sharing for Microsoft Networks_ on the heartbeat/private network adapater on each node in the cluster.
 
 You would normally do this on a standard quorum cluster, however because a Majority Node Cluster does not use shared storage, each node needs to view cluster information via a UNC path on the other node or nodes. The following error was recorded in the cluster log file (C:WINDOWSCLUSTERcluster.log):
 

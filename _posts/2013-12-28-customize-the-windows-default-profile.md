@@ -4,7 +4,7 @@ title: A Better Way to Customize the Windows Default Profile
 date: 2013-12-28T09:00:30+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=3522
+guid: https://stealthpuppy.com/?p=3522
 permalink: /customize-the-windows-default-profile/
 dsq_thread_id:
   - "2077733197"
@@ -54,11 +54,11 @@ To find the profile locations to modify there's a couple of methods that I rely 
 
 In most cases, someone (or even Microsoft) will have documented a registry value or profile location that is used to store a setting. More obscure or new settings will require detecting the location with Process Monitor. For example, to determine where a setting is stored in the Registry, create a filter in Process Monitor using the process name or process ID, additionally filtering on the operation such as RegSetValue, as shown below:
 
-[<img class="size-full wp-image-3525 alignnone" alt="Configuring Process Monitor filter " src="http://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-Filter.png" width="519" height="310" srcset="https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-Filter.png 519w, https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-Filter-150x89.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-Filter-300x179.png 300w" sizes="(max-width: 519px) 100vw, 519px" />](http://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-Filter.png)
+[<img class="size-full wp-image-3525 alignnone" alt="Configuring Process Monitor filter " src="https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-Filter.png" width="519" height="310" srcset="https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-Filter.png 519w, https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-Filter-150x89.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-Filter-300x179.png 300w" sizes="(max-width: 519px) 100vw, 519px" />](https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-Filter.png)
 
 A trace with Process Monitor when making a preference change should result in something like this:
 
-[<img class="alignnone size-full wp-image-3532" alt="Process Monitor results" src="http://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer.png" width="888" height="464" srcset="https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer.png 888w, https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-150x78.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-300x156.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-624x326.png 624w" sizes="(max-width: 888px) 100vw, 888px" />](http://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer.png)
+[<img class="alignnone size-full wp-image-3532" alt="Process Monitor results" src="https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer.png" width="888" height="464" srcset="https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer.png 888w, https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-150x78.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-300x156.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer-624x326.png 624w" sizes="(max-width: 888px) 100vw, 888px" />](https://stealthpuppy.com/wp-content/uploads/2013/12/ProcessMonitor-Explorer.png)
 
 [Regshot](http://sourceforge.net/projects/regshot/) is also useful for comparing a before and after change to the profile for determining registry value locations.
 
@@ -82,7 +82,7 @@ A common requirement is to modify the the pinned shortcuts on the Taskbar or Sta
   [download id="62&#8243; format="1&#8243;]
 </p>
 
-Note that Windows 8 and above, do not expose a programatic method to pin and unpin shortcuts to the Start screen. If you're looking to customise the Start screen, refer to this existing article: <http://stealthpuppy.com/customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance/>.
+Note that Windows 8 and above, do not expose a programatic method to pin and unpin shortcuts to the Start screen. If you're looking to customise the Start screen, refer to this existing article: <https://stealthpuppy.com/customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance/>.
 
 ## Modifying the Windows Libraries
 

@@ -12,7 +12,7 @@ tags:
   - SoftGrid
   - Terminal Server
 ---
-<img border="0" alt="SoftGridAppCompat" align="left" src="http://stealthpuppy.com/wp-content/uploads/2008/03/softgridappcompat.png" width="140" height="128" />If there's ever a great example of the benefits of application virtualisation it can often be found in the little things.
+<img border="0" alt="SoftGridAppCompat" align="left" src="https://stealthpuppy.com/wp-content/uploads/2008/03/softgridappcompat.png" width="140" height="128" />If there's ever a great example of the benefits of application virtualisation it can often be found in the little things.
 
 One of the guys in our team has been sequencing [Volo View](http://usa.autodesk.com/adsk/servlet/index?id=3239384&siteID=123112), which isn't a particularly well behaved piece of software to begin with. It has a menu option that launches Windows Explorer to view some config files and when  run under Terminal Services, this fails to launch Explorer.
 

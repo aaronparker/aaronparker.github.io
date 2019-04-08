@@ -13,7 +13,7 @@ categories:
 tags:
   - Exchange
 ---
-<img src="http://stealthpuppy.com/wp-content/uploads/2007/05/exchange4.png" alt="" align="left" />Dear Diary,
+<img src="https://stealthpuppy.com/wp-content/uploads/2007/05/exchange4.png" alt="" align="left" />Dear Diary,
 
 I am currently in the process of upgrading an Exchange Server 2003 organisation to Exchange Server 2007, so I thought it might be a good idea to tell you about my experience whilst I perform the upgrade. This will mostly be in point format but I'll expand on some points where required.
 

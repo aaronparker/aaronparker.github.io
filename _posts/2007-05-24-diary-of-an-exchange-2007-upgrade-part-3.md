@@ -14,7 +14,7 @@ tags:
   - Cluster
   - Exchange
 ---
-<img align="left" src="http://stealthpuppy.com/wp-content/uploads/2007/05/exchange3.png" />Dear Diary,
+<img align="left" src="https://stealthpuppy.com/wp-content/uploads/2007/05/exchange3.png" />Dear Diary,
 
 Things will be quiet on the Exchange front for the next few days as I'm delivering ISA Server training to some of the other engineers, but I'll be back into Exchange on Monday.
 

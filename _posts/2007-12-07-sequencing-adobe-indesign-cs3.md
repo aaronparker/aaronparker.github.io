@@ -14,7 +14,7 @@ tags:
   - Adobe
   - SoftGrid
 ---
-<img src="http://stealthpuppy.com/wp-content/uploads/2008/02/indesign-softgridbox.png" align="left" alt="indesign-softgridbox.png" />Adobe InDesign should be the last of the Adobe CS3 applications that I'll have to sequence and like [Illustrator](http://stealthpuppy.com/virtualisation/sequencing-adobe-illustrator-cs3), [Photoshop](http://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3) and [Acrobat](http://stealthpuppy.com/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far), I had the same issues with sequencing and running the application on the client. So I don't have to repeat myself, check out those posts first and here are the basics for sequencing InDesign CS3.
+<img src="https://stealthpuppy.com/wp-content/uploads/2008/02/indesign-softgridbox.png" align="left" alt="indesign-softgridbox.png" />Adobe InDesign should be the last of the Adobe CS3 applications that I'll have to sequence and like [Illustrator](https://stealthpuppy.com/virtualisation/sequencing-adobe-illustrator-cs3), [Photoshop](https://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3) and [Acrobat](https://stealthpuppy.com/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far), I had the same issues with sequencing and running the application on the client. So I don't have to repeat myself, check out those posts first and here are the basics for sequencing InDesign CS3.
 
 **Sequencing**
 

@@ -1,13 +1,11 @@
 ---
 id: 274
-title: Sizing Terminal Servers and the 4GB memory limit(?)
+title: Sizing Terminal Servers and the 4GB memory limit
 date: 2006-05-22T23:31:00+10:00
 author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/uncategorized/sizing-terminal-servers-and-the-4gb-memory-limit
 permalink: /sizing-terminal-servers-and-the-4gb-memory-limit/
-aktt_notify_twitter:
-  - 'yes'
 categories:
   - Microsoft
 tags:

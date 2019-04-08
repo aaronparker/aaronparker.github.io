@@ -19,55 +19,63 @@ When deploying Windows Vista in the enterprise you have the choice of Multiple A
 
 There's a fair amount of reading you'll have to do to work out how to get the KMS up and running, but if you're like me and you have the attention span of a goldfish, here's the short version:
 
-**1**. Download the Key Management Service for Windows Server 2003 SP1 €“ there are [x86](http://www.microsoft.com/downloads/details.aspx?FamilyID=81d1cb89-13bd-4250-b624-2f8c57a1ae7b&DisplayLang=en) and [x64](http://www.microsoft.com/downloads/details.aspx?FamilyID=03fe69b2-6244-471c-80d2-b4171fb1d7a5&DisplayLang=en) versions available.
+**1**. Download the Key Management Service for Windows Server 2003 SP1“ there are [x86](http://www.microsoft.com/downloads/details.aspx?FamilyID=81d1cb89-13bd-4250-b624-2f8c57a1ae7b&DisplayLang=en) and [x64](http://www.microsoft.com/downloads/details.aspx?FamilyID=03fe69b2-6244-471c-80d2-b4171fb1d7a5&DisplayLang=en) versions available.
 
 **2**. Install the KMS on a physical machine running Windows Server 2003. The same machine you might be using for [WDS](http://technet.microsoft.com/en-us/windowsvista/aa905118.aspx) could be the best candidate.
 
 **3**. Add your Windows Vista KMS key to the KMS host:
 
-`C:\WINDOWS\system32>cscript slmgr.vbs /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX</p>
-<p>Microsoft (R) Windows Script Host Version 5.6<br />
-Copyright (C) Microsoft Corporation 1996-2001. All rights reserved.</p>
-<p>Installed product key XXXXX-XXXXX-XXXXX-XXXXX-XXXXX successfully.`
+```powershell
+C:\WINDOWS\system32>cscript slmgr.vbs /ipk XXXXX-XXXXX-XXXXX-XXXXX-XXXXX
+Microsoft (R) Windows Script Host Version 5.6
+Copyright (C) Microsoft Corporation 1996-2001. All rights reserved.
+Installed product key XXXXX-XXXXX-XXXXX-XXXXX-XXXXX successfully.
+```
 
 **4**. Activate your KMS host with Microsoft:
 
-`C:\WINDOWS\system32>cscript slmgr.vbs /ato</p>
-<p>Microsoft (R) Windows Script Host Version 5.6<br />
-Copyright (C) Microsoft Corporation 1996-2001. All rights reserved.</p>
-<p>This operation connects over the Internet to send the appropriate computer information, such as the types of hardware you are using and the product ID, to the Microsoft activation server. By using this Software, you consent to the transmission of this information. Microsoft does not use the information to identify or contact you.</p>
-<p>Do you want to continue [y/n]? y</p>
-<p>Activating Windows(TM) Server 2003 KMS, KmsW2k3Prs edition (aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa) ...</p>
-<p>Product activated successfully.<code></p>
-<p>You can now view the status of your KMS server:</p>
-<p><code>C:\WINDOWS\system32>cscript slmgr.vbs /dli</p>
-<p>Microsoft (R) Windows Script Host Version 5.6<br />
-Copyright (C) Microsoft Corporation 1996-2001. All rights reserved.</p>
-<p>Name: Windows(TM) Server 2003 KMS, KmsW2k3Prs edition<br />
-Description: Windows(TM) Server 2003 KMS, VOLUME_KMS channel<br />
-Partial Product Key: J3YKD<br />
-License Status: Licensed</p>
-<p>Key Management Service is enabled on this machine</p>
-<p style="margin-left: 36pt;">Current count: 0<br />
-Listening on Port: 1688<br />
-DNS publishing enabled<br />
-KMS priority: Normal`
+```powershell
+C:\WINDOWS\system32>cscript slmgr.vbs /ato
+Microsoft (R) Windows Script Host Version 5.6
+Copyright (C) Microsoft Corporation 1996-2001. All rights reserved.
+This operation connects over the Internet to send the appropriate computer information, such as the types of hardware you are using and the product ID, to the Microsoft activation server. By using this Software, you consent to the transmission of this information. Microsoft does not use the information to identify or contact you.
+Do you want to continue [y/n]? y
+Activating Windows(TM) Server 2003 KMS, KmsW2k3Prs edition (aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa) ...
+Product activated successfully.
+You can now view the status of your KMS server:
+C:\WINDOWS\system32>cscript slmgr.vbs /dli
+Microsoft (R) Windows Script Host Version 5.6
+Copyright (C) Microsoft Corporation 1996-2001. All rights reserved.
+Name: Windows(TM) Server 2003 KMS, KmsW2k3Prs edition
+Description: Windows(TM) Server 2003 KMS, VOLUME_KMS channel
+Partial Product Key: J3YKD
+License Status: Licensed
+Key Management Service is enabled on this machine
+Current count: 0
+Listening on Port: 1688
+DNS publishing enabled
+KMS priority: Normal
+```
 
 Now your KMS server should be running you can deploy Windows Vista using the same KMS key. Windows Vista will query DNS to find your KMS server and activate against it. Give DNS time to replicate and you can then see if your KMS server is registred correctly with NSLOOKUP:
 
-`C:\>nslookup -type=srv _vlmcs._tcp<br />
-Server: dc.company.local<br />
-Address: 192.168.1.17:53</p>
-<p>_vlmcs._tcp.company.local SRV service location:<br />
-priority = 0<br />
-weight = 0<br />
-port = 1688<br />
-svr hostname = kmshost.company.local<br />
-kmshost.company.local internet address = 192.168.1.23`
+```powershell
+C:\> nslookup -type=srv _vlmcs._tcp
+Server: dc.company.local
+Address: 192.168.1.17:53
+_vlmcs._tcp.company.local SRV service location:
+priority = 0
+weight = 0
+port = 1688
+svr hostname = kmshost.company.local
+kmshost.company.local internet address = 192.168.1.23
+```
 
 As alternative to quering DNS to find the KMS host, you can hard code a client to use a particular KMS host:
 
-`C:\Windows\System32\cscript slmgr.vbs -skms <KMS_FQDN>[:port]`
+```powershell
+C:\Windows\System32\cscript slmgr.vbs -skms <KMS_FQDN>[:port]
+```
 
 The best place to get questions and answers about Volume Activation 2.0 is the FAQ page:
 

@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -49,10 +49,10 @@
     <p>ISAServer.org has an excellent four part tutorial on using LDAP to pre-authenticate Outlook Web Access. You can find them here:</p>
 
 <ul>
-  <li>Â <a href="http://www.isaserver.org/tutorials/LDAP-Pre-authentication-ISA-2006-Firewalls-Part1.html">LDAP Pre-authentication with ISA 2006 Firewalls: Using LDAP to Pre-authenticate OWA Access (Part 1)</a></li>
-  <li>Â <a href="http://www.isaserver.org/tutorials/LDAP-Pre-authentication-ISA-2006-Firewalls-Part2.html">LDAP Pre-authentication with ISA 2006 Firewalls: Using LDAP to Pre-authenticate OWA Access (Part 2)</a></li>
-  <li>Â <a href="http://www.isaserver.org/tutorials/LDAP-Pre-authentication-ISA-2006-Firewalls-Part3.html">LDAP Pre-authentication with ISA 2006 Firewalls: Using LDAP to Pre-authenticate OWA Access (Part 3)</a></li>
-  <li>Â <a href="http://www.isaserver.org/tutorials/LDAP-Pre-authentication-ISA-2006-Firewalls-Part4.html">LDAP Pre-authentication with ISA 2006 Firewalls: Using LDAP to Pre-authenticate OWA Access (Part 4)</a></li>
+  <li> <a href="http://www.isaserver.org/tutorials/LDAP-Pre-authentication-ISA-2006-Firewalls-Part1.html">LDAP Pre-authentication with ISA 2006 Firewalls: Using LDAP to Pre-authenticate OWA Access (Part 1)</a></li>
+  <li> <a href="http://www.isaserver.org/tutorials/LDAP-Pre-authentication-ISA-2006-Firewalls-Part2.html">LDAP Pre-authentication with ISA 2006 Firewalls: Using LDAP to Pre-authenticate OWA Access (Part 2)</a></li>
+  <li> <a href="http://www.isaserver.org/tutorials/LDAP-Pre-authentication-ISA-2006-Firewalls-Part3.html">LDAP Pre-authentication with ISA 2006 Firewalls: Using LDAP to Pre-authenticate OWA Access (Part 3)</a></li>
+  <li> <a href="http://www.isaserver.org/tutorials/LDAP-Pre-authentication-ISA-2006-Firewalls-Part4.html">LDAP Pre-authentication with ISA 2006 Firewalls: Using LDAP to Pre-authenticate OWA Access (Part 4)</a></li>
 </ul>
 
 <p>This is an excellent feature of ISA Server 2006 because it allows scenarios whereby ISA Server cannot be the edge firewall for whatever reason and is placed in the DMZ instead. LDAP allows for ISA Server to authentcate against Active Directory without the server being a member of the domain. However, once you configure LDAP authentication you cannot then use <a href="http://www.trustedaccess.info/blogs/microsoft/archive/2006/09/29/Strengthening-OWA-Authentication-with-ISA-2006-and-RSA-SecurID-.aspx">additional authentication methods</a> such as RADIUS OTP and RSA SecurID. You can see this on the web listener Authentication tab, once you select the option to ‘Collect additional delegation credentials in the form’, LDAP is no longer selectable.</p>

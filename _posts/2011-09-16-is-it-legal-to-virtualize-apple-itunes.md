@@ -20,7 +20,7 @@ tags:
 ---
 _Preface_: I don't speak legalese and this post is based on my own intepretation of the iTunes distribution agreement.
 
-I've previously talked about [virtualizing Apple iTunes with App-V](http://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/); however after taking a look through the distribution agreements that you're supposed to accept, I'm under the impression that doing so doesn't adhere to the agreement.
+I've previously talked about [virtualizing Apple iTunes with App-V](https://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/); however after taking a look through the distribution agreements that you're supposed to accept, I'm under the impression that doing so doesn't adhere to the agreement.
 
 If you're looking to distribute iTunes and QuickTime in your environment, Apple requires that you [obtain an agreement to do so](http://developer.apple.com/softwarelicensing/agreements/itunes.html). There are two agreements - one for universities and another for corporations (uni's actually have 2 - one for [CD distribution](http://developer.apple.com/softwarelicensing/agreements/pdf/itns.qt.univ.cd.pdf), another for [distribution from a server](http://developer.apple.com/softwarelicensing/agreements/pdf/itunesqt.univ.server.pdf)).
 
@@ -32,7 +32,7 @@ And here's a quote from the corporate site license:
 
 > Licensee may not modify or alter the Software, the Apple installer or the Apple End User Agreement that accompanies the Software as provided by Apple to Licensee. As a condition of the rights granted herein, each installation of the iTunes and QuickTime Software must result in the iTunes and QuickTime Player icon residing on the desktop of each authorised user.
 
-Based on [my recipe for iTunes](http://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/), I understand the process of virtualising the application to be breaking the agreement because we are doing a few things:
+Based on [my recipe for iTunes](https://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/), I understand the process of virtualising the application to be breaking the agreement because we are doing a few things:
 
   * Extracting the MSI's from the iTunes installer - breaking the Apple installer
   * Accepting the End User Agreement during the monitoring phase

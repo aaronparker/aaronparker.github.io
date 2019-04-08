@@ -4,7 +4,7 @@ title: View Memory Stats on a Hyper-V Server
 date: 2014-08-29T15:14:42+10:00
 author: Aaron Parker
 layout: post
-guid: http://stealthpuppy.com/?p=3686
+guid: https://stealthpuppy.com/?p=3686
 permalink: /view-memory-stats-on-hyper-v/
 dsq_thread_id:
   - "2968770936"
@@ -14,7 +14,7 @@ tags:
   - Hyper-V
   - PowerShell
 ---
-I've got a very simple setup in [my home lab](http://stealthpuppy.com/lab-server-to-run-esxi-hyper-v/) with a couple of machine running either Hyper-V or ESXi. I typically don't have monitoring solutions running and manage each host directly, rather than part of a cluster or with SCVMM or vCenter. For Hyper-V, I try to manage it remotely via PowerShell as much as I can and so it's handy to be able to see memory utilisation on the remote host to understand how much capacity I've got before powering on a VM. I've written a PowerShell function to return various memory stats:
+I've got a very simple setup in [my home lab](https://stealthpuppy.com/lab-server-to-run-esxi-hyper-v/) with a couple of machine running either Hyper-V or ESXi. I typically don't have monitoring solutions running and manage each host directly, rather than part of a cluster or with SCVMM or vCenter. For Hyper-V, I try to manage it remotely via PowerShell as much as I can and so it's handy to be able to see memory utilisation on the remote host to understand how much capacity I've got before powering on a VM. I've written a PowerShell function to return various memory stats:
 
   * Total RAM available in the host - using [Get-VMHost](http://go.microsoft.com/fwlink/?LinkID=306853).
   * Total memory in use by running VMs - by returning the running VMs and finding the current amount of RAM assigned to each VM with [Get-VM](http://go.microsoft.com/fwlink/?LinkID=306845). This works with dynamic memory.
@@ -51,7 +51,7 @@ Here's the code listing for the Get-HvMem function:
         .NOTES
  
         .LINK
-            http://stealthpuppy.com/hyperv-memory-powershell
+            https://stealthpuppy.com/hyperv-memory-powershell
  
     #&gt;
     param(

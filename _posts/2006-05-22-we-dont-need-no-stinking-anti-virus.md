@@ -6,8 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/uncategorized/we-dont-need-no-stinking-anti-virus
 permalink: /we-dont-need-no-stinking-anti-virus/
-aktt_notify_twitter:
-  - 'yes'
 categories:
   - Microsoft
 ---
@@ -29,4 +27,3 @@ I don't run anti-virus software on my home machine - I actually haven't done for
 The point is controlling what can run rather than attempting to control what cannot run. Apparently this is the way the original version of Norton AntiVirus worked, until they found there was more money in definition updates. Windows XP and Windows Server 2003 include [Software Restriction Policy](http://technet2.microsoft.com/WindowsServer/en/Library/90b75a83-bca7-4871-a661-d67eafcfd86c1033.mspx) that can be used to define what software can run on a system. This is not a new concept, but it make far more sense than, in this age of 0 day exploits, ensuring definitions are up-to-date.
 
 Software Restriction Policy can be a challenge to implement in complex scenarios, however there are a number of third party tools available, including [AppSense Application Manager](http://www.appsense.com/default.asp) (excellent gear) and [DesktopStandard PolicyMaker Application Security](http://www.desktopstandard.com/PolicyMakerApplicationSecurity.aspx) (haven't tested this tool yet). I've also come across [Core Force](http://force.coresecurity.com/). This tool is free but only for the technically advanced.  
-<img src="http://blogs.virtualserver.tv/aggbug.aspx?PostID=892" alt="" width="1" height="1" />

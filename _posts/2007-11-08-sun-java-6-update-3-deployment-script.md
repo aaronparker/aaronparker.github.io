@@ -13,7 +13,7 @@ categories:
 tags:
   - Java
 ---
-I've just updated my [Java Runtime Environment install script](http://stealthpuppy.com/unattended/unattended-install-sun-java-runtime-environment-16-update-3) for [Sun Java 6 Update 3](http://www.java.com/en/download/windows_manual.jsp?locale=en&host=www.java.com:80). Apart from supporting the latest JRE update, this version of the script fixes some registry changes that I hadn't got quite right previously. If you've not seen this script before here's a breakdown of what it does:
+I've just updated my [Java Runtime Environment install script](https://stealthpuppy.com/unattended/unattended-install-sun-java-runtime-environment-16-update-3) for [Sun Java 6 Update 3](http://www.java.com/en/download/windows_manual.jsp?locale=en&host=www.java.com:80). Apart from supporting the latest JRE update, this version of the script fixes some registry changes that I hadn't got quite right previously. If you've not seen this script before here's a breakdown of what it does:
 
   * Installs only the core Java files
   * Integrates with Internet Explorer and Mozilla browsers

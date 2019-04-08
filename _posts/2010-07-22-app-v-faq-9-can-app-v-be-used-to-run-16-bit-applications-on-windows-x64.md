@@ -16,9 +16,9 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="left" />
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="left" />
 
-No, [App-V is not a compatibility solution](http://stealthpuppy.com/virtualisation/app-v-faq-7-is-app-v-an-application-compatibility-solution). App-V does not provide any additional layers that applications can use when executing on different versions of Windows. Although 16-bit applications can be deployed on 32-bit Windows via App-V, it cannot be used to run 16-bit applications on 64-bit Windows.
+No, [App-V is not a compatibility solution](https://stealthpuppy.com/virtualisation/app-v-faq-7-is-app-v-an-application-compatibility-solution). App-V does not provide any additional layers that applications can use when executing on different versions of Windows. Although 16-bit applications can be deployed on 32-bit Windows via App-V, it cannot be used to run 16-bit applications on 64-bit Windows.
 
 If 64-bit Windows does not support 16-bit applications, then neither will App-V. The lack of 16-bit application support in x64 Windows is documented in this Microsoft Knowledgebase Article: [64-bit versions of Windows do not support 16-bit components, 16-bit processes, or 16-bit applications](http://support.microsoft.com/kb/896458):
 

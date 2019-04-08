@@ -20,7 +20,7 @@ tags:
   - App-V
   - PowerShell
 ---
-<img class="alignright size-full wp-image-2873" style="margin-left: 5px; margin-right: 5px;" title="AppV-PowerShell-Logo" src="http://stealthpuppy.com/wp-content/uploads/2012/10/AppV-PowerShell-Logo.png" alt="" width="128" height="128" />App-V 5.0 is PowerShell driven, which means opportunity for automating and scripting tasks that might have to be completed manually or might have been a challenge to script previously.
+<img class="alignright size-full wp-image-2873" style="margin-left: 5px; margin-right: 5px;" title="AppV-PowerShell-Logo" src="https://stealthpuppy.com/wp-content/uploads/2012/10/AppV-PowerShell-Logo.png" alt="" width="128" height="128" />App-V 5.0 is PowerShell driven, which means opportunity for automating and scripting tasks that might have to be completed manually or might have been a challenge to script previously.
 
 Using PowerShell to drive the App-V Management Server opens up plenty of great scenarios. Here's how to use PowerShell to import a package (from a UNC path), publish it and grant access to a domain group, all on one line.
 
