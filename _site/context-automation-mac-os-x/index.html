@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Context based automation in Mac OS X | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Context based automation in Mac OS X" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I currently use a MacBook Pro for my personal and work use every day – it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office)." />
+<meta property="og:description" content="I currently use a MacBook Pro for my personal and work use every day – it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office)." />
+<link rel="canonical" href="/context-automation-mac-os-x/" />
+<meta property="og:url" content="/context-automation-mac-os-x/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-01-12T14:12:18+11:00" />
+<script type="application/ld+json">
+{"description":"I currently use a MacBook Pro for my personal and work use every day – it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/context-automation-mac-os-x/","headline":"Context based automation in Mac OS X","dateModified":"2013-01-12T14:12:18+11:00","datePublished":"2013-01-12T14:12:18+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/context-automation-mac-os-x/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Context based automation in Mac OS X</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2013-01-12T14:12:18+11:00" itemprop="datePublished">Jan 12, 2013
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img class="alignright size-full wp-image-3021" alt="ControlPlane Icon" src="http://stealthpuppy.com/wp-content/uploads/2013/01/controlplane.png" width="128" height="128" />I currently use a MacBook Pro for my personal and work use every day – it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).</p>
+
+<p>Each location therefore, has different contexts – at home I might connect to my <a href="http://www.synology.com/">Synology</a> NAS and I don’t need to lock the laptop when I walk away from it. Work is a very different context – I don’t have access to the NAS and I’m in a public location where I should be locking the desktop when it’s not in use.</p>
+
+<p>Manually mounting remote shares or changing security settings for each locations is repetitive and time consuming. Surely there’s a better way?</p>
+
+<p>I’m not that keen on writing shell scripts in OS X to automate the process, so I was impressed to come across <a href="http://www.controlplaneapp.com/">ControlPlane</a>. With this tool I can define different contexts and then enable certain actions based on those contexts.</p>
+
+<p>So here’s how I’m using <a href="http://www.controlplaneapp.com/about/">ControlPlane</a> to make life easier by performing tasks as I move between home and work (or any other locations).</p>
+
+<h1 id="installing-controlplane">Installing ControlPlane</h1>
+
+<p>Downloading and installing ControlPlane is very simple – download the disk image (DMG file) and drag ControlPlane to your Applications folder.</p>
+
+<p>Launch ControlPlane and enable ‘Start ControlPlane at login’ (if it’s not running, actions won’t fire). Here I’ve also set a default context (Secure). This is important because I want the secure actions firing by default with other actions only firing if I connect to a specific context (such as Home).</p>
+
+<p><img class="alignnone size-full wp-image-3022" alt="ControlPlane General" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General.png" width="527" height="491" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-General.png 527w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-General-150x139.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-General-300x279.png 300w" sizes="(max-width: 527px) 100vw, 527px" /></p>
+
+<p>I’ve enabled the display of the context name in the menu bar so that I can easily see which context the laptop is in:</p>
+
+<p><img class="alignnone size-full wp-image-3027" alt="ControlPlane Menubar" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar.png" width="539" height="63" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Menubar.png 539w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Menubar-150x17.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Menubar-300x35.png 300w" sizes="(max-width: 539px) 100vw, 539px" /></p>
+
+<h1 id="configuring-contexts">Configuring Contexts</h1>
+
+<p>Create a Context with a name, Evidence Sources (properties of a location, physical configuration, peripherals, time of day etc) and Rules (these define evidence sources that describe the context).</p>
+
+<p>I’ve created three Contexts – Home, Mobile (for use with a MiFi-style device) and Secure. Rules are applied to Home and Mobile, whilst Secure has no rules applied and thus applies to any location that isn’t Home or Mobile.</p>
+
+<p><img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Contexts.png 507w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Contexts-150x150.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></p>
+
+<p>To define the Home context, I’ve used the ‘WiFi BSSID’ rule to define that if the MacBook has a connection to my home router, then I must be at home. 100% confidence is enabled on this rule because I know it’s highly unlikely that I’ll be connected to the same SSID and MAC address at any other location.</p>
+
+<p><img class="alignnone size-full wp-image-3024" alt="ControlPlane Rules" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules.png" width="591" height="476" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Rules.png 591w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Rules-150x120.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Rules-300x241.png 300w" sizes="(max-width: 591px) 100vw, 591px" /></p>
+
+<p>I could use various other evidence sources; however I’ve found that a WiFi connection is the simplest approach for my needs.</p>
+
+<h1 id="enabling-actions">Enabling Actions</h1>
+
+<p>For each Context I’ve enabled various actions. When the laptop connects to my home WiFi, the following actions will take place:</p>
+
+<ul>
+  <li>Disable the requirement to enter my password when opening the lid or after a screensaver fires (System Preferences / Security &amp; Privacy / General)</li>
+  <li>Mounting a share (or shares) on the NAS</li>
+  <li>Enabling Time Machine</li>
+</ul>
+
+<p>When the Secure context is enabled, the follow actions take place:</p>
+
+<ul>
+  <li>Enable the requirement to enter a password when the desktop is locked</li>
+  <li>Disable Time Machine (without access to the NAS, there’s little use in Time Machine running)</li>
+</ul>
+
+<h1 id="action-details">Action Details</h1>
+
+<p>ControlPlane provides a plethora of actions and enabling or disabling Time Machine is straight forward. Mounting a remote share or enabling/disabling the screen lock are a little more nuanced.</p>
+
+<p>Mounting or dismounting a remote share requires the full path to that share. That full path can be found via Get Info from the right-click context menu on the share.</p>
+
+<p><img class="alignnone size-full wp-image-3028" alt="ControlPlane Mount" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount.png" width="612" height="605" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Mount.png 612w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Mount-150x148.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Mount-300x296.png 300w" sizes="(max-width: 612px) 100vw, 612px" /></p>
+
+<p>I could also unmount the same share when I leave the Home context.</p>
+
+<p>A shell script is needed to configure the requirement for a password when unlocking OS X. This uses the <a href="http://en.wikipedia.org/wiki/Defaults_(software)">defaults</a> command to directly modify the system preferences. Here’s the commands to lock:</p>
+
+<p>[code]defaults write com.apple.screensaver askForPassword -int 1<br />
+defaults write com.apple.screensaver askForPasswordDelay -int 0[/code]</p>
+
+<p>And here are the commands to unlock:</p>
+
+<p>[code]defaults write com.apple.screensaver askForPassword -int 0<br />
+defaults write com.apple.screensaver askForPasswordDelay -int 3600[/code]</p>
+
+<p>Save these commands in text files on the file system (e.g. enable-passwordlock.sh and disable-passwordlock.sh) and <a href="https://developer.apple.com/library/mac/#documentation/opensource/conceptual/shellscripting/shell_scripts/shell_scripts.html#//apple_ref/doc/uid/TP40004268-CH237-SW3">mark them as executable</a> with:</p>
+
+<p>[code]chmod u+x <script name="">.sh[/code]</script></p>
+
+<p>Then add System actions in ControlPlane to execute the shell scripts at in the right context:</p>
+
+<p><img alt="ControlPlane Actions" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Actions.png" width="612" height="605" /></p>
+
+<h1 id="life-is-good">Life is Good</h1>
+
+<p>With ControlPlane I’ve got a great (and free) solution to automating some common actions that I’ve previously been performing manually as I move between home and work. <a href="https://twitter.com/search?q=%23firstworldproblems&amp;src=hash">First world problems</a> solved again.</p>
+
+<p>In this article I’ve only shown a couple of examples of what’s possible with ControlPlane, so I recommend <a href="http://www.controlplaneapp.com/">checking it out for yourself</a> to see how it can improve your workflows.</p>
+
+  </div><a class="u-url" href="/context-automation-mac-os-x/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

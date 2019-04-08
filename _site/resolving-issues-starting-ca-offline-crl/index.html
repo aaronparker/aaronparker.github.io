@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Resolving Issues Starting a CA due to an Offline CRL | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Resolving Issues Starting a CA due to an Offline CRL" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I recently wrote a couple of articles on setting up and Root Certification Authority and a Subordinate Certification Authority as a basic cheat sheet for setting up and Enterprise PKI. One configuration item that is less well understood and often the cause of major headaches with certificate authorities, is the Certificate Revocation List (CRL). An Offline CRL can bring down your PKI and other services that rely on it." />
+<meta property="og:description" content="I recently wrote a couple of articles on setting up and Root Certification Authority and a Subordinate Certification Authority as a basic cheat sheet for setting up and Enterprise PKI. One configuration item that is less well understood and often the cause of major headaches with certificate authorities, is the Certificate Revocation List (CRL). An Offline CRL can bring down your PKI and other services that rely on it." />
+<link rel="canonical" href="/resolving-issues-starting-ca-offline-crl/" />
+<meta property="og:url" content="/resolving-issues-starting-ca-offline-crl/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2016/09/13740073235_b8a4ec0ffc_k.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-09-04T22:18:39+10:00" />
+<script type="application/ld+json">
+{"description":"I recently wrote a couple of articles on setting up and Root Certification Authority and a Subordinate Certification Authority as a basic cheat sheet for setting up and Enterprise PKI. One configuration item that is less well understood and often the cause of major headaches with certificate authorities, is the Certificate Revocation List (CRL). An Offline CRL can bring down your PKI and other services that rely on it.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/resolving-issues-starting-ca-offline-crl/","image":"/wp-content/uploads/2016/09/13740073235_b8a4ec0ffc_k.jpg","headline":"Resolving Issues Starting a CA due to an Offline CRL","dateModified":"2016-09-04T22:18:39+10:00","datePublished":"2016-09-04T22:18:39+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/resolving-issues-starting-ca-offline-crl/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Resolving Issues Starting a CA due to an Offline CRL</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2016-09-04T22:18:39+10:00" itemprop="datePublished">Sep 4, 2016
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I recently wrote a couple of articles on setting up and <a href="http://stealthpuppy.com/deploy-enterprise-root-certificate-authority/">Root Certification Authority</a> and a <a href="http://stealthpuppy.com/deploy-enterprise-subordinate-certificate-authority/">Subordinate Certification Authority</a> as a basic cheat sheet for setting up and Enterprise PKI. One configuration item that is less well understood and often the cause of major headaches with certificate authorities, is the Certificate Revocation List (CRL). An Offline CRL can bring down your PKI and other services that rely on it.</p>
+
+<h1 id="the-issue">The Issue</h1>
+
+<p>You might find your certificate authority, in this case, a subordinate certificate authority that is not started, perhaps after a server reboot. Attempting to start the CA, results in this message:</p>
+
+<blockquote>
+  <p>The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT_E_REVOCATION_OFFLINE)</p>
+</blockquote>
+
+<p>Which looks like this:</p>
+
+<figure id="attachment_5130" aria-describedby="caption-attachment-5130" style="width: 959px" class="wp-caption alignnone">[<img class="wp-image-5130 size-full" src="http://stealthpuppy.com/wp-content/uploads/2016/09/CRYPT_E_REVOCATION_OFFLINE.png" alt="Unable to start a CA due to an Offline CRL CRYPT_E_REVOCATION_OFFLINE" width="959" height="497" srcset="http://192.168.0.89/wp-content/uploads/2016/09/CRYPT_E_REVOCATION_OFFLINE.png 959w, http://192.168.0.89/wp-content/uploads/2016/09/CRYPT_E_REVOCATION_OFFLINE-150x78.png 150w, http://192.168.0.89/wp-content/uploads/2016/09/CRYPT_E_REVOCATION_OFFLINE-300x155.png 300w, http://192.168.0.89/wp-content/uploads/2016/09/CRYPT_E_REVOCATION_OFFLINE-768x398.png 768w" sizes="(max-width: 959px) 100vw, 959px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/CRYPT_E_REVOCATION_OFFLINE.png)<figcaption id="caption-attachment-5130" class="wp-caption-text">Unable to start a CA due to an Offline CRL, reporting CRYPT\_E\_REVOCATION_OFFLINE.</figcaption></figure>
+
+<p>In the Application log on the subordinate CA, I can see event id 100 from source CertificationAuthority:</p>
+
+<blockquote>
+  <p>Active Directory Certificate Services did not start: Could not load or verify the current CA certificate.  stealthpuppy Issuing CA The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT_E_REVOCATION_OFFLINE).</p>
+</blockquote>
+
+<p>As well as, event id 48 from the same source, CertificationAuthority:</p>
+
+<blockquote>
+  <p>Revocation status for a certificate in the chain for CA certificate 0 for stealthpuppy Issuing CA could not be verified because a server is currently unavailable.  The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT_E_REVOCATION_OFFLINE).</p>
+</blockquote>
+
+<p>Certificate 0 is the subordinate CA’s certificate, issued by the offline Root CA.</p>
+
+<p>In addition (by starting the CA with a workaround) I can see a number of failed certificate requests with the same Offline CRL issue:</p>
+
+<figure id="attachment_5139" aria-describedby="caption-attachment-5139" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5139" src="http://stealthpuppy.com/wp-content/uploads/2016/09/IssuingCAFailedRequests-1024x457.png" alt="Failed Requests for certifiicates due to CRYPT_E_REVOCATION_OFFLINE" width="1024" height="457" srcset="http://192.168.0.89/wp-content/uploads/2016/09/IssuingCAFailedRequests-1024x457.png 1024w, http://192.168.0.89/wp-content/uploads/2016/09/IssuingCAFailedRequests-150x67.png 150w, http://192.168.0.89/wp-content/uploads/2016/09/IssuingCAFailedRequests-300x134.png 300w, http://192.168.0.89/wp-content/uploads/2016/09/IssuingCAFailedRequests-768x342.png 768w, http://192.168.0.89/wp-content/uploads/2016/09/IssuingCAFailedRequests.png 1294w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/IssuingCAFailedRequests.png)<figcaption id="caption-attachment-5139" class="wp-caption-text">Failed Requests for certificates due to CRYPT\_E\_REVOCATION_OFFLINE</figcaption></figure>
+
+<p>In this case, I knew that my CRL was online – it’s the same server as the subordinate CA and I had configured both the offline Root CA and the Subordinate CA for the same CRL distribution point.</p>
+
+<figure id="attachment_5142" aria-describedby="caption-attachment-5142" style="width: 959px" class="wp-caption alignnone">[<img class="size-full wp-image-5142" src="http://stealthpuppy.com/wp-content/uploads/2016/09/http-crl-issuingca.png" alt="CRL distribution point on the Subordinate CA" width="959" height="544" srcset="http://192.168.0.89/wp-content/uploads/2016/09/http-crl-issuingca.png 959w, http://192.168.0.89/wp-content/uploads/2016/09/http-crl-issuingca-150x85.png 150w, http://192.168.0.89/wp-content/uploads/2016/09/http-crl-issuingca-300x170.png 300w, http://192.168.0.89/wp-content/uploads/2016/09/http-crl-issuingca-768x436.png 768w" sizes="(max-width: 959px) 100vw, 959px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/http-crl-issuingca.png)<figcaption id="caption-attachment-5142" class="wp-caption-text">CRL distribution point on the Subordinate CA</figcaption></figure>
+
+<h1 id="the-workaround">The Workaround</h1>
+
+<p>Of course, you probably want to get the CA up and running as quickly as possible. The easy way to do that is to disable CRL checking with the following command on the CA server:</p>
+
+<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">certutil –setreg ca\CRLFlags +CRLF_REVCHECK_IGNORE_OFFLINE</pre>
+
+<p>Run this from an elevated command prompt and you should now be able to start the CA and get on with the business of troubleshooting.</p>
+
+<figure id="attachment_5145" aria-describedby="caption-attachment-5145" style="width: 837px" class="wp-caption alignnone">[<img class="size-full wp-image-5145" src="http://stealthpuppy.com/wp-content/uploads/2016/09/CRLF_REVCHECK_IGNORE_OFFLINE.png" alt="Setting CRLF_REVCHECK_IGNORE_OFFLINE with certutil.exe" width="837" height="427" srcset="http://192.168.0.89/wp-content/uploads/2016/09/CRLF_REVCHECK_IGNORE_OFFLINE.png 837w, http://192.168.0.89/wp-content/uploads/2016/09/CRLF_REVCHECK_IGNORE_OFFLINE-150x77.png 150w, http://192.168.0.89/wp-content/uploads/2016/09/CRLF_REVCHECK_IGNORE_OFFLINE-300x153.png 300w, http://192.168.0.89/wp-content/uploads/2016/09/CRLF_REVCHECK_IGNORE_OFFLINE-768x392.png 768w" sizes="(max-width: 837px) 100vw, 837px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/CRLF_REVCHECK_IGNORE_OFFLINE.png)<figcaption id="caption-attachment-5145" class="wp-caption-text">Setting CRLF\_REVCHECK\_IGNORE_OFFLINE with certutil.exe</figcaption></figure>
+
+<h1 id="the-cause-of-an-offline-crl">The Cause of an Offline CRL</h1>
+
+<p>My CRL was online as it is available in Active Directory (for domain joined machines) and via HTTP at crl.home.stealthpuppy.com, an alias of the subordinate CA. I’ve tested that I can retrieve the CRL by putting the HTTP path into a browser and I’m prompted to download a file.</p>
+
+<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Issuing CA.crl
+http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Offline Root CA.crl</pre>
+
+<p>Through having spent some time recently with setting up an Enterprise PKI in my lab and for a project, I’ve come to know the command line tool <a href="https://technet.microsoft.com/en-us/library/cc732443(v=ws.11).aspx">certutil.exe</a>. This tool is available in all versions of Windows and should be the first tool to use to troubleshoot and manage certificates and certificate authorities on Windows.</p>
+
+<p>Certutil can be used to perform many functions, one of which is to verify a CRL. I know the path to the CRL file because I can view the CRLs on the file system (in C:\Windows\System32\certsrv\CertEnroll) and I’ve <a href="http://stealthpuppy.com/deploy-enterprise-subordinate-certificate-authority/">previously configured CRLs for both CAs</a>.</p>
+
+<p>To verify the CRL, use the -URL switch with the HTTP (or LDAP) path to the CRL:</p>
+
+<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">certutil -URL "http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Issuing CA.crl"</pre>
+
+<p>This will display the <strong>URL Retrieval Tool</strong> that shows that the CRLs are able to be contacted and show a status of OK.</p>
+
+<figure id="attachment_5141" aria-describedby="caption-attachment-5141" style="width: 837px" class="wp-caption alignnone">[<img class="size-full wp-image-5141" src="http://stealthpuppy.com/wp-content/uploads/2016/09/certutilURLCRL.png" alt="Using certutil.exe to test the Offline CRL" width="837" height="507" srcset="http://192.168.0.89/wp-content/uploads/2016/09/certutilURLCRL.png 837w, http://192.168.0.89/wp-content/uploads/2016/09/certutilURLCRL-150x91.png 150w, http://192.168.0.89/wp-content/uploads/2016/09/certutilURLCRL-300x182.png 300w, http://192.168.0.89/wp-content/uploads/2016/09/certutilURLCRL-768x465.png 768w" sizes="(max-width: 837px) 100vw, 837px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/certutilURLCRL.png)<figcaption id="caption-attachment-5141" class="wp-caption-text">Using certutil.exe to test the Offline CRL</figcaption></figure>
+
+<p>However, if we load a target certificate, in this case, the subordinate CA’s cert, we can start to see why we have an issue with the CRL.</p>
+
+<p>Select the certificate for the subordinate CA that has been previously exported to the file system (in C:\Windows\System32\certsrv\CertEnroll) – click <strong>Select</strong>, open the certificate and click <strong>Retrieve</strong> again. This time, we can see a new line that shows that the base CRL for the subordinate CA’s certificate is <em>Expired</em>.</p>
+
+<figure id="attachment_5143" aria-describedby="caption-attachment-5143" style="width: 837px" class="wp-caption alignnone">[<img class="size-full wp-image-5143" src="http://stealthpuppy.com/wp-content/uploads/2016/09/IssuingCAExpiredBaseCRL.png" alt="An expired base CRL on the Subordinate CA" width="837" height="507" srcset="http://192.168.0.89/wp-content/uploads/2016/09/IssuingCAExpiredBaseCRL.png 837w, http://192.168.0.89/wp-content/uploads/2016/09/IssuingCAExpiredBaseCRL-150x91.png 150w, http://192.168.0.89/wp-content/uploads/2016/09/IssuingCAExpiredBaseCRL-300x182.png 300w, http://192.168.0.89/wp-content/uploads/2016/09/IssuingCAExpiredBaseCRL-768x465.png 768w" sizes="(max-width: 837px) 100vw, 837px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/IssuingCAExpiredBaseCRL.png)<figcaption id="caption-attachment-5143" class="wp-caption-text">An expired base CRL on the Subordinate CA</figcaption></figure>
+
+<p>The CRL for the subordinate CA’s certificate will come from the root CA, so we’ll need to check that CRL. Open the CRL file (<em>C:\windows\system32\certsrv\CertEnroll\stealthpuppy Offline Root CA.crl</em>) – double-click or right-click and <strong>Open</strong>. Here we can see the CRL information, including the next publishing time (Next CRL Publish).</p>
+
+<figure id="attachment_5147" aria-describedby="caption-attachment-5147" style="width: 419px" class="wp-caption alignnone">[<img class="size-full wp-image-5147" src="http://stealthpuppy.com/wp-content/uploads/2016/09/OfflineRootCA-CRL.png" alt="Viewing the properties of the Root CA's CRL" width="419" height="518" srcset="http://192.168.0.89/wp-content/uploads/2016/09/OfflineRootCA-CRL.png 419w, http://192.168.0.89/wp-content/uploads/2016/09/OfflineRootCA-CRL-121x150.png 121w, http://192.168.0.89/wp-content/uploads/2016/09/OfflineRootCA-CRL-243x300.png 243w" sizes="(max-width: 419px) 100vw, 419px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/OfflineRootCA-CRL.png)<figcaption id="caption-attachment-5147" class="wp-caption-text">Viewing the properties of the Root CA&#8217;s CRL</figcaption></figure>
+
+<p>At the time of troubleshooting, this date was in the past and because the Root CA is offline and the CRL is hosted on a different server (the subordinate CA), this particular CRL will never receive an update. So, when the subordinate CA has rebooted, it has checked the Root CA’s CRL and found it expired. Hence the certification authority service won’t start.</p>
+
+<h1 id="how-to-fix-it">How To Fix It</h1>
+
+<p>Now we know why the certification authority service won’t start and an understanding of why the CRL is offline, even if the wording doesn’t match the symptoms. If the error message had told me the CRL had expired instead of being offline, I might have saved some troubleshooting time. We now know that we need to re-publish the CRL from the Root CA.</p>
+
+<p>Start the offline Root CA, log into it and open the <strong>Certification Authority</strong> console. We will first want to ensure that the CRL publication interval is extended so that we don’t run into the same problem in the near future. Open the properties of the <strong>Revoked Certificates</strong> node to view and set the publication interval. The default interval is 1 week, obviously too often for an offline Root CA.</p>
+
+<p>Instead, set this value to something suitable for the environment you have installed the CA into. Remember that you’ll need to boot the Root CA and publish a new CRL before the end of this interval, otherwise, you’ll have exactly the same issue.</p>
+
+<figure id="attachment_5137" aria-describedby="caption-attachment-5137" style="width: 968px" class="wp-caption alignnone">[<img class="size-full wp-image-5137" src="http://stealthpuppy.com/wp-content/uploads/2016/08/rootCASettingCRLPublishingInterval.png" alt="Setting the CRL Publication Interval on the Root CA" width="968" height="570" srcset="http://192.168.0.89/wp-content/uploads/2016/08/rootCASettingCRLPublishingInterval.png 968w, http://192.168.0.89/wp-content/uploads/2016/08/rootCASettingCRLPublishingInterval-150x88.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/rootCASettingCRLPublishingInterval-300x177.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/rootCASettingCRLPublishingInterval-768x452.png 768w" sizes="(max-width: 968px) 100vw, 968px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/rootCASettingCRLPublishingInterval.png)<figcaption id="caption-attachment-5137" class="wp-caption-text">Setting the CRL Publication Interval on the Root CA</figcaption></figure>
+
+<p>Now publish a new CRL – right-click the <strong>Revoked Certificates</strong> node and click <strong>All Tasks</strong> / <strong>Publish</strong>.</p>
+
+<figure id="attachment_5149" aria-describedby="caption-attachment-5149" style="width: 968px" class="wp-caption alignnone">[<img class="size-full wp-image-5149" src="http://stealthpuppy.com/wp-content/uploads/2016/09/RootCAPublishingNewCRL.png" alt="Publishing a new CRL from the Root CA" width="968" height="570" srcset="http://192.168.0.89/wp-content/uploads/2016/09/RootCAPublishingNewCRL.png 968w, http://192.168.0.89/wp-content/uploads/2016/09/RootCAPublishingNewCRL-150x88.png 150w, http://192.168.0.89/wp-content/uploads/2016/09/RootCAPublishingNewCRL-300x177.png 300w, http://192.168.0.89/wp-content/uploads/2016/09/RootCAPublishingNewCRL-768x452.png 768w" sizes="(max-width: 968px) 100vw, 968px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/RootCAPublishingNewCRL.png)<figcaption id="caption-attachment-5149" class="wp-caption-text">Publishing a new CRL from the Root CA</figcaption></figure>
+
+<p>Copy the updated CRL (from <em>C:\Windows\System32\certsrv\CertEnroll</em> by default) from the Root CA to the CRL distribution point and overwrite the existing CRL file (<em>C:\Windows\System32\certsrv\CertEnroll</em> again on my subordinate CA).</p>
+
+<p>Now if we again use certutil.exe to verify the CRL, it comes up roses:</p>
+
+<figure id="attachment_5150" aria-describedby="caption-attachment-5150" style="width: 837px" class="wp-caption alignnone">[<img class="size-full wp-image-5150" src="http://stealthpuppy.com/wp-content/uploads/2016/09/verifiedCRL.png" alt="Viewing the verified CRL with certutil.exe" width="837" height="507" srcset="http://192.168.0.89/wp-content/uploads/2016/09/verifiedCRL.png 837w, http://192.168.0.89/wp-content/uploads/2016/09/verifiedCRL-150x91.png 150w, http://192.168.0.89/wp-content/uploads/2016/09/verifiedCRL-300x182.png 300w, http://192.168.0.89/wp-content/uploads/2016/09/verifiedCRL-768x465.png 768w" sizes="(max-width: 837px) 100vw, 837px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/verifiedCRL.png)<figcaption id="caption-attachment-5150" class="wp-caption-text">Viewing the verified CRL with certutil.exe</figcaption></figure>
+
+<p>To ensure that the subordinate CA’s certification authority service will start, re-enable CRL checking:</p>
+
+<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">certutil –setreg ca\CRLFlags -CRLF_REVCHECK_IGNORE_OFFLINE</pre>
+
+<p>If you have re-published the CRL from the Root CA correctly, the service should start and you can then shut down the Root CA. Then open Outlook and put a reminder in the calendar for a week before the CRL expires again.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>I’ve had this issue with an Offline CRL a few times now and not really understood what the issue is until I took the time to troubleshoot the issue properly. I don’t spend that much time with an enterprise PKI and it’s easy to underestimate the complexity of setting up AD Certificate Services correctly.</p>
+
+<p>This same issue has also caused me headaches with a <a href="http://social.technet.microsoft.com/wiki/contents/articles/9063.network-device-enrollment-service-ndes-in-active-directory-certificate-services-ad-cs.aspx">Network Device Enrollment Service</a> (NDES) deployment for issuing certificates to devices via Intune. The expired CRL has caused the NDES service to not start and the events logged do not mention in any way, an expired CRL.</p>
+
+  </div><a class="u-url" href="/resolving-issues-starting-ca-offline-crl/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

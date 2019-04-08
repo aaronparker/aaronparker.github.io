@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Sequencing Mozilla Firefox with App-V 5.x | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Sequencing Mozilla Firefox with App-V 5.x" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little preparation. Before embarking on sequencing Firefox, please refer to this companion article – Prepare Mozilla Firefox for Enterprise Deployment and Virtualization – which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features." />
+<meta property="og:description" content="It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little preparation. Before embarking on sequencing Firefox, please refer to this companion article – Prepare Mozilla Firefox for Enterprise Deployment and Virtualization – which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features." />
+<link rel="canonical" href="/sequencing-mozilla-firefox-with-app-v-5-x/" />
+<meta property="og:url" content="/sequencing-mozilla-firefox-with-app-v-5-x/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-03-16T21:46:47+11:00" />
+<script type="application/ld+json">
+{"description":"It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little preparation. Before embarking on sequencing Firefox, please refer to this companion article – Prepare Mozilla Firefox for Enterprise Deployment and Virtualization – which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/sequencing-mozilla-firefox-with-app-v-5-x/","headline":"Sequencing Mozilla Firefox with App-V 5.x","dateModified":"2013-03-16T21:46:47+11:00","datePublished":"2013-03-16T21:46:47+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/sequencing-mozilla-firefox-with-app-v-5-x/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Sequencing Mozilla Firefox with App-V 5.x</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2013-03-16T21:46:47+11:00" itemprop="datePublished">Mar 16, 2013
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img style="background-image: none; float: right; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" src="http://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" alt="" align="right" border="0" />It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little preparation. Before embarking on sequencing Firefox, please refer to this companion article – <a href="http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/">Prepare Mozilla Firefox for Enterprise Deployment and Virtualization</a> – which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features.</p>
+
+<h1 id="user-experience">User Experience</h1>
+
+<p>Typically, virtualizing an application changes the user experience due to the introduction of isolation. With App-V 5 there’s no such change to the way users might interact with Firefox. Users can even set a virtualized Firefox as their default browser.</p>
+
+<h1 id="firefox-features-to-disable">Firefox features to disable</h1>
+
+<p>There are a couple of features that should be disabled when running Firefox under App-V 5:</p>
+
+<ul>
+  <li>Automatic updates for Firefox – <em>Options / Advanced / Update / Firefox updates.</em> Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile</li>
+  <li><em>Mozilla Maintenance Service</em> – <a href="http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service">Firefox installs an updater service</a> that allows updating whilst avoiding UAC prompts. This service should be disabled or not installed</li>
+</ul>
+
+<p>Read the article <a href="http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/">Prepare Mozilla Firefox for Enterprise Deployment and Virtualization</a> for full details on removing these options during installation.</p>
+
+<h1 id="managing-the-firefox-profile">Managing the Firefox profile</h1>
+
+<p><a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">Firefox stores preferences, extensions and other user data</a> in:</p>
+
+<ul>
+  <li>%APPDATA%\Mozilla (preferences, bookmarks etc.); and</li>
+  <li>%LOCALAPPDATA%\Mozilla (browser cache)</li>
+</ul>
+
+<p>The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% – this is a good thing and I don’t recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding <strong>[{AppData}]\Mozilla</strong> to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time.</p>
+
+<p>Virtualizing the profile increases the complexity of upgrading Firefox packages especially challenging given <a href="http://www.zdnet.com/blog/bott/mozilla-to-enterprise-customers-drop-dead/3497">Mozilla’s approach to Firefox releases</a>. By storing the Firefox profile on the real file system, Firefox can be deployed via completely unrelated packages – no need to create upgrade versions. By excluding %APPDATA% and not virtualizing the user profile you will gain some flexibility with your Firefox deployment.</p>
+
+<h1 id="sequencing-platform">Sequencing Platform</h1>
+
+<p>Sequence Firefox on a clean Windows 7 SP1 x86 VM with all current updates and no other applications other than the App-V Sequencer. The Firefox version available from Mozilla is an x86 application, so I generally recommend sequencing Firefox on Windows 7 x86 virtual machine even though you may be deploying to 64-bit Windows. However confirm this in your own environment and re-sequence for 64-bit platforms if required.</p>
+
+<h1 id="sequencer-configuration">Sequencer Configuration</h1>
+
+<p>Before sequencing, add the following recommended exclusions. :</p>
+
+<ul>
+  <li>[{AppData}]\Mozilla</li>
+  <li>[{Common AppData}]\Microsoft\RAC</li>
+  <li>REGISTRY\USER\ [{AppVCurrentUserSID}]\Software\Microsoft\Windows\CurrentVersion\Internet Settings</li>
+</ul>
+
+<p>Download the following Sequencer Template as a starting point for your Firefox sequence:</p>
+
+<p class="download">
+  [download id=&#8221;61&#8243; format=&#8221;1&#8243;]
+</p>
+
+<h1 id="installing-firefox">Installing Firefox</h1>
+
+<p>Download the <a href="http://www.mozilla.com/firefox/all.html">Firefox installer in your target language from the Mozilla site</a>. <a href="http://technet.microsoft.com/en-US/library/jj713468.aspx">Sequence Firefox</a> by following these high level steps:</p>
+
+<ul>
+  <li>Install Firefox</li>
+  <li>Configure profile defaults and preferences locking</li>
+  <li>Optionally add global add-ons and install plug-ins such as <a href="https://www.adobe.com/devnet/flashplayer/enterprise_deployment.html">Adobe Flash Player</a> (assuming you want this in the same package)</li>
+</ul>
+
+<p>Automating this process as much as possible will create a cleaner package and make it faster to re-create a new Firefox package if required.</p>
+
+<ul>
+  <li>Mozilla <a href="https://wiki.mozilla.org/Installer:Command_Line_Arguments">Firefox installer command line arguments</a> – use the INI file approach to control where Firefox is installed and to prevent the addition of a desktop shortcut, if required</li>
+  <li>After installing Firefox, copy <em>user.js</em> to <em>%ProgramFiles%\Mozilla Firefox\defaults\profile</em></li>
+  <li>Copy <em>userChrome.css</em> to <em>%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome</em></li>
+  <li>Firefox also allows you to <a href="http://kb.mozillazine.org/Installing_extensions">add global add-ons by adding them to the Extensions sub-folder</a> of the Firefox installation folder</li>
+  <li>If you are including Adobe Flash player in the package, be sure to <a href="http://kb2.adobe.com/cps/167/16701594.html">disable the auto-update notification</a></li>
+</ul>
+
+<p>Before sequencing, copy all of the required files into the sequencing VM, which should like something like this:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="AppVFirefoxSetupFolder" src="http://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb.png" alt="AppVFirefoxSetupFolder" width="660" height="253" border="0" /></a></p>
+
+<p>For a walkthrough of the sequencing process, using the installation script outlined in <a href="http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/">the Firefox deployment article</a>, see the following screenshots:</p>
+
+<p>[nggallery id=3]</p>
+
+<h1 id="first-run-tasks-and-primary-feature-block">First Run Tasks and Primary Feature Block</h1>
+
+<p>If the steps above have been followed for exclusions, installation and configuration of Firefox, there will be no first run tasks to complete. Additionally the resultant package will be reasonably small so there is no need to create the Primary Feature Block. Because you don’t need to complete first run tasks or create the Primary Feature Block, you could automate the entire end-to-end process of creating a Firefox package using the App-V 5 Sequencer PowerShell module.</p>
+
+<h1 id="automating-the-firefox-sequence">Automating the Firefox sequence</h1>
+
+<p>With the provided script, sequencing Firefox with the App-V 5 PowerShell module is very simple. Use the PowerShell script below to create a Firefox package based on the steps outlined above.</p>
+
+<pre class="lang:ps decode:true  ">Import-Module AppvSequencera
+New-Item -Path C:\Packages\MozillaFirefox19 -ItemType Directory
+CD C:\Packages\Firefox19
+New-AppvSequencerPackage -Name "Mozilla Firefox 19" -TemplateFilePath .\AppV5SequencerTemplate.appvt -OutputPath C:\Packages -PrimaryVirtualApplicationDirectory C:\MozillaFirefox -Installer .\InstallFirefox.cmd</pre>
+
+<h1 id="finally">Finally</h1>
+
+<p>Save your package and deploy. With compression enabled, the package should be around 27Mb.</p>
+
+  </div><a class="u-url" href="/sequencing-mozilla-firefox-with-app-v-5-x/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

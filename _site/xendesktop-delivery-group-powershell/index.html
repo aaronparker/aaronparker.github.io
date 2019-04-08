@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Creating a XenDesktop Delivery Group with PowerShell | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Creating a XenDesktop Delivery Group with PowerShell" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="My last article was on creating a XenDesktop machine catalog with PowerShell – in this article I’m going to create a Delivery Group which provides access to the virtual machines that a part of that catalog." />
+<meta property="og:description" content="My last article was on creating a XenDesktop machine catalog with PowerShell – in this article I’m going to create a Delivery Group which provides access to the virtual machines that a part of that catalog." />
+<link rel="canonical" href="/xendesktop-delivery-group-powershell/" />
+<meta property="og:url" content="/xendesktop-delivery-group-powershell/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-08-26T08:00:16+10:00" />
+<script type="application/ld+json">
+{"description":"My last article was on creating a XenDesktop machine catalog with PowerShell – in this article I’m going to create a Delivery Group which provides access to the virtual machines that a part of that catalog.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/xendesktop-delivery-group-powershell/","headline":"Creating a XenDesktop Delivery Group with PowerShell","dateModified":"2014-08-26T08:00:16+10:00","datePublished":"2014-08-26T08:00:16+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/xendesktop-delivery-group-powershell/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Creating a XenDesktop Delivery Group with PowerShell</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-08-26T08:00:16+10:00" itemprop="datePublished">Aug 26, 2014
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>My last article was on <a href="http://stealthpuppy.com/xendesktop-mcs-machine-catalog-powershell/">creating a XenDesktop machine catalog with PowerShell</a> – in this article I’m going to create a Delivery Group which provides access to the virtual machines that a part of that catalog.</p>
+
+<p>Like the last article, I’ve taken the PowerShell generated by Citrix Studio, banged my head against the wall a few times, and improved it to create the code presented in this article.</p>
+
+<h1 id="linking-the-code-to-the-ui">Linking the Code to the UI</h1>
+
+<p>To help explain the code, I’ll first run through the Create Delivery Group wizard and show how the code relates to options in the wizard and the Delivery Group properties.</p>
+
+<p><em><a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/add-brokermachinestodesktopgroup-xd75.html">Add-BrokerMachinesToDesktopGroup</a></em> assigns virtual machines from a specified Machine Catalog to the new Delivery Group.</p>
+
+<figure id="attachment_3668" aria-describedby="caption-attachment-3668" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3668" src="http://stealthpuppy.com/wp-content/uploads/2014/08/Machines.png" alt="Selecting the Machine Catalog and the number of desktops - Add-BrokerMachinesToDesktopGroup -Catalog &quot;Windows 8 x86&quot; -Count 5" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/Machines.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/Machines-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/Machines-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/Machines-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/Machines.png)<figcaption id="caption-attachment-3668" class="wp-caption-text">Selecting the Machine Catalog and the number of desktops &#8211; Add-BrokerMachinesToDesktopGroup -Catalog &#8220;Windows 8 x86&#8221; -Count 5</figcaption></figure>
+
+<p>Specify the delivery type for this Delivery Group when using <em><a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerdesktopgroup-xd75.html">New-BrokerDesktopGroup</a></em>.</p>
+
+<figure id="attachment_3669" aria-describedby="caption-attachment-3669" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3669" src="http://stealthpuppy.com/wp-content/uploads/2014/08/DeliveryType.png" alt="Selecting the delivery type - New-BrokerDesktopGroup  -DeliveryType 'DesktopsOnly'" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/DeliveryType.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/DeliveryType-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/DeliveryType-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/DeliveryType-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/DeliveryType.png)<figcaption id="caption-attachment-3669" class="wp-caption-text">Selecting the delivery type &#8211; New-BrokerDesktopGroup -DeliveryType &#8216;DesktopsOnly&#8217;</figcaption></figure>
+
+<p><a href="#http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerentitlementpolicyrule-xd75.html"><em>New-BrokerEntitlementPolicyRule</em></a> is used to assign user or group accounts to the Delivery Group.</p>
+
+<figure id="attachment_3670" aria-describedby="caption-attachment-3670" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3670" src="http://stealthpuppy.com/wp-content/uploads/2014/08/Users.png" alt="Assigning users to the Desktop Group - New-BrokerEntitlementPolicyRule -Name &quot;Windows 8 x86_1&quot; -IncludedUsers $brokerUsers -DesktopGroupUid 11" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/Users.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/Users-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/Users-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/Users-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/Users.png)<figcaption id="caption-attachment-3670" class="wp-caption-text">Assigning users to the Desktop Group &#8211; New-BrokerEntitlementPolicyRule -Name &#8220;Windows 8 x86_1&#8221; -IncludedUsers &#8220;HOME\Domain Users&#8221; -DesktopGroupUid 11</figcaption></figure>
+
+<p><a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/add-brokermachineconfiguration-xd75.html"><em>Add-BrokerMachineConfiguration</em></a> adds StoreFront and UPM configurations to a Delivery Group. The function just adds a machine configuration – the configuration is setup separately. To avoid selecting a StoreFront server for the Delivery Group, don’t use this function.</p>
+
+<figure id="attachment_3672" aria-describedby="caption-attachment-3672" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3672" src="http://stealthpuppy.com/wp-content/uploads/2014/08/StoreFrontAutomatic.png" alt="Selecting a StoreFront server - Add-BrokerMachineConfiguration -DesktopGroup &quot;Windows 8 x86&quot; -InputObject @(1005)" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/StoreFrontAutomatic.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/StoreFrontAutomatic-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/StoreFrontAutomatic-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/StoreFrontAutomatic-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/StoreFrontAutomatic.png)<figcaption id="caption-attachment-3672" class="wp-caption-text">Selecting a StoreFront server &#8211; Add-BrokerMachineConfiguration -DesktopGroup &#8220;Windows 8 x86&#8221; -InputObject @(1005)</figcaption></figure>
+
+<p>When calling <a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerdesktopgroup-xd75.html"><em>New-BrokerDesktopGroup</em></a>, the Delivery Group name, display or published name and description is specified.</p>
+
+<figure id="attachment_3673" aria-describedby="caption-attachment-3673" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3673" src="http://stealthpuppy.com/wp-content/uploads/2014/08/Summary.png" alt="Group name, Display name and description - New-BrokerDesktopGroup -Name &quot;Windows 8 x86&quot; -PublishedName &quot;Windows 8 x86&quot; -Description &quot;Windows 8 x86 with Office 2013, Pooled desktops&quot;" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/Summary.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/Summary-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/Summary-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/Summary-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/Summary.png)<figcaption id="caption-attachment-3673" class="wp-caption-text">Group name, Display name and description &#8211; New-BrokerDesktopGroup -Name &#8220;Windows 8 x86&#8221; -PublishedName &#8220;Windows 8 x86&#8221; -Description &#8220;Windows 8 x86 with Office 2013, Pooled desktops&#8221;</figcaption></figure>
+
+<p>The wizard does not expose all settings for the Delivery Group, so additional settings require opening the properties of the new group. These can be set during creation of the group when using PowerShell.</p>
+
+<p>The same call to <em><a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerdesktopgroup-xd75.html">New-BrokerDesktopGroup</a></em> is used to specify user settings including colour depth and time zone preferences.</p>
+
+<figure id="attachment_3675" aria-describedby="caption-attachment-3675" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3675" src="http://stealthpuppy.com/wp-content/uploads/2014/08/UserSettings.png" alt="Controlling various user settings - New-BrokerDesktopGroup -ColorDepth TwentyFourBit -TimeZone &quot;AUS Eastern Standard Time&quot; -SecureIcaRequired $False" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/UserSettings.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/UserSettings-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/UserSettings-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/UserSettings-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/UserSettings.png)<figcaption id="caption-attachment-3675" class="wp-caption-text">Controlling various user settings &#8211; New-BrokerDesktopGroup -ColorDepth TwentyFourBit -TimeZone &#8220;AUS Eastern Standard Time&#8221; -SecureIcaRequired $False</figcaption></figure>
+
+<p><em><a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerdesktopgroup-xd75.html">New-BrokerDesktopGroup</a></em> and <a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerpowertimescheme-xd75.html"><em>New-BrokerPowerTimeScheme</em></a> are both used to manage virtual machine power management settings. Setting or modifying the peak and off peak hours isn’t friendly either.</p>
+
+<figure id="attachment_3676" aria-describedby="caption-attachment-3676" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3676" src="http://stealthpuppy.com/wp-content/uploads/2014/08/PowerManagement.png" alt="Virtual machine power management settings - New-BrokerPowerTimeScheme -DisplayName 'Weekdays' -DaysOfWeek 'Weekdays' -DesktopGroupUid 11; New-BrokerDesktopGroup -OffPeakDisconnectAction Suspend -OffPeakDisconnectTimeout 15" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/PowerManagement.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/PowerManagement-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/PowerManagement-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/PowerManagement-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/PowerManagement.png)<figcaption id="caption-attachment-3676" class="wp-caption-text">Virtual machine power management settings &#8211; New-BrokerPowerTimeScheme -DisplayName &#8216;Weekdays&#8217; -DaysOfWeek &#8216;Weekdays&#8217; -DesktopGroupUid 11; New-BrokerDesktopGroup -OffPeakDisconnectAction Suspend -OffPeakDisconnectTimeout 15</figcaption></figure>
+
+<p><a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokeraccesspolicyrule-xd75.html"><em>New-BrokerAccessPolicyRule</em></a> modifies the access policies. This is called twice – once for connections through NetScaler Gateway and once for direct connections.</p>
+
+<figure id="attachment_3677" aria-describedby="caption-attachment-3677" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3677" src="http://stealthpuppy.com/wp-content/uploads/2014/08/AccessPolicy.png" alt="Modifying access policies - New-BrokerAccessPolicyRule -Name &quot;Windows 8 x86_AG&quot; -AllowedConnections 'ViaAG' -AllowedProtocols @('HDX','RDP') -DesktopGroupUid 11 -Enabled $True -IncludedSmartAccessFilterEnabled $True -IncludedSmartAccessTags @() -IncludedUserFilterEnabled $True" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/AccessPolicy.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/AccessPolicy-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/AccessPolicy-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/AccessPolicy-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/AccessPolicy.png)<figcaption id="caption-attachment-3677" class="wp-caption-text">Modifying access policies &#8211; New-BrokerAccessPolicyRule -Name &#8220;Windows 8 x86_AG&#8221; -AllowedConnections &#8216;ViaAG&#8217; -AllowedProtocols @(&#8216;HDX&#8217;,&#8217;RDP&#8217;) -DesktopGroupUid 11 -Enabled $True -IncludedSmartAccessFilterEnabled $True -IncludedSmartAccessTags @() -IncludedUserFilterEnabled $True</figcaption></figure>
+
+<p>Creating the Delivery Group is relatively straight-forward; however there are some additional steps, such as creating a StoreFront server and working out how to manage peak and off peak times, that require a bit more investigation.</p>
+
+<h1 id="the-code">The Code</h1>
+
+<p>Below is the full code listing with comments inline that should provide some detail on the process the code follows. At this point the code provides some error checking for the most important steps. There are still some additional steps and error checking that could be integrated into the code.</p>
+
+<pre class="lang:ps decode:true" title="Creating a XenDesktop Delivery Group">#---------------------------------------------------------------------------
+# Author: Aaron Parker
+# Desc:   Using PowerShell to create a XenDesktop 7.x Delivery Group 
+# Date:   Aug 23, 2014
+# Site:   http://stealthpuppy.com
+#---------------------------------------------------------------------------
+# 
+
+# Set variables for the target infrastructure
+# ----------
+$adminAddress = 'xd71.home.stealthpuppy.com' #The XD Controller we're going to execute against
+$xdControllers = 'xd71.home.stealthpuppy.com'
+
+# Desktop Group properties
+$desktopGroupName = "Windows 8 desktops"
+$desktopGroupPublishedName = "Windows 8 desktops"
+$desktopGroupDesc = "Windows 8 x86 with Office 2013, Pooled desktops"
+$colorDepth = 'TwentyFourBit'
+$deliveryType = 'DesktopsOnly'
+$desktopKind = 'Shared'
+$sessionSupport = "SingleSession" #Also: MultiSession
+$functionalLevel = 'L7'
+$timeZone = 'AUS Eastern Standard Time'
+$offPeakBuffer = 10
+$peakBuffer = 10
+$assignedGroup = "HOME\Domain Users"
+
+#Machine Catalog
+$machineCatalogName = "Windows 8 x86"
+# ----------
+
+# Change to SilentlyContinue to avoid verbose output
+$VerbosePreference = "Continue"
+
+# Create the Desktop Group
+# http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerdesktopgroup-xd75.html
+If (!(Get-BrokerDesktopGroup -Name $desktopGroupName -ErrorAction SilentlyContinue)) {
+    Write-Verbose "Creating new Desktop Group: $desktopGroupName"
+    $desktopGroup = New-BrokerDesktopGroup -ErrorAction SilentlyContinue -AdminAddress $adminAddress -Name $desktopGroupName -DesktopKind $desktopKind -DeliveryType $deliveryType -Description $desktopGroupPublishedName -PublishedName $desktopGroupPublishedName  -MinimumFunctionalLevel $functionalLevel -ColorDepth $colorDepth -SessionSupport $sessionSupport -ShutdownDesktopsAfterUse $True -TimeZone $timeZone -InMaintenanceMode $False -IsRemotePC $False -OffPeakBufferSizePercent $offPeakBuffer -PeakBufferSizePercent $peakBuffer -SecureIcaRequired $False -TurnOnAddedMachine $False -OffPeakDisconnectAction Suspend -OffPeakDisconnectTimeout 15 -Scope @() 
+}
+
+# At this point, we have a Desktop Group, but no users or desktops assigned to it, no power management etc.
+# Open the properties of the new Desktop Group to see what's missing.
+
+# If creation of the desktop group was successful, continue modifying its properties
+If ($desktopGroup) {
+
+    # Add a machine configuration to the new desktop group; This line adds an existing StoreFront server to the desktop group
+    # Where does Input Object 1005 come from?
+    # http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/add-brokermachineconfiguration-xd75.html
+    # Write-Verbose "Adding machine configuration to the Desktop Group: $desktopGroupName"
+    # Add-BrokerMachineConfiguration -AdminAddress $adminAddress -DesktopGroup $desktopGroup -InputObject @(1005)
+
+    # Add machines to the new desktop group. Uses the number of machines available in the target machine catalog
+    # http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/add-brokermachinestodesktopgroup-xd75.html
+    Write-Verbose "Getting details for the Machine Catalog: $machineCatalogName"
+    $machineCatalog = Get-BrokerCatalog -AdminAddress $adminAddress -Name $machineCatalogName
+    Write-Verbose "Adding $machineCatalog.UnassignedCount machines to the Desktop Group: $desktopGroupName"
+    $machinesCount = Add-BrokerMachinesToDesktopGroup -AdminAddress $adminAddress -Catalog $machineCatalog -Count $machineCatalog.UnassignedCount -DesktopGroup $desktopGroup
+
+    # Create a new broker user/group object if it doesn't already exist
+    # http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokeruser-xd75.html
+    Write-Verbose "Creating user/group object in the broker for $assignedGroup"
+    If (!(Get-BrokerUser -AdminAddress $adminAddress -Name $assignedGroup -ErrorAction SilentlyContinue)) {
+        $brokerUsers = New-BrokerUser -AdminAddress $adminAddress -Name $assignedGroup
+    } Else {
+        $brokerUsers = Get-BrokerUser -AdminAddress $adminAddress -Name $assignedGroup
+    }
+
+    # Create an entitlement policy for the new desktop group. Assigned users to the desktop group
+    # First check that we have an entitlement name available. Increment until we do.
+    $Num = 1
+    Do {
+        # http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/test-brokerentitlementpolicyrulenameavailable-xd75.html
+        $Test = Test-BrokerEntitlementPolicyRuleNameAvailable -AdminAddress $adminAddress -Name @($desktopGroupName + "_" + $Num.ToString()) -ErrorAction SilentlyContinue
+        If ($Test.Available -eq $False) { $Num = $Num + 1 }
+    } While ($Test.Available -eq $False)
+    #http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerentitlementpolicyrule-xd75.html
+    Write-Verbose "Assigning $brokerUsers.Name to Desktop Catalog: $machineCatalogName"
+    $EntPolicyRule = New-BrokerEntitlementPolicyRule -AdminAddress $adminAddress  -Name ($desktopGroupName + "_" + $Num.ToString()) -IncludedUsers $brokerUsers -DesktopGroupUid $desktopGroup.Uid -Enabled $True -IncludedUserFilterEnabled $False
+
+    # Check whether access rules exist and then create rules for direct access and via Access Gateway
+    # http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokeraccesspolicyrule-xd75.html
+    $accessPolicyRule = $desktopGroupName + "_Direct"
+    If (Test-BrokerAccessPolicyRuleNameAvailable -AdminAddress $adminAddress -Name @($accessPolicyRule) -ErrorAction SilentlyContinue) {
+        Write-Verbose "Allowing direct access rule to the Desktop Catalog: $machineCatalogName"
+        New-BrokerAccessPolicyRule -AdminAddress $adminAddress -Name $accessPolicyRule  -IncludedUsers @($brokerUsers.Name) -AllowedConnections 'NotViaAG' -AllowedProtocols @('HDX','RDP') -AllowRestart $True -DesktopGroupUid $desktopGroup.Uid -Enabled $True -IncludedSmartAccessFilterEnabled $True -IncludedUserFilterEnabled $True
+    } Else {
+        Write-Error "Failed to add direct access rule $accessPolicyRule. It already exists."
+    }
+    $accessPolicyRule = $desktopGroupName + "_AG"
+    If (Test-BrokerAccessPolicyRuleNameAvailable -AdminAddress $adminAddress -Name @($accessPolicyRule) -ErrorAction SilentlyContinue) {
+        Write-Verbose "Allowing access via Access Gateway rule to the Desktop Catalog: $machineCatalogName"
+        New-BrokerAccessPolicyRule -AdminAddress $adminAddress -Name $accessPolicyRule -IncludedUsers @($brokerUsers.Name) -AllowedConnections 'ViaAG' -AllowedProtocols @('HDX','RDP') -AllowRestart $True -DesktopGroupUid $desktopGroup.Uid -Enabled $True -IncludedSmartAccessFilterEnabled $True -IncludedSmartAccessTags @() -IncludedUserFilterEnabled $True
+    } Else {
+        Write-Error "Failed to add Access Gateway rule $accessPolicyRule. It already exists."
+    }
+
+    # Create weekday and weekend access rules
+    # http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerpowertimescheme-xd75.html
+    $powerTimeScheme = "Windows 8 Pooled Desktop_Weekdays"
+    If (Test-BrokerPowerTimeSchemeNameAvailable -AdminAddress $adminAddress -Name @($powerTimeScheme) -ErrorAction SilentlyContinue) {
+        Write-Verbose "Adding new power scheme $powerTimeScheme"
+        New-BrokerPowerTimeScheme -AdminAddress $adminAddress -DisplayName 'Weekdays' -Name $powerTimeScheme -DaysOfWeek 'Weekdays' -DesktopGroupUid $desktopGroup.Uid -PeakHours @($False,$False,$False,$False,$False,$False,$False,$True,$True,$True,$True,$True,$True,$True,$True,$True,$True,$True,$True,$False,$False,$False,$False,$False) -PoolSize @(0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0)
+    } Else {
+        Write-Error "Failed to add power scheme rule $powerTimeScheme. It already exists."
+    }
+    $powerTimeScheme = "Windows 8 Pooled Desktop_Weekend"
+    If (Test-BrokerPowerTimeSchemeNameAvailable -AdminAddress $adminAddress -Name @($powerTimeScheme) -ErrorAction SilentlyContinue) {
+        Write-Verbose "Adding new power scheme $powerTimeScheme"
+        New-BrokerPowerTimeScheme -AdminAddress $adminAddress -DisplayName 'Weekend' -Name $powerTimeScheme -DaysOfWeek 'Weekend' -DesktopGroupUid $desktopGroup.Uid -PeakHours @($False,$False,$False,$False,$False,$False,$False,$True,$True,$True,$True,$True,$True,$True,$True,$True,$True,$True,$True,$False,$False,$False,$False,$False) -PoolSize @(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+    } Else {
+        Write-Error "Failed to add power scheme rule $powerTimeScheme. It already exists."
+    }
+
+} #End If DesktopGroup
+</pre>
+
+<p>Comments or feedback on bugs, better ways to do things or additional steps is welcome.</p>
+
+  </div><a class="u-url" href="/xendesktop-delivery-group-powershell/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

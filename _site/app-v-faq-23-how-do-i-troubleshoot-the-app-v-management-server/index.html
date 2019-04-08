@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>App-V FAQ: How do I troubleshoot the App-V Management Server? | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="App-V FAQ: How do I troubleshoot the App-V Management Server?" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Common scenarios for troubleshooting the Management Server (or the Streaming Server) are connectivity issues between the client and server, opening the Management Console from a remote machine and upgrading the Management Server." />
+<meta property="og:description" content="Common scenarios for troubleshooting the Management Server (or the Streaming Server) are connectivity issues between the client and server, opening the Management Console from a remote machine and upgrading the Management Server." />
+<link rel="canonical" href="/app-v-faq-23-how-do-i-troubleshoot-the-app-v-management-server/" />
+<meta property="og:url" content="/app-v-faq-23-how-do-i-troubleshoot-the-app-v-management-server/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-09-01T11:00:00+10:00" />
+<script type="application/ld+json">
+{"description":"Common scenarios for troubleshooting the Management Server (or the Streaming Server) are connectivity issues between the client and server, opening the Management Console from a remote machine and upgrading the Management Server.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/app-v-faq-23-how-do-i-troubleshoot-the-app-v-management-server/","headline":"App-V FAQ: How do I troubleshoot the App-V Management Server?","dateModified":"2010-09-01T11:00:00+10:00","datePublished":"2010-09-01T11:00:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/app-v-faq-23-how-do-i-troubleshoot-the-app-v-management-server/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">App-V FAQ: How do I troubleshoot the App-V Management Server?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-09-01T11:00:00+10:00" itemprop="datePublished">Sep 1, 2010
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img style="margin: 0px 10px 5px 0px; display: inline;" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="right" />Common scenarios for troubleshooting the Management Server (or the Streaming Server) are connectivity issues between the client and server, opening the Management Console from a remote machine and upgrading the Management Server.</p>
+
+<h3 id="before-you-deploy">Before you Deploy</h3>
+
+<p>If you’re new to App-V I recommend reading the existing documentation on how to deploy the Management Server software to save you from having to troubleshoot issues later on. The <a href="http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-V/App-V%204.6%20SP1%20Trial%20Guide.docx">Microsoft Application Virtualization Version 4.6 SP1 Trial Guide</a> is available for download, or you can follow these articles available on TechNet:</p>
+
+<ol>
+  <li><a href="http://technet.microsoft.com/en-gb/library/cc843803.aspx">How to Install Application Virtualization Management Server</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/cc817085.aspx">How to Install the Application Virtualization Streaming Server</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/cc817146.aspx">How to Install the Management Web Service</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/cc843742.aspx">How to Install a Database</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/cc817095.aspx">How to Configure the Application Virtualization Management Servers</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/cc843709.aspx">How to Configure the Application Virtualization Streaming Servers</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/cc843650.aspx">How to Configure the IIS Server</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/ee675779.aspx">How to Configure the Server to be Trusted for Delegation</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/ff361465.aspx">Configuring the Firewall for the App-V Servers</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/ff361458.aspx">How to Install and Configure the Default Application</a></li>
+</ol>
+
+<h3 id="troubleshooting-tools">Troubleshooting Tools</h3>
+
+<p>There are three tools that you should reach for when troubleshooting the Management Server or the Streaming Server:</p>
+
+<ul>
+  <li>The Application Event log on the server</li>
+  <li>The App-V Management Server log</li>
+  <li>The App-V Ping Tool</li>
+</ul>
+
+<p>When viewing the Application event log, filter the log (right-click / <em>Filter Current Log…</em>) and use these Event sources – Application Virtualization and Application Virtualization Server.</p>
+
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-ApplicationEventLog" src="http://stealthpuppy.com/wp-content/uploads/2010/08/AppVApplicationEventLog.png" alt="AppV-ApplicationEventLog" width="660" height="416" border="0" /></p>
+
+<p>The App-V Management Server event log is located in:</p>
+
+<ul>
+  <li>x86: C:\Program Files\Microsoft System Center App Virt Management Server\App Virt Management Server\logs</li>
+  <li>x64: C:\Program Files (x86)\Microsoft System Center App Virt Management Server\App Virt Management Server\logs</li>
+</ul>
+
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Server-Logfile-location" src="http://stealthpuppy.com/wp-content/uploads/2010/08/AppVServerLogfilelocation.png" alt="AppV-Server-Logfile-location" width="660" height="177" border="0" /></p>
+
+<p>There are a couple of great posts on using the log files to troubleshoot issues with the log file: <a href="http://blogs.technet.com/b/appv/archive/2009/01/26/troubleshooting-app-v-with-log-files.aspx">Troubleshooting App-V with log files</a>  and <a href="http://blogs.technet.com/b/virtualworld/archive/2009/04/10/getting-to-grip-with-the-app-v-server-log-file-sft-server-log.aspx">Getting to Grip with the App-V Server Log File (sft-server.log)</a>.</p>
+
+<p>Although you can use Telnet to check connectivity issues, you should first reach for the App-V Ping Tool by <a href="http://immidio.com/">Immidio</a>. This command-line application comes as a part of the <a href="http://immidio.com/resourcekit/">Immidio Resource Kit</a>, which is free. I can’t speak highly enough of the App-V Ping Tool, it’s the fastest and easiest way to determine whether the Management Server is contactable.</p>
+
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-PingTool-Output" src="http://stealthpuppy.com/wp-content/uploads/2010/08/AppVPingToolOutput.png" alt="AppV-PingTool-Output" width="660" height="367" border="0" /></p>
+
+<h3 id="resources">Resources</h3>
+
+<p>The following articles and blog posts are excellent resources for troubleshooting the Management Server:</p>
+
+<ul>
+  <li><a href="http://technet.microsoft.com/en-us/library/ff699130.aspx">App-V 4.5 SP2 Release Notes</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/cc843634.aspx">Application Virtualization Server-Based Scenario</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/dd351443.aspx">Troubleshooting Information for the Application Virtualization Server</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2010/06/30/new-video-on-how-to-fix-common-app-v-configuration-issues.aspx">New video on how to fix common App-V configuration issues</a></li>
+  <li><a href="http://technet.microsoft.com/en-us/library/ff361465.aspx">Configuring the Firewall for the App-V Servers</a></li>
+  <li>This is a great article &gt; <a href="http://blogs.technet.com/b/appvcallback/archive/2010/08/03/app-v-troubleshooting-known-issues-and-general-resources.aspx">App-V Troubleshooting, Known Issues and General Resources</a></li>
+  <li><a href="http://social.technet.microsoft.com/Forums/en-gb/appvserverandmanagement/threads">App-V Server and Management threads on the TechNet Forums</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2009/04/30/resolving-a-couple-common-softgrid-app-v-management-console-issues.aspx">Resolving a couple common SoftGrid/App-V Management Console issues</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2010/03/24/network-devices-that-use-rtsp-inspection-may-cause-problems-in-specific-app-v-scenarios.aspx">Network devices that use RTSP Inspection may cause problems in specific App-V scenarios</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2008/11/19/app-v-server-install-error-the-installation-program-was-unable-to-create-the-required-iis-virtual-directory.aspx">App-V server install error “The Installation program was unable to create the required IIS virtual directory”</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2008/10/23/error-25109-the-installation-program-could-not-create-the-configuration-data-store.aspx">Error 25109: The installation program could not create the configuration data store</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2008/08/21/how-to-configure-the-app-v-management-server-service-to-run-as-a-service-account.aspx">How to configure the App-V Management Server Service to run as a Service Account</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2010/03/09/troubleshooting-common-rtsps-issues-with-app-v.aspx">Troubleshooting Common RTSPS Issues with App-V</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2009/01/26/troubleshooting-app-v-with-log-files.aspx">Troubleshooting App-V with log files</a></li>
+  <li><a href="http://blogs.technet.com/b/virtualworld/archive/2009/04/10/getting-to-grip-with-the-app-v-server-log-file-sft-server-log.aspx">Getting to Grip with the App-V Server Log File (sft-server.log)</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2010/06/03/publishing-refresh-succeeded-but-where-are-my-icons-troubleshooting-some-common-publishing-issues-in-microsoft-app-v.aspx">Publishing Refresh succeeded but where are my icons? Troubleshooting some common publishing issues in Microsoft App-V</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2010/05/10/pre-creation-of-server-objects-may-yield-certain-sub-optimal-values-in-the-app-v-sql-database.aspx">Pre-creation of Server objects may yield certain sub-optimal values in the App-V SQL Database</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2008/09/08/the-top-three-rookie-mistakes-part-2.aspx">The Top Three Rookie Mistakes – Part 1</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2008/09/08/the-top-three-rookie-mistakes-part-2.aspx">The Top Three Rookie Mistakes – Part 2</a></li>
+  <li>SQL Server permissions: <a href="http://msdn.microsoft.com/en-us/library/ms143504.aspx">Setting Up Windows Service Accounts</a></li>
+</ul>
+
+<h3 id="knowledgebase-articles">Knowledgebase Articles</h3>
+
+<p>The KB articles will help you solve specific issues that you may experience:</p>
+
+<ul>
+  <li><a href="http://support.microsoft.com/kb/930871">How to interpret the messages in the SoftGrid Virtual Application Server log</a></li>
+  <li><a href="http://support.microsoft.com/kb/959459/">Microsoft Application Virtualization Management Service fails to Start when installed on the same machine as SQL Server 2005</a></li>
+  <li><a href="http://support.microsoft.com/kb/959413/">Application Virtualization Clients are not able to stream content from an Application Virtualization 4.5 Streaming Server</a></li>
+  <li><a href="http://support.microsoft.com/kb/2212140/">Error 25100 or 25122 when installing the Microsoft Application Virtualization Management service</a></li>
+  <li><a href="http://support.microsoft.com/kb/976641/">Error message when you upgrade the SQL Server database role from Application Virtualization Management Server 4.1 to Application Virtualization Management Server 4.5: “Error 25119”</a></li>
+  <li><a href="http://support.microsoft.com/kb/930565/">Error message when you connect to the SoftGrid Management Web Service from the SoftGrid Management Console: “Error code: 0000C800”</a></li>
+  <li><a href="http://support.microsoft.com/kb/932136/">How to migrate the Microsoft SoftGrid database from one computer that is running Microsoft SQL Server to another computer that is running SQL Server</a></li>
+  <li><a href="http://support.microsoft.com/kb/2266600">Using the Refresh Server option to refresh a Publishing Server from the Microsoft Application Virtualization Client MMC snap-in results in error code 04-00000917</a></li>
+  <li><a href="http://support.microsoft.com/kb/2266481">Using the Refresh Server option to refresh a Publishing Server from the Microsoft Application Virtualization Client MMC snap-in results in error code 2A-0000274D</a></li>
+  <li><a href="http://support.microsoft.com/kb/930469/">Error message when you try to connect to the SoftGrid Management Web Service from the SoftGrid Management Console: “Error code: 0000C802”</a></li>
+</ul>
+
+  </div><a class="u-url" href="/app-v-faq-23-how-do-i-troubleshoot-the-app-v-management-server/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

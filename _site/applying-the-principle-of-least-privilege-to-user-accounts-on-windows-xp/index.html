@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Applying the Principle of Least Privilege to User Accounts on Windows XP | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Applying the Principle of Least Privilege to User Accounts on Windows XP" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Here’s an excellent document I’ve added to my list of articles to give to clients:" />
+<meta property="og:description" content="Here’s an excellent document I’ve added to my list of articles to give to clients:" />
+<link rel="canonical" href="/applying-the-principle-of-least-privilege-to-user-accounts-on-windows-xp/" />
+<meta property="og:url" content="/applying-the-principle-of-least-privilege-to-user-accounts-on-windows-xp/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-01-19T14:07:00+11:00" />
+<script type="application/ld+json">
+{"description":"Here’s an excellent document I’ve added to my list of articles to give to clients:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/applying-the-principle-of-least-privilege-to-user-accounts-on-windows-xp/","headline":"Applying the Principle of Least Privilege to User Accounts on Windows XP","dateModified":"2006-01-19T14:07:00+11:00","datePublished":"2006-01-19T14:07:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/applying-the-principle-of-least-privilege-to-user-accounts-on-windows-xp/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Applying the Principle of Least Privilege to User Accounts on Windows XP</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2006-01-19T14:07:00+11:00" itemprop="datePublished">Jan 19, 2006
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Here’s an excellent document I’ve added to my list of articles to give to clients:</p>
+
+<p><strong>Applying the Principle of Least Privilege to User Accounts on Windows XP</strong><br />
+<a href="http://www.microsoft.com/technet/prodtechnol/winxppro/maintain/luawinxp.mspx">http://www.microsoft.com/technet/prodtechnol/winxppro/maintain/luawinxp.mspx</a></p>
+
+<blockquote>
+  <p>“Recent advances in networking technology such as permanent connectivity to the Internet have brought enormous opportunities to organizations of all sizes. Unfortunately, a connection between a computer and any network, especially the Internet, increases the level of risk from malicious software and external attackers, and as old risks are managed, new ones are discovered or created.</p>
+
+  <p>Sophos, an Internet security company, found that the number of malicious programs detected rose from 45,879 in November of 1999 to 114,082 in November of 2005, an increase of at least 10 percent every year for the last six years. In November of 2005, Sophos discovered more than 1,900 new examples of malicious software, such as viruses, Trojan horses, and spyware programs. Other antivirus vendors report similar increases in the numbers and types of malicious software.</p>
+
+  <p>A significant factor that increases the risks from malicious software is the tendency to give users administrative rights on their client computers. When a user or administrator logs on with administrative rights, any programs that they run, such as browsers, e-mail clients, and instant messaging programs, also have administrative rights. If these programs activate malicious software, that malicious software can install itself, manipulate services such as antivirus programs, and even hide from the operating system. Users can run malicious software unintentionally and unknowingly, for example, by visiting a compromised Web site or by clicking a link in an e-mail message.</p>
+
+  <p>Malicious software poses numerous threats to organizations, from intercepting a user’s logon credentials with a keystroke logger to achieving complete control over a computer or an entire network by using a rootkit. Malicious software can cause Web sites to become inaccessible, destroy or corrupt data, and reformat hard disks. Effects can include additional costs such as to disinfect computers, restore files, re-enter or re-create lost data. Virus attacks can also cause project teams to miss deadlines, leading to breach of contract or loss of customer confidence. Organizations that are subject to regulatory compliance can be prosecuted and fined.”</p>
+</blockquote>
+
+  </div><a class="u-url" href="/applying-the-principle-of-least-privilege-to-user-accounts-on-windows-xp/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

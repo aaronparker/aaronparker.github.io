@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Running the latest Oracle JInitiator | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Running the latest Oracle JInitiator" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Here’s a really simple method for using running the latest version of the Oracle JInitiator even though your application may require a specific version. DISCLAIMER: This is most likely unsupported by Oracle but it thus far it’s worked for me. If you’re worried about your applications breaking don’t implement this hack." />
+<meta property="og:description" content="Here’s a really simple method for using running the latest version of the Oracle JInitiator even though your application may require a specific version. DISCLAIMER: This is most likely unsupported by Oracle but it thus far it’s worked for me. If you’re worried about your applications breaking don’t implement this hack." />
+<link rel="canonical" href="/running-the-latest-oracle-jinitiator/" />
+<meta property="og:url" content="/running-the-latest-oracle-jinitiator/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-12-13T17:35:14+11:00" />
+<script type="application/ld+json">
+{"description":"Here’s a really simple method for using running the latest version of the Oracle JInitiator even though your application may require a specific version. DISCLAIMER: This is most likely unsupported by Oracle but it thus far it’s worked for me. If you’re worried about your applications breaking don’t implement this hack.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/running-the-latest-oracle-jinitiator/","headline":"Running the latest Oracle JInitiator","dateModified":"2007-12-13T17:35:14+11:00","datePublished":"2007-12-13T17:35:14+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/running-the-latest-oracle-jinitiator/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Running the latest Oracle JInitiator</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-12-13T17:35:14+11:00" itemprop="datePublished">Dec 13, 2007
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Here’s a really simple method for using running the latest version of the Oracle JInitiator even though your application may require a specific version. DISCLAIMER: This is most likely unsupported by Oracle but it thus far it’s worked for me. If you’re worried about your applications breaking don’t implement this hack.</p>
+
+<p>You can download the latest version of the JInitiator from the <a href="http://www.oracle.com/technology/software/products/developer/htdocs/jinit.htm">JInitiator Download Page</a>. In this case I’ve used version 1.3.1.28 and modified the client to call this version when it actually required version 1.3.1.17.</p>
+
+<p>Getting this to work requires adding the CLSID (or CLASSID) of the older version of JInitiator and modifying it to point to the installed version. You can find the CLSID of each JInitiator version on the download page. Here’s an example of a REG file with the required registry entries, pointing 1.3.1.17 to 1.3.1.28:</p>
+
+<p>[code]Windows Registry Editor Version 5.00<br />
+[HKEY_LOCAL_MACHINE\Software\Classes\CLSID{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}]<br />
+@=”JInitiator 1.3.1.17”</p>
+
+<p>[HKEY_LOCAL_MACHINE\Software\Classes\CLSID{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}\Control]</p>
+
+<p>[HKEY_LOCAL_MACHINE\Software\Classes\CLSID{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}\InprocServer32]<br />
+@=”C:\Program Files\Oracle\JInitiator 1.3.1.28\bin\npjinit13128.dll”<br />
+“ThreadingModel”=”Apartment”</p>
+
+<p>[HKEY_LOCAL_MACHINE\Software\Classes\CLSID{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}\MiscStatus]<br />
+@=”0”</p>
+
+<p>[HKEY_LOCAL_MACHINE\Software\Classes\CLSID{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}\MiscStatus\1]<br />
+@=”2449”</p>
+
+<p>[HKEY_LOCAL_MACHINE\Software\Classes\CLSID{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}\ProgID]<br />
+@=”Oracle.JavaBeansBridge.1”</p>
+
+<p>[HKEY_LOCAL_MACHINE\Software\Classes\CLSID{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}\Programmable]</p>
+
+<p>[HKEY_LOCAL_MACHINE\Software\Classes\CLSID{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}\Version]<br />
+@=”1.1”</p>
+
+<p>[HKEY_LOCAL_MACHINE\Software\Classes\CLSID{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}\VersionIndependentProgID]<br />
+@=”Oracle.JavaBeansBridge”[/code]</p>
+
+<p>This shows the CLSID (the GUID between the {} brackets) for JInitiator 1.3.1.17 and as you can see, the default value for the InprocServer32 is where the “magic” happens.</p>
+
+<p>Secondly you may also want to add another registry value that fools the JRE into seeing version 1.3.1.17 as well. This command will add the correct registry entry for you.</p>
+
+<p>[code]REG ADD HKLM\SOFTWARE\Oracle\JInitiator\1.3.1.17 /v JavaHome /d “C:\Program Files\Oracle\JInitiator 1.3.1.28” /t REG_SZ[/code]</p>
+
+<p>You will then see each version listed in the JInitiator Control Panel applet:</p>
+
+<p><img src="http://stealthpuppy.com/wp-content/uploads/2007/12/jinitiator.PNG" alt="jinitiator.PNG" /></p>
+
+<p>This is pretty much the same approach you can use with t<a href="http://stealthpuppy.com/unattended/unattended-install-sun-java-runtime-environment-16-update-3">he Sun JRE</a> to fool applications into seeing older versions, allowing to install only the latest (and greatest?).</p>
+
+  </div><a class="u-url" href="/running-the-latest-oracle-jinitiator/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

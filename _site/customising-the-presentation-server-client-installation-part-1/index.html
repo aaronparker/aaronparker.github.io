@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Customising the Presentation Server Client Installation Part 1 | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Customising the Presentation Server Client Installation Part 1" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The Citrix Presentation Server Client provides the ability to customise the client before you deploy it to your workstations. Customisation of the client is an important step to ensure the best possible experience for your users and it is yet very simple to achieve:" />
+<meta property="og:description" content="The Citrix Presentation Server Client provides the ability to customise the client before you deploy it to your workstations. Customisation of the client is an important step to ensure the best possible experience for your users and it is yet very simple to achieve:" />
+<link rel="canonical" href="/customising-the-presentation-server-client-installation-part-1/" />
+<meta property="og:url" content="/customising-the-presentation-server-client-installation-part-1/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-03-11T02:08:00+11:00" />
+<script type="application/ld+json">
+{"description":"The Citrix Presentation Server Client provides the ability to customise the client before you deploy it to your workstations. Customisation of the client is an important step to ensure the best possible experience for your users and it is yet very simple to achieve:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/customising-the-presentation-server-client-installation-part-1/","headline":"Customising the Presentation Server Client Installation Part 1","dateModified":"2007-03-11T02:08:00+11:00","datePublished":"2007-03-11T02:08:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/customising-the-presentation-server-client-installation-part-1/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Customising the Presentation Server Client Installation Part 1</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-03-11T02:08:00+11:00" itemprop="datePublished">Mar 11, 2007
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>The Citrix Presentation Server Client provides the ability to customise the client before you deploy it to your workstations. Customisation of the client is an important step to ensure the best possible experience for your users and it is yet very simple to achieve:</p>
+
+<p>To start the customisation, download the standard <a href="http://www.citrix.com/English/SS/downloads/details.asp?dID=2755&amp;downloadID=683986&amp;pID=186">Citrix Presentation Server Client Packager</a> from the Citrix web site. This process will work for both version 10.0 and version 9.x of the client.</p>
+
+<p>Start the packager customisation wizard with the Windows Installer command line. This will start an administrative installation of the packager (For a full list of MSIEXEC command line switches you can run <font face="courier new,courier">MSIEXEC /?</font>).</p>
+
+<p class="console">
+  [quickcode:noclick]MSIEXEC /A ICA32PKG.MSI[/quickcode]
+</p>
+
+<p>If you are doing this on Windows Vista you will need to run this command line from an elevated command prompt, otherwise you will be prompted for elevation during the packager wizard.</p>
+
+<p>Here’s a walkthrough of the customisation process, screen by screen:</p>
+
+<ol>
+  <li><strong>Welcome screen.</strong> Nothing to see here, move along.</li>
+  <li><strong>License Agreement</strong>. If you don’t agree to this you won’t get far.</li>
+  <li><strong>Create Client Package</strong>. Choose an empty folder to store the package; don’t choose the same folder containing the original client package. Of the three package types – <em>Uncompressed</em>, <em>Compressed</em> and <em>Single Windows Installer file</em>, the single Windows Installer file will create a package this is the easiest to manage and distribute. However an Uncompressed client will allow you to prepopulate PN.INI and APPSRV.INI before installation.</li>
+  <li><strong>Select Client</strong>. Select the clients to install as a part of this package. You could create multiple custom packages to target specific users. For example you could package just the Web Client for user’s home computers.</li>
+  <li><strong>Server Address</strong>. If you choose to install the Program Neighbourhood Agent you will need to add a location for the Program Neighbourhood Agent Service URL. If you don’t enter this users will be prompted for the location when they run the Program Neighbourhood Agent.</li>
+  <li><strong>Select Programs Folder</strong>. This is the location shortcuts will be added into the Start Menu Programs folder.</li>
+  <li><strong>Client Name</strong>. You get two options for the client name: <em>Use machine name as client name</em> and <em>Let user specify a client name</em>. Let the user specify the client name? Are you crazy?</li>
+  <li><strong>Use Local Name and Password</strong>. This option is important for domain computers; if you do not enable this option users must specify a username and password when they connect. If you don’t enable pass-through authentication users could be saving their usernames and passwords on their computers, which could pose a security risk. Pass-through authentication also improves the user’s experience when using remote applications.</li>
+  <li><strong>Program Neighbourhood Options</strong>. These options, <em>Enable Quick Launch Bar</em> and <em>Enable custom ICA connections</em> can be disabled so that users will only have Application Sets available to them in Program Neighbourhood.</li>
+  <li><strong>Upgrade Settings</strong>. These two options, <em>Allow upgrade if package is newer than existing client version</em> and <em>Allow downgrade if package is older than existing client version</em> are fairly self explanatory, but we all want to upgrade to the latest client don’t we?</li>
+  <li><strong>Select User Dialog Boxes</strong>. You can customise what dialogs boxes are seen as the client is installing. Leaving any of these screens on will allow the user to customise the client during installation. I generally only enable <em>Splash</em> <em>Screen</em>, <em>Progress</em> and <em>Finish</em>.</li>
+  <li><strong>Client Package Installation Summary</strong>. A summary of the options you chose before the package is created.</li>
+  <li><strong>Client Install Progress</strong>. You will see a progress bar as the custom package is created.</li>
+  <li><strong>Finish</strong>. You should be left with your custom client package. I have seen on various machines where I’ve chosen Single Windows Installer file and been left with the uncompressed package. I haven’t found a cause, but if you see this, create the custom package on another machine.</li>
+</ol>
+
+<p>Now that you have the custom package you will need to distribute it to your client computers. As Citrix is phasing out their client deployment tool, you will need to use Web Interface or a deployment tool such as Group Policy, SMS, Tivoli or Altiris Deployment Solution.</p>
+
+<p><strong>UPDATE</strong>: Jason Conger has a pretty in depth article at DABCC.com, <a href="http://www.jasonconger.com/ShowPost.aspx?strID=87a0885c-a0f1-4b85-b28f-a25813ed8119">How to Customize and Install the Citrix Client using Active Directory</a>, which has some excellent tips including disabling the Auto Client Update feature and what you’ll need to add when deploying the client via AD.</p>
+
+  </div><a class="u-url" href="/customising-the-presentation-server-client-installation-part-1/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

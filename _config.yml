@@ -1,9 +1,3 @@
-url: ""
-name: Aaron Parker
-description: >
-  on end user computing and enterprise
-  mobility
-  
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -19,6 +13,11 @@ description: >
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
+
+url: ""
+name: Aaron Parker
+description: >
+  on end user computing and enterprise mobility
 title: stealthpuppy
 email: aaron@stealthpuppy.com
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -27,7 +26,7 @@ github_username:  aaronparker
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-cayman
+theme: minima
 plugins:
   - jekyll-feed
 

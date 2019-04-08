@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>OS Automation Survey Results – How Do You Build Master Images? | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="OS Automation Survey Results – How Do You Build Master Images?" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Previously we’ve looked at which hypervisors are in use and the virtual desktop solutions deployed on those hypervisors, so now we’ll take a look at how organisations are building their master images." />
+<meta property="og:description" content="Previously we’ve looked at which hypervisors are in use and the virtual desktop solutions deployed on those hypervisors, so now we’ll take a look at how organisations are building their master images." />
+<link rel="canonical" href="/automation-survey-results-build-master-images/" />
+<meta property="og:url" content="/automation-survey-results-build-master-images/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2015/10/8755184025_26238d1d37_k.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-10-15T23:31:25+11:00" />
+<script type="application/ld+json">
+{"description":"Previously we’ve looked at which hypervisors are in use and the virtual desktop solutions deployed on those hypervisors, so now we’ll take a look at how organisations are building their master images.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/automation-survey-results-build-master-images/","image":"/wp-content/uploads/2015/10/8755184025_26238d1d37_k.jpg","headline":"OS Automation Survey Results – How Do You Build Master Images?","dateModified":"2015-10-15T23:31:25+11:00","datePublished":"2015-10-15T23:31:25+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/automation-survey-results-build-master-images/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">OS Automation Survey Results &amp;#8211; How Do You Build Master Images?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2015-10-15T23:31:25+11:00" itemprop="datePublished">Oct 15, 2015
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Previously we’ve looked at <a href="http://stealthpuppy.com/automation-survey-results-hypervisor/">which hypervisors are in use</a> and the <a href="http://stealthpuppy.com/automation-survey-results-vdi-platforms/">virtual desktop solutions deployed on those hypervisors</a>, so now we’ll take a look at how organisations are building their master images.</p>
+
+<h1 id="building-a-master-image">Building A Master Image</h1>
+
+<p>Whether you’re building physical or virtual desktops, the quality of the desktops environment and ultimately the user experience can be dictated in a large part by the consistency in how Windows, applications and configurations are delivered to the desktops. If you want to ensure a predictable user experience across desktops and reduce troubleshooting times, then the only way to do that is to automate the deployment of Windows and applications.</p>
+
+<p>With the right tools and community resources, automation is simple; however that doesn’t make it easy – if you have a lot of applications or challenging applications and/or a complex environment, fully automating the deployment of your desktops can be time consuming.</p>
+
+<p>Having said that, we believe that any investment made into automation will pay dividends in the future and the barriers into automation of Windows have reduced over the past 7 or 8 years with the introduction of tools such as the <a href="https://technet.microsoft.com/en-us/windows/dn475741.aspx">Microsoft Deployment Toolkit</a> and PowerShell.</p>
+
+<h1 id="whos-automating-their-deployments">Who’s Automating Their Deployments?</h1>
+
+<p>In this survey we’ve concentrated on how organisations are building their master images, whether they’re deploying Remote Desktop Services, persistent desktops or non-persistent desktops, a master image is typically the basis of Windows deployment in VDI.</p>
+
+<p>Although we had 724 good responses, on this question 705 people responded to it, and here’s what we got:</p>
+
+<figure id="attachment_4173" aria-describedby="caption-attachment-4173" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4173" src="http://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-1024x558.png" alt="Breakdown of how respondents are building master images" width="1024" height="558" srcset="http://192.168.0.89/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-1024x558.png 1024w, http://192.168.0.89/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-150x82.png 150w, http://192.168.0.89/wp-content/uploads/2015/10/HowDoYouBuildMasterImages-300x163.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2015/10/HowDoYouBuildMasterImages.png)<figcaption id="caption-attachment-4173" class="wp-caption-text">Breakdown of how respondents are building master images</figcaption></figure>
+
+<p>For the chart I’ve simplified the responses, so here’s what we actually asked in the survey:</p>
+
+<ul>
+  <li>We insert the Windows ISO / CD / USB stick &amp; manually install Windows and applications: <strong>23.5%</strong></li>
+  <li>We use a partially automated build process leaving some manual tasks: <strong>52.5%</strong></li>
+  <li>We use a fully automated build process from start to finish: <strong>24.0%</strong></li>
+</ul>
+
+<p>This means that over 75% of respondents are utilising some form of automation and I would read from this, that with roughly 52% of organisations leaving some manual tasks, that getting to 100% is either too time consuming so not worth the effort, or perhaps some tasks can’t be automated.</p>
+
+<figure id="attachment_3331" aria-describedby="caption-attachment-3331" style="width: 720px" class="wp-caption alignnone"><img class="wp-image-3331 size-full" src="http://stealthpuppy.com/wp-content/uploads/2013/05/Slide12.png" alt="Slide12" width="720" height="405" srcset="http://192.168.0.89/wp-content/uploads/2013/05/Slide12.png 720w, http://192.168.0.89/wp-content/uploads/2013/05/Slide12-150x84.png 150w, http://192.168.0.89/wp-content/uploads/2013/05/Slide12-300x168.png 300w, http://192.168.0.89/wp-content/uploads/2013/05/Slide12-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" /><figcaption id="caption-attachment-3331" class="wp-caption-text">xkcd sums the problem up nicely.</figcaption></figure>
+
+<p>What we didn’t ask is what are the blockers to automation – so perhaps if we get to run the survey again, this is question that we can pose to get some idea.</p>
+
+<p>So what type of number is 23.5% of respondents using a completely manual process? Let’s look at the average size of the environments for each questions:</p>
+
+<ul>
+  <li>Completely manual: 1411 average seats (this includes two organisations at 24,000 and 35,000 seats!)</li>
+  <li>Partially automated: 2283 average seats</li>
+  <li>Fully automated: 2993 average seats</li>
+</ul>
+
+<p>On average, the larger the environment the more that automation is leveraged. This could be due to the ability to invest more time into automation, more resources and/or skill sets around automation or perhaps even the use of third party products. Clearly the barrier to automation needs to drop further.</p>
+
+<p>23.5% is about what I expected for manual deployments – <a href="http://stealthpuppy.com/hands-off-my-gold-image-a-recap-from-citrix-synergy-2013/">the last time I ran a survey like this</a>, I saw manual builds at 26%, so a slight improvement over the past couple of years. 76.5% of organisations using some type of automation is really great to see.</p>
+
+<p>I will say this: VDI should not be treated as a panacea for desktop deployments – VDI doesn’t improve desktop management in and of itself, it just gets your poor quality images out faster.</p>
+
+<h1 id="next-up">Next Up</h1>
+
+<p>In the next article, we’ll take a look at <a href="http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/">the solutions used for automating image builds</a>.</p>
+
+  </div><a class="u-url" href="/automation-survey-results-build-master-images/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

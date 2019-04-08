@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Windows Vista 101: How to leave UAC on | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Windows Vista 101: How to leave UAC on" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This one is in reply to Long’s post, but to be fair I know he’s all for UAC. Windows Vista finally introduces some real security improvements to the Windows operating system that have been long overdue. The product is still in beta, however people are already up in arms about how ‘intrusive’ UAC is. Why is it that Linux and MacOS users understand why it’s not a good idea to run with administrative privileges and Windows users don’t? *" />
+<meta property="og:description" content="This one is in reply to Long’s post, but to be fair I know he’s all for UAC. Windows Vista finally introduces some real security improvements to the Windows operating system that have been long overdue. The product is still in beta, however people are already up in arms about how ‘intrusive’ UAC is. Why is it that Linux and MacOS users understand why it’s not a good idea to run with administrative privileges and Windows users don’t? *" />
+<link rel="canonical" href="/windows-vista-101-how-to-leave-uac-on/" />
+<meta property="og:url" content="/windows-vista-101-how-to-leave-uac-on/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-09-09T07:27:00+10:00" />
+<script type="application/ld+json">
+{"description":"This one is in reply to Long’s post, but to be fair I know he’s all for UAC. Windows Vista finally introduces some real security improvements to the Windows operating system that have been long overdue. The product is still in beta, however people are already up in arms about how ‘intrusive’ UAC is. Why is it that Linux and MacOS users understand why it’s not a good idea to run with administrative privileges and Windows users don’t? *","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/windows-vista-101-how-to-leave-uac-on/","headline":"Windows Vista 101: How to leave UAC on","dateModified":"2006-09-09T07:27:00+10:00","datePublished":"2006-09-09T07:27:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/windows-vista-101-how-to-leave-uac-on/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Windows Vista 101: How to leave UAC on</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2006-09-09T07:27:00+10:00" itemprop="datePublished">Sep 9, 2006
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>This one is in reply to <a href="http://www.istartedsomething.com/20060909/howto-turn-off-uac/">Long’s post</a>, but to be fair I know he’s all for UAC. Windows Vista finally introduces some real security improvements to the Windows operating system that have been long overdue. The product is still in beta, however people are already up in arms about how ‘intrusive’ UAC is. Why is it that Linux and MacOS users understand why it’s not a good idea to run with administrative privileges and Windows users don’t? *</p>
+
+<p>How did Windows users get into this mess in the first place? This can be summed up in one word: Compatibility. Microsoft are big on compatibility, probably more than anyone else in the industry**. The problem with this, is that Windows is still providing compatibility for a time when everyone was writing applications for MS-DOS / Windows 3.1 / Windows 95, when full access to Windows was guaranteed. Because there was no security. Where are we now, in 2006? Well not that much better, developers still think the user has administrative access to their workstations, and program accordingly. This proves to be a big challenge when we want to run applications with limited user access. Developers need a right royal kick up the behind and <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnlong/html/AccProtVista.asp">learn how to write applications that don’t require administrative access</a>.</p>
+
+<p>So what does UAC actually mean to the end-user? UAC gives us the best of both worlds, it allows us to run as a limited user and protect Windows from malicious software yet still allows administrative access when required. Now it’s not implemented in the same manner as something like <a href="http://en.wikipedia.org/wiki/Sudo">sudo</a> but it still does the job. When logging onto a Windows Vista machine as an administrator, Windows does not grant the user’s session a token for performing administrative tasks until UAC kicks in and elevates the user. This can be demonstrated with everyone’s favourite word processing application – Notepad. The image below shows the privileges Notepad has when running with limited user privileges (check out the lower list box).</p>
+
+<p><img src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.95.NotepadAsUser.PNG" alt="" /></p>
+
+<p>The screenshot below shows Notepad run with elevated privileges after running as administrator. As you can see Notepad now has many more access privileges and therefore the ability to have complete access to the operating system.</p>
+
+<p><img src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.96.NotepadAsAdministrator.PNG" alt="" /></p>
+
+<p>Fortunately there are a couple of methods that can be used to make life with UAC easier whilst still reaping the benefits of what UAC has to offer.</p>
+
+<p><strong>Run a Command Prompt As Administrator</strong><br />
+Now this one will require returning to your command line roots or learning how to use the command line if you don’t already know how. But that’s a good thing (You’ll be surprised how much faster you can get things done via the command line). There are two ways to run a command prompt as Administrator:</p>
+
+<ul>
+  <li>Right click the Command Prompt icon and choose ‘Run as administrator’. This is the long way that requires an extra click; or</li>
+  <li>Modify a shortcut for the command prompt so that it will always launch as an Administrator.</li>
+</ul>
+
+<p>This will result in a Command Prompt window with the text “Administrator” in the title bar. Using the second option is easy, just open the properties of the Command Prompt shortcut, click Advanced and place a tick in the checkbox labelled “Run as administrator”. Click on the screenshots below to see the shortcut properties and the resulting Command Prompt in more detail:</p>
+
+<p><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.93.RunAsAdministrator.PNG" /><br />
+<img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.94.AdministratorCommandPrompt.PNG" /></p>
+
+<p>The benefit of the approach is that applications launched via the elevated command prompt will also be elevated.</p>
+
+<p><strong>Run an Explorer Window As Administrator</strong><br />
+Most of the frustrations with UAC will stem from the requirement to click the UAC prompt when performing file system tasks in Windows Explorer that require administrative tasks. Fortunately there is an easy way to get around this without disabling UAC:</p>
+
+<ul>
+  <li>Open an Explorer window and click ‘Organise’;</li>
+  <li>Click ‘Folder and Search Options’ and click the ‘View’ tab;</li>
+  <li>Place a tick next to ‘Launch folder windows in a separate process’.</li>
+</ul>
+
+<p>The following screenshot shows this option:</p>
+
+<p><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.92.SeperateProcess.PNG" /></p>
+
+<p>Now you can right click a Windows Explorer shortcut and choose ‘Run as administrator’ to elevate that window to perform administrative tasks from that single window without multiple UAC prompts.</p>
+
+<p>These are just a couple of ways to make life with UAC easier and I encourage everyone to leave UAC on. In twelve months after Vista has been out for some time things will be different again. More applications will be Vista aware and the number of UAC prompts should be reduced.</p>
+
+<p><span style="font-size: 7pt">*I’m generalising, I know; **This is conjecture drawn from purely anecdotal evidence, but I think its correct 😉</span></p>
+
+  </div><a class="u-url" href="/windows-vista-101-how-to-leave-uac-on/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

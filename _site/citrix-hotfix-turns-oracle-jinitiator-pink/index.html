@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Citrix Hotfix Turns Oracle JInitiator Pink | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Citrix Hotfix Turns Oracle JInitiator Pink" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A workaround has been posted in the forums. Run the following command to exclude Internet Explorer from the multiple montior hooks that Presentation Server provides: [code]REG ADD &quot;HKLM\SOFTWARE\Citrix\CtxHook\AppInit_Dlls\Multiple Monitor Hook&quot; /v Exclude /d &quot;iexplore.exe&quot; /t REG_SZ /f[/code]" />
+<meta property="og:description" content="A workaround has been posted in the forums. Run the following command to exclude Internet Explorer from the multiple montior hooks that Presentation Server provides: [code]REG ADD &quot;HKLM\SOFTWARE\Citrix\CtxHook\AppInit_Dlls\Multiple Monitor Hook&quot; /v Exclude /d &quot;iexplore.exe&quot; /t REG_SZ /f[/code]" />
+<link rel="canonical" href="/citrix-hotfix-turns-oracle-jinitiator-pink/" />
+<meta property="og:url" content="/citrix-hotfix-turns-oracle-jinitiator-pink/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-02-11T22:30:06+11:00" />
+<script type="application/ld+json">
+{"description":"A workaround has been posted in the forums. Run the following command to exclude Internet Explorer from the multiple montior hooks that Presentation Server provides: [code]REG ADD &quot;HKLM\\SOFTWARE\\Citrix\\CtxHook\\AppInit_Dlls\\Multiple Monitor Hook&quot; /v Exclude /d &quot;iexplore.exe&quot; /t REG_SZ /f[/code]","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/citrix-hotfix-turns-oracle-jinitiator-pink/","headline":"Citrix Hotfix Turns Oracle JInitiator Pink","dateModified":"2008-02-11T22:30:06+11:00","datePublished":"2008-02-11T22:30:06+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/citrix-hotfix-turns-oracle-jinitiator-pink/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Citrix Hotfix Turns Oracle JInitiator Pink</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-02-11T22:30:06+11:00" itemprop="datePublished">Feb 11, 2008
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p class="important">
+  A <a href="http://support.citrix.com/forums/thread.jspa?forumID=137&amp;threadID=98610&amp;messageID=698788&amp;start=0&amp;#698788">workaround has been posted </a>in the forums. Run the following command to exclude Internet Explorer from the <a href="http://support.citrix.com/article/CTX110301">multiple montior hooks</a> that Presentation Server provides:<br /> [code]REG ADD "HKLM\SOFTWARE\Citrix\CtxHook\AppInit_Dlls\Multiple Monitor Hook" /v Exclude /d "iexplore.exe" /t REG_SZ /f[/code]
+</p>
+
+<p>Avert thy eyes lest you be turned to stone! Well not quite, but your users might be stoning you if your Oracle JInitiator applications look like this (I’ve spared you the hot pink version):</p>
+
+<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/02/pinkjinitiator.png" border="0" alt="PinkJInitiator" width="410" height="296" /></p>
+
+<p>This behaviour is due to a couple of Presentation Server hotfixes – <a href="http://support.citrix.com/article/CTX115275">PSE450R01W2K3035</a> and <a href="http://support.citrix.com/article/CTX115629">PSE450R01W2K3042</a> (which supersedes the former). Ironically these hotfixes directly address some graphical display issues:</p>
+
+<blockquote>
+  <ul>
+    <li>In 16-bit color connections, blue or cyan rectangles might appear on graphics.</li>
+    <li>In 16-bit color connections, text, lines, and shadows on inactive menu buttons and windows might appear blue instead of gray.</li>
+    <li>In 16-bit color connections, blue or cyan rectangles might appear on graphics.</li>
+  </ul>
+</blockquote>
+
+<p>I’ve tested the following configurations in our environment:</p>
+
+<ul>
+  <li>PSE450R01W2K3035 installed only</li>
+  <li>PSE450R01W2K3042 installed after installing PSE450R01W2K3035</li>
+  <li>PSE450R01W2K3042 installed only</li>
+  <li>ICA and RDP connections</li>
+  <li>256 colour, 16-bit colour and 24-bit colour depths</li>
+</ul>
+
+<p>These versions of the JInitiator experience the issue, and they even come with their own colour scheme:</p>
+
+<ul>
+  <li>Oracle JInitiator 1.3.1.28, paints the form in pink or purple, hot pink is especially nice</li>
+  <li>Oracle JInitiator 1.3.1.25, paints the form white</li>
+  <li>Oracle JInitiator 1.3.1.22, paints the form yellow and green, very earthy</li>
+</ul>
+
+<p>We’re having some problems with earlier versions of the JInitiator so I haven’t been able to test those. These hotfixes address a large number of issues including some of seamless windows updates as well as being required to use the <a href="http://www.citrix.com/English/ps2/products/subfeature.asp?contentID=682169">SmartAuditor</a> feature of Presentation Server. Hopefully Citrix will have an update soon.</p>
+
+<p>Citrix Support forum topics covering this issue:</p>
+
+<ul>
+  <li><a href="http://support.citrix.com/forums/thread.jspa?forumID=137&amp;threadID=98610&amp;tstart=0">Problem Citrix PS 4.5 with Oracle web</a></li>
+  <li><a href="http://support.citrix.com/forums/thread.jspa?forumID=137&amp;threadID=97365&amp;tstart=0">Issues after installing PSE450R01W2K3035.msp</a></li>
+</ul>
+
+  </div><a class="u-url" href="/citrix-hotfix-turns-oracle-jinitiator-pink/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

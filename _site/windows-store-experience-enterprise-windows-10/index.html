@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Windows Store User Experience in the Enterprise in Windows 10 | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Windows Store User Experience in the Enterprise in Windows 10" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Chicken Little seems to be working overtime when it comes to the Windows Store in Windows 10. I’ve read and heard many different thoughts and approaches to the Store in Windows 10, but I believe that the Store and Universal apps should be embraced. It would; however, be nice to have more control over user interaction with the Store and in-box Univeral apps." />
+<meta property="og:description" content="Chicken Little seems to be working overtime when it comes to the Windows Store in Windows 10. I’ve read and heard many different thoughts and approaches to the Store in Windows 10, but I believe that the Store and Universal apps should be embraced. It would; however, be nice to have more control over user interaction with the Store and in-box Univeral apps." />
+<link rel="canonical" href="/windows-store-experience-enterprise-windows-10/" />
+<meta property="og:url" content="/windows-store-experience-enterprise-windows-10/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2016/07/BusinessStoreWIndows10Enterprise1607.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-07-20T23:32:07+10:00" />
+<script type="application/ld+json">
+{"description":"Chicken Little seems to be working overtime when it comes to the Windows Store in Windows 10. I’ve read and heard many different thoughts and approaches to the Store in Windows 10, but I believe that the Store and Universal apps should be embraced. It would; however, be nice to have more control over user interaction with the Store and in-box Univeral apps.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/windows-store-experience-enterprise-windows-10/","image":"/wp-content/uploads/2016/07/BusinessStoreWIndows10Enterprise1607.png","headline":"Windows Store User Experience in the Enterprise in Windows 10","dateModified":"2016-07-20T23:32:07+10:00","datePublished":"2016-07-20T23:32:07+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/windows-store-experience-enterprise-windows-10/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Windows Store User Experience in the Enterprise in Windows 10</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2016-07-20T23:32:07+10:00" itemprop="datePublished">Jul 20, 2016
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Chicken Little seems to be working overtime when it comes to the Windows Store in Windows 10. I’ve read and heard many different thoughts and approaches to the Store in Windows 10, but I believe that the Store and Universal apps should be embraced. It would; however, be nice to have more control over user interaction with the Store and in-box Univeral apps.</p>
+
+<p>There are a number of the in-box Universal apps that I would consider to be useful, at least if you’re deploying Current Branch / Current Branch for Business. These include Edge, Calculator, Photos, Weather, News and perhaps even Sticky Notes (in 1607). Some organisations would find the growing list of 3rd party apps including Twitter and Facebook (think marketing) useful for deployment.</p>
+
+<p>While it remains to be seen how many line-of-business applications that will embrace the Universal app platform, deploying and updating Universal apps is far simpler than traditional Win32 apps – roaming preferences notwithstanding.</p>
+
+<h1 id="managing-the-windows-store-without-disabling-it">Managing the Windows Store without Disabling It</h1>
+
+<p>If you’re looking to embrace or at least maintaining some of the in-box Universal apps, there are a number of steps you should be taking:</p>
+
+<ul>
+  <li><a href="https://azure.microsoft.com/en-us/documentation/articles/active-directory-aadconnect/">Extend your on-premises Active Directory into Azure AD</a>. Whether you’re considering rolling out Microsoft services such as Office 365 or <a href="http://azureplatform.azurewebsites.net/en-us/">other services on the Azure platform</a>, extending into Azure AD will a part of almost organisation’s Windows 10 deployments. Extending into Azure AD does not require you to purchase any Azure services – <a href="https://azure.microsoft.com/en-us/documentation/articles/active-directory-editions/">Azure AD Basic</a> is free and provides what is needed for integration into cloud services.</li>
+  <li>Microsoft provides <a href="https://azure.microsoft.com/en-us/documentation/articles/active-directory-aadconnect-topologies/">AD Connect to enable synchronisation into Azure AD</a>. The minimum amount of effort to enable synchronisation is surprisingly simple to setup.</li>
+  <li>Setup the Windows <a href="https://www.microsoft.com/business-store/">Store for Business</a>, enabling IT to curate a list of Universal apps for their users (you could even curate no apps and hide the public links). <a href="https://technet.microsoft.com/en-us/windows/store-for-business.aspx">Setting up the Store for Business</a> is very straight-forward. Note that you’ll get all of the Office Mobile apps by default and adding a new app takes around 24 hours for it to appear in the Store on devices.</li>
+</ul>
+
+<p>With these components in place, the following scenarios are enabled:</p>
+
+<ul>
+  <li>Users logging with their cloud credentials (credentials in the cloud or synchronised from Active Directory) onto <a href="https://blogs.technet.microsoft.com/enterprisemobility/2015/05/28/azure-ad-join-on-windows-10-devices/">Azure AD joined Windows 10 PCs</a> are enabled for single sign-on to the Store and other apps that leverage Azure AD or Office 365 services. Azure AD join is a great use case for greenfield deployments, but be certain of current and future PC management requirements – the case for Active Directory joined PCs is still valid.</li>
+  <li>Users on Windows 10 stand-alone (typically personal devices) or Active Directory domain member PCs (without Azure AD sync or Azure AD Premium) can <a href="https://blogs.technet.microsoft.com/enterprisemobility/2015/05/21/azure-ad-on-windows-10-personal-devices/">manually add their work credentials to their PC</a> and sign into the Store.</li>
+  <li>Windows 10 domain members with AD Connect/ADFS and Azure AD Premium are single signed-on into the Store (and other apps that Azure AD or Office 365 services) once <a href="https://technet.microsoft.com/en-us/library/dn280945(v=ws.11).aspx">Workplace Join</a> is configured.</li>
+</ul>
+
+<p>The last scenario is ideal for most organisations extending their environments into Azure AD and should be completed as a part of your Windows 10 deployment. A couple of articles are great references for this setup:</p>
+
+<ul>
+  <li><a href="https://azure.microsoft.com/en-us/documentation/articles/active-directory-azureadjoin-devices-group-policy/">Connect domain-joined devices to Azure AD for Windows 10 experiences</a>. Documents the PowerShell command and optional ADFS claims rules, and Group Policy configuration required to setup Workplace Join.</li>
+  <li><a href="https://azure.microsoft.com/en-us/documentation/articles/active-directory-aadconnect-feature-device-writeback/">Azure AD Connect: Enabling device writeback</a>. While this article states that device writeback is used to <a href="https://azure.microsoft.com/en-us/documentation/articles/active-directory-conditional-access-on-premises-setup/">enable conditional access based on devices to ADFS protected applications</a>, the automatic configuration of Workplace Join didn’t work until I enabled device writeback. This feature does require Azure AD Premium, so it will be interesting to see how readily organisations will be willing to pay for <a href="https://azure.microsoft.com/en-us/documentation/articles/active-directory-editions/#premium-features">Azure AD Premium</a>.</li>
+</ul>
+
+<p>Microsoft has recently stated <a href="https://rcpmag.com/articles/2015/09/01/enterprise-mobility.aspx">the Enterprise Mobility Suite is the fastest growing product in their history</a> and I think access to Azure AD Premium in EMS could be a large part of that growth.</p>
+
+<p>In any of the 3 scenarios above and the Business Store enabled, users can install apps on their devices from the list of apps that IT has subscribed to:</p>
+
+<figure id="attachment_4963" aria-describedby="caption-attachment-4963" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-4963 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/07/Store-1511-1024x640.png" alt="Windows Store for Business in Windows 10 1511" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/07/Store-1511-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/07/Store-1511-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/07/Store-1511-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/07/Store-1511-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/07/Store-1511.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/07/Store-1511.png)<figcaption id="caption-attachment-4963" class="wp-caption-text">Windows Store for Business in Windows 10 1511</figcaption></figure>
+
+<h1 id="showing-only-the-business-store">Showing Only the Business Store</h1>
+
+<p>Now that the Business Store is enabled and available on user devices, we can start to take some control over what users see in the Store. By default, this will be the Business Store as well as the public links as seen in the screenshot above. To disable the public links we can enable the <a href="https://technet.microsoft.com/en-us/itpro/windows/manage/manage-access-to-private-store">RequirePrivateStoreOnly</a> policy.</p>
+
+<p>This is actually an MDM policy that’s not available in Group Policy, so unless you managing devices with an MDM solution, you’ll need to configure this with a direct Registry edit via PowerShell, as below, or other means such as Group Policy Preferences.</p>
+
+<pre class="lang:ps decode:true" title="Hiding the public links in the Windows 10 Store"># Hide the public links in the Windows Store
+$RegPath = "Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PolicyManager\default\ApplicationManagement\RequirePrivateStoreOnly"
+New-ItemProperty -Path $RegPath -Name "value" -Value 1 -Force</pre>
+
+<p>This results in a curated view only of the Store, which could look something like this:</p>
+
+<figure id="attachment_4956" aria-describedby="caption-attachment-4956" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-4956 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/07/Parallels-Windows-10-1511-Private-Store-only-1024x640.png" alt="Windows Store showing the Private Store only, in Windows 10 Pro 1511" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/07/Parallels-Windows-10-1511-Private-Store-only-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/07/Parallels-Windows-10-1511-Private-Store-only-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/07/Parallels-Windows-10-1511-Private-Store-only-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/07/Parallels-Windows-10-1511-Private-Store-only-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/07/Parallels-Windows-10-1511-Private-Store-only.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/07/Parallels-Windows-10-1511-Private-Store-only.png)<figcaption id="caption-attachment-4956" class="wp-caption-text">Windows Store showing the Private Store only, in Windows 10 Pro 1511</figcaption></figure>
+
+<p>So without resorting hacking our Windows 10 image or AppLocker or Windows Firewall controls on the Store, IT now has some control over what users see and which applications can be added to their PCs.</p>
+
+<h1 id="bypassing-the-business-store">Bypassing the Business Store</h1>
+
+<p>It’s not all roses though – users can still directly access applications from the public Store via direct links to those apps. Direct links are available from a couple of places – suggestions shown by default on the Start menu and on the web. If you want to control the app suggestions on the Start menu, PCs will need to be running Windows 10 Enterprise or Education editions.</p>
+
+<p>To see bypassing the Business Store, search the web for an example app, e.g. <a href="https://www.microsoft.com/en-au/store/apps/facebook/9wzdncrfj2wl" target="_blank">the Windows 10 Facebook app</a>. A user can click on the ‘Get the app’ button on that page which will launch the Store:</p>
+
+<figure id="attachment_4967" aria-describedby="caption-attachment-4967" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-4967 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/07/FacebookInStore-1024x609.png" alt="Facebook for Windows 10" width="1024" height="609" srcset="http://192.168.0.89/wp-content/uploads/2016/07/FacebookInStore-1024x609.png 1024w, http://192.168.0.89/wp-content/uploads/2016/07/FacebookInStore-150x89.png 150w, http://192.168.0.89/wp-content/uploads/2016/07/FacebookInStore-300x179.png 300w, http://192.168.0.89/wp-content/uploads/2016/07/FacebookInStore-768x457.png 768w, http://192.168.0.89/wp-content/uploads/2016/07/FacebookInStore.png 1415w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/07/FacebookInStore.png)<figcaption id="caption-attachment-4967" class="wp-caption-text">Facebook for Windows 10</figcaption></figure>
+
+<p>A user can click on ‘Free’ button. If the user can add a Microsoft account to Windows, they can install the app. To prevent that, you’ll want to <a href="https://technet.microsoft.com/en-us/itpro/windows/keep-secure/accounts-block-microsoft-accounts">block Microsoft accounts</a>.</p>
+
+<h1 id="windows-10-1607-changes-the-store-behaviour">Windows 10 1607 Changes the Store Behaviour</h1>
+
+<p>Along with the changes to the <a href="https://support.microsoft.com/en-us/kb/3135657">Group Policy that hides the Store</a> in Windows 10 1511, now restricted to Enterprise or Education editions only; 1607 will also restrict the ability to hide the public links in the Store also to Enterprise and Education.</p>
+
+<p>Shown here is the Windows Store on the same PC, running Windows 10 Pro upgraded from 1511 to 1607. With the policy still in place, the public links are shown again:</p>
+
+<figure id="attachment_4957" aria-describedby="caption-attachment-4957" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-4957 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/07/Parallels-Windows-10-1607-Store-1024x640.png" alt="Windows Store with the Private Store enabled in Windows 10 Pro 1607" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/07/Parallels-Windows-10-1607-Store-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/07/Parallels-Windows-10-1607-Store-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/07/Parallels-Windows-10-1607-Store-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/07/Parallels-Windows-10-1607-Store-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/07/Parallels-Windows-10-1607-Store.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/07/Parallels-Windows-10-1607-Store.png)<figcaption id="caption-attachment-4957" class="wp-caption-text">Windows Store with the Private Store enabled in Windows 10 Pro 1607</figcaption></figure>
+
+<p>With Windows 10 Enterprise or Education editions, I can maintain full control over the consumer user experiences in Windows. Organisations running Windows 10 Pro will not be able to implement these controls.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>With Windows 10, Microsoft is changing the user experience in big ways and pushing organisations towards <a href="https://blogs.windows.com/windowsexperience/2016/07/12/announcing-new-subscription-options-for-windows-10-and-surface-for-businesses/">subscription options</a> for tighter control over the user experience. Regardless, I believe that IT should, and will eventually be forced to, embrace the new Windows world. Organisations without Software Assurance won’t be able to maintain the control they’ve been used to.</p>
+
+<p>Finally, here’s a couple of articles that I found useful when setting up Workplace Join with Azure AD:</p>
+
+<ul>
+  <li><a href="https://jankesblog.com/2016/01/20/why-and-how-you-should-register-your-windows-10-domain-joined-pcs-with-azure-ad/">Why and how you should register your Windows 10 Domain Joined PC’s with Azure AD</a></li>
+  <li><a href="https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/">How Domain Join is different in Windows 10 with Azure AD</a></li>
+</ul>
+
+  </div><a class="u-url" href="/windows-store-experience-enterprise-windows-10/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

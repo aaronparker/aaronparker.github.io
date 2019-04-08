@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Adobe Reader XI Deployment | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Adobe Reader XI Deployment" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Adobe Reader XI is now available and along with this release comes some interesting tools for deployment:" />
+<meta property="og:description" content="Adobe Reader XI is now available and along with this release comes some interesting tools for deployment:" />
+<link rel="canonical" href="/adobe-reader-xi-deployment/" />
+<meta property="og:url" content="/adobe-reader-xi-deployment/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-10-15T13:18:43+11:00" />
+<script type="application/ld+json">
+{"description":"Adobe Reader XI is now available and along with this release comes some interesting tools for deployment:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/adobe-reader-xi-deployment/","headline":"Adobe Reader XI Deployment","dateModified":"2012-10-15T13:18:43+11:00","datePublished":"2012-10-15T13:18:43+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/adobe-reader-xi-deployment/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Adobe Reader XI Deployment</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2012-10-15T13:18:43+11:00" itemprop="datePublished">Oct 15, 2012
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="http://get.adobe.com/reader/"><img class="alignright size-full wp-image-2848" style="margin-left: 5px; margin-right: 5px;" title="ReaderXI-Installer" src="http://stealthpuppy.com/wp-content/uploads/2012/10/ReaderXI-Installer.png" alt="" width="128" height="128" />Adobe Reader XI</a> is now available and along with this release comes some interesting tools for deployment:</p>
+
+<ul>
+  <li>Citrix XenApp enhancements for better performance (it’s not clear whether this specifically XenApp or RDS enhancements. Hopefully this means reduced memory requirements)</li>
+  <li>New App-V support, including a Package Accelerator (presumably this is App-V 4.6, not 5.0)</li>
+  <li>GPO Template for the most common enterprise settings (this includes a hand full of settings; however removing menu and toolbar items still requires resorting to Javascript)</li>
+</ul>
+
+<p>There’s a full list of new features in this blog post: <a href="http://blogs.adobe.com/adobereader/2012/10/announcing-adobe-reader-xi.html">Announcing Adobe Reader XI</a>. All of the bits that are currently available can be downloaded here:</p>
+
+<ul>
+  <li><a href="ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/">Adobe Reader XI installers in available languages</a></li>
+  <li><a href="ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/misc/ReaderADMTemplate.zip">Reader XI Administrative Template</a></li>
+  <li><a href="ftp://ftp.adobe.com/pub/adobe/acrobat/win/11.x/11.0.00/misc/AcrobatADMTemplate.zip">Acrobat XI Administrative Template</a></li>
+</ul>
+
+<h1 id="customisation">Customisation</h1>
+
+<p>Customisation of Reader XI with the Adobe Customization Wizard XI is the same approach as previous versions and I have a comprehensive post on <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/">deploying Adobe Reader X</a> which will largely apply to XI, but Adobe does have customisation and deployment documentation available:</p>
+
+<ul>
+  <li><a href="http://www.adobe.com/devnet-docs/acrobatetk/#">Enterprise Toolkit for Acrobat Products</a></li>
+  <li><a href="http://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/Customization%20Wizard%2011%20for%20Windows.pdf">Adobe Customization Wizard XI documentation</a></li>
+</ul>
+
+<p>The <a href="http://www.adobe.com/support/downloads/thankyou.jsp?ftpID=5515&amp;fileID=5526">Adobe Customization Wizard XI for Windows</a> is now available and the administration experience does not change massively (or at all) from <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/">previous versions</a>.</p>
+
+<p>Extracting Reader XI from the installer is the same as previous versions – run the following command:</p>
+
+<p>[code]AdbeRdr11000_en_US -nos_o”C:\Folder” -nos_ne[/code]</p>
+
+<p>Restricting user interface elements in Acrobat/Reader XI is the same as previous versions. This cannot be performed by Group Policy but requires Javascript instead. Here’s an example Javascript that you can use to hide the most common menu items:</p>
+
+<p>[code]//HideMenu.js</p>
+
+<p>// [Help – Repair Adobe Reader Installation]<br />
+app.hideMenuItem(“DetectAndRepair”);</p>
+
+<p>// [Help – Check for Updates]<br />
+app.hideMenuItem(“Updates”);</p>
+
+<p>// [Help – Purchase Adobe Acrobat]<br />
+app.hideMenuItem(“Weblink:BuyAcrobat”);</p>
+
+<p>// [Help – Digital Editions]<br />
+app.hideMenuItem(“eBook:Digital Edition Services”);</p>
+
+<p>// [Help – Online Support]<br />
+app.hideMenuItem(“OnlineSupport”);</p>
+
+<p>// [Help – Online Support – Knowledge Base]<br />
+app.hideMenuItem(“KnowledgeBase”);</p>
+
+<p>// [Help – Online Support – Adobe Support Programs]<br />
+app.hideMenuItem(“AdobeExpertSupport”);</p>
+
+<p>// [Help – Online Support – Adobe User Community]<br />
+app.hideMenuItem(“AdobeUserCommunity”);</p>
+
+<p>// [Help – Online Support – Accessibility Resource Center]<br />
+app.hideMenuItem(“AccessOnline”);</p>
+
+<p>// [Help – Online Support – Generate System Report]<br />
+app.hideMenuItem(“SystemInformation”);</p>
+
+<p>// [Help – Product Improvement Options]<br />
+app.hideMenuItem(“UsageMeasurement”);</p>
+
+<p>// [File – Share Files Using SendNow Online]<br />
+app.hideMenuItem(“SPAObject 51”);</p>
+
+<p>// [File – CreatePDF Online]<br />
+app.hideMenuItem(“SPAObject 47”);[/code]</p>
+
+<p>Save this file as <em>HideItems.js</em> and copy the file into <em>%ProgramFiles%\Adobe\Reader 11.0\Reader\Javascripts</em>.</p>
+
+<p>To create a custom transform file, open the extracted AcroRead.msi, set your required options and save the transform file. The following table list some recommended options to set via the Customization Wizard. Review these settings to see how they might apply in your environment.</p>
+
+<p>[table id=30 /]</p>
+
+<h1 id="deployment">Deployment</h1>
+
+<p>Deployment of Reader XI will be largely the same as Reader X and 9 before it, so if you’ve deployed Reader previously there’s little new.</p>
+
+<p>Although Adobe Reader is free you’ll need to agree to and obtain a license to distribute it in your own environment. Obtaining a license is simple, you’ll just need to answer a few questions such as the number of copies, how you will distribute Reader, which platforms and some information on your company including contact information. To apply for the license go to the <a href="http://www.adobe.com/go/rdr_apply_dist">Adobe Runtimes / Reader Distribution License Agreement</a>.</p>
+
+<p>To deploy Reader in your environment, you would continue to use the same approaches you are using today. Now might be the time to look at delivering Reader with App-V as this is now officially supported. The only hurdle will continue to be in browser (embedded) viewing of PDFs under Internet Explorer.</p>
+
+<p>Whilst the Group Policy management support is great and way overdue, there’s currently only a handful of settings – don’t expect the same level of policy configuration that we get with Microsoft Office. It remains to be seen whether more will be required in production environments.</p>
+
+<p><img title="ReaderXI-GroupPolicy" src="http://stealthpuppy.com/wp-content/uploads/2012/10/ReaderXI-GroupPolicy.png" alt="" width="440" height="165" /></p>
+
+<h1 id="finally">Finally..</h1>
+
+<p>Go forth and deploy.</p>
+
+  </div><a class="u-url" href="/adobe-reader-xi-deployment/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

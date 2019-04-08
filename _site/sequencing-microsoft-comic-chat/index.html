@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Sequencing Microsoft Comic Chat | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Sequencing Microsoft Comic Chat" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="on end user computing and enterprise mobility" />
+<meta property="og:description" content="on end user computing and enterprise mobility" />
+<link rel="canonical" href="/sequencing-microsoft-comic-chat/" />
+<meta property="og:url" content="/sequencing-microsoft-comic-chat/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-04-02T00:24:55+11:00" />
+<script type="application/ld+json">
+{"description":"on end user computing and enterprise mobility","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/sequencing-microsoft-comic-chat/","headline":"Sequencing Microsoft Comic Chat","dateModified":"2011-04-02T00:24:55+11:00","datePublished":"2011-04-02T00:24:55+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/sequencing-microsoft-comic-chat/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Sequencing Microsoft Comic Chat</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2011-04-02T00:24:55+11:00" itemprop="datePublished">Apr 2, 2011
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="http://stealthpuppy.com/wp-content/uploads/2011/04/Step3.jpg"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Step3" src="http://stealthpuppy.com/wp-content/uploads/2011/04/Step3_thumb.jpg" border="0" alt="Step3" width="264" height="264" /></a></p>
+
+<p>No, this isn’t an April Fools joke – I wanted to see if I could sequence <a href="http://en.wikipedia.org/wiki/Microsoft_Comic_Chat">Microsoft Comic Chat</a> using App-V. After seeing <a href="http://blogs.msdn.com/b/oldnewthing/archive/2011/04/01/10148494.aspx">Raymond Chen’s latest post on Comic Chat</a>, I had to take a look.</p>
+
+<blockquote>
+  <p>Comic Chat is a radically different kind of internet chat program, released by Microsoft in 1996. Instead of representing chat dialogs as text, like the majority of internet chat programs, or as graphical worlds like some emerging chat programs, Comic Chat visually represents conversations as sequences of comic panels.</p>
+</blockquote>
+
+<p>Using App-V to deliver this application is actually a great example of the power of using any application virtualization product to deliver your legacy applications. The first version of Comic Chat was release in 1996 when we were all running Windows 95, even to run our businesses. Running Comic Chat today under Windows 7 will result in this error:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/04/07.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="07" src="http://stealthpuppy.com/wp-content/uploads/2011/04/07_thumb.png" border="0" alt="07" width="298" height="161" /></a></p>
+
+<p>Comic Chat is expecting to be able to write to the HKEY_LOCAL_MACHINE key in the Registry. App-V solves this issue two ways – capturing the writes at first launch and optional allowing standard users to write to protected locations because the writes occur within the virtual environment.</p>
+
+<h3 id="getting-ready-to-sequence-comic-chat">Getting ready to sequence Comic Chat</h3>
+
+<p>You can download Microsoft Comic Chat 2.5 from <a href="http://kurlander.net/DJ/Projects/ComicChat/resources.html">David Kurlander’s site</a> (Kurlander is the designer of Comic Chat). See <a href="http://kurlander.net/DJ/Projects/ComicChat/GettingStarted.html">the Getting Started page</a> for installation and usage instructions.</p>
+
+<p>Although Comic Chat installs OK on Windows 7, during sequencing Setup produces this error:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/04/INFInstallFailure.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="INFInstallFailure" src="http://stealthpuppy.com/wp-content/uploads/2011/04/INFInstallFailure_thumb.png" border="0" alt="INFInstallFailure" width="391" height="161" /></a></p>
+
+<p>Fortunately, there’s an easy fix – before starting the monitoring phase, configure mschat25.exe to start in Windows XP Compatibility Mode:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/04/MSChat-Compat.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="MSChat-Compat" src="http://stealthpuppy.com/wp-content/uploads/2011/04/MSChat-Compat_thumb.png" border="0" alt="MSChat-Compat" width="419" height="292" /></a></p>
+
+<h3 id="sequencing-comic-chat">Sequencing Comic Chat</h3>
+
+<p>I sequenced Comic Chat on Windows 7 using the App-V 4.6 SP1 Sequencer. Sequencing is simple enough – just install to the default folder. During first run, you can choose to enable the Comic Strip view:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/04/08.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="08" src="http://stealthpuppy.com/wp-content/uploads/2011/04/08_thumb.png" border="0" alt="08" width="660" height="354" /></a></p>
+
+<p>You might also like to remove the extra shortcut created by Setup in <em>Start Menu\Programs\Internet Explorer</em>:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/04/05.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="05" src="http://stealthpuppy.com/wp-content/uploads/2011/04/05_thumb.png" border="0" alt="05" width="660" height="470" /></a></p>
+
+<p>And that’s about it. I’ve tested execution on a Windows 7 SP1 64-bit installation. Other than taking some time to connect to an IRC server, Comic Chat works under App-V on Windows 7.</p>
+
+<h3 id="comic-chat-package-accelerator">Comic Chat Package Accelerator</h3>
+
+<p>If you’d like to sequence Comic Chat yourself, I’ve uploaded a Package Accelerator to the TechNet Gallery – <a href="http://gallery.technet.microsoft.com/Package-Accelerator-for-97080d2c">App-V Package Accelerator for Microsoft Comic Chat 2.5</a></p>
+
+  </div><a class="u-url" href="/sequencing-microsoft-comic-chat/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

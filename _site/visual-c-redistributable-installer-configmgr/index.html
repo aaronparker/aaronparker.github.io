@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Install-VisualCRedistributables.ps1 – Now with ConfigMgr Support! | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Install-VisualCRedistributables.ps1 – Now with ConfigMgr Support!" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I recently posted an article on a script I’ve written for downloading and installing the Microsoft Visual C++ Redistributables. Thanks to Cornelius Schuchardt, the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr)." />
+<meta property="og:description" content="I recently posted an article on a script I’ve written for downloading and installing the Microsoft Visual C++ Redistributables. Thanks to Cornelius Schuchardt, the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr)." />
+<link rel="canonical" href="/visual-c-redistributable-installer-configmgr/" />
+<meta property="og:url" content="/visual-c-redistributable-installer-configmgr/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2017/05/VCredist_ConfigMgr.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-08T23:25:28+10:00" />
+<script type="application/ld+json">
+{"description":"I recently posted an article on a script I’ve written for downloading and installing the Microsoft Visual C++ Redistributables. Thanks to Cornelius Schuchardt, the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/visual-c-redistributable-installer-configmgr/","image":"/wp-content/uploads/2017/05/VCredist_ConfigMgr.png","headline":"Install-VisualCRedistributables.ps1 – Now with ConfigMgr Support!","dateModified":"2017-05-08T23:25:28+10:00","datePublished":"2017-05-08T23:25:28+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/visual-c-redistributable-installer-configmgr/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Install-VisualCRedistributables.ps1 – Now with ConfigMgr Support!</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-05-08T23:25:28+10:00" itemprop="datePublished">May 8, 2017
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I recently <a href="http://stealthpuppy.com/visual-c-redistributable-installer/">posted an article</a> on a script I’ve written for downloading and installing the Microsoft <a href="https://github.com/aaronparker/Install-VisualCRedistributables">Visual C++ Redistributables</a>. Thanks to <a href="https://twitter.com/techdecline">Cornelius Schuchardt</a>, the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).</p>
+
+<p>Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you can <a href="https://github.com/aaronparker/Install-VisualCRedistributables/releases">download from the releases page</a> and includes the following updates:</p>
+
+<ul>
+  <li>VisualCRedistributables.xml updated with MSI Product codes for the redistributables</li>
+  <li>Install-VisualCRedistributables.ps1 updated with ConfigMgr support – create applications for the redistributables in ConfigMgr</li>
+  <li>Updated with additional parameter validation, parameter sets, inline comments</li>
+</ul>
+
+<h1 id="overview">Overview</h1>
+
+<p>This script will download the Visual C++ Redistributables listed in an external XML file into a folder structure that represents major release, processor architecture and update release (e.g. SP1, MFC, ATL etc.). The script defines the available redistributables and can be updated with each release with no changes made to the script.</p>
+
+<p>The basic structure of the XML file should be as follows (an XSD schema is included in the repository):</p>
+
+<pre class="prettyprint lang-xml" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">&lt;Redistributables&gt;
+    &lt;Platform Architecture="x64" Release="" Install=""&gt;
+        &lt;Redistributable&gt;
+            &lt;Name&gt;&lt;/Name&gt;
+            &lt;ShortName&gt;&lt;/ShortName&gt;
+            &lt;URL&gt;&lt;/URL&gt;
+            &lt;ProductCode&gt;&lt;/ProductCode&gt;
+            &lt;Download&gt;&lt;/Download&gt;
+        &lt;/Redistributable&gt;
+    &lt;/Platform&gt;
+    &lt;Platform Architecture="x86" Release="" Install=""&gt;
+        &lt;Redistributable&gt;
+            &lt;Name&gt;&lt;/Name&gt;
+            &lt;ShortName&gt;&lt;/ShortName&gt;
+            &lt;URL&gt;&lt;/URL&gt;
+            &lt;ProductCode&gt;&lt;/ProductCode&gt;
+            &lt;Download&gt;&lt;/Download&gt;
+        &lt;/Redistributable&gt;
+    &lt;/Platform&gt;
+&lt;/Redistributables&gt;</pre>
+
+<p>Each major version of the redistributables is grouped by that defines the major release, processor architecture and install arguments passed to the installer.</p>
+
+<p>The properties of each redistributable are defined in each node:</p>
+
+<ul>
+  <li>Name – the name of the redistributable as displayed on the download page. Not used in the script, but useful for reading the XML file.</li>
+  <li>ShortName – the redistributable will be downloaded to Release\Architecture\ShortName</li>
+  <li>URL – this is the URL to the page at microsoft.com/downloads. Not used in the script, but useful for referencing the download as needed</li>
+  <li>ProductCode – this is the MSI Product Code for the specified VC++ App that will be used to import the package into Configuration Manager</li>
+  <li>Download – this is the URL to the installer so that the script can download each redistributable</li>
+</ul>
+
+<h2 id="parameters">Parameters</h2>
+
+<p>The script supports the -WhatIf and -Verbose parameters for testing and verbose output when using the parameter actions below.</p>
+
+<p>There are 3 parameter sets that control the following actions:</p>
+
+<ol>
+  <li>Download only</li>
+  <li>Download and Install the redistributable to the current machine</li>
+  <li>Download and create ConfigMgr applications for the redistributables</li>
+</ol>
+
+<h3 id="download">Download</h3>
+
+<h4 id="xml">Xml</h4>
+
+<p>The XML file that contains the details about the Visual C++ Redistributables. This must be in the expected format. If the redistributable exists in the target location, it will be skipped and not re-downloaded.</p>
+
+<p>Example: download the Visual C++ Redistributables listed in VisualCRedistributables.xml to the current folder.</p>
+
+<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml"&nbsp;-Path .\</pre>
+
+<p>Specify a target folder to download the Redistributables to, otherwise use the current folder will be used.</p>
+
+<p>Example: download the Visual C++ Redistributables listed in VisualCRedistributables.xml to C:\Redist.</p>
+
+<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path C:\Redist -Install</pre>
+
+<p>To install the redistributables add the -Install parameter.</p>
+
+<h4 id="install">Install</h4>
+
+<p>By default, the script will only download the Redistributables. This allows you to download the Redistributables for separate deployment (e.g. in a reference image). Add -Install to install each of the Redistributables as well.</p>
+
+<p>Example: download (to the current folder) and install the Visual C++ Redistributables listed in VisualCRedistributables.xml.</p>
+
+<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Install</pre>
+
+<p>The Redistributables will installed in the order specified in the XML file.</p>
+
+<h4 id="results">Results</h4>
+
+<p>Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list.<figure></figure></p>
+
+<figure style="width: 1442px" class="wp-caption alignnone"><img title="Visual C++ Redistributables 2005-2015" src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/2005-2015.PNG" alt="Visual C++ Redistributables 2005-2015" width="1442" height="900" /><figcaption class="wp-caption-text">Visual C++ Redistributables 2005-2015</figcaption></figure>
+<p>&lt;/figure&gt;</p>
+
+<p>Visual C++ Redistributables 2005 to 2017 (including 2015) installed:<figure></figure></p>
+
+<figure style="width: 1442px" class="wp-caption alignnone"><img title="Visual C++ Redistributables 2005-2017" src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/2005-2017.PNG" alt="Visual C++ Redistributables 2005-2017" width="1442" height="900" /><figcaption class="wp-caption-text">Visual C++ Redistributables 2005-2017</figcaption></figure>
+<p>&lt;/figure&gt;</p>
+
+<h3 id="configmgr">ConfigMgr</h3>
+
+<p>Support for downloading the Redistributables and creating applications in System Center Configuration Manager has recently been added.</p>
+
+<h4 id="createcmapp">CreateCMApp</h4>
+
+<p>If specified, enables automatic creation of Application Containers in Configuration Manager with a single Deployment Type containing the downloaded EXE file. The script must be run from a machine with the Configuration Manager console and the ConfigMgr PowerShell module installed.</p>
+
+<h4 id="smssitecode">SMSSiteCode</h4>
+
+<p>Specify SMS Site Code for the ConfigMgr app creation.</p>
+
+<p>Example: Download Visual C++ Redistributables listed in VisualCRedistributables.xml and create ConfigMgr Applications for the selected Site.</p>
+
+<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path \\server1.contoso.com\Sources\Apps\VSRedist -CreateCMApp -SMSSiteCode S01</pre>
+
+<p>This will look similar to the following in the Configuration Manager console:<figure></figure></p>
+
+<figure style="width: 1368px" class="wp-caption alignnone"><img src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/VCredist_ConfigMgr.PNG" alt="Visual C++ Redistributables in Configuration Manager" width="1368" height="727" /><figcaption class="wp-caption-text">Visual C++ Redistributables in Configuration Manager</figcaption></figure>
+<p>&lt;/figure&gt;</p>
+
+<h1 id="finally">Finally</h1>
+
+<p>Work is proceeding on additional updates including the following:</p>
+
+<ul>
+  <li>Provide arguments for specifying processor architectures (x86, x64) and platforms (2005, 2012, 2017, etc.) to enable only those specified for download, install etc. without having to modify the XML file</li>
+  <li>Add software versions for import into ConfigMgr applications</li>
+  <li>Specify a folder for creating the ConfigMgr applications in. Currently, applications are created in the top level Applications node</li>
+</ul>
+
+<p>Feedback and bug reports welcome.</p>
+
+  </div><a class="u-url" href="/visual-c-redistributable-installer-configmgr/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

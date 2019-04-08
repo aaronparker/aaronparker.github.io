@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Updating an MCS-based XenDesktop Machine Catalog with PowerShell | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Updating an MCS-based XenDesktop Machine Catalog with PowerShell" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I wrote previously about automating the creation of an MCS-based machine catalog in XenDesktop with PowerShell, so in this article I’ll cover updating that machine catalog via PowerShell." />
+<meta property="og:description" content="I wrote previously about automating the creation of an MCS-based machine catalog in XenDesktop with PowerShell, so in this article I’ll cover updating that machine catalog via PowerShell." />
+<link rel="canonical" href="/xendesktop-update-mcs-machine-catalog-powershell/" />
+<meta property="og:url" content="/xendesktop-update-mcs-machine-catalog-powershell/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2014/10/powershell_ise.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-10-28T00:34:50+11:00" />
+<script type="application/ld+json">
+{"description":"I wrote previously about automating the creation of an MCS-based machine catalog in XenDesktop with PowerShell, so in this article I’ll cover updating that machine catalog via PowerShell.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/xendesktop-update-mcs-machine-catalog-powershell/","image":"/wp-content/uploads/2014/10/powershell_ise.png","headline":"Updating an MCS-based XenDesktop Machine Catalog with PowerShell","dateModified":"2014-10-28T00:34:50+11:00","datePublished":"2014-10-28T00:34:50+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/xendesktop-update-mcs-machine-catalog-powershell/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Updating an MCS-based XenDesktop Machine Catalog with PowerShell</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-10-28T00:34:50+11:00" itemprop="datePublished">Oct 28, 2014
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I wrote previously about <a href="http://stealthpuppy.com/xendesktop-mcs-machine-catalog-powershell/">automating the creation of an MCS-based machine catalog in XenDesktop with PowerShell</a>, so in this article I’ll cover updating that machine catalog via PowerShell.</p>
+
+<p>Separate to this article would be the process of creating the updated image – that could be done manually (by updating the existing master image), or by <a href="http://stealthpuppy.com/briforum-2014-hands-off-my-gold-image-the-slides/">automating a new master image deployment with MDT</a>, or any other method that you can think of.</p>
+
+<p>Just as with creating the machine catalog, the PowerShell output from Studio when updating a catalog is a place to start – the code provided isn’t reusable without some effort to make it work.</p>
+
+<h1 id="linking-the-code-to-the-ui">Linking the Code to the UI</h1>
+
+<p>I’ll walk briefly through the wizards to show, in part, how the code relates to each step when updating a machine catalog via the Studio UI.</p>
+
+<p>In this case, I’ve already created the machine catalog and updated my master image and created a snapshot. The hypervisor isn’t important because Citrix Studio abstracts this from the process when performing the update (I do need to be using the same infrastructure as the target catalog).</p>
+
+<p>To find the snapshot to use, I’ve obtained the path to the master image and a specified snapshot via the <em>Get-ChildItem</em> command (on the path XDHyp:\HostingUnits&lt;Storage Resource&gt;). This is essentially a path/directory that I can parse – I’ve explicitly specified the master image and the snapshot to use. I need the path to the snapshot so that I can use that in the publish step for the image update.</p>
+
+<figure id="attachment_3729" aria-describedby="caption-attachment-3729" style="width: 806px" class="wp-caption alignnone">[<img class="wp-image-3729 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/10/01-Master-Image.png" alt="" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/10/01-Master-Image.png 806w, http://192.168.0.89/wp-content/uploads/2014/10/01-Master-Image-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/10/01-Master-Image-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/10/01-Master-Image-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/01-Master-Image.png)<figcaption id="caption-attachment-3729" class="wp-caption-text">Selecting the master image snapshot &#8211; Get-ChildItem &#8220;XDHyp:\HostingUnits\&#8221;</figcaption></figure>
+
+<p>I can choose from a couple of rollout strategies for the image update – I can choose to update on next shutdown of the desktop, or update immediately (with a specified delay).</p>
+
+<figure id="attachment_3730" aria-describedby="caption-attachment-3730" style="width: 806px" class="wp-caption alignnone">[<img class="wp-image-3730 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/10/02-Rollout-01.png" alt="" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/10/02-Rollout-01.png 806w, http://192.168.0.89/wp-content/uploads/2014/10/02-Rollout-01-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/10/02-Rollout-01-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/10/02-Rollout-01-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/02-Rollout-01.png)<figcaption id="caption-attachment-3730" class="wp-caption-text">Rollout the image update on next reboot &#8211; Start-BrokerRebootCycle or Start-BrokerNaturalRebootCycle (still need to work this out)</figcaption></figure>
+
+<p><em><a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/start-brokerrebootcycle-xd75.html">Start-BrokerRebootCycle</a></em> is used to control the the reboot cycle, but this is called at the end of the script to ensure the update process is completed first.</p>
+
+<figure id="attachment_3731" aria-describedby="caption-attachment-3731" style="width: 806px" class="wp-caption alignnone">[<img class="wp-image-3731 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/10/02-Rollout-02.png" alt="" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/10/02-Rollout-02.png 806w, http://192.168.0.89/wp-content/uploads/2014/10/02-Rollout-02-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/10/02-Rollout-02-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/10/02-Rollout-02-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/02-Rollout-02.png)<figcaption id="caption-attachment-3731" class="wp-caption-text">Rollout image update immediately &#8211; Start-BrokerRebootCycle -InputObject @(<Machine Catalog="" Name="">) -RebootDuration 120 -WarningDuration 15 -WarningMessage <message> -WarningTitle <message>&lt;/figcaption&gt;&lt;/figure&gt;
+
+<p class="p1">
+  <a href="http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/publish-provmastervmimage-xd75.html"><em>Publish-ProvMasterVmImage</em></a> is used to publish the image. The process can then be monitored by getting updates for the process via <a href="http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/get-provtask-xd75.html">Get-ProvTask</a>. I&#8217;ve opted to show a progress bar while the update is on-going before initiating the desktop reboot.
+</p>
+
+<figure id="attachment_3732" aria-describedby="caption-attachment-3732" style="width: 806px" class="wp-caption alignnone">[<img class="wp-image-3732 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/10/04-Summary.png" alt="" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/10/04-Summary.png 806w, http://192.168.0.89/wp-content/uploads/2014/10/04-Summary-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/10/04-Summary-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/10/04-Summary-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/04-Summary.png)<figcaption id="caption-attachment-3732" class="wp-caption-text">Catalog update summary</figcaption></figure>
+
+There’s plenty that the wizard does to hide the complexity of setting up a catalog from the administrator. If you attempt the same via PowerShell, what goes on under the hood is laid bare.
+
+# The Code
+
+Below is the full code listing with comments inline that should provide some detail on the process the code follows. At this point the code provides some error checking for the most important steps. There are still some additional steps and error checking that could be integrated:
+
+  * The code will get a specified snapshot from the target VM. I&#8217;ve done this to ensure I&#8217;m using the correct version of the image
+  * Publish the image update to the catalog
+  * Monitor the update process until completion
+  * Start the desktop reboot cycle
+
+At this stage, I haven&#8217;t added too much error checking, but an important step to add will be to check that the image update process was successful and rollback if it wasn&#8217;t.
+
+<pre class="lang:ps decode:true " title="PowerShell code to update and MCS-based Machine Catalog">#---------------------------------------------------------------------------
+# Author: Aaron Parker
+# Desc:   Using PowerShell to update a XenDesktop 7.x machine catalog 
+# Date:   Oct 27, 2014
+# Site:   http://stealthpuppy.com
+#---------------------------------------------------------------------------
+
+# Set variables for the target infrastructure
+# ----------
+$adminAddress = 'xd71.home.stealthpuppy.com' #The XD Controller we're going to execute against
+$xdControllers = 'xd71.home.stealthpuppy.com'
+
+# Hypervisor and storage resources
+# These need to be configured in Studio prior to running this script
+# This script is hypervisor and management agnostic - just point to the right infrastructure
+$storageResource = "HV2-EVOPro" #Storage
+$hostResource = "Lab vCenter" #Hypervisor management
+
+# Master image properties
+$machineCatalogName = "Windows 8 vSphere"
+$masterImage ="Windows8*"
+$snapshot = "VDA 7.6"
+
+$messageDetail = "Your computer has been updated and will be automatically restarted in 15 minutes."
+$messageTitle = "Help desk message"
+# ----------
+
+# Load the Citrix PowerShell modules
+Write-Verbose "Loading Citrix XenDesktop modules."
+Add-PSSnapin Citrix*
+
+# Get information from the hosting environment via the XD Controller
+# Get the storage resource
+Write-Verbose "Gathering storage and hypervisor connections from the XenDesktop infrastructure."
+$hostingUnit = Get-ChildItem -AdminAddress $adminAddress "XDHyp:\HostingUnits" | Where-Object { $_.PSChildName -like $storageResource } | Select-Object PSChildName, PsPath
+# Get the hypervisor management resources
+$hostConnection = Get-ChildItem -AdminAddress $adminAddress "XDHyp:\Connections" | Where-Object { $_.PSChildName -like $hostResource }
+
+# Get the broker connection to the hypervisor management
+# http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/get-brokerhypervisorconnection-xd75.html
+$brokerHypConnection = Get-BrokerHypervisorConnection -AdminAddress $adminAddress -HypHypervisorConnectionUid $hostConnection.HypervisorConnectionUid
+
+# Set a provisioning scheme for the update process
+# http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/set-provschememetadata-xd75.html
+$ProvScheme = Set-ProvSchemeMetadata -AdminAddress $adminAddress -Name 'ImageManagementPrep_DoImagePreparation' -ProvisioningSchemeName $machineCatalogName -Value 'True'
+
+# Get the master VM image from the same storage resource we're going to deploy to. Could pull this from another storage resource available to the host
+Write-Verbose "Getting the snapshot details for the catalog: $machineCatalogName"
+$VM = Get-ChildItem -AdminAddress $adminAddress "XDHyp:\HostingUnits\$storageResource" | Where-Object { $_.ObjectType -eq "VM" -and $_.PSChildName -like $masterImage }
+# Get the snapshot details. This code will grab a specific snapshot, although you could grab the last in the list assuming it's the latest.
+$VMSnapshots = Get-ChildItem -AdminAddress $adminAddress $VM.FullPath -Recurse -Include *.snapshot
+$TargetSnapshot = $VMSnapshots | Where-Object { $_.FullName -eq "$snapshot.snapshot" }
+
+# Publish the image update to the machine catalog
+# http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/publish-provmastervmimage-xd75.html
+$PubTask = Publish-ProvMasterVmImage -AdminAddress $adminAddress -MasterImageVM $TargetSnapshot.FullPath -ProvisioningSchemeName $machineCatalogName -RunAsynchronously
+$provTask = Get-ProvTask -AdminAddress $adminAddress -TaskId $PubTask
+
+# Track progress of the image update
+Write-Verbose "Tracking progress of the machine creation task."
+$totalPercent = 0
+While ( $provTask.Active -eq $True ) {
+    Try { $totalPercent = If ( $provTask.TaskProgress ) { $provTask.TaskProgress } Else {0} } Catch { }
+
+    Write-Progress -Activity "Provisioning image update" -Status "$totalPercent% Complete:" -percentcomplete $totalPercent
+    Sleep 15
+    $provTask = Get-ProvTask -AdminAddress $adminAddress -TaskId $PubTask
+}
+
+# Start the desktop reboot cycle to get the update to the actual desktops
+# http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/start-brokerrebootcycle-xd75.html
+Start-BrokerRebootCycle -AdminAddress $adminAddress -InputObject @($machineCatalogName) -RebootDuration 60 -WarningDuration 15 -WarningMessage $messageDetail -WarningTitle $messageTitle</pre>
+
+Comments or feedback on bugs, better ways to do things or additional steps is welcome. the code is provided as-is, so ensure you test before using in a production environment.
+</message></message></Machine></figcaption></figure>
+
+  </div><a class="u-url" href="/xendesktop-update-mcs-machine-catalog-powershell/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

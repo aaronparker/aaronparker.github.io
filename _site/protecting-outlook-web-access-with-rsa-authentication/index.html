@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Protecting Outlook Web Access with RSA authentication | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Protecting Outlook Web Access with RSA authentication" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Outlook Web Access can be protected with an extra layer of authentication via RSA SecurID. This can be implemented in one of two ways:" />
+<meta property="og:description" content="Outlook Web Access can be protected with an extra layer of authentication via RSA SecurID. This can be implemented in one of two ways:" />
+<link rel="canonical" href="/protecting-outlook-web-access-with-rsa-authentication/" />
+<meta property="og:url" content="/protecting-outlook-web-access-with-rsa-authentication/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-08-25T05:51:00+10:00" />
+<script type="application/ld+json">
+{"description":"Outlook Web Access can be protected with an extra layer of authentication via RSA SecurID. This can be implemented in one of two ways:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/protecting-outlook-web-access-with-rsa-authentication/","headline":"Protecting Outlook Web Access with RSA authentication","dateModified":"2006-08-25T05:51:00+10:00","datePublished":"2006-08-25T05:51:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/protecting-outlook-web-access-with-rsa-authentication/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Protecting Outlook Web Access with RSA authentication</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2006-08-25T05:51:00+10:00" itemprop="datePublished">Aug 25, 2006
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img align="left" src="http://stealthpuppy.com/wp-content/uploads/2006/08/exchange1.png" />Outlook Web Access can be protected with an extra layer of authentication via RSA SecurID. This can be implemented in one of two ways:</p>
+
+<p><strong>1. ISA Server 2004</strong><br />
+ISA Server 2004 implements the SecurID Web Filter that allows ISA Server to authenticate connections before providing access to published web servers. See the ISA Server help for information, but the requirements are:</p>
+
+<ol>
+  <li>The RSA ACE Client does not need to be installed on the server. ISA Server comes with it’s own RSA ACE client DLLs and thus does not require the client installation. All that is required is to create the agent host and copy SDCONF.REC to %SYSTEMROOT%SYSTEM32</li>
+  <li>The Network Service account must have read/write access to the following registry key: HKLMSoftwareSDTIACECLIENT.</li>
+</ol>
+
+<p>There are two issues with this implementation:<br />
+– The user will be prompted with an RSA authentication prompt; and<br />
+– The RSA authentication web page is not customisable.</p>
+
+<p><strong>2. RSA Web Agent for IIS</strong><br />
+The RSA Web Agent for IIS, installed on the Exchange Server, offers authentication directly from IIS and also offers a ‘single sign-on’ solution.</p>
+
+<p><em>RSA Authentication Agent 5.3 for Web for Internet Information Services</em><br />
+<a target="_blank" href="http://www.rsasecurity.com/node.asp?id=2807"><u>http://www.rsasecurity.com/node.asp?id=2807</u></a></p>
+
+<p>The download contains the Agent software and a PDF file (WebAgent_IIS.PDF) for implementing RSA authentication on protected web pages. Page 51 of the PDF contains configuration information for implementing the single sign-on solution for Outlook Web Access. The information listed in the document is fairly straight-forward, however where it mentions Exchange System Manager to configure the HTTP Virtual Server, it should say IIS Manager.</p>
+
+<p>There are a few things to be aware of when implementing this solution:</p>
+
+<p><strong>Requirements</strong><br />
+– The Exchange server/s must be running Exchange Server 2003 Service Pack 1 and Windows Server 2003 Service Pack 1;<br />
+– The domain must be at Windows Server 2003 Functional Level;<br />
+– Although the RSA documentation discusses implementing this solution in a front-end/back-end scenario, this solution will work in an environment without front-end servers.</p>
+
+<p><strong>Installation</strong><br />
+– After installing the RSA Web Agent software, IIS may need to be restarted (IISRESET) before RSA Authentication will work. The web browser may report ‘500. Internal Server error’;<br />
+– Create a second virtual server in IIS on the Exchange Server before implementing RSA auth. In this way, RSA can be implemented without affecting the existing Default Web Site and OWA will continue to work. This also allows for internal access to OWA via Integrated authentication and and external site with RSA auth for publishing;<br />
+– To create the virtual server, right click the Default Web Site and select All Tasks/Save Configuration to a file. Use this configration file to create a new site: right click Web Sites and select New/Web Site (from file). Provide access to this site via a second IP address or use host headers;<br />
+– Test that standard RSA authentication works before implementing the single sign-on configuration;<br />
+– After configuration anonymous access to OWA as per the RSA documentation, check the directory access to the following file, otherwise users will be prompted with an authentication prompt when they logoff from OWA: /exchweb/bin/USA/logoff.asp;</p>
+
+<font color="#ff0000">UPDATE</font>
+<p>: I forgot to add a third method of adding RSA authentication to OWA: <a href="http://www.rsasecurity.com/node.asp?id=1186">RSA ClearTrust</a>. ClearTrust is better integrated into the authentication than the Web Agent, however this requires additional cost above the standard RSA SecurID Authentication.</p>
+
+<font color="#ff0000">UPDATE #2</font>
+<p>: There’s a much better way to protect OWA with RSA authentication now that ISA Server 2006 has been released. Check out <a href="http://www.stealthpuppy.com/blogs/travelling/archive/2006/09/29/Strengthening-OWA-Authentication-with-ISA-2006-and-RSA-SecurID-.aspx">my post here</a>.</p>
+
+  </div><a class="u-url" href="/protecting-outlook-web-access-with-rsa-authentication/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

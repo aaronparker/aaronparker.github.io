@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Profile Changes in Windows Vista and Windows Server 2008 and beyond | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Profile Changes in Windows Vista and Windows Server 2008 and beyond" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windows Vista and Windows Server 2008 introduce a number of new user profile paths and environment variables that differ from earlier versions of Windows and these changes may have an impact on scripts such as logon scripts and application install scripts. Most scripts should work correctly – VBScript scripts that use system functions to find folder paths should work as expected, however batch scripts that use environment variables or hard codes scripts will require modifications. Here’s a short run down of the changes." />
+<meta property="og:description" content="Windows Vista and Windows Server 2008 introduce a number of new user profile paths and environment variables that differ from earlier versions of Windows and these changes may have an impact on scripts such as logon scripts and application install scripts. Most scripts should work correctly – VBScript scripts that use system functions to find folder paths should work as expected, however batch scripts that use environment variables or hard codes scripts will require modifications. Here’s a short run down of the changes." />
+<link rel="canonical" href="/profile-changes-in-windows-vistalonghorn-server/" />
+<meta property="og:url" content="/profile-changes-in-windows-vistalonghorn-server/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-08-25T06:08:00+10:00" />
+<script type="application/ld+json">
+{"description":"Windows Vista and Windows Server 2008 introduce a number of new user profile paths and environment variables that differ from earlier versions of Windows and these changes may have an impact on scripts such as logon scripts and application install scripts. Most scripts should work correctly – VBScript scripts that use system functions to find folder paths should work as expected, however batch scripts that use environment variables or hard codes scripts will require modifications. Here’s a short run down of the changes.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/profile-changes-in-windows-vistalonghorn-server/","headline":"Profile Changes in Windows Vista and Windows Server 2008 and beyond","dateModified":"2006-08-25T06:08:00+10:00","datePublished":"2006-08-25T06:08:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/profile-changes-in-windows-vistalonghorn-server/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Profile Changes in Windows Vista and Windows Server 2008 and beyond</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2006-08-25T06:08:00+10:00" itemprop="datePublished">Aug 25, 2006
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Windows Vista and Windows Server 2008 introduce a number of new user profile paths and environment variables that differ from earlier versions of Windows and these changes may have an impact on scripts such as logon scripts and application install scripts. Most scripts should work correctly – VBScript scripts that use system functions to find folder paths should work as expected, however batch scripts that use environment variables or hard codes scripts will require modifications. Here’s a short run down of the changes.</p>
+
+<p>The following table lists the old profile path and the corresponding new path under Windows Vista/Windows Server 2008:</p>
+
+<p>[table id=8 /]</p>
+
+<p>Folders to take note of here are the folders in the All Users path. Many older applications that use out of date methods to resolve system folders, will resolve paths under \ProgramData when looking for common locations. For example the common desktop may be resolved as \ProgramData\Desktop, however this is actually a junction point for \Users\Public\Desktop. A DIR /A:H listing in \ProgramData folder reveals the following junction points:</p>
+
+<p>[table id=9 /]</p>
+
+<p>These junction points should offer backward compatibility for older applications, however I have found that some of my installation scripts are not cleaning up shortcuts from the public desktop as expected.</p>
+
+<p>There are also differences in environment variables between the new version of Windows and the older versions. Windows Server 2003 and below define the following variables relating to profiles:</p>
+
+<p><code class="highlighter-rouge">ALLUSERSPROFILE=C:\Documents and Settings\All Users&lt;br /&gt;
+APPDATA=C:\Documents and Settings\aaron\Application Data&lt;br /&gt;
+HOMEPATH=\Documents and Settings\aaron&lt;br /&gt;
+TEMP=C:\DOCUME~1\aaron\LOCALS~1\Temp&lt;br /&gt;
+TMP=C:\DOCUME~1\aaron\LOCALS~1\Temp&lt;br /&gt;
+USERPROFILE=C:\Documents and Settings\aaron&lt;br /&gt;
+</code></p>
+
+<p>Windows Vista and Windows Server 2008 define the same variables while adding a couple more.</p>
+
+<p><code class="highlighter-rouge">ALLUSERSPROFILE=C:\ProgramData&lt;br /&gt;
+APPDATA=C:\Users\aaronp\AppData\Roaming&lt;br /&gt;
+HOMEPATH=\Users\aaronp&lt;br /&gt;
+LOCALAPPDATA=C:\Users\aaronp\AppData\Local&lt;br /&gt;
+ProgramData=C:\ProgramData&lt;br /&gt;
+PUBLIC=C:\Users\Public&lt;br /&gt;
+TEMP=C:\Users\aaronp\AppData\Local\Temp&lt;br /&gt;
+TMP=C:\Users\aaronp\AppData\Local\Temp&lt;br /&gt;
+USERPROFILE=C:\Users\aaronp</code></p>
+
+<p>In practice, I’ve found that scripts that reference locations such as %ALLUSERSPROFILE%\Desktop, are not performing actions as intended and will have to be updated to use %PUBLIC% instead. Certainly something that requires more investigation.</p>
+
+<p><strong>UPDATE</strong>: Microsoft have an excellent reference document that details the profile changes in Windows Vista and how roaming profiles should managed in a Windows Vista environment. Check it out for more information that what I’ve listed here:</p>
+
+<p><a href="http://www.microsoft.com/technet/windowsvista/library/fb3681b2-da39-4944-93ad-dd3b6e8ca4dc.mspx">Managing Roaming User Data Deployment Guide</a></p>
+
+  </div><a class="u-url" href="/profile-changes-in-windows-vistalonghorn-server/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

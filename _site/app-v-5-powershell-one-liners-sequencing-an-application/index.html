@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>App-V 5 PowerShell One Liners – Sequencing an application | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="App-V 5 PowerShell One Liners – Sequencing an application" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="App-V 5.0 is PowerShell driven, which means opportunity for automating and scripting tasks that might have to be completed manually or might have been a challenge to script previously." />
+<meta property="og:description" content="App-V 5.0 is PowerShell driven, which means opportunity for automating and scripting tasks that might have to be completed manually or might have been a challenge to script previously." />
+<link rel="canonical" href="/app-v-5-powershell-one-liners-sequencing-an-application/" />
+<meta property="og:url" content="/app-v-5-powershell-one-liners-sequencing-an-application/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-11-02T00:43:55+11:00" />
+<script type="application/ld+json">
+{"description":"App-V 5.0 is PowerShell driven, which means opportunity for automating and scripting tasks that might have to be completed manually or might have been a challenge to script previously.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/app-v-5-powershell-one-liners-sequencing-an-application/","headline":"App-V 5 PowerShell One Liners – Sequencing an application","dateModified":"2012-11-02T00:43:55+11:00","datePublished":"2012-11-02T00:43:55+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/app-v-5-powershell-one-liners-sequencing-an-application/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">App-V 5 PowerShell One Liners – Sequencing an application</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2012-11-02T00:43:55+11:00" itemprop="datePublished">Nov 2, 2012
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img class="alignright size-full wp-image-2873" style="margin-left: 5px; margin-right: 5px;" title="AppV-PowerShell-Logo" src="http://stealthpuppy.com/wp-content/uploads/2012/10/AppV-PowerShell-Logo.png" alt="" width="128" height="128" />App-V 5.0 is PowerShell driven, which means opportunity for automating and scripting tasks that might have to be completed manually or might have been a challenge to script previously.</p>
+
+<p>Using PowerShell to drive the App-V Sequencer opens up some great automation scenarios. Here’s how to use PowerShell to sequence an application without manually starting the Sequencer UI.</p>
+
+<p>I’m using <a href="http://getpaint.net">Paint.NET</a> as my example application and before sequencing, I have configured an install script for this application which will automate the installation and configuration.</p>
+
+<p>I’ve placed all binaries and files, including a Sequencer Template into a folder at C:\Packages. My script (INSTALL.CMD) looks like this:</p>
+
+<p>[code]@ECHO OFF<br />
+START /WAIT C:\Packages\Paint.NET.3.5.10.Install.exe /skipConfig /auto PDNUPDATING=0 CHECKFORUPDATES=0 DESKTOPSHORTCUT=0[/code]</p>
+
+<p><img class="alignnone size-full wp-image-2895" title="PackagesFolder" src="http://stealthpuppy.com/wp-content/uploads/2012/11/PackagesFolder.png" alt="" width="660" height="190" srcset="http://192.168.0.89/wp-content/uploads/2012/11/PackagesFolder.png 660w, http://192.168.0.89/wp-content/uploads/2012/11/PackagesFolder-150x43.png 150w, http://192.168.0.89/wp-content/uploads/2012/11/PackagesFolder-300x86.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
+
+<p>Before running the <strong>New-AppvSequencerPackage</strong> command, I have changed directory to C:\Packages. To capture Paint.NET as a new App-V 5.0 package, I have used the following command:</p>
+
+<p>[code language=”ps”]New-AppvSequencerPackage -FullLoad -Installer “Install.CMD” -Name “PaintNet3x” -Path “C:\Packages” -PrimaryVirtualApplicationDirectory “C:\Program Files\Paint.Net” -TemplateFilePath “AppV5SequencerTemplate.appvt” -Verbose[/code]</p>
+
+<p>This generates a completed package in C:\Packages\PaintNet3x, ready for deployment to a client PC.</p>
+
+<p>For more information on the New-AppvSequencerPackage command, run:</p>
+
+<p>[code]Get-Help New-AppvSequencerPackage -detailed[/code]</p>
+
+  </div><a class="u-url" href="/app-v-5-powershell-one-liners-sequencing-an-application/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

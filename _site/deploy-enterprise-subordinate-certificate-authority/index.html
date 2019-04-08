@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Deploying an Enterprise Subordinate Certificate Authority | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Deploying an Enterprise Subordinate Certificate Authority" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In the last article, I documented the steps for deploying an offline Root Certificate Authority on Windows Server 2012 R2. This article will continue the process and show how to install and configure a Subordinate Certificate Authority that will be used to issue certificates to users and devices." />
+<meta property="og:description" content="In the last article, I documented the steps for deploying an offline Root Certificate Authority on Windows Server 2012 R2. This article will continue the process and show how to install and configure a Subordinate Certificate Authority that will be used to issue certificates to users and devices." />
+<link rel="canonical" href="/deploy-enterprise-subordinate-certificate-authority/" />
+<meta property="og:url" content="/deploy-enterprise-subordinate-certificate-authority/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2016/08/parchment-11299780361Z1G.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-08-22T00:49:16+10:00" />
+<script type="application/ld+json">
+{"description":"In the last article, I documented the steps for deploying an offline Root Certificate Authority on Windows Server 2012 R2. This article will continue the process and show how to install and configure a Subordinate Certificate Authority that will be used to issue certificates to users and devices.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/deploy-enterprise-subordinate-certificate-authority/","image":"/wp-content/uploads/2016/08/parchment-11299780361Z1G.jpg","headline":"Deploying an Enterprise Subordinate Certificate Authority","dateModified":"2016-08-22T00:49:16+10:00","datePublished":"2016-08-22T00:49:16+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/deploy-enterprise-subordinate-certificate-authority/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Deploying an Enterprise Subordinate Certificate Authority</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2016-08-22T00:49:16+10:00" itemprop="datePublished">Aug 22, 2016
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In the last article, I documented the steps for <a href="http://stealthpuppy.com/deploy-enterprise-root-certificate-authority/">deploying an offline Root Certificate Authority on Windows Server 2012 R2</a>. This article will continue the process and show how to install and configure a Subordinate Certificate Authority that will be used to issue certificates to users and devices.</p>
+
+<h1 id="basics">Basics</h1>
+
+<p>To setup a subordinate certificate authority, especially one that will deploy certificates in an Active Directory environment, we’ll deploy to a machine running Windows Server 2012 R2 that is a member of the domain.</p>
+
+<p>In this article we will:</p>
+
+<ol>
+  <li>Install the subordinate certificate authority</li>
+  <li>Request and approve a CA certificate from the offline root CA</li>
+  <li>Configure the subordinate CA for the CRL to work correctly</li>
+</ol>
+
+<p>To deploy an Enterprise Certificate Authority you’ll need to be installing certificate services as a member of the Enterprise Admins group, or have <a href="https://technet.microsoft.com/en-us/library/dn722303(v=ws.11).aspx">permissions delegated to your account</a>. Remember, this means that you won’t be installing an Enterprise CA in an environment using <a href="https://azure.microsoft.com/en-us/services/active-directory-ds/">Azure Active Directory Domain Services</a> because you won’t have rights.</p>
+
+<h1 id="further-reading">Further Reading</h1>
+
+<p>As in my last article, my intention is to not go into detail, rather I’m looking to document a set of recommended steps to get an Enterprise Certificate Authority up and running successfully. For more in-depth reading, here is a list of recommended articles:</p>
+
+<ul>
+  <li><a href="https://technet.microsoft.com/en-us/library/hh831740(v=ws.11).aspx">Active Directory Certificate Services Overview</a></li>
+  <li><a href="https://technet.microsoft.com/en-us/library/hh831574.aspx">Certification Authority Guidance</a></li>
+</ul>
+
+<h1 id="deploying-an-enterprise-subordinate-certificate-authority">Deploying an Enterprise Subordinate Certificate Authority</h1>
+
+<p>The following steps are taken on a virtual machine running Windows Server 2012 R2 with all current updates as an Active Directory domain member.</p>
+
+<h2 id="installing-certificate-services">Installing Certificate Services</h2>
+
+<p>Just as with <a href="http://stealthpuppy.com/deploy-enterprise-root-certificate-authority/">the offline Root CA</a>, deploying Certificate Services on Windows Server 2012 R2 is simple – open Server Manager, open the <strong>Add Roles and Features</strong> wizard and choose <strong>Active Directory Certificate Services</strong> under Server Roles.</p>
+
+<p>In this instance, choose to install the <strong>Certification Authority</strong> and the <a href="https://technet.microsoft.com/en-us/library/hh831649(v=ws.11).aspx"><strong>Certification Authority Web Enrollment</strong></a> services:</p>
+
+<figure id="attachment_5081" aria-describedby="caption-attachment-5081" style="width: 800px" class="wp-caption alignnone">[<img class="size-full wp-image-5081" src="http://stealthpuppy.com/wp-content/uploads/2016/08/CertificateAuthorityInstalling.png" alt="Installing the Certificate Authority components" width="800" height="567" srcset="http://192.168.0.89/wp-content/uploads/2016/08/CertificateAuthorityInstalling.png 800w, http://192.168.0.89/wp-content/uploads/2016/08/CertificateAuthorityInstalling-150x106.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/CertificateAuthorityInstalling-300x213.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/CertificateAuthorityInstalling-768x544.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/CertificateAuthorityInstalling-480x340.png 480w" sizes="(max-width: 800px) 100vw, 800px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/CertificateAuthorityInstalling.png)<figcaption id="caption-attachment-5081" class="wp-caption-text">Installing the Certificate Authority components</figcaption></figure>
+
+<p>You can choose additional certificate services roles at this point; however, these two services are recommended to get the subordinate certificate authority running. When selecting the Certification Authority Web Enrollment, the wizard will prompt you to install a set of IIS components to support this role.</p>
+
+<figure id="attachment_5082" aria-describedby="caption-attachment-5082" style="width: 800px" class="wp-caption alignnone">[<img class="size-full wp-image-5082" src="http://stealthpuppy.com/wp-content/uploads/2016/08/CertificateServiceIISRoles.png" alt="IIS components to support the Certification Authority Web Enrollment role" width="800" height="567" srcset="http://192.168.0.89/wp-content/uploads/2016/08/CertificateServiceIISRoles.png 800w, http://192.168.0.89/wp-content/uploads/2016/08/CertificateServiceIISRoles-150x106.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/CertificateServiceIISRoles-300x213.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/CertificateServiceIISRoles-768x544.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/CertificateServiceIISRoles-480x340.png 480w" sizes="(max-width: 800px) 100vw, 800px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/CertificateServiceIISRoles.png)<figcaption id="caption-attachment-5082" class="wp-caption-text">IIS components to support the Certification Authority Web Enrollment role</figcaption></figure>
+
+<p>To simplify the installation of these roles, install via PowerShell instead. Elevate a PowerShell prompt and use the Add-WindowsFeature cmdlet:</p>
+
+<figure id="attachment_5084" aria-describedby="caption-attachment-5084" style="width: 997px" class="wp-caption alignnone">[<img class="size-full wp-image-5084" src="http://stealthpuppy.com/wp-content/uploads/2016/08/PowerShellInstallingCAServices.png" alt="Installing the subordinate CA roles with PowerShell" width="997" height="427" srcset="http://192.168.0.89/wp-content/uploads/2016/08/PowerShellInstallingCAServices.png 997w, http://192.168.0.89/wp-content/uploads/2016/08/PowerShellInstallingCAServices-150x64.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/PowerShellInstallingCAServices-300x128.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/PowerShellInstallingCAServices-768x329.png 768w" sizes="(max-width: 997px) 100vw, 997px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/PowerShellInstallingCAServices.png)<figcaption id="caption-attachment-5084" class="wp-caption-text">Installing the subordinate CA roles with PowerShell</figcaption></figure>
+
+<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Add-WindowsFeature -IncludeManagementTools -Name ADCS-Cert-Authority, `
+ADCS-Web-Enrollment, Web-Default-Doc, Web-Dir-Browsing, Web-Http-Errors, `
+Web-Static-Content, Web-Http-Redirect, Web-Http-Logging, Web-Log-Libraries, `
+Web-Request-Monitor, Web-Http-Tracing, Web-Stat-Compression, Web-Filtering, `
+Web-Windows-Auth, Web-ASP, Web-ISAPI-Ext</pre>
+
+<p>No reboot should be required after installing these roles.</p>
+
+<h2 id="configure-dns">Configure DNS</h2>
+
+<p>Before we go any further, remember that in setting up the Root CA, we <a href="http://stealthpuppy.com/wp-content/uploads/2016/08/14-Root-CA-Certificate-Services.png">configured</a> the <strong>Certificate Revocation List Distribution Point</strong> using an alias to the issuing CA. In my case, I’ve configured a CNAME record – <em>crl.home.stealthpuppy.com</em> to point to my issuing CA hostname – <em>issuingca.home.stealthpuppy.com</em>.</p>
+
+<p>Configure the alias in DNS now, so that it has time to propagate and be available for resolution when we configure the subordinate certificate request later. If this step is missed, you will receive ‘CRL unavailable’ errors.</p>
+
+<h2 id="configuringcertificate-services">Configuring Certificate Services</h2>
+
+<p>After the Certificate Services roles are installed, start the configuration wizard from Server Manager – click the flag and yellow icon and click the <strong>Configure Active Directory Certificate Services</strong>… link.</p>
+
+<p>In the configuration wizard, set the credentials used to configure the certificate services as required. You’ll need to change this if your login account is different to the account with Enterprise Administrator rights.</p>
+
+<figure id="attachment_5085" aria-describedby="caption-attachment-5085" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5085" src="http://stealthpuppy.com/wp-content/uploads/2016/08/01CAConfigure-1024x592.png" alt="Certificate Services wizard - configuration credentials" width="1024" height="592" srcset="http://192.168.0.89/wp-content/uploads/2016/08/01CAConfigure-1024x592.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/01CAConfigure-150x87.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/01CAConfigure-300x173.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/01CAConfigure-768x444.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/01CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/01CAConfigure.png)<figcaption id="caption-attachment-5085" class="wp-caption-text">Certificate Services wizard &#8211; configuration credentials</figcaption></figure>
+
+<p>For this server, we have two roles to configure:</p>
+
+<figure id="attachment_5086" aria-describedby="caption-attachment-5086" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5086" src="http://stealthpuppy.com/wp-content/uploads/2016/08/02CAConfigure-1024x592.png" alt="Certificate Services wizard – roles to configure" width="1024" height="592" srcset="http://192.168.0.89/wp-content/uploads/2016/08/02CAConfigure-1024x592.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/02CAConfigure-150x87.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/02CAConfigure-300x173.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/02CAConfigure-768x444.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/02CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/02CAConfigure.png)<figcaption id="caption-attachment-5086" class="wp-caption-text">Certificate Services wizard – roles to configure</figcaption></figure>
+
+<p>Configure this subordinate certificate authority as an Enterprise CA. The server is a member of a domain and an Enterprise CA allows more flexibility in certificate management, including supporting certificate autoenrollment with domain authentication.</p>
+
+<figure id="attachment_5087" aria-describedby="caption-attachment-5087" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5087" src="http://stealthpuppy.com/wp-content/uploads/2016/08/03CAConfigure-1024x604.png" alt="Certificate Services wizard – install an Enterprise CA" width="1024" height="604" srcset="http://192.168.0.89/wp-content/uploads/2016/08/03CAConfigure-1024x604.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/03CAConfigure-150x88.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/03CAConfigure-300x177.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/03CAConfigure-768x453.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/03CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/03CAConfigure.png)<figcaption id="caption-attachment-5087" class="wp-caption-text">Certificate Services wizard – install an Enterprise CA</figcaption></figure>
+
+<p>Configure this CA as a subordinate CA. After configuration, we will submit a CA certificate request to the offline root CA.</p>
+
+<figure id="attachment_5088" aria-describedby="caption-attachment-5088" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5088 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/08/04CAConfigure-1024x592.png" alt="Certificate Services wizard – install a subordinate certificate authority" width="1024" height="592" srcset="http://192.168.0.89/wp-content/uploads/2016/08/04CAConfigure-1024x592.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/04CAConfigure-150x87.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/04CAConfigure-300x173.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/04CAConfigure-768x444.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/04CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/04CAConfigure.png)<figcaption id="caption-attachment-5088" class="wp-caption-text">Certificate Services wizard – install a subordinate certificate authority</figcaption></figure>
+
+<p>Create a new private key for this CA as this is the first time we’re configuring it.</p>
+
+<figure id="attachment_5089" aria-describedby="caption-attachment-5089" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5089" src="http://stealthpuppy.com/wp-content/uploads/2016/08/05CAConfigure-1024x592.png" alt="Certificate Services wizard – create a new private key" width="1024" height="592" srcset="http://192.168.0.89/wp-content/uploads/2016/08/05CAConfigure-1024x592.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/05CAConfigure-150x87.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/05CAConfigure-300x173.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/05CAConfigure-768x444.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/05CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/05CAConfigure.png)<figcaption id="caption-attachment-5089" class="wp-caption-text">Certificate Services wizard – create a new private key</figcaption></figure>
+
+<p>When selecting a cryptographic provider and a hash algorithm, SHA1 will be the default hashing algorithm; however, Windows will no longer accept certificates signed with <a href="http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx">SHA1 after 1st of January 2017</a>, so be sure to <a href="https://blogs.technet.microsoft.com/askds/2015/10/26/sha1-key-migration-to-sha256-for-a-two-tier-pki-hierarchy/">choose at least SHA256</a>.</p>
+
+<figure id="attachment_5090" aria-describedby="caption-attachment-5090" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5090" src="http://stealthpuppy.com/wp-content/uploads/2016/08/06CAConfigure-1024x592.png" alt="Certificate Services wizard – choose SHA256 as the hashing algorithm" width="1024" height="592" srcset="http://192.168.0.89/wp-content/uploads/2016/08/06CAConfigure-1024x592.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/06CAConfigure-150x87.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/06CAConfigure-300x173.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/06CAConfigure-768x444.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/06CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/06CAConfigure.png)<figcaption id="caption-attachment-5090" class="wp-caption-text">Certificate Services wizard – choose SHA256 as the hashing algorithm</figcaption></figure>
+
+<p>Set a name for the CA that makes sense and somewhat descriptive. Note, that because this CA is a member of the domain the distinguished name includes the domain name automatically.</p>
+
+<figure id="attachment_5091" aria-describedby="caption-attachment-5091" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5091 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/08/07CAConfigure-1024x592.png" alt="Certificate Services wizard - setting a subordinate certificate authority name" width="1024" height="592" srcset="http://192.168.0.89/wp-content/uploads/2016/08/07CAConfigure-1024x592.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/07CAConfigure-150x87.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/07CAConfigure-300x173.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/07CAConfigure-768x444.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/07CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/07CAConfigure.png)<figcaption id="caption-attachment-5091" class="wp-caption-text">Certificate Services wizard &#8211; setting a subordinate certificate authority name</figcaption></figure>
+
+<p>Because this is a subordinate CA, we’ll need to send a CA certificate request to the offline root CA. Save the request locally which will be used later to manually request and approve the certificate. This is saved to the root of C: by default.</p>
+
+<figure id="attachment_5092" aria-describedby="caption-attachment-5092" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5092" src="http://stealthpuppy.com/wp-content/uploads/2016/08/08CAConfigure-1024x592.png" alt="Certificate Services wizard - the CA certificate request" width="1024" height="592" srcset="http://192.168.0.89/wp-content/uploads/2016/08/08CAConfigure-1024x592.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/08CAConfigure-150x87.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/08CAConfigure-300x173.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/08CAConfigure-768x444.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/08CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/08CAConfigure.png)<figcaption id="caption-attachment-5092" class="wp-caption-text">Certificate Services wizard &#8211; the CA certificate request</figcaption></figure>
+
+<p>On the next page of the wizard, you can choose the location of the certificate services database and logs location (<em>C:\Windows\System32\Certlog</em>), which can be changed depending on your specific environment.</p>
+
+<p>On the last page, you will see a summary of the configuration before committing it to the local certificate services.</p>
+
+<figure id="attachment_5094" aria-describedby="caption-attachment-5094" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5094" src="http://stealthpuppy.com/wp-content/uploads/2016/08/10CAConfigure-1024x592.png" alt="Certificate Services wizard - summary page" width="1024" height="592" srcset="http://192.168.0.89/wp-content/uploads/2016/08/10CAConfigure-1024x592.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/10CAConfigure-150x87.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/10CAConfigure-300x173.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/10CAConfigure-768x444.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/10CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/10CAConfigure.png)<figcaption id="caption-attachment-5094" class="wp-caption-text">Certificate Services wizard &#8211; summary page</figcaption></figure>
+
+<p>Click <strong>Configure</strong> and the wizard will configure the certificate services roles. Note the warning that the configuration for this CA is not complete, as we still need to request, approve and import the CA certificate.</p>
+
+<figure id="attachment_5095" aria-describedby="caption-attachment-5095" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5095" src="http://stealthpuppy.com/wp-content/uploads/2016/08/11CAConfigure-1024x592.png" alt="Certificate Services wizard - configuration results" width="1024" height="592" srcset="http://192.168.0.89/wp-content/uploads/2016/08/11CAConfigure-1024x592.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/11CAConfigure-150x87.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/11CAConfigure-300x173.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/11CAConfigure-768x444.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/11CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/11CAConfigure.png)<figcaption id="caption-attachment-5095" class="wp-caption-text">Certificate Services wizard &#8211; configuration results</figcaption></figure>
+
+<h2 id="configuring-thecrl-distribution-point">Configuring the CRL Distribution Point</h2>
+
+<p>Before configuring the Certification Authority itself, we’ll first copy across the certificate and CRL from the root CA.</p>
+
+<p>Ensure the root CA virtual machine is running and copy the contents of <strong>C:\Windows\System32\certsrv\CertEnroll</strong> from the root CA to the same folder on the subordinate CA. This is the default location to which certificates and CRLs are published. Keeping the default locations will require the minimum amount of configuration for the CRL and AIA distribution points.</p>
+
+<p>The result on the subordinate certificate authority will look something like this – note that the CRL for the root CA is located here:</p>
+
+<figure id="attachment_5098" aria-describedby="caption-attachment-5098" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5098" src="http://stealthpuppy.com/wp-content/uploads/2016/08/CertEnrollFolder-1024x529.png" alt="The CertEnroll folder after copying certificates and CRLs from the root CA" width="1024" height="529" srcset="http://192.168.0.89/wp-content/uploads/2016/08/CertEnrollFolder-1024x529.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/CertEnrollFolder-150x77.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/CertEnrollFolder-300x155.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/CertEnrollFolder-768x396.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/CertEnrollFolder.png 1054w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/CertEnrollFolder.png)<figcaption id="caption-attachment-5098" class="wp-caption-text">The CertEnroll folder after copying certificates and CRLs from the root CA</figcaption></figure>
+
+<p>Now double check that the alias you’ve selected for your CRL host is resolvable. In my case, I’ve checked that I can ping <em>crl.home.stealthpuppy.com</em>.</p>
+
+<h2 id="issuing-the-subordinate-ca-certificate">Issuing the Subordinate CA Certificate</h2>
+
+<p>Next, we will request, approve the certificate request for the subordinate CA. At this point, the subordinate CA is unconfigured because it does not yet have a valid CA certificate.</p>
+
+<p>On the root CA, open the Certificate Authority console and <strong>submit a new certificate request</strong>:</p>
+
+<figure id="attachment_5096" aria-describedby="caption-attachment-5096" style="width: 1015px" class="wp-caption alignnone">[<img class="size-full wp-image-5096" src="http://stealthpuppy.com/wp-content/uploads/2016/08/12CAConfigure.png" alt="Submitting a new certificate request on the root CA" width="1015" height="538" srcset="http://192.168.0.89/wp-content/uploads/2016/08/12CAConfigure.png 1015w, http://192.168.0.89/wp-content/uploads/2016/08/12CAConfigure-150x80.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/12CAConfigure-300x159.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/12CAConfigure-768x407.png 768w" sizes="(max-width: 1015px) 100vw, 1015px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/12CAConfigure.png)<figcaption id="caption-attachment-5096" class="wp-caption-text">Submitting a new certificate request on the root CA</figcaption></figure>
+
+<p>Browse to where the certificate request for the subordinate certificate authority is located and open the file. The certificate request will then be listed under <strong>Pending Requests</strong> on the root CA. Right-click the request, choose <strong>All Tasks</strong> and <strong>Issue</strong>.</p>
+
+<figure id="attachment_5100" aria-describedby="caption-attachment-5100" style="width: 1015px" class="wp-caption alignnone">[<img class="size-full wp-image-5100" src="http://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert.png" alt="Issue the new certificate request from the subordinate CA" width="1015" height="538" srcset="http://192.168.0.89/wp-content/uploads/2016/08/PendingCACert.png 1015w, http://192.168.0.89/wp-content/uploads/2016/08/PendingCACert-150x80.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/PendingCACert-300x159.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/PendingCACert-768x407.png 768w" sizes="(max-width: 1015px) 100vw, 1015px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert.png)<figcaption id="caption-attachment-5100" class="wp-caption-text">Issue the new certificate request from the subordinate CA</figcaption></figure>
+
+<p>The subordinate CA’s certificate will now be issued and we can copy it to that CA. View the certificate under <strong>Issued Certificates</strong>. Right-click the certificate, click <strong>Open</strong> and choose <strong>Copy to File…</strong> from the <strong>Details</strong> tab on the certificate properties.</p>
+
+<figure id="attachment_5101" aria-describedby="caption-attachment-5101" style="width: 1015px" class="wp-caption alignnone">[<img class="size-full wp-image-5101" src="http://stealthpuppy.com/wp-content/uploads/2016/08/IssuedSubCA.png" alt="Open the properties of the issued certificate and copy to a file" width="1015" height="538" srcset="http://192.168.0.89/wp-content/uploads/2016/08/IssuedSubCA.png 1015w, http://192.168.0.89/wp-content/uploads/2016/08/IssuedSubCA-150x80.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/IssuedSubCA-300x159.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/IssuedSubCA-768x407.png 768w" sizes="(max-width: 1015px) 100vw, 1015px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/IssuedSubCA.png)<figcaption id="caption-attachment-5101" class="wp-caption-text">Open the properties of the issued certificate and copy to a file</figcaption></figure>
+
+<p>Export the new certificate to a file in PKCS format. Copy the file back to the subordinate certificate authority, so that it can be imported and enable certificate services on that machine.</p>
+
+<figure id="attachment_5102" aria-describedby="caption-attachment-5102" style="width: 1015px" class="wp-caption alignnone">[<img class="size-full wp-image-5102" src="http://stealthpuppy.com/wp-content/uploads/2016/08/CopyCertToPKCSformat.png" alt="Copying the subordinate CA certificate to a PKCS format file" width="1015" height="538" srcset="http://192.168.0.89/wp-content/uploads/2016/08/CopyCertToPKCSformat.png 1015w, http://192.168.0.89/wp-content/uploads/2016/08/CopyCertToPKCSformat-150x80.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/CopyCertToPKCSformat-300x159.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/CopyCertToPKCSformat-768x407.png 768w" sizes="(max-width: 1015px) 100vw, 1015px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/CopyCertToPKCSformat.png)<figcaption id="caption-attachment-5102" class="wp-caption-text">Copying the subordinate CA certificate to a PKCS format file</figcaption></figure>
+
+<p>We have successfully issued and exported the subordinate CA’s certificate, so this CA should no longer be required. You can shut down and secure the root CA – either move the VM to a secure location or ensure it is stored in such a way that it can’t readily be started.</p>
+
+<h2 id="configuring-the-subordinate-ca">Configuring the Subordinate CA</h2>
+
+<p>With the certificate file stored locally to the subordinate CA, open the Certificate Authority console – note that the certificate service is stopped. Right-click the CA, select <strong>All Tasks</strong> and choose <strong>Install CA Certificate…</strong></p>
+
+<figure id="attachment_5104" aria-describedby="caption-attachment-5104" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5104" src="http://stealthpuppy.com/wp-content/uploads/2016/08/SubCAInstallCert-1024x523.png" alt="Install the subordinate CA certificate that we've just issued from the root CA" width="1024" height="523" srcset="http://192.168.0.89/wp-content/uploads/2016/08/SubCAInstallCert-1024x523.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAInstallCert-150x77.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAInstallCert-300x153.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAInstallCert-768x392.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAInstallCert.png 1081w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/SubCAInstallCert.png)<figcaption id="caption-attachment-5104" class="wp-caption-text">Install the subordinate CA certificate that we&#8217;ve just issued from the root CA</figcaption></figure>
+
+<p>Browse to where the certificate file is stored:</p>
+
+<figure id="attachment_5103" aria-describedby="caption-attachment-5103" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5103 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/08/SubCABrowseToCert-1024x533.png" alt="Browse to where the PKCS formatted certificate is stored" width="1024" height="533" srcset="http://192.168.0.89/wp-content/uploads/2016/08/SubCABrowseToCert-1024x533.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/SubCABrowseToCert-150x78.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/SubCABrowseToCert-300x156.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/SubCABrowseToCert-768x400.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/SubCABrowseToCert.png 1034w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/SubCABrowseToCert.png)<figcaption id="caption-attachment-5103" class="wp-caption-text">Browse to where the PKCS formatted certificate is stored</figcaption></figure>
+
+<p>Move through the import wizard to import the certificate. If the CRL is online, the certificate should import successfully. If you receive error messages about the CRL, double check the alias created earlier in DNS can be resolved and IIS is online.</p>
+
+<p>Once imported, you should now be able to start the certificate service.</p>
+
+<figure id="attachment_5105" aria-describedby="caption-attachment-5105" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5105 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/08/SubCAStartService-1024x523.png" alt="With the certificate installed and the CRL online, start the certificate service on the subordinate CA" width="1024" height="523" srcset="http://192.168.0.89/wp-content/uploads/2016/08/SubCAStartService-1024x523.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAStartService-150x77.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAStartService-300x153.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAStartService-768x392.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAStartService.png 1081w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/SubCAStartService.png)<figcaption id="caption-attachment-5105" class="wp-caption-text">With the certificate installed and the CRL online, start the certificate service on the subordinate CA</figcaption></figure>
+
+<p>If the CRL is online correctly, the service should start without issues.</p>
+
+<p>Just like the root CA, we should now open the properties of this certificate authority and configure the CRL and AIA distribution points. The difference with this subordinate certificate authority is that we will ensure that LDAP is left configured as this machine is a member of the domain.</p>
+
+<p>Open the properties of the CA, choose the <strong>Extensions</strong> tab and ensure that the options for the existing HTTP entry are <em>deselected</em>. Now add a new CRL distribution point.</p>
+
+<p>You can select the existing HTTP distribution point and press Ctrl-C to copy the existing location. For this CA we can leave the default <ServerDNSName> variable; however, to be consistent with the root CA, I&#8217;ve chosen to add the same crl alias:</ServerDNSName></p>
+
+<figure id="attachment_5106" aria-describedby="caption-attachment-5106" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5106" src="http://stealthpuppy.com/wp-content/uploads/2016/08/CRLAddHTTP-1024x539.png" alt="Adding a new HTTP CRL distribution point to the CA" width="1024" height="539" srcset="http://192.168.0.89/wp-content/uploads/2016/08/CRLAddHTTP-1024x539.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/CRLAddHTTP-150x79.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/CRLAddHTTP-300x158.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/CRLAddHTTP-768x404.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/CRLAddHTTP.png 1088w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/CRLAddHTTP.png)<figcaption id="caption-attachment-5106" class="wp-caption-text">Adding a new HTTP CRL distribution point to the CA</figcaption></figure>
+
+<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">http://crl.home.stealthpuppy.com/CertEnroll/&lt;CaName&gt;&lt;CRLNameSuffix&gt;&lt;DeltaCRLAllowed&gt;.crl</pre>
+
+<p>For this new DP, I’ve enabled ‘<strong>Include in CRLs’</strong> and ‘<strong>Include in the CDP…’</strong> options (and disabled these for the existing http:// DP). Also check that the ldap:// distribution is enabled, which it should be by default.</p>
+
+<figure id="attachment_5107" aria-describedby="caption-attachment-5107" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5107" src="http://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-1024x539.png" alt="HTTP CRL distribution point properties" width="1024" height="539" srcset="http://192.168.0.89/wp-content/uploads/2016/08/CRLHTTPproperties-1024x539.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/CRLHTTPproperties-150x79.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/CRLHTTPproperties-300x158.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/CRLHTTPproperties-768x404.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/CRLHTTPproperties.png 1088w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties.png)<figcaption id="caption-attachment-5107" class="wp-caption-text">HTTP CRL distribution point properties</figcaption></figure>
+
+<p>This configuration allows clients to check for the CRL from Active Directory or via an HTTP request – useful for clients that are not a member of AD (e.g. stand-alone machines or other devices such as non-Windows PCs.).</p>
+
+<p>Repeat for the AIA extension:</p>
+
+<figure id="attachment_5108" aria-describedby="caption-attachment-5108" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5108" src="http://stealthpuppy.com/wp-content/uploads/2016/08/SubCAAIA-1024x539.png" alt="Configuring an AIA extension on the subordinate CA" width="1024" height="539" srcset="http://192.168.0.89/wp-content/uploads/2016/08/SubCAAIA-1024x539.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAAIA-150x79.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAAIA-300x158.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAAIA-768x404.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAAIA.png 1088w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/SubCAAIA.png)<figcaption id="caption-attachment-5108" class="wp-caption-text">Configuring an AIA extension on the subordinate CA</figcaption></figure>
+
+<p>Once clicking OK, you will be prompted to restart the Active Directory Certificate Services for these changes to take effect.</p>
+
+<p>After the service is restarted, publish the Certificate Revocation List – right-click <strong>Revoked Certificates</strong> and choose <strong>All Tasks / Publish</strong>. Publish a new CRL:</p>
+
+<figure id="attachment_5110" aria-describedby="caption-attachment-5110" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5110" src="http://stealthpuppy.com/wp-content/uploads/2016/08/SubCAPublishCRL-1024x539.png" alt="Publishing a new CRL on the subordinate CA" width="1024" height="539" srcset="http://192.168.0.89/wp-content/uploads/2016/08/SubCAPublishCRL-1024x539.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAPublishCRL-150x79.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAPublishCRL-300x158.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAPublishCRL-768x404.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/SubCAPublishCRL.png 1088w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/SubCAPublishCRL.png)<figcaption id="caption-attachment-5110" class="wp-caption-text">Publishing a new CRL on the subordinate CA</figcaption></figure>
+
+<p>View the C:\Windows\System32\certsrv\CertEnroll folder to view the certificates and CRLs for both the root CA and the subordinate CA.</p>
+
+<figure id="attachment_5109" aria-describedby="caption-attachment-5109" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5109" src="http://stealthpuppy.com/wp-content/uploads/2016/08/SubCA-CertEnroll-1024x533.png" alt="Viewing the populated CertEnroll folder on the subordinate CA" width="1024" height="533" srcset="http://192.168.0.89/wp-content/uploads/2016/08/SubCA-CertEnroll-1024x533.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/SubCA-CertEnroll-150x78.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/SubCA-CertEnroll-300x156.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/SubCA-CertEnroll-768x400.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/SubCA-CertEnroll.png 1075w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/SubCA-CertEnroll.png)<figcaption id="caption-attachment-5109" class="wp-caption-text">Viewing the populated CertEnroll folder on the subordinate CA</figcaption></figure>
+
+<p>If the CRL of the root CA ever needs to be updated (e.g. if new subordinate CAs are provisioned), manually boot the root CA, publish the CRL and copy over to this location on the subordinate certificate authority.</p>
+
+<h1 id="viewing-the-ca-configuration-in-active-directory">Viewing the CA configuration in Active Directory</h1>
+
+<p>The certificate services configuration in Active Directory can be confirmed with the Enterprise PKI snap-in. Open a Microsoft Management Console instance (<strong>mmc.exe</strong>) and add the <strong>Enterprise PKI</strong> snap-in.</p>
+
+<figure id="attachment_5113" aria-describedby="caption-attachment-5113" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5113" src="http://stealthpuppy.com/wp-content/uploads/2016/08/EnterprisePKISnapin-1024x521.png" alt="Viewing the Active Directory Certificate Services configuration with the Enterprise PKI snap-in" width="1024" height="521" srcset="http://192.168.0.89/wp-content/uploads/2016/08/EnterprisePKISnapin-1024x521.png 1024w, http://192.168.0.89/wp-content/uploads/2016/08/EnterprisePKISnapin-150x76.png 150w, http://192.168.0.89/wp-content/uploads/2016/08/EnterprisePKISnapin-300x153.png 300w, http://192.168.0.89/wp-content/uploads/2016/08/EnterprisePKISnapin-768x391.png 768w, http://192.168.0.89/wp-content/uploads/2016/08/EnterprisePKISnapin.png 1227w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/EnterprisePKISnapin.png)<figcaption id="caption-attachment-5113" class="wp-caption-text">Viewing the Active Directory Certificate Services configuration with the Enterprise PKI snap-in</figcaption></figure>
+
+<p>In my example, you can see the configuration in Active Directory and the act of configuring certificate services on the subordinate CA and issuing the CA certificate has imported the certificate chain into AD and I can see CRL and AIA distribution points listed.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Setting up Active Directory Certificate Services consists of quite a reasonable number of steps and doing so successfully requires paying attention to the details. If you ensure that you’ve configured an offline root CA, a subordinate certificate authority and correct locations for the certificate revocation list, installing and configuring certificate services should be easy.</p>
+
+<p>For those readers who are consultants, I would generally be recommending close to a day to deploy and test certificate services correctly and that’s without looking at a design phase.</p>
+
+<p>Hopefully, I’ve provided enough to qualify for the lazy admin’s guide to setting up AD Certificate Services.</p>
+
+  </div><a class="u-url" href="/deploy-enterprise-subordinate-certificate-authority/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

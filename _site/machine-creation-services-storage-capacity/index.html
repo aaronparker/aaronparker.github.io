@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Storage Capacity Required for Machine Creation Services | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Storage Capacity Required for Machine Creation Services" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How much storage capacity do you need for Citrix Machine Creation Services? If you’re designing a XenApp or XenDesktop environment, one question you’re going to ask is “how much storage do we need?”. Let’s dig into the fundamentals of Machine Creation Services and have a look at how much capacity you’ll need to provision." />
+<meta property="og:description" content="How much storage capacity do you need for Citrix Machine Creation Services? If you’re designing a XenApp or XenDesktop environment, one question you’re going to ask is “how much storage do we need?”. Let’s dig into the fundamentals of Machine Creation Services and have a look at how much capacity you’ll need to provision." />
+<link rel="canonical" href="/machine-creation-services-storage-capacity/" />
+<meta property="og:url" content="/machine-creation-services-storage-capacity/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2016/08/storage.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-10-07T17:20:22+11:00" />
+<script type="application/ld+json">
+{"description":"How much storage capacity do you need for Citrix Machine Creation Services? If you’re designing a XenApp or XenDesktop environment, one question you’re going to ask is “how much storage do we need?”. Let’s dig into the fundamentals of Machine Creation Services and have a look at how much capacity you’ll need to provision.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/machine-creation-services-storage-capacity/","image":"/wp-content/uploads/2016/08/storage.jpg","headline":"Storage Capacity Required for Machine Creation Services","dateModified":"2016-10-07T17:20:22+11:00","datePublished":"2016-10-07T17:20:22+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/machine-creation-services-storage-capacity/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Storage Capacity Required for Machine Creation Services</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2016-10-07T17:20:22+11:00" itemprop="datePublished">Oct 7, 2016
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>How much storage capacity do you need for Citrix Machine Creation Services? If you’re designing a XenApp or XenDesktop environment, one question you’re going to ask is “how much storage do we need?”. Let’s dig into the fundamentals of Machine Creation Services and have a look at how much capacity you’ll need to provision.</p>
+
+<h1 id="what-is-machine-creation-services">What is Machine Creation Services?</h1>
+
+<p>Citrix Machine Creation Services (MCS) takes the pain out of deploying virtual machine workloads for XenApp and XenDesktop. MCS leverages hypervisor management APIs to deploy virtual machines from a master image. While the approach for deploying VMs is the same at a high level across hypervisors, there are, of course, differences due to different virtual machine formats.</p>
+
+<p>If you’re new to XenApp or XenDesktop, or have yet to move from XenApp 5.x or 6.x, there are a few of articles on MCS that I recommend reading and keeping for reference:</p>
+
+<ul>
+  <li><a href="https://www.citrix.com/blogs/2011/06/28/machine-creation-services-primer-part-1/">MCS Primer – Part 1</a> and <a href="https://www.citrix.com/blogs/2011/08/05/machine-creation-services-primer-%E2%80%93-part-2/">MCS Primer – Part 2</a> by Dan Feller</li>
+  <li>A great <a href="http://www.basvankaam.com/2016/02/09/citrix-machine-creation-services-what-to-consider/">article by Bas van Kaam on MCS considerations</a></li>
+  <li>Citrix KB article – <a href="http://support.citrix.com/article/CTX218082">MCS Storage Considerations</a></li>
+</ul>
+
+<p>Unlike <a href="http://docs.citrix.com/en-us/provisioning/7-11.html">Citrix Provisioning Services</a>, there are no additional infrastructure components required to deploy machines via MCS; however, MCS can only deploy virtual machines. This makes MCS easy to deploy because it’s available by virtue of deploying XenDesktop on almost any type of virtualized infrastructure.</p>
+
+<p>XenDesktop 7.11 has now made it possible to deploy full clone virtual machines improving disaster recovery scenarios, for MCS deployed VMs. <a href="https://twitter.com/kbaggerman">Kees Baggerman</a> has written about this new option – <a href="http://blog.myvirtualvision.com/2016/10/06/citrix-xendesktop-7-11-digesting-full-clones/">Citrix XenDesktop 7.11; digesting full clones</a>.</p>
+
+<p>Kees also presented a session at Citrix Synergy 2016 on MCS and PVS that goes into great detail on these deployment solutions under the hood. You can watch the video here: <a href="https://www.youtube.com/watch?v=p47JwwpUArQ">Citrix Synergy 2016 – SYN219 – Getting up close and personal with MCS and PVS</a>. This session presents a great overview of the deployment options available with MCS.</p>
+
+<p>I’ve updated that image for XenDesktop 7.11. Now the available deployment options for MCS are:</p>
+
+<figure id="attachment_5179" aria-describedby="caption-attachment-5179" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5179 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-1024x438.png" alt="Deployment options available in XenDesktop Machine Creation Services" width="1024" height="438" srcset="http://192.168.0.89/wp-content/uploads/2016/10/MCS-deployment-options-1024x438.png 1024w, http://192.168.0.89/wp-content/uploads/2016/10/MCS-deployment-options-150x64.png 150w, http://192.168.0.89/wp-content/uploads/2016/10/MCS-deployment-options-300x128.png 300w, http://192.168.0.89/wp-content/uploads/2016/10/MCS-deployment-options-768x329.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options.png)<figcaption id="caption-attachment-5179" class="wp-caption-text">Deployment options available in XenDesktop Machine Creation Services (credit: Kees Baggerman &amp; Martijn Bosschaart)</figcaption></figure>
+
+<p>As you can see, there are quite a number of deployment options in MCS now, so this can’t make sizing straight-forward.</p>
+
+<h1 id="machine-creation-servicesvm-components">Machine Creation Services VM Components</h1>
+
+<p>To determine the storage capacity we require for MCS, we should start with knowing what makes up a virtual machine deployed via Machine Creation Services. This will differ for each hypervisor and machine catalog configuration:</p>
+
+<ul>
+  <li>Base image – there will be at least 1 base image per machine catalog. Multiple base images can exist if updates are applied to the catalog or multiple catalogs are deployed to a single data store</li>
+  <li>Identity disk – each virtual machine will have an identity disk that contains the bits that provide each VMs its unique identity. This disk is only deleted when the VM is deleted</li>
+  <li>Differencing or delta disk – while running a virtual machine needs a location to write changes from the base image. This disk is deleted if you’ve configured the machine catalog to refresh VMs on reboot</li>
+  <li>Cache overflow disk – with XenDesktop 7.9 and above you can configure Cache in RAM with Overflow to Disk. If so, the delta disk is not used and this overflow disk is used instead. This disk will be deleted at VM reboot</li>
+  <li>Snapshots – depending on the deployment options used, some VMs may also have snapshots applied to them</li>
+  <li>VM configuration files, logs, swap files etc. – Hyper-V and ESXi have configuration files and others for each VM, while XenServer and AHV store these descriptors differently. These may not have a large impact on storage, but we can include them for completeness.</li>
+</ul>
+
+<p>Because each hypervisor has its own idiosyncracies our calculations for storage capacity will differ depending on the platform choice.</p>
+
+<h1 id="what-about-dedupe-and-compression">What about Dedupe and Compression?</h1>
+
+<p>For the purposes of this exercise, I’m going to ignore deduplication and compression. Each storage vendor has different approaches – some do inline dedupe, some do post-process dedupe, while others do both and not all vendors support compression. Additionally, storage vendors are using different approaches for block sizes so may have different results for reclaiming capacity.</p>
+
+<p>Think about deploying XenDesktop on Azure – deduplication or compression are not exposed to the administrator, so for sizing on Azure, we’d need to consider the total capacity consumed to understand storage costs.</p>
+
+<p>If we start with calculating the maximum capacity we’ll require based on our deployment options, then testing on specific storage configurations that include dedupe and/or compression means that we can only reduce our storage capacity requirements.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>MCS helps to take the pain out of virtual desktop deployments but you’ll still need to carefully consider the storage capacity requirements. Because the approach for each hypervisor is slightly different, I’ll cover each platform individually in upcoming articles. I’m going to start with what I think is the easiest and simplest platform – Hyper-V in Windows Server 2012 R2 and Windows Server 2016.</p>
+
+<p>Note that for this series, I’m only interested in Windows deployments, so I won’t cover Linux at this time.</p>
+
+<h2 id="articles">Articles</h2>
+
+<p>The articles for specific platforms can be found here:</p>
+
+<ul>
+  <li><a href="http://stealthpuppy.com/mcs-capacity-sizing-hyper-v/">MCS Capacity Sizing on Hyper-V</a></li>
+  <li>MCS Capacity Sizing on vSphere</li>
+  <li>MCS Capacity Sizing on XenServer</li>
+</ul>
+
+  </div><a class="u-url" href="/machine-creation-services-storage-capacity/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

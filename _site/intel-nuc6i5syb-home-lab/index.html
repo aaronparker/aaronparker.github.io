@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>An Intel NUC6i5SYB for My Home Lab | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="An Intel NUC6i5SYB for My Home Lab" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’ve recently added a new PC to my home lab – the Intel NUC6i5SYB, to replace a Lenovo laptop that I’ve been using to host VMs on Hyper-V. In this article, I’ll cover an overview of the NUC, how I’ve configured this device and some details on performance." />
+<meta property="og:description" content="I’ve recently added a new PC to my home lab – the Intel NUC6i5SYB, to replace a Lenovo laptop that I’ve been using to host VMs on Hyper-V. In this article, I’ll cover an overview of the NUC, how I’ve configured this device and some details on performance." />
+<link rel="canonical" href="/intel-nuc6i5syb-home-lab/" />
+<meta property="og:url" content="/intel-nuc6i5syb-home-lab/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2016/04/Intel-NUC6i5SYB.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-04-10T14:04:12+10:00" />
+<script type="application/ld+json">
+{"description":"I’ve recently added a new PC to my home lab – the Intel NUC6i5SYB, to replace a Lenovo laptop that I’ve been using to host VMs on Hyper-V. In this article, I’ll cover an overview of the NUC, how I’ve configured this device and some details on performance.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/intel-nuc6i5syb-home-lab/","image":"/wp-content/uploads/2016/04/Intel-NUC6i5SYB.jpg","headline":"An Intel NUC6i5SYB for My Home Lab","dateModified":"2016-04-10T14:04:12+10:00","datePublished":"2016-04-10T14:04:12+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/intel-nuc6i5syb-home-lab/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">An Intel NUC6i5SYB for My Home Lab</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2016-04-10T14:04:12+10:00" itemprop="datePublished">Apr 10, 2016
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I’ve recently added a new PC to my home lab – the Intel NUC6i5SYB, to replace a Lenovo laptop that I’ve been using to host VMs on Hyper-V. In this article, I’ll cover an overview of the NUC, how I’ve configured this device and some details on performance.</p>
+
+<p>For the past couple of years I’ve been using a <a href="http://shop.lenovo.com/us/en/laptops/thinkpad/t-series/t440s/">Lenovo ThinkPad 440s ultrabook</a> with an i5, 12GB RAM and a 256GB SSD running Windows Server 2012 R2 with Hyper-V as a host for some infrastructure VMs (XenDesktop, App-V infrastructure, vCenter, SQL Server etc.), but it’s come time to replace it. I looked at another low power device as a hypervisor host and the Intel NUC was the go to PC.</p>
+
+<h1 id="intel-nuc6i5syb--nuc6i5syh-hardware">Intel NUC6i5SYB / NUC6i5SYH Hardware</h1>
+
+<p>This is one of the new Skylake versions of the <a href="http://www.intel.com.au/content/www/au/en/nuc/overview.html">Intel NUC</a>. While the model I’ve purchased is the NUC6i5SYB, it seems to be the same as, or close to, the <a href="http://www.intel.com/content/www/us/en/nuc/nuc-kit-nuc6i5syh.html">NUC6i5SYH</a> as this model keeps coming up in searches for the NUC6i5SYB.</p>
+
+<p>This version of the NUC is capable of taking two drives with one SATA and one M.2 connections. Maxing out the RAM makes this an amazing low-power hypervisor in a small package.</p>
+
+<p>For this build, which I wanted to keep to a budget, I purchased:</p>
+
+<ul>
+  <li>Intel NUC6i5SYB ($649AU)</li>
+  <li>2 x 16GB G.Skill Ripjaws PC4-17000 (2133MHz) DDR4 SODIMM ($298AU)</li>
+  <li>Samsung 850 EVO 250GB SSD ($135AU)</li>
+  <li>Samsung 850 EVO Series, m.2 (SATA) 120GB SSD ($105AU)</li>
+</ul>
+
+<p>The total package came to $1,187.00AU.</p>
+
+<h2 id="cpu">CPU</h2>
+
+<p>The i5 processor in the Lenovo laptop is the previous Haswell mobile CPU (i5-4300U) and I’m replacing it with the NUC that has a Skylake i5 (i5-6260U), also a mobile processor. This CPU has a similar base clock speed at the same 15W, but the Skylake model brings support (as in supported by Intel) for 32GB of RAM.</p>
+
+<p>Like its predecessor, the newer i5 has 2 cores with hyper-threading support, so I get 4 cores (or 4 threads to be more precise) to play with for VMs.</p>
+
+<p>A previous generation i7 version of the Intel NUC comes with the <a href="http://ark.intel.com/products/84993/Intel-Core-i7-5557U-Processor-4M-Cache-up-to-3_40-GHz">i7-5557U</a>; however this still only has 2 cores (unlike some desktop versions that have 4 cores) but jumps the base clock frequency to 3.1Ghz. If you need the extra performance at 28W, then it’s still a low power package but not the latest generation of CPU. This model comes in at $719AU.</p>
+
+<p>A <a href="http://www.intel.com/content/www/us/en/nuc/nuc-kit-nuc6i7kyk-features-configurations.html">newer i7 Skylake version of the NUC</a> is due for release in May with the i7-6770HQ that provides 4 cores. This one looks like a beast but perhaps overkill for this use case. Here’s <a href="http://ark.intel.com/compare/84993,91160,93341">a comparison of all 3 CPUs models</a>.</p>
+
+<h2 id="ssds">SSDs</h2>
+
+<p>I’d originally had the idea that the M.2 SSD is for the operating system, while a larger drive would be for hosting VMs etc. Once I’ve installed the RAM and SSDs and powered on the PC, I’ve subsequently found that the SATA SSD is drive 0 while the M.2 drive is drive 1. This isn’t a show stopper (not enough to exchange the drives) and I’m still using the M.2 drive for the OS; however I would have change the configuration had I known this before purchase.</p>
+
+<h2 id="ram">RAM</h2>
+
+<p>I’ve purchased G.Skill RAM previously and found them to be reliable and perform well. G.Skill often hits the middle range in terms of price when compared with other vendors, so I’ve stuck with the brand with 2 x 16GB SODIMMs.</p>
+
+<h2 id="installing-ram-and-ssds">Installing RAM and SSDs</h2>
+
+<p>Installing the RAM and drives into a NUC is simple enough – pop the top off, install the RAM into the two slots, install the M.2 drive with a screw to keep it into place and the SATA SSD just pushes into the slot in the top of the NUC. Here’s a view of the installed hardware:</p>
+
+<figure id="attachment_4329" aria-describedby="caption-attachment-4329" style="width: 1024px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/04/Open-NUC.jpg" rel="attachment wp-att-4329"><img class="wp-image-4329 size-large" title="Intel NUC open with RAM and SSDs installed." src="http://stealthpuppy.com/wp-content/uploads/2016/04/Open-NUC-1024x768.jpg" alt="Intel NUC open with RAM and SSDs installed." width="1024" height="768" srcset="http://192.168.0.89/wp-content/uploads/2016/04/Open-NUC-1024x768.jpg 1024w, http://192.168.0.89/wp-content/uploads/2016/04/Open-NUC-150x113.jpg 150w, http://192.168.0.89/wp-content/uploads/2016/04/Open-NUC-300x225.jpg 300w, http://192.168.0.89/wp-content/uploads/2016/04/Open-NUC-768x576.jpg 768w, http://192.168.0.89/wp-content/uploads/2016/04/Open-NUC.jpg 1224w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption id="caption-attachment-4329" class="wp-caption-text">Intel NUC open with RAM and SSDs installed.</figcaption></figure>
+
+<p>Screw the lid back on and power up the PC. The 1.5 amp power supply comes with removable adapters to suit multiple regions.</p>
+
+<h1 id="configuration">Configuration</h1>
+
+<p>The Intel NUC comes with the Intel Visual BIOS, which is a nice change from text-based UIs we’re used to. Here’s a short walk-through of the BIOS configuration – as a hypervisor I’ve disabled hardware such as audio, Bluetooth and Wi-Fi etc.</p>
+
+<p><img class="ngg_displayed_gallery mceItem" src="http://stealthpuppy.com/nextgen-attach_to_post/preview/id--4351" alt="" data-mce-placeholder="1" /></p>
+
+<h1 id="installing-windows">Installing Windows</h1>
+
+<p>Installing Windows 10is straight-forward, Windows 10 will recognise most devices and will require updates for the chipset and display driver. Support for Windows Server, however, is a bit more tricky.</p>
+
+<p>Windows Server does not provide support for the <a href="http://ark.intel.com/products/82186/Intel-Ethernet-Connection-I219-V">Intel I219-V</a> network adapter in-box. So installing manually or via an automated deployment requires a manual installation of the network driver – because the driver is not signed for Windows Server, there is no automated install.</p>
+
+<p>At this time, I have Windows Server 2016 installed but I would prefer to be running Nano Server – without a signed network driver there’s no way to get Nano Server working on this PC. To get a driver signed, I’m getting a code signing certificate from <a href="https://www.digicert.com/">DigiCert</a> to enable me to sign the drivers. I’ll write an article in the future on getting Nano Server onto the Intel NUC.</p>
+
+<p>With Windows Server or Windows Server Core and with devices disabled in the BIOS, Device Manager looks like this:</p>
+
+<figure id="attachment_4361" aria-describedby="caption-attachment-4361" style="width: 1024px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/04/Intel-NUC-Device-Manager.png" rel="attachment wp-att-4361"><img class="wp-image-4361 size-large" title="Device Manager after installing Windows Server and required drivers." src="http://stealthpuppy.com/wp-content/uploads/2016/04/Intel-NUC-Device-Manager-1024x715.png" alt="Device Manager after installing Windows Server and required drivers." width="1024" height="715" srcset="http://192.168.0.89/wp-content/uploads/2016/04/Intel-NUC-Device-Manager-1024x715.png 1024w, http://192.168.0.89/wp-content/uploads/2016/04/Intel-NUC-Device-Manager-150x105.png 150w, http://192.168.0.89/wp-content/uploads/2016/04/Intel-NUC-Device-Manager-300x210.png 300w, http://192.168.0.89/wp-content/uploads/2016/04/Intel-NUC-Device-Manager-768x537.png 768w, http://192.168.0.89/wp-content/uploads/2016/04/Intel-NUC-Device-Manager.png 1188w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption id="caption-attachment-4361" class="wp-caption-text">Device Manager after installing Windows Server and required drivers.</figcaption></figure>
+
+<p>With a custom automated deployment via MDT, the disk partitions resulted as follows:</p>
+
+<figure id="attachment_4360" aria-describedby="caption-attachment-4360" style="width: 903px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/04/Intel-NUC-Disk-Manager.png" rel="attachment wp-att-4360"><img class="wp-image-4360 size-full" title="Disk partitions after installing Windows Server via MDT" src="http://stealthpuppy.com/wp-content/uploads/2016/04/Intel-NUC-Disk-Manager.png" alt="Disk partitions after installing Windows Server via MDT" width="903" height="498" srcset="http://192.168.0.89/wp-content/uploads/2016/04/Intel-NUC-Disk-Manager.png 903w, http://192.168.0.89/wp-content/uploads/2016/04/Intel-NUC-Disk-Manager-150x83.png 150w, http://192.168.0.89/wp-content/uploads/2016/04/Intel-NUC-Disk-Manager-300x165.png 300w, http://192.168.0.89/wp-content/uploads/2016/04/Intel-NUC-Disk-Manager-768x424.png 768w" sizes="(max-width: 903px) 100vw, 903px" /></a><figcaption id="caption-attachment-4360" class="wp-caption-text">Disk partitions after installing Windows Server via MDT</figcaption></figure>
+
+<h1 id="performance">Performance</h1>
+
+<p>I’ve done some basic performance testing on the hardware with PassMark and Iometer on Windows 10 x64. The PassMark result is above average with both disk and RAM performing very well. View the full benchmark results <a href="http://www.passmark.com/baselines/V8/display.php?id=58626026814">on the PassMark web site</a>.</p>
+
+<p><a href="http://www.passmark.com/baselines/V8/display.php?id=58626026814"><img src="http://www.passmark.com/baselines/V8/images/58626026814.png" alt="PassMark Rating" border="0" /></a></p>
+
+<p>To test both SSDs, I’ve used Iometer with a 4K block size, 80% write, 80% random write. Both SSDs provide excellent results and I’ve some to expect great performance from Samsung SSDs which I’ve been using for a number of years how.</p>
+
+<p>Here’s the result for the Samsung 850 EVO 120GB M.2 drive:</p>
+
+<figure id="attachment_4353" aria-describedby="caption-attachment-4353" style="width: 764px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive.png" rel="attachment wp-att-4353"><img class="wp-image-4353 size-full" title="Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random" src="http://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive.png" alt="Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random" width="764" height="472" srcset="http://192.168.0.89/wp-content/uploads/2016/04/Iometer-CDrive.png 764w, http://192.168.0.89/wp-content/uploads/2016/04/Iometer-CDrive-150x93.png 150w, http://192.168.0.89/wp-content/uploads/2016/04/Iometer-CDrive-300x185.png 300w" sizes="(max-width: 764px) 100vw, 764px" /></a><figcaption id="caption-attachment-4353" class="wp-caption-text">Samsung 850 EVO M.2 drive: Iometer performance &#8211; 4K blocks, 80% write, 80% random</figcaption></figure>
+
+<p>And results for the Samsung EVO 850 256GB SATA drive:</p>
+
+<p>Note that both drives are the cheaper EVOs, not the EVO Pros. Spending more for the Pro version ( ~$100AU additional per drive) should provide even better results; however for use in a home lab, this type of performance is pretty good.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>I’m very happy with the Intel NUC6i5SYB, especially with this configuration and price point. The size is excellent and it’s also low noise and low power, even under load.</p>
+
+<p>I would, however, have done two things differently:</p>
+
+<ol>
+  <li>Swapped the drive configurations – make the M.2 the larger drive for VM storage. As this is drive 1, it would simplify OS deployment to the SATA SSD as drive 0.</li>
+  <li>Extended my budget and gone with the Samsung 50GB M.2 SSD at $235AU. While I’m using deduplication built into Windows Server, there’s not a huge price difference between the 256GB and 512GB SSDs.</li>
+</ol>
+
+<p>Overall though this is a great addition to my home lab environment.</p>
+
+  </div><a class="u-url" href="/intel-nuc6i5syb-home-lab/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

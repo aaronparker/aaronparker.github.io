@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>App-V 5 FAQ: Visual C++ Redistributable as local installs or allow App-V to deploy as needed? | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="App-V 5 FAQ: Visual C++ Redistributable as local installs or allow App-V to deploy as needed?" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This FAQ has been contributed by Thamim Karim, a former Microsoft employee and owner of popular App-V blog virtualvibes.co.uk. Over the years @ThamimKarim has worked across the globe assisting customers with their user experience and application deployment strategies offering both consultancy and training services. He also has made many speaker appearances at conferences including TechEd, App-V User Groups and Microsoft Ignite." />
+<meta property="og:description" content="This FAQ has been contributed by Thamim Karim, a former Microsoft employee and owner of popular App-V blog virtualvibes.co.uk. Over the years @ThamimKarim has worked across the globe assisting customers with their user experience and application deployment strategies offering both consultancy and training services. He also has made many speaker appearances at conferences including TechEd, App-V User Groups and Microsoft Ignite." />
+<link rel="canonical" href="/appv5-faq-visualc-redistributables/" />
+<meta property="og:url" content="/appv5-faq-visualc-redistributables/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2015/06/AppV5FAQ.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-10-29T22:21:32+11:00" />
+<script type="application/ld+json">
+{"description":"This FAQ has been contributed by Thamim Karim, a former Microsoft employee and owner of popular App-V blog virtualvibes.co.uk. Over the years @ThamimKarim has worked across the globe assisting customers with their user experience and application deployment strategies offering both consultancy and training services. He also has made many speaker appearances at conferences including TechEd, App-V User Groups and Microsoft Ignite.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/appv5-faq-visualc-redistributables/","image":"/wp-content/uploads/2015/06/AppV5FAQ.png","headline":"App-V 5 FAQ: Visual C++ Redistributable as local installs or allow App-V to deploy as needed?","dateModified":"2015-10-29T22:21:32+11:00","datePublished":"2015-10-29T22:21:32+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/appv5-faq-visualc-redistributables/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">App-V 5 FAQ: Visual C++ Redistributable as local installs or allow App-V to deploy as needed?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2015-10-29T22:21:32+11:00" itemprop="datePublished">Oct 29, 2015
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><em><img class="alignleft wp-image-4188" style="margin: 0px 15px 0px 0px;" src="http://stealthpuppy.com/wp-content/uploads/2015/10/thamim.jpg" alt="ThamimKarim" width="100" height="100" srcset="http://192.168.0.89/wp-content/uploads/2015/10/thamim.jpg 350w, http://192.168.0.89/wp-content/uploads/2015/10/thamim-150x150.jpg 150w, http://192.168.0.89/wp-content/uploads/2015/10/thamim-300x300.jpg 300w" sizes="(max-width: 100px) 100vw, 100px" />This FAQ has been contributed by Thamim Karim, a former Microsoft employee and owner of popular App-V blog <a href="http://virtualvibes.co.uk">virtualvibes.co.uk</a>. Over the years <a href="https://twitter.com/ThamimKarim">@ThamimKarim</a> has worked across the globe assisting customers with their user experience and application deployment strategies offering both consultancy and training services. He also has made many speaker appearances at conferences including TechEd, App-V User Groups and Microsoft Ignite.</em></p>
+
+<p>Since the release of App-V 5.0 SP2 almost two years ago, the question regarding whether we should allow runtimes such as Visual C++ redistributables to be automatically packaged as part of App-V sequences or whether they should be individually managed on the base OS is on-going. Well there is no right or wrong approach to this, I know people who are massive fans of this feature and others who staunchly believe such SxS components should be managed locally.</p>
+
+<figure id="attachment_4187" aria-describedby="caption-attachment-4187" style="width: 517px" class="wp-caption alignnone"><img class="size-full wp-image-4187" src="http://stealthpuppy.com/wp-content/uploads/2015/10/SequencerOptions.png" alt="App-V 5 Sequencer options" width="517" height="406" srcset="http://192.168.0.89/wp-content/uploads/2015/10/SequencerOptions.png 517w, http://192.168.0.89/wp-content/uploads/2015/10/SequencerOptions-150x118.png 150w, http://192.168.0.89/wp-content/uploads/2015/10/SequencerOptions-300x236.png 300w" sizes="(max-width: 517px) 100vw, 517px" /><figcaption id="caption-attachment-4187" class="wp-caption-text">App-V 5 Sequencer options</figcaption></figure>
+
+<p>Either way here are your three main options:</p>
+
+<h1 id="1-rely-on-app-v-to-package-and-deliver">1. Rely on App-V to package and deliver</h1>
+
+<p>This is the assumption the App-V Sequencer makes, as by default, the option to package VC runtimes is already ticked. This means regardless of whether the runtime is already on the machine or delivered during the monitoring phase it will be picked up into the package. The App-V client will then ensure it is dropped back down to the client OS in the event the runtime is not present when the package is delivered. The plus side of this approach is you will less likely be caught out with mismatching VC runtimes between your sequencer and client. The downside is there is a significant performance overhead as the runtimes are provisioned during publish of the package. Another point to note is runtimes will not be removed with the package if it is ever unpublished.</p>
+
+<h1 id="2-manage-runtimes-on-your-base-os-and-turn-off-the-feature">2. Manage runtimes on your base OS and turn off the feature</h1>
+
+<p>In my opinion this is the cleanest approach to runtimes that will give you the most control. It also means you won’t bog down the performance of publishing times or bloat your package sizes. However at the same time it leaves you with nowhere to hide should your package expect to find runtimes that aren’t present on the client that were on the sequencer it was packaged on.</p>
+
+<h1 id="3-manage-runtimes-on-your-base-os-and-leave-the-feature-on">3. Manage runtimes on your base OS and leave the feature on</h1>
+
+<p>This is a compromise approach whereby you actively manage runtimes locally on the OS but leave the App-V feature on “just incase”. This means your packages will pick up the runtimes into the App-V package but you will pro-actively reduce the instances where they will actually be needed to be dropped down on the client side. The downside of this approach is the safety net might end up too comforting and the pro-active approach will slowly fade out until you end up back at option 1!</p>
+
+<p>Before you decide, check out the following resources:</p>
+
+<ul>
+  <li><a href="https://technet.microsoft.com/en-us/library/dn508408.aspx">About App-V 5.0 SP2 on TechNet</a></li>
+  <li><a href="http://virtualvibes.co.uk/shell-extensions-and-runtimes-with-app-v-5-0-sp2/">Shell Extensions and Runtimes with App-V 5.0 SP2 on Virtual Vibes</a></li>
+  <li><a href="http://www.tmurgent.com/AppV/images/WhitePapers/Research_VCRuntimes.pdf">Effects of “VC Runtimes” in App-V 5 SP2 white paper by Tim Mangan</a></li>
+</ul>
+
+<p> </p>
+
+  </div><a class="u-url" href="/appv5-faq-visualc-redistributables/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Error with OUTLK12.ADM | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Error with OUTLK12.ADM" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The ADM/ADMX templates have been updated and include the fix for the Outlook template. See the download link below to update your templates." />
+<meta property="og:description" content="The ADM/ADMX templates have been updated and include the fix for the Outlook template. See the download link below to update your templates." />
+<link rel="canonical" href="/error-with-outlk12adm/" />
+<meta property="og:url" content="/error-with-outlk12adm/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-04-17T20:28:00+10:00" />
+<script type="application/ld+json">
+{"description":"The ADM/ADMX templates have been updated and include the fix for the Outlook template. See the download link below to update your templates.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/error-with-outlk12adm/","headline":"Error with OUTLK12.ADM","dateModified":"2007-04-17T20:28:00+10:00","datePublished":"2007-04-17T20:28:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/error-with-outlk12adm/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Error with OUTLK12.ADM</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-04-17T20:28:00+10:00" itemprop="datePublished">Apr 17, 2007
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p class="important">
+  The ADM/ADMX templates have been updated and include the fix for the Outlook template. See the download link below to update your templates.
+</p>
+
+<p>When adding the Outlook 2007 ADM template file, OUTLK12.ADM, to a Group Policy object, you may encounter the following error displayed when you view a settings report in the GPMC:</p>
+
+<blockquote>
+  <p>The .adm file “\company.local\SysVol\clariti.internal\Policies{C08857CE-A103-456A-8D3D-0A4F869B8C4A}\Adm\outlk12.adm” is in not in a valid format and must be replaced. Details: A value name is expected before line 2461.</p>
+</blockquote>
+
+<p>To fix this issue follow these steps:</p>
+
+<p><strong>1</strong>. Make a copy of OUTLK12.ADM, e.g. OUTLK12-Fixed.ADM</p>
+
+<p><strong>2</strong>. Open OUTLK12-Fixed.ADM in Notepad and go to line 2461 (Edit / Go To..)</p>
+
+<p><strong>3</strong>. This line should be in a section that looks like this, starting at line 2459 and ending at 2464:</p>
+
+<p>[code]KEYNAME Software\Policies\Microsoft\Office\12.0\Outlook\Security<br />
+VALUEON NUMERIC 1<br />
+VALUEOFF NUMERIC 0<br />
+VALUENAME PromoteErrorsAsWarnings<br />
+EXPLAIN !!L_PromotingerrorsaswarningsExplain<br />
+END POLICY[/code]</p>
+
+<p><strong>4</strong>. Swap the text on line 2460 with the text on line 2462, so that is now looks like this:</p>
+
+<p>[code]KEYNAME Software\Policies\Microsoft\Office\12.0\Outlook\Security<br />
+VALUENAME PromoteErrorsAsWarnings<br />
+VALUEON NUMERIC 1<br />
+VALUEOFF NUMERIC 0<br />
+EXPLAIN !!L_PromotingerrorsaswarningsExplain<br />
+END POLICY[/code]</p>
+
+<ol>
+  <li>Save the template and add it back into your Group Policy object and it should now work.</li>
+</ol>
+
+<p>It’s a little odd that this problem is there right out of the box but I don’t know if anyone else is experiencing this issue. You can get the Office 2007 ADM files from here:</p>
+
+<p class="download">
+  <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=92d8519a-e143-4aee-8f7a-e4bbaeba13e7&amp;DisplayLang=en">2007 Office System Administrative Templates</a>
+</p>
+
+<blockquote>
+  <p>This download includes updated Group Policy Administrative Template files and Office Customization Tool OPA files for use with the 2007 Microsoft Office system programs. It also includes an \Admin folder with an updated Office Customization Tool, and ADMX and ADML versions of the 2007 Microsoft Office system Administrative Template files for Windows Vista and Windows Server 2008. In Windows Vista and Windows Server 2008 operating systems, the ADM files are replaced by ADMX files, which use an XML-based file format to display registry-based policy settings. This download also includes a workbook (Office2007GroupPolicyAndOCTSettings.xls) that provides information about the 2007 Office system Group Policy settings and OPA settings.</p>
+</blockquote>
+
+  </div><a class="u-url" href="/error-with-outlk12adm/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

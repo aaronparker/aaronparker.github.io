@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Deploying Adobe Reader 8.0 | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Deploying Adobe Reader 8.0" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="For an Adobe Reader 9 version of this post, go here. For an Adobe Reader 8.x version of this post, go here" />
+<meta property="og:description" content="For an Adobe Reader 9 version of this post, go here. For an Adobe Reader 8.x version of this post, go here" />
+<link rel="canonical" href="/deploying-adobe-reader-8/" />
+<meta property="og:url" content="/deploying-adobe-reader-8/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-12-06T08:15:00+11:00" />
+<script type="application/ld+json">
+{"description":"For an Adobe Reader 9 version of this post, go here. For an Adobe Reader 8.x version of this post, go here","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/deploying-adobe-reader-8/","headline":"Deploying Adobe Reader 8.0","dateModified":"2006-12-06T08:15:00+11:00","datePublished":"2006-12-06T08:15:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/deploying-adobe-reader-8/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Deploying Adobe Reader 8.0</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2006-12-06T08:15:00+11:00" itemprop="datePublished">Dec 6, 2006
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p class="alert">
+  For an Adobe Reader 9 version of this post, go <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">here</a>. For an Adobe Reader 8.x version of this post, go <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-81">here</a>
+</p>
+
+<p>Now that <a href="http://www.adobe.com/products/acrobat/readstep2.html">Adobe Reader 8 has been released</a> and the setup routine has changed slightly, we’ll have to jump through hoops again to get this new version deployed. Here are a few things that I’ve found in regards to deployment in a corporate environment:</p>
+
+<ul>
+  <li>Here’s <a href="http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.0/enu/AdbeRdr80_en_US.exe">a direct link to the download</a> for Adobe Reader 8.0;</li>
+  <li>The installer weighs in at 20.8Mb;</li>
+  <li>It requires Windows Installer 3.0 and appears to require a minimum of Internet Explorer 6.0;</li>
+  <li>Adobe Reader 8 uses a newer version of the Netopsystems FEAD setup routine;</li>
+  <li>Adobe Customization Wizard 8 is “<a href="http://www.adobe.com/uk/products/acrobat/solutions/it/deployment.html">coming soon</a>“;</li>
+  <li>On Windows Vista, setup files are unpacked to <span style="font-family: Courier New">%USERPROFILE%AppDataLocalLowNetopsystemstempAdobe Reader 8.0</span></li>
+  <li>On Windows XP/2003, setup files are unpacked to <font face="courier new,courier">%USERPROFILE%\Local SettingsTemp1Adobe Reader 8.0</font> (The folder 1 may change);</li>
+  <li>After Reader is installed, setup files are located at <span style="font-family: Courier New">%ProgramFilesAdobeReader 8.0Setup Files{AC76BA86-7AD7-1033-7B44-A80000000002}</span></li>
+  <li>Setup switches have changed, here’s the full list:</li>
+</ul>
+
+<p>[table id=10 /]</p>
+
+<ul>
+  <li>If you want to perform a silent install directly from the download, use the following command:</li>
+</ul>
+
+<p>[code]AdbeRdr80_en_US.EXE /sPB /rs /rps /msi”ALLUSERS=TRUE EULA_ACCEPT=YES SUPPRESS_APP_LAUNCH=YES”[/code]</p>
+
+<ul>
+  <li>To perform an silent install from the unpacked setup files use the following command:</li>
+</ul>
+
+<p>[code]SETUP.EXE /sPB /rs /rps /msi”ALLUSERS=TRUE EULA_ACCEPT=YES SUPPRESS_APP_LAUNCH=YES”[/code]<br />
+or<br />
+[code]MSIEXEC /I AcroRead.msi ALLUSERS=TRUE EULA_ACCEPT=YES SUPPRESS_APP_LAUNCH=YES REBOOT=REALLYSUPRESS /QB-[/code]</p>
+
+<ul>
+  <li>A second shortcut is now added to the Startup group – <strong>Adobe Reader Synchronizer</strong> as well as the <strong>Adobe Reader Speed Launch</strong> shortcut;</li>
+  <li>At launch, Adobe Reader reads the <span style="font-family: Courier New">HKLMSystemCurrentControlSetControlTerminal Server</span> registry key. Will it perform differently on a Terminal Server?</li>
+  <li>It appears to launch quite quickly;</li>
+  <li>It also reads this registry key <span style="font-family: Courier New">HKLMSOFTWAREPoliciesAdobeAcrobat Reader8.0FeatureLockdown</span> which could mean that an ADM/ADMX file exists or is coming to manage Adobe Reader via Group Policy;</li>
+  <li>You can set this DWORD value in the registry: <span style="font-family: Courier New">HKCUSoftwareAdobeAcrobat Reader8.0AVGeneralbDocumentsInTaskbar</span>, to force Reader to display a separate window for each document, just like Microsoft Office;</li>
+  <li>There are no ads in the toolbar as in previous versions;</li>
+  <li>It includes nice new fancy 256 x 256 pixel icons (click each one for a larger view):</li>
+</ul>
+
+<p><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.225.Reader.png" /><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.226.PDFFile.png" /></p>
+
+<p>There are a lot of things left to find and I’ll update this post as I find them.</p>
+
+<p><strong>UPDATES</strong>:</p>
+
+<ul>
+  <li>AppDeploy.com has been updated with an Adobe Reader 8 specific entry: <a href="http://www.appdeploy.com/packages/detail.asp?id=915">http://www.appdeploy.com/packages/detail.asp?id=915</a></li>
+  <li>Set this DWORD value to 1 <font face="courier new,courier">HKEY_LOCAL_MACHINESoftwareAdobeAcrobat Reader8.0DowntownbDontShowAtLaunch</font> and this DWORD value to 0 <font face="courier new,courier">HKEY_LOCAL_MACHINESoftwareAdobeAcrobat Reader8.0DowntownbGoOnline</font>, to supress the Beyond Adobe Reader window and feature;</li>
+  <li>The Adobe Updater is installed along with Reader to here: <font face="courier new,courier">%CommonProgramFiles%AdobeUpdater5</font></li>
+  <li>Adobe Updater has created a folder in my Documents folder: <font face="courier new,courier">DocumentsUpdater5AdobeUpdaterreader8rdr-en_US</font></li>
+  <li>So Joe… has an excellent post on installing Adobe Reader 8: <a href="http://sojoe.info/2006/12/09/a-step-by-step-guide-to-silently-installing-and-configuring-adobe-reader-8/">A Step-by-Step Guide to Silently Installing and Configuring Adobe Reader 8</a></li>
+  <li>Disable the Adobe Updater with the following DWORD (set it to 0x00000001) <font face="courier new,courier">HKLMSoftwareAdobeUpdaterEnterprise</font>. I’m still confirming this one, but I found the registry key on the Adobe knowledgebase site: <a href="http://www.adobe.com/support/techdocs/331261.html">Perform a silent installation of Photoshop</a></li>
+</ul>
+
+<p class="important">
+  <strong>NOTE</strong>: See <a href="http://www.stealthpuppy.com/blogs/travelling/pages/adobe-reader-8-0.aspx">Unattended Install: Adobe Reader 8.0</a> and <a href="http://www.stealthpuppy.com/blogs/travelling/archive/2007/01/06/adobe-customization-wizard-8.aspx">Disable Adobe Updater with Adobe Customization Wizard 8</a> for information on silent or unattended installations of Adobe Reader 8.
+</p>
+
+  </div><a class="u-url" href="/deploying-adobe-reader-8/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

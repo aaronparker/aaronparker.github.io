@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Virtualizing Adobe Reader X | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Virtualizing Adobe Reader X" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product." />
+<meta property="og:description" content="This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product." />
+<link rel="canonical" href="/virtualising-adobe-reader-x/" />
+<meta property="og:url" content="/virtualising-adobe-reader-x/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-10-26T15:00:00+11:00" />
+<script type="application/ld+json">
+{"description":"This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/virtualising-adobe-reader-x/","headline":"Virtualizing Adobe Reader X","dateModified":"2010-10-26T15:00:00+11:00","datePublished":"2010-10-26T15:00:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/virtualising-adobe-reader-x/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Virtualizing Adobe Reader X</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-10-26T15:00:00+11:00" itemprop="datePublished">Oct 26, 2010
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="http://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise.png"><img style="background-image: none; margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 10px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ReaderXVirtualise" src="http://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise_thumb.png" alt="ReaderXVirtualise" width="128" height="124" align="right" border="0" /></a>This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.</p>
+
+<h3 id="dont-virtualize-reader">Don’t Virtualize Reader</h3>
+
+<p>Before I get to the details I would like you to first consider the implications of virtualising Reader. Adobe Reader is often a common component of any desktop deployment and like Microsoft Office and Internet Explorer, it usually becomes a core application on which other applications depend.</p>
+
+<p>If you are using a virtualisation solution that isolates an application from other applications and the operating system, integration can be a challenge. Let me illustrate with a couple of examples:</p>
+
+<p><em>Internet Explorer</em>: if Reader is isolated from Windows, Internet Explorer will be able to download PDFs which can then be opened with the virtualised Reader; however IE will have no knowledge of any application that is handling the PDF file type or MIME type. Launching Reader inside IE or viewing a PDF <a href="http://blogs.adobe.com/pdfdevjunkie/2007/08/using_the_html_embed_tag_to_di.html">embedded in a web page</a> will not be possible.</p>
+
+<p><img title="ComparingReaderInstallTypes" src="http://stealthpuppy.com/wp-content/uploads/2010/10/ComparingReaderInstallTypes.png" alt="" width="660" height="241" /></p>
+
+<p>You could solve this my launching Internet Explorer inside the Reader package, but this will require covering all of the ways a user can launch Internet Explorer. If you do that, what happens when you want IE to launch inside the environment of another package? App-V doesn’t handle integration with these entry points elegantly today.</p>
+
+<p><em>Virtualised applications</em>: Additionally, if you need to provide other virtualised applications with Reader support, you will need to maintain <a href="http://www.microsoft.com/systemcenter/appv/dynamic.mspx">Dynamic Suite Composition</a> links to the Reader package for each primary package that requires it. Because Reader is used so often, managing DSC links is something that could get out of hand very quickly.</p>
+
+<p>In most cases I do not recommend virtualizing Reader – your mileage may vary, but because of the additional administrative overhead and the change in the user experience, you should invest your time in other areas.</p>
+
+<h3 id="configuring-the-adobe-reader-installation">Configuring the Adobe Reader installation</h3>
+
+<p>If I haven’t convinced you that virtualizing Reader is more trouble that it’s worth, then here’s how to do it:</p>
+
+<p>I’ve previously covered <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/">how to create a customised deployment of Reader X</a> to suit your environment. If you have read that article yet, I recommend that you do before proceeding further. Automating the installation and configuration of Reader during sequencing will make it easier to re-create the package and will simplify documentation.</p>
+
+<p>Here’s my recommendations for settings that you should configure when creating a transform to install Reader during sequencing:</p>
+
+<ul>
+  <li><em>Personalisation Options</em>: change the install path if required. You can choose to install to the virtual drive; however a VFS install will work as well</li>
+  <li><em>Installation Options</em>: disable the caching of the Reader installer files to reduce the size of the package. Choose an unattended install and supress reboot</li>
+  <li><em>Files and Folders</em>: add the JavaScript (HideItems.js) to disable additional toolbar buttons and menu items</li>
+  <li><em>Registry</em>: add the bProtectedMode value to the Policies key to disable Protected Mode (more on that below)</li>
+  <li><em>Shortcuts</em>: disable the shortcut added to the Desktop</li>
+  <li><em>Server Locations</em>: additional server locations should not be required when virtualising Reader</li>
+  <li><em>EULA</em>: ensure that the End User License Agreement is suppressed</li>
+  <li><em>Online and Acrobat.com Features</em>: disabling the Adobe Updater is important so that user’s can’t attempt to update Reader after deployment</li>
+  <li><em>Direct Editor</em>: you can edit the Transform directly to prevent the installation of Adobe Updater (although you can just delete the ARM folder during sequencing).</li>
+</ul>
+
+<p>Reader X 10.1 introduces a new <em>Adobe Acrobat Updater Service</em>, you can use the Direct Editor to prevent the service from being installed, because it won’t be required once virtualized.</p>
+
+<p>Create a script to perform the installation. Here’s a sample script that will install Reader, perform some additional actions that can be done in the transform file instead and will then launch Reader after setup has completed.</p>
+
+<p>[sourcecode toolbar=”true” language=”plain”]@ECHO OFF<br />
+START /WAIT MSIEXEC /I AcroRead.MSI TRANSFORMS=VirtualisedReaderX.MSI ALLUSERS=TRUE /QB-<br />
+IF “%PROCESSOR_ARCHITECTURE%”==”AMD64” RD /Q /S “%CommonProgramFiles(x86)%\Adobe\ARM”<br />
+IF “%PROCESSOR_ARCHITECTURE%”==”x86” RD /Q /S “%CommonProgramFiles%\Adobe\ARM”<br />
+REG ADD “HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\10.0\FeatureLockDown” /v bProtectedMode /d 0 /f<br />
+REG ADD “HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\10.0\FeatureLockDown” /v bUpdater /d 0 /f<br />
+IF EXIST “%PUBLIC%\Desktop\Adobe Reader X.lnk” DEL /F “%PUBLIC%\Desktop\Adobe Reader X.lnk”<br />
+IF “%PROCESSOR_ARCHITECTURE%”==”AMD64” START /D “%ProgramFiles(x86)%\Adobe\Reader 10.0\Reader” AcroRd32.exe<br />
+IF “%PROCESSOR_ARCHITECTURE%”==”x86” START /D “%ProgramFiles%\Adobe\Reader 10.0\Reader” AcroRd32.exe[/sourcecode]</p>
+
+<p>Copy the Reader setup files, the Windows Installer transform and the script into your sequencing machine before capturing. I generally use a folder named <em>C:\Packages</em> and add this location to the excludes for the package.</p>
+
+<h3 id="virtualizing-adobe-reader">Virtualizing Adobe Reader</h3>
+
+<p>There are no additional requirements or dependencies for virtualizing Reader X and I have successfully created an App-V package on Windows 7 x86 and deployed to both x86 and x64 platforms using the custom installation and script outlined above.</p>
+
+<p>I have provided here a copy of the App-V 4.6 SP1 Package Template which includes a number of exclusions that do not need to be captured in a Reader package.</p>
+
+<p class="download">
+  [download id=&#8221;43&#8243; format=&#8221;1&#8243;]
+</p>
+
+<p>There is one issue though – the Adobe Reader Protected Mode doesn’t like running under App-V. During the monitoring phase the application may not launch on first run and on the second launch the following dialog box will be displayed:</p>
+
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AdobeReaderProtectedModePrompt" src="http://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderProtectedModePrompt_thumb.png" alt="AdobeReaderProtectedModePrompt" width="660" height="232" border="0" /></p>
+
+<p>Choosing the option ‘Always open with Protected Mode disabled’ will save the setting in HKCU in the Registry, but until a fix is found (either by Adobe or Microsoft) you can disable Protected Mode using the following Registry key:</p>
+
+<ul>
+  <li>Key: HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\10.0\FeatureLockDown</li>
+  <li>Value: bProtectedMode</li>
+  <li>Type: REG_DWORD</li>
+  <li>Data: 0</li>
+</ul>
+
+<p>The script listed above includes a REG command to disable Protected Mode, however this can be done in the transform file instead.</p>
+
+<p>If Protected Mode is not disabled when Reader is virtualized or when it is running inside an App-V bubble via another package, it will crash with the following error: <em>Error in Microsoft Visual C++ Runtime Library</em>. Disable Protected Mode to avoid this issue.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Virtualizing Reader is straightforward and it performs well under App-V, although I would consider the implications of isolating Reader from the OS, even before you start the Sequencer. A virtualized Reader will require managing DSC links and you’ll need ensure that users understand the difference in behaviour with IE integration.</p>
+
+<p>Hopefully an update of either Reader or App-V in the future will enable Protected Mode support to improve security.</p>
+
+<h3 id="resources">Resources</h3>
+
+<p>To make the job of sequencing Reader X easier, the following App-V 4.6 SP1 Package Accelerators are available.</p>
+
+<ul>
+  <li><a href="http://gallery.technet.microsoft.com/Adobe-Reader-X-101-en-US-42e026c8">App-V 4.6 SP1 Package Accelerator for Adobe Reader X 10.1</a></li>
+  <li><a href="http://gallery.technet.microsoft.com/Adobe-Reader-X-Package-ac504c1c">App-V 4.6 SP1 Package Accelerator for Adobe Reader X 10.0</a></li>
+</ul>
+
+  </div><a class="u-url" href="/virtualising-adobe-reader-x/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

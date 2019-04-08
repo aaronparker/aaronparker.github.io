@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Performing vSphere VM RAM Overhead Lookups in Excel | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Performing vSphere VM RAM Overhead Lookups in Excel" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Running VMs under ESXi will incur a memory overhead for each virtual machine.  You can read about this overhead here: Understanding Memory Overhead. Essentially memory overhead is:" />
+<meta property="og:description" content="Running VMs under ESXi will incur a memory overhead for each virtual machine.  You can read about this overhead here: Understanding Memory Overhead. Essentially memory overhead is:" />
+<link rel="canonical" href="/performing-vsphere-vm-ram-overhead-lookups-in-excel/" />
+<meta property="og:url" content="/performing-vsphere-vm-ram-overhead-lookups-in-excel/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-07-18T22:34:12+10:00" />
+<script type="application/ld+json">
+{"description":"Running VMs under ESXi will incur a memory overhead for each virtual machine.  You can read about this overhead here: Understanding Memory Overhead. Essentially memory overhead is:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/performing-vsphere-vm-ram-overhead-lookups-in-excel/","headline":"Performing vSphere VM RAM Overhead Lookups in Excel","dateModified":"2014-07-18T22:34:12+10:00","datePublished":"2014-07-18T22:34:12+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/performing-vsphere-vm-ram-overhead-lookups-in-excel/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Performing vSphere VM RAM Overhead Lookups in Excel</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-07-18T22:34:12+10:00" itemprop="datePublished">Jul 18, 2014
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Running VMs under ESXi will incur a memory overhead for each virtual machine.  You can read about this overhead here: <a href="http://pubs.vmware.com/vsphere-51/index.jsp#com.vmware.vsphere.resmgmt.doc/GUID-4954A03F-E1F4-46C7-A3E7-947D30269E34.html">Understanding Memory Overhead</a>. Essentially memory overhead is:</p>
+
+<blockquote>
+  <p>Overhead memory includes space reserved for the virtual machine frame buffer and various virtualization data structures, such as shadow page tables. Overhead memory depends on the number of virtual CPUs and the configured memory for the guest operating system.</p>
+</blockquote>
+
+<p>While ESXi provides memory optimisations such as page sharing which have the potential to save more memory than is taken up by the overhead, it’s still worth including the RAM overhead in any calculations used to determine the number of VMs per host (especially for VDI or RDS/XenApp).</p>
+
+<p>If I’m going through a sizing exercise, I’m not typically going to account for RAM optimisations as I don’t know how much RAM will be saved until the solution is deployed.</p>
+
+<p>VMware has a reasonably complete <a href="http://pubs.vmware.com/vsp40_i/wwhelp/wwhimpl/common/html/wwhelp.htm#href=resmgmt/r_overhead_memory_on_virtual_machines.html#1_7_9_9_10_1&amp;single=true">table for VM RAM overhead for ESXi 4.0</a>, plus a <a href="http://pubs.vmware.com/vsphere-51/index.jsp#com.vmware.vsphere.resmgmt.doc/GUID-B42C72C1-F8D5-40DC-93D1-FB31849B1114.html">sample table for ESXi 5.1</a>. From what I can tell, a complete table for ESXi 5.x doesn’t exist, so unfortunately you’ll need to create your own. That’s a straight-forward task, but will be time consuming.</p>
+
+<p>I’ve created an Excel spreadsheet that I can use for estimating the number of virtual desktops or XenApp servers per host based on some specific configurations and that includes calculating the VM RAM overhead.</p>
+
+<p>Creating a formula to perform the lookup, I’ve used the <a href="http://office.microsoft.com/en-au/excel-help/index-function-HP010069831.aspx">INDEX</a> and <a href="http://office.microsoft.com/en-au/excel-help/match-function-HP010062414.aspx">MATCH</a> functions to look up the number of vCPUs against the amount of RAM assigned to the VM, to return the VM RAM Overhead.</p>
+
+<p>Here’s what it looks like in Excel:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2014/07/Excel-Lookup1.png"><img class="alignnone wp-image-3636 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/07/Excel-Lookup1.png" alt="" width="1180" height="575" srcset="http://192.168.0.89/wp-content/uploads/2014/07/Excel-Lookup1.png 1180w, http://192.168.0.89/wp-content/uploads/2014/07/Excel-Lookup1-150x73.png 150w, http://192.168.0.89/wp-content/uploads/2014/07/Excel-Lookup1-300x146.png 300w, http://192.168.0.89/wp-content/uploads/2014/07/Excel-Lookup1-1024x498.png 1024w, http://192.168.0.89/wp-content/uploads/2014/07/Excel-Lookup1-624x304.png 624w" sizes="(max-width: 1180px) 100vw, 1180px" /></a></p>
+
+<p>The INDEX formula is used to return the amount of RAM overhead based on the vCPU and RAM values that we input into the spreadsheet. In this instance, I have two inputs – number of vCPUs (B3) and amount of RAM in GB (B4) assigned to my sample VM (for RDS/XenApp or VDI, I’ve assumed that all VMs on the host are configured identically.</p>
+
+<pre class="lang:ini decode:true" title="Using INDEX to select from an array">INDEX(array,row_num,column_num)</pre>
+
+<p>Here, <em>array</em> is the amount of RAM Overhead to select from – essentially the lookup table I’ve added into the spreadsheet that lists the amount of VM RAM Overhead (D6 to I16), <em>row_num</em> is the number of vCPUs assigned to the VM (1 to 8), <em>column_num</em> is the amount of RAM assigned to the VM (256Mb to 256GB).</p>
+
+<p>To select from the appropriate row and column in the table, I need to match the inputs from the array of vCPUs (E5 to L5, or 1 to 8 vCPUs) and the amount of RAM (from D6 to D16, or 256Mb to 256GB of RAM).  The MATCH formula will look like the below. <em>Lookup_value</em> will be the number of vCPUs or amount of RAM, <em>lookup_array</em> is the number of vCPUs in the table to select from (1 to 8). We can ignore <em>match_type</em>.</p>
+
+<pre class="lang:ini decode:true">MATCH(lookup_value, lookup_array, [match_type])</pre>
+
+<p>So, now my formula will look something like this:</p>
+
+<pre class="lang:ini decode:true ">INDEX(array,(MATCH(lookup_value, lookup_array)),(MATCH(lookup_value, lookup_array)))</pre>
+
+<p>To make this work in Excel, I’ve also added two extra components to the formula, converting GB to MB by multiplying the VM RAM size input (B5) by 1024 and rounding the result to a single decimal place. The resulting formula is then:</p>
+
+<pre class="lang:ini decode:true ">=ROUND((INDEX(&lt;Lookup table&gt;,MATCH((&lt;VM RAM size in GB&gt;*1024),&lt;VM RAM size column&gt;),MATCH(&lt;No. VM vCPUs,&lt;vCPUs Row&gt;))),1)</pre>
+
+<p>I can then multiply the result by the number of VMs to get a full picture of the amount of RAM consumed on the host.</p>
+
+<p>Here’s a downloadable version of the Excel spreadsheet, which includes the ESXi 4.x version of the VM RAM Overhead.</p>
+
+<p class="download">
+  [download id=&#8221;63&#8243; format=&#8221;1&#8243;]
+</p>
+
+<p>With a bit of effort, you could update the table for ESXi 5.x.</p>
+
+  </div><a class="u-url" href="/performing-vsphere-vm-ram-overhead-lookups-in-excel/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

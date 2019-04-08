@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Hands On with the Citrix ShareFile Drive Mapper | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Hands On with the Citrix ShareFile Drive Mapper" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Citrix recently made the ShareFile Drive Mapper tool available for mapping a drive letter into your ShareFile data available on Windows clients. This is an interesting approach to providing access to ShareFile data which changes the data access approach from sync to on-demand." />
+<meta property="og:description" content="Citrix recently made the ShareFile Drive Mapper tool available for mapping a drive letter into your ShareFile data available on Windows clients. This is an interesting approach to providing access to ShareFile data which changes the data access approach from sync to on-demand." />
+<link rel="canonical" href="/citrix-sharefile-drive-mapper/" />
+<meta property="og:url" content="/citrix-sharefile-drive-mapper/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2016/05/2749278085_ab1b43f2d9_o.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-05-25T02:43:59+10:00" />
+<script type="application/ld+json">
+{"description":"Citrix recently made the ShareFile Drive Mapper tool available for mapping a drive letter into your ShareFile data available on Windows clients. This is an interesting approach to providing access to ShareFile data which changes the data access approach from sync to on-demand.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/citrix-sharefile-drive-mapper/","image":"/wp-content/uploads/2016/05/2749278085_ab1b43f2d9_o.jpg","headline":"Hands On with the Citrix ShareFile Drive Mapper","dateModified":"2016-05-25T02:43:59+10:00","datePublished":"2016-05-25T02:43:59+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/citrix-sharefile-drive-mapper/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Hands On with the Citrix ShareFile Drive Mapper</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2016-05-25T02:43:59+10:00" itemprop="datePublished">May 25, 2016
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="https://www.citrix.com/blogs/2016/05/20/drive-mapper-optimize-your-sharefile-investment/">Citrix recently</a> made the ShareFile Drive Mapper tool available for mapping a drive letter into your ShareFile data available on Windows clients. This is an interesting approach to providing access to ShareFile data which changes the data access approach from sync to on-demand.</p>
+
+<p>In this article, I’ll provide an overview of the installation, configuration and how the client works. I’ve tested version 3.2.112.0 of the Drive Mapper on Windows 10 64-bit (build 14342).</p>
+
+<p>Note that this article has been written from what I can gather by installing and testing the client into a local Windows virtual machine. This is my interpretation which could be flawed.</p>
+
+<h1 id="using-the-drive-mapper">Using the Drive Mapper</h1>
+
+<p>When starting the Drive Mapper the user is prompted for their ShareFile credentials. If the ShareFile administrator has not enabled the Drive Mapper, the user might see a message telling them they’re not authorised to run the client.</p>
+
+<figure id="attachment_4426" aria-describedby="caption-attachment-4426" style="width: 666px" class="wp-caption alignnone">[<img class="size-full wp-image-4426" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileLogin2Failed.png" alt="ShareFile Drive Mapper login" width="666" height="563" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileLogin2Failed.png 666w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileLogin2Failed-150x127.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileLogin2Failed-300x254.png 300w" sizes="(max-width: 666px) 100vw, 666px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileLogin2Failed.png)<figcaption id="caption-attachment-4426" class="wp-caption-text">ShareFile Drive Mapper login</figcaption></figure>
+
+<p>Once logged in, a drive mapped to the user’s ShareFile data with an icon overlay, can be accessed from Explorer. An administrator also has the option to map into a local folder rather than a drive letter.</p>
+
+<figure id="attachment_4427" aria-describedby="caption-attachment-4427" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4427" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMyComputer-1024x557.png" alt="ShareFile Drive in Explorer" width="1024" height="557" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMyComputer-1024x557.png 1024w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMyComputer-150x82.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMyComputer-300x163.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMyComputer-768x418.png 768w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMyComputer.png 1132w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMyComputer.png)<figcaption id="caption-attachment-4427" class="wp-caption-text">ShareFile Drive in Explorer</figcaption></figure>
+
+<p>The client supports ShareFile links via the right-click menu:</p>
+
+<figure id="attachment_4428" aria-describedby="caption-attachment-4428" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4428" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperRightClickShare-1024x562.png" alt="ShareFile Drive Mapper right click options" width="1024" height="562" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperRightClickShare-1024x562.png 1024w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperRightClickShare-150x82.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperRightClickShare-300x165.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperRightClickShare-768x421.png 768w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperRightClickShare.png 1059w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperRightClickShare.png)<figcaption id="caption-attachment-4428" class="wp-caption-text">ShareFile Drive Mapper right click options</figcaption></figure>
+
+<p>From a user perspective, accessing data is consistent and familiar.</p>
+
+<figure id="attachment_4432" aria-describedby="caption-attachment-4432" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4432" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveTopFolder-1024x557.png" alt="ShareFile Drive top folder" width="1024" height="557" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveTopFolder-1024x557.png 1024w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveTopFolder-150x82.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveTopFolder-300x163.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveTopFolder-768x418.png 768w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveTopFolder.png 1132w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveTopFolder.png)<figcaption id="caption-attachment-4432" class="wp-caption-text">ShareFile Drive top folder</figcaption></figure>
+
+<p>If I access a folder to a Connector location, I am prompted for authentication, which is then cached. With federation and SSO, you could remove the need for the user to authenticate multiple times – once for the initial logon and then this authentication prompt.</p>
+
+<figure id="attachment_4433" aria-describedby="caption-attachment-4433" style="width: 666px" class="wp-caption alignnone">[<img class="size-full wp-image-4433" src="http://stealthpuppy.com/wp-content/uploads/2016/05/DriveMapper-Connector.png" alt="Authenticating to a Connector location" width="666" height="421" srcset="http://192.168.0.89/wp-content/uploads/2016/05/DriveMapper-Connector.png 666w, http://192.168.0.89/wp-content/uploads/2016/05/DriveMapper-Connector-150x95.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/DriveMapper-Connector-300x190.png 300w" sizes="(max-width: 666px) 100vw, 666px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/DriveMapper-Connector.png)<figcaption id="caption-attachment-4433" class="wp-caption-text">Authenticating to a Connector location</figcaption></figure>
+
+<p>Simple enough, so far and the user experience is much as I would expect. Let’s look a bit deeper.</p>
+
+<h1 id="enabling-the-citrix-sharefile-drive-mapper">Enabling the Citrix ShareFile Drive Mapper</h1>
+
+<p>This client won’t be enabled by default within ShareFile. Before installing on a client PC, enable in the Admin section in the ShareFile website under <em>Admin / Power Tools</em>:</p>
+
+<figure id="attachment_4418" aria-describedby="caption-attachment-4418" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4418" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileAdminEnableDriveMapper-1024x750.png" alt="Enabling the ShareFile Driver Mapper" width="1024" height="750" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileAdminEnableDriveMapper-1024x750.png 1024w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileAdminEnableDriveMapper-150x110.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileAdminEnableDriveMapper-300x220.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileAdminEnableDriveMapper-768x562.png 768w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileAdminEnableDriveMapper.png 1281w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileAdminEnableDriveMapper.png)<figcaption id="caption-attachment-4418" class="wp-caption-text">Enabling the ShareFile Driver Mapper</figcaption></figure>
+
+<h1 id="installation">Installation</h1>
+
+<p>The Drive Mapper tool is <a href="https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/sharefile-drive-mapper.html">available from the Citrix Download site</a> and is available in an EXE, 32-bit MSI or 64-bit MSI. In addition, you can download the policy definitions; however, these are included in each client install as well.</p>
+
+<p>Some <a href="https://www.citrix.com/content/dam/citrix/en_us/documents/downloads/sharefile/Drive-Mapper-3.2-release-notes.pdf">documentation is available</a>, but the installation and configuration is very straightforward. If using the EXE installer, you can perform a silent install with command line options (the MSI should of course support that natively).</p>
+
+<figure id="attachment_4415" aria-describedby="caption-attachment-4415" style="width: 496px" class="wp-caption alignnone">[<img class="size-full wp-image-4415" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperInstaller.png" alt="Share File Drive Mapper Installer switches" width="496" height="388" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperInstaller.png 496w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperInstaller-150x117.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperInstaller-300x235.png 300w" sizes="(max-width: 496px) 100vw, 496px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperInstaller.png)<figcaption id="caption-attachment-4415" class="wp-caption-text">Share File Drive Mapper Installer switches</figcaption></figure>
+
+<p>The Drive Mapper does install a driver, which unfortunately is not yet signed for the WHQL.</p>
+
+<figure id="attachment_4416" aria-describedby="caption-attachment-4416" style="width: 501px" class="wp-caption alignnone">[<img class="size-full wp-image-4416" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png" alt="Citrix ShareFile Driver" width="501" height="232" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriver.png 501w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriver-150x69.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriver-300x139.png 300w" sizes="(max-width: 501px) 100vw, 501px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png)<figcaption id="caption-attachment-4416" class="wp-caption-text">Citrix ShareFile Driver</figcaption></figure>
+
+<p>Hopefully, this changes because this presents a road bump for automated installations.</p>
+
+<h1 id="the-sharefile-drive-mapper-client">The ShareFile Drive Mapper Client</h1>
+
+<p>The ShareFile Drive Mapper client is made up of two main components of interest – the ShareFileDriveMapper.exe executable and a filter driver.</p>
+
+<figure id="attachment_4419" aria-describedby="caption-attachment-4419" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4419" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperBinaries-1024x517.png" alt="Citrix ShareFile Drive Mapper Binaries" width="1024" height="517" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperBinaries-1024x517.png 1024w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperBinaries-150x76.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperBinaries-300x151.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperBinaries-768x387.png 768w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperBinaries.png 1106w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperBinaries.png)<figcaption id="caption-attachment-4419" class="wp-caption-text">Citrix ShareFile Drive Mapper Binaries</figcaption></figure>
+
+<p><a href="https://msdn.microsoft.com/en-us/library/windows/hardware/ff541610%28v=vs.85%29.aspx">The filter driver</a> is a <a href="https://blogs.msdn.microsoft.com/ntdebugging/2013/03/25/understanding-file-system-minifilter-and-legacy-filter-load-order/">legacy filter driver, rather than a minifilter driver</a>. I assume the reason for this is that you need to <a href="https://msdn.microsoft.com/en-us/library/windows/hardware/dn508284(v=vs.85).aspx">request an altitude for minifilters from Microsoft</a>, so perhaps in this initial version, Citrix has decided to make this tool available without having delays due to Microsoft processes (similar to the lack of WHQL certification).</p>
+
+<figure id="attachment_4420" aria-describedby="caption-attachment-4420" style="width: 979px" class="wp-caption alignnone">[<img class="size-full wp-image-4420" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileFilterDriver.png" alt="Showing loaded filter drivers and the ShareFile filter driver" width="979" height="421" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileFilterDriver.png 979w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileFilterDriver-150x65.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileFilterDriver-300x129.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileFilterDriver-768x330.png 768w" sizes="(max-width: 979px) 100vw, 979px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileFilterDriver.png)<figcaption id="caption-attachment-4420" class="wp-caption-text">Showing loaded filter drivers and the ShareFile filter driver</figcaption></figure>
+
+<p>The ShareFileDriveMapper executable then provides the user interface. If this executable is not running, the drive does disappear from Explorer, so something to watch out for.</p>
+
+<h2 id="client-settings">Client Settings</h2>
+
+<p>The client provides a number of settings to the user including setting the drive letter used, the cache size, clearing the local cache and file link expiration policy.</p>
+
+<figure id="attachment_4421" aria-describedby="caption-attachment-4421" style="width: 666px" class="wp-caption alignnone">[<img class="size-full wp-image-4421" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileSettings.png" alt="ShareFile Driver Mapper settings" width="666" height="421" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileSettings.png 666w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileSettings-150x95.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileSettings-300x190.png 300w" sizes="(max-width: 666px) 100vw, 666px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileSettings.png)<figcaption id="caption-attachment-4421" class="wp-caption-text">ShareFile Driver Mapper settings</figcaption></figure>
+
+<p>These settings can be managed with Group Policy as we’ll see later.</p>
+
+<h2 id="client-settings-and-locations">Client Settings and Locations</h2>
+
+<p>The client uses a number of locations on a machine:</p>
+
+<ul>
+  <li>HKEY_CURRENT_USER\SOFTWARE\Citrix\ShareFile\DriveMapper</li>
+  <li>%APPDATA%\Citrix\DriveMapper3</li>
+  <li>%LOCALAPPDATA%\Citrix\DriveMapper3</li>
+</ul>
+
+<p>These locations include settings for the client and the local cache.</p>
+
+<figure id="attachment_4423" aria-describedby="caption-attachment-4423" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4423" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperAppDataRoaming-1024x511.png" alt="AppData Roaming folder" width="1024" height="511" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperAppDataRoaming-1024x511.png 1024w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperAppDataRoaming-150x75.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperAppDataRoaming-300x150.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperAppDataRoaming-768x383.png 768w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperAppDataRoaming.png 1059w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperAppDataRoaming.png)<figcaption id="caption-attachment-4423" class="wp-caption-text">AppData Roaming folder</figcaption></figure>
+
+<p>The local cache will be interesting to look at as we use the client and copy files up or down or access files stored in ShareFile.</p>
+
+<figure id="attachment_4424" aria-describedby="caption-attachment-4424" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4424" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData-1024x509.png" alt="The Drive Mapper local cache" width="1024" height="509" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData-1024x509.png 1024w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData-150x75.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData-300x149.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData-768x382.png 768w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData.png 1135w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData.png)<figcaption id="caption-attachment-4424" class="wp-caption-text">The Drive Mapper local cache</figcaption></figure>
+
+<h1 id="group-policy-management">Group Policy Management</h1>
+
+<p>Citrix provides both User and Computer configuration Group Policy settings giving you detailed control over the client. User policy settings include control over the ShareFile instance (Account) and file types allowed.</p>
+
+<figure id="attachment_4434" aria-describedby="caption-attachment-4434" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4434" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperUserPolicies-1024x491.png" alt="Group Policy - User Configuration" width="1024" height="491" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperUserPolicies-1024x491.png 1024w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperUserPolicies-150x72.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperUserPolicies-300x144.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperUserPolicies-768x368.png 768w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperUserPolicies.png 1156w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperUserPolicies.png)<figcaption id="caption-attachment-4434" class="wp-caption-text">Group Policy &#8211; User Configuration</figcaption></figure>
+
+<p>Computer settings provide control over the cache size and update settings etc. Note that under XenApp, auto-updates will be disabled by default, so GP can be used to enforce this default setting.</p>
+
+<figure id="attachment_4435" aria-describedby="caption-attachment-4435" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4435" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperComputerPolicies-1024x491.png" alt="Group Policy - Computer configuration" width="1024" height="491" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperComputerPolicies-1024x491.png 1024w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperComputerPolicies-150x72.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperComputerPolicies-300x144.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperComputerPolicies-768x368.png 768w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperComputerPolicies.png 1156w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperComputerPolicies.png)<figcaption id="caption-attachment-4435" class="wp-caption-text">Group Policy &#8211; Computer configuration</figcaption></figure>
+
+<h1 id="performance">Performance</h1>
+
+<p>In my testing of the client, I’m using an Internet connection in the US with about 9ms latency with 59Mbps up and 50Mbps down. I’ve tested only with the ShareFile cloud storage and not a connector to on-premises storage or SharePoint etc.</p>
+
+<p>Here’s a look at the client performance as I browse my ShareFile drive. In this instance I’m browsing folders with images and thumbnails are being generated as Explorer displays the image files. On first access of the file, it needs to be cached locally. Subsequent access is of course fast because file IO is handled from the local disk.</p>
+
+<div style="width: 640px;" class="wp-video">
+  <!--[if lt IE 9]><![endif]--><video class="wp-video-shortcode" id="video-4413-1" width="640" height="400" loop="1" autoplay="1" preload="metadata" controls="controls"><source type="video/mp4" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperBrowsing.mp4?_=1" /><source type="video/webm" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperBrowsing.webm?_=1" />
+  
+  <a href="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperBrowsing.mp4">http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperBrowsing.mp4</a></video>
+</div>
+
+<p>If we look at the cache folder again after files have been accessed, you’ll see the files appearing the cache folder in real time.</p>
+
+<figure id="attachment_4424" aria-describedby="caption-attachment-4424" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-4424 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData-1024x509.png" alt="The Drive Mapper local cache" width="1024" height="509" srcset="http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData-1024x509.png 1024w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData-150x75.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData-300x149.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData-768x382.png 768w, http://192.168.0.89/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData.png 1135w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveMapperLocalAppData.png)<figcaption id="caption-attachment-4424" class="wp-caption-text">The Drive Mapper local cache</figcaption></figure>
+
+<p>Each of these cache files is a copy of the actual file data – I can copy out a file from here, rename it with the correct file extension and open the file. The filter driver is what makes it possible to access the file data on the ShareFile drive and for that data to be seamlessly cached locally.</p>
+
+<p>I wanted to test accessing large files and see the impact on the user experience. In this example, I have a 43Mb PowerPoint presentation. I’ve noticed that files are cached as soon as they’re accessed and that access could be Explorer generating a thumbnail or the user right-clicking on a file.</p>
+
+<p>In the video below you can see the effect of right clicking on this large, un-cached file. Explorer halts while the file is downloaded and as soon as it is has been cached all subsequent access is just like local disk (because it is). At the end of the video, the second right click is very responsive.</p>
+
+<div style="width: 640px;" class="wp-video">
+  <video class="wp-video-shortcode" id="video-4413-2" width="640" height="345" loop="1" autoplay="1" preload="metadata" controls="controls"><source type="video/mp4" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveRightClick.mp4?_=2" /><source type="video/webm" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveRightClick.webm?_=2" /><a href="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveRightClick.mp4">http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriveRightClick.mp4</a></video>
+</div>
+
+<p>While the behaviour of this client might work as in the example above, one of the key features looks to be reducing the local disk footprint, so downloading stubs or the entire file in the background may be counter-productive to that goal.</p>
+
+<h1 id="final-thoughts">Final Thoughts</h1>
+
+<p>I’ve only taken a short look at the ShareFile Drive Mapper client and it’s a very interesting way to provide users with a familiar method of accessing their data.</p>
+
+<ul>
+  <li>Citrix should fix WHQL certification for the driver, making it easier when deploying the client</li>
+  <li>I haven’t tested identity federation and SSO, but I’m certain it should work to reduce user authentication interaction</li>
+  <li>Citrix has called out support for XenApp and XenDesktop; however, I’ve not had a chance to test in a non-persistent environment. 3rd party layering solution will alleviate any challenges with caching files.</li>
+  <li>Redirecting user data folders to this location should be workable, but understand how the client works – caveat emptor.</li>
+  <li>Upcoming improvements in the client should improve the user experience. I would assume that Citrix will be stepping up the release cadence of the client.</li>
+</ul>
+
+<p>I’ve heard from the ShareFile team that a number of improvements are planned, so I’m looking forward to seeing how Citrix evolves this client over time.</p>
+
+  </div><a class="u-url" href="/citrix-sharefile-drive-mapper/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Configuring Remote Desktop Certificates for OS X Clients | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Configuring Remote Desktop Certificates for OS X Clients" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windows has supported TLS for server authentication with RDP going back to Windows Server 2003 SP1. When connecting to a Windows PC, unless certificates have been configured, the remote PC presents a self-signed certificate, which results in a warning prompt from the Remote Desktop client. An environment with an enterprise certificate authority can enable certificate autoenrollment to enable trusted certificates on the RDP listener, thus removing the prompt. To get OS X clients to accept the certificate takes a little extra configuration not required on Windows clients." />
+<meta property="og:description" content="Windows has supported TLS for server authentication with RDP going back to Windows Server 2003 SP1. When connecting to a Windows PC, unless certificates have been configured, the remote PC presents a self-signed certificate, which results in a warning prompt from the Remote Desktop client. An environment with an enterprise certificate authority can enable certificate autoenrollment to enable trusted certificates on the RDP listener, thus removing the prompt. To get OS X clients to accept the certificate takes a little extra configuration not required on Windows clients." />
+<link rel="canonical" href="/remote-desktop-certificates-os-x-clients/" />
+<meta property="og:url" content="/remote-desktop-certificates-os-x-clients/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2016/05/RemoteDesktop.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-05-20T00:34:23+10:00" />
+<script type="application/ld+json">
+{"description":"Windows has supported TLS for server authentication with RDP going back to Windows Server 2003 SP1. When connecting to a Windows PC, unless certificates have been configured, the remote PC presents a self-signed certificate, which results in a warning prompt from the Remote Desktop client. An environment with an enterprise certificate authority can enable certificate autoenrollment to enable trusted certificates on the RDP listener, thus removing the prompt. To get OS X clients to accept the certificate takes a little extra configuration not required on Windows clients.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/remote-desktop-certificates-os-x-clients/","image":"/wp-content/uploads/2016/05/RemoteDesktop.png","headline":"Configuring Remote Desktop Certificates for OS X Clients","dateModified":"2016-05-20T00:34:23+10:00","datePublished":"2016-05-20T00:34:23+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/remote-desktop-certificates-os-x-clients/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Configuring Remote Desktop Certificates for OS X Clients</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2016-05-20T00:34:23+10:00" itemprop="datePublished">May 20, 2016
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Windows has supported TLS for server authentication with <a href="https://technet.microsoft.com/en-us/library/dn473009">RDP</a> going back to Windows Server 2003 SP1. When connecting to a Windows PC, unless certificates have been configured, the remote PC presents a self-signed certificate, which results in a warning prompt from the Remote Desktop client. An environment with an enterprise certificate authority can enable certificate autoenrollment to enable trusted certificates on the RDP listener, thus removing the prompt. To get OS X clients to accept the certificate takes a little extra configuration not required on Windows clients.</p>
+
+<p>While I may only be configuring certificates in my lab environment, there’s not much effort required to remove these certificate warnings.</p>
+
+<h1 id="client-warnings-for-untrusted-certificates">Client Warnings for Untrusted Certificates</h1>
+
+<p>Here are the client certificate warnings on various Microsoft Remote Desktop clients, including OS X. First up the original Remote Desktop Connection (mstsc) on Windows:</p>
+
+<figure id="attachment_4401" aria-describedby="caption-attachment-4401" style="width: 392px" class="wp-caption alignnone">[<img class="size-full wp-image-4401" src="http://stealthpuppy.com/wp-content/uploads/2016/05/remote-desktop-cert-error-mstsc.png" alt="Certificate Warning on the Remote Desktop Connection client" width="392" height="401" srcset="http://192.168.0.89/wp-content/uploads/2016/05/remote-desktop-cert-error-mstsc.png 392w, http://192.168.0.89/wp-content/uploads/2016/05/remote-desktop-cert-error-mstsc-147x150.png 147w, http://192.168.0.89/wp-content/uploads/2016/05/remote-desktop-cert-error-mstsc-293x300.png 293w" sizes="(max-width: 392px) 100vw, 392px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/remote-desktop-cert-error-mstsc.png)<figcaption id="caption-attachment-4401" class="wp-caption-text">Certificate Warning on the Remote Desktop Connection client</figcaption></figure>
+
+<p>The new Remote Desktop Universal app on Windows 10:</p>
+
+<figure id="attachment_4402" aria-describedby="caption-attachment-4402" style="width: 464px" class="wp-caption alignnone">[<img class="size-full wp-image-4402" src="http://stealthpuppy.com/wp-content/uploads/2016/05/remote-desktop-cert-error-uwa.png" alt="Certificate warning in the Remote Desktop Universal app" width="464" height="779" srcset="http://192.168.0.89/wp-content/uploads/2016/05/remote-desktop-cert-error-uwa.png 464w, http://192.168.0.89/wp-content/uploads/2016/05/remote-desktop-cert-error-uwa-89x150.png 89w, http://192.168.0.89/wp-content/uploads/2016/05/remote-desktop-cert-error-uwa-179x300.png 179w" sizes="(max-width: 464px) 100vw, 464px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/remote-desktop-cert-error-uwa.png)<figcaption id="caption-attachment-4402" class="wp-caption-text">Certificate warning in the Remote Desktop Universal app</figcaption></figure>
+
+<p>And the Remote Desktop client on OS X 10.11:</p>
+
+<figure id="attachment_4400" aria-describedby="caption-attachment-4400" style="width: 662px" class="wp-caption alignnone">[<img class="size-full wp-image-4400" src="http://stealthpuppy.com/wp-content/uploads/2016/05/RDP-Invalid-Certificate.png" alt="Certificate warning in the Remote Desktop client for OS X" width="662" height="460" srcset="http://192.168.0.89/wp-content/uploads/2016/05/RDP-Invalid-Certificate.png 662w, http://192.168.0.89/wp-content/uploads/2016/05/RDP-Invalid-Certificate-150x104.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/RDP-Invalid-Certificate-300x208.png 300w" sizes="(max-width: 662px) 100vw, 662px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/RDP-Invalid-Certificate.png)<figcaption id="caption-attachment-4400" class="wp-caption-text">Certificate warning in the Remote Desktop client for OS X</figcaption></figure>
+
+<h1 id="configuring-the-certificate-template">Configuring the Certificate Template</h1>
+
+<p>I won’t cover installing and configuring an enterprise certificate authority here; however, here are a number of articles worth reading on this topic:</p>
+
+<ul>
+  <li><a href="https://technet.microsoft.com/en-us/library/hh831574(v=ws.11).aspx">Certification Authority Guidance</a></li>
+  <li><a href="https://blogs.technet.microsoft.com/yungchou/2013/10/21/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2/">Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services (Part 1 of 2)</a></li>
+  <li><a href="https://blogs.technet.microsoft.com/yungchou/2013/10/22/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-2-of-2/">Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services (Part 2 of 2)</a></li>
+  <li><a href="https://technet.microsoft.com/en-us/library/dn781533(v=ws.11).aspx">Using certificates in Remote Desktop Services</a></li>
+</ul>
+
+<p>To configure a certificate for use with Remote Desktop Services (or RDP into any Windows PC), you’ll need to create a new certificate template and enable both the Server Authentication and the Remote Desktop Authentication application policies. This was key for OS X clients – both of these policies must exist. Some articles will walk through this configuration and recommend removing the Server Authentication policy; however, the certificates will then not work on non-Windows clients.</p>
+
+<p>This article has a great walk-through of the entire process and more: <a href="http://www.darkoperator.com/blog/2015/3/26/rdp-tls-certificate-deployment-using-gpo">RDP TLS Certificate Deployment Using GPO</a>. In my lab, I’ve created a ‘Remote Desktop Computer’ certificate template and enabled it to be autoenrolled via Group Policy.</p>
+
+<h2 id="certificate-template-options">Certificate Template Options</h2>
+
+<p>To create the new template, open the Certificate Templates console and duplicate the Computer template. Use this template because it already has the Server Authentication policy enabled.</p>
+
+<p>Navigate to the Extensions tab, edit the ‘Application Policies’ extension and remove ‘Client Authentication’ from the list.</p>
+
+<figure id="attachment_4404" aria-describedby="caption-attachment-4404" style="width: 414px" class="wp-caption alignnone">[<img class="size-full wp-image-4404" src="http://stealthpuppy.com/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions.png" alt="Remote Desktop template certificate extensions" width="414" height="567" srcset="http://192.168.0.89/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions.png 414w, http://192.168.0.89/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-110x150.png 110w, http://192.168.0.89/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-219x300.png 219w" sizes="(max-width: 414px) 100vw, 414px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions.png)<figcaption id="caption-attachment-4404" class="wp-caption-text">Remote Desktop template certificate extensions</figcaption></figure>
+
+<p>After you added the ‘Remote Desktop Authentication’ policy, you should see the policies and see in the following dialog box. See below for the actual ‘Remote Desktop Authentication’ policy.</p>
+
+<figure id="attachment_4405" aria-describedby="caption-attachment-4405" style="width: 414px" class="wp-caption alignnone">[<img class="size-full wp-image-4405" src="http://stealthpuppy.com/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-Application-Policies.png" alt="Remote Desktop certificate Application Policies extension" width="414" height="567" srcset="http://192.168.0.89/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-Application-Policies.png 414w, http://192.168.0.89/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-Application-Policies-110x150.png 110w, http://192.168.0.89/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-Application-Policies-219x300.png 219w" sizes="(max-width: 414px) 100vw, 414px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-Application-Policies.png)<figcaption id="caption-attachment-4405" class="wp-caption-text">Remote Desktop certificate Application Policies extension</figcaption></figure>
+
+<p>Adding the ‘Remote Desktop Authentication’ policy requires adding a new extension named ‘Remote Desktop Authentication’ (or similar) with an object value of “1.3.6.1.4.1.311.54.1.2” (excluding quotes). <strong>Edit</strong> the <strong>Application Policies</strong>, click <strong>Add</strong>, then click <strong>New</strong> and enter the values as above.</p>
+
+<figure id="attachment_4406" aria-describedby="caption-attachment-4406" style="width: 414px" class="wp-caption alignnone">[<img class="size-full wp-image-4406" src="http://stealthpuppy.com/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-Remote-Desktop-Authentication.png" alt="The Remote Desktop Authentication policy extension" width="414" height="567" srcset="http://192.168.0.89/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-Remote-Desktop-Authentication.png 414w, http://192.168.0.89/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-Remote-Desktop-Authentication-110x150.png 110w, http://192.168.0.89/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-Remote-Desktop-Authentication-219x300.png 219w" sizes="(max-width: 414px) 100vw, 414px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/Remote-Desktop-Cert-Extensions-Remote-Desktop-Authentication.png)<figcaption id="caption-attachment-4406" class="wp-caption-text">The Remote Desktop Authentication policy extension</figcaption></figure>
+
+<p>Save the template and configure your CA to issue the new template. In my lab my certificate template display name ‘Remote Desktop Computer’. Since my first template failed, it’s actually called ‘Remote Desktop Computer v2’. However, the important name to note for the next step is the actual template name, which can be found on the General tab of the template. In my case this is ‘RemoteDesktopComputerv2’ (the display name, minus the spaces).</p>
+
+<h1 id="configure-autorenrollment">Configure Autorenrollment</h1>
+
+<p>To configure autoenrollment, I’ve created a new GPO dedicated to the autoenrollment setting and linked it to the organisational units containing server and workstation computer account objects. Edit the policy and enable the following setting:</p>
+
+<p>Computer Configuration / Administrative Templates / Windows Components / Remote Desktop Services / Remote Desktop Session Host / Security / Server authentication certificate template</p>
+
+<p>Add the name of the certificate template and shown in the screenshot below:</p>
+
+<figure id="attachment_4407" aria-describedby="caption-attachment-4407" style="width: 686px" class="wp-caption alignnone">[<img class="size-full wp-image-4407" src="http://stealthpuppy.com/wp-content/uploads/2016/05/Server-Authentication-Certificate-Template.png" alt="Server authentication certificate template" width="686" height="636" srcset="http://192.168.0.89/wp-content/uploads/2016/05/Server-Authentication-Certificate-Template.png 686w, http://192.168.0.89/wp-content/uploads/2016/05/Server-Authentication-Certificate-Template-150x139.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/Server-Authentication-Certificate-Template-300x278.png 300w" sizes="(max-width: 686px) 100vw, 686px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/Server-Authentication-Certificate-Template.png)<figcaption id="caption-attachment-4407" class="wp-caption-text">Enabling the &#8216;Server authentication certificate template&#8217; in Group Policy</figcaption></figure>
+
+<p>Once a Group Poliy refresh occurs or on the next boot, the target Windows machines will autoenroll for the certificate and configure their RDP listener.</p>
+
+<h1 id="os-x-configuration">OS X Configuration</h1>
+
+<p>Now that my Remote Desktop certificates are configured for autoentrollment and Windows machines are picking up the certificates, I can import the root CA certificate into my MacBook running OS X.</p>
+
+<p>Navigate to the URL of your certificate server (e.g. http://cert1/certsrv) and download the certificate via ‘Download a CA certificate, certificate chain, or CRL’. Download the CA certificate in DER format. Find the downloaded certificate in Finder and open the certificate to install it into Keychain.</p>
+
+<p>Once installed the certificate is not automatically trused as you can see below:</p>
+
+<figure id="attachment_4408" aria-describedby="caption-attachment-4408" style="width: 929px" class="wp-caption alignnone">[<img class="size-full wp-image-4408" src="http://stealthpuppy.com/wp-content/uploads/2016/05/OSX-root-CA-certificate.png" alt="OSX root CA certificate" width="929" height="843" srcset="http://192.168.0.89/wp-content/uploads/2016/05/OSX-root-CA-certificate.png 929w, http://192.168.0.89/wp-content/uploads/2016/05/OSX-root-CA-certificate-150x136.png 150w, http://192.168.0.89/wp-content/uploads/2016/05/OSX-root-CA-certificate-300x272.png 300w, http://192.168.0.89/wp-content/uploads/2016/05/OSX-root-CA-certificate-768x697.png 768w" sizes="(max-width: 929px) 100vw, 929px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/OSX-root-CA-certificate.png)<figcaption id="caption-attachment-4408" class="wp-caption-text">My root CA certificate in Keychain on OS X</figcaption></figure>
+
+<p>Set the certificate to be trusted by selecting ‘Alway Trust’ from the ‘When using this certificate’ option. Close the certificate properties window and you should be prompted for your password to save the changes. Now when connecting to PCs via the Remote Desktop client, you should no longer receive certificate warnings.</p>
+
+<p>This article shows <a href="https://derflounder.wordpress.com/2011/03/13/adding-new-trusted-root-certificates-to-system-keychain/">how to install the root CA certificate via Terminal</a>, which should assist in automating the import across a number of Macs.</p>
+
+  </div><a class="u-url" href="/remote-desktop-certificates-os-x-clients/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

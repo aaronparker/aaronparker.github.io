@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Windows Server 2003 SP2: What’s in it for Terminal Servers? | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Windows Server 2003 SP2: What’s in it for Terminal Servers?" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Now that Service Pack 2 for Windows Server 2003 has been released, I thought that I would take a brief look at what’s new for Terminal Servers:" />
+<meta property="og:description" content="Now that Service Pack 2 for Windows Server 2003 has been released, I thought that I would take a brief look at what’s new for Terminal Servers:" />
+<link rel="canonical" href="/windows-server-2003-sp2-what%E2%80%99s-in-it-for-terminal-servers/" />
+<meta property="og:url" content="/windows-server-2003-sp2-what%E2%80%99s-in-it-for-terminal-servers/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-03-13T19:01:00+11:00" />
+<script type="application/ld+json">
+{"description":"Now that Service Pack 2 for Windows Server 2003 has been released, I thought that I would take a brief look at what’s new for Terminal Servers:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/windows-server-2003-sp2-what%E2%80%99s-in-it-for-terminal-servers/","headline":"Windows Server 2003 SP2: What’s in it for Terminal Servers?","dateModified":"2007-03-13T19:01:00+11:00","datePublished":"2007-03-13T19:01:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/windows-server-2003-sp2-what%E2%80%99s-in-it-for-terminal-servers/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Windows Server 2003 SP2: What&amp;#8217;s in it for Terminal Servers?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-03-13T19:01:00+11:00" itemprop="datePublished">Mar 13, 2007
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Now that <a href="http://www.microsoft.com/technet/windowsserver/sp2.mspx">Service Pack 2 for Windows Server 2003</a> has been released, I thought that I would take a brief look at what’s new for Terminal Servers:</p>
+
+<p><strong>New Features</strong></p>
+
+<p>Microsoft have a page that details <a href="http://www.microsoft.com/technet/windowsserver/sp2/top-reasons.mspx">ten reasons to install Windows Server 2003 SP2</a>, here’s some of the highlights that I think are great for Terminal Server environments:</p>
+
+<ul>
+  <li><a href="http://www.microsoft.com/snp">Windows Server 2003 SP2 Scalable Networking Pack (SNP)</a>: Improvements in networking to take advantages of high speed networks.</li>
+  <li><a href="http://www.microsoft.com/windowsserver/longhorn/deployment/services.mspx">Windows Deployment Services (WDS)</a>: WDS is a great way to deploy Windows Server 2003 using Windows PE. I’ve just completed a project where I used WDS so that I could take advantage of Windows PE 2.0.</li>
+  <li><a href="http://support.microsoft.com/kb/914841">IPsec management updates</a>: Updates to IPsec in Windows that makes it easier to implement <a href="http://www.microsoft.com/sdisolation">server and domain isolation</a>.</li>
+  <li>Microsoft Management Console 3.0: Updates the MMC to the same version included with Windows Server 2003 R2.</li>
+</ul>
+
+<p><strong>Updates</strong></p>
+
+<p>Microsoft has a complete <a href="http://support.microsoft.com/kb/914962/en-us">list of updates in SP2</a> and 19 of them are Terminal Server specific:</p>
+
+<ul>
+  <li><a href="http://support.microsoft.com/kb/811211/">Your multiprocessor Microsoft Windows 2000 Server-based computer or multiprocessor Windows Server 2003-based computer may stop responding, and the keyboard may not work correctly</a></li>
+  <li><a href="http://support.microsoft.com/kb/896679/">The shadow session is disconnected between two Web client computers that are running Windows Server 2003 or Windows XP</a></li>
+  <li><a href="http://support.microsoft.com/kb/899266/">Error message when you try to paste data into Excel 2003 during a Terminal Services session: “Cannot empty the clipboard”</a></li>
+  <li><a href="http://support.microsoft.com/kb/899591/">MS05-041: Vulnerability in Remote Desktop Protocol could allow denial of service</a></li>
+  <li><a href="http://support.microsoft.com/kb/900090/">Print spooling operation in Windows Server 2003-based Terminal Services (TS) computer is slow when Remote Desktop Connection thin clients use printer redirection</a></li>
+  <li><a href="http://support.microsoft.com/kb/901115/">A Terminal Services client computer may make beep sounds after you connect to a Windows Server 2003 Service Pack 1-based computer</a></li>
+  <li><a href="http://support.microsoft.com/kb/905687/">A Windows Server 2003-based terminal server in a forest cannot obtain a license from a license server in a different forest</a></li>
+  <li><a href="http://support.microsoft.com/kb/905888/">A memory leak occurs in the Wmiprvse.exe process when a program calls an instance of the “CWin32_TerminalService::ExecQuery” function in Windows Server 2003</a></li>
+  <li><a href="http://support.microsoft.com/kb/906207/">Terminal Services Licensing Manager may stop when you add a new license on a computer that is running the Brazilian Portuguese version of Windows Server 2003</a></li>
+  <li><a href="http://support.microsoft.com/kb/908011/">You cannot use a Group Policy setting to set the same mandatory profile for all the Terminal Services users in Windows Server 2003</a></li>
+  <li><a href="http://support.microsoft.com/kb/910088/">The Terminal Server Licensing tool may unexpectedly quit after you install Windows Server 2003 Service Pack 1 on a Terminal Server</a></li>
+  <li><a href="http://support.microsoft.com/kb/911288/">A client computer does not receive a permanent Per Device CAL from a Windows Server 2003-based license server</a></li>
+  <li><a href="http://support.microsoft.com/kb/911913/">How to redirect the default printer of a Terminal Services client to a Windows Server 2003 Terminal Server session</a></li>
+  <li><a href="http://support.microsoft.com/kb/913948/">The session redirection function does not work correctly on Windows Server 2003-based servers that have Terminal Server enabled</a></li>
+  <li><a href="http://support.microsoft.com/kb/914539/">The Terminal Server object and the object of the Terminal Server session for a Windows Server 2003 Terminal Server are unavailable when you use Performance Monitor on a remote computer</a></li>
+  <li><a href="http://support.microsoft.com/kb/915947/">You cannot connect to a Windows Server 2003-based terminal server when the Remote Desktop Web Connection ActiveX control screen resolution is higher than 1600 by 1200 pixels on a client computer</a></li>
+  <li><a href="http://support.microsoft.com/kb/916667/">An IBM DB2 program stops responding on a Windows Server 2003-based computer that is running Terminal Services</a></li>
+  <li><a href="http://support.microsoft.com/kb/917046/">FIX: You cannot reconnect a Citrix ICA client to an instance of Citrix Presentation Server that is running on a Windows Server 2003 Service Pack 1-based computer</a></li>
+  <li><a href="http://support.microsoft.com/kb/918679/">You cannot connect to a Windows Server 2003-based terminal server when the screen resolution for the Remote Desktop Web Connection ActiveX control is higher than 1600 by 1200 pixels</a></li>
+  <li><a href="http://support.microsoft.com/kb/918679/">Stop error message when a Terminal Services client logs off from a session on a server that is running Windows Server 2003 with Service Pack 1: “Stop 0x000000AB (SESSION_HAS_VALID_POOL_ON_EXIT)”</a></li>
+</ul>
+
+<p>There are also 12 Intellimirror updates, two of which I had experienced in my most recent project:</p>
+
+<ul>
+  <li><a href="http://support.microsoft.com/kb/919614/">Users experience an 11-second delay in folder redirection when a Windows Server 2003 SP1-based computer that is running Terminal Services uses mandatory profiles</a></li>
+  <li><a href="http://support.microsoft.com/kb/899409/">You may experience a 20-second delay when you try to access a redirected folder by logging on to a Windows Server 2003 Service Pack 1-based computer or to a Windows XP Service Pack 2-based computer</a></li>
+</ul>
+
+<p>So there are plenty of reasons to deploy Service Pack 2 including <a href="http://www.microsoft.com/technet/windowsserver/sp2/security-bulletins.mspx">two years worth of security updates</a>. For those of us who use unattended setups to deploy Terminal Servers, I recommend updating your source and redeploying your machines from scratch rather than update in place. For everyone else, Microsoft has <a href="http://technet2.microsoft.com/WindowsServer/en/library/ed5382af-e819-4d33-ace0-225d31b7ab751033.mspx?mfr=true">details for deployment</a> up on TechNet; <strike>just remember that you will have to remove </strike><a href="http://technet2.microsoft.com/WindowsServer/en/library/ed5382af-e819-4d33-ace0-225d31b7ab751033.mspx?mfr=true"><strike>Internet Explorer 7 before you install Service Pack 2</strike></a> (you <a href="http://blogs.msdn.com/ie/archive/2007/03/15/windows-server-2003-service-pack-2-released.aspx">don’t need to uninstall IE7</a> before installing Service Pack 2).</p>
+
+<p><a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=95AC1610-C232-4644-B828-C55EEC605D55">Windows Server 2003 Service Pack 2 x86</a></p>
+
+<p><a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=08FEC2F5-6E3B-4E0D-9314-646414D0A421">Windows Server 2003 Service Pack 2 x64</a></p>
+
+  </div><a class="u-url" href="/windows-server-2003-sp2-what%E2%80%99s-in-it-for-terminal-servers/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

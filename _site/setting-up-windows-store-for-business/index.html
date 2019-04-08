@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Setting up the Windows Store for Business | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Setting up the Windows Store for Business" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="While the Universal app platform on Windows 10 isn’t going to replace legacy Win32 apps for some time, the potential of this platform to improve the way IT approaches application lifecycle management is high. Apps can be deployed, updated and removed without packaging or having to worry about application conflicts. It’s encouraging to see a number of useful enterprise applications available – the future is mobile apps, even on the desktop, so every enterprise should be looking at the Windows Store for Business." />
+<meta property="og:description" content="While the Universal app platform on Windows 10 isn’t going to replace legacy Win32 apps for some time, the potential of this platform to improve the way IT approaches application lifecycle management is high. Apps can be deployed, updated and removed without packaging or having to worry about application conflicts. It’s encouraging to see a number of useful enterprise applications available – the future is mobile apps, even on the desktop, so every enterprise should be looking at the Windows Store for Business." />
+<link rel="canonical" href="/setting-up-windows-store-for-business/" />
+<meta property="og:url" content="/setting-up-windows-store-for-business/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2016/12/14992123054_8295b89b82_k.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-12-12T09:00:31+11:00" />
+<script type="application/ld+json">
+{"description":"While the Universal app platform on Windows 10 isn’t going to replace legacy Win32 apps for some time, the potential of this platform to improve the way IT approaches application lifecycle management is high. Apps can be deployed, updated and removed without packaging or having to worry about application conflicts. It’s encouraging to see a number of useful enterprise applications available – the future is mobile apps, even on the desktop, so every enterprise should be looking at the Windows Store for Business.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/setting-up-windows-store-for-business/","image":"/wp-content/uploads/2016/12/14992123054_8295b89b82_k.jpg","headline":"Setting up the Windows Store for Business","dateModified":"2016-12-12T09:00:31+11:00","datePublished":"2016-12-12T09:00:31+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/setting-up-windows-store-for-business/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Setting up the Windows Store for Business</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2016-12-12T09:00:31+11:00" itemprop="datePublished">Dec 12, 2016
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>While the Universal app platform on Windows 10 isn’t going to replace legacy Win32 apps for some time, the potential of this platform to improve the way IT approaches application lifecycle management is high. Apps can be deployed, updated and removed without packaging or having to worry about application conflicts. It’s encouraging to see a number of useful enterprise applications available – the future is mobile apps, even on the desktop, so every enterprise should be looking at the Windows Store for Business.</p>
+
+<p><em>Even if you’re not intending to deliver Universal apps at this time, or even hiding the Store app on Windows 10 desktops, you should configure the Windows Store for Business.</em> This ensures full control over the user experience.</p>
+
+<p>In a previous article, <a href="http://stealthpuppy.com/windows-store-experience-enterprise-windows-10/">I’ve detailed how to manage the Windows Store experience on Windows 10</a>, and I now want to cover a couple of additional scenarios with Intune and Configuration Manager. The first step; however, is to detail setting up the Windows Store for Business. For any Windows 10 Current Branch or Current Branch for Business deployment, whether Professional or Enterprise edition, this is a key first step.</p>
+
+<p>Configuring the Windows Store for Business (WSfB) in your environment provides control over the Windows Store by enabling a private store within the Windows Store app (Enterprise edition required to hide the public links) and with management tools (e.g. Intune and Configuration Manager) you have the ability to add or remove Universal applications to and from Windows 10. This is just one of a few reasons why I tell anyone who’ll listen that Azure AD is in your future (unless you’re there already) whether you know it or not.</p>
+
+<p>At a high level, the process to configure the WSfB is as follows:</p>
+
+<ol>
+  <li>Create a Microsoft Azure tenant</li>
+  <li>Configure a domain</li>
+  <li>Optionally, configure AD Connect (or ADFS)</li>
+  <li>Create or enable a Global Administrator in Azure AD</li>
+  <li>Sign up for the Windows Store for Business</li>
+  <li>Configure the App Inventory</li>
+</ol>
+
+<p>I’m not going to cover these in detail but I will cover the key steps and provide links to additional reading. If you already have an Azure tenant configured with a custom domain and AD Connect/ADFS, you can, of course, skip to the Windows Store for Business configuration. All that’s required is user accounts synchronised or federated to Azure AD.</p>
+
+<p>If you don’t have any on-premises identities, then you can create an Azure tenant for Azure AD functionality and skip the steps on configuring AD Connect/ADFS.</p>
+
+<h1 id="create-an-azure-tenant">Create an Azure tenant</h1>
+
+<p>If you’re already using a Microsoft cloud service, such as Office 365, an Azure AD tenant will already exist. Ensure you do not have an existing tenant before proceeding.</p>
+
+<p>Creating an Azure tenant is required because we’ll need to sign in a corporate account that is an Azure AD Global Administrator. Here’s a great article on understanding the requirements and configuration for <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-aadconnect">integrating your on-premises identities with Azure Active Directory</a>.</p>
+
+<p>Microsoft has <a href="https://azure.microsoft.com/en-us/resources/videos/sign-up-for-microsoft-azure/">a short video available that shows the Azure sign up</a> process and the steps are:</p>
+
+<ol>
+  <li>Navigate to the Azure sign up page at <a href="https://account.windowsazure.com/SignUp">https://account.windowsazure.com/SignUp</a></li>
+  <li>Sign in with a Microsoft account. If this is a corporate environment, it may be wise to create a dedicated Microsoft account for this purpose and <a href="https://support.microsoft.com/en-au/help/12408/microsoft-account-about-two-step-verification">protect it with multi-factor authentication</a></li>
+  <li>Add personal information such as region, phone details and organisation name etc.</li>
+  <li>Verify your identity via phone (an SMS or phone call can be used)</li>
+  <li>Add credit card details. It’s important to note here that the card will not be charged until you use a paid tier of an Azure service, so this process can be done without paying Microsoft</li>
+  <li>Agree to the subscription agreement, offer details and privacy statement. Be sure to deselect signing up for special offers</li>
+</ol>
+
+<p>Setting up an Azure tenant is quite simple, just be sure to pay attention to the region you’re setting as default (i.e. your sign up region) and the account used to sign up to the service. Once sign up is complete, you’ll have a certain amount of credit to use within Azure for testing.</p>
+
+<figure id="attachment_5304" aria-describedby="caption-attachment-5304" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5304" src="http://stealthpuppy.com/wp-content/uploads/2016/12/Azure-StartUsing-1024x640.png" alt="The Azure subscription is ready to use" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/12/Azure-StartUsing-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/Azure-StartUsing-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/Azure-StartUsing-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/Azure-StartUsing-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/Azure-StartUsing.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/Azure-StartUsing.png)<figcaption id="caption-attachment-5304" class="wp-caption-text">The Azure subscription is ready to use</figcaption></figure>
+
+<p>Before configuring anything else in the new Azure tenant, configure a custom domain. You’ll notice that the default domain will be <domain>.onemicrosoft.com.</domain></p>
+
+<h2 id="configure-a-domain">Configure a Domain</h2>
+
+<p>A custom domain is required to use account within a namespace that better aligns with your corporate identity and you will need to own the custom domain. In my Azure tenant I’m using a subdomain of stealthpuppy.com; however, you may want to use your primary domain to ensure user account names align with corporate email addresses.</p>
+
+<p><a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-domains-add-azure-portal">Adding a domain can now be done in the Azure Portal</a> (i.e. the Resource Manager portal instead of the old <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-add-domain">Classic portal</a>):</p>
+
+<ol>
+  <li>Open the <strong>Azure Active Directory</strong> resource and click on <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Domains"><strong>Domain names</strong></a></li>
+  <li>Click <strong>Add</strong> and enter your domain name</li>
+  <li>You will be prompted to verify the domain name by adding a <a href="https://en.wikipedia.org/wiki/TXT_record">TXT</a> record with provided details. Setting up DNS will differ depending on the DNS provider</li>
+  <li>Once DNS is updated, click <strong>Verify</strong> and you should see that the domain is added</li>
+</ol>
+
+<p>The process for adding a custom domain is <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-add-domain-federated">slightly different when using ADFS</a>.</p>
+
+<p>At this point, you can make the new domain the primary domain for Azure AD.</p>
+
+<figure id="attachment_5305" aria-describedby="caption-attachment-5305" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5305" src="http://stealthpuppy.com/wp-content/uploads/2016/12/01_VerifyDomainName-1024x587.png" alt="Add and verify a custom domain in Azure" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2016/12/01_VerifyDomainName-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/01_VerifyDomainName-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/01_VerifyDomainName-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/01_VerifyDomainName-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/01_VerifyDomainName.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/01_VerifyDomainName.png)<figcaption id="caption-attachment-5305" class="wp-caption-text">Add and verify a custom domain in Azure</figcaption></figure>
+
+<h1 id="configure-azure-ad-connectadfs">Configure Azure AD Connect/ADFS</h1>
+
+<p>Microsoft provides detailed <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-aadconnect-prerequisites">instructions on setting up AD Connect</a> on the Azure documentation site. Exactly how to do that in your environment is out of the scope of this article, but AD Connect to synchronise accounts into <a href="https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect-get-started-express">Azure AD with the Express setup</a> is the simplest and fastest way to get up and running.</p>
+
+<p>Again, I highly recommend reading this article on <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-aadconnect">integrating your on-premises identities with Azure Active Directory</a>.</p>
+
+<h1 id="create-an-azure-global-administrator">Create an Azure Global Administrator</h1>
+
+<p>Signing up for or into the Windows Store for Business requires a work or school account, i.e. an account from Azure AD.</p>
+
+<figure id="attachment_5308" aria-describedby="caption-attachment-5308" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5308" src="http://stealthpuppy.com/wp-content/uploads/2016/12/02_CreateAzureADUser-1024x587.png" alt="Creating an Azure AD user and assigning a Directory role" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2016/12/02_CreateAzureADUser-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/02_CreateAzureADUser-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/02_CreateAzureADUser-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/02_CreateAzureADUser-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/02_CreateAzureADUser.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/02_CreateAzureADUser.png)<figcaption id="caption-attachment-5308" class="wp-caption-text">Creating an Azure AD user and assigning a Directory role</figcaption></figure>
+
+<h1 id="setup-the-windows-store-for-business">Setup the Windows Store for Business</h1>
+
+<p>Configuring the Windows Store for Business is very simple</p>
+
+<ol>
+  <li>Log onto <a href="https://www.microsoft.com/business-store">the WSfB site</a> with an account from Azure AD</li>
+  <li>Accept the usage agreement</li>
+  <li>Configure the private store name</li>
+  <li>Add apps to your Inventory</li>
+</ol>
+
+<h2 id="sign-up-and-initial-configuration">Sign Up and Initial Configuration</h2>
+
+<p>Logging onto the WSfB site for the first time will bind the Store configuration to your Azure tenant. You can <a href="https://technet.microsoft.com/en-au/itpro/windows/manage/sign-up-windows-store-for-business">sign up to the WSfB without an Azure AD tenant</a> and you will then be directed to create an Azure tenant; however, creating that first is a better approach.</p>
+
+<p>Navigate to <a href="https://www.microsoft.com/business-store">https://www.microsoft.com/business-store</a> and sign in, accept the usage agreement and you will see a basic Store configuration.</p>
+
+<figure id="attachment_5310" aria-describedby="caption-attachment-5310" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5310 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness-1024x587.png" alt="Sign up for the Windows Store for Business" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness.png)<figcaption id="caption-attachment-5310" class="wp-caption-text">Sign up for the Windows Store for Business</figcaption></figure>
+
+<p>Configure the Private store display name – this will appear in the Windows Store app on Windows 10 devices. Click <strong>Settings</strong> / <strong>Private store</strong>. Keep this short, but something that will be clear to users.</p>
+
+<figure id="attachment_5311" aria-describedby="caption-attachment-5311" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5311 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore-1024x587.png" alt="Setting the Private store display name in the Windows Store for Business" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore.png)<figcaption id="caption-attachment-5311" class="wp-caption-text">Setting the Private store display name in the Windows Store for Business</figcaption></figure>
+
+<h2 id="configure-the-app-inventory">Configure the App Inventory</h2>
+
+<p>Next, click <strong>Manage</strong> / <strong>Inventory</strong> to view the initial app inventory. A number of the Office mobile applications will be listed and in the process of being added to the Private store. <em>Adding apps to the Private store will take 12-24 hours to appear in the Windows Store app on user’s devices</em> – not a short process.</p>
+
+<figure id="attachment_5312" aria-describedby="caption-attachment-5312" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5312" src="http://stealthpuppy.com/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory-1024x587.png" alt="Viewing the Inventory in the Windows Store for Business" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory.png)<figcaption id="caption-attachment-5312" class="wp-caption-text">Viewing the Inventory in the Windows Store for Business</figcaption></figure>
+
+<p><em>Until the ‘Add in progress’ action is complete, you cannot remove these initial apps from the Private store</em>. Keep an eye on these once the process is complete and remove from the Private store as required.</p>
+
+<p>At this point you have a number of decisions to make:</p>
+
+<ol>
+  <li><strong>Which Universal apps do we want to deliver to users?</strong> Don’t think about delivery mechanism at this point, just consider apps that will be useful</li>
+  <li><strong>Which apps do we to remove from user devices?</strong> You can target inbox apps for removal (using Intune or Configuration Manager, or a 3rd party solution)</li>
+  <li>If you’re deploying Windows 10 Enterprise edition – <strong>will the Windows Store app be available to users?</strong> Only with Enterprise edition will you have full control over the Store app</li>
+  <li><strong>Which apps will be made available in the Windows Store app?</strong> If you elect to keep the Store app available, the WSfB allows IT to curate a list of apps. This would typically be a subset of the total apps in your Inventory</li>
+</ol>
+
+<h3 id="add-apps-to-your-inventory">Add Apps to Your Inventory</h3>
+
+<p>Here are a few recommendations for adding apps to the Inventory, in no particular order:</p>
+
+<ol>
+  <li><strong>Add all of the inbox Windows 10 apps</strong>. Unfortunately, not all inbox apps are available in the WSfB. For example, the Microsoft Solitare Collection isn’t listed</li>
+  <li>Windows 10 and Windows 8/8.1 apps are available in the WSfB – <strong>target Windows 10 apps where possible</strong> as these will provide a more consistent user experience as they are designed for Windows 10</li>
+  <li>While perhaps subjective, <strong>find apps that can be useful in your environment</strong>. This could be an opportunity to show what’s possible with the Universal app platform</li>
+  <li><strong>Don’t forget about browser extensions for Edge</strong>. These could be added to the Private store to allow users to install themselves</li>
+  <li><strong>Not all apps are available for the desktop</strong> – apps that work on Windows 10 Mobile are listed in the WSfB as well. This seems counterintuitive to a “Universal app platform”, but that’s the reality. If you’re managing Windows 10 mobile devices, then you’ll manage apps for all platforms from the WSfB</li>
+  <li><strong>The Windows Store app on Windows 10 is a little easier for finding apps including finding apps from a specific developer</strong>. You can then search for those apps in the WSfB.</li>
+</ol>
+
+<h3 id="managing-apps">Managing Apps</h3>
+
+<p>Once you have a reasonable number of apps, management can become a little cumbersome, use the search feature or the <strong>Refine</strong> dropdown to filter apps. Here I’ve filtered by only those apps added to the private store. </p>
+
+<figure id="attachment_5315" aria-describedby="caption-attachment-5315" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5315" src="http://stealthpuppy.com/wp-content/uploads/2016/12/07_WindowsStoreBusiness-PrivateStore-1024x907.png" alt="Filtering on apps in the Private store in the Windows Store for Business" width="1024" height="907" srcset="http://192.168.0.89/wp-content/uploads/2016/12/07_WindowsStoreBusiness-PrivateStore-1024x907.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/07_WindowsStoreBusiness-PrivateStore-150x133.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/07_WindowsStoreBusiness-PrivateStore-300x266.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/07_WindowsStoreBusiness-PrivateStore-768x681.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/07_WindowsStoreBusiness-PrivateStore.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/07_WindowsStoreBusiness-PrivateStore.png)<figcaption id="caption-attachment-5315" class="wp-caption-text">Filtering on apps in the Private store in the Windows Store for Business</figcaption></figure>
+
+<p>As mentioned above, <strong>add those apps to the Inventory that you want to target for removal from end-user devices</strong>. This includes the inbox apps and those that appear by default on the Start menu. This will provide the opportunity to target apps for removal using device management tools.</p>
+
+<figure id="attachment_5316" aria-describedby="caption-attachment-5316" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5316" src="http://stealthpuppy.com/wp-content/uploads/2016/12/TargettingUnwantedApps-1024x587.png" alt="Add even unwanted apps to the Windows Store for Business" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2016/12/TargettingUnwantedApps-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/TargettingUnwantedApps-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/TargettingUnwantedApps-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/TargettingUnwantedApps-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/TargettingUnwantedApps.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/TargettingUnwantedApps.png)<figcaption id="caption-attachment-5316" class="wp-caption-text">Add even unwanted apps to the Windows Store for Business</figcaption></figure>
+
+<h3 id="assigning-apps">Assigning Apps</h3>
+
+<p><a href="https://technet.microsoft.com/en-au/itpro/windows/manage/assign-apps-to-employees">Applications can be assigned to people</a> (and licenses managed) from the Window Store for Business. However, this is largely not scaleable as only individual users can be selected.</p>
+
+<figure id="attachment_5318" aria-describedby="caption-attachment-5318" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5318" src="http://stealthpuppy.com/wp-content/uploads/2016/12/AssignToPeople-1024x587.png" alt="Assigning an app in the Windows Store for Business" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2016/12/AssignToPeople-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/AssignToPeople-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/AssignToPeople-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/AssignToPeople-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/AssignToPeople.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/AssignToPeople.png)<figcaption id="caption-attachment-5318" class="wp-caption-text">Assigning an app in the Windows Store for Business</figcaption></figure>
+
+<p>From a user experience perspective, apps are also not automatically assigned, instead the user will receive an email with a link to the apps which opens in the Store, or assigned apps can be viewed and installed from the My Library section in the Store app.</p>
+
+<figure id="attachment_5319" aria-describedby="caption-attachment-5319" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5319" src="http://stealthpuppy.com/wp-content/uploads/2016/12/Windows10StoreAppMyLibrary-1024x640.png" alt="My Library in the Windows 10 Store app" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/12/Windows10StoreAppMyLibrary-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/Windows10StoreAppMyLibrary-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/Windows10StoreAppMyLibrary-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/Windows10StoreAppMyLibrary-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/Windows10StoreAppMyLibrary.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/Windows10StoreAppMyLibrary.png)<figcaption id="caption-attachment-5319" class="wp-caption-text">My Library in the Windows 10 Store app</figcaption></figure>
+
+<p>A better approach will be to use a management tool that enables automatic deployment (or removal) of apps to users or devices, which I’ll cover in upcoming articles.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>For existing enterprises moving to Windows 10, extending your on-premises identity into Azure AD and configuring the WSfB are important steps for managing the user experience on Windows 10. The Universal app platform shows promise from an application lifecycle management perspective and getting ready to deploy these apps on Windows 10 is considerably simpler than other mobile app platforms. </p>
+
+<p>I’ve not covered online or offline Universal app deployment or VDI/SBC use-cases in this article, but I will cover integration of the Windows Store for Business with device management solutions in future articles.</p>
+
+<p>Read the next article for details on <a href="http://stealthpuppy.com/managing-universal-apps-intune/">managing Universal apps with Microsoft Intune</a>.</p>
+
+  </div><a class="u-url" href="/setting-up-windows-store-for-business/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

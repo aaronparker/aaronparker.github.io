@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Managing Universal Apps with Microsoft Intune | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Managing Universal Apps with Microsoft Intune" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I am excited about the opportunities that managing Windows 10 devices with Azure AD Join and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution – Microsoft Intune standalone for managing Universal apps." />
+<meta property="og:description" content="I am excited about the opportunities that managing Windows 10 devices with Azure AD Join and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution – Microsoft Intune standalone for managing Universal apps." />
+<link rel="canonical" href="/managing-universal-apps-microsoft-intune/" />
+<meta property="og:url" content="/managing-universal-apps-microsoft-intune/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2016/12/10017151914_3be1e6364c_k.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-12-13T10:00:48+11:00" />
+<script type="application/ld+json">
+{"description":"I am excited about the opportunities that managing Windows 10 devices with Azure AD Join and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution – Microsoft Intune standalone for managing Universal apps.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/managing-universal-apps-microsoft-intune/","image":"/wp-content/uploads/2016/12/10017151914_3be1e6364c_k.jpg","headline":"Managing Universal Apps with Microsoft Intune","dateModified":"2016-12-13T10:00:48+11:00","datePublished":"2016-12-13T10:00:48+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/managing-universal-apps-microsoft-intune/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Managing Universal Apps with Microsoft Intune</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2016-12-13T10:00:48+11:00" itemprop="datePublished">Dec 13, 2016
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I am excited about the opportunities that managing Windows 10 devices with <a href="https://blogs.technet.microsoft.com/enterprisemobility/2015/05/28/azure-ad-join-on-windows-10-devices/">Azure AD Join</a> and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution – Microsoft Intune standalone for managing Universal apps.</p>
+
+<p>Consider that with Windows 10, an organisation can provision and manage Windows 10 PCs <a href="https://technet.microsoft.com/en-us/itpro/windows/deploy/provisioning-packages">without a custom SOE</a> and with a fully <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis">cloud-based authentication</a> and management solution, requiring no infrastructure (other than networking) on-premises. This approach comes with some caveats today, of course, but PC and application lifecycle can be achieved without exhaustive architectural consideration or deployment of complex management solutions.</p>
+
+<p>Using Intune to manage Windows 10 PCs (and Windows 10 mobile devices) along with the <a href="http://stealthpuppy.com/setup-windows-store-for-business/">Windows Store for Business</a> will enable you to manage Universal apps on these devices. With Intune, you can deploy and remove apps by targeting users or devices.</p>
+
+<h1 id="requirements-for-microsoft-intune">Requirements for Microsoft Intune</h1>
+
+<p>Deploying and configuring Microsoft Intune requires two things – Azure AD and licensing Intune. In this article, I’m concentrating on Intune standalone only, i.e. Intune as a standalone cloud solution, not <a href="https://technet.microsoft.com/en-us/library/jj884158.aspx">integrated with Configuration Manager</a>.</p>
+
+<h2 id="azure-active-directory">Azure Active Directory</h2>
+
+<p>Like the <a href="http://stealthpuppy.com/setup-windows-store-for-business/">Windows Store for Business</a> (WSfB), Intune relies on Azure Active Directory for user identities. As with my previous article, I recommend setting up an Azure tenant as your first step before integrating any additional solutions. That process may, or may not, include synchronising identities with AD Connect. This approach to application deployment and device management can be achieved with cloud-based identities only.</p>
+
+<h2 id="licensing-microsoft-intune">Licensing Microsoft Intune</h2>
+
+<p>While Intune can be licensed on its own, the ideal way of licensing Intune is as a component of <a href="https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security">the Microsoft Enterprise Mobility + Security suite</a> (EMS). The primary reason is to enable advanced features you get with an Azure AD Premium subscription. If you’re not familiar with EMS, you can read up on the components and licensing details here: <a href="https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security-pricing">Enterprise Mobility + Security Pricing</a>.</p>
+
+<p>For this solution, we’re interested in:</p>
+
+<ul>
+  <li><strong>Azure Active Directory Premium</strong> – this enables a<a href="https://blogs.technet.microsoft.com/enterprisemobility/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/">utomatic MDM enrollment</a> when a device is provisioned and connected to Azure AD. Additionally Azure AD Premium provides branding customisation which improves the sign on user experience; multi-factor authentication onto devices as well as cloud applications and conditional access to protect resources such as Exchange and SharePoint Online.</li>
+  <li><strong>Microsoft Intune</strong> – Intune is included in the EMS license which is the primary reason for deploying modern management.</li>
+</ul>
+
+<p>Additional components that make sense in a cloud-based management approach include <a href="https://www.microsoft.com/en-au/cloud-platform/azure-information-protection">Azure Information Protection</a> and <a href="https://www.microsoft.com/en-au/cloud-platform/advanced-threat-analytics">Microsoft Advanced Threat Analytics</a>. These are entire topics on their own, so I won’t be covering those in the context of this article.</p>
+
+<h2 id="setting-up-intune">Setting up Intune</h2>
+
+<p>I’m not going to cover <a href="https://docs.microsoft.com/en-us/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune-step-1">the setup of Intune</a> in detail as there are plenty of existing resources available including the official Microsoft document. I highly recommend reading <a href="https://docs.microsoft.com/en-us/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune">the getting started guide</a> and using the <a href="https://www.microsoft.com/itprocloudessentials/">Microsoft IT Pro Cloud Essentials</a> site to setup a trial environment if you’re new to Intune.</p>
+
+<p>Once you have Azure AD and Intune provisioned, we can connect Intune to the Windows Store for Business and start managing Universal apps.</p>
+
+<h1 id="connect-intune-to-the-windows-store-for-business">Connect Intune to the Windows Store for Business</h1>
+
+<p>To start managing Universal apps with Intune, we need to first <a href="https://docs.microsoft.com/en-us/intune/deploy-use/manage-apps-you-purchased-from-the-windows-store-for-business-with-microsoft-intune">associate our Intune deployment</a> with <a href="http://stealthpuppy.com/setup-windows-store-for-business/">the Windows Store for Business that we set up previously</a>. This is a 3-step process:</p>
+
+<ol class="lf-text-block lf-block" data-lf-anchor-id="e9d33c57cef1fea91ccd03e76b2b6373:0">
+  <li>
+    Ensure that you sign into the Business Store using the same tenant account you use to sign into Intune
+  </li>
+  <li>
+    In the Business Store, choose <strong>Settings</strong> &gt; <strong>Management tools</strong>
+  </li>
+  <li>
+    On the Management tools page, choose <strong>Add a management tool</strong>, and choose <strong>Microsoft Intune</strong>.
+  </li>
+</ol>
+
+<p>You should see a screen similar to the below. This sets Intune as the device management authority. Note that I’ve already associated my Intune tenant.</p>
+
+<figure id="attachment_5326" aria-describedby="caption-attachment-5326" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5326" src="http://stealthpuppy.com/wp-content/uploads/2016/12/AssociateIntuneWSfB-1024x587.png" alt="Associating Intune with the Windows Store for Business to start managing Universal apps" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2016/12/AssociateIntuneWSfB-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/AssociateIntuneWSfB-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/AssociateIntuneWSfB-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/AssociateIntuneWSfB-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/AssociateIntuneWSfB.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/AssociateIntuneWSfB.png)<figcaption id="caption-attachment-5326" class="wp-caption-text">Associating Intune with the Windows Store for Business to start managing Universal apps</figcaption></figure>
+
+<p>Now we can synchronise the Universal app inventory with Intune.</p>
+
+<h1 id="managing-universal-apps">Managing Universal Apps</h1>
+
+<p>Synchronising the Business Store inventory with Intune will show the full list of subscribed apps in the Intune console from which we can then target user or device groups.</p>
+
+<p>Sign into the Intune console and configure sync:</p>
+
+<ol>
+  <li>Navigate to <strong>Admin</strong> / <strong>Mobile Device Management</strong> / <strong>Windows</strong> / <strong>Store for Business</strong></li>
+  <li>Click <strong>Configure Sync</strong></li>
+  <li>Select <strong>Enable Windows Store for Business Sync</strong> and click <strong>OK</strong></li>
+</ol>
+
+<p>Which should look like the screenshot below. Once configured click the <strong>Sync now</strong> button and wait for the first synchronisation.</p>
+
+<figure id="attachment_5328" aria-describedby="caption-attachment-5328" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5328" src="http://stealthpuppy.com/wp-content/uploads/2016/12/IntuneStoreSync1-1024x640.png" alt="Configuring Windows Store for Business app sync in the Intune console" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/12/IntuneStoreSync1-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/IntuneStoreSync1-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/IntuneStoreSync1-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/IntuneStoreSync1-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/IntuneStoreSync1.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/IntuneStoreSync1.png)<figcaption id="caption-attachment-5328" class="wp-caption-text">Configuring Windows Store for Business app sync in the Intune console</figcaption></figure>
+
+<p>Now navigate to <strong>Apps</strong> / <strong>Apps</strong> / <strong>Volume-Purchased Apps</strong>. The list of Universal apps from the Business Store inventory should be displayed.</p>
+
+<figure id="attachment_5329" aria-describedby="caption-attachment-5329" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5329" src="http://stealthpuppy.com/wp-content/uploads/2016/12/Volume-Purchased-Apps-1024x640.png" alt="Volume Purchased Apps in the Intune console, synchronised from the Windows Store for Business" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/12/Volume-Purchased-Apps-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/Volume-Purchased-Apps-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/Volume-Purchased-Apps-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/Volume-Purchased-Apps-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/Volume-Purchased-Apps.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/Volume-Purchased-Apps.png)<figcaption id="caption-attachment-5329" class="wp-caption-text">Volume Purchased Apps in the Intune console, synchronised from the Windows Store for Business</figcaption></figure>
+
+<p>Apps added to the Business Store inventory will appear immediately after a sync, so unlike the Windows Store app on devices, we don’t need to wait 12-24 hours for apps to appear in the list.</p>
+
+<h2 id="targeting-apps">Targeting Apps</h2>
+
+<p>Now that we have a list of apps, the deployment to users can be managed. Because we have a list of apps in the Inventory that we want to deploy and a list of apps to target for removal from devices the deployment options can be set per app.</p>
+
+<p>To deploy apps:</p>
+
+<ol>
+  <li>Select the app or a selection of apps</li>
+  <li><strong>Select the user groups</strong> (and by extension their devices) to target. Create custom groups to target specific users. Click <strong>Next.</strong></li>
+</ol>
+
+<figure id="attachment_5330" aria-describedby="caption-attachment-5330" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5330" src="http://stealthpuppy.com/wp-content/uploads/2016/12/Deploy-Apps-Users-1024x640.png" alt="Managing Universal app deployment in Intune by targeting user groups" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/12/Deploy-Apps-Users-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/Deploy-Apps-Users-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/Deploy-Apps-Users-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/Deploy-Apps-Users-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/Deploy-Apps-Users.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/Deploy-Apps-Users.png)<figcaption id="caption-attachment-5330" class="wp-caption-text">Managing Universal app deployment in Intune by targeting user groups</figcaption></figure>
+
+<ol start="3">
+  <li>
+    Set the <strong>Approval</strong> to <strong>Uninstall</strong> or <strong>Required Install</strong> as desired.
+  </li>
+  <li>
+    Click <strong>Finish</strong> and the application action will take effect when the devices next sync.
+  </li>
+</ol>
+
+<figure id="attachment_5331" aria-describedby="caption-attachment-5331" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5331" src="http://stealthpuppy.com/wp-content/uploads/2016/12/Deploy-Apps-Uninstall-1024x640.png" alt="Setting deployment options on the application" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/12/Deploy-Apps-Uninstall-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/Deploy-Apps-Uninstall-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/Deploy-Apps-Uninstall-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/Deploy-Apps-Uninstall-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/Deploy-Apps-Uninstall.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/Deploy-Apps-Uninstall.png)<figcaption id="caption-attachment-5331" class="wp-caption-text">Setting deployment options on the application</figcaption></figure>
+
+<p>Now when a Windows 10 PC is provisioned, enrolled into Azure AD and Intune MDM, the Universal apps will be deployed and removed as required. If you have targeted the inbox applications, <strong>this will include removal of apps and even those pesky tiles on the default Start menu</strong>.</p>
+
+<figure id="attachment_5335" aria-describedby="caption-attachment-5335" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5335" src="http://stealthpuppy.com/wp-content/uploads/2016/12/Windows10-Initial-Logon-1024x640.png" alt="Target those unwanted apps for uninstall" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/12/Windows10-Initial-Logon-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/Windows10-Initial-Logon-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/Windows10-Initial-Logon-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/Windows10-Initial-Logon-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/Windows10-Initial-Logon.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/Windows10-Initial-Logon.png)<figcaption id="caption-attachment-5335" class="wp-caption-text">Target those unwanted apps for uninstall</figcaption></figure>
+
+<h3 id="updates">Updates</h3>
+
+<p>Updates to Universal apps are automatic. Windows will automatically handle updates to installed apps going forward and this should be largely seamless to the user.</p>
+
+<h3 id="intune-company-portal">Intune Company Portal</h3>
+
+<p>One app worth highlighting is the <a href="https://www.microsoft.com/en-au/store/p/company-portal/9wzdncrfj3pz">Intune Company Portal for Windows 10</a>. The Compay Portal, especially since the latest update last week to the app to support Windows 10, provides users with a nice interface to their enrolled devices, available legacy apps and Universal apps configured as links to the Windows Store. While this is a separate interface to the Windows Store app</p>
+
+<p>With an Azure AD joined Windows 10 PC, enrolled for Intune MDM, the Company Portal app can be targeted to all users and installed when their device is provisioned. <a href="https://docs.microsoft.com/en-us/intune/deploy-use/add-apps-for-mobile-devices-in-microsoft-intune">Applications installed via an MSI can be targeted to MDM</a> enrolled PCs and made available for users to install via the Portal.</p>
+
+<figure id="attachment_5334" aria-describedby="caption-attachment-5334" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5334" src="http://stealthpuppy.com/wp-content/uploads/2016/12/Intune-Company-Portal2-1024x640.png" alt="The Intune Company Portal Universal app" width="1024" height="640" srcset="http://192.168.0.89/wp-content/uploads/2016/12/Intune-Company-Portal2-1024x640.png 1024w, http://192.168.0.89/wp-content/uploads/2016/12/Intune-Company-Portal2-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2016/12/Intune-Company-Portal2-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2016/12/Intune-Company-Portal2-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2016/12/Intune-Company-Portal2.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/Intune-Company-Portal2.png)<figcaption id="caption-attachment-5334" class="wp-caption-text">The Intune Company Portal Universal app</figcaption></figure>
+
+<h1 id="online-vs-offline-distribution">Online vs. Offline Distribution</h1>
+
+<p>In this scenario where Universal apps are synchronised with the Business Store and deployed via Volume-Purchased Apps, app distribution is <em>Online</em>. Where devices are connected to the Internet and managed via a cloud-based device management solution, this type of distribution mechanism makes sense.</p>
+
+<p>Intune does support <em>Offline</em> distribution of Universal apps; however, this doesn’t necessarily make sense for connected devices plus access to download apps from the Windows Store for Business for offline distribution is controlled by the vendor of the app. If they don’t make the app available for offline distribution you must deliver the app online.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>In this article, I’ve detailed the steps required for managing Universal apps on Windows 10 PCs enrolled for MDM management with Microsoft Intune. While this approach may not yet be right for every organisation, I do see this gaining traction for smaller organisations in the future.</p>
+
+  </div><a class="u-url" href="/managing-universal-apps-microsoft-intune/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>App-V FAQ: Do I need to backup the App-V Management Server? | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="App-V FAQ: Do I need to backup the App-V Management Server?" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="If you’ve deployed the native App-V infrastructure, you will have the following components in your environment:" />
+<meta property="og:description" content="If you’ve deployed the native App-V infrastructure, you will have the following components in your environment:" />
+<link rel="canonical" href="/app-v-faq-22-do-i-need-to-backup-the-app-v-management-server/" />
+<meta property="og:url" content="/app-v-faq-22-do-i-need-to-backup-the-app-v-management-server/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-08-31T11:00:00+10:00" />
+<script type="application/ld+json">
+{"description":"If you’ve deployed the native App-V infrastructure, you will have the following components in your environment:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/app-v-faq-22-do-i-need-to-backup-the-app-v-management-server/","headline":"App-V FAQ: Do I need to backup the App-V Management Server?","dateModified":"2010-08-31T11:00:00+10:00","datePublished":"2010-08-31T11:00:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/app-v-faq-22-do-i-need-to-backup-the-app-v-management-server/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">App-V FAQ: Do I need to backup the App-V Management Server?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-08-31T11:00:00+10:00" itemprop="datePublished">Aug 31, 2010
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img style="margin: 0px 10px 5px 0px; display: inline" align="right" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" />If you’ve deployed <a href="http://technet.microsoft.com/en-gb/library/cc843686.aspx">the native App-V infrastructure</a>, you will have the following components in your environment:</p>
+
+<ul>
+  <li>App-V Management Server (and optionally the App-V Streaming Server)</li>
+  <li>Content share hosting the App-V packages</li>
+  <li>Management database hosted on SQL Server</li>
+</ul>
+
+<p>Only two of these are critical – the Content share and the Management database.</p>
+
+<h3 id="backing-up-the-content-share">Backing up the Content share</h3>
+
+<p>App-V packages are stored on the Content share and are generally available to both the App-V Management Server (and Streaming) servers and to users (to download ICO and OSD files). Because the packages are stored on the file system, you can <a href="http://technet.microsoft.com/en-us/library/dd979562(WS.10).aspx">backup</a> the Content share using your standard backup tools. Restoring the Content share should just require restoring the files and folders for the App-V packages.</p>
+
+<p>Often the Content share is replicated, either between multiple Management Servers or file servers in different locations. Replication can be accomplished with DFS-R built into Windows Server or the replication technologies built into your SAN. Replicating the Content share will give you another avenue for restoration if a replica still exists.</p>
+
+<h3 id="what-if-you-lose-the-content-share-completely">What if you lose the Content share completely?</h3>
+
+<p>There’s no excuse for no documentation – you are documenting your sequences aren’t you? Detailed documentation that includes step-by-step instructions for how the application was sequenced or scripts for performing the installation and configuration of the application during sequencing is an essential component of deploying applications via App-V (or any other application virtualisation product).</p>
+
+<p>I have seen several instances where not enough emphasis has been placed on documentation – when it comes to recreating the package, the whole thing needs to be re-done from scratch.</p>
+
+<h3 id="backing-up-the-app-v-management-database">Backing up the App-V Management database</h3>
+
+<p>I presume that most of us who deploy the App-V infrastructure are probably not SQL Server experts as well, but it does pay to have at least <a href="http://technet.microsoft.com/en-us/library/ms175477.aspx">a basic understanding of the backup and restore requirements for SQL Server</a>. My own SQL Server knowledge is a bit limited, so rather than attempt at giving you a complete overview of the backup and restore requirements for SQL Server, I’ll just say that if you haven’t considered backing up the Management Server database stop reading this and go and back it up now. I have included links to further reading on backup and restore in the resources below.</p>
+
+<p><a href="http://msdn.microsoft.com/en-us/library/ms189852.aspx">SQL Server mirroring</a> is supported with the App-V 4.5 SP2 Management Server, so failover options are now available for App-V.</p>
+
+<h3 id="recovery-options-for-the-app-v-management-server">Recovery options for the App-V Management Server</h3>
+
+<p>The App-V Management Server (and the Streaming Server) is stateless so whether or not you back it up will depend on your own requirements; however you can implement an alternative approach to ensuring availability of the Management Server:</p>
+
+<ul>
+  <li>Deploy multiple Management Servers to provide load-balancing and redundancy</li>
+  <li>Configure an unattended deployment of Windows and the Management Server</li>
+</ul>
+
+<p>Deploying multiple Management servers and load-balancing them with a hardware load-balancer or the <a href="http://technet.microsoft.com/en-us/library/cc771700(WS.10).aspx">Network Load Balancing</a> feature built into Windows will allow you to recover a problematic server whilst maintaining service to App-V clients. A hardware load-balancer is the preferred method; however many smaller enterprises can offer adequate service with NLB instead. Additionally there are other ways to provide high availability that includes <a href="http://www.vmware.com/products/fault-tolerance/">VMware’s Fault Tolerance and High Availability feature</a> built into vSphere.</p>
+
+<p>To get a server back up and running quickly or for deploying multiple Management Servers, you should consider an unattended deployment of Windows Server and the App-V Management Server software. An unattended deployment allows you to provide avoid spending time troubleshooting a server and just rebuild it and to ensure that every Management Server or Streaming Server has been configured exactly the same way.</p>
+
+<p>If you aren’t currently deploying Windows via an unattended means, Microsoft provides the <a href="http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx">Microsoft Deployment Toolkit</a> for doing just that. The Setup for the App-V Management Server or the Streaming Server can also be installed silently and is documented in this knowledgebase article: <a href="http://support.microsoft.com/kb/2384955">Supported command line options for the Microsoft App-V 4.5 Management Server installer</a>.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Although you can backup the Management Server, it is the component in the native App-V infrastructure that can be recovered without requiring a backup and can probably be redeployed or rebuilt faster than you can restore from backup. Instead of spending resources creating and managing a backup, spend time on the alternatives I’ve outlined above to provide better service and recovery.</p>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li><a href="http://technet.microsoft.com/en-us/library/cc754097(WS.10).aspx">Windows Server 2008 and Windows Server 2008 R2 Backup and Recovery</a></li>
+  <li><a href="http://technet.microsoft.com/en-us/library/cc770266(WS.10).aspx">Windows Server Backup Step-by-Step Guide for Windows Server 2008</a></li>
+  <li><a href="http://technet.microsoft.com/en-us/library/ee849849(WS.10).aspx">Windows Server Backup Step-by-Step Guide for Windows Server 2008 R2</a></li>
+  <li><a href="http://technet.microsoft.com/en-us/library/cc773238(WS.10).aspx">DFS Replication: Frequently Asked Questions (FAQ</a></li>
+  <li><a href="http://technet.microsoft.com/en-us/library/ms175477.aspx">Backup Overview (SQL Server)</a></li>
+  <li><a href="http://technet.microsoft.com/en-us/library/ms187048.aspx">Backing Up and Restoring Databases in SQL Server</a></li>
+  <li><a href="http://msdn.microsoft.com/en-us/library/ms187510.aspx">How to: Back Up a Database (SQL Server Management Studio)</a></li>
+  <li><a href="http://technet.microsoft.com/en-gb/library/ff660790.aspx">How to Configure Microsoft SQL Server Mirroring Support for App-V</a></li>
+  <li>Video: <a href="http://www.youtube.com/watch?v=YOLqyPa3LOw">SQL Server 2008 Demo Database Mirroring</a></li>
+  <li><a href="http://blogs.technet.com/b/josebda/archive/2009/04/02/sql-server-2008-database-mirroring.aspx">SQL Server 2008 Database Mirroring</a></li>
+  <li><a href="http://support.microsoft.com/kb/932017/">Introduction to SoftGrid networking</a></li>
+  <li><a href="http://support.microsoft.com/kb/932018/">How SoftGrid Networking works together with Windows Server 2003 Network Load Balancing</a></li>
+  <li><a href="http://support.microsoft.com/kb/2384955">Supported command line options for the Microsoft App-V 4.5 Management Server installer</a></li>
+</ul>
+
+  </div><a class="u-url" href="/app-v-faq-22-do-i-need-to-backup-the-app-v-management-server/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

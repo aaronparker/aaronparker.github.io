@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Server Manager’s Power Is In The Command Line | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Server Manager’s Power Is In The Command Line" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Like most IT Pros deploying and managing Windows Server, I’ve avoided the wizard interfaces, like Manage Your Server, in previous versions of Windows. However with Windows Server 2008, Microsoft have actually succeeded in creating a tool that I think people will find indispensable." />
+<meta property="og:description" content="Like most IT Pros deploying and managing Windows Server, I’ve avoided the wizard interfaces, like Manage Your Server, in previous versions of Windows. However with Windows Server 2008, Microsoft have actually succeeded in creating a tool that I think people will find indispensable." />
+<link rel="canonical" href="/server-managers-power-is-in-the-command-line/" />
+<meta property="og:url" content="/server-managers-power-is-in-the-command-line/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-02-18T22:54:54+11:00" />
+<script type="application/ld+json">
+{"description":"Like most IT Pros deploying and managing Windows Server, I’ve avoided the wizard interfaces, like Manage Your Server, in previous versions of Windows. However with Windows Server 2008, Microsoft have actually succeeded in creating a tool that I think people will find indispensable.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/server-managers-power-is-in-the-command-line/","headline":"Server Manager’s Power Is In The Command Line","dateModified":"2008-02-18T22:54:54+11:00","datePublished":"2008-02-18T22:54:54+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/server-managers-power-is-in-the-command-line/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Server Manager&amp;#8217;s Power Is In The Command Line</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-02-18T22:54:54+11:00" itemprop="datePublished">Feb 18, 2008
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img src="http://stealthpuppy.com/wp-content/uploads/2008/02/servermanagercmd.png" alt="servermanagercmd.png" align="left" />Like most IT Pros deploying and managing Windows Server, I’ve avoided the wizard interfaces, like Manage Your Server, in previous versions of Windows. However with Windows Server 2008, Microsoft have actually succeeded in creating a tool that I think people will find indispensable.</p>
+
+<p>Server Manager is an MMC-based front-end for anything you will need to manage on your servers running Windows 2008. As well as combining many of the individual management tools, it gives you a simple overview of what’s happening on your server and integrates the old Add/Remove Programs interface too.</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2008/02/servermanager.png"></a></p>
+
+<p>If you’ve not taken a look at Windows Server 2008 and are interested in reading more about Server Manager, there is a plethora of resources available to you:</p>
+
+<ul>
+  <li>Start with the <a href="http://technet2.microsoft.com/windowsserver2008/en/library/18dd1257-2cd1-48f0-91f1-3012cf0fcc831033.mspx?mfr=true">Windows Server 2008 Server Manager Technical Overview</a></li>
+  <li>You can then use <a href="http://technet2.microsoft.com/windowsserver2008/en/servermanager/default.mspx">Server Manager page on TechNet</a> to find links to more detailed information</li>
+  <li>Read <a href="http://go.microsoft.com/fwlink/?LinkId=92732">Server Manager Compared to Earlier Windows Management Tools</a> to get an idea of what Server Manager is all about in Windows Server 2008</li>
+  <li>Take a look at <a href="http://www.microsoft.com/events/EventDetails.aspx?CMTYSvcSource=MSCOMMedia&amp;Params=%7eCMTYDataSvcParams%5e%7earg+Name%3d%22ID%22+Value%3d%221032358383%22%2f%5e%7earg+Name%3d%22ProviderID%22+Value%3d%22A6B43178-497C-4225-BA42-DF595171F04C%22%2f%5e%7earg+Name%3d%22lang%22+Value%3d%22en%22%2f%5e%7earg+Name%3d%22cr%22+Value%3d%22US%22%2f%5e%7esParams%5e%7e%2fsParams%5e%7e%2fCMTYDataSvcParams%5e">TechNet Webcast: Managing Windows Server 2008 with Server Manager (Level 200)</a> and</li>
+  <li><a href="http://go.microsoft.com/fwlink/?LinkId=92591">TechNet Webcast: Overview of Server Manager and Windows PowerShell in Windows Server 2008 (Level 300)</a> to see Server Manager in action</li>
+  <li>Read the <a href="http://download.microsoft.com/download/b/1/0/b106fc39-936c-4857-a6ea-3fb9d1f37063/Server%20Manager%20Scenarios%20Step-by-Step%20Guide.doc">Server Manager Scenarios Step-by-Step Guide</a> to see how to use Server Manager.</li>
+</ul>
+
+<p>The real power of Server Manager and what makes this tool truly worthwhile is it’s command line interface. SERVERMANAGERCMD.EXE replaces what SYSOCMGR.EXE provided in previous versions of Windows, but it does so much more:</p>
+
+<blockquote>
+  <p>A new command-line feature in Server Manager allows unattended installation and removal of Windows Server 2008 technologies. The ServerManagerCmd.exe command-line tool exposes the key set of Server Manager tasks, such as installation or removal of roles, role services and features, validation, and querying the current state of the computer. It also allows for installation or removal of multiple roles, role services, or features in a single command instance by using XML answer files.</p>
+
+  <p>Before the implementation of the Server Manager command line, the only command-line tools available for installing Windows software packages on a computer were ocsetup and pkgmgr. The command line syntax for these tools is complex, and the names of roles, role services, and features available for installation or removal by using these two tools were not intuitive. ServerManagerCmd.exe simplifies command-line installation and removal of roles, role services, and features</p>
+</blockquote>
+
+<p>So, for example, if I am looking to install to install the Network Policy and Access Server, in preparation for configuring Network Access Protection, I would install it via the following command:</p>
+
+<p>[code]SERVERMANAGERCMD -install NPAS -restart[/code]</p>
+
+<p>If I am installing Terminal Server components on an existing server, I could run the following command to install the Terminal Server, Licensing and Session Broker components.</p>
+
+<p>[code]SERVERMANAGERCMD -install TS-Terminal-Server,TS-Licensing,TS-Session-Broker -restart[/code]</p>
+
+<p>To install the complete Remote Server Administration Tools (RSAT) on a Windows Server 2008 server, run this command (curiously this requires a restart):</p>
+
+<p>[code]SERVERMANAGERCMD -install RSAT -allsubfeatures -restart[/code]</p>
+
+<p>Command line interaction with Server Manager also provides the ability to query what roles and features are installed on the server as well as export and import configurations via XML files. This is a great change from earlier versions of Windows and will help to reduce the time spent managing Windows Server 2008.</p>
+
+<p>I’ve included here the complete list of roles and features that you can use with SERVERMANAGER.CMD and OCSETUP.EXE in Windows Server 2008 and Windows Server Core. Don’t reach for that GUI, real men (and women) use the command line.</p>
+
+<p class="download">
+  [download id=&#8221;25&#8243; format=&#8221;1&#8243;]
+</p>
+
+<p class="download">
+  [download id=&#8221;26&#8243; format=&#8221;1&#8243;]
+</p>
+
+<p>Here’s something I really like: using SERVERMANAGERCMD -QUERY via Windows PowerShell makes seeing what’s installed on your server nice and simple (<strong>Update</strong>: this works under Command Prompt too):</p>
+
+<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/02/query.png" border="0" alt="" width="446" height="313" /></p>
+
+<p>For more information on Server Manager with PowerShell , read Marc van Orsouw’s post: <a href="http://thepowershellguy.com/blogs/posh/archive/2007/05/23/dueling-command-lines-in-windows-server-2008-or-a-happy-end.aspx">Dueling Command Lines in Windows Server 2008 ? .. or a happy end ?</a>.</p>
+
+<h3 id="what-about-server-core">What About Server Core?</h3>
+
+<p>Server Manager is not included in a Server Core installation. Subsequently the command line version is not installed either. Management of features and roles in Server Core is performed via OCSETUP and OCLIST. OCSETUP is the same tool <a href="http://technet2.microsoft.com/WindowsVista/en/library/ced21f54-456d-4936-88a1-a0e42eea3ca31033.mspx?mfr=true">included in Windows Vista</a> for managing features and works the same way on Server Core.</p>
+
+<p>Unfortunately we don’t get the ability to save OCLIST’s output to XML for import to another server, but OCSETUP does provide an answer file option for automating the installation or removal of features.</p>
+
+<h3 id="more-reading">More Reading</h3>
+
+<ul>
+  <li><a href="http://edge.technet.com/Media/539/">Server Manager Command Line in Windows Server 2008</a></li>
+  <li><a href="http://technet2.microsoft.com/WindowsServer2008/en/library/e7edce1d-442c-4ec3-b324-c748e4f937551033.mspx#BKMK_cmdline">Server Manager Command Line Syntax</a></li>
+</ul>
+
+  </div><a class="u-url" href="/server-managers-power-is-in-the-command-line/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

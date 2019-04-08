@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Dynamic Software Update Rings in Microsoft Intune | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Dynamic Software Update Rings in Microsoft Intune" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Microsoft Intune provides management of Window 10 Update Rings to enable Windows as a Service, via the Software Updates feature. This enrols a Windows PC into Windows Update for Business to manage feature and quality updates the device receives and how quickly it updates to a new release. As you scale the number of devices managed by Microsoft Intune, the need to manage the software update or deployment rings is key to adopting Windows 10 successfully. Being able to do so dynamically and empowering end-users by involving them in the process sounds like an idea that’s just crazy enough to work. This article details an approach to achieve dynamic software update rings." />
+<meta property="og:description" content="Microsoft Intune provides management of Window 10 Update Rings to enable Windows as a Service, via the Software Updates feature. This enrols a Windows PC into Windows Update for Business to manage feature and quality updates the device receives and how quickly it updates to a new release. As you scale the number of devices managed by Microsoft Intune, the need to manage the software update or deployment rings is key to adopting Windows 10 successfully. Being able to do so dynamically and empowering end-users by involving them in the process sounds like an idea that’s just crazy enough to work. This article details an approach to achieve dynamic software update rings." />
+<link rel="canonical" href="/dynamic-software-update-rings/" />
+<meta property="og:url" content="/dynamic-software-update-rings/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2018/10/mathew-schwartz-397471-unsplash.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-10T14:27:43+11:00" />
+<script type="application/ld+json">
+{"description":"Microsoft Intune provides management of Window 10 Update Rings to enable Windows as a Service, via the Software Updates feature. This enrols a Windows PC into Windows Update for Business to manage feature and quality updates the device receives and how quickly it updates to a new release. As you scale the number of devices managed by Microsoft Intune, the need to manage the software update or deployment rings is key to adopting Windows 10 successfully. Being able to do so dynamically and empowering end-users by involving them in the process sounds like an idea that’s just crazy enough to work. This article details an approach to achieve dynamic software update rings.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/dynamic-software-update-rings/","image":"/wp-content/uploads/2018/10/mathew-schwartz-397471-unsplash.jpg","headline":"Dynamic Software Update Rings in Microsoft Intune","dateModified":"2018-10-10T14:27:43+11:00","datePublished":"2018-10-10T14:27:43+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/dynamic-software-update-rings/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Dynamic Software Update Rings in Microsoft Intune</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-10-10T14:27:43+11:00" itemprop="datePublished">Oct 10, 2018
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Microsoft Intune provides management of <a href="https://docs.microsoft.com/en-us/intune/windows-update-for-business-configure">Window 10 Update Rings</a> to enable <a href="https://docs.microsoft.com/en-us/windows/deployment/update/waas-overview#servicing-channels">Windows as a Service</a>, via the Software Updates feature. This enrols a Windows PC into Windows Update for Business to manage feature and quality updates the device receives and how quickly it updates to a new release. As you scale the number of devices managed by Microsoft Intune, the need to manage the software update or <a href="https://blog.juriba.com/windows-10-deployment-rings">deployment rings</a> is key to adopting Windows 10 successfully. Being able to do so dynamically and empowering end-users by involving them in the process sounds like an idea that’s just crazy enough to work. This article details an approach to achieve dynamic software update rings.</p>
+
+<h1 id="dynamic-groups">Dynamic Groups </h1>
+
+<p>Azure AD Premium includes <a href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-create-rule">Dynamic Device and User groups</a> whose membership can change, well dynamically. This feature enables us to apply software update rings to dynamic groups where the membership can be based on just about any user or device property that suits our needs.</p>
+
+<p>In most cases, applying Windows 10 Update Rings to devices, rather than users, is the best approach to ensure that updates can be better tracked across specific hardware and software combinations. I don’t necessarily want a user moving between PCs and have devices move back and forth between update rings. Basing update rings on dynamic device groups is then likely the better approach.</p>
+
+<h1 id="software-update-rings">Software Update Rings</h1>
+
+<p>For the purposes of illustration, I’ve created a basic approach to update rings with the 3 rings show here:</p>
+
+<ul>
+  <li>Semi-Annual Channel – we need a catch-all ring applied to All Devices. If our dynamic groups that are based on a device property don’t catch a device, it won’t get the correct update ring applied. This approach ensures that by default, a device is treated as generally production ready be being enrolled in the Semi-Annual Channel to receive well tested updates. This ring is assigned to All Devices, while <em>excluding</em> Azure AD dynamic groups assigned to all other rings</li>
+  <li>Semi-Annual Channel (Targeted) – here devices are enrolled for a pilot ring so that the latest Windows 10 release can be tested before rolling out the majority of PCs. This ring applies to a specific Azure AD dynamic group</li>
+  <li>Windows Insider – to preview upcoming Windows 10 releases it’s important to be enrolled in the Windows Insider program. This ring applies to a specific Azure AD dynamic group</li>
+</ul>
+
+<p>My update rings in this example are quite simple, but the approach can be customised for specific environments and needs.</p>
+
+<figure id="attachment_6195" aria-describedby="caption-attachment-6195" style="width: 2268px" class="wp-caption aligncenter">[<img class="wp-image-6195 size-full" src="https://stealthpuppy.com/wp-content/uploads/2018/10/SoftwareUpdateRings.png" alt="Dynamic Software Update Rings" width="2268" height="618" srcset="http://192.168.0.89/wp-content/uploads/2018/10/SoftwareUpdateRings.png 2268w, http://192.168.0.89/wp-content/uploads/2018/10/SoftwareUpdateRings-150x41.png 150w, http://192.168.0.89/wp-content/uploads/2018/10/SoftwareUpdateRings-300x82.png 300w, http://192.168.0.89/wp-content/uploads/2018/10/SoftwareUpdateRings-768x209.png 768w, http://192.168.0.89/wp-content/uploads/2018/10/SoftwareUpdateRings-1024x279.png 1024w" sizes="(max-width: 2268px) 100vw, 2268px" />](https://stealthpuppy.com/wp-content/uploads/2018/10/SoftwareUpdateRings.png)<figcaption id="caption-attachment-6195" class="wp-caption-text">Update Rings configured within Intune Software Updates</figcaption></figure>
+
+<h1 id="assigning-devices">Assigning Devices</h1>
+
+<p>To assign a device to an update ring, we need to leverage a device property that can be dynamically set. Here, <a href="https://docs.microsoft.com/en-us/intune/device-group-mapping">Device Category</a> fits this bill in a number of ways – here, the administrator can view the device category and therefore the device’s update ring, by viewing the device properties in the Intune console. If device category is not set (it will be set to Unassigned), our catch-all update ring will ensure the device is set to a production ready state.</p>
+
+<figure id="attachment_6197" aria-describedby="caption-attachment-6197" style="width: 1700px" class="wp-caption aligncenter">[<img class="size-full wp-image-6197" src="https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneDeviceProperties.png" alt="Device properties in Intune" width="1700" height="1132" srcset="http://192.168.0.89/wp-content/uploads/2018/10/IntuneDeviceProperties.png 1700w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneDeviceProperties-150x100.png 150w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneDeviceProperties-300x200.png 300w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneDeviceProperties-768x511.png 768w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneDeviceProperties-1024x682.png 1024w" sizes="(max-width: 1700px) 100vw, 1700px" />](https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneDeviceProperties.png)<figcaption id="caption-attachment-6197" class="wp-caption-text">Device properties in Intune</figcaption></figure>
+
+<p>The device category can also be viewed in the Intune Company Portal, thus making it easy to view this property from multiple locations. This visibility makes device category a good choice for managing our update rings.</p>
+
+<figure id="attachment_6203" aria-describedby="caption-attachment-6203" style="width: 1920px" class="wp-caption aligncenter">[<img class="size-full wp-image-6203" src="https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceDetails.png" alt="Device details in the Intune Company Portal" width="1920" height="1200" srcset="http://192.168.0.89/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceDetails.png 1920w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceDetails-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceDetails-300x188.png 300w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceDetails-768x480.png 768w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceDetails-1024x640.png 1024w" sizes="(max-width: 1920px) 100vw, 1920px" />](https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceDetails.png)<figcaption id="caption-attachment-6203" class="wp-caption-text">Device properties in the Intune Company Portal</figcaption></figure>
+
+<p>The Intune Administrator creates device categories in the console. As you can see in the image below, I’ve chosen <strong>Production</strong>, <strong>Pilot</strong> and <strong>Preview</strong> as the device categories that provide, hopefully, clear indication as to what each category is for.</p>
+
+<figure id="attachment_6206" aria-describedby="caption-attachment-6206" style="width: 2242px" class="wp-caption aligncenter">[<img class="size-full wp-image-6206" src="https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneDevcecategories.png" alt="Intune Device categories" width="2242" height="782" srcset="http://192.168.0.89/wp-content/uploads/2018/10/IntuneDevcecategories.png 2242w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneDevcecategories-150x52.png 150w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneDevcecategories-300x105.png 300w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneDevcecategories-768x268.png 768w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneDevcecategories-1024x357.png 1024w" sizes="(max-width: 2242px) 100vw, 2242px" />](https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneDevcecategories.png)<figcaption id="caption-attachment-6206" class="wp-caption-text">Intune Device categories</figcaption></figure>
+
+<p>Here’s where the choice of using Device Category for assigning update rings is possibly a bit out there – the end-user chooses the device category! When enrolling their device or launching the Intune Company Portal for the first time they see the device category choices:</p>
+
+<figure id="attachment_6201" aria-describedby="caption-attachment-6201" style="width: 1893px" class="wp-caption aligncenter">[<img class="wp-image-6201 size-full" src="https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceCategory.png" alt="Setting a device category in the Intune Company Portal" width="1893" height="1162" srcset="http://192.168.0.89/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceCategory.png 1893w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceCategory-150x92.png 150w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceCategory-300x184.png 300w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceCategory-768x471.png 768w, http://192.168.0.89/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceCategory-1024x629.png 1024w" sizes="(max-width: 1893px) 100vw, 1893px" />](https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceCategory.png)<figcaption id="caption-attachment-6201" class="wp-caption-text">Setting a device category in the Intune Company Portal</figcaption></figure>
+
+<p>There’s no replacement for end-user education, so it would behoove an organisation to include instructions on which category to choose, but in my mind it’s obvious that most users should choose Production. Having device category descriptions displayed as well would help, but they don’t at this time. Device categories are only shown once and the user cannot change the category after enrolment. Bulk changes to or reporting on categories can be achieved using the new <a href="https://github.com/Microsoft/Intune-PowerShell-SDK">Intune PowerShell SDK</a>.</p>
+
+<h1 id="dynamic-software-update-rings">Dynamic Software Update Rings</h1>
+
+<p>Now that we have Update rings in place and an approach assigning them via Dynamic Device groups in Azure AD, we can create those groups based on membership rules that query Device Category. I’ve created two groups – <strong>Devices-Pilot</strong> and <strong>Devices-Preview</strong> that use a query where <code class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">deviceCategory</code> equals <strong>Pilot</strong> or <strong>Preview</strong> respectively. A <strong>Devices-Production</strong> group can also be created, but isn’t required because the production update ring applies to All Devices. A production devices group would assist with reporting.</p>
+
+<figure id="attachment_6208" aria-describedby="caption-attachment-6208" style="width: 1258px" class="wp-caption aligncenter">[<img class="size-full wp-image-6208" src="https://stealthpuppy.com/wp-content/uploads/2018/10/DynamicGroupRule.png" alt="Dynamic group membership rules" width="1258" height="528" srcset="http://192.168.0.89/wp-content/uploads/2018/10/DynamicGroupRule.png 1258w, http://192.168.0.89/wp-content/uploads/2018/10/DynamicGroupRule-150x63.png 150w, http://192.168.0.89/wp-content/uploads/2018/10/DynamicGroupRule-300x126.png 300w, http://192.168.0.89/wp-content/uploads/2018/10/DynamicGroupRule-768x322.png 768w, http://192.168.0.89/wp-content/uploads/2018/10/DynamicGroupRule-1024x430.png 1024w" sizes="(max-width: 1258px) 100vw, 1258px" />](https://stealthpuppy.com/wp-content/uploads/2018/10/DynamicGroupRule.png)<figcaption id="caption-attachment-6208" class="wp-caption-text">Dynamic group membership rules</figcaption></figure>
+
+<p>For these devices groups, the membership rules are:</p>
+
+<ul>
+  <li>Devices-Production: <code class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">(device.deviceCategory -eq "Production") -or (device.deviceCategory -eq "Unknown")</code> </li>
+  <li>Devices-Pilot: <code class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">(device.deviceCategory -eq "Pilot")</code> </li>
+  <li>Devices-Preview: <code class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">(device.deviceCategory -eq "Preview")</code> </li>
+</ul>
+
+<p>We can take this a step further and account for corporate vs. personal devices. Where users can enrol personal devices and you would prefer not to deploy Software update policies to them, membership can be filtered further. Using an advanced membership rule, update the group membership with:</p>
+
+<ul>
+  <li>Devices-Production: <code class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">((device.deviceCategory -eq "Production") -or (device.deviceCategory -eq "Unknown")) -and (device.deviceOwnership -eq "Company")</code> </li>
+  <li>Devices-Pilot: <code class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">(device.deviceCategory -eq "Pilot") -and (device.deviceOwnership -eq "Company")</code> </li>
+  <li>Devices-Preview: <code class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">(device.deviceCategory -eq "Preview") -and (device.deviceOwnership -eq "Company")</code> </li>
+</ul>
+
+<p>With these groups created, assignments for my Software update rings are:</p>
+
+<ul>
+  <li>Semi-Annual Channel – assign to All Devices and exclude Devices-Pilot and Devices-Preview. </li>
+  <li>Semi-Annual Channel (Targeted) – assign to Devices-Pilot</li>
+  <li>Windows Insider – assign to Devices-Preview</li>
+</ul>
+
+<p>When a category is assigned to a device, the dynamic group will <a href="https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-troubleshooting">update at some point and the policy</a> will apply on a subsequent <a href="https://docs.microsoft.com/en-au/intune/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies">device policy refresh</a>.</p>
+
+<h1 id="dynamic-software-updates">Dynamic Software Updates</h1>
+
+<p>The same approach can be used for deploying applications that provide preview channels similar to Windows. Microsoft Office 365 ProPlus is an obvious choice – we can create Office application deployments using Update Channels with assignments using our Dynamic Device groups.</p>
+
+<figure id="attachment_6207" aria-describedby="caption-attachment-6207" style="width: 1598px" class="wp-caption aligncenter">[<img class="size-full wp-image-6207" src="https://stealthpuppy.com/wp-content/uploads/2018/10/Office365ProPlus.png" alt="Office 365 ProPlus apps in Intune to manage update channels" width="1598" height="460" srcset="http://192.168.0.89/wp-content/uploads/2018/10/Office365ProPlus.png 1598w, http://192.168.0.89/wp-content/uploads/2018/10/Office365ProPlus-150x43.png 150w, http://192.168.0.89/wp-content/uploads/2018/10/Office365ProPlus-300x86.png 300w, http://192.168.0.89/wp-content/uploads/2018/10/Office365ProPlus-768x221.png 768w, http://192.168.0.89/wp-content/uploads/2018/10/Office365ProPlus-1024x295.png 1024w" sizes="(max-width: 1598px) 100vw, 1598px" />](https://stealthpuppy.com/wp-content/uploads/2018/10/Office365ProPlus.png)<figcaption id="caption-attachment-6207" class="wp-caption-text">Office 365 ProPlus apps in Intune to manage update channels</figcaption></figure>
+
+<p>The update rings I’ve implemented in my test environment include:</p>
+
+<ul>
+  <li>Office 365 ProPlus Semi-Annual Channel or Semi-Annual Channel (Targeted) that is assigned to All Devices and excludes Devices-Pilot and Devices-Preview, we have a catch all Office deployment package that will go out to the majority of devices</li>
+  <li>Office 365 ProPlus Semi-Annual Channel (Targeted) or Monthly Channel assigned to the Devices-Pilot group to receive the latest updates</li>
+  <li>Office 365 ProPlus Monthly Channel (Targeted) assigned to the Devices-Preview group to test Office Insider updates for testing upcoming features</li>
+</ul>
+
+<p>Office 365 ProPlus then updates itself on the end-device based on the assigned channel. This actually works quite well for this application as you can pretty seamlessly move between channels as required.</p>
+
+<h1 id="wrapping-up">Wrapping Up</h1>
+
+<p>In this article, I’ve shown you how to enable dynamic Software Update rings for Windows Office in Intune using Azure AD Device Dynamic groups. This uses what may be a controversial approach – devices category chosen by the end-user. Modern device management forces us to rethink our engagement with end-users and involving them more directly in the testing process can help make IT more personal.</p>
+
+<p>For more controlled environments, the choice of category can be overwritten by the administrator, especially for users who may need to roll back to a more stable release.</p>
+
+<p>Photo by <a href="https://unsplash.com/photos/sb7RUrRMaC4?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Mathew Schwartz</a> on <a href="https://unsplash.com/search/photos/software?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+
+  </div><a class="u-url" href="/dynamic-software-update-rings/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

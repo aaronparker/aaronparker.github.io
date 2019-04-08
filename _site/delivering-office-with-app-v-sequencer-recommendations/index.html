@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Delivering Office with App-V – Sequencer Recommendations &#038; Best Practices | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Delivering Office with App-V – Sequencer Recommendations &#038; Best Practices" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Having had to travel to Australia and the US recently, I’ve not had that much time to work on an upcoming white paper, but I have been posting some of the early versions of the chapters. So here’s another in that series while I work on getting the paper finished." />
+<meta property="og:description" content="Having had to travel to Australia and the US recently, I’ve not had that much time to work on an upcoming white paper, but I have been posting some of the early versions of the chapters. So here’s another in that series while I work on getting the paper finished." />
+<link rel="canonical" href="/delivering-office-with-app-v-sequencer-recommendations/" />
+<meta property="og:url" content="/delivering-office-with-app-v-sequencer-recommendations/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-03-05T16:00:14+11:00" />
+<script type="application/ld+json">
+{"description":"Having had to travel to Australia and the US recently, I’ve not had that much time to work on an upcoming white paper, but I have been posting some of the early versions of the chapters. So here’s another in that series while I work on getting the paper finished.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/delivering-office-with-app-v-sequencer-recommendations/","headline":"Delivering Office with App-V – Sequencer Recommendations &#038; Best Practices","dateModified":"2012-03-05T16:00:14+11:00","datePublished":"2012-03-05T16:00:14+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/delivering-office-with-app-v-sequencer-recommendations/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Delivering Office with App-V – Sequencer Recommendations &amp;#038; Best Practices</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2012-03-05T16:00:14+11:00" itemprop="datePublished">Mar 5, 2012
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Having had to travel to Australia and the US recently, I’ve not had that much time to work on an upcoming white paper, but I have been posting some of the early versions of the chapters. So here’s another in that series while I work on getting the paper finished.</p>
+
+<p>Creation of successful App-V packages requires building on a solid base – that base is the machine used to perform sequencing. This section details recommendations for creating the perfect sequencing machine. Follow these recommendations for the best chance at creating clean, successful App-V packages.</p>
+
+<h1 id="obtain-background-information">Obtain background information**</h1>
+<p>**</p>
+
+<p>Microsoft has made available a number of documents as introductions to App-V and the sequencing of applications.</p>
+
+<ul>
+  <li>Review the product documentation that was included together with App-V. This includes the following documents:
+    <ul>
+      <li><a href="http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-V/App-V%204.6%20SP1%20Trial%20Guide.docx">Microsoft Application Virtualization Version 4.6 SP1 Trial Guide</a></li>
+      <li><a href="http://technet.microsoft.com/library/cc843820.aspx">How to Install the Application Virtualization Sequencer</a></li>
+      <li><a href="http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-V/App-V%204.6%20Service%20Pack%201%20Sequencing%20Guide.docx" title="App-V 4.6 Service Pack 1 Sequencing Guide">App-V 4.6 Service Pack 1 Sequencing Guide</a></li>
+    </ul>
+  </li>
+  <li>Review the “Best practices to use for sequencing in Microsoft App-V ” article. For more information, click the following article number to view the article in the Microsoft Knowledge Base: <a href="http://support.microsoft.com/kb/932137">932137</a> (http://support.microsoft.com/kb/932137/)</li>
+  <li>Install the Office suites and applications to become familiar with the functionality of the program. Additionally understand the deployment requirements for Office</li>
+</ul>
+
+<h1 id="dos-and-donts">Do’s and Don’ts**</h1>
+<p>**</p>
+
+<p>Don’t make the sequencing machine an exact copy of your Standard Operating Environment (SOE) or add the machine to your domain. That is, do not create a sequencing machine directly from your SOE; instead create a new environment that closely matches your SOE. There are several reasons for this:</p>
+
+<ul>
+  <li>Your SOE most likely has many pre-requisites or applications installed that may interfere with sequencing, such as security agents and anti-virus</li>
+  <li>Changes to your SOE may break virtual applications – if your SOE has a DLL required by a virtual application, that DLL wouldn’t be captured in the virtual application package. In the event of the SOE changing and the DLL being removed or the version changing, any virtual application package that doesn’t include that DLL may now not work</li>
+  <li>Domain computers may have services, process or scheduled tasks that will interfere with sequencing or may cause files or registry settings to be inadvertently captured – changes made by a process that starts during sequencing will be captured in the package</li>
+  <li>Domain computers may have policies applied that may be inadvertently captured in the package, causing issues with virtual applications or subsequent changes to those policies to be ignored</li>
+</ul>
+
+<p>Based on my own experiences and those of others that I’ve spoken to, the most successful App-V packages are created on vanilla installations of Windows.</p>
+
+<h2 id="donts">Don’ts</h2>
+
+<ul>
+  <li>Don’t add the sequencing VM to the domain, unless sequencing an application that requires it</li>
+  <li>Don’t use an exact copy of your SOE</li>
+  <li>Don’t install anti-virus applications or other security agents</li>
+  <li>If possible, don’t access the Internet directly from the sequencing VM</li>
+</ul>
+
+<h2 id="dos">Do’s</h2>
+
+<ul>
+  <li>Do leave Windows in workgroup mode the majority of applications</li>
+  <li>Do use the same versions of components used in your SOE</li>
+  <li>Do choose carefully which of those components should be installed in the sequencing VM</li>
+  <li>Do scan the VM with the Microsoft Windows Malicious Software Removal Tool; optionally mount the VM’s virtual disk on your host machine and scan it with the anti-virus application on the host</li>
+  <li>Do create a snapshot of the sequencing VM in a clean state</li>
+  <li>Do patch the sequencing VM each month</li>
+</ul>
+
+<h1 id="hardware">Hardware</h1>
+
+<p>Always use a virtual machine to host the sequencing machine – a virtual machine provides snapshots to allow you to capture a clean image of the sequencing VM and then rollback to that clean snapshot after sequencing an application.When taking a snapshot, ensure that the virtual machine is shutdown – do not leave the Sequencer running when taking a snapshot. Leaving the VM running puts you at risk of creating multiple packages with the same GUID. Every App-V package requires a unique GUID.</p>
+
+<p>If you are using a local PC for sequencing, a second hard drive to host the VMs is recommended so that the sequencing process does not affect the host machine.Virtual machine software or hypervisors available for free include:</p>
+
+<ul>
+  <li>Microsoft <a href="http://www.microsoft.com/download/en/details.aspx?id=3702">Windows Virtual PC</a> (Virtual PC does not support 64-bit guests)</li>
+  <li>Microsoft <a href="http://www.microsoft.com/download/en/details.aspx?id=20196">Hyper-V</a>, available as either a stand-alone product or as a component of Windows Server 2008 R2 SP1</li>
+  <li>VMware <a href="http://www.vmware.com/products/player/">Player</a> (note that Player does not support snapshots)</li>
+  <li>VMware <a href="http://www.vmware.com/products/vsphere-hypervisor/">vSphere Hypervisor</a></li>
+  <li>Oracle <a href="https://www.virtualbox.org/">VirtualBox</a></li>
+  <li>Citrix <a href="http://www.citrix.com/xenserver">XenServer</a></li>
+</ul>
+
+<p>Create a new virtual machine with the following virtual hardware:</p>
+
+<ul>
+  <li>1 x vCPU – the Sequencer is still only single threaded and additional CPUs will make little difference</li>
+  <li>A minimum of 1 GB RAM – Windows XP may require less</li>
+  <li>Add NICs, a sound card, USB hubs, COM &amp; LPT ports as required</li>
+  <li>2 x vDisks – use fixed size disks if you have the space. Fixed size disks will offer better IO performance. Additionally the App-V 4.6 SP1 Sequencer can automatically create a Q: drive if none already exists; however a second vDisk is a better approach.</li>
+</ul>
+
+<p><img class="alignleft" style="margin-right: 10px;" src="http://stealthpuppy.com/wp-content/uploads/2012/02/021412_1854_DeliveringO1.png" alt="" width="48" height="48" align="left" /> If no secondary partition exists, the Sequencer setup will create a substituted drive letter for the virtual drive. A known issue exists where this configuration can cause an issue with new and upgraded packages because the Sequencer resolves the full path instead of the substituted drive letter.</p>
+
+<p>This issue looks to be fixed with <a href="http://support.microsoft.com/kb/2571168">Hotfix 3 for the 4.6 SP1 Sequencer</a>; however it is still recommended that you create a second vDisk, rather than let setup create the drive for you.</p>
+
+<h1 id="windows">Windows**</h1>
+<p>**</p>
+
+<p>Windows XP Professional or Windows 7 Enterprise editions are recommended for client OS deployments. If you are sequencing for both Windows XP/7 and Windows Server, sequence on the lowest common denominator (Windows XP in this example). If issues arise with testing a package on a different operating system, create a new version of the package for that OS.To create a clean Windows VM for sequencing, follow these steps:</p>
+
+<ul>
+  <li>Install Windows via the ISO, or better still, create an unattended deployment using the <a href="http://technet.microsoft.com/en-us/solutionaccelerators/dd407791">Microsoft Deployment Toolkit</a> or your software deployment tool of choice, but keep the Windows deployment as vanilla as possible. Use the same Windows version and service pack level as your App-V client machines. This may mean creating multiple sequencing VMs. If you are deploying to both x86 and x64 clients, sequence on an x86 Windows machine, re-sequence the application on 64-bit Windows if required
+    <ul>
+      <li>Service Pack deployment is recommended via a slipstreamed Windows ISO (that is the ISO with the latest service pack integrated into it)</li>
+    </ul>
+  </li>
+  <li>Install the hypervisor tools or additions to install drivers and services required by the hypervisor to support the VM correctly</li>
+  <li>Enable Windows Firewall including the File and Printer Sharing rule to prevent remote PCs from connecting to the virtual machine</li>
+  <li>Active Windows inside the VM. A KMS will be make this simple; however if you are using a MAK key provided by your TechNet or MSDN subscription, this article is recommended reading: <a href="http://stealthpuppy.com/general/managing-product-activation-with-a-technet-subscription-and-msdn-too/">Managing product activation with a TechNet subscription</a></li>
+  <li>Disable System Restore on Windows XP or System Protection on Windows 7</li>
+  <li>Disable Windows Defender on Windows 7 (or disable the service)</li>
+  <li>If deploying Windows 7, leave the following Optional Components enabled:
+    <ul>
+      <li>Windows Search</li>
+      <li>XPS Services</li>
+      <li>XPS Viewer</li>
+    </ul>
+  </li>
+  <li>If deploying Windows XP, remove the following Windows Components:
+    <ul>
+      <li>MSN Explorer</li>
+      <li>Internet Gateway Device Discovery and Control Client</li>
+      <li>Windows Messenger</li>
+      <li>Additionally it’s recommended to remove the Adobe Flash Player that comes with Windows XP: <a href="http://kb2.adobe.com/cps/141/tn_14157.html">http://kb2.adobe.com/cps/141/tn_14157.html</a></li>
+    </ul>
+  </li>
+  <li>If deploying Windows XP or Windows Server 2003, install the following updates from the Microsoft Download Centre: <a href="http://microsoft.com/downloads">http://microsoft.com/downloads</a>
+    <ul>
+      <li>XML Paper Specification Essentials Pack</li>
+      <li>Windows Search 4.0 (available via Windows Update)</li>
+      <li>Windows Media Player 11 (available via Windows Update)</li>
+      <li>Update for Root Certificates (available via Windows Update)</li>
+    </ul>
+  </li>
+  <li>Install the latest version of Internet Explorer for the target operating system – if you would prefer to match the IE version of your SOE, then stick with that version. Set the home page to <em>about:tabs</em>, this will ensure that if Internet Explorer is started during sequencing it won’t attempt to connect to the Internet</li>
+  <li>Install or enable the Microsoft .NET Framework – install the most recent version of the .NET Framework deployed in your environment. Note that .NET Framework 4.0 comes with all previous versions and .NET Framework 3.5 SP1 come with all its previous versions (and so on)</li>
+  <li>Install the Visual C++ Redistributables – 2005, 2008 and 2010 redistributables are recommended. Multiple versions of each redistributable may be required depending on application requirements. It is recommended to install these in order of release</li>
+  <li>Enable Microsoft Update</li>
+  <li>Update Windows with the latest updates – High Priority, Critical and Important updates should be installed at a minimum
+    <ul>
+      <li>Do not install Microsoft Silverlight – this important for Microsoft Lync or if you intend to sequence Silverlight</li>
+      <li>Windows Update may need to be run multiple times to ensure all updates have been detected and installed</li>
+    </ul>
+  </li>
+  <li>Configure the following services (some services are not available on Windows XP):</li>
+</ul>
+
+<table style="border-collapse: collapse;" border="0">
+  <tr>
+    <td>
+      <strong>Service</strong>
+    </td>
+    
+    <td>
+      <strong>State</strong>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Diagnostic Policy Service
+    </td>
+    
+    <td>
+      Disabled
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Offline Files
+    </td>
+    
+    <td>
+      Disabled
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Security Center
+    </td>
+    
+    <td>
+      Disabled
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Windows Defender
+    </td>
+    
+    <td>
+      Disabled
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Windows Search
+    </td>
+    
+    <td>
+      Manual
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Windows Update
+    </td>
+    
+    <td>
+      Manual
+    </td>
+  </tr>
+</table>
+
+<ul>
+  <li>At a minimum, run the following built in applications so that they make changes to the local profile and remove first-run dialogs:
+    <ul>
+      <li>Control Panel</li>
+      <li>Internet Explorer including the Internet Options Control Panel applet
+        <ul>
+          <li>Start Internet Explorer a couple of times</li>
+          <li>Set the home page to <em>about:tabs</em> so that if IE is launched during sequencing, it will not connect to the Internet</li>
+        </ul>
+      </li>
+      <li>Windows Media Player</li>
+      <li>Notepad</li>
+      <li>WordPad</li>
+    </ul>
+  </li>
+  <li>Restart the VM several times and log back on to ensure all first-run dialogs have been acknowledged or do not appear</li>
+</ul>
+
+<p>Additional pre-requisites should only be installed when required by an application. For example, if Office is a pre-requisite of another application (such as SAP products or a plug-in) only install Office when sequencing that application.</p>
+
+<p><img class="alignleft" style="margin-right: 10px;" src="http://stealthpuppy.com/wp-content/uploads/2012/02/021412_1854_DeliveringO2.png" alt="" width="48" height="48" align="left" /> At this point you will have a VM that can be used as a sequencing environment as well as an App-V client. It is highly recommended that you create two VMs based on this environment so that you have a second VM to perform testing of packages to confirm that the sequenced applications work at runtime.</p>
+
+<h1 id="sequencer">Sequencer</h1>
+
+<p>Office 2010 is only supported with the 4.5 SP2 and 4.6 SP1 version of the Sequencer. Office 2007 and Office 2003 can be sequenced with earlier versions. Where possible it is recommended to use the latest Sequencer – this often requires the matching version of the client to be deployed as well (although the App-V 4.6 SP1 Sequencer is backwardly compatible with the App-V 4.6 client).</p>
+
+<p>Install the Sequencer into the VM along with the most recent hotfix rollup. At the time of publishing of this document the most recent versions of the Sequencer are:</p>
+
+<ul>
+  <li>App-V 4.6 Service Pack 1 with Hotfix Rollup 3: <a href="http://support.microsoft.com/kb/2571168">http://support.microsoft.com/kb/2571168</a></li>
+  <li>App-V 4.5 Service Pack 2: <a href="http://support.microsoft.com/kb/980847">http://support.microsoft.com/kb/980847</a></li>
+</ul>
+
+<h1 id="application-install-source">Application Install Source</h1>
+
+<p>Installing applications from a copy of the setup files located on a local disk inside the VM is recommended. Installation of the application from setup files located on a network share may cause files from that location to be captured during sequencing. Create a local folder inside the VM where application setup files will be copied to before sequencing. For example, use C:\Packages or C:\Source.</p>
+
+<p>To ensure successful sequencing, it is not recommended to run setup applications directly from the networkEnsure that the folder is then added as an exclusion in your sequencing projects – often application setups may write log or temporary files to the same folder.</p>
+
+<h1 id="snapshots">Snapshots</h1>
+
+<p>Once Windows has been configured, shutdown the VM – never take a snapshot of the virtual machine with the App-V Sequencer running. Each App-V package must have a unique GUID and snapshots with the Sequencer running are often a source of duplicate GUIDs. Additionally a VM in a shutdown state will take less room on disk for a snapshot because the VM’s RAM won’t be included in the snapshot.</p>
+
+<p>Periodically rollback the VM to this snapshot to install the latest updates from Windows Update, then re-create the snapshot.</p>
+
+<h1 id="sequencer-template">Sequencer Template</h1>
+
+<p>The App-V 4.6 SP1 Sequencer supports templates which will allow you to configure project options including exclusions, enabling Windows Update during sequencing and enabling compression when saving the package. Package templates can be used by multiple sequencing engineers or across multiple Office packages to ensure consistency.</p>
+
+<h1 id="package-options">Package Options**</h1>
+<p>**</p>
+
+<p>A number of options can be set in a sequencer template that may be required for an Office package:</p>
+
+<ul>
+  <li>Allow Microsoft Update to run during monitoring – enable updating of an Office package via Windows Update</li>
+  <li>Allow all named objects and COM objects to interact with the local system – this enabled LOCAL_INTERACTION_ALLOWED in the OSD file. This will save you from having to set this option manually after sequencing. If you are creating an Office package that will co-exist with other Office packages or locally installed Office, do not enable this option</li>
+  <li>Compress Package – Reduce the size of your Office package with compression. Recommended for all Office packages.</li>
+</ul>
+
+<h1 id="exclusions">Exclusions</h1>
+
+<p><em>**</em>The table below lists the recommended exclusions to add when sequencing Office applications.</p>
+
+<table border="0">
+  <tr>
+    <td>
+      <strong>Path</strong>
+    </td>
+    
+    <td>
+      <strong>Description</strong>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        %CSIDL_COMMON_APPDATA%\Microsoft\RAC
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Microsoft Reliability Analysis Component.
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        %CSIDL_PROFILE%\Lync Recordings
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Microsoft Lync saved recordings folder. Just like documents, we don&#8217;t want these being saved into the virtual environment
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        %CSIDL_PROGRAM_FILES%\MSECACHE
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Outlook Connector cache. Reduce the package size by excluding cached installers
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        %CSIDL_PROGRAM_FILESS%\OCSetup
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Lync/Communicator cached setup files. Reduce the package size by excluding cached installers
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        %CSIDL_WINDOWS%\Installer
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Windows Installer cache. Reduce the package size by excluding cached installers
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        %CSIDL_WINDOWS%\SoftwareDistribution
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Windows Update. Ensure that these files are not cached to prevent breaking future updates to the package
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        %SFT_MNT%\Config.msi
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Windows Installer rollback files. Reduce the package size by excluding cached installers
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        %SFT_MNT%\MSOCACHE
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Microsoft Office installer cache. Reduce the package size by excluding cached installers
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        C:\MSOCACHE
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Microsoft Office installer cache. Reduce the package size by excluding cached installers
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        <source folder="" /> (e.g. C:\Packages)
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        A local folder that contains Office setup. Ensure that any changed files are not captured
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        Q:\Config.msi
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Windows Installer rollback files. Reduce the package size by excluding cached installers
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        Q:\MSOCACHE
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Microsoft Office installer cache. Reduce the package size by excluding cached installers
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        \REGISTRY\MACHINE\Software\Policies
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Machine-level Group Policies. Ensure that Group Policy can deliver Office policies post deployment
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        \REGISTRY\USER\%SFT_SID%\Software\Microsoft\Tracing
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Microsoft Tracing settings
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        \REGISTRY\USER\%SFT_SID%\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        User-level proxy server and other browser settings. Ensure that proxy settings aren&#8217;t cached in the package
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        \REGISTRY\USER\%SFT_SID%\Software\Microsoft\Internet Explorer
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        Internet Explorer settings. Ensure Internet Explorer settings aren&#8217;t cached in the package
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p style="font-size: small;">
+        \REGISTRY\USER\%SFT_SID%\Policies
+      </p>
+    </td>
+    
+    <td>
+      <p style="font-size: small;">
+        User level Group Policies. Ensure that Group Policy can deliver Office policies post deployment
+      </p>
+    </td>
+  </tr>
+</table>
+
+<h1 id="using-the-sequencer-template">Using the Sequencer Template</h1>
+
+<p>To create a sequencer template, open the Sequencer and choose Tools / Options to set the package options and exclusions. Then choose File / Save As Template to save the file to disk. Save the template to a file and open in a text editor such as Notepad. The new template will have a number of changes over a default templateUnder DEFAULTS, the following options will be set to Yes (if they aren’t change them to Yes):</p>
+
+<p>[code]<DEFAULT Name="AllowMUADuringMonitoring" Value="Yes"></DEFAULT></p>
+<DEFAULT Name="CompressPackage" Value="Yes" />
+<p>[/code]</p>
+
+<p>Additional exclusions should also be listed, for example:</p>
+
+<p>[code]<EXCLUSION Pattern="Q:\MSOCACHE" Context="VFS\_EXC" Type="PSR\_DataSystem"></EXCLUSION>[/code]</p>
+
+<p>The DEFAULTOSD section sets the LOCAL_INTERACTION_ALLOWED option:</p>
+
+<p>[code]<DEFAULTOSD><SOFTPKG><IMPLEMENTATION><CODEBASE HREF="rtsps://%SFT\_SOFTGRIDSERVER%:322/"></CODEBASE><OS VALUE="Win7"></OS><VIRTUALENV><POLICIES>&lt;LOCAL\_INTERACTION\_ALLOWED&gt;TRUE&lt;/LOCAL\_INTERACTION_ALLOWED&gt;</POLICIES></VIRTUALENV></IMPLEMENTATION></SOFTPKG>  
+</DEFAULTOSD>[/code]</p>
+
+<p>To use the template during sequencing, start the Sequencer and choose File / New from Template, and choose your Sequencer Template file.</p>
+
+  </div><a class="u-url" href="/delivering-office-with-app-v-sequencer-recommendations/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

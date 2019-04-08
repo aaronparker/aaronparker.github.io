@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Managing product activation with a TechNet subscription (and MSDN too) | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Managing product activation with a TechNet subscription (and MSDN too)" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’ve been avoiding activating Windows installations in my home test environment with the product keys from my TechNet subscription because I’ve been afraid of running out of keys. Fortunately that fear has been mostly unfounded. I won’t go into what I really think about product activation but if you’re interested in how to manage your TechNet or MSDN keys, I have discussed how I’m doing that here." />
+<meta property="og:description" content="I’ve been avoiding activating Windows installations in my home test environment with the product keys from my TechNet subscription because I’ve been afraid of running out of keys. Fortunately that fear has been mostly unfounded. I won’t go into what I really think about product activation but if you’re interested in how to manage your TechNet or MSDN keys, I have discussed how I’m doing that here." />
+<link rel="canonical" href="/managing-product-activation-with-a-technet-subscription-and-msdn-too/" />
+<meta property="og:url" content="/managing-product-activation-with-a-technet-subscription-and-msdn-too/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-05-02T19:39:54+10:00" />
+<script type="application/ld+json">
+{"description":"I’ve been avoiding activating Windows installations in my home test environment with the product keys from my TechNet subscription because I’ve been afraid of running out of keys. Fortunately that fear has been mostly unfounded. I won’t go into what I really think about product activation but if you’re interested in how to manage your TechNet or MSDN keys, I have discussed how I’m doing that here.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/managing-product-activation-with-a-technet-subscription-and-msdn-too/","headline":"Managing product activation with a TechNet subscription (and MSDN too)","dateModified":"2010-05-02T19:39:54+10:00","datePublished":"2010-05-02T19:39:54+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/managing-product-activation-with-a-technet-subscription-and-msdn-too/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Managing product activation with a TechNet subscription (and MSDN too)</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-05-02T19:39:54+10:00" itemprop="datePublished">May 2, 2010
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><a href="http://stealthpuppy.com/wp-content/uploads/2010/05/ComputerTick.png"><img style="margin: 0px 10px 10px 0px; display: inline; border-width: 0px;" title="ComputerTick" src="http://stealthpuppy.com/wp-content/uploads/2010/05/ComputerTick_thumb.png" border="0" alt="ComputerTick" width="128" height="128" align="left" /></a> I’ve been avoiding activating Windows installations in my home test environment with the product keys from my TechNet subscription because I’ve been afraid of running out of keys. Fortunately that fear has been mostly unfounded. I won’t go into what I really think about product activation but if you’re interested in how to manage your TechNet or MSDN keys, I have discussed how I’m doing that here.</p>
+
+<p>Microsoft delivered a webcast recently, entitled <a href="https://msevents.microsoft.com/CUI/WebCastEventDetails.aspx?culture=en-US&amp;EventID=1032448730">Product Activation in Development Environments</a>, which discusses Windows Product Activation for development and test environments. Although aimed at developers using an MSDN subscription (IT Pros don’t have to worry about licensing and product activation?) the concepts discussed apply to TechNet subscriptions as well.</p>
+
+<p>A companion white paper, Windows Activation in Development and Test Environments, can be <a href="http://technet.microsoft.com/en-us/library/dd981009.aspx">viewed on TechNet</a> or downloaded as <a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=4dea973e-8235-4bad-8f6d-e08d14d08075">a Word document</a>. The webcast and white paper go into plenty of detail about production activation, different product key types and how to manage product activation, but they are focused on corporate development and test environments. If you have a personal TechNet subscription for your own testing, your options are limited in comparison.</p>
+
+<h3 id="what-do-you-get-with-a-technet-subscription">What do you get with a TechNet subscription?</h3>
+
+<p>Quite a lot actually. If you don’t already have a TechNet Plus subscription you should read about it <a href="http://technet.microsoft.com/en-us/subscriptions/default.aspx">here</a> (read about MSDN subscriptions <a href="http://msdn.microsoft.com/en-us/subscriptions/default.aspx">here</a> – MSDN gives you much more than TechNet, but with a price to match).</p>
+
+<p>However it is interesting to discuss what you don’t get with a TechNet or MSDN subscription, and that is the activation feature that would make activation simplest – Key Management Service (KMS) keys. You do get retail and MAK (Multiple Activation Key) keys. This means that the number of activations that you are entitled to are finite. What I wasn’t aware of is what the number of activations is for each product.</p>
+
+<p>Windows Vista, Windows Server 2008, Windows 7, Windows Server 2008 R2 and Office 2010 products must all be activated using <a href="http://technet.microsoft.com/en-gb/library/cc303277.aspx">Volume Activation (VA) 2.0</a> product keys. TechNet provides MAK keys for Windows Server and Enterprise editions of Windows 7. Retail keys are provided for all other editions and other VA 2.0 products.</p>
+
+<p>In the case of Windows Server 2008 R2 (Standard and Enterprise) and Windows 7 Enterprise, the number of activations is 500 for each. Windows Server 2008 MAK keys also provide for 500 activations, but Windows Vista Enterprise gets only 10. At this stage, I only have access to Retail keys for Office Professional Plus 2010, but I do get 10 activations for each version (totalling 30) of Visio and Project 2010 (Standard, Professional and Premium). Perhaps more keys for Office 2010 are forthcoming.</p>
+
+<h3 id="strategies-for-managing-production-activations">Strategies for managing production activations</h3>
+
+<p>TechNet and MSDN subscriptions are not entitled to KMS keys, so you will have to use at least some of those MAK activations. In my own test environment, I have activated my Hyper-V host, a domain controller and a server used for hosting databases and a couple of other services. I am now going to activate almost all of my virtual machines that I intend on keeping for any extended period of time.</p>
+
+<p><span style="text-decoration: line-through;">To enable reuse of activations in the event of redeploying Windows to a virtual machine, there are a couple of steps you should follow:</span></p>
+
+<ol>
+  <li><span style="text-decoration: line-through;">Assign virtual machines by operating system, i.e. virtual machines should run Windows Server or Windows client operating systems </span></li>
+  <li><span style="text-decoration: line-through;">Don’t delete your virtual machines (VHDs or VMDKs are OK to delete), instead reuse them </span></li>
+</ol>
+
+<p><span style="text-decoration: line-through;">Reinstalling the same version and edition of Windows using the same product key on a machine should not count against your total activation account.</span></p>
+
+<p><strong><em>Update</em></strong>: OK, my information in regards to MAK keys wasn’t exactly correct. The TechNet site doesn’t make it exactly clear as to what happens specifically with keys provided to subscribers; however it’s worth reading this page: <a href="http://www.microsoft.com/licensing/existing-customers/product-activation-faq.aspx">Frequently Asked Questions About Volume License Keys</a> for lot’s of good information about activation. I was able to speak with TechNet technical support to get some answers on product activation, so I’ll summarise here:</p>
+
+<ul>
+  <li>MAK keys provide a set number of activations (in the case of the newer products, TechNet subscribers get 500 activations). This number is not directly related to what you are licensed to install – it’s just a limit on the number of activations per key.</li>
+  <li>Activations of MAK keys will count against the total activations whether you are reinstalling on the same hardware or not. The TechNet representative alluded to a current (as at May 2010) issue with activations in virtual environments. I couldn’t get more information on that but I don’t believe that this impacts MAK activations anyway.</li>
+  <li><em>However</em>: if you the VAMT to proxy activate your machines, those machines will use the same activation if you reload and proxy reactivate on the same hardware. When proxy activating you will must store the proxy activation information – if you loose that, you will lose the activations that you have completed.</li>
+  <li>MAK keys provided in TechNet (and MSDN subscriptions) are the same as MAK keys provided to Volume License customers. So the same thing applied to where-ever you are using MAK keys.</li>
+  <li>Retail keys (like those provided for Office 2010) should reactivate on the same hardware and not count against your total number of activations.</li>
+  <li>The good news is that if you run out of activations for a particular MAK key or set of MAK keys, you can contact Microsoft to increase the number of activations as long as you are using those keys for installing products for testing purposes and not production. If you need to increase your activation counts just contact your TechNet Regional Service Centre and they’ll be happy to help.</li>
+</ul>
+
+<p>If you would prefer not to activate Windows, you can do the following:</p>
+
+<ul>
+  <li>Rearm Windows every 30 days, up to 3 times, to extend the pre-activation period to 120 days with the <a href="http://www.google.co.uk/search?hl=en&amp;source=hp&amp;q=windows+activation+rearm&amp;btnG=Google+Search&amp;meta=&amp;aq=f&amp;oq=">SLMGR –rearm</a> command.</li>
+  <li>Create unattended deployments using the Microsoft Deployment Toolkit (or even SCCM) so that you can redeploy Windows to those test machines once the pre-activation period is up. If you can separate the data from the machine, then reinstalling Windows shouldn’t be that much of an issue.</li>
+</ul>
+
+<p>Knowing that I have 500 activations for most of the products that are important to me, then perhaps activation isn’t that much of an issue. I am also fairly certain that when my current subscription expires on Wednesday and my new subscription kicks in, I will get a new set of keys – far more machines than I could get running on a single hypervisor with 12 GB of RAM.</p>
+
+<h3 id="using-the-vamt-to-track-activations-and-product-keys">Using the VAMT to track activations and product keys</h3>
+
+<p>The <a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=ec7156d2-2864-49ee-bfcb-777b898ad582">Volume Activation Management Tool (VAMT) 2.0</a> is provided to manage keys and you can use this with TechNet, MSDN or Volume License keys to keep track of machine and key status.</p>
+
+<p>The tool itself is very simple. In the example screenshot below, I have imported a list of machines from Active Directory and this shows the status of machines that I have scanned:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/05/VAMTAllProducts.png"><img style="display: inline; border-width: 0px;" title="VAMTAllProducts" src="http://stealthpuppy.com/wp-content/uploads/2010/05/VAMTAllProducts_thumb.png" border="0" alt="VAMTAllProducts" width="660" height="368" /></a></p>
+
+<p>Once machines are imported, I can select a machine or a group of machines and update their status to view the installed products (Windows and Office 2010 will be reported). Remote machines must be powered up to gather their status, unfortunately this information isn’t stored in AD and I can’t scan powered down virtual machines. Product keys can be installed and activated on remote machines directly from the VAMT console.</p>
+
+<p>By importing product keys into the VAMT, you can track the number of activations for MAK and KMS keys (it doesn’t report on Retail keys). This will help you discover the total number of activations you have for each product and keep track of the number of actual activations.</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/05/VAMTProductKeys.png"><img style="display: inline; border-width: 0px;" title="VAMTProductKeys" src="http://stealthpuppy.com/wp-content/uploads/2010/05/VAMTProductKeys_thumb.png" border="0" alt="VAMTProductKeys" width="660" height="292" /></a></p>
+
+<p>For more information on VAMT and how to use it to management production activation in your environment, see the following links:</p>
+
+<ul>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=ec7156d2-2864-49ee-bfcb-777b898ad582">Volume Activation Management Tool (VAMT) 2.0</a></li>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=6e1377c3-9348-4b89-a92d-3e4801bcd2bf">Product Activation Using VAMT 2.0</a></li>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=a6d4ee56-a19e-4b62-a5c8-94eb8b9a4d78">Manage Activation Using VAMT 2.0</a></li>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=812e96b3-5be5-448b-881f-d8ef9f89f37c">Manage Product Keys Using VAMT 2.0</a></li>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=0bbd06d1-f483-4e6b-9fdc-beaf28edfe4a">Activation in Disconnected Environments Using VAMT 2.0</a></li>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=e0fb0042-4aee-4bb2-8b93-266fa29b8575">Reporting Activation Information Using VAMT 2.0</a></li>
+</ul>
+
+<p>It is important to note that even if your TechNet or MSDN subscription expires you <em>should</em> still have access to your keys, and can activate those that you might have saved. It is worth obtaining all of the keys that you are entitled to and exporting them from TechNet well <a href="http://stealthpuppy.com/general/export-your-product-keys-before-your-technet-subscription-expires">before your subscription expires</a>.</p>
+
+<p>For complete information on Volume Activation, your first port of call should be the <a href="http://technet.microsoft.com/volumeactivation">Windows Volume Activation</a> site on TechNet.</p>
+
+  </div><a class="u-url" href="/managing-product-activation-with-a-technet-subscription-and-msdn-too/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

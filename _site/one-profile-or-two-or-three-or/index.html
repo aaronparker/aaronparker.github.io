@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>One profile, or Two, or Three, or… | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="One profile, or Two, or Three, or…" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Surely one of the main goals of any good desktop delivery project is to remove the user’s reliance on any single device?" />
+<meta property="og:description" content="Surely one of the main goals of any good desktop delivery project is to remove the user’s reliance on any single device?" />
+<link rel="canonical" href="/one-profile-or-two-or-three-or/" />
+<meta property="og:url" content="/one-profile-or-two-or-three-or/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-10-28T18:27:40+11:00" />
+<script type="application/ld+json">
+{"description":"Surely one of the main goals of any good desktop delivery project is to remove the user’s reliance on any single device?","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/one-profile-or-two-or-three-or/","headline":"One profile, or Two, or Three, or…","dateModified":"2011-10-28T18:27:40+11:00","datePublished":"2011-10-28T18:27:40+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/one-profile-or-two-or-three-or/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">One profile, or Two, or Three, or&amp;#8230;</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2011-10-28T18:27:40+11:00" itemprop="datePublished">Oct 28, 2011
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img class="alignright size-full wp-image-2432" style="margin-left: 5px; margin-right: 5px;" title="User001" src="http://stealthpuppy.com/wp-content/uploads/2011/10/User001.png" alt="" width="128" height="128" />Surely one of the main goals of any good desktop delivery project is to remove the user’s reliance on any single device?</p>
+
+<p>To achieve that goal, we need to ensure that the user’s environment is available across any device. Whether the desktop is a physical PC, Remote Desktop server or running on a virtual machine in the data centre, providing the user with a consistent view of their applications allows them to be productive as soon as they logon.</p>
+
+<p>Once we achieve device independence, users should rightly expect that their data and preferences will be available where ever they logon. At least, that’s what I would expect – I don’t care too much how I access an application, I’d like some consistency when I do access them. I’d like my favourites to follow me (<a href="http://www.google.co.uk/support/chrome/bin/answer.py?answer=185277">Google got this right with Chrome</a>), I’d like my application settings to follow me, and of course my data as well.</p>
+
+<p>How do we do this in a corporate environment today, with multiple operating systems and often multiple versions of an application? I can bet you aren’t achieving that with standard Roaming Profiles.</p>
+
+<p>I’ve recently finished working on a project consisting of migrating to Windows 7 which also includes delivering desktops and applications using Citrix XenDesktop and XenApp. A key component of the migration was to provide users with some consistency across those desktops.</p>
+
+<p>That’s not as simple as task as it may sound. How do you migrate user settings and preferences from the previous operating system and roam settings between Windows 7 and Windows Server 2008 R2 (and with any luck, back again)?</p>
+
+<p>Another barrier, and a surprising one to me, is that (depending on the size of the organisation) all architecture and engineering teams need to be on board with the roaming train. Having dealt with a team that was responsible for some of the core applications, who didn’t understand roaming, clear direction on the approach to the user environment is critical.</p>
+
+<p>So my goal has been is this – provide the user with a single set of preferences across all operating systems. Even moving those preferences to down level versions of Windows if the project demands it. There will always be a certain subset of preferences that can’t be moved across Windows versions; however for the most part this is achievable.</p>
+
+<p>I asserted this during my sessions at BriForum this year, in London and Chicago, <a href="http://briforum.com/US/sessions.html#userenvironment">User Environment Smack Down</a> – a single profile per user provides the best user experience.</p>
+
+<p>However what if you don’t want that? Perhaps it’s a valid approach for a user to have completely separate profiles per machine. So I thought that a completely non-scientific poll might be an interesting way to find out your thoughts. Have you say by voting in the poll embedded below:</p>
+
+<p>[polldaddy poll=”5295720″]</p>
+
+<p>So how do you get to a single profile? For an independent review of the 3rd party solutions available for achieving a consistent user environment regardless of device, download the <a href="http://www.brianmadden.com/blogs/rubenspruijt/archive/2011/06/29/user-environment-management-smackdown-head-to-head-analysis-of-appsense-citrix-immidio-liquidware-labs-microsoft-quest-res-scense-tricerat-unidesk-and-vuem.aspx">User Environment Smack Down white paper from brianmadden.com</a>. We’ve been hard at work on version 1.1 which is due very soon.</p>
+
+  </div><a class="u-url" href="/one-profile-or-two-or-three-or/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

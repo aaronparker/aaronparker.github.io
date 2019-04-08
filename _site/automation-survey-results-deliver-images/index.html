@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>OS Automation Survey Results – What Solution is Used to Deliver Images? | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="OS Automation Survey Results – What Solution is Used to Deliver Images?" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In the previous article, we covered which automation solutions are in use to create (and manage) master images. In this article we’ll cover what tools or technologies are used to deliver an image to an end-point (that being a virtual machine or a physical device)." />
+<meta property="og:description" content="In the previous article, we covered which automation solutions are in use to create (and manage) master images. In this article we’ll cover what tools or technologies are used to deliver an image to an end-point (that being a virtual machine or a physical device)." />
+<link rel="canonical" href="/automation-survey-results-deliver-images/" />
+<meta property="og:url" content="/automation-survey-results-deliver-images/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2015/11/5954193181_07aa522a0d_o.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-11-16T19:21:20+11:00" />
+<script type="application/ld+json">
+{"description":"In the previous article, we covered which automation solutions are in use to create (and manage) master images. In this article we’ll cover what tools or technologies are used to deliver an image to an end-point (that being a virtual machine or a physical device).","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/automation-survey-results-deliver-images/","image":"/wp-content/uploads/2015/11/5954193181_07aa522a0d_o.jpg","headline":"OS Automation Survey Results – What Solution is Used to Deliver Images?","dateModified":"2015-11-16T19:21:20+11:00","datePublished":"2015-11-16T19:21:20+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/automation-survey-results-deliver-images/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">OS Automation Survey Results &amp;#8211; What Solution is Used to Deliver Images?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2015-11-16T19:21:20+11:00" itemprop="datePublished">Nov 16, 2015
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In the previous article, we covered <a href="http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/">which automation solutions are in use to create</a> (and manage) master images. In this article we’ll cover what tools or technologies are used to deliver an image to an end-point (that being a virtual machine or a physical device).</p>
+
+<p>This is an important distinction – often the solution for delivering the master image is relied upon for “image management”; however these solutions aren’t typically capable of creating a framework for repeatable, consistent image creation. Solutions available for VDI (and RDS) for image delivery might differ depending on the product and some of those include image versioning, but they do not enable complete recreation of an image from scratch without some form of automation.</p>
+
+<h1 id="image-delivery-solutions">Image Delivery Solutions</h1>
+
+<p>Based on 524 responses to this question, we are able to see the following usage:</p>
+
+<figure id="attachment_4205" aria-describedby="caption-attachment-4205" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4205" src="http://stealthpuppy.com/wp-content/uploads/2015/11/WhatIsUsedToDeliverImage-1024x554.png" alt="What is used to deliver a standardised image to VMs or end-points." width="1024" height="554" srcset="http://192.168.0.89/wp-content/uploads/2015/11/WhatIsUsedToDeliverImage-1024x554.png 1024w, http://192.168.0.89/wp-content/uploads/2015/11/WhatIsUsedToDeliverImage-150x81.png 150w, http://192.168.0.89/wp-content/uploads/2015/11/WhatIsUsedToDeliverImage-300x162.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2015/11/WhatIsUsedToDeliverImage.png)<figcaption id="caption-attachment-4205" class="wp-caption-text">What is used to deliver a standardised image to VMs or end-points.</figcaption></figure>
+
+<p>This result is similar to <a href="http://stealthpuppy.com/automation-survey-results-vdi-platforms/">the overall usage of VDI solutions</a> – Citrix PVS and MCS usage is higher than other solutions because the amount of XenDesktop and XenApp deployments is far higher than competing products. Based on this usage, we can make a reasonable assumption that the majority of Citrix-based deployments are non-persistent; however “persistent desktops” based on MCS is common, so the numbers won’t be completely reflective of this chart.</p>
+
+<h2 id="observations">Observations</h2>
+
+<p>Due to the manner in which we’ve asked this particular question, I’m unable to correlate delivery solutions against some of the other useful data, so we can draw some limited conclusions at this time. In the next article where we discuss patching schedules, it will be interested to link to delivery solutions.</p>
+
+<p>One thing that did surprise me, is that I was unable to find any responder using Citrix PVS and a completely manual build process for their images. I’m not sure whether this is reflective of real world deployments or a result of how we asked the questions (I think the latter), but based on real world experience, I find this hard to believe. Perhaps several years of <a href="http://stealthpuppy.com/hands-off-my-gold-image-a-recap-from-citrix-synergy-2013/">encouraging people to automation their builds</a> is paying off. 😉</p>
+
+<p>Looking at those using PVS, each respondent has selected a custom scripted solution, typically in-conjunction with others tools such as MDT. 51 respondents are using a custom scripted solution for their master images with PVS only. For MCS this was 24 using a custom scripted solution only.</p>
+
+<p>133 respondents use both PVS and MCS in their environments. Again, because we have respondents who are consultants delivering multiple environments there is cross-over here, but it is interesting nonetheless to see multiple Citrix delivery options used.</p>
+
+<p>What about physical hardware? 6% of respondents use no virtualization at all in their SBC/VDI environments.</p>
+
+<h1 id="next-up">Next Up</h1>
+
+<p>In the next article, we’ll take a look at how often people are <a href="http://stealthpuppy.com/automation-survey-results-update-images/">patching their master images</a>.</p>
+
+<p> </p>
+
+  </div><a class="u-url" href="/automation-survey-results-deliver-images/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

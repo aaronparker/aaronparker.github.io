@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Sequencing Mozilla Firefox 8 | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Sequencing Mozilla Firefox 8" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Mozilla has just released Firefox 8, so it’s time to look at virtualizing the new version. It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. Here’s how to successfully sequence Mozilla Firefox 8.x." />
+<meta property="og:description" content="Mozilla has just released Firefox 8, so it’s time to look at virtualizing the new version. It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. Here’s how to successfully sequence Mozilla Firefox 8.x." />
+<link rel="canonical" href="/sequencing-mozilla-firefox-8/" />
+<meta property="og:url" content="/sequencing-mozilla-firefox-8/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-11-08T13:00:42+11:00" />
+<script type="application/ld+json">
+{"description":"Mozilla has just released Firefox 8, so it’s time to look at virtualizing the new version. It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. Here’s how to successfully sequence Mozilla Firefox 8.x.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/sequencing-mozilla-firefox-8/","headline":"Sequencing Mozilla Firefox 8","dateModified":"2011-11-08T13:00:42+11:00","datePublished":"2011-11-08T13:00:42+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/sequencing-mozilla-firefox-8/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Sequencing Mozilla Firefox 8</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2011-11-08T13:00:42+11:00" itemprop="datePublished">Nov 8, 2011
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img src="http://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" alt="" align="right" />Mozilla has just released Firefox 8, so it’s time to look at virtualizing the new version. It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. Here’s how to successfully sequence <a href="http://www.mozilla.com/en-US/firefox/">Mozilla Firefox 8.x</a>.</p>
+
+<h3 id="what-you-lose-by-virtualizing-firefox">What you lose by virtualizing Firefox</h3>
+
+<p>Virtualizing Firefox with App-V will isolate the application from the OS, so the following features will not be available once Firefox has been sequenced:</p>
+
+<ul>
+  <li>Firefox Jump Lists in the Start Menu and Taskbar</li>
+  <li>The ability set the browser as default</li>
+</ul>
+
+<h3 id="firefox-features-to-disable">Firefox features to disable</h3>
+
+<p>There are a couple of features that should be disabled when running Firefox under App-V:</p>
+
+<ul>
+  <li>Automatic updates for Firefox – <em>Options / Advanced / Update – Automatically check for updates to: Firefox</em>. Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile</li>
+  <li>Default browser check – <em>Options / Advanced / General – Always check to see if Firefox is the default browser on startup</em>. Once Firefox is isolated from the OS, the user won’t be able to make it the default browser</li>
+</ul>
+
+<p>I will cover using a couple of customisation to ensure these features are disabled for any new Firefox profile.</p>
+
+<h3 id="managing-the-firefox-profile--virtualize-or-not">Managing the Firefox profile – virtualize or not?</h3>
+
+<p><a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">Firefox stores preferences, extensions and other user data</a> in:</p>
+
+<ul>
+  <li>%APPDATA%\Mozilla (preferences, bookmarks etc.); and</li>
+  <li>%LOCALAPPDATA%\Mozilla (browser cache)</li>
+</ul>
+
+<p>The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% – this is a good thing and I don’t recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla_to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time. There are several reasons why this approach is a good idea:</p>
+
+<ul>
+  <li>Some of the configuration files within the Firefox profile include hard-codes paths – challenging if your App-V virtual drive changes between clients</li>
+  <li>Virtualizing the profile increases the complexity of upgrading Firefox packages especially challenging given <a href="http://www.zdnet.com/blog/bott/mozilla-to-enterprise-customers-drop-dead/3497">Mozilla’s new approach to Firefox releases</a>. By storing the Firefox profile on the real file system, Firefox can be deployed via completely unrelated packages – no need to create upgrade versions</li>
+  <li>Users can potentially create multiple Firefox profiles, with each stored in the users’ PKG file. The minimum size for a new Firefox profile is 12Mb – the PKG file will grow by 12Mb for each new Firefox profile created</li>
+</ul>
+
+<p>By excluding %APPDATA% and not virtualizing the user profile you will gain some flexibility with your Firefox deployment.</p>
+
+<h3 id="configuring-firefox-defaults">Configuring Firefox Defaults</h3>
+
+<p>If a Firefox profile is not virtualized within the package any options set during the monitoring phase won’t be captured. Fortunately Firefox can be configured with defaults for any new profile so that it will contain your required configuration options.</p>
+
+<p>Mozilla has made it easy to deploy custom default settings and preferences – by adding files to <em>%ProgramFiles%\Mozilla Firefox\defaults\profile</em> (change the path to suit your environment), new Firefox profiles will pick up a copy of these files when the profile is created. I will walk through adding a couple of files to this location to ensure that any new Firefox profile receives the required settings. You can find more detailed documentation on these features in the following articles:</p>
+
+<ul>
+  <li><a href="http://kb.mozillazine.org/User.js_file">User.js file</a></li>
+  <li><a href="http://kb.mozillazine.org/Prefs.js_file">Prefs.js file</a></li>
+  <li><a href="http://kb.mozillazine.org/UserChrome.css">UserChrome.css</a> and <a href="http://kb.mozillazine.org/UserChrome.css_Element_Names/IDs">Chrome element names and IDs</a></li>
+  <li><a href="http://www.binaryturf.com/enterprise-build-firefox-deployment/">Enterprise Build Of Firefox For Deployment</a></li>
+</ul>
+
+<p>To enforce user settings we can leverage <a href="http://kb.mozillazine.org/User.js_file"><em>user.js</em></a> and the use <a href="http://www-archive.mozilla.org/unix/customizing.html"><em>UserChrome.css</em></a> to remove those user interface elements. Available below is a copy of <em>user.js</em> that disables automatic updates of Firefox and checking whether it is the default browser:</p>
+
+<p class="download">
+  [download id=&#8221;44&#8243; format=&#8221;1&#8243;]
+</p>
+
+<p>A simple approach to extending the options in <a href="http://kb.mozillazine.org/User.js_file">user.js</a> and <a href="http://kb.mozillazine.org/Prefs.js_file">prefs.js</a> is to install Firefox and configure it the way you would like. Then open prefs.js from the new profile and use the entries to create custom versions.</p>
+
+<p>Available here is a copy of <em>userChrome.css</em> that will remove from the user interface the options to enable browser updates and set Firefox as the default browser:</p>
+
+<p class="download">
+  [download id=&#8221;45&#8243; format=&#8221;1&#8243;]
+</p>
+
+<h3 id="sequencing-platform">Sequencing Platform</h3>
+
+<p>I have sequenced Firefox 8 on a clean Windows 7 SP1 x86 VM with all current updates and no other applications other than the App-V Sequencer. I’ve configured a Q: drive using a second vDisk, rather than let the Sequencer create a Q: drive for me. I’ve used a VFS install and tested successfully; however if you would prefer a MNT install just change the install folder when installing Firefox</p>
+
+<p>The Firefox version available from Mozilla is an x86 application (x64 build are available from other sources), so I generally recommend sequencing Firefox on Windows 7 x86 virtual machine even though you may be deploying to 64-bit Windows. However confirm this in your own environment and re-sequence for 64-bit platforms if required.</p>
+
+<h3 id="sequencer-configuration">Sequencer Configuration</h3>
+
+<p>Before Sequencing, add the following exclusions:</p>
+
+<ul>
+  <li>%CSIDL_APPDATA%\Mozilla</li>
+  <li>%CSIDL_COMMON_APPDATA%\Microsoft\RAC</li>
+  <li>\REGISTRY\USER\%SFT_SID%\Software\Microsoft\Windows\CurrentVersion\Internet Settings</li>
+</ul>
+
+<p>If you are adding Adobe Flash Player to the package, add these exclusions as well:</p>
+
+<ul>
+  <li>%CSIDL_APPDATA%\Adobe</li>
+  <li>%CSIDL_APPDATA%\Macromedia</li>
+  <li>%CSIDL_WINDOWS%\Installer</li>
+</ul>
+
+<p>I have included these in a Package Template for Firefox that you can download from here:</p>
+
+<p class="download">
+  [download id=&#8221;46&#8243; format=&#8221;1&#8243;]
+</p>
+
+<h3 id="installing-firefox">Installing Firefox</h3>
+
+<p>Download the <a href="http://www.mozilla.com/firefox/all.html">Firefox installer in your target language from the Mozilla site</a>. Sequencing Firefox will require the following steps:</p>
+
+<ul>
+  <li>Install Firefox</li>
+  <li>Configure profile defaults</li>
+  <li>Optionally add global add-ons and install plug-ins such as <a href="https://www.adobe.com/devnet/flashplayer/enterprise_deployment.html">Adobe Flash Player</a></li>
+</ul>
+
+<p>Automating this process as much as possible will create a cleaner package and make it faster to re-create a new Firefox package if required.</p>
+
+<ul>
+  <li>Mozilla <a href="https://wiki.mozilla.org/Installer:Command_Line_Arguments">Firefox installer command line arguments</a> – use the INI file approach to control where Firefox is installed and to prevent the addition of a desktop shortcut, if required</li>
+  <li>After installing Firefox, copy <em>user.js</em> to <em>%ProgramFiles%\Mozilla Firefox\defaults\profile</em></li>
+  <li>Copy <em>userChrome.css</em> to <em>%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome</em></li>
+  <li>Firefox also allows you to <a href="http://kb.mozillazine.org/Installing_extensions">add global add-ons by adding them to the Extensions sub-folder</a> of the Firefox installation folder</li>
+  <li>If you are including Adobe Flash player in the package, be sure to <a href="http://kb2.adobe.com/cps/167/16701594.html">disable the auto-update notification</a></li>
+</ul>
+
+<p>For an example script that will automate the install and configuration of Firefox, see the script below:</p>
+
+<p>[code]@ECHO OFF<br />
+SET SOURCE=%~dp0<br />
+SET SOURCE=%SOURCE:~0,-2%</p>
+
+<p>REM Create the Firefox answer file<br />
+ECHO [Install] &gt; %SOURCE%\Firefox8.ini<br />
+ECHO ; InstallDirectoryName=Firefox8 » %SOURCE%\Firefox8.ini<br />
+ECHO ; InstallDirectoryPath=Q:\MozillaFirefox8_en-GB » %SOURCE%\Firefox8.ini<br />
+ECHO QuickLaunchShortcut=false » %SOURCE%\Firefox8.ini<br />
+ECHO DesktopShortcut=false » %SOURCE%\Firefox8.ini<br />
+ECHO StartMenuShortcuts=true » %SOURCE%\Firefox8.ini<br />
+REM Install Firefox – the START command will not work if the Firefox setup filename includes spaces<br />
+START /WAIT FirefoxSetup8.exe /INI=%SOURCE%\Firefox8.ini</p>
+
+<p>REM Configure Firefox profile defaults<br />
+MD “%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome”<br />
+COPY %SOURCE%\user.js “%ProgramFiles%\Mozilla Firefox\defaults\profile\user.js”<br />
+COPY %SOURCE%\userChrome.css “%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome\userChrome.css”[/code]</p>
+
+<h3 id="shortcuts">Shortcuts</h3>
+
+<p>If the monitoring phase was successful the Sequencer should create a single shortcut for Firefox. If you are including Flash Player, add an additional shortcut for the Flash Player Control Panel applet using “C:\Windows\System32\FlashPlayerCPLApp.cpl” as the target.</p>
+
+<h3 id="first-run-tasks-and-primary-feature-block">First Run Tasks and Primary Feature Block</h3>
+
+<p>If the steps above have been followed for exclusions, installation and configuration of Firefox, there will be no first run tasks to complete. Additionally the resultant package will be reasonably small so there is no need to create the Primary Feature Block. Because you don’t need to complete first run tasks or create the Primary Feature Block, you could automate the entire end-to-end process of creating a Firefox package using <a href="http://softwaredeployment.wordpress.com/2011/04/15/app-v-4-6-sp1-command-line-interface/">the App-V Sequencer command-line interface</a>.</p>
+
+<h3 id="finally">Finally</h3>
+
+<p>Save your package and deploy. With compression enabled, the package should be around 22Mb.</p>
+
+  </div><a class="u-url" href="/sequencing-mozilla-firefox-8/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

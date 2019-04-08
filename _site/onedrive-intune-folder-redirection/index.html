@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Folder Redirection to OneDrive on Windows 10 with Intune | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Folder Redirection to OneDrive on Windows 10 with Intune" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="If you’re deploying Windows 10 with Modern Management (Azure AD joined, MDM managed), you’ll likely have wondered about data protection – if users aren’t intentionally saving documents to their OneDrive folder, that data is likely, not synchronised and therefore not protected against data loss." />
+<meta property="og:description" content="If you’re deploying Windows 10 with Modern Management (Azure AD joined, MDM managed), you’ll likely have wondered about data protection – if users aren’t intentionally saving documents to their OneDrive folder, that data is likely, not synchronised and therefore not protected against data loss." />
+<link rel="canonical" href="/onedrive-intune-folder-redirection/" />
+<meta property="og:url" content="/onedrive-intune-folder-redirection/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2017/12/andrew-pons-6488.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-12-27T23:07:40+11:00" />
+<script type="application/ld+json">
+{"description":"If you’re deploying Windows 10 with Modern Management (Azure AD joined, MDM managed), you’ll likely have wondered about data protection – if users aren’t intentionally saving documents to their OneDrive folder, that data is likely, not synchronised and therefore not protected against data loss.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/onedrive-intune-folder-redirection/","image":"/wp-content/uploads/2017/12/andrew-pons-6488.jpg","headline":"Folder Redirection to OneDrive on Windows 10 with Intune","dateModified":"2017-12-27T23:07:40+11:00","datePublished":"2017-12-27T23:07:40+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/onedrive-intune-folder-redirection/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Folder Redirection to OneDrive on Windows 10 with Intune</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-12-27T23:07:40+11:00" itemprop="datePublished">Dec 27, 2017
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>If you’re deploying Windows 10 with Modern Management (Azure AD joined, MDM managed), you’ll likely have wondered about data protection – if users aren’t intentionally saving documents to their OneDrive folder, that data is likely, not synchronised and therefore not protected against data loss.</p>
+
+<p>Traditionally managed PCs will have folder redirection (and offline files) so that user’s documents are synchronised when connected to the corporate network. Some organisations will even have implemented folder redirection into the OneDrive folder via Group Policy, as a better alternative.</p>
+
+<p>Implementing folder redirection for Windows 10 via Intune currently isn’t possible, so we need a creative solution to this challenge. With <a href="https://docs.microsoft.com/en-us/intune/intune-management-extension">PowerShell scripts available to deploy via Intune</a>, we can create a custom approach for redirecting essential folders into OneDrive.</p>
+
+<p><strong>[Update – December 29, 2017]</strong> <a href="https://github.com/aaronparker/intune/tree/master/Folder-Redirection">A GitHub repository has been established for the scripts in this article</a>. Going forward any additional development will occur there. Testing, feedback and improvements can be logged on the repository.</p>
+
+<h1 id="how-folder-redirection-works">How Folder Redirection Works</h1>
+
+<p>Here’s an old, but an excellent article that covers <a href="https://technet.microsoft.com/en-us/library/cc787939">how the Folder Redirection Extension works</a>. The document targets Windows XP and Windows Server 2003, but the concepts are still the same in 2017. The article includes the following overview of folder redirection:</p>
+
+<blockquote>
+  <p>Folder Redirection processing contains five steps:</p>
+
+  <ol>
+    <li>Determine which user folders to redirect based on changes to Group Policy settings at the time of logon.</li>
+    <li>Determine the target location specified for redirection and confirm the user has access rights to that location.</li>
+    <li>If the target folder does not exist, the folder is created and the appropriate access control list (ACL) rights are set.</li>
+    <li>If the folder exists, access rights and folder ownership are checked.</li>
+    <li>If desired, the files contained within specified folders are moved to the new location, which also deletes them from the source folder if the source folders are local.</li>
+  </ol>
+</blockquote>
+
+<p>In this case, because we’re looking to redirect folders with the source and destination in the user profile on a local disk, we can skip steps 2, 3, and 4. Step 1 is our primary requirement and step 5 (moving existing data into the new folder on the same disk), should be quick and reasonably safe on modern PCs with SSDs.</p>
+
+<p>Given that we don’t have Group Policy available to us, we need to implement steps 1 and 5 in such a way that we can be sure the redirection and move of data will be successful.</p>
+
+<h1 id="implementing-folder-redirection-in-powershell">Implementing folder redirection in PowerShell </h1>
+
+<p>A script that performs folder redirection using <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/bb762249">SHSetKnownFolderPath</a> is available from here: <a href="https://gist.github.com/semenko/49a28675e4aae5c8be49b83960877ac5">SetupFoldersForOneDrive.ps1</a>. This script defines a function called Set-KnownFolderPath that can be used to redirect a folder of your choosing to a target path and it works quite well. In its current iteration though, all it does is redirect the folder. </p>
+
+<p>Because we also need to move the folder contents, I’ve forked the script and added some additional functionality:</p>
+
+<p>My version updates the <strong>Set-KnownFolderPath</strong> function to ensure all known folders for Documents, Pictures etc. are covered and adds:</p>
+
+<ul>
+  <li><strong>Get-KownFolderPath</strong> – we need to know what the existing physical path is before redirecting the folder</li>
+  <li><strong>Move-Files</strong> – a wrapper for Robocopy.exe. Rather than implement the same functionality of Robocopy in PowerShell, the script references it directly to move the contents of the folder to the new location. This function ensures that we also get a full log of all files moved to the new path.</li>
+  <li><strong>Redirect-Folder</strong> – this function wraps some testing around the redirect + move functionality</li>
+  <li>Reads the OneDrive for Business sync folder from the registry to avoid hard-coding the target path</li>
+  <li>Implements redirection for the Desktop, Documents and Pictures folders.</li>
+</ul>
+
+<p>My script could do with some additional error checking and robustness; however, it provides the functionality required to redirect specific folders into the OneDrive folder and can be re-run as necessary to enforce redirection for each folder.</p>
+
+<h1 id="deploying-with-microsoft-intune">Deploying with Microsoft Intune</h1>
+
+<p>Intune allows you to implement PowerShell scripts that run in the user context or Local System contexts. </p>
+
+<figure id="attachment_5898" aria-describedby="caption-attachment-5898" style="width: 1164px" class="wp-caption aligncenter">[<img class="wp-image-5898 size-full" src="https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings.png" alt="Intune PowerShell script settings, OneDrive" width="1164" height="306" srcset="http://192.168.0.89/wp-content/uploads/2017/12/ScriptSettings.png 1164w, http://192.168.0.89/wp-content/uploads/2017/12/ScriptSettings-150x39.png 150w, http://192.168.0.89/wp-content/uploads/2017/12/ScriptSettings-300x79.png 300w, http://192.168.0.89/wp-content/uploads/2017/12/ScriptSettings-768x202.png 768w, http://192.168.0.89/wp-content/uploads/2017/12/ScriptSettings-1024x269.png 1024w" sizes="(max-width: 1164px) 100vw, 1164px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings.png)<figcaption id="caption-attachment-5898" class="wp-caption-text">Intune PowerShell script settings &#8211; user context. Not what we want.</figcaption></figure>
+
+<p>Implementing the redirection script in the user context though fails when adding the SHSetKnownFolderPath class to the script session. Additionally, deploying the script in this manner will only run the script once – if the OneDrive client is not configured correctly when the script runs, the folder redirection will then never work.</p>
+
+<p>Instead of deploying the folder redirection script with Intune, we can instead implement a script that downloads the folder redirection script to a local path and creates a scheduled task that runs at user login to run the script. That way, we can be sure that the redirection script will run after the user has logged into the OneDrive client and set up the local sync folder in their profile. Additionally, this approach will enable folder redirection to run for any user logging onto the PC.</p>
+
+<p>The script below will download the redirection script to C:&lt;span class=”pl-smi”&gt;ProgramData&lt;/span&gt;\Scripts, create the scheduled task and output a transcript into the same folder.</p>
+
+<p><em>Note that this downloads the redirection script from my public gist repository. If you implement this in production, I would highly recommend a more secure source for the redirection script.</em></p>
+
+<p>Right now this script is quite simple – it will need to be updated to remove or update an existing script in the event you need to remove the script from Intune and re-add it.</p>
+
+<p>To deploy the script via Intune, save it locally as Set-RedirectOneDriveTask.ps1 and add as a new PowerShell script under Device Configuration. Ensure that the scheduled task is created successfully with the script run as Local System by setting ‘Run this script using the logged on credentials’ to No. </p>
+
+<figure id="attachment_5901" aria-describedby="caption-attachment-5901" style="width: 2322px" class="wp-caption aligncenter">[<img class="size-full wp-image-5901" src="https://stealthpuppy.com/wp-content/uploads/2017/12/CreateOneDriveRedirectTask.png" alt="Adding the Create OneDrive Redirect Task script to Intune" width="2322" height="794" srcset="http://192.168.0.89/wp-content/uploads/2017/12/CreateOneDriveRedirectTask.png 2322w, http://192.168.0.89/wp-content/uploads/2017/12/CreateOneDriveRedirectTask-150x51.png 150w, http://192.168.0.89/wp-content/uploads/2017/12/CreateOneDriveRedirectTask-300x103.png 300w, http://192.168.0.89/wp-content/uploads/2017/12/CreateOneDriveRedirectTask-768x263.png 768w, http://192.168.0.89/wp-content/uploads/2017/12/CreateOneDriveRedirectTask-1024x350.png 1024w" sizes="(max-width: 2322px) 100vw, 2322px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/CreateOneDriveRedirectTask.png)<figcaption id="caption-attachment-5901" class="wp-caption-text">Adding the Create OneDrive Redirect Task script to Intune</figcaption></figure>
+
+<p>Assign the script to a user or device group and track deployment progress in the Overview blade. A successful deployment will result in a scheduled task on the target PCs. </p>
+
+<figure id="attachment_5903" aria-describedby="caption-attachment-5903" style="width: 1264px" class="wp-caption aligncenter">[<img class="size-full wp-image-5903" src="https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectTaskProperties.png" alt="OneDrive Folder Redirection Task Properties" width="1264" height="960" srcset="http://192.168.0.89/wp-content/uploads/2017/12/RedirectTaskProperties.png 1264w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectTaskProperties-150x114.png 150w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectTaskProperties-300x228.png 300w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectTaskProperties-768x583.png 768w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectTaskProperties-1024x778.png 1024w" sizes="(max-width: 1264px) 100vw, 1264px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectTaskProperties.png)<figcaption id="caption-attachment-5903" class="wp-caption-text">OneDrive Folder Redirection Task Properties</figcaption></figure>
+
+<p>When the Intune Management Extension runs the script and creates the task, you’ll see the script and a transcript in C:\ProgramData\Scripts.</p>
+
+<figure id="attachment_5905" aria-describedby="caption-attachment-5905" style="width: 1568px" class="wp-caption aligncenter">[<img class="size-full wp-image-5905" src="https://stealthpuppy.com/wp-content/uploads/2017/12/Scripts.png" alt="The downloaded folder redirection script" width="1568" height="587" srcset="http://192.168.0.89/wp-content/uploads/2017/12/Scripts.png 1568w, http://192.168.0.89/wp-content/uploads/2017/12/Scripts-150x56.png 150w, http://192.168.0.89/wp-content/uploads/2017/12/Scripts-300x112.png 300w, http://192.168.0.89/wp-content/uploads/2017/12/Scripts-768x288.png 768w, http://192.168.0.89/wp-content/uploads/2017/12/Scripts-1024x383.png 1024w" sizes="(max-width: 1568px) 100vw, 1568px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/Scripts.png)<figcaption id="caption-attachment-5905" class="wp-caption-text">The downloaded folder redirection script</figcaption></figure>
+
+<p>When the folder redirection script runs Robocopy to move documents, it will log those moves to %LocalAppData%\RedirectLogs.</p>
+
+<figure id="attachment_5906" aria-describedby="caption-attachment-5906" style="width: 1568px" class="wp-caption aligncenter">[<img class="size-full wp-image-5906" src="https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectLogs.png" alt="Data copy/move logs" width="1568" height="587" srcset="http://192.168.0.89/wp-content/uploads/2017/12/RedirectLogs.png 1568w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectLogs-150x56.png 150w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectLogs-300x112.png 300w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectLogs-768x288.png 768w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectLogs-1024x383.png 1024w" sizes="(max-width: 1568px) 100vw, 1568px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectLogs.png)<figcaption id="caption-attachment-5906" class="wp-caption-text">Data copy/move logs</figcaption></figure>
+
+<p>When implemented in this way, the script will run at user login and successfully enable folder redirection into the OneDrive for Business sync folder. The user will see a PowerShell script window – pointing the scheduled task trigger to a VBscript wrapper could fix this.</p>
+
+<h2 id="configuring-onedrive">Configuring OneDrive</h2>
+
+<p><a href="https://osddeployment.dk/2017/12/18/how-to-silently-configure-onedrive-for-business-with-intune/">Enable single sign-on</a> in the OneDrive client for the best user experience. Not necessarily a requirement; however, it will make it quicker for users to be up and running and therefore faster for the script to redirect the target folders.</p>
+
+<p>Given the approach outlined in this article, it’s unlikely that folder redirection will kick in on the first login. Adding a delay to the scheduled task may allow redirection to work on the first run; however, Intune won’t necessarily run all PowerShell scripts in the required order.</p>
+
+<h1 id="summary">Summary</h1>
+
+<p>In this article, I’ve outlined an approach to implementing folder redirection with PowerShell, via Intune, into the OneDrive for Business sync folder. This method uses a script deployed from Intune to Windows 10 Azure AD joined machines to download the folder redirection script and create a scheduled task that runs at user login to perform the redirection and data move.</p>
+
+<p>Redirecting the Desktop, Documents and Pictures to OneDrive should protect key user folders via data synchronisation. While redirecting additional folders is possible, they can often contain data that would be less this ideal for synchronising to OneDrive.</p>
+
+<figure id="attachment_5910" aria-describedby="caption-attachment-5910" style="width: 1776px" class="wp-caption aligncenter">[<img class="size-full wp-image-5910" src="https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectedDocumentsFolder.png" alt="Redirected Documents folder in the OneDrive sync folder" width="1776" height="725" srcset="http://192.168.0.89/wp-content/uploads/2017/12/RedirectedDocumentsFolder.png 1776w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectedDocumentsFolder-150x61.png 150w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectedDocumentsFolder-300x122.png 300w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectedDocumentsFolder-768x314.png 768w, http://192.168.0.89/wp-content/uploads/2017/12/RedirectedDocumentsFolder-1024x418.png 1024w" sizes="(max-width: 1776px) 100vw, 1776px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectedDocumentsFolder.png)<figcaption id="caption-attachment-5910" class="wp-caption-text">Redirected Documents folder in the OneDrive sync folder</figcaption></figure>
+
+<p>These scripts are provided as-is, and I highly recommend testing carefully before implementing in production.</p>
+
+<h2 id="bonus">Bonus </h2>
+
+<p>The folder redirection script will work for any enterprise file and sync tool, not just OneDrive for Business. For example, if you wanted to redirect folders into <a href="https://www.citrix.com/products/sharefile/">Citrix ShareFile</a>, just read the <strong>PersonalFolderRootLocation</strong> value from <strong>HKCU\Software\Citrix\ShareFile\Sync</strong> to find the sync folder.</p>
+
+  </div><a class="u-url" href="/onedrive-intune-folder-redirection/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

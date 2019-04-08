@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>OS Automation Survey Results – How Often Are Master Images Updated? | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="OS Automation Survey Results – How Often Are Master Images Updated?" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Now that we’ve covered the main questions in the survey – which hypervisors are in use, the VDI solutions are run on those hypervisors, how master images are built, the automation solutions used to build images and the solutions used to deliver images to SBC and VDI environments, we’ll take a short look at how often master images are updated." />
+<meta property="og:description" content="Now that we’ve covered the main questions in the survey – which hypervisors are in use, the VDI solutions are run on those hypervisors, how master images are built, the automation solutions used to build images and the solutions used to deliver images to SBC and VDI environments, we’ll take a short look at how often master images are updated." />
+<link rel="canonical" href="/automation-survey-results-update-images/" />
+<meta property="og:url" content="/automation-survey-results-update-images/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2015/11/16638657367_33486a6676_k.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-11-29T19:28:13+11:00" />
+<script type="application/ld+json">
+{"description":"Now that we’ve covered the main questions in the survey – which hypervisors are in use, the VDI solutions are run on those hypervisors, how master images are built, the automation solutions used to build images and the solutions used to deliver images to SBC and VDI environments, we’ll take a short look at how often master images are updated.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/automation-survey-results-update-images/","image":"/wp-content/uploads/2015/11/16638657367_33486a6676_k.jpg","headline":"OS Automation Survey Results – How Often Are Master Images Updated?","dateModified":"2015-11-29T19:28:13+11:00","datePublished":"2015-11-29T19:28:13+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/automation-survey-results-update-images/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">OS Automation Survey Results &amp;#8211; How Often Are Master Images Updated?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2015-11-29T19:28:13+11:00" itemprop="datePublished">Nov 29, 2015
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Now that we’ve covered the main questions in the survey – <a href="http://stealthpuppy.com/automation-survey-results-hypervisor/">which hypervisors are in use</a>, the <a href="http://stealthpuppy.com/automation-survey-results-vdi-platforms/">VDI solutions are run on those hypervisors</a>, <a href="http://stealthpuppy.com/automation-survey-results-build-master-images/">how master images are built</a>, <a href="http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/">the automation solutions used to build images</a> and the <a href="http://stealthpuppy.com/automation-survey-results-deliver-images/">solutions used to deliver images to SBC and VDI environments</a>, we’ll take a short look at how often master images are updated.</p>
+
+<h1 id="updating-master-images">Updating Master Images</h1>
+
+<p>Here are the results for how often master images are updated based on 501 responses to this question:</p>
+
+<figure id="attachment_4211" aria-describedby="caption-attachment-4211" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4211" src="http://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-1024x603.png" alt="How often master images are updated" width="1024" height="603" srcset="http://192.168.0.89/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-1024x603.png 1024w, http://192.168.0.89/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-150x88.png 150w, http://192.168.0.89/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-300x177.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated.png)<figcaption id="caption-attachment-4211" class="wp-caption-text">How often master images are updated</figcaption></figure>
+
+<p>Monthly patching is ideal and the majority of organisations appear to be standardising on monthly updates. Adding those respondents who patch every 2 months, 62.7% of organisations patch quite regularly.</p>
+
+<p>Patch schedules that are every quarter or longer are of concern – perhaps understandable in environments sensitive to changes, but still concerning to see that many desktops are running un-patched for considerable periods of time. We only need to look at <a href="http://www.gfi.com/blog/most-vulnerable-operating-systems-and-applications-in-2014/">last year’s most vulnerable operating systems and applications</a> to get a sense of what risk our desktops are at. 2015 is looking to provide <a href="http://news.softpedia.com/news/Record-Number-of-Microsoft-Patches-in-2015-Less-Secure-Windows-or-More-Active-Hackers-481007.shtml">a record number of updates from Microsoft</a>.</p>
+
+<h2 id="patching-by-average-organisation-size">Patching by Average Organisation Size</h2>
+
+<p>##</p>
+
+<p>Based on our data, here is the average user base for organisations based on patch schedules:</p>
+
+<ul>
+  <li>Monthly – 2932 seats</li>
+  <li>Every 2 months – 2171 seats</li>
+  <li>Quarterly – 1671 seats</li>
+  <li>Every 6 months – 2718</li>
+</ul>
+
+<p>It would be nice to be able to analyse a much larger sample set, as we see a clear trend to smaller organisation sizes when patch schedules change from Monthly to Every 2 months to Quarterly, but the average goes up again for Every 6 months. So I would have drawn the conclusion that larger organisations have better resources for testing OS and application updates before deployment. This might be true; however it’s difficult to draw a definitive conclusion based on our data.</p>
+
+<p>Do larger organisation fare best? This table lists the patch schedules for organisations 10,000 users and over.</p>
+
+<p>[table id=39 /]</p>
+
+<p>##</p>
+
+<h2 id="what-about-other">What About Other?</h2>
+
+<p>In this question we asked respondents to use Other, if their patching schedules didn’t fit into the Here are the responses that we received from respondents who selected Other for this question:</p>
+
+<ul>
+  <li>Never</li>
+  <li>Yearly, if ever. I don’t touch what isn’t broken</li>
+  <li>As infrequently as possible</li>
+  <li>As needed, typically more than a year</li>
+  <li>Depends on request cycle</li>
+  <li>Depends on application updates</li>
+  <li>As needed depending on criticality of updates or need</li>
+  <li>Vaires</li>
+  <li>VDI every 3 months. XenApp when new version release</li>
+  <li>Every 2 weeks</li>
+  <li>Weekly</li>
+  <li>Using single VMs</li>
+  <li>Individually</li>
+</ul>
+
+<p>These are very interesting responses – looking at the top 5 responses, we get the impression that updates are difficult to test, deploy and manage. User productivity is typically more important than security.</p>
+
+<h2 id="automation-reduces-risk">Automation Reduces Risk</h2>
+
+<p>Patching can be challenging to manage, especially in persistent desktop environments – rollback of an update can be disruptive. Improvements in delivering virtual desktop environments, with tools such as app layering and mature UEM solutions, are enabling non-persistent VDI easier to achieve. Automating the creation of a master image simplifies troubleshooting – rebuild in the event of a bad update, rather than take manual steps to remove an update. The image is guaranteed to be the same as the version before the update.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Patching is hard; users and desktops are at risk. While automation won’t solve everything, it does reduce risk and helps provide consistency. Automation as a part of your patch schedule will improve responsiveness in the event of wayward updates.</p>
+
+<p><a href="http://xenappblog.com">We’d</a> like to thank everyone who took part in this survey and hope the results and interpretation were useful. Any and all feedback is welcome and look forward to continuing the conversation next year.</p>
+
+  </div><a class="u-url" href="/automation-survey-results-update-images/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

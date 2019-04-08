@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Just how do Exclusions in App-V packages work? | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Just how do Exclusions in App-V packages work?" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Exactly how do folder and Registry exclusions work in App-V? I had presumed that exclusions for both folder and Registry paths would carry over to package execution. This is something that I had made some assumptions about and it’s only recently that I looked into exclusions in detail to get a better understanding." />
+<meta property="og:description" content="Exactly how do folder and Registry exclusions work in App-V? I had presumed that exclusions for both folder and Registry paths would carry over to package execution. This is something that I had made some assumptions about and it’s only recently that I looked into exclusions in detail to get a better understanding." />
+<link rel="canonical" href="/just-how-do-exclusions-in-app-v-packages-work/" />
+<meta property="og:url" content="/just-how-do-exclusions-in-app-v-packages-work/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-02-26T02:27:51+11:00" />
+<script type="application/ld+json">
+{"description":"Exactly how do folder and Registry exclusions work in App-V? I had presumed that exclusions for both folder and Registry paths would carry over to package execution. This is something that I had made some assumptions about and it’s only recently that I looked into exclusions in detail to get a better understanding.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/just-how-do-exclusions-in-app-v-packages-work/","headline":"Just how do Exclusions in App-V packages work?","dateModified":"2011-02-26T02:27:51+11:00","datePublished":"2011-02-26T02:27:51+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/just-how-do-exclusions-in-app-v-packages-work/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Just how do Exclusions in App-V packages work?</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2011-02-26T02:27:51+11:00" itemprop="datePublished">Feb 26, 2011
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Exactly how do folder and Registry exclusions work in App-V? I had presumed that exclusions for both folder and Registry paths would carry over to package execution. This is something that I had made some assumptions about and it’s only recently that I looked into exclusions in detail to get a better understanding.</p>
+
+<p>I’ve spent some time working out how folder and Registry exclusions and Merge/Override settings impact the package at runtime and this post is based on my findings. Although I believe that the details in this post are correct, I recommend testing out these behaviours for yourself.</p>
+
+<h3 id="why-exclude">Why Exclude?</h3>
+
+<p>When virtualising an application, we may need to avoid capturing specific paths for several reasons:</p>
+
+<ul>
+  <li>Reduce the size of the package (installers often put files down that aren’t required for an application to execute, such as cached setup files)</li>
+  <li>Prevent conflicts with data already on the client (preventing a virtualised view of specific paths so that a virtualised application does not see different data to application running outside of App-V)</li>
+  <li>When running an operating system component such as Internet Explorer inside the bubble, we may want to ensure that the application sees the same data inside and outside the bubble</li>
+</ul>
+
+<h3 id="exclusions-apply-at-sequencing-time-only">Exclusions Apply at Sequencing Time Only</h3>
+
+<p>Exclusions are only used to prevent certain paths from being captured during sequencing; it does not necessarily mean that those paths will then <em>not</em> be virtualised at runtime.</p>
+
+<p>Understanding how an application interacts with the operating system and other applications is important for knowing which paths to add as exclusions. In most cases if a path exists both inside and outside of the package it won’t affect execution; however depending on your requirements, some locations should never appear inside the virtual environment.</p>
+
+<p>These paths might include, but are not limited to:</p>
+
+<ul>
+  <li>MAPI profiles (the Windows Messaging Subsystem key)</li>
+  <li>Printers (stored in the HKCU\Printers)</li>
+  <li>ODBC connections (stored in HKCU\Software\ODBC)</li>
+  <li>Windows 7 Libraries (%APPDATA%\Microsoft\Windows\Libraries)</li>
+</ul>
+
+<p>I’ll discuss some of these in more detail later.</p>
+
+<h3 id="creating-a-package-for-testing">Creating a Package for Testing</h3>
+
+<p>To perform some tests and to illustrate what happens during sequencing and execution, I’ve created a very simple package that contains some Registry keys and folders. I turned the following script into an App-V package:</p>
+
+<p>[code]REG ADD “HKEY_CURRENT_USER\Software\MergeTest1” /v InsideTheBubble /t REG_SZ /d “True”<br />
+REG ADD “HKEY_CURRENT_USER\Software\MergeTest1\Key” /v InsideTheBubble /t REG_SZ /d “True”<br />
+REG ADD “HKEY_CURRENT_USER\Software\MergeTest2” /v InsideTheBubble /t REG_SZ /d “True”<br />
+REG ADD “HKEY_CURRENT_USER\Software\MergeTest3” /v InsideTheBubble /t REG_SZ /d “True”<br />
+MD “%APPDATA%\MyApplication1”<br />
+MD “%APPDATA%\MyApplication2\InsideSub-folder”<br />
+ECHO txt &gt; “%APPDATA%\MyApplication1\InsideTheBubble.txt”<br />
+ECHO txt &gt; “%APPDATA%\MyApplication2\InsideTheBubble.txt”<br />
+ECHO txt &gt; “%APPDATA%\MyApplication2\InsideSub-folder\InsideTheBubble.txt”[/code]</p>
+
+<h3 id="how-the-virtual-file-system-interacts-with-the-real-file-system">How the Virtual File System interacts with the Real File System</h3>
+
+<p>Excluded folder paths in an App-V package works just the way you would expect – the folder is not captured in the package. I then may choose to control how the folder is handled at execution time by setting the path to Override the Local Directory (preventing the package from see the real file system) or Merge with the Local Directory (the application sees a merged view of the virtual and real file systems).</p>
+
+<p>In my example package I’ve added the path <em>%APPDATA%\MyApplication2\InsideSub-folder</em> as an exclusion. In the screenshot below, you can see that the parent folder <em>%APPDATA%\MyApplication2</em> was captured but <em>InsideSub-folder</em> was not:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/VFSMerge3.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual File System Root" src="http://stealthpuppy.com/wp-content/uploads/2011/02/VFSMerge3_thumb.png" border="0" alt="Virtual File System Root" width="660" height="337" /></a></p>
+
+<p>To perform some specific testing at execution time, I’ve then set this folder to <em>Merge with Local Directory</em>. Let’s see what happens on the client:</p>
+
+<p>On the real file system I’ve created the folder <em>%APPDATA%\MyApplication2.</em> The screenshot below shows a directory listing outside of the bubble:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs1.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS Outside the package" src="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs1_thumb.png" border="0" alt="VFS Outside the package" width="660" height="277" /></a></p>
+
+<p>If I see the same %APPDATA% location within the package I should see the merged view of <em>%APPDATA%\MyApplication2:</em></p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs2.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS Inside the package" src="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs2_thumb.png" border="0" alt="VFS Inside the package" width="660" height="277" /></a></p>
+
+<p>If I create a sub-folder of the MyApplication2 folder:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs3.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS inside creating a sub-folder" src="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs3_thumb.png" border="0" alt="VFS inside creating a sub-folder" width="660" height="277" /></a></p>
+
+<p>I can see that the sub-folder has fallen through the virtual environment to the real file system:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs4.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VSF viewing outside the buble" src="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs4_thumb.png" border="0" alt="VSF viewing outside the buble" width="660" height="277" /></a></p>
+
+<p>I can also create a file or folder outside of those paths that were captured during sequencing and any path marked <em>Override Local Directory</em> and they will be created in the real file system. In this package %APPDATA% was not captured during sequencing, so I can create a sub-folder (or file):</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs5.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VSF inside the bubble, create a folder" src="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs5_thumb.png" border="0" alt="VSF inside the bubble, create a folder" width="660" height="277" /></a></p>
+
+<p>That is written to the real file system:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs6.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS outside the bubble" src="http://stealthpuppy.com/wp-content/uploads/2011/02/vfs6_thumb.png" border="0" alt="VFS outside the bubble" width="660" height="277" /></a></p>
+
+<p><strong>Bottom line</strong>: Exclusions ensure specified file data isn’t captured at sequencing time and Merge with Local means that anything that doesn’t already exist in the package will be written to the real file system. So file system virtualization is straight-forward and for the most part works the way we would expect.</p>
+
+<h3 id="how-the-virtual-registry-interacts-with-the-real-registry">How the Virtual Registry interacts with the Real Registry</h3>
+
+<p>The virtual Registry is quite different to the virtual file system – writes to the Registry at execution time will always end up in the virtual Registry. In my example package I have several Registry keys: <em>HKCU\Software\MergeTest1</em> and <em>HKCU\Software\MergeTest2</em>, while <em>HKCU\Software\MergeTest3</em> was excluded. The key <em>HKCU\Software\MergeTest2</em> has been configured for Merge with the Local Key.</p>
+
+<p>On the client in the real Registry I’ve created <em>HKCU\Software\MergeTest2</em> with a value (OutsideTheBubble) inside it:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/vrg1.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Read registry" src="http://stealthpuppy.com/wp-content/uploads/2011/02/vrg1_thumb.png" border="0" alt="Read registry" width="660" height="261" /></a></p>
+
+<p>Within the virtual Registry I can create other keys at the same levels MergeTest1 and MergeTest2 (MergeTest3) and I can make an edit to a value that exists outside of the virtual Registry.</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/vrg2.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual registry" src="http://stealthpuppy.com/wp-content/uploads/2011/02/vrg2_thumb.png" border="0" alt="Virtual registry" width="660" height="261" /></a></p>
+
+<p>All of these changes have been captured inside the virtual Registry. This means that while I get a merged view of the virtual and real Registry’s, any changes made by the virtual application will only persist inside the virtual registry. Here’s a look again at the real Registry after I’ve closed the virtual application:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/vrg3.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Real registry" src="http://stealthpuppy.com/wp-content/uploads/2011/02/vrg3_thumb.png" border="0" alt="Real registry" width="660" height="261" /></a></p>
+
+<p>When you take a closer look at a package, you’ll start to see why this is the case. In this screenshot you can see that the Registry root (REGISTRY) is set to <em>Merge with Local Key</em>.</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/VRGMerge3.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual Registry root" src="http://stealthpuppy.com/wp-content/uploads/2011/02/VRGMerge3_thumb.png" border="0" alt="Virtual Registry root" width="660" height="337" /></a></p>
+
+<p><strong>Bottom line</strong>: Exclusions ensure specified Registry data isn’t captured at sequencing time and Merge with Local, means just that: merge with any existing local keys; however <em>any</em> new writes to the Registry will be captured in the virtual Registry (a copy on write action).</p>
+
+<p>In the majority of scenarios the behaviour of the virtual Registry is exactly the way we need it to be; however what happens if you absolutely, positively need a Registry write to make it into the real Registry? (i.e. how do you force an exclude at runtime?)</p>
+
+<h3 id="why-write-to-the-real-registry">Why write to the Real Registry?</h3>
+
+<p>I’ll draw on my earlier examples to explain why I would want a Registry write to make into the real Registry.</p>
+
+<p><strong>MAPI profiles</strong> (HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows Messaging Subsystem): your user environment management approach may necessitate managing MAPI profiles outside of the virtual environment. See the <a href="http://support.microsoft.com/kb/983462">Prescriptive guidance for sequencing Office 2010 in Microsoft App-V</a> for different approaches to this key depending whether you are deploying to App-V 4.5 or 4.6.</p>
+
+<p><strong>ODBC connections</strong> (HKCU\Software\ODBC): virtualising ODBC connections can be useful; however if they connection can be edited in-application, then the changes would be saved to the user’s PKG file. If you are deploying ODBC connections with a tool such as Group Policy Preferences, you can’t deploy those changes inside a package, because GPP only applies before the application launches.</p>
+
+<p><strong>Printers</strong> (HKCU\Printers): the user could change their default printer inside an application via the print dialog – the application will have one default printer, while the system will see another default printer. This could be a good or bad consequence depending on how savvy your users are.</p>
+
+<p>These are just a few examples and I’m sure there are plenty more.</p>
+
+<h3 id="how-to-write-to-the-real-registry">How to write to the Real Registry</h3>
+
+<p>The App-V client includes a Registry key at HKLM\SOFTWARE\Wow6432Node\Microsoft\SoftGrid\4.5\SystemGuard\Overrides with a couple of interesting values – <em>VirtualRegistryPassthrough</em> and <em>VirtualRegistryPassthroughEx</em>.</p>
+
+<p>VirtualRegistryPassthrough is used to allow a local process pass up into the virtual Registry. You can read more about this value in this knowledgebase article: <a href="http://support.microsoft.com/kb/931191">How to print to an Adobe PDF writer printer from SoftGrid-enabled applications</a>. Any detailed documentation beyond this article does not appear to be publically available.</p>
+
+<p>The second value of interest VirtualRegistryPassthroughEx, can be used in the opposite way. It can be used to ensure a specific key will always pass through to the real Registry. <a href="http://www.google.com/search?hl=en&amp;source=hp&amp;biw=1280&amp;bih=699&amp;q=VirtualRegistryPassthroughEx&amp;btnG=Google+Search&amp;aq=f&amp;aqi=&amp;aql=&amp;oq=">A web search draws a complete blank on this one</a>, so until Microsoft comes out with better documentation on TechNet, I recommend testing this value carefully.</p>
+
+<p>There are a couple of caveats with this approach:</p>
+
+<ol>
+  <li>
+    <p>You must ensure that the key or keys that you want to pass through to the real Registry do <em>not</em> exist inside your App-V package but they should be created in the real Registry. In fact, the key must be initially created outside of the package – you won’t be able to create the key at execution time inside the virtual Registry.</p>
+  </li>
+  <li>
+    <p>This is a global setting; it can’t be used on a per-package basis.</p>
+  </li>
+</ol>
+
+<p>VirtualRegistryPassthroughEx is a multi-string value (REG_MULTI_SZ) to which you add Registry keys to, one for each line. The default keys included here are:</p>
+
+<ul>
+  <li>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT</li>
+  <li>HKEY_LOCAL_MACHINE\System\CurrentControlSet\services\eventlog\Application</li>
+  <li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger</li>
+  <li>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings</li>
+  <li>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib</li>
+</ul>
+
+<p>Add the key or keys that you want to exclude from the bubble. No restart is required for this to take effect.</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/02/VirtualRegistryPassthroughEx.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VirtualRegistryPassthroughEx" src="http://stealthpuppy.com/wp-content/uploads/2011/02/VirtualRegistryPassthroughEx_thumb.png" border="0" alt="VirtualRegistryPassthroughEx" width="394" height="358" /></a></p>
+
+<p>In my example I’ve added HKEY_CURRENT_USER\Software\MergeTest3. I can now create values and sub-keys and be certain that they will end up in the real Registry.</p>
+
+<h3 id="where-to-from-here">Where to from here?</h3>
+
+<p>The lack of available documentation on this setting deter you from using it; however based on my findings I’m reasonably confident in the way this works. I do recommend performing your own in-depth testing before using this to address challenges you may have with the virtual Registry.</p>
+
+<p>In a related post I should have ready in a couple of weeks, I’ll post my list of recommended file system and Registry exclusions to add to your App-V projects before sequencing.</p>
+
+  </div><a class="u-url" href="/just-how-do-exclusions-in-app-v-packages-work/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

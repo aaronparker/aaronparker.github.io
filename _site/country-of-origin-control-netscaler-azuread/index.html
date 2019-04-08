@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Simple Country of Origin Control for NetScaler with Azure AD | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Simple Country of Origin Control for NetScaler with Azure AD" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Great news! Microsoft has enabled a number of available conditions and custom controls in Azure AD for use in Conditional Access making these policies even more useful. This includes a simple method to control access to Citrix NetScaler by country of origin." />
+<meta property="og:description" content="Great news! Microsoft has enabled a number of available conditions and custom controls in Azure AD for use in Conditional Access making these policies even more useful. This includes a simple method to control access to Citrix NetScaler by country of origin." />
+<link rel="canonical" href="/country-of-origin-control-netscaler-azuread/" />
+<meta property="og:url" content="/country-of-origin-control-netscaler-azuread/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:image" content="/wp-content/uploads/2017/09/8439088143_259e3f274f_k.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-09-28T16:29:39+10:00" />
+<script type="application/ld+json">
+{"description":"Great news! Microsoft has enabled a number of available conditions and custom controls in Azure AD for use in Conditional Access making these policies even more useful. This includes a simple method to control access to Citrix NetScaler by country of origin.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/country-of-origin-control-netscaler-azuread/","image":"/wp-content/uploads/2017/09/8439088143_259e3f274f_k.jpg","headline":"Simple Country of Origin Control for NetScaler with Azure AD","dateModified":"2017-09-28T16:29:39+10:00","datePublished":"2017-09-28T16:29:39+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/country-of-origin-control-netscaler-azuread/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Simple Country of Origin Control for NetScaler with Azure AD</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2017-09-28T16:29:39+10:00" itemprop="datePublished">Sep 28, 2017
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Great news! <a href="https://blogs.technet.microsoft.com/enterprisemobility/2017/09/27/whats-new-with-azure-active-directory-ignite-2017/">Microsoft has enabled a number of available conditions and custom controls in Azure AD</a> for use in Conditional Access making these policies even more useful. This includes a simple method to control access to Citrix NetScaler by country of origin.</p>
+
+<p>Back in March of this year, I was working on a project to design a solution for hosting applications in an Azure data centre, with access provided by Citrix XenApp and NetScaler. This particular customer needed to control access to both Office 365 applications and XenApp from specific locations only. </p>
+
+<p>By configuring <a href="http://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/secure/federated-authentication-service.html">Citrix FAS</a> and <a href="https://stealthpuppy.com/netscaler-azure-ad-conditional-access/">NetScaler with SAML authentication to Azure AD</a>, we were able to use <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-named-locations">Named Locations in Azure AD</a> Conditional Access policies to achieve the desired goal. For instance we could allow Office 365 only from compliant or domain-joined PCs and ensure access to XenApp only from specific locations. Thus for a certain group of users, they could only access Office 365 applications from XenApp and then only from a specific physical location.</p>
+
+<p>All was well, until Microsoft pulled the ability to use Named Locations in Conditional Access policies half-way through the project. Lesson learned – never rely on preview features in Azure.</p>
+
+<p>At Ignite 2017 this week, Microsoft announced a number of new conditions that includes the ability again to use Named Locations in conditions. What’s new here is the ability to pick from a list of countries when defining those locations. With the number of new conditions available, including Terms of Use, VPN connectivity and Custom controls, I am hoping that Microsoft will not pull these features in the future and instead get them out of preview as quickly as possible.</p>
+
+<h1 id="saml-all-the-things">SAML All The Things!</h1>
+
+<p>In my previous article on <a href="https://stealthpuppy.com/netscaler-azure-ad-conditional-access/">integrating Citrix NetScaler with Azure AD and Conditional Access</a>, I’ve described the steps to enable SAML authentication to Azure AD from NetScaler to enable a single authentication experience across remote published apps (or desktops) and Office 365. You could extend this of course to additional applications, provide users with single sign-on across all sorts of applications.</p>
+
+<p>Doing so allows IT to control access to any application, whether that be legacy Win32 apps, or new SaaS applications from a single administrative experience with Conditional Access. Seen in the screenshot below, I have policies providing access to various applications – it’s a beautiful thing.</p>
+
+<figure id="attachment_5798" aria-describedby="caption-attachment-5798" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5798" src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-1024x587.png" alt="Azure AD Conditional Access policies" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Policies-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Policies-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Policies-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Policies-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Policies.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies.png)<figcaption id="caption-attachment-5798" class="wp-caption-text">Azure AD Conditional Access policies</figcaption></figure>
+
+<h1 id="conditions-in-conditional-access-policies">Conditions in Conditional Access Policies</h1>
+
+<p>The new conditions and controls should be available now, in preview, for just about everyone. These include:</p>
+
+<ul>
+  <li>Custom controls – JSON for customised controls from 3rd party claim providers. This should enable just about any type of user or device control in a CA policy</li>
+  <li>Terms of use – require a user to consent to your organisation’s terms of use before they get access to an application</li>
+  <li>VPN connectivity – force device compliance (for Windows 10 devices) before being allowed access to a corporate VPN</li>
+</ul>
+
+<figure id="attachment_5804" aria-describedby="caption-attachment-5804" style="width: 818px" class="wp-caption alignnone">[<img class="size-full wp-image-5804" src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom.png" alt="New conditions and controls in preview" width="818" height="519" srcset="http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom.png 818w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom-150x95.png 150w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom-300x190.png 300w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom-768x487.png 768w" sizes="(max-width: 818px) 100vw, 818px" />](https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom.png)<figcaption id="caption-attachment-5804" class="wp-caption-text">New conditions and controls in preview</figcaption></figure>
+
+<h1 id="enabling-country-of-origin">Enabling Country of Origin</h1>
+
+<p>Previously Named Locations allow you to only provide locations via specific subnets to define egress locations, e.g. your corporate office. New in Named Locations is the ability to add specific countries that you could use in allow or block scenarios, effectively enabling a whitelist or blacklist of regions.</p>
+
+<figure id="attachment_5800" aria-describedby="caption-attachment-5800" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5800 size-large" src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Countries-Regions-1024x587.png" alt="Creating a Named Location to define country of origin" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Countries-Regions-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Countries-Regions-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Countries-Regions-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Countries-Regions-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-Countries-Regions.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Countries-Regions.png)<figcaption id="caption-attachment-5800" class="wp-caption-text">Creating a Named Location to define country of origin</figcaption></figure>
+
+<p>Once these Named Locations are defined, it’s possible to mix and match locations depending on your requirements. Within a Conditional Access policy, enable <strong>Locations</strong> under <strong>Conditions</strong>, and add the Named Locations. Use either Include or Exclude to whitelist or blacklist respectively.</p>
+
+<figure id="attachment_5799" aria-describedby="caption-attachment-5799" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5799" src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-SelectedLocations-1024x587.png" alt="Allowing access from specific countries" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-SelectedLocations-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-SelectedLocations-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-SelectedLocations-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-SelectedLocations-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-SelectedLocations.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-SelectedLocations.png)<figcaption id="caption-attachment-5799" class="wp-caption-text">Allowing access from specific countries</figcaption></figure>
+
+<p>And that’s it! We now have country of origin as a condition that we could use as one condition to ensure access is secure. Allow compliant device, enforce MFA, or a custom control to give you confidence that access to XenApp or XenDesktop applications (or perhaps even web apps) is secure.</p>
+
+<figure id="attachment_5797" aria-describedby="caption-attachment-5797" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5797" src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-GrantControl-MFA-1024x587.png" alt="Granting access with MFA" width="1024" height="587" srcset="http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-GrantControl-MFA-1024x587.png 1024w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-GrantControl-MFA-150x86.png 150w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-GrantControl-MFA-300x172.png 300w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-GrantControl-MFA-768x441.png 768w, http://192.168.0.89/wp-content/uploads/2017/09/AzureAD-CA-GrantControl-MFA.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-GrantControl-MFA.png)<figcaption id="caption-attachment-5797" class="wp-caption-text">Granting access with MFA</figcaption></figure>
+
+<p>If we were to compare setting up NetScaler Gateway with AD integration, 3rd party multi-factor authentication and <a href="https://support.citrix.com/article/CTX130701">country of</a> origin access by subscribing to a country database (see <a href="https://support.citrix.com/article/CTX130701">How to Use NetScaler to Block Access to a Website Using a Location Database Based on User’s Country</a>), I’m sure you would agree this method is simpler and easier to maintain.</p>
+
+  </div><a class="u-url" href="/country-of-origin-control-netscaler-azuread/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

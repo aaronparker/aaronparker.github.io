@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Dynamic Suite Composition and short names | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Dynamic Suite Composition and short names" />
+<meta name="author" content="Nicke Källén" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is a guest post from Nicke Källén, an App-V MVP from Sweden. He posts as Znack on the TechNet Forums, where he’s consistently the  most active answerer in App-V topics. You can find his blog here." />
+<meta property="og:description" content="This is a guest post from Nicke Källén, an App-V MVP from Sweden. He posts as Znack on the TechNet Forums, where he’s consistently the  most active answerer in App-V topics. You can find his blog here." />
+<link rel="canonical" href="/dynamic-suite-composition-and-short-names/" />
+<meta property="og:url" content="/dynamic-suite-composition-and-short-names/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2010-04-19T10:00:05+10:00" />
+<script type="application/ld+json">
+{"description":"This is a guest post from Nicke Källén, an App-V MVP from Sweden. He posts as Znack on the TechNet Forums, where he’s consistently the  most active answerer in App-V topics. You can find his blog here.","author":{"@type":"Person","name":"Nicke Källén"},"@type":"BlogPosting","url":"/dynamic-suite-composition-and-short-names/","headline":"Dynamic Suite Composition and short names","dateModified":"2010-04-19T10:00:05+10:00","datePublished":"2010-04-19T10:00:05+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/dynamic-suite-composition-and-short-names/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Dynamic Suite Composition and short names</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2010-04-19T10:00:05+10:00" itemprop="datePublished">Apr 19, 2010
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Nicke Källén</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><em>This is a guest post from Nicke Källén, an</em> <a href="https://mvp.support.microsoft.com/profile=DEDA5599-4A38-46A1-A4B0-479D4A945793"><em>App-V MVP</em></a> <em>from Sweden. He posts as <a href="http://social.technet.microsoft.com/Profile/en-US/?user=znack&amp;referrer=http%3a%2f%2fsocial.technet.microsoft.com%2fForums%2fen-US%2fappvclients%2fthread%2fba1a1e3b-b14e-45aa-9373-ba83601b67e9%3foutputas%3dxml&amp;rh=tWq%2byX14GBUU1nKZoHcORYkqCJLPYn4mhXSrzDpr8kk%3d&amp;sp=forums">Znack</a> on the <a href="http://social.technet.microsoft.com/Forums/en-gb/category/appvirtualization">TechNet Forums</a>, where he’s consistently the  most active answerer in App-V topics. You can find his blog</em> <a href="http://www.viridisit.se/eng/blog/"><em>here</em></a><em>.</em></p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/04/AppVLogo.png"><img style="margin-left: 0px; margin-right: 0px; border: 0px;" src="http://stealthpuppy.com/wp-content/uploads/2010/04/AppVLogo_thumb.png" border="0" alt="AppV-Logo" width="136" height="136" align="right" /></a> After looking for information in all my usual channels during the last few months and banging my head against the wall for not understanding why I always run into problems in specific scenarios I finally came to a breakthrough in solving an issue that had been bugging me since early 2009.</p>
+
+<p>This started out with me deciding to really pinpoint the root cause of the issue where the application could not find a file in a linked package, something I wrote about this in my <a href="http://www.viridisit.se/swe/blog/?p=149">Swedish</a> blog a while ago (available for translation if wanted) and continued <a href="http://www.viridisit.se/eng/blog/?p=198">discussing</a> later while requesting assistance.</p>
+
+<p>Now – lets focus on the background before digging any deeper.</p>
+
+<p>During the last couple of years I have been involved in the building of a XenApp farm based on Windows 2003 and XenApp 4.5. The goal of the project was to be able to create an environment that would be able to satisfy all the application owners needs. To add further complications the company just bought a larger company and they were both in need of major infrastructure upgrades (the number 2000 was showing up to many times). Essentially this meant: we needed to support just about any application in the world!</p>
+
+<p>So how do you handle all the needs of different Java , Oracle client, Office versions and the possible conflicts you can expect in an environment like that?</p>
+
+<p>I did not make the design. I have been involved in the details, I have assisted with making things run smoother. I hope I have helped make the people involved in the project see it as a delight and not a burden in making their applications available to a new client – most certainly making some applications available even though the new Vista-client could not host them. The design was made by someone else who provided great insights and an understanding of business requirements and how-to adopt them to a technical platform. The first draft of the environment was based on Windows Server 2003 SP1, SoftGrid 4.1 Terminal Services and XenApp 4.5. It has since evolved to Windows Server 2003 SP2, App-V 4.5 Terminal Services CU1 + HF6 and XenApp 4.5 Hotfix Rollup 5.</p>
+
+<p>To use a marketing phrase – our setup was cloud based. The farm would be stripped of anything not necessary. No Office. Because, which Office version would we install? No Java. Because, which Java version would we install?</p>
+
+<p>This would standardize the server-setup to one common installation hosting all applications – increasing flexibility, scalability and still allowing the various requirements of all applications that could possible want to be hosted.</p>
+
+<p>This of course lead us to include any necessary software within a single virtual package. A package that would contain exactly what the application owner specified as requirements. Such as Office 2000, Adobe Reader 7, 8 or 9… or you name it… Only limitation is the 4gb limit of any App-V package. 4.5 removed this limit! Almost…. by using the feature <a href="http://technet.microsoft.com/en-us/library/cc843662.aspx">Dynamic Suite Composition</a> we could work around it</p>
+
+<p>Now – I was being told that one special application was going to be a challenge. Early on there was an insight that this system would have loads of middleware, different dependencies and would constantly be changing the configuration of any individual component.</p>
+
+<p>Dynamic Suite Composition would of course be the rescue. As the system forced us to discover many new things (I can not stress enough that Aaron’s writings have been invaluable), however there was an ongoing struggle with odd things simply not working. Choosing the simple path and going back to the “single-package” approach was done quite early as the amount of issues reported could simply not be handled while using Dynamic Suite Composition. Usually when things go that bad it’s because somebody didn’t read the documentation. Apparently somebody in this case is me – so I read the documentation. Again. and Again… and felt pretty dumb…. because I just couldn’t figure it out.</p>
+
+<p>Now, Dynamic Suite Composition was in my own little world a perfect usage for the scenario. The software needed Microsoft Office 2007, Adobe Acrobat, one small plug-in and some other minor stuff like Java. Early on I realized that there might be simply things – like a DLL conflict. Considering the fact that I separated the software into different packages to be able to cope with changes effectively I started thinking about what happened if there was a conflict between a registry key or file in the primary package and any secondary package.</p>
+
+<p>There was no documentation regarding that – but let me clarify this;</p>
+
+<ul>
+  <li>Last loaded wins, apart from any configuration in primary OSD.</li>
+  <li>Packages are loaded in the order they are listed, so:</li>
+</ul>
+
+<ol>
+  <li>Primary Package</li>
+  <li>Secondary package 1</li>
+  <li>Secondary package 2</li>
+</ol>
+
+<p>Any conflict between the packages means that Secondary package 2 wins. DSC suddenly didn’t appear as such a good solution as some ideas had to be scrapped right away. Apart from the above realization we continued working with it in some cases, but again – other issues kept appearing. Most commonly we received messages that the Macro-feature was not installed with Office.</p>
+
+<p>The macro-feature is a DLL-file. It’s referenced using a short name. More precisely – it looks like this:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/04/ShortFileNamePath.png"><img style="border: 0px;" src="http://stealthpuppy.com/wp-content/uploads/2010/04/ShortFileNamePath_thumb.png" border="0" alt="ShortFileNamePath" width="660" height="160" /></a></p>
+
+<p>The reference was there, the file was there – but yet when Microsoft Office was made a secondary package it could not locate the file.</p>
+
+<p>As the 4.6 beta was out and there was a Connect-site up – we of course tried the 4.6 release and could repeat the issue. After getting an e-mail confirming that the product didn’t meet our expectations but no elaboration of why it didn’t we decided to pursue this further and opened a Premier Support Case and finally got information detailing the behaviour:</p>
+
+<p><em>Short name tables are not loaded from secondary packages.</em></p>
+
+<p>Not really sure why, but any file being referenced using a short name from a secondary package will of course fail. In the above scenario – we have the luck of being able to change the reference – enter a long name path and all will be well. Currently there are more discussions ongoing regarding this behaviour – what it will mean in the end I am uncertain of.</p>
+
+<p>So what can be done to avoid issues with the above? Make sure you do not have anything in the secondary package available in a location which uses long names. Such as %PROGRAMFILES%.</p>
+
+<p>Since all of this was undocumented, our main focus was to get some proper documentation in place, and with the release of App-v 4.6 the <a href="http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-46_Sequencing_Guide_Final.docx">sequencing guide</a> was updated with a few notes and the replacement of some images that had been pretty harshly judged. None of the actual technical limitations were written, instead small notes like this were noticed;</p>
+
+<blockquote>
+  <p><em>Also, the secondary application can only be middleware or a plug-in and cannot be another full software product.</em></p>
+</blockquote>
+
+<p>What does that mean? Office is not supported as a secondary package and along with it all other full software suites. Why? To minimize the risk of any short name requirements within secondary packages.</p>
+
+<p>Realizing the limitations of a product is probably key to optimally using it for any environment – the current issue revolving around the fact that we know there are limitations with a feature and hopefully Microsoft can be honest about them. So we can plan accordingly.</p>
+
+  </div><a class="u-url" href="/dynamic-suite-composition-and-short-names/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

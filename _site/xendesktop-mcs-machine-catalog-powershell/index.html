@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Creating an MCS-based XenDesktop Machine Catalog with PowerShell | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Creating an MCS-based XenDesktop Machine Catalog with PowerShell" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Driving XenDesktop with PowerShell is a challenge to say the least. While documentation for the XenDesktop PowerShell modules is OK and Citrix Studio outputs PowerShell code after you’ve completed a task in the console, there’s still plenty of work to get that code into something usable." />
+<meta property="og:description" content="Driving XenDesktop with PowerShell is a challenge to say the least. While documentation for the XenDesktop PowerShell modules is OK and Citrix Studio outputs PowerShell code after you’ve completed a task in the console, there’s still plenty of work to get that code into something usable." />
+<link rel="canonical" href="/xendesktop-mcs-machine-catalog-powershell/" />
+<meta property="og:url" content="/xendesktop-mcs-machine-catalog-powershell/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-08-22T11:18:11+10:00" />
+<script type="application/ld+json">
+{"description":"Driving XenDesktop with PowerShell is a challenge to say the least. While documentation for the XenDesktop PowerShell modules is OK and Citrix Studio outputs PowerShell code after you’ve completed a task in the console, there’s still plenty of work to get that code into something usable.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/xendesktop-mcs-machine-catalog-powershell/","headline":"Creating an MCS-based XenDesktop Machine Catalog with PowerShell","dateModified":"2014-08-22T11:18:11+10:00","datePublished":"2014-08-22T11:18:11+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/xendesktop-mcs-machine-catalog-powershell/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Creating an MCS-based XenDesktop Machine Catalog with PowerShell</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2014-08-22T11:18:11+10:00" itemprop="datePublished">Aug 22, 2014
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Driving XenDesktop with PowerShell is a challenge to say the least. While <a href="http://support.citrix.com/proddocs/topic/xenapp-xendesktop-75/cds-sdk-cmdlet-help.html">documentation for the XenDesktop PowerShell modules</a> is OK and Citrix Studio outputs PowerShell code after you’ve completed a task in the console, there’s still plenty of work to get that code into something usable.</p>
+
+<p>As part of an ongoing series of articles themed around automating virtual desktop deployment, I’ve written some PowerShell code to automate the creation of an non-persistent, MCS-based Machine Catalog based on <a href="http://stealthpuppy.com/briforum-2014-hands-off-my-gold-image-the-slides/">a specific Windows image, that we’ve already automated</a> with a solution such as MDT.</p>
+
+<p>Don’t expect to copy and paste the PowerShell output in Citrix Studio and have a complete script. The code is missing a number of lines that link tasks together. I found this article on the Citrix Blogs quite useful – <a href="http://blogs.citrix.com/2012/03/06/using-powershell-to-create-a-catalog-of-machine-creations-services-machines/">Using PowerShell to Create a Catalog of Machine Creations Services Machines</a>; however I’ve taken my script a few steps further.</p>
+
+<h1 id="linking-the-code-to-the-ui">Linking the Code to the UI</h1>
+
+<p>While the Create Machine Catalog wizard doesn’t expose everything that goes on behind the scenes when a machine catalog is created, I think it’s still worth showing how specific functions relate to choices that the administrator makes in the wizard.</p>
+
+<p>The screenshots below show just a snippet of the functions required to automate the catalog creation using PowerShell. These walkthrough the same environment that the full code listing at the end of this article is creating. See the image captions for example code that applies to each step.</p>
+
+<p><a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html"><em>New-BrokerCataog</em></a> is used to create the machine catalog and set a number of properties. You’ll see <a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html"><em>New-BrokerCatalog</em></a> across a number of these screen shots. First up is setting the broker type – in this instance, I’m deploying a Windows 8 image, so need to choose ‘Windows Desktop OS’:</p>
+
+<figure id="attachment_3654" aria-describedby="caption-attachment-3654" style="width: 806px" class="wp-caption alignnone">[<img class="wp-image-3654 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/08/MachineCatalogType.png" alt="Selecting the Machine Catalog type - New-BrokerCatalog SessionSupport SingleSession" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/MachineCatalogType.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/MachineCatalogType-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/MachineCatalogType-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/MachineCatalogType-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/MachineCatalogType.png)<figcaption id="caption-attachment-3654" class="wp-caption-text">Selecting the Machine Catalog type &#8211; New-BrokerCatalog -SessionSupport SingleSession</figcaption></figure>
+
+<p>Because were using MCS, I’m going to specify that I’m using virtual machines and choose the storage on which to deploy those VMs and use the <em>ProvisioningType</em> parameter on <a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html"><em>New-BrokerCatalog</em></a> to specify MCS. This is done in PowerShell via a number of commands – see around line 45 where we specify the hypervisor management and storage resource to use.</p>
+
+<figure id="attachment_3657" aria-describedby="caption-attachment-3657" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3657" src="http://stealthpuppy.com/wp-content/uploads/2014/08/MachineManagement.png" alt="Selecting the provisioning type - New-BrokerCatalog -ProvisioningType $provType" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/MachineManagement.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/MachineManagement-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/MachineManagement-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/MachineManagement-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/MachineManagement.png)<figcaption id="caption-attachment-3657" class="wp-caption-text">Selecting the provisioning type &#8211; New-BrokerCatalog -ProvisioningType MCS</figcaption></figure>
+
+<p>Also on the <a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html"><em>New-BrokerCatalog</em></a>, we can specify that this is a set of randomly assigned desktops.</p>
+
+<figure id="attachment_3658" aria-describedby="caption-attachment-3658" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3658" src="http://stealthpuppy.com/wp-content/uploads/2014/08/DesktopExperience.png" alt="Selecting Random or Static desktops - New-BrokerCatalog -AllocationType Random" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/DesktopExperience.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/DesktopExperience-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/DesktopExperience-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/DesktopExperience-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/DesktopExperience.png)<figcaption id="caption-attachment-3658" class="wp-caption-text">Selecting Random or Static desktops &#8211; New-BrokerCatalog -AllocationType Random</figcaption></figure>
+
+<p>To find the image to use, I’ve obtained the path to the master image and its snapshot via the <em>Get-ChildItem</em> command (on the path XDHyp:\HostingUnits&lt;Storage Resource&gt;) and passed that to <a href="http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/new-provscheme-xd75.html"><em>New-ProvScheme</em></a>.</p>
+
+<figure id="attachment_3659" aria-describedby="caption-attachment-3659" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3659" src="http://stealthpuppy.com/wp-content/uploads/2014/08/MasterImageAndSnapshot.png" alt="Selecting the master image and snapshot to use - New-ProvScheme -ProvisioningSchemeName &quot;Windows 8&quot; -HostingUnitName &quot;HV1-LocalStorage -MasterImageVM &quot;XDHyp:\HostingUnits\HV1-LocalStorage\WIN81.vm\MasterImage.snapshot&quot;" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/MasterImageAndSnapshot.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/MasterImageAndSnapshot-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/MasterImageAndSnapshot-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/MasterImageAndSnapshot-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/MasterImageAndSnapshot.png)<figcaption id="caption-attachment-3659" class="wp-caption-text">Selecting the master image and snapshot to use &#8211; New-ProvScheme -ProvisioningSchemeName &#8220;Windows 8&#8221; -HostingUnitName &#8220;HV1-LocalStorage&#8221; -MasterImageVM &#8220;XDHyp:\HostingUnits\HV1-LocalStorage\WIN81.vm\MasterImage.snapshot&#8221;</figcaption></figure>
+
+<p>Also with <em><a href="http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/new-provscheme-xd75.html">New-ProvScheme</a></em> we can set the number of virtual CPUs and the amount of RAM to assign to each virtual desktop. To specify the number of desktops to create, we’re actually first specifying the number of AD machine accounts to create via <em><a href="http://support.citrix.com/proddocs/topic/citrix-adidentity-admin-v2-xd75/new-acctadaccount-xd75.html">New-AcctADAccount</a></em> and then creating the same number of desktops to assign to those accounts.</p>
+
+<figure id="attachment_3660" aria-describedby="caption-attachment-3660" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3660" src="http://stealthpuppy.com/wp-content/uploads/2014/08/VirtualMachineConfiguration.png" alt="Selecting the virtual machine configurations - New-ProvScheme -VMCpuCount 2 -VMMemoryMB 2048" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/VirtualMachineConfiguration.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/VirtualMachineConfiguration-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/VirtualMachineConfiguration-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/VirtualMachineConfiguration-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/VirtualMachineConfiguration.png)<figcaption id="caption-attachment-3660" class="wp-caption-text">Selecting the virtual machine configurations &#8211; New-ProvScheme -VMCpuCount 2 -VMMemoryMB 2048</figcaption></figure>
+
+<p><a href="http://support.citrix.com/proddocs/topic/citrix-adidentity-admin-v2-xd75/new-acctidentitypool-xd75.html"><em>New-AcctIdentityPool</em></a> is used to create an identity pool that stores the machine accounts by specifying the naming convention and where the accounts will be stored.</p>
+
+<figure id="attachment_3661" aria-describedby="caption-attachment-3661" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3661" src="http://stealthpuppy.com/wp-content/uploads/2014/08/ActiveDirectoryAndMachineAccountName.png" alt="Setting machine account names and location - New-AcctIdentityPool -Domain 'home.stealthpuppy.com' -NamingScheme 'W8-MCS-###'-NamingSchemeType Numeric -OU 'OU=MCS Pooled,OU=Workstations,DC=home,DC=stealthpuppy,DC=com'" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/ActiveDirectoryAndMachineAccountName.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/ActiveDirectoryAndMachineAccountName-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/ActiveDirectoryAndMachineAccountName-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/ActiveDirectoryAndMachineAccountName-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/ActiveDirectoryAndMachineAccountName.png)<figcaption id="caption-attachment-3661" class="wp-caption-text">Setting machine account names and location &#8211; New-AcctIdentityPool -Domain &#8216;home.stealthpuppy.com&#8217; -NamingScheme &#8216;W8-MCS-###&#8217;-NamingSchemeType Numeric -OU &#8216;OU=MCS Pooled,OU=Workstations,DC=home,DC=stealthpuppy,DC=com&#8217;</figcaption></figure>
+
+<p>Again we can see where <em><a href="http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html">New-BrokerCataog</a></em> is used to specify the catalog name and description.</p>
+
+<figure id="attachment_3662" aria-describedby="caption-attachment-3662" style="width: 806px" class="wp-caption alignnone">[<img class="size-full wp-image-3662" src="http://stealthpuppy.com/wp-content/uploads/2014/08/MachineCatalogNameAndDescription.png" alt="Setting the machine catalog name and description - New-BrokerCatalog  -Name &quot;Windows 8 x86&quot; -Description &quot;Windows 8.1 x86 SP1 with Office 2013&quot;" width="806" height="585" srcset="http://192.168.0.89/wp-content/uploads/2014/08/MachineCatalogNameAndDescription.png 806w, http://192.168.0.89/wp-content/uploads/2014/08/MachineCatalogNameAndDescription-150x108.png 150w, http://192.168.0.89/wp-content/uploads/2014/08/MachineCatalogNameAndDescription-300x217.png 300w, http://192.168.0.89/wp-content/uploads/2014/08/MachineCatalogNameAndDescription-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/08/MachineCatalogNameAndDescription.png)<figcaption id="caption-attachment-3662" class="wp-caption-text">Setting the machine catalog name and description &#8211; New-BrokerCatalog -Name &#8220;Windows 8 x86&#8221; -Description &#8220;Windows 8.1 x86 SP1 with Office 2013&#8221;</figcaption></figure>
+
+<p>There’s plenty that the wizard does to hide the complexity of setting up a catalog from the administrator. If you attempt the same via PowerShell, what goes on under the hood is laid bare.</p>
+
+<h1 id="thecode">The Code</h1>
+
+<p>Below is the full code listing with comments inline that should provide some detail on the process the code follows. At this point the code provides some error checking for the most important steps. There are still some additional steps and error checking that could be integrated:</p>
+
+<ul>
+  <li>This code should find the last snapshot of the target master image; it would be simple enough to specify a particular snapshot if required</li>
+  <li>Checking whether provisioning schemes are already available or exist before attempting to create a new provisioning scheme</li>
+  <li>Additional checking that some tasks have completed successfully before continuing</li>
+</ul>
+
+<pre class="lang:ps decode:true " title="PowerShell code to create an MCS-based Machine Catalog in XenDesktop 7.x">#---------------------------------------------------------------------------
+# Author: Aaron Parker
+# Desc:   Using PowerShell to create a XenDesktop 7.x machine catalog 
+# Date:   Aug 19, 2014
+# Site:   http://stealthpuppy.com
+#---------------------------------------------------------------------------
+
+# Set variables for the target infrastructure
+# ----------
+$adminAddress = 'xd71.home.stealthpuppy.com' #The XD Controller we're going to execute against
+$xdControllers = 'xd71.home.stealthpuppy.com'
+
+# Hypervisor and storage resources
+# These need to be configured in Studio prior to running this script
+# This script is hypervisor and management agnostic - just point to the right infrastructure
+$storageResource = "HV1-LocalStorage" #Storage
+$hostResource = "Lab SCVMM" #Hypervisor management
+
+# Machine catalog properties
+$machineCatalogName = "Windows 8 x86"
+$machineCatalogDesc = "Windows 8.1 x86 SP1 with Office 2013"
+$domain = "home.stealthpuppy.com"
+$orgUnit = "OU=MCS Pooled,OU=Workstations,DC=home,DC=stealthpuppy,DC=com"
+$namingScheme = "W8-MCS-###" #AD machine account naming conventions
+$namingSchemeType = "Numeric" #Also: Alphabetic
+$allocType = "Random" #Also: Static
+$persistChanges = "Discard" #Also: OnLocal, OnPvD
+$provType = "MCS" #Also: Manual, PVS
+$sessionSupport = "SingleSession" #Also: MultiSession
+$masterImage ="WIN81*"
+$vCPUs = 2
+$VRAM = 2048
+# ----------
+
+# Change to SilentlyContinue to avoid verbose output
+$VerbosePreference = "Continue"
+
+# Load the Citrix PowerShell modules
+Write-Verbose "Loading Citrix XenDesktop modules."
+Add-PSSnapin Citrix*
+
+# Get information from the hosting environment via the XD Controller
+# Get the storage resource
+Write-Verbose "Gathering storage and hypervisor connections from the XenDesktop infrastructure."
+$hostingUnit = Get-ChildItem -AdminAddress $adminAddress "XDHyp:\HostingUnits" | Where-Object { $_.PSChildName -like $storageResource } | Select-Object PSChildName, PsPath
+# Get the hypervisor management resources
+$hostConnection = Get-ChildItem -AdminAddress $adminAddress "XDHyp:\Connections" | Where-Object { $_.PSChildName -like $hostResource }
+$brokerHypConnection = Get-BrokerHypervisorConnection -AdminAddress $adminAddress -HypHypervisorConnectionUid $hostConnection.HypervisorConnectionUid
+$brokerServiceGroup = Get-ConfigServiceGroup -AdminAddress $adminAddress -ServiceType 'Broker' -MaxRecordCount 2147483647
+
+# Create a Machine Catalog. In this case a catalog with randomly assigned desktops
+Write-Verbose "Creating machine catalog. Name: $machineCatalogName; Description: $machineCatalogDesc; Allocation: $allocType"
+$brokerCatalog = New-BrokerCatalog -AdminAddress $adminAddress -AllocationType $allocType -Description $machineCatalogDesc -Name $machineCatalogName -PersistUserChanges $persistChanges -ProvisioningType $provType -SessionSupport $sessionSupport
+# The identity pool is used to store AD machine accounts
+Write-Verbose "Creating a new identity pool for machine accounts."
+$identPool = New-AcctIdentityPool -AdminAddress $adminAddress -Domain $domain -IdentityPoolName $machineCatalogName -NamingScheme $namingScheme -NamingSchemeType $namingSchemeType -OU $orgUnit
+
+# Creates/Updates metadata key-value pairs for the catalog (no idea why).
+Write-Verbose "Retrieving the newly created machine catalog."
+$catalogUid = Get-BrokerCatalog | Where-Object { $_.Name -eq $machineCatalogName } | Select-Object Uid
+$guid = [guid]::NewGuid()
+Write-Verbose "Updating metadata key-value pairs for the catalog."
+Set-BrokerCatalogMetadata -AdminAddress $adminAddress -CatalogId $catalogUid.Uid -Name 'Citrix_DesktopStudio_IdentityPoolUid' -Value $guid
+
+# Check to see whether a provisioning scheme is already available
+Write-Verbose "Checking whether the provisioning scheme name is unused."
+If (Test-ProvSchemeNameAvailable -AdminAddress $adminAddress -ProvisioningSchemeName @($machineCatalogName))
+{
+  Write-Verbose "Success."
+
+  # Get the master VM image from the same storage resource we're going to deploy to. Could pull this from another storage resource available to the host
+  Write-Verbose "Getting the master image details for the new catalog: $masterImage"
+  $VM = Get-ChildItem -AdminAddress $adminAddress "XDHyp:\HostingUnits\$storageResource" | Where-Object { $_.ObjectType -eq "VM" -and $_.PSChildName -like $masterImage }
+  # Get the snapshot details. This code will assume a single snapshot exists - could add additional checking to grab last snapshot or check for no snapshots.
+  $VMDetails = Get-ChildItem -AdminAddress $adminAddress $VM.FullPath
+  
+  # Create a new provisioning scheme - the configuration of VMs to deploy. This will copy the master image to the target datastore.
+  Write-Verbose "Creating new provisioning scheme using $VMDetails.FullPath"
+  # Provision VMs based on the selected snapshot.
+  $provTaskId = New-ProvScheme -AdminAddress $adminAddress -ProvisioningSchemeName $machineCatalogName -HostingUnitName $storageResource -MasterImageVM $VMDetails.FullPath -CleanOnBoot -IdentityPoolName $identPool.IdentityPoolName -VMCpuCount $vCPUs -VMMemoryMB $vRAM -RunAsynchronously
+  $provTask = Get-ProvTask -AdminAddress $adminAddress -TaskId $provTaskId
+
+  # Track the progress of copying the master image
+  Write-Verbose "Tracking progress of provisioning scheme creation task."
+  $totalPercent = 0
+  While ( $provTask.Active -eq $True ) {
+    Try { $totalPercent = If ( $provTask.TaskProgress ) { $provTask.TaskProgress } Else {0} } Catch { }
+
+    Write-Progress -Activity "Creating Provisioning Scheme (copying and composing master image):" -Status "$totalPercent% Complete:" -percentcomplete $totalPercent
+    Sleep 15
+    $provTask = Get-ProvTask -AdminAddress $adminAddress -TaskID $provTaskId
+  }
+
+  # If provisioning task fails, there's no point in continuing further.
+  If ( $provTask.WorkflowStatus -eq "Completed" )
+  { 
+      # Apply the provisioning scheme to the machine catalog
+      Write-Verbose "Binding provisioning scheme to the new machine catalog"
+      $provScheme = Get-ProvScheme | Where-Object { $_.ProvisioningSchemeName -eq $machineCatalogName }
+      Set-BrokerCatalog -AdminAddress $adminAddress -Name $provScheme.ProvisioningSchemeName -ProvisioningSchemeId $provScheme.ProvisioningSchemeUid
+
+      # Associate a specific set of controllers to the provisioning scheme. This steps appears to be optional.
+      Write-Verbose "Associating controllers $xdControllers to the provisioning scheme."
+      Add-ProvSchemeControllerAddress -AdminAddress $adminAddress -ControllerAddress @($xdControllers) -ProvisioningSchemeName $provScheme.ProvisioningSchemeName
+
+      # Provisiong the actual machines and map them to AD accounts, track the progress while this is happening
+      Write-Verbose "Creating the machine accounts in AD."
+      $adAccounts = New-AcctADAccount -AdminAddress $adminAddress -Count 5 -IdentityPoolUid $identPool.IdentityPoolUid
+      Write-Verbose "Creating the virtual machines."
+      $provTaskId = New-ProvVM -AdminAddress $adminAddress -ADAccountName @($adAccounts.SuccessfulAccounts) -ProvisioningSchemeName $provScheme.ProvisioningSchemeName -RunAsynchronously
+      $provTask = Get-ProvTask -AdminAddress $adminAddress -TaskId $provTaskId
+
+      Write-Verbose "Tracking progress of the machine creation task."
+      $totalPercent = 0
+      While ( $provTask.Active -eq $True ) {
+        Try { $totalPercent = If ( $provTask.TaskProgress ) { $provTask.TaskProgress } Else {0} } Catch { }
+
+        Write-Progress -Activity "Creating Virtual Machines:" -Status "$totalPercent% Complete:" -percentcomplete $totalPercent
+        Sleep 15
+        $ProvTask = Get-ProvTask -AdminAddress $adminAddress -TaskID $provTaskId
+      }
+
+      # Assign the newly created virtual machines to the machine catalog
+      $provVMs = Get-ProvVM -AdminAddress $adminAddress -ProvisioningSchemeUid $provScheme.ProvisioningSchemeUid
+      Write-Verbose "Assigning the virtual machines to the new machine catalog."
+      ForEach ( $provVM in $provVMs ) {
+        Write-Verbose "Locking VM $provVM.ADAccountName"
+        Lock-ProvVM -AdminAddress $adminAddress -ProvisioningSchemeName $provScheme.ProvisioningSchemeName -Tag 'Brokered' -VMID @($provVM.VMId)
+        Write-Verbose "Adding VM $provVM.ADAccountName"
+        New-BrokerMachine -AdminAddress $adminAddress -CatalogUid $catalogUid.Uid -MachineName $provVM.ADAccountName
+      }
+      Write-Verbose "Machine catalog creation complete."
+
+   } Else {
+    # If provisioning task fails, provide error
+    # Check that the hypervisor management and storage resources do no have errors. Run 'Test Connection', 'Test Resources' in Citrix Studio
+    Write-Error "Provisioning task failed with error: [$provTask.TaskState] $provTask.TerminatingError"
+   }
+}
+</pre>
+
+<p>Comments or feedback on bugs, better ways to do things or additional steps is welcome.</p>
+
+  </div><a class="u-url" href="/xendesktop-mcs-machine-catalog-powershell/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

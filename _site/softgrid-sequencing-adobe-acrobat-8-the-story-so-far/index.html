@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>SoftGrid: Sequencing Adobe Acrobat 8 – The Story So Far | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="SoftGrid: Sequencing Adobe Acrobat 8 – The Story So Far" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I’m not completely convinced that Adobe Acrobat (not Reader) is the best candidate for deploying via application virtualisation techniques, but if you’re looking to do it you’re in for a bit of a ride." />
+<meta property="og:description" content="I’m not completely convinced that Adobe Acrobat (not Reader) is the best candidate for deploying via application virtualisation techniques, but if you’re looking to do it you’re in for a bit of a ride." />
+<link rel="canonical" href="/softgrid-sequencing-adobe-acrobat-8-the-story-so-far/" />
+<meta property="og:url" content="/softgrid-sequencing-adobe-acrobat-8-the-story-so-far/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2007-11-27T18:45:38+11:00" />
+<script type="application/ld+json">
+{"description":"I’m not completely convinced that Adobe Acrobat (not Reader) is the best candidate for deploying via application virtualisation techniques, but if you’re looking to do it you’re in for a bit of a ride.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/softgrid-sequencing-adobe-acrobat-8-the-story-so-far/","headline":"SoftGrid: Sequencing Adobe Acrobat 8 – The Story So Far","dateModified":"2007-11-27T18:45:38+11:00","datePublished":"2007-11-27T18:45:38+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/softgrid-sequencing-adobe-acrobat-8-the-story-so-far/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">SoftGrid: Sequencing Adobe Acrobat 8 &amp;#8211; The Story So Far</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2007-11-27T18:45:38+11:00" itemprop="datePublished">Nov 27, 2007
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img src="http://stealthpuppy.com/wp-content/uploads/2008/02/adobeacrobat-softgridbox.png" alt="adobeacrobat-softgridbox.png" align="left" />I’m not completely convinced that Adobe Acrobat (not Reader) is the best candidate for deploying via application virtualisation techniques, but if you’re looking to do it you’re in for a bit of a ride.</p>
+
+<p>Getting this one as far as I have has taken the better part of three days and I still have some challenges on the client to solve. For this sequence you will need access to the <a href="http://www.adobe.com/aboutadobe/openoptions/">volume license version of the media</a>, otherwise you will find that the application will prompt for activation when run on your client machines.</p>
+
+<p>I am using VMware Workstation 6 and the virtual machine running the SoftGrid Sequencer was running Windows XP Professional Service Pack 2, with Internet Explorer 7.0 and the .NET Framework 2.0. In this environment I am installing the sequenced applications to Y: drive and Acrobat to Y:\acrobatp.80.</p>
+
+<p>Before I sequenced Acrobat I performed a standard installation, with all of the latest patches, so that I could extract the Adobe PDF Converter printer driver and AdobePDF.DLL. After installation the driver can be found in %ProgramFiles%\Adobe\Acrobat 8.0\Acrobat\Xtras\AdobePDF and AdobePDF.DLL can be found in %SystemRoot%\SYSTEM32. Then, before sequencing the application, I installed the printer driver on the Sequencer machine (this was the driver only, not the Adobe PDF printer) and copied across AdobePDF.DLL.</p>
+
+<p>To setup for sequencing, I created a snapshot of the Sequencer machine with all of the required files for the Acrobat installation so that I could roll back if my sequence failed. And it did fail, a lot, while getting this working. One of the current issues with the Sequencer is that if it fails on a file while building the package after the monitoring phase, it just stops. This means that I’ve had to rerun the sequence and installation until I worked out each file that was causing issues.</p>
+
+<p>In the case of Acrobat, I would receive this error: “SystemGuard download failed (error code 53256)”. By looking at the log file (%ProgramFiles%\Softricity\SoftGrid Sequencer\Logs\sft-seq-log), I could see the files that the Sequencer was having issues with.</p>
+
+<blockquote>
+  <p>[11/22/2007 17:38:04 VRB VFSX] SxS: Starting SxS public-to-private assembly conversion.<br />
+[11/22/2007 17:38:05 WRN VFSX] SxSPE::parseUTF : Unsupported UTF format for file Y:\acrobatp.80\Adobe\Acrobat 8.0\Acrobat\FileInfo.dll (format # 3).<br />
+[11/22/2007 17:38:05 VRB RTSK] Failed to convert public SxS assemblies.<br />
+[11/22/2007 17:38:05 ERR RTSK] SystemGuard download failed (error code 53256).<br />
+[11/22/2007 17:38:05 ERR RTSK] SystemGuard download failed (error code 53256).</p>
+</blockquote>
+
+<p>This turned out to be issues with the manifests inside three DLL files encoded in UTF-16. There a couple of ways around this issue. One is to delete the .manifest resource from within the DLL with a PE utility such as <a href="http://www.heaventools.com/overview.htm">PE Explorer</a>, however two of these files don’t include a manifest within them at all. A much better way is to add an external manifest for each DLL after completing the installation of Acrobat. These are the files I had issues with:</p>
+
+<ul>
+  <li>Y:\acrobatp.80\Adobe\Acrobat 8.0\Acrobat\FileInfo.dll</li>
+  <li>Y:\acrobatp.80\Adobe\Acrobat 8.0\Acrobat\versioncue.dll</li>
+  <li>Y:\acrobatp.80\Adobe\Acrobat 8.0\Acrobat\versioncueui.dll</li>
+</ul>
+
+<p>So I needed to add a manifest file for each DLL:</p>
+
+<ul>
+  <li>Y:\acrobatp.80\Adobe\Acrobat 8.0\Acrobat\FileInfo.dll.manifest</li>
+  <li>Y:\acrobatp.80\Adobe\Acrobat 8.0\Acrobat\versioncue.dll.manifest</li>
+  <li>Y:\acrobatp.80\Adobe\Acrobat 8.0\Acrobat\versioncueui.dll.manifest</li>
+</ul>
+
+<p>I created this for FILEINFO.DLL using PE Explorer; however I was able to use the same contents for each manifest file. I presume the only required text is the first line. Here’s a list of the components I required for this installation:</p>
+
+<ul>
+  <li>The Acrobat installation files</li>
+  <li>Updates 8.1 and 8.1.1 for Acrobat 8 (these are MSP files and non-cumulative)</li>
+  <li>The Adobe PDF Converter driver</li>
+  <li>Two scripts, one for installing the driver and a second for installing Adobe Acrobat plus patches and modifications</li>
+  <li>A transform file to assist in automating and configuring the installation of Acrobat</li>
+  <li>Manifest files for each DLL that the Sequencer has issues with</li>
+</ul>
+
+<p>When sequencing of Adobe Acrobat I’ve <a href="http://www.adobe.com/support/downloads/detail.jsp?ftpID=3564">created a custom transform file</a> that adds the serial number, disables Adobe Updater and ensures the setup files (around 1 GB) are not cached. Installation, patching, configuring and sequencing Acrobat has been taking about an hour. Once the application is ready to go on the SoftGrid client I’ve observed the following behaviour:</p>
+
+<ul>
+  <li>The Adobe licensing appears to work as the application do not prompt for a license number or activation</li>
+  <li>Acrobat Professional and LiveCycle Designer run without issues. Users should be able to create documents and forms without issues</li>
+  <li>Installation of the Adobe PDF Converter driver and creating the Adobe PDF printer is straight-forward, however:</li>
+  <li>The Adobe PDF printer port is not created, which mean that the printer is offline and you can’t print PDF files</li>
+  <li>Acrobat Distiller pushes the CPU to 100% as soon as it’s run</li>
+</ul>
+
+<p>So that’s what I’ve got so far. I still have a few issues to sort out and I’ll post again if I find a solution but I’m not terribly optimistic.</p>
+
+<p>**Further Reading:<br />
+**</p>
+
+<ul>
+  <li><a href="http://blogs.msdn.com/rslaten/archive/2007/09/11/some-applications-fail-to-sequence-with-error-code-53256-unsupported-utf-format.aspx">Some Applications Fail to Sequence with Error Code 53256 / Unsupported UTF format</a></li>
+  <li><a href="http://support.microsoft.com/kb/931592">Error message when you try to sequence an application in SoftGrid: “SystemGuard download failed (error code 53256)”</a></li>
+  <li><a href="http://blogs.technet.com/softgrid/archive/2007/10/25/update-error-53256-sequencing-adobe-cs3.aspx">Update: Error 53256 Sequencing Adobe CS3</a></li>
+  <li><a href="http://forums.microsoft.com/TechNet/ShowPost.aspx?PostID=2105830&amp;SiteID=17">TechNet Forums: SxS error when sequencing Adobe CS3 apps, Acrobat 8 Pro</a></li>
+  <li><a href="http://forums.microsoft.com/TechNet/ShowPost.aspx?PostID=2121347&amp;SiteID=17">TechNet Forums: Adobe Acrobat 8 Standard</a></li>
+</ul>
+
+  </div><a class="u-url" href="/softgrid-sequencing-adobe-acrobat-8-the-story-so-far/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

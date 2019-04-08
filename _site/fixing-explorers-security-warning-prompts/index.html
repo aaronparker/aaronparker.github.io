@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Fixing Windows Explorer security warning prompts | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Fixing Windows Explorer security warning prompts" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Last week I wrote about avoiding Explorer’s Security Warning prompts, this time around I want to document a related fix that I’ve had to implement because Explorer’s expected behaviour was not just not working." />
+<meta property="og:description" content="Last week I wrote about avoiding Explorer’s Security Warning prompts, this time around I want to document a related fix that I’ve had to implement because Explorer’s expected behaviour was not just not working." />
+<link rel="canonical" href="/fixing-explorers-security-warning-prompts/" />
+<meta property="og:url" content="/fixing-explorers-security-warning-prompts/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-06-22T22:11:00+10:00" />
+<script type="application/ld+json">
+{"description":"Last week I wrote about avoiding Explorer’s Security Warning prompts, this time around I want to document a related fix that I’ve had to implement because Explorer’s expected behaviour was not just not working.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/fixing-explorers-security-warning-prompts/","headline":"Fixing Windows Explorer security warning prompts","dateModified":"2008-06-22T22:11:00+10:00","datePublished":"2008-06-22T22:11:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/fixing-explorers-security-warning-prompts/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Fixing Windows Explorer security warning prompts</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-06-22T22:11:00+10:00" itemprop="datePublished">Jun 22, 2008
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Last week I wrote about <a href="http://stealthpuppy.com/windows/avoiding-explorers-security-warning-prompts">avoiding Explorer’s Security Warning prompts</a>, this time around I want to document a related fix that I’ve had to implement because Explorer’s expected behaviour was not just not working.</p>
+
+<p>First a quick background on what we’re trying to solve. By default, Windows Explorer will place network locations (mapped drives and UNC paths) with a period (.) in the path, into the the Internet zone. This means that when users access files from these locations, they will see security warnings like these:</p>
+
+<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/securityrisk.png" border="0" alt="SecurityRisk" width="345" height="136" /></p>
+
+<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/securitywarning.png" alt="" /></p>
+
+<p>These warnings attempt to ensure users are aware of the potential risks when opening files from un-trusted locations. You can make a location trusted by adding it to the Local Intranet or Trusted Sites zones. This is exactly what you would do via script, Group Policy or some other workspace management tool, for your internal network locations, so that users do not see these prompts. However, a bug exists where drives mapped to these network locations are not placed into the right zone.</p>
+
+<p>If you map a drive to a UNC path that that includes two or more periods in the name you will see that the network drive is marked as being in the Internet zone even though you may have added the location to the Local Intranet zone. In my example here, I’ve mapped drive S: to <a href="file://\\dc.dev.local\Apps">\dc.dev.local\Apps</a>, and as you can see, it’s in the Internet zone:</p>
+
+<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/internetzonedrive.png" border="0" alt="InternetZoneDrive" width="304" height="336" /></p>
+
+<p>If I open the same location via a UNC path you will see that Explorer sees it as being in the Local Intranet zone:</p>
+
+<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/intranetzoneunc.png" border="0" alt="IntranetZoneUNC" width="304" height="321" /></p>
+
+<p>Oddly enough, if I map a network drive to a path with only a single period on that path, the detection process works correctly and the location is seen as Intranet. In the example here, I’m mapping a drive to the same location as the previous two screen shots, but via a DFS path – <a href="file://\\dev.local\Public\Apps">\dev.local\Public\Apps</a> that redirects to <a href="file://\\dc.dev.local\Apps">\dc.dev.local\Apps</a>.</p>
+
+<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/intranetzonedrive.png" border="0" alt="IntranetZoneDrive" width="304" height="321" /></p>
+
+<p>This issue is addressed in the following knowledge base article:</p>
+
+<p><a href="http://support.microsoft.com/kb/929798">Windows Internet Explorer 7 may not correctly recognize the zone to which a network resource belongs when you access the resource by using a mapped drive in Windows Vista or in Windows XP with Service Pack 2</a></p>
+
+<p>The article details a hotfix that is available for Windows Vista and Windows XP Service Pack 2 and the issue has been addressed in Windows Vista Service Pack 1 and Windows XP Service Pack 3. For Windows Server 2003 the issue is fixed in the <a href="http://www.microsoft.com/technet/security/bulletin/MS08-031.mspx">latest cumulative security update for Internet Explorer</a>. To install the fix when deploying this update you need to use the <a href="http://searchwinit.techtarget.com/sDefinition/0,,sid1_gci753550,00.html">QFE</a> switch:</p>
+
+<p>[code]IE7-WindowsServer2003-KB950759-x86-ENU.exe /B:SP2QFE[/code]</p>
+
+<p>To enable the fixed behaviour for each of the operating system versions, including Vista SP1 and XP SP3, you also have to add the following registry value. See the KB article for more details.</p>
+
+<p>[code]Windows Registry Editor Version 5.00<br />
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_RESPECT_ZONEMAP_FOR_MAPPED_DRIVES_KB929798]<br />
+“*“=dword:00000001[/code]</p>
+
+<p>For anyone who can’t yet deploy Windows Vista SP1 or Windows XP SP3, you may be able (I haven’t tested) to deploy the IE cumulative security update instead of the hotfix.</p>
+
+  </div><a class="u-url" href="/fixing-explorers-security-warning-prompts/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

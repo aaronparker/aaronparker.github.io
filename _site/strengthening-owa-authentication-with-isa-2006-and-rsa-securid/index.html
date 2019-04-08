@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Strengthening OWA Authentication with ISA 2006 and RSA SecurID | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Strengthening OWA Authentication with ISA 2006 and RSA SecurID" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Now that Microsoft have released ISA Server 2006, we have more authentication options available to us. This includes the ability to add two-factor authentication solutions to the existing forms based authentication, traditionally used to authentication against Active Directory only. I have a previous post on how to protect Outlook Web Access with RSA SecurID, which discusses using the RSA Web Agent with IIS and RSA SecurID authentication with ISA Server 2004, however both of those options are a little clunky. Now with ISA Server 2006, we have a more elegant solution that allows us to integrate RSA SecurID directly into the forms authentication method. Assuming ISA Server is a domain member, here’s how to do it." />
+<meta property="og:description" content="Now that Microsoft have released ISA Server 2006, we have more authentication options available to us. This includes the ability to add two-factor authentication solutions to the existing forms based authentication, traditionally used to authentication against Active Directory only. I have a previous post on how to protect Outlook Web Access with RSA SecurID, which discusses using the RSA Web Agent with IIS and RSA SecurID authentication with ISA Server 2004, however both of those options are a little clunky. Now with ISA Server 2006, we have a more elegant solution that allows us to integrate RSA SecurID directly into the forms authentication method. Assuming ISA Server is a domain member, here’s how to do it." />
+<link rel="canonical" href="/strengthening-owa-authentication-with-isa-2006-and-rsa-securid/" />
+<meta property="og:url" content="/strengthening-owa-authentication-with-isa-2006-and-rsa-securid/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2006-09-28T23:12:00+10:00" />
+<script type="application/ld+json">
+{"description":"Now that Microsoft have released ISA Server 2006, we have more authentication options available to us. This includes the ability to add two-factor authentication solutions to the existing forms based authentication, traditionally used to authentication against Active Directory only. I have a previous post on how to protect Outlook Web Access with RSA SecurID, which discusses using the RSA Web Agent with IIS and RSA SecurID authentication with ISA Server 2004, however both of those options are a little clunky. Now with ISA Server 2006, we have a more elegant solution that allows us to integrate RSA SecurID directly into the forms authentication method. Assuming ISA Server is a domain member, here’s how to do it.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/strengthening-owa-authentication-with-isa-2006-and-rsa-securid/","headline":"Strengthening OWA Authentication with ISA 2006 and RSA SecurID","dateModified":"2006-09-28T23:12:00+10:00","datePublished":"2006-09-28T23:12:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/strengthening-owa-authentication-with-isa-2006-and-rsa-securid/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Strengthening OWA Authentication with ISA 2006 and RSA SecurID</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2006-09-28T23:12:00+10:00" itemprop="datePublished">Sep 28, 2006
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Now that Microsoft have released ISA Server 2006, we have <a href="http://www.microsoft.com/technet/isa/2006/authentication.mspx">more authentication options</a> available to us. This includes the ability to add two-factor authentication solutions to the existing forms based authentication, traditionally used to authentication against Active Directory only. I have a previous post on how to protect <a href="http://www.trustedaccess.info/blogs/travelling/archive/2006/08/25/Protecting-Outlook-Web-Access-with-RSA-authentication.aspx">Outlook Web Access with RSA SecurID</a>, which discusses using the RSA Web Agent with IIS and RSA SecurID authentication with ISA Server 2004, however both of those options are a little clunky. Now with ISA Server 2006, we have a more elegant solution that allows us to integrate RSA SecurID directly into the forms authentication method. Assuming ISA Server is a domain member, here’s how to do it.</p>
+
+<p>First off, I’ll discuss how SecurID authentication works in ISA Server. Microsoft have licensed the agent software from RSA and offered RSA SecurID authentication since ISA Server 2000 Feature Pack 1. This is built into the product and does not require a separate agent installation. As of ISA Server 2006, the SecurID agent version is 6.1.1.53. You can view the support DLLs in the ISA Server program folder (Program FilesMicrosoft ISA Server, aceclnt.dll, sdmsg.dll and sdui.dll).</p>
+
+<p>To allow the ISA Server to authenticate against the RSA ACE server, an agent host record needs to be created (assuming a Windows box is hosting the ACE server):</p>
+
+<ol>
+  <li>Log onto the RSA ACE server and start the Database Administration tool in Host Mode</li>
+  <li>Add a new agent host and use ‘Net OS Agent’ as the agent type</li>
+  <li>Enable the tick-box labelled ‘Open to All Locally Known Users’ if you want all users to be able to authenticate</li>
+  <li>Click OK to save the changes and copy SDCONF.REC (located in <span style="font-size: 9pt; font-family: Courier New">WINDOWSSYSTEM32</span>) to ISA Server.</li>
+</ol>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.127.AgentHost.gif"><img style="width: 318px; height: 311px;" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.127.AgentHost.gif" border="0" alt="" width="318" height="311" /></a></p>
+
+<p>Configuring SecurID support in ISA Server as a simple process:</p>
+
+<ol>
+  <li>Copy SDCONF.REC to <span style="font-size: 9pt; font-family: Courier New">WINDOWSSYSTEM32.</span> The ISA Server help file says to put this file into the ISA Server program folder, but this worked fine for me in the SYSTEM32 folder.</li>
+  <li>Ensure that the local account NETWORK SERVICE has Full Control to the following registry key: <span style="font-size: 9pt; font-family: Courier New">HKEY_LOCAL_MACHINESOFTWARESDTI</span>. This is so that ISA Server can write the secret to the registry.</li>
+  <li>You may also need to add the <strong>PrimaryInterfaceIP</strong> string value to the registry under <span style="font-size: 9pt; font-family: Courier New">HKEY_LOCAL_MACHINESOFTWARESDTIACECLIENT</span> depending on your ISA Server configuration. The value must match that set in the agent host record.</li>
+</ol>
+
+<p>You can test RSA SecurID authentication with the RSA Test Authentication utility available from the Microsoft web site. Download this utility and copy the extracted utility to the ISA Server program folder and execute from there (if you don’t you will receive an error).</p>
+
+<p><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=7b0ca409-55d0-4d33-bb3f-1ba4376d5737&amp;DisplayLang=en">RSA Test Authentication Utility for Internet Security and Acceleration (ISA) Server 2006</a></p>
+
+<p>Now that the SecurID authentication requirements have been configured you can create a web publishing rule to enable access to Outlook Web Access. This is a simple wizard driven interface (use the Exchange Web Client Access Publish Rule wizard) and is discussed in detail in ISAServer.org so I won’t go into detail here.</p>
+
+<p>Once the rule and a corresponding web listener has been created, you will need to edit the properties of the web listener:</p>
+
+<ol>
+  <li>Choose the Authentication tab and ensure that ‘HTML Form Authentication’ is selected as the authentication method</li>
+  <li>Enable the tick-box labelled ‘Collect additional delegation credentials in the form’</li>
+  <li>Then select the radio button labelled ‘RSA SecurID’</li>
+  <li>Click OK and apply your configuration changes.</li>
+</ol>
+
+<p><img style="width: 404px; height: 466px;" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.128.WebListener.png" alt="" width="404" height="466" /></p>
+
+<p>Now you should have three fields listed on the Outlook Web Access authentication page: username, token code and password. ISA Server also provides for a scenario where the RSA username and the Windows username are different, adding a forth field for a Windows username.</p>
+
+<p><img style="width: 468px; height: 389px;" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.129.OWA.png" alt="" width="468" height="389" /></p>
+
+<p>This is an excellent method of taking authentication that one step further to ensure only trusted users have access to your corporate resources. The same authentication options offered in ISA Server also allow for other two-factor authentication solutions via RADIUS OTP (One Time Password). With this option you could authenticate against Secure Computing’s <a href="http://www.securecomputing.com/index.cfm?skey=643">SafeWord PremierAccess</a> or <a href="http://www.verisign.com/products-services/security-services/unified-authentication/index.html">Verisign’s Unified Authentication</a> to provide two-factor authentication.</p>
+
+<p>One thing to note about enabling RSA authentication on your OWA rule, if you also use this rule for ActiveSync, this will break ActiveSync. I have not looked into this further, but I would recommend creating a separate rule for ActiveSync using a second certificate.</p>
+
+  </div><a class="u-url" href="/strengthening-owa-authentication-with-isa-2006-and-rsa-securid/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

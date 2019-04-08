@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Sequencing Google Chrome 15 | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Sequencing Google Chrome 15" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Here’s how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions." />
+<meta property="og:description" content="Here’s how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions." />
+<link rel="canonical" href="/sequencing-google-chrome-15/" />
+<meta property="og:url" content="/sequencing-google-chrome-15/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2011-11-07T16:00:00+11:00" />
+<script type="application/ld+json">
+{"description":"Here’s how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/sequencing-google-chrome-15/","headline":"Sequencing Google Chrome 15","dateModified":"2011-11-07T16:00:00+11:00","datePublished":"2011-11-07T16:00:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/sequencing-google-chrome-15/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Sequencing Google Chrome 15</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2011-11-07T16:00:00+11:00" itemprop="datePublished">Nov 7, 2011
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img style="background-image: none; margin: 0px 0px 0px 5px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border-width: 0px;" title="GoogleChrome" src="http://stealthpuppy.com/wp-content/uploads/2011/11/GoogleChrome.png" alt="GoogleChrome" width="128" height="128" align="right" border="0" />Here’s how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions.</p>
+
+<h3 id="what-you-lose-by-virtualizing-chrome">What you lose by virtualizing Chrome</h3>
+
+<p>Virtualizing Chrome with App-V will isolate the application from the OS, so the following features will not be available once Chrome has been sequenced:</p>
+
+<ul>
+  <li>Chrome Jump Lists in the Start Menu and Taskbar</li>
+  <li>The ability set the browser as default</li>
+  <li>The Chrome <a href="http://dev.chromium.org/developers/design-documents/sandbox">sandbox</a> (maybe)</li>
+</ul>
+
+<p><strong>Note</strong>: Note that disabling the sandbox will reduce the browser security. This is not recommended and as such, I actually do not recommend virtualizing Chrome, if it is to be your regular browser.</p>
+
+<h3 id="managing-the-chrome-profile--virtualize-or-not">Managing the Chrome profile – virtualize or not?</h3>
+
+<p><a href="http://www.chromium.org/user-experience/user-data-directory">Chrome stores preferences, extensions and other user data</a>in:</p>
+
+<ul>
+  <li>%LOCALAPPDATA%\Google\Chrome\User Data\Default (preferences, bookmarks etc. <strong>and</strong> browser cache)</li>
+</ul>
+
+<p>I don’t know why Google has chosen this location by default, however I suspect that it may be to encourage users to signup for a Google account to enable the <a href="http://www.google.com/support/chrome/bin/answer.py?hl=en&amp;answer=165139&amp;topic=1693469">native syncing features of the browser</a>. The Chrome User Data folder can become very large and that’s without the Cache folder. You could potentially hit the limit of the user PKG file size.</p>
+
+<p>Whether you the Chrome user profile in the package will depend on your specific deployment requirements; however my recommendation is to use this sync feature and leave the User Data outside of the App-V package.</p>
+
+<p>There are a couple of reasons why this approach is a good idea:</p>
+
+<ul>
+  <li>Some of the configuration files within the Chrome profile include hard-codes paths – challenging if your App-V virtual drive changes between clients</li>
+  <li>Virtualizing the profile increases the complexity of upgrading Chrome packages especially challenging given how often the browser is updated. By storing the Chrome profile on the real file system, Chrome can be deployed via completely unrelated packages – no need to create upgrade versions</li>
+</ul>
+
+<p>By not virtualizing the user profile you will gain some flexibility with your Chrome deployment.</p>
+
+<p>However, if you absolutely must place the Chrome profile in the virtual environment, then here’s a couple of approaches to including the User Data folder in the App-V package:</p>
+
+<ol>
+  <li>Use the <em>–user-data-dir</em> and <em>–disk-cache-dir</em> command line parameters to specify an alternate location for the User Data and Cache folders</li>
+  <li>Remove the exclusions for the Local AppData location from the Sequencer before sequencing</li>
+</ol>
+
+<p>For the first approach, add the parameters to the command line, placing <a href="http://www.chromium.org/user-experience/user-data-directory">the User Data folder</a> in the roaming portion of the profile and the browser cache in the local portion:</p>
+
+<p>[code]chrome –user-data-dir=%AppData%\Google\Chrome\User Data –disk-cache-dir=%LocalAppData%\Google\Chrome\User Data[/code]</p>
+
+<p>The second approach doesn’t require any command line parameters, but it will require modifying the default Sequencer exclusions and some scripting:</p>
+
+<ul>
+  <li>Remove the default exclusions of <em>%CSIDL_LOCAL_APPDATA%</em> and <em>%CSIDL_PROFILE%\Local Settings</em></li>
+  <li>Add an exclusion for <em>%CSIDL_LOCAL_APPDATA%\Google\Chrome\User Data\Default\Cache</em> or <em>%CSIDL_PROFILE%\Local Settings\Google\Chrome\User Data\Default\Cache</em>, depending on the operating system you are sequencing on</li>
+  <li>Post sequencing, set the folder to Merge with Local and add a pre-launch script that creates the Cache folder outside of the virtual environment</li>
+</ul>
+
+<p>The first approach would be the easiest way to go.</p>
+
+<h3 id="chrome-features-to-disable">Chrome features to disable</h3>
+
+<p>There are a couple of features that should be disabled when running Chrome under App-V:</p>
+
+<ul>
+  <li>Browser auto updates. Chrome updates should be delivered via new App-V packages</li>
+  <li>Default browser check. Once Chrome is isolated from the OS, the user won’t be able to make it the default browser</li>
+</ul>
+
+<p><a href="http://www.chromium.org/administrators/turning-off-auto-updates">Disabling browser auto updates</a> on Windows requires setting a policy. This can be done via Group Policy, delivered post sequence, or placing the policy directly into the package. To <a href="http://www.google.com/support/installer/bin/answer.py?answer=146164">deliver the setting via Group Policy</a>, ensure that the Policies key is not captured in the package.</p>
+
+<p>To set the policy during sequencing, run the following command:</p>
+
+<p>[code]REG ADD HKLM\SOFTWARE\Policies\Google\Update /v AutoUpdateCheckPeriodMinutes /d 0 /t REG_SZ /f[/code]</p>
+
+<p>Google Update should also be excluded from the package, which I discuss below. The default browser check can be disabled with a couple of approaches including the master preferences file.</p>
+
+<h3 id="configuring-chrome-defaults">Configuring Chrome Defaults</h3>
+
+<p>If a Chrome profile is not virtualized within the package any options set during the monitoring phase won’t be captured. Fortunately Chrome can be configured with defaults for any new profile so that it will contain your required configuration options. Google has made it simple to deploy custom default settings and preferences – by adding a preference file to the same folder where Chrome is installed, Chrome will use these master preferences for any new user who runs Chrome.</p>
+
+<p>For information on what these master preferences are, see the <a href="http://www.chromium.org/administrators/configuring-other-preferences">Chromium administrators documentation on master preferences</a>. I’ve included a sample <strong>master_preferences</strong> file in which I have set several defaults including removing the default browser check, preventing Google from adding a shortcut to the user’s desktop on first run and setting a home page.</p>
+
+<p class="download">
+  [download id=&#8221;51&#8243; format=&#8221;1&#8243;]
+</p>
+
+<p>Remove the .txt file extension to use</p>
+
+<h3 id="sequencing-platform">Sequencing Platform</h3>
+
+<p>I have sequenced Google Chrome 15.0.874.106 on a clean Windows 7 SP1 x86 VM with all current updates and no other applications other than the App-V Sequencer. I’ve configured a Q: drive using a second vDisk. I’ve used a VFS install because installing Chrome to the Q: drive isn’t an option, unless you want to move the application manually.</p>
+
+<h3 id="sequencer-configuration">Sequencer Configuration</h3>
+
+<p>Before Sequencing, add the following exclusions:</p>
+
+<ul>
+  <li>\REGISTRY\USER\%SFT_SID%\Software\Microsoft\Windows\CurrentVersion\Internet Settings</li>
+  <li>%CSIDL_COMMON_APPDATA%\Microsoft\RAC</li>
+  <li>%CSIDL_WINDOWS%\Microsoft.NET</li>
+  <li>%CSIDL_WINDOWS%\Installer</li>
+  <li>%CSIDL_PROGRAM_FILES%\Google\Update</li>
+  <li>%CSIDL_WINDOWS%\Tasks</li>
+</ul>
+
+<p>The last two exclusions will prevent Google Update related binaries from being captured. Additionally disable the option to “Allow Virtualization of Services” to prevent the capture of the Google Update services.</p>
+
+<p>I have included these options in a Package Template for Chrome that you can download here:</p>
+
+<p class="download">
+  [download id=&#8221;52&#8243; format=&#8221;1&#8243;]
+</p>
+
+<h3 id="sequencing-chrome">Sequencing Chrome</h3>
+
+<p>Download the <a href="http://www.google.com/chrome/eula.html?msi=true">Google Chrome Enterprise (or MSI) installer</a>. Sequencing Chrome will require the following steps:</p>
+
+<ol>
+  <li>Install Chrome using the Windows Installer file</li>
+  <li>Delete the cached copy of the Chrome installer, which won’t be required once delivered with App-V</li>
+  <li>Move chrome.exe to the same folder as the current version’s binaries (or vice-versa).</li>
+</ol>
+
+<p>With the default folder structure, Chrome will execute during sequencing, but won’t execute once delivered to a client. The debug.log file will contain entries similar to this:</p>
+
+<p>[code][1106/180706:ERROR:client_util.cc(231)] Could not get Chrome DLL version.<br />
+[1106/180706:ERROR:client_util.cc(268)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded[/code]</p>
+
+<li value="4">
+  Copy the <strong>master_preferences</strong> file to the same location as <strong>chrome.exe</strong> to configure user profile defaults
+</li>
+<li value="5">
+  Disable browser auto updates
+</li>
+<li value="6">
+  Prevent the Sequencer from deleting the Chrome application folder once the monitoring phase is finished. To see why the Sequencer may process a reboot task that deletes the Chrome install folder read this article: <a href="http://stealthpuppy.com/virtualisation/the-case-of-the-disappearing-application-during-sequencing/">The Case of the Disappearing Application during Sequencing</a>.
+</li>
+
+<p>Automating this process as much as possible will create a cleaner package and make it faster to re-create a new Chrome package if required. Here’s an example script that will perform the tasks above:</p>
+
+<p>[code]START /WAIT GoogleChromeStandaloneEnterprise.MSI ALLUSERS=TRUE /QB-<br />
+RD /Q /S “%ProgramFiles%\Google\Chrome\Application\15.0.874.106\Installer”<br />
+ROBOCOPY “%ProgramFiles%\Google\Chrome\Application\15.0.874.106” “%ProgramFiles%\Google\Chrome\Application” /mov /e<br />
+COPY master_preferences “%ProgramFiles%\Google\Chrome\Application\master_preferences<br />
+REG ADD HKLM\SOFTWARE\Policies\Google\Update /v AutoUpdateCheckPeriodMinutes /d 0 /t REG_SZ /f<br />
+REG ADD “HKLM\System\CurrentControlSet\Control\Session Manager” /v PendingFileRenameOperations /d “” /t REG_MULTI_SZ /f[/code]</p>
+
+<h3 id="shortcuts">Shortcuts</h3>
+
+<p>For Chrome to run successfully under App-V there are a few additional command line parameters that will need to be added to the Chrome shortcut at the configure applications stage:</p>
+
+<ul>
+  <li>–disable-custom-jumplist: Disables the Windows 7 Jump List, which doesn’t work once Chrome is virtualized any way</li>
+  <li>–no-default-browser-check: A further flag to prevent the browser from prompting the user to set it as default</li>
+  <li>–in-process-plugins: Run plugins inside the renderer process. May be optional, but <a href="http://www.viridisit.se/eng/blog/sequence-google-chrome-5-beta/">has been required in the past when virtualizing Chrome</a></li>
+  <li>–no-sandbox: Not required; however I have found that extensions do not install if this parameter has not been added</li>
+</ul>
+
+<p>For the full list of command-line parameters for Chrome and Chromium see this page: <a href="http://peter.sh/experiments/chromium-command-line-switches/">List of Chromium Command Line Switches</a></p>
+
+<p>With the sandbox running, you will see an error similar to this when attempting to add an extension:</p>
+
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ChromeExtension" src="http://stealthpuppy.com/wp-content/uploads/2011/11/ChromeExtension.png" alt="ChromeExtension" width="511" height="215" border="0" /></p>
+
+<p><strong>Note</strong>: Note that disabling the sandbox will reduce the browser security. I recommend testing the browser functionality and see if you can get away without disabling the sandbox.</p>
+
+<p>The browser will notify you when the sandbox is disabled:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/11/GoogleChromeNoSandbox.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GoogleChromeNoSandbox" src="http://stealthpuppy.com/wp-content/uploads/2011/11/GoogleChromeNoSandbox_thumb.png" alt="GoogleChromeNoSandbox" width="660" height="114" border="0" /></a></p>
+
+<h3 id="first-run-tasks-and-primary-feature-block">First Run Tasks and Primary Feature Block</h3>
+
+<p>If the steps above have been followed for exclusions, installation and configuration of Chrome, there will be no first run tasks to complete. Additionally the resultant package will be reasonably small so there is no need to create the Primary Feature Block. Because you don’t need to complete first run tasks or create the Primary Feature Block, you could automate the entire end-to-end process of creating a Chrome package using <a href="http://softwaredeployment.wordpress.com/2011/04/15/app-v-4-6-sp1-command-line-interface/">the App-V Sequencer command-line interface</a>.</p>
+
+<h3 id="finally">Finally</h3>
+
+<p>Save your package and deploy. With compression enabled, the package should be around 36Mb.</p>
+
+  </div><a class="u-url" href="/sequencing-google-chrome-15/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

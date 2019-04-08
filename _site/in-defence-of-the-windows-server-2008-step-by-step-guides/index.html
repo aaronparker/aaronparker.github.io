@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>In Defence Of The Windows Server 2008 Step-by-Step Guides | stealthpuppy</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="In Defence Of The Windows Server 2008 Step-by-Step Guides" />
+<meta name="author" content="Aaron Parker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Michael over at 4sysops has taken a shot at the Windows Server 2008 Step-by-Step Guides and I’m left scratching my head. His beef with the guides is that they haven’t yet been updated for RTM and still include some older terminology:" />
+<meta property="og:description" content="Michael over at 4sysops has taken a shot at the Windows Server 2008 Step-by-Step Guides and I’m left scratching my head. His beef with the guides is that they haven’t yet been updated for RTM and still include some older terminology:" />
+<link rel="canonical" href="/in-defence-of-the-windows-server-2008-step-by-step-guides/" />
+<meta property="og:url" content="/in-defence-of-the-windows-server-2008-step-by-step-guides/" />
+<meta property="og:site_name" content="stealthpuppy" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2008-03-26T18:50:45+11:00" />
+<script type="application/ld+json">
+{"description":"Michael over at 4sysops has taken a shot at the Windows Server 2008 Step-by-Step Guides and I’m left scratching my head. His beef with the guides is that they haven’t yet been updated for RTM and still include some older terminology:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/in-defence-of-the-windows-server-2008-step-by-step-guides/","headline":"In Defence Of The Windows Server 2008 Step-by-Step Guides","dateModified":"2008-03-26T18:50:45+11:00","datePublished":"2008-03-26T18:50:45+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/in-defence-of-the-windows-server-2008-step-by-step-guides/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/about/">About</a><a class="page-link" href="/app-v-5-x-versions.html">App-V 5.x Versions</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/archives.html">Archives</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/search-results.html">Search Results</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS &amp;#8211; Why you should stop referring to CIFS</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">In Defence Of The Windows Server 2008 Step-by-Step Guides</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2008-03-26T18:50:45+11:00" itemprop="datePublished">Mar 26, 2008
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><img src="http://stealthpuppy.com/wp-content/uploads/2008/03/windowshelp.png" border="0" alt="WindowsHelp" width="140" height="128" align="left" />Michael over at <a href="http://4sysops.com/archives/windows-server-2008-step-by-step-guides-don%E2%80%99t-waste-your-time/">4sysops has taken a shot</a> at the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=518d870c-fa3e-4f6a-97f5-acaf31de6dce&amp;DisplayLang=en">Windows Server 2008 Step-by-Step Guides</a> and I’m left scratching my head. His beef with the guides is that they haven’t yet been updated for RTM and still include some older terminology:</p>
+
+<blockquote>
+  <p>In this manual, they still talk about â€œWindows Server virtualization (wsv)â€ even though wsv was already renamed to Hyper-V in November. It seems as if even Microsoftâ€™s own employees canâ€™t keep up with the pace by which their marketing renames their products. Even worse is that this paper doesnâ€™t mention that Hyper-V is still in beta. I wonder if the author of this paper was aware of this fact. Of course, the reader is also kept in the dark that there meanwhile is an update of Hyper-V which has to be downloaded separately.</p>
+</blockquote>
+
+<p>I subscribe to Michael’s blog and enjoy reading what he’s got to say, but I think in this case he’s missing the big picture. The Step-by-Step “library” contains a list of 24 documents, with the earliest document dated May 2007. Windows Server 2008 was feature complete by Beta 3 in April 2007. This means that, for the most part, these documents will applicable to the final release of Windows 2008.</p>
+
+<p>The list has been updated regularly too. I haven’t been keeping an exact count, but the guides have been through at least 6 updates so far this year, with the latest being yesterday. 7 days since the previous update. I presume that documentation like this takes considerable man hours to create and review and they can’t possible be considered complete until the product is final. If the current release pace keeps up we should see these documents finalised soon.</p>
+
+<p>I like these document because they focus on a particular feature or scenario and help you get a test environment up and running a quickly as possible. When Windows Server 2003 was launched, we didn’t have anything quite like this. I encourage you to <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=518d870c-fa3e-4f6a-97f5-acaf31de6dce&amp;DisplayLang=en">check them out</a> as they should assist in fast tracking your understanding of Windows Server 2008. This is the current list of guides:</p>
+
+<ul>
+  <li>Creating and Deploying Active Directory Rights Management Services Templates Step-by-Step Guide</li>
+  <li>Deploying Active Directory Rights Management Services in an Extranet Step-by-Step Guide</li>
+  <li>Deploying Active Directory Rights Management Services with Microsoft Office SharePoint Server 2007 Step-By-Step Guide</li>
+  <li>Deploying SSTP Remote Access Step by Step Guide</li>
+  <li>Server Manager Scenarios Step-by-Step Guide</li>
+  <li>Server Core Installation Option of Windows Server 2008 Step-By-Step Guide</li>
+  <li>Step by Step Guide to Customizing TS Web Access by Using Windows SharePoint Services</li>
+  <li>Step-by-Step Guide for Configuring a Two-Node File Server Failover Cluster in Windows Server 2008</li>
+  <li>Step-by-Step Guide for Configuring a Two-Node Print Server Failover Cluster in Windows Server 2008</li>
+  <li>Step-by-Step Guide for File Server Resource Manager in Windows Server 2008</li>
+  <li>Step-by-Step Guide for Storage Manager for SANs in Windows Server 2008</li>
+  <li>Step-by-Step Guide to Deploying Policies for Windows Firewall with Advanced Security</li>
+  <li>Step-by-Step Guide for Configuring Network Load Balancing with Terminal Services in Windows Server 2008</li>
+  <li>Step-by-Step Guide for Windows Deployment Services in Windows Server 2008</li>
+  <li>Using Identity Federation with Active Directory Rights Management Services Step-by-Step Guide</li>
+  <li>Windows Firewall with Advanced Security Design Guide</li>
+  <li>Windows Server 2008 Active Directory Certificate Services Step-By-Step Guide</li>
+  <li>Windows Server 2008 Foundation Network Guide</li>
+  <li>Windows Server 2008 Step-by-Step Guide for DNS in Small Networks</li>
+  <li>Windows Server 2008 TS Gateway Server Step-By-Step Setup Guide</li>
+  <li>WindowsÂ  Server Active Directory Rights Management Services Step-by-Step Guide</li>
+  <li>Windows Server 2008 Terminal Services RemoteApp Step-by-Step Guide</li>
+  <li>Windows Server 2008 TS Licensing Step-By-Step Setup Guide</li>
+  <li>Windows Server 2008 TS Session Broker Load Balancing Step-By-Step Guide</li>
+</ul>
+
+<p>If you can’t get enough of Step-by-Step guides, there’s even more:</p>
+
+<ul>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=8a0925ee-ee06-4dfb-bba2-07605eff0608&amp;DisplayLang=en">Step-by-Step Guide: Demonstrate NAP 802.1X Enforcement in a Test Lab</a></li>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=729bba00-55ad-4199-b441-378cc3d900a7&amp;DisplayLang=en">Step-by-Step Guide: Demonstrate NAP VPN Enforcement in a Test Lab</a></li>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=298ff956-1e6c-4d97-a3ed-7e7ffc4bed32&amp;DisplayLang=en">Step-by-Step Guide: Demonstrate NAP IPsec Enforcement in a Test Lab</a></li>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=ac38e5bb-18ce-40cb-8e59-188f7a198897&amp;DisplayLang=en">Step-by-Step Guide: Demonstrate NAP DHCP Enforcement in a Test Lab</a></li>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=311f4be8-9983-4ab0-9685-f1bfec1e7d62&amp;DisplayLang=en">Windows Vista Step-by-Step Guides for IT Professionals</a></li>
+</ul>
+
+  </div><a class="u-url" href="/in-defence-of-the-windows-server-2008-step-by-step-guides/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">stealthpuppy</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>on end user computing and enterprise mobility
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
