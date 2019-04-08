@@ -13,14 +13,12 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
-url: ""
-name: Aaron Parker
-description: >
-  on end user computing and enterprise mobility
 title: aaron parker
 email: aaron@stealthpuppy.com
+description: >- # this means to ignore newlines until "baseurl:"
+  on end user computing and enterprise mobility
 baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: stealthpuppy
 github_username:  aaronparker
 
@@ -29,15 +27,6 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
-
-# Plugins
-# gems:
-#   - jekyll-paginate
-#   - jekyll-sitemap
-#   - jekyll-gist
-#   - jekyll-feed
-#   - jemoji
-#   - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -50,13 +39,3 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-author:
-  name             : "Aaron Parker"
-#  avatar           : "me2.png"
-#  bio              : ""
-  location         : "Melbourne, Australia"
-  email            : "aaron@stealthpuppy.com"
-  github           : "aaronparker"
-  linkedin         : "aaronedwardparker"
-  twitter          : "stealthpuppy"

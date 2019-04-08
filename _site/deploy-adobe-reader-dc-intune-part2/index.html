@@ -59,45 +59,48 @@
 
 <p>The task has two triggers - one after user logon, but with a delay of 12 minutes, and the other at a scheduled time that is possibly different per device. Here’s the scheduled task:</p>
 
-<figure id="attachment_6046" aria-describedby="caption-attachment-6046" style="width: 1338px" class="wp-caption aligncenter">[<img class="wp-image-6046 size-full" src="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png" alt="Adobe Acrobat Update Task" width="1338" height="711" srcset="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png 1338w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-300x159.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-768x408.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-1024x544.png 1024w" sizes="(max-width: 1338px) 100vw, 1338px" />](https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png)<figcaption id="caption-attachment-6046" class="wp-caption-text">Adobe Acrobat Update Task*&lt;/figure&gt;
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png" alt="Adobe Acrobat Update Task" /><em>Adobe Acrobat Update Task</em></p>
 
-In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn't exhaustive), it would take more than that to download an update and I resorted to using the 'Check for Updates' option from within Adobe Reader manually. 
+<p>In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn’t exhaustive), it would take more than that to download an update and I resorted to using the ‘Check for Updates’ option from within Adobe Reader manually.</p>
 
-## Update Process
+<h2 id="update-process">Update Process</h2>
 
-Downloading and installing updates does not unfortunately go straight to the latest version. In my testing, my target PCs downloaded an intermediate update to **2015.023.20070** before the second update to **2018.011.20055**. This means that in the real world, it could be several days before a PC has the most recent version installed.
+<p>Downloading and installing updates does not unfortunately go straight to the latest version. In my testing, my target PCs downloaded an intermediate update to <strong>2015.023.20070</strong> before the second update to <strong>2018.011.20055</strong>. This means that in the real world, it could be several days before a PC has the most recent version installed.</p>
 
-<figure id="attachment_6058" aria-describedby="caption-attachment-6058" style="width: 497px" class="wp-caption aligncenter">[<img class="size-full wp-image-6058" src="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png" alt="Adobe Reader DC - An update is available" width="497" height="360" srcset="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png 497w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033-150x109.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033-300x217.png 300w" sizes="(max-width: 497px) 100vw, 497px" />](https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png)<figcaption id="caption-attachment-6058" class="wp-caption-text">Adobe Reader DC - An update is available*&lt;/figure&gt;
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png" alt="Adobe Reader DC - An update is available" /><em>Adobe Reader DC - An update is available</em></p>
 
-Fortunately, the updates are downloaded and installed without user intervention, meaning that the update process works for users [without administrative rights to their PC](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/user-driven).
+<p>Fortunately, the updates are downloaded and installed without user intervention, meaning that the update process works for users <a href="https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/user-driven">without administrative rights to their PC</a>.</p>
 
-# To Deploy or Not Deploy
+<h1 id="to-deploy-or-not-deploy">To Deploy or Not Deploy</h1>
 
-So understanding that to deploy Adobe Reader DC via Microsoft Intune requires deploying a version that is more than 3 years old and relying on the end-point to download and install updates, the question that should be asked - should you deploy Adobe Reader to Windows 10 machines via Microsoft Intune?
+<p>So understanding that to deploy Adobe Reader DC via Microsoft Intune requires deploying a version that is more than 3 years old and relying on the end-point to download and install updates, the question that should be asked - should you deploy Adobe Reader to Windows 10 machines via Microsoft Intune?</p>
 
-Here's what you should consider:
+<p>Here’s what you should consider:</p>
 
-  * Many organisations prefer Adobe Reader over 3rd party PDF readers for first party features and support.
-  * Of the top 50 Windows desktop applications in 2018, Adobe Reader had the most vulnerabilities (source: [Flexera](https://info.flexerasoftware.com/SVM-WP-Vulnerability-Review-2018-Desktop-Apps)), beaten only by Windows itself. If the option is to install an old version of Adobe Reader and rely on the automatic updater on the end-point to install the latest version, the time to update may be unacceptable for some organisations
-  * [PowerShell can be used to deploy Adobe Reader](https://allthingscloud.blog/install-adobe-reader-dc-with-intune-and-powershell/) to Windows 10 PCs via Intune; however, this does not allow for user self-service installs and will require building in logic to account for failures in network connectivity during the download or retrying the installation if it were to fail
-  * Windows 10 includes a capable PDF Reader in Microsoft Edge and other browsers also implement native PDF viewing features
-  * Other PDF readers are available from the Microsoft Store, so it is possible to deploy and keep a PDF reader up to date simpler than the process I've outlined in these articles; however, many of these are less than ideal - the UI is often not great and many have up sell features built into them
+<ul>
+  <li>Many organisations prefer Adobe Reader over 3rd party PDF readers for first party features and support.</li>
+  <li>Of the top 50 Windows desktop applications in 2018, Adobe Reader had the most vulnerabilities (source: <a href="https://info.flexerasoftware.com/SVM-WP-Vulnerability-Review-2018-Desktop-Apps">Flexera</a>), beaten only by Windows itself. If the option is to install an old version of Adobe Reader and rely on the automatic updater on the end-point to install the latest version, the time to update may be unacceptable for some organisations</li>
+  <li><a href="https://allthingscloud.blog/install-adobe-reader-dc-with-intune-and-powershell/">PowerShell can be used to deploy Adobe Reader</a> to Windows 10 PCs via Intune; however, this does not allow for user self-service installs and will require building in logic to account for failures in network connectivity during the download or retrying the installation if it were to fail</li>
+  <li>Windows 10 includes a capable PDF Reader in Microsoft Edge and other browsers also implement native PDF viewing features</li>
+  <li>Other PDF readers are available from the Microsoft Store, so it is possible to deploy and keep a PDF reader up to date simpler than the process I’ve outlined in these articles; however, many of these are less than ideal - the UI is often not great and many have up sell features built into them</li>
+</ul>
 
-# Summary
+<h1 id="summary">Summary</h1>
 
-In [these articles](https://stealthpuppy.com/deploy-adobe-reader-dc-microsoft-intune-part1/), I've demonstrated how to package and deploy Adobe Reader DC as a native application via Microsoft Intune, while relying on the automatic updater installed by the application for an end-point to keep Reader up to date. This approach allows you to deploy Adobe Reader in the same way as other [line-of-business applications](https://docs.microsoft.com/en-us/intune/lob-apps-windows) for required or optional user-driven installs and then reporting in the Intune console.
+<p>In <a href="https://stealthpuppy.com/deploy-adobe-reader-dc-microsoft-intune-part1/">these articles</a>, I’ve demonstrated how to package and deploy Adobe Reader DC as a native application via Microsoft Intune, while relying on the automatic updater installed by the application for an end-point to keep Reader up to date. This approach allows you to deploy Adobe Reader in the same way as other <a href="https://docs.microsoft.com/en-us/intune/lob-apps-windows">line-of-business applications</a> for required or optional user-driven installs and then reporting in the Intune console.</p>
 
-Because Adobe haven't released a newer version of the single file Windows Installer for Adobe Reader, you should consider carefully whether this approach is right for your organisation. Deployment of an old version of a high-target, popular application on Windows with the highest number of patched vulnerabilities is probably not a great idea. You might though have good reason to deploy it for features that your users require.
+<p>Because Adobe haven’t released a newer version of the single file Windows Installer for Adobe Reader, you should consider carefully whether this approach is right for your organisation. Deployment of an old version of a high-target, popular application on Windows with the highest number of patched vulnerabilities is probably not a great idea. You might though have good reason to deploy it for features that your users require.</p>
 
-So what can you do if you need to deploy it?
+<p>So what can you do if you need to deploy it?</p>
 
-  1. Make it an optional user-driven install and make most users rely on the PDF viewer built into their browser
-  2. Deploy via PowerShell if you want to enforce the install on end-points (this could be targeted by Azure AD groups)
-  3. Look at alternatives readers from the Store
-  4. Request Adobe update their installer or make Adobe Reader available from the Microsoft Store
+<ol>
+  <li>Make it an optional user-driven install and make most users rely on the PDF viewer built into their browser</li>
+  <li>Deploy via PowerShell if you want to enforce the install on end-points (this could be targeted by Azure AD groups)</li>
+  <li>Look at alternatives readers from the Store</li>
+  <li>Request Adobe update their installer or make Adobe Reader available from the Microsoft Store</li>
+</ol>
 
-I would prefer install from the Store but that will require enough organisations asking for this feature. [Adobe has a Feature Request form](https://www.adobe.com/products/wishform.html) and I would encourage you to use it.
-</figcaption></figure></figcaption></figure>
+<p>I would prefer install from the Store but that will require enough organisations asking for this feature. <a href="https://www.adobe.com/products/wishform.html">Adobe has a Feature Request form</a> and I would encourage you to use it.</p>
 
   </div><a class="u-url" href="/deploy-adobe-reader-dc-intune-part2/" hidden></a>
 </article>
@@ -113,15 +116,14 @@ I would prefer install from the Store but that will require enough organisations
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li class="p-name">{&quot;name&quot;=&gt;&quot;Aaron Parker&quot;, &quot;location&quot;=&gt;&quot;Melbourne, Australia&quot;, &quot;email&quot;=&gt;&quot;aaron@stealthpuppy.com&quot;, &quot;github&quot;=&gt;&quot;aaronparker&quot;, &quot;linkedin&quot;=&gt;&quot;aaronedwardparker&quot;, &quot;twitter&quot;=&gt;&quot;stealthpuppy&quot;}</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
+          <li class="p-name">aaron parker</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
       </div>
 
       <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
 </div>
 
       <div class="footer-col footer-col-3">
-        <p>on end user computing and enterprise mobility
-</p>
+        <p>on end user computing and enterprise mobility</p>
       </div>
     </div>
 

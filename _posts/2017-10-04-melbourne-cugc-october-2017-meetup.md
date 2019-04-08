@@ -29,16 +29,14 @@ We still have space for a community presentation - if you're interested in prese
 
 # Sponsor
 
-This month, we're really happy to have [eG Innovations](https://www.eginnovations.com/) sponsoring our meet-up and to discuss proactive monitoring, assessment and management of your Citrix XenDesktop and XenApp environments. To get an idea what eG Innovations is doing, check out this recent Citrix blog article: [Monitor Logon Performance Seamlessly with eG Innovations](https://www.citrix.com/blogs/2017/09/26/monitor-logon-performance-seamlessly-with-eg-innovations/). Did you know they have a logon simulator? Check it out: 
+This month, we're really happy to have [eG Innovations](https://www.eginnovations.com/) sponsoring our meet-up and to discuss proactive monitoring, assessment and management of your Citrix XenDesktop and XenApp environments. To get an idea what eG Innovations is doing, check out this recent Citrix blog article: [Monitor Logon Performance Seamlessly with eG Innovations](https://www.citrix.com/blogs/2017/09/26/monitor-logon-performance-seamlessly-with-eg-innovations/). Did you know they have a logon simulator? Check it out:
 
-<figure id="attachment_5810" aria-describedby="caption-attachment-5810" style="width: 720px" class="wp-caption alignnone">[<img class="size-full wp-image-5810" src="https://stealthpuppy.com/wp-content/uploads/2017/10/eG-Enterprise-Express-Free-Logon-Simulator-Image-02-720x478.png" alt="eG Enterprise Express-Free-Logon Simulator screenshot" width="720" height="478" srcset="https://stealthpuppy.com/wp-content/uploads/2017/10/eG-Enterprise-Express-Free-Logon-Simulator-Image-02-720x478.png 720w, https://stealthpuppy.com/wp-content/uploads/2017/10/eG-Enterprise-Express-Free-Logon-Simulator-Image-02-720x478-150x100.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/10/eG-Enterprise-Express-Free-Logon-Simulator-Image-02-720x478-300x199.png 300w" sizes="(max-width: 720px) 100vw, 720px" />](https://stealthpuppy.com/wp-content/uploads/2017/10/eG-Enterprise-Express-Free-Logon-Simulator-Image-02-720x478.png)<figcaption id="caption-attachment-5810" class="wp-caption-text">eG Enterprise Express-Free-Logon Simulator screenshot*
+![](https://stealthpuppy.com/wp-content/uploads/2017/10/eG-Enterprise-Express-Free-Logon-Simulator-Image-02-720x478.png)*eG Enterprise Express-Free-Logon Simulator screenshot*
 
 eG Innovations enables us to rent the venue and also provide beer and pizza for XenBeers afterwards, so we'd love to see you there. Even better, they'll be giving away a [Google Home](https://madeby.google.com/home/)!
 
-<figure id="attachment_5811" aria-describedby="caption-attachment-5811" style="width: 450px" class="wp-caption alignnone">[<img class="wp-image-5811" src="https://stealthpuppy.com/wp-content/uploads/2017/10/GoogleHome-300x300.jpg" alt="Win Google Home at our next CUGC meet-up" width="450" height="450" srcset="https://stealthpuppy.com/wp-content/uploads/2017/10/GoogleHome-300x300.jpg 300w, https://stealthpuppy.com/wp-content/uploads/2017/10/GoogleHome-150x150.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2017/10/GoogleHome-768x768.jpg 768w, https://stealthpuppy.com/wp-content/uploads/2017/10/GoogleHome-480x480.jpg 480w, https://stealthpuppy.com/wp-content/uploads/2017/10/GoogleHome.jpg 1000w" sizes="(max-width: 450px) 100vw, 450px" />](https://stealthpuppy.com/wp-content/uploads/2017/10/GoogleHome.jpg)<figcaption id="caption-attachment-5811" class="wp-caption-text">Win Google Home at our next CUGC meet-up*
+![Win Google Home at our next CUGC meet-up](https://stealthpuppy.com/wp-content/uploads/2017/10/GoogleHome.jpg)*Win Google Home at our next CUGC meet-up*
 
 # Special Announcement
 
 Be sure to come along to this month's event to hear about our extra special December event. This is not something you're going to want to miss.
-
- 
