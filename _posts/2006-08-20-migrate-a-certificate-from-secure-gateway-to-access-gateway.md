@@ -12,7 +12,7 @@ tags:
   - Access-Gateway
   - Secure-Gateway
 ---
-This is listed in the [Access Gateway Administrators document](http://support.citrix.com/article/CTX107804), but it&#8217;s buried deep, so here&#8217;s my own version.
+This is listed in the [Access Gateway Administrators document](http://support.citrix.com/article/CTX107804), but it's buried deep, so here's my own version.
 
 Many implementations of the Citrix Access Gateway appliance will be replacing existing installations of Citrix Secure Gateway usually running on a Windows server. To migrate the certificate from Windows to the appliance follow these steps:
 

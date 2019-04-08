@@ -13,9 +13,9 @@ categories:
 tags:
   - Windows-Live
 ---
-<img src="http://stealthpuppy.com/wp-content/uploads/2008/02/windowslive.png" align="left" alt="windowslive.png" />Looking to bypass the Windows Live Installer and want direct access to the Live suite application installers? Here&#8217;s where to find them. Credits go to the [Vistax64 forums](http://www.vistax64.com/windows-live/92348-windows-live-suite-downloads.html) and [Snakodus](http://snakodus.blogspot.com/2007/11/once-again-windows-live-products.html).
+<img src="http://stealthpuppy.com/wp-content/uploads/2008/02/windowslive.png" align="left" alt="windowslive.png" />Looking to bypass the Windows Live Installer and want direct access to the Live suite application installers? Here's where to find them. Credits go to the [Vistax64 forums](http://www.vistax64.com/windows-live/92348-windows-live-suite-downloads.html) and [Snakodus](http://snakodus.blogspot.com/2007/11/once-again-windows-live-products.html).
 
-The new [Windows Live Installer](http://get.live.com/) is a great way for every day users to gain access to each of the new Live applications, but what if you are looking to create a silent install script, deploy them to multiple computers or just don&#8217;t have Internet access at the time of install?
+The new [Windows Live Installer](http://get.live.com/) is a great way for every day users to gain access to each of the new Live applications, but what if you are looking to create a silent install script, deploy them to multiple computers or just don't have Internet access at the time of install?
 
 There are two ways to get access to the source MSI files for installing these applications. The first way is install the Live applications on a single computer, you can then find a copy of the installers locally:
 

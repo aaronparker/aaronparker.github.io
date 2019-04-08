@@ -11,7 +11,7 @@ dsq_thread_id:
 categories:
   - Applications
 ---
-Today&#8217;s entrant into the Hall of Shame is Esker Tun PLUS which can be used to provide an ActiveX based terminal emulator via the web. This product downloads no less than 11 ActiveX controls and then wants the user to run an application named TRUST.EXE from a page that has the following text:
+Today's entrant into the Hall of Shame is Esker Tun PLUS which can be used to provide an ActiveX based terminal emulator via the web. This product downloads no less than 11 ActiveX controls and then wants the user to run an application named TRUST.EXE from a page that has the following text:
 
 <blockquote style="margin-right: 0px" dir="ltr">
   <p>
@@ -19,6 +19,6 @@ Today&#8217;s entrant into the Hall of Shame is Esker Tun PLUS which can be used
   </p>
 </blockquote>
 
-TRUST.EXE will provide Tun PLUS full access to my system. What else could potentially have full access to my system? Output from FILEMON and REGMON is a little cryptic when TRUST.EXE is run. I can&#8217;t quite work out what it is doing. Geez, at least my terminal emulator works. Shame, Esker, shame.
+TRUST.EXE will provide Tun PLUS full access to my system. What else could potentially have full access to my system? Output from FILEMON and REGMON is a little cryptic when TRUST.EXE is run. I can't quite work out what it is doing. Geez, at least my terminal emulator works. Shame, Esker, shame.
 
 <img width="602" src="http://stealthpuppy.com/wp-content/uploads/2006/08/1000.14.59.eskertunplus.png" height="449" style="width: 602px; height: 449px" />

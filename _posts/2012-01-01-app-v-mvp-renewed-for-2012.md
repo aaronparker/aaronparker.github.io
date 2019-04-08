@@ -23,4 +23,4 @@ I was quite relieved and grateful to receive the Microsoft MVP award again for 2
 
 > Congratulations! We are pleased to present you with the 2012 Microsoft® MVP Award! This award is given to exceptional technical community leaders who actively share their high quality, real world expertise with others. We appreciate your outstanding contributions in App-V technical communities during the past year.
 
-A big thank-you to the community, other App-V MVPs and the App-V product team. Here&#8217;s to another full year.
+A big thank-you to the community, other App-V MVPs and the App-V product team. Here's to another full year.

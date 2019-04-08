@@ -11,7 +11,7 @@ categories:
 tags:
   - Remote Desktop Connection
 ---
-Want the Remote Desktop Connection 6.1 client for Windows XP but can&#8217;t update to [Service Pack 3](http://www.microsoft.com/downloads/details.aspx?FamilyID=68C48DAD-BC34-40BE-8D85-6BB4F56F5110&displaylang=en) or Windows Vista? No need to hack files from SP3, just grab the update from here: 
+Want the Remote Desktop Connection 6.1 client for Windows XP but can't update to [Service Pack 3](http://www.microsoft.com/downloads/details.aspx?FamilyID=68C48DAD-BC34-40BE-8D85-6BB4F56F5110&displaylang=en) or Windows Vista? No need to hack files from SP3, just grab the update from here: 
 
 [Update for Windows XP (KB952155)](http://www.microsoft.com/downloads/details.aspx?FamilyID=6e1ec93d-bdbd-4983-92f7-479e088570ad&DisplayLang=en)
 
@@ -19,4 +19,4 @@ Want the Remote Desktop Connection 6.1 client for Windows XP but can&#8217;t upd
 
 <img border="0" alt="RDCXPSP2" src="http://stealthpuppy.com/wp-content/uploads/2008/06/rdcxpsp2.png" width="345" height="310" /> 
 
-There&#8217;s a [MUI pack](http://www.microsoft.com/downloads/details.aspx?FamilyID=e35296ed-fc0c-43e4-a99d-aec4505d7793&DisplayLang=en) available too. The [knowledge base article for this update](http://support.microsoft.com/kb/952155) should be available soon, hopefully. Unfortunately there doesn&#8217;t appear to be an update available for Windows Server 2003.
+There's a [MUI pack](http://www.microsoft.com/downloads/details.aspx?FamilyID=e35296ed-fc0c-43e4-a99d-aec4505d7793&DisplayLang=en) available too. The [knowledge base article for this update](http://support.microsoft.com/kb/952155) should be available soon, hopefully. Unfortunately there doesn't appear to be an update available for Windows Server 2003.

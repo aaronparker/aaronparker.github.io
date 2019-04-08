@@ -51,11 +51,11 @@ I have included a sample script below, that shows the unattended options that I 
 
 ### Virtualising (or Sequencing) Paint.NET
 
-Before sequencing, ensure your sequencing image has been configured with the Microsoft .NET Framework 3.5 or 4.0 - if you are sequencing on Windows 7, version 3.5 is already included. Here&#8217;s what you should configure before sequencing:
+Before sequencing, ensure your sequencing image has been configured with the Microsoft .NET Framework 3.5 or 4.0 - if you are sequencing on Windows 7, version 3.5 is already included. Here's what you should configure before sequencing:
 
   * Install or enable the .NET Framework - use the same version of the .NET Framework that is deployed to your client computers
-  * Disable System Protection (or System Restore) - setup creates a restore point during install which we don&#8217;t want to capture
-  * Add an exclusion for _CSIDL_DESKTOP_ - if Paint.NET crashed during sequencing it will place a log file on the desktop which we don&#8217;t want to capture
+  * Disable System Protection (or System Restore) - setup creates a restore point during install which we don't want to capture
+  * Add an exclusion for _CSIDL_DESKTOP_ - if Paint.NET crashed during sequencing it will place a log file on the desktop which we don't want to capture
   * Add an exclusion for _CSIDL_Windows\Installer_ so that the cached MSI file is not captured in the package
   * Copy the installation script and the Paint.NET installer to a local path inside the sequencing machine
 

@@ -14,11 +14,11 @@ tags:
   - Java
   - Oracle
 ---
-Here&#8217;s a really simple method for using running the latest version of the Oracle JInitiator even though your application may require a specific version. DISCLAIMER: This is most likely unsupported by Oracle but it thus far it&#8217;s worked for me. If you&#8217;re worried about your applications breaking don&#8217;t implement this hack.
+Here's a really simple method for using running the latest version of the Oracle JInitiator even though your application may require a specific version. DISCLAIMER: This is most likely unsupported by Oracle but it thus far it's worked for me. If you're worried about your applications breaking don't implement this hack.
 
-You can download the latest version of the JInitiator from the [JInitiator Download Page](http://www.oracle.com/technology/software/products/developer/htdocs/jinit.htm). In this case I&#8217;ve used version 1.3.1.28 and modified the client to call this version when it actually required version 1.3.1.17.
+You can download the latest version of the JInitiator from the [JInitiator Download Page](http://www.oracle.com/technology/software/products/developer/htdocs/jinit.htm). In this case I've used version 1.3.1.28 and modified the client to call this version when it actually required version 1.3.1.17.
 
-Getting this to work requires adding the CLSID (or CLASSID) of the older version of JInitiator and modifying it to point to the installed version. You can find the CLSID of each JInitiator version on the download page. Here&#8217;s an example of a REG file with the required registry entries, pointing 1.3.1.17 to 1.3.1.28:
+Getting this to work requires adding the CLSID (or CLASSID) of the older version of JInitiator and modifying it to point to the installed version. You can find the CLSID of each JInitiator version on the download page. Here's an example of a REG file with the required registry entries, pointing 1.3.1.17 to 1.3.1.28:
 
 [code]Windows Registry Editor Version 5.00  
 [HKEY\_LOCAL\_MACHINE\Software\Classes\CLSID\{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}]  

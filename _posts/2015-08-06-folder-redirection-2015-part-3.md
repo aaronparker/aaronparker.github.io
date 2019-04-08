@@ -1,6 +1,6 @@
 ---
 id: 4040
-title: 'I&#8217;ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3.'
+title: 'I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3.'
 date: 2015-08-06T19:30:36+10:00
 author: Aaron Parker
 layout: post
@@ -20,9 +20,9 @@ tags:
 ---
 This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:
 
-  * [I&#8217;ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1](http://stealthpuppy.com/folder-redirection-2015-part-1/).
-  * [I&#8217;ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2](http://stealthpuppy.com/folder-redirection-2015-part-2/).
-  * I&#8217;ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3. (this article)
+  * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1](http://stealthpuppy.com/folder-redirection-2015-part-1/).
+  * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2](http://stealthpuppy.com/folder-redirection-2015-part-2/).
+  * I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3. (this article)
 
 # File Access Performance
 
@@ -55,9 +55,9 @@ While all VMs in our environments are patched via Windows Update, we did not get
 
 <figure id="attachment_4042" aria-describedby="caption-attachment-4042" style="width: 952px" class="wp-caption alignnone">[<img class="size-full wp-image-4042" src="http://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests.png" alt="SMB Versions Have Little Impact on IO Performance" width="952" height="446" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests.png 952w, https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests-150x70.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests-300x141.png 300w" sizes="(max-width: 952px) 100vw, 952px" />](http://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests.png)<figcaption id="caption-attachment-4042" class="wp-caption-text">SMB Versions Have Little Impact on IO Performance</figcaption></figure>
 
-If you&#8217;re redirecting AppData, you&#8217;ll need to understand how your applications are interacting with files in the user profile. If they use this method (which is very common), performance could suffer as a result if you aren&#8217;t matching your client and server versions of Windows.
+If you're redirecting AppData, you'll need to understand how your applications are interacting with files in the user profile. If they use this method (which is very common), performance could suffer as a result if you aren't matching your client and server versions of Windows.
 
-One additional behaviour that we noticed, contrary to Magnar&#8217;s article, is that the negotiation between client and server only happens once, rather than for each file IO access. This can be shown by capturing traffic between client and server with a Wireshark trace. The screenshot below shows the protocol negotiation and then several read requests by the client to the server:
+One additional behaviour that we noticed, contrary to Magnar's article, is that the negotiation between client and server only happens once, rather than for each file IO access. This can be shown by capturing traffic between client and server with a Wireshark trace. The screenshot below shows the protocol negotiation and then several read requests by the client to the server:
 
 <figure id="attachment_4041" aria-describedby="caption-attachment-4041" style="width: 952px" class="wp-caption alignnone">[<img class="wp-image-4041 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString.png" alt="SMB Negotiations Occur only Once Per Session" width="952" height="422" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString.png 952w, https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString-150x66.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString-300x133.png 300w" sizes="(max-width: 952px) 100vw, 952px" />](http://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString.png)<figcaption id="caption-attachment-4041" class="wp-caption-text">SMB Negotiations Occur only Once Per Session</figcaption></figure>
 
@@ -67,13 +67,13 @@ Folder redirection is a feature that most environments will not be able to avoid
 
 To that end, here are our recommendations for getting the best out of folder redirection. In no particular order:
 
-  * **Simulate client load to determine file server breaking point** - the [File Server Capacity Tool](http://stealthpuppy.com/replicate-2015-folder-redirection-test/) is, so far, the best solution I&#8217;ve seen for simulating user access to home folders. This is a useful tool for determining the expected load on your file server/s and working out the number of servers required to support your environment.
+  * **Simulate client load to determine file server breaking point** - the [File Server Capacity Tool](http://stealthpuppy.com/replicate-2015-folder-redirection-test/) is, so far, the best solution I've seen for simulating user access to home folders. This is a useful tool for determining the expected load on your file server/s and working out the number of servers required to support your environment.
   * **Multiple vCPUs in file servers** - file servers will require multiple CPUs to provide good performance. Servicing multiple simultaneous connections will require more than a single CPU - start with 2 and scale up as required.
   * **Size for peaks** - just like we do with VDI workloads, size for your expected peaks to ensure continued good user experience as your environment becomes busy.
   * **Hypervisor resource sharing, watch overcommit** - resource contention at multiple levels including storage and compute will impact how well file servers can response to requests.
-  * **Scale out** - Scaling out across multiple physical hosts and making sure you don&#8217;t over commit compute resources will ensure file servers remain responsive. Scaling out may require solutions such as [DFS](https://technet.microsoft.com/en-us/library/dn281957.aspx) and even third party solutions such as Citrix Melio might be worth investigating.
+  * **Scale out** - Scaling out across multiple physical hosts and making sure you don't over commit compute resources will ensure file servers remain responsive. Scaling out may require solutions such as [DFS](https://technet.microsoft.com/en-us/library/dn281957.aspx) and even third party solutions such as Citrix Melio might be worth investigating.
   * **High performance mode** - put hypervisor hosts in high performance mode to ensure good response for 4K and 8K blocks. You can schedule placing hosts into low performance mode after hours if power consumption is of concern.
-  * **Expect performance impacts of anti-virus** - there are very few environments that can do without anti-virus and the performance impact is very high as we&#8217;ve shown. Test various anti-virus solutions to find the best performing product if you can; however expect that AV will contribute to high CPU.
+  * **Expect performance impacts of anti-virus** - there are very few environments that can do without anti-virus and the performance impact is very high as we've shown. Test various anti-virus solutions to find the best performing product if you can; however expect that AV will contribute to high CPU.
   * **Update Windows versions, especially on servers** - best results might be gained from matching client and server, but we have shown that SMB 3+ reduces the CPU load on the file server.
   * **Update client and servers** - keep clients and servers updated with the latest service packs and available hotfixes for folder redirection and file services. Here are some knowledgebase articles that are important references: 
       * [Current hotfixes for Windows 7 SP1 enterprise clients that have folder redirection enabled](https://support.microsoft.com/en-us/kb/2820927)
@@ -91,9 +91,9 @@ If you are using Windows 8 and above, PowerShell now includes a cmdlet to determ
 
 # Summary
 
-This year, we&#8217;ve covered additional scenarios, and there are always additional tests to cover. Future editions of these presentations will include the impact of folder redirection on Login VSI results and we&#8217;ll look at whether Windows 10 and Windows Server 2016 improves performance.
+This year, we've covered additional scenarios, and there are always additional tests to cover. Future editions of these presentations will include the impact of folder redirection on Login VSI results and we'll look at whether Windows 10 and Windows Server 2016 improves performance.
 
-To summarise this round, I&#8217;ll leave you with these key points:
+To summarise this round, I'll leave you with these key points:
 
   * Little effective performance difference between SMB 2.1 & 3.02; however SMB 3.02 lowers file server CPU utilisation
   * Size file servers for peak workload
@@ -101,4 +101,4 @@ To summarise this round, I&#8217;ll leave you with these key points:
   * Anti-virus has a big impact
   * Don’t overcommit resources
 
-Want good user experience for your users with folder redirection enabled? You&#8217;ll need to put in the effort to determine the optimal configuration in your environment.
+Want good user experience for your users with folder redirection enabled? You'll need to put in the effort to determine the optimal configuration in your environment.

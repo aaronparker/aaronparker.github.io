@@ -11,14 +11,14 @@ categories:
 tags:
   - NAP
 ---
-[Jeff Sigman](http://blogs.technet.com/nap/archive/2006/10/05/NAP-MVP-webcast-now-available-for-offline-viewing.aspx), the NAP Release Manager at Microsoft, has posted a link to a webcast he did recently for MVPs, which is now [available for general viewing](https://www119.livemeeting.com/cc/msmvp/view?id=3K8FCR). This is quite a long webcast (1h 40m) but it goes into detail about NAP and demonstrates using DHCP or IPSec as an enforcement tool for NAP. It&#8217;s well worth checking out if you have the time, but if you don&#8217;t, here&#8217;s my (really) rough notes to give you an overview of the content:
+[Jeff Sigman](http://blogs.technet.com/nap/archive/2006/10/05/NAP-MVP-webcast-now-available-for-offline-viewing.aspx), the NAP Release Manager at Microsoft, has posted a link to a webcast he did recently for MVPs, which is now [available for general viewing](https://www119.livemeeting.com/cc/msmvp/view?id=3K8FCR). This is quite a long webcast (1h 40m) but it goes into detail about NAP and demonstrates using DHCP or IPSec as an enforcement tool for NAP. It's well worth checking out if you have the time, but if you don't, here's my (really) rough notes to give you an overview of the content:
 
   * Intro, How NAP came about, What is NAP? [Terminal Server Gateway](http://www.msterminalservices.org/articles/Overview-Longhorn-Servers-Terminal-Service-Gateway-Part1.html) supports NAP
   * Demo NAP working by turning off anti-virus with manual remediation and turning off Windows Update settings with automatic remediation
   * Using DHCP requires no client side configuration (compared to IPSec), easiest way to implement NAP, but least secure
   * 3<sup>rd</sup> party DHCP server vendors can license the statement of health protocol to interoperate with NAP
   * NAP uses WMI to determine status of antivirus, firewall and anti-spyware products. All venders should be using proper APIs to notify WMI. NAP is reliant on the Windows Security Centre
-  * [Cisco NAC](http://www.cisco.com/en/US/netsol/ns466/networking_solutions_package.html) and NAP interoperate by allowing NAP to use NAC (for example implemented in a Cisco switch) as an enforcement tool instead of DHCP or Microsoft&#8217;s IPSec/802.1X
+  * [Cisco NAC](http://www.cisco.com/en/US/netsol/ns466/networking_solutions_package.html) and NAP interoperate by allowing NAP to use NAC (for example implemented in a Cisco switch) as an enforcement tool instead of DHCP or Microsoft's IPSec/802.1X
   * When Using DHCP, NPS (Network Policy Server) and DHCP must co-exist on the same server
   * NAP client may be included in Windows XP Service Pack 3
   * NAP will tie in with [Forefront Client Security](http://www.microsoft.com/forefront/clientsecurity/default.mspx)

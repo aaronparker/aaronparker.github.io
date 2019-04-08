@@ -17,7 +17,7 @@ tags:
   - App-V
   - Office
 ---
-Here&#8217;s is a list of articles and resources for delivering the currently supported versions of Microsoft Office with App-V 5.
+Here's is a list of articles and resources for delivering the currently supported versions of Microsoft Office with App-V 5.
 
 # General Resources
 

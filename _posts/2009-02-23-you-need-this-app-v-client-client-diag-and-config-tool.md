@@ -24,6 +24,6 @@ tags:
 >   * Give an overview of application and package information by merging important WMI, registry and OSD information in one single window.
 >   * ACDC can be run both as an Administrator and as a Limited User. Running as a limited user will limit the functionality of the tool due to the fact that it has less permission on the system.
 
-I&#8217;ve not had time yet to go through the tool in detail, but I&#8217;m definitely adding this one to my toolkit. Thanks Ment!
+I've not had time yet to go through the tool in detail, but I'm definitely adding this one to my toolkit. Thanks Ment!
 
 <img class="aligncenter size-full wp-image-920" title="App-V 4.5 Client Config and Diag tool screenshot" src="http://stealthpuppy.com/wp-content/uploads/2009/02/appvclientdiagtool1.png" alt="App-V 4.5 Client Config and Diag tool screenshot" width="590" height="389" srcset="https://stealthpuppy.com/wp-content/uploads/2009/02/appvclientdiagtool1.png 590w, https://stealthpuppy.com/wp-content/uploads/2009/02/appvclientdiagtool1-300x197.png 300w" sizes="(max-width: 590px) 100vw, 590px" />

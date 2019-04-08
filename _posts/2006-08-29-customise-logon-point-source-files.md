@@ -11,13 +11,13 @@ categories:
 tags:
   - Access-Gateway
 ---
-Customising Logon points in Advanced Access Control is a fairly easy process. Customisation allows you to add a corporate look and feel to the user interface. However, removing and redeploying the Logon Point will remove all customisations - the Logon Point is just a bunch of HTML and graphic files. Here&#8217;s how to customise the source files so that redeployed and new Logon Points will already have your customisations.
+Customising Logon points in Advanced Access Control is a fairly easy process. Customisation allows you to add a corporate look and feel to the user interface. However, removing and redeploying the Logon Point will remove all customisations - the Logon Point is just a bunch of HTML and graphic files. Here's how to customise the source files so that redeployed and new Logon Points will already have your customisations.
 
   1. Navigate to \Program Files\Citrix\Access Gateway\WebServicesCabContent.
   2. Make a backup copy of LogonAgentApp.CAB - allow for roll back if anything fails.
-  3. Extract LogonAgentApp.CAB to a folder. For this example I&#8217;m using as C:\Temp\LogonAgentApp
+  3. Extract LogonAgentApp.CAB to a folder. For this example I'm using as C:\Temp\LogonAgentApp
   4. Make all customisation to the Logon Point files. See [here](http://support.citrix.com/article/CTX108617&searchID=20966991) and [here](http://www.jasonconger.com/ShowPost.aspx?strID=9efce8af-b7a3-4836-a0f5-cc6478909654) for information on customising the Logon Point.
-  5. Download CABSDK.EXE from [Microsoft Cabinet Software Development Kit](http://support.microsoft.com/kb/310618) (Surely there&#8217;s a better tool around..)
+  5. Download CABSDK.EXE from [Microsoft Cabinet Software Development Kit](http://support.microsoft.com/kb/310618) (Surely there's a better tool around..)
   6. Extract CABSDK.EXE and copy the files from \BIN to C:\Temp.
   7. Run the following command-line to pack the Logon Point source files back into a .CAB file: <font face="courier new,courier">CABARC.EXE -p -r -P Temp\ -P LogonAgentApp\ N LogonAgentApp.CAB LogonAgentApp\*.*</font>
   8. Copy the new .CAB file to \Program Files\Citrix\Access Gateway\WebServicesCabContent.

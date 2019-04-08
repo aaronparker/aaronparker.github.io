@@ -11,7 +11,7 @@ categories:
 tags:
   - Domain-Isolation
 ---
-I promise this won&#8217;t become yet another blog just reposting links to other sites (more original posts to come), but here a link to a new document on the Microsoft Download site that&#8217;s worth mentioning. This document goes into the various methods that can be used to protect your network from unmanaged clients. This includes:
+I promise this won't become yet another blog just reposting links to other sites (more original posts to come), but here a link to a new document on the Microsoft Download site that's worth mentioning. This document goes into the various methods that can be used to protect your network from unmanaged clients. This includes:
 
   * Domain and Server Isolation with IPSec;
   * VPN Quarantine services;

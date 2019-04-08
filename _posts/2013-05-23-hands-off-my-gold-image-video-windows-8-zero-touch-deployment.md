@@ -15,9 +15,9 @@ categories:
 tags:
   - MDT
 ---
-Here&#8217;s another demo that I showed during my [Geek Speak Live session](https://citrix.g2planet.com/synergylosangeles2013/public_session_view.php?agenda_session_id=274&conference=synergy) at Citrix Synergy 2013 at Anaheim yesterday.
+Here's another demo that I showed during my [Geek Speak Live session](https://citrix.g2planet.com/synergylosangeles2013/public_session_view.php?agenda_session_id=274&conference=synergy) at Citrix Synergy 2013 at Anaheim yesterday.
 
-In a 45 minute session on MDT and automating gold image deployments there&#8217;s not enough time for such a large topic, so perhaps I should have dropped this one; however this is interesting nonetheless. Using PowerShell to drive Hyper-V and MDT, this demo shows a full Windows 8 deployment from start to ready for user logon. This approach might be useful for persistent virtual desktops, or with a little more effort, using the image in a XenDesktop 7 desktop catalog created with PowerShell.
+In a 45 minute session on MDT and automating gold image deployments there's not enough time for such a large topic, so perhaps I should have dropped this one; however this is interesting nonetheless. Using PowerShell to drive Hyper-V and MDT, this demo shows a full Windows 8 deployment from start to ready for user logon. This approach might be useful for persistent virtual desktops, or with a little more effort, using the image in a XenDesktop 7 desktop catalog created with PowerShell.
 
 Here’s a flow chart that gives an overview of what the script does:
 

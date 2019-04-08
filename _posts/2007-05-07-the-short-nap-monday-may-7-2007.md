@@ -20,4 +20,4 @@ The Short NAP is a (semi-regular) quick list of Microsoft Network Access Protect
   * _Upcoming Chat May 24, 2007_: [Deploying NAP](http://www.microsoft.com/technet/community/chats/default.mspx)  
     &#8220;The Enterprise Networking Group is hosting a web chat that will focus on the deployment of Network Access Protection (NAP) that will cover different enforcement technologies. There will be the opportunity to ask questions of the developers, testers and program managers working on NAP.&#8221;
   * [TechNet Australia 2007 sessions](http://blogs.technet.com/mkleef/archive/2007/05/07/yes-its-teched-planning-time-of-year-again.aspx)  
-    The session &#8220;Microsoft Windows Server Network Policy Server Fundamentals: Implementing NAP&#8221; will be run at this year&#8217;s TechEd Australia at the Gold Coast Convention Centre, August 7<sup>th</sup> to 10<sup>th</sup>.
+    The session &#8220;Microsoft Windows Server Network Policy Server Fundamentals: Implementing NAP&#8221; will be run at this year's TechEd Australia at the Gold Coast Convention Centre, August 7<sup>th</sup> to 10<sup>th</sup>.

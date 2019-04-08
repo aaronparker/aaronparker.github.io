@@ -29,6 +29,6 @@ After watching the video I was convinced enough to turn System Restore back on a
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1078.DiskCleanupforVista2.png" /> 
 
-This will delete all but the most recent restore point, clearing space but still leaving you some protection. You should also be aware that if you want the Previous Versions feature available on disks other than the system drive you will have to enable System Protection on your other disks or partitions. By storing you data on a second drive or partition you could then disable System Restore on your system drive but take advantage of Previous Versions for your data. Here I&#8217;ve enabled System Protection on my D: drive which contains my important data:
+This will delete all but the most recent restore point, clearing space but still leaving you some protection. You should also be aware that if you want the Previous Versions feature available on disks other than the system drive you will have to enable System Protection on your other disks or partitions. By storing you data on a second drive or partition you could then disable System Restore on your system drive but take advantage of Previous Versions for your data. Here I've enabled System Protection on my D: drive which contains my important data:
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1080.RestorePoints.png" />

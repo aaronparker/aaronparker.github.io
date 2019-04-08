@@ -18,7 +18,7 @@ tags:
 
 ### Sequencing Photoshop CS3
 
-Before sequencing Photoshop, you will need to obtain the [volume license version of the media](http://www.adobe.com/aboutadobe/openoptions/) so that you won&#8217;t have to worry about activation. If you use standard media that requires activation the application will refuse to run on your SoftGrid/MAV client machines. For this sequence I installed Photoshop CS3 with the following updates:
+Before sequencing Photoshop, you will need to obtain the [volume license version of the media](http://www.adobe.com/aboutadobe/openoptions/) so that you won't have to worry about activation. If you use standard media that requires activation the application will refuse to run on your SoftGrid/MAV client machines. For this sequence I installed Photoshop CS3 with the following updates:
 
   * [Adobe Photoshop 10.0.1 update for Adobe Photoshop CS3](http://www.adobe.com/support/downloads/detail.jsp?ftpID=3775)
   * [Adobe DNG Converter and Camera Raw 4.3 update](http://www.adobe.com/support/downloads/detail.jsp?ftpID=3824)
@@ -73,7 +73,7 @@ When launching Photoshop the SoftGrid client would fail and produce this error:
 
 A bit of searching turned up this knowledgebase article: [Error message when you try to start a sequenced application in the Microsoft SoftGrid Client: &#8220;Error code: 410038-0060922C-800736B1](http://support.microsoft.com/default.aspx/kb/939084). The article offer two solutions, the first being that your clients should have the .NET Framework and the Visual C++ 2005 redistributable package installed locally on the client. The second solution is to add a script to the OSD file to copy the required files out of the package to the client before the application executes.
 
-The problem with the first solution is that both runtimes are installed on my test machine but the required files are not included in either package. At this point I&#8217;m unsure where these files come from, even though [another knowledgebase article](http://support.microsoft.com/kb/923610) seems to indicate that they should be in the Visual C++ 2005 SP1 redistributable package. A logical explanation is that they are included in the application setup routine.
+The problem with the first solution is that both runtimes are installed on my test machine but the required files are not included in either package. At this point I'm unsure where these files come from, even though [another knowledgebase article](http://support.microsoft.com/kb/923610) seems to indicate that they should be in the Visual C++ 2005 SP1 redistributable package. A logical explanation is that they are included in the application setup routine.
 
 The problem with the second solution, which involves copying the files out of the protected environment down to the machine, is that users would require administrative access to their workstations for this to work.
 

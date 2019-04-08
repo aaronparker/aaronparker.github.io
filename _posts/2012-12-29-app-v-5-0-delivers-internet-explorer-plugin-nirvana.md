@@ -29,29 +29,29 @@ RunVirtual works by the App-V client intercepting the process launch (CreateProc
 
 # Implementing RunVirtual
 
-To illustrate implementing the RunVirtual feature, I&#8217;ll demonstrate delivering plugins to a Windows 7 client running Internet Explorer 9. In this example, I&#8217;m [managing the App-V client with PowerShell](http://technet.microsoft.com/en-us/library/jj713419.aspx) to show what&#8217;s going on under the hood. This process would be simplified with Configuration Manager or the [native App-V infrastructure](http://technet.microsoft.com/en-us/library/jj713496.aspx).
+To illustrate implementing the RunVirtual feature, I'll demonstrate delivering plugins to a Windows 7 client running Internet Explorer 9. In this example, I'm [managing the App-V client with PowerShell](http://technet.microsoft.com/en-us/library/jj713419.aspx) to show what's going on under the hood. This process would be simplified with Configuration Manager or the [native App-V infrastructure](http://technet.microsoft.com/en-us/library/jj713496.aspx).
 
 ## Publishing Packages
 
-Before deployment to a client PC, I&#8217;ve sequenced the follow applications into App-V 5.0 packages and saved them to the network:
+Before deployment to a client PC, I've sequenced the follow applications into App-V 5.0 packages and saved them to the network:
 
   * Adobe Reader X
   * Adobe Flash Player 11
   * Oracle Java 7
 
-During sequencing I&#8217;ve not performed any special steps to prepare the environment - there is no bearing on deployment during the sequencing stage.
+During sequencing I've not performed any special steps to prepare the environment - there is no bearing on deployment during the sequencing stage.
 
 Each package has been added to the client and published globally with the following commands:
 
 [code]Add-AppvClientPackage –Path \\server\Packages\AdobeReaderX_pkg\AdobeReaderX.appv | Publish-AppvClientPackage -Global<br>Add-AppvClientPackage –Path \\server\Packages\AdobeFlashPlayer11\AdobeFlashPlayer11.appv | Publish-AppvClientPackage -Global<br>Add-AppvClientPackage –Path \\server\Packages\OracleJava7\OracleJava7.appv | Publish-AppvClientPackage -Global[/code]
 
-Whilst Adobe Reader can be used just like any other application, Flash and Java aren&#8217;t particularly useful on their own.
+Whilst Adobe Reader can be used just like any other application, Flash and Java aren't particularly useful on their own.
 
 ## Enabling a Connection Group
 
 Only a single package can be applied to a process with the RunVirtual feature. This means that to provide Internet Explorer with access to several packages, we need to first add each package to a [Connection Group](http://technet.microsoft.com/library/jj713417.aspx) and add that to the client.
 
-[Connection Groups are defined via XML files](http://technet.microsoft.com/en-US/library/jj737969.aspx) that list each member package. If we&#8217;re managing the App-V client with PowerShell, the Connection Group descriptor files need to be created manually. I won&#8217;t go into detail here; however below is the listing for the descriptor file for a Connection Group that contains the Internet Explorer Plugins:
+[Connection Groups are defined via XML files](http://technet.microsoft.com/en-US/library/jj737969.aspx) that list each member package. If we're managing the App-V client with PowerShell, the Connection Group descriptor files need to be created manually. I won't go into detail here; however below is the listing for the descriptor file for a Connection Group that contains the Internet Explorer Plugins:
 
 [code language=&#8221;xml&#8221;]<?xml version="1.0" ?>  
 <appv:AppConnectionGroup  
@@ -85,9 +85,9 @@ So using Internet Explorer (iexplore.exe) and the Connection Group for the plugi
 
 (Note the underscore between Package ID and Version ID to make up the data stored in the registry value.)
 
-**However** - I have found that RunVirtual doesn&#8217;t start the virtual environment (VE) if details for a Connection Group are supplied. Documentation on this feature is scant, so it&#8217;s hard to tell whether this behaviour is by design or not.
+**However** - I have found that RunVirtual doesn't start the virtual environment (VE) if details for a Connection Group are supplied. Documentation on this feature is scant, so it's hard to tell whether this behaviour is by design or not.
 
-If the Package and Version ID are of a member package are provided, then the Connection Group VE is loaded, so we do get the desired effect. In my test case, I&#8217;ve added the Package and Version ID of the primary package (Flash) to the registry.
+If the Package and Version ID are of a member package are provided, then the Connection Group VE is loaded, so we do get the desired effect. In my test case, I've added the Package and Version ID of the primary package (Flash) to the registry.
 
 [<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="RunVirtualRegistryKey" alt="RunVirtualRegistryKey" src="http://stealthpuppy.com/wp-content/uploads/2012/12/RunVirtualRegistryKey_thumb.png" width="660" height="233" border="0" />](http://stealthpuppy.com/wp-content/uploads/2012/12/RunVirtualRegistryKey.png)
 
@@ -95,6 +95,6 @@ Once the key is created and populated, start or restart the target process and t
 
 # The End to installing Plugins?
 
-RunVirtual is a great new feature of App-V 5.0 that has only been possible with the re-architecture of App-V. The ability to provide add-ons or plugins for installed software without changing the user experience is brilliant. A feature that agent-less application virtalization solutions won&#8217;t be able to match.
+RunVirtual is a great new feature of App-V 5.0 that has only been possible with the re-architecture of App-V. The ability to provide add-ons or plugins for installed software without changing the user experience is brilliant. A feature that agent-less application virtalization solutions won't be able to match.
 
-However it&#8217;s still early days for App-V 5.0, so it remains to be seen how widely this feature will be used. At this point, it only works with global (i.e. not user targeted) packages and requires a change to the real registry. It is though, a feature with a lot of promise and I&#8217;m looking forward to it simplifying desktop images.
+However it's still early days for App-V 5.0, so it remains to be seen how widely this feature will be used. At this point, it only works with global (i.e. not user targeted) packages and requires a change to the real registry. It is though, a feature with a lot of promise and I'm looking forward to it simplifying desktop images.

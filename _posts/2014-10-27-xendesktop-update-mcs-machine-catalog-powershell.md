@@ -17,19 +17,19 @@ tags:
   - PowerShell
   - XenDesktop
 ---
-I wrote previously about [automating the creation of an MCS-based machine catalog in XenDesktop with PowerShell](http://stealthpuppy.com/xendesktop-mcs-machine-catalog-powershell/), so in this article I&#8217;ll cover updating that machine catalog via PowerShell.
+I wrote previously about [automating the creation of an MCS-based machine catalog in XenDesktop with PowerShell](http://stealthpuppy.com/xendesktop-mcs-machine-catalog-powershell/), so in this article I'll cover updating that machine catalog via PowerShell.
 
 Separate to this article would be the process of creating the updated image - that could be done manually (by updating the existing master image), or by [automating a new master image deployment with MDT](http://stealthpuppy.com/briforum-2014-hands-off-my-gold-image-the-slides/), or any other method that you can think of.
 
-Just as with creating the machine catalog, the PowerShell output from Studio when updating a catalog is a place to start - the code provided isn&#8217;t reusable without some effort to make it work.
+Just as with creating the machine catalog, the PowerShell output from Studio when updating a catalog is a place to start - the code provided isn't reusable without some effort to make it work.
 
 # Linking the Code to the UI
 
-I&#8217;ll walk briefly through the wizards to show, in part, how the code relates to each step when updating a machine catalog via the Studio UI.
+I'll walk briefly through the wizards to show, in part, how the code relates to each step when updating a machine catalog via the Studio UI.
 
-In this case, I&#8217;ve already created the machine catalog and updated my master image and created a snapshot. The hypervisor isn&#8217;t important because Citrix Studio abstracts this from the process when performing the update (I do need to be using the same infrastructure as the target catalog).
+In this case, I've already created the machine catalog and updated my master image and created a snapshot. The hypervisor isn't important because Citrix Studio abstracts this from the process when performing the update (I do need to be using the same infrastructure as the target catalog).
 
-To find the snapshot to use, I’ve obtained the path to the master image and a specified snapshot via the _Get-ChildItem_ command (on the path XDHyp:\HostingUnits\<Storage Resource>). This is essentially a path/directory that I can parse - I&#8217;ve explicitly specified the master image and the snapshot to use. I need the path to the snapshot so that I can use that in the publish step for the image update.
+To find the snapshot to use, I’ve obtained the path to the master image and a specified snapshot via the _Get-ChildItem_ command (on the path XDHyp:\HostingUnits\<Storage Resource>). This is essentially a path/directory that I can parse - I've explicitly specified the master image and the snapshot to use. I need the path to the snapshot so that I can use that in the publish step for the image update.
 
 <figure id="attachment_3729" aria-describedby="caption-attachment-3729" style="width: 806px" class="wp-caption alignnone">[<img class="wp-image-3729 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/10/01-Master-Image.png" alt="" width="806" height="585" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/01-Master-Image.png 806w, https://stealthpuppy.com/wp-content/uploads/2014/10/01-Master-Image-150x108.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/10/01-Master-Image-300x217.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/10/01-Master-Image-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/01-Master-Image.png)<figcaption id="caption-attachment-3729" class="wp-caption-text">Selecting the master image snapshot - Get-ChildItem &#8220;XDHyp:\HostingUnits\&#8221;</figcaption>
 
@@ -42,7 +42,7 @@ _[Start-BrokerRebootCycle](http://support.citrix.com/proddocs/topic/citrix-broke
 <figure id="attachment_3731" aria-describedby="caption-attachment-3731" style="width: 806px" class="wp-caption alignnone">[<img class="wp-image-3731 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/10/02-Rollout-02.png" alt="" width="806" height="585" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/02-Rollout-02.png 806w, https://stealthpuppy.com/wp-content/uploads/2014/10/02-Rollout-02-150x108.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/10/02-Rollout-02-300x217.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/10/02-Rollout-02-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/02-Rollout-02.png)<figcaption id="caption-attachment-3731" class="wp-caption-text">Rollout image update immediately - Start-BrokerRebootCycle -InputObject @(<Machine Catalog Name>) -RebootDuration 120 -WarningDuration 15 -WarningMessage <message> -WarningTitle <message></figcaption>
 
 <p class="p1">
-  <a href="http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/publish-provmastervmimage-xd75.html"><em>Publish-ProvMasterVmImage</em></a> is used to publish the image. The process can then be monitored by getting updates for the process via <a href="http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/get-provtask-xd75.html">Get-ProvTask</a>. I&#8217;ve opted to show a progress bar while the update is on-going before initiating the desktop reboot.
+  <a href="http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/publish-provmastervmimage-xd75.html"><em>Publish-ProvMasterVmImage</em></a> is used to publish the image. The process can then be monitored by getting updates for the process via <a href="http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/get-provtask-xd75.html">Get-ProvTask</a>. I've opted to show a progress bar while the update is on-going before initiating the desktop reboot.
 </p>
 
 <figure id="attachment_3732" aria-describedby="caption-attachment-3732" style="width: 806px" class="wp-caption alignnone">[<img class="wp-image-3732 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/10/04-Summary.png" alt="" width="806" height="585" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/04-Summary.png 806w, https://stealthpuppy.com/wp-content/uploads/2014/10/04-Summary-150x108.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/10/04-Summary-300x217.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/10/04-Summary-624x452.png 624w" sizes="(max-width: 806px) 100vw, 806px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/04-Summary.png)<figcaption id="caption-attachment-3732" class="wp-caption-text">Catalog update summary</figcaption>
@@ -53,12 +53,12 @@ There’s plenty that the wizard does to hide the complexity of setting up a cat
 
 Below is the full code listing with comments inline that should provide some detail on the process the code follows. At this point the code provides some error checking for the most important steps. There are still some additional steps and error checking that could be integrated:
 
-  * The code will get a specified snapshot from the target VM. I&#8217;ve done this to ensure I&#8217;m using the correct version of the image
+  * The code will get a specified snapshot from the target VM. I've done this to ensure I'm using the correct version of the image
   * Publish the image update to the catalog
   * Monitor the update process until completion
   * Start the desktop reboot cycle
 
-At this stage, I haven&#8217;t added too much error checking, but an important step to add will be to check that the image update process was successful and rollback if it wasn&#8217;t.
+At this stage, I haven't added too much error checking, but an important step to add will be to check that the image update process was successful and rollback if it wasn't.
 
 <pre class="lang:ps decode:true " title="PowerShell code to update and MCS-based Machine Catalog">#---------------------------------------------------------------------------
 # Author: Aaron Parker

@@ -15,9 +15,9 @@ Microsoft have just [made available a new series of Infrastructure Planning and 
 
 > The IPD series is the next step in the evolution of architectural guidance for Microsoft infrastructure. IPD is designed to make the consumption of architectural guidance easier for the reader. Over time, the services covered by WSSRA will be updated and placed in the IPD format. Initially, the IPD series will focus on helping the reader to architect individual technologies such as Windows Server virtualization, Windows Server 2008 Active DirectoryÂ®, and Windows Deployment Services.
 
-What&#8217;s of interest to me here is the SoftGrid Application Virtualisation reference document. At 54 pages it&#8217;s a fairly light read but still manages to pack in a heap of good information and that&#8217;s a good thing.
+What's of interest to me here is the SoftGrid Application Virtualisation reference document. At 54 pages it's a fairly light read but still manages to pack in a heap of good information and that's a good thing.
 
-If you register before downloading these documents you will be notified when more are available. Here&#8217;s what&#8217;s available in this download now:
+If you register before downloading these documents you will be notified when more are available. Here's what's available in this download now:
 
   * IPD Series Introduction
   * Selecting the Right Virtualization Technology

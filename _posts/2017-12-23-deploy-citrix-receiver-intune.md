@@ -19,13 +19,13 @@ tags:
   - Modern Management
   - Windows 10
 ---
-If you&#8217;ve deployed Windows 10 Modern Management you&#8217;ll know that some applications present a challenge for deployment, because Windows 10 MDM supports the Win32 applications via a single MSI file only. Applications such as Citrix Receiver, that are a single EXE (that wraps multiple MSI files), can, therefore, be challenging. You can [create a custom wrapper to deploy Receiver](https://configmgrblog.com/2017/08/29/how-to-deploy-the-citrix-receiver-for-windows-10-via-microsoft-intune/), but this requires a packaging tool and some specific knowledge on how to package applications.
+If you've deployed Windows 10 Modern Management you'll know that some applications present a challenge for deployment, because Windows 10 MDM supports the Win32 applications via a single MSI file only. Applications such as Citrix Receiver, that are a single EXE (that wraps multiple MSI files), can, therefore, be challenging. You can [create a custom wrapper to deploy Receiver](https://configmgrblog.com/2017/08/29/how-to-deploy-the-citrix-receiver-for-windows-10-via-microsoft-intune/), but this requires a packaging tool and some specific knowledge on how to package applications.
 
 Microsoft Intune now [supports deploying PowerShell scripts](https://docs.microsoft.com/en-us/intune/intune-management-extension) to Windows 10 machines, which can provide a more flexible framework for deploying complex applications. For Citrix Reciever, we can use this approach to target Windows 10 PCs for downloading the latest version of Receiver directly from Citrix and [install it with any required command line options](https://docs.citrix.com/en-us/receiver/windows/current-release/install/cfg-command-line.html). This ensures that devices always install the latest version and the Intune administrator only ever has to create a single deployment option via a PowerShell script.
 
 # Citrix Receiver for Windows vs. Citrix Receiver for Windows (Store)
 
-In December 2017, Citrix made available an updated Receiver via the Windows Store that is not a true Universal Windows Platform app, instead, it&#8217;s the Win32 Receiver converted to a Store app via the [Desktop Bridge](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root). Deploying this version via Microsoft Intune only requires that you subscribe to the app via the [Microsoft Store for Business](https://businessstore.microsoft.com/), sync with Intune and then target that version for deployment via Intune.
+In December 2017, Citrix made available an updated Receiver via the Windows Store that is not a true Universal Windows Platform app, instead, it's the Win32 Receiver converted to a Store app via the [Desktop Bridge](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root). Deploying this version via Microsoft Intune only requires that you subscribe to the app via the [Microsoft Store for Business](https://businessstore.microsoft.com/), sync with Intune and then target that version for deployment via Intune.
 
 The Citrix Receiver for Windows Store version does have [a number of limitations or unsupported features](https://docs.citrix.com/en-us/receiver/windows-store/current-release/known-issues.html), primarily due to restrictions on apps deployed from the Store. These are:
 
@@ -52,7 +52,7 @@ If you can work without the features above, then use the Store version instead o
 
 # Installing Citrix Receiver
 
-Here&#8217;s a simple script to detect whether Receiver is installed and if not, download and install Receiver using a specific set of command line options.
+Here's a simple script to detect whether Receiver is installed and if not, download and install Receiver using a specific set of command line options.
 
 
 

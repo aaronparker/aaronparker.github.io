@@ -20,11 +20,11 @@ tags:
 ---
 <img class="alignright size-full wp-image-2873" style="margin-left: 5px; margin-right: 5px;" title="AppV-PowerShell-Logo" src="http://stealthpuppy.com/wp-content/uploads/2012/10/AppV-PowerShell-Logo.png" alt="" width="128" height="128" />App-V 5.0 is PowerShell driven, which means opportunity for automating and scripting tasks that might have to be completed manually or might have been a challenge to script previously.
 
-Using PowerShell to drive the App-V Sequencer opens up some great automation scenarios. Here&#8217;s how to use PowerShell to sequence an application without manually starting the Sequencer UI.
+Using PowerShell to drive the App-V Sequencer opens up some great automation scenarios. Here's how to use PowerShell to sequence an application without manually starting the Sequencer UI.
 
-I&#8217;m using [Paint.NET](http://getpaint.net) as my example application and before sequencing, I have configured an install script for this application which will automate the installation and configuration.
+I'm using [Paint.NET](http://getpaint.net) as my example application and before sequencing, I have configured an install script for this application which will automate the installation and configuration.
 
-I&#8217;ve placed all binaries and files, including a Sequencer Template into a folder at C:\Packages. My script (INSTALL.CMD) looks like this:
+I've placed all binaries and files, including a Sequencer Template into a folder at C:\Packages. My script (INSTALL.CMD) looks like this:
 
 [code]@ECHO OFF  
 START /WAIT C:\Packages\Paint.NET.3.5.10.Install.exe /skipConfig /auto PDNUPDATING=0 CHECKFORUPDATES=0 DESKTOPSHORTCUT=0[/code]

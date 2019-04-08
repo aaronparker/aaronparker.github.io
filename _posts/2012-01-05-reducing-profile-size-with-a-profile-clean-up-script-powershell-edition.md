@@ -31,7 +31,7 @@ Just like the original script, this could be executed at logoff, before the prof
   1. Delete all files of a specific file type in a specified folder, including sub-folders
   2. Delete all files older than X days in a specified folder, including sub-folders
 
-For example, you could use the script to delete all .log or temporary files below %APPDATA% that aren&#8217;t required to be roamed, or delete all Cookies older than 90 days to keep the Cookies folder to a manageable size.
+For example, you could use the script to delete all .log or temporary files below %APPDATA% that aren't required to be roamed, or delete all Cookies older than 90 days to keep the Cookies folder to a manageable size.
 
 **Note**: the script listing below has the -whatif parameter applied when calling the function, so no deletes will occur unless the parameter is removed.
 

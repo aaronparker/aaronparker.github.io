@@ -14,7 +14,7 @@ tags:
   - Cluster
   - VMware
 ---
-Truly geeky people will appreciate the ability to run their mailbox on their very own Exchange cluster running on their laptop. Not quite high availability but high on a list of silly things to do. Here&#8217;s how to create a cluser in VMware Workstation:
+Truly geeky people will appreciate the ability to run their mailbox on their very own Exchange cluster running on their laptop. Not quite high availability but high on a list of silly things to do. Here's how to create a cluser in VMware Workstation:
 
 1. Create a new guest virtual machine with the following settings:
 

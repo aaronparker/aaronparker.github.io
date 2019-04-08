@@ -17,14 +17,14 @@ For anyone [deploying Adobe Reader](http://stealthpuppy.com/deployment/deploying
 
 Ideally you should be obtaining a [Distribution Agreement](http://www.adobe.com/products/acrobat/distribute.html) for Adobe Reader if you are looking to distribute the application over your network or other means such as CDROM. Once you do obtain the agreement, you are given a link to the [direct download page](http://www.adobe.com/products/acrobat/readstep2.html?type=distrib) where you can get the direct download for various versions of Adobe Reader in your language of choice.
 
-Here what I&#8217;ve found so far - happy downloading 😉
+Here what I've found so far - happy downloading 😉
 
   * [Adobe Reader 8.1 US English](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/enu/AdbeRdr810_en_US.exe)
   * [Adobe Reader 8.1 Deutsch](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/deu/AdbeRdr810_de_DE.exe)
   * [Adobe Reader 8.1 FranÃ§ais](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/fra/AdbeRdr810_fr_FR.exe)
   * [Adobe Reader 8.1 æ—¥æœ¬èªž](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/jpn/AdbeRdr810_ja_JP.exe)
 
-**Update:** Here&#8217;s a few more
+**Update:** Here's a few more
 
   * [Adobe Reader 8.1 Italiano](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/ita/AdbeRdr810_it_IT.exe) (Thanks Francesco)
   * [Adobe Reader 8.1 EspaÃ±ol](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/esp/AdbeRdr810_es_ES.exe)

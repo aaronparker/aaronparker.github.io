@@ -47,7 +47,7 @@ Application Virtualisation has a number of benefits over traditional method of a
     </td>
     
     <td valign="top">
-      <strong>Standard Operating System Environment</strong>: In standard OS environments, applications install their settings onto the host operating system, hard-coding the entire system to fit that application&#8217;s needs. Other applications&#8217; settings can be overwritten, possibly causing them to malfunction or break.<sup>3</sup>
+      <strong>Standard Operating System Environment</strong>: In standard OS environments, applications install their settings onto the host operating system, hard-coding the entire system to fit that application's needs. Other applications' settings can be overwritten, possibly causing them to malfunction or break.<sup>3</sup>
     </td>
   </tr>
   

@@ -17,7 +17,7 @@ categories:
 ---
 The App-V 5 Sequencer, just [like version 4.6 SP1](http://blogs.technet.com/b/appv/archive/2011/05/04/app-v-4-6-sp1-sequencer-project-template-improvements.aspx), includes support for [Sequencer Templates](http://technet.microsoft.com/en-gb/library/jj684290.aspx). These are an ideal approach for ensuring the use of the same set of Sequencer settings and exclusions across all packages.
 
-App-V 5 captures many additional locations that weren&#8217;t captured by the version 4 Sequencer. This isn&#8217;t generally an issue for packages; however excluding unneeded data means that data isn&#8217;t streamed to clients unnecessarily. Listed below is sequencer template that includes a few additional locations that I&#8217;d recommend excluding.
+App-V 5 captures many additional locations that weren't captured by the version 4 Sequencer. This isn't generally an issue for packages; however excluding unneeded data means that data isn't streamed to clients unnecessarily. Listed below is sequencer template that includes a few additional locations that I'd recommend excluding.
 
 In the listing below, the highlighted line is a local folder into which all application installations are executed from (i.e. setup has been copied locally to the sequencing VM). This ensures that any files created by the application setup are not captured during installation.
 

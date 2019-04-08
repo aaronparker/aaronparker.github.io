@@ -11,9 +11,9 @@ categories:
 tags:
   - ISA Server
 ---
-Here&#8217;s an easy way to crash the Microsoft Firewall service in ISA Server - create a server publishing rule that allows all high ports inbound to an internal NATed IP address.
+Here's an easy way to crash the Microsoft Firewall service in ISA Server - create a server publishing rule that allows all high ports inbound to an internal NATed IP address.
 
-Now this is something that it is not normally done and I don&#8217;t think that ISA Server was designed to work this way. I was doing some specific testing yesterday and as a shortcut, rather than find out what ports I needed inbound (which ended up being UDP 28000 - 29000), I allowed UDP 1024 - 65535 inbound with some unexpected results. The Microsoft Firewall service crashed with the following event logged:
+Now this is something that it is not normally done and I don't think that ISA Server was designed to work this way. I was doing some specific testing yesterday and as a shortcut, rather than find out what ports I needed inbound (which ended up being UDP 28000 - 29000), I allowed UDP 1024 - 65535 inbound with some unexpected results. The Microsoft Firewall service crashed with the following event logged:
 
 > Event Type: Error  
 > Event Source: Microsoft ISA Server Control  
@@ -40,4 +40,4 @@ The following alerts were logged in the ISA Server Management Console:
 > **Server Publishing Failure**  
 > Description: ISA Server failed to read one or more server publishing rules from the stored configuration because an internal error occurred. Error location 325.1524.5.0.5720.100. The stored configuration may be corrupted. The failure is due to error: Ran out of memory
 
-Deleting the rule and restarting the Microsoft Firewall service got the server up and running, but there&#8217;s something I won&#8217;t do again.
+Deleting the rule and restarting the Microsoft Firewall service got the server up and running, but there's something I won't do again.

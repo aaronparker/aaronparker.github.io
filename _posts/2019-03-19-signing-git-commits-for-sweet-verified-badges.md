@@ -17,7 +17,7 @@ tags:
   - GPG
   - Visual Studio Code
 ---
-Confession time - I've had a [GitHub accoun](https://github.com/aaronparker?tab=repositories)t since 2014 and haven't signed a single commit. I've read various tweets and articles about signing your commits, but never committed (git it? ... see what I did there...) to setting up a signature until recently.
+Confession time - I've had a [GitHub account](https://github.com/aaronparker?tab=repositories) since 2014 and haven't signed a single commit. I've read various tweets and articles about signing your commits, but never committed (git it? ... see what I did there...) to setting up a signature until recently.
 
 I'm not a developer, [I just write a bunch of scripts](https://stealthpuppy.com/tag/powershell/), but I like the idea of signing my commits so that others can see that all changes to my code are verified. There's plenty of articles on why signing your commits is a good idea. Here's a couple:
 
@@ -82,5 +82,3 @@ In Preferences, search for 'git signing' and select 'Git: Enable Commit Signing'
 That's about all the steps required for signing git commits. We have signed commits in a GitHub repository and a sweet, sweet Verified badge - now I can brag to all my friends and they'll know that code came from me. My mum still won't understand what I do for a living, but you can't get a win every day.
 
 [<img src="https://stealthpuppy.com/wp-content/uploads/2019/03/Verified.gif" alt="Now I have a nice shiny verified badge on my commits" class="wp-image-6280" />](https://stealthpuppy.com/wp-content/uploads/2019/03/Verified.gif)<figcaption>Now I have a nice shiny verified badge on my commits</figcaption> 
-
-[Photo by Helloquence on Unsplash](https://unsplash.com/photos/OQMZwNd3ThU)

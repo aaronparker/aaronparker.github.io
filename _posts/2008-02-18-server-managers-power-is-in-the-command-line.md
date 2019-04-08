@@ -1,6 +1,6 @@
 ---
 id: 469
-title: 'Server Manager&#8217;s Power Is In The Command Line'
+title: 'Server Manager's Power Is In The Command Line'
 date: 2008-02-18T21:54:54+10:00
 author: Aaron Parker
 layout: post
@@ -15,13 +15,13 @@ tags:
   - Unattended
   - Windows-Server-2008
 ---
-<img src="http://stealthpuppy.com/wp-content/uploads/2008/02/servermanagercmd.png" alt="servermanagercmd.png" align="left" />Like most IT Pros deploying and managing Windows Server, I&#8217;ve avoided the wizard interfaces, like Manage Your Server, in previous versions of Windows. However with Windows Server 2008, Microsoft have actually succeeded in creating a tool that I think people will find indispensable.
+<img src="http://stealthpuppy.com/wp-content/uploads/2008/02/servermanagercmd.png" alt="servermanagercmd.png" align="left" />Like most IT Pros deploying and managing Windows Server, I've avoided the wizard interfaces, like Manage Your Server, in previous versions of Windows. However with Windows Server 2008, Microsoft have actually succeeded in creating a tool that I think people will find indispensable.
 
-Server Manager is an MMC-based front-end for anything you will need to manage on your servers running Windows 2008. As well as combining many of the individual management tools, it gives you a simple overview of what&#8217;s happening on your server and integrates the old Add/Remove Programs interface too.
+Server Manager is an MMC-based front-end for anything you will need to manage on your servers running Windows 2008. As well as combining many of the individual management tools, it gives you a simple overview of what's happening on your server and integrates the old Add/Remove Programs interface too.
 
 [](http://stealthpuppy.com/wp-content/uploads/2008/02/servermanager.png)
 
-If you&#8217;ve not taken a look at Windows Server 2008 and are interested in reading more about Server Manager, there is a plethora of resources available to you:
+If you've not taken a look at Windows Server 2008 and are interested in reading more about Server Manager, there is a plethora of resources available to you:
 
   * Start with the [Windows Server 2008 Server Manager Technical Overview](http://technet2.microsoft.com/windowsserver2008/en/library/18dd1257-2cd1-48f0-91f1-3012cf0fcc831033.mspx?mfr=true)
   * You can then use [Server Manager page on TechNet](http://technet2.microsoft.com/windowsserver2008/en/servermanager/default.mspx) to find links to more detailed information
@@ -30,7 +30,7 @@ If you&#8217;ve not taken a look at Windows Server 2008 and are interested in re
   * [TechNet Webcast: Overview of Server Manager and Windows PowerShell in Windows Server 2008 (Level 300)](http://go.microsoft.com/fwlink/?LinkId=92591) to see Server Manager in action
   * Read the [Server Manager Scenarios Step-by-Step Guide](http://download.microsoft.com/download/b/1/0/b106fc39-936c-4857-a6ea-3fb9d1f37063/Server%20Manager%20Scenarios%20Step-by-Step%20Guide.doc) to see how to use Server Manager.
 
-The real power of Server Manager and what makes this tool truly worthwhile is it&#8217;s command line interface. SERVERMANAGERCMD.EXE replaces what SYSOCMGR.EXE provided in previous versions of Windows, but it does so much more:
+The real power of Server Manager and what makes this tool truly worthwhile is it's command line interface. SERVERMANAGERCMD.EXE replaces what SYSOCMGR.EXE provided in previous versions of Windows, but it does so much more:
 
 > A new command-line feature in Server Manager allows unattended installation and removal of Windows Server 2008 technologies. The ServerManagerCmd.exe command-line tool exposes the key set of Server Manager tasks, such as installation or removal of roles, role services and features, validation, and querying the current state of the computer. It also allows for installation or removal of multiple roles, role services, or features in a single command instance by using XML answer files.
 > 
@@ -50,7 +50,7 @@ To install the complete Remote Server Administration Tools (RSAT) on a Windows S
 
 Command line interaction with Server Manager also provides the ability to query what roles and features are installed on the server as well as export and import configurations via XML files. This is a great change from earlier versions of Windows and will help to reduce the time spent managing Windows Server 2008.
 
-I&#8217;ve included here the complete list of roles and features that you can use with SERVERMANAGER.CMD and OCSETUP.EXE in Windows Server 2008 and Windows Server Core. Don&#8217;t reach for that GUI, real men (and women) use the command line.
+I've included here the complete list of roles and features that you can use with SERVERMANAGER.CMD and OCSETUP.EXE in Windows Server 2008 and Windows Server Core. Don't reach for that GUI, real men (and women) use the command line.
 
 <p class="download">
   [download id=&#8221;25&#8243; format=&#8221;1&#8243;]
@@ -60,17 +60,17 @@ I&#8217;ve included here the complete list of roles and features that you can us
   [download id=&#8221;26&#8243; format=&#8221;1&#8243;]
 </p>
 
-Here&#8217;s something I really like: using SERVERMANAGERCMD -QUERY via Windows PowerShell makes seeing what&#8217;s installed on your server nice and simple (**Update**: this works under Command Prompt too):
+Here's something I really like: using SERVERMANAGERCMD -QUERY via Windows PowerShell makes seeing what's installed on your server nice and simple (**Update**: this works under Command Prompt too):
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/02/query.png" border="0" alt="" width="446" height="313" /> 
 
-For more information on Server Manager with PowerShell , read Marc van Orsouw&#8217;s post: [Dueling Command Lines in Windows Server 2008 ? .. or a happy end ?](http://thepowershellguy.com/blogs/posh/archive/2007/05/23/dueling-command-lines-in-windows-server-2008-or-a-happy-end.aspx).
+For more information on Server Manager with PowerShell , read Marc van Orsouw's post: [Dueling Command Lines in Windows Server 2008 ? .. or a happy end ?](http://thepowershellguy.com/blogs/posh/archive/2007/05/23/dueling-command-lines-in-windows-server-2008-or-a-happy-end.aspx).
 
 ### What About Server Core?
 
 Server Manager is not included in a Server Core installation. Subsequently the command line version is not installed either. Management of features and roles in Server Core is performed via OCSETUP and OCLIST. OCSETUP is the same tool [included in Windows Vista](http://technet2.microsoft.com/WindowsVista/en/library/ced21f54-456d-4936-88a1-a0e42eea3ca31033.mspx?mfr=true) for managing features and works the same way on Server Core.
 
-Unfortunately we don&#8217;t get the ability to save OCLIST&#8217;s output to XML for import to another server, but OCSETUP does provide an answer file option for automating the installation or removal of features.
+Unfortunately we don't get the ability to save OCLIST's output to XML for import to another server, but OCSETUP does provide an answer file option for automating the installation or removal of features.
 
 ### More Reading
 

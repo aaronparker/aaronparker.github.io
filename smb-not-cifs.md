@@ -12,7 +12,7 @@ dsq_thread_id:
 ---
 Information Technology should be approached with a scientific methodology and therefore our language should be exact when we're discussing IT topics. It's way past time to drop the term CIFS and use the correct acronym when we're referring to SMB.
 
-<figure id="attachment_5165" aria-describedby="caption-attachment-5165" style="width: 300px" class="wp-caption alignright">[<img class="wp-image-5165 size-medium" src="http://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-300x300.png" alt="CIFS - You keep using that word. I do not think it means what you think it means." width="300" height="300" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-300x300.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-150x150.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-480x480.png 480w, https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word.png 500w" sizes="(max-width: 300px) 100vw, 300px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word.png)<figcaption id="caption-attachment-5165" class="wp-caption-text">Even Inigo Montoya knows not to use 'CIFS'</figcaption>
+![Even Inigo Montoya knows not to use 'CIFS'](http://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word.png)
 
 CIFS has persisted well past its expiry date. No supported versions of Windows use CIFS and SMB has changed dramatically since the introduction of SMB 2.0 in Windows Vista and Windows Server 2008.
 
@@ -50,7 +50,7 @@ The various versions of SMB available with Windows and other operating systems:
   * **SMB 2.1** - [2009] Windows 7, Windows Server 2008 R2
   * **SMB 3.0** - [2012] Windows 8, Windows Server 2012 
       * Originally called SMB 2.2
-      * <span style="line-height: 1.5;">First version of Windows to make SMB 1.0 optional</span>
+      * First version of Windows to make SMB 1.0 optional
   * **SMB 3.0.2** - [2013] Windows 8.1, Windows Server 2012 R2
   * **SMB 3.1.1** - [2015] Windows 10, Windows Server 2016
 
@@ -78,3 +78,4 @@ For further reading on why you should use 'SMB', see the following articles:
   * [SMB 2 and SMB 3 protocol specifications](https://msdn.microsoft.com/en-us/library/cc246483.aspx)
   * [[MS-CIFS]: Common Internet File System (CIFS) Protocol](https://msdn.microsoft.com/en-us/library/ee442092.aspx)
   * [What’s new in SMB 3.1.1 in the Windows Server 2016 Technical Preview 2](https://blogs.technet.microsoft.com/josebda/2015/05/05/whats-new-in-smb-3-1-1-in-the-windows-server-2016-technical-preview-2/)
+  

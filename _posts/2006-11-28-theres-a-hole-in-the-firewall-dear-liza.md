@@ -1,6 +1,6 @@
 ---
 id: 144
-title: 'There&#8217;s a Hole in the Firewall, Dear Liza'
+title: 'There's a Hole in the Firewall, Dear Liza'
 date: 2006-11-28T21:49:00+10:00
 author: Aaron Parker
 layout: post
