@@ -105,7 +105,3 @@ Right now, I have a few tasks for updating the module, including:
   * Documentation updates
 
 For full details and further updates, [keep an eye on the repository](https://github.com/aaronparker/Install-VisualCRedistributables) and test out the module via [the PowerShell Gallery](https://www.powershellgallery.com/packages/VcRedist/).
-
-Image credit:
-
-<a style="background-color: black; color: white; text-decoration: none; padding: 4px 6px; font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, 'Segoe UI', Arial, sans-serif; font-size: 12px; font-weight: bold; line-height: 1.2; display: inline-block; border-radius: 3px;" title="Download free do whatever you want high-resolution photos from Alexey Ruban" href="https://unsplash.com/@kartochky?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge" target="_blank" rel="noopener noreferrer"><span style="display: inline-block; padding: 2px 3px;">Alexey Ruban</span></a>
