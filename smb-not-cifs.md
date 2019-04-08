@@ -1,6 +1,6 @@
 ---
 id: 5164
-title: 'SMB not CIFS &#8211; Why you should stop referring to CIFS'
+title: 'SMB not CIFS'
 date: 2016-09-19T00:30:15+10:00
 author: Aaron Parker
 layout: page
