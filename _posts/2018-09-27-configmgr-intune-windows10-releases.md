@@ -32,7 +32,7 @@ In my session, I demonstrated this with current Microsoft products - System Cent
 
 Here's the slide I created to visualise this theme.
 
-<figure id="attachment_6184" aria-describedby="caption-attachment-6184" style="width: 2560px" class="wp-caption aligncenter">[<img class="size-full wp-image-6184" src="https://stealthpuppy.com/wp-content/uploads/2018/09/MicrosoftReleases.png" alt="Visualising ConfigMgr, Intune and Windows 10 Releases" width="2560" height="1440" srcset="https://stealthpuppy.com/wp-content/uploads/2018/09/MicrosoftReleases.png 2560w, https://stealthpuppy.com/wp-content/uploads/2018/09/MicrosoftReleases-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/09/MicrosoftReleases-300x169.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/09/MicrosoftReleases-768x432.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/09/MicrosoftReleases-1024x576.png 1024w" sizes="(max-width: 2560px) 100vw, 2560px" />](https://stealthpuppy.com/wp-content/uploads/2018/09/MicrosoftReleases.png)<figcaption id="caption-attachment-6184" class="wp-caption-text">Visualising ConfigMgr, Intune and Windows 10 Releases*</figure>
+![Visualising ConfigMgr, Intune and Windows 10 Releases](https://stealthpuppy.com/wp-content/uploads/2018/09/MicrosoftReleases.png)*Visualising ConfigMgr, Intune and Windows 10 Releases*
 
 # Download the Slide
 
@@ -43,7 +43,3 @@ Note that this is covered under the same license as all content on this site - a
 # View the Session
 
 [Eric](https://twitter.com/xenappblog) should making the recordings from last week's Virtual Expo available soon, so you should be able to see my session in full.
-
-Photo by [Alex Litvin](https://unsplash.com/photos/MAYsdoYpGuk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/projector?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
- 
