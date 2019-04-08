@@ -32,7 +32,7 @@ Fortunately there is a work around until the next version of PolicyMaker is rele
 > Simply rename the following Registry keys:
 > 
 > HKEY\_CLASSES\_ROOT\CLSID\{45B01F1C-5AC2-458C-9457-42A81B34A26D}  
-> HKEY\_CLASSES\_ROOT\CLSID\{{A8EEA101-3610-4D97-A8AE-E88E50DD5488}  
-> HKEY\_CLASSES\_ROOT\CLSID\{{6EA87A55-745F-4c28-8DDC-B679A68E3E01}
+> HKEY\_CLASSES\_ROOT\CLSID\{A8EEA101-3610-4D97-A8AE-E88E50DD5488}  
+> HKEY\_CLASSES\_ROOT\CLSID\{6EA87A55-745F-4c28-8DDC-B679A68E3E01}
 > 
 > The easiest thing to do is add a dash to the end of the key name, so it will be disabled, but you can easily find it to re-enable it later. Note that you may not have all three of these keys, if you don&#8217;t have all of our products installed. Just rename the ones that you have.
