@@ -9,7 +9,7 @@ permalink: /event-search/
 categories:
   - Microsoft
 ---
-Has Microsoft realised the power of [EventID.Net](http://www.eventid.net)? They&#8217;ve added an &#8216;<span id="lblPageHeader"><a href="http://www.microsoft.com/technet/support/ee/ee_advanced.aspx">Events and Errors Message Center&#8217; </a>page @ TechNet. </span>
+Has Microsoft realised the power of [EventID.Net](http://www.eventid.net)? They&#8217;ve added an '<span id="lblPageHeader"><a href="http://www.microsoft.com/technet/support/ee/ee_advanced.aspx">Events and Errors Message Center&#8217; </a>page @ TechNet. </span>
 
 <blockquote dir="ltr">
   <p>

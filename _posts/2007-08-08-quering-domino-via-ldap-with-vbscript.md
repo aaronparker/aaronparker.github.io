@@ -25,7 +25,7 @@ objCommand.Properties("Page Size") = 1000
 objCommand.Properties("Searchscope") = ADS\_SCOPE\_SUBTREE
 
 WScript.Echo "Executing LDAP query.."  
-objCommand.CommandText = "SELECT \* FROM &#8216;LDAP://server/o=org&#8217; WHERE objectClass=&#8217;dominoPerson&#8217; AND mail=&#8217;\*&#8217;"  
+objCommand.CommandText = "SELECT \* FROM 'LDAP://server/o=org&#8217; WHERE objectClass=&#8217;dominoPerson&#8217; AND mail=&#8217;\*&#8217;"  
 Set objRecordSet = objCommand.Execute  
 WScript.Echo "Query complete. Found " & objRecordSet.RecordCount & " objects."
 
@@ -60,7 +60,7 @@ oConnection.Open "ADs Provider"
 oCommand.ActiveConnection = oConnection  
 oCommand.Properties("Page Size") = 1000
 
-&#8216;Output of query looks like this: GC://server:389/CN=Joe Blogs,OU=Sales,O=DominoOrg  
+'Output of query looks like this: GC://server:389/CN=Joe Blogs,OU=Sales,O=DominoOrg  
 oCommand.CommandText = "<gc:>;(objectClass=dominoPerson);*;subtree"  
 Set oRecordset = oCommand.Execute</gc:>
 

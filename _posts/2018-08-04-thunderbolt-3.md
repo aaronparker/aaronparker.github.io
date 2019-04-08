@@ -59,7 +59,7 @@ Here's two articles I recommend reading on the topic of displays and pixel densi
   * [Retina Monitors](https://www.caseyliss.com/2017/5/17/retina-monitors)
   * [Displays for designers and developers](https://bjango.com/articles/macexternaldisplays/)
 
-The short version is this - the aim of a &#8216;Retina' display is that you don't see individual pixels, so as the screen size increases, you need to increase resolution.  Sounds simple enough, but I think it's easy to believe that a 4K 27&#8243; display will give you retina quality, which is just not the case.
+The short version is this - the aim of a 'Retina' display is that you don't see individual pixels, so as the screen size increases, you need to increase resolution.  Sounds simple enough, but I think it's easy to believe that a 4K 27&#8243; display will give you retina quality, which is just not the case.
 
 So with the desire to improve my external display options, I needed to find the right monitor and look at how to connect to it.
 

@@ -46,9 +46,9 @@ I&#8217;m going to specify a static list of Controllers using the aptly named CO
 
 <pre class="lang:batch decode:true">SET OPTIONS=%OPTIONS% /CONTROLLERS "ctx-xd7-ddc1.lab.com,ctx-xd7-ddc2.lab.com"</pre>
 
-There are additional options at this point and the recommended approach is to specify the XD site GUID using SITE\_GUID (this is the same as &#8216;Choose locations from Active Directory&#8217; shown below). Don&#8217;t use CONTROLLERS and SITE\_GUID at the same time.
+There are additional options at this point and the recommended approach is to specify the XD site GUID using SITE\_GUID (this is the same as 'Choose locations from Active Directory&#8217; shown below). Don&#8217;t use CONTROLLERS and SITE\_GUID at the same time.
 
-The last option - &#8216;Let Machine Creation Services do it automatically&#8217; doesn&#8217;t appear to be available as a command line option. From the command line perspective, I assume this is the same as not specifying CONTROLLERS or SITE_GUID at all.
+The last option - 'Let Machine Creation Services do it automatically&#8217; doesn&#8217;t appear to be available as a command line option. From the command line perspective, I assume this is the same as not specifying CONTROLLERS or SITE_GUID at all.
 
 [<img class="alignnone size-full wp-image-3396" alt="ConfigurationOptions" src="http://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions.png" width="766" height="272" srcset="https://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions.png 766w, https://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions-150x53.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions-300x106.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions-624x221.png 624w" sizes="(max-width: 766px) 100vw, 766px" />](http://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions.png)
 

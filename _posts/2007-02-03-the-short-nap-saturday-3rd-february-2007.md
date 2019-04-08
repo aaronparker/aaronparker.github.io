@@ -22,4 +22,4 @@ Lot's of NAP in the news over the past week or two, now if only I had the time a
   * [Windows XP NAP client complete?](http://blogs.technet.com/nap/archive/2007/01/24/nap-the-world-rsa-2007.aspx)  
     Jeff Sigman's not so subtle hint at the XP NAP client demo as RSA 2007
   * [NAP Web Chats coming your way!](http://blogs.technet.com/nap/archive/2007/01/23/nap-web-chats-coming-your-way.aspx)  
-    The &#8216;Using Microsoft's RADIUS server to secure your Network' chat has been and gone (hopefully a transcript soon) the &#8216;Network Access Protection (NAP) System Health Agent/Validator (SHA/SHV) SDK' is still to come.
+    The 'Using Microsoft's RADIUS server to secure your Network' chat has been and gone (hopefully a transcript soon) the 'Network Access Protection (NAP) System Health Agent/Validator (SHA/SHV) SDK' is still to come.

@@ -28,7 +28,7 @@ This is very similar to redirected [Start Menus for Terminal Servers](http://ste
 
 Create a GPO linked to the OU that contains your target workstations and enable Group Policy loopback mode. You would generally target similarly configured workstations just like you would do for Terminal Servers. In my test environment I&#8217;m configuring this for Windows Vista, I&#8217;ve enabled a WMI filter on this GPO so that it only applies to Vista and above:
 
-[code]SELECT Version FROM Win32_OperatingSystem WHERE Version >= &#8216;6&#8217;[/code]
+[code]SELECT Version FROM Win32_OperatingSystem WHERE Version >= '6&#8217;[/code]
 
 Edit the GPO and enable these settings (here&#8217;s the [full GPO report](http://stealthpuppy.com/wp-content/uploads/2008/04/WindowsVistaStartMenu.htm)):
 

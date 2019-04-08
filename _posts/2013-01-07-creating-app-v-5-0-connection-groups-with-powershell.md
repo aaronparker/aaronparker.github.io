@@ -79,12 +79,12 @@ The packages to include in the Connection Group.
 .EXAMPLE  
 PS C:\> New-AppvConnectionGroupFile -DisplayName "Internet Explorer Plugins" -Priority 0 -FilePath InternetExplorerPlugins.xml -Packages $Packages
 
-Creates a Connection Group file named &#8216;InternetExplorerPlugins.xml' with a display name of &#8216;Internet Explorer Plugins' from packages contained within the array $Packages.
+Creates a Connection Group file named 'InternetExplorerPlugins.xml' with a display name of 'Internet Explorer Plugins' from packages contained within the array $Packages.
 
 .EXAMPLE  
 PS C:\> Get-AppvClientPackage -Name Adobe* | New-AppvConnectionGroupFile -DisplayName "Adobe Apps" -Priority 10 -FilePath AdobeApps.xml
 
-Creates a Connection Group file named &#8216;AdobeApps.xml' with a display name of &#8216;Adobe Apps' from packages passed via the pipeline from Get-AppvClientPackage.
+Creates a Connection Group file named 'AdobeApps.xml' with a display name of 'Adobe Apps' from packages passed via the pipeline from Get-AppvClientPackage.
 
 .NOTES  
 See http://stealthpuppy.com/ for support information.
@@ -121,7 +121,7 @@ DisplayName="Display Name">
 <appv:Package DisplayName="Package1" PackageId="GUID" VersionId="GUID" />  
 </appv:Packages>  
 </appv:AppConnectionGroup>  
-&#8216;@
+'@
 
 \# Write out the template XML to a file in the current directory  
 $templateXMLFile = $pwd.Path + "\ConnectionGroupTemplate.XML"  

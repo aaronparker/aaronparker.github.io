@@ -32,7 +32,7 @@ PowerShell scripts can be used to remove user and system provisioned Store apps 
 
 ## Looking for Alternatives
 
-With the availability of the [Windows Autopilot Enrolment Status](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/enrollment-status) page in Windows 10 1803 and above, plus the recent addition of the feature to &#8216;[Block device use until these required apps are installed](https://docs.microsoft.com/en-us/intune/windows-enrollment-status#block-access-to-a-device-until-a-specific-application-is-installed)&#8216;, we might have an opportunity to [deploy a customised default Start menu](https://docs.microsoft.com/en-us/windows/configuration/customize-and-export-start-layout).
+With the availability of the [Windows Autopilot Enrolment Status](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/enrollment-status) page in Windows 10 1803 and above, plus the recent addition of the feature to '[Block device use until these required apps are installed](https://docs.microsoft.com/en-us/intune/windows-enrollment-status#block-access-to-a-device-until-a-specific-application-is-installed)', we might have an opportunity to [deploy a customised default Start menu](https://docs.microsoft.com/en-us/windows/configuration/customize-and-export-start-layout).
 
 The Enrolment Status page [tracks security policies and line-of-business (MSI) applications](https://docs.microsoft.com/en-us/intune/windows-enrollment-status#enrollment-status-page-tracking-information), so a custom default Start menu will have to be packaged into an MSI. Fingers and toes crossed then that this approach works.
 
@@ -76,7 +76,7 @@ Build your package and add the MSI into Microsoft Intune as [a line-of-business 
 
 To ensure that the package is delivered to the target PCs before the user logs on, we'll leverage the Enrolment Status Page (ESP). The ESP is supported on Windows 10 1803 and above, so if you've gotten this far into the article and haven't yet updated to 1803 or higher, you should stop reading and update those machines.
 
-Configure the ESP and enable the &#8216;Block device use until these required apps are installed if they are assigned to the user/device' feature. Here select at least the applications whose shortcuts you have configured in your Start layout customisation. This list must include the MSI package containing the customisation itself.
+Configure the ESP and enable the 'Block device use until these required apps are installed if they are assigned to the user/device' feature. Here select at least the applications whose shortcuts you have configured in your Start layout customisation. This list must include the MSI package containing the customisation itself.
 
 Here's the applications that I've configured in my test environment:
 

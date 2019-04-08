@@ -68,11 +68,11 @@ So without resorting hacking our Windows 10 image or AppLocker or Windows Firewa
 
 It&#8217;s not all roses though - users can still directly access applications from the public Store via direct links to those apps. Direct links are available from a couple of places - suggestions shown by default on the Start menu and on the web. If you want to control the app suggestions on the Start menu, PCs will need to be running Windows 10 Enterprise or Education editions.
 
-To see bypassing the Business Store, search the web for an example app, e.g. <a href="https://www.microsoft.com/en-au/store/apps/facebook/9wzdncrfj2wl" target="_blank">the Windows 10 Facebook app</a>. A user can click on the &#8216;Get the app&#8217; button on that page which will launch the Store:
+To see bypassing the Business Store, search the web for an example app, e.g. <a href="https://www.microsoft.com/en-au/store/apps/facebook/9wzdncrfj2wl" target="_blank">the Windows 10 Facebook app</a>. A user can click on the 'Get the app&#8217; button on that page which will launch the Store:
 
 <figure id="attachment_4967" aria-describedby="caption-attachment-4967" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-4967 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/07/FacebookInStore-1024x609.png" alt="Facebook for Windows 10" width="1024" height="609" srcset="https://stealthpuppy.com/wp-content/uploads/2016/07/FacebookInStore-1024x609.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/07/FacebookInStore-150x89.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/07/FacebookInStore-300x179.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/07/FacebookInStore-768x457.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/07/FacebookInStore.png 1415w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/07/FacebookInStore.png)<figcaption id="caption-attachment-4967" class="wp-caption-text">Facebook for Windows 10</figcaption></figure>
 
-A user can click on &#8216;Free&#8217; button. If the user can add a Microsoft account to Windows, they can install the app. To prevent that, you&#8217;ll want to [block Microsoft accounts](https://technet.microsoft.com/en-us/itpro/windows/keep-secure/accounts-block-microsoft-accounts).
+A user can click on 'Free&#8217; button. If the user can add a Microsoft account to Windows, they can install the app. To prevent that, you&#8217;ll want to [block Microsoft accounts](https://technet.microsoft.com/en-us/itpro/windows/keep-secure/accounts-block-microsoft-accounts).
 
 # Windows 10 1607 Changes the Store Behaviour
 

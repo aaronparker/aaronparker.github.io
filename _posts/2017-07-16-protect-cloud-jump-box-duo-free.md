@@ -33,9 +33,9 @@ Fellow [CTP](http://stealthpuppy.com/1about/) and all round knowledgeable guy, [
 
 Signing up for Duo and adding MFA to a Windows Server VM running in Azure is a simple process:
 
-  1. [Sign up for Duo](https://signup.duo.com/). A Duo account is free - this provides you with a control panel used to add Duo support for multiple applications. Install the Duo Mobile app on your phone to enable MFA prompts as phone calls and SMSs are not free. Duo gives you 490 &#8216;Telephone credits&#8217;, but you&#8217;ll need to add a credit card to purchase more.
+  1. [Sign up for Duo](https://signup.duo.com/). A Duo account is free - this provides you with a control panel used to add Duo support for multiple applications. Install the Duo Mobile app on your phone to enable MFA prompts as phone calls and SMSs are not free. Duo gives you 490 'Telephone credits&#8217;, but you&#8217;ll need to add a credit card to purchase more.
   2. Add a user account to Duo that matches the account on the jump box. My jump box is a stand-alone server, so the account in Duo matches the username of an account local to the VM
-  3. Choose to add MFA to &#8216;[Microsoft RDP](https://duo.com/docs/rdp)&#8216;. Duo have [about 125 applications](https://duo.com/docs) they can add authentication features to, and their documentation for setup is very good.
+  3. Choose to add MFA to '[Microsoft RDP](https://duo.com/docs/rdp)'. Duo have [about 125 applications](https://duo.com/docs) they can add authentication features to, and their documentation for setup is very good.
   4. Install the Duo Authentication for Windows Logon on the target VM. The hardest part about this step was actually finding the binaries to install the agent. It&#8217;s linked in the documentation (of course) but for whatever reason, I just couldn&#8217;t see it.
   5. Keep the bad guys out
 
@@ -43,7 +43,7 @@ Here&#8217;s what the process looks like:
 
 ## Setup
 
-Adding Microsoft RDP (and local logon) support is as simple as clicking the &#8216;Protect this Application&#8217; link. When you added, you&#8217;ll find an Integration Key, Secret Key and API hostname that will be used by the Duo agent on the target VM to authenticate against Duo for MFA prompts.
+Adding Microsoft RDP (and local logon) support is as simple as clicking the 'Protect this Application&#8217; link. When you added, you&#8217;ll find an Integration Key, Secret Key and API hostname that will be used by the Duo agent on the target VM to authenticate against Duo for MFA prompts.
 
 <figure id="attachment_5508" aria-describedby="caption-attachment-5508" style="width: 541px" class="wp-caption alignnone">[<img class="size-large wp-image-5508" src="http://stealthpuppy.com/wp-content/uploads/2017/07/02_Setup-1-541x1024.png" alt="Authentication details for Microsoft RDP" width="541" height="1024" srcset="https://stealthpuppy.com/wp-content/uploads/2017/07/02_Setup-1-541x1024.png 541w, https://stealthpuppy.com/wp-content/uploads/2017/07/02_Setup-1-79x150.png 79w, https://stealthpuppy.com/wp-content/uploads/2017/07/02_Setup-1-158x300.png 158w, https://stealthpuppy.com/wp-content/uploads/2017/07/02_Setup-1-768x1454.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/07/02_Setup-1.png 1440w" sizes="(max-width: 541px) 100vw, 541px" />](http://stealthpuppy.com/wp-content/uploads/2017/07/02_Setup-1.png)<figcaption id="caption-attachment-5508" class="wp-caption-text">Authentication details for Microsoft RDP</figcaption></figure>
 

@@ -9,7 +9,7 @@ permalink: /remote-access-makes-users-happy/
 categories:
   - Citrix
 ---
-HP and [the Chief Happiness Officer](http://positivesharing.com/2008/01/hp-and-i-team-up-to-make-the-uk-happy-at-work/) have teamed up to [make the UK happy at work](http://h40059.www4.hp.com/campaigns/happypeople/index.html?jumpid=ex_r135_1-4BJKH_uk_en_smb_psg/mu/pr/happypeopletwo). It&#8217;s all about giving users choice and remote access looks to be a big part of that. 800 employees across different companies were &#8216;experimented&#8217; on and [the results](http://h40059.www4.hp.com/campaigns/happypeople/experiment.html) speak for themselves:
+HP and [the Chief Happiness Officer](http://positivesharing.com/2008/01/hp-and-i-team-up-to-make-the-uk-happy-at-work/) have teamed up to [make the UK happy at work](http://h40059.www4.hp.com/campaigns/happypeople/index.html?jumpid=ex_r135_1-4BJKH_uk_en_smb_psg/mu/pr/happypeopletwo). It&#8217;s all about giving users choice and remote access looks to be a big part of that. 800 employees across different companies were 'experimented&#8217; on and [the results](http://h40059.www4.hp.com/campaigns/happypeople/experiment.html) speak for themselves:
 
 > We built two environments. The first resembled a battery chicken farm. Cramped, cluttered surfaces with slow PCs and bulky CRT monitors. The second was more â€˜free-rangeâ€™. It was designed to give people the space and technology to get on with the job. We also gave people in the second office the option to work from home if they chose.
 > 

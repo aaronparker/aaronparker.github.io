@@ -26,7 +26,7 @@ The first issue I ran into was a problem with the Access Gateway COM server afte
 > User: DOMAINserviceaccount  
 > Computer: SERVER  
 > Description:  
-> Login failed for user &#8216;DOMAINserviceaccount'. [CLIENT: <local machine>]  
+> Login failed for user 'DOMAINserviceaccount'. [CLIENT: <local machine>]  
 > For more information, see Help and Support Center at http://go.microsoft.com/fwlink/events.asp.  
 > Data:  
 > 0000: 18 48 00 00 0e 00 00 00 .H......  
@@ -69,10 +69,10 @@ Now that I had AAC up and running, I configured a logon point, some resources an
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1177.AccessGateway.gif" /> 
 
-Far more appealing don't you think? A little &#8216;Microsofty' I know, but much better. On graphics too, don't forget that the Access Gateway only handles GIF files; don't use PNGs like I did.
+Far more appealing don't you think? A little 'Microsofty' I know, but much better. On graphics too, don't forget that the Access Gateway only handles GIF files; don't use PNGs like I did.
 
-The upgrade of the Access Gateway appliance itself was very straightforward. I made a backup of the configuration and then uploaded the 4.5 upgrade. After a reboot, I uploaded the 4.5.1 hotfix and it looked good â€“ just as expected. I then connected the Access Gateway to my new AAC farm and then thought that all was well until I ran into the dreaded &#8216;[Protocol Driver Error](http://www.google.com/search?hl=en&rls=com.microsoft%3Aen-AU&q=%22protocol+driver+error%22+site%3Asupport.citrix.com)&#8216;.
+The upgrade of the Access Gateway appliance itself was very straightforward. I made a backup of the configuration and then uploaded the 4.5 upgrade. After a reboot, I uploaded the 4.5.1 hotfix and it looked good â€“ just as expected. I then connected the Access Gateway to my new AAC farm and then thought that all was well until I ran into the dreaded '[Protocol Driver Error](http://www.google.com/search?hl=en&rls=com.microsoft%3Aen-AU&q=%22protocol+driver+error%22+site%3Asupport.citrix.com)'.
 
 What I'd missed was adding the Secure Ticket Authorities to the Access Gateway properties (through Gateway Appliances properties / Secure Ticket Authority option). Something so simple that cost me about Â½ hour of my time chasing my tail. What have I learnt from this? 1. Blog about it so I won't forget for next time and 2. Use a checklist when installing the Access Gateway.
 
-Now all that I'm left with is a &#8216;500 Internal Server Error' when I restart the AAC services but that can wait for another time.
+Now all that I'm left with is a '500 Internal Server Error' when I restart the AAC services but that can wait for another time.

@@ -20,7 +20,7 @@ tags:
 ---
 If you are starting to deploy Windows Vista you may have noticed that any user who has administrative access to their workstation will not receive mapped drives or printers. This is due to the new privilege model introduced in Windows Vista with [User Account Control](http://technet.microsoft.com/en-us/windowsvista/aa905117.aspx).
 
-Microsoft has a complete explanation of why this behaviour with Group Policy scripts occurs at the TechNet site - [Deploying Group Policy Using Windows Vista](http://technet2.microsoft.com/WindowsVista/en/library/5ae8da2a-878e-48db-a3c1-4be6ac7cf7631033.mspx?mfr=true). Just over half way down the page you&#8217;ll find a section titled &#8216;**Group Policy Scripts can fail due to User Account Control**&#8216;, however here&#8217;s a quote from that page that summarises the issue:
+Microsoft has a complete explanation of why this behaviour with Group Policy scripts occurs at the TechNet site - [Deploying Group Policy Using Windows Vista](http://technet2.microsoft.com/WindowsVista/en/library/5ae8da2a-878e-48db-a3c1-4be6ac7cf7631033.mspx?mfr=true). Just over half way down the page you&#8217;ll find a section titled '**Group Policy Scripts can fail due to User Account Control**', however here&#8217;s a quote from that page that summarises the issue:
 
 > When the administrative user logs on, Windows processes the logon scripts using the elevated token. The script actually works and maps the drive. However, Windows blocks the view of the mapped network drives because the desktop uses the limited token while the drives were mapped using the elevated token.
 

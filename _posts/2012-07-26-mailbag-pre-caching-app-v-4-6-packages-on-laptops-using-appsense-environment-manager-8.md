@@ -44,20 +44,20 @@ tags:
 Determining whether the local machine is a laptop is quite simple, but we&#8217;ll need to resort to some custom code to that. Fortunately we don&#8217;t need to re-invent the wheel - we can use this code by [Rob van der Woude](http://www.robvanderwoude.com/) that [uses WMI to look for a battery](http://www.robvanderwoude.com/vbstech_inventory_laptop.php):
 
 [code language=&#8221;vb&#8221;]If IsLaptop( "." ) Then  
-&#8216; WScript.Echo "Laptop"  
-&#8216; Return Success  
+' WScript.Echo "Laptop"  
+' Return Success  
 WScript.Quit 0  
 Else  
-&#8216; WScript.Echo "Desktop or server"  
-&#8216; Return failure  
+' WScript.Echo "Desktop or server"  
+' Return failure  
 WScript.Quit 1  
 End If
 
 Function IsLaptop(myComputer)  
-&#8216; This Function checks if a computer has a battery pack.  
-&#8216; Argument: myComputer [string] name of the computer to check, or "." for the local computer  
-&#8216; Written by Rob van der Woude  
-&#8216; http://www.robvanderwoude.com  
+' This Function checks if a computer has a battery pack.  
+' Argument: myComputer [string] name of the computer to check, or "." for the local computer  
+' Written by Rob van der Woude  
+' http://www.robvanderwoude.com  
 On Error Resume Next  
 Set objWMIService = GetObject( "winmgmts://" & myComputer & "/root/cimv2" )  
 Set colItems = objWMIService.ExecQuery( "Select * from Win32_Battery", , 48 )  
@@ -69,13 +69,13 @@ If Err Then Err.Clear
 On Error Goto 0  
 End Function[/code]
 
-Add this to a **Reusable Condition** (or even an inline condition if you&#8217;d like) that includes this code as a Custom Condition. Make sure to set the Custom Condition **Type** to VBscript and enable &#8216;Evaluate Once Per Session&#8217; and &#8216;Run As System User&#8217;.
+Add this to a **Reusable Condition** (or even an inline condition if you&#8217;d like) that includes this code as a Custom Condition. Make sure to set the Custom Condition **Type** to VBscript and enable 'Evaluate Once Per Session&#8217; and 'Run As System User&#8217;.
 
 Next up, you may want determine whether the client can contact the streaming source (what ever that is - App-V Management Server, App-V Streaming Server, HTTP or even a UNC path).  You could use native **Computer IP Address** condition and make the assumption that the remote host is available because the client is located in a known network, or [ping the remote host using PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2012/02/24/use-powershell-to-test-connectivity-on-remote-servers.aspx) in a **Custom Condition**. Alternatively an Active Directory Site Membership might suffice, however this may require listing all of your AD sites which isn&#8217;t ideal.
 
-For a Computer IP Address condition, choose Condition / Computer / Computer IP Address and configure the required IP range. Ensure that &#8216;Evaluate Once Per Session&#8217; is **disabled** - because the client IP address may change during a single session. Repeat this for multiple IP ranges.
+For a Computer IP Address condition, choose Condition / Computer / Computer IP Address and configure the required IP range. Ensure that 'Evaluate Once Per Session&#8217; is **disabled** - because the client IP address may change during a single session. Repeat this for multiple IP ranges.
 
-To use a PowerShell script instead, create a Custom Condition, set the **Type** to PowerShell, _disable_ &#8216;Evaluate Once Per Session&#8217; and set &#8216;Run As System User&#8217;.
+To use a PowerShell script instead, create a Custom Condition, set the **Type** to PowerShell, _disable_ 'Evaluate Once Per Session&#8217; and set 'Run As System User&#8217;.
 
 [code language=&#8221;ps&#8221;]$servers = "appv1.domain.local"  
 If (!(Test-Connection -Cn $server -BufferSize 16 -Count 1 -ea 0 -quiet))  

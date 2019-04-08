@@ -17,7 +17,7 @@ Change the values for &#8220;MS Shell Dlg 2&#8221; and &#8220;MS Shell Dlg&#8221
 
 This &#8220;bug&#8221; has been reported on the Vista/Longhorn newsgroups, some hopefully weâ€™ll see this change in upcoming builds of Vista. (Please, please Microsoft, just the single UI font would be nice..)
 
-**Update**: I found some more information on the Microsoft Sans Serif/MS Sans Serif font in use in Windows. Microsoft Sans Serif is an OpenType font that replaces the older MS Sans Serif font. Many applications just don't use the new font though and this is noticeable when you enable ClearType font smoothing - MS Sans Serif is not &#8216;smoothed' . The same registry key can be used to replace the font in older applications:
+**Update**: I found some more information on the Microsoft Sans Serif/MS Sans Serif font in use in Windows. Microsoft Sans Serif is an OpenType font that replaces the older MS Sans Serif font. Many applications just don't use the new font though and this is noticeable when you enable ClearType font smoothing - MS Sans Serif is not 'smoothed' . The same registry key can be used to replace the font in older applications:
 
   1. Open your Fonts folder via Control Panel and drag MS Sans Serif somewhere safe in case you ever want it back
   2. Open your registry and navigate to <span style="font-style: italic">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes</span>

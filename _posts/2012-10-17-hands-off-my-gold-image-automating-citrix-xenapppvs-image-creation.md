@@ -82,7 +82,7 @@ Capturing the image into PVS will have to be performed while the MDT task sequen
 
 During this step there are a number of items to complete in order:
 
-  1. Optimise the image for delivery via PVS - essentially replacing the &#8216;Optimise for PVS&#8217; button in the XenConvert wizard. These are Registry changes that the wizard rights to a .REG file before importing, so this was easy to capture.
+  1. Optimise the image for delivery via PVS - essentially replacing the 'Optimise for PVS&#8217; button in the XenConvert wizard. These are Registry changes that the wizard rights to a .REG file before importing, so this was easy to capture.
   2. Run ngen to compile the .NET Framework assemblies. This will take some time.
   3. Rearm Windows and Office (2010 or 2013)
   4. Capture the image, whilst accounting for the fact that the PVS conversion is occurring during the MDT deployment. We need to edit the local install, capture the local install, cleanup the captured image and then ensure the MDT deployment can continue unhindered. If this does not happen, then the MDT deployment will continue to run every time the PVS image is delivered to an end-point.

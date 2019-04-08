@@ -26,8 +26,8 @@ The Short NAP is a quick list of Microsoft Network Access Protection and Server/
   * [Microsoft Network Infrastructure Servers Forum](http://forums.microsoft.com/TechNet/ShowForum.aspx?ForumID=1510&SiteID=17)  
     A new forum for discussions on DHCP, DNS, NPS, and RRAS
   * [Dodging Silver Bullet Syndrome or: How I Learned to Stop Worrying and Prepared for NAP (Part 1)](http://blogs.technet.com/ianhamer/archive/2007/04/13/dodging-silver-bullet-syndrome-or-how-i-learned-to-stop-worrying-and-prepared-for-nap-part-1.aspx)  
-    Ian Hameroff asks &#8216;You&#8217;ve got your network policies in place right?&#8217;
-  * [Vista&#8217;s Network Access Protection (NAP) helps keep &#8216;unhealthy&#8217; computers off your LAN](http://articles.techrepublic.com.com/5100-10877_11-6153295.html)  
+    Ian Hameroff asks 'You&#8217;ve got your network policies in place right?&#8217;
+  * [Vista&#8217;s Network Access Protection (NAP) helps keep 'unhealthy&#8217; computers off your LAN](http://articles.techrepublic.com.com/5100-10877_11-6153295.html)  
     This one&#8217;s a few months old but I didn&#8217;t notice until today
   * [Network Access Protection: New Ways To Keep Your Network Healthy](http://www.techworld.com/security/whitepapers/index.cfm?whitepaperid=3477)  
     An introductory whitepaper on NAP over at Techworld.com

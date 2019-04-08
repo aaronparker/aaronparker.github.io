@@ -21,4 +21,4 @@ Today there&#8217;s also the [Windows Server 2008 Network Shell (Netsh) Technica
 
 > The Windows ServerÂ® 2008 Network Shell (Netsh) Technical Reference provides a comprehensive command reference for networking technologies such as Dynamic Host Configuration Protocol (DHCP), Network Policy Server (NPS), Network Access Protection (NAP), and Routing and Remote Access Services (RRAS), among many other technologies for which there are netsh commands. Netsh commands offer an alternative to configuring network technologies using the Windows interface. You can run netsh commands in batch files and scripts, and you can run them from the netsh prompt by manually typing commands. You can use netsh commands to configure both local and remote computers.
 
-Remember - &#8216;Real men don&#8217;t click&#8217;
+Remember - 'Real men don&#8217;t click&#8217;

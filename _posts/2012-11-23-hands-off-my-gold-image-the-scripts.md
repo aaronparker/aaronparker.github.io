@@ -41,7 +41,7 @@ In the download that contains the pieces you can use to get this up and running 
   * Citrix XenConvert x64 2.x
   * Convert XenApp PVS Image
 
-Import each of these as a separate application into the Applications folder in the MDT Workbench. Create a new application and choose &#8216;Application with source files&#8217; and choose each script folder as the source directory.
+Import each of these as a separate application into the Applications folder in the MDT Workbench. Create a new application and choose 'Application with source files&#8217; and choose each script folder as the source directory.
 
 You&#8217;ll then need to download the binaries for each application. Each script expects those binaries to be in the same folder as the script.
 

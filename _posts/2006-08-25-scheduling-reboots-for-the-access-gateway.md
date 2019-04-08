@@ -35,8 +35,8 @@ tags:
 
 <font face="courier new,courier">chroot /cag</font>
 
-  1. Run <font face="courier new,courier">setup</font> and change the firewall settings from &#8216;high&#8217; to &#8216;disabled&#8217;.
-  2. Go to system services, deselect &#8216;iptables&#8217;, make sure sshd and xinetd are selected, and press quit to save changes.
+  1. Run <font face="courier new,courier">setup</font> and change the firewall settings from 'high&#8217; to 'disabled&#8217;.
+  2. Go to system services, deselect 'iptables&#8217;, make sure sshd and xinetd are selected, and press quit to save changes.
   3. Now run the SSH daemon to generate the key pairs:
 
 <font face="courier new,courier">/etc/init.d/sshd</font>
@@ -53,7 +53,7 @@ Now that SSH is enabled, we can schedule a reboot of the Access Gateway.
 
 <font face="courier new,courier">crontab -e</font>
 
-  1. This will open the crontab file in vi. Insert a line by pressing &#8216;i&#8217;.
+  1. This will open the crontab file in vi. Insert a line by pressing 'i&#8217;.
   2. Enable a reboot by entering the following:
 
 <font face="courier new,courier">0<tab>0<tab>*<tab>*<tab>*<tab>reboot</font>

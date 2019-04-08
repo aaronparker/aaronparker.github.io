@@ -61,7 +61,7 @@ If ($AdapterDecription) {
 \# Import the PowerShell Management Library for Hyper-V  
 Import-Module $HyperVLibrary
 
-\# Create the Hyper-V network and remove the option &#8216;Allow management operating system to share this network adapter'  
+\# Create the Hyper-V network and remove the option 'Allow management operating system to share this network adapter'  
 New-VMExternalSwitch -VirtualSwitchName $SwitchName -ExternalEthernet $AdapterDecription -force  
 Remove-VMSwitchNic -Name $SwitchName -Force  
 }  

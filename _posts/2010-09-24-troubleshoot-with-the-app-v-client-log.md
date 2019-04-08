@@ -50,7 +50,7 @@ Viewing the App-V client log, I've narrowed down the following lines that show w
 Could not load OSD file \\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd
 
 [09/23/2010 22:03:50:900 AMGR INF] {tid=B60:usr=aaron}  
-The app manager could not create an application from &#8216;\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd' (rc 0C405564-00000002).[/code]
+The app manager could not create an application from '\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd' (rc 0C405564-00000002).[/code]
 
 If I set the log to verbose and try the refresh action again, I get more detail:
 
@@ -78,7 +78,7 @@ SWOsdFile(url=\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, orig
 Could not load OSD file \\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd
 
 [09/23/2010 22:45:28:727 AMGR INF] {tid=B14:usr=woody}  
-The app manager could not create an application from &#8216;\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd' (rc 0C405564-00000002).[/code]
+The app manager could not create an application from '\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd' (rc 0C405564-00000002).[/code]
 
 If check the actual location of the OSD file, I can see that the package is not in the correct path (its actually located at \\domain.local\Public\Apps\Adobe\AdobeReader9_x86):
 

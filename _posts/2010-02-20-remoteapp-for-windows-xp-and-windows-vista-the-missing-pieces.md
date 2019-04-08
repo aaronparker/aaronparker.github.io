@@ -61,7 +61,7 @@ The simplest method of discovering the required registry keys for each RemoteApp
 
 I’ve originally based the .RDP file on those created by the RemoteApp Manager in Windows Server. There is documentation on TechNet on how to configure RemoteApp programs and creating the .RDP file for each application here: [Configuring RemoteApp Programs](http://technet.microsoft.com/en-us/library/cc733174.aspx).
 
-The important entries for connecting to Windows XP and Windows Vista, that you may need to add manually, are `disableremoteappcapscheck` (set to 1) and `alternate shell` (set to rdpinit.exe). These were the only additional entries I need to add the .RDP file to get this working. DisableRemoteAppCapsCheck fixes the &#8216;remote computer does not support RemoteApp&#8217; error, and Alternate Shell makes sure you actually get a published application and not a remote desktop.
+The important entries for connecting to Windows XP and Windows Vista, that you may need to add manually, are `disableremoteappcapscheck` (set to 1) and `alternate shell` (set to rdpinit.exe). These were the only additional entries I need to add the .RDP file to get this working. DisableRemoteAppCapsCheck fixes the 'remote computer does not support RemoteApp&#8217; error, and Alternate Shell makes sure you actually get a published application and not a remote desktop.
 
 An .RDP file to connect to a RemoteApp program then looks like this (the added lines are highlighted):
 

@@ -24,7 +24,7 @@ If you attempt to move the database or log file locations on a clustered Exchang
 > Parameter name: ConfigurationOnly
 > 
 > Exchange Management Shell command attempted:  
-> move-StorageGroupPath -Identity &#8216;exchsrvrSecond Storage Group&#8217; -LogFolderPath &#8216;G:Program FilesMicrosoftExchange ServerMailboxFirst Storage Group&#8217;
+> move-StorageGroupPath -Identity 'exchsrvrSecond Storage Group&#8217; -LogFolderPath 'G:Program FilesMicrosoftExchange ServerMailboxFirst Storage Group&#8217;
 
 To move the file locations then you will have to change the configuration and move the files manually on both nodes, even though the page on TechNet indicates the command will move the files automattically. Here&#8217;s how I went through this process on a live system to move the log files.
 

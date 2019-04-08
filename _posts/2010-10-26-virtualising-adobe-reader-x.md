@@ -81,7 +81,7 @@ There is one issue though – the Adobe Reader Protected Mode doesn&#8217;t like
 
 <img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AdobeReaderProtectedModePrompt" src="http://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderProtectedModePrompt_thumb.png" alt="AdobeReaderProtectedModePrompt" width="660" height="232" border="0" /> 
 
-Choosing the option &#8216;Always open with Protected Mode disabled&#8217; will save the setting in HKCU in the Registry, but until a fix is found (either by Adobe or Microsoft) you can disable Protected Mode using the following Registry key:
+Choosing the option 'Always open with Protected Mode disabled&#8217; will save the setting in HKCU in the Registry, but until a fix is found (either by Adobe or Microsoft) you can disable Protected Mode using the following Registry key:
 
   * Key: HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\10.0\FeatureLockDown
   * Value: bProtectedMode

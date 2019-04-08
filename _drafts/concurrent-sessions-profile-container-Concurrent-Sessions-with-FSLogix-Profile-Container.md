@@ -22,7 +22,7 @@ I was recently assisting a customer with an FSLogix Profile Container and Office
 
 Let's first take a look at what we mean by concurrent sessions. In a virtual desktop environment, whether that be Windows 10 virtual desktops or a multi-session environment built on Windows Server, a concurrent session could be:
 
-  1. A user has multiple sessions on the same machine - by default, users are restrict to a single session on a server, but this should only been seen under an RDSH session where session sharing hasn't kicked in when the user launches two published apps, or may have connected to two session desktops from the same VM. This behaviour is controlled with the policy &#8216;Restrict Remote Desktop Services users to a single Remote Desktop Services session'.
+  1. A user has multiple sessions on the same machine - by default, users are restrict to a single session on a server, but this should only been seen under an RDSH session where session sharing hasn't kicked in when the user launches two published apps, or may have connected to two session desktops from the same VM. This behaviour is controlled with the policy 'Restrict Remote Desktop Services users to a single Remote Desktop Services session'.
   2. A user is logged onto two virtual machines concurrently - this should be the most common scenario, whereby a user may log onto a virtual or session desktop and then launch a published application from a seperate catalog or silo, or launch multiple published apps concurrently from different machines.
 
 ### User Experience Impacts
@@ -58,7 +58,7 @@ Let's delve into what this looks like. Note that in my simple lab environment, I
 
 ### No Concurrent Access
 
-This is simple, I've deployed Profile Container with configuration via Group Policy and have ensured that concurrent user sessions are disabled and the Profile Type is set to &#8216;Normal direct-access profile' (i.e. the value is 0).
+This is simple, I've deployed Profile Container with configuration via Group Policy and have ensured that concurrent user sessions are disabled and the Profile Type is set to 'Normal direct-access profile' (i.e. the value is 0).
 
 <img src="https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png" alt="GPO with Concurrent Sessions in Profile Container disabled" class="wp-image-6262" srcset="https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png 1024w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentAccessDisabled-150x70.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentAccessDisabled-300x140.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentAccessDisabled-768x358.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>Concurrent Sessions in Profile Container are disabled by default</figcaption> 
 
@@ -100,7 +100,7 @@ This behaviour can be prevented with the [PreventLoginWithFailure](https://docs.
 
 ### Read / Write Access
 
-A read / write profile is no different in user experience than the default configuration. A read / write profile is configured by setting Profile Type to &#8216;Read-write profile' (i.e. value is 1). Behind the scenes, a RW.VHDX file along-side the Profile Container is created as can be seen below. This is essentially [a differencing disk](https://www.altaro.com/hyper-v/hyper-v-differencing-disks-explained/) where writes are redirected during the session.
+A read / write profile is no different in user experience than the default configuration. A read / write profile is configured by setting Profile Type to 'Read-write profile' (i.e. value is 1). Behind the scenes, a RW.VHDX file along-side the Profile Container is created as can be seen below. This is essentially [a differencing disk](https://www.altaro.com/hyper-v/hyper-v-differencing-disks-explained/) where writes are redirected during the session.
 
 <img src="https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentRW.png" alt="Folder with user Profile Container and the read / write RW.VHDX" class="wp-image-6270" srcset="https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentRW.png 848w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentRW-150x69.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentRW-300x137.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentRW-768x351.png 768w" sizes="(max-width: 848px) 100vw, 848px" /> <figcaption>Folder with user Profile Container and the read / write RW.VHDX</figcaption> 
 

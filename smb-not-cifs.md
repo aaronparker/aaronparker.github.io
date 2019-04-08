@@ -12,7 +12,7 @@ dsq_thread_id:
 ---
 Information Technology should be approached with a scientific methodology and therefore our language should be exact when we're discussing IT topics. It's way past time to drop the term CIFS and use the correct acronym when we're referring to SMB.
 
-<figure id="attachment_5165" aria-describedby="caption-attachment-5165" style="width: 300px" class="wp-caption alignright">[<img class="wp-image-5165 size-medium" src="http://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-300x300.png" alt="CIFS - You keep using that word. I do not think it means what you think it means." width="300" height="300" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-300x300.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-150x150.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-480x480.png 480w, https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word.png 500w" sizes="(max-width: 300px) 100vw, 300px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word.png)<figcaption id="caption-attachment-5165" class="wp-caption-text">Even Inigo Montoya knows not to use &#8216;CIFS'</figcaption>
+<figure id="attachment_5165" aria-describedby="caption-attachment-5165" style="width: 300px" class="wp-caption alignright">[<img class="wp-image-5165 size-medium" src="http://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-300x300.png" alt="CIFS - You keep using that word. I do not think it means what you think it means." width="300" height="300" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-300x300.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-150x150.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word-480x480.png 480w, https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word.png 500w" sizes="(max-width: 300px) 100vw, 300px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word.png)<figcaption id="caption-attachment-5165" class="wp-caption-text">Even Inigo Montoya knows not to use 'CIFS'</figcaption>
 
 CIFS has persisted well past its expiry date. No supported versions of Windows use CIFS and SMB has changed dramatically since the introduction of SMB 2.0 in Windows Vista and Windows Server 2008.
 
@@ -30,13 +30,13 @@ CIFS, or Common Internet File System, is a network protocol that provides client
 > 
 > The meaning of the term &#8220;CIFS&#8221; has changed since it was first introduced. It was originally used to indicate a proposed standard version of SMB based upon the design of the Windows NT 4.0 operating system and Windows 2000 operating system implementations. In some references, &#8220;CIFS&#8221; has been used as a name for the SMB protocol in general (all dialects) and, additionally, the suite of protocols that support and include SMB. In this document, the term &#8220;CIFS&#8221; is used specifically to identify the Windows NT LAN Manager (NTLM) dialect of SMB as designed for use with Windows: in particular, Windows NT Server 3.51 operating system and Windows NT Server 4.0 operating system, Windows NT Workstation 4.0 operating system, and Microsoft Windows 98 operating system.
 
-So, unless you are specifically talking about Windows NT 3.x and 4.x, you should not use &#8216;CIFS' and we can no longer interchangeably use CIFS and SMB.
+So, unless you are specifically talking about Windows NT 3.x and 4.x, you should not use 'CIFS' and we can no longer interchangeably use CIFS and SMB.
 
 # What is SMB?
 
 SMB, or Server Message Block, is a network protocol that provides clients access to files on remote servers. Originally developed by IBM, SMB has been extended by Microsoft and used in OS/2, LAN Manager and Windows. SMB has gone through several revisions and since SMB 2.0 (introduced with Windows Vista), is quite different to CIFS and SMB 1.0.
 
-SMB 2.0 and above provide much-improved performance than SMB 1.0 or CIFS, have very different specifications and therefore cannot be considered the same as CIFS or SMB 1.0. If someone says &#8216;CIFS' today, they're most likely referring to SMB 2+; however, their terminology is incorrect.
+SMB 2.0 and above provide much-improved performance than SMB 1.0 or CIFS, have very different specifications and therefore cannot be considered the same as CIFS or SMB 1.0. If someone says 'CIFS' today, they're most likely referring to SMB 2+; however, their terminology is incorrect.
 
 # History
 
@@ -60,7 +60,7 @@ Here's a really important article from Microsoft on why you should stop using SM
 
 # Further Reading
 
-For further reading on why you should use &#8216;SMB', see the following articles:
+For further reading on why you should use 'SMB', see the following articles:
 
 ## 3rd Party Articles
 

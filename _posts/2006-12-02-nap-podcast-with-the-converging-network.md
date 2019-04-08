@@ -24,7 +24,7 @@ Mitchell Ashley is CTO and VP Customer Experience at [StillSecure](http://www.st
   * Clients for Windows XP/Windows 2000
   * Clients for non-Windows OSs
   * A little more on NAP and NAC
-  * Support for [Trusted Computing Group](https://www.trustedcomputinggroup.org/home)&#8216;s standards
+  * Support for [Trusted Computing Group](https://www.trustedcomputinggroup.org/home)'s standards
   * Enforcement options
   * Remediation options
   * Identity management

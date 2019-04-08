@@ -33,4 +33,4 @@ Here is the full list of values to add to this new key:
 
 The .docm, .xlsm and .pptm are the new document types that include macros. If you feel that it could be a security risk for your organisation to allow macro support through the HTML rendering in AAC, do not add these file types.
 
-Also of note is that the HTML rendering feature does not support text files by default. To add support for text files add &#8216;.txt:' (without quotes) to the MSWordHandler value.
+Also of note is that the HTML rendering feature does not support text files by default. To add support for text files add '.txt:' (without quotes) to the MSWordHandler value.

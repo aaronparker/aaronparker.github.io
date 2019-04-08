@@ -125,8 +125,8 @@ To set up a CRL distribution point that will work with a location that's online 
 
 Before that we'll want to do two things:
 
-  1. Ensure that &#8216;Publish CRLs to this location' and &#8216;Publish Delta CRLs to this location' are selected on the default **C:\Windows\System32\CertSrv\CertEnroll** location. This should be the default setting.
-  2. For each existing DP, remove any check marks enabled for &#8216;Include in CRLs'.
+  1. Ensure that 'Publish CRLs to this location' and 'Publish Delta CRLs to this location' are selected on the default **C:\Windows\System32\CertSrv\CertEnroll** location. This should be the default setting.
+  2. For each existing DP, remove any check marks enabled for 'Include in CRLs'.
 
 Now add a new CRL location, using the same HTTP location value included by default; however, change **<ServerDNSName>** for the FQDN for the host that will serve the CRL. In my example, I've changed:
 
@@ -142,7 +142,7 @@ This FQDN is an alias for the subordinate certificate authority that I'll be dep
 
 Repeat the same process for the [Authority Information Access](https://technet.microsoft.com/en-us/library/cc753754(v=ws.11).aspx) (AIA) locations:
 
-  1. Disable &#8216;Include in the AIA extensions of issued certificates' for all existing locations
+  1. Disable 'Include in the AIA extensions of issued certificates' for all existing locations
   2. Copy the existing http:// location
   3. Add a new http:// location, changing **<ServerDNSName>** for the FQDN of the alias also used for the CRL distribution point
 

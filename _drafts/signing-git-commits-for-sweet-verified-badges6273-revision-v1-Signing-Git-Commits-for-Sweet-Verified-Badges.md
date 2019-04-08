@@ -27,7 +27,7 @@ I write PowerShell scripts and modules primarily on macOS, so I've installed [GP
   1. Create a new key pair using the same email address used when committing code to your git repository and also used to sign into GitHub
   2. Ensure you use a strong password to protect the key. I manage passwords in 1Password making it simple to create and store keys. It's a 39 random character string which means relying on copy and paste of course
   3. I've also exported my public and private key to store in my 1Password vault as backup and a way to copy the key into a Windows VM
-  4. Finally I've uploaded my public key to the key server with the &#8216;Send Public Key to the Key Server' option. Some [GPG nerd would know what exactly that does](https://sks-keyservers.net/overview-of-pools.php), but I don't believe it actually required for signing commits and pushing to GitHub, because we need to update the public key to GtiHub anyway.
+  4. Finally I've uploaded my public key to the key server with the 'Send Public Key to the Key Server' option. Some [GPG nerd would know what exactly that does](https://sks-keyservers.net/overview-of-pools.php), but I don't believe it actually required for signing commits and pushing to GitHub, because we need to update the public key to GtiHub anyway.
 
 [<img src="https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-1024x645.png" alt="GPG key view in the GPG Keychain and Signing Git Commits" class="wp-image-6277" srcset="https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-1024x645.png 1024w, https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-300x189.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-768x483.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key.png)<figcaption>GPG key view in the GPG Keychain</figcaption>
 
@@ -49,7 +49,7 @@ To sign your commits, you of course need to [tell git about your GPG key](https:
   <strong>gpg -list-secret-keys -keyid-format LONG</strong>
 </p>
 
-With defaults, the key ID will be on the line that starts with &#8216;sec'. Copy the key ID and use git to configure the signing key. In my case, it looks like this:
+With defaults, the key ID will be on the line that starts with 'sec'. Copy the key ID and use git to configure the signing key. In my case, it looks like this:
 
 <p class="customcode">
   <strong>git config -global user.signingkey C55D39F88CE9A2C5</strong>
@@ -63,7 +63,7 @@ On Windows the process for signing git commits is much the same. First install [
 
 Finally, we can configure [Visual Studio Code](https://code.visualstudio.com/) to sign our git commits. I typically rely on GitHub Desktop to commit and push code; however, it doesn't support commit signing. While I could use [the command line to commit changes](https://help.github.com/en/articles/signing-commits), I'd prefer manage commits from fewer tools, hence doing that in VSCode instead.
 
-In Preferences, search for &#8216;git signing' and select &#8216;Git: Enable Commit Signing':
+In Preferences, search for 'git signing' and select 'Git: Enable Commit Signing':
 
 [<img src="https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-1024x625.png" alt="Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits" class="wp-image-6282" srcset="https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-1024x625.png 1024w, https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-150x92.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-300x183.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-768x469.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning.png)<figcaption>Enable Commit Signing in Visual Studio Code preferences</figcaption>
 

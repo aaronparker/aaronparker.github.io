@@ -39,7 +39,7 @@ Can’t see the the problem? The command certainly looks like it should work. An
 The first backslash is truncated, leave the UNC path incorrect. The same happens for the path to the SFT file – again the log file shows what’s going on:
 
 > [02/09/2010 17:21:07:936 JGSW ERR] {hap=20:app=Microsoft Word 2010 (Beta) 084154.001:tid=9D8:usr=Admin}  
-> The Application Virtualization Client could not connect to a server because the URL specified, &#8216;\VBOXSVR\Packages\Microsoft Office\2010\_x64\000\Microsoft\_Office\_2010\_x64_084154.001.sft', was invalid (rc 04300507-000D3002).
+> The Application Virtualization Client could not connect to a server because the URL specified, '\VBOXSVR\Packages\Microsoft Office\2010\_x64\000\Microsoft\_Office\_2010\_x64_084154.001.sft', was invalid (rc 04300507-000D3002).
 
 When attempting to stream the package, the operation fails and the following error is displayed:
 

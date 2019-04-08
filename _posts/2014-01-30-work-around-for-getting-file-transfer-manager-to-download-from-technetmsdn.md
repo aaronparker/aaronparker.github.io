@@ -41,8 +41,8 @@ Fortunately a work around is straight-forward - enable emulation mode to view th
 
   1. For Internet Explorer 11, press F12 to bring up the developer tools window
   2. Click the Emulation icon (bottom left) or press Ctrl+8
-  3. Select &#8216;9&#8217; under Document Mode
-  4. Choose &#8216;Internet Explorer 9&#8217; under User Agent String
+  3. Select '9&#8217; under Document Mode
+  4. Choose 'Internet Explorer 9&#8217; under User Agent String
 
 [<img class="alignnone size-full wp-image-3549" src="http://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools.png" alt="Emulation with Developer Tools" width="1027" height="517" srcset="https://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools.png 1027w, https://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools-150x75.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools-300x151.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools-1024x515.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools-624x314.png 624w" sizes="(max-width: 1027px) 100vw, 1027px" />](http://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools.png)
 

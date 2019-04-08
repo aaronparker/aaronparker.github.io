@@ -32,7 +32,7 @@ tags:
   - App-V
   - TechEd
 ---
-<a href="http://stealthpuppy.com/community/may-user-group-presentations/attachment/softgridpresentationpng/" style="margin: 0px 0px 5px 10px; display: inline; border-width: 0px;" rel="attachment wp-att-542"><img src="http://stealthpuppy.com/wp-content/uploads/2008/04/softgridpresentation.png" alt="" title="softgridpresentation.png" width="128" height="128" class="alignright size-full wp-image-542" /></a>[Justin Zarb](http://appvguy.com)&#8216;s presentations at TechEd Australia and New Zealand are now freely available for all on the Microsoft TechEd Online site. There are [6 sessions in total to view](http://www.msteched.com/Speakers/Justin-Zarb).
+<a href="http://stealthpuppy.com/community/may-user-group-presentations/attachment/softgridpresentationpng/" style="margin: 0px 0px 5px 10px; display: inline; border-width: 0px;" rel="attachment wp-att-542"><img src="http://stealthpuppy.com/wp-content/uploads/2008/04/softgridpresentation.png" alt="" title="softgridpresentation.png" width="128" height="128" class="alignright size-full wp-image-542" /></a>[Justin Zarb](http://appvguy.com)'s presentations at TechEd Australia and New Zealand are now freely available for all on the Microsoft TechEd Online site. There are [6 sessions in total to view](http://www.msteched.com/Speakers/Justin-Zarb).
 
 I&#8217;ve embedded the videos here. You&#8217;ll need an HTML 5 capable browser to view them, otherwise go to the TechEd Online site links I&#8217;ve provided, to view Silverlight and download MP4 versions plus access to the slide decks.
 

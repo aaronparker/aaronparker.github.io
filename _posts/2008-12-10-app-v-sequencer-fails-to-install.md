@@ -23,6 +23,6 @@ Taking a deeper look at the issue by enabling a log file, reveals the problem �
 SoftGrid Action: SWGetProductVersion Details: Version = 4.5.0.1485  
 SoftGrid Action: SWGetProductVersion Details: Action ended  
 SoftGrid Action: SWISequencerLaunchConditions Details: Client is installed, rejecting sequencer install  
-MSI (c) (A8!00) [11:39:16:780]: PROPERTY CHANGE: Adding SWIClientInstalled property. Its value is &#8216;1&#8217;.[/quickcode]
+MSI (c) (A8!00) [11:39:16:780]: PROPERTY CHANGE: Adding SWIClientInstalled property. Its value is '1&#8217;.[/quickcode]
 
 Of course <span style="text-decoration: line-through;">I shouldn’t have been attempting to</span> you shouldn’t install the Sequencer and Client on the same machine. The best way to fix this is to start with a clean Windows install and then install the Sequencer.

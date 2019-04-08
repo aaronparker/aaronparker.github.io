@@ -52,7 +52,7 @@ Another great thing about DFS is that you can take advantage of your AD sites - 
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1360.DFS.png" /> 
 
-A third advantage to using DFS is replication. With Windows 2000 and Windows Server 2003 you can use DFS to replicate your applications from a &#8216;master' copy to your other sites, thus keeping them in sync. DFS Replication released as [a feature of Windows Server 2003 R2](http://technet2.microsoft.com/windowsserver/en/library/d3afe6ee-3083-4950-a093-8ab748651b761033.mspx?mfr=true) is a huge improvement over the older FRS based replication method and provides the ability to replicate only the changes within files, making replication more efficient.
+A third advantage to using DFS is replication. With Windows 2000 and Windows Server 2003 you can use DFS to replicate your applications from a 'master' copy to your other sites, thus keeping them in sync. DFS Replication released as [a feature of Windows Server 2003 R2](http://technet2.microsoft.com/windowsserver/en/library/d3afe6ee-3083-4950-a093-8ab748651b761033.mspx?mfr=true) is a huge improvement over the older FRS based replication method and provides the ability to replicate only the changes within files, making replication more efficient.
 
 **Summary**
 

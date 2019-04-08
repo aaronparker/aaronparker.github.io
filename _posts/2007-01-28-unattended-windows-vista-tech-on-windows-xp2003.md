@@ -18,7 +18,7 @@ tags:
 ---
 **UPDATE** (09/12/2007): Updated with the list of applications and components listed here: [Windows Vista components available for Windows XP](http://stealthpuppy.com/windows/windows-vista-components-available-for-windows-xp).
 
-With Microsoft releasing a number of applications developed for Windows Vista also available for Windows XP, I've put together a quick &#8216;how to' guide for performing an unattended install for each application.
+With Microsoft releasing a number of applications developed for Windows Vista also available for Windows XP, I've put together a quick 'how to' guide for performing an unattended install for each application.
 
   * Windows Internet Explorer 7 [ [Windows XP 32-bit](http://download.microsoft.com/download/3/8/8/38889dc1-848c-4bf2-8335-86c573ad86d9/IE7-WindowsXP-x86-enu.exe) | [Windows Server 2003 32-bit](http://download.microsoft.com/download/d/1/3/d1346f12-f3a0-4ac6-8f5c-2bea2a184957/IE7-WindowsServer2003-x86-enu.exe) ]
   * Windows Media Player 11 [ [Windows XP 32-bit](http://download.microsoft.com/download/0/9/5/0953e553-3bb6-44b1-8973-106f1b7e5049/wmp11-windowsxp-x86-enu.exe) ]
@@ -58,7 +58,7 @@ The .NET Framework 3.0 includes the .NET Framework 2.0 so you do not have to ins
 
 ### Windows Desktop Search 3.01
 
-The Windows Desktop Search setup application will accept the /PASSIVE switch so that a progress bar is displayed during setup, but the /QUIET switch is required to prevent setup from displaying an &#8216;Install Complete' dialog once finished.
+The Windows Desktop Search setup application will accept the /PASSIVE switch so that a progress bar is displayed during setup, but the /QUIET switch is required to prevent setup from displaying an 'Install Complete' dialog once finished.
 
 [code]START /WAIT WindowsDesktopSearch-KB917013-V301-XP-x86-enu.exe /QUIET /NORESTART [/code]
 

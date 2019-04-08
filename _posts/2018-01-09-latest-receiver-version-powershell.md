@@ -32,7 +32,7 @@ To use the script, save as Get-CitrixReceiverVersions.ps1 and run from the comma
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">. .\Get-CitrixReceiverVersions.ps1
 Get-CitrixReceiverVersions</pre>
 
-The script returns specific platforms with the -Platform parameter. This only accepts valid values, such as &#8216;Windows&#8217;, &#8216;Mac&#8217; and &#8216;Linux&#8217; and the script will validate those values and supports tab completion.
+The script returns specific platforms with the -Platform parameter. This only accepts valid values, such as 'Windows&#8217;, 'Mac&#8217; and 'Linux&#8217; and the script will validate those values and supports tab completion.
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Get-CitrixReceiverVersions -Platform Mac, Linux</pre>
 

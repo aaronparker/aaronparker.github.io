@@ -7,11 +7,11 @@ layout: revision
 guid: https://stealthpuppy.com/6179-revision-v1/
 permalink: /6179-revision-v1/
 ---
-I recently presented a session titled &#8216;[Modern Management Methodology Imaginarium](https://xenappblog.com/agenda/)&#8216; at the [xenappblog.com Virtual Expo September](https://xenapptraining.lpages.co/xbve092018/) 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it.
+I recently presented a session titled '[Modern Management Methodology Imaginarium](https://xenappblog.com/agenda/)' at the [xenappblog.com Virtual Expo September](https://xenapptraining.lpages.co/xbve092018/) 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it.
 
 # The Modern Desktop
 
-While the &#8216;modern desktop' is most certainly a popular topic in the EUC space today, how to implement a modern desktop approach I think, is not yet widely understood. Organisations are looking to solve the same desktop challenges we've had for the past 20 years, in a more efficient and secure manner. Implementing the modern desktop requires defining a methodology that follows the same basic process followed for any desktop project - discovery and assessment, design, build, test, pilot, deploy (rinse and repeat). 
+While the 'modern desktop' is most certainly a popular topic in the EUC space today, how to implement a modern desktop approach I think, is not yet widely understood. Organisations are looking to solve the same desktop challenges we've had for the past 20 years, in a more efficient and secure manner. Implementing the modern desktop requires defining a methodology that follows the same basic process followed for any desktop project - discovery and assessment, design, build, test, pilot, deploy (rinse and repeat). 
 
 Successfully adopting the modern desktop requires leveraging analytics which is easier to achieve with current cloud-based toolsets (Microsoft has essentially [made this free](https://docs.microsoft.com/en-us/windows/deployment/update/windows-analytics-overview)). Whilst analytics show you where you are, it's important to understand where you need to get to, or at least what the journey will look like.
 

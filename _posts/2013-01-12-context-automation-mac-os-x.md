@@ -32,7 +32,7 @@ So here&#8217;s how I&#8217;m using [ControlPlane](http://www.controlplaneapp.co
 
 Downloading and installing ControlPlane is very simple - download the disk image (DMG file) and drag ControlPlane to your Applications folder.
 
-Launch ControlPlane and enable &#8216;Start ControlPlane at login&#8217; (if it&#8217;s not running, actions won&#8217;t fire). Here I&#8217;ve also set a default context (Secure). This is important because I want the secure actions firing by default with other actions only firing if I connect to a specific context (such as Home).
+Launch ControlPlane and enable 'Start ControlPlane at login&#8217; (if it&#8217;s not running, actions won&#8217;t fire). Here I&#8217;ve also set a default context (Secure). This is important because I want the secure actions firing by default with other actions only firing if I connect to a specific context (such as Home).
 
 <img class="alignnone size-full wp-image-3022" alt="ControlPlane General" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General.png" width="527" height="491" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General.png 527w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General-150x139.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General-300x279.png 300w" sizes="(max-width: 527px) 100vw, 527px" /> 
 
@@ -48,7 +48,7 @@ I&#8217;ve created three Contexts - Home, Mobile (for use with a MiFi-style devi
 
 <img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png 507w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts-150x150.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /> 
 
-To define the Home context, I&#8217;ve used the &#8216;WiFi BSSID&#8217; rule to define that if the MacBook has a connection to my home router, then I must be at home. 100% confidence is enabled on this rule because I know it&#8217;s highly unlikely that I&#8217;ll be connected to the same SSID and MAC address at any other location.
+To define the Home context, I&#8217;ve used the 'WiFi BSSID&#8217; rule to define that if the MacBook has a connection to my home router, then I must be at home. 100% confidence is enabled on this rule because I know it&#8217;s highly unlikely that I&#8217;ll be connected to the same SSID and MAC address at any other location.
 
 <img class="alignnone size-full wp-image-3024" alt="ControlPlane Rules" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules.png" width="591" height="476" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules.png 591w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules-150x120.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules-300x241.png 300w" sizes="(max-width: 591px) 100vw, 591px" /> 
 

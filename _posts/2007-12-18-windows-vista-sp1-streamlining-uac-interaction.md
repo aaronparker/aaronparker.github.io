@@ -12,7 +12,7 @@ tags:
   - UAC
   - Windows-Vista
 ---
-Here's a great example of the improvements to interaction with User Account Control in Windows Vista Service Pack -creating folders in system locations (e.g. the Start Menu, Program Files etc.). This is probably the most &#8216;in your face' UAC interaction, and beyond this I've personally found UAC to be quite usable.
+Here's a great example of the improvements to interaction with User Account Control in Windows Vista Service Pack -creating folders in system locations (e.g. the Start Menu, Program Files etc.). This is probably the most 'in your face' UAC interaction, and beyond this I've personally found UAC to be quite usable.
 
 With the release version of Windows Vista creating a folder in a location such as the All Users Start Menu generated quite a few extra clicks than were perhaps necessary. I've always thought that this dialog box is a little redundant - it just making me confirm something I already know that I'm doing:
 
@@ -29,7 +29,7 @@ So what does this actually mean to the end user? Here's what you see before Serv
   1. Lets open C:\ProgramData\Microsoft\Windows\Start Menu\Programs and create a new folder.
   2. I'm then presented with a dialog that explains I'll need to elevate before this can be done.
   3. I can then consent to the UAC dialog.
-  4. The folder is created (as &#8216;New Folder') and I can give it a name (which essentially becomes a rename operation).
+  4. The folder is created (as 'New Folder') and I can give it a name (which essentially becomes a rename operation).
   5. I'm then prompted again that I'll need to elevate to change the name of the folder.
   6. I then consent to the UAC dialog.
   7. The folder is then renamed.

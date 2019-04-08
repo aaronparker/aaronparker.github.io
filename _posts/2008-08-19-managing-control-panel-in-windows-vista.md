@@ -56,4 +56,4 @@ And finally, here’s what Control Panel under Windows 2008 Terminal Server migh
 
 [<img title="Windows2008ControlPanel" src="http://stealthpuppy.com/wp-content/uploads/2008/08/windows2008controlpanel-thumb.png" border="0" alt="Windows2008ControlPanel" width="546" height="392" />](http://stealthpuppy.com/wp-content/uploads/2008/08/windows2008controlpanel.png)
 
-So, what do you think - am I off my tree for giving users so many options? Or can I get some support for the &#8216;enabling users&#8217; camp?
+So, what do you think - am I off my tree for giving users so many options? Or can I get some support for the 'enabling users&#8217; camp?

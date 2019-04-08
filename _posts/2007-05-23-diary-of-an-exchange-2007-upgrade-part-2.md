@@ -37,7 +37,7 @@ Installation of the Client Access, Hub Transport and Unified Messaging roles on 
 
 To remove the mailbox role, I first had to remove the Public Folder replicas contained on that server. Attempting to remove the role would produce this error:
 
-> Uninstall cannot proceed. Database &#8216;Public Folder Database&#8217;: The public folder database specified contains folder replicas. Before deleting the public folder database, remove the folders or move the replicas to another public folder database.
+> Uninstall cannot proceed. Database 'Public Folder Database&#8217;: The public folder database specified contains folder replicas. Before deleting the public folder database, remove the folders or move the replicas to another public folder database.
 
 Removing the replicas proved to be difficult; I could get so far with the Remove-PublicFolder command so I ended up deleting the Public Folder store with ADSIEDIT so that I could remove the Mailbox role successfully. The Exchange team have a lot to answer for in regards to Public Folder management in Exchange 2006 RTM.
 

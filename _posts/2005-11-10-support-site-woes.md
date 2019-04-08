@@ -17,59 +17,59 @@ Over the past week, I&#8217;ve been creating an internal Exchange best practice/
   * Trend Micro; and
   * CA
 
-Now finding this information was harder than I thought, the steps taken to find the relevant articles was not straightforward. First I had to find out the current product versions (I still can&#8217;t find a product version number for the Trend Micro AV), then I used each support site to search for the terms &#8216;exchange&#8217; and &#8216;mdbdata&#8217;. I used these terms because I knew that the \mdbdata folder is one of the folders to exclude. Here are the steps taken to find each document for each vendor. As you can see some are easier to find than others.
+Now finding this information was harder than I thought, the steps taken to find the relevant articles was not straightforward. First I had to find out the current product versions (I still can&#8217;t find a product version number for the Trend Micro AV), then I used each support site to search for the terms 'exchange&#8217; and 'mdbdata&#8217;. I used these terms because I knew that the \mdbdata folder is one of the folders to exclude. Here are the steps taken to find each document for each vendor. As you can see some are easier to find than others.
 
 **Symantec  
 ** - Browse to [http://www.symantec.com](http://www.symantec.com/)  
-- Click &#8216;Support&#8217;  
-- Click &#8216;Get Enterprise Support&#8217;  
-- Click &#8216;Symantec AntiVirus Corporate Edition 10.0&#8217; under the heading &#8216;Getting Started&#8217;  
-- View the document &#8216;[How to prevent Symantec AntiVirus Corporate Edition from scanning the Microsoft Exchange directory structure](http://service1.symantec.com/SUPPORT/ent-security.nsf/docid/2005040513412648?OpenDocument&dtype=corp&src=ent_tutweb_nam?Open&dtype=corp&tdir=&tpre=&src=ent_tutweb_nam)&#8216;  
+- Click 'Support&#8217;  
+- Click 'Get Enterprise Support&#8217;  
+- Click 'Symantec AntiVirus Corporate Edition 10.0&#8217; under the heading 'Getting Started&#8217;  
+- View the document '[How to prevent Symantec AntiVirus Corporate Edition from scanning the Microsoft Exchange directory structure](http://service1.symantec.com/SUPPORT/ent-security.nsf/docid/2005040513412648?OpenDocument&dtype=corp&src=ent_tutweb_nam?Open&dtype=corp&tdir=&tpre=&src=ent_tutweb_nam)'  
 Score: 7<font size="4">Â½</font> /10
 
 **Sophos  
 ** - Browse to [http://www.sophos.com](http://www.sophos.com/)  
-- Click &#8216;Support&#8217;  
-- Click &#8216;Knowledgebase&#8217;  
-- Search for &#8216;exchange mdbdata&#8217;  
-- View the document &#8216;[Sophos Anti-Virus for Windows: file exclusions for Microsoft Exchange Server 2000 and 2003](http://www.sophos.com/support/knowledgebase/article/2214.html)&#8216;  
+- Click 'Support&#8217;  
+- Click 'Knowledgebase&#8217;  
+- Search for 'exchange mdbdata&#8217;  
+- View the document '[Sophos Anti-Virus for Windows: file exclusions for Microsoft Exchange Server 2000 and 2003](http://www.sophos.com/support/knowledgebase/article/2214.html)'  
 Score: 7<font size="4">Â½</font> /10
 
 **McAfee  
 ** - Browse to [http://www.mcafee.com](http://www.mcafee.com/)  
-- Click &#8216;Enterprise&#8217;  
-- Click &#8216;Support&#8217;  
-- Click &#8216;Technical Support&#8217;  
-- Click &#8216;KnowledgeBase Search&#8217;  
-- Search for &#8216;exchange mdbdata&#8217;  
-- View the document &#8216;[Solution ID kb38560 - Configuring VirusScan Enterprise exclusions on an Exchange 2000/2003 server running McAfee GroupShield Exchange](http://knowledgemap.nai.com/KanisaSupportSite/search.do?cmd=displayKCPopup&docType=kc&externalId=KBkb38560xml&sliceId=&dialogID=4606785)&#8216;  
+- Click 'Enterprise&#8217;  
+- Click 'Support&#8217;  
+- Click 'Technical Support&#8217;  
+- Click 'KnowledgeBase Search&#8217;  
+- Search for 'exchange mdbdata&#8217;  
+- View the document '[Solution ID kb38560 - Configuring VirusScan Enterprise exclusions on an Exchange 2000/2003 server running McAfee GroupShield Exchange](http://knowledgemap.nai.com/KanisaSupportSite/search.do?cmd=displayKCPopup&docType=kc&externalId=KBkb38560xml&sliceId=&dialogID=4606785)'  
 Score: 7/10
 
 **Trend Micro  
 ** - Browse to [http://www.trendmicro.com](http://www.trendmicro.com/)  
-- Click &#8216;Support&#8217;  
-- Search for &#8216;exchange mdbdata&#8217;  
-- View the document &#8216;[Recommended exclusion list for OfficeScan 7.0 clients installed on a Microsoft Exchange 2003 server](http://kb.trendmicro.com/solutions/search/main/search/solutionDetail.asp?solutionID=25527&q=exchange+mdbdata&qp=&qt=exchange+mdbdata&qs=&r=4&c=25527&sort=0)&#8216;  
+- Click 'Support&#8217;  
+- Search for 'exchange mdbdata&#8217;  
+- View the document '[Recommended exclusion list for OfficeScan 7.0 clients installed on a Microsoft Exchange 2003 server](http://kb.trendmicro.com/solutions/search/main/search/solutionDetail.asp?solutionID=25527&q=exchange+mdbdata&qp=&qt=exchange+mdbdata&qs=&r=4&c=25527&sort=0)'  
 Score: 8/10
 
 **CA**  
 - Browse to [http://www.cai.com](http://www.cai.com/)  
-- Click &#8216;Support&#8217;  
-- Click &#8216;Technical Support&#8217;  
-- Click &#8216;SupportConnect&#8217;  
-- Click &#8216;Knowledge Base&#8217;  
-- Search for &#8216;exchange mdbdata&#8217;  
+- Click 'Support&#8217;  
+- Click 'Technical Support&#8217;  
+- Click 'SupportConnect&#8217;  
+- Click 'Knowledge Base&#8217;  
+- Search for 'exchange mdbdata&#8217;  
 - Hmmm.. two documents, nothing about Exchange and AV  
-- Click &#8216;Knowledge Base&#8217;  
-- Search for &#8216;exchange antivirus&#8217;  
+- Click 'Knowledge Base&#8217;  
+- Search for 'exchange antivirus&#8217;  
 - Hmmm.. Go through 3 pages of results with nothing related to my search  
-- Click &#8216;Published Solutions&#8217;  
-- Select &#8216;eTrust Antivirus All User versions Multi-platform&#8217;  
-- Select &#8216;Release: 7.1&#8243;  
-- Select &#8216;Operating System: WIN2003&#8217;  
-- Click &#8216;Search&#8217;  
-- Grrrr.. &#8216;No solutions were found that match your search criteria&#8217;  
-- Click &#8216;Toolbox&#8217;  
+- Click 'Published Solutions&#8217;  
+- Select 'eTrust Antivirus All User versions Multi-platform&#8217;  
+- Select 'Release: 7.1&#8243;  
+- Select 'Operating System: WIN2003&#8217;  
+- Click 'Search&#8217;  
+- Grrrr.. 'No solutions were found that match your search criteria&#8217;  
+- Click 'Toolbox&#8217;  
 - Arrghh.. Nothing  
 - CA, you suck!  
 - Browse to [http://www.symantec.com](http://www.symantec.com/)  

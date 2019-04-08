@@ -182,7 +182,7 @@ To sequence iTunes, follow the basic outline here:
 6. First Run tasks
 
   * QuickTime – follow the recommendations for configuration in this article: [Virtualising Apple QuickTime 7.x](http://stealthpuppy.com/virtualisation/sequencing-apple-quicktime-7x/)
-  * iTunes – iTunes will prompt to make itself the default for media files – set this if required and be sure to disable the option &#8216;Warn me if iTunes is not the default player for audio files&#8217;
+  * iTunes – iTunes will prompt to make itself the default for media files – set this if required and be sure to disable the option 'Warn me if iTunes is not the default player for audio files&#8217;
 
 7. Customize shortcuts
 

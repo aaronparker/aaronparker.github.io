@@ -26,7 +26,7 @@ Task sequences in the Microsoft Deployment Toolkit (MDT) are core of what makes 
 
 # Importing the Task Sequence
 
-To create a new task sequence, use the MDT Deployment Workbench, navigate to Task Sequences, right-click on that node and select &#8216;Create Task Sequence':
+To create a new task sequence, use the MDT Deployment Workbench, navigate to Task Sequences, right-click on that node and select 'Create Task Sequence':
 
   1. Set a unique ID and task sequence name
   2. Use the Standard Server Task Sequence as the template

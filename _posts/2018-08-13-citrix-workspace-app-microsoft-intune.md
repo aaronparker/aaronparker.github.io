@@ -176,9 +176,9 @@ The Citrix HDX RealTime Media Engine is also available as an installer package t
 
 As at the time of writing, Citrix Receiver is still available on the iOS App Store and we should see it updated to Citrix Workspace app soon. [Adding an iOS application in Microsoft Intune](https://docs.microsoft.com/en-us/intune/store-apps-ios) is, fortunately, a simple process:
 
-  1. Add an application and choose &#8216;Store app - iOS&#8217;, then search the app store
-  2. Search for &#8216;Citrix&#8217;, &#8216;Citrix Receiver&#8217; or &#8216;Citrix Workspace&#8217;
-  3. Choose &#8216;Citrix Receiver&#8217; or &#8216;Citrix Workspace&#8217; depending on what is returned
+  1. Add an application and choose 'Store app - iOS&#8217;, then search the app store
+  2. Search for 'Citrix&#8217;, 'Citrix Receiver&#8217; or 'Citrix Workspace&#8217;
+  3. Choose 'Citrix Receiver&#8217; or 'Citrix Workspace&#8217; depending on what is returned
   4. Save the change and Add the application
   5. Assign the application as required 
 
@@ -196,8 +196,8 @@ At the time of writing, the Workspace app for Android is not available in the Go
 
 The process for deploying Citrix Workspace app or Citrix Receiver on Android follows [the standard Android store app deployment steps](https://docs.microsoft.com/en-us/intune/store-apps-android):
 
-  1. Add an application and choose &#8216;Store app - Android&#8217;, then search the app store
-  2. Name - &#8216;Citrix Workspace&#8217; or &#8216;Citrix Receiver&#8217;
+  1. Add an application and choose 'Store app - Android&#8217;, then search the app store
+  2. Name - 'Citrix Workspace&#8217; or 'Citrix Receiver&#8217;
   3. Description - copy and paste the [description from Workspace app on the Microsoft Store](https://businessstore.microsoft.com/en-au/store/details/citrix-workspace/9wzdncrfj2kj)
   4. Publisher - Citrix
   5. Appstore URL - https://play.google.com/store/apps/details?id=com.citrix.Receiver

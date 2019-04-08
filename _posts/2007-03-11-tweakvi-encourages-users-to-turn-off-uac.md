@@ -22,7 +22,7 @@ What has struck me about this software is that during setup you are encouraged t
 
 Here&#8217;s a couple of quotes from their FAQ page site about [TweakVI and UAC](http://www.totalidea.com/content/tweakvi/tweakvi-faq.html#15):
 
-> **Dragging files into the File Shredder listbox in the &#8216;File Tools&#8217; plugin does not work. How can I fix that?**
+> **Dragging files into the File Shredder listbox in the 'File Tools&#8217; plugin does not work. How can I fix that?**
 > 
 > In order for the FileShredder feature to work, the Windows Vista User Account Control (UAC) must be disabled; otherwise communication between Windows Vista and the FileShredder via drag-and-drop is impossible. Please check your UAC settings (Control panel >>> User Account Settings). There you can disable UAC.
 > 

@@ -63,7 +63,7 @@ I generally set this to Merge because most settings are configured by GPOs on th
 
 _User Configuration / Administrative Templates / Start Menu and Taskbar / Remove common program groups from Start Menu_
 
-Now enable folder redirection to your network share and be sure to set the option &#8216;Redirect the folder back to the local userprofile location when policy is removed&#8217;. Here&#8217;s a copy of [the GPO report](http://stealthpuppy.com/wp-content/uploads/2008/04/TerminalServerLoopbackPolicy.htm) to see exactly how I&#8217;ve configured it.
+Now enable folder redirection to your network share and be sure to set the option 'Redirect the folder back to the local userprofile location when policy is removed&#8217;. Here&#8217;s a copy of [the GPO report](http://stealthpuppy.com/wp-content/uploads/2008/04/TerminalServerLoopbackPolicy.htm) to see exactly how I&#8217;ve configured it.
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/04/startmenuredirection.png" border="0" alt="StartMenuRedirection" width="323" height="358" /> 
 

@@ -25,13 +25,13 @@ First though, it&#8217;s important to point out that the version of Adobe Reader
 
 Adobe Reader (and Acrobat) installs the **Adobe Acrobat Update Service**. On typical enterprise PCs or virtual desktop environments this service may not be desirable, because updates are managed by Configuration Manager or monthly image updates. On a Windows 10 desktop deployed modern management style, it can be up to the device to ensure the OS and applications are kept up to date; thus, this service should remain enabled on those end-points.
 
-The updater is actually two components - the Update service and a scheduled task that runs &#8216;C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARM.exe&#8217; to check for, download and install updates.
+The updater is actually two components - the Update service and a scheduled task that runs 'C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARM.exe&#8217; to check for, download and install updates.
 
 The task has two triggers - one after user logon, but with a delay of 12 minutes, and the other at a scheduled time that is possibly different per device. Here&#8217;s the scheduled task:
 
 <figure id="attachment_6046" aria-describedby="caption-attachment-6046" style="width: 1338px" class="wp-caption aligncenter">[<img class="wp-image-6046 size-full" src="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png" alt="Adobe Acrobat Update Task" width="1338" height="711" srcset="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png 1338w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-300x159.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-768x408.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-1024x544.png 1024w" sizes="(max-width: 1338px) 100vw, 1338px" />](https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png)<figcaption id="caption-attachment-6046" class="wp-caption-text">Adobe Acrobat Update Task</figcaption></figure>
 
-In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn&#8217;t exhaustive), it would take more than that to download an update and I resorted to using the &#8216;Check for Updates&#8217; option from within Adobe Reader manually. 
+In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn&#8217;t exhaustive), it would take more than that to download an update and I resorted to using the 'Check for Updates&#8217; option from within Adobe Reader manually. 
 
 ## Update Process
 

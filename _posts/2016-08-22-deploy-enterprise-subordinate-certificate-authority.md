@@ -70,7 +70,7 @@ No reboot should be required after installing these roles.
 
 Before we go any further, remember that in setting up the Root CA, we [configured](http://stealthpuppy.com/wp-content/uploads/2016/08/14-Root-CA-Certificate-Services.png) the **Certificate Revocation List Distribution Point** using an alias to the issuing CA. In my case, I&#8217;ve configured a CNAME record - _crl.home.stealthpuppy.com_ to point to my issuing CA hostname - _issuingca.home.stealthpuppy.com_.
 
-Configure the alias in DNS now, so that it has time to propagate and be available for resolution when we configure the subordinate certificate request later. If this step is missed, you will receive &#8216;CRL unavailable&#8217; errors.
+Configure the alias in DNS now, so that it has time to propagate and be available for resolution when we configure the subordinate certificate request later. If this step is missed, you will receive 'CRL unavailable&#8217; errors.
 
 ## Configuring&nbsp;Certificate Services
 
@@ -180,7 +180,7 @@ You can select the existing HTTP distribution point and press Ctrl-C to copy the
 
 <pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">http://crl.home.stealthpuppy.com/CertEnroll/&lt;CaName&gt;&lt;CRLNameSuffix&gt;&lt;DeltaCRLAllowed&gt;.crl</pre>
 
-For this new DP, I&#8217;ve enabled &#8216;**Include in CRLs&#8217;** and &#8216;**Include in the CDP...&#8217;** options (and disabled these for the existing http:// DP). Also check that the ldap:// distribution is enabled, which it should be by default.
+For this new DP, I&#8217;ve enabled '**Include in CRLs&#8217;** and '**Include in the CDP...&#8217;** options (and disabled these for the existing http:// DP). Also check that the ldap:// distribution is enabled, which it should be by default.
 
 <figure id="attachment_5107" aria-describedby="caption-attachment-5107" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5107" src="http://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-1024x539.png" alt="HTTP CRL distribution point properties" width="1024" height="539" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-1024x539.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-150x79.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-300x158.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-768x404.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties.png 1088w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties.png)<figcaption id="caption-attachment-5107" class="wp-caption-text">HTTP CRL distribution point properties</figcaption></figure>
 

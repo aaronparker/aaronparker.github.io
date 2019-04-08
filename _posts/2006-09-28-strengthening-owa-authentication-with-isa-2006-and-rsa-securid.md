@@ -21,8 +21,8 @@ First off, I&#8217;ll discuss how SecurID authentication works in ISA Server. Mi
 To allow the ISA Server to authenticate against the RSA ACE server, an agent host record needs to be created (assuming a Windows box is hosting the ACE server):
 
   1. Log onto the RSA ACE server and start the Database Administration tool in Host Mode
-  2. Add a new agent host and use &#8216;Net OS Agent&#8217; as the agent type
-  3. Enable the tick-box labelled &#8216;Open to All Locally Known Users&#8217; if you want all users to be able to authenticate
+  2. Add a new agent host and use 'Net OS Agent&#8217; as the agent type
+  3. Enable the tick-box labelled 'Open to All Locally Known Users&#8217; if you want all users to be able to authenticate
   4. Click OK to save the changes and copy SDCONF.REC (located in <span style="font-size: 9pt; font-family: Courier New">WINDOWSSYSTEM32</span>) to ISA Server.
 
 [<img style="width: 318px; height: 311px;" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.127.AgentHost.gif" border="0" alt="" width="318" height="311" />](http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.127.AgentHost.gif)
@@ -41,9 +41,9 @@ Now that the SecurID authentication requirements have been configured you can cr
 
 Once the rule and a corresponding web listener has been created, you will need to edit the properties of the web listener:
 
-  1. Choose the Authentication tab and ensure that &#8216;HTML Form Authentication&#8217; is selected as the authentication method
-  2. Enable the tick-box labelled &#8216;Collect additional delegation credentials in the form&#8217;
-  3. Then select the radio button labelled &#8216;RSA SecurID&#8217;
+  1. Choose the Authentication tab and ensure that 'HTML Form Authentication&#8217; is selected as the authentication method
+  2. Enable the tick-box labelled 'Collect additional delegation credentials in the form&#8217;
+  3. Then select the radio button labelled 'RSA SecurID&#8217;
   4. Click OK and apply your configuration changes.
 
 <img style="width: 404px; height: 466px;" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.128.WebListener.png" alt="" width="404" height="466" /> 

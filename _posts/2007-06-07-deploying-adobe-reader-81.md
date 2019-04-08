@@ -161,7 +161,7 @@ Most medium to large enterprises will have some sort of application deployment t
 
   * [Group Policy and Active Directory](http://www.adobe.com/devnet/acrobat/pdfs/gpo_ad_8.pdf); and
   * [Systems Management Server](http://www.adobe.com/devnet/acrobat/pdfs/sms_8.pdf) (now System Centre Configuration Manager).
-  * Apparently documentation for using IBM Tivoli Configuration Manager to deploy Reader/Acrobat is &#8216;coming in mid-2007'.
+  * Apparently documentation for using IBM Tivoli Configuration Manager to deploy Reader/Acrobat is 'coming in mid-2007'.
 
 Any organisation utilising Group Policy for application deployment may find things a little more challenging. Check out my post on [deploying applications with Group Policy](http://stealthpuppy.com/deployment/group-policy-application-deployment-done-right) for details on doing it the right way.You will also find information on deploying Reader on:
 

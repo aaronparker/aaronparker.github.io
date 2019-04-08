@@ -28,10 +28,10 @@ When you install VMware tools you are prompted to enable video hardware accelera
 Dim RegValueData  
 Set objReg=GetObject("winmgmts:{impersonationLevel=impersonate}!\.rootdefault:StdRegProv")
 
-&#8216;Get Path to Acceleration.Level  
+'Get Path to Acceleration.Level  
 objReg.GetStringValue HKEY\_LOCAL\_MACHINE,"HARDWAREDEVICEMAPVIDEO","DeviceVideo0",RegValueData
 
-&#8216;Set Acceleration.Level to Full  
+'Set Acceleration.Level to Full  
 objReg.SetDWORDValue HKEY\_LOCAL\_MACHINE,RIGHT(RegValueData, 82),"Acceleration.Level",0 [/code]
 
 ### Installing VMware Tools

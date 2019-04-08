@@ -122,6 +122,6 @@ This is the first build of Windows 10, available to testers, where the App-V and
 In going through this exercise, there are two things that stand out:
 
   * <del>The Enable and Disable cmdlets should return a True or False if the command was successful or not. This is expected to be fixed before release</del>. [24th April 2016 - build 14328 has updated the cmdlets to return a status]
-  * I would like to see the App-V and UE-V clients enable and disabled as Windows Features (to enable/disable via DISM or &#8216;Programs and Features&#8217;), rather than just be in-box disabled. I&#8217;m not confident that this approach will change.
+  * I would like to see the App-V and UE-V clients enable and disabled as Windows Features (to enable/disable via DISM or 'Programs and Features&#8217;), rather than just be in-box disabled. I&#8217;m not confident that this approach will change.
 
 If you are a Windows Insider, I would recommend testing the App-V and UE-V functionality delivered as a part of this build. In addition, if you encounter challenges or bug, be sure to log them on [Connect](http://connect.microsoft.com).
