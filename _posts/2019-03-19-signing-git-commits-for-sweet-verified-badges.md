@@ -49,23 +49,23 @@ I write PowerShell scripts and modules primarily on macOS, so I've installed [GP
   2. Open your GitHub settings, choose **SSH and GPG keys** and click **[New GPG Key](https://github.com/settings/gpg/new)**
   3. Paste in the key and click **Add GPG Key**
 
-![Adding your public GPG key to GitHub and Signing Git Commits](https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey.png)*Adding your public GPG key to GitHub* 
+![Adding your public GPG key to GitHub and Signing Git Commits](https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey.png)*Adding your public GPG key to GitHub*
 
 ## Add Your Signing Key to Git
 
 To sign your commits, you of course need to [tell git about your GPG key](https://help.github.com/en/articles/telling-git-about-your-signing-key). On macOS that looks like this - in Terminal, list your keys to find the key ID for the key added to your GitHub account:
 
-<p class="customcode">
-  <strong>gpg -list-secret-keys -keyid-format LONG</strong>
-</p>
+```bash
+gpg -list-secret-keys -keyid-format LONG
+```
 
 With defaults, the key ID will be on the line that starts with 'sec'. Copy the key ID and use git to configure the signing key. In my case, it looks like this:
 
-<p class="customcode">
-  <strong>git config -global user.signingkey C55D39F88CE9A2C5</strong>
-</p><figure class="wp-block-image is-resized">
+```bash
+git config -global user.signingkey C55D39F88CE9A2C5
+```
 
-![Finding your key ID and adding the key to git](https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig.png)*Finding your key ID and adding the key to git* 
+![Finding your key ID and adding the key to git](https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig.png)*Finding your key ID and adding the key to git*
 
 On Windows the process for signing git commits is much the same. First install [Git for Windows](https://gitforwindows.org/) and use git bash instead of Terminal.
 
@@ -75,10 +75,10 @@ Finally, we can configure [Visual Studio Code](https://code.visualstudio.com/) t
 
 In Preferences, search for 'git signing' and select 'Git: Enable Commit Signing':
 
-![Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits](https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning.png)*Enable Commit Signing in Visual Studio Code preferences* 
+![Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits](https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning.png)*Enable Commit Signing in Visual Studio Code preferences*
 
 [VSCode supports version control using git](https://code.visualstudio.com/docs/introvideos/versioncontrol) from directly within the VSCode window. On your first commit, you'll be prompted to enter the password for your GPG key before the commit will complete.
 
 That's about all the steps required for signing git commits. We have signed commits in a GitHub repository and a sweet, sweet Verified badge - now I can brag to all my friends and they'll know that code came from me. My mum still won't understand what I do for a living, but you can't get a win every day.
 
-![Now I have a nice shiny verified badge on my commits](https://stealthpuppy.com/wp-content/uploads/2019/03/Verified.gif)*Now I have a nice shiny verified badge on my commits* 
+![Now I have a nice shiny verified badge on my commits](https://stealthpuppy.com/wp-content/uploads/2019/03/Verified.gif)*Now I have a nice shiny verified badge on my commits*
