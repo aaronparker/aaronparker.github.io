@@ -3,13 +3,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
-<title>Install-VisualCRedistributables.ps1 – A Visual C++ Redistributable Installer | stealthpuppy</title>
+<title>Install-VisualCRedistributables.ps1 - A Visual C++ Redistributable Installer | stealthpuppy</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Install-VisualCRedistributables.ps1 – A Visual C++ Redistributable Installer" />
+<meta property="og:title" content="Install-VisualCRedistributables.ps1 - A Visual C++ Redistributable Installer" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In updating my MDT deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I’ve written a script that will download the installers and optionally install them – Install-VisualCRedistributables.ps1." />
-<meta property="og:description" content="In updating my MDT deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I’ve written a script that will download the installers and optionally install them – Install-VisualCRedistributables.ps1." />
+<meta name="description" content="In updating my MDT deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I’ve written a script that will download the installers and optionally install them - Install-VisualCRedistributables.ps1." />
+<meta property="og:description" content="In updating my MDT deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I’ve written a script that will download the installers and optionally install them - Install-VisualCRedistributables.ps1." />
 <link rel="canonical" href="/visual-c-redistributable-installer/" />
 <meta property="og:url" content="/visual-c-redistributable-installer/" />
 <meta property="og:site_name" content="stealthpuppy" />
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-05-01T19:26:58+10:00" />
 <script type="application/ld+json">
-{"description":"In updating my MDT deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I’ve written a script that will download the installers and optionally install them – Install-VisualCRedistributables.ps1.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/visual-c-redistributable-installer/","image":"/wp-content/uploads/2017/05/2005-2017.png","headline":"Install-VisualCRedistributables.ps1 – A Visual C++ Redistributable Installer","dateModified":"2017-05-01T19:26:58+10:00","datePublished":"2017-05-01T19:26:58+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/visual-c-redistributable-installer/"},"@context":"https://schema.org"}</script>
+{"description":"In updating my MDT deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I’ve written a script that will download the installers and optionally install them - Install-VisualCRedistributables.ps1.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/visual-c-redistributable-installer/","image":"/wp-content/uploads/2017/05/2005-2017.png","headline":"Install-VisualCRedistributables.ps1 - A Visual C++ Redistributable Installer","dateModified":"2017-05-01T19:26:58+10:00","datePublished":"2017-05-01T19:26:58+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/visual-c-redistributable-installer/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -40,16 +40,16 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Install-VisualCRedistributables.ps1 &amp;#8211; A Visual C++ Redistributable Installer</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Install-VisualCRedistributables.ps1 - A Visual C++ Redistributable Installer</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2017-05-01T19:26:58+10:00" itemprop="datePublished">May 1, 2017
       </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>In updating my <a href="http://stealthpuppy.com/tag/mdt/">MDT</a> deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I’ve written a script that will download the installers and optionally install them – <a href="https://github.com/aaronparker/Install-VisualCRedistributables">Install-VisualCRedistributables.ps1</a>.</p>
+    <p>In updating my <a href="http://stealthpuppy.com/tag/mdt/">MDT</a> deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I’ve written a script that will download the installers and optionally install them - <a href="https://github.com/aaronparker/Install-VisualCRedistributables">Install-VisualCRedistributables.ps1</a>.</p>
 
-<p>This script reads <a href="https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml">an external XML file</a> that contains the installer information for each of the Visual C++ Redistributables so that changes to URLs, install options and new redistributables can be made without making changes to the script. The XML file lists the download URL and install instructions for each installer and looks like this:</p>
+<p>This script reads <a href="https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml">an external XML file</a> that contains the installer information for each of the Visual C++ Redistributables so that changes to URLs, install options and new redistributables can be made without making changes to the script. The XML file lists the download URL and install instructions for each installer and looks like this:</p>
 
 <pre class="prettyprint lang-xml" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;Redistributables&gt;
@@ -88,9 +88,9 @@
 
 <h1 id="using-install-visualcredistributablesps1">Using Install-VisualCRedistributables.ps1</h1>
 
-<p>Download <a href="https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/Install-VisualCRedistributables.ps1" title="Install-VisualCRedistributables.ps1">Install-VisualCRedistributables.ps1</a>{#6688ca8243a1ff4cb920b2f5b0eb5d4f-fc78b16fb52218a5ca1961809bece9155c302c06.js-navigation-open} and <a href="https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml" title="VisualCRedistributables.xml">VisualCRedistributablesSupported.xml</a>{#ae2b8c9175203ac3b93b3a45bf39ac3f-2392f8cdffa2c6a99fa7b73e04bccc284321c434.js-navigation-open} from the repository and edit the XML as required. As this includes all supported redistributables from 2008 to 2017, all will be downloaded and installed by default. If you don’t need all of them in your environment, remove those that aren’t required.</p>
+<p>Download <a href="https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/Install-VisualCRedistributables.ps1" title="Install-VisualCRedistributables.ps1">Install-VisualCRedistributables.ps1</a>{#6688ca8243a1ff4cb920b2f5b0eb5d4f-fc78b16fb52218a5ca1961809bece9155c302c06.js-navigation-open} and <a href="https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml" title="VisualCRedistributables.xml">VisualCRedistributablesSupported.xml</a>{#ae2b8c9175203ac3b93b3a45bf39ac3f-2392f8cdffa2c6a99fa7b73e04bccc284321c434.js-navigation-open} from the repository and edit the XML as required. As this includes all supported redistributables from 2008 to 2017, all will be downloaded and installed by default. If you don’t need all of them in your environment, remove those that aren’t required.</p>
 
-<p>The script can be run in two phases – one to download the installers and again to install the redistributables – this is useful for downloading the installers to add to your reference image via MDT, for example. The script can also be used to download and install in one action.</p>
+<p>The script can be run in two phases - one to download the installers and again to install the redistributables - this is useful for downloading the installers to add to your reference image via MDT, for example. The script can also be used to download and install in one action.</p>
 
 <h2 id="parameters">Parameters</h2>
 
@@ -100,7 +100,7 @@
 
 <p>This points to the XML file that contains the details about the Visual C++ Redistributables. This must be in the expected format, otherwise, the script will fail.</p>
 
-<p>Example – Downloads the Visual C++ Redistributables listed in VisualCRedistributables.xml.</p>
+<p>Example - Downloads the Visual C++ Redistributables listed in VisualCRedistributables.xml.</p>
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml"</pre>
 
@@ -108,7 +108,7 @@
 
 <p>Specify a target folder to download the Redistributables to, otherwise, use the current folder.</p>
 
-<p>Example – Downloads the Visual C++ Redistributables listed in VisualCRedistributables.xml to C:\Redist.</p>
+<p>Example - Downloads the Visual C++ Redistributables listed in VisualCRedistributables.xml to C:\Redist.</p>
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml" -Path C:\Redist</pre>
 
@@ -116,7 +116,7 @@
 
 <p>By default, the script will only download the Redistributables. This allows you to download the Redistributables for separate deployment (e.g. in a reference image). Add -Install to install each of the Redistributables as well.</p>
 
-<p>Example – Downloads and installs the Visual C++ Redistributables listed in VisualCRedistributables.xml.</p>
+<p>Example - Downloads and installs the Visual C++ Redistributables listed in VisualCRedistributables.xml.</p>
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml" -Install:$True</pre>
 
@@ -124,11 +124,12 @@
 
 <p>Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list. 2005 are not installed by default, as these are no longer supported.</p>
 
-<figure id="attachment_5436" aria-describedby="caption-attachment-5436" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5436" src="http://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017-1024x639.png" alt="Microsoft Visual C++ Redistributable 2005-2015 installed" width="1024" height="639" srcset="https://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017-1024x639.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017-300x187.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017-768x479.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017.png 1442w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017.png)<figcaption id="caption-attachment-5436" class="wp-caption-text">Microsoft Visual C++ Redistributables</figcaption></figure>
+<figure id="attachment_5436" aria-describedby="caption-attachment-5436" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5436" src="http://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017-1024x639.png" alt="Microsoft Visual C++ Redistributable 2005-2015 installed" width="1024" height="639" srcset="https://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017-1024x639.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017-300x187.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017-768x479.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017.png 1442w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/05/2005-2017.png)<figcaption id="caption-attachment-5436" class="wp-caption-text">Microsoft Visual C++ Redistributables</figcaption>
 
-<h1 id="finally">Finally</h1>
+# Finally
 
-<p>This is the first version of the script and to the best of my knowledge, the XML file is correct. Feedback and corrections are welcome and I have some plans to update the script with some additional error checking.</p>
+This is the first version of the script and to the best of my knowledge, the XML file is correct. Feedback and corrections are welcome and I have some plans to update the script with some additional error checking.
+</figure>
 
   </div><a class="u-url" href="/visual-c-redistributable-installer/" hidden></a>
 </article>

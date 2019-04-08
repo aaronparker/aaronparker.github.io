@@ -1,0 +1,25 @@
+@ECHO OFF
+SET SOURCE=%~dp0 
+SET SOURCE=%SOURCE:~0,-2%
+
+REM Create the Firefox answer file
+ECHO [Install] > %SOURCE%\Firefox7.ini
+ECHO ; InstallDirectoryName=Firefox7 >> %SOURCE%\Firefox7.ini
+ECHO ; InstallDirectoryPath=Q:\Mozilla Firefox 7.0 en-GB >> %SOURCE%\Firefox7.ini
+ECHO QuickLaunchShortcut=false >> %SOURCE%\Firefox7.ini
+ECHO DesktopShortcut=false >> %SOURCE%\Firefox7.ini
+ECHO StartMenuShortcuts=true >> %SOURCE%\Firefox7.ini
+
+REM Install Firefox - the START command will not work if the Firefox setup filename includes spaces
+START /WAIT FirefoxSetup70.exe /INI=%SOURCE%\Firefox7.ini
+
+REM Configure Firefox profile defaults
+MD "%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome"
+COPY %SOURCE%\user.js "%ProgramFiles%\Mozilla Firefox\defaults\profile\user.js"
+COPY %SOURCE%\userChrome.css "%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome\userChrome.css"
+
+REM Install Flash Player
+START /WAIT MSIEXEC /I install_flash_player_10_plugin.msi ALLUSERS=TRUE REBOOT=SUPPRESS /QB-
+
+REM Disable Flash auto-upate notifications
+COPY %SOURCE%\mms.cfg %SYSTEMROOT%\system32\Macromed\Flash\mms.cfg

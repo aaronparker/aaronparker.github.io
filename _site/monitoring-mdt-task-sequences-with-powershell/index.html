@@ -8,15 +8,15 @@
 <meta property="og:title" content="Monitoring MDT Task Sequences with PowerShell" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The Microsoft Deployment Toolkit provides a Lite Touch deployment model – typically a device requires an engineer to manually start the deployment task sequence. Using PowerShell to drive MDT offers the chance to provide a little more automation around OS deployments." />
-<meta property="og:description" content="The Microsoft Deployment Toolkit provides a Lite Touch deployment model – typically a device requires an engineer to manually start the deployment task sequence. Using PowerShell to drive MDT offers the chance to provide a little more automation around OS deployments." />
+<meta name="description" content="The Microsoft Deployment Toolkit provides a Lite Touch deployment model - typically a device requires an engineer to manually start the deployment task sequence. Using PowerShell to drive MDT offers the chance to provide a little more automation around OS deployments." />
+<meta property="og:description" content="The Microsoft Deployment Toolkit provides a Lite Touch deployment model - typically a device requires an engineer to manually start the deployment task sequence. Using PowerShell to drive MDT offers the chance to provide a little more automation around OS deployments." />
 <link rel="canonical" href="/monitoring-mdt-task-sequences-with-powershell/" />
 <meta property="og:url" content="/monitoring-mdt-task-sequences-with-powershell/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2013-06-04T14:30:23+10:00" />
 <script type="application/ld+json">
-{"description":"The Microsoft Deployment Toolkit provides a Lite Touch deployment model – typically a device requires an engineer to manually start the deployment task sequence. Using PowerShell to drive MDT offers the chance to provide a little more automation around OS deployments.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/monitoring-mdt-task-sequences-with-powershell/","headline":"Monitoring MDT Task Sequences with PowerShell","dateModified":"2013-06-04T14:30:23+10:00","datePublished":"2013-06-04T14:30:23+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/monitoring-mdt-task-sequences-with-powershell/"},"@context":"https://schema.org"}</script>
+{"description":"The Microsoft Deployment Toolkit provides a Lite Touch deployment model - typically a device requires an engineer to manually start the deployment task sequence. Using PowerShell to drive MDT offers the chance to provide a little more automation around OS deployments.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/monitoring-mdt-task-sequences-with-powershell/","headline":"Monitoring MDT Task Sequences with PowerShell","dateModified":"2013-06-04T14:30:23+10:00","datePublished":"2013-06-04T14:30:23+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/monitoring-mdt-task-sequences-with-powershell/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>The <a href="http://technet.microsoft.com/en-gb/solutionaccelerators/dd407791.aspx">Microsoft Deployment Toolkit</a> provides a <a href="http://technet.microsoft.com/en-us/library/dd919179(v=ws.10).aspx">Lite Touch deployment model</a> – typically a device requires an engineer to manually start the deployment task sequence. Using PowerShell to drive MDT offers the chance to provide a little more automation around OS deployments.</p>
+    <p>The <a href="http://technet.microsoft.com/en-gb/solutionaccelerators/dd407791.aspx">Microsoft Deployment Toolkit</a> provides a <a href="http://technet.microsoft.com/en-us/library/dd919179(v=ws.10).aspx">Lite Touch deployment model</a> - typically a device requires an engineer to manually start the deployment task sequence. Using PowerShell to drive MDT offers the chance to provide a little more automation around OS deployments.</p>
 
 <p>Here’s a couple of sample videos that demonstrate the use of PowerShell to automate OS deployments using MDT task sequences. Both of these examples are utilising <a href="http://blogs.technet.com/b/mniehaus/archive/2012/03/09/mdt-2012-new-feature-monitoring.aspx">the monitoring feature in MDT 2012</a> to watch the progress of each task sequence to enable managing the complete deployment, both before and after the task sequence.</p>
 
@@ -127,7 +127,7 @@ ComputerIdentities : {}[/plain]</p>
 
 <h1 id="the-complete-script">The Complete Script</h1>
 
-<p>The script listing below put these pieces together and provides two loops – one that waits for the task sequence to begin and once it has, waits for the task sequence to complete.</p>
+<p>The script listing below put these pieces together and provides two loops - one that waits for the task sequence to begin and once it has, waits for the task sequence to complete.</p>
 
 <pre>$target = "VM1"
 $deploymentShare = "E:\Deployment"

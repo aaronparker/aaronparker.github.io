@@ -8,15 +8,15 @@
 <meta property="og:title" content="Creating Custom MetaFrame Admins with VBscript: Part 1" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Overview Setting privileges on a custom administrator account in Presentation Server is not quite as simple as I thought when I set out to create a script to do so – there’s not much information on the CDN forums, so this was a bit of trial and error." />
-<meta property="og:description" content="Overview Setting privileges on a custom administrator account in Presentation Server is not quite as simple as I thought when I set out to create a script to do so – there’s not much information on the CDN forums, so this was a bit of trial and error." />
+<meta name="description" content="Overview Setting privileges on a custom administrator account in Presentation Server is not quite as simple as I thought when I set out to create a script to do so - there’s not much information on the CDN forums, so this was a bit of trial and error." />
+<meta property="og:description" content="Overview Setting privileges on a custom administrator account in Presentation Server is not quite as simple as I thought when I set out to create a script to do so - there’s not much information on the CDN forums, so this was a bit of trial and error." />
 <link rel="canonical" href="/creating-custom-metaframe-admins-with-vbscript-part-1/" />
 <meta property="og:url" content="/creating-custom-metaframe-admins-with-vbscript-part-1/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2007-08-21T08:18:19+10:00" />
 <script type="application/ld+json">
-{"description":"Overview Setting privileges on a custom administrator account in Presentation Server is not quite as simple as I thought when I set out to create a script to do so – there’s not much information on the CDN forums, so this was a bit of trial and error.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/creating-custom-metaframe-admins-with-vbscript-part-1/","headline":"Creating Custom MetaFrame Admins with VBscript: Part 1","dateModified":"2007-08-21T08:18:19+10:00","datePublished":"2007-08-21T08:18:19+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/creating-custom-metaframe-admins-with-vbscript-part-1/"},"@context":"https://schema.org"}</script>
+{"description":"Overview Setting privileges on a custom administrator account in Presentation Server is not quite as simple as I thought when I set out to create a script to do so - there’s not much information on the CDN forums, so this was a bit of trial and error.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/creating-custom-metaframe-admins-with-vbscript-part-1/","headline":"Creating Custom MetaFrame Admins with VBscript: Part 1","dateModified":"2007-08-21T08:18:19+10:00","datePublished":"2007-08-21T08:18:19+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/creating-custom-metaframe-admins-with-vbscript-part-1/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -47,7 +47,7 @@
 
   <div class="post-content e-content" itemprop="articleBody">
     <p><strong>Overview</strong><br />
-Setting privileges on a custom administrator account in Presentation Server is not quite as simple as I thought when I set out to create a script to do so – there’s not much information on the CDN forums, so this was a bit of trial and error.</p>
+Setting privileges on a custom administrator account in Presentation Server is not quite as simple as I thought when I set out to create a script to do so - there’s not much information on the CDN forums, so this was a bit of trial and error.</p>
 
 <p>The process for creating a custom administrator account and setting privileges goes like this:</p>
 
@@ -73,9 +73,9 @@ Setting privileges on a custom administrator account in Presentation Server is n
 <p>Something I should note here though, is that I’ve not been able to set permissions on the Monitoring Profiles folder. I could be wrong but from what I can tell you can’t currently access these types of folders.</p>
 
 <p><strong>Reading The Privileges</strong><br />
-First up I had to read the privileges from an existing object to make it simpler to set the privileges on any new administrators – you’ve gotta learn to read before you can write. Initially setting the privileges is easy via the Access Management Console then programatically reading back then simplifies the write process.</p>
+First up I had to read the privileges from an existing object to make it simpler to set the privileges on any new administrators - you’ve gotta learn to read before you can write. Initially setting the privileges is easy via the Access Management Console then programatically reading back then simplifies the write process.</p>
 
-<p>Reading the privileges on an administrator account is simple enough because we can bind to the administrator object and then read the privileges. Reading the privileges for that account on the Applications and Servers folders is a little different – unless you want to statically supply the list of folders, you’ll need to enumerate them.</p>
+<p>Reading the privileges on an administrator account is simple enough because we can bind to the administrator object and then read the privileges. Reading the privileges for that account on the Applications and Servers folders is a little different - unless you want to statically supply the list of folders, you’ll need to enumerate them.</p>
 
 <p>I’ve created a fuction and a few subroutines, based on some code from the CDN forums, that will return an array containing the distinguished names of the Application or Server folders. The code essentially walks the folder tree to find the subfolders of each folder, while calling itself to do so until the subfolder count reaches 0.</p>
 

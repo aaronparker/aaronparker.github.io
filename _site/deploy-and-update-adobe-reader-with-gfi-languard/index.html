@@ -8,15 +8,15 @@
 <meta property="og:title" content="Deploy and update Adobe Reader with GFI LANguard" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="This post has been sitting in my drafts since June 2009 and for whatever reason I haven&#8217;t gotten around to posting it. So rather than delete it, I&#8217;m posting it as is &#8211; apologies in advance for quality of this post" />
-<meta property="og:description" content="This post has been sitting in my drafts since June 2009 and for whatever reason I haven&#8217;t gotten around to posting it. So rather than delete it, I&#8217;m posting it as is &#8211; apologies in advance for quality of this post" />
+<meta name="description" content="This post has been sitting in my drafts since June 2009 and for whatever reason I haven&#39;t gotten around to posting it. So rather than delete it, I&#39;m posting it as is - apologies in advance for quality of this post" />
+<meta property="og:description" content="This post has been sitting in my drafts since June 2009 and for whatever reason I haven&#39;t gotten around to posting it. So rather than delete it, I&#39;m posting it as is - apologies in advance for quality of this post" />
 <link rel="canonical" href="/deploy-and-update-adobe-reader-with-gfi-languard/" />
 <meta property="og:url" content="/deploy-and-update-adobe-reader-with-gfi-languard/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2010-03-21T23:57:33+11:00" />
 <script type="application/ld+json">
-{"description":"This post has been sitting in my drafts since June 2009 and for whatever reason I haven&#8217;t gotten around to posting it. So rather than delete it, I&#8217;m posting it as is &#8211; apologies in advance for quality of this post","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/deploy-and-update-adobe-reader-with-gfi-languard/","headline":"Deploy and update Adobe Reader with GFI LANguard","dateModified":"2010-03-21T23:57:33+11:00","datePublished":"2010-03-21T23:57:33+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/deploy-and-update-adobe-reader-with-gfi-languard/"},"@context":"https://schema.org"}</script>
+{"description":"This post has been sitting in my drafts since June 2009 and for whatever reason I haven&#39;t gotten around to posting it. So rather than delete it, I&#39;m posting it as is - apologies in advance for quality of this post","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/deploy-and-update-adobe-reader-with-gfi-languard/","headline":"Deploy and update Adobe Reader with GFI LANguard","dateModified":"2010-03-21T23:57:33+11:00","datePublished":"2010-03-21T23:57:33+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/deploy-and-update-adobe-reader-with-gfi-languard/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -47,14 +47,14 @@
 
   <div class="post-content e-content" itemprop="articleBody">
     <p class="note">
-  This post has been sitting in my drafts since June 2009 and for whatever reason I haven&#8217;t gotten around to posting it. So rather than delete it, I&#8217;m posting it as is &#8211; apologies in advance for quality of this post
+  This post has been sitting in my drafts since June 2009 and for whatever reason I haven't gotten around to posting it. So rather than delete it, I'm posting it as is - apologies in advance for quality of this post
 </p>
 
 <p>I have used LANguard in the past for vulnerability testing and network discovery but frankly that’s kind of boring stuff. What is interesting in the latest version is the ability to deploy software.</p>
 
 <p><a href="http://www.gfi.com/lannetscan">LANguard 9</a> includes application deployment functions that make deploying software to remote machines quite simple.  I’m going to detail deploying Adobe Reader 9, using the deployment notes outlined in my <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">Deploying Adobe Reader 9</a> post, then deploy the Reader 9.1.1 update, using that functionality.</p>
 
-<p>I’m going to skip over most of the details of installing LANguard – it’s a simple process, you’ll just need to choose the type of datebase you</p>
+<p>I’m going to skip over most of the details of installing LANguard - it’s a simple process, you’ll just need to choose the type of datebase you</p>
 
 <p>In my test environment I have configured three machines:</p>
 
@@ -104,7 +104,7 @@ MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALL
 
 <p>I can also use the same process to update Reader 9.1 with the 9.11. update patch.</p>
 
-<p>I have downloaded the <a href="http://www.adobe.com/support/downloads/detail.jsp?ftpID=4452">Adobe Reader 9.1.1 Update</a> (which comes as a Windows Installer Patch file – .MSP) and added it to the the same deployment location (\dc\common\Adobe\Reader911Update). Again I have created a batch file that will install the 9.1.1 update from the same location:</p>
+<p>I have downloaded the <a href="http://www.adobe.com/support/downloads/detail.jsp?ftpID=4452">Adobe Reader 9.1.1 Update</a> (which comes as a Windows Installer Patch file - .MSP) and added it to the the same deployment location (\dc\common\Adobe\Reader911Update). Again I have created a batch file that will install the 9.1.1 update from the same location:</p>
 
 <p><code class="highlighter-rouge">@ECHO OFF&lt;br /&gt;
 SET SOURCE=\\dc\common\Adobe\Reader911Update&lt;br /&gt;
@@ -112,7 +112,7 @@ MSIEXEC /P %SOURCE%\AdbeRdrUpd911_all_incr.msp ALLUSERS=TRUE REBOOT=SUPRESS /QB<
 
 <p>By going through the same deployment configuration, but instead using the batch file that will install the update, I can deploy to the machines that have Reader 9.1.</p>
 
-<p>I’ve tested deploying the update while Reader is open on the remote machine and the install was successful. Once I closed and reopened Reader, I could see the 9.1.1 version. This may not work for all applications – I don’t think that my example worked specifically because of LANguard, but you should at least have some success when updating in-use applications.</p>
+<p>I’ve tested deploying the update while Reader is open on the remote machine and the install was successful. Once I closed and reopened Reader, I could see the 9.1.1 version. This may not work for all applications - I don’t think that my example worked specifically because of LANguard, but you should at least have some success when updating in-use applications.</p>
 
   </div><a class="u-url" href="/deploy-and-update-adobe-reader-with-gfi-languard/" hidden></a>
 </article>

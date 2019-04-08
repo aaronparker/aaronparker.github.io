@@ -8,15 +8,15 @@
 <meta property="og:title" content="Sequencing Mozilla Firefox with App-V 4.6" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I’ve previously shown you how to sequence Firefox 8, Firefox 7 and Firefox 5. Before embarking on sequencing Firefox, please refer to this companion article – Prepare Mozilla Firefox for Enterprise Deployment and Virtualization – which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features.." />
-<meta property="og:description" content="It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I’ve previously shown you how to sequence Firefox 8, Firefox 7 and Firefox 5. Before embarking on sequencing Firefox, please refer to this companion article – Prepare Mozilla Firefox for Enterprise Deployment and Virtualization – which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features.." />
+<meta name="description" content="It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I’ve previously shown you how to sequence Firefox 8, Firefox 7 and Firefox 5. Before embarking on sequencing Firefox, please refer to this companion article - Prepare Mozilla Firefox for Enterprise Deployment and Virtualization - which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features.." />
+<meta property="og:description" content="It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I’ve previously shown you how to sequence Firefox 8, Firefox 7 and Firefox 5. Before embarking on sequencing Firefox, please refer to this companion article - Prepare Mozilla Firefox for Enterprise Deployment and Virtualization - which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features.." />
 <link rel="canonical" href="/sequencing-mozilla-firefox-13-with-app-v-4-6/" />
 <meta property="og:url" content="/sequencing-mozilla-firefox-13-with-app-v-4-6/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-06-28T22:20:00+10:00" />
 <script type="application/ld+json">
-{"description":"It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I’ve previously shown you how to sequence Firefox 8, Firefox 7 and Firefox 5. Before embarking on sequencing Firefox, please refer to this companion article – Prepare Mozilla Firefox for Enterprise Deployment and Virtualization – which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features..","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/sequencing-mozilla-firefox-13-with-app-v-4-6/","headline":"Sequencing Mozilla Firefox with App-V 4.6","dateModified":"2012-06-28T22:20:00+10:00","datePublished":"2012-06-28T22:20:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/sequencing-mozilla-firefox-13-with-app-v-4-6/"},"@context":"https://schema.org"}</script>
+{"description":"It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I’ve previously shown you how to sequence Firefox 8, Firefox 7 and Firefox 5. Before embarking on sequencing Firefox, please refer to this companion article - Prepare Mozilla Firefox for Enterprise Deployment and Virtualization - which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features..","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/sequencing-mozilla-firefox-13-with-app-v-4-6/","headline":"Sequencing Mozilla Firefox with App-V 4.6","dateModified":"2012-06-28T22:20:00+10:00","datePublished":"2012-06-28T22:20:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/sequencing-mozilla-firefox-13-with-app-v-4-6/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -46,14 +46,14 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img alt="" src="http://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" align="right" />It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I’ve previously shown you how to sequence <a href="http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-8/">Firefox 8</a>, <a href="http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-7/">Firefox 7</a> and <a href="http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-5/">Firefox 5</a>. Before embarking on sequencing Firefox, please refer to this companion article – <a href="http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/">Prepare Mozilla Firefox for Enterprise Deployment and Virtualization</a> – which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features..</p>
+    <p><img alt="" src="http://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" align="right" />It’s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I’ve previously shown you how to sequence <a href="http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-8/">Firefox 8</a>, <a href="http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-7/">Firefox 7</a> and <a href="http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-5/">Firefox 5</a>. Before embarking on sequencing Firefox, please refer to this companion article - <a href="http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/">Prepare Mozilla Firefox for Enterprise Deployment and Virtualization</a> - which covers configuring a Firefox installation for virtualizing. It’s important that Firefox is configured correctly for virtualization by disabling specific features..</p>
 
 <h1 id="user-experience">User Experience</h1>
 
 <p>Typically, virtualizing an application changes the user experience due to the introduction of isolation. Virtualizing Firefox with App-V 4.6 will isolate the application from the OS, so the following features will not be available once Firefox has been sequenced:</p>
 
 <ul>
-  <li>The ability set the browser as default – isolation prevents this from working</li>
+  <li>The ability set the browser as default - isolation prevents this from working</li>
   <li>Firefox Jump Lists in the Start Menu and Taskbar do work, but they don’t display icons correctly</li>
 </ul>
 
@@ -62,9 +62,9 @@
 <p>There are a couple of features that should be disabled when running Firefox under App-V:</p>
 
 <ul>
-  <li>Default browser check – <em>Options / Advanced / General – Always check to see if Firefox is the default browser on startup</em>. Once Firefox is isolated from the OS, the user won’t be able to make it the default browser</li>
+  <li>Default browser check – <em>Options / Advanced / General - Always check to see if Firefox is the default browser on startup</em>. Once Firefox is isolated from the OS, the user won’t be able to make it the default browser</li>
   <li>Automatic updates for Firefox – <em>Options / Advanced / Update / Firefox updates.</em> Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile</li>
-  <li><em>Mozilla Maintenance Service</em> – <a href="http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service">Firefox installs an updater service</a> that allows updating whilst avoiding UAC prompts. This service should be disabled or not installed</li>
+  <li><em>Mozilla Maintenance Service</em> - <a href="http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service">Firefox installs an updater service</a> that allows updating whilst avoiding UAC prompts. This service should be disabled or not installed</li>
 </ul>
 
 <p>I will cover using a couple of customisations to ensure these user features are disabled in the UI for any new Firefox profile. This service is simple enough to handle by disabling it</p>
@@ -78,7 +78,7 @@
   <li>%LOCALAPPDATA%\Mozilla (browser cache)</li>
 </ul>
 
-<p>The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% – this is a good thing and I don’t recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla _to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time. There are several reasons why this approach is a good idea:</p>
+<p>The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this is a good thing and I don’t recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla _to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time. There are several reasons why this approach is a good idea:</p>
 
 <ul>
   <li>Some of the configuration files within the Firefox profile include hard-coded paths – challenging if your App-V virtual drive changes between clients</li>

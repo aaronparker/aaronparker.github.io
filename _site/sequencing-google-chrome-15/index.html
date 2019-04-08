@@ -84,13 +84,13 @@
 <p>However, if you absolutely must place the Chrome profile in the virtual environment, then here’s a couple of approaches to including the User Data folder in the App-V package:</p>
 
 <ol>
-  <li>Use the <em>–user-data-dir</em> and <em>–disk-cache-dir</em> command line parameters to specify an alternate location for the User Data and Cache folders</li>
+  <li>Use the <em>-user-data-dir</em> and <em>-disk-cache-dir</em> command line parameters to specify an alternate location for the User Data and Cache folders</li>
   <li>Remove the exclusions for the Local AppData location from the Sequencer before sequencing</li>
 </ol>
 
 <p>For the first approach, add the parameters to the command line, placing <a href="http://www.chromium.org/user-experience/user-data-directory">the User Data folder</a> in the roaming portion of the profile and the browser cache in the local portion:</p>
 
-<p>[code]chrome –user-data-dir=%AppData%\Google\Chrome\User Data –disk-cache-dir=%LocalAppData%\Google\Chrome\User Data[/code]</p>
+<p>[code]chrome -user-data-dir=%AppData%\Google\Chrome\User Data -disk-cache-dir=%LocalAppData%\Google\Chrome\User Data[/code]</p>
 
 <p>The second approach doesn’t require any command line parameters, but it will require modifying the default Sequencer exclusions and some scripting:</p>
 
@@ -195,10 +195,10 @@ REG ADD “HKLM\System\CurrentControlSet\Control\Session Manager” /v PendingFi
 <p>For Chrome to run successfully under App-V there are a few additional command line parameters that will need to be added to the Chrome shortcut at the configure applications stage:</p>
 
 <ul>
-  <li>–disable-custom-jumplist: Disables the Windows 7 Jump List, which doesn’t work once Chrome is virtualized any way</li>
-  <li>–no-default-browser-check: A further flag to prevent the browser from prompting the user to set it as default</li>
-  <li>–in-process-plugins: Run plugins inside the renderer process. May be optional, but <a href="http://www.viridisit.se/eng/blog/sequence-google-chrome-5-beta/">has been required in the past when virtualizing Chrome</a></li>
-  <li>–no-sandbox: Not required; however I have found that extensions do not install if this parameter has not been added</li>
+  <li>-disable-custom-jumplist: Disables the Windows 7 Jump List, which doesn’t work once Chrome is virtualized any way</li>
+  <li>-no-default-browser-check: A further flag to prevent the browser from prompting the user to set it as default</li>
+  <li>-in-process-plugins: Run plugins inside the renderer process. May be optional, but <a href="http://www.viridisit.se/eng/blog/sequence-google-chrome-5-beta/">has been required in the past when virtualizing Chrome</a></li>
+  <li>-no-sandbox: Not required; however I have found that extensions do not install if this parameter has not been added</li>
 </ul>
 
 <p>For the full list of command-line parameters for Chrome and Chromium see this page: <a href="http://peter.sh/experiments/chromium-command-line-switches/">List of Chromium Command Line Switches</a></p>

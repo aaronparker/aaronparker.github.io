@@ -51,11 +51,11 @@
 
 <h1 id="thunderbolt-3-on-macos">Thunderbolt 3 on macOS</h1>
 
-<p>Thunderbolt <a href="https://www.apple.com/thunderbolt/">on macOS just works</a> – plug-in a TB device and off you go. This makes sense given that the standard was <a href="https://en.wikipedia.org/wiki/Thunderbolt_(interface)">designed by Intel and Apple</a>. Unpacking and plugging in a Thunderbolt dock with external displays, ethernet, audio etc., on macOS in just about every case will work without installing drivers.</p>
+<p>Thunderbolt <a href="https://www.apple.com/thunderbolt/">on macOS just works</a> - plug-in a TB device and off you go. This makes sense given that the standard was <a href="https://en.wikipedia.org/wiki/Thunderbolt_(interface)">designed by Intel and Apple</a>. Unpacking and plugging in a Thunderbolt dock with external displays, ethernet, audio etc., on macOS in just about every case will work without installing drivers.</p>
 
 <figure id="attachment_6108" aria-describedby="caption-attachment-6108" style="width: 1560px" class="wp-caption aligncenter">[<img class="size-full wp-image-6108" src="https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed.jpg" alt="Thunderbolt ports on the MacBook Pro" width="1560" height="140" srcset="https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed.jpg 1560w, https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed-150x13.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed-300x27.jpg 300w, https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed-768x69.jpg 768w, https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed-1024x92.jpg 1024w" sizes="(max-width: 1560px) 100vw, 1560px" />](https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed.jpg)<figcaption id="caption-attachment-6108" class="wp-caption-text">Thunderbolt ports on the MacBook Pro</figcaption></figure>
 
-<p>Here’s Apple’s dirty (not so) secret though – excluding the MacBook Air (and the Mini that comes with TB2), all current Macs have TB3 ports, <a href="https://support.apple.com/en-au/HT207443">except for the MacBook</a>. It has a single USB-C port only. Maybe that’s OK – the TB target market is likely to be purchasing the Pro line anyway, but Apple isn’t a fan of labelling their ports, so caveat emptor.</p>
+<p>Here’s Apple’s dirty (not so) secret though - excluding the MacBook Air (and the Mini that comes with TB2), all current Macs have TB3 ports, <a href="https://support.apple.com/en-au/HT207443">except for the MacBook</a>. It has a single USB-C port only. Maybe that’s OK - the TB target market is likely to be purchasing the Pro line anyway, but Apple isn’t a fan of labelling their ports, so caveat emptor.</p>
 
 <p>macOS provides a good look at the devices plugged into your TB ports:</p>
 
@@ -65,17 +65,17 @@
 
 <h1 id="thunderbolt-3-on-windows">Thunderbolt 3 on Windows</h1>
 
-<p>Thunderbolt 3 <a href="https://www.microsoft.com/en-us/store/collections/thunderbolt-3">on Windows 10</a>? That is unfortunately not so straight-forward. </p>
+<p>Thunderbolt 3 <a href="https://www.microsoft.com/en-us/store/collections/thunderbolt-3">on Windows 10</a>? That is unfortunately not so straight-forward.</p>
 
 <p>I’ve been testing connection to my dock on an <a href="http://h20386.www2.hp.com/AustraliaStore/Merch/Offer.aspx?p=elitebook-x360">HP Elitebook x360 G2</a> that comes equipped with 2 x TB3 ports. The default Windows 10 image for this machine is an absolute mess that has a whole lot of software that isn’t required. Resetting the machine back to defaults strips it right back to the bare essentials, excluding the Thunderbolt driver and software. After plugging in a TB device, it isn’t recognised and no driver or software is downloaded from Windows Update. Interestingly, no driver or software was offered by the HP Support Assistant app designed to help end-users keep their HP PCs up to date.</p>
 
 <p>Windows PCs equipped with Thunderbolt ports will have the driver and software installed by default, so typically this won’t be an issue; however, if you’re resetting the PC or creating a corporate image, you’ll need to install that software. Every OEM should supply Thunderbolt software for download, which for HP PCs is listed as <strong>Intel Thunderbolt 3 Secure Connect</strong>. The software is actually provided by Intel and <a href="https://downloadcenter.intel.com/search?keyword=thunderbolt">available in various downloads on their site</a>.</p>
 
-<p>With the software installed and a device plugged in, the user sees a message box asking to approve the connection to a Thunderbolt device. Management actions such as approving or removing a device requires administrator rights on the PC. Pluggable has a good article on the entire <a href="https://plugable.com/thunderbolt-3/support/">user experience and troubleshooting</a>.</p>
+<p>With the software installed and a device plugged in, the user sees a message box asking to approve the connection to a Thunderbolt device. Management actions such as approving or removing a device requires administrator rights on the PC. Pluggable has a good article on the entire <a href="https://plugable.com/thunderbolt-3/support/">user experience and troubleshooting</a>.</p>
 
 <figure id="attachment_6114" aria-describedby="caption-attachment-6114" style="width: 609px" class="wp-caption aligncenter">[<img class="wp-image-6114 size-full" src="https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-ApprovePopup.png" alt="Approving connection to TB devices on Windows 10" width="609" height="324" srcset="https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-ApprovePopup.png 609w, https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-ApprovePopup-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-ApprovePopup-300x160.png 300w" sizes="(max-width: 609px) 100vw, 609px" />](https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-ApprovePopup.png)<figcaption id="caption-attachment-6114" class="wp-caption-text">Approving connection to TB devices on Windows 10</figcaption></figure>
 
-<p>Once approved, the device can then be viewed and managed. </p>
+<p>Once approved, the device can then be viewed and managed.</p>
 
 <figure id="attachment_6115" aria-describedby="caption-attachment-6115" style="width: 1677px" class="wp-caption aligncenter">[<img class="wp-image-6115 size-full" src="https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-AttachedDevices.png" alt="Viewing attached TB devices on Windows 10" width="1677" height="1069" srcset="https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-AttachedDevices.png 1677w, https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-AttachedDevices-150x96.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-AttachedDevices-300x191.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-AttachedDevices-768x490.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-AttachedDevices-1024x653.png 1024w" sizes="(max-width: 1677px) 100vw, 1677px" />](https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-AttachedDevices.png)<figcaption id="caption-attachment-6115" class="wp-caption-text">Viewing attached TB devices on Windows 10</figcaption></figure>
 
@@ -89,11 +89,11 @@
 
 <p>Thunderbolt will unlikely see as wide spread adoption as USB 3.1, but users with specialised requirements such as video editors, CAD, etc., will benefit from the available bandwidth, which today is 40 Gbit/s vs. 10 Gbit/s. Early <a href="https://www.tomshardware.com/news/usb-3.2-synopsys-20gbps,37124.html">USB 3.2 hardware with 20 Gbit/s speeds has been demonstrated</a> recently and this may further reduce the need for some users to go to devices providing the higher bandwidth.</p>
 
-<p>The end-user experience of TB on macOS vs. Windows 10 is kind of disappointing – Windows requires that you install drivers and the software requires administrative rights. Not an ideal experience for home or SMB users and these requirements might preclude the usage of Thunderbolt in enterprise environments. However my own personal experience on a MacBook is pretty awesome – just plug in and go. Looks like I’ll be on macOS for the foreseeable future.</p>
+<p>The end-user experience of TB on macOS vs. Windows 10 is kind of disappointing - Windows requires that you install drivers and the software requires administrative rights. Not an ideal experience for home or SMB users and these requirements might preclude the usage of Thunderbolt in enterprise environments. However my own personal experience on a MacBook is pretty awesome - just plug in and go. Looks like I’ll be on macOS for the foreseeable future.</p>
 
 <h2 id="update">Update</h2>
 
-<p>Microsoft has an article on <a href="https://docs.microsoft.com/en-au/windows/security/information-protection/kernel-dma-protection-for-thunderbolt">enabling Kernel DMA Protection</a> for Thunderbolt 3. This requires Windows 10 1803 or above and must also be supported by the device drivers.</p>
+<p>Microsoft has an article on <a href="https://docs.microsoft.com/en-au/windows/security/information-protection/kernel-dma-protection-for-thunderbolt">enabling Kernel DMA Protection</a> for Thunderbolt 3. This requires Windows 10 1803 or above and must also be supported by the device drivers.</p>
 
 <p><a href="https://unsplash.com/photos/56bn5HdGKTM">Photo by Linda Xu</a></p>
 

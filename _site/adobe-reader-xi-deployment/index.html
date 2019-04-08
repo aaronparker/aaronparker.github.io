@@ -73,7 +73,7 @@
 
 <p>The <a href="http://www.adobe.com/support/downloads/thankyou.jsp?ftpID=5515&amp;fileID=5526">Adobe Customization Wizard XI for Windows</a> is now available and the administration experience does not change massively (or at all) from <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/">previous versions</a>.</p>
 
-<p>Extracting Reader XI from the installer is the same as previous versions – run the following command:</p>
+<p>Extracting Reader XI from the installer is the same as previous versions - run the following command:</p>
 
 <p>[code]AdbeRdr11000_en_US -nos_o”C:\Folder” -nos_ne[/code]</p>
 
@@ -81,43 +81,43 @@
 
 <p>[code]//HideMenu.js</p>
 
-<p>// [Help – Repair Adobe Reader Installation]<br />
+<p>// [Help - Repair Adobe Reader Installation]<br />
 app.hideMenuItem(“DetectAndRepair”);</p>
 
-<p>// [Help – Check for Updates]<br />
+<p>// [Help - Check for Updates]<br />
 app.hideMenuItem(“Updates”);</p>
 
-<p>// [Help – Purchase Adobe Acrobat]<br />
+<p>// [Help - Purchase Adobe Acrobat]<br />
 app.hideMenuItem(“Weblink:BuyAcrobat”);</p>
 
-<p>// [Help – Digital Editions]<br />
+<p>// [Help - Digital Editions]<br />
 app.hideMenuItem(“eBook:Digital Edition Services”);</p>
 
-<p>// [Help – Online Support]<br />
+<p>// [Help - Online Support]<br />
 app.hideMenuItem(“OnlineSupport”);</p>
 
-<p>// [Help – Online Support – Knowledge Base]<br />
+<p>// [Help - Online Support - Knowledge Base]<br />
 app.hideMenuItem(“KnowledgeBase”);</p>
 
-<p>// [Help – Online Support – Adobe Support Programs]<br />
+<p>// [Help - Online Support - Adobe Support Programs]<br />
 app.hideMenuItem(“AdobeExpertSupport”);</p>
 
-<p>// [Help – Online Support – Adobe User Community]<br />
+<p>// [Help - Online Support - Adobe User Community]<br />
 app.hideMenuItem(“AdobeUserCommunity”);</p>
 
-<p>// [Help – Online Support – Accessibility Resource Center]<br />
+<p>// [Help - Online Support - Accessibility Resource Center]<br />
 app.hideMenuItem(“AccessOnline”);</p>
 
-<p>// [Help – Online Support – Generate System Report]<br />
+<p>// [Help - Online Support - Generate System Report]<br />
 app.hideMenuItem(“SystemInformation”);</p>
 
-<p>// [Help – Product Improvement Options]<br />
+<p>// [Help - Product Improvement Options]<br />
 app.hideMenuItem(“UsageMeasurement”);</p>
 
-<p>// [File – Share Files Using SendNow Online]<br />
+<p>// [File - Share Files Using SendNow Online]<br />
 app.hideMenuItem(“SPAObject 51”);</p>
 
-<p>// [File – CreatePDF Online]<br />
+<p>// [File - CreatePDF Online]<br />
 app.hideMenuItem(“SPAObject 47”);[/code]</p>
 
 <p>Save this file as <em>HideItems.js</em> and copy the file into <em>%ProgramFiles%\Adobe\Reader 11.0\Reader\Javascripts</em>.</p>
@@ -134,7 +134,7 @@ app.hideMenuItem(“SPAObject 47”);[/code]</p>
 
 <p>To deploy Reader in your environment, you would continue to use the same approaches you are using today. Now might be the time to look at delivering Reader with App-V as this is now officially supported. The only hurdle will continue to be in browser (embedded) viewing of PDFs under Internet Explorer.</p>
 
-<p>Whilst the Group Policy management support is great and way overdue, there’s currently only a handful of settings – don’t expect the same level of policy configuration that we get with Microsoft Office. It remains to be seen whether more will be required in production environments.</p>
+<p>Whilst the Group Policy management support is great and way overdue, there’s currently only a handful of settings - don’t expect the same level of policy configuration that we get with Microsoft Office. It remains to be seen whether more will be required in production environments.</p>
 
 <p><img title="ReaderXI-GroupPolicy" src="http://stealthpuppy.com/wp-content/uploads/2012/10/ReaderXI-GroupPolicy.png" alt="" width="440" height="165" /></p>
 

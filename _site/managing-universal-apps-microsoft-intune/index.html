@@ -8,8 +8,8 @@
 <meta property="og:title" content="Managing Universal Apps with Microsoft Intune" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I am excited about the opportunities that managing Windows 10 devices with Azure AD Join and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution – Microsoft Intune standalone for managing Universal apps." />
-<meta property="og:description" content="I am excited about the opportunities that managing Windows 10 devices with Azure AD Join and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution – Microsoft Intune standalone for managing Universal apps." />
+<meta name="description" content="I am excited about the opportunities that managing Windows 10 devices with Azure AD Join and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution - Microsoft Intune standalone for managing Universal apps." />
+<meta property="og:description" content="I am excited about the opportunities that managing Windows 10 devices with Azure AD Join and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution - Microsoft Intune standalone for managing Universal apps." />
 <link rel="canonical" href="/managing-universal-apps-microsoft-intune/" />
 <meta property="og:url" content="/managing-universal-apps-microsoft-intune/" />
 <meta property="og:site_name" content="stealthpuppy" />
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2016-12-13T10:00:48+11:00" />
 <script type="application/ld+json">
-{"description":"I am excited about the opportunities that managing Windows 10 devices with Azure AD Join and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution – Microsoft Intune standalone for managing Universal apps.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/managing-universal-apps-microsoft-intune/","image":"/wp-content/uploads/2016/12/10017151914_3be1e6364c_k.jpg","headline":"Managing Universal Apps with Microsoft Intune","dateModified":"2016-12-13T10:00:48+11:00","datePublished":"2016-12-13T10:00:48+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/managing-universal-apps-microsoft-intune/"},"@context":"https://schema.org"}</script>
+{"description":"I am excited about the opportunities that managing Windows 10 devices with Azure AD Join and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution - Microsoft Intune standalone for managing Universal apps.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/managing-universal-apps-microsoft-intune/","image":"/wp-content/uploads/2016/12/10017151914_3be1e6364c_k.jpg","headline":"Managing Universal Apps with Microsoft Intune","dateModified":"2016-12-13T10:00:48+11:00","datePublished":"2016-12-13T10:00:48+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/managing-universal-apps-microsoft-intune/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -47,7 +47,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>I am excited about the opportunities that managing Windows 10 devices with <a href="https://blogs.technet.microsoft.com/enterprisemobility/2015/05/28/azure-ad-join-on-windows-10-devices/">Azure AD Join</a> and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution – Microsoft Intune standalone for managing Universal apps.</p>
+    <p>I am excited about the opportunities that managing Windows 10 devices with <a href="https://blogs.technet.microsoft.com/enterprisemobility/2015/05/28/azure-ad-join-on-windows-10-devices/">Azure AD Join</a> and MDM (i.e. modern management) provides for both users and admins. In this article, I’ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution - Microsoft Intune standalone for managing Universal apps.</p>
 
 <p>Consider that with Windows 10, an organisation can provision and manage Windows 10 PCs <a href="https://technet.microsoft.com/en-us/itpro/windows/deploy/provisioning-packages">without a custom SOE</a> and with a fully <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis">cloud-based authentication</a> and management solution, requiring no infrastructure (other than networking) on-premises. This approach comes with some caveats today, of course, but PC and application lifecycle can be achieved without exhaustive architectural consideration or deployment of complex management solutions.</p>
 
@@ -55,7 +55,7 @@
 
 <h1 id="requirements-for-microsoft-intune">Requirements for Microsoft Intune</h1>
 
-<p>Deploying and configuring Microsoft Intune requires two things – Azure AD and licensing Intune. In this article, I’m concentrating on Intune standalone only, i.e. Intune as a standalone cloud solution, not <a href="https://technet.microsoft.com/en-us/library/jj884158.aspx">integrated with Configuration Manager</a>.</p>
+<p>Deploying and configuring Microsoft Intune requires two things - Azure AD and licensing Intune. In this article, I’m concentrating on Intune standalone only, i.e. Intune as a standalone cloud solution, not <a href="https://technet.microsoft.com/en-us/library/jj884158.aspx">integrated with Configuration Manager</a>.</p>
 
 <h2 id="azure-active-directory">Azure Active Directory</h2>
 
@@ -68,8 +68,8 @@
 <p>For this solution, we’re interested in:</p>
 
 <ul>
-  <li><strong>Azure Active Directory Premium</strong> – this enables a<a href="https://blogs.technet.microsoft.com/enterprisemobility/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/">utomatic MDM enrollment</a> when a device is provisioned and connected to Azure AD. Additionally Azure AD Premium provides branding customisation which improves the sign on user experience; multi-factor authentication onto devices as well as cloud applications and conditional access to protect resources such as Exchange and SharePoint Online.</li>
-  <li><strong>Microsoft Intune</strong> – Intune is included in the EMS license which is the primary reason for deploying modern management.</li>
+  <li><strong>Azure Active Directory Premium</strong> - this enables a<a href="https://blogs.technet.microsoft.com/enterprisemobility/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/">utomatic MDM enrollment</a> when a device is provisioned and connected to Azure AD. Additionally Azure AD Premium provides branding customisation which improves the sign on user experience; multi-factor authentication onto devices as well as cloud applications and conditional access to protect resources such as Exchange and SharePoint Online.</li>
+  <li><strong>Microsoft Intune</strong> - Intune is included in the EMS license which is the primary reason for deploying modern management.</li>
 </ul>
 
 <p>Additional components that make sense in a cloud-based management approach include <a href="https://www.microsoft.com/en-au/cloud-platform/azure-information-protection">Azure Information Protection</a> and <a href="https://www.microsoft.com/en-au/cloud-platform/advanced-threat-analytics">Microsoft Advanced Threat Analytics</a>. These are entire topics on their own, so I won’t be covering those in the context of this article.</p>

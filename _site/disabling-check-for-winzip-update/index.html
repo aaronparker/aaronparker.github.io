@@ -66,8 +66,8 @@
 <p>During an installation of WinZip you can set the following registry values to supress and disable the updater. Under <font face="courier new,courier">HEY_LOCAL_MACHINESOFTWARENico Mak ComputingWinZipUpdateCheck</font> set two string values (REG_SZ):</p>
 
 <ul>
-  <li>AutoMode – set to “0”</li>
-  <li>NoUpdateChecking – set to “1”</li>
+  <li>AutoMode - set to “0”</li>
+  <li>NoUpdateChecking - set to “1”</li>
 </ul>
 
 <p>AutoMode will supress the updater and NoUpdateChecking will actually disable the updater completely, removing the interface from WinZip (Options / Configuration… / Miscellaneous / Check for Updates:). If these values appear in the same key under HKEY_CURRENT_USER they will override the values set in HKEY_LOCAL_MACHINE, so you may want to ensure they don’t exist in each users regsitry.</p>

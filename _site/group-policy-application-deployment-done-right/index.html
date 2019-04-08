@@ -86,7 +86,7 @@
 
 <p>How do we get around this? <a href="http://www.microsoft.com/windowsserver2003/technologies/storage/dfs/default.mspx">Distributed File System</a>. DFS provides a path that will always be static while the real path points to an actual share on a server. This allows us to deploy applications from a DFS path and if we need to change real path we can do so without touching Group Policy or affecting the applications at all.</p>
 
-<p>Another great thing about DFS is that you can take advantage of your AD sites – DFS is site aware. If you have a copy of your application share close to your workstations they will pull the installation from a local server rather than across a WAN link. For example, if we have a DFS path <strong>\company.localPublicApplications</strong> that points to <strong>\SERVER1Apps</strong> at site A and <strong>\SERVER2Apps</strong> at site B, workstations at site B will connect to <strong>\SERVER2Apps</strong> when Group Policy is applied to deploy applications.</p>
+<p>Another great thing about DFS is that you can take advantage of your AD sites - DFS is site aware. If you have a copy of your application share close to your workstations they will pull the installation from a local server rather than across a WAN link. For example, if we have a DFS path <strong>\company.localPublicApplications</strong> that points to <strong>\SERVER1Apps</strong> at site A and <strong>\SERVER2Apps</strong> at site B, workstations at site B will connect to <strong>\SERVER2Apps</strong> when Group Policy is applied to deploy applications.</p>
 
 <p><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1360.DFS.png" /></p>
 

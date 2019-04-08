@@ -60,11 +60,11 @@
 
 <h1 id="obtaining-the-adobe-customization-wizard">Obtaining the Adobe Customization Wizard</h1>
 
-<p>Unfortunately Adobe doesn’t use the same installer across all of their products – the installers for the Acrobat products are different to the <a href="http://www.adobe.com/devnet/creativesuite/enterprisedeployment.html">Creative Suite</a> products. For anyone who’s attempted deployment of the CS products would probably consider this a good thing.</p>
+<p>Unfortunately Adobe doesn’t use the same installer across all of their products - the installers for the Acrobat products are different to the <a href="http://www.adobe.com/devnet/creativesuite/enterprisedeployment.html">Creative Suite</a> products. For anyone who’s attempted deployment of the CS products would probably consider this a good thing.</p>
 
 <p>To start customising Reader before deploying, you’ll need access to the Adobe Customization Wizard. The Customization Wizard X hasn’t changed much since the <a href="http://www.adobe.com/support/downloads/detail.jsp?ftpID=3993">Customization Wizard 9</a>, so if you have experience deploying <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-81">Adobe Reader 8</a> or <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows/">Reader 9</a>, you’ll be comfortable customising and deploying the new version.</p>
 
-<p>The Adobe Customization Wizard X should be available from here – <a href="http://www.adobe.com/support/downloads/detail.jsp?ftpID=4950">Adobe Customization Wizard X</a>. Otherwise you can use this direct download link: <a href="http://ardownload.adobe.com/pub/adobe/acrobat/win/10.x/10.0.0/misc/CustWiz1000_en_US.exe">Adobe Customization Wizard X</a>. An FTP site is also available – <a href="ftp://ftp.adobe.com/pub/adobe/acrobat/win/10.x/10.0.0/misc/">Adobe FTP site</a>.</p>
+<p>The Adobe Customization Wizard X should be available from here - <a href="http://www.adobe.com/support/downloads/detail.jsp?ftpID=4950">Adobe Customization Wizard X</a>. Otherwise you can use this direct download link: <a href="http://ardownload.adobe.com/pub/adobe/acrobat/win/10.x/10.0.0/misc/CustWiz1000_en_US.exe">Adobe Customization Wizard X</a>. An FTP site is also available - <a href="ftp://ftp.adobe.com/pub/adobe/acrobat/win/10.x/10.0.0/misc/">Adobe FTP site</a>.</p>
 
 <p>The Customization Wizard should be installed to an administrative workstation and it will allow you to create a custom Windows Installer transform that can configure the Reader installation, including settings to:</p>
 
@@ -178,7 +178,7 @@
   <li>Disable all updates: this will prevent the Adobe Updater from running automatically (but won’t prevent it from installing). The Check for Updates menu option will also be removed.</li>
 </ul>
 
-<p><span style="color: #ff0000;"><strong>Warning</strong></span>: It is extremely important to disable Adobe Updater on shared systems such as Terminal Server/Remote Desktop Servers – a standard user can initiate a reboot of a computer if Updater applies a Reader update. This is because the update is applied using Windows Installer which runs in the System context.</p>
+<p><span style="color: #ff0000;"><strong>Warning</strong></span>: It is extremely important to disable Adobe Updater on shared systems such as Terminal Server/Remote Desktop Servers - a standard user can initiate a reboot of a computer if Updater applies a Reader update. This is because the update is applied using Windows Installer which runs in the System context.</p>
 
 <ul>
   <li>Browser integration can be controlled here – you can force Reader to open PDFs outside of the browser rather than embedded in the browser window</li>
@@ -235,7 +235,7 @@
   <li>Help / Repair Adobe Reader Installation</li>
 </ul>
 
-<p><span style="color: #ff0000;"><strong>Warning</strong></span>: It is extremely important to remove the <em>Repair Adobe Reader Installation</em> menu item on shared systems such as Terminal Server/Remote Desktop Servers – a standard user can initiate a reboot of a computer if the repair kicks in. This is because the repair is applied using Windows Installer which runs in the System context.</p>
+<p><span style="color: #ff0000;"><strong>Warning</strong></span>: It is extremely important to remove the <em>Repair Adobe Reader Installation</em> menu item on shared systems such as Terminal Server/Remote Desktop Servers - a standard user can initiate a reboot of a computer if the repair kicks in. This is because the repair is applied using Windows Installer which runs in the System context.</p>
 
 <p>Just like previous versions, the only way to disable certain UI elements such as menu items and toolbars is to use JavaScript. This is a two step process – first we need to find out the name of the items we want to disable. To do that you will need to place some JavaScript in a file in the JavaScripts folder where Reader is installed. For example this on x64 Windows, place the file here: <em>%ProgramFiles (x86)%\Adobe\Reader 10.0\Reader\Javascripts</em>. Add the following code into the file and save it as <em>ListItems.js</em></p>
 
@@ -263,25 +263,25 @@ console.println(menuItems + “\n”)[/code]</p>
 
 <p>[code]//HideMenu.js</p>
 
-<p>// [Help – Repair Adobe Reader Installation]<br />
+<p>// [Help - Repair Adobe Reader Installation]<br />
 app.hideMenuItem(“DetectAndRepair”);</p>
 
-<p>// [Help – Online Support]<br />
+<p>// [Help - Online Support]<br />
 app.hideMenuItem(“OnlineSupport”);</p>
 
-<p>// [Help – Online Support – Knowledge Base]<br />
+<p>// [Help - Online Support - Knowledge Base]<br />
 app.hideMenuItem(“KnowledgeBase”);</p>
 
-<p>// [Help – Online Support – Adobe Support Programs]<br />
+<p>// [Help - Online Support - Adobe Support Programs]<br />
 app.hideMenuItem(“AdobeExpertSupport”);</p>
 
-<p>// [Help – Online Support – Adobe User Community]<br />
+<p>// [Help - Online Support - Adobe User Community]<br />
 app.hideMenuItem(“AdobeUserCommunity”);</p>
 
-<p>// [Help – Online Support – Accessibility Resource Center]<br />
+<p>// [Help - Online Support - Accessibility Resource Center]<br />
 app.hideMenuItem(“AccessOnline”);</p>
 
-<p>// [Help – Online Support – Generate System Report]<br />
+<p>// [Help - Online Support - Generate System Report]<br />
 app.hideMenuItem(“SystemInformation”);[/code]</p>
 
 <p>To deliver the script with the Reader package, use the Files and Folders section in the Customization Wizard. Add the files to <em>Destination Computer / ProgramFilesFolder / Adobe / Reader 10.0 / Reader / JavaScripts</em> (see Step 3 above).</p>
@@ -290,7 +290,7 @@ app.hideMenuItem(“SystemInformation”);[/code]</p>
 
 <h1 id="enforcing-protected-mode">Enforcing Protected Mode</h1>
 
-<p><a href="http://blogs.adobe.com/asset/2010/07/introducing-adobe-reader-protected-mode.html">Adobe Reader X Protected Mode</a> will assist in reducing the potential security threats when opening or viewing PDF files, so it’s a feature you’ll want to ensure remains enabled on client computers. However, by default, users can turn this feature off – this option is available in the Preferences dialog box under General:</p>
+<p><a href="http://blogs.adobe.com/asset/2010/07/introducing-adobe-reader-protected-mode.html">Adobe Reader X Protected Mode</a> will assist in reducing the potential security threats when opening or viewing PDF files, so it’s a feature you’ll want to ensure remains enabled on client computers. However, by default, users can turn this feature off - this option is available in the Preferences dialog box under General:</p>
 
 <p><a href="http://stealthpuppy.com/?attachment_id=2024"><img class="alignnone size-full wp-image-2024" title="EnableProtectedModeAtStartup" src="http://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup.png" alt="" width="660" height="231" srcset="https://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup-150x52.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup-300x105.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a></p>
 

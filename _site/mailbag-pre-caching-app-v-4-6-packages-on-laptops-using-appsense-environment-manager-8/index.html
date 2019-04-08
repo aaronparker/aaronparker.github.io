@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
-<title>Mailbag – Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8 | stealthpuppy</title>
+<title>Mailbag - Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8 | stealthpuppy</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Mailbag – Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8" />
+<meta property="og:title" content="Mailbag - Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="on end user computing and enterprise mobility" />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-07-26T22:46:47+10:00" />
 <script type="application/ld+json">
-{"description":"on end user computing and enterprise mobility","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/mailbag-pre-caching-app-v-4-6-packages-on-laptops-using-appsense-environment-manager-8/","headline":"Mailbag – Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8","dateModified":"2012-07-26T22:46:47+10:00","datePublished":"2012-07-26T22:46:47+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/mailbag-pre-caching-app-v-4-6-packages-on-laptops-using-appsense-environment-manager-8/"},"@context":"https://schema.org"}</script>
+{"description":"on end user computing and enterprise mobility","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/mailbag-pre-caching-app-v-4-6-packages-on-laptops-using-appsense-environment-manager-8/","headline":"Mailbag - Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8","dateModified":"2012-07-26T22:46:47+10:00","datePublished":"2012-07-26T22:46:47+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/mailbag-pre-caching-app-v-4-6-packages-on-laptops-using-appsense-environment-manager-8/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -39,7 +39,7 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Mailbag &amp;#8211; Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Mailbag - Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2012-07-26T22:46:47+10:00" itemprop="datePublished">Jul 26, 2012
       </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
@@ -48,20 +48,20 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p><img class="size-full wp-image-2631 alignnone" title="Mail Bag" src="http://stealthpuppy.com/wp-content/uploads/2012/02/Mail-Bag.png" alt="Mail Bag" width="128" height="128" /></p>
 
-<p><a href="https://twitter.com/Rorymon">Rory</a> <a href="https://twitter.com/Rorymon/status/228536440403931136">asks via Twitter</a> – can we pre-cache App-V packages on laptop clients so that all applications are available offline, using <a href="http://www.appsense.com/policy-and-governance">AppSense Environment Manager</a>?:</p>
+<p><a href="https://twitter.com/Rorymon">Rory</a> <a href="https://twitter.com/Rorymon/status/228536440403931136">asks via Twitter</a> - can we pre-cache App-V packages on laptop clients so that all applications are available offline, using <a href="http://www.appsense.com/policy-and-governance">AppSense Environment Manager</a>?:</p>
 
 <p style="text-align: center;">
   <img class="size-full wp-image-2796 aligncenter" title="Rory Asks" src="http://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks.png" alt="Rory Asks" width="519" height="138" srcset="https://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks.png 519w, https://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks-150x39.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks-300x79.png 300w" sizes="(max-width: 519px) 100vw, 519px" />
 </p>
 
 <p style="text-align: left;">
-  As with many solutions in Environment Manager, there&#8217;s probably a number of ways to achieve this &#8211; here&#8217;s just one.
+  As with many solutions in Environment Manager, there's probably a number of ways to achieve this - here's just one.
 </p>
 
 <h1 id="the-logic">The Logic</h1>
 
 <p style="text-align: left;">
-  In Rory&#8217;s scenario, he&#8217;s using the App-V Management Server to deliver packages. This means that packages are delivered to users only and not to the client (i.e. globally). First up we&#8217;ll need to work out what we&#8217;re trying to achieve here:
+  In Rory's scenario, he's using the App-V Management Server to deliver packages. This means that packages are delivered to users only and not to the client (i.e. globally). First up we'll need to work out what we're trying to achieve here:
 </p>
 
 <ul>
@@ -71,7 +71,7 @@
   <li>We’ll most likely also need to ensure that the pre-caching doesn’t run too often or doesn’t run over a VPN connection</li>
 </ul>
 
-<p>Determining whether the local machine is a laptop is quite simple, but we’ll need to resort to some custom code to that. Fortunately we don’t need to re-invent the wheel – we can use this code by <a href="http://www.robvanderwoude.com/">Rob van der Woude</a> that <a href="http://www.robvanderwoude.com/vbstech_inventory_laptop.php">uses WMI to look for a battery</a>:</p>
+<p>Determining whether the local machine is a laptop is quite simple, but we’ll need to resort to some custom code to that. Fortunately we don’t need to re-invent the wheel - we can use this code by <a href="http://www.robvanderwoude.com/">Rob van der Woude</a> that <a href="http://www.robvanderwoude.com/vbstech_inventory_laptop.php">uses WMI to look for a battery</a>:</p>
 
 <p>[code language=”vb”]If IsLaptop( “.” ) Then<br />
 ‘ WScript.Echo “Laptop”<br />
@@ -101,9 +101,9 @@ End Function[/code]</p>
 
 <p>Add this to a <strong>Reusable Condition</strong> (or even an inline condition if you’d like) that includes this code as a Custom Condition. Make sure to set the Custom Condition <strong>Type</strong> to VBscript and enable ‘Evaluate Once Per Session’ and ‘Run As System User’.</p>
 
-<p>Next up, you may want determine whether the client can contact the streaming source (what ever that is – App-V Management Server, App-V Streaming Server, HTTP or even a UNC path).  You could use native <strong>Computer IP Address</strong> condition and make the assumption that the remote host is available because the client is located in a known network, or <a href="http://blogs.technet.com/b/heyscriptingguy/archive/2012/02/24/use-powershell-to-test-connectivity-on-remote-servers.aspx">ping the remote host using PowerShell</a> in a <strong>Custom Condition</strong>. Alternatively an Active Directory Site Membership might suffice, however this may require listing all of your AD sites which isn’t ideal.</p>
+<p>Next up, you may want determine whether the client can contact the streaming source (what ever that is - App-V Management Server, App-V Streaming Server, HTTP or even a UNC path).  You could use native <strong>Computer IP Address</strong> condition and make the assumption that the remote host is available because the client is located in a known network, or <a href="http://blogs.technet.com/b/heyscriptingguy/archive/2012/02/24/use-powershell-to-test-connectivity-on-remote-servers.aspx">ping the remote host using PowerShell</a> in a <strong>Custom Condition</strong>. Alternatively an Active Directory Site Membership might suffice, however this may require listing all of your AD sites which isn’t ideal.</p>
 
-<p>For a Computer IP Address condition, choose Condition / Computer / Computer IP Address and configure the required IP range. Ensure that ‘Evaluate Once Per Session’ is <strong>disabled</strong> – because the client IP address may change during a single session. Repeat this for multiple IP ranges.</p>
+<p>For a Computer IP Address condition, choose Condition / Computer / Computer IP Address and configure the required IP range. Ensure that ‘Evaluate Once Per Session’ is <strong>disabled</strong> - because the client IP address may change during a single session. Repeat this for multiple IP ranges.</p>
 
 <p>To use a PowerShell script instead, create a Custom Condition, set the <strong>Type</strong> to PowerShell, <em>disable</em> ‘Evaluate Once Per Session’ and set ‘Run As System User’.</p>
 
@@ -132,9 +132,9 @@ exit 1<br />
 <p>To put this into action, we’ll need to think about when to run the SFTTRAY command. User Logon might be an obvious choice, but this could potentially slow down the logon process; however we do need run the action not long after logon because we can’t run it before the user disconnects the machine or logs off (running the action at logoff, would delay logoff). There are a number of ways we can run the SFTTRAY action:</p>
 
 <ul>
-  <li>At User Process Started for <em>%ProgramFiles%\Microsoft Application Virtualization Client\sftdcc.exe</em> launches – this will run at logon, but the logon process should be mostly complete by this time</li>
-  <li>At Network Connected – we have an opportunity to cache packages when connecting back to the corporate network if the laptop is resuming from sleep mode</li>
-  <li>Session Locked – this is a great time to cache packages because the user is not interacting with the desktop</li>
+  <li>At User Process Started for <em>%ProgramFiles%\Microsoft Application Virtualization Client\sftdcc.exe</em> launches - this will run at logon, but the logon process should be mostly complete by this time</li>
+  <li>At Network Connected - we have an opportunity to cache packages when connecting back to the corporate network if the laptop is resuming from sleep mode</li>
+  <li>Session Locked - this is a great time to cache packages because the user is not interacting with the desktop</li>
 </ul>
 
 <p>I’ve included a sample configuration below that uses each of these approaches by applying the logic in a Reusable Node linked to each of the triggers listed above.</p>

@@ -8,15 +8,15 @@
 <meta property="og:title" content="Microsoft issues update to fix disabling Autorun" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Microsoft has issued an security advisory for a non-security update (I know, sounds odd, but bear with me) – Microsoft Security Advisory (967940), Update for Windows Autorun. Specifically this update fixes an issue that prevents the NoDriveTypeAutoRun registry key from functioning as expected." />
-<meta property="og:description" content="Microsoft has issued an security advisory for a non-security update (I know, sounds odd, but bear with me) – Microsoft Security Advisory (967940), Update for Windows Autorun. Specifically this update fixes an issue that prevents the NoDriveTypeAutoRun registry key from functioning as expected." />
+<meta name="description" content="Microsoft has issued an security advisory for a non-security update (I know, sounds odd, but bear with me) - Microsoft Security Advisory (967940), Update for Windows Autorun. Specifically this update fixes an issue that prevents the NoDriveTypeAutoRun registry key from functioning as expected." />
+<meta property="og:description" content="Microsoft has issued an security advisory for a non-security update (I know, sounds odd, but bear with me) - Microsoft Security Advisory (967940), Update for Windows Autorun. Specifically this update fixes an issue that prevents the NoDriveTypeAutoRun registry key from functioning as expected." />
 <link rel="canonical" href="/microsoft-issues-update-to-fix-disabling-autorun/" />
 <meta property="og:url" content="/microsoft-issues-update-to-fix-disabling-autorun/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2009-02-25T09:30:36+11:00" />
 <script type="application/ld+json">
-{"description":"Microsoft has issued an security advisory for a non-security update (I know, sounds odd, but bear with me) – Microsoft Security Advisory (967940), Update for Windows Autorun. Specifically this update fixes an issue that prevents the NoDriveTypeAutoRun registry key from functioning as expected.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/microsoft-issues-update-to-fix-disabling-autorun/","headline":"Microsoft issues update to fix disabling Autorun","dateModified":"2009-02-25T09:30:36+11:00","datePublished":"2009-02-25T09:30:36+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/microsoft-issues-update-to-fix-disabling-autorun/"},"@context":"https://schema.org"}</script>
+{"description":"Microsoft has issued an security advisory for a non-security update (I know, sounds odd, but bear with me) - Microsoft Security Advisory (967940), Update for Windows Autorun. Specifically this update fixes an issue that prevents the NoDriveTypeAutoRun registry key from functioning as expected.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/microsoft-issues-update-to-fix-disabling-autorun/","headline":"Microsoft issues update to fix disabling Autorun","dateModified":"2009-02-25T09:30:36+11:00","datePublished":"2009-02-25T09:30:36+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/microsoft-issues-update-to-fix-disabling-autorun/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -46,13 +46,13 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img class="alignleft size-full wp-image-939" style="margin-left: 0px; margin-right: 10px;" title="Autorun icon (kinda)" src="http://stealthpuppy.com/wp-content/uploads/2009/02/autorun.png" alt="Autorun icon (kinda)" width="100" height="100" />Microsoft has issued an security advisory for a non-security update (I know, sounds odd, but bear with me) – <a href="http://www.microsoft.com/technet/security/advisory/967940.mspx">Microsoft Security Advisory (967940), Update for Windows Autorun</a>. Specifically this update fixes an issue that prevents the <a href="http://www.microsoft.com/technet/prodtechnol/windows2000serv/reskit/regentry/93502.mspx?mfr=true">NoDriveTypeAutoRun</a> registry key from functioning as expected.</p>
+    <p><img class="alignleft size-full wp-image-939" style="margin-left: 0px; margin-right: 10px;" title="Autorun icon (kinda)" src="http://stealthpuppy.com/wp-content/uploads/2009/02/autorun.png" alt="Autorun icon (kinda)" width="100" height="100" />Microsoft has issued an security advisory for a non-security update (I know, sounds odd, but bear with me) - <a href="http://www.microsoft.com/technet/security/advisory/967940.mspx">Microsoft Security Advisory (967940), Update for Windows Autorun</a>. Specifically this update fixes an issue that prevents the <a href="http://www.microsoft.com/technet/prodtechnol/windows2000serv/reskit/regentry/93502.mspx?mfr=true">NoDriveTypeAutoRun</a> registry key from functioning as expected.</p>
 
-<p>IT World <a href="http://www.itworld.com/windows/63219/after-cert-warning-microsoft-delivers-autorun-fix">has covered the update</a> and US-CERT actually issued a security alert about the issue last month – <a href="http://www.us-cert.gov/cas/techalerts/TA09-020A.html">Microsoft Windows Does Not Disable AutoRun Properly</a>. The US-CERT article has guidance on disabling <code class="highlighter-rouge">AUTORUN.INF</code> completely via the IniFileMapping feature – something that <a href="http://nick.brown.free.fr/blog/2007/10/memory-stick-worms.html">Nick Brown covered back in 2007</a>.</p>
+<p>IT World <a href="http://www.itworld.com/windows/63219/after-cert-warning-microsoft-delivers-autorun-fix">has covered the update</a> and US-CERT actually issued a security alert about the issue last month - <a href="http://www.us-cert.gov/cas/techalerts/TA09-020A.html">Microsoft Windows Does Not Disable AutoRun Properly</a>. The US-CERT article has guidance on disabling <code class="highlighter-rouge">AUTORUN.INF</code> completely via the IniFileMapping feature - something that <a href="http://nick.brown.free.fr/blog/2007/10/memory-stick-worms.html">Nick Brown covered back in 2007</a>.</p>
 
 <p>There are actually two knowlegebase articles that cover the issue and the update: <a href="http://support.microsoft.com/kb/967715">How to correct “disable Autorun registry key” enforcement in Windows (967715)</a> and <a href="http://support.microsoft.com/kb/953252">How to correct “disable Autorun registry key” enforcement in Windows (953252)</a>. You’ll only need to read the first.</p>
 
-<p>On Windows XP/2003 the update does two things – updates SHELL32.DLL and creates the registry value: <code class="highlighter-rouge">HKLMSoftwareMicrosoftWindowsCurrentVersionPoliciesExplorer HonorAutorunSetting</code>. You can download the updates here:</p>
+<p>On Windows XP/2003 the update does two things - updates SHELL32.DLL and creates the registry value: <code class="highlighter-rouge">HKLMSoftwareMicrosoftWindowsCurrentVersionPoliciesExplorer HonorAutorunSetting</code>. You can download the updates here:</p>
 
 <ul>
   <li><a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=CC4FB38C-579B-40F7-89C4-1721D7B8DAA5">Update for Windows XP (KB950582)</a></li>
@@ -65,12 +65,12 @@
 
 <p>For Windows Vista and Windows Server 2008, this issue was addressed in Microsoft <a href="http://www.microsoft.com/technet/security/bulletin/ms08-038.mspx">Security Bulletin MS08-038</a>, released July last year. You’ve deployed that update right?</p>
 
-<p>So the question is then, does Autorun have a place in corporate environments? I think the answer is no – a little tradeoff in usability for a big gain in security. Here’s a few interesting articles by Steve Riley and Jesper Johasson on the subject:</p>
+<p>So the question is then, does Autorun have a place in corporate environments? I think the answer is no - a little tradeoff in usability for a big gain in security. Here’s a few interesting articles by Steve Riley and Jesper Johasson on the subject:</p>
 
 <ul>
   <li><a href="http://blogs.technet.com/steriley/archive/2007/09/22/autorun-good-for-you.aspx">Autorun: good for you?</a></li>
   <li><a href="http://blogs.technet.com/steriley/archive/2007/10/30/more-on-autorun.aspx">More on Autorun</a></li>
-  <li><a href="http://technet.microsoft.com/en-us/magazine/2008.01.securitywatch.aspx">Security Watch: Island Hopping – The Infectious Allure of Vendor Swag</a></li>
+  <li><a href="http://technet.microsoft.com/en-us/magazine/2008.01.securitywatch.aspx">Security Watch: Island Hopping - The Infectious Allure of Vendor Swag</a></li>
 </ul>
 
 <p>If we only learn two things from Conficker, they should be patch early and disable Autorun. If you’re not on top of this, you could potentially leave yourself open for a world of hurt.</p>

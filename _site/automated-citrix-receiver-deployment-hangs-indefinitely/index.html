@@ -56,10 +56,10 @@
 
 <p>Taking a look at the installer’s log file (search in %TEMP% for the logs with the prefix CtxInstall- or TrollyExpress-) gives an indication of what the issue is. Looking for any time discrepancies, reveals a large gap between actions (which matchs the installer kicking off and me interacting with the target VM)</p>
 
-<p>[code]15:12:29: Information – CInstallationManager::InstallComponent(426) – Running InstallComponent method for: USB.<br />
-15:12:29: Information – CInstallationManager::InstallComponent(462) – Installing Component: ID = USB<br />
-15:12:29: Information – CInstallationManager::InstallComponent(598) – Component Install Commandline: REBOOT=ReallySuppress MSIDISABLERMRESTART=0 MSIRESTARTMANAGERCONTROL=0 ARPSYSTEMCOMPONENT=1 NEED_RECEIVER=n SILENT=1 SERVER_LOCATION=”http://storefront.demolab.test/Citrix/DemoLabStore/PNAgent/config.xml” ALLUSERS=1<br />
-16:52:49: Information – CComponent::CreateRegistryRecords(621) – Writing registry records for uninstall.[/code]</p>
+<p>[code]15:12:29: Information - CInstallationManager::InstallComponent(426) - Running InstallComponent method for: USB.<br />
+15:12:29: Information - CInstallationManager::InstallComponent(462) - Installing Component: ID = USB<br />
+15:12:29: Information - CInstallationManager::InstallComponent(598) - Component Install Commandline: REBOOT=ReallySuppress MSIDISABLERMRESTART=0 MSIRESTARTMANAGERCONTROL=0 ARPSYSTEMCOMPONENT=1 NEED_RECEIVER=n SILENT=1 SERVER_LOCATION=”http://storefront.demolab.test/Citrix/DemoLabStore/PNAgent/config.xml” ALLUSERS=1<br />
+16:52:49: Information - CComponent::CreateRegistryRecords(621) - Writing registry records for uninstall.[/code]</p>
 
 <p>Something to do with the USB support provided by Receiver for XenDesktop doesn’t install correctly when the virtual machine’s console does not have focus. Unfortunately the root cause might be a little more difficult to find.</p>
 

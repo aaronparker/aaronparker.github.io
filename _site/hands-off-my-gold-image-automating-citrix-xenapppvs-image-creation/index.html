@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
-<title>Hands off my gold image – Automating Citrix XenApp/PVS Image Creation | stealthpuppy</title>
+<title>Hands off my gold image - Automating Citrix XenApp/PVS Image Creation | stealthpuppy</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Hands off my gold image – Automating Citrix XenApp/PVS Image Creation" />
+<meta property="og:title" content="Hands off my gold image - Automating Citrix XenApp/PVS Image Creation" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Citrix Provisioning Services is a great solution for the rapid deployment of Windows workloads from a master image. However, rapid deployment is not a replacement for a consistent, repeatable method of creating that master image." />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-10-17T17:15:23+11:00" />
 <script type="application/ld+json">
-{"description":"Citrix Provisioning Services is a great solution for the rapid deployment of Windows workloads from a master image. However, rapid deployment is not a replacement for a consistent, repeatable method of creating that master image.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/","headline":"Hands off my gold image – Automating Citrix XenApp/PVS Image Creation","dateModified":"2012-10-17T17:15:23+11:00","datePublished":"2012-10-17T17:15:23+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/"},"@context":"https://schema.org"}</script>
+{"description":"Citrix Provisioning Services is a great solution for the rapid deployment of Windows workloads from a master image. However, rapid deployment is not a replacement for a consistent, repeatable method of creating that master image.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/","headline":"Hands off my gold image - Automating Citrix XenApp/PVS Image Creation","dateModified":"2012-10-17T17:15:23+11:00","datePublished":"2012-10-17T17:15:23+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -39,7 +39,7 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Hands off my gold image &amp;#8211; Automating Citrix XenApp/PVS Image Creation</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Hands off my gold image - Automating Citrix XenApp/PVS Image Creation</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2012-10-17T17:15:23+11:00" itemprop="datePublished">Oct 17, 2012
       </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
@@ -48,7 +48,7 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p><img class="alignright size-full wp-image-2861" title="hands-off" src="http://stealthpuppy.com/wp-content/uploads/2012/10/hands-off.png" alt="" width="256" height="247" srcset="https://stealthpuppy.com/wp-content/uploads/2012/10/hands-off.png 256w, https://stealthpuppy.com/wp-content/uploads/2012/10/hands-off-150x144.png 150w" sizes="(max-width: 256px) 100vw, 256px" />Citrix Provisioning Services is a great solution for the rapid deployment of Windows workloads from a master image. However, rapid deployment is not a replacement for a consistent, repeatable method of creating that master image.</p>
 
-<p>Today I covered this in my talk at Citrix Synergy, along with my colleague <a href="https://twitter.com/jonathanew">Jonathan Eyton-Williams</a> – “<a href="https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&amp;conference=synergy">Hands off my gold image!</a>“. This article will show you how to automate the deployment of a Windows image from bare metal to a finalised PVS image. This is part of an approach that we use for deployment within <a href="http://www.kelway.co.uk">Kelway</a>.</p>
+<p>Today I covered this in my talk at Citrix Synergy, along with my colleague <a href="https://twitter.com/jonathanew">Jonathan Eyton-Williams</a> - “<a href="https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&amp;conference=synergy">Hands off my gold image!</a>“. This article will show you how to automate the deployment of a Windows image from bare metal to a finalised PVS image. This is part of an approach that we use for deployment within <a href="http://www.kelway.co.uk">Kelway</a>.</p>
 
 <p>To keep things simple I’ll focus on the minimum pieces required to get this working. From here you should be able to expand the approach to include any number of components in your build.</p>
 
@@ -92,11 +92,11 @@
 <p>Add the following as applications in MDT:</p>
 
 <ul>
-  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=17718">Microsoft .NET Framework 4</a> – this is required by XenConvert; however you’ll also need other dependencies for your environment, for example the Visual C++ Redistributables</li>
-  <li>Citrix XenApp 6.5 – the simplest way to do this is just import the entire XenApp 6.5 ISO</li>
-  <li><a href="http://support.citrix.com/product/xa/v6.5_2008r2/">Citrix XenApp 6.5 hotfixes</a> – these need to be installed separately after XenApp is installed</li>
-  <li><a href="http://support.citrix.com/article/CTX133349">Citrix Provisioning Services Device Target</a> – this is obviously needed to connect to PVS and stream the image</li>
-  <li><a href="http://www.citrix.com/downloads/xenserver/tools/conversion.html">Citrix XenConvert</a> – install the latest version of XenConvert to manage the conversion process from the installed image to the PVS VHD</li>
+  <li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=17718">Microsoft .NET Framework 4</a> - this is required by XenConvert; however you’ll also need other dependencies for your environment, for example the Visual C++ Redistributables</li>
+  <li>Citrix XenApp 6.5 - the simplest way to do this is just import the entire XenApp 6.5 ISO</li>
+  <li><a href="http://support.citrix.com/product/xa/v6.5_2008r2/">Citrix XenApp 6.5 hotfixes</a> - these need to be installed separately after XenApp is installed</li>
+  <li><a href="http://support.citrix.com/article/CTX133349">Citrix Provisioning Services Device Target</a> - this is obviously needed to connect to PVS and stream the image</li>
+  <li><a href="http://www.citrix.com/downloads/xenserver/tools/conversion.html">Citrix XenConvert</a> - install the latest version of XenConvert to manage the conversion process from the installed image to the PVS VHD</li>
   <li>The Convert PVS image script</li>
 </ul>
 
@@ -121,7 +121,7 @@
 <p>During this step there are a number of items to complete in order:</p>
 
 <ol>
-  <li>Optimise the image for delivery via PVS – essentially replacing the ‘Optimise for PVS’ button in the XenConvert wizard. These are Registry changes that the wizard rights to a .REG file before importing, so this was easy to capture.</li>
+  <li>Optimise the image for delivery via PVS - essentially replacing the ‘Optimise for PVS’ button in the XenConvert wizard. These are Registry changes that the wizard rights to a .REG file before importing, so this was easy to capture.</li>
   <li>Run ngen to compile the .NET Framework assemblies. This will take some time.</li>
   <li>Rearm Windows and Office (2010 or 2013)</li>
   <li>Capture the image, whilst accounting for the fact that the PVS conversion is occurring during the MDT deployment. We need to edit the local install, capture the local install, cleanup the captured image and then ensure the MDT deployment can continue unhindered. If this does not happen, then the MDT deployment will continue to run every time the PVS image is delivered to an end-point.</li>

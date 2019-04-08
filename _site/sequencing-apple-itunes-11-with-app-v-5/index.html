@@ -54,14 +54,14 @@
 
 <h1 id="itunes-components">iTunes Components</h1>
 
-<p>To virtualize iTunes, you’ll need to extract the installer – simply run the installer and find the extracted MSI files in a folder under %TEMP%. This results in several files:</p>
+<p>To virtualize iTunes, you’ll need to extract the installer - simply run the installer and find the extracted MSI files in a folder under %TEMP%. This results in several files:</p>
 
 <ul>
   <li>SetupAdmin.exe – the setup wrapper application. This can be discarded</li>
   <li>AppleSoftwareUpdate.msi – Software Update is used to download and Apple software and updates</li>
   <li>AppleApplicationSupport.msi – all Apple applications on Windows require this as a dependency</li>
   <li>AppleMobileDeviceSupport.msi – required for Apple mobile device support (iPhone, iPad etc.). This installer includes the drivers for Apple’s devices</li>
-  <li>Bonjour.msi – <a href="http://support.apple.com/kb/HT2250">iTunes uses Bonjour</a> to find shared music libraries, to find AirPort Express devices for streaming music to, and to find Apple TVs</li>
+  <li>Bonjour.msi - <a href="http://support.apple.com/kb/HT2250">iTunes uses Bonjour</a> to find shared music libraries, to find AirPort Express devices for streaming music to, and to find Apple TVs</li>
   <li>iTunes.msi – the iTunes installer itself</li>
 </ul>
 
@@ -103,7 +103,7 @@
 <ul>
   <li>Bonjour.msi</li>
   <li>iTunes.msi</li>
-  <li>Optionally – AppleApplicationSupport.msi</li>
+  <li>Optionally - AppleApplicationSupport.msi</li>
 </ul>
 
 <p>The installation and configuration of the above can be scripted, which would be a good approach for repeatability.</p>
@@ -168,7 +168,7 @@ MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE_ASUW=0 REGSRCH_DES
     <p>At the Create Package step, continue on to modify the package rather than stop now.</p>
   </li>
   <li>
-    <p>Add a description to the package and check each tab in the Sequencer to ensure the package looks OK. Under Virtual Services, two services should be listed – <em>Bonjour Service</em> and <em>iPod Service</em>.</p>
+    <p>Add a description to the package and check each tab in the Sequencer to ensure the package looks OK. Under Virtual Services, two services should be listed - <em>Bonjour Service</em> and <em>iPod Service</em>.</p>
   </li>
   <li>
     <p>Edit the Shortcuts and remove the <em>About Bonjour</em> and <em>About iTunes</em> shortcuts.</p>
@@ -186,7 +186,7 @@ MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE_ASUW=0 REGSRCH_DES
 
 <h2 id="dcom">DCOM</h2>
 
-<p>iTunes includes some DCOM components – the report shows:</p>
+<p>iTunes includes some DCOM components - the report shows:</p>
 
 <blockquote>
   <p>The sequencer detected a DCOM subsystem. Application components that use DCOM will not work with App-V. The DCOM subsystems detected are as follows:</p>
@@ -210,7 +210,7 @@ MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE_ASUW=0 REGSRCH_DES
   <p>The unsupported drivers detected are as follows: SYSTEM\CurrentControlSet\services\GEARAspiWDM</p>
 </blockquote>
 
-<p>This is related to writing CD/DVDs – once iTunes is virtualized, that feature will be unavailable.</p>
+<p>This is related to writing CD/DVDs - once iTunes is virtualized, that feature will be unavailable.</p>
 
 <h1 id="deploying-itunes">Deploying iTunes</h1>
 

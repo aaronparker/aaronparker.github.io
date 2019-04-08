@@ -66,7 +66,7 @@
   <li>%LOCALAPPDATA%\Mozilla (browser cache)</li>
 </ul>
 
-<p>The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% – this is a good thing and I don’t recommend removing this exclusion.</p>
+<p>The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this is a good thing and I don’t recommend removing this exclusion.</p>
 
 <p>%APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding <em>%CSIDL_APPDATA%\Mozilla</em> to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time.</p>
 
@@ -97,8 +97,8 @@
 <p>There are a couple of features that should be disabled when running Firefox under App-V:</p>
 
 <ul>
-  <li>Automatic updates for Firefox – <em>Options / Advanced / Update – Automatically check for updates to: Firefox</em>. Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile</li>
-  <li>Default browser check – <em>Options / Advanced / General – Always check to see if Firefox is the default browser on startup</em>. Once Firefox is isolated from the OS, the user won’t be able to make it the default browser</li>
+  <li>Automatic updates for Firefox – <em>Options / Advanced / Update - Automatically check for updates to: Firefox</em>. Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile</li>
+  <li>Default browser check – <em>Options / Advanced / General - Always check to see if Firefox is the default browser on startup</em>. Once Firefox is isolated from the OS, the user won’t be able to make it the default browser</li>
 </ul>
 
 <p><a href="http://kb.mozillazine.org/User.js_file"><em>user.js</em></a> is used to configure Firefox options and enforce them and <a href="http://www-archive.mozilla.org/unix/customizing.html"><em>UserChrome.css</em></a> is used to remove those options from the user interface.</p>

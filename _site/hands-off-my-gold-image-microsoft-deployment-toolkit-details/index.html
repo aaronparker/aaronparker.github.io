@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
-<title>Hands off my gold image – Microsoft Deployment Toolkit details | stealthpuppy</title>
+<title>Hands off my gold image - Microsoft Deployment Toolkit details | stealthpuppy</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Hands off my gold image – Microsoft Deployment Toolkit details" />
+<meta property="og:title" content="Hands off my gold image - Microsoft Deployment Toolkit details" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="After the corresponding Geek Speak talk at Citrix Synergy in Barcelona, I posted an article on automating a XenApp deployment and capture into Provisioning Services via the Microsoft Deployment Toolkit (MDT): Hands off my gold image – Automating Citrix XenApp/PVS Image Creation." />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2012-10-30T16:39:43+11:00" />
 <script type="application/ld+json">
-{"description":"After the corresponding Geek Speak talk at Citrix Synergy in Barcelona, I posted an article on automating a XenApp deployment and capture into Provisioning Services via the Microsoft Deployment Toolkit (MDT): Hands off my gold image – Automating Citrix XenApp/PVS Image Creation.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/hands-off-my-gold-image-microsoft-deployment-toolkit-details/","headline":"Hands off my gold image – Microsoft Deployment Toolkit details","dateModified":"2012-10-30T16:39:43+11:00","datePublished":"2012-10-30T16:39:43+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/hands-off-my-gold-image-microsoft-deployment-toolkit-details/"},"@context":"https://schema.org"}</script>
+{"description":"After the corresponding Geek Speak talk at Citrix Synergy in Barcelona, I posted an article on automating a XenApp deployment and capture into Provisioning Services via the Microsoft Deployment Toolkit (MDT): Hands off my gold image – Automating Citrix XenApp/PVS Image Creation.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/hands-off-my-gold-image-microsoft-deployment-toolkit-details/","headline":"Hands off my gold image - Microsoft Deployment Toolkit details","dateModified":"2012-10-30T16:39:43+11:00","datePublished":"2012-10-30T16:39:43+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/hands-off-my-gold-image-microsoft-deployment-toolkit-details/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -39,7 +39,7 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Hands off my gold image &amp;#8211; Microsoft Deployment Toolkit details</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Hands off my gold image - Microsoft Deployment Toolkit details</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2012-10-30T16:39:43+11:00" itemprop="datePublished">Oct 30, 2012
       </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
@@ -48,7 +48,7 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>After the corresponding <a href="https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&amp;conference=synergy">Geek Speak talk at Citrix Synergy in Barcelona</a>, I posted an article on automating a XenApp deployment and capture into Provisioning Services via the <a href="http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx">Microsoft Deployment Toolkit</a> (MDT): <a href="http://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/">Hands off my gold image – Automating Citrix XenApp/PVS Image Creation.</a></p>
 
-<p>In a series of blog posts I’ll cover some of the steps in more detail – first up is configuring the MDT deployment share. I won’t cover setting up a share here, so if you’re new to MDT, I suggest starting at the <a href="http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx">MDT home page on TechNet</a> where you’ll find various resources on using MDT.</p>
+<p>In a series of blog posts I’ll cover some of the steps in more detail - first up is configuring the MDT deployment share. I won’t cover setting up a share here, so if you’re new to MDT, I suggest starting at the <a href="http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx">MDT home page on TechNet</a> where you’ll find various resources on using MDT.</p>
 
 <h2 id="hosting-mdt">Hosting MDT</h2>
 
@@ -96,9 +96,9 @@ PVSTemplate=TRUE[/code]</task></VM></p>
 <p>Under the [Settings] heading, I’ve created three custom properties <em>XenAppRole</em>, <em>PVSTemplate</em> and <em>WindowsUpdate</em>. These properties enable a few things:</p>
 
 <ul>
-  <li>XenAppRole – valid values for this property are CONTROLLER and WORKER. This controls the installation of XenApp and whether XenApp is then configured as a Controller (hosts the XML broker and enumerates applications and zones etc) or a Worker (hosting user sessions and applications). If this property is not set against a computer record, then XenApp will not be installed</li>
-  <li>PVSTemplate – this controls whether a computer is the master template for Provisioning Services. The only valid value is TRUE. If this is set, then during the MDT task sequence, the computer image will be converted to a PVS image</li>
-  <li>WindowsUpdate – this property controls whether Windows Update is run during the task sequence. Valid values are TRUE or FALSE. Set this to FALSE during testing to reduce the amount of time to deploy and capture an image.</li>
+  <li>XenAppRole - valid values for this property are CONTROLLER and WORKER. This controls the installation of XenApp and whether XenApp is then configured as a Controller (hosts the XML broker and enumerates applications and zones etc) or a Worker (hosting user sessions and applications). If this property is not set against a computer record, then XenApp will not be installed</li>
+  <li>PVSTemplate - this controls whether a computer is the master template for Provisioning Services. The only valid value is TRUE. If this is set, then during the MDT task sequence, the computer image will be converted to a PVS image</li>
+  <li>WindowsUpdate - this property controls whether Windows Update is run during the task sequence. Valid values are TRUE or FALSE. Set this to FALSE during testing to reduce the amount of time to deploy and capture an image.</li>
 </ul>
 
 <p>To control the creation (or not) of the BitLocker boot partition, a combination of the property <em>DoNotCreateExtraPartition</em> and detection of a virtual machine (the <em>ByVM</em> and <em>VM-True</em> sections) is used. This allows us to ensure that the partition is not created on virtual machines where it isn’t required.</p>

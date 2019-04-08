@@ -64,9 +64,9 @@
 <p>The Paint.NET documentation explains <a href="http://www.getpaint.net/doc/latest/en/UnattendedInstallation.html">how to create an unattended installation</a>. There are a number of options that are important when virtualising Paint.NET:</p>
 
 <ul>
-  <li>TARGETDIR – specify an installation folder on the virtual drive. This is not required and you can successfully sequence a VFS install of this application</li>
-  <li>CHECKFORUPDATES – it is important to set this value to 0 to disable prevent Paint.NET from automatically prompting users to update the package. Users will still be able to access the <em>Utilities / Check for Updates</em> menu item – Resource Hacker or other tools such as AppSense Environment Manager can be used to disable this menu item</li>
-  <li>CHECKFORBETAS – if CHECKFORUPDATES is set to 0 then this option should automatically be set to 0 as well; however I have set this option in my install script</li>
+  <li>TARGETDIR - specify an installation folder on the virtual drive. This is not required and you can successfully sequence a VFS install of this application</li>
+  <li>CHECKFORUPDATES - it is important to set this value to 0 to disable prevent Paint.NET from automatically prompting users to update the package. Users will still be able to access the <em>Utilities / Check for Updates</em> menu item - Resource Hacker or other tools such as AppSense Environment Manager can be used to disable this menu item</li>
+  <li>CHECKFORBETAS - if CHECKFORUPDATES is set to 0 then this option should automatically be set to 0 as well; however I have set this option in my install script</li>
 </ul>
 
 <p>Unfortunately the updater component is in process so it is difficult to remove from the installation. Additionally deleting files associated with the updater results in Paint.NET attempting to repair itself on start-up:</p>
@@ -74,9 +74,9 @@
 <p><img style="display: inline; border-width: 0px;" title="PaintDotNetRepairFiles" src="http://stealthpuppy.com/wp-content/uploads/2010/05/PaintDotNetRepairFiles.png" border="0" alt="PaintDotNetRepairFiles" width="448" height="190" /></p>
 
 <ul>
-  <li>JPGPNGBMPEDITOR – if you want Paint.NET to be the default editor for JPG, PNG and BMP files, set this to 1</li>
-  <li>TGAEDITOR – if you want Paint.NET to be the default editor for TGA files, set this to 1</li>
-  <li>DESKTOPSHORTCUT – setting this to 0 will prevent setup from creating a desktop shortcut</li>
+  <li>JPGPNGBMPEDITOR - if you want Paint.NET to be the default editor for JPG, PNG and BMP files, set this to 1</li>
+  <li>TGAEDITOR - if you want Paint.NET to be the default editor for TGA files, set this to 1</li>
+  <li>DESKTOPSHORTCUT - setting this to 0 will prevent setup from creating a desktop shortcut</li>
 </ul>
 
 <p>I have included a sample script below, that shows the unattended options that I have used during sequencing:</p>
@@ -87,12 +87,12 @@
 
 <h3 id="virtualising-or-sequencing-paintnet">Virtualising (or Sequencing) Paint.NET</h3>
 
-<p>Before sequencing, ensure your sequencing image has been configured with the Microsoft .NET Framework 3.5 or 4.0 – if you are sequencing on Windows 7, version 3.5 is already included. Here’s what you should configure before sequencing:</p>
+<p>Before sequencing, ensure your sequencing image has been configured with the Microsoft .NET Framework 3.5 or 4.0 - if you are sequencing on Windows 7, version 3.5 is already included. Here’s what you should configure before sequencing:</p>
 
 <ul>
-  <li>Install or enable the .NET Framework – use the same version of the .NET Framework that is deployed to your client computers</li>
-  <li>Disable System Protection (or System Restore) – setup creates a restore point during install which we don’t want to capture</li>
-  <li>Add an exclusion for <em>CSIDL_DESKTOP</em> – if Paint.NET crashed during sequencing it will place a log file on the desktop which we don’t want to capture</li>
+  <li>Install or enable the .NET Framework - use the same version of the .NET Framework that is deployed to your client computers</li>
+  <li>Disable System Protection (or System Restore) - setup creates a restore point during install which we don’t want to capture</li>
+  <li>Add an exclusion for <em>CSIDL_DESKTOP</em> - if Paint.NET crashed during sequencing it will place a log file on the desktop which we don’t want to capture</li>
   <li>Add an exclusion for <em>CSIDL_Windows\Installer</em> so that the cached MSI file is not captured in the package</li>
   <li>Copy the installation script and the Paint.NET installer to a local path inside the sequencing machine</li>
 </ul>
@@ -116,7 +116,7 @@
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p>Virtualising Paint.NET should be very quick and can be sequenced on 32-bit and 64-bit Windows. Even if sequenced on 32-bit Windows, Paint.NET will execute as a 64-bit application under Windows x64 – no re-sequencing required.</p>
+<p>Virtualising Paint.NET should be very quick and can be sequenced on 32-bit and 64-bit Windows. Even if sequenced on 32-bit Windows, Paint.NET will execute as a 64-bit application under Windows x64 - no re-sequencing required.</p>
 
 <p>One final item to fix up when creating the package is the file type icon that is extracted from the Paint.NET executable is only a 32×32 pixel icon. To make associated files look better under Windows Vista and Windows 7, you could replace this with an icon that includes a 256×256 pixel size image.</p>
 

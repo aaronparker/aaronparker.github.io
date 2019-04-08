@@ -3,9 +3,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
-<title>Dell owners – avoid the IDT 92HDxxx HD Audio driver | stealthpuppy</title>
+<title>Dell owners - avoid the IDT 92HDxxx HD Audio driver | stealthpuppy</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Dell owners – avoid the IDT 92HDxxx HD Audio driver" />
+<meta property="og:title" content="Dell owners - avoid the IDT 92HDxxx HD Audio driver" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="I’ve been mucking around with MDT 2010 lately, which has made it pretty simple to create an unattended install routine for my Dell Latitude XT2 (hopefully more on that soon) and to inject drivers into the build; however in doing so I’ve found a nasty bug in the IDT 92HDxxx HD Audio drivers from Dell (version 6.10.0.6217, A09)." />
@@ -16,7 +16,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2009-10-29T01:19:30+11:00" />
 <script type="application/ld+json">
-{"description":"I’ve been mucking around with MDT 2010 lately, which has made it pretty simple to create an unattended install routine for my Dell Latitude XT2 (hopefully more on that soon) and to inject drivers into the build; however in doing so I’ve found a nasty bug in the IDT 92HDxxx HD Audio drivers from Dell (version 6.10.0.6217, A09).","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/dell-owners-avoid-the-idt-92hdxxx-hd-audio-driver/","headline":"Dell owners – avoid the IDT 92HDxxx HD Audio driver","dateModified":"2009-10-29T01:19:30+11:00","datePublished":"2009-10-29T01:19:30+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/dell-owners-avoid-the-idt-92hdxxx-hd-audio-driver/"},"@context":"https://schema.org"}</script>
+{"description":"I’ve been mucking around with MDT 2010 lately, which has made it pretty simple to create an unattended install routine for my Dell Latitude XT2 (hopefully more on that soon) and to inject drivers into the build; however in doing so I’ve found a nasty bug in the IDT 92HDxxx HD Audio drivers from Dell (version 6.10.0.6217, A09).","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/dell-owners-avoid-the-idt-92hdxxx-hd-audio-driver/","headline":"Dell owners - avoid the IDT 92HDxxx HD Audio driver","dateModified":"2009-10-29T01:19:30+11:00","datePublished":"2009-10-29T01:19:30+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/dell-owners-avoid-the-idt-92hdxxx-hd-audio-driver/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -39,7 +39,7 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Dell owners &amp;#8211; avoid the IDT 92HDxxx HD Audio driver</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Dell owners - avoid the IDT 92HDxxx HD Audio driver</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2009-10-29T01:19:30+11:00" itemprop="datePublished">Oct 29, 2009
       </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
@@ -113,7 +113,7 @@
   <li>Dell Precision Mobile WorkStation M6400</li>
 </ul>
 
-<p>I’ve tested these on a 32-bit install of Windows 7 on two machines – a Latitude XT2 and a Latitude E4200, with the same result. Fortunately though, the drivers are not required for playing sound – Windows 7 will find the audio hardware out of the box.</p>
+<p>I’ve tested these on a 32-bit install of Windows 7 on two machines - a Latitude XT2 and a Latitude E4200, with the same result. Fortunately though, the drivers are not required for playing sound - Windows 7 will find the audio hardware out of the box.</p>
 
 <p>If you have the same issue, open Device Manager and uninstall the device labelled <em>IDT High Definition Audio CODEC</em>, be sure to also tick the option <em>Delete the driver software for this device</em> to remove the driver completely. Here’s what you’ll see in Device Manager:</p>
 

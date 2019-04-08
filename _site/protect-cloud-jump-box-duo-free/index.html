@@ -8,8 +8,8 @@
 <meta property="og:title" content="Protecting a Cloud Jump Box with Duo Free" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Deploying a jump box into a cloud environment such as Azure or AWS, is a common way of providing access into said environment through a single entry point. Often access to the jump box will be restricted by source IP, but that approach isn’t completely secure for many reasons – admins don’t update the rules, source IP doesn’t identify the user etc." />
-<meta property="og:description" content="Deploying a jump box into a cloud environment such as Azure or AWS, is a common way of providing access into said environment through a single entry point. Often access to the jump box will be restricted by source IP, but that approach isn’t completely secure for many reasons – admins don’t update the rules, source IP doesn’t identify the user etc." />
+<meta name="description" content="Deploying a jump box into a cloud environment such as Azure or AWS, is a common way of providing access into said environment through a single entry point. Often access to the jump box will be restricted by source IP, but that approach isn’t completely secure for many reasons - admins don’t update the rules, source IP doesn’t identify the user etc." />
+<meta property="og:description" content="Deploying a jump box into a cloud environment such as Azure or AWS, is a common way of providing access into said environment through a single entry point. Often access to the jump box will be restricted by source IP, but that approach isn’t completely secure for many reasons - admins don’t update the rules, source IP doesn’t identify the user etc." />
 <link rel="canonical" href="/protect-cloud-jump-box-duo-free/" />
 <meta property="og:url" content="/protect-cloud-jump-box-duo-free/" />
 <meta property="og:site_name" content="stealthpuppy" />
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-07-16T11:28:39+10:00" />
 <script type="application/ld+json">
-{"description":"Deploying a jump box into a cloud environment such as Azure or AWS, is a common way of providing access into said environment through a single entry point. Often access to the jump box will be restricted by source IP, but that approach isn’t completely secure for many reasons – admins don’t update the rules, source IP doesn’t identify the user etc.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/protect-cloud-jump-box-duo-free/","image":"/wp-content/uploads/2017/07/6512196829_862d3de0d2_b.jpg","headline":"Protecting a Cloud Jump Box with Duo Free","dateModified":"2017-07-16T11:28:39+10:00","datePublished":"2017-07-16T11:28:39+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/protect-cloud-jump-box-duo-free/"},"@context":"https://schema.org"}</script>
+{"description":"Deploying a jump box into a cloud environment such as Azure or AWS, is a common way of providing access into said environment through a single entry point. Often access to the jump box will be restricted by source IP, but that approach isn’t completely secure for many reasons - admins don’t update the rules, source IP doesn’t identify the user etc.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/protect-cloud-jump-box-duo-free/","image":"/wp-content/uploads/2017/07/6512196829_862d3de0d2_b.jpg","headline":"Protecting a Cloud Jump Box with Duo Free","dateModified":"2017-07-16T11:28:39+10:00","datePublished":"2017-07-16T11:28:39+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/protect-cloud-jump-box-duo-free/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -47,13 +47,13 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Deploying a jump box into a cloud environment such as <a href="http://stealthpuppy.com/tag/azure/">Azure</a> or AWS, is a common way of providing access into said environment through a single entry point. Often access to the jump box will be restricted by source IP, but that approach isn’t completely secure for many reasons – admins don’t update the rules, source IP doesn’t identify the user etc.</p>
+    <p>Deploying a jump box into a cloud environment such as <a href="http://stealthpuppy.com/tag/azure/">Azure</a> or AWS, is a common way of providing access into said environment through a single entry point. Often access to the jump box will be restricted by source IP, but that approach isn’t completely secure for many reasons - admins don’t update the rules, source IP doesn’t identify the user etc.</p>
 
 <p>One of the best ways to protection authentication to a remote Windows box is via multi-factor authentication (MFA). Keep source IP rulesets if you want, but add <a href="http://stealthpuppy.com/tag/mfa/">MFA</a> to ensure that even if a user’s password is compromised, additional authentication information is always enforced.</p>
 
 <p>In most Azure environments I’ve deployed, the customer is licensing <a href="http://stealthpuppy.com/tag/azure-ad">Azure AD</a> Premium which we could integrate with RD Gateway and RD Web Access for securing authentication to the jump box via the Azure MFA Server. The issue there is that it requires deploying more complexity than necessary for a jump box and likely extra licensing for the RD Gateway role. Less than ideal.</p>
 
-<p>So I went looking for a more cost effective way of securing remote access to cloud environments – something that’s light weight, runs on a single VM and ideally wouldn’t require additional licensing.</p>
+<p>So I went looking for a more cost effective way of securing remote access to cloud environments - something that’s light weight, runs on a single VM and ideally wouldn’t require additional licensing.</p>
 
 <p>Fellow <a href="http://stealthpuppy.com/1about/">CTP</a> and all round knowledgeable guy, <a href="https://twitter.com/jariangibson">Jarian Gibson</a> recommended checking out Duo. Duo are an <a href="https://duo.com/">identity provider</a> including MFA who have a <a href="https://duo.com/pricing/duo-free">a free version that gives you two-factor authentication for up to 10 users</a>.</p>
 
@@ -62,9 +62,9 @@
 <p>Signing up for Duo and adding MFA to a Windows Server VM running in Azure is a simple process:</p>
 
 <ol>
-  <li><a href="https://signup.duo.com/">Sign up for Duo</a>. A Duo account is free – this provides you with a control panel used to add Duo support for multiple applications. Install the Duo Mobile app on your phone to enable MFA prompts as phone calls and SMSs are not free. Duo gives you 490 ‘Telephone credits’, but you’ll need to add a credit card to purchase more.</li>
+  <li><a href="https://signup.duo.com/">Sign up for Duo</a>. A Duo account is free - this provides you with a control panel used to add Duo support for multiple applications. Install the Duo Mobile app on your phone to enable MFA prompts as phone calls and SMSs are not free. Duo gives you 490 ‘Telephone credits’, but you’ll need to add a credit card to purchase more.</li>
   <li>Add a user account to Duo that matches the account on the jump box. My jump box is a stand-alone server, so the account in Duo matches the username of an account local to the VM</li>
-  <li>Choose to add MFA to ‘<a href="https://duo.com/docs/rdp">Microsoft RDP</a>‘. Duo have <a href="https://duo.com/docs">about 125 applications</a> they can add authentication features to, and their documentation for setup is very good.</li>
+  <li>Choose to add MFA to ‘<a href="https://duo.com/docs/rdp">Microsoft RDP</a>’. Duo have <a href="https://duo.com/docs">about 125 applications</a> they can add authentication features to, and their documentation for setup is very good.</li>
   <li>Install the Duo Authentication for Windows Logon on the target VM. The hardest part about this step was actually finding the binaries to install the agent. It’s linked in the documentation (of course) but for whatever reason, I just couldn’t see it.</li>
   <li>Keep the bad guys out</li>
 </ol>
@@ -91,7 +91,7 @@
 
 <figure id="attachment_5523" aria-describedby="caption-attachment-5523" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5523" src="http://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup-1024x587.png" alt="Send an activation link to the user" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup.png)<figcaption id="caption-attachment-5523" class="wp-caption-text">Send an activation link to the user</figcaption></figure>
 
-<p>Here’s what appears on the user’s phone – tap the link and it will open in the Duo app.</p>
+<p>Here’s what appears on the user’s phone - tap the link and it will open in the Duo app.</p>
 
 <figure id="attachment_5518" aria-describedby="caption-attachment-5518" style="width: 576px" class="wp-caption alignnone">[<img class="wp-image-5518 size-large" src="http://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106-576x1024.png" alt="Duo activation link sent to the phone" width="576" height="1024" srcset="https://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106-576x1024.png 576w, https://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106-84x150.png 84w, https://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106-169x300.png 169w, https://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106.png 750w" sizes="(max-width: 576px) 100vw, 576px" />](http://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106.png)<figcaption id="caption-attachment-5518" class="wp-caption-text">Duo activation link sent to the phone</figcaption></figure>
 
@@ -109,7 +109,7 @@
 
 <p><a href="https://help.duo.com/s/article/ka070000000k9uCAAQ/1090">The installer supports a silent install</a>, so you could for example, add the agent with authentication details with PowerShell DSC during deployment of the VM.</p>
 
-<p>One the agent is install, no reboot is required. Yes – no reboot!</p>
+<p>One the agent is install, no reboot is required. Yes - no reboot!</p>
 
 <h1 id="logon-experience">Logon Experience</h1>
 

@@ -53,30 +53,30 @@
 
 <h1 id="persistency">Persistency</h1>
 
-<p>I think it was <a href="https://twitter.com/harrylabana">Harry Labana</a> that I originally heard this statement from – “Persistency is a measure of time”. This is absolutely true – what is the time between deploying and re-deploying that desktop? How long before that PC is rebuilt because of an unrecoverable error?</p>
+<p>I think it was <a href="https://twitter.com/harrylabana">Harry Labana</a> that I originally heard this statement from - “Persistency is a measure of time”. This is absolutely true - what is the time between deploying and re-deploying that desktop? How long before that PC is rebuilt because of an unrecoverable error?</p>
 
 <p>If Windows is re-installed or the PC retired, the user must migrate to a new instance of Windows. If Windows is running on a persistent virtual machine, how long do you let that instance of Windows run before the size of the virtual hard disk becomes unmanageable? (<a href="http://www.atlantiscomputing.com/">Perhaps you need dedupe?</a>)</p>
 
-<p>If we take persistency to mean a Windows install is immutable we live with a false sense of security. The same would apply to any general purpose OS – manage the data and configuration as though that install will fail tomorrow. If you can run all non-persistent desktops, you’re way ahead.</p>
+<p>If we take persistency to mean a Windows install is immutable we live with a false sense of security. The same would apply to any general purpose OS - manage the data and configuration as though that install will fail tomorrow. If you can run all non-persistent desktops, you’re way ahead.</p>
 
 <h1 id="defining-terms">Defining Terms</h1>
 
 <p>Let me first list the various terms that you might hear when discussing this topic:</p>
 
 <ul>
-  <li>Persistent, stateful, full clone – a Windows instance is persistent because we want to protect that Windows install. Rebuilding it from scratch can take time and effort. A physical PC or server is persistent because there’s no abstraction of the OS from the hardware.</li>
-  <li>Non-persistent, stateless, pooled, shared, linked-clone – a non-persistent virtual desktop is often destroyed at user logoff, reboot or shutdown. A Remote Desktop Services (RDS) environment can also be considered non-persistent, even though the underlying Windows instance may be persistent.</li>
+  <li>Persistent, stateful, full clone - a Windows instance is persistent because we want to protect that Windows install. Rebuilding it from scratch can take time and effort. A physical PC or server is persistent because there’s no abstraction of the OS from the hardware.</li>
+  <li>Non-persistent, stateless, pooled, shared, linked-clone - a non-persistent virtual desktop is often destroyed at user logoff, reboot or shutdown. A Remote Desktop Services (RDS) environment can also be considered non-persistent, even though the underlying Windows instance may be persistent.</li>
 </ul>
 
 <p>So many words to describe essentially the same thing. For clarity’s sake, let’s stick with persistent and non-persistent for the rest of this article.</p>
 
 <h1 id="who-are-we-talking-to">Who Are We Talking To?</h1>
 
-<p>When discussing persistent and non-persistent, context is key – who’s perspective are we using – the administrator (admin, engineer, architecture etc.) or the user (end-user, IT Manager, CIO etc.)? These terms may have different meaning depending on the audience – non-persistent may sound scary to the uninitiated. Tell a user that their desktop is non-persistent and see what reaction you get.</p>
+<p>When discussing persistent and non-persistent, context is key - who’s perspective are we using - the administrator (admin, engineer, architecture etc.) or the user (end-user, IT Manager, CIO etc.)? These terms may have different meaning depending on the audience - non-persistent may sound scary to the uninitiated. Tell a user that their desktop is non-persistent and see what reaction you get.</p>
 
 <p>An administrator on the other hand, can choose either for his (or her) toolbox when delivering virtual desktops; however non-persistent may take a rethink when compared to traditional desktop management.</p>
 
-<p>Regardless of what type of desktop a user receives, the user requires persistency of their data – some things are non-negotiable.</p>
+<p>Regardless of what type of desktop a user receives, the user requires persistency of their data - some things are non-negotiable.</p>
 
 <p>Ultimately we need to tailor the conversation to the audience and ensure we explain these concepts succinctly.</p>
 
@@ -85,11 +85,11 @@
 <p>Data aside, we first need to establish whether a user requires a persistent state across sessions, before deciding on a way to manage the desktops. To do that, we should consider each of the major components of the modern Windows desktop:</p>
 
 <ul>
-  <li>Application data – where does the application store data? If it’s a web-based application or stores data in a database, then it’s unlikely data also ends up on the user’s desktop</li>
-  <li>User data – ideally user data (e.g. documents) is not stored on the desktop or is at least synchronised to a remote location.</li>
-  <li>User preferences – do user preferences or their profiles need to persist across sessions? If you’re delivering just applications (and not desktops), do those applications have preferences that need to be saved? Could application settings be delivered as policies instead?</li>
-  <li>Applications – what is your application delivery strategy. VDI/RDS has been historically been hard to manage as a result of application requirements, making persistent desktops the easy route</li>
-  <li>User applications – do you need to provide an environment that users can install applications? Do you have developers or IT Pros in-house who often need administrative rights to get their jobs done</li>
+  <li>Application data - where does the application store data? If it’s a web-based application or stores data in a database, then it’s unlikely data also ends up on the user’s desktop</li>
+  <li>User data - ideally user data (e.g. documents) is not stored on the desktop or is at least synchronised to a remote location.</li>
+  <li>User preferences - do user preferences or their profiles need to persist across sessions? If you’re delivering just applications (and not desktops), do those applications have preferences that need to be saved? Could application settings be delivered as policies instead?</li>
+  <li>Applications - what is your application delivery strategy. VDI/RDS has been historically been hard to manage as a result of application requirements, making persistent desktops the easy route</li>
+  <li>User applications - do you need to provide an environment that users can install applications? Do you have developers or IT Pros in-house who often need administrative rights to get their jobs done</li>
 </ul>
 
 <h1 id="virtual-desktops">Virtual Desktops</h1>
@@ -106,7 +106,7 @@
 
 <p>From the administrators point of view, Remote Desktop Session Hosts (RDSH) are managed as a persistent virtual machines (or as Windows directly on a physical host) but they could also be managed as non-persistent VMs.</p>
 
-<p>RDSH servers provide a pool (or farm) of Windows instances that users can receive their desktops or applications from – a user could connect to any server in the pool. As such, they represent a non-persistent desktop, regardless of whether the underlying RDSH server is persistent or non-persistent.</p>
+<p>RDSH servers provide a pool (or farm) of Windows instances that users can receive their desktops or applications from - a user could connect to any server in the pool. As such, they represent a non-persistent desktop, regardless of whether the underlying RDSH server is persistent or non-persistent.</p>
 
 <h1 id="considerations">Considerations</h1>
 

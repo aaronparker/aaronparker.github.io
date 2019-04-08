@@ -66,11 +66,11 @@
 
 <p><a href="http://stealthpuppy.com/wp-content/uploads/2014/07/Excel-Lookup1.png"><img class="alignnone wp-image-3636 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/07/Excel-Lookup1.png" alt="" width="1180" height="575" srcset="https://stealthpuppy.com/wp-content/uploads/2014/07/Excel-Lookup1.png 1180w, https://stealthpuppy.com/wp-content/uploads/2014/07/Excel-Lookup1-150x73.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/07/Excel-Lookup1-300x146.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/07/Excel-Lookup1-1024x498.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/07/Excel-Lookup1-624x304.png 624w" sizes="(max-width: 1180px) 100vw, 1180px" /></a></p>
 
-<p>The INDEX formula is used to return the amount of RAM overhead based on the vCPU and RAM values that we input into the spreadsheet. In this instance, I have two inputs – number of vCPUs (B3) and amount of RAM in GB (B4) assigned to my sample VM (for RDS/XenApp or VDI, I’ve assumed that all VMs on the host are configured identically.</p>
+<p>The INDEX formula is used to return the amount of RAM overhead based on the vCPU and RAM values that we input into the spreadsheet. In this instance, I have two inputs - number of vCPUs (B3) and amount of RAM in GB (B4) assigned to my sample VM (for RDS/XenApp or VDI, I’ve assumed that all VMs on the host are configured identically.</p>
 
 <pre class="lang:ini decode:true" title="Using INDEX to select from an array">INDEX(array,row_num,column_num)</pre>
 
-<p>Here, <em>array</em> is the amount of RAM Overhead to select from – essentially the lookup table I’ve added into the spreadsheet that lists the amount of VM RAM Overhead (D6 to I16), <em>row_num</em> is the number of vCPUs assigned to the VM (1 to 8), <em>column_num</em> is the amount of RAM assigned to the VM (256Mb to 256GB).</p>
+<p>Here, <em>array</em> is the amount of RAM Overhead to select from - essentially the lookup table I’ve added into the spreadsheet that lists the amount of VM RAM Overhead (D6 to I16), <em>row_num</em> is the number of vCPUs assigned to the VM (1 to 8), <em>column_num</em> is the amount of RAM assigned to the VM (256Mb to 256GB).</p>
 
 <p>To select from the appropriate row and column in the table, I need to match the inputs from the array of vCPUs (E5 to L5, or 1 to 8 vCPUs) and the amount of RAM (from D6 to D16, or 256Mb to 256GB of RAM).  The MATCH formula will look like the below. <em>Lookup_value</em> will be the number of vCPUs or amount of RAM, <em>lookup_array</em> is the number of vCPUs in the table to select from (1 to 8). We can ignore <em>match_type</em>.</p>
 

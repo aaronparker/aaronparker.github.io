@@ -53,7 +53,7 @@
 
 <ul>
   <li>VisualCRedistributables.xml updated with MSI Product codes for the redistributables</li>
-  <li>Install-VisualCRedistributables.ps1 updated with ConfigMgr support – create applications for the redistributables in ConfigMgr</li>
+  <li>Install-VisualCRedistributables.ps1 updated with ConfigMgr support - create applications for the redistributables in ConfigMgr</li>
   <li>Updated with additional parameter validation, parameter sets, inline comments</li>
 </ul>
 
@@ -89,11 +89,11 @@
 <p>The properties of each redistributable are defined in each node:</p>
 
 <ul>
-  <li>Name – the name of the redistributable as displayed on the download page. Not used in the script, but useful for reading the XML file.</li>
-  <li>ShortName – the redistributable will be downloaded to Release\Architecture\ShortName</li>
-  <li>URL – this is the URL to the page at microsoft.com/downloads. Not used in the script, but useful for referencing the download as needed</li>
-  <li>ProductCode – this is the MSI Product Code for the specified VC++ App that will be used to import the package into Configuration Manager</li>
-  <li>Download – this is the URL to the installer so that the script can download each redistributable</li>
+  <li>Name - the name of the redistributable as displayed on the download page. Not used in the script, but useful for reading the XML file.</li>
+  <li>ShortName - the redistributable will be downloaded to Release\Architecture\ShortName</li>
+  <li>URL - this is the URL to the page at microsoft.com/downloads. Not used in the script, but useful for referencing the download as needed</li>
+  <li>ProductCode - this is the MSI Product Code for the specified VC++ App that will be used to import the package into Configuration Manager</li>
+  <li>Download - this is the URL to the installer so that the script can download each redistributable</li>
 </ul>
 
 <h2 id="parameters">Parameters</h2>
@@ -141,12 +141,10 @@
 <p>Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list.<figure></figure></p>
 
 <figure style="width: 1442px" class="wp-caption alignnone"><img title="Visual C++ Redistributables 2005-2015" src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/2005-2015.PNG" alt="Visual C++ Redistributables 2005-2015" width="1442" height="900" /><figcaption class="wp-caption-text">Visual C++ Redistributables 2005-2015</figcaption></figure>
-<p>&lt;/figure&gt;</p>
 
 <p>Visual C++ Redistributables 2005 to 2017 (including 2015) installed:<figure></figure></p>
 
 <figure style="width: 1442px" class="wp-caption alignnone"><img title="Visual C++ Redistributables 2005-2017" src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/2005-2017.PNG" alt="Visual C++ Redistributables 2005-2017" width="1442" height="900" /><figcaption class="wp-caption-text">Visual C++ Redistributables 2005-2017</figcaption></figure>
-<p>&lt;/figure&gt;</p>
 
 <h3 id="configmgr">ConfigMgr</h3>
 
@@ -167,7 +165,6 @@
 <p>This will look similar to the following in the Configuration Manager console:<figure></figure></p>
 
 <figure style="width: 1368px" class="wp-caption alignnone"><img src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/VCredist_ConfigMgr.PNG" alt="Visual C++ Redistributables in Configuration Manager" width="1368" height="727" /><figcaption class="wp-caption-text">Visual C++ Redistributables in Configuration Manager</figcaption></figure>
-<p>&lt;/figure&gt;</p>
 
 <h1 id="finally">Finally</h1>
 

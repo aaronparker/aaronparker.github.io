@@ -8,8 +8,8 @@
 <meta property="og:title" content="Visualising ConfigMgr, Intune and Windows 10 Releases" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I recently presented a session titled ‘Modern Management Methodology Imaginarium‘ at the xenappblog.com Virtual Expo September 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it." />
-<meta property="og:description" content="I recently presented a session titled ‘Modern Management Methodology Imaginarium‘ at the xenappblog.com Virtual Expo September 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it." />
+<meta name="description" content="I recently presented a session titled ‘Modern Management Methodology Imaginarium’ at the xenappblog.com Virtual Expo September 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it." />
+<meta property="og:description" content="I recently presented a session titled ‘Modern Management Methodology Imaginarium’ at the xenappblog.com Virtual Expo September 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it." />
 <link rel="canonical" href="/configmgr-intune-windows10-releases/" />
 <meta property="og:url" content="/configmgr-intune-windows10-releases/" />
 <meta property="og:site_name" content="stealthpuppy" />
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-09-27T01:06:31+10:00" />
 <script type="application/ld+json">
-{"description":"I recently presented a session titled ‘Modern Management Methodology Imaginarium‘ at the xenappblog.com Virtual Expo September 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/configmgr-intune-windows10-releases/","image":"/wp-content/uploads/2018/09/alex-litvin-790876-unsplash.jpg","headline":"Visualising ConfigMgr, Intune and Windows 10 Releases","dateModified":"2018-09-27T01:06:31+10:00","datePublished":"2018-09-27T01:06:31+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/configmgr-intune-windows10-releases/"},"@context":"https://schema.org"}</script>
+{"description":"I recently presented a session titled ‘Modern Management Methodology Imaginarium’ at the xenappblog.com Virtual Expo September 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/configmgr-intune-windows10-releases/","image":"/wp-content/uploads/2018/09/alex-litvin-790876-unsplash.jpg","headline":"Visualising ConfigMgr, Intune and Windows 10 Releases","dateModified":"2018-09-27T01:06:31+10:00","datePublished":"2018-09-27T01:06:31+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/configmgr-intune-windows10-releases/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -47,19 +47,19 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>I recently presented a session titled ‘<a href="https://xenappblog.com/agenda/">Modern Management Methodology Imaginarium</a>‘ at the <a href="https://xenapptraining.lpages.co/xbve092018/">xenappblog.com Virtual Expo September</a> 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it.</p>
+    <p>I recently presented a session titled ‘<a href="https://xenappblog.com/agenda/">Modern Management Methodology Imaginarium</a>’ at the <a href="https://xenapptraining.lpages.co/xbve092018/">xenappblog.com Virtual Expo September</a> 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it.</p>
 
 <h1 id="the-modern-desktop">The Modern Desktop</h1>
 
-<p>While the ‘modern desktop’ is most certainly a popular topic in the EUC space today, how to implement a modern desktop approach I think, is not yet widely understood. Organisations are looking to solve the same desktop challenges we’ve had for the past 20 years, in a more efficient and secure manner. Implementing the modern desktop requires defining a methodology that follows the same basic process followed for any desktop project – discovery and assessment, design, build, test, pilot, deploy (rinse and repeat). </p>
+<p>While the ‘modern desktop’ is most certainly a popular topic in the EUC space today, how to implement a modern desktop approach I think, is not yet widely understood. Organisations are looking to solve the same desktop challenges we’ve had for the past 20 years, in a more efficient and secure manner. Implementing the modern desktop requires defining a methodology that follows the same basic process followed for any desktop project - discovery and assessment, design, build, test, pilot, deploy (rinse and repeat).</p>
 
 <p>Successfully adopting the modern desktop requires leveraging analytics which is easier to achieve with current cloud-based toolsets (Microsoft has essentially <a href="https://docs.microsoft.com/en-us/windows/deployment/update/windows-analytics-overview">made this free</a>). Whilst analytics show you where you are, it’s important to understand where you need to get to, or at least what the journey will look like.</p>
 
 <h1 id="faster-release-schedules">Faster Release Schedules</h1>
 
-<p>Software vendors have changed their approach to releases and more regular smaller releases are common. I posit that the effect of this on our methodology or approach is seen primarily in the design phase – a design document can be out of date a week after you’ve written it. Thus we should ensure that we document design principles and business outcomes rather than get bogged down in the details.</p>
+<p>Software vendors have changed their approach to releases and more regular smaller releases are common. I posit that the effect of this on our methodology or approach is seen primarily in the design phase - a design document can be out of date a week after you’ve written it. Thus we should ensure that we document design principles and business outcomes rather than get bogged down in the details.</p>
 
-<p>In my session, I demonstrated this with current Microsoft products – System Center Configuration Manager, Microsoft Intune and, of course, Windows 10 itself. The pace of releases has increased, which while great for innovation, can out pressure IT groups implementing and managing these products. Microsoft Intune has weekly updates!</p>
+<p>In my session, I demonstrated this with current Microsoft products - System Center Configuration Manager, Microsoft Intune and, of course, Windows 10 itself. The pace of releases has increased, which while great for innovation, can out pressure IT groups implementing and managing these products. Microsoft Intune has weekly updates!</p>
 
 <p>Here’s the slide I created to visualise this theme.</p>
 
@@ -67,17 +67,16 @@
 
 <h1 id="download-the-slide">Download the Slide</h1>
 
-<p>A number of people have asked about using the slide, so I’m making it available here for download to use in your own presentations. Download here in PowerPoint format: <a href="https://stealthpuppy.sharefile.com/d-se48ec490d4c485f8">Visualising ConfigMgr, Intune and Windows 10 Releases</a>.</p>
+<p>A number of people have asked about using the slide, so I’m making it available here for download to use in your own presentations. Download here in PowerPoint format: <a href="https://stealthpuppy.sharefile.com/d-se48ec490d4c485f8">Visualising ConfigMgr, Intune and Windows 10 Releases</a>.</p>
 
-<p>Note that this is covered under the same license as all content on this site – a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. If you use the slide, please keep the attribution intact. I welcome any updates or improvements you might have.</p>
+<p>Note that this is covered under the same license as all content on this site - a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. If you use the slide, please keep the attribution intact. I welcome any updates or improvements you might have.</p>
 
 <h1 id="view-the-session">View the Session</h1>
 
-<p><a href="https://twitter.com/xenappblog">Eric</a> should making the recordings from last week’s Virtual Expo available soon, so you should be able to see my session in full.</p>
+<p><a href="https://twitter.com/xenappblog">Eric</a> should making the recordings from last week’s Virtual Expo available soon, so you should be able to see my session in full.</p>
 
-<p>Photo by <a href="https://unsplash.com/photos/MAYsdoYpGuk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alex Litvin</a> on <a href="https://unsplash.com/search/photos/projector?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
+<p>Photo by <a href="https://unsplash.com/photos/MAYsdoYpGuk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alex Litvin</a> on <a href="https://unsplash.com/search/photos/projector?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></p>
 
-<p> </p>
 
   </div><a class="u-url" href="/configmgr-intune-windows10-releases/" hidden></a>
 </article>

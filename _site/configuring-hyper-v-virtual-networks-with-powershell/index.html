@@ -54,7 +54,7 @@
 
 <p><img class="alignnone size-full wp-image-2676" title="Hyper-V Virtual Networks" src="http://stealthpuppy.com/wp-content/uploads/2012/03/HyperVVirtualNetworks.png" alt="Hyper-V Virtual Networks" width="660" height="324" srcset="https://stealthpuppy.com/wp-content/uploads/2012/03/HyperVVirtualNetworks.png 660w, https://stealthpuppy.com/wp-content/uploads/2012/03/HyperVVirtualNetworks-150x73.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/03/HyperVVirtualNetworks-300x147.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
 
-<p>Because the <em>New-VMExternalSwitch</em> and <em>Remove-VMSwitchNic</em> commandlets to used configure the virtual networks require the adapter description, I’ve had to come up with a way to grab the description based on some that remains static – the MAC address. List below is a script that contains a list of MAC addresses (you could improve on this by keeping the list in a file) for each target MAC address in each server.</p>
+<p>Because the <em>New-VMExternalSwitch</em> and <em>Remove-VMSwitchNic</em> commandlets to used configure the virtual networks require the adapter description, I’ve had to come up with a way to grab the description based on some that remains static - the MAC address. List below is a script that contains a list of MAC addresses (you could improve on this by keeping the list in a file) for each target MAC address in each server.</p>
 
 <p>It’s just a simple list, so if I add another server, I just add the new server’s MAC address to the list. The script returns the description of the adapter with that MAC address and then uses that to configure the new virtual network. Enjoy.</p>
 
@@ -99,7 +99,7 @@ Write-Warning “Unable to match a local adapter from the list of supplied MAC a
 }<br />
 }<br />
 Else {<br />
-Write-Warning “’$HyperVLibrary’ doesn’t exist. Unable to continue without the PowerShell Management Library for Hyper-V.”<br />
+Write-Warning “‘$HyperVLibrary’ doesn’t exist. Unable to continue without the PowerShell Management Library for Hyper-V.”<br />
 }<br />
 [/code]</p>
 

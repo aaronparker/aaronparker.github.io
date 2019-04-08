@@ -65,15 +65,15 @@ Description:<br />
 Login failed for user ‘DOMAINserviceaccount’. [CLIENT: <local machine="">]  
 For more information, see Help and Support Center at http://go.microsoft.com/fwlink/events.asp.  
 Data:  
-0000: 18 48 00 00 0e 00 00 00 .H&#8230;&#8230;  
-0008: 13 00 00 00 43 00 4c 00 &#8230;.C.L.  
+0000: 18 48 00 00 0e 00 00 00 .H......  
+0008: 13 00 00 00 43 00 4c 00 ....C.L.  
 0010: 41 00 41 00 47 00 45 00 A.A.G.E.  
 0018: 30 00 31 00 5c 00 43 00 0.1..C.  
 0020: 49 00 54 00 52 00 49 00 I.T.R.I.  
 0028: 58 00 41 00 41 00 43 00 X.A.A.C.  
-0030: 00 00 07 00 00 00 6d 00 &#8230;&#8230;m.  
+0030: 00 00 07 00 00 00 6d 00 ......m.  
 0038: 61 00 73 00 74 00 65 00 a.s.t.e.  
-0040: 72 00 00 00 r&#8230;</local></p>
+0040: 72 00 00 00 r...</local></p>
 
   <ul>
     <li>
@@ -113,7 +113,7 @@ So this appeared to be an issue with the permissions on database access for the 
 
 <p>Far more appealing don’t you think? A little ‘Microsofty’ I know, but much better. On graphics too, don’t forget that the Access Gateway only handles GIF files; don’t use PNGs like I did.</p>
 
-<p>The upgrade of the Access Gateway appliance itself was very straightforward. I made a backup of the configuration and then uploaded the 4.5 upgrade. After a reboot, I uploaded the 4.5.1 hotfix and it looked good â€“ just as expected. I then connected the Access Gateway to my new AAC farm and then thought that all was well until I ran into the dreaded ‘<a href="http://www.google.com/search?hl=en&amp;rls=com.microsoft%3Aen-AU&amp;q=%22protocol+driver+error%22+site%3Asupport.citrix.com">Protocol Driver Error</a>‘.</p>
+<p>The upgrade of the Access Gateway appliance itself was very straightforward. I made a backup of the configuration and then uploaded the 4.5 upgrade. After a reboot, I uploaded the 4.5.1 hotfix and it looked good â€“ just as expected. I then connected the Access Gateway to my new AAC farm and then thought that all was well until I ran into the dreaded ‘<a href="http://www.google.com/search?hl=en&amp;rls=com.microsoft%3Aen-AU&amp;q=%22protocol+driver+error%22+site%3Asupport.citrix.com">Protocol Driver Error</a>’.</p>
 
 <p>What I’d missed was adding the Secure Ticket Authorities to the Access Gateway properties (through Gateway Appliances properties / Secure Ticket Authority option). Something so simple that cost me about Â½ hour of my time chasing my tail. What have I learnt from this? 1. Blog about it so I won’t forget for next time and 2. Use a checklist when installing the Access Gateway.</p>
 

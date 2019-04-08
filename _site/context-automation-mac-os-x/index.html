@@ -8,15 +8,15 @@
 <meta property="og:title" content="Context based automation in Mac OS X" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I currently use a MacBook Pro for my personal and work use every day – it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office)." />
-<meta property="og:description" content="I currently use a MacBook Pro for my personal and work use every day – it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office)." />
+<meta name="description" content="I currently use a MacBook Pro for my personal and work use every day - it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office)." />
+<meta property="og:description" content="I currently use a MacBook Pro for my personal and work use every day - it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office)." />
 <link rel="canonical" href="/context-automation-mac-os-x/" />
 <meta property="og:url" content="/context-automation-mac-os-x/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2013-01-12T14:12:18+11:00" />
 <script type="application/ld+json">
-{"description":"I currently use a MacBook Pro for my personal and work use every day – it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/context-automation-mac-os-x/","headline":"Context based automation in Mac OS X","dateModified":"2013-01-12T14:12:18+11:00","datePublished":"2013-01-12T14:12:18+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/context-automation-mac-os-x/"},"@context":"https://schema.org"}</script>
+{"description":"I currently use a MacBook Pro for my personal and work use every day - it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/context-automation-mac-os-x/","headline":"Context based automation in Mac OS X","dateModified":"2013-01-12T14:12:18+11:00","datePublished":"2013-01-12T14:12:18+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/context-automation-mac-os-x/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -46,9 +46,9 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img class="alignright size-full wp-image-3021" alt="ControlPlane Icon" src="http://stealthpuppy.com/wp-content/uploads/2013/01/controlplane.png" width="128" height="128" />I currently use a MacBook Pro for my personal and work use every day – it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).</p>
+    <p><img class="alignright size-full wp-image-3021" alt="ControlPlane Icon" src="http://stealthpuppy.com/wp-content/uploads/2013/01/controlplane.png" width="128" height="128" />I currently use a MacBook Pro for my personal and work use every day - it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).</p>
 
-<p>Each location therefore, has different contexts – at home I might connect to my <a href="http://www.synology.com/">Synology</a> NAS and I don’t need to lock the laptop when I walk away from it. Work is a very different context – I don’t have access to the NAS and I’m in a public location where I should be locking the desktop when it’s not in use.</p>
+<p>Each location therefore, has different contexts - at home I might connect to my <a href="http://www.synology.com/">Synology</a> NAS and I don’t need to lock the laptop when I walk away from it. Work is a very different context - I don’t have access to the NAS and I’m in a public location where I should be locking the desktop when it’s not in use.</p>
 
 <p>Manually mounting remote shares or changing security settings for each locations is repetitive and time consuming. Surely there’s a better way?</p>
 
@@ -58,7 +58,7 @@
 
 <h1 id="installing-controlplane">Installing ControlPlane</h1>
 
-<p>Downloading and installing ControlPlane is very simple – download the disk image (DMG file) and drag ControlPlane to your Applications folder.</p>
+<p>Downloading and installing ControlPlane is very simple - download the disk image (DMG file) and drag ControlPlane to your Applications folder.</p>
 
 <p>Launch ControlPlane and enable ‘Start ControlPlane at login’ (if it’s not running, actions won’t fire). Here I’ve also set a default context (Secure). This is important because I want the secure actions firing by default with other actions only firing if I connect to a specific context (such as Home).</p>
 
@@ -72,7 +72,7 @@
 
 <p>Create a Context with a name, Evidence Sources (properties of a location, physical configuration, peripherals, time of day etc) and Rules (these define evidence sources that describe the context).</p>
 
-<p>I’ve created three Contexts – Home, Mobile (for use with a MiFi-style device) and Secure. Rules are applied to Home and Mobile, whilst Secure has no rules applied and thus applies to any location that isn’t Home or Mobile.</p>
+<p>I’ve created three Contexts - Home, Mobile (for use with a MiFi-style device) and Secure. Rules are applied to Home and Mobile, whilst Secure has no rules applied and thus applies to any location that isn’t Home or Mobile.</p>
 
 <p><img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png 507w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts-150x150.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></p>
 

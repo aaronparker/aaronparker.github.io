@@ -1,0 +1,93 @@
+<p><img style="margin: 0px 10px 5px 0px; display: inline;" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="right" />If you have successfully virtualised an application, imported the package into the Management Server but you are having issues publishing the package, streaming the application or getting it to launch, the first place to start is the <a href="http://technet.microsoft.com/en-us/library/cc817165.aspx">the App-V client log</a>.</p>
+
+<p>The client log settings are managed in the Application Virtualization Client console (SFTCMC.MSC) – start the console and the logging settings can be viewed on the General tab:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ClientProperties" src="http://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties_thumb.png" border="0" alt="ClientProperties" width="414" height="479" /></a></p>
+
+<p>There are actually two places to which the the client will log errors – the Application event log (shown in the image under <em>System Log Level</em>) and the client log file; however the log file is generally the easiest to use when troubleshooting because it’s a flat text file.</p>
+
+<h3 id="using-the-client-log-file">Using the client log file</h3>
+
+<p>The default location for the log file is <em>%ProgramData%\Microsoft\Application Virtualization Client\sftlog.txt</em>. To view the log you can use something as simple as Notepad, but if you want to view it in real time, use SMS Trace (Trace32) from the <a href="http://www.microsoft.com/downloads/en/details.aspx?displaylang=en&amp;FamilyID=5a47b972-95d2-46b1-ab14-5d0cbce54eb8">ConfigMgr 2007 Toolkit</a>.</p>
+
+<p>To get more information out of the client, enable verbose mode, which will enable you to better identify the cause.</p>
+
+<ol>
+  <li>Open the client console and view the client properties</li>
+  <li>Set the Log Level to <em>Verbose</em></li>
+  <li>Click the <em>Reset Log</em> button to start with a clean log file</li>
+</ol>
+
+<p>Resetting the log will rename the existing file and start a new one:</p>
+
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="LogLocation" src="http://stealthpuppy.com/wp-content/uploads/2010/09/LogLocation.png" border="0" alt="LogLocation" width="660" height="200" /></p>
+
+<p><strong>Note</strong>: once you have finished troubleshooting, don’t forget to set the logging level back to <em>Information</em>.</p>
+
+<h3 id="heres-an-example">Here’s an example</h3>
+
+<p>In my test environment, I have a client machine (WIN71) and an App-V Management Server (APPV). I’ve imported a virtualised copy of Adobe Reader and assigned it to a set of users. On the client I have configured APPV as a publishing server; however when refreshing the client no shortcuts for Reader are created.</p>
+
+<p>Viewing the App-V client log, I’ve narrowed down the following lines that show what’s going on during the refresh:</p>
+
+<p>[code][09/23/2010 22:03:50:885 SWAP WRN] {tid=B60:usr=aaron}<br />
+Could not load OSD file \domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd</p>
+
+<p>[09/23/2010 22:03:50:900 AMGR INF] {tid=B60:usr=aaron}<br />
+The app manager could not create an application from ‘\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd’ (rc 0C405564-00000002).[/code]</p>
+
+<p>If I set the log to verbose and try the refresh action again, I get more detail:</p>
+
+<p>[code][09/23/2010 22:45:28:684 AMGR VRB] {tid=B14:usr=woody}CreateApp(osd=\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, icon=\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9_x86 Icons\AdobeReader9.ico)</p>
+
+<p>[09/23/2010 22:45:28:685 AMGR VRB] {tid=B14:usr=woody}<br />
+Parsing type from url \domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd</p>
+
+<p>[09/23/2010 22:45:28:686 SWAP VRB] {tid=B14:usr=woody}<br />
+Initialize(osd=\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, origUrl=NULL)</p>
+
+<p>[09/23/2010 22:45:28:687 OMGR VRB] {tid=B14:usr=woody}<br />
+GetOsdFile(url=\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, origUrl=NULL name=NULL, ver=NULL)</p>
+
+<p>[09/23/2010 22:45:28:688 OSDF VRB] {tid=B14:usr=woody}<br />
+SWOsdFile(url=\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, origUrl=NULL, name=NULL, ver=NULL)</p>
+
+<p>[09/23/2010 22:45:28:710 OSDF VRB] {tid=B14:usr=woody}<br />
+~SWOsdFile()</p>
+
+<p>[09/23/2010 22:45:28:712 OSDF VRB] {tid=B14:usr=woody}<br />
+~SWOsdFile() complete</p>
+
+<p>[09/23/2010 22:45:28:726 SWAP WRN] {tid=B14:usr=woody}<br />
+Could not load OSD file \domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd</p>
+
+<p>[09/23/2010 22:45:28:727 AMGR INF] {tid=B14:usr=woody}<br />
+The app manager could not create an application from ‘\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd’ (rc 0C405564-00000002).[/code]</p>
+
+<p>If check the actual location of the OSD file, I can see that the package is not in the correct path (its actually located at \domain.local\Public\Apps\Adobe\AdobeReader9_x86):</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/OSDLocation.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="OSDLocation" src="http://stealthpuppy.com/wp-content/uploads/2010/09/OSDLocation_thumb.png" border="0" alt="OSDLocation" width="660" height="200" /></a></p>
+
+<p>To fix this issue, I need to update the application properties in the App-V Management console, I can then refresh the client again and the application will be published correctly.</p>
+
+<h3 id="error-codes">Error Codes</h3>
+
+<p>This was a very simple example and the fix was quite obvious. In all cases though, the client log will include an error code – the same code will often be displayed in a dialog box:</p>
+
+<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/ClientError.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ClientError" src="http://stealthpuppy.com/wp-content/uploads/2010/09/ClientError_thumb.png" border="0" alt="ClientError" width="466" height="244" /></a></p>
+
+<p>If the problem is not immediately apparent in the log, start looking for a solution by using the error code. Falko Gräfe has an excellent article that explains <a href="http://www.kirx.org/app-v/read/error-codes-en.html">how to interpret these error codes</a>. In most cases, there will be <a href="http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code">an associated Microsoft knowledgebase article</a> that should give a solution for the error.</p>
+
+<h3 id="resources">Resources</h3>
+
+<ul>
+  <li><a href="http://technet.microsoft.com/en-us/library/cc817103.aspx">Log File for the Application Virtualization Client</a></li>
+  <li><a href="http://technet.microsoft.com/en-us/library/cc817165.aspx">How to Configure the Client Log File</a></li>
+  <li><a href="http://blogs.technet.com/b/appv/archive/2009/01/26/troubleshooting-app-v-with-log-files.aspx">Troubleshooting App-V with log files</a></li>
+  <li><a href="http://support.microsoft.com/kb/939896/">﻿﻿How to use the Process Monitor tool to generate a log file for an application in the App-V virtual environment</a></li>
+  <li><a href="http://www.microsoft.com/downloads/en/details.aspx?displaylang=en&amp;FamilyID=5a47b972-95d2-46b1-ab14-5d0cbce54eb8">System Center Configuration Manager 2007 Toolkit V2</a></li>
+  <li><a href="http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=72876c60-3a87-4705-b722-f73eb56219bf">Application Virtualization Client Log Parser Utility</a> (and <a href="http://blogs.technet.com/b/appv/archive/2008/11/06/app-v-4-5-resource-kit-application-virtualization-client-log-parser-utility.aspx">how to use it</a>)</li>
+  <li><a href="http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/AppPubandClientInteraction.docx">App-V Application Publishing and Client Interaction</a></li>
+  <li><a href="http://www.kirx.org/app-v/read/error-codes-en.html">App-V Client Error Codes</a></li>
+  <li><a href="http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code">App-V Error Codes search</a> on Microsoft Support</li>
+</ul>

@@ -49,13 +49,13 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p><strong>Note</strong>: for a more up to date version of the content in this article, VcRedist now has documentation available here: <a href="https://docs.stealthpuppy.com/vcredist">https://docs.stealthpuppy.com/vcredist</a></p>
 
-<p>Last year I wrote <a href="https://stealthpuppy.com/visual-c-redistributable-installer/">a PowerShell script that can download, install or import</a> the Visual C++ Redistributables into MDT or ConfigMgr. Long-term maintenance of the full feature set in a single script is a little unwieldy so I’ve re-written the script and created <a href="https://github.com/aaronparker/Install-VisualCRedistributables">a PowerShell module</a> – VcRedist.</p>
+<p>Last year I wrote <a href="https://stealthpuppy.com/visual-c-redistributable-installer/">a PowerShell script that can download, install or import</a> the Visual C++ Redistributables into MDT or ConfigMgr. Long-term maintenance of the full feature set in a single script is a little unwieldy so I’ve re-written the script and created <a href="https://github.com/aaronparker/Install-VisualCRedistributables">a PowerShell module</a> - VcRedist.</p>
 
 <p>Refactoring the script into a module has been a great little project for creating my first PowerShell function and publishing it to <a href="https://www.powershellgallery.com/packages/VcRedist/">the PowerShell Gallery</a>.</p>
 
 <h1 id="why-vcredist">Why VcRedist?</h1>
 
-<p>At this point, I’m sure you’re saying to yourself – “Aaron, haven’t you just created <a href="https://chocolatey.org/">Chocolatey</a>?”. In a way yes, this module does exactly what you can do with Chocolatey – install the <a href="https://chocolatey.org/packages/vcredist140">Visual C++ Redistributables</a> directly to the local machine. Although you can download and install all of the supported (and unsupported) Redistributables, the primary aim of the module is to provide a fast way to download and import the Redistributables into the Microsoft Deployment Toolkit or System Center Configuration Manager for operating system deployments.</p>
+<p>At this point, I’m sure you’re saying to yourself - “Aaron, haven’t you just created <a href="https://chocolatey.org/">Chocolatey</a>?”. In a way yes, this module does exactly what you can do with Chocolatey - install the <a href="https://chocolatey.org/packages/vcredist140">Visual C++ Redistributables</a> directly to the local machine. Although you can download and install all of the supported (and unsupported) Redistributables, the primary aim of the module is to provide a fast way to download and import the Redistributables into the Microsoft Deployment Toolkit or System Center Configuration Manager for operating system deployments.</p>
 
 <h1 id="module">Module</h1>
 
@@ -139,10 +139,6 @@ $VcList | Install-VcRedist -Path C:\Temp\VcRedist</pre>
 </ul>
 
 <p>For full details and further updates, <a href="https://github.com/aaronparker/Install-VisualCRedistributables">keep an eye on the repository</a> and test out the module via <a href="https://www.powershellgallery.com/packages/VcRedist/">the PowerShell Gallery</a>.</p>
-
-<p>Image credit:</p>
-
-<p><a style="background-color: black; color: white; text-decoration: none; padding: 4px 6px; font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Helvetica Neue', Helvetica, Ubuntu, Roboto, Noto, 'Segoe UI', Arial, sans-serif; font-size: 12px; font-weight: bold; line-height: 1.2; display: inline-block; border-radius: 3px;" title="Download free do whatever you want high-resolution photos from Alexey Ruban" href="https://unsplash.com/@kartochky?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer"><span style="display: inline-block; padding: 2px 3px;">Alexey Ruban</span></a></p>
 
   </div><a class="u-url" href="/vcredist-powershell-module/" hidden></a>
 </article>

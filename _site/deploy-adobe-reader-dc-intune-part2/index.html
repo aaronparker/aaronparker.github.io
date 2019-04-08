@@ -49,31 +49,31 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>In <a href="https://stealthpuppy.com/deploy-adobe-reader-dc-microsoft-intune-part1/">the previous article</a> we saw how to customise the Adobe Reader DC installation and deploy it via Microsoft Intune. Now that it’s installed on Windows 10 end-points let’s look at how updates work.</p>
 
-<p>First though, it’s important to point out that the version of Adobe Reader DC deployed from the single file Windows Installer is <strong>2015.07.20033</strong>, while the version that is <a href="https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html">current as of July 2018 is <strong>2018.011.20055</strong></a>. The deployed version then is <em>extremely</em> out of date, and given that Intune cannot deploy Windows Installer Patch (MSP) files directly, the end-point needs to rely on the Adobe Acrobat update service to download and install updates.</p>
+<p>First though, it’s important to point out that the version of Adobe Reader DC deployed from the single file Windows Installer is <strong>2015.07.20033</strong>, while the version that is <a href="https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html">current as of July 2018 is <strong>2018.011.20055</strong></a>. The deployed version then is <em>extremely</em> out of date, and given that Intune cannot deploy Windows Installer Patch (MSP) files directly, the end-point needs to rely on the Adobe Acrobat update service to download and install updates.</p>
 
 <h1 id="updating-adobe-reader-dc">Updating Adobe Reader DC</h1>
 
-<p>Adobe Reader (and Acrobat) installs the <strong>Adobe Acrobat Update Service</strong>. On typical enterprise PCs or virtual desktop environments this service may not be desirable, because updates are managed by Configuration Manager or monthly image updates. On a Windows 10 desktop deployed modern management style, it can be up to the device to ensure the OS and applications are kept up to date; thus, this service should remain enabled on those end-points.</p>
+<p>Adobe Reader (and Acrobat) installs the <strong>Adobe Acrobat Update Service</strong>. On typical enterprise PCs or virtual desktop environments this service may not be desirable, because updates are managed by Configuration Manager or monthly image updates. On a Windows 10 desktop deployed modern management style, it can be up to the device to ensure the OS and applications are kept up to date; thus, this service should remain enabled on those end-points.</p>
 
-<p>The updater is actually two components – the Update service and a scheduled task that runs ‘C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARM.exe’ to check for, download and install updates.</p>
+<p>The updater is actually two components - the Update service and a scheduled task that runs ‘C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARM.exe’ to check for, download and install updates.</p>
 
-<p>The task has two triggers – one after user logon, but with a delay of 12 minutes, and the other at a scheduled time that is possibly different per device. Here’s the scheduled task:</p>
+<p>The task has two triggers - one after user logon, but with a delay of 12 minutes, and the other at a scheduled time that is possibly different per device. Here’s the scheduled task:</p>
 
 <figure id="attachment_6046" aria-describedby="caption-attachment-6046" style="width: 1338px" class="wp-caption aligncenter">[<img class="wp-image-6046 size-full" src="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png" alt="Adobe Acrobat Update Task" width="1338" height="711" srcset="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png 1338w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-300x159.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-768x408.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask-1024x544.png 1024w" sizes="(max-width: 1338px) 100vw, 1338px" />](https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png)<figcaption id="caption-attachment-6046" class="wp-caption-text">Adobe Acrobat Update Task</figcaption></figure>
 
-<p>In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn’t exhaustive), it would take more than that to download an update and I resorted to using the ‘Check for Updates’ option from within Adobe Reader manually. </p>
+<p>In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn’t exhaustive), it would take more than that to download an update and I resorted to using the ‘Check for Updates’ option from within Adobe Reader manually.</p>
 
 <h2 id="update-process">Update Process</h2>
 
-<p>Downloading and installing updates does not unfortunately go straight to the latest version. In my testing, my target PCs downloaded an intermediate update to <strong>2015.023.20070</strong> before the second update to <strong>2018.011.20055</strong>. This means that in the real world, it could be several days before a PC has the most recent version installed.</p>
+<p>Downloading and installing updates does not unfortunately go straight to the latest version. In my testing, my target PCs downloaded an intermediate update to <strong>2015.023.20070</strong> before the second update to <strong>2018.011.20055</strong>. This means that in the real world, it could be several days before a PC has the most recent version installed.</p>
 
-<figure id="attachment_6058" aria-describedby="caption-attachment-6058" style="width: 497px" class="wp-caption aligncenter">[<img class="size-full wp-image-6058" src="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png" alt="Adobe Reader DC - An update is available" width="497" height="360" srcset="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png 497w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033-150x109.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033-300x217.png 300w" sizes="(max-width: 497px) 100vw, 497px" />](https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png)<figcaption id="caption-attachment-6058" class="wp-caption-text">Adobe Reader DC &#8211; An update is available</figcaption></figure>
+<figure id="attachment_6058" aria-describedby="caption-attachment-6058" style="width: 497px" class="wp-caption aligncenter">[<img class="size-full wp-image-6058" src="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png" alt="Adobe Reader DC - An update is available" width="497" height="360" srcset="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png 497w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033-150x109.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033-300x217.png 300w" sizes="(max-width: 497px) 100vw, 497px" />](https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png)<figcaption id="caption-attachment-6058" class="wp-caption-text">Adobe Reader DC - An update is available</figcaption></figure>
 
 <p>Fortunately, the updates are downloaded and installed without user intervention, meaning that the update process works for users <a href="https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/user-driven">without administrative rights to their PC</a>.</p>
 
 <h1 id="to-deploy-or-not-deploy">To Deploy or Not Deploy</h1>
 
-<p>So understanding that to deploy Adobe Reader DC via Microsoft Intune requires deploying a version that is more than 3 years old and relying on the end-point to download and install updates, the question that should be asked – should you deploy Adobe Reader to Windows 10 machines via Microsoft Intune?</p>
+<p>So understanding that to deploy Adobe Reader DC via Microsoft Intune requires deploying a version that is more than 3 years old and relying on the end-point to download and install updates, the question that should be asked - should you deploy Adobe Reader to Windows 10 machines via Microsoft Intune?</p>
 
 <p>Here’s what you should consider:</p>
 
@@ -82,7 +82,7 @@
   <li>Of the top 50 Windows desktop applications in 2018, Adobe Reader had the most vulnerabilities (source: <a href="https://info.flexerasoftware.com/SVM-WP-Vulnerability-Review-2018-Desktop-Apps">Flexera</a>), beaten only by Windows itself. If the option is to install an old version of Adobe Reader and rely on the automatic updater on the end-point to install the latest version, the time to update may be unacceptable for some organisations</li>
   <li><a href="https://allthingscloud.blog/install-adobe-reader-dc-with-intune-and-powershell/">PowerShell can be used to deploy Adobe Reader</a> to Windows 10 PCs via Intune; however, this does not allow for user self-service installs and will require building in logic to account for failures in network connectivity during the download or retrying the installation if it were to fail</li>
   <li>Windows 10 includes a capable PDF Reader in Microsoft Edge and other browsers also implement native PDF viewing features</li>
-  <li>Other PDF readers are available from the Microsoft Store, so it is possible to deploy and keep a PDF reader up to date simpler than the process I’ve outlined in these articles; however, many of these are less than ideal – the UI is often not great and many have up sell features built into them</li>
+  <li>Other PDF readers are available from the Microsoft Store, so it is possible to deploy and keep a PDF reader up to date simpler than the process I’ve outlined in these articles; however, many of these are less than ideal - the UI is often not great and many have up sell features built into them</li>
 </ul>
 
 <h1 id="summary">Summary</h1>
@@ -101,16 +101,6 @@
 </ol>
 
 <p>I would prefer install from the Store but that will require enough organisations asking for this feature. <a href="https://www.adobe.com/products/wishform.html">Adobe has a Feature Request form</a> and I would encourage you to use it.</p>
-
-<p><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@digibread?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Russ McCabe"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32"></svg></span></a></p>
-
-<title>
-  unsplash-logo
-</title>
-<path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>
-<p>&lt;/svg&gt;&lt;/span&gt;</p>
-
-<p><span style="display:inline-block;padding:2px 3px">Russ McCabe</span>&lt;/a&gt;</p>
 
   </div><a class="u-url" href="/deploy-adobe-reader-dc-intune-part2/" hidden></a>
 </article>

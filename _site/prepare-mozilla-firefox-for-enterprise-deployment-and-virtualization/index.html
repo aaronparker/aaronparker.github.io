@@ -61,8 +61,8 @@
 <ul>
   <li>Import Wizard – Firefox starts a wizard on first run that imports settings from other browsers. You may want to remove this wizard to simplify the startup of Firefox</li>
   <li>Automatic updates for Firefox – <em>Options / Advanced / Update / Firefox updates.</em> Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile</li>
-  <li><em>Mozilla Maintenance Service</em> – <a href="http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service">Firefox installs an updater service</a> that allows updating Firefox automatically, whilst avoiding UAC prompts. This service should be disabled or not installed in a controlled environment including under application virtualization</li>
-  <li>Default browser check – <em>Options / Advanced / General – Always check to see if Firefox is the default browser on startup</em>. Under App-V 4,x, once Firefox is isolated from the OS, the user won’t be able to make it the default browser (this will work under App-V 5)</li>
+  <li><em>Mozilla Maintenance Service</em> - <a href="http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service">Firefox installs an updater service</a> that allows updating Firefox automatically, whilst avoiding UAC prompts. This service should be disabled or not installed in a controlled environment including under application virtualization</li>
+  <li>Default browser check – <em>Options / Advanced / General - Always check to see if Firefox is the default browser on startup</em>. Under App-V 4,x, once Firefox is isolated from the OS, the user won’t be able to make it the default browser (this will work under App-V 5)</li>
   <li>The ‘Welcome to Firefox’ tab, the ‘Know your rights’ and ‘Improve Firefox’ notifications</li>
 </ul>
 
@@ -125,13 +125,13 @@ EnableProfileMigrator=false[/code]</p>
 <p>[code lang=”css” highlight=”5″]/* UserChrome.css for Mozilla Firefox */<br />
 /* Remove access to user interface elements that aren’t suitable for application virtualization */</p>
 
-<p>/* Options – Advanced – General – System Defaults */<br />
+<p>/* Options - Advanced - General - System Defaults */<br />
 #systemDefaultsGroup { display: none !important; }</p>
 
 <p>/* Options / Advanced / Update / Firefox updates group box */<br />
 #updateApp { display: none !important; }</p>
 
-<p>/* Help – About – Check for Updates button */<br />
+<p>/* Help - About - Check for Updates button */<br />
 #updateButton { display: none !important; }[/code]</p>
 
 <h1 id="installing-firefox">Installing Firefox</h1>

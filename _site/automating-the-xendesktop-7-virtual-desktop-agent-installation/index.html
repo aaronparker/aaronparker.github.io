@@ -80,7 +80,7 @@ SET OPTIONS=%OPTIONS% /NOREBOOT</pre>
 
 <p>There are additional options at this point and the recommended approach is to specify the XD site GUID using SITE_GUID (this is the same as ‘Choose locations from Active Directory’ shown below). Don’t use CONTROLLERS and SITE_GUID at the same time.</p>
 
-<p>The last option – ‘Let Machine Creation Services do it automatically’ doesn’t appear to be available as a command line option. From the command line perspective, I assume this is the same as not specifying CONTROLLERS or SITE_GUID at all.</p>
+<p>The last option - ‘Let Machine Creation Services do it automatically’ doesn’t appear to be available as a command line option. From the command line perspective, I assume this is the same as not specifying CONTROLLERS or SITE_GUID at all.</p>
 
 <p><a href="http://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions.png"><img class="alignnone size-full wp-image-3396" alt="ConfigurationOptions" src="http://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions.png" width="766" height="272" srcset="https://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions.png 766w, https://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions-150x53.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions-300x106.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/06/ConfigurationOptions-624x221.png 624w" sizes="(max-width: 766px) 100vw, 766px" /></a></p>
 
@@ -128,10 +128,10 @@ START /WAIT XenDesktopVDASetup.exe %OPTIONS%</pre>
 <p>The <a href="http://support.citrix.com/proddocs/topic/xendesktop-7/cds-install-command.html">documentation</a> is quite clear and easy to understand; however there’s a few options that I would recommend having clear understanding of what they enable:</p>
 
 <ul>
-  <li>OPTIMIZE – this option will optimise the base image for a virtual machine using the changes outlined in this support article:<a href="http://support.citrix.com/article/ctx125874"> How to Optimize XenDesktop Machines</a>. I would recommend understanding clearly what each change does and removing this option if you have implemented your own optimisations.</li>
-  <li>NODESKTOPEXPERIENCE – I utilise my own solution for making a Windows Server look like a desktop OS and would generally leave this out as a result. This enables the default Citrix wallpaper, which is pretty horrible.</li>
-  <li>BASEIMAGE – this will enable PVD support. Use at your own risk 😉</li>
-  <li>PORTNUMBER – using a custom port for the VDA other than the default TCP 80, requires installing the VDA and then re-rerunning setup to specify a different port.</li>
+  <li>OPTIMIZE - this option will optimise the base image for a virtual machine using the changes outlined in this support article:<a href="http://support.citrix.com/article/ctx125874"> How to Optimize XenDesktop Machines</a>. I would recommend understanding clearly what each change does and removing this option if you have implemented your own optimisations.</li>
+  <li>NODESKTOPEXPERIENCE - I utilise my own solution for making a Windows Server look like a desktop OS and would generally leave this out as a result. This enables the default Citrix wallpaper, which is pretty horrible.</li>
+  <li>BASEIMAGE - this will enable PVD support. Use at your own risk 😉</li>
+  <li>PORTNUMBER - using a custom port for the VDA other than the default TCP 80, requires installing the VDA and then re-rerunning setup to specify a different port.</li>
 </ul>
 
 <p>There’s not much different here to previously releases, but I would like to see Citrix add all options to the wizard and then provide the command line, based on what you’ve selected, at the end to lower the barriers to automation even further.</p>
