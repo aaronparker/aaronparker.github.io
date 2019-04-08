@@ -30,6 +30,15 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Plugins
+# gems:
+#   - jekyll-paginate
+#   - jekyll-sitemap
+#   - jekyll-gist
+#   - jekyll-feed
+#   - jemoji
+#   - jekyll-seo-tag
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -41,3 +50,13 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+author:
+  name             : "Aaron Parker"
+#  avatar           : "me2.png"
+#  bio              : ""
+  location         : "Melbourne, Australia"
+  email            : "aaron@stealthpuppy.com"
+  github           : "aaronparker"
+  linkedin         : "aaronedwardparker"
+  twitter          : "stealthpuppy"
