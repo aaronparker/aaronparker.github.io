@@ -53,11 +53,11 @@ Command line interaction with Server Manager also provides the ability to query 
 I've included here the complete list of roles and features that you can use with SERVERMANAGER.CMD and OCSETUP.EXE in Windows Server 2008 and Windows Server Core. Don't reach for that GUI, real men (and women) use the command line.
 
 <p class="download">
-  [download id=&#8221;25&#8243; format=&#8221;1&#8243;]
+  [download id="25&#8243; format="1&#8243;]
 </p>
 
 <p class="download">
-  [download id=&#8221;26&#8243; format=&#8221;1&#8243;]
+  [download id="26&#8243; format="1&#8243;]
 </p>
 
 Here's something I really like: using SERVERMANAGERCMD -QUERY via Windows PowerShell makes seeing what's installed on your server nice and simple (**Update**: this works under Command Prompt too):

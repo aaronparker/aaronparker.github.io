@@ -11,7 +11,7 @@ categories:
 ---
 I've seen some dumb software in my travels and [Mercury Quality Center](http://www.mercury.com/us/products/quality-center/) is no exception; however this one has got me scratching my head.
 
-Mercury Quality Center &#8220;provides a web-based system for _automated_ software quality testing and management&#8221;. It uses a browser front-end with ActiveX controls connecting to a back-end process (I really don't know much about the back-end). Now, as you would expect from the product description, Mercury Quality Center should be a nice quality package from end to end. In my view this would include a scriptable client installation package. Scripting any client software installation is important because it should be a consistent repeatable process.
+Mercury Quality Center "provides a web-based system for _automated_ software quality testing and management". It uses a browser front-end with ActiveX controls connecting to a back-end process (I really don't know much about the back-end). Now, as you would expect from the product description, Mercury Quality Center should be a nice quality package from end to end. In my view this would include a scriptable client installation package. Scripting any client software installation is important because it should be a consistent repeatable process.
 
 Except that's where they strike out. The incredibly dumb thing about this is the client software is packaged up in an _InstallShield_ package which is only used to unpack some files and launch another custom installer. (See the screenshot). No silent install for you!
 

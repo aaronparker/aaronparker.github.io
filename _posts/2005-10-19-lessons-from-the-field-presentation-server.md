@@ -11,10 +11,10 @@ categories:
 tags:
   - Presentation-Server
 ---
-I'll file this under &#8220;Stupid Things I Didn't Know&#8221;. Citrix Presentation Server relies on the PATH variable for core components to run. I was adding to the PATH variable, in a scripted build after the CPS install and before a reboot, with a command like this:
+I'll file this under "Stupid Things I Didn't Know". Citrix Presentation Server relies on the PATH variable for core components to run. I was adding to the PATH variable, in a scripted build after the CPS install and before a reboot, with a command like this:
 
 <p class="console">
-  C:\REG ADD &#8220;HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment&#8221; /v Path /d &#8220;%PATH%;%ProgramFiles%\Sysinternals&#8221; /f
+  C:\REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /d "%PATH%;%ProgramFiles%\Sysinternals" /f
 </p>
 
 Unfortunately, that additions to the PATH that the CPS Setup program has added aren't seen because I'm calling all this from the same session of CMD.EXE. After a reboot the server would not load the logon dialog and show this error instead:

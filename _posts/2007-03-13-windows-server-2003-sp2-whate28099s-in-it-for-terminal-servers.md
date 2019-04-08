@@ -30,12 +30,12 @@ Microsoft has a complete [list of updates in SP2](http://support.microsoft.com/k
 
   * [Your multiprocessor Microsoft Windows 2000 Server-based computer or multiprocessor Windows Server 2003-based computer may stop responding, and the keyboard may not work correctly](http://support.microsoft.com/kb/811211/)
   * [The shadow session is disconnected between two Web client computers that are running Windows Server 2003 or Windows XP](http://support.microsoft.com/kb/896679/)
-  * [Error message when you try to paste data into Excel 2003 during a Terminal Services session: &#8220;Cannot empty the clipboard&#8221;](http://support.microsoft.com/kb/899266/)
+  * [Error message when you try to paste data into Excel 2003 during a Terminal Services session: "Cannot empty the clipboard"](http://support.microsoft.com/kb/899266/)
   * [MS05-041: Vulnerability in Remote Desktop Protocol could allow denial of service](http://support.microsoft.com/kb/899591/)
   * [Print spooling operation in Windows Server 2003-based Terminal Services (TS) computer is slow when Remote Desktop Connection thin clients use printer redirection](http://support.microsoft.com/kb/900090/)
   * [A Terminal Services client computer may make beep sounds after you connect to a Windows Server 2003 Service Pack 1-based computer](http://support.microsoft.com/kb/901115/)
   * [A Windows Server 2003-based terminal server in a forest cannot obtain a license from a license server in a different forest](http://support.microsoft.com/kb/905687/)
-  * [A memory leak occurs in the Wmiprvse.exe process when a program calls an instance of the &#8220;CWin32_TerminalService::ExecQuery&#8221; function in Windows Server 2003](http://support.microsoft.com/kb/905888/)
+  * [A memory leak occurs in the Wmiprvse.exe process when a program calls an instance of the "CWin32_TerminalService::ExecQuery" function in Windows Server 2003](http://support.microsoft.com/kb/905888/)
   * [Terminal Services Licensing Manager may stop when you add a new license on a computer that is running the Brazilian Portuguese version of Windows Server 2003](http://support.microsoft.com/kb/906207/)
   * [You cannot use a Group Policy setting to set the same mandatory profile for all the Terminal Services users in Windows Server 2003](http://support.microsoft.com/kb/908011/)
   * [The Terminal Server Licensing tool may unexpectedly quit after you install Windows Server 2003 Service Pack 1 on a Terminal Server](http://support.microsoft.com/kb/910088/)
@@ -47,7 +47,7 @@ Microsoft has a complete [list of updates in SP2](http://support.microsoft.com/k
   * [An IBM DB2 program stops responding on a Windows Server 2003-based computer that is running Terminal Services](http://support.microsoft.com/kb/916667/)
   * [FIX: You cannot reconnect a Citrix ICA client to an instance of Citrix Presentation Server that is running on a Windows Server 2003 Service Pack 1-based computer](http://support.microsoft.com/kb/917046/)
   * [You cannot connect to a Windows Server 2003-based terminal server when the screen resolution for the Remote Desktop Web Connection ActiveX control is higher than 1600 by 1200 pixels](http://support.microsoft.com/kb/918679/)
-  * [Stop error message when a Terminal Services client logs off from a session on a server that is running Windows Server 2003 with Service Pack 1: &#8220;Stop 0x000000AB (SESSION\_HAS\_VALID\_POOL\_ON_EXIT)&#8221;](http://support.microsoft.com/kb/918679/)
+  * [Stop error message when a Terminal Services client logs off from a session on a server that is running Windows Server 2003 with Service Pack 1: "Stop 0x000000AB (SESSION\_HAS\_VALID\_POOL\_ON_EXIT)"](http://support.microsoft.com/kb/918679/)
 
 There are also 12 Intellimirror updates, two of which I had experienced in my most recent project:
 

@@ -133,7 +133,7 @@ Here are a few recommendations for adding apps to the Inventory, in no particula
   2. Windows 10 and Windows 8/8.1 apps are available in the WSfB - **target Windows 10 apps where possible** as these will provide a more consistent user experience as they are designed for Windows 10
   3. While perhaps subjective, **find apps that can be useful in your environment**. This could be an opportunity to show what's possible with the Universal app platform
   4. **Don't forget about browser extensions for Edge**. These could be added to the Private store to allow users to install themselves
-  5. **Not all apps are available for the desktop** - apps that work on Windows 10 Mobile are listed in the WSfB as well. This seems counterintuitive to a &#8220;Universal app platform&#8221;, but that's the reality. If you're managing Windows 10 mobile devices, then you'll manage apps for all platforms from the WSfB
+  5. **Not all apps are available for the desktop** - apps that work on Windows 10 Mobile are listed in the WSfB as well. This seems counterintuitive to a "Universal app platform", but that's the reality. If you're managing Windows 10 mobile devices, then you'll manage apps for all platforms from the WSfB
   6. **The Windows Store app on Windows 10 is a little easier for finding apps including finding apps from a specific developer**. You can then search for those apps in the WSfB.
 
 ### Managing Apps

@@ -18,7 +18,7 @@ I promise this won't become yet another blog just reposting links to other sites
   * 802.1X for wireless clients; and
   * Using SMS to detect and remediate unmanaged clients.
 
-Check out page 22 for &#8220;Identifying Levels of Trust&#8221;. This is a good starting point to start thinking about levels of trust in your Internal network. The days of having complete trust in our internal networks is over. There is also only a single paragraph on NAP because this document details technologies that you can implement today.
+Check out page 22 for "Identifying Levels of Trust". This is a good starting point to start thinking about levels of trust in your Internal network. The days of having complete trust in our internal networks is over. There is also only a single paragraph on NAP because this document details technologies that you can implement today.
 
 > Security organizations and professionals now understand that internal network risks, whether intentional or accidental, have the potential to be even more perilous than external threats. ... This security guidance discusses some effective approaches that can be used to help enforce compliance with security policies. These approaches maximize the benefits of risk management efforts and add an extra layer of security to midsize business networks that will help reduce the risks associated with untrusted and unmanaged computers.
 

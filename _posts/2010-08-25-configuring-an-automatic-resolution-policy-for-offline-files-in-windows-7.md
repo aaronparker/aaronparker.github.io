@@ -31,7 +31,7 @@ Most users are not going to know which option they should choose (and they certa
 
 ### The feature does exist!
 
-Last week I came across a knowledgebase article that Microsoft recently updated – [Automatic resolution policy for an offline file synchronization conflict does not work if the &#8220;keep all changes&#8221; setting is enabled in Windows Vista or in Windows Server 2008](http://support.microsoft.com/kb/2189014). It appears that an automatic resolution policy does exist even though there's no documentation on this feature, beyond one page on MSDN on the [OFFLINEFILES\_SYNC\_CONFLICT_RESOLVE](http://msdn.microsoft.com/en-us/library/bb530653(v=VS.85).aspx) enumerator in the Offline Files API.
+Last week I came across a knowledgebase article that Microsoft recently updated – [Automatic resolution policy for an offline file synchronization conflict does not work if the "keep all changes" setting is enabled in Windows Vista or in Windows Server 2008](http://support.microsoft.com/kb/2189014). It appears that an automatic resolution policy does exist even though there's no documentation on this feature, beyond one page on MSDN on the [OFFLINEFILES\_SYNC\_CONFLICT_RESOLVE](http://msdn.microsoft.com/en-us/library/bb530653(v=VS.85).aspx) enumerator in the Offline Files API.
 
 ### Configuring an Automatic Resolution Policy
 

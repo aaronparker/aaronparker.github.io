@@ -29,7 +29,7 @@ Sounds awesome on paper right? With the performance and synchronisation issues t
 
 Perhaps eventually we'll be able to replace both features with different approaches, instead of attempting to fix the unfixable. Maybe I shouldn't be so hard on these technologies because they were great when introduced, but in my view they're not up to task for user data management in today's desktop. Where's the corporate version of SkyDrive with on premise data?
 
-There's various 3<sup>rd</sup> party &#8220;cloud&#8221; solutions aimed at this data problem now – Citrix ShareFile, Oxygen Open Storage Grid, RES HyperDrive and AppSense DataNow, to name a few. I wanted to take a look at the integration between DataNow and the traditional way of providing users with their data.
+There's various 3<sup>rd</sup> party "cloud" solutions aimed at this data problem now – Citrix ShareFile, Oxygen Open Storage Grid, RES HyperDrive and AppSense DataNow, to name a few. I wanted to take a look at the integration between DataNow and the traditional way of providing users with their data.
 
 # What is AppSense DataNow?
 

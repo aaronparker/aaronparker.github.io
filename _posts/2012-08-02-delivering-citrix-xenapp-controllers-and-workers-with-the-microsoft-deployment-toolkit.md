@@ -31,7 +31,7 @@ Behind the scenes, these applications run a script that will install and configu
 
 In CustomSettings.ini, under the _Settings_  define a custom property named _XenAppRole_:
 
-\[code highlight=&#8221;3&#8243;\]\[Settings\]  
+\[code highlight="3&#8243;\]\[Settings\]  
 Priority=UUID, Default  
 Properties=XenAppRole[/code]
 
@@ -39,7 +39,7 @@ Next we need to define the role for a specific machine. For this example I'm usi
 
 Because this is a custom property I can choose what ever value I like, so I've creatively chosen WORKER or CONTROLLER. The following example shows the configuration for a specific machine named XENAPP1 identified from its UUID:
 
-\[code highlight=&#8221;3&#8243;\]\[F1373B42-1F37-75FC-B166-A2E578E28B1E\]  
+\[code highlight="3&#8243;\]\[F1373B42-1F37-75FC-B166-A2E578E28B1E\]  
 OSDComputerName=XENAPP1  
 XenAppRole=CONTROLLER[/code]
 

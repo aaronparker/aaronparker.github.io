@@ -20,7 +20,7 @@ tags:
 
 Before sequencing Illustrator, you will need to obtain the [volume license version of the media](http://www.adobe.com/aboutadobe/openoptions/) so that you won't have to worry about activation. If you use standard media that requires activation the application will refuse to run on your SoftGrid/MAV client machines.
 
-When sequencing Illustrator CS3 you will run into errors as the Sequencer is going through the post-monitoring phase. You will see the sequencer fail and report &#8220;`SystemGuard download failed (error code 53256)`&#8220;.
+When sequencing Illustrator CS3 you will run into errors as the Sequencer is going through the post-monitoring phase. You will see the sequencer fail and report "`SystemGuard download failed (error code 53256)`".
 
 J.C. Hornbeck has [posted a solution that involves editing DLL files](http://blogs.technet.com/softgrid/archive/2007/12/03/microsoft-application-virtualization-sequencing-adobe-cs3.aspx) directly to fix their manifests. My solution, which does not involve hacking the files is to create manifest files for these DLLs and copy them to the installation folder just after installing the application. These are standard XML files that the Sequencer will read and then process the DLLs using [UTF-8 instead of their native UTF-16](http://blogs.technet.com/softgrid/archive/2007/10/25/update-error-53256-sequencing-adobe-cs3.aspx).
 
@@ -31,7 +31,7 @@ You will need to create these manifest files:
 
 And the contents of the manifest files should look like this:
 
-[code lang=&#8221;xml&#8221;]<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
+[code lang="xml"]<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
 <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
 <assemblyIdentity  
 name="Adobe.Acrobat.fileinfo.dll"  

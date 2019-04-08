@@ -33,7 +33,7 @@ Install the registry entry by placing this into a .REG file and import via
 
 [code]AIESETUP /W /N "Microsoft Java VM" REGEDIT /S SunJava-Off.REG[/code]
 
-Where &#8220;Microsoft Java VM&#8221; is the name of the Isolation Environment and SunJava-Off.REG is the name of the registry file.
+Where "Microsoft Java VM" is the name of the Isolation Environment and SunJava-Off.REG is the name of the registry file.
 
 **4**. Create a new published application instance of Internet Explorer. In my case, because it was for one site only, I specified the URL after IEXPLORE.EXE and labled the published application to reflect the web site.
 

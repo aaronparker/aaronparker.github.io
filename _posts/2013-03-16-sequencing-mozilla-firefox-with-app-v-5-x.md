@@ -61,7 +61,7 @@ Before sequencing, add the following recommended exclusions. :
 Download the following Sequencer Template as a starting point for your Firefox sequence:
 
 <p class="download">
-  [download id=&#8221;61&#8243; format=&#8221;1&#8243;]
+  [download id="61&#8243; format="1&#8243;]
 </p>
 
 # Installing Firefox

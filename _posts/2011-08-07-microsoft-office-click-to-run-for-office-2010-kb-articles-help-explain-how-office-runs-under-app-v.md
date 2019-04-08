@@ -20,10 +20,10 @@ Articles that detail limitations and workarounds that have been updated recently
 
   * [Click-to-Run: Known issues](http://office2010.microsoft.com/en-us/excel-help/click-to-run-known-issues-HA101850565.aspx)
   * [In Office Click-to-Run 2010, some functionality is unavailable, or an Office add-in does not run correctly](http://support.microsoft.com/kb/983266/)
-  * [When Office Click-to-Run 2010 is installed, Microsoft Word is not listed as an application when you right-click an .htm file or an .mhtml file and then click &#8220;Open with&#8221;](http://support.microsoft.com/kb/982259/)
-  * [You cannot use the &#8220;send to&#8221; feature of an external application together with Office Click-to-Run for Outlook 2010](http://support.microsoft.com/kb/982430/)
+  * [When Office Click-to-Run 2010 is installed, Microsoft Word is not listed as an application when you right-click an .htm file or an .mhtml file and then click "Open with"](http://support.microsoft.com/kb/982259/)
+  * [You cannot use the "send to" feature of an external application together with Office Click-to-Run for Outlook 2010](http://support.microsoft.com/kb/982430/)
   * [Office 2010 Click-to-Run compatibility with add-ins](http://support.microsoft.com/kb/982431/)
-  * [&#8220;This product must be installed to Q:&#8221; error message when you try to install Office 2010 that is delivered by Click-to-Run](http://support.microsoft.com/kb/982757/)
+  * ["This product must be installed to Q:" error message when you try to install Office 2010 that is delivered by Click-to-Run](http://support.microsoft.com/kb/982757/)
   * [How to use command-line switches in Office Click-to-Run for Office 2010](http://support.microsoft.com/kb/982432/)
 
 There's even an article on getting into the virtual environment (which is good for a laugh):

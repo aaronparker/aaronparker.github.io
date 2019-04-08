@@ -26,7 +26,7 @@ Going back many years, my initial foray into a media centre was Windows XP Media
 
 Through that time, I've fought an ever frustrating battle with simplifying the way that we watch TV and movies (and to a lesser extend listen to audio).
 
-I've had a Samsung smart TV since 2012; however from a usability perspective, it hasn't held up when compared to newer devices. Our Sony Blu-ray player has &#8220;smart TV&#8221; functionality built into it as well, but this suffers from the same problems as the TV - slow to operate (although better than the TV) and a clunky interface, and I suspect a platform that's effectively abandoned.
+I've had a Samsung smart TV since 2012; however from a usability perspective, it hasn't held up when compared to newer devices. Our Sony Blu-ray player has "smart TV" functionality built into it as well, but this suffers from the same problems as the TV - slow to operate (although better than the TV) and a clunky interface, and I suspect a platform that's effectively abandoned.
 
 Both of these devices will stream TV and other streaming media solution, as well as from a NAS. They play various media types, but both choke on certain types of encoded video and just refuse to play or recognise others.
 

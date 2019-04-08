@@ -22,7 +22,7 @@ This poses some challenges – how do you use troubleshooting tools such as [Pro
 
 ### The Old Way – editing OSD files
 
-The old method of launching an external application into the bubble was to edit an OSD file and add  [SCRIPT](http://support.microsoft.com/kb/939085) entry. In this example, CMD.EXE will be launched before the application (TIMING=&#8221;PRE&#8221;) and inside the bubble (PROTECT=&#8221;TRUE&#8221;).
+The old method of launching an external application into the bubble was to edit an OSD file and add  [SCRIPT](http://support.microsoft.com/kb/939085) entry. In this example, CMD.EXE will be launched before the application (TIMING="PRE") and inside the bubble (PROTECT="TRUE").
 
 [code]<SCRIPT EVENT="LAUNCH" TIMING="PRE" PROTECT="TRUE" WAIT="TRUE" TIMEOUT="">  
 <HREF>cmd.exe</HREF>  

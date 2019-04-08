@@ -9,7 +9,7 @@ permalink: /isa-server-2006-supportability-update/
 categories:
   - Microsoft
 ---
-Don't call it a service pack, but what's a service pack by any other name? Seems it's a &#8220;Supportability Update&#8221;. Microsoft have released an update for ISA Server 2006 that brings the features that ISA Server 2004 got with Service Pack 3. Here's the breakdown of what's included:
+Don't call it a service pack, but what's a service pack by any other name? Seems it's a "Supportability Update". Microsoft have released an update for ISA Server 2006 that brings the features that ISA Server 2004 got with Service Pack 3. Here's the breakdown of what's included:
 
   * All software updates issued since ISA Server 2006 was released to manufacturing.
   * Improved log viewer functionality, including an enhanced details pane view, text coloring, and new log filtering functionality.

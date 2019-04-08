@@ -22,9 +22,9 @@ Yay! (it is so very geeky to get excited over a scripting tool isn't it?) Micros
 >   <a name="Description" title="Description"></a><span>Windows PowerShell includes: </span>
 > </p>
 > 
->   * One hundred and twenty-nine command-line tools (called &#8220;cmdlets&#8221;) for performing common system administration tasks, such as managing services, processes, event logs, certificates, the registry, and using Windows Management Instrumentation (WMI).
+>   * One hundred and twenty-nine command-line tools (called "cmdlets") for performing common system administration tasks, such as managing services, processes, event logs, certificates, the registry, and using Windows Management Instrumentation (WMI).
 >   * Command-line tools are easy to learn and easy to use with standard naming conventions and common parameters, and simple tools for sorting, filtering, and formatting data and objects.
->   * Support for existing scripting languages and existing command-line tools, and multiple versions of Windows, including Windows XP, Windows Server 2003, Windows Vista and Windows Server code name &#8220;Longhorn&#8221;.
+>   * Support for existing scripting languages and existing command-line tools, and multiple versions of Windows, including Windows XP, Windows Server 2003, Windows Vista and Windows Server code name "Longhorn".
 >   * Feature that allows users to navigate data stores, like the registry and certificate stores, as if they were a file system.
 >   * Standard utilities for managing Windows data in different stores and formats, including Active Directory (ADSI), Windows Management Instrumentation (WMI), Component Object Model (COM) objects, Active X Data Objects (ADO), HTML and XML.
 >   * Sophisticated expression parsing and .NET object manipulation at the command line, including pipelining of objects, make IT professionals more efficient and productive.

@@ -1,6 +1,6 @@
 ---
 id: 3553
-title: '&#8220;There isn’t enough memory available to create a ramdisk device&#8221; booting VMs on Hyper-V'
+title: '"There isn’t enough memory available to create a ramdisk device" booting VMs on Hyper-V'
 date: 2014-01-30T12:38:22+10:00
 author: Aaron Parker
 layout: post

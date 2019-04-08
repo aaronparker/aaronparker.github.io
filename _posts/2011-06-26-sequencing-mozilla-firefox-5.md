@@ -66,13 +66,13 @@ There are a couple of features that should be disabled when running Firefox unde
 Available below is a copy of _user.js_ that disables automatic updates of Firefox and checking whether it is the default browser:
 
 <p class="download">
-  [download id=&#8221;44&#8243; format=&#8221;1&#8243;]
+  [download id="44&#8243; format="1&#8243;]
 </p>
 
 Here is a copy of _userChrome.css_ that will remove updates and default browser options from user interface:
 
 <p class="download">
-  [download id=&#8221;45&#8243; format=&#8221;1&#8243;]
+  [download id="45&#8243; format="1&#8243;]
 </p>
 
 ### Sequencing Platform
@@ -98,7 +98,7 @@ If you are adding Adobe Flash Player to the package, add these exclusions as wel
 I have included these in a Package Template for Firefox that you can download from here:
 
 <p class="download">
-  [download id=&#8221;46&#8243; format=&#8221;1&#8243;]
+  [download id="46&#8243; format="1&#8243;]
 </p>
 
 ### Installing Firefox
@@ -120,12 +120,12 @@ Automating this process as much as possible will create a cleaner package and ma
 For an example script that will automate the install and configuration of Firefox, see the script below:
 
 <p class="download">
-  [download id=&#8221;47&#8243; format=&#8221;1&#8243;]
+  [download id="47&#8243; format="1&#8243;]
 </p>
 
 ### Shortcuts
 
-If the monitoring phase was successful the Sequencer should create a single shortcut for Firefox. If you are including Flash 10.3 or above in the package, add an additional shortcut for the Flash Player Control Panel applet using &#8220;C:\Windows\System32\FlashPlayerCPLApp.cpl&#8221; as the target.
+If the monitoring phase was successful the Sequencer should create a single shortcut for Firefox. If you are including Flash 10.3 or above in the package, add an additional shortcut for the Flash Player Control Panel applet using "C:\Windows\System32\FlashPlayerCPLApp.cpl" as the target.
 
 ### First Run Tasks and Primary Feature Block
 

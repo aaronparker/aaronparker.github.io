@@ -1,6 +1,6 @@
 ---
 id: 3796
-title: 'Participate in the Project VRC &#8220;State of the VDI and SBC union 2015&#8221; survey'
+title: 'Participate in the Project VRC "State of the VDI and SBC union 2015" survey'
 date: 2015-01-14T22:00:07+10:00
 author: Aaron Parker
 layout: post
@@ -26,4 +26,4 @@ The success of the survey will not only be determined by the number of the resp
 
 The survey will be closed **February 15th** this year. I really hope you want to participate and enjoy the official Project VRC “State of the VDI and SBC union 2015” survey!
 
-**Visit <a class="" href="http://www.projectvrc.com/blog/23-project-vrc-state-of-the-vdi-and-sbc-union-2015-survey" target="">www.projectvrc.com/blog/23-project-vrc-state-of-the-vdi-and-sbc-union-2015-survey</a> to fill out the Project Virtual Reality Check &#8220;State of the VDI and SBC Union 2014&#8221; survey.**
+**Visit <a class="" href="http://www.projectvrc.com/blog/23-project-vrc-state-of-the-vdi-and-sbc-union-2015-survey" target="">www.projectvrc.com/blog/23-project-vrc-state-of-the-vdi-and-sbc-union-2015-survey</a> to fill out the Project Virtual Reality Check "State of the VDI and SBC Union 2014" survey.**

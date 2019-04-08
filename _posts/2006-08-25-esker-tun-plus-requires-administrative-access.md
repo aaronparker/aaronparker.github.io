@@ -15,7 +15,7 @@ Today's entrant into the Hall of Shame is Esker Tun PLUS which can be used to pr
 
 <blockquote style="margin-right: 0px" dir="ltr">
   <p>
-    You are attempting to run a Tun PLUS session from the server, &#8220;<edited>&#8221;. <strong>Since Tun PLUS sessions require full access to your system, you must download trust.exe to enable access. Running this executable give Tun PLUS sessions permission to access your system</strong>. You will only have to perform the following operation once.
+    You are attempting to run a Tun PLUS session from the server, "<edited>". <strong>Since Tun PLUS sessions require full access to your system, you must download trust.exe to enable access. Running this executable give Tun PLUS sessions permission to access your system</strong>. You will only have to perform the following operation once.
   </p>
 </blockquote>
 

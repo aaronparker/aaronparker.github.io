@@ -22,7 +22,7 @@ I was having some issues integrating Windows Server 2003 Service Pack 2 into a c
 > a) No network or copy errors occurred during the integration process  
 > b) The format of the destination directory is correct.  
 > The files to be integrated must reside in an i386 and/or ia64 or nec98 directory  
-> (i.e. for an i386 share, if you typed &#8220;update /s:c:\cdshare&#8221;, the files must be in the c:\cdshare\i386 directory).  
+> (i.e. for an i386 share, if you typed "update /s:c:\cdshare", the files must be in the c:\cdshare\i386 directory).  
 > &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;  
 > OK  
 > &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;

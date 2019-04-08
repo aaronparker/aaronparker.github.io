@@ -55,7 +55,7 @@ Reader X 10.1 introduces a new _Adobe Acrobat Updater Service_, you can use the 
 
 Create a script to perform the installation. Here's a sample script that will install Reader, perform some additional actions that can be done in the transform file instead and will then launch Reader after setup has completed.
 
-[sourcecode toolbar=&#8221;true&#8221; language=&#8221;plain&#8221;]@ECHO OFF  
+[sourcecode toolbar="true" language="plain"]@ECHO OFF  
 START /WAIT MSIEXEC /I AcroRead.MSI TRANSFORMS=VirtualisedReaderX.MSI ALLUSERS=TRUE /QB-  
 IF "%PROCESSOR_ARCHITECTURE%"=="AMD64" RD /Q /S "%CommonProgramFiles(x86)%\Adobe\ARM"  
 IF "%PROCESSOR_ARCHITECTURE%"=="x86" RD /Q /S "%CommonProgramFiles%\Adobe\ARM"  
@@ -74,7 +74,7 @@ There are no additional requirements or dependencies for virtualizing Reader X a
 I have provided here a copy of the App-V 4.6 SP1 Package Template which includes a number of exclusions that do not need to be captured in a Reader package.
 
 <p class="download">
-  [download id=&#8221;43&#8243; format=&#8221;1&#8243;]
+  [download id="43&#8243; format="1&#8243;]
 </p>
 
 There is one issue though – the Adobe Reader Protected Mode doesn't like running under App-V. During the monitoring phase the application may not launch on first run and on the second launch the following dialog box will be displayed:

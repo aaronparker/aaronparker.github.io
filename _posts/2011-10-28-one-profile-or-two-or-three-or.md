@@ -35,6 +35,6 @@ I asserted this during my sessions at BriForum this year, in London and Chicago,
 
 However what if you don't want that? Perhaps it's a valid approach for a user to have completely separate profiles per machine. So I thought that a completely non-scientific poll might be an interesting way to find out your thoughts. Have you say by voting in the poll embedded below:
 
-[polldaddy poll=&#8221;5295720&#8243;]
+[polldaddy poll="5295720&#8243;]
 
 So how do you get to a single profile? For an independent review of the 3rd party solutions available for achieving a consistent user environment regardless of device, download the [User Environment Smack Down white paper from brianmadden.com](http://www.brianmadden.com/blogs/rubenspruijt/archive/2011/06/29/user-environment-management-smackdown-head-to-head-analysis-of-appsense-citrix-immidio-liquidware-labs-microsoft-quest-res-scense-tricerat-unidesk-and-vuem.aspx). We've been hard at work on version 1.1 which is due very soon.

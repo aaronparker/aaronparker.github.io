@@ -38,7 +38,7 @@ I've embedded the videos here. You'll need an HTML 5 capable browser to view the
 
 ### TechEd Australia
 
-[The Case of.....Featuring &#8220;The App-V Sequencer&#8221;](http://www.msteched.com/2010/Australia/CLI310)
+[The Case of.....Featuring "The App-V Sequencer"](http://www.msteched.com/2010/Australia/CLI310)
 
 > This is a deep dive of troubleshooting techniques used when Microsoft PFE and the GTSC have investigated customer issues with Applications. See the step by step techniques used to see real world customer problems and the investigations and resolutions that were used to get the application functioning correctly. Learn some of the techniques used, and the importance of understanding the sequencer, windows and your applications. Objectives: 1. Attendees are able to identify common troubleshooting techniques for the most application issues with the App-V sequencer. 2. Attendees take away steps and methods to resolve specific application issues from the field, the root cause and resolution...
 
@@ -58,7 +58,7 @@ I've embedded the videos here. You'll need an HTML 5 capable browser to view the
 
 ### TechEd New Zealand
 
-[The Case of.....Featuring &#8220;The App-V Sequencer&#8221;](http://www.msteched.com/2010/NewZealand/CLI310)
+[The Case of.....Featuring "The App-V Sequencer"](http://www.msteched.com/2010/NewZealand/CLI310)
 
 > This is a deep dive of troubleshooting techniques used when Microsoft PFE and the GTSC have investigated customer issues with Applications. See the step by step techniques used to see real world customer problems and the investigations and resolutions that were used to get the application functioning correctly. Learn some of the techniques used, and the importance of understanding the sequencer, windows and your applications.
 

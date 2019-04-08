@@ -27,6 +27,6 @@ I briefly thought about posting this but I knew [Dugie would do a better job of 
 > 
 > If any of these roles fulfil your secret burning desire to change the world &#8212; and you live or want to live in sunny Brisbane, send my Manager, <a href="mailto:recruitment@clariti.com.au" target="_blank">Matthew Chilcott</a> an e-mail for more information.
 > 
-> PS: Last year there was no iForum and hence no shiny award, be we also won &#8220;Trusted Advisor of the year&#8221; in 2005, and aiming to win it again in 2007 🙂
+> PS: Last year there was no iForum and hence no shiny award, be we also won "Trusted Advisor of the year" in 2005, and aiming to win it again in 2007 🙂
 > 
 > PPS: If you want to know more about Clariti or our <a href="http://www.cudakitchen.com/catalog-product.php?p_ref=248" target="_blank">awesome coffee machine</a>, feel free to drop me an e-mail or give me a call.

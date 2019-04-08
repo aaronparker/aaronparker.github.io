@@ -62,4 +62,4 @@ The method and processes you use for sequencing an application is not affected b
   * [About the Deployment Tab](http://technet.microsoft.com/en-us/library/cc843635.aspx)
   * [How to Change Deployment Properties](http://technet.microsoft.com/en-us/library/cc843624.aspx)
   * [The Top Three Rookie Mistakes - Part 3](http://blogs.technet.com/b/appv/archive/2008/09/15/the-top-three-rookie-mistakes-part-3.aspx)
-  * [Error message when you start an application or update a Desktop Configuration Server in Microsoft SoftGrid: &#8220;The SoftGrid Client could not update desktop configuration information&#8221;](http://technet.microsoft.com/en-us/library/cc843817.aspx)
+  * [Error message when you start an application or update a Desktop Configuration Server in Microsoft SoftGrid: "The SoftGrid Client could not update desktop configuration information"](http://technet.microsoft.com/en-us/library/cc843817.aspx)

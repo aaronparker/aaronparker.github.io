@@ -60,17 +60,17 @@ Truly geeky people will appreciate the ability to run their mailbox on their ver
 
   * Add the following lines to create a second SCSI channel:
 
-<font face="Courier New">scsi1.present = &#8220;TRUE&#8221;<br /> scsi1.virtualDev = &#8220;lsilogic&#8221;</font>
+<font face="Courier New">scsi1.present = "TRUE"<br /> scsi1.virtualDev = "lsilogic"</font>
 
   * Modify the additional hard drives to be attached to the new SCSI channel. Example:
 
-<font face="Courier New">scsi1:5.present = &#8220;TRUE&#8221;<br /> scsi1:5.fileName = &#8220;I:\Cluster Shared\Quorum.vmdk&#8221;</font>
+<font face="Courier New">scsi1:5.present = "TRUE"<br /> scsi1:5.fileName = "I:\Cluster Shared\Quorum.vmdk"</font>
 
-<font face="Courier New">scsi1:6.present = &#8220;TRUE&#8221;<br /> scsi1:6.fileName = &#8220;I:\Cluster Shared\Data.vmdk&#8221;<br /> </font>
+<font face="Courier New">scsi1:6.present = "TRUE"<br /> scsi1:6.fileName = "I:\Cluster Shared\Data.vmdk"<br /> </font>
 
   * Add the following lines to disable disk locking and caching:
 
-<font face="Courier New">disk.locking = &#8220;false&#8221;<br /> diskLib.dataCacheMaxSize = &#8220;0&#8221;<br /> </font>
+<font face="Courier New">disk.locking = "false"<br /> diskLib.dataCacheMaxSize = "0"<br /> </font>
 
 9. Add the same lines to the VMware Configuration of Cluster Node B.
 

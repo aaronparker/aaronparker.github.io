@@ -19,7 +19,7 @@ Here's a short function I wrote to sequentially start a list of virtual machines
 
 This version currently supports Hyper-V only. The script does not currently return anything, but has a number of parameters:
 
-  * ComputerName - the name of the Hyper-V host. Specify &#8220;.&#8221; for the local machine (without quotes)
+  * ComputerName - the name of the Hyper-V host. Specify "." for the local machine (without quotes)
   * VM - specify a comma separated list of VMs
   * Wait - the number of seconds to wait between starting a VM after the previous VM. Specify the number of VMs as a number (integer) only. This will default to 180 seconds
   * ShowProgress - Specify whether to show progress while starting the VMs. This is cosmetic only, but does give some indication as to how far through the boot process the script is.

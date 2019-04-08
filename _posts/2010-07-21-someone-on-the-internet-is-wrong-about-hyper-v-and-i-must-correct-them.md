@@ -30,9 +30,9 @@ The first point takes issue with the various Remote Desktop features in Windows 
 >   * Remote Desktop Web Access - formerly Terminal Services Web Access, allows users to access remote desktops and apps through their web browser
 >   * Remote Desktop Virtualization Host - the piece that connects Hyper-V virtual machines to end users connecting through RD connection broker, providing that personal virtual desktop
 > 
-> And, the Remote Desktop product line goes on and on with a handful of other &#8220;Remote Desktop X, Y, and Z&#8221; products that are less important. My point in this, besides trying to educate you on the various Remote Desktop products from Microsoft, is that this Microsoft Remote Desktop product line is confusing. With VMware or Citrix there is View and XenDesktop, respectively. What's the answer? Simplify it. If you want to do any kind of desktop or session virtualization, why can't you just install Microsoft &#8220;Remote&#8221;? It's one word and it could do it all.
+> And, the Remote Desktop product line goes on and on with a handful of other "Remote Desktop X, Y, and Z" products that are less important. My point in this, besides trying to educate you on the various Remote Desktop products from Microsoft, is that this Microsoft Remote Desktop product line is confusing. With VMware or Citrix there is View and XenDesktop, respectively. What's the answer? Simplify it. If you want to do any kind of desktop or session virtualization, why can't you just install Microsoft "Remote"? It's one word and it could do it all.
 
-I'll agree that the naming is a mouthful, but then Microsoft has never been known for catchy product names - in fact products usually have cool names during beta but end up being given ridiculously unwieldy names at launch. I don't know what the &#8220;handful of other Remote Desktop X, Y, and Z&#8221; products are because I can't find them. Unless he's referring to the client side components - Remote Desktop Connection client and the RemoteApp and Desktop Connections applet in Windows 7 (it would be great if Microsoft released this feature for Windows Vista and XP).
+I'll agree that the naming is a mouthful, but then Microsoft has never been known for catchy product names - in fact products usually have cool names during beta but end up being given ridiculously unwieldy names at launch. I don't know what the "handful of other Remote Desktop X, Y, and Z" products are because I can't find them. Unless he's referring to the client side components - Remote Desktop Connection client and the RemoteApp and Desktop Connections applet in Windows 7 (it would be great if Microsoft released this feature for Windows Vista and XP).
 
 In regards to simplifying, David isn't comparing apples with apples here, VMware View and Citrix XenDesktop are only one part of the full suites. With Citrix XenDesktop, you need to add XenApp, Web Interface, XenServer, Provisioning Services and Secure Gateway or Access Gateway to to the list. With VMware View, you need to add vSphere, VMware View Webinterface, View Manager and View Composer (as far as I can tell VMware doesn’t have an equivalent for RD Gateway).
 
@@ -46,7 +46,7 @@ Finally just on a technical point, Remote Desktop Connection Broker is also used
 
 David says of SCVMM:
 
-> System Center Virtual Machine Manager 2008 R2- while it isn't a feature, again, Microsoft is killing me with names. A name with 7 words is just silly. VMware has vCenter and Xen has Essentials. Microsoft's centralized virtualization manager needs a simple name like &#8220;HVmanager&#8221;.
+> System Center Virtual Machine Manager 2008 R2- while it isn't a feature, again, Microsoft is killing me with names. A name with 7 words is just silly. VMware has vCenter and Xen has Essentials. Microsoft's centralized virtualization manager needs a simple name like "HVmanager".
 
 Yeah, System Center Virtual Machine Manager 2007 R2 is a pretty long name and could be simpler, but there’s plenty more to fix in or add to SCVMM before changing the name.
 
@@ -64,7 +64,7 @@ Offline desktop - Microsoft has this in a fashion with Windows Vista and above t
 
 On Windows Azure, David writes:
 
-> It has been reported that Microsoft's Azure service doesn't use their flagship virtualization product - Hyper-V. Instead, Azure is based on a modified version of Linux. How can Microsoft tout cloud computing and virtualization if they don't &#8220;take their own medicine&#8221;? If Hyper-V is supposed to be good enough for the Fortune 5000 companies, then it should be good enough for Microsoft's cloud computing platform.
+> It has been reported that Microsoft's Azure service doesn't use their flagship virtualization product - Hyper-V. Instead, Azure is based on a modified version of Linux. How can Microsoft tout cloud computing and virtualization if they don't "take their own medicine"? If Hyper-V is supposed to be good enough for the Fortune 5000 companies, then it should be good enough for Microsoft's cloud computing platform.
 
 Wow, a little research (even [use Bing](http://www.bing.com/search?q=hypervisor+used+by+windows+azure&go=&form=QBLH&filt=all&qs=n&sk=) if you must) will show that this isn't true and I can’t find an article that asserts that the Azure hypervisor is Linux based. The confusion here may stem from the fact that the hypervisor used by Windows Azure is not the Hyper-V used in Windows Server. Instead it’s a heavily customised version of Hyper-V from which features are ported into the mainstream Hyper-V product.
 
@@ -80,7 +80,7 @@ Here are a few articles that discuss the Azure Hypervisor:
 
 On this, David says:
 
-> VMware's VMworld conference is the model for any other virtualization conference in the world. VMware awarded 300 expert bloggers and experts the vExpert award. VMware's communities and blogs are the best out there. These are examples of things that Microsoft needs to &#8220;match and raise&#8221; VMware on. They have to do better than &#8220;handing out poker chips&#8221; (at VMworld 2008), essentially bribing people to get their attention. Instead, how about delivering shocking new features and building a huge base of experts and bloggers that love the product? In other words - create a &#8220;vTechEd&#8221; for virtualization only and a &#8220;vMVP&#8221; for Microsoft virtualization pros only.
+> VMware's VMworld conference is the model for any other virtualization conference in the world. VMware awarded 300 expert bloggers and experts the vExpert award. VMware's communities and blogs are the best out there. These are examples of things that Microsoft needs to "match and raise" VMware on. They have to do better than "handing out poker chips" (at VMworld 2008), essentially bribing people to get their attention. Instead, how about delivering shocking new features and building a huge base of experts and bloggers that love the product? In other words - create a "vTechEd" for virtualization only and a "vMVP" for Microsoft virtualization pros only.
 
 I think this is a matter of opinion rather than fact.
 

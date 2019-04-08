@@ -20,7 +20,7 @@ After upgrading our internal Exchange organisation to Exchange Server 2007 (we h
 
 No amount of attempting to log into OWA through this interface will result in a successful login. Looking at a packet capture of the initial logon attempt the Access Gateway sends the initial GET request and the Exchange server responds with a 401 and sends back the authentication options as you can see here:
 
-<font face="courier new,courier">- HTTP: Response, HTTP/1.1, Status Code = 401<br /> ProtocolVersion: HTTP/1.1<br /> StatusCode: 401, Unauthorized<br /> Reason: Unauthorized<br /> ContentLength: 1656<br /> ContentType: text/html<br /> Server: Microsoft-IIS/6.0<br /> WWWAuthenticate: Negotiate<br /> WWWAuthenticate: NTLM<br /> WWWAuthenticate: Basic realm=&#8221;exchange.company.local&#8221;<br /> X-Powered-By: ASP.NET<br /> Date: Wed, 09 May 2007 05:10:18 GMT<br /> HeaderEnd: CRLF</font>
+<font face="courier new,courier">- HTTP: Response, HTTP/1.1, Status Code = 401<br /> ProtocolVersion: HTTP/1.1<br /> StatusCode: 401, Unauthorized<br /> Reason: Unauthorized<br /> ContentLength: 1656<br /> ContentType: text/html<br /> Server: Microsoft-IIS/6.0<br /> WWWAuthenticate: Negotiate<br /> WWWAuthenticate: NTLM<br /> WWWAuthenticate: Basic realm="exchange.company.local"<br /> X-Powered-By: ASP.NET<br /> Date: Wed, 09 May 2007 05:10:18 GMT<br /> HeaderEnd: CRLF</font>
 
 One glaring issue with this response is that realm used for Basic authentication is the name of the server, not the domain name as specified in the IIS configuration, but I think that's another issue. AAC does attempt NTLM authentication in the next packet - this is the GET request (I've truncated the Authorisation field):
 

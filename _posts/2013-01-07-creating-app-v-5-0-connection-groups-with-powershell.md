@@ -29,7 +29,7 @@ A [Connection Group definition file](http://blogs.technet.com/b/appv/archive/201
 
 A typical definition file will look something like this:
 
-[code language=&#8221;xml&#8221;]<?xml version="1.0" encoding="UTF-8"?>  
+[code language="xml"]<?xml version="1.0" encoding="UTF-8"?>  
 <appv:AppConnectionGroup xmlns="http://schemas.microsoft.com/appv/2010/virtualapplicationconnectiongroup" xmlns:appv="http://schemas.microsoft.com/appv/2010/virtualapplicationconnectiongroup" AppConnectionGroupId="715f39d8-1b48-4b9a-95e6-d33370564b33" VersionId="9cdf46f3-6716-43d3-b533-5c697878f51f" Priority="2" DisplayName="Adobe Apps">  
 <appv:Packages>  
 <appv:Package DisplayName="Adobe Reader X" PackageId="abf1cd38-03cf-42af-8b27-564c4b9fcd1e" VersionId="818bc4eb-50f2-4fd4-90e4-9c8ed097e1e9" />  
@@ -45,7 +45,7 @@ To simplify the process of creating the definition file for a Connection Group, 
 
 The function will output the definition file to a specified path and then return that file as an object that you can do further processing with.
 
-[code language=&#8221;ps&#8221;]#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;  
+[code language="ps"]#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;  
 \# Author: Aaron Parker  
 \# Desc: Function that uses the App-V 5.0 client to create Connection  
 \# Group description (XML) files for use with stand alone clients or  
@@ -182,12 +182,12 @@ Using the function requires supplying a Display Name and Priority for the Connec
 
 In this example, I've added the list of packages to the variable $Packages and then supplied that to the New-AppvConnectionGroupFile function. This results in the definition file AdobeApps.xml with any Adobe package included in it.
 
-[code language=&#8221;ps&#8221;]$Packages = Get-AppvClientPackage -Name Adobe*  
+[code language="ps"]$Packages = Get-AppvClientPackage -Name Adobe*  
 New-AppvConnectionGroupFile -Path C:\Packages\AdobeApps.xml -DisplayName "Adobe Apps" -Priority 2 -Packages $Packages[/code]
 
 Taking this a step further, I can use a single line of PowerShell to query for a filtered list of packages on the local client, passing that to my function that will create the definition file. The Connection Group is then immediately added to the client and enabled.
 
-[code language=&#8221;ps&#8221;]Get-AppvClientPackage -Name Adobe* | New-AppvConnectionGroupFile -Path C:\Packages\AdobeApps.xml -DisplayName "Adobe Apps" -Priority 2 | Add-AppvClientConnectionGroup | Enable-AppvClientConnectionGroup -Global[/code]
+[code language="ps"]Get-AppvClientPackage -Name Adobe* | New-AppvConnectionGroupFile -Path C:\Packages\AdobeApps.xml -DisplayName "Adobe Apps" -Priority 2 | Add-AppvClientConnectionGroup | Enable-AppvClientConnectionGroup -Global[/code]
 
 # Finally
 

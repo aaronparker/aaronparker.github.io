@@ -16,6 +16,6 @@ Like all of the current Adobe applications, the CS3 suite comes bundled with Ado
 
 Allowing Updater to run from within the bubble will cause user profile issues. I was going to address this in a separate post, but Rodney Medina has already said it so well here: [Can I sequence applications that update themselves?](http://www.softgridblog.com/?p=27).
 
-You can customise the Windows Installer source files to prevent Updater from installing; however disabling Updater is as simple as deleting the Updater5 programÂ folder:
+You can customise the Windows Installer source files to prevent Updater from installing; however disabling Updater is as simple as deleting the Updater5 program folder:
 
 [code]RD /Q /S "%CommonProgramFiles%\Adobe\Updater5"[/code]

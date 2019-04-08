@@ -15,9 +15,9 @@ tags:
 ---
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/03/windowshelp.png" border="0" alt="WindowsHelp" width="140" height="128" align="left" />Michael over at [4sysops has taken a shot](http://4sysops.com/archives/windows-server-2008-step-by-step-guides-don%E2%80%99t-waste-your-time/) at the [Windows Server 2008 Step-by-Step Guides](http://www.microsoft.com/downloads/details.aspx?FamilyID=518d870c-fa3e-4f6a-97f5-acaf31de6dce&DisplayLang=en) and I'm left scratching my head. His beef with the guides is that they haven't yet been updated for RTM and still include some older terminology:
 
-> In this manual, they still talk about â€œWindows Server virtualization (wsv)â€ even though wsv was already renamed to Hyper-V in November. It seems as if even Microsoftâ€™s own employees canâ€™t keep up with the pace by which their marketing renames their products. Even worse is that this paper doesnâ€™t mention that Hyper-V is still in beta. I wonder if the author of this paper was aware of this fact. Of course, the reader is also kept in the dark that there meanwhile is an update of Hyper-V which has to be downloaded separately.
+> In this manual, they still talk about €œWindows Server virtualization (wsv)€ even though wsv was already renamed to Hyper-V in November. It seems as if even Microsoft€™s own employees can€™t keep up with the pace by which their marketing renames their products. Even worse is that this paper doesn€™t mention that Hyper-V is still in beta. I wonder if the author of this paper was aware of this fact. Of course, the reader is also kept in the dark that there meanwhile is an update of Hyper-V which has to be downloaded separately.
 
-I subscribe to Michael's blog and enjoy reading what he's got to say, but I think in this case he's missing the big picture. The Step-by-Step &#8220;library&#8221; contains a list of 24 documents, with the earliest document dated May 2007. Windows Server 2008 was feature complete by Beta 3 in April 2007. This means that, for the most part, these documents will applicable to the final release of Windows 2008.
+I subscribe to Michael's blog and enjoy reading what he's got to say, but I think in this case he's missing the big picture. The Step-by-Step "library" contains a list of 24 documents, with the earliest document dated May 2007. Windows Server 2008 was feature complete by Beta 3 in April 2007. This means that, for the most part, these documents will applicable to the final release of Windows 2008.
 
 The list has been updated regularly too. I haven't been keeping an exact count, but the guides have been through at least 6 updates so far this year, with the latest being yesterday. 7 days since the previous update. I presume that documentation like this takes considerable man hours to create and review and they can't possible be considered complete until the product is final. If the current release pace keeps up we should see these documents finalised soon.
 
@@ -43,7 +43,7 @@ I like these document because they focus on a particular feature or scenario and
   * Windows Server 2008 Foundation Network Guide
   * Windows Server 2008 Step-by-Step Guide for DNS in Small Networks
   * Windows Server 2008 TS Gateway Server Step-By-Step Setup Guide
-  * WindowsÂ  Server Active Directory Rights Management Services Step-by-Step Guide
+  * Windows  Server Active Directory Rights Management Services Step-by-Step Guide
   * Windows Server 2008 Terminal Services RemoteApp Step-by-Step Guide
   * Windows Server 2008 TS Licensing Step-By-Step Setup Guide
   * Windows Server 2008 TS Session Broker Load Balancing Step-By-Step Guide

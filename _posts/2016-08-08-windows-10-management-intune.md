@@ -41,13 +41,13 @@ There are a few articles in the Intune documentation that provide an overview of
   * [Windows PC management capabilities (with the Microsoft Intune PC client)](https://docs.microsoft.com/en-us/intune/get-started/windows-pc-management-capabilities-in-microsoft-intune)
   * [Windows 10 policy settings in Microsoft Intune](https://docs.microsoft.com/en-us/intune/deploy-use/windows-10-policy-settings-in-microsoft-intune)
 
-When reading the Microsoft documentation, the language is key to understanding the capabilities - if &#8220;enrolled&#8221; is used, then this is referring to a Windows 10 device enrolled in Intune MDM and is thus treated as a mobile device; if &#8220;client&#8221; is used, then this, of course, is referring to the installed client. That first article has this important paragraph:
+When reading the Microsoft documentation, the language is key to understanding the capabilities - if "enrolled" is used, then this is referring to a Windows 10 device enrolled in Intune MDM and is thus treated as a mobile device; if "client" is used, then this, of course, is referring to the installed client. That first article has this important paragraph:
 
 > While the Intune client supports policies that help protect PCs by managing software updates, Windows firewall, and Endpoint Protection, PCs managed with the Intune client cannot be targeted with other Intune policies.
 
 I've come across two other great resources that provide more insight:
 
-  * A post at UserVoice highlighting the need for Microsoft to improve the comparison between the two: [Improve documentation - it is very vague on what works with &#8220;Intune client&#8221; and what works with &#8220;MDM&#8221;](https://microsoftintune.uservoice.com/forums/291681-ideas/suggestions/11378736-improve-documentation-it-is-very-vague-on-what-w#comments)
+  * A post at UserVoice highlighting the need for Microsoft to improve the comparison between the two: [Improve documentation - it is very vague on what works with "Intune client" and what works with "MDM"](https://microsoftintune.uservoice.com/forums/291681-ideas/suggestions/11378736-improve-documentation-it-is-very-vague-on-what-w#comments)
   * An article by Gert-Jan van de Werfhorst & Eric Dunnewijk that provides the best overview I've found on the features available with each management option: [Microsoft Intune, wat is nu toch modern management?](https://wow365.nl/mobiliteit/intune/modern-management/) (Dutch)
 
 To summarise the key points:

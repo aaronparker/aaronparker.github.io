@@ -24,7 +24,7 @@ The issue with allowing this service to run inside the bubble is that multiple c
 
 This means that we need to remove the service from inside the bubble. Directly after installing a CS3 application and before clicking on _Stop Monitoring_, remove the Bonjour service by running the following command:
 
-[quickcode:noclick]&#8221;%ProgramFiles%\Bonjour\mDNSResponder.exe&#8221; -remove[/quickcode]
+[quickcode:noclick]"%ProgramFiles%\Bonjour\mDNSResponder.exe" -remove[/quickcode]
 
 Then delete the Bonjour folder - _%ProgramFiles%\Bonjour_. Users can then connect to the Version Cue Servers manually when running a CS3 application:
 
@@ -36,4 +36,4 @@ If automatic discovery is required, perform a native install of [Bonjour for Win
   2. Copy these files to _%ProgramFiles%\Bonjour_
   3. Run this command to install the service:
 
-[quickcode:noclick]&#8221;%ProgramFiles%\Bonjour\mDNSResponder.exe&#8221; -install[/quickcode]
+[quickcode:noclick]"%ProgramFiles%\Bonjour\mDNSResponder.exe" -install[/quickcode]

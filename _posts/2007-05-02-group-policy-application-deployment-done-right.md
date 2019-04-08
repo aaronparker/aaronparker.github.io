@@ -40,7 +40,7 @@ Organisational unit structure will differ for every organisation, however if you
 
 **DNS** 
 
-This one is pretty simple â€“ without DNS you won't have a functional Active Directory. You must have name resolution in place and working before your workstations can query DNS for the Group Policy objects that will be used to deploy your applications. To get a better understanding of Active Directory and DNS, I recommend you start here: [How DNS Support for Active Directory Works](http://technet2.microsoft.com/windowsserver/en/library/9d62e91d-75c3-4a77-ae93-a8804e9ff2a11033.mspx?mfr=true)
+This one is pretty simple €“ without DNS you won't have a functional Active Directory. You must have name resolution in place and working before your workstations can query DNS for the Group Policy objects that will be used to deploy your applications. To get a better understanding of Active Directory and DNS, I recommend you start here: [How DNS Support for Active Directory Works](http://technet2.microsoft.com/windowsserver/en/library/9d62e91d-75c3-4a77-ae93-a8804e9ff2a11033.mspx?mfr=true)
 
 **Distributed File System** 
 

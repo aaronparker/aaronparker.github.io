@@ -25,14 +25,14 @@ Before sequencing Photoshop, you will need to obtain the [volume license version
 
 You can find information on performing a silent installation of the Adobe CS3 products here: [Perform a silent installation of Photoshop CS3](http://kb.adobe.com/selfservice/viewContent.do?externalId=kb400995), which should help if you need to repeat this process, but I recommend a silent or scripted installation the best method at all times. The only customisation I performed to the installation was to change the install location. This means that about half of the application will be installed to C: drive. A little hacking of the MSI files included in the setup would get just about everything to the SoftGrid client drive.
 
-When sequencing Photoshop CS3 you will run into errors as the Sequencer is going through the post-monitoring phase. You will see the sequencer fail and report &#8220;`SystemGuard download failed (error code 53256)`&#8220;. The solution to this, is to create manifest files for FILEINFO.DLL and copy them to the installation folder just after installing the application. These are standard XML files that the Sequencer will read and then process the files using [UTF-8 instead of their native UTF-16](http://blogs.technet.com/softgrid/archive/2007/10/25/update-error-53256-sequencing-adobe-cs3.aspx).
+When sequencing Photoshop CS3 you will run into errors as the Sequencer is going through the post-monitoring phase. You will see the sequencer fail and report "`SystemGuard download failed (error code 53256)`". The solution to this, is to create manifest files for FILEINFO.DLL and copy them to the installation folder just after installing the application. These are standard XML files that the Sequencer will read and then process the files using [UTF-8 instead of their native UTF-16](http://blogs.technet.com/softgrid/archive/2007/10/25/update-error-53256-sequencing-adobe-cs3.aspx).
 
   * Q:\<Asset Folder>\Adobe\Adobe Bridge CS3\fileinfo.dll.manifest
   * Q:\<Asset Folder>\Adobe\Adobe Photoshop CS3\fileinfo.dll.manifest
 
 The contents of the manifest file should look like this:
 
-[code lang=&#8221;xml&#8221;]<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
+[code lang="xml"]<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
 <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
 <assemblyIdentity  
 name="Adobe.Acrobat.fileinfo.dll"  
@@ -71,7 +71,7 @@ When launching Photoshop the SoftGrid client would fail and produce this error:
 > This application has failed to start because the application configuration is incorrect. Reinstalling the application may fix this problem.  
 > Error code: 42012E-0060922C-800736B1
 
-A bit of searching turned up this knowledgebase article: [Error message when you try to start a sequenced application in the Microsoft SoftGrid Client: &#8220;Error code: 410038-0060922C-800736B1](http://support.microsoft.com/default.aspx/kb/939084). The article offer two solutions, the first being that your clients should have the .NET Framework and the Visual C++ 2005 redistributable package installed locally on the client. The second solution is to add a script to the OSD file to copy the required files out of the package to the client before the application executes.
+A bit of searching turned up this knowledgebase article: [Error message when you try to start a sequenced application in the Microsoft SoftGrid Client: "Error code: 410038-0060922C-800736B1](http://support.microsoft.com/default.aspx/kb/939084). The article offer two solutions, the first being that your clients should have the .NET Framework and the Visual C++ 2005 redistributable package installed locally on the client. The second solution is to add a script to the OSD file to copy the required files out of the package to the client before the application executes.
 
 The problem with the first solution is that both runtimes are installed on my test machine but the required files are not included in either package. At this point I'm unsure where these files come from, even though [another knowledgebase article](http://support.microsoft.com/kb/923610) seems to indicate that they should be in the Visual C++ 2005 SP1 redistributable package. A logical explanation is that they are included in the application setup routine.
 

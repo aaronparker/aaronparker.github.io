@@ -19,7 +19,7 @@ The biggest change is that from this new version onwards, the point releases (re
 
 Here's what Sun has to say about the new update process:
 
-> For current users of Java SE, the JRE update mechanism has also been improved, using a patch-in-place mechanism that translates in a faster and more reliable update process (the patch in place mechanism will take effect for end users who upgrade from this update release or later to a new update release). As an added benefit, follow-on update releases will no longer be listed as separate items in the Windows &#8220;Add or Remove Programs&#8221; dialog.
+> For current users of Java SE, the JRE update mechanism has also been improved, using a patch-in-place mechanism that translates in a faster and more reliable update process (the patch in place mechanism will take effect for end users who upgrade from this update release or later to a new update release). As an added benefit, follow-on update releases will no longer be listed as separate items in the Windows "Add or Remove Programs" dialog.
 
 Sounds good to me, so far so good. But there's a new feature that's got me asking Why?, it's the Java Quick Starter service.
 

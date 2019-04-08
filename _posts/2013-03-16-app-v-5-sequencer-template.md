@@ -24,10 +24,10 @@ In the listing below, the highlighted line is a local folder into which all appl
 Attached here is a downloadable copy of the template listing:
 
 <p class="download">
-  [download id=&#8221;61&#8243; format=&#8221;1&#8243;]
+  [download id="61&#8243; format="1&#8243;]
 </p>
 
-[code language=&#8221;xml&#8221; highlight=&#8221;10&#8243;]<?xml version="1.0" encoding="utf-8"?>  
+[code language="xml" highlight="10&#8243;]<?xml version="1.0" encoding="utf-8"?>  
 <SequencerTemplate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
 <AllowMU>true</AllowMU>  
 <AppendPackageVersionToFilename>true</AppendPackageVersionToFilename>  

@@ -15,7 +15,7 @@ I don't really want to admit to interacting with [Lotus Notes](http://lotusnotes
 
 The TechNet script centre has a [two-part](http://http://www.microsoft.com/technet/scriptcenter/resources/tales/sg0405.mspx), [detailed article](http://www.microsoft.com/technet/scriptcenter/resources/tales/sg0505.mspx) on how to query Active Directory which is a great resource for this type of query. Here a script I've used to query Notes for user objects and return their e-mail addresses. The LDAP query includes a server name so that it will connect to a specific server. This will attempt an anonymous query so you will have to extend this script to make an authenticated query.
 
-[code lang=&#8221;vb&#8221;]Const ADS\_SCOPE\_SUBTREE = 2  
+[code lang="vb"]Const ADS\_SCOPE\_SUBTREE = 2  
 Set objConnection = CreateObject("ADODB.Connection")  
 Set objCommand = CreateObject("ADODB.Command")  
 objConnection.Provider = "ADsDSOObject"  
@@ -41,9 +41,9 @@ You can also find information and example for querying 3rd party LDAP servers wi
   * [INFO: How to Use ADSI to Query a Third-Party LDAP Server](http://support.microsoft.com/kb/q251195/)
   * [How To Query Exchange 5.x Anonymously Through ADSI](http://support.microsoft.com/kb/223049/EN-US/)
 
-Here's a function that uses a different query method that will return an array of user distinguished names based on the search string passed to it. For example, if you pass the following string &#8220;OU=Sales,O=DominoOrg&#8221; it will only return users in the Sales OU below the DominoOrg organisation:
+Here's a function that uses a different query method that will return an array of user distinguished names based on the search string passed to it. For example, if you pass the following string "OU=Sales,O=DominoOrg" it will only return users in the Sales OU below the DominoOrg organisation:
 
-[code lang=&#8221;vb&#8221;]'Return the distinguished name of all of the user objects below the specified organisation  
+[code lang="vb"]'Return the distinguished name of all of the user objects below the specified organisation  
 Function fReturnDominoDNs(sDominoServer, sDominoScope)  
 Dim aArray()  
 Dim i: i = 0

@@ -28,7 +28,7 @@ CIFS, or Common Internet File System, is a network protocol that provides client
 > 
 > CIFS is a dialect of the Server Message Block (SMB) protocol, which was originally developed by IBM Corporation and then further enhanced by Microsoft, IBM, Intel, 3Com, and others. There are several dialects of SMB. A standard for the SMB protocol, covering dialects prior to CIFS, was published by X/Open (now The Open Group) as [XOPEN-SMB].
 > 
-> The meaning of the term &#8220;CIFS&#8221; has changed since it was first introduced. It was originally used to indicate a proposed standard version of SMB based upon the design of the Windows NT 4.0 operating system and Windows 2000 operating system implementations. In some references, &#8220;CIFS&#8221; has been used as a name for the SMB protocol in general (all dialects) and, additionally, the suite of protocols that support and include SMB. In this document, the term &#8220;CIFS&#8221; is used specifically to identify the Windows NT LAN Manager (NTLM) dialect of SMB as designed for use with Windows: in particular, Windows NT Server 3.51 operating system and Windows NT Server 4.0 operating system, Windows NT Workstation 4.0 operating system, and Microsoft Windows 98 operating system.
+> The meaning of the term "CIFS" has changed since it was first introduced. It was originally used to indicate a proposed standard version of SMB based upon the design of the Windows NT 4.0 operating system and Windows 2000 operating system implementations. In some references, "CIFS" has been used as a name for the SMB protocol in general (all dialects) and, additionally, the suite of protocols that support and include SMB. In this document, the term "CIFS" is used specifically to identify the Windows NT LAN Manager (NTLM) dialect of SMB as designed for use with Windows: in particular, Windows NT Server 3.51 operating system and Windows NT Server 4.0 operating system, Windows NT Workstation 4.0 operating system, and Microsoft Windows 98 operating system.
 
 So, unless you are specifically talking about Windows NT 3.x and 4.x, you should not use 'CIFS' and we can no longer interchangeably use CIFS and SMB.
 
@@ -78,4 +78,3 @@ For further reading on why you should use 'SMB', see the following articles:
   * [SMB 2 and SMB 3 protocol specifications](https://msdn.microsoft.com/en-us/library/cc246483.aspx)
   * [[MS-CIFS]: Common Internet File System (CIFS) Protocol](https://msdn.microsoft.com/en-us/library/ee442092.aspx)
   * [What’s new in SMB 3.1.1 in the Windows Server 2016 Technical Preview 2](https://blogs.technet.microsoft.com/josebda/2015/05/05/whats-new-in-smb-3-1-1-in-the-windows-server-2016-technical-preview-2/)
-  

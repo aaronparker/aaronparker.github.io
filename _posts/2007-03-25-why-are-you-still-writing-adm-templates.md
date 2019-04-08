@@ -30,7 +30,7 @@ You can use Registry Extension to create, replace, update and delete registry se
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1164.GroupPolicyExtended.png" border="0" alt="" align="top" /><img src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1165.NewRegistryItem.png" border="0" alt="" /> 
 
-Adding a registry key is very simple â€“ you can manually specify a registry key and value or you can import directly from the current machine unfortunately there is no way to import settings from a file. You can though, copy items directly between Group Policy Objects.
+Adding a registry key is very simple €“ you can manually specify a registry key and value or you can import directly from the current machine unfortunately there is no way to import settings from a file. You can though, copy items directly between Group Policy Objects.
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1166.RegistryKeyProperties1.png" border="0" alt="" /><img src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1167.RegistryKeyProperties2.png" border="0" alt="" /> 
 

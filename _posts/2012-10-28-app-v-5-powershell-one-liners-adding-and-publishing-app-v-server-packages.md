@@ -24,7 +24,7 @@ tags:
 
 Using PowerShell to drive the App-V Management Server opens up plenty of great scenarios. Here's how to use PowerShell to import a package (from a UNC path), publish it and grant access to a domain group, all on one line.
 
-[code language=&#8221;ps&#8221;]Import-AppvServerPackage -PackagePath "\\Server\Packages\MozillaFirefox16_pkg\MozillaFirefox16.appv" | Publish-AppvServerPackage -Verbose | Grant-AppvServerPackage -Groups "lab\Domain Users" -Verbose[/code]
+[code language="ps"]Import-AppvServerPackage -PackagePath "\\Server\Packages\MozillaFirefox16_pkg\MozillaFirefox16.appv" | Publish-AppvServerPackage -Verbose | Grant-AppvServerPackage -Groups "lab\Domain Users" -Verbose[/code]
 
 The PackagePath property on the Import-AppvServerPackage command should take any UNC or HTTP path, just like the Management Server UI.
 

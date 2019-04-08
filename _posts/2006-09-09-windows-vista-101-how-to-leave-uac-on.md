@@ -32,7 +32,7 @@ Now this one will require returning to your command line roots or learning how t
   * Right click the Command Prompt icon and choose 'Run as administrator'. This is the long way that requires an extra click; or
   * Modify a shortcut for the command prompt so that it will always launch as an Administrator.
 
-This will result in a Command Prompt window with the text &#8220;Administrator&#8221; in the title bar. Using the second option is easy, just open the properties of the Command Prompt shortcut, click Advanced and place a tick in the checkbox labelled &#8220;Run as administrator&#8221;. Click on the screenshots below to see the shortcut properties and the resulting Command Prompt in more detail:
+This will result in a Command Prompt window with the text "Administrator" in the title bar. Using the second option is easy, just open the properties of the Command Prompt shortcut, click Advanced and place a tick in the checkbox labelled "Run as administrator". Click on the screenshots below to see the shortcut properties and the resulting Command Prompt in more detail:
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.93.RunAsAdministrator.PNG" />  
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.94.AdministratorCommandPrompt.PNG" /> 

@@ -18,7 +18,7 @@ tags:
 ---
 _<img style="margin: 0px 10px 5px 0px; display: inline;" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="left" />Today’s FAQ has been written by Justin Zarb, all around good guy and a Premier Field Engineer with Microsoft in the UK. You can read more App-V articles written by Justin at his blog:_ [appvguy.com](http://appvguy.com/ "appvguy.com")
 
-This terminology is a little confusing. The &#8220;Active&#8221; was added in 4.x and referred to the fact that we could add and begin serving an updated version while the current version was still actively in use. The RTSP, HTTP, FILE (SMB) protocols all allow this functionality.
+This terminology is a little confusing. The "Active" was added in 4.x and referred to the fact that we could add and begin serving an updated version while the current version was still actively in use. The RTSP, HTTP, FILE (SMB) protocols all allow this functionality.
 
 However with RTSP, an [App-V Management Server or Streaming Server](http://technet.microsoft.com/en-us/library/cc843634.aspx) sits between the client and the content (the SFT file containing the application). Clients never need to be told that there is an update because the server is checking every launch and streams the updated SFT. The client requests a Package GUID not a specific file.
 

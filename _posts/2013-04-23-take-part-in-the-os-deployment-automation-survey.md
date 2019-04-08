@@ -26,7 +26,7 @@ In my [role](https://citrix.g2planet.com/synergylosangeles2013/public_speaker_vi
 So for this talk, I wanted to provide more than just anecdotal evidence, I'd like to back up my approach with some real data. That's where I need 60 seconds of your time to contribute to a survey. Here's a 5 question, anonymous survey designed to gather some details on OS automation in hosted desktop environments:
 
 <p style="text-align: center;">
-  [polldaddy survey=&#8221;5E367B86C0AE2769&#8243; type=&#8221;button&#8221; title=&#8221;Take the OS Automation survey&#8221; style=&#8221;rounded&#8221; text_color=&#8221;FFFFFF&#8221; back_color=&#8221;000000&#8243;]
+  [polldaddy survey="5E367B86C0AE2769&#8243; type="button" title="Take the OS Automation survey" style="rounded" text_color="FFFFFF" back_color="000000&#8243;]
 </p>
 
 This survey will be available until at least Synergy in May, where I'll present the results during my talk - [Hands Off My Gold Image!](https://citrix.g2planet.com/synergylosangeles2013/public_session_view.php?agenda_session_id=274&conference=synergy)

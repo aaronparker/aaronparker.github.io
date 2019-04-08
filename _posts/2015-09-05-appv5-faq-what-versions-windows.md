@@ -16,7 +16,7 @@ categories:
 tags:
   - App-V
 ---
-Operating system support for App-V is ultimately determined by the [Microsoft Product Support Lifecycle](https://support.microsoft.com/en-us/lifecycle). You can search the Product Support Lifecycle page for [&#8220;Application Virtualization&#8221; to return the product lifecycle for all versions of App-V](https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=application%20virtualization&Filter=FilterNO). This FAQ covers the most recent version of App-V: 5.1.
+Operating system support for App-V is ultimately determined by the [Microsoft Product Support Lifecycle](https://support.microsoft.com/en-us/lifecycle). You can search the Product Support Lifecycle page for ["Application Virtualization" to return the product lifecycle for all versions of App-V](https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=application%20virtualization&Filter=FilterNO). This FAQ covers the most recent version of App-V: 5.1.
 
 # Application Virtualization Components
 

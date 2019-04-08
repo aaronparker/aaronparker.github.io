@@ -109,7 +109,7 @@ If I click Dismiss and close the Duo dialog box, Windows displays a login reques
 
 I can re-enter my password at the point and the Duo Security dialog will come up again and send me an authentication notification.
 
-What happens for other users on the system that aren't enrolled in Duo? If login is successful, they'll see a prompt that says &#8220;The username you have entered is not enrolled with Duo Security. Please contact your system administrator.&#8221; Shown here:
+What happens for other users on the system that aren't enrolled in Duo? If login is successful, they'll see a prompt that says "The username you have entered is not enrolled with Duo Security. Please contact your system administrator." Shown here:
 
 <figure id="attachment_5535" aria-describedby="caption-attachment-5535" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5535" src="http://stealthpuppy.com/wp-content/uploads/2017/07/NotEnrolled-1024x640.png" alt="When a user is not enrolled in Duo" width="1024" height="640" srcset="https://stealthpuppy.com/wp-content/uploads/2017/07/NotEnrolled-1024x640.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/07/NotEnrolled-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/07/NotEnrolled-300x188.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/07/NotEnrolled-768x480.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/07/NotEnrolled.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/07/NotEnrolled.png)<figcaption id="caption-attachment-5535" class="wp-caption-text">When a user is not enrolled in Duo*</figure>
 

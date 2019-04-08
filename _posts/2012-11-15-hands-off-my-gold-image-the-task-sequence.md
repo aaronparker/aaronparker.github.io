@@ -34,7 +34,7 @@ To create a new task sequence, use the MDT Deployment Workbench, navigate to Tas
   4. Specify settings such as a product key, name, organisation and IE home page and local administrator password
   5. Customise the task sequence and unattend.xml to automate the deployment of Windows Server, XenApp and applications
 
-The download that I have supplied ([download id=&#8221;58&#8243; format=&#8221;3&#8243;]) includes a pre-configured task sequence and unattend.xml for Windows Server 2008 R2 Standard Edition. To import these into a MDT Deployment Share, follow the steps above and then replace the resultant TS.XML and UNATTEND.XML that you'll find in the \Control folder.
+The download that I have supplied ([download id="58&#8243; format="3&#8243;]) includes a pre-configured task sequence and unattend.xml for Windows Server 2008 R2 Standard Edition. To import these into a MDT Deployment Share, follow the steps above and then replace the resultant TS.XML and UNATTEND.XML that you'll find in the \Control folder.
 
 Re-open the task sequence properties and you should see something like this:
 

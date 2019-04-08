@@ -152,4 +152,4 @@ This function is fairly basic and while it does do some error checking, it could
 
 Please ensure that you test thoroughly before using in a production environment. Comments or feedback on bugs, better ways to do things or additional steps is welcome.
 
-Note - a very big thanks to David Wagner at Citrix (and team) for assisting with working out how to write the App-V publishing information that you see in the Studio UI. This is done by applying the description &#8220;Created with Studio&#8221; to the publishing configuration (presumably only the first configuration that you apply with that description).
+Note - a very big thanks to David Wagner at Citrix (and team) for assisting with working out how to write the App-V publishing information that you see in the Studio UI. This is done by applying the description "Created with Studio" to the publishing configuration (presumably only the first configuration that you apply with that description).

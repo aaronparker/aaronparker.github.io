@@ -16,13 +16,13 @@ categories:
   * 2 GB RAM (2 x 1GB SIMMS) at 667 MHz
   * 100GB 7200RPM SATA HDD
   * NVIDIA GeForce Go 7400 with 256Mb RAM
-  * DVDÂ±RW drive
+  * DVD±RW drive
   * 4 USB ports plus 1 Firewire port
   * 5 in 1 Card reader
   * Broadcom LAN, Intel WLAN, Bluetooth plus a WWAN slot
   * 5.1 surround sound with digital out
   * ExpressCard slot
-  * Inbuilt Logitech web cam â€“ no [taping a web cam to my head](http://www.youtube.com/watch?v=1dJiFUZ6dHM) for me
+  * Inbuilt Logitech web cam €“ no [taping a web cam to my head](http://www.youtube.com/watch?v=1dJiFUZ6dHM) for me
   * Creative in-ear sound isolating head phones
   * Razer Diamondback gaming mouse
   * Dell printer
@@ -30,7 +30,7 @@ categories:
   * 3 year international warranty
   * Windows Vista Home Premium
 
-When I ran it up I was surprised at the amount of applications installed out of the box. There was Google desktop, McAfee Internet Security, Microsoft Works, Roxio MyDVD plus a couple of others - in all about 73 processes running at boot. Compare that with about 43 with a clean Windows Vista install and you've got a lot of crap there. The hard drive was also partitioned into two drives â€“ the D: drive, which was about 6GB, had a copy of a Windows PE recovery environment. Probably useful for most normal consumers but not so for me.
+When I ran it up I was surprised at the amount of applications installed out of the box. There was Google desktop, McAfee Internet Security, Microsoft Works, Roxio MyDVD plus a couple of others - in all about 73 processes running at boot. Compare that with about 43 with a clean Windows Vista install and you've got a lot of crap there. The hard drive was also partitioned into two drives €“ the D: drive, which was about 6GB, had a copy of a Windows PE recovery environment. Probably useful for most normal consumers but not so for me.
 
 So the first thing I did after saving a copy of the drivers was to wipe the drive and install the 64 bit version of Windows Vista Ultimate. Unfortunately there doesn't appear to be 64 bit drivers for the card reader or the sound card and as I don't really see the point in going 64 bit yet I went back to the 32 bit version of Windows Vista Ultimate. Now I've got a far better install I think
 

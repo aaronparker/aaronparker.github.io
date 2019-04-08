@@ -23,7 +23,7 @@ Now that [Adobe Reader 8 has been released](http://www.adobe.com/products/acroba
   * The installer weighs in at 20.8Mb;
   * It requires Windows Installer 3.0 and appears to require a minimum of Internet Explorer 6.0;
   * Adobe Reader 8 uses a newer version of the Netopsystems FEAD setup routine;
-  * Adobe Customization Wizard 8 is &#8220;[coming soon](http://www.adobe.com/uk/products/acrobat/solutions/it/deployment.html)&#8220;;
+  * Adobe Customization Wizard 8 is "[coming soon](http://www.adobe.com/uk/products/acrobat/solutions/it/deployment.html)";
   * On Windows Vista, setup files are unpacked to <span style="font-family: Courier New">%USERPROFILE%AppDataLocalLowNetopsystemstempAdobe Reader 8.0</span>
   * On Windows XP/2003, setup files are unpacked to <font face="courier new,courier">%USERPROFILE%\Local SettingsTemp1Adobe Reader 8.0</font> (The folder 1 may change);
   * After Reader is installed, setup files are located at <span style="font-family: Courier New">%ProgramFilesAdobeReader 8.0Setup Files{AC76BA86-7AD7-1033-7B44-A80000000002}</span>

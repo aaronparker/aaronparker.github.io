@@ -192,7 +192,7 @@ In my lab, this path is:
 
 <pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\stealthpuppy Offline Root CA</pre>
 
-Here I can see two values that define how long issued certificates are valid for - ValidityPeriod (defaults to 1) and ValidityPeriodUnits (defaults to &#8220;Years&#8221;).
+Here I can see two values that define how long issued certificates are valid for - ValidityPeriod (defaults to 1) and ValidityPeriodUnits (defaults to "Years").
 
 <figure id="attachment_5124" aria-describedby="caption-attachment-5124" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5124" src="http://stealthpuppy.com/wp-content/uploads/2016/08/rootCAValidityUnits-1024x473.png" alt="Viewing the Root CA certificate validity lifetime" width="1024" height="473" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/rootCAValidityUnits-1024x473.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/08/rootCAValidityUnits-150x69.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/rootCAValidityUnits-300x138.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/rootCAValidityUnits-768x354.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/08/rootCAValidityUnits.png 1246w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/rootCAValidityUnits.png)<figcaption id="caption-attachment-5124" class="wp-caption-text">Viewing the Root CA certificate validity lifetime*</figure>
 

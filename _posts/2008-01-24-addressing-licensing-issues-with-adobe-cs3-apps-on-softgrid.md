@@ -30,7 +30,7 @@ Fortunately the FLEXnet Licensing service only needs to run when the application
 
 Originally I had attempted using WMI to detect the state of the service, wait for it to start and then stop it. However, the virtual services are not detectable via WMI so I've had to resort to something a little more crude. This script reads the output from a NET START command until the FLEXnet service starts and then stops the service. It's not a robust script by any means but it gets the job done.
 
-[code lang=&#8221;vb&#8221;]Dim WshShell, oExec  
+[code lang="vb"]Dim WshShell, oExec  
 Set WshShell = CreateObject("WScript.Shell")  
 Do While True  
 Set oExec = WshShell.Exec("NET START")  
@@ -49,7 +49,7 @@ Loop
 
 Run the script by adding a POST LAUNCH script event in the OSD file:
 
-[code lang=&#8221;xml&#8221;]<SCRIPT EVENT="LAUNCH" TIMING="POST" PROTECT="TRUE" WAIT="FALSE" TIMEOUT="0">  
+[code lang="xml"]<SCRIPT EVENT="LAUNCH" TIMING="POST" PROTECT="TRUE" WAIT="FALSE" TIMEOUT="0">  
 <HREF>CMDOW.EXE /RUN /HID CSCRIPT //NOLOGO \\SERVER\Scripts\StopFLEXnet.VBS</HREF>  
 </SCRIPT>[/code]
 

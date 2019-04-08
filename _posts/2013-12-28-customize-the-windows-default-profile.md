@@ -79,7 +79,7 @@ Note that this will need to be run with administrative privileges and in an elev
 A common requirement is to modify the the pinned shortcuts on the Taskbar or Start menu. This can be automated using a script, which needs to run a first logon (either as the user, or in the profile copied over the default profile via Sysprep/CopyProfile). Unfortunately I can't find the original source for this script; however it works quite well and allows you to pin shortcuts to and unpin shortcuts from the Taskbar and Start menu via a command line. The script is available here:
 
 <p class="important">
-  [download id=&#8221;62&#8243; format=&#8221;1&#8243;]
+  [download id="62&#8243; format="1&#8243;]
 </p>
 
 Note that Windows 8 and above, do not expose a programatic method to pin and unpin shortcuts to the Start screen. If you're looking to customise the Start screen, refer to this existing article: <http://stealthpuppy.com/customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance/>.

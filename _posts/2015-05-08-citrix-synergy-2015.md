@@ -48,4 +48,4 @@ There's a very special part of Geek Speak Tonight this year - [GeekOvation](http
 
 # User Group Initiatives
 
-Some new initiatives around Citrix user groups looks to be one of those &#8220;worst keep secrets&#8221;, but I won't share details, however this is something worth looking forward to and getting involved in. Full details will be announced by Citrix on Tuesday.
+Some new initiatives around Citrix user groups looks to be one of those "worst keep secrets", but I won't share details, however this is something worth looking forward to and getting involved in. Full details will be announced by Citrix on Tuesday.

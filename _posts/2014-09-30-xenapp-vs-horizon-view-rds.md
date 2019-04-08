@@ -22,7 +22,7 @@ tags:
 ---
 Is VMware Horizon View 6 RDS a viable replacement or competitor to Citrix XenApp? A competitor, most certainly. View RDS as a replacement for XenApp deserves further investigation and I recommend no assumptions be made as to the suitability of View RDS, especially if you are a current Citrix customer, or a VMware partner.
 
-One of the most interesting plays that VMware has with Horizon 6, is the ability to present resources through Horizon Workspace from Citrix XenApp. My initial knee jerk reaction was &#8220;why would you want to move from XenApp/XenDesktop to View?&#8221;, but it's ultimately an excellent salvo in the fight to win customers away from Citrix.
+One of the most interesting plays that VMware has with Horizon 6, is the ability to present resources through Horizon Workspace from Citrix XenApp. My initial knee jerk reaction was "why would you want to move from XenApp/XenDesktop to View?", but it's ultimately an excellent salvo in the fight to win customers away from Citrix.
 
 This feature enables XenApp customers to implement View into existing environments and provide users with access to resources from XenApp and View from a single workspace. The aim is to create an on-ramp for the entire Horizon suite and ultimately a migration away from XenApp and/or XenDesktop.
 
@@ -32,7 +32,7 @@ I've put together a table in this article to compare features of XenApp and Hor
 
 There are a few things to keep in mind while reading this - a tick/star against a feature does not necessarily indicate that feature is directly comparable. Due to differences in approach and architecture, it's very difficult to draw direct comparisons against some features.
 
-I've added the VDI components of XenDesktop and View to provide reference.  The heading in the table &#8220;XenDesktop VDI&#8221; refers to the VDI features of XenDesktop, not the XenDesktop VDI edition. Any XenApp version between 6.5 and 7.6 should be applicable to this comparison.
+I've added the VDI components of XenDesktop and View to provide reference.  The heading in the table "XenDesktop VDI" refers to the VDI features of XenDesktop, not the XenDesktop VDI edition. Any XenApp version between 6.5 and 7.6 should be applicable to this comparison.
 
 This comparison is intended as a starting point for looking at both solutions. Your mileage will vary and I encourage performing your own due diligence. VMware has already improved View RDS with printing functionality within months of the original 6.0 release.
 

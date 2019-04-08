@@ -19,7 +19,7 @@ When deploying Windows Vista in the enterprise you have the choice of Multiple A
 
 There's a fair amount of reading you'll have to do to work out how to get the KMS up and running, but if you're like me and you have the attention span of a goldfish, here's the short version:
 
-**1**. Download the Key Management Service for Windows Server 2003 SP1 â€“ there are [x86](http://www.microsoft.com/downloads/details.aspx?FamilyID=81d1cb89-13bd-4250-b624-2f8c57a1ae7b&DisplayLang=en) and [x64](http://www.microsoft.com/downloads/details.aspx?FamilyID=03fe69b2-6244-471c-80d2-b4171fb1d7a5&DisplayLang=en) versions available.
+**1**. Download the Key Management Service for Windows Server 2003 SP1 €“ there are [x86](http://www.microsoft.com/downloads/details.aspx?FamilyID=81d1cb89-13bd-4250-b624-2f8c57a1ae7b&DisplayLang=en) and [x64](http://www.microsoft.com/downloads/details.aspx?FamilyID=03fe69b2-6244-471c-80d2-b4171fb1d7a5&DisplayLang=en) versions available.
 
 **2**. Install the KMS on a physical machine running Windows Server 2003. The same machine you might be using for [WDS](http://technet.microsoft.com/en-us/windowsvista/aa905118.aspx) could be the best candidate.
 

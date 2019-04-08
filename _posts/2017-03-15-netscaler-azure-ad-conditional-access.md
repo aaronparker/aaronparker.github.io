@@ -76,7 +76,7 @@ To add support for NetScaler, you'll need to [add a custom application to Azure 
   * Azure AD **Identifier** maps to **Issuer name** in the NetScaler Gateway Authentication SAML Server page. Use the public URL to your NetScaler Gateway
   * The Reply URL should be the SAML endpoint URL on your NetScaler Gateway, e.g. https://apps.home.stealthpuppy.com**/cgi/samlauth**
 
-During testing I did run into an issue with SAML assertion - after authenticating to Azure AD, the browser presented &#8220;SAML Assertion verification failed&#8221;. This turned out to be an issue with the Azure AD SAML Signing Certificate. After creating a new certificate and deploying it to NetScaler, authentication worked.
+During testing I did run into an issue with SAML assertion - after authenticating to Azure AD, the browser presented "SAML Assertion verification failed". This turned out to be an issue with the Azure AD SAML Signing Certificate. After creating a new certificate and deploying it to NetScaler, authentication worked.
 
 When configuring your NetScaler Gateway application in Azure AD, your Single sign-on configuration should look something like this:
 
@@ -115,7 +115,7 @@ If you've configured each of the components correctly, logging into NetScaler Ga
 
 ## Callback URL
 
-[Update 19/03/2017] I ran into an issue whereby the StoreFront page would display &#8220;Cannot Complete your Request&#8221; after successfully logging in. The following error was displayed in the Citrix Delivery Services event log on the StoreFront server:
+[Update 19/03/2017] I ran into an issue whereby the StoreFront page would display "Cannot Complete your Request" after successfully logging in. The following error was displayed in the Citrix Delivery Services event log on the StoreFront server:
 
 > A CitrixAGBasic Login request has failed.  
 > Citrix.DeliveryServicesClients.Authentication.AG.AGAuthenticatorException, Citrix.DeliveryServicesClients.Authentication, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null  
@@ -133,7 +133,7 @@ If you've configured each of the components correctly, logging into NetScaler Ga
 > at Citrix.DeliveryServicesClients.Authentication.TokenIssuingClient.RequestToken(String url, RequestToken requestToken, String primaryToken, String languages, CookieContainer cookieContainer, IEnumerable\`1 acceptedResponseTypes, IDictionary\`2 additionalHeaders)  
 > at Citrix.DeliveryServicesClients.Authentication.AG.AGAuthenticator.Authenticate(HttpRequestBase clientRequest, Boolean& passwordSupplied)
 
-I had not added a Callback URL as it's optional since StoreFront 2.6 and only required for the [SmartAccess](https://docs.citrix.com/en-us/netscaler-gateway/10-1/ng-xa-xd-integration-edocs-landing/ng-integrate-web-interface-apps-wrapper/ng-smartaccess-wrapper-con/ng-smartaccess-how-it-works-con.html) feature. Since I'm passing the conditional access control to Azure AD, I don't need SmartAccess and therefore don't really need to add the Callback URL. However, in this instance, adding the Callback URL fixed the &#8220;Cannot Complete your Request&#8221; issue.
+I had not added a Callback URL as it's optional since StoreFront 2.6 and only required for the [SmartAccess](https://docs.citrix.com/en-us/netscaler-gateway/10-1/ng-xa-xd-integration-edocs-landing/ng-integrate-web-interface-apps-wrapper/ng-smartaccess-wrapper-con/ng-smartaccess-how-it-works-con.html) feature. Since I'm passing the conditional access control to Azure AD, I don't need SmartAccess and therefore don't really need to add the Callback URL. However, in this instance, adding the Callback URL fixed the "Cannot Complete your Request" issue.
 
 ## Citrix Receiver
 
@@ -169,7 +169,7 @@ For example, you could choose :
 
 <figure id="attachment_5405" aria-describedby="caption-attachment-5405" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5405" src="http://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls-1024x587.png" alt="Applying Conditional Access controls to NetScaler" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls.png)<figcaption id="caption-attachment-5405" class="wp-caption-text">Applying Conditional Access controls to NetScaler*</figure>
 
-Device based Conditional Access is a great way of further securing access to your on-premises resources; however, it's worth noting that today Microsoft does not yet include support for macOS. Support for macOS is &#8220;coming soon&#8221;.
+Device based Conditional Access is a great way of further securing access to your on-premises resources; however, it's worth noting that today Microsoft does not yet include support for macOS. Support for macOS is "coming soon".
 
 <figure id="attachment_5414" aria-describedby="caption-attachment-5414" style="width: 624px" class="wp-caption alignnone">[<img class="size-full wp-image-5414" src="http://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Devices.png" alt="Device support for Conditional Access" width="624" height="293" srcset="https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Devices.png 624w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Devices-150x70.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Devices-300x141.png 300w" sizes="(max-width: 624px) 100vw, 624px" />](http://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Devices.png)<figcaption id="caption-attachment-5414" class="wp-caption-text">Device support for Conditional Access*</figure>
 

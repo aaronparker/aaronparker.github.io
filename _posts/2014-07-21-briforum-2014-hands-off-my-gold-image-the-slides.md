@@ -20,5 +20,5 @@ Thanks to all who attended my BriForum 2014 session in Boston - [Hands Off My Go
 For reference, or if you weren't able to attend, here's a copy of the full slide deck. If you have any questions, drop me a line on Twitter.
 
 <p class="download">
-  [download id=&#8221;64&#8243; format=&#8221;1&#8243;]
+  [download id="64&#8243; format="1&#8243;]
 </p>

@@ -8,8 +8,6 @@ guid: https://stealthpuppy.com/?p=5809
 permalink: /melbourne-cugc-october-2017-meetup/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-dsq_thread_id:
-  - "6190304301"
 image: /wp-content/uploads/2016/11/MelbourneCUCG-white.png
 categories:
   - Community

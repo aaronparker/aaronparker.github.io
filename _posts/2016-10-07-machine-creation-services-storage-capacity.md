@@ -20,7 +20,7 @@ tags:
   - XenApp
   - XenDesktop
 ---
-How much storage capacity do you need for Citrix Machine Creation Services? If you're designing a XenApp or XenDesktop environment, one question you're going to ask is &#8220;how much storage do we need?&#8221;. Let's dig into the fundamentals of Machine Creation Services and have a look at how much capacity you'll need to provision.
+How much storage capacity do you need for Citrix Machine Creation Services? If you're designing a XenApp or XenDesktop environment, one question you're going to ask is "how much storage do we need?". Let's dig into the fundamentals of Machine Creation Services and have a look at how much capacity you'll need to provision.
 
 # What is Machine Creation Services?
 

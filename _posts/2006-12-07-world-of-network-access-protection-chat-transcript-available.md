@@ -13,7 +13,7 @@ tags:
 ---
 The November 13, World of NAP chat transcript is finally [available on the TechNet site](http://www.microsoft.com/technet/community/chats/trans/network/06_1113_tn_nap.mspx). Unfortunately I'm usually asleep when these chats and webcasts are live, so I missed out on taking part, but here are some highlight questions from the chat (edited slightly for readability):
 
-> **Q:** Is it true that NAP will not be &#8220;fully implemented&#8221; until Windows Longhorn is released?  
+> **Q:** Is it true that NAP will not be "fully implemented" until Windows Longhorn is released?  
 > **A:** This is correct. We shipped the NAP client-side pieces on Vista. We will be shipping the server-side [components] of NAP on Longhorn Server in the next year, as well as additional NAP client releases for XP SP2+ and Windows Server 2003.
 > 
 > **Q:** Can you explain how the NAP client pieces can be used prior to Longhorn?  

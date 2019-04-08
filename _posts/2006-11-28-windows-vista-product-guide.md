@@ -23,7 +23,7 @@ Microsoft have posted **the** Windows Vista Product Guide on their Downloads Cen
 
 The document comes in Word 2007 and XPS formats, so you'll need either the [Microsoft Office Compatibility Pack](http://www.microsoft.com/downloads/details.aspx?FamilyId=941B3470-3AE9-4AEE-8F43-C6BB74CD1466&displaylang=en), if you don't already have Word 2007, or [MSXML 6.0](http://www.microsoft.com/downloads/details.aspx?familyid=993C0BCF-3BCF-4009-BE21-27E85E1857B1&displaylang=en) and the [XML Paper Specification Essentials Pack](http://www.microsoft.com/downloads/details.aspx?FamilyId=4A7B8983-7BE1-4740-BC9C-D377A8F2D6EB&displaylang=en), if you're not already running Windows Vista, to view it:
 
-  * Â  [Windows Vista Product Guide](http://www.microsoft.com/downloads/details.aspx?FamilyID=bbc16ebf-4823-4a12-afe1-5b40b2ad3725&DisplayLang=en)
+  *   [Windows Vista Product Guide](http://www.microsoft.com/downloads/details.aspx?FamilyID=bbc16ebf-4823-4a12-afe1-5b40b2ad3725&DisplayLang=en)
 
 Another interesting download posted today is the [Microsoft Windows Vista Readiness Assessment tool](http://www.microsoft.com/downloads/details.aspx?FamilyID=5cafd2ab-2397-45eb-81b1-9e915c157485&DisplayLang=en), although at the moment, it looks to me like someone hasn't finished uploading the correct files. There are only XML files available for download - no WSSADS.EXE link, which should contain the assessment tool. Keep an eye on this one for updates:
 

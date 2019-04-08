@@ -26,6 +26,6 @@ This is simple with a slight modification of the original command line with the 
 
 Here's how to use PowerShell to import packages stored in their own folder (i.e. sub-folders) in a UNC, publish them globally and stream each package into the local cache.
 
-[code language=&#8221;ps&#8221;]Get-ChildItem "\\Server\Share\Packages" -recurse -force -include *.appv | Add-AppvClientPackage | Publish-AppvClientPackage -global | Mount-AppvClientPackage[/code]
+[code language="ps"]Get-ChildItem "\\Server\Share\Packages" -recurse -force -include *.appv | Add-AppvClientPackage | Publish-AppvClientPackage -global | Mount-AppvClientPackage[/code]
 
 Teamed with NTFS permissions on each package folder, this command is a (very) simple, roll your own publishing tool for App-V 5.

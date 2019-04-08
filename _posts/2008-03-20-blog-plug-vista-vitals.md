@@ -24,4 +24,4 @@ Here are some of my favourite posts:
   * [Folder Redirection: Not to the user's home directory](http://vistavitals.blogspot.com/2007/10/folder-redirection-not-to-users-home.html)
   * [Folder Redirection: Amateur Magician](http://vistavitals.blogspot.com/2007/10/folder-redirection-amateur-magician.html)
 
-So, in the words of [Molly Meldrum](http://en.wikipedia.org/wiki/Molly_Meldrum) - &#8220;do ya'self a favour&#8221; and check this one out.
+So, in the words of [Molly Meldrum](http://en.wikipedia.org/wiki/Molly_Meldrum) - "do ya'self a favour" and check this one out.

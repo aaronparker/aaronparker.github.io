@@ -28,5 +28,5 @@ See the Property table inside SETUP.MSI for the complete list of additional clie
 I have included here a complete sample script that deploys the App-V client, by first installing the dependencies and setting permissions (and other options) during install, using the MSI:
 
 <p class="download">
-  [download id=&#8221;35&#8243; format=&#8221;1&#8243;]
+  [download id="35&#8243; format="1&#8243;]
 </p>

@@ -23,7 +23,7 @@ Refactoring the script into a module has been a great little project for creatin
 
 # Why VcRedist?
 
-At this point, I'm sure you're saying to yourself - &#8220;Aaron, haven't you just created [Chocolatey](https://chocolatey.org/)?&#8221;. In a way yes, this module does exactly what you can do with Chocolatey - install the [Visual C++ Redistributables](https://chocolatey.org/packages/vcredist140) directly to the local machine. Although you can download and install all of the supported (and unsupported) Redistributables, the primary aim of the module is to provide a fast way to download and import the Redistributables into the Microsoft Deployment Toolkit or System Center Configuration Manager for operating system deployments.
+At this point, I'm sure you're saying to yourself - "Aaron, haven't you just created [Chocolatey](https://chocolatey.org/)?". In a way yes, this module does exactly what you can do with Chocolatey - install the [Visual C++ Redistributables](https://chocolatey.org/packages/vcredist140) directly to the local machine. Although you can download and install all of the supported (and unsupported) Redistributables, the primary aim of the module is to provide a fast way to download and import the Redistributables into the Microsoft Deployment Toolkit or System Center Configuration Manager for operating system deployments.
 
 # Module
 

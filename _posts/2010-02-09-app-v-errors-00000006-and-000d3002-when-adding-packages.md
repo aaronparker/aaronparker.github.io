@@ -29,7 +29,7 @@ Which looks something like this:
 
 The issue is in the path to the manifest XML file for the package – when executing the command like this, I’ll see the error every time:
 
-[code wrapping=&#8221;true&#8221;]SFTMIME ADD PACKAGE:"Microsoft\_Office\_2010\_x64\_084154.001" /MANIFEST "\\VBOXSVR\Packages\Microsoft Office\2010\_x64&#92;&#48;00\Microsoft\_Office\_2010\_x64\_084154.001\_manifest.xml" /OVERRIDEURL "\\VBOXSVR\Packages\Microsoft Office\2010\_x64&#92;&#48;00\Microsoft\_Office\_2010\_x64_084154.001.sft" /GLOBAL /CONSOLE[/code]
+[code wrapping="true"]SFTMIME ADD PACKAGE:"Microsoft\_Office\_2010\_x64\_084154.001" /MANIFEST "\\VBOXSVR\Packages\Microsoft Office\2010\_x64&#92;&#48;00\Microsoft\_Office\_2010\_x64\_084154.001\_manifest.xml" /OVERRIDEURL "\\VBOXSVR\Packages\Microsoft Office\2010\_x64&#92;&#48;00\Microsoft\_Office\_2010\_x64_084154.001.sft" /GLOBAL /CONSOLE[/code]
 
 Can’t see the the problem? The command certainly looks like it should work. An entry in the log file sheds light on the issue:
 
@@ -51,6 +51,6 @@ Which looks like this:
 
 Thankfully a workaround is very easy to implement – just add an extra backslash to each path:
 
-[code wrapping=&#8221;true&#8221;]SFTMIME ADD PACKAGE:"Microsoft\_Office\_2010\_x64\_084154.001" /MANIFEST "\\\VBOXSVR\Packages\Microsoft Office\2010\_x64&#92;&#48;00\Microsoft\_Office\_2010\_x64\_084154.001\_manifest.xml" /OVERRIDEURL "\\\VBOXSVR\Packages\Microsoft Office\2010\_x64&#92;&#48;00\Microsoft\_Office\_2010\_x64_084154.001.sft" /GLOBAL /CONSOLE[/code]
+[code wrapping="true"]SFTMIME ADD PACKAGE:"Microsoft\_Office\_2010\_x64\_084154.001" /MANIFEST "\\\VBOXSVR\Packages\Microsoft Office\2010\_x64&#92;&#48;00\Microsoft\_Office\_2010\_x64\_084154.001\_manifest.xml" /OVERRIDEURL "\\\VBOXSVR\Packages\Microsoft Office\2010\_x64&#92;&#48;00\Microsoft\_Office\_2010\_x64_084154.001.sft" /GLOBAL /CONSOLE[/code]
 
 The ADD PACKAGE command will then work and the package will stream correctly.

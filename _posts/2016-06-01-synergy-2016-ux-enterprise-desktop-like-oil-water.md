@@ -28,7 +28,7 @@ This session covers our testing in turning a vanilla Windows installation, which
 
 The full video of the 45-minute session is available on [YouTube](https://www.youtube.com/watch?v=8TpXl80fkKQ) and embedded below.
 
-_Out of the box, Windows is lightning fast and responsive. Enterprise desktops, on the other hand, tend to be slow and bloated. Why is that? Enterprises typically add a plethora of third-party management, security and virtualization components and implement &#8220;best practices&#8221;. Combined, these customizations often bog Windows down and impact user experience. But what is the impact of each change? This session will showcase a clean install of Windows, measuring and explaining the impact of each configuration change on the user experience._
+_Out of the box, Windows is lightning fast and responsive. Enterprise desktops, on the other hand, tend to be slow and bloated. Why is that? Enterprises typically add a plethora of third-party management, security and virtualization components and implement "best practices". Combined, these customizations often bog Windows down and impact user experience. But what is the impact of each change? This session will showcase a clean install of Windows, measuring and explaining the impact of each configuration change on the user experience._
 
 _In this session, you will learn:_
 

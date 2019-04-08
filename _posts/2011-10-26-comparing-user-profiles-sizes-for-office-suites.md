@@ -31,7 +31,7 @@ In this screenshot, the profile sizes for each versions of Office breaks down li
 
 And that's compressed too. So in my profile, the user preferences for Office 2010 are 9 times larger than for Office 2007 and 216 times larger than the preferences for Office 2003!
 
-If you're in the process of or have upgraded to Office 2010, have you thought about the additional data that you'll be managing (whether proactively or not)? If you're stuck with &#8220;managing&#8221; user preferences with Roaming Profiles, you're just masking this issue and will have no real insight into how much space this stuff is consuming.
+If you're in the process of or have upgraded to Office 2010, have you thought about the additional data that you'll be managing (whether proactively or not)? If you're stuck with "managing" user preferences with Roaming Profiles, you're just masking this issue and will have no real insight into how much space this stuff is consuming.
 
 What do you do about it? I think the only solution is to use a third party user environment management (or user virtualization, if you like) solution from one of the vendors covered in this white paper: [User Environment Management Smackdown](http://www.brianmadden.com/blogs/rubenspruijt/archive/2011/06/29/user-environment-management-smackdown-head-to-head-analysis-of-appsense-citrix-immidio-liquidware-labs-microsoft-quest-res-scense-tricerat-unidesk-and-vuem.aspx)*. Go read it to find out what you can do with a solution that actually manages the user layer.
 

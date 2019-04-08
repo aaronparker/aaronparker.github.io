@@ -29,7 +29,7 @@ Because the _New-VMExternalSwitch_ and _Remove-VMSwitchNic_ commandlets to used
 
 It's just a simple list, so if I add another server, I just add the new server's MAC address to the list. The script returns the description of the adapter with that MAC address and then uses that to configure the new virtual network. Enjoy.
 
-[code language=&#8221;ps&#8221;]## Configures a Hyper-V external virtual network based on a supplied MAC address
+[code language="ps"]## Configures a Hyper-V external virtual network based on a supplied MAC address
 
 \## Variables ##  
 \# Path to the PowerShell Management Library for Hyper-V  

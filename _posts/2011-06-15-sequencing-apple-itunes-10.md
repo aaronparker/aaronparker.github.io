@@ -137,7 +137,7 @@ There’s no reason why you couldn’t install and configure QuickTime and iTune
 You can download the script here:
 
 <p class="download">
-  [download id=&#8221;41&#8243; format=&#8221;1&#8243;]
+  [download id="41&#8243; format="1&#8243;]
 </p>
 
 Place the script into the same folder as the iTunes Windows Installer files as it will attempt to run the MSI files from the same location.
@@ -162,7 +162,7 @@ There are a number of locations that we need to exclude from capture during sequ
 I have included these in a Package Template for iTunes that you can download from here:
 
 <p class="download">
-  [download id=&#8221;40&#8243; format=&#8221;1&#8243;]
+  [download id="40&#8243; format="1&#8243;]
 </p>
 
 # Sequencing iTunes
@@ -210,7 +210,7 @@ Add a script to the iTunes OSD file to create the AppData folder structure that 
 For an example of what to add to the OSD file, download the example here:
 
 <p class="download">
-  [download id=&#8221;42&#8243; format=&#8221;1&#8243;]
+  [download id="42&#8243; format="1&#8243;]
 </p>
 
 **iPod Service**: Set the _iPod Service_ to Automatic. This will ensure that the service is ready as soon as iTunes starts.

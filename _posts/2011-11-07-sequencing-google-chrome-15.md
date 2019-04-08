@@ -86,7 +86,7 @@ If a Chrome profile is not virtualized within the package any options set during
 For information on what these master preferences are, see the [Chromium administrators documentation on master preferences](http://www.chromium.org/administrators/configuring-other-preferences). I've included a sample **master_preferences** file in which I have set several defaults including removing the default browser check, preventing Google from adding a shortcut to the user's desktop on first run and setting a home page.
 
 <p class="download">
-  [download id=&#8221;51&#8243; format=&#8221;1&#8243;]
+  [download id="51&#8243; format="1&#8243;]
 </p>
 
 Remove the .txt file extension to use
@@ -106,12 +106,12 @@ Before Sequencing, add the following exclusions:
   * %CSIDL\_PROGRAM\_FILES%\Google\Update
   * %CSIDL_WINDOWS%\Tasks
 
-The last two exclusions will prevent Google Update related binaries from being captured. Additionally disable the option to &#8220;Allow Virtualization of Services&#8221; to prevent the capture of the Google Update services.
+The last two exclusions will prevent Google Update related binaries from being captured. Additionally disable the option to "Allow Virtualization of Services" to prevent the capture of the Google Update services.
 
 I have included these options in a Package Template for Chrome that you can download here:
 
 <p class="download">
-  [download id=&#8221;52&#8243; format=&#8221;1&#8243;]
+  [download id="52&#8243; format="1&#8243;]
 </p>
 
 ### Sequencing Chrome

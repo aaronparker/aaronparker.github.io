@@ -114,11 +114,11 @@ Here's what AACConfig.TXT looks like:
 > <Password>password</Password>  
 > <Domain>DOMAIN</Domain>  
 > </ServiceAccount>  
-> <ServerFarm type=&#8221;Create&#8221;>  
+> <ServerFarm type="Create">  
 > <DBServer>SERVER\CITRIXAAC</DBServer>  
 > <FarmName>AccessGateway</FarmName>  
 > <ServerRoles>Admin|HTML Preview</ServerRoles>  
-> <DatabaseAccount type=&#8221;windows&#8221;/>  
+> <DatabaseAccount type="windows"/>  
 > </ServerFarm>  
 > <RadiusConfig>  
 > <Secret></Secret>  

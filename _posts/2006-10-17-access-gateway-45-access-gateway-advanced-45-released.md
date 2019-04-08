@@ -16,11 +16,11 @@ tags:
 </p>
 
 > <p class="MsoNormal" style="margin: 0cm 0cm 10pt">
->   <font face="verdana,geneva">As many of you will by now know, Access Gateway and Access Gateway Advanced were released on Friday 13 October and can be downloaded from MyCitrix. Weâ€™ve set the Subscription Advantage date somewhat earlier than the release date (1 January 2006 if I recall correctly) which means that virtually everyone with an Access Gateway [Advanced] installation will be eligible to run this code. This is good because thereâ€™s a number of stability and scalability improvements that will be useful for all customers and it will allow us to focus our support resources on 4.5 (which is not to say that 4.2 will go unsupported, just that users will likely be encouraged to upgrade).</font>
+>   <font face="verdana,geneva">As many of you will by now know, Access Gateway and Access Gateway Advanced were released on Friday 13 October and can be downloaded from MyCitrix. We€™ve set the Subscription Advantage date somewhat earlier than the release date (1 January 2006 if I recall correctly) which means that virtually everyone with an Access Gateway [Advanced] installation will be eligible to run this code. This is good because there€™s a number of stability and scalability improvements that will be useful for all customers and it will allow us to focus our support resources on 4.5 (which is not to say that 4.2 will go unsupported, just that users will likely be encouraged to upgrade).</font>
 > </p>
 
 <p class="MsoNormal" style="margin: 0cm 0cm 10pt">
-  <font face="verdana,geneva">I donâ€™t know how I missed this one, I think itâ€™s been slipped in under the radar and I think Sam means 1 January 2007. I donâ€™t seem to have access to it from the MyCitrix web site, but I no longer have access to the beta. So I'm yet to see the final 4.5 code.</font>
+  <font face="verdana,geneva">I don€™t know how I missed this one, I think it€™s been slipped in under the radar and I think Sam means 1 January 2007. I don€™t seem to have access to it from the MyCitrix web site, but I no longer have access to the beta. So I'm yet to see the final 4.5 code.</font>
 </p>
 
 <p class="MsoNormal" style="margin: 0cm 0cm 10pt">
@@ -28,7 +28,7 @@ tags:
 </p>
 
 <p class="MsoNormal" style="margin: 0cm 0cm 10pt">
-  <font face="verdana,geneva">Hereâ€™s a list of the feature changes in the Access Gateway and Advanced Access Control:</font>
+  <font face="verdana,geneva">Here€™s a list of the feature changes in the Access Gateway and Advanced Access Control:</font>
 </p>
 
 <table class="MsoNormalTable" border="0" cellpadding="0">

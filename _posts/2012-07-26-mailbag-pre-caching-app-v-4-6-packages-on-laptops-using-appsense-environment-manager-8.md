@@ -43,7 +43,7 @@ tags:
 
 Determining whether the local machine is a laptop is quite simple, but we'll need to resort to some custom code to that. Fortunately we don't need to re-invent the wheel - we can use this code by [Rob van der Woude](http://www.robvanderwoude.com/) that [uses WMI to look for a battery](http://www.robvanderwoude.com/vbstech_inventory_laptop.php):
 
-[code language=&#8221;vb&#8221;]If IsLaptop( "." ) Then  
+[code language="vb"]If IsLaptop( "." ) Then  
 ' WScript.Echo "Laptop"  
 ' Return Success  
 WScript.Quit 0  
@@ -77,7 +77,7 @@ For a Computer IP Address condition, choose Condition / Computer / Computer IP A
 
 To use a PowerShell script instead, create a Custom Condition, set the **Type** to PowerShell, _disable_ 'Evaluate Once Per Session' and set 'Run As System User'.
 
-[code language=&#8221;ps&#8221;]$servers = "appv1.domain.local"  
+[code language="ps"]$servers = "appv1.domain.local"  
 If (!(Test-Connection -Cn $server -BufferSize 16 -Count 1 -ea 0 -quiet))  
 {  
 exit 0  
@@ -112,5 +112,5 @@ I've included a sample configuration below that uses each of these approaches by
 Download the configuration shown above from here:
 
 <p class="important">
-  [download id=&#8221;57&#8243; format=&#8221;1&#8243;]
+  [download id="57&#8243; format="1&#8243;]
 </p>

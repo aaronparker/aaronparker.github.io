@@ -22,7 +22,7 @@ tags:
 
 When adding the Outlook 2007 ADM template file, OUTLK12.ADM, to a Group Policy object, you may encounter the following error displayed when you view a settings report in the GPMC:
 
-> The .adm file &#8220;\\company.local\SysVol\clariti.internal\Policies\{C08857CE-A103-456A-8D3D-0A4F869B8C4A}\Adm\outlk12.adm&#8221; is in not in a valid format and must be replaced. Details: A value name is expected before line 2461.
+> The .adm file "\\company.local\SysVol\clariti.internal\Policies\{C08857CE-A103-456A-8D3D-0A4F869B8C4A}\Adm\outlk12.adm" is in not in a valid format and must be replaced. Details: A value name is expected before line 2461.
 
 To fix this issue follow these steps:
 

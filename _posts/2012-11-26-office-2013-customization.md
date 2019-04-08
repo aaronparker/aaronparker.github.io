@@ -63,7 +63,7 @@ Navigate to the ‘Modify user settings’ page and set the options applicable t
 
 When saving your customization file, you can choose to save it to the Updates folder where it will run automatically, or [use SETUP.EXE to run a specific customization file](http://technet.microsoft.com/en-us/library/cc178956.aspx).
 
-If you save the customization file to the Updates folder, use a descriptive name for the file, but also add &#8220;1_&#8221; (without quotes) to the file name. This will ensure that the customization MSP will be applied before any other updates.
+If you save the customization file to the Updates folder, use a descriptive name for the file, but also add "1_" (without quotes) to the file name. This will ensure that the customization MSP will be applied before any other updates.
 
 # User Settings Recommendations
 

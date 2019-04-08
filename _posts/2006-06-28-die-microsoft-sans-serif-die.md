@@ -17,9 +17,9 @@ When Microsoft released Windows 2000, the new default UI font was changed to Tah
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes`
 
-Change the values for &#8220;MS Shell Dlg 2&#8221; and &#8220;MS Shell Dlg&#8221; to &#8220;Tahoma&#8221; or &#8220;Segoe UI&#8221; depending on what platform you are on. Reboot and you will see the new font in use where it should be. In some places however, you will see text controls wrapping because the newer fonts may be spread out a little more, but these are few.
+Change the values for "MS Shell Dlg 2" and "MS Shell Dlg" to "Tahoma" or "Segoe UI" depending on what platform you are on. Reboot and you will see the new font in use where it should be. In some places however, you will see text controls wrapping because the newer fonts may be spread out a little more, but these are few.
 
-This &#8220;bug&#8221; has been reported on the Vista/Longhorn newsgroups, some hopefully we'll see this change in upcoming builds of Vista. (Microsoft, just the single UI font would be nice..)
+This "bug" has been reported on the Vista/Longhorn newsgroups, some hopefully we'll see this change in upcoming builds of Vista. (Microsoft, just the single UI font would be nice..)
 
 UPDATE: I found some more information on the Microsoft Sans Serif/MS Sans Serif font in use in Windows. Microsoft Sans Serif is an OpenType font that replaces the older MS Sans Serif font. Many applications just don't use the new font though and this is noticeable when you enable ClearType font smoothing - MS Sans Serif is not 'smoothed' . The same registry key can be used to replace the font in older applications:
 

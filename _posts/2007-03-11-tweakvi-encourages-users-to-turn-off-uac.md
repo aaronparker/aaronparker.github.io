@@ -12,9 +12,9 @@ tags:
   - UAC
   - Windows-Vista
 ---
-TweakVI is a tweaking and &#8220;optimisation&#8221; application from [Totalidea](http://www.totalidea.com/content/tweakvi/tweakvi-index.html) that is essentially a front end for a large number of registry settings that you can enable or disable to change the behaviour of features in Windows Vista. The application is mainly aimed at power users but I would assume that some slightly less power users would be interested in this application as well.
+TweakVI is a tweaking and "optimisation" application from [Totalidea](http://www.totalidea.com/content/tweakvi/tweakvi-index.html) that is essentially a front end for a large number of registry settings that you can enable or disable to change the behaviour of features in Windows Vista. The application is mainly aimed at power users but I would assume that some slightly less power users would be interested in this application as well.
 
-What has struck me about this software is that during setup you are encouraged to disable UAC because it &#8220;might cause warning message to appear&#8221;. Here's the screenshots from the installer:
+What has struck me about this software is that during setup you are encouraged to disable UAC because it "might cause warning message to appear". Here's the screenshots from the installer:
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1100.TweakVISetup3.png" /> 
 

@@ -22,7 +22,7 @@ tags:
 
 Using PowerShell to drive the App-V Client opens up plenty of great scenarios. Here's how to use PowerShell to import a package (from a UNC path), publish it globally so that it's available for all users logging onto the local machine and stream the package into the cache.
 
-[code language=&#8221;ps&#8221;]Add-AppvClientPackage -Path "\\Server\Packages\MozillaFirefox16_pkg\MozillaFirefox16.appv" | Publish-AppvClientPackage -Global | Mount-AppvClientPackage -Verbose[/code]
+[code language="ps"]Add-AppvClientPackage -Path "\\Server\Packages\MozillaFirefox16_pkg\MozillaFirefox16.appv" | Publish-AppvClientPackage -Global | Mount-AppvClientPackage -Verbose[/code]
 
 The Path property on the Add-AppvClientPackage command should take any local, UNC or HTTP path. This is a quick and dirty method of importing and testing App-V 5 packages into a machine for testing.
 

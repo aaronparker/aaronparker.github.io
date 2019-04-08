@@ -75,7 +75,7 @@ Not documented anywhere and purely untested, normally these following redistribu
   * [Guide to sequencing .NET 4.0 with App-V 4.6 SP1](http://support.microsoft.com/kb/2519958)
   * [Support for .NET in Microsoft Application Virtualization (4.5) and 4.5 Cumulative Update 1](http://technet.microsoft.com/appvirtualization/dd146065.aspx)
   * [Support for .NET in Microsoft Application Virtualization 4.5 (App-V)](http://support.microsoft.com/kb/959524)
-  * [Error message when you try to start a sequenced application in the Microsoft App-V (SoftGrid) client: &#8220;Error code: xxxxxx-xxxxxx2C-800736B1&#8221;](http://support.microsoft.com/kb/939084)
+  * [Error message when you try to start a sequenced application in the Microsoft App-V (SoftGrid) client: "Error code: xxxxxx-xxxxxx2C-800736B1"](http://support.microsoft.com/kb/939084)
   * [Microsoft Application Virtualization 4.6 Sequencing Guide](http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-46_Sequencing_Guide_Final.docx)
   * [Visual C++ Libraries as Shared Side-by-Side Assemblies](http://msdn.microsoft.com/en-us/library/ms235624(VS.80).aspx)
   * [Howto: Deploy VC2008 apps without installing vcredist_x86.exe](http://blog.kalmbach-software.de/2008/05/03/howto-deploy-vc2008-apps-without-installing-vcredist_x86exe/)

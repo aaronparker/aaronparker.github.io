@@ -28,7 +28,7 @@ There are a couple of ways to avoid this scenario:
 
 [Create a new WMI filter in the GPMC](http://technet.microsoft.com/en-us/library/cc780416.aspx) with this query:
 
-[quickcode:noclick]SELECT * FROM Win32_Product WHERE (Caption = &#8220;Microsoft Application Virtualization Desktop Client&#8221; AND Version = &#8220;4.5.0.1485&#8221;)[/quickcode]
+[quickcode:noclick]SELECT * FROM Win32_Product WHERE (Caption = "Microsoft Application Virtualization Desktop Client" AND Version = "4.5.0.1485")[/quickcode]
 
 Your WMI filter should look something like this and your GPO will only apply once the App-V 4.5 client has been installed:
 

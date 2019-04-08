@@ -19,7 +19,7 @@ tags:
 
 IT World [has covered the update](http://www.itworld.com/windows/63219/after-cert-warning-microsoft-delivers-autorun-fix) and US-CERT actually issued a security alert about the issue last month - [Microsoft Windows Does Not Disable AutoRun Properly](http://www.us-cert.gov/cas/techalerts/TA09-020A.html). The US-CERT article has guidance on disabling `AUTORUN.INF` completely via the IniFileMapping feature - something that [Nick Brown covered back in 2007](http://nick.brown.free.fr/blog/2007/10/memory-stick-worms.html).
 
-There are actually two knowlegebase articles that cover the issue and the update: [How to correct &#8220;disable Autorun registry key&#8221; enforcement in Windows (967715)](http://support.microsoft.com/kb/967715) and [How to correct &#8220;disable Autorun registry key&#8221; enforcement in Windows (953252)](http://support.microsoft.com/kb/953252). You'll only need to read the first.
+There are actually two knowlegebase articles that cover the issue and the update: [How to correct "disable Autorun registry key" enforcement in Windows (967715)](http://support.microsoft.com/kb/967715) and [How to correct "disable Autorun registry key" enforcement in Windows (953252)](http://support.microsoft.com/kb/953252). You'll only need to read the first.
 
 On Windows XP/2003 the update does two things - updates SHELL32.DLL and creates the registry value: `HKLMSoftwareMicrosoftWindowsCurrentVersionPoliciesExplorer HonorAutorunSetting`. You can download the updates here:
 

@@ -47,7 +47,7 @@ Each download is a ZIP file containing the configuration and documentation to h
 <span style="color: #ff0000;">New!</span> December 2011, updated configuration version 3.1.
 
 <p class="download">
-  [download id=&#8221;53&#8243; format=&#8221;1&#8243;]
+  [download id="53&#8243; format="1&#8243;]
 </p>
 
 Change log:
@@ -66,11 +66,11 @@ Change log:
 **Previous versions**
 
 <p class="download">
-  [download id=&#8221;49&#8243; format=&#8221;1&#8243;]
+  [download id="49&#8243; format="1&#8243;]
 </p>
 
 **Note**: Version 3.0 or 3.1 are not compatible with EM 8.0, use version 2.1 below:
 
 <p class="download">
-  [download id=&#8221;48&#8243; format=&#8221;1&#8243;]
+  [download id="48&#8243; format="1&#8243;]
 </p>

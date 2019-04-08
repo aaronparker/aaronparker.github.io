@@ -15,9 +15,9 @@ tags:
 ---
 <img align="left" src="http://stealthpuppy.com/wp-content/uploads/2008/02/softgridtip.png" alt="softgridtip.png" />Here's a nice SoftGrid tip from one of the guys in the team here.
 
-If you want to take a look at the SoftGrid client drive, there a several methods. The most common would be to add a PRE LAUNCH script to the OSD file that would launchÂ a Command Prompt window inside the SoftGrid bubble.
+If you want to take a look at the SoftGrid client drive, there a several methods. The most common would be to add a PRE LAUNCH script to the OSD file that would launch a Command Prompt window inside the SoftGrid bubble.
 
-Now, I like my command line, but if I want to just take a quick look around a file location a GUI makes things nice and simple. To do that on the SoftGrid client drive, I could [run Windows Explorer within the bubble](http://stealthpuppy.com/virtualisation/softgrid-launch-windows-explorer-inside-the-bubble), or I could just map anotherÂ drive to the SoftGrid drive.
+Now, I like my command line, but if I want to just take a quick look around a file location a GUI makes things nice and simple. To do that on the SoftGrid client drive, I could [run Windows Explorer within the bubble](http://stealthpuppy.com/virtualisation/softgrid-launch-windows-explorer-inside-the-bubble), or I could just map another drive to the SoftGrid drive.
 
 This is as easy as running a NET USE command, so to map drive X to my client drive Q:, I can run:
 

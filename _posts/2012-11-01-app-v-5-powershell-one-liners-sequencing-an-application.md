@@ -33,7 +33,7 @@ START /WAIT C:\Packages\Paint.NET.3.5.10.Install.exe /skipConfig /auto PDNUPDATI
 
 Before running the **New-AppvSequencerPackage** command, I have changed directory to C:\Packages. To capture Paint.NET as a new App-V 5.0 package, I have used the following command:
 
-[code language=&#8221;ps&#8221;]New-AppvSequencerPackage -FullLoad -Installer "Install.CMD" -Name "PaintNet3x" -Path "C:\Packages" -PrimaryVirtualApplicationDirectory "C:\Program Files\Paint.Net" -TemplateFilePath "AppV5SequencerTemplate.appvt" -Verbose[/code]
+[code language="ps"]New-AppvSequencerPackage -FullLoad -Installer "Install.CMD" -Name "PaintNet3x" -Path "C:\Packages" -PrimaryVirtualApplicationDirectory "C:\Program Files\Paint.Net" -TemplateFilePath "AppV5SequencerTemplate.appvt" -Verbose[/code]
 
 This generates a completed package in C:\Packages\PaintNet3x, ready for deployment to a client PC.
 

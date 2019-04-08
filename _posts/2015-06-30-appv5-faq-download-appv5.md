@@ -28,7 +28,7 @@ Each of the downloads includes the App-V client (either for desktops or RDS host
 
 # Microsoft Volume License
 
-If you have purchased the Microsoft Desktop Optimization Pack or Remote Desktop Services Client Access Licenses (CALs), the downloads will be available to you on the [Microsoft Volume License](https://licensing.microsoft.com) site. Search for &#8220;Microsoft Desktop Optimisation Pack&#8221; or select 'Software Insurance' under All Products to filter for all Software Assurance downloads.
+If you have purchased the Microsoft Desktop Optimization Pack or Remote Desktop Services Client Access Licenses (CALs), the downloads will be available to you on the [Microsoft Volume License](https://licensing.microsoft.com) site. Search for "Microsoft Desktop Optimisation Pack" or select 'Software Insurance' under All Products to filter for all Software Assurance downloads.
 
 # Microsoft Developer Network (MSDN)
 

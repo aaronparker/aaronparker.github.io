@@ -29,7 +29,7 @@ You'll need to accept the license agreement and join the Customer Experience Imp
 
 To see the new modules, import the AppVPkgConverter module and list the available commands in that module, run the following commands from a PowerShell prompt:
 
-[code language=&#8221;ps&#8221;]Get-Module -ListAvailable  
+[code language="ps"]Get-Module -ListAvailable  
 Import-Module AppVPkgConverter  
 Get-Command -Module AppVPkgConverter[/code]
 
@@ -45,7 +45,7 @@ In my test environment, I have a number of legacy packages that I'm going to con
 
 To test these packages before conversion, I can run the following command against a legacy package:
 
-\[code language=&#8221;ps&#8221;]Test-AppvLegacyPackage -SourcePath [path to legacy package\]\[/code\]
+\[code language="ps"]Test-AppvLegacyPackage -SourcePath [path to legacy package\]\[/code\]
 
 One of my packages results in a warning when running Test-AppvLegacyPackage against it, in this case an issue that won't prevent conversion:
 
@@ -53,7 +53,7 @@ One of my packages results in a warning when running Test-AppvLegacyPackage agai
 
 To test all of my packages and convert those without errors (but include those with warnings), I can use the following example code:
 
-[code language=&#8221;ps&#8221;]$Source = "Y:\Packages"  
+[code language="ps"]$Source = "Y:\Packages"  
 $Dest = "Y:\Packages.v5"  
 Get-ChildItem -Path $Source | Test-AppvLegacyPackage | Where-Object {$_.Errors.Count -eq 0 } | ConvertFrom-AppvLegacyPackage -DestinationPath $Dest[/code]
 
@@ -63,7 +63,7 @@ This will result in the packages being converted into the new format in the dest
 
 To make this a little cleaner I've also added some code to move the converted packages into their own folder, so that each folder contains the APPV, MSI and XML files for a single package. Here's the full code listing:
 
-[code language=&#8221;ps&#8221;]## Convert a folder of legacy App-V packages to v5 format
+[code language="ps"]## Convert a folder of legacy App-V packages to v5 format
 
 \# Source and destination folders  
 $Source = "Y:\Packages"  

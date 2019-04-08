@@ -9,7 +9,7 @@ permalink: /support-site-woes/
 categories:
   - Applications
 ---
-Over the past week, I've been creating an internal Exchange best practice/check list document so that we can standardise on how we configure Exchange serversÂ for our clients. This document includes a number of items including information on configuring AV scanners to exclude certain Exchange folders. I thought it best to provide the reader of this document direct links to knowledgebase articles on various AV products. I attempted to cover the following vendors:
+Over the past week, I've been creating an internal Exchange best practice/check list document so that we can standardise on how we configure Exchange servers for our clients. This document includes a number of items including information on configuring AV scanners to exclude certain Exchange folders. I thought it best to provide the reader of this document direct links to knowledgebase articles on various AV products. I attempted to cover the following vendors:
 
   * Symantec;
   * Sophos;
@@ -25,7 +25,7 @@ Now finding this information was harder than I thought, the steps taken to find 
 - Click 'Get Enterprise Support'  
 - Click 'Symantec AntiVirus Corporate Edition 10.0' under the heading 'Getting Started'  
 - View the document '[How to prevent Symantec AntiVirus Corporate Edition from scanning the Microsoft Exchange directory structure](http://service1.symantec.com/SUPPORT/ent-security.nsf/docid/2005040513412648?OpenDocument&dtype=corp&src=ent_tutweb_nam?Open&dtype=corp&tdir=&tpre=&src=ent_tutweb_nam)'  
-Score: 7<font size="4">Â½</font> /10
+Score: 7<font size="4">½</font> /10
 
 **Sophos  
 ** - Browse to [http://www.sophos.com](http://www.sophos.com/)  
@@ -33,7 +33,7 @@ Score: 7<font size="4">Â½</font> /10
 - Click 'Knowledgebase'  
 - Search for 'exchange mdbdata'  
 - View the document '[Sophos Anti-Virus for Windows: file exclusions for Microsoft Exchange Server 2000 and 2003](http://www.sophos.com/support/knowledgebase/article/2214.html)'  
-Score: 7<font size="4">Â½</font> /10
+Score: 7<font size="4">½</font> /10
 
 **McAfee  
 ** - Browse to [http://www.mcafee.com](http://www.mcafee.com/)  

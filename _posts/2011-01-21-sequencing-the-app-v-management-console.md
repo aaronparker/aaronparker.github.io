@@ -55,7 +55,7 @@ Follow the recommendations outlined in the [Microsoft Application Virtualization
 
 Monitoring phase – install the Console during the Sequencing phase. Open MMC and check that the App Virt Management Console snap-in is available or start the Application Virtualization Management Console shortcut. There is no need to connect to a Management Server during sequencing.
 
-Configure Applications phase – the default shortcut will point directly to the SftMMC.MSC file. In my case this was _&#8220;Q:\APPVMMC.001\Console\App Virt Management Console\SftMMC.msc&#8221;_. Change the Application Path to read _&#8220;C:\Windows\System32\MMC.EXE&#8221; &#8220;Q:\APPVMMC.001\Console\App Virt Management Console\SftMMC.msc&#8221;_ instead (change the install path to suit your own environment). Change the Version and OSD File Name default text to suit your standards.
+Configure Applications phase – the default shortcut will point directly to the SftMMC.MSC file. In my case this was _"Q:\APPVMMC.001\Console\App Virt Management Console\SftMMC.msc"_. Change the Application Path to read _"C:\Windows\System32\MMC.EXE" "Q:\APPVMMC.001\Console\App Virt Management Console\SftMMC.msc"_ instead (change the install path to suit your own environment). Change the Version and OSD File Name default text to suit your standards.
 
 Once the package is saved, the CODEBASE line in the OSD file will include FILENAME and PARAMETERS elements that will look something like this:
 

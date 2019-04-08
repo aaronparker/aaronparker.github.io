@@ -18,4 +18,4 @@ Here's a quick list of interesting NAP and Domain/Server Isolation related links
   * [Longhorn Server will have the Windows Firewall ON by default](http://blogs.technet.com/nap/archive/2006/08/18/447505.aspx)
   * [Webcast: Network Access Protection Platform Architecture](http://support.microsoft.com/kb/924160/)
   * [Webcast: Next Generation Networking features](http://www.microsoft.com/emea/itsshowtime/sessionh.aspx?videoid=218)
-  * [WebCast: How to configure VPN enforcement for NAP in Windows Vista and in Windows Server &#8220;Longhorn&#8221; Beta 2](http://support.microsoft.com/kb/924161/en-us)
+  * [WebCast: How to configure VPN enforcement for NAP in Windows Vista and in Windows Server "Longhorn" Beta 2](http://support.microsoft.com/kb/924161/en-us)

@@ -26,12 +26,12 @@ To use the function, first ensure that [PowerCLI](http://communities.vmware.com/
 
 For example, I could use the following command to retrieve the UUID from a target VM:
 
-[code language=&#8221;ps&#8221;]PS C:\> Get-VM -VM "W7VM1" | Get-vSphereVMUUID  
+[code language="ps"]PS C:\> Get-VM -VM "W7VM1" | Get-vSphereVMUUID  
 554c0342-c2c7-c3b7-8258-96eb00f62b0c[/code]
 
 Code listing below:
 
-[code language=&#8221;ps&#8221;]#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;  
+[code language="ps"]#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;  
 \# Author: Aaron Parker  
 \# Desc: Function that uses retrieves the UUID from a specified VM and  
 \# transposes it into the right format for use with MDT/SCCM etc  

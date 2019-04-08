@@ -25,7 +25,7 @@ tags:
 >   * <span style="color: #993300;">As of March 2015, MSDN has discontinued the use of the Microsoft File Transfer Manager.</span>
 >   * <span style="color: #993300;">Third-party download managers have not been tested and are not supported by Microsoft. If you have issues completing a download using a third-party download manager, please try again using your browser’s built-in download functionality.</span>
 
-The subtitle to this post should be - &#8220;How to get faster downloads from TechNet and MSDN&#8221;.
+The subtitle to this post should be - "How to get faster downloads from TechNet and MSDN".
 
 I download quite a bit of stuff from TechNet and/or MSDN fairly regularly for deploying into a lab. With downloads typically in the gigabytes and often needing those downloads as soon as possible, I need to be able to download files consistently and faster than a browser alone might be able to.
 

@@ -17,7 +17,7 @@ categories:
 tags:
   - UEM
 ---
-At [Citrix Synergy 2012](http://www.citrixsynergy.com/sanfrancisco/index.html), I had the distinct pleasure of moderating a Geek Speak panel:  &#8220;User Environment Management smackdown 2012&#8221; with [Shawn Bass](http://twitter.com/shawnbass), [Helge Klein](http://twitter.com/helgeklein), [Harry Labana](http://twitter.com/harrylabana) from AppSense, [Bob Janssen](http://twitter.com/bobtopus) from RES Software and [Mike Larkin](http://twitter.com/mlarkin2012) from Citrix on the state of User Environment Management.
+At [Citrix Synergy 2012](http://www.citrixsynergy.com/sanfrancisco/index.html), I had the distinct pleasure of moderating a Geek Speak panel:  "User Environment Management smackdown 2012" with [Shawn Bass](http://twitter.com/shawnbass), [Helge Klein](http://twitter.com/helgeklein), [Harry Labana](http://twitter.com/harrylabana) from AppSense, [Bob Janssen](http://twitter.com/bobtopus) from RES Software and [Mike Larkin](http://twitter.com/mlarkin2012) from Citrix on the state of User Environment Management.
 
 Feedback was good and I'm hoping that we might be able to do something new on this topic in Barcelona later this year.
 

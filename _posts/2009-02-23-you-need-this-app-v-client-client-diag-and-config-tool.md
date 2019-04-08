@@ -20,7 +20,7 @@ tags:
 >   * Launch predefined and custom commands within the virtual environment of each application.
 >   * See the impact of the App-V Client and the available virtual applications on your system by calculating package size, cache size, user delta file size, log file size etc.
 >   * Diagnose problems with App-V applications by parsing the App-V Client log file (in real time) and search any message online.
->   * Configure settings that are not visible in the App-V Client GUI, such as &#8220;Predictive Streaming&#8221;, &#8220;Allow Stream from File&#8221;, &#8220;Max Package Age&#8221; and many more.
+>   * Configure settings that are not visible in the App-V Client GUI, such as "Predictive Streaming", "Allow Stream from File", "Max Package Age" and many more.
 >   * Give an overview of application and package information by merging important WMI, registry and OSD information in one single window.
 >   * ACDC can be run both as an Administrator and as a Limited User. Running as a limited user will limit the functionality of the tool due to the fact that it has less permission on the system.
 

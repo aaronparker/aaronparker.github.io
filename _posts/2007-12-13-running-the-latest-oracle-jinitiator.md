@@ -47,7 +47,7 @@ Getting this to work requires adding the CLSID (or CLASSID) of the older version
 [HKEY\_LOCAL\_MACHINE\Software\Classes\CLSID\{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}\VersionIndependentProgID]  
 @="Oracle.JavaBeansBridge"[/code]
 
-This shows the CLSID (the GUID between the {} brackets) for JInitiator 1.3.1.17 and as you can see, the default value for the InprocServer32 is where the &#8220;magic&#8221; happens.
+This shows the CLSID (the GUID between the {} brackets) for JInitiator 1.3.1.17 and as you can see, the default value for the InprocServer32 is where the "magic" happens.
 
 Secondly you may also want to add another registry value that fools the JRE into seeing version 1.3.1.17 as well. This command will add the correct registry entry for you.
 

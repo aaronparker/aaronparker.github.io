@@ -13,7 +13,7 @@ Has Microsoft realised the power of [EventID.Net](http://www.eventid.net)? They'
 
 <blockquote dir="ltr">
   <p>
-    <span>&#8220;To perform an advanced search, enter one or more of the following parameters: Event Id, event source, message text, file name. These values can be found in the Event Viewer logs.&#8221;</span>
+    <span>"To perform an advanced search, enter one or more of the following parameters: Event Id, event source, message text, file name. These values can be found in the Event Viewer logs."</span>
   </p>
 </blockquote>
 

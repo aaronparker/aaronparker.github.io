@@ -13,7 +13,7 @@ categories:
 tags:
   - Presentation-Server
 ---
-Â If you're looking at deploying the updated [Access Management Console](https://www.citrix.com/English/SS/downloads/details.asp?dID=8218&downloadID=164650&pID=186#top) you might be interested in how to perform an unattended install. There are really two ways to do this:
+ If you're looking at deploying the updated [Access Management Console](https://www.citrix.com/English/SS/downloads/details.asp?dID=8218&downloadID=164650&pID=186#top) you might be interested in how to perform an unattended install. There are really two ways to do this:
 
   1. Use Windows Installer (MSIEXEC) to run each of the installer packages
   2. Run the CTXINSTALL setup application

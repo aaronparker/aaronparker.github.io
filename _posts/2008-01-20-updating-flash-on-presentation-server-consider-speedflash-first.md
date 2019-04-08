@@ -16,7 +16,7 @@ tags:
 ---
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/02/adobeflash.png" align="left" alt="adobeflash.png" />Like any good IT pro you're probably keeping an eye on the latest software releases and updating to keep on top of security updates. When it comes to Adobe Flash under Citrix Presentation Server, you'll want to ensure that the latest update is supported by SpeedFlash/SpeedScreen.
 
-Unfortunately the [latest version of Adobe Flash Player](http://stealthpuppy.com/general/looking-for-adobe-flash-player-download-links), 9e (9.0.115.0), which [addresses various vulnerabilities](http://www.adobe.com/support/security/index.html#flashplayer), isn't supported by SpeedFlash. This is because SpeedFlash works by looking for known names of the Flash ActiveX files and this does not include version 9e (FLASH9E.OCX).Â 
+Unfortunately the [latest version of Adobe Flash Player](http://stealthpuppy.com/general/looking-for-adobe-flash-player-download-links), 9e (9.0.115.0), which [addresses various vulnerabilities](http://www.adobe.com/support/security/index.html#flashplayer), isn't supported by SpeedFlash. This is because SpeedFlash works by looking for known names of the Flash ActiveX files and this does not include version 9e (FLASH9E.OCX). 
 
 A [hotfix is available for Presentation Server 4.0](http://support.citrix.com/article/CTX115426) to provide support for the most recent versions, except for 9e, and I'm not sure where this leaves Presentation Server 4.5. There's currently an issue getting to that article, but you'll need to contact Citrix to get a hold of the hotfix.
 

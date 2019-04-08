@@ -20,7 +20,7 @@ The Citrix Presentation Server 4.0 Management Console requires a specific versio
 
 <blockquote dir="ltr">
   <p>
-    <font size="2" face="Courier New">REG ADD &#8220;HKLM\SOFTWARE\JavaSoft\Java Runtime Environment\1.4&#8221; /v JavaHome /d &#8220;C:\Program Files\Java\jre1.5.0_04&#8221; /f<br /> REG ADD &#8220;HKLM\SOFTWARE\JavaSoft\Java Runtime Environment\1.4&#8221; /v MicroVersion /d &#8220;2&#8221; /f<br /> REG ADD &#8220;HKLM\SOFTWARE\JavaSoft\Java Runtime Environment\1.4&#8221; /v RuntimeLib /d &#8220;C:\Program Files\Java\jre1.5.0_04\bin\client\jvm.dll&#8221; /f</font>
+    <font size="2" face="Courier New">REG ADD "HKLM\SOFTWARE\JavaSoft\Java Runtime Environment\1.4" /v JavaHome /d "C:\Program Files\Java\jre1.5.0_04" /f<br /> REG ADD "HKLM\SOFTWARE\JavaSoft\Java Runtime Environment\1.4" /v MicroVersion /d "2" /f<br /> REG ADD "HKLM\SOFTWARE\JavaSoft\Java Runtime Environment\1.4" /v RuntimeLib /d "C:\Program Files\Java\jre1.5.0_04\bin\client\jvm.dll" /f</font>
   </p>
 </blockquote>
 

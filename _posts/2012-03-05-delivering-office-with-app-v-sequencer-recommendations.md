@@ -31,7 +31,7 @@ Microsoft has made available a number of documents as introductions to App-V and
       * [Microsoft Application Virtualization Version 4.6 SP1 Trial Guide](http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-V/App-V%204.6%20SP1%20Trial%20Guide.docx)
       * [How to Install the Application Virtualization Sequencer](http://technet.microsoft.com/library/cc843820.aspx)
       * [App-V 4.6 Service Pack 1 Sequencing Guide](http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-V/App-V%204.6%20Service%20Pack%201%20Sequencing%20Guide.docx "App-V 4.6 Service Pack 1 Sequencing Guide")
-  * Review the &#8220;Best practices to use for sequencing in Microsoft App-V &#8221; article. For more information, click the following article number to view the article in the Microsoft Knowledge Base: [932137](http://support.microsoft.com/kb/932137) (http://support.microsoft.com/kb/932137/)
+  * Review the "Best practices to use for sequencing in Microsoft App-V " article. For more information, click the following article number to view the article in the Microsoft Knowledge Base: [932137](http://support.microsoft.com/kb/932137) (http://support.microsoft.com/kb/932137/)
   * Install the Office suites and applications to become familiar with the functionality of the program. Additionally understand the deployment requirements for Office
 
 # Do's and Don'ts**  

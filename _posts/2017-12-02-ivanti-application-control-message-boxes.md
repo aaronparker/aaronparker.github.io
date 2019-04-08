@@ -58,7 +58,7 @@ When customising these I recommend paying careful attention to the language and 
 
 I believe these to be reasonable principles to consider, but of course, some environments may have specific requirements.
 
-Microsoft has published user interface guidelines for Windows for many years, with what I would call &#8220;mixed results&#8221; from the developer community. While good design isn't easy, Microsoft has guidelines on [Fonts](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742483(v=vs.85).aspx), [Style and Tone](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742477(v=vs.85).aspx), and [User Interface Principles](https://msdn.microsoft.com/en-us/library/windows/desktop/ff728831(v=vs.85).aspx) that are applicable to the Application Control administrator.
+Microsoft has published user interface guidelines for Windows for many years, with what I would call "mixed results" from the developer community. While good design isn't easy, Microsoft has guidelines on [Fonts](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742483(v=vs.85).aspx), [Style and Tone](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742477(v=vs.85).aspx), and [User Interface Principles](https://msdn.microsoft.com/en-us/library/windows/desktop/ff728831(v=vs.85).aspx) that are applicable to the Application Control administrator.
 
 ## Looking for Inspiration
 
@@ -118,7 +118,7 @@ Let's look again at the default Access Denied message box. This doesn't fit into
 
 <figure id="attachment_5829" aria-describedby="caption-attachment-5829" style="width: 422px" class="wp-caption aligncenter">[<img class="size-full wp-image-5829" src="https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied.png" alt="Ivanti Application Control default access denied dialog box" width="422" height="147" srcset="https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied.png 422w, https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied-150x52.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied-300x105.png 300w" sizes="(max-width: 422px) 100vw, 422px" />](https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied.png)<figcaption id="caption-attachment-5829" class="wp-caption-text">Ivanti Application Control default access denied dialog box*</figure>
 
-With our new CSS in place, we can modify the HTML behind this message to reflect what's going on, as well as provide the user with a link to a page with more information. Note that because my CSS isn't currently perfect, I'm cheating a bit by putting a carriage return after &#8220;Running this app might put&#8221; so that the text isn't cut off on the right-hand side of the message box.
+With our new CSS in place, we can modify the HTML behind this message to reflect what's going on, as well as provide the user with a link to a page with more information. Note that because my CSS isn't currently perfect, I'm cheating a bit by putting a carriage return after "Running this app might put" so that the text isn't cut off on the right-hand side of the message box.
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">&lt;div class="header red"&gt;An app has been prevented from running to protect this PC.&lt;/div&gt;
 &lt;div class="description"&gt;An unrecognised or unauthorised app was prevented from starting. Running this app might put

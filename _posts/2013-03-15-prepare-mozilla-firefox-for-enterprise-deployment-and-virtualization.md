@@ -59,7 +59,7 @@ To enforce user settings we can leverage the [ability to lock Firefox preference
 
 Local-settings.js is used to tell Firefox to read Mozilla.cfg for some configuration items. Add the following lines to local-settings.js:
 
-[code lang=&#8221;js&#8221;]pref("general.config.obscure_value", 0);  
+[code lang="js"]pref("general.config.obscure_value", 0);  
 pref("general.config.filename", "mozilla.cfg");[/code]
 
 ## Mozilla.cfg
@@ -68,7 +68,7 @@ Here’s is where we can lock specified Firefox preferences. In the listing belo
 
 This is useful where you would like to restrict this functionality and is applicable to App-V 4.x environments where attempting to set a virtualized Firefox as default won’t work. Under App-V 5, remove this line so that users can set Firefox as the default browser if they wish.
 
-[code highlight=&#8221;7&#8243;]lockPref("app.update.auto", false);  
+[code highlight="7&#8243;]lockPref("app.update.auto", false);  
 lockPref("app.update.enabled", false);  
 lockPref("app.update.service.enabled", false);  
 lockPref("toolkit.telemetry.prompted", true);  
@@ -87,7 +87,7 @@ EnableProfileMigrator=false[/code]
 
 Mozilla has made it a fairly straight forward process to remove browser user interface elements using userChrome.css. Where browser functionality has been disabled, we can remove the corresponding UI to avoid user confusion. Enter the following lines into userChrome.css; however remove the highlighted line if you would like users to be able to set Firefox as the default browser:
 
-[code lang=&#8221;css&#8221; highlight=&#8221;5&#8243;]/\* UserChrome.css for Mozilla Firefox \*/  
+[code lang="css" highlight="5&#8243;]/\* UserChrome.css for Mozilla Firefox \*/  
 /\* Remove access to user interface elements that aren't suitable for application virtualization \*/
 
 /\* Options - Advanced - General - System Defaults \*/  
@@ -112,7 +112,7 @@ An installation script for Firefox should perform the following tasks:
 
 For an example script that will automate the install and configuration of Firefox using the recommendations outlined in this article, see the script below. Note the highlighted line, where I can change the target installation directory for Firefox:
 
-[code highlight=&#8221;4&#8243;]@ECHO OFF  
+[code highlight="4&#8243;]@ECHO OFF  
 SET SOURCE=%~dp0  
 SET SOURCE=%SOURCE:~0,-1%  
 SET INSTALLPATH=%ProgramFiles%\Mozilla Firefox
@@ -147,7 +147,7 @@ If the installation has been configured correctly, Firefox should start and not 
 To make it easier, I've included the configuration files and the installation script listed above in a single ZIP file that you can download here:
 
 <p class="download">
-  [download id=&#8221;60&#8243; format=&#8221;1&#8243;]
+  [download id="60&#8243; format="1&#8243;]
 </p>
 
 # Finally

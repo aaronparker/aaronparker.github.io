@@ -41,7 +41,7 @@ When configuring the host, Iâ€™ve been using been using a 1-to-1 setup, I havenâ
 
 To enable RemoteApp on the host, install the hotfix, then configure the `TsAppAllowList` key in the registry. In this example, I've configured the required entries for running Calculator. Here's a listing of the registry values I added with the pertinent values highlighted.
 
-\[code highlight=&#8221;2,9,12&#8243; wraplines=&#8221;true&#8221;\]\[HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\TSAppAllowList\]  
+\[code highlight="2,9,12&#8243; wraplines="true"\]\[HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\TSAppAllowList\]  
 "fDisabledAllowList"=dword:00000001
 
 [HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\TSAppAllowList\Applications\calc]  
@@ -65,7 +65,7 @@ The important entries for connecting to Windows XP and Windows Vista, that you m
 
 An .RDP file to connect to a RemoteApp program then looks like this (the added lines are highlighted):
 
-[code highlight=&#8221;23,24&#8243;]redirectclipboard:i:1  
+[code highlight="23,24&#8243;]redirectclipboard:i:1  
 redirectposdevices:i:0  
 redirectprinters:i:1  
 redirectcomports:i:1  

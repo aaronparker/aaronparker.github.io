@@ -24,7 +24,7 @@ Before I sequenced Acrobat I performed a standard installation, with all of the 
 
 To setup for sequencing, I created a snapshot of the Sequencer machine with all of the required files for the Acrobat installation so that I could roll back if my sequence failed. And it did fail, a lot, while getting this working. One of the current issues with the Sequencer is that if it fails on a file while building the package after the monitoring phase, it just stops. This means that I've had to rerun the sequence and installation until I worked out each file that was causing issues.
 
-In the case of Acrobat, I would receive this error: &#8220;SystemGuard download failed (error code 53256)&#8221;. By looking at the log file (%ProgramFiles%\Softricity\SoftGrid Sequencer\Logs\sft-seq-log), I could see the files that the Sequencer was having issues with.
+In the case of Acrobat, I would receive this error: "SystemGuard download failed (error code 53256)". By looking at the log file (%ProgramFiles%\Softricity\SoftGrid Sequencer\Logs\sft-seq-log), I could see the files that the Sequencer was having issues with.
 
 > [11/22/2007 17:38:04 VRB VFSX] SxS: Starting SxS public-to-private assembly conversion.  
 > [11/22/2007 17:38:05 WRN VFSX] SxSPE::parseUTF : Unsupported UTF format for file Y:\acrobatp.80\Adobe\Acrobat 8.0\Acrobat\FileInfo.dll (format # 3).  
@@ -67,7 +67,7 @@ So that's what I've got so far. I still have a few issues to sort out and I'll p
 ** 
 
   * [Some Applications Fail to Sequence with Error Code 53256 / Unsupported UTF format](http://blogs.msdn.com/rslaten/archive/2007/09/11/some-applications-fail-to-sequence-with-error-code-53256-unsupported-utf-format.aspx)
-  * [Error message when you try to sequence an application in SoftGrid: &#8220;SystemGuard download failed (error code 53256)&#8221;](http://support.microsoft.com/kb/931592)
+  * [Error message when you try to sequence an application in SoftGrid: "SystemGuard download failed (error code 53256)"](http://support.microsoft.com/kb/931592)
   * [Update: Error 53256 Sequencing Adobe CS3](http://blogs.technet.com/softgrid/archive/2007/10/25/update-error-53256-sequencing-adobe-cs3.aspx)
   * [TechNet Forums: SxS error when sequencing Adobe CS3 apps, Acrobat 8 Pro](http://forums.microsoft.com/TechNet/ShowPost.aspx?PostID=2105830&SiteID=17)
   * [TechNet Forums: Adobe Acrobat 8 Standard](http://forums.microsoft.com/TechNet/ShowPost.aspx?PostID=2121347&SiteID=17)

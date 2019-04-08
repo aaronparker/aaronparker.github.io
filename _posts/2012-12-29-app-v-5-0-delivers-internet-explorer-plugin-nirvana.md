@@ -53,7 +53,7 @@ Only a single package can be applied to a process with the RunVirtual feature. T
 
 [Connection Groups are defined via XML files](http://technet.microsoft.com/en-US/library/jj737969.aspx) that list each member package. If we're managing the App-V client with PowerShell, the Connection Group descriptor files need to be created manually. I won't go into detail here; however below is the listing for the descriptor file for a Connection Group that contains the Internet Explorer Plugins:
 
-[code language=&#8221;xml&#8221;]<?xml version="1.0" ?>  
+[code language="xml"]<?xml version="1.0" ?>  
 <appv:AppConnectionGroup  
 xmlns="http://schemas.microsoft.com/appv/2010/virtualapplicationconnectiongroup"  
 xmlns:appv="http://schemas.microsoft.com/appv/2010/virtualapplicationconnectiongroup"  

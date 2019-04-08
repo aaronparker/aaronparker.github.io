@@ -54,7 +54,7 @@ I can then multiply the result by the number of VMs to get a full picture of the
 Here's a downloadable version of the Excel spreadsheet, which includes the ESXi 4.x version of the VM RAM Overhead.
 
 <p class="download">
-  [download id=&#8221;63&#8243; format=&#8221;1&#8243;]
+  [download id="63&#8243; format="1&#8243;]
 </p>
 
 With a bit of effort, you could update the table for ESXi 5.x.
