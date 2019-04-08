@@ -18,7 +18,7 @@ tags:
   - App-V
   - Office
 ---
-Having had to travel to Australia and the US recently, I&#8217;ve not had that much time to work on an upcoming white paper, but I have been posting some of the early versions of the chapters. So here&#8217;s another in that series while I work on getting the paper finished.
+Having had to travel to Australia and the US recently, I've not had that much time to work on an upcoming white paper, but I have been posting some of the early versions of the chapters. So here's another in that series while I work on getting the paper finished.
 
 Creation of successful App-V packages requires building on a solid base – that base is the machine used to perform sequencing. This section details recommendations for creating the perfect sequencing machine. Follow these recommendations for the best chance at creating clean, successful App-V packages.
 
@@ -34,31 +34,31 @@ Microsoft has made available a number of documents as introductions to App-V and
   * Review the &#8220;Best practices to use for sequencing in Microsoft App-V &#8221; article. For more information, click the following article number to view the article in the Microsoft Knowledge Base: [932137](http://support.microsoft.com/kb/932137) (http://support.microsoft.com/kb/932137/)
   * Install the Office suites and applications to become familiar with the functionality of the program. Additionally understand the deployment requirements for Office
 
-# Do&#8217;s and Don&#8217;ts**  
+# Do's and Don'ts**  
 ** 
 
-Don&#8217;t make the sequencing machine an exact copy of your Standard Operating Environment (SOE) or add the machine to your domain. That is, do not create a sequencing machine directly from your SOE; instead create a new environment that closely matches your SOE. There are several reasons for this:
+Don't make the sequencing machine an exact copy of your Standard Operating Environment (SOE) or add the machine to your domain. That is, do not create a sequencing machine directly from your SOE; instead create a new environment that closely matches your SOE. There are several reasons for this:
 
   * Your SOE most likely has many pre-requisites or applications installed that may interfere with sequencing, such as security agents and anti-virus
-  * Changes to your SOE may break virtual applications – if your SOE has a DLL required by a virtual application, that DLL wouldn&#8217;t be captured in the virtual application package. In the event of the SOE changing and the DLL being removed or the version changing, any virtual application package that doesn&#8217;t include that DLL may now not work
+  * Changes to your SOE may break virtual applications – if your SOE has a DLL required by a virtual application, that DLL wouldn't be captured in the virtual application package. In the event of the SOE changing and the DLL being removed or the version changing, any virtual application package that doesn't include that DLL may now not work
   * Domain computers may have services, process or scheduled tasks that will interfere with sequencing or may cause files or registry settings to be inadvertently captured – changes made by a process that starts during sequencing will be captured in the package
   * Domain computers may have policies applied that may be inadvertently captured in the package, causing issues with virtual applications or subsequent changes to those policies to be ignored
 
-Based on my own experiences and those of others that I&#8217;ve spoken to, the most successful App-V packages are created on vanilla installations of Windows.
+Based on my own experiences and those of others that I've spoken to, the most successful App-V packages are created on vanilla installations of Windows.
 
-## Don&#8217;ts
+## Don'ts
 
-  * Don&#8217;t add the sequencing VM to the domain, unless sequencing an application that requires it
-  * Don&#8217;t use an exact copy of your SOE
-  * Don&#8217;t install anti-virus applications or other security agents
-  * If possible, don&#8217;t access the Internet directly from the sequencing VM
+  * Don't add the sequencing VM to the domain, unless sequencing an application that requires it
+  * Don't use an exact copy of your SOE
+  * Don't install anti-virus applications or other security agents
+  * If possible, don't access the Internet directly from the sequencing VM
 
-## Do&#8217;s
+## Do's
 
   * Do leave Windows in workgroup mode the majority of applications
   * Do use the same versions of components used in your SOE
   * Do choose carefully which of those components should be installed in the sequencing VM
-  * Do scan the VM with the Microsoft Windows Malicious Software Removal Tool; optionally mount the VM&#8217;s virtual disk on your host machine and scan it with the anti-virus application on the host
+  * Do scan the VM with the Microsoft Windows Malicious Software Removal Tool; optionally mount the VM's virtual disk on your host machine and scan it with the anti-virus application on the host
   * Do create a snapshot of the sequencing VM in a clean state
   * Do patch the sequencing VM each month
 
@@ -106,13 +106,13 @@ Windows XP Professional or Windows 7 Enterprise editions are recommended for cli
       * MSN Explorer
       * Internet Gateway Device Discovery and Control Client
       * Windows Messenger
-      * Additionally it&#8217;s recommended to remove the Adobe Flash Player that comes with Windows XP: <http://kb2.adobe.com/cps/141/tn_14157.html>
+      * Additionally it's recommended to remove the Adobe Flash Player that comes with Windows XP: <http://kb2.adobe.com/cps/141/tn_14157.html>
   * If deploying Windows XP or Windows Server 2003, install the following updates from the Microsoft Download Centre: <http://microsoft.com/downloads> 
       * XML Paper Specification Essentials Pack
       * Windows Search 4.0 (available via Windows Update)
       * Windows Media Player 11 (available via Windows Update)
       * Update for Root Certificates (available via Windows Update)
-  * Install the latest version of Internet Explorer for the target operating system – if you would prefer to match the IE version of your SOE, then stick with that version. Set the home page to _about:tabs_, this will ensure that if Internet Explorer is started during sequencing it won&#8217;t attempt to connect to the Internet
+  * Install the latest version of Internet Explorer for the target operating system – if you would prefer to match the IE version of your SOE, then stick with that version. Set the home page to _about:tabs_, this will ensure that if Internet Explorer is started during sequencing it won't attempt to connect to the Internet
   * Install or enable the Microsoft .NET Framework – install the most recent version of the .NET Framework deployed in your environment. Note that .NET Framework 4.0 comes with all previous versions and .NET Framework 3.5 SP1 come with all its previous versions (and so on)
   * Install the Visual C++ Redistributables – 2005, 2008 and 2010 redistributables are recommended. Multiple versions of each redistributable may be required depending on application requirements. It is recommended to install these in order of release
   * Enable Microsoft Update
@@ -224,7 +224,7 @@ To ensure successful sequencing, it is not recommended to run setup applications
 
 # Snapshots
 
-Once Windows has been configured, shutdown the VM – never take a snapshot of the virtual machine with the App-V Sequencer running. Each App-V package must have a unique GUID and snapshots with the Sequencer running are often a source of duplicate GUIDs. Additionally a VM in a shutdown state will take less room on disk for a snapshot because the VM&#8217;s RAM won&#8217;t be included in the snapshot.
+Once Windows has been configured, shutdown the VM – never take a snapshot of the virtual machine with the App-V Sequencer running. Each App-V package must have a unique GUID and snapshots with the Sequencer running are often a source of duplicate GUIDs. Additionally a VM in a shutdown state will take less room on disk for a snapshot because the VM's RAM won't be included in the snapshot.
 
 Periodically rollback the VM to this snapshot to install the latest updates from Windows Update, then re-create the snapshot.
 
@@ -279,7 +279,7 @@ A number of options can be set in a sequencer template that may be required for 
     
     <td>
       <p style="font-size: small;">
-        Microsoft Lync saved recordings folder. Just like documents, we don&#8217;t want these being saved into the virtual environment
+        Microsoft Lync saved recordings folder. Just like documents, we don't want these being saved into the virtual environment
       </p>
     </td>
   </tr>
@@ -461,7 +461,7 @@ A number of options can be set in a sequencer template that may be required for 
     
     <td>
       <p style="font-size: small;">
-        User-level proxy server and other browser settings. Ensure that proxy settings aren&#8217;t cached in the package
+        User-level proxy server and other browser settings. Ensure that proxy settings aren't cached in the package
       </p>
     </td>
   </tr>
@@ -475,7 +475,7 @@ A number of options can be set in a sequencer template that may be required for 
     
     <td>
       <p style="font-size: small;">
-        Internet Explorer settings. Ensure Internet Explorer settings aren&#8217;t cached in the package
+        Internet Explorer settings. Ensure Internet Explorer settings aren't cached in the package
       </p>
     </td>
   </tr>
@@ -497,7 +497,7 @@ A number of options can be set in a sequencer template that may be required for 
 
 # Using the Sequencer Template
 
-To create a sequencer template, open the Sequencer and choose Tools / Options to set the package options and exclusions. Then choose File / Save As Template to save the file to disk. Save the template to a file and open in a text editor such as Notepad. The new template will have a number of changes over a default templateUnder DEFAULTS, the following options will be set to Yes (if they aren&#8217;t change them to Yes):
+To create a sequencer template, open the Sequencer and choose Tools / Options to set the package options and exclusions. Then choose File / Save As Template to save the file to disk. Save the template to a file and open in a text editor such as Notepad. The new template will have a number of changes over a default templateUnder DEFAULTS, the following options will be set to Yes (if they aren't change them to Yes):
 
 [code]<DEFAULT Name="AllowMUADuringMonitoring" Value="Yes"/>  
 <DEFAULT Name="CompressPackage" Value="Yes"/>[/code]

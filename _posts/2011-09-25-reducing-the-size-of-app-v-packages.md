@@ -35,6 +35,6 @@ So instead of leaving them in the package, we could exclude them from the sequen
   4. When it comes time to update the package, copy the folders back into the sequencing machine before starting the sequencing process
   5. Repeat the process once you&#8217;ve saved the updated package
 
-The same Office 2010 package is now 606Mb &#8211; 22% of the size of the original package:
+The same Office 2010 package is now 606Mb - 22% of the size of the original package:
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Office2010-After" src="http://stealthpuppy.com/wp-content/uploads/2011/09/Office2010-After_thumb.png" alt="Office2010-After" width="377" height="282" border="0" />](http://stealthpuppy.com/wp-content/uploads/2011/09/Office2010-After.png)

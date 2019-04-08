@@ -19,9 +19,9 @@ tags:
 ---
 One of the great things I enjoyed about working at [Kelway](http://www.kelway.com/) was the access to a pretty solid lab environment. While I do have access to a lab environment at [Atlantis](http://www.atlantiscomputing.com) (3 in fact), now that I work primarily from home, I really prefer a lab environment that can provide me more flexibility. Only a local environment can do that.
 
-I originally started out with the aim of building a system that achieved 3 goals &#8211; low power consumption, enough grunt to deliver the workloads I&#8217;d like to run, plus be (relatively) quiet. As you can probably guess, I&#8217;ve achieved only two of those objectives (plus blowing my budget in the process).
+I originally started out with the aim of building a system that achieved 3 goals - low power consumption, enough grunt to deliver the workloads I&#8217;d like to run, plus be (relatively) quiet. As you can probably guess, I&#8217;ve achieved only two of those objectives (plus blowing my budget in the process).
 
-Having recently moved back to Australia from the UK, I&#8217;ve gone from spending approximately £500 a year on electricity and gas, to what I estimate will be $1500 AU on electricity (no gas appliances in our current house). If you weren&#8217;t already aware, Australian summers can be hot (or bloody hot, as I prefer to say). Living in Melbourne means summers are shorter than Sydney or Brisbane, but I&#8217;ll still have two issues &#8211; heat and the cost of running a lab at home.
+Having recently moved back to Australia from the UK, I&#8217;ve gone from spending approximately £500 a year on electricity and gas, to what I estimate will be $1500 AU on electricity (no gas appliances in our current house). If you weren&#8217;t already aware, Australian summers can be hot (or bloody hot, as I prefer to say). Living in Melbourne means summers are shorter than Sydney or Brisbane, but I&#8217;ll still have two issues - heat and the cost of running a lab at home.
 
 I first started looking at a [Lenovo ThinkCentre M83 SFF Pro](http://shopap.lenovo.com/au/en/desktops/thinkcentre/towers/m83-sff/), as it&#8217;s the only small-form factor PC that I can find that can take 32 GB of RAM. While it looks like a good PC, it was coming out a bit expensive for what it is and an unknown quantity when it comes to noise.
 
@@ -29,15 +29,15 @@ It&#8217;s been a long time since I&#8217;ve built a PC from scratch, so to get 
 
 # **Picking a CPU**
 
-My first step was to settle on a CPU &#8211; that way I can build everything else around it as the choice of CPU has an impact on the socket and motherboard plus the maximum amount of RAM. While I did do some research on various processors, I did find that I ended up being limited by availability.
+My first step was to settle on a CPU - that way I can build everything else around it as the choice of CPU has an impact on the socket and motherboard plus the maximum amount of RAM. While I did do some research on various processors, I did find that I ended up being limited by availability.
 
 Intel CPUs have been my personal preference, so I ruled out AMD immediately. If I&#8217;d used an AMD CPU, I probably could have saved a bit on the final build.
 
-Starting with the [Core i5](http://www.intel.com.au/content/www/au/en/processors/core/core-i5-processor.html) made some sense, both from a power consumption and cost perspective, but the i5 has two things going against it &#8211; no Hyper-Threading and a maximum of 32 GB of RAM. I didn&#8217;t want to limit my workloads, so I&#8217;ve gone with a [Core i7](http://www.intel.com.au/content/www/au/en/processors/core/core-i7-processor.html).
+Starting with the [Core i5](http://www.intel.com.au/content/www/au/en/processors/core/core-i5-processor.html) made some sense, both from a power consumption and cost perspective, but the i5 has two things going against it - no Hyper-Threading and a maximum of 32 GB of RAM. I didn&#8217;t want to limit my workloads, so I&#8217;ve gone with a [Core i7](http://www.intel.com.au/content/www/au/en/processors/core/core-i7-processor.html).
 
 To build a 32 GB system, you could go with the [Core i7-4770K](http://ark.intel.com/products/75123/intel-core-i7-4770k-processor-8m-cache-up-to-3_90-ghz) that uses a socket LGA1150. One problem with the 4th generation Core i7 (i.e. [Haswell](https://en.wikipedia.org/wiki/Haswell_(microarchitecture))) is that they don&#8217;t yet support 64GB of RAM (as far as I can tell).
 
-<img class="alignleft size-full wp-image-3601" alt="Core-i7-CPU" src="http://stealthpuppy.com/wp-content/uploads/2014/03/Core-i7-CPU.jpg" width="200" height="172" srcset="https://stealthpuppy.com/wp-content/uploads/2014/03/Core-i7-CPU.jpg 200w, https://stealthpuppy.com/wp-content/uploads/2014/03/Core-i7-CPU-150x129.jpg 150w" sizes="(max-width: 200px) 100vw, 200px" /> For a 64 GB system I picked the [Core i7-4820K](http://ark.intel.com/products/77781) &#8211; this CPU is the older [Ivy Bridge-E](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)) architecture. While I priced up a system based on the 4770K, I ended up going with the 4820K, so that I could build a machine with 64 GB of RAM.
+<img class="alignleft size-full wp-image-3601" alt="Core-i7-CPU" src="http://stealthpuppy.com/wp-content/uploads/2014/03/Core-i7-CPU.jpg" width="200" height="172" srcset="https://stealthpuppy.com/wp-content/uploads/2014/03/Core-i7-CPU.jpg 200w, https://stealthpuppy.com/wp-content/uploads/2014/03/Core-i7-CPU-150x129.jpg 150w" sizes="(max-width: 200px) 100vw, 200px" /> For a 64 GB system I picked the [Core i7-4820K](http://ark.intel.com/products/77781) - this CPU is the older [Ivy Bridge-E](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)) architecture. While I priced up a system based on the 4770K, I ended up going with the 4820K, so that I could build a machine with 64 GB of RAM.
 
 As I&#8217;m doing testing and modelling with [a solution that utilise a lot of RAM](http://atlantiscomputing.com/), I really needed to go with as much RAM as I could afford. There ended up being about $500-$600 AU difference between a 32 GB system and a 64 GB system, so budget be damned, 64 GB PC is what I got.
 
@@ -45,7 +45,7 @@ As I&#8217;m doing testing and modelling with [a solution that utilise a lot of 
 
 I had originally wanted to build a system around a min-ITX or mini/microATX board to build a smaller PC but the choice of CPU using the socket LGA2011 and 64 GB of RAM has forced me on to a full ATX board.
 
-As I&#8217;m not interested in over-clocking, my requirements for a motherboard were simple &#8211; I went for the lowest price board that could fit 64 GB of RAM (8 DIMM slots) and supports a minimum of 4 x SATA3 (6Gbps) ports. Unless you&#8217;re looking at server boards, you&#8217;ll find most desktop motherboards come with a lot of extra features that are just not required for a lab server (sound, SPDIF, heaps of USB ports, FireWire etc.).
+As I&#8217;m not interested in over-clocking, my requirements for a motherboard were simple - I went for the lowest price board that could fit 64 GB of RAM (8 DIMM slots) and supports a minimum of 4 x SATA3 (6Gbps) ports. Unless you&#8217;re looking at server boards, you&#8217;ll find most desktop motherboards come with a lot of extra features that are just not required for a lab server (sound, SPDIF, heaps of USB ports, FireWire etc.).
 
 <img class="alignright size-full wp-image-3603" alt="ASRock-Extreme6" src="http://stealthpuppy.com/wp-content/uploads/2014/03/ASRock-Extreme6.jpg" width="200" height="108" srcset="https://stealthpuppy.com/wp-content/uploads/2014/03/ASRock-Extreme6.jpg 200w, https://stealthpuppy.com/wp-content/uploads/2014/03/ASRock-Extreme6-150x81.jpg 150w" sizes="(max-width: 200px) 100vw, 200px" /> Ultimately I went for the [ASRock X79 Extreme 6](http://www.asrock.com/mb/Intel/X79%20Extreme6/) with 5 x SATA 3 ports. One thing I&#8217;ve found out in building this PC, is that the Intel chipsets typically provide 2 x SATA3 ports only. The remaining SATA ports are provided by a second chipset (or sometimes even a third chipset). Not a problem for Windows, but not the best choice for ESXi (more on that later).
 
@@ -59,9 +59,9 @@ I originally looked at Corsair Vengeance RAM but settled on [G.Skill RipjawsX D
 
 # Housing the Rig in a Case
 
-<img class="alignright size-full wp-image-3608" alt="Corsair-330r" src="http://stealthpuppy.com/wp-content/uploads/2014/03/Corsair-330r.png" width="200" height="264" srcset="https://stealthpuppy.com/wp-content/uploads/2014/03/Corsair-330r.png 200w, https://stealthpuppy.com/wp-content/uploads/2014/03/Corsair-330r-113x150.png 113w" sizes="(max-width: 200px) 100vw, 200px" /> I had two main requirements for a case &#8211; help the PC be as silent as possible and look unassuming (as it&#8217;s not locked away but sitting next to the living room). Additionally, as I&#8217;d locked myself into an ATX board, I needed an ATX case.
+<img class="alignright size-full wp-image-3608" alt="Corsair-330r" src="http://stealthpuppy.com/wp-content/uploads/2014/03/Corsair-330r.png" width="200" height="264" srcset="https://stealthpuppy.com/wp-content/uploads/2014/03/Corsair-330r.png 200w, https://stealthpuppy.com/wp-content/uploads/2014/03/Corsair-330r-113x150.png 113w" sizes="(max-width: 200px) 100vw, 200px" /> I had two main requirements for a case - help the PC be as silent as possible and look unassuming (as it&#8217;s not locked away but sitting next to the living room). Additionally, as I&#8217;d locked myself into an ATX board, I needed an ATX case.
 
-When picking a case, I looked at cooling options as well &#8211; by picking a CPU cooler, case fans and a case from the same manufacture, I was comfortable that I could build the system knowing that every thing would fit. I picked the [Corsair Carbide 330R Quiet Mid-Tower](http://www.corsair.com/en-au/carbide-series-330r-quiet-mid-tower-case) case which looks nice and has good reviews.
+When picking a case, I looked at cooling options as well - by picking a CPU cooler, case fans and a case from the same manufacture, I was comfortable that I could build the system knowing that every thing would fit. I picked the [Corsair Carbide 330R Quiet Mid-Tower](http://www.corsair.com/en-au/carbide-series-330r-quiet-mid-tower-case) case which looks nice and has good reviews.
 
 # Keeping it Cool
 
@@ -102,13 +102,13 @@ Something I didn&#8217;t realise until I&#8217;d put the whole thing together, i
 
 # Thoughts on Building this PC
 
-Building this PC took a really long time &#8211; it&#8217;s been quite a while since I last built a PC and I needed to ensure I got this one right and it was up and running on first go (other than having to source a graphics adapter after completing the build).
+Building this PC took a really long time - it&#8217;s been quite a while since I last built a PC and I needed to ensure I got this one right and it was up and running on first go (other than having to source a graphics adapter after completing the build).
 
 Here&#8217;s a few thoughts and tips if you&#8217;re looking to build your own lab PC:
 
   * Picking the right hardware and finding out which parts will be suitable is painful. The best site I found that helped me build the right parts as [PCPartPicker](http://pcpartpicker.com/). It would be nice if PC parts retailers provided this functionality in their web sites, but most of them (at least in Australia) have terrible web sites.
   * The Corsair Carbide 330R is a nice case and performs well for airflow and noise. It would have been nice to have more than 4 x 3.5&#8243; drive bays and there&#8217;s not a lot of space between the back of the motherboard and the side panel. This makes putting the side panel back on a challenge, because the routed cables don&#8217;t sit completely flat. While I think the 330R is a nice case, I think you could choose a better case.
-  * This is the first time I&#8217;ve built a water cooled PC &#8211; fitting the fan and radiator was fiddly, but fitting the CPU cooler was very simple. Although Corsair recommends fitting the radiator fan so that it sucks air into the case, I&#8217;ve fitted it to blow air out of the case &#8211; which is a good thing, since&#8230;
+  * This is the first time I&#8217;ve built a water cooled PC - fitting the fan and radiator was fiddly, but fitting the CPU cooler was very simple. Although Corsair recommends fitting the radiator fan so that it sucks air into the case, I&#8217;ve fitted it to blow air out of the case - which is a good thing, since&#8230;
   * I should have picked low profile DIMMs. The radiator fan is practically sitting right on top of the RAM heat sinks. I don&#8217;t think this is an issue, but at least it&#8217;s not the radiator touch the heat sinks.
   * Unfortunately the i7 4820K CPU can run at up to 130W, so not ideal for low power.
   * To get the additional SSDs connected to SATA ports on the ASMedia chipset working, I needed to follow this article: [How to make your unsupported SATA AHCI Controller work with ESXi 5.5](http://www.v-front.de/2013/11/how-to-make-your-unsupported-sata-ahci.html). Without this change to ESXi, the drives connected to the additional SATA ports were just not seen. This wasn&#8217;t a problem under Windows Server.

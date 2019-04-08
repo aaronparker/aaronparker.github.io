@@ -31,7 +31,7 @@ Other than Windows XP Service Pack 2 or above, there are no specific prerequisit
 
 The default installation of Safari will install Apple Software Update so it&#8217;s important to prevent this from installing during sequencing so that the package is not automatically updated once deployed. [Bonjour](http://en.wikipedia.org/wiki/Apple_Bonjour) is also installed; however this is optional.
 
-There are a few ways to extract the Safari installer, but I find this process is simplest &#8211; [Download the Safari installer](http://www.apple.com/safari/download/) and execute it, but do not step through the installation. The setup files will be extracted to your Temp folder (%TEMP%), so grab a copy from there. The following files will be extracted:
+There are a few ways to extract the Safari installer, but I find this process is simplest - [Download the Safari installer](http://www.apple.com/safari/download/) and execute it, but do not step through the installation. The setup files will be extracted to your Temp folder (%TEMP%), so grab a copy from there. The following files will be extracted:
 
   * AppleApplicationSupport.msi
   * AppleSoftwareUpdate.msi
@@ -50,7 +50,7 @@ START /WAIT Safari.MSI SCHEDULE\_ASUW=0 DESKTOP\_SHORTCUTS=0 INSTALLDIR=Q:\SAFAR
 
 ### Virtualising (or Sequencing) Safari
 
-Capturing the Safari package is very simple &#8211; no exclusions were added and the following steps should produce a successful package:
+Capturing the Safari package is very simple - no exclusions were added and the following steps should produce a successful package:
 
 1. Start monitoring and install Safari using the sample script listed above
 

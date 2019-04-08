@@ -30,7 +30,7 @@ Horizon View 6 RDS is really a first entry (or v2 depending on how you look at 
 
 I&#8217;ve put together a table in this article to compare features of XenApp and Horizon View RDS. This is not intended to be as feature complete or provide as much detail as the [VDI Smackdown](http://pqr.com/vdi-smackdown), instead I wanted to look at a handful of I what I see as the most important features and provide a quick a dirty reference.
 
-There are a few things to keep in mind while reading this &#8211; a tick/star against a feature does not necessarily indicate that feature is directly comparable. Due to differences in approach and architecture, it&#8217;s very difficult to draw direct comparisons against some features.
+There are a few things to keep in mind while reading this - a tick/star against a feature does not necessarily indicate that feature is directly comparable. Due to differences in approach and architecture, it&#8217;s very difficult to draw direct comparisons against some features.
 
 I&#8217;ve added the VDI components of XenDesktop and View to provide reference.  The heading in the table &#8220;XenDesktop VDI&#8221; refers to the VDI features of XenDesktop, not the XenDesktop VDI edition. Any XenApp version between 6.5 and 7.6 should be applicable to this comparison.
 
@@ -42,12 +42,12 @@ This comparison is intended as a starting point for looking at both solutions. Y
 
 Here&#8217;s a set of additional XenApp and XenDesktop features that I&#8217;ll move into the table as time permits. In the meantime some of them are significant features that can&#8217;t be taken for granted.
 
-  * Session Pre-launch &#8211; improve the perceived time to launch remote applications
-  * Session Linger &#8211; keep a remote session open for a period of time after closing all remote applications
-  * Anonymous Logon &#8211; allow access to remote applications without requiring authentication
-  * Advanced Policy Control and SmartAccess &#8211; Citrix has provided a flexible access control and policy solution within XenApp and XenDesktop, especially in conjunction with NetScaler
-  * User shadowing &#8211; remote controlling user sessions for support purposes
-  * Hypervisor-based read cache (IntelliCache, CSV Cache, CBRC) &#8211; how do these features fit into your storage requirements?
+  * Session Pre-launch - improve the perceived time to launch remote applications
+  * Session Linger - keep a remote session open for a period of time after closing all remote applications
+  * Anonymous Logon - allow access to remote applications without requiring authentication
+  * Advanced Policy Control and SmartAccess - Citrix has provided a flexible access control and policy solution within XenApp and XenDesktop, especially in conjunction with NetScaler
+  * User shadowing - remote controlling user sessions for support purposes
+  * Hypervisor-based read cache (IntelliCache, CSV Cache, CBRC) - how do these features fit into your storage requirements?
 
 I&#8217;ve made every effort to ensure this comparison is accurate at the time of posting; however this is subject to change and I&#8217;ll update as new information comes to light.
 
@@ -68,5 +68,5 @@ Comments and feedback, as always, are welcome.
 
 # Updates
 
-  * Oct 1. 2014 &#8211; removed HTML5 clientless support check mark from Horizon View RDS
-  * Oct 27. 2014 &#8211; added NSX to load balancing option for Horizon View
+  * Oct 1. 2014 - removed HTML5 clientless support check mark from Horizon View RDS
+  * Oct 27. 2014 - added NSX to load balancing option for Horizon View

@@ -1,6 +1,6 @@
 ---
 id: 2409
-title: 'Delivering Office with App-V &#8211; Error 0x80070424 installing the Office 2010 Deployment Kit'
+title: 'Delivering Office with App-V - Error 0x80070424 installing the Office 2010 Deployment Kit'
 date: 2011-10-25T11:30:00+10:00
 author: Aaron Parker
 layout: post

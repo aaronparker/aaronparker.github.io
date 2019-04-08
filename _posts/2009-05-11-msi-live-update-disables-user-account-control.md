@@ -27,13 +27,13 @@ For some reason that I can&#8217;t quite fathom, it appears that MSI has decided
 
 <img class="alignnone size-full wp-image-1088" title="msiuacwarning" src="http://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning.png" alt="msiuacwarning" width="423" height="157" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning.png 423w, https://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning-150x55.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning-300x111.png 300w" sizes="(max-width: 423px) 100vw, 423px" /> 
 
-Clicking the only option available to you &#8211; the OK button, results in a UAC prompt:
+Clicking the only option available to you - the OK button, results in a UAC prompt:
 
 <img class="alignnone size-full wp-image-1089" title="msidisableuacprompt" src="http://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt.png" alt="msidisableuacprompt" width="460" height="417" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt.png 460w, https://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt-150x135.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt-300x271.png 300w" sizes="(max-width: 460px) 100vw, 460px" /> 
 
-Hmm.. DUAC.EXE, I wonder what that does. Let&#8217;s cancel that prompt and try the another tool included with Live Updater &#8211; Live Monitor. This one not only requires elevation to initially execute, but you just will not get anything useful out of it with UAC enabled.
+Hmm.. DUAC.EXE, I wonder what that does. Let&#8217;s cancel that prompt and try the another tool included with Live Updater - Live Monitor. This one not only requires elevation to initially execute, but you just will not get anything useful out of it with UAC enabled.
 
-Here&#8217;s [a video of the application in action](http://www.youtube.com/watch?v=C297dtKFrK8) (on Windows Vista) &#8211; running LMONITOR.EXE will in turn run DUAC.EXE to disable UAC and then reboot the machine &#8211; with little warning:
+Here&#8217;s [a video of the application in action](http://www.youtube.com/watch?v=C297dtKFrK8) (on Windows Vista) - running LMONITOR.EXE will in turn run DUAC.EXE to disable UAC and then reboot the machine - with little warning:
 
 [youtube=http://www.youtube.com/watch?v=C297dtKFrK8]
 

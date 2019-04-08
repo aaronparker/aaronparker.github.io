@@ -11,7 +11,7 @@ dsq_thread_id:
 categories:
   - Applications
 ---
-I&#8217;ve recently noticed a DLL file from Intel that keep reappearing on my system drive and I&#8217;ve tracked this down to the display software on my laptop &#8211; I&#8217;ve recently moved to a Dell laptop that has an Intel 945GM display adapter. Here&#8217;s the DLL in question:
+I&#8217;ve recently noticed a DLL file from Intel that keep reappearing on my system drive and I&#8217;ve tracked this down to the display software on my laptop - I&#8217;ve recently moved to a Dell laptop that has an Intel 945GM display adapter. Here&#8217;s the DLL in question:
 
 <span style="font-family: Courier New">C:IntelExtremeGraphicsCUIResourceigfxres.dll </span>
 

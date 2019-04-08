@@ -11,13 +11,13 @@ categories:
 tags:
   - Group Policy
 ---
-Here&#8217;s an interesting tool that Microsoft have just released &#8211; the Group Policy Diagnostic Best Practice Analyzer:
+Here's an interesting tool that Microsoft have just released - the Group Policy Diagnostic Best Practice Analyzer:
 
 > The Microsoft Group Policy Diagnostic Best Practice Analyzer (GPDBPA) for Windows XP and Windows Server 2003 is designed to help you identify Group Policy configuration errors or other dependency failures that may prevent settings or features from functioning as expected.
 > 
 > The GPDBPA scans the client computer or domain controller for configuration information that can impact Group Policy, and generates a report identifying potential issues. It also scans for error messages commonly related to Group Policy and, if found, attempts to identify the source of the error.
 
-The knowledge base article, [KB940122](http://support.microsoft.com/kb/940122), for this update is not yet available, however there is a help file included with the update. It looks to scan for fairly common issues with Group Policy, but it&#8217;s a great tool to have in your toolkit and could even be scheduled to proactively scan for issues.
+The knowledge base article, [KB940122](http://support.microsoft.com/kb/940122), for this update is not yet available, however there is a help file included with the update. It looks to scan for fairly common issues with Group Policy, but it's a great tool to have in your toolkit and could even be scheduled to proactively scan for issues.
 
 Curiously only the Windows XP 32-bit version currently requires validation for download:
 

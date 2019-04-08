@@ -15,7 +15,7 @@ categories:
 tags:
   - App-V
 ---
-Two great tools for managing App-V applications have appeared in the last few weeks &#8211; [SoftBar](http://www.jagtechnical.com/softbar/) and the [App-V 4.5 Client Diagnostic and Configuration tool](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=34&Itemid=62) (ACDC). Thanks to the efforts of Greg Brownstein and Ment van der Plas, we have some excellent choices for improving the way we can manage and troubleshoot virtual applications on the client. 
+Two great tools for managing App-V applications have appeared in the last few weeks - [SoftBar](http://www.jagtechnical.com/softbar/) and the [App-V 4.5 Client Diagnostic and Configuration tool](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=34&Itemid=62) (ACDC). Thanks to the efforts of Greg Brownstein and Ment van der Plas, we have some excellent choices for improving the way we can manage and troubleshoot virtual applications on the client. 
 
 Both tools are aimed at anyone virtualising applications with App-V and make it a snap to get into those applications for testing and troubleshooting as well as managing the App-V client. Here&#8217;s SoftBar and ACDC in action:
 

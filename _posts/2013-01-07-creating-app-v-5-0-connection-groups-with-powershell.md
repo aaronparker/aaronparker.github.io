@@ -19,13 +19,13 @@ tags:
   - Connection Groups
   - PowerShell
 ---
-[Connection Groups](http://technet.microsoft.com/en-us/library/jj737969.aspx) (or Dynamic Suite Composition v2) in App-V 5.0 are great for enabling separate App-V packages to talk to each other. Connection Groups are easy enough to [deploy with the App-V Management Server](http://technet.microsoft.com/en-us/library/jj713462.aspx) or [Configuration Manager 2012](http://technet.microsoft.com/en-us/library/jj591609.aspx); however that isn&#8217;t the case for [stand-alone scenarios](http://www.applepie.se/app-v-5-standalone-and-connection-groups) or 3rd party ESDs.
+[Connection Groups](http://technet.microsoft.com/en-us/library/jj737969.aspx) (or Dynamic Suite Composition v2) in App-V 5.0 are great for enabling separate App-V packages to talk to each other. Connection Groups are easy enough to [deploy with the App-V Management Server](http://technet.microsoft.com/en-us/library/jj713462.aspx) or [Configuration Manager 2012](http://technet.microsoft.com/en-us/library/jj591609.aspx); however that isn't the case for [stand-alone scenarios](http://www.applepie.se/app-v-5-standalone-and-connection-groups) or 3rd party ESDs.
 
-Adding a Connection Group to the client, first requires creating a definition file in XML. Without the App-V Management Server or ConfigMgr (where [the resulting file ends up on the client](http://technet.microsoft.com/en-us/library/jj870811.aspx)), you&#8217;ll need to do that manually. Crafting XML files from scratch using Notepad isn&#8217;t my idea of fun.
+Adding a Connection Group to the client, first requires creating a definition file in XML. Without the App-V Management Server or ConfigMgr (where [the resulting file ends up on the client](http://technet.microsoft.com/en-us/library/jj870811.aspx)), you'll need to do that manually. Crafting XML files from scratch using Notepad isn't my idea of fun.
 
-# What&#8217;s in a Definition File?
+# What's in a Definition File?
 
-A [Connection Group definition file](http://blogs.technet.com/b/appv/archive/2012/11/06/deploying-connection-groups-app-v-5-0.aspx) contains the details about the Connection Group and the member packages. Each Connection Group has it&#8217;s own group and version ID (GUIDs).
+A [Connection Group definition file](http://blogs.technet.com/b/appv/archive/2012/11/06/deploying-connection-groups-app-v-5-0.aspx) contains the details about the Connection Group and the member packages. Each Connection Group has it's own group and version ID (GUIDs).
 
 A typical definition file will look something like this:
 
@@ -41,7 +41,7 @@ To create the file, we need to generate GUIDs for the group and version IDs, sup
 
 # Enter PowerShell
 
-To simplify the process of creating the definition file for a Connection Group, I&#8217;ve written a PowerShell function that will handle the heavy lifting for you. _New-AppvConnectionGroupFile_ will create the definition file from a list of App-V packages passed to it.
+To simplify the process of creating the definition file for a Connection Group, I've written a PowerShell function that will handle the heavy lifting for you. _New-AppvConnectionGroupFile_ will create the definition file from a list of App-V packages passed to it.
 
 The function will output the definition file to a specified path and then return that file as an object that you can do further processing with.
 
@@ -79,12 +79,12 @@ The packages to include in the Connection Group.
 .EXAMPLE  
 PS C:\> New-AppvConnectionGroupFile -DisplayName "Internet Explorer Plugins" -Priority 0 -FilePath InternetExplorerPlugins.xml -Packages $Packages
 
-Creates a Connection Group file named &#8216;InternetExplorerPlugins.xml&#8217; with a display name of &#8216;Internet Explorer Plugins&#8217; from packages contained within the array $Packages.
+Creates a Connection Group file named &#8216;InternetExplorerPlugins.xml' with a display name of &#8216;Internet Explorer Plugins' from packages contained within the array $Packages.
 
 .EXAMPLE  
 PS C:\> Get-AppvClientPackage -Name Adobe* | New-AppvConnectionGroupFile -DisplayName "Adobe Apps" -Priority 10 -FilePath AdobeApps.xml
 
-Creates a Connection Group file named &#8216;AdobeApps.xml&#8217; with a display name of &#8216;Adobe Apps&#8217; from packages passed via the pipeline from Get-AppvClientPackage.
+Creates a Connection Group file named &#8216;AdobeApps.xml' with a display name of &#8216;Adobe Apps' from packages passed via the pipeline from Get-AppvClientPackage.
 
 .NOTES  
 See http://stealthpuppy.com/ for support information.
@@ -108,7 +108,7 @@ Param(
 BEGIN {
 
 \# Template XML for an App-V Connection Group description file. Easier than building from an XML object  
-$templateXML = @&#8217;  
+$templateXML = @'  
 <?xml version="1.0" encoding="UTF-8" ?>  
 <appv:AppConnectionGroup  
 xmlns="http://schemas.microsoft.com/appv/2010/virtualapplicationconnectiongroup"  
@@ -180,7 +180,7 @@ The function includes help and examples, so that you can view them from within P
 
 Using the function requires supplying a Display Name and Priority for the Connection Group as well as the list of App-V packages to include in the group. To supply the packages, first ensure they have been added to the local client, so that they can be queried with Get-AppvClientPackage.
 
-In this example, I&#8217;ve added the list of packages to the variable $Packages and then supplied that to the New-AppvConnectionGroupFile function. This results in the definition file AdobeApps.xml with any Adobe package included in it.
+In this example, I've added the list of packages to the variable $Packages and then supplied that to the New-AppvConnectionGroupFile function. This results in the definition file AdobeApps.xml with any Adobe package included in it.
 
 [code language=&#8221;ps&#8221;]$Packages = Get-AppvClientPackage -Name Adobe*  
 New-AppvConnectionGroupFile -Path C:\Packages\AdobeApps.xml -DisplayName "Adobe Apps" -Priority 2 -Packages $Packages[/code]

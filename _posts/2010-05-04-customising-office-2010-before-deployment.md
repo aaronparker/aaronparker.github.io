@@ -101,14 +101,14 @@ Like user settings, feature installation states will impact on the default Offic
 
 Some features that may not be suitable for some corporate environments include:
 
-  * Office Shared Features &#8211; [Business Connectivity Services](http://blogs.msdn.com/bcs/)
-  * Office Shared Features &#8211; Web Themes
-  * Office Tools &#8211; Hosted Webs
+  * Office Shared Features - [Business Connectivity Services](http://blogs.msdn.com/bcs/)
+  * Office Shared Features - Web Themes
+  * Office Tools - Hosted Webs
 
 There are several other options available from within the OCT – you can [deploy additional files and programs along side Office](http://technet.microsoft.com/en-gb/library/cc179200(office.14).aspx), [automatically configure Outlook profiles](http://technet.microsoft.com/en-gb/library/cc303392(office.14).aspx) when users first start Outlook and [configure SharePoint Workspaces](http://technet.microsoft.com/en-gb/library/ee649101(office.14).aspx).
 
 Once you have finished creating the customisation file, save it and now you’re ready to start the [Office 2010 deployment process](http://technet.microsoft.com/en-gb/library/ee656739(office.14).aspx).
 
-**Note**: a downloadable version of the Office 2010 deployment resources are available in this document &#8211; [Deployment guide for Microsoft Office 2010](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=2d67bf2d-75ff-47d9-ae7b-c67b09a9c902). This is a 216 page document that covers every aspect of Office 2010 deployment
+**Note**: a downloadable version of the Office 2010 deployment resources are available in this document - [Deployment guide for Microsoft Office 2010](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=2d67bf2d-75ff-47d9-ae7b-c67b09a9c902). This is a 216 page document that covers every aspect of Office 2010 deployment
 
 > This book provides how-to information: the recommended steps to execute specific deployment tasks, such as customizing the installation and installing Microsoft Office 2010.

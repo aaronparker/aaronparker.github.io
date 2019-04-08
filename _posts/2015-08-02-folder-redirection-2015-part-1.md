@@ -36,27 +36,27 @@ Just as we continue to discuss printing in VDI and SBC environments because user
 
 Folder redirection remains a popular method of user data and profile management because it can improve the user experience by achieving two things:
 
-  1. Faster logons &#8211; redirecting AppData out of the profile reduces the amount of data required to be copied locally at user logon
-  2. Abstracting user data &#8211; moving user data out of the profile to a home folder ensures data is available on any desktop and allows IT to protect that data
+  1. Faster logons - redirecting AppData out of the profile reduces the amount of data required to be copied locally at user logon
+  2. Abstracting user data - moving user data out of the profile to a home folder ensures data is available on any desktop and allows IT to protect that data
 
 However, by implementing folder redirection, we&#8217;ve moved data that applications constantly interact with from the local machine to a shared resource. This means that good user experience now requires your storage back-end and network to be responsive and highly available.
 
-Those shared resources (network, storage, hypervisor, CPU etc.) contend for resources, especially in today&#8217;s data centre with traditional shared storage and with most applications and file services on a virtualized platform. This is what has driven us to to do this testing and present the results to the community &#8211; many organisations don&#8217;t consider the ramifications of implementing folder redirection. Performance on day 1 may be good, but as an environment grows organically and resources become further contended, user experience suffers.
+Those shared resources (network, storage, hypervisor, CPU etc.) contend for resources, especially in today&#8217;s data centre with traditional shared storage and with most applications and file services on a virtualized platform. This is what has driven us to to do this testing and present the results to the community - many organisations don&#8217;t consider the ramifications of implementing folder redirection. Performance on day 1 may be good, but as an environment grows organically and resources become further contended, user experience suffers.
 
 # 2015 Testing Focus
 
 This year, we focussed our testing on several areas:
 
-  1. Comparing SMB 2.1 with SMB 3.02 &#8211; last year we tested primarily with Windows 7 as the client. In this round we&#8217;ve used Windows 8.1 as the client to see whether SMB 3.02 provides any improvements over SMB 2.1
-  2. IO performance &#8211; does SMB 3.02 improve raw IO performance and throughput over SMB 2.1?
-  3. Workload simulations &#8211; we&#8217;ve used the File Server Capacity Toolkit to model how users work with home folders to demonstrate the performance profiles of various scenarios and show you how you can do performance modelling for your file servers
-  4. Folder redirection alternatives &#8211; newer file sync and share solutions that have been popular of the past several years may make interesting alternatives to folder redirection. I&#8217;ve [written about one of these previously](http://stealthpuppy.com/folder-redirection-offline-files-appsense-datanow-35/) and we have covered several more alternatives. I&#8217;ll cover some additional alternatives in seperate articles.
+  1. Comparing SMB 2.1 with SMB 3.02 - last year we tested primarily with Windows 7 as the client. In this round we&#8217;ve used Windows 8.1 as the client to see whether SMB 3.02 provides any improvements over SMB 2.1
+  2. IO performance - does SMB 3.02 improve raw IO performance and throughput over SMB 2.1?
+  3. Workload simulations - we&#8217;ve used the File Server Capacity Toolkit to model how users work with home folders to demonstrate the performance profiles of various scenarios and show you how you can do performance modelling for your file servers
+  4. Folder redirection alternatives - newer file sync and share solutions that have been popular of the past several years may make interesting alternatives to folder redirection. I&#8217;ve [written about one of these previously](http://stealthpuppy.com/folder-redirection-offline-files-appsense-datanow-35/) and we have covered several more alternatives. I&#8217;ll cover some additional alternatives in seperate articles.
 
 All of our testing this year was performed with Windows 8.1 or Windows Server 2012 R2 on the client end, with Windows Server 2008 R2 or Windows Server 2012 R2 on the server end.
 
-Utilising a specific version of SMB requires that both the client and server are capable of speaking that particular version of the protocol. If you want to read a thorough explanation of SMB versions and how they are negotiated, this article is recommended reading &#8211; [Windows Server 2012 R2: Which version of the SMB protocol (SMB 1.0, SMB 2.0, SMB 2.1, SMB 3.0 or SMB 3.02) are you using?](http://stealthpuppy.com/folder-redirection-offline-files-appsense-datanow-35/).
+Utilising a specific version of SMB requires that both the client and server are capable of speaking that particular version of the protocol. If you want to read a thorough explanation of SMB versions and how they are negotiated, this article is recommended reading - [Windows Server 2012 R2: Which version of the SMB protocol (SMB 1.0, SMB 2.0, SMB 2.1, SMB 3.0 or SMB 3.02) are you using?](http://stealthpuppy.com/folder-redirection-offline-files-appsense-datanow-35/).
 
-I&#8217;ve already covered the tools that we&#8217;ve used in our testing in this blog post &#8211; [Replicating Our 2015 Folder Redirection Performance Tests In Your Own Lab](http://stealthpuppy.com/replicate-2015-folder-redirection-test/).
+I&#8217;ve already covered the tools that we&#8217;ve used in our testing in this blog post - [Replicating Our 2015 Folder Redirection Performance Tests In Your Own Lab](http://stealthpuppy.com/replicate-2015-folder-redirection-test/).
 
 In my own lab, all of the testing was done on the following hardware and software:
 
@@ -87,13 +87,13 @@ Another tool was used ([i/o performance tool](http://sourceforge.net/projects/io
 
 <figure id="attachment_4023" aria-describedby="caption-attachment-4023" style="width: 912px" class="wp-caption alignnone">[<img class="size-full wp-image-4023" src="http://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2.png" alt="Choppier performance with SMB 3.02" width="912" height="461" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2.png 912w, https://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2-150x76.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2-300x152.png 300w" sizes="(max-width: 912px) 100vw, 912px" />](http://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2.png)<figcaption id="caption-attachment-4023" class="wp-caption-text">Choppier performance with SMB 3.02</figcaption></figure>
 
-Any difference between the two protocols wasn&#8217;t shown in our user logon tests &#8211; a practical measure of any performance difference.
+Any difference between the two protocols wasn&#8217;t shown in our user logon tests - a practical measure of any performance difference.
 
 # SMB 2.1 vs. 3.02 Logon Times
 
 To test logon times, we configured what we consider to be an enormous user profile and test environment with the following details:
 
-  * User profile &#8211; the same profile was used across client and server tests: 
+  * User profile - the same profile was used across client and server tests: 
       * 151 Mb
       * 18,460 file
       * 2,206 folders (while the profile file size is not huge, the number of files has a significant impact on logon times)

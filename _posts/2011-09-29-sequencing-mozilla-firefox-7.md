@@ -34,7 +34,7 @@ Virtualizing Firefox with App-V will isolate the application from the OS, so the
   * %APPDATA%\Mozilla (preferences, bookmarks etc.); and
   * %LOCALAPPDATA%\Mozilla (browser cache)
 
-The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% &#8211; this is a good thing and I don&#8217;t recommend removing this exclusion.
+The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this is a good thing and I don&#8217;t recommend removing this exclusion.
 
 %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla_ to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time.
 
@@ -60,8 +60,8 @@ I will walk through adding a couple of files to this location for to ensure that
 
 There are a couple of features that should be disabled when running Firefox under App-V:
 
-  * Automatic updates for Firefox – _Options / Advanced / Update &#8211; Automatically check for updates to: Firefox_. Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
-  * Default browser check – _Options / Advanced / General &#8211; Always check to see if Firefox is the default browser on startup_. Once Firefox is isolated from the OS, the user won&#8217;t be able to make it the default browser
+  * Automatic updates for Firefox – _Options / Advanced / Update - Automatically check for updates to: Firefox_. Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
+  * Default browser check – _Options / Advanced / General - Always check to see if Firefox is the default browser on startup_. Once Firefox is isolated from the OS, the user won&#8217;t be able to make it the default browser
 
 [_user.js_](http://kb.mozillazine.org/User.js_file) is used to configure Firefox options and enforce them and [_UserChrome.css_](http://www-archive.mozilla.org/unix/customizing.html) is used to remove those options from the user interface.
 

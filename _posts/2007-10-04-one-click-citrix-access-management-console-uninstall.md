@@ -16,22 +16,22 @@ Citrix provide a nice installer for the [Access Management Console](https://www.
 So here&#8217;s a script that you can use to uninstall the current version of the AMC and its components in one step:
 
 [code]@ECHO OFF  
-REM Citrix Access Management Console &#8211; Hotfix Management  
+REM Citrix Access Management Console - Hotfix Management  
 START /WAIT MSIEXEC /QB /UNINSTALL {40E9841C-CF57-4B88-8A06-F944D322E92E}  
-REM Citrix Access Management Console &#8211; Knowledge Base  
+REM Citrix Access Management Console - Knowledge Base  
 START /WAIT MSIEXEC /QB /UNINSTALL {557E05DF-F2E6-410A-8C35-2E73552110C8}  
-REM Citrix Access Management Console &#8211; Legacy Tools  
+REM Citrix Access Management Console - Legacy Tools  
 START /WAIT MSIEXEC /QB /UNINSTALL {760D0614-9608-4637-919B-3573FC0F0D87}  
-REM Citrix Access Management Console &#8211; Diagnostics  
+REM Citrix Access Management Console - Diagnostics  
 START /WAIT MSIEXEC /QB /UNINSTALL {9B5AEAE3-8CE1-4524-A7C4-1CFD2B98F1E9}  
-REM Citrix Presentation Server &#8211; Administration Snap-in  
+REM Citrix Presentation Server - Administration Snap-in  
 START /WAIT MSIEXEC /QB /UNINSTALL {BE4DE1B2-10F2-4DB2-A0C3-309FC61FDDA0}  
-REM Citrix Access Management Console &#8211; Web Interface  
+REM Citrix Access Management Console - Web Interface  
 START /WAIT MSIEXEC /QB /UNINSTALL {D89D16D0-9626-4781-A517-1BE9EFD622F8}  
-REM Citrix Presentation Server &#8211; Presentation Server Reports  
+REM Citrix Presentation Server - Presentation Server Reports  
 START /WAIT MSIEXEC /QB /UNINSTALL {2F97CB0C-7636-4289-B458-282DAC3F42BB}  
-REM Citrix Access Management Console &#8211; Report Center  
+REM Citrix Access Management Console - Report Center  
 START /WAIT MSIEXEC /QB /UNINSTALL {23207B10-4855-496B-A099-7B80C4AFD355}  
-REM Citrix Access Management Console &#8211; Framework  
+REM Citrix Access Management Console - Framework  
 START /WAIT MSIEXEC /QB /UNINSTALL {5436F894-39CC-41D7-AEFC-AF5E2C7F0852}  
 [/code]

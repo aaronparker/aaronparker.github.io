@@ -15,6 +15,6 @@ tags:
 ---
 <img height="128" alt="IISManager128" src="http://stealthpuppy.com/wp-content/uploads/2008/03/iismanager128.png" width="140" align="left" border="0" /> 
 
-The [Internet Information Services (IIS) 7.0 Manager is available](http://www.microsoft.com/downloads/details.aspx?FamilyID=32c54c37-7530-4fc0-bd20-177a3e5330b7&DisplayLang=en#filelist) for installation on Windows Vista, Windows Server 2003 and Windows XP. Does that mean the Remote Server Administration Tools are almost here? Let&#8217;s hope so, I think we&#8217;re deserving, don&#8217;t you? While we&#8217;re at it, what about the Remote Desktop Client 6.1?
+The [Internet Information Services (IIS) 7.0 Manager is available](http://www.microsoft.com/downloads/details.aspx?FamilyID=32c54c37-7530-4fc0-bd20-177a3e5330b7&DisplayLang=en#filelist) for installation on Windows Vista, Windows Server 2003 and Windows XP. Does that mean the Remote Server Administration Tools are almost here? Let's hope so, I think we're deserving, don't you? While we're at it, what about the Remote Desktop Client 6.1?
 
-If you&#8217;re looking to remotely administer IIS 7.0, you&#8217;ll need to enable it first: Open IIS Manager _locally_ on the server you want to manage, click on the server object in the tree in the left pane, open Management Service under Management in the right pane, then _enable remote connections_ and apply.
+If you're looking to remotely administer IIS 7.0, you'll need to enable it first: Open IIS Manager _locally_ on the server you want to manage, click on the server object in the tree in the left pane, open Management Service under Management in the right pane, then _enable remote connections_ and apply.

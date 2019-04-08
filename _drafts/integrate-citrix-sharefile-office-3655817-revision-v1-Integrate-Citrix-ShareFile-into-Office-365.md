@@ -7,9 +7,9 @@ layout: revision
 guid: https://stealthpuppy.com/5817-revision-v1/
 permalink: /5817-revision-v1/
 ---
-While Office 365 overall is a great concept, the user experience of OneDrive for Business and SharePoint is less than ideal. Integrating an alternative enterprise file and sync solution can be difficult to justify from a cost perspective &#8211; if Office 365 has a storage solution, what benefits do you gain by adding an alternative?
+While Office 365 overall is a great concept, the user experience of OneDrive for Business and SharePoint is less than ideal. Integrating an alternative enterprise file and sync solution can be difficult to justify from a cost perspective - if Office 365 has a storage solution, what benefits do you gain by adding an alternative?
 
-Perhaps a subjective view, but integrating Citrix ShareFile into Office 365 provides a better end-user experience than OneDrive for Business and SharePoint. Plus it works in virtual desktop environments (something you don&#8217;t get without [3rd party solutions](https://www.fslogix.com)) and enables access to on-premises storage. Thus, an organisation may see value in going Office 365 **and** Citrix ShareFile, or perhaps may already be a ShareFile customer and is moving to Office 365.
+Perhaps a subjective view, but integrating Citrix ShareFile into Office 365 provides a better end-user experience than OneDrive for Business and SharePoint. Plus it works in virtual desktop environments (something you don't get without [3rd party solutions](https://www.fslogix.com)) and enables access to on-premises storage. Thus, an organisation may see value in going Office 365 **and** Citrix ShareFile, or perhaps may already be a ShareFile customer and is moving to Office 365.
 
 To integrate Citrix ShareFile into Office 365, there are a number of touch&nbsp;points worth spending time on to get the user experience just right.
 

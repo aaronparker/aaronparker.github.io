@@ -75,7 +75,7 @@ Get-ChildItem -Path $Source | Test-AppvLegacyPackage | Where-Object {$_.Errors.C
 \# Move packages and related files to a sub-folder per-package  
 $Packages = Get-ChildItem -Path $Dest -Filter "\*.appv\*"  
 foreach ($Package in $Packages) {  
-$Name = $Package.Name.substring(0,($Package.Name.length &#8211; 5))  
+$Name = $Package.Name.substring(0,($Package.Name.length - 5))  
 $PackageItems = Get-ChildItem -Path $Dest -Filter "$Name*"  
 New-Item -Path $Dest\$Name -Type Directory  
 For ($n=0; $n -le $PackageItems.Count -1; $n++) { Move-Item $PackageItems[$n].FullName $Dest\$Name }  

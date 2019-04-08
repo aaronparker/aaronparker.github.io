@@ -19,13 +19,13 @@ tags:
   - Duo
   - MFA
 ---
-Deploying a jump box into a cloud environment such as [Azure](http://stealthpuppy.com/tag/azure/) or AWS, is a common way of providing access into said environment through a single entry point. Often access to the jump box will be restricted by source IP, but that approach isn&#8217;t completely secure for many reasons &#8211; admins don&#8217;t update the rules, source IP doesn&#8217;t identify the user etc.
+Deploying a jump box into a cloud environment such as [Azure](http://stealthpuppy.com/tag/azure/) or AWS, is a common way of providing access into said environment through a single entry point. Often access to the jump box will be restricted by source IP, but that approach isn&#8217;t completely secure for many reasons - admins don&#8217;t update the rules, source IP doesn&#8217;t identify the user etc.
 
 One of the best ways to protection authentication to a remote Windows box is via multi-factor authentication (MFA). Keep source IP rulesets if you want, but add [MFA](http://stealthpuppy.com/tag/mfa/) to ensure that even if a user&#8217;s password is compromised, additional authentication information is always enforced.
 
 In most Azure environments I&#8217;ve deployed, the customer is licensing [Azure AD](http://stealthpuppy.com/tag/azure-ad) Premium which we could integrate with RD Gateway and RD Web Access for securing authentication to the jump box via the Azure MFA Server. The issue there is that it requires deploying more complexity than necessary for a jump box and likely extra licensing for the RD Gateway role. Less than ideal.
 
-So I went looking for a more cost effective way of securing remote access to cloud environments &#8211; something that&#8217;s light weight, runs on a single VM and ideally wouldn&#8217;t require additional licensing.
+So I went looking for a more cost effective way of securing remote access to cloud environments - something that&#8217;s light weight, runs on a single VM and ideally wouldn&#8217;t require additional licensing.
 
 Fellow [CTP](http://stealthpuppy.com/1about/) and all round knowledgeable guy, [Jarian Gibson](https://twitter.com/jariangibson) recommended checking out Duo. Duo are an [identity provider](https://duo.com/)&nbsp;including MFA who have a&nbsp;[a free version that gives you two-factor authentication for up to 10 users](https://duo.com/pricing/duo-free).
 
@@ -33,7 +33,7 @@ Fellow [CTP](http://stealthpuppy.com/1about/) and all round knowledgeable guy, [
 
 Signing up for Duo and adding MFA to a Windows Server VM running in Azure is a simple process:
 
-  1. [Sign up for Duo](https://signup.duo.com/). A Duo account is free &#8211; this provides you with a control panel used to add Duo support for multiple applications. Install the Duo Mobile app on your phone to enable MFA prompts as phone calls and SMSs are not free. Duo gives you 490 &#8216;Telephone credits&#8217;, but you&#8217;ll need to add a credit card to purchase more.
+  1. [Sign up for Duo](https://signup.duo.com/). A Duo account is free - this provides you with a control panel used to add Duo support for multiple applications. Install the Duo Mobile app on your phone to enable MFA prompts as phone calls and SMSs are not free. Duo gives you 490 &#8216;Telephone credits&#8217;, but you&#8217;ll need to add a credit card to purchase more.
   2. Add a user account to Duo that matches the account on the jump box. My jump box is a stand-alone server, so the account in Duo matches the username of an account local to the VM
   3. Choose to add MFA to &#8216;[Microsoft RDP](https://duo.com/docs/rdp)&#8216;. Duo have [about 125 applications](https://duo.com/docs) they can add authentication features to, and their documentation for setup is very good.
   4. Install the Duo Authentication for Windows Logon on the target VM. The hardest part about this step was actually finding the binaries to install the agent. It&#8217;s linked in the documentation (of course) but for whatever reason, I just couldn&#8217;t see it.
@@ -61,7 +61,7 @@ Send a link to the user which can be customised:
 
 <figure id="attachment_5523" aria-describedby="caption-attachment-5523" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5523" src="http://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup-1024x587.png" alt="Send an activation link to the user" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/07/09_Setup.png)<figcaption id="caption-attachment-5523" class="wp-caption-text">Send an activation link to the user</figcaption></figure>
 
-Here&#8217;s what appears on the user&#8217;s phone &#8211; tap the link and it will open in the Duo app.
+Here&#8217;s what appears on the user&#8217;s phone - tap the link and it will open in the Duo app.
 
 <figure id="attachment_5518" aria-describedby="caption-attachment-5518" style="width: 576px" class="wp-caption alignnone">[<img class="wp-image-5518 size-large" src="http://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106-576x1024.png" alt="Duo activation link sent to the phone" width="576" height="1024" srcset="https://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106-576x1024.png 576w, https://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106-84x150.png 84w, https://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106-169x300.png 169w, https://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106.png 750w" sizes="(max-width: 576px) 100vw, 576px" />](http://stealthpuppy.com/wp-content/uploads/2017/07/IMG_4106.png)<figcaption id="caption-attachment-5518" class="wp-caption-text">Duo activation link sent to the phone</figcaption></figure>
 
@@ -79,7 +79,7 @@ Logon to your target VM, download the [Duo Authentication for Windows Logon agen
 
 [The installer supports a silent install](https://help.duo.com/s/article/ka070000000k9uCAAQ/1090), so you could for example, add the agent with authentication details with PowerShell DSC during deployment of the VM.
 
-One the agent is install, no reboot is required. Yes &#8211; no reboot!
+One the agent is install, no reboot is required. Yes - no reboot!
 
 # Logon Experience
 

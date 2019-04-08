@@ -42,7 +42,7 @@ Extracting [the iTunes installer](http://www.apple.com/itunes/download/) results
   * AppleApplicationSupport.msi – all Apple applications on Windows require this as a dependency
   * AppleMobileDeviceSupport.msi – required for Apple mobile device support (iPhone, iPad etc.). This installer includes the drivers for Apple’s devices
   * QuickTime.msi – iTunes uses QuickTime for video codec support
-  * Bonjour.msi &#8211; [iTunes uses Bonjour](http://support.apple.com/kb/HT2250) to find shared music libraries, to find AirPort Express devices for streaming music to, and to find Apple TVs
+  * Bonjour.msi - [iTunes uses Bonjour](http://support.apple.com/kb/HT2250) to find shared music libraries, to find AirPort Express devices for streaming music to, and to find Apple TVs
   * iTunes.msi – the iTunes installer itself
 
 It is important that _Apple Software Update_ is not included in the App-V package – allowing the applications in the package to update will at best fail and at worst, most likely bloat the package if it were allowed to run after deployment. Before copying the iTunes setup files into your sequencing VM, delete _AppleSoftwareUpdate.msi_ and _SetupAdmin.exe_. This will prevent the iTunes installer from automatically installing Software Update during sequencing.
@@ -241,7 +241,7 @@ Although iTunes reports this error and I can confirm that the service is started
 
 Last, but not least, for media sharing to work, firewall exceptions will be required for the following processes:
 
-  * iTunes &#8211; Q:\Apple iTunes 10 x86\VFS\CSIDL\_PROGRAM\_FILES\iTunes\iTunes.exe
-  * Bonjour service &#8211; Q:\Apple iTunes 10 x86\VFS\CSIDL\_PROGRAM\_FILES\Bonjour\mDNSResponder.exe
+  * iTunes - Q:\Apple iTunes 10 x86\VFS\CSIDL\_PROGRAM\_FILES\iTunes\iTunes.exe
+  * Bonjour service - Q:\Apple iTunes 10 x86\VFS\CSIDL\_PROGRAM\_FILES\Bonjour\mDNSResponder.exe
 
 The path to the processes may change depending where you install iTunes and dependent components.

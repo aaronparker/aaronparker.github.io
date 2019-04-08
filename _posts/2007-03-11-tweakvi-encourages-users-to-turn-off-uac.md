@@ -26,7 +26,7 @@ Here&#8217;s a couple of quotes from their FAQ page site about [TweakVI and UAC]
 > 
 > In order for the FileShredder feature to work, the Windows Vista User Account Control (UAC) must be disabled; otherwise communication between Windows Vista and the FileShredder via drag-and-drop is impossible. Please check your UAC settings (Control panel >>> User Account Settings). There you can disable UAC.
 > 
-> **Certain features might not work as expected &#8211; what am I doing wrong?**
+> **Certain features might not work as expected - what am I doing wrong?**
 > 
 > It is possible that you have the new Windows User Account Control activated. UAC is known to interfere with some of TweakVIs features. If you encounter a problem, or a malfunction of a TweakVI feature, please check your UAC settings. If UAC is enabled, please disable it, reboot your machine, and check if the problem has disappeared.
 

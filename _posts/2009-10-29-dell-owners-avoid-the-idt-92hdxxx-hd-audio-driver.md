@@ -1,6 +1,6 @@
 ---
 id: 1217
-title: 'Dell owners &#8211; avoid the IDT 92HDxxx HD Audio driver'
+title: 'Dell owners - avoid the IDT 92HDxxx HD Audio driver'
 date: 2009-10-29T00:19:30+10:00
 author: Aaron Parker
 layout: post
@@ -84,7 +84,7 @@ This particular version doesn&#8217;t actually work at all, i.e. no sound plays.
   * Dell Precision Mobile WorkStation M4400
   * Dell Precision Mobile WorkStation M6400
 
-I&#8217;ve tested these on a 32-bit install of Windows 7 on two machines &#8211; a Latitude XT2 and a Latitude E4200, with the same result. Fortunately though, the drivers are not required for playing sound &#8211; Windows 7 will find the audio hardware out of the box.
+I&#8217;ve tested these on a 32-bit install of Windows 7 on two machines - a Latitude XT2 and a Latitude E4200, with the same result. Fortunately though, the drivers are not required for playing sound - Windows 7 will find the audio hardware out of the box.
 
 If you have the same issue, open Device Manager and uninstall the device labelled _IDT High Definition Audio CODEC_, be sure to also tick the option _Delete the driver software for this device_ to remove the driver completely. Here&#8217;s what you&#8217;ll see in Device Manager:
 

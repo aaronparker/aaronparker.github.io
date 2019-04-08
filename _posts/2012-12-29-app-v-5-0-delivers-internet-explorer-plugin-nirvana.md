@@ -39,7 +39,7 @@ Before deployment to a client PC, I&#8217;ve sequenced the follow applications i
   * Adobe Flash Player 11
   * Oracle Java 7
 
-During sequencing I&#8217;ve not performed any special steps to prepare the environment &#8211; there is no bearing on deployment during the sequencing stage.
+During sequencing I&#8217;ve not performed any special steps to prepare the environment - there is no bearing on deployment during the sequencing stage.
 
 Each package has been added to the client and published globally with the following commands:
 
@@ -85,7 +85,7 @@ So using Internet Explorer (iexplore.exe) and the Connection Group for the plugi
 
 (Note the underscore between Package ID and Version ID to make up the data stored in the registry value.)
 
-**However** &#8211; I have found that RunVirtual doesn&#8217;t start the virtual environment (VE) if details for a Connection Group are supplied. Documentation on this feature is scant, so it&#8217;s hard to tell whether this behaviour is by design or not.
+**However** - I have found that RunVirtual doesn&#8217;t start the virtual environment (VE) if details for a Connection Group are supplied. Documentation on this feature is scant, so it&#8217;s hard to tell whether this behaviour is by design or not.
 
 If the Package and Version ID are of a member package are provided, then the Connection Group VE is loaded, so we do get the desired effect. In my test case, I&#8217;ve added the Package and Version ID of the primary package (Flash) to the registry.
 

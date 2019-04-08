@@ -1,6 +1,6 @@
 ---
 id: 2392
-title: 'Delivering Office with App-V &#8211; The Deployment Kit and Product Key issues'
+title: 'Delivering Office with App-V - The Deployment Kit and Product Key issues'
 date: 2011-10-03T23:37:38+10:00
 author: Aaron Parker
 layout: post

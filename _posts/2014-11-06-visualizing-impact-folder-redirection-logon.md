@@ -1,6 +1,6 @@
 ---
 id: 3737
-title: 'Visualizing the Impact of Folder Redirection &#8211; Logon and Application Launch'
+title: 'Visualizing the Impact of Folder Redirection - Logon and Application Launch'
 date: 2014-11-06T17:20:20+10:00
 author: Aaron Parker
 layout: post
@@ -52,7 +52,7 @@ As you can see, logon is quick and once logon is complete the system is quite re
 
 ## File Server Under 99% Load
 
-Now, let&#8217;s make no changes to the user account configuration (using the same profile), but put the file server under load by stressing the CPU. CPU load on the file server can be a common occurrence for various reasons &#8211; AV scans, run away processes, servicing a large number of SMB requests, or perhaps even CPU resources are limited due to contention on shared platforms (i.e. a hypervisor).
+Now, let&#8217;s make no changes to the user account configuration (using the same profile), but put the file server under load by stressing the CPU. CPU load on the file server can be a common occurrence for various reasons - AV scans, run away processes, servicing a large number of SMB requests, or perhaps even CPU resources are limited due to contention on shared platforms (i.e. a hypervisor).
 
 
 
@@ -78,13 +78,13 @@ In this scenario, we&#8217;ve traded slower performance over the session for imp
 
 ## Citrix Profile Management with Folder Redirection Not Enabled
 
-The next test actually reverses the scenario bit &#8211; we again have no folder redirection, but have augmented or replaced the roaming profile with a profile managed by Citrix Profile Management.
+The next test actually reverses the scenario bit - we again have no folder redirection, but have augmented or replaced the roaming profile with a profile managed by Citrix Profile Management.
 
 This approach uses streaming to bring the profile down to the desktop as data is requested. Data transfer is extended over the length of the session, rather than copied down before the logon process is complete.
 
 
 
-This test demonstrates the streaming approach to profiles that Citrix Profile Management uses &#8211; files are copied down in the background as they are requested. The effect is that some actions are slower, so logon is slower than with folder redirection, but as the profile is fleshed out locally, application launches are then what you would expect from roaming profiles (or even a local profile). No additional requests to the network are required, so file access is from the local disk.
+This test demonstrates the streaming approach to profiles that Citrix Profile Management uses - files are copied down in the background as they are requested. The effect is that some actions are slower, so logon is slower than with folder redirection, but as the profile is fleshed out locally, application launches are then what you would expect from roaming profiles (or even a local profile). No additional requests to the network are required, so file access is from the local disk.
 
 # Conclusion
 

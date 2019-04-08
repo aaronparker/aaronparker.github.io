@@ -25,7 +25,7 @@ First up, I have a Windows Vista style icon for the Briefcase. I can’t remembe
 
 
 
-Extract this icon to a local folder &#8211; I usually place custom icons in _C:\Windows\Media_. Then change the following three registry values to &#8220;%SystemRoot%\Media\Briefcase.ico&#8221; (without the quotes):
+Extract this icon to a local folder - I usually place custom icons in _C:\Windows\Media_. Then change the following three registry values to &#8220;%SystemRoot%\Media\Briefcase.ico&#8221; (without the quotes):
 
 [table id=11 /]
 

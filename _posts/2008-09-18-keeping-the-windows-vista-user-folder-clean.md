@@ -17,7 +17,7 @@ Because I’m a stickler for clean UI, I want to ensure users don’t see extra 
 
 <img style="display: inline" title="Computer" src="http://stealthpuppy.com/wp-content/uploads/2008/09/computer.png" border="0" alt="Computer" width="566" height="419" /> 
 
-This location in the UI replaces the Documents folder as the top level navigation tool but it essentially gives you a view of the user profile (%USERPROFILE%). As such, this location cannot be redirected to the network, so it would be advantageous to prevent users from adding data to this folder &#8211; otherwise you will need to manage that data. Leaving it inside the roaming profile is probably not the best solution.
+This location in the UI replaces the Documents folder as the top level navigation tool but it essentially gives you a view of the user profile (%USERPROFILE%). As such, this location cannot be redirected to the network, so it would be advantageous to prevent users from adding data to this folder - otherwise you will need to manage that data. Leaving it inside the roaming profile is probably not the best solution.
 
 Fortunately, Microsoft provide a Group Policy setting that will prevent users from adding files to to this location:
 

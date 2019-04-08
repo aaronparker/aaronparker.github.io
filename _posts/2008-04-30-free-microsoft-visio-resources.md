@@ -19,7 +19,7 @@ First up, check out the [Visio Toolbox](http://visiotoolbox.com) site where you 
 
 A few other Visio related tools have been made available recently on the Microsoft Downloads site:
 
-[Visio &#8211; Exchange Server Connector](http://www.microsoft.com/downloads/details.aspx?FamilyID=0140bc6d-1c51-41f6-a473-d0e04690ee5e&DisplayLang=en)
+[Visio - Exchange Server Connector](http://www.microsoft.com/downloads/details.aspx?FamilyID=0140bc6d-1c51-41f6-a473-d0e04690ee5e&DisplayLang=en)
 
 > This Microsoft Office Visio 2007 Connector is an add-in for Microsoft Office Visio 2007 that you can use to diagram a Microsoft Exchange Server site topology, including sites, servers, and connections for an organization.
 
@@ -27,7 +27,7 @@ A few other Visio related tools have been made available recently on the Microso
 
 > Rack Server Virtualization Add-in provides the capability to pull the rack-server data either from Excel spread sheet or from user and render the Visio diagram
 
-[Microsoft Office Visio 2007 Pro &#8211; Storage Management for Servers (NRTM) Connector](http://www.microsoft.com/downloads/details.aspx?FamilyID=b3ee9327-e393-4718-a3b4-6bc860b65634&DisplayLang=en)
+[Microsoft Office Visio 2007 Pro - Storage Management for Servers (NRTM) Connector](http://www.microsoft.com/downloads/details.aspx?FamilyID=b3ee9327-e393-4718-a3b4-6bc860b65634&DisplayLang=en)
 
 > The Data Center Disk Space Monitoring Connector for Microsoft Office Visio&#174; 2007 uses Visio data graphics to display the results of server monitoring. The connector enables effective integration of Microsoft Office Visio 2007 with the service management solution System Center Operations Manager 2007. The connector helps to view the results of monitoring servers in a clear, comprehensive Visio network diagram.
 

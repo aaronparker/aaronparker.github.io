@@ -27,7 +27,7 @@ If you’re configuring the [Remote Desktop Virtualization Host](http://technet.
 
 <img class="wlDisabledImage" style="display: inline; border: 0px;" title="RemoteFX-Licensing-Service" src="http://stealthpuppy.com/wp-content/uploads/2010/07/RemoteFXLicensingService.png" alt="RemoteFX-Licensing-Service" width="602" height="126" border="0" /> 
 
-To configure the licensing mode and add a licensing server, you can use the [Remote Desktop Services Provider for PowerShell](http://technet.microsoft.com/en-us/library/ee791871(WS.10).aspx). There’s a great post on the RDS Team blog that demonstrates how to use this provider to manage licensing &#8211; [Manage Remote Desktop Licensing by using Windows PowerShell](http://blogs.msdn.com/b/rds/archive/2010/04/07/manage-remote-desktop-licensing-by-using-windows-powershell.aspx), so I’ll just add the commands required to configure the RDVH server.
+To configure the licensing mode and add a licensing server, you can use the [Remote Desktop Services Provider for PowerShell](http://technet.microsoft.com/en-us/library/ee791871(WS.10).aspx). There’s a great post on the RDS Team blog that demonstrates how to use this provider to manage licensing - [Manage Remote Desktop Licensing by using Windows PowerShell](http://blogs.msdn.com/b/rds/archive/2010/04/07/manage-remote-desktop-licensing-by-using-windows-powershell.aspx), so I’ll just add the commands required to configure the RDVH server.
 
 To enable the RDS Provider in PowerShell, you can start PowerShell from the _Windows PowerShell Modules_ shortcut, or import the RemoteDesktopServices module in an other (elevated) PowerShell window:
 

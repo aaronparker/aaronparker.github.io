@@ -19,7 +19,7 @@ tags:
   Note, this post is now out of date; for an Adobe Reader 9 version of this post, go <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">here</a>.
 </p>
 
-<img src="http://stealthpuppy.com/wp-content/uploads/2008/02/adobereader.png" alt="adobereader.png" align="left" /> Deployment of Adobe Reader in an enterprise environment has been much simplified since version 6, however there is still some important preparation before you think about deploying version 8. Adobe have compiled information on enterprise deployment which are available on the following pages &#8211; I prefer the developer page over the page aimed at IT professionals because it has more information and is a little easier to read:
+<img src="http://stealthpuppy.com/wp-content/uploads/2008/02/adobereader.png" alt="adobereader.png" align="left" /> Deployment of Adobe Reader in an enterprise environment has been much simplified since version 6, however there is still some important preparation before you think about deploying version 8. Adobe have compiled information on enterprise deployment which are available on the following pages - I prefer the developer page over the page aimed at IT professionals because it has more information and is a little easier to read:
 
   * [Adobe Developer Centre: Enterprise deployment](http://www.adobe.com/devnet/acrobat/enterprise_deployment.html)
   * [Acrobat Solutions for IT professionals: Deploy Adobe Acrobat and Reader](http://www.adobe.com/products/acrobat/solutions/it/index.html)
@@ -86,31 +86,31 @@ Hide menu items:
 //Hides "File" on main toolbar  
 //app.hideMenuItem("File");
 
-//Hides File &#8211; Open  
+//Hides File - Open  
 app.hideMenuItem("Open");
 
-//Hides File &#8211; Attach to email  
+//Hides File - Attach to email  
 app.hideMenuItem("AcroSendMail:SendMail");
 
-//Hides Edit &#8211; Check Spelling  
+//Hides Edit - Check Spelling  
 app.hideMenuItem("Spelling:Spelling");
 
-//Hides Edit &#8211; Preferences  
+//Hides Edit - Preferences  
 app.hideMenuItem("GeneralPrefs");
 
-//Hides View &#8211; Menu Bar  
+//Hides View - Menu Bar  
 app.hideMenuItem("ShowHideMenuBar");
 
-//Hides View &#8211; Toolbars  
+//Hides View - Toolbars  
 app.hideMenuItem("Toolbars");
 
-//Hides View &#8211; Navigation Panels  
+//Hides View - Navigation Panels  
 app.hideMenuItem("Navigation");
 
-//Hides View &#8211; Automatically Scroll  
+//Hides View - Automatically Scroll  
 app.hideMenuItem("AutoScroll");
 
-//Hides View &#8211; Read Out Loud  
+//Hides View - Read Out Loud  
 app.hideMenuItem("ReadAloud");
 
 //Hides "Document" on main toolbar  
@@ -119,45 +119,45 @@ app.hideMenuItem("Document");
 //Hides "Tools" on main toolbar  
 //app.hideMenuItem("Tools");
 
-//Hides Tools &#8211; Object Data  
+//Hides Tools - Object Data  
 app.hideMenuItem("DataToolsItem");
 
-//Hides Tools &#8211; Customize Toolbars  
+//Hides Tools - Customize Toolbars  
 app.hideMenuItem("CustomizeToolbars");
 
-//Hides Help &#8211; Beyond Adobe Reader  
+//Hides Help - Beyond Adobe Reader  
 app.hideMenuItem("GettingStarted");
 
-//Hides Help &#8211; How to  
+//Hides Help - How to  
 app.hideMenuItem("HelpHowTo");
 
-//Help &#8211; Online Support  
+//Help - Online Support  
 app.hideMenuItem("OnlineSupport");
 
-//Hides Help &#8211; Online Support &#8211; Knowledge Base  
+//Hides Help - Online Support - Knowledge Base  
 //app.hideMenuItem("KnowledgeBase");
 
-//Hides Help &#8211; Online Support &#8211; Adobe Support Programs  
+//Hides Help - Online Support - Adobe Support Programs  
 //app.hideMenuItem("AdobeExpertSupport");
 
-//Hides Help &#8211; Online Support &#8211; Accessibility Resource Center  
+//Hides Help - Online Support - Accessibility Resource Center  
 //app.hideMenuItem("AccessOnline");
 
-//Hides Help &#8211; Online Support &#8211; Generate System Report  
+//Hides Help - Online Support - Generate System Report  
 //app.hideMenuItem("SystemInformation");
 
-//Hides Help &#8211; Repair Adobe Reader Installation  
+//Hides Help - Repair Adobe Reader Installation  
 app.hideMenuItem("DetectAndRepair");
 
-//Hides Help &#8211; Purchase Adobe Acrobat  
+//Hides Help - Purchase Adobe Acrobat  
 //app.hideMenuItem("BuyAcro");
 
-//Hides View &#8211; Read Out Loud (Great for Terminal Server)  
+//Hides View - Read Out Loud (Great for Terminal Server)  
 //app.hideMenuItem("ReadLoud");[/code]
 
 ### Deployment Methods
 
-Most medium to large enterprises will have some sort of application deployment tool already in place, therefore deployment for these organisations should be fairly straight-forward &#8211; extract the setup files, create a transform and deploy. Adobe has some fairly straight forward documentation on deploying Adobe Reader via different deployment tools:
+Most medium to large enterprises will have some sort of application deployment tool already in place, therefore deployment for these organisations should be fairly straight-forward - extract the setup files, create a transform and deploy. Adobe has some fairly straight forward documentation on deploying Adobe Reader via different deployment tools:
 
   * [Group Policy and Active Directory](http://www.adobe.com/devnet/acrobat/pdfs/gpo_ad_8.pdf); and
   * [Systems Management Server](http://www.adobe.com/devnet/acrobat/pdfs/sms_8.pdf) (now System Centre Configuration Manager).
@@ -168,4 +168,4 @@ Any organisation utilising Group Policy for application deployment may find thin
   * [Windows Terminal Server](http://www.adobe.com/devnet/acrobat/pdfs/wts_8.pdf); and
   * [Citrix Presentation Server](http://www.adobe.com/devnet/acrobat/pdfs/wts_8.pdf) 
 
-Why two documents are required for Terminal Server and Presentation Server, I don&#8217;t know &#8211; deployment is exactly the same. If you are deploying via a script, I have details on scripting the installation of Adobe Reader 8.x &#8211; [Unattended Install: Adobe Reader 8.x](http://stealthpuppy.com/unattended/unattended-install-adobe-reader-8x).
+Why two documents are required for Terminal Server and Presentation Server, I don&#8217;t know - deployment is exactly the same. If you are deploying via a script, I have details on scripting the installation of Adobe Reader 8.x - [Unattended Install: Adobe Reader 8.x](http://stealthpuppy.com/unattended/unattended-install-adobe-reader-8x).

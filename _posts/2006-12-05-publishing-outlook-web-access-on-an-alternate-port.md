@@ -12,7 +12,7 @@ tags:
   - ISA Server
   - Outlook-Web-Access
 ---
-<img align="left" src="http://stealthpuppy.com/wp-content/uploads/2006/12/exchange.png" />We recently had client with a requirement to provide Outlook Web Access and Exchange over the Internet/Outlook Anywhere (RPC over HTTPS) access using a single IP address on ISA Server. The problem with making both of these services available on a single IP address is that both utilise HTTPS which by default is TCP 443. RPC over HTTPS with Outlook can&#8217;t use an alternate port &#8211; if you attempt to specify and alternate port Outlook UI you receive the following error:
+<img align="left" src="http://stealthpuppy.com/wp-content/uploads/2006/12/exchange.png" />We recently had client with a requirement to provide Outlook Web Access and Exchange over the Internet/Outlook Anywhere (RPC over HTTPS) access using a single IP address on ISA Server. The problem with making both of these services available on a single IP address is that both utilise HTTPS which by default is TCP 443. RPC over HTTPS with Outlook can&#8217;t use an alternate port - if you attempt to specify and alternate port Outlook UI you receive the following error:
 
 <font face="courier new,courier">The proxy server you have specified is invalid. Correct it and try again.</font>
 

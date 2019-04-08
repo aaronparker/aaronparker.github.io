@@ -1,6 +1,6 @@
 ---
 id: 2920
-title: 'Hands off my gold image &#8211; The Task Sequence'
+title: 'Hands off my gold image - The Task Sequence'
 date: 2012-11-15T16:30:45+10:00
 author: Aaron Parker
 layout: post
@@ -30,7 +30,7 @@ To create a new task sequence, use the MDT Deployment Workbench, navigate to Tas
 
   1. Set a unique ID and task sequence name
   2. Use the Standard Server Task Sequence as the template
-  3. Select the operating system &#8211; in this case Windows Server 2008 R2 SP1. I usually recommend deploying Standard Edition
+  3. Select the operating system - in this case Windows Server 2008 R2 SP1. I usually recommend deploying Standard Edition
   4. Specify settings such as a product key, name, organisation and IE home page and local administrator password
   5. Customise the task sequence and unattend.xml to automate the deployment of Windows Server, XenApp and applications
 
@@ -85,6 +85,6 @@ The included unattend.xml has configuration items applied to two [configuration 
 
 Together the task sequence and unattend.xml create what should be a fairly clean (and importantly, repeatable) deployment of a XenApp server.
 
-In the last article of this series, I&#8217;ll discuss some of the included scripts, but as always, if you&#8217;d like to ask some specific questions, email me &#8211; aaron (at) stealthpuppy.com.
+In the last article of this series, I&#8217;ll discuss some of the included scripts, but as always, if you&#8217;d like to ask some specific questions, email me - aaron (at) stealthpuppy.com.
 
 Next up: [Hands off my gold image – The Scripts](http://stealthpuppy.com/deployment/hands-off-my-gold-image-the-scripts/)

@@ -23,7 +23,7 @@ The Short NAP is a (semi-regular) quick list of Microsoft Network Access Protect
     Jeff Sigman&#8217;s presention on NAP in Windows Server 2008 Beta 3
   * [TechEd 2007 AU and NZ Server Track: Changes](http://blogs.technet.com/mkleef/archive/2007/05/21/teched-2007-au-and-nz-server-track-changes.aspx)  
     Details on a NAP and SCCM 2007 session at TechNet AU/NZ still to come
-  * [Download troubles of the NAP on XP Client &#8211; UPDATE!](http://blogs.technet.com/nap/archive/2007/05/18/download-troubles-of-the-nap-on-xp-client-update.aspx)  
+  * [Download troubles of the NAP on XP Client - UPDATE!](http://blogs.technet.com/nap/archive/2007/05/18/download-troubles-of-the-nap-on-xp-client-update.aspx)  
     The NAP client for Windows XP Service Pack 2 is available for download, again.
   * [Juniper Networks and Microsoft Announce Unified Access Control and Network Access Protection to Interoperate](https://www.junipernetworks.com/company/presscenter/pr/2007/pr-070521a.html)  
     Juniper Networks press release on how they intend to interoperate with NAP

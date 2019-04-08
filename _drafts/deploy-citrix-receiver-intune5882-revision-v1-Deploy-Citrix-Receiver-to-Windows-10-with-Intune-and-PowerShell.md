@@ -7,13 +7,13 @@ layout: revision
 guid: https://stealthpuppy.com/5882-revision-v1/
 permalink: /5882-revision-v1/
 ---
-If you&#8217;ve deployed Windows 10 Modern Management you&#8217;ll know that some applications present a challenge for deployment, because Windows 10 MDM supports the Win32 applications via a single MSI file only. Applications such as Citrix Receiver, that are a single EXE (that wraps multiple MSI files), can, therefore, be challenging. You can [create a custom wrapper to deploy Receiver](https://configmgrblog.com/2017/08/29/how-to-deploy-the-citrix-receiver-for-windows-10-via-microsoft-intune/), but this requires a packaging tool and some specific knowledge on how to package applications.
+If you've deployed Windows 10 Modern Management you'll know that some applications present a challenge for deployment, because Windows 10 MDM supports the Win32 applications via a single MSI file only. Applications such as Citrix Receiver, that are a single EXE (that wraps multiple MSI files), can, therefore, be challenging. You can [create a custom wrapper to deploy Receiver](https://configmgrblog.com/2017/08/29/how-to-deploy-the-citrix-receiver-for-windows-10-via-microsoft-intune/), but this requires a packaging tool and some specific knowledge on how to package applications.
 
 Microsoft Intune now [supports deploying PowerShell scripts](https://docs.microsoft.com/en-us/intune/intune-management-extension) to Windows 10 machines, which can provide a more flexible framework for deploying complex applications. For Citrix Reciever, we can use this approach to target Windows 10 PCs for downloading the latest version of Receiver directly from Citrix and [install it with any required command line options](https://docs.citrix.com/en-us/receiver/windows/current-release/install/cfg-command-line.html). This ensures that devices always install the latest version and the Intune administrator only ever has to create a single deployment option via a PowerShell script.
 
 # Citrix Receiver for Windows vs.&nbsp;Citrix Receiver for Windows (Store)
 
-In December 2017, Citrix made available an updated Receiver via the Windows Store that is not a true Universal Windows Platform app, instead, it&#8217;s the Win32 Receiver converted to a Store app via the [Desktop Bridge](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root). Deploying this version via Microsoft Intune only requires that you subscribe to the app via the [Microsoft Store for Business](https://businessstore.microsoft.com/), sync with Intune and then target that version for deployment via Intune.
+In December 2017, Citrix made available an updated Receiver via the Windows Store that is not a true Universal Windows Platform app, instead, it's the Win32 Receiver converted to a Store app via the [Desktop Bridge](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root). Deploying this version via Microsoft Intune only requires that you subscribe to the app via the [Microsoft Store for Business](https://businessstore.microsoft.com/), sync with Intune and then target that version for deployment via Intune.
 
 The Citrix Receiver for Windows Store version does have [a number of limitations or unsupported features](https://docs.citrix.com/en-us/receiver/windows-store/current-release/known-issues.html), primarily due to restrictions on apps deployed from the Store. These are:
 
@@ -40,7 +40,7 @@ If you can work without the features above, then use the Store version instead o
 
 # Installing Citrix Receiver
 
-Here&#8217;s a simple script to detect whether Receiver is installed and if not, download and install Receiver using a specific set of command line options.
+Here's a simple script to detect whether Receiver is installed and if not, download and install Receiver using a specific set of command line options.
 
 
 
@@ -58,7 +58,7 @@ Assign the script to an Azure AD group for target users or devices. Your script 
 
 <figure id="attachment_5886" aria-describedby="caption-attachment-5886" style="width: 1440px" class="wp-caption aligncenter">[<img class="size-full wp-image-5886" src="https://stealthpuppy.com/wp-content/uploads/2017/12/All-Scripts.png" alt="Install-CitrixReceiver.ps1 along side other PowerShell scripts" width="1440" height="826" srcset="https://stealthpuppy.com/wp-content/uploads/2017/12/All-Scripts.png 1440w, https://stealthpuppy.com/wp-content/uploads/2017/12/All-Scripts-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/12/All-Scripts-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/12/All-Scripts-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/12/All-Scripts-1024x587.png 1024w" sizes="(max-width: 1440px) 100vw, 1440px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/All-Scripts.png)<figcaption id="caption-attachment-5886" class="wp-caption-text">Install-CitrixReceiver.ps1 alongside other PowerShell scripts</figcaption></figure>
 
-Once deployed, we can track successful installations in the Overview blade.&nbsp;Note that the script will only run once per target device &#8211; it should be unlikely that the device will receive the script and have it fail (e.g. fail to download the CitrixReceiver.exe), but there could be edge cases where installation fails as a result of some very specific circumstances.
+Once deployed, we can track successful installations in the Overview blade.&nbsp;Note that the script will only run once per target device - it should be unlikely that the device will receive the script and have it fail (e.g. fail to download the CitrixReceiver.exe), but there could be edge cases where installation fails as a result of some very specific circumstances.
 
 <figure id="attachment_5887" aria-describedby="caption-attachment-5887" style="width: 1440px" class="wp-caption aligncenter">[<img class="size-full wp-image-5887" src="https://stealthpuppy.com/wp-content/uploads/2017/12/Script-Overview.png" alt="Citrix Receiver deployment overview" width="1440" height="826" srcset="https://stealthpuppy.com/wp-content/uploads/2017/12/Script-Overview.png 1440w, https://stealthpuppy.com/wp-content/uploads/2017/12/Script-Overview-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/12/Script-Overview-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/12/Script-Overview-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/12/Script-Overview-1024x587.png 1024w" sizes="(max-width: 1440px) 100vw, 1440px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/Script-Overview.png)<figcaption id="caption-attachment-5887" class="wp-caption-text">Citrix Receiver deployment overview</figcaption></figure>
 

@@ -57,7 +57,7 @@ This method provides some flexibility to enable a controlled deployment or insta
 
 # Deploying the Drive Mapper client
 
-To deploy the Drive Mapper client is very simple &#8211; no customisation of the installer should be required, unless you want to change the default installation path. Download the [Drive Mapper client in EXE or MSI](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/sharefile-drive-mapper.html) format. An installation guide can be found in article&nbsp;[CTX207791](http://support.citrix.com/article/CTX207791).
+To deploy the Drive Mapper client is very simple - no customisation of the installer should be required, unless you want to change the default installation path. Download the [Drive Mapper client in EXE or MSI](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/sharefile-drive-mapper.html) format. An installation guide can be found in article&nbsp;[CTX207791](http://support.citrix.com/article/CTX207791).
 
 I&#8217;ve been able to deploy the client via MDM-enrolled Windows 10 machines using the Windows Installer deployment option. The particular environment is using Windows 10 joined to Azure AD with SSO enabled for ShareFile, which flows through to the Drive Mapper and ShareFile Outlook plug-in.
 

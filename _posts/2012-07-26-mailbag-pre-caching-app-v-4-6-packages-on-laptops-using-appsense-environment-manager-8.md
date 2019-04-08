@@ -1,6 +1,6 @@
 ---
 id: 2795
-title: 'Mailbag &#8211; Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8'
+title: 'Mailbag - Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8'
 date: 2012-07-26T22:46:47+10:00
 author: Aaron Parker
 layout: post
@@ -20,14 +20,14 @@ tags:
 ---
 <img class="size-full wp-image-2631 alignnone" title="Mail Bag" src="http://stealthpuppy.com/wp-content/uploads/2012/02/Mail-Bag.png" alt="Mail Bag" width="128" height="128" />
 
-[Rory](https://twitter.com/Rorymon) [asks via Twitter](https://twitter.com/Rorymon/status/228536440403931136) &#8211; can we pre-cache App-V packages on laptop clients so that all applications are available offline, using [AppSense Environment Manager](http://www.appsense.com/policy-and-governance)?:
+[Rory](https://twitter.com/Rorymon) [asks via Twitter](https://twitter.com/Rorymon/status/228536440403931136) - can we pre-cache App-V packages on laptop clients so that all applications are available offline, using [AppSense Environment Manager](http://www.appsense.com/policy-and-governance)?:
 
 <p style="text-align: center;">
   <img class="size-full wp-image-2796 aligncenter" title="Rory Asks" src="http://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks.png" alt="Rory Asks" width="519" height="138" srcset="https://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks.png 519w, https://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks-150x39.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks-300x79.png 300w" sizes="(max-width: 519px) 100vw, 519px" />
 </p>
 
 <p style="text-align: left;">
-  As with many solutions in Environment Manager, there&#8217;s probably a number of ways to achieve this &#8211; here&#8217;s just one.
+  As with many solutions in Environment Manager, there&#8217;s probably a number of ways to achieve this - here&#8217;s just one.
 </p>
 
 # The Logic
@@ -41,7 +41,7 @@ tags:
   * How to cache all of the packages to the client?
   * We&#8217;ll most likely also need to ensure that the pre-caching doesn&#8217;t run too often or doesn&#8217;t run over a VPN connection
 
-Determining whether the local machine is a laptop is quite simple, but we&#8217;ll need to resort to some custom code to that. Fortunately we don&#8217;t need to re-invent the wheel &#8211; we can use this code by [Rob van der Woude](http://www.robvanderwoude.com/) that [uses WMI to look for a battery](http://www.robvanderwoude.com/vbstech_inventory_laptop.php):
+Determining whether the local machine is a laptop is quite simple, but we&#8217;ll need to resort to some custom code to that. Fortunately we don&#8217;t need to re-invent the wheel - we can use this code by [Rob van der Woude](http://www.robvanderwoude.com/) that [uses WMI to look for a battery](http://www.robvanderwoude.com/vbstech_inventory_laptop.php):
 
 [code language=&#8221;vb&#8221;]If IsLaptop( "." ) Then  
 &#8216; WScript.Echo "Laptop"  
@@ -71,9 +71,9 @@ End Function[/code]
 
 Add this to a **Reusable Condition** (or even an inline condition if you&#8217;d like) that includes this code as a Custom Condition. Make sure to set the Custom Condition **Type** to VBscript and enable &#8216;Evaluate Once Per Session&#8217; and &#8216;Run As System User&#8217;.
 
-Next up, you may want determine whether the client can contact the streaming source (what ever that is &#8211; App-V Management Server, App-V Streaming Server, HTTP or even a UNC path).  You could use native **Computer IP Address** condition and make the assumption that the remote host is available because the client is located in a known network, or [ping the remote host using PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2012/02/24/use-powershell-to-test-connectivity-on-remote-servers.aspx) in a **Custom Condition**. Alternatively an Active Directory Site Membership might suffice, however this may require listing all of your AD sites which isn&#8217;t ideal.
+Next up, you may want determine whether the client can contact the streaming source (what ever that is - App-V Management Server, App-V Streaming Server, HTTP or even a UNC path).  You could use native **Computer IP Address** condition and make the assumption that the remote host is available because the client is located in a known network, or [ping the remote host using PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2012/02/24/use-powershell-to-test-connectivity-on-remote-servers.aspx) in a **Custom Condition**. Alternatively an Active Directory Site Membership might suffice, however this may require listing all of your AD sites which isn&#8217;t ideal.
 
-For a Computer IP Address condition, choose Condition / Computer / Computer IP Address and configure the required IP range. Ensure that &#8216;Evaluate Once Per Session&#8217; is **disabled** &#8211; because the client IP address may change during a single session. Repeat this for multiple IP ranges.
+For a Computer IP Address condition, choose Condition / Computer / Computer IP Address and configure the required IP range. Ensure that &#8216;Evaluate Once Per Session&#8217; is **disabled** - because the client IP address may change during a single session. Repeat this for multiple IP ranges.
 
 To use a PowerShell script instead, create a Custom Condition, set the **Type** to PowerShell, _disable_ &#8216;Evaluate Once Per Session&#8217; and set &#8216;Run As System User&#8217;.
 
@@ -101,9 +101,9 @@ If you are publishing packages to users, configure this action to run in the cur
 
 To put this into action, we&#8217;ll need to think about when to run the SFTTRAY command. User Logon might be an obvious choice, but this could potentially slow down the logon process; however we do need run the action not long after logon because we can&#8217;t run it before the user disconnects the machine or logs off (running the action at logoff, would delay logoff). There are a number of ways we can run the SFTTRAY action:
 
-  * At User Process Started for _%ProgramFiles%\Microsoft Application Virtualization Client\sftdcc.exe_ launches &#8211; this will run at logon, but the logon process should be mostly complete by this time
-  * At Network Connected &#8211; we have an opportunity to cache packages when connecting back to the corporate network if the laptop is resuming from sleep mode
-  * Session Locked &#8211; this is a great time to cache packages because the user is not interacting with the desktop
+  * At User Process Started for _%ProgramFiles%\Microsoft Application Virtualization Client\sftdcc.exe_ launches - this will run at logon, but the logon process should be mostly complete by this time
+  * At Network Connected - we have an opportunity to cache packages when connecting back to the corporate network if the laptop is resuming from sleep mode
+  * Session Locked - this is a great time to cache packages because the user is not interacting with the desktop
 
 I&#8217;ve included a sample configuration below that uses each of these approaches by applying the logic in a Reusable Node linked to each of the triggers listed above.
 

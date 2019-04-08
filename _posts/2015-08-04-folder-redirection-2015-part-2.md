@@ -40,7 +40,7 @@ The results from the tests with Windows Server 2012 R2 on the file server shows 
 
 ## Looking at the Impact of Anti-Virus
 
-Running the same test with Windows Server 2012 R2, but this time with one of the major anti-virus products installed on the file server. This was installed with all of the default settings. This test shows a very interesting result when compared against the previous test &#8211; the chart below displays the same results as the previous test with the results from a testing run with AV:
+Running the same test with Windows Server 2012 R2, but this time with one of the major anti-virus products installed on the file server. This was installed with all of the default settings. This test shows a very interesting result when compared against the previous test - the chart below displays the same results as the previous test with the results from a testing run with AV:
 
 <figure id="attachment_4027" aria-describedby="caption-attachment-4027" style="width: 912px" class="wp-caption alignnone">[<img class="size-full wp-image-4027" src="http://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV.png" alt="Anti-Virus Has a Large Impact on CPU" width="912" height="461" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV.png 912w, https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV-150x76.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV-300x152.png 300w" sizes="(max-width: 912px) 100vw, 912px" />](http://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV.png)<figcaption id="caption-attachment-4027" class="wp-caption-text">Anti-Virus Has a Large Impact on CPU</figcaption></figure>
 
@@ -54,7 +54,7 @@ There might be additional tweaking that may improve performance; however given t
 
 ## File Server Capacity Tool Disk Performance
 
-The FSCT workloads show some interesting results in regards to disk performance. First up is a correlation between high IO and high CPU &#8211; the more blocks generated on the storage (i.e. more blocks that are read or written from and to the file server, requires the file server to process it).
+The FSCT workloads show some interesting results in regards to disk performance. First up is a correlation between high IO and high CPU - the more blocks generated on the storage (i.e. more blocks that are read or written from and to the file server, requires the file server to process it).
 
 In the result below, we can see that when the IO peaks at near 2500 IOPS, the CPU makes a big jump as well:
 

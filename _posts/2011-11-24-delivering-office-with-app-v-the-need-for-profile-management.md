@@ -1,6 +1,6 @@
 ---
 id: 2542
-title: 'Delivering Office with App-V &#8211; The Need for Profile Management'
+title: 'Delivering Office with App-V - The Need for Profile Management'
 date: 2011-11-24T09:16:00+10:00
 author: Aaron Parker
 layout: post

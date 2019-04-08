@@ -14,7 +14,7 @@ This is a great article discussing the features of ISA Server as a layer 7 firew
 **The Industry Insiders: Securing the network using Microsoft ISA Server 2004**  
 <http://blogs.technet.com/industry_insiders/articles/404588.aspx>
 
-Whilst on the subject of layer 7 &#8211; here&#8217;s why outbound HTTP/S should be authenticated (and users should not have admin access to their workstations)- _HTTP Tunnels_:
+Whilst on the subject of layer 7 - here&#8217;s why outbound HTTP/S should be authenticated (and users should not have admin access to their workstations)- _HTTP Tunnels_:
 
 [HTTP Tunnel](http://www.http-tunnel.com/)Â  (I think this one is particularly insidious, because they sell it as a &#8220;service&#8221;, lets hope the CEO does&#8217;nt stumble across this site)  
 [Zebedee](http://www.winton.org.uk/zebedee/)

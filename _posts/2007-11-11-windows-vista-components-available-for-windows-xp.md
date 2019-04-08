@@ -13,7 +13,7 @@ categories:
 tags:
   - Windows-Vista
 ---
-Here&#8217;s a list of components developed for Windows Vista or during the same development time frame and included in Windows Vista, that have also been made available for installation on Windows XP:
+Here's a list of components developed for Windows Vista or during the same development time frame and included in Windows Vista, that have also been made available for installation on Windows XP:
 
 <table border="1" cellspacing="0" cellpadding="2" width="600">
   <tr>

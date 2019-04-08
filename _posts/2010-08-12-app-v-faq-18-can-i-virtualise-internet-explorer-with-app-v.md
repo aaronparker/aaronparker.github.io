@@ -36,7 +36,7 @@ tags:
 
 No, unfortunately you cannot use App-V to virtualise Internet Explorer today. Other application virtualisation solutions such as [VMware ThinApp](http://blogs.vmware.com/thinapp/2010/06/internet-explorer-6on-windows-7.html), [Symantec Workspace Virtualization](http://www.symantec.com/connect/articles/running-ie6-ie7-and-ie8-side-side-using-symantec-workspace-virtualization), and [InstallFree Bridge](http://www.installfree.com/solutions/virtual-internet-explorer/) can virtualise Internet Explorer, so why can’t App-V?
 
-There’s no technical reason why App-V can’t virtualise Internet Explorer; however at this time Microsoft’s stance on running multiple versions of Internet Explorer on a single operating system is preventing this from becoming a reality &#8211; [Running Multiple Versions of Internet Explorer On Single Operating System is Unsupported](http://support.microsoft.com/kb/2020599).
+There’s no technical reason why App-V can’t virtualise Internet Explorer; however at this time Microsoft’s stance on running multiple versions of Internet Explorer on a single operating system is preventing this from becoming a reality - [Running Multiple Versions of Internet Explorer On Single Operating System is Unsupported](http://support.microsoft.com/kb/2020599).
 
 ### Microsoft’s recommend solutions
 
@@ -74,4 +74,4 @@ Although you cannot deliver older versions of Internet Explorer with App-V, Micr
 
 ### Resources
 
-  * [Addressing Application Compatibility When Migrating to Internet Explorer 8 &#8211; Information for Corporate Developers](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=60017d66-4da9-4455-a092-7c7253559a8e&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+MicrosoftDownloadCenter+(Microsoft+Download+Center)#tm)
+  * [Addressing Application Compatibility When Migrating to Internet Explorer 8 - Information for Corporate Developers](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=60017d66-4da9-4455-a092-7c7253559a8e&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+MicrosoftDownloadCenter+(Microsoft+Download+Center)#tm)

@@ -36,8 +36,8 @@ Adding a registry key is very simple â€“ you can manually specify a registr
 
 What makes Registry Extension compelling are the extra features it packs because it includes a client side agent:
 
-  * Treating settings as a preference &#8211; rather than enforce settings it will only touch the registry key once;
-  * Removes settings when they no longer apply, just like managed settings &#8211; no more tattooing the registry;
+  * Treating settings as a preference - rather than enforce settings it will only touch the registry key once;
+  * Removes settings when they no longer apply, just like managed settings - no more tattooing the registry;
   * You can apply filters to settings so that action is only taken if the filter is matched.
 
 Filters add a lot of flexibility to your application of registry settings and as you see from this screenshot there are 29 items to filter on. You can also build filter queries using the AND/OR operators.

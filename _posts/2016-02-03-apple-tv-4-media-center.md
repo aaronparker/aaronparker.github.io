@@ -26,11 +26,11 @@ Going back many years, my initial foray into a media centre was Windows XP Media
 
 Through that time, I&#8217;ve fought an ever frustrating battle with simplifying the way that we watch TV and movies (and to a lesser extend listen to audio).
 
-I&#8217;ve had a Samsung smart TV since 2012; however from a usability perspective, it hasn&#8217;t held up when compared to newer devices. Our Sony Blu-ray player has &#8220;smart TV&#8221; functionality built into it as well, but this suffers from the same problems as the TV &#8211; slow to operate (although better than the TV) and a clunky interface, and I suspect a platform that&#8217;s effectively abandoned.
+I&#8217;ve had a Samsung smart TV since 2012; however from a usability perspective, it hasn&#8217;t held up when compared to newer devices. Our Sony Blu-ray player has &#8220;smart TV&#8221; functionality built into it as well, but this suffers from the same problems as the TV - slow to operate (although better than the TV) and a clunky interface, and I suspect a platform that&#8217;s effectively abandoned.
 
 Both of these devices will stream TV and other streaming media solution, as well as from a NAS. They play various media types, but both choke on certain types of encoded video and just refuse to play or recognise others.
 
-Finally, we don&#8217;t have our TV connected to the terrestrial aerial &#8211; it&#8217;s on the other side of the room and I couldn&#8217;t be bothered with attempting to get a coax cable through the wall. So, free-to-air TV is streamed via the TV or Blu-ray player
+Finally, we don&#8217;t have our TV connected to the terrestrial aerial - it&#8217;s on the other side of the room and I couldn&#8217;t be bothered with attempting to get a coax cable through the wall. So, free-to-air TV is streamed via the TV or Blu-ray player
 
 ## Apple TV 3
 
@@ -64,10 +64,10 @@ The setup process was quite simple and I was up and running within a few minutes
 
 Today, we have a number of sources for video content that we typically watch on a large screen:
 
-  * **Netflix** &#8211; we&#8217;ve subscribed to Netflix for several years now and some of the Netflix Originals shows are great, e.g. Bloodline, Daredevil; however the content available in Australia isn&#8217;t as broad as it is in the US and the UK. The usability of Netflix app was better on the previous Apple TV, so I&#8217;m hoping this improves over time.
-  * **iTunes** &#8211; I still prefer Blu-ray media, but online sources such as iTunes, makes it simple to find new movies. If you&#8217;ve got young kids, the ability to watch something brand new at short notice, if you can&#8217;t stand watching Frozen for the 103rd time, is just fantastic. We also use iTunes to rent movies.
-  * **Local video files** &#8211; video ripped from DVD or downloaded via BitTorrent or other sources and stored on a NAS device
-  * **Standard TV channels** &#8211; we don&#8217;t watch free-to-air TV often, but the [ABC](http://iview.abc.net.au/) (similar to the BBC or PBS) has great content for kids. The ABC iView app isn&#8217;t available for the Apple TV 4 yet, so this is the last app I&#8217;m waiting on to complete the media centre experience.
+  * **Netflix** - we&#8217;ve subscribed to Netflix for several years now and some of the Netflix Originals shows are great, e.g. Bloodline, Daredevil; however the content available in Australia isn&#8217;t as broad as it is in the US and the UK. The usability of Netflix app was better on the previous Apple TV, so I&#8217;m hoping this improves over time.
+  * **iTunes** - I still prefer Blu-ray media, but online sources such as iTunes, makes it simple to find new movies. If you&#8217;ve got young kids, the ability to watch something brand new at short notice, if you can&#8217;t stand watching Frozen for the 103rd time, is just fantastic. We also use iTunes to rent movies.
+  * **Local video files** - video ripped from DVD or downloaded via BitTorrent or other sources and stored on a NAS device
+  * **Standard TV channels** - we don&#8217;t watch free-to-air TV often, but the [ABC](http://iview.abc.net.au/) (similar to the BBC or PBS) has great content for kids. The ABC iView app isn&#8217;t available for the Apple TV 4 yet, so this is the last app I&#8217;m waiting on to complete the media centre experience.
 
 Most of the sources above are possible on the previous Apple TV; however local video sources wasn&#8217;t possible unless you used AirPlay. Now that the native platform has improved, apps such as [Infuse](http://firecore.com/infuse) or Plex make this possible natively.
 
@@ -79,14 +79,14 @@ Things might be different in 18 months to 2 years and 4K TV will have then also
 
 # Power Consumption
 
-The Apple TV 4 is an _extremely_ low power device &#8211; one key decision for sticking with the Apple TV is the low power consumption both on stand-by and under load . I measured power consumption under various uses which shows impressive power draw:
+The Apple TV 4 is an _extremely_ low power device - one key decision for sticking with the Apple TV is the low power consumption both on stand-by and under load . I measured power consumption under various uses which shows impressive power draw:
 
-  * Home screen, no movement &#8211; 1.7 watts
-  * Home screen, navigating &#8211; 2.6 watts
-  * Netflix, streaming live action 1080p movie &#8211; 2.2 watts
-  * iTunes, streaming animated 1080p movie &#8211; 1.8 watts
-  * iTunes, streaming live action 1080p movie &#8211; 2.2 watts
-  * Infuse, streaming live action 1080p movie &#8211; 2.7 watts (the Synology DS212j that I&#8217;m streaming from pulls about 13.5 watts under normal load)
+  * Home screen, no movement - 1.7 watts
+  * Home screen, navigating - 2.6 watts
+  * Netflix, streaming live action 1080p movie - 2.2 watts
+  * iTunes, streaming animated 1080p movie - 1.8 watts
+  * iTunes, streaming live action 1080p movie - 2.2 watts
+  * Infuse, streaming live action 1080p movie - 2.7 watts (the Synology DS212j that I&#8217;m streaming from pulls about 13.5 watts under normal load)
 
 [Ars Technica has a comparison table in their review of the Apple TV 4](http://arstechnica.com/apple/2015/11/new-apple-tv-wants-to-be-more-than-just-a-streaming-box-but-it-isnt-yet/2/) from November 2015.
 
@@ -122,7 +122,7 @@ Even though the App Store is still light, I&#8217;m unlikely to use the Apple TV
 
 When it comes time to look at a new TV (probably with 4K support) any smart TV features will be superfluous. I need a large, high quality monitor, rather than a TV.
 
-Although there are cheaper (and potentially more capable devices such as the [Roku 4](https://www.roku.com/products/roku-4)), the new Apple TV was a known quantity for me, so as an existing Apple user it&#8217;s an obvious choice. The only down side that I can see at this stage is the cost &#8211; this is not a cheap device, especially considering that the previous model was under $100US/£100. It does more, includes local storage and has an App Store, so depending on your requirements, the cost may not be an issue.
+Although there are cheaper (and potentially more capable devices such as the [Roku 4](https://www.roku.com/products/roku-4)), the new Apple TV was a known quantity for me, so as an existing Apple user it&#8217;s an obvious choice. The only down side that I can see at this stage is the cost - this is not a cheap device, especially considering that the previous model was under $100US/£100. It does more, includes local storage and has an App Store, so depending on your requirements, the cost may not be an issue.
 
 ## Other Uses
 
@@ -130,4 +130,4 @@ With AirPlay, the previous Apple TV models have been useful as remote displays i
 
 An upcoming update to the Apple TV&#8217;s operating system ([tvOS](https://en.wikipedia.org/wiki/TvOS)) will include the ability to connect Bluetooth keyboards. Along with 3rd party apps, the new Apple TV has potential to be a thin-client, much in the same way that [Citrix Receiver works on iOS](http://docs.citrix.com/en-us/receiver/ios/6.html) (the missing piece may be mouse support). It&#8217;s not likely to be used for general thin-client use, but for
 
-So, the new Apple TV could become a more interesting device for conference room type use cases &#8211; it supports remote display of content via AirPlay as it always has plus it could serve a thin-client. With an App Store, I wonder if it&#8217;s possible for an app to support [Miracast](https://en.wikipedia.org/wiki/Miracast). With this, the Apple TV could also support remote display from Windows and Chromebook devices, making it very flexible indeed.
+So, the new Apple TV could become a more interesting device for conference room type use cases - it supports remote display of content via AirPlay as it always has plus it could serve a thin-client. With an App Store, I wonder if it&#8217;s possible for an app to support [Miracast](https://en.wikipedia.org/wiki/Miracast). With this, the Apple TV could also support remote display from Windows and Chromebook devices, making it very flexible indeed.

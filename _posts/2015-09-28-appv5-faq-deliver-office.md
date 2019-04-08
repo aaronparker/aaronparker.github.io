@@ -21,7 +21,7 @@ Here&#8217;s is a list of articles and resources for delivering the currently s
 
 # General Resources
 
-Note that with Office 2016 and Office 2013, the only supported method for delivering Office with App-V is to use the Office Deployment Tool &#8211; you cannot capture the Windows Installer version of Office 2016 or 2013 with the App-V Sequencer.
+Note that with Office 2016 and Office 2013, the only supported method for delivering Office with App-V is to use the Office Deployment Tool - you cannot capture the Windows Installer version of Office 2016 or 2013 with the App-V Sequencer.
 
 Here are articles that apply to all versions of Office or that have general recommendations for sequencing any version of Office.
 

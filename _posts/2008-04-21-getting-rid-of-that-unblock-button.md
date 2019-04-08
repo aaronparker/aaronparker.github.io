@@ -23,6 +23,6 @@ _User Configuration / Administrative Templates / Windows Components / Attachment
 
 > This policy setting allows you to manage whether Windows marks file attachments with information about their zone of origin (i.e. restricted, Internet, intranet, local). This requires NTFS in order to function correctly, and will fail without notice on FAT32. By not preserving the zone information Windows cannot make proper risk assessments.
 
-A Group Policy refresh or logoff and back on will get this working for you on any _new_ file downloads or copies. This comes with all of the usual warnings about opening stuff downloaded from the Internet &#8211; make sure you know where you got it from is trustworthy and scan it with AV first.
+A Group Policy refresh or logoff and back on will get this working for you on any _new_ file downloads or copies. This comes with all of the usual warnings about opening stuff downloaded from the Internet - make sure you know where you got it from is trustworthy and scan it with AV first.
 
 [Description of how the Attachment Manager works in Windows XP Service Pack 2](http://support.microsoft.com/kb/883260)

@@ -36,10 +36,10 @@ Login VSI was developed to solve the problem of sizing an environment correctly.
 
 The client-side measure launcher can now be used to perform these tests:
 
-  * Character response &#8211; what&#8217;s the response time from pressing a key on the keyboard to that character being displayed on screen
-  * Desktop filling text &#8211; how long does it take to copy text from the local client clipboard and paste that text into a remote application
-  * Mouse click feedback &#8211; how long does it take to register the a mouse click and show that change to the user
-  * Image quality and loading times &#8211; how long does it take for an image to load and what is the resulting quality. This is very interesting because Login VSI can objectively measure the client-side image quality against the original lossless image
+  * Character response - what&#8217;s the response time from pressing a key on the keyboard to that character being displayed on screen
+  * Desktop filling text - how long does it take to copy text from the local client clipboard and paste that text into a remote application
+  * Mouse click feedback - how long does it take to register the a mouse click and show that change to the user
+  * Image quality and loading times - how long does it take for an image to load and what is the resulting quality. This is very interesting because Login VSI can objectively measure the client-side image quality against the original lossless image
 
 # Scenarios
 
@@ -47,14 +47,14 @@ With very little between the performance of the most common remoting protocols o
 
   * Testing access from branch offices across the WAN
   * Branch access can also be tested using WAN simulator such as WANem
-  * Check response time &#8211; what is the real world response time for your typical work loads?
+  * Check response time - what is the real world response time for your typical work loads?
   * Testing without caching enabled on the client for realistic results. Disabling caching enables you to test the raw performance of the remoting protocol
 
 # Additional Points
 
 This is the first release of the Client Side Performance Testing module, so there&#8217;s a few things to consider:
 
-  * Linux clients aren&#8217;t yet available &#8211; the client-side module is Windows only
+  * Linux clients aren&#8217;t yet available - the client-side module is Windows only
   * This first version is aimed at typical office and line-of-business applications. Video and audio testing is planned for the next version and will be able to test audio and video sync
   * A (beta?) release is planned within 2 weeks
   * This module will be included in the Login VSI license

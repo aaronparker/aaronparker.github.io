@@ -16,7 +16,7 @@ categories:
 tags:
   - App-V
 ---
-Some older applications (and perhaps even some newer applications) will prompt for elevation on Windows via User Account Control (UAC) &#8211; this might be a valid request for elevation, but in the case of many older applications it&#8217;s because they expect to run with administrative rights.
+Some older applications (and perhaps even some newer applications) will prompt for elevation on Windows via User Account Control (UAC) - this might be a valid request for elevation, but in the case of many older applications it's because they expect to run with administrative rights.
 
 Virtualizing an application via App-V can help with older applications by virtualizing rights to protected locations in the file system; however an application may still trigger a UAC prompt. It is possible to suppress these prompts and force the application to run with standard user rights.
 

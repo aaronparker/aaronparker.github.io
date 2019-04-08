@@ -16,21 +16,21 @@ tags:
   - Office 365 Container
   - Profile Container
 ---
-I was recently assisting a customer with an FSLogix Profile Container and Office 365 Container evaluation and the subject of concurrent sessions came up. In this article, I&#8217;ll go into a bit of detail on how FSLogix Profile Containers handle concurrent sessions and follow up with an article on Office 365 Container.
+I was recently assisting a customer with an FSLogix Profile Container and Office 365 Container evaluation and the subject of concurrent sessions came up. In this article, I'll go into a bit of detail on how FSLogix Profile Containers handle concurrent sessions and follow up with an article on Office 365 Container.
 
 ## Concurrent Sessions
 
-Let&#8217;s first take a look at what we mean by concurrent sessions. In a virtual desktop environment, whether that be Windows 10 virtual desktops or a multi-session environment built on Windows Server, a concurrent session could be:
+Let's first take a look at what we mean by concurrent sessions. In a virtual desktop environment, whether that be Windows 10 virtual desktops or a multi-session environment built on Windows Server, a concurrent session could be:
 
-  1. A user has multiple sessions on the same machine &#8211; by default, users are restrict to a single session on a server, but this should only been seen under an RDSH session where session sharing hasn&#8217;t kicked in when the user launches two published apps, or may have connected to two session desktops from the same VM. This behaviour is controlled with the policy &#8216;Restrict Remote Desktop Services users to a single Remote Desktop Services session&#8217;.
-  2. A user is logged onto two virtual machines concurrently &#8211; this should be the most common scenario, whereby a user may log onto a virtual or session desktop and then launch a published application from a seperate catalog or silo, or launch multiple published apps concurrently from different machines.
+  1. A user has multiple sessions on the same machine - by default, users are restrict to a single session on a server, but this should only been seen under an RDSH session where session sharing hasn't kicked in when the user launches two published apps, or may have connected to two session desktops from the same VM. This behaviour is controlled with the policy &#8216;Restrict Remote Desktop Services users to a single Remote Desktop Services session'.
+  2. A user is logged onto two virtual machines concurrently - this should be the most common scenario, whereby a user may log onto a virtual or session desktop and then launch a published application from a seperate catalog or silo, or launch multiple published apps concurrently from different machines.
 
 ### User Experience Impacts
 
-When a user encounters this scenario, they&#8217;re not going to know (or care) where their applications are delivered from. They will however, expect a consistent experience across applications and sessions. For the administrator, there&#8217;s several considerations if the application writes preferences into the user profile that need to persist:
+When a user encounters this scenario, they're not going to know (or care) where their applications are delivered from. They will however, expect a consistent experience across applications and sessions. For the administrator, there's several considerations if the application writes preferences into the user profile that need to persist:
 
-  1. If the application doesn&#8217;t require persistence of any kind (perhaps it doesn&#8217;t write anything to the profile), use a temporary or mandatory profile (or similar) and discard the profile at logoff
-  2. If the application doesn&#8217;t require persistence, but it has a dependent application that does, the user session will need the profile settings for that application. At logoff it might be OK to discard that copy of the profile, or we may need to merge it back into the primary copy
+  1. If the application doesn't require persistence of any kind (perhaps it doesn't write anything to the profile), use a temporary or mandatory profile (or similar) and discard the profile at logoff
+  2. If the application doesn't require persistence, but it has a dependent application that does, the user session will need the profile settings for that application. At logoff it might be OK to discard that copy of the profile, or we may need to merge it back into the primary copy
   3. If the application does require persistence, the user session often needs to start with their existing profile and have the profile updated or merged at logoff
 
 All of these require the administrator to have insight into how applications in their environment behave and interact with the user profile. At least someone in the chain of command should be making decisions about the desired user experience and any trade offs between engineering a solution and the effort to do so. For most organisations, user experience wins.
@@ -49,20 +49,20 @@ Restrict Remote Desktop Services users to a single Remote Desktop Services sessi
 
 Profile Container uses the VHD / VHDX format and therefore supports differencing disks. Leveraging this feature, Profile Container supports [Concurrent User Profile Access](https://docs.fslogix.com/display/20170529/Concurrent+User+Profile+Access) in 3 modes:
 
-  1. No support for concurrent sessions &#8211; this is the default. Technically not a concurrency mode, but it&#8217;s worth understanding the default behaviour. This will be the safest configuration that also requires the least amount of storage capacity, because we have only 1 copy of the profile to manage.
-  2. Read / Write &#8211; the agent will attempt to open read / write access to the Profile Container. This configuration redirected writes into a differencing disk on the network (in the same location as the Profile Container and merges the container disks at logoff. 
-  3. Read Only &#8211; the agent will open a local differencing disk where writes are directed to during the user session. This disk is then discarded at logoff, leaving the original profile intact.
-  4. Attempt RW with fall back to RO &#8211; if the agent can&#8217;t get read / write access to the profile it will redirect writes into a local disk that is discarded at logoff
+  1. No support for concurrent sessions - this is the default. Technically not a concurrency mode, but it's worth understanding the default behaviour. This will be the safest configuration that also requires the least amount of storage capacity, because we have only 1 copy of the profile to manage.
+  2. Read / Write - the agent will attempt to open read / write access to the Profile Container. This configuration redirected writes into a differencing disk on the network (in the same location as the Profile Container and merges the container disks at logoff. 
+  3. Read Only - the agent will open a local differencing disk where writes are directed to during the user session. This disk is then discarded at logoff, leaving the original profile intact.
+  4. Attempt RW with fall back to RO - if the agent can't get read / write access to the profile it will redirect writes into a local disk that is discarded at logoff
 
-Let&#8217;s delve into what this looks like. Note that in my simple lab environment, I&#8217;m currently testing on Windows Server 2019.
+Let's delve into what this looks like. Note that in my simple lab environment, I'm currently testing on Windows Server 2019.
 
 ### No Concurrent Access
 
-This is simple, I&#8217;ve deployed Profile Container with configuration via Group Policy and have ensured that concurrent user sessions are disabled and the Profile Type is set to &#8216;Normal direct-access profile&#8217; (i.e. the value is 0).<figure class="wp-block-image">
+This is simple, I've deployed Profile Container with configuration via Group Policy and have ensured that concurrent user sessions are disabled and the Profile Type is set to &#8216;Normal direct-access profile' (i.e. the value is 0).<figure class="wp-block-image">
 
 <img src="https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png" alt="GPO with Concurrent Sessions in Profile Container disabled" class="wp-image-6262" srcset="https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png 1024w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentAccessDisabled-150x70.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentAccessDisabled-300x140.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentAccessDisabled-768x358.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>Concurrent Sessions in Profile Container are disabled by default</figcaption></figure> 
 
-When logging onto the first session, my Profile Container is created if it doesn&#8217;t exist and mounted onto the target machine and my thus profile is available.<figure class="wp-block-image">
+When logging onto the first session, my Profile Container is created if it doesn't exist and mounted onto the target machine and my thus profile is available.<figure class="wp-block-image">
 
 <img src="https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-NoConcurrent-1.png" alt="Folder showing the Profile and Office 365 user containers with a default configuration" class="wp-image-6264" srcset="https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-NoConcurrent-1.png 848w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-NoConcurrent-1-150x69.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-NoConcurrent-1-300x137.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-NoConcurrent-1-768x351.png 768w" sizes="(max-width: 848px) 100vw, 848px" /> <figcaption>Profile Container in the default configuration</figcaption></figure> 
 
@@ -100,7 +100,7 @@ This behaviour can be prevented with the [PreventLoginWithFailure](https://docs.
 
 ### Read / Write Access
 
-A read / write profile is no different in user experience than the default configuration. A read / write profile is configured by setting Profile Type to &#8216;Read-write profile&#8217; (i.e. value is 1). Behind the scenes, a RW.VHDX file along-side the Profile Container is created as can be seen below. This is essentially [a differencing disk](https://www.altaro.com/hyper-v/hyper-v-differencing-disks-explained/) where writes are redirected during the session.<figure class="wp-block-image">
+A read / write profile is no different in user experience than the default configuration. A read / write profile is configured by setting Profile Type to &#8216;Read-write profile' (i.e. value is 1). Behind the scenes, a RW.VHDX file along-side the Profile Container is created as can be seen below. This is essentially [a differencing disk](https://www.altaro.com/hyper-v/hyper-v-differencing-disks-explained/) where writes are redirected during the session.<figure class="wp-block-image">
 
 <img src="https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentRW.png" alt="Folder with user Profile Container and the read / write RW.VHDX" class="wp-image-6270" srcset="https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentRW.png 848w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentRW-150x69.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentRW-300x137.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/02/ProfileContainer-ConcurrentRW-768x351.png 768w" sizes="(max-width: 848px) 100vw, 848px" /> <figcaption>Folder with user Profile Container and the read / write RW.VHDX</figcaption></figure> 
 

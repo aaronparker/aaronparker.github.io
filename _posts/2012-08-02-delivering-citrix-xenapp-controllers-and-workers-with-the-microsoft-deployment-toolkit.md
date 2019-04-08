@@ -55,4 +55,4 @@ On the XenApp Worker step, create a condition that detects whether XenAppRole ha
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppWorker" src="http://stealthpuppy.com/wp-content/uploads/2012/08/XenAppWorker_thumb.png" alt="XenAppWorker" width="660" height="218" border="0" />](http://stealthpuppy.com/wp-content/uploads/2012/08/XenAppWorker.png)
 
-Simple and straightforward &#8211; I get a clean, consistent build of XenApp 6.5 and control over which role is deployed to an end-point by changing one line in CustomSettings.ini.
+Simple and straightforward - I get a clean, consistent build of XenApp 6.5 and control over which role is deployed to an end-point by changing one line in CustomSettings.ini.

@@ -20,7 +20,7 @@ tags:
   - Windows Store
   - Windows Store for Business
 ---
-I am excited about the opportunities that managing Windows 10 devices with [Azure AD Join](https://blogs.technet.microsoft.com/enterprisemobility/2015/05/28/azure-ad-join-on-windows-10-devices/) and MDM (i.e. modern management) provides for both users and admins. In this article, I&#8217;ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution &#8211; Microsoft Intune standalone for managing Universal apps.
+I am excited about the opportunities that managing Windows 10 devices with [Azure AD Join](https://blogs.technet.microsoft.com/enterprisemobility/2015/05/28/azure-ad-join-on-windows-10-devices/) and MDM (i.e. modern management) provides for both users and admins. In this article, I&#8217;ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution - Microsoft Intune standalone for managing Universal apps.
 
 Consider that with Windows 10, an organisation can provision and manage Windows 10 PCs [without a custom SOE](https://technet.microsoft.com/en-us/itpro/windows/deploy/provisioning-packages) and with a fully [cloud-based authentication](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis) and management solution, requiring no infrastructure (other than networking) on-premises. This approach comes with some caveats today, of course, but PC and application lifecycle can be achieved without exhaustive architectural consideration or deployment of complex management solutions.
 
@@ -28,7 +28,7 @@ Using Intune to manage Windows 10 PCs (and Windows 10 mobile devices) along with
 
 # Requirements for Microsoft Intune
 
-Deploying and configuring Microsoft Intune requires two things &#8211; Azure AD and licensing Intune. In this article, I&#8217;m concentrating on Intune standalone only, i.e. Intune as a standalone cloud solution, not [integrated with Configuration Manager](https://technet.microsoft.com/en-us/library/jj884158.aspx).
+Deploying and configuring Microsoft Intune requires two things - Azure AD and licensing Intune. In this article, I&#8217;m concentrating on Intune standalone only, i.e. Intune as a standalone cloud solution, not [integrated with Configuration Manager](https://technet.microsoft.com/en-us/library/jj884158.aspx).
 
 ## Azure Active Directory
 
@@ -40,8 +40,8 @@ While Intune can be licensed on its own, the ideal way of licensing Intune is as
 
 For this solution, we&#8217;re interested in:
 
-  * **Azure Active Directory Premium** &#8211; this enables a[utomatic MDM enrollment](https://blogs.technet.microsoft.com/enterprisemobility/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/) when a device is provisioned and connected to Azure AD. Additionally Azure AD Premium provides branding customisation which improves the sign on user experience; multi-factor authentication onto devices as well as cloud applications and conditional access to protect resources such as Exchange and SharePoint Online.
-  * **Microsoft Intune** &#8211; Intune is included in the EMS license which is the primary reason for deploying modern management.
+  * **Azure Active Directory Premium** - this enables a[utomatic MDM enrollment](https://blogs.technet.microsoft.com/enterprisemobility/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/) when a device is provisioned and connected to Azure AD. Additionally Azure AD Premium provides branding customisation which improves the sign on user experience; multi-factor authentication onto devices as well as cloud applications and conditional access to protect resources such as Exchange and SharePoint Online.
+  * **Microsoft Intune** - Intune is included in the EMS license which is the primary reason for deploying modern management.
 
 Additional components that make sense in a cloud-based management approach include [Azure Information Protection](https://www.microsoft.com/en-au/cloud-platform/azure-information-protection) and [Microsoft Advanced Threat Analytics](https://www.microsoft.com/en-au/cloud-platform/advanced-threat-analytics). These are entire topics on their own, so I won&#8217;t be covering those in the context of this article.
 

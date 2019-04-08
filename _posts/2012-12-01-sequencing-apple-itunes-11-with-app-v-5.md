@@ -26,13 +26,13 @@ Previously delivering [iTunes 10 with App-V 4.6](http://stealthpuppy.com/virtual
 
 # iTunes Components
 
-To virtualize iTunes, you&#8217;ll need to extract the installer &#8211; simply run the installer and find the extracted MSI files in a folder under %TEMP%. This results in several files:
+To virtualize iTunes, you&#8217;ll need to extract the installer - simply run the installer and find the extracted MSI files in a folder under %TEMP%. This results in several files:
 
   * SetupAdmin.exe – the setup wrapper application. This can be discarded
   * AppleSoftwareUpdate.msi – Software Update is used to download and Apple software and updates
   * AppleApplicationSupport.msi – all Apple applications on Windows require this as a dependency
   * AppleMobileDeviceSupport.msi – required for Apple mobile device support (iPhone, iPad etc.). This installer includes the drivers for Apple’s devices
-  * Bonjour.msi &#8211; [iTunes uses Bonjour](http://support.apple.com/kb/HT2250) to find shared music libraries, to find AirPort Express devices for streaming music to, and to find Apple TVs
+  * Bonjour.msi - [iTunes uses Bonjour](http://support.apple.com/kb/HT2250) to find shared music libraries, to find AirPort Express devices for streaming music to, and to find Apple TVs
   * iTunes.msi – the iTunes installer itself
 
 It is important that _Apple Software Update_ is not included in the App-V package – allowing the applications in the package to update will at best fail and at worst, most likely bloat the package if it were allowed to run after deployment. Before copying the iTunes setup files into your sequencing VM, delete _AppleSoftwareUpdate.msi_ and _SetupAdmin.exe_. This will prevent the iTunes installer from automatically installing Software Update during sequencing.
@@ -70,7 +70,7 @@ Sequencing is as simple as capturing the installation of the following files and
 
   * Bonjour.msi
   * iTunes.msi
-  * Optionally &#8211; AppleApplicationSupport.msi
+  * Optionally - AppleApplicationSupport.msi
 
 The installation and configuration of the above can be scripted, which would be a good approach for repeatability.
 
@@ -115,7 +115,7 @@ When installing iTunes, be sure to install to C:\iTunes11\iTunes and remove the 
 
 12. At the Create Package step, continue on to modify the package rather than stop now.
 
-13. Add a description to the package and check each tab in the Sequencer to ensure the package looks OK. Under Virtual Services, two services should be listed &#8211; _Bonjour Service_ and _iPod Service_.
+13. Add a description to the package and check each tab in the Sequencer to ensure the package looks OK. Under Virtual Services, two services should be listed - _Bonjour Service_ and _iPod Service_.
 
 14. Edit the Shortcuts and remove the _About Bonjour_ and _About iTunes_ shortcuts.
 
@@ -128,7 +128,7 @@ The Sequencer will highlight a a couple of issues:
 
 ## DCOM
 
-iTunes includes some DCOM components &#8211; the report shows:
+iTunes includes some DCOM components - the report shows:
 
 > The sequencer detected a DCOM subsystem. Application components that use DCOM will not work with App-V. The DCOM subsystems detected are as follows:
 > 
@@ -148,7 +148,7 @@ iTunes installs the [GEARAspiWDM](http://www.gearsoftware.com/support/drivers.ph
 > 
 > The unsupported drivers detected are as follows: SYSTEM\CurrentControlSet\services\GEARAspiWDM
 
-This is related to writing CD/DVDs &#8211; once iTunes is virtualized, that feature will be unavailable.
+This is related to writing CD/DVDs - once iTunes is virtualized, that feature will be unavailable.
 
 # Deploying iTunes
 

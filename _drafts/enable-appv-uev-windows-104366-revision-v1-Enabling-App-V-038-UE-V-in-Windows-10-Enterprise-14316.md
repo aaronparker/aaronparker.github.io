@@ -9,7 +9,7 @@ permalink: /4366-revision-v1/
 ---
 Enabling the App-V client and UE-V client in Windows 10 Enterprise Build 14316 via PowerShell and viewing the behaviour of filter drivers for each client.
 
-If you&#8217;re following Microsoft App-V and [User Experience&nbsp;Virtualization (UE-V)](https://technet.microsoft.com/en-au/windows/hh943107.aspx), then you&#8217;re probably aware that these products are being built into Windows 10 Enterprise (and presumably Windows Server 2016). This means no longer having to download and install each client &#8211; it will already be available in Windows and just requires enabling to use.
+If you're following Microsoft App-V and [User Experience&nbsp;Virtualization (UE-V)](https://technet.microsoft.com/en-au/windows/hh943107.aspx), then you're probably aware that these products are being built into Windows 10 Enterprise (and presumably Windows Server 2016). This means no longer having to download and install each client - it will already be available in Windows and just requires enabling to use.
 
 I previously tweeted a view of the App-V and UE-V client files available in the latest build:
 
@@ -27,7 +27,7 @@ I previously tweeted a view of the App-V and UE-V client files available in the 
 
 # Filter Drivers
 
-Before we enable the clients, let&#8217;s take a quick look at the filter drivers in Windows 10 build 14136 (note, I&#8217;m looking at a VM with the Office 365 apps installed, so I may have picked up a filter driver or two already). The _fltmc_ command from an elevated Command Prompt or PowerShell instance displays the currently running filters:
+Before we enable the clients, let's take a quick look at the filter drivers in Windows 10 build 14136 (note, I'm looking at a VM with the Office 365 apps installed, so I may have picked up a filter driver or two already). The _fltmc_ command from an elevated Command Prompt or PowerShell instance displays the currently running filters:
 
 <figure id="attachment_4369" aria-describedby="caption-attachment-4369" style="width: 950px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable.png" rel="attachment wp-att-4369"><img class="wp-image-4369 size-full" title="Viewing filter drivers before enabling App-V and UE-V clients." src="http://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable.png" alt="Viewing filter drivers before enabling App-V and UE-V clients." width="950" height="528" srcset="https://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable.png 950w, https://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable-300x167.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable-768x427.png 768w" sizes="(max-width: 950px) 100vw, 950px" /></a><figcaption id="caption-attachment-4369" class="wp-caption-text">Viewing filter drivers before enabling App-V and UE-V clients.</figcaption></figure>
 
@@ -44,7 +44,7 @@ The App-V PowerShell module included in Windows 10 includes an _Enable-AppV_ com
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Enabling the App-V client">Import-Module AppvClient
 Enable-AppV</pre>
 
-Unfortunately, at this time, the cmdlet does not return anything &#8211; neither&nbsp;True or False or anything else depending on the result. This will be important for validating automation, so hopefully, Microsoft will fix that before release. Once the cmdlet is successful the App-V Client service will be enabled an running, so it is possible to check whether the service has been enabled to see whether _Enable-AppV_ was successful.
+Unfortunately, at this time, the cmdlet does not return anything - neither&nbsp;True or False or anything else depending on the result. This will be important for validating automation, so hopefully, Microsoft will fix that before release. Once the cmdlet is successful the App-V Client service will be enabled an running, so it is possible to check whether the service has been enabled to see whether _Enable-AppV_ was successful.
 
 Unlike fellow MVP [Ryan Bijkerk](https://twitter.com/logitblog), I did not&nbsp;[run into issues running this command](http://www.logitblog.com/microsoft-app-v-built-in-windows-10/), but if the cmdlet fails to enable the App-V client, you can enable the service with the following commands:
 
@@ -76,7 +76,7 @@ Again, like _Enable-AppV_, _Enable-Uev_ returns nothing, you can view the status
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Enabling and starting the UE-V client service via PowerShell.">Set-Service -Name AppVClient -StartupType Automatic; Start-Service AppVClient</pre>
 
-Now lets again look at the filter drivers that have been added &#8211; just a single driver for UE-V:
+Now lets again look at the filter drivers that have been added - just a single driver for UE-V:
 
   * UevAgentDriver
 
@@ -95,7 +95,7 @@ Once run the services for both clients will be stopped:
 
 <figure id="attachment_4375" aria-describedby="caption-attachment-4375" style="width: 950px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/04/PowerShell-AppVUev-serivces-stopped.png" rel="attachment wp-att-4375"><img class="wp-image-4375 size-full" title="Both services stopped after disabling the clients." src="http://stealthpuppy.com/wp-content/uploads/2016/04/PowerShell-AppVUev-serivces-stopped.png" alt="Both services stopped after disabling the clients." width="950" height="527" srcset="https://stealthpuppy.com/wp-content/uploads/2016/04/PowerShell-AppVUev-serivces-stopped.png 950w, https://stealthpuppy.com/wp-content/uploads/2016/04/PowerShell-AppVUev-serivces-stopped-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/04/PowerShell-AppVUev-serivces-stopped-300x166.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/04/PowerShell-AppVUev-serivces-stopped-768x426.png 768w" sizes="(max-width: 950px) 100vw, 950px" /></a><figcaption id="caption-attachment-4375" class="wp-caption-text">Both services stopped after disabling the clients.</figcaption></figure>
 
-Once disabled, we would expect the filter drivers to be unloaded&nbsp;&#8211; the UE-V filter driver is unloaded immediately; however, the filter&nbsp;drivers for App-V are not unloaded until Windows restarts.
+Once disabled, we would expect the filter drivers to be unloaded&nbsp;- the UE-V filter driver is unloaded immediately; however, the filter&nbsp;drivers for App-V are not unloaded until Windows restarts.
 
 From what I understand, even though the client services are stopped, requests will still be passed through&nbsp;the filter drivers (I reserve the right to be wrong though&#8230;). To unload the filter drivers immediately, use the _fltmc unload_ command:
 
@@ -111,7 +111,7 @@ This is the first build of Windows 10, available to testers, where the App-V and
 
 In going through this exercise, there are two things that stand out:
 
-  * <del>The Enable and Disable cmdlets should return a True or False if the command was successful or not. This is expected to be fixed before release</del>. [24th April 2016 &#8211; build 14328 has updated the cmdlets to return a status]
-  * I would like to see the App-V and UE-V clients enable and disabled as Windows Features (to enable/disable via DISM or &#8216;Programs and Features&#8217;), rather than just be in-box disabled. I&#8217;m not confident that this approach will change.
+  * <del>The Enable and Disable cmdlets should return a True or False if the command was successful or not. This is expected to be fixed before release</del>. [24th April 2016 - build 14328 has updated the cmdlets to return a status]
+  * I would like to see the App-V and UE-V clients enable and disabled as Windows Features (to enable/disable via DISM or &#8216;Programs and Features'), rather than just be in-box disabled. I'm not confident that this approach will change.
 
 If you are a Windows Insider, I would recommend testing the App-V and UE-V functionality delivered as a part of this build. In addition, if you encounter challenges or bug, be sure to log them on [Connect](http://connect.microsoft.com).

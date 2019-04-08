@@ -18,7 +18,7 @@ tags:
   - Windows Store
   - Windows Store for Business
 ---
-While the Universal app platform on Windows 10 isn&#8217;t going to replace legacy Win32 apps for some time, the potential of this platform to improve the way IT approaches application lifecycle management is high. Apps can be deployed, updated and removed without packaging or having to worry about application conflicts. It&#8217;s encouraging&nbsp;to see a number of useful enterprise applications available &#8211; the future is mobile apps, even on the desktop, so every enterprise should be looking at the Windows Store for Business.
+While the Universal app platform on Windows 10 isn&#8217;t going to replace legacy Win32 apps for some time, the potential of this platform to improve the way IT approaches application lifecycle management is high. Apps can be deployed, updated and removed without packaging or having to worry about application conflicts. It&#8217;s encouraging&nbsp;to see a number of useful enterprise applications available - the future is mobile apps, even on the desktop, so every enterprise should be looking at the Windows Store for Business.
 
 _Even if you&#8217;re not intending to deliver Universal apps at this time, or even hiding the Store app on Windows 10 desktops, you should configure the Windows Store for Business._&nbsp;This ensures full control over the user experience.
 
@@ -106,13 +106,13 @@ Navigate to&nbsp;<https://www.microsoft.com/business-store>&nbsp;and sign in, ac
 
 <figure id="attachment_5310" aria-describedby="caption-attachment-5310" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5310 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness-1024x587.png" alt="Sign up for the Windows Store for Business" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/03_SignUpWIndowsStoreBusiness.png)<figcaption id="caption-attachment-5310" class="wp-caption-text">Sign up for the Windows Store for Business</figcaption></figure>
 
-Configure the Private store display name &#8211; this will appear in the Windows Store app on Windows 10 devices. Click **Settings** / **Private store**. Keep this short, but something that will be clear to users.
+Configure the Private store display name - this will appear in the Windows Store app on Windows 10 devices. Click **Settings** / **Private store**. Keep this short, but something that will be clear to users.
 
 <figure id="attachment_5311" aria-describedby="caption-attachment-5311" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5311 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore-1024x587.png" alt="Setting the Private store display name in the Windows Store for Business" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/05_WindowsStoreBusiness-NamePrivateStore.png)<figcaption id="caption-attachment-5311" class="wp-caption-text">Setting the Private store display name in the Windows Store for Business</figcaption></figure>
 
 ## Configure the App Inventory
 
-Next, click **Manage** / **Inventory** to view the initial app inventory. A number of the Office mobile applications will be listed and in the process of being added to the Private store. _Adding apps to the Private store will take 12-24 hours to appear in the Windows Store app on user&#8217;s devices_ &#8211; not a short process.
+Next, click **Manage** / **Inventory** to view the initial app inventory. A number of the Office mobile applications will be listed and in the process of being added to the Private store. _Adding apps to the Private store will take 12-24 hours to appear in the Windows Store app on user&#8217;s devices_ - not a short process.
 
 <figure id="attachment_5312" aria-describedby="caption-attachment-5312" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5312" src="http://stealthpuppy.com/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory-1024x587.png" alt="Viewing the Inventory in the Windows Store for Business" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/06_WindowsStoreBusiness-InitialInventory.png)<figcaption id="caption-attachment-5312" class="wp-caption-text">Viewing the Inventory in the Windows Store for Business</figcaption></figure>
 
@@ -122,7 +122,7 @@ At this point you have a number of decisions to make:
 
   1. **Which Universal apps do we want to deliver to users?**&nbsp;Don&#8217;t think about delivery mechanism at this point, just consider apps that will be useful
   2. **Which apps do we to remove from user devices?** You can target inbox apps for removal (using Intune or Configuration Manager, or a 3rd party solution)
-  3. If you&#8217;re deploying Windows 10 Enterprise edition &#8211; **will the Windows Store app be available to users?**&nbsp;Only with Enterprise edition will you have full control over the Store app
+  3. If you&#8217;re deploying Windows 10 Enterprise edition - **will the Windows Store app be available to users?**&nbsp;Only with Enterprise edition will you have full control over the Store app
   4. **Which apps will be made available in the Windows Store app?**&nbsp;If you elect to keep the Store app available, the WSfB allows IT to curate a list of apps. This would typically be a subset of the total apps in your Inventory
 
 ### Add Apps to Your Inventory
@@ -130,10 +130,10 @@ At this point you have a number of decisions to make:
 Here are a few recommendations for adding apps to the Inventory, in no particular order:
 
   1. **Add all of the inbox Windows 10 apps**. Unfortunately, not all inbox apps are available in the WSfB. For example, the Microsoft Solitare Collection isn&#8217;t listed
-  2. Windows 10 and Windows 8/8.1 apps are available in the WSfB &#8211; **target Windows 10 apps where possible** as these will provide a more consistent user experience as they are designed for Windows 10
+  2. Windows 10 and Windows 8/8.1 apps are available in the WSfB - **target Windows 10 apps where possible** as these will provide a more consistent user experience as they are designed for Windows 10
   3. While perhaps subjective, **find apps that can be useful in your environment**. This could be an opportunity to show what&#8217;s possible with the Universal app platform
   4. **Don&#8217;t forget about browser extensions for Edge**. These could be added to the Private store to allow users to install themselves
-  5. **Not all apps are available for the desktop** &#8211; apps that work on Windows 10 Mobile are listed in the WSfB as well. This seems counterintuitive to a &#8220;Universal app platform&#8221;, but that&#8217;s the reality. If you&#8217;re managing Windows 10 mobile devices, then you&#8217;ll manage apps for all platforms from the WSfB
+  5. **Not all apps are available for the desktop** - apps that work on Windows 10 Mobile are listed in the WSfB as well. This seems counterintuitive to a &#8220;Universal app platform&#8221;, but that&#8217;s the reality. If you&#8217;re managing Windows 10 mobile devices, then you&#8217;ll manage apps for all platforms from the WSfB
   6. **The Windows Store app on Windows 10 is a little easier for finding apps including finding apps from a specific developer**. You can then search for those apps in the WSfB.
 
 ### Managing Apps

@@ -17,7 +17,7 @@ categories:
 tags:
   - App-V
 ---
-Great news &#8211; the first annual [European App-V User Group](http://www.appvug.com/) has been announced, for Friday November 18, 2011 9:00 AM to be held at [Microsoft HQ, in the Netherlands](http://g.co/maps/vc82n):
+Great news - the first annual [European App-V User Group](http://www.appvug.com/) has been announced, for Friday November 18, 2011 9:00 AM to be held at [Microsoft HQ, in the Netherlands](http://g.co/maps/vc82n):
 
 > Welcome to our first annual European App-V User Group conference.
 > 
@@ -27,4 +27,4 @@ Great news &#8211; the first annual [European App-V User Group](http://www.appvu
 > 
 > We invite you to register for FREE and we are looking forward to welcome you on the event.
 
-Keep an eye on the Twitter hashtag #AppVUG for more news, and [sign up](http://www.amiando.com/appvug.html?page=593565) at the site if you&#8217;d like to attend. I&#8217;ll be there and presenting a session on [virtualising Office with App-V](http://www.amiando.com/appvug.html?page=594395).
+Keep an eye on the Twitter hashtag #AppVUG for more news, and [sign up](http://www.amiando.com/appvug.html?page=593565) at the site if you'd like to attend. I'll be there and presenting a session on [virtualising Office with App-V](http://www.amiando.com/appvug.html?page=594395).

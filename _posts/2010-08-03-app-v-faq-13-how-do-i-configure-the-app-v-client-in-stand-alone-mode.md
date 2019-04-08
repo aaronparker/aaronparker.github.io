@@ -28,7 +28,7 @@ There are a couple of [properties](http://technet.microsoft.com/en-us/library/cc
 
 A common scenario for stand-alone mode is to test packages. To import a package in this mode, you can use the [SFTMIME ADD PACKAGE](http://technet.microsoft.com/en-us/library/cc817181.aspx) command.
 
-The simplest way to use this command is to copy your package to the local computer and using an elevated Command Prompt, change to the folder were the package is located. For example, I have a Mozilla Firefox package stored locally &#8211; I can use the following commands to import the package:
+The simplest way to use this command is to copy your package to the local computer and using an elevated Command Prompt, change to the folder were the package is located. For example, I have a Mozilla Firefox package stored locally - I can use the following commands to import the package:
 
 [code]CD C:\Common\Packages\MozillaFirefox4_US
 

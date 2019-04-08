@@ -14,13 +14,13 @@ tags:
   - Access
   - OneNote
 ---
-Microsoft Office used to be simple &#8211; Word, Excel, PowerPoint. And they only ran on Windows. A few apps that were added, others came and went, and Office even popped up on macOS just over 20 years ago.
+Microsoft Office used to be simple - Word, Excel, PowerPoint. And they only ran on Windows. A few apps that were added, others came and went, and Office even popped up on macOS just over 20 years ago.
 
-For enterprises, Microsoft Office on Windows was straight-forward &#8211; you licensed a version, [packaged](https://stealthpuppy.com/office-2013-customization/) and deployed it for your environment, and avoided upgrading as long as possible. To a certain extent that&#8217;s still valid today, even with Office 2019.
+For enterprises, Microsoft Office on Windows was straight-forward - you licensed a version, [packaged](https://stealthpuppy.com/office-2013-customization/) and deployed it for your environment, and avoided upgrading as long as possible. To a certain extent that's still valid today, even with Office 2019.
 
 ## Microsoft Office 365
 
-Office 365 changes things &#8211; Office now runs on Windows, macOS, iOS, Android and in the browser. Office on Windows deploys via Click-to-Run, runs as a traditional desktop application, has native UWP editions, and is available in the app store on all platforms.
+Office 365 changes things - Office now runs on Windows, macOS, iOS, Android and in the browser. Office on Windows deploys via Click-to-Run, runs as a traditional desktop application, has native UWP editions, and is available in the app store on all platforms.
 
 The administrator should no longer consider , Office 365 applications 
 

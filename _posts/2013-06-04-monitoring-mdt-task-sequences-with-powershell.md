@@ -14,18 +14,18 @@ tags:
   - MDT
   - PowerShell
 ---
-The [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-gb/solutionaccelerators/dd407791.aspx) provides a [Lite Touch deployment model](http://technet.microsoft.com/en-us/library/dd919179(v=ws.10).aspx) &#8211; typically a device requires an engineer to manually start the deployment task sequence. Using PowerShell to drive MDT offers the chance to provide a little more automation around OS deployments.
+The [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-gb/solutionaccelerators/dd407791.aspx) provides a [Lite Touch deployment model](http://technet.microsoft.com/en-us/library/dd919179(v=ws.10).aspx) - typically a device requires an engineer to manually start the deployment task sequence. Using PowerShell to drive MDT offers the chance to provide a little more automation around OS deployments.
 
-Here&#8217;s a couple of sample videos that demonstrate the use of PowerShell to automate OS deployments using MDT task sequences. Both of these examples are utilising [the monitoring feature in MDT 2012](http://blogs.technet.com/b/mniehaus/archive/2012/03/09/mdt-2012-new-feature-monitoring.aspx) to watch the progress of each task sequence to enable managing the complete deployment, both before and after the task sequence.
+Here's a couple of sample videos that demonstrate the use of PowerShell to automate OS deployments using MDT task sequences. Both of these examples are utilising [the monitoring feature in MDT 2012](http://blogs.technet.com/b/mniehaus/archive/2012/03/09/mdt-2012-new-feature-monitoring.aspx) to watch the progress of each task sequence to enable managing the complete deployment, both before and after the task sequence.
 
   * [PowerShell, MDT, Atlantis ILIO and XenDesktop deployment](http://stealthpuppy.com/community/hands-off-my-gold-image-video-powershell-mdt-atlantis-ilio-and-xendesktop-deployment/)
   * [Windows 8 zero-touch deployment](http://stealthpuppy.com/community/hands-off-my-gold-image-video-windows-8-zero-touch-deployment/)
 
 # Using PowerShell with MDT
 
-To use PowerShell with MDT requires installing the MDT console which will provide the PowerShell snapin support. For this article, I&#8217;ve used [MDT 2012 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=25175). Either 32-bit or 64-bit should work.
+To use PowerShell with MDT requires installing the MDT console which will provide the PowerShell snapin support. For this article, I've used [MDT 2012 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=25175). Either 32-bit or 64-bit should work.
 
-I&#8217;m first going to set a couple of variables. In this instance, I&#8217;ve set the computer name of the target machine that I want to monitor and the path to the MDT deployment share. For this example, I&#8217;m using a local path because I&#8217;m running the PowerShell script on the server hosting the MDT deployment share. A UNC path will also work.
+I'm first going to set a couple of variables. In this instance, I've set the computer name of the target machine that I want to monitor and the path to the MDT deployment share. For this example, I'm using a local path because I'm running the PowerShell script on the server hosting the MDT deployment share. A UNC path will also work.
 
 <pre>$target = "VM1"
 $deploymentShare = "E:\Deployment"</pre>
@@ -39,7 +39,7 @@ Before starting the task sequence, I want to remove any existing monitoring data
 
 <pre>Get-MDTMonitorData -Path MDT: | Where-Object { $_.Name -eq $target } | Remove-MDTMonitorData -Path MDT:</pre>
 
-Once the target machine has booted into the Lite Touch WinPE environment, monitoring data should be sent to the MDT server; however we aren&#8217;t interested in that data yet because it will be pre-task sequence, which isn&#8217;t much use to us.
+Once the target machine has booted into the Lite Touch WinPE environment, monitoring data should be sent to the MDT server; however we aren't interested in that data yet because it will be pre-task sequence, which isn't much use to us.
 
 The screenshot below shows the monitoring data returned pre-task sequence. Typically, any machine name that starts with MININT will be the WinPE environment:
 
@@ -91,7 +91,7 @@ Using these properties and the **Write-Progress** cmdlet we can display the prog
 
 # The Complete Script
 
-The script listing below put these pieces together and provides two loops &#8211; one that waits for the task sequence to begin and once it has, waits for the task sequence to complete.
+The script listing below put these pieces together and provides two loops - one that waits for the task sequence to begin and once it has, waits for the task sequence to complete.
 
 <pre>$target = "VM1"
 $deploymentShare = "E:\Deployment"

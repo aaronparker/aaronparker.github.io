@@ -30,7 +30,7 @@ The virtual machine configuration used for the file server VMs, were configured 
 
 Client virtual machines were also configured with 2 vCPUs but with Dynamic Memory.
 
-This year, we have concentrated on testing SMB 3.02 as the primary version of SMB. We have used Windows 8.1 on the client side and Windows Server 2012 R2 and Windows Server 2008 R2 on the server side &#8211; so because Windows 8.1 and Windows Server 2012 R2 are SMB 3.02 aware, they will negotiate that version. When Windows 8.1 opens a connection to Windows Server 2008 R2, an SMB 2.1 connection is made.
+This year, we have concentrated on testing SMB 3.02 as the primary version of SMB. We have used Windows 8.1 on the client side and Windows Server 2012 R2 and Windows Server 2008 R2 on the server side - so because Windows 8.1 and Windows Server 2012 R2 are SMB 3.02 aware, they will negotiate that version. When Windows 8.1 opens a connection to Windows Server 2008 R2, an SMB 2.1 connection is made.
 
 All virtual machines were deployed with the latest updates as at May 2015.
 
@@ -58,14 +58,14 @@ Each of these tests uses 2 threads (1 per vCPU) and then from the output I&#8217
 
 # File Server Capacity Tool
 
-To appropriate some type of folder redirection tests, I used the File Server Capacity Tool &#8211; this was about the best tool that I could find that could simulate home folder access (if you know of another, please let me know).
+To appropriate some type of folder redirection tests, I used the File Server Capacity Tool - this was about the best tool that I could find that could simulate home folder access (if you know of another, please let me know).
 
-I won&#8217;t go into detail on how to use FSCT, instead I recommend reading this article by Mark Morowczynski &#8211; [How to use the File Server Capacity Tool (FSCT) on Server 2012 R2](http://blogs.technet.com/b/askpfeplat/archive/2014/04/28/how-to-use-the-file-server-capacity-tool-fsct-on-server-2012-r2.aspx).
+I won&#8217;t go into detail on how to use FSCT, instead I recommend reading this article by Mark Morowczynski - [How to use the File Server Capacity Tool (FSCT) on Server 2012 R2](http://blogs.technet.com/b/askpfeplat/archive/2014/04/28/how-to-use-the-file-server-capacity-tool-fsct-on-server-2012-r2.aspx).
 
 The File Server Capacity Tool binaries are available from the following links:
 
   * [File Server Capacity Tool v1.2- (64 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=27284)
-  * [File Server Capacity Tool v1.2 &#8211; (32 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=27283)
+  * [File Server Capacity Tool v1.2 - (32 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=27283)
 
 In my lab environment, I&#8217;ve used two physical hosts with the file server targets on one host (to ensure no resource contention) and the controller and clients on a separate host. The two hosts are connected via a 1GB switch.
 
@@ -73,9 +73,9 @@ Other than specific tests where we wanted to know the effect of anti-virus on th
 
 <figure id="attachment_3953" aria-describedby="caption-attachment-3953" style="width: 565px" class="wp-caption alignnone"><img class="wp-image-3953 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/05/FSCT.png" alt="File Server Capacity Tool" width="565" height="399" srcset="https://stealthpuppy.com/wp-content/uploads/2015/05/FSCT.png 565w, https://stealthpuppy.com/wp-content/uploads/2015/05/FSCT-150x106.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/05/FSCT-300x212.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/05/FSCT-480x340.png 480w" sizes="(max-width: 565px) 100vw, 565px" /><figcaption id="caption-attachment-3953" class="wp-caption-text">File Server Capacity Tool architecture</figcaption></figure>
 
-FSCT comes with a single work load &#8211; Home Folders. Which is fortunately great for our use, should be as similar as possible to real work use of users interacting with their Documents or Desktop folders that are redirected to their home drive.
+FSCT comes with a single work load - Home Folders. Which is fortunately great for our use, should be as similar as possible to real work use of users interacting with their Documents or Desktop folders that are redirected to their home drive.
 
-<figure id="attachment_3957" aria-describedby="caption-attachment-3957" style="width: 1394px" class="wp-caption alignnone">[<img class="wp-image-3957 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload.png" alt="File Server Capacity Tool - Home Folders Workload" width="1394" height="711" srcset="https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload.png 1394w, https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload-150x77.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload-300x153.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload-1024x522.png 1024w" sizes="(max-width: 1394px) 100vw, 1394px" />](http://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload.png)<figcaption id="caption-attachment-3957" class="wp-caption-text">File Server Capacity Tool &#8211; Home Folders Workload</figcaption></figure>
+<figure id="attachment_3957" aria-describedby="caption-attachment-3957" style="width: 1394px" class="wp-caption alignnone">[<img class="wp-image-3957 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload.png" alt="File Server Capacity Tool - Home Folders Workload" width="1394" height="711" srcset="https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload.png 1394w, https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload-150x77.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload-300x153.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload-1024x522.png 1024w" sizes="(max-width: 1394px) 100vw, 1394px" />](http://stealthpuppy.com/wp-content/uploads/2015/05/fsct-workload.png)<figcaption id="caption-attachment-3957" class="wp-caption-text">File Server Capacity Tool - Home Folders Workload</figcaption></figure>
 
 A single run of an FSCT workload simulation can take a very long time, so expect each simulation to run from 3 hours or more depending on the total number of user sessions that you want to get to. In each workload simulation, I ran from 50 to 800 user sessions, stepping by 50 user sessions for each test.
 
@@ -112,11 +112,11 @@ So the commands I used for my environment (run on the various VMs used in the te
 
 <pre class="lang:ps decode:true " title="Start the tests (run on the Controller VM)">fsct run controller /server FILE3 /password Passw0rd /volumes E: /clients CLIENT1,CLIENT2,CLIENT3,CLIENT4 /min_users 50 /max_users 800 /step 50 /duration 720 /workload HomeFolders</pre>
 
-Each command is run on the respective virtual machine &#8211; the FSCT binaries were run from C:\FSCT.
+Each command is run on the respective virtual machine - the FSCT binaries were run from C:\FSCT.
 
 # uberAgent for Splunk
 
-To make it simple to measure logon times, there&#8217;s only one tool worth using to view metrics and that&#8217;s of course [uberAgent for Splunk](https://helgeklein.com/uberagent-for-splunk/). uberAgent makes it simple to report on logon times &#8211; so all you&#8217;ll need to do is setup roaming profiles, log onto a machine with the agent installed and view the Logon Duration report.
+To make it simple to measure logon times, there&#8217;s only one tool worth using to view metrics and that&#8217;s of course [uberAgent for Splunk](https://helgeklein.com/uberagent-for-splunk/). uberAgent makes it simple to report on logon times - so all you&#8217;ll need to do is setup roaming profiles, log onto a machine with the agent installed and view the Logon Duration report.
 
 I recommend creating a large enough profile, or one that is indicative of profiles that you may have in production. For real stress testing, the number of files in the profile is more important than the total profile size.
 

@@ -1,6 +1,6 @@
 ---
 id: 3293
-title: 'Hands off my gold image! &#8211; Video: automated PVS image deploy and capture'
+title: 'Hands off my gold image! - Video: automated PVS image deploy and capture'
 date: 2013-05-23T18:26:02+10:00
 author: Aaron Parker
 layout: post

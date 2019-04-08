@@ -15,6 +15,6 @@ tags:
   - Azure AD
   - Citrix Director
 ---
-Want to provide remote access to Citrix Director and ensure secure access only from trusted devices or multi-factor authentication? Then Azure AD and Application Proxy is a great way to do that &#8211; here&#8217;s how to set it up.
+Want to provide remote access to Citrix Director and ensure secure access only from trusted devices or multi-factor authentication? Then Azure AD and Application Proxy is a great way to do that - here's how to set it up.
 
-Deploying XenApp and XenDesktop into cloud environments is a popular strategy that I&#8217;m seeing a regular basis, and from my experience deploying full infrastructure control planes on IaaS (rather than Citrix Cloud) is a common approach. These environments are some times fully hosted with the only in-bound access controlled by NetScaler. The challenge then is how to provide support for users running applications on XenApp or desktops on XenDesktop.
+Deploying XenApp and XenDesktop into cloud environments is a popular strategy that I'm seeing a regular basis, and from my experience deploying full infrastructure control planes on IaaS (rather than Citrix Cloud) is a common approach. These environments are some times fully hosted with the only in-bound access controlled by NetScaler. The challenge then is how to provide support for users running applications on XenApp or desktops on XenDesktop.

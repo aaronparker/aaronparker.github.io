@@ -18,9 +18,9 @@ tags:
 
 Click on your city to register:
 
-[**Melbourne Wednesday 11<sup>th</sup> October 11am &#8211; 2pm**](http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032310574&Culture=en-AU)  
-**[Canberra Monday 23<sup>rd</sup> October 3pm &#8211; 5pm](http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032310561&Culture=en-AU)**  
-**[Brisbane Wednesday 25<sup>th</sup> October 3pm &#8211; 5pm](http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032310571&Culture=en-AU)**  
-**[Sydney Monday 30<sup>th</sup> October 3pm &#8211; 5pm](http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032310573&Culture=en-AU)**
+[**Melbourne Wednesday 11<sup>th</sup> October 11am - 2pm**](http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032310574&Culture=en-AU)  
+**[Canberra Monday 23<sup>rd</sup> October 3pm - 5pm](http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032310561&Culture=en-AU)**  
+**[Brisbane Wednesday 25<sup>th</sup> October 3pm - 5pm](http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032310571&Culture=en-AU)**  
+**[Sydney Monday 30<sup>th</sup> October 3pm - 5pm](http://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032310573&Culture=en-AU)**
 
 This should be a great session to attend, as both Exchange 2007 and NAP are pretty cool. I&#8217;ll be attending the Brisbane session.

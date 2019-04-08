@@ -27,11 +27,11 @@ Gene Ferioli, a Program Manager with the Customer Connection Team at Microsoft d
       * Remediation Servers
   * Linux and Mac NAP clients are in the works, to be developed by third party developers
   * Network access devices (end-points that control access to the network): 
-      * Wired 802.1x &#8211; switch
-      * Wireless 802.1x &#8211; access point
-      * IPSec &#8211; Health Registration Authority
-      * DHCP &#8211; DHCP server
-      * VPN &#8211; VPN server
+      * Wired 802.1x - switch
+      * Wireless 802.1x - access point
+      * IPSec - Health Registration Authority
+      * DHCP - DHCP server
+      * VPN - VPN server
   * A health certificate is short lived so that system health can be re-evaluated. This re-evaluation occurs at 80% of the certificate life time + a random offset
   * Multiple certificate authorities can be specified for health certificates
   * You can configure NAP to remediate and/or report but not restrict
@@ -41,7 +41,7 @@ Gene Ferioli, a Program Manager with the Customer Connection Team at Microsoft d
       * NAP is designed at the health overlay to the network security systems
       * NAP is dependent on its enforcement mechanisms
       * IPSec, VPN, 802.1x and DHCP need to be designed and deployed as security solutions in their own right prior to overlaying
-  * Start planning today &#8211; are all switches capable of 802.1x (if you plan to use 802.1x). If you are implementing VoIP, are the phone using the same physical connections or VLANs?
+  * Start planning today - are all switches capable of 802.1x (if you plan to use 802.1x). If you are implementing VoIP, are the phone using the same physical connections or VLANs?
   * Covers Cisco NAC, Microsoft NAP interoperability 
       * _Windows Vista only scenario_
       * Describes the NAP/NAC interoperability architecture and process

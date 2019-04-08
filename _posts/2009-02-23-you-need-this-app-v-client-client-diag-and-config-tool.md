@@ -1,6 +1,6 @@
 ---
 id: 916
-title: 'You need this &#8211; App-V Client Client Diag and Config tool'
+title: 'You need this - App-V Client Client Diag and Config tool'
 date: 2009-02-23T14:15:01+10:00
 author: Aaron Parker
 layout: post
@@ -13,7 +13,7 @@ categories:
 tags:
   - App-V
 ---
-[Ment van der Plas](http://desktopcontrol.blogspot.com/), of [Login Consultants](http://www.loginconsultants.com/), has gone and created the most awesome App-V client tool &#8211; the [App-V 4.5 Client Diagnostic and Configuration tool:](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=34&Itemid=62)
+[Ment van der Plas](http://desktopcontrol.blogspot.com/), of [Login Consultants](http://www.loginconsultants.com/), has gone and created the most awesome App-V client tool - the [App-V 4.5 Client Diagnostic and Configuration tool:](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=34&Itemid=62)
 
 > ACDC makes it possible for administrators or users to troubleshoot virtual applications and the environment they run in:
 > 

@@ -34,4 +34,4 @@ Thursday 29th January 2009
 
 20:00 – 21:15: Justin Zarb (Microsoft); Application virtualisation – in-depth look at App-V architecture 
 
-21:15 &#8211; 21:30: Q/A and wrap up
+21:15 - 21:30: Q/A and wrap up

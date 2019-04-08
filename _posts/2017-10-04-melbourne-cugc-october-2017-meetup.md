@@ -1,6 +1,6 @@
 ---
 id: 5809
-title: 'Melbourne CUGC IV &#8211; It&#8217;s LTSR in the Spotlight!'
+title: 'Melbourne CUGC IV - It&#8217;s LTSR in the Spotlight!'
 date: 2017-10-04T22:20:14+10:00
 author: Aaron Parker
 layout: post
@@ -25,7 +25,7 @@ We&#8217;ve got Christian Lloyd from Citrix to take us through the XenDesktop / 
 
 ## CUGC Community Presentation
 
-We still have space for a community presentation &#8211; if you&#8217;re interested in presenting on any topic related to Citrix technologies, we would love for you to present.&nbsp;
+We still have space for a community presentation - if you&#8217;re interested in presenting on any topic related to Citrix technologies, we would love for you to present.&nbsp;
 
 # Sponsor
 

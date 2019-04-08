@@ -26,7 +26,7 @@ An easy win, is running the [Disk Clean-up](http://windows.microsoft.com/en-au/w
 
 Microsoft released [an important update for Windows 7 last year](http://blogs.technet.com/b/askpfeplat/archive/2013/10/08/breaking-news-reduce-the-size-of-the-winsxs-directory-and-free-up-disk-space-with-a-new-update-for-windows-7-sp1-clients.aspx) that can result in a significant reduction in disk space: [Disk Clean-up Wizard addon lets users delete outdated Windows updates on Windows 7 SP1](http://support.microsoft.com/kb/2852386). The same feature was originally delivered with Windows 8. (Windows 8.1 Update 1 is expected to reduce disk space requirements again).
 
-Here&#8217;s an example system where I&#8217;ve run the Disk Clean-up tool that has resulted in a 3.4 GB reduction in disk usage &#8211; on the left is the before image, on the right is after the cleanup. (I&#8217;m cheating a bit here, this is a system that has gone from Windows 7 to Windows 7 SP1, hence the reason for such a large change).
+Here&#8217;s an example system where I&#8217;ve run the Disk Clean-up tool that has resulted in a 3.4 GB reduction in disk usage - on the left is the before image, on the right is after the cleanup. (I&#8217;m cheating a bit here, this is a system that has gone from Windows 7 to Windows 7 SP1, hence the reason for such a large change).
 
 [<img class="alignnone size-full wp-image-3587" src="http://stealthpuppy.com/wp-content/uploads/2014/03/BeforeAfterClean.png" alt="Compare Disk Cleanup Before and After" width="758" height="505" srcset="https://stealthpuppy.com/wp-content/uploads/2014/03/BeforeAfterClean.png 758w, https://stealthpuppy.com/wp-content/uploads/2014/03/BeforeAfterClean-150x99.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/03/BeforeAfterClean-300x199.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/03/BeforeAfterClean-624x415.png 624w" sizes="(max-width: 758px) 100vw, 758px" />](http://stealthpuppy.com/wp-content/uploads/2014/03/BeforeAfterClean.png)
 
@@ -87,9 +87,9 @@ If your image is Windows 8.1 or Windows Server 2012 R2, then the following comma
 
 <pre class="lang:batch decode:true">Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase</pre>
 
-Running Disk Clean-up and the above DISM command in a script to clean up your master image should result in a smaller image. Don&#8217;t forget that this approach is also useful for persistent desktops &#8211; unless you&#8217;re using some type of dedupe solution, then there&#8217;s potentially gigabytes per desktop that can be removed.
+Running Disk Clean-up and the above DISM command in a script to clean up your master image should result in a smaller image. Don&#8217;t forget that this approach is also useful for persistent desktops - unless you&#8217;re using some type of dedupe solution, then there&#8217;s potentially gigabytes per desktop that can be removed.
 
-There is one more method worth for reducing space worth mentioning &#8211; the [Uninstall-WindowsFeature](http://technet.microsoft.com/en-us/library/jj205471.aspx) PowerShell cmdlet in Windows Server 2012 and Windows Server 2012 R2. This can go a long way too to reducing the disk footprint by completely removing features from Windows (making them unavailable for install).
+There is one more method worth for reducing space worth mentioning - the [Uninstall-WindowsFeature](http://technet.microsoft.com/en-us/library/jj205471.aspx) PowerShell cmdlet in Windows Server 2012 and Windows Server 2012 R2. This can go a long way too to reducing the disk footprint by completely removing features from Windows (making them unavailable for install).
 
 For instance, if you&#8217;re deploying a Remote Desktop Session Host, there&#8217;s no need for IIS or Hyper-V to be in the component store. See this blog post article for full details: [How to Reduce the Size of the Winsxs directory and Free Up Disk Space on Windows Server 2012 Using Features on Demand](http://blogs.technet.com/b/askpfeplat/archive/2013/02/24/how-to-reduce-the-size-of-the-winsxs-directory-and-free-up-disk-space-on-windows-server-2012-using-features-on-demand.aspx)
 

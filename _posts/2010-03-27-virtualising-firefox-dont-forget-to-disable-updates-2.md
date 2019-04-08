@@ -26,7 +26,7 @@ Fortunately doing so is fairly straight-forward:
 
 ### Disable Automatic Updates
 
-Updates are disabled in the _Options / Advanced / Updates_ dialog box (under Windows), which you can do when running Firefox during the sequencing/capture process &#8211; untick the _Firefox_ check box and change _When updates to Firefox are found_ to _Ask me what to do_.
+Updates are disabled in the _Options / Advanced / Updates_ dialog box (under Windows), which you can do when running Firefox during the sequencing/capture process - untick the _Firefox_ check box and change _When updates to Firefox are found_ to _Ask me what to do_.
 
 Alternatively set _app.update.auto_ and _app.update.enabled_ to false in about:config or directly in `%APPDATA%\Mozilla\Firefox\Profiles\<profile>.default\prefs.js`.
 

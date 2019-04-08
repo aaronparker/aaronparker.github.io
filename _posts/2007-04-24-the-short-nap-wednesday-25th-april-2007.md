@@ -13,7 +13,7 @@ tags:
 ---
 The Short NAP is a quick list of Microsoft Network Access Protection and Server/Domain Isolation related links from around the web. Here are links for Wednesday the 25th of April 2007:
 
-This edition of the Short NAP is a little earlier than expected as Microsoft has released a number of guides for configuring Network Access Protection in a lab environment. These documents have been around previously but they&#8217;ve been updated and re-released:
+This edition of the Short NAP is a little earlier than expected as Microsoft has released a number of guides for configuring Network Access Protection in a lab environment. These documents have been around previously but they've been updated and re-released:
 
   * [Step By Step Guide: Demonstrate 802.1X NAP Enforcement in a Test Lab](http://www.microsoft.com/downloads/details.aspx?FamilyID=8a0925ee-ee06-4dfb-bba2-07605eff0608&DisplayLang=en)
   * [Setting Up Virtual Private Network Enforcement for Network Access Protection in a Test Lab](http://www.microsoft.com/downloads/details.aspx?FamilyID=729bba00-55ad-4199-b441-378cc3d900a7&DisplayLang=en)

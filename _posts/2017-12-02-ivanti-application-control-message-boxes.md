@@ -26,34 +26,34 @@ Let&#8217;s take a look at a typical message box. Below is the default Access De
 
 <figure id="attachment_5829" aria-describedby="caption-attachment-5829" style="width: 422px" class="wp-caption aligncenter">[<img class="wp-image-5829 size-full" src="https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied.png" alt="Ivanti Application Control default access denied dialog box" width="422" height="147" srcset="https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied.png 422w, https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied-150x52.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied-300x105.png 300w" sizes="(max-width: 422px) 100vw, 422px" />](https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied.png)<figcaption id="caption-attachment-5829" class="wp-caption-text">Ivanti Application Control default access denied message box</figcaption></figure>
 
-With [apologies to Guy Leech](https://twitter.com/guyrleech/status/925706951773827072) (the original developer of AppSense Application Manager), this message box doesn&#8217;t fit with Microsoft&#8217;s recommended&nbsp;[Windows 7 or Windows 10 desktop UI guidelines](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742446.aspx)&nbsp;nor display anything useful to the end user that is useful or actionable. Side note &#8211; on Windows 10, I&#8217;d love to see this particular message as a [notification](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/) instead because there&#8217;s no immediate action the user can take.
+With [apologies to Guy Leech](https://twitter.com/guyrleech/status/925706951773827072) (the original developer of AppSense Application Manager), this message box doesn&#8217;t fit with Microsoft&#8217;s recommended&nbsp;[Windows 7 or Windows 10 desktop UI guidelines](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742446.aspx)&nbsp;nor display anything useful to the end user that is useful or actionable. Side note - on Windows 10, I&#8217;d love to see this particular message as a [notification](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/) instead because there&#8217;s no immediate action the user can take.
 
-Here&#8217;s another message box &#8211; this one is shown for privilege escalation. Similar in a sense to a UAC dialogue box, but this forces the user to complete the action for elevating an application with a reason for taking that action that can be audited.
+Here&#8217;s another message box - this one is shown for privilege escalation. Similar in a sense to a UAC dialogue box, but this forces the user to complete the action for elevating an application with a reason for taking that action that can be audited.
 
 <figure id="attachment_5830" aria-describedby="caption-attachment-5830" style="width: 335px" class="wp-caption aligncenter">[<img class="size-full wp-image-5830" src="https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultElevate.png" alt="Ivanti Application Control default self-elevation message box" width="335" height="274" srcset="https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultElevate.png 335w, https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultElevate-150x123.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultElevate-300x245.png 300w" sizes="(max-width: 335px) 100vw, 335px" />](https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultElevate.png)<figcaption id="caption-attachment-5830" class="wp-caption-text">Ivanti Application Control default self-elevation message box</figcaption></figure>
 
 There are several scenarios where Application Control may display a message to the end user:
 
-  * Access Denied &#8211; execution of an application is denied
-  * Application Limits Exceeded &#8211; the end-user is prevented from running multiple instances of an application
-  * Self-Elevation &#8211; an end-user can elevate an application via Application Control instead of being granted administrative rights
-  * System Controls &#8211; the user can be prevented from uninstalling an application, clearing specific event logs or stopping services
-  * Time Limits &#8211; time limits can be put on application execution
-  * Self-Authorization &#8211; end-user can be given the ability to whitelist an application themselves
-  * Network Connections &#8211; controls can be placed on network destinations, paths or ports
+  * Access Denied - execution of an application is denied
+  * Application Limits Exceeded - the end-user is prevented from running multiple instances of an application
+  * Self-Elevation - an end-user can elevate an application via Application Control instead of being granted administrative rights
+  * System Controls - the user can be prevented from uninstalling an application, clearing specific event logs or stopping services
+  * Time Limits - time limits can be put on application execution
+  * Self-Authorization - end-user can be given the ability to whitelist an application themselves
+  * Network Connections - controls can be placed on network destinations, paths or ports
 
-So, potentially a reasonable level of interaction with the end-user and thus Application Control can have some impact on the perception of a user&#8217;s everyday experience.&nbsp;Fortunately, each of these message boxes is almost fully customisable &#8211; Ivanti provides the administrator with the ability to control both the appearance and text in the message to something that may suit a specific requirement or the environment into which it is deployed.
+So, potentially a reasonable level of interaction with the end-user and thus Application Control can have some impact on the perception of a user&#8217;s everyday experience.&nbsp;Fortunately, each of these message boxes is almost fully customisable - Ivanti provides the administrator with the ability to control both the appearance and text in the message to something that may suit a specific requirement or the environment into which it is deployed.
 
 # Creating Better Message Boxes
 
-Dialog boxes suck (or at least a good chunk of them do). To understand why here&#8217;s an excellent article I recommend reading &#8211;&nbsp;[The Magic of Flow and Why Dialogs Frustrate People](https://uxplanet.org/the-magic-of-flow-and-why-dialogs-frustrate-people-9408e08b7f3d). The dialogs interrupt user workflow and it&#8217;s safe to assume a user is typically seeing multiple messages in a single session (not just our Application Control messages).
+Dialog boxes suck (or at least a good chunk of them do). To understand why here&#8217;s an excellent article I recommend reading -&nbsp;[The Magic of Flow and Why Dialogs Frustrate People](https://uxplanet.org/the-magic-of-flow-and-why-dialogs-frustrate-people-9408e08b7f3d). The dialogs interrupt user workflow and it&#8217;s safe to assume a user is typically seeing multiple messages in a single session (not just our Application Control messages).
 
 Application Control supports [customising the messages as well as the UI with HTML and CSS](https://help.ivanti.com/ap/help/en_US/am/10.1/Content/Application_Manager/Message_Settings.htm).&nbsp;With customisable notifications, the Application Control administrator effectively becomes a UX designer; therefore to&nbsp;provide users with the best experience possible and balance security needs of the organisation, we should consider carefully that experience both visually and narratively in the text displayed to the user.
 
 When customising these I recommend paying careful attention to the language and tone of the text. Empowering a user to take the right, or no, action without generating unnecessary service desk calls is important. Here are my 3 recommendations&nbsp;for customising these messages boxes for an environment:
 
-  * Ensure the message boxes fit with Microsoft UX guidelines for Windows &#8211; apart from not visually assaulting the senses, fitting in with the standard Windows visual style will provide users with a sense that these messages are a part of the normal Windows desktop workflow
-  * Don&#8217;t overwhelm the user with explanatory text that they aren&#8217;t going to read anyway &#8211; avoid [dialogue box fatigue](https://blogs.msdn.microsoft.com/oldnewthing/20060526-03/?p=31063). If you can, provide a link to more information, so that the user can choose to read up on why the system has been implemented
+  * Ensure the message boxes fit with Microsoft UX guidelines for Windows - apart from not visually assaulting the senses, fitting in with the standard Windows visual style will provide users with a sense that these messages are a part of the normal Windows desktop workflow
+  * Don&#8217;t overwhelm the user with explanatory text that they aren&#8217;t going to read anyway - avoid [dialogue box fatigue](https://blogs.msdn.microsoft.com/oldnewthing/20060526-03/?p=31063). If you can, provide a link to more information, so that the user can choose to read up on why the system has been implemented
   * Don&#8217;t assume the user is doing the wrong thing. Taking a default hostile stance via the language or wording used in the messages won&#8217;t foster a sense of trust. Yes, [insider threats are often the main cause of security breaches](https://www.tripwire.com/state-of-security/security-data-protection/insider-threats-main-security-threat-2017/), but IT can do its part in building team trust
 
 I believe these to be reasonable principles to consider, but of course, some environments may have specific requirements.
@@ -62,7 +62,7 @@ Microsoft has published user interface guidelines for Windows for many years, wi
 
 ## Looking for Inspiration
 
-Microsoft has specific message boxes in User Account Control that I&#8217;ve used as the basis for improving the messages boxes from Application Control; both visually and in the language/text. Here&#8217;s a typical UAC message box on Windows 10 &#8211; it provides some immediate visual feedback with colour and simple language for the user to act upon:
+Microsoft has specific message boxes in User Account Control that I&#8217;ve used as the basis for improving the messages boxes from Application Control; both visually and in the language/text. Here&#8217;s a typical UAC message box on Windows 10 - it provides some immediate visual feedback with colour and simple language for the user to act upon:
 
 <figure id="attachment_5837" aria-describedby="caption-attachment-5837" style="width: 456px" class="wp-caption aligncenter">[<img class="wp-image-5837 size-full" src="https://stealthpuppy.com/wp-content/uploads/2017/11/WindowsUACLight.png" alt="Windows User Account Control message box" width="456" height="481" srcset="https://stealthpuppy.com/wp-content/uploads/2017/11/WindowsUACLight.png 456w, https://stealthpuppy.com/wp-content/uploads/2017/11/WindowsUACLight-142x150.png 142w, https://stealthpuppy.com/wp-content/uploads/2017/11/WindowsUACLight-284x300.png 284w" sizes="(max-width: 456px) 100vw, 456px" />](https://stealthpuppy.com/wp-content/uploads/2017/11/WindowsUACLight.png)<figcaption id="caption-attachment-5837" class="wp-caption-text">Windows User Account Control message box</figcaption></figure>
 
@@ -108,7 +108,7 @@ There are a few things that the CSS does and provides customisation for:
   2. Hides the red and white X graphic. By default, this image is shown on all message boxes and doesn&#8217;t actually fit in with the intention of all messages boxes
   3. Enables a header in the 3 colours shown above
   4. Gives buttons a Windows 10 look
-  5. Prevents scrollbars from showing inside the message boxes &#8211; because the messages can only be set to a fixed height and width, some scrolling occurs even in the default messages shown in the images at the beginning of this article
+  5. Prevents scrollbars from showing inside the message boxes - because the messages can only be set to a fixed height and width, some scrolling occurs even in the default messages shown in the images at the beginning of this article
 
 At the moment, this CSS isn&#8217;t perfect and requires updates to fix the cutting off text on the right-hand side of the dialog box, but I think it&#8217;s a huge improvement over what&#8217;s provided by default.&nbsp;
 

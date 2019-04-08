@@ -56,7 +56,7 @@ When deploying the client via Group Policy, there&#8217;s a good chance that you
 > **Workaround  
 >** Citrix is providing a Windows Installer Transform File, Slfregfix.mst, so that administrators may bypass the imposed security restriction.
 
-Unfortunately the transform file provided by Citrix doesn&#8217;t work with the Presentation Server Client 10, so I&#8217;ve recreated it to work with version 10. Here&#8217;s the file for you to download and test in your own environment. Just a quick word of warning &#8211; I&#8217;ve only performed some very quick testing at this stage. Before you use this, test it out to ensure it works for you in your network.
+Unfortunately the transform file provided by Citrix doesn&#8217;t work with the Presentation Server Client 10, so I&#8217;ve recreated it to work with version 10. Here&#8217;s the file for you to download and test in your own environment. Just a quick word of warning - I&#8217;ve only performed some very quick testing at this stage. Before you use this, test it out to ensure it works for you in your network.
 
 <p class="download">
   <a href="http://stealthpuppy.com/wp-content/uploads/2007/03/slfregfix2.mst">Transform to enable Pass-through authentication</a>

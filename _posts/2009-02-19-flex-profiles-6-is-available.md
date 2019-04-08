@@ -19,8 +19,8 @@ thesis_post_image_horizontal:
 categories:
   - Applications
 ---
-A press release from [Immidio](http://www.immidio.com/) landed in by inbox today &#8211; Flex Profiles, formerly by [Login Consultants](http://www.loginconsultants.com/), has been updated to [version 6](http://www.immidio.com/flexprofiles/). It comes as [a free Express version](http://www.immidio.com/initiate_download.asp?download=Flex) and from what I can tell, you can pay for support.
+A press release from [Immidio](http://www.immidio.com/) landed in by inbox today - Flex Profiles, formerly by [Login Consultants](http://www.loginconsultants.com/), has been updated to [version 6](http://www.immidio.com/flexprofiles/). It comes as [a free Express version](http://www.immidio.com/initiate_download.asp?download=Flex) and from what I can tell, you can pay for support.
 
 > Immidio announces the launch of Immidio Flex Profiles 6.0, the successor of the popular Login Consultants freeware tool. Immidio Flex Profiles gives administrators full control over Windows user profiles on workstations, remote desktops and virtualized applications. Immidio Response provides tailored product support programs based on the size and complexity of the IT environment.
 
-I must admit that I haven&#8217;t looked at version 6, but I have used earlier versions quite extensively in the past in Terminal Server environments, and it was always a great way to manage user profiles.
+I must admit that I haven't looked at version 6, but I have used earlier versions quite extensively in the past in Terminal Server environments, and it was always a great way to manage user profiles.

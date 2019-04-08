@@ -26,7 +26,7 @@ In a MAV environment this service can be successfully virtualised, however you m
 
 [<img border="0" width="777" src="http://stealthpuppy.com/wp-content/uploads/2008/01/licensing-error-thumb1.png" alt="Licensing Error" height="113" style="border-width: 0px" />](http://stealthpuppy.com/wp-content/uploads/2008/01/licensing-error3.png)
 
-Fortunately the FLEXnet Licensing service only needs to run when the application starts &#8211; you can subsequently stop the service and the application will continue to run. With a script we can stop this service to get more than one CS3 application running.
+Fortunately the FLEXnet Licensing service only needs to run when the application starts - you can subsequently stop the service and the application will continue to run. With a script we can stop this service to get more than one CS3 application running.
 
 Originally I had attempted using WMI to detect the state of the service, wait for it to start and then stop it. However, the virtual services are not detectable via WMI so I&#8217;ve had to resort to something a little more crude. This script reads the output from a NET START command until the FLEXnet service starts and then stops the service. It&#8217;s not a robust script by any means but it gets the job done.
 

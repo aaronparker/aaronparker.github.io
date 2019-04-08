@@ -69,7 +69,7 @@ Although PNGOUT is a command line tool, you can make life easier by adding a sho
 
 ### Wrapping Up
 
-So that&#8217;s what I use and you can&#8217;t argue with great results &#8211; don&#8217;t settle for second rate screen shots. I&#8217;ll leave you with a few more pointers:
+So that&#8217;s what I use and you can&#8217;t argue with great results - don&#8217;t settle for second rate screen shots. I&#8217;ll leave you with a few more pointers:
 
   * Please spare us (or maybe just me) from that awful shadow Windows Live Writer adds to images. It&#8217;s just plain ugly.
   * Always use the default Windows themes when creating screen shots for documentation. There&#8217;s a good chance your audience may not recognise that custom theme as anything close to what they&#8217;re seeing on their own machine.

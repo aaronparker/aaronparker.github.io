@@ -36,7 +36,7 @@ Note that if you are [deploying Office 2013 with Click-to-Run (App-V)](http://te
 
 [Office 2013 customisation and deployment](http://technet.microsoft.com/en-us/library/cc178982.aspx) is already well covered in the documentation available on TechNet, so in this article I’ll only cover some highlights and recommendations.
 
-To manage an Office 2013 deployment, copy the Office source files to a folder and ensure you&#8217;ve downloaded the latest updates and service packs. [Extract these and copy into your Office setup folder under Updates](http://technet.microsoft.com/en-us/library/cc178995.aspx). These will then be installed along side Office during setup.
+To manage an Office 2013 deployment, copy the Office source files to a folder and ensure you've downloaded the latest updates and service packs. [Extract these and copy into your Office setup folder under Updates](http://technet.microsoft.com/en-us/library/cc178995.aspx). These will then be installed along side Office during setup.
 
   * [Service Pack 1 for Microsoft Office 2013 (KB2817430) 32-Bit Edition](http://www.microsoft.com/en-us/download/details.aspx?id=42017)
   * [Service Pack 1 for Microsoft Office 2013 (KB2817430) 64-Bit Edition](http://www.microsoft.com/en-us/download/details.aspx?id=42006)
@@ -53,7 +53,7 @@ Choose the default file types:
 
 [<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FileTypes" alt="FileTypes" src="http://stealthpuppy.com/wp-content/uploads/2012/11/FileTypes_thumb.png" width="660" height="380" border="0" />](http://stealthpuppy.com/wp-content/uploads/2012/11/FileTypes.png)
 
-Set licensing options and the display level of the setup UI. These options will vary dependant on whether you&#8217;re using KMS or MAK licensing and how you’re deploying Office:
+Set licensing options and the display level of the setup UI. These options will vary dependant on whether you're using KMS or MAK licensing and how you’re deploying Office:
 
 [<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Licensing" alt="Licensing" src="http://stealthpuppy.com/wp-content/uploads/2012/11/Licensing_thumb.png" width="660" height="380" border="0" />](http://stealthpuppy.com/wp-content/uploads/2012/11/Licensing.png)
 

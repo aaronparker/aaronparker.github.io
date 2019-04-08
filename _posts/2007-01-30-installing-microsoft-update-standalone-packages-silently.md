@@ -31,10 +31,10 @@ You can run the WUSA command with /? to see a dialog box detailing the complete 
 > 
 > wusa <update> \[/quiet\] \[/norestart\]
 > 
-> /?, /h, /help &#8211; Display help information.
+> /?, /h, /help - Display help information.
 > 
-> update &#8211; Full path of the MSU file.
+> update - Full path of the MSU file.
 > 
-> /quiet &#8211; Quiet mode, no user interaction. reboot as needed
+> /quiet - Quiet mode, no user interaction. reboot as needed
 > 
-> /norestart &#8211; When combined with /quiet, installer will NOT initiate reboot. It is ignored if it is used alone
+> /norestart - When combined with /quiet, installer will NOT initiate reboot. It is ignored if it is used alone

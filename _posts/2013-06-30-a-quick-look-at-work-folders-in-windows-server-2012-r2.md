@@ -14,11 +14,11 @@ tags:
   - Data
   - Folder Redirection
 ---
-Microsoft announced some interesting new features in Windows Server 2012 R2 at [TechEd 2013](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/Key01#fbid=lNnF7jCr5lA) and one of those that piqued my interest is Work Folders. I&#8217;m not the biggest fan of [Redirected Folders and Offline files](http://stealthpuppy.com/replacing-redirected-folders-and-offline-files-with-appsense-datanow/), but it&#8217;s essentially the only enterprise solution Microsoft provides today for taking your data offline. Microsoft needs to provide a completely new method of syncing file data &#8211; one that is designed for todays use cases and computing environment.
+Microsoft announced some interesting new features in Windows Server 2012 R2 at [TechEd 2013](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/Key01#fbid=lNnF7jCr5lA) and one of those that piqued my interest is Work Folders. I&#8217;m not the biggest fan of [Redirected Folders and Offline files](http://stealthpuppy.com/replacing-redirected-folders-and-offline-files-with-appsense-datanow/), but it&#8217;s essentially the only enterprise solution Microsoft provides today for taking your data offline. Microsoft needs to provide a completely new method of syncing file data - one that is designed for todays use cases and computing environment.
 
 Work Folders is a brand new direction for enabling access to data in offline scenarios, along the lines of Citrix ShareFile and Dropbox, but without the web and sharing features. Like most Microsoft OS features, Work Folders is tied to a specific release of Windows; however according to this [Channel 9 video](http://channel9.msdn.com/Shows/Edge/Edge-Show-65-Windows-Server-2012-R2-Work-Folders), Microsoft will release Work Folders for Windows 7, iOS and &#8220;other devices&#8221; (presumably Android). This is excellent news.
 
-Here&#8217;s a short look at setting up and connecting to Work Folders using the preview releases of Windows Server 2012 R2 and Windows 8.1 &#8211; what&#8217;s version 1.0 going to deliver?
+Here&#8217;s a short look at setting up and connecting to Work Folders using the preview releases of Windows Server 2012 R2 and Windows 8.1 - what&#8217;s version 1.0 going to deliver?
 
 # Server Configuration
 
@@ -32,7 +32,7 @@ Once installed, Work Folders is managed through Server Manager:
 
 [<img class="alignnone size-full wp-image-3402" alt="WorkFolders-ServerManager" src="http://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-ServerManager.png" width="1022" height="622" srcset="https://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-ServerManager.png 1022w, https://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-ServerManager-150x91.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-ServerManager-300x182.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-ServerManager-624x379.png 624w" sizes="(max-width: 1022px) 100vw, 1022px" />](http://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-ServerManager.png)
 
-Creating a new sync share is performed via a wizard which will first ask where the Sync Share will be located. This can be a new folder or an existing share &#8211; mixing user home drives and Work Folders should be possible. Note that at this time, Work Folders only supports providing users with exclusive access to Sync Share location &#8211; there is no provision for providing access to shared data.
+Creating a new sync share is performed via a wizard which will first ask where the Sync Share will be located. This can be a new folder or an existing share - mixing user home drives and Work Folders should be possible. Note that at this time, Work Folders only supports providing users with exclusive access to Sync Share location - there is no provision for providing access to shared data.
 
 [<img class="alignnone size-full wp-image-3403" alt="WorkFolders-Setup1" src="http://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-Setup1.png" width="775" height="567" srcset="https://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-Setup1.png 775w, https://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-Setup1-150x109.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-Setup1-300x219.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-Setup1-624x456.png 624w" sizes="(max-width: 775px) 100vw, 775px" />](http://stealthpuppy.com/wp-content/uploads/2013/06/WorkFolders-Setup1.png)
 

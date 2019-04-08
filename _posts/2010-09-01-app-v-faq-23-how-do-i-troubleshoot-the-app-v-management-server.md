@@ -45,7 +45,7 @@ There are three tools that you should reach for when troubleshooting the Managem
   * The App-V Management Server log
   * The App-V Ping Tool
 
-When viewing the Application event log, filter the log (right-click / _Filter Current Log…_) and use these Event sources &#8211; Application Virtualization and Application Virtualization Server.
+When viewing the Application event log, filter the log (right-click / _Filter Current Log…_) and use these Event sources - Application Virtualization and Application Virtualization Server.
 
 <img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-ApplicationEventLog" src="http://stealthpuppy.com/wp-content/uploads/2010/08/AppVApplicationEventLog.png" alt="AppV-ApplicationEventLog" width="660" height="416" border="0" /> 
 
@@ -83,8 +83,8 @@ The following articles and blog posts are excellent resources for troubleshootin
   * [Getting to Grip with the App-V Server Log File (sft-server.log)](http://blogs.technet.com/b/virtualworld/archive/2009/04/10/getting-to-grip-with-the-app-v-server-log-file-sft-server-log.aspx)
   * [Publishing Refresh succeeded but where are my icons? Troubleshooting some common publishing issues in Microsoft App-V](http://blogs.technet.com/b/appv/archive/2010/06/03/publishing-refresh-succeeded-but-where-are-my-icons-troubleshooting-some-common-publishing-issues-in-microsoft-app-v.aspx)
   * [Pre-creation of Server objects may yield certain sub-optimal values in the App-V SQL Database](http://blogs.technet.com/b/appv/archive/2010/05/10/pre-creation-of-server-objects-may-yield-certain-sub-optimal-values-in-the-app-v-sql-database.aspx)
-  * [The Top Three Rookie Mistakes &#8211; Part 1](http://blogs.technet.com/b/appv/archive/2008/09/08/the-top-three-rookie-mistakes-part-2.aspx)
-  * [The Top Three Rookie Mistakes &#8211; Part 2](http://blogs.technet.com/b/appv/archive/2008/09/08/the-top-three-rookie-mistakes-part-2.aspx)
+  * [The Top Three Rookie Mistakes - Part 1](http://blogs.technet.com/b/appv/archive/2008/09/08/the-top-three-rookie-mistakes-part-2.aspx)
+  * [The Top Three Rookie Mistakes - Part 2](http://blogs.technet.com/b/appv/archive/2008/09/08/the-top-three-rookie-mistakes-part-2.aspx)
   * SQL Server permissions: [Setting Up Windows Service Accounts](http://msdn.microsoft.com/en-us/library/ms143504.aspx)
 
 ### Knowledgebase Articles

@@ -22,7 +22,7 @@ Avert thy eyes lest you be turned to stone! Well not quite, but your users might
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/02/pinkjinitiator.png" border="0" alt="PinkJInitiator" width="410" height="296" /> 
 
-This behaviour is due to a couple of Presentation Server hotfixes &#8211; [PSE450R01W2K3035](http://support.citrix.com/article/CTX115275) and [PSE450R01W2K3042](http://support.citrix.com/article/CTX115629) (which supersedes the former). Ironically these hotfixes directly address some graphical display issues:
+This behaviour is due to a couple of Presentation Server hotfixes - [PSE450R01W2K3035](http://support.citrix.com/article/CTX115275) and [PSE450R01W2K3042](http://support.citrix.com/article/CTX115629) (which supersedes the former). Ironically these hotfixes directly address some graphical display issues:
 
 >   * In 16-bit color connections, blue or cyan rectangles might appear on graphics.
 >   * In 16-bit color connections, text, lines, and shadows on inactive menu buttons and windows might appear blue instead of gray.

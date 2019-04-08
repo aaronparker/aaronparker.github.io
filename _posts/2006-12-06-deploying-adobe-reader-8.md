@@ -41,7 +41,7 @@ Now that [Adobe Reader 8 has been released](http://www.adobe.com/products/acroba
 or  
 [code]MSIEXEC /I AcroRead.msi ALLUSERS=TRUE EULA\_ACCEPT=YES SUPPRESS\_APP_LAUNCH=YES REBOOT=REALLYSUPRESS /QB-[/code]
 
-  * A second shortcut is now added to the Startup group &#8211; **Adobe Reader Synchronizer** as well as the **Adobe Reader Speed Launch** shortcut;
+  * A second shortcut is now added to the Startup group - **Adobe Reader Synchronizer** as well as the **Adobe Reader Speed Launch** shortcut;
   * At launch, Adobe Reader reads the <span style="font-family: Courier New">HKLMSystemCurrentControlSetControlTerminal Server</span> registry key. Will it perform differently on a Terminal Server?
   * It appears to launch quite quickly;
   * It also reads this registry key <span style="font-family: Courier New">HKLMSOFTWAREPoliciesAdobeAcrobat Reader8.0FeatureLockdown</span> which could mean that an ADM/ADMX file exists or is coming to manage Adobe Reader via Group Policy;

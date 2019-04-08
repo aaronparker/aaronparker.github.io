@@ -1,6 +1,6 @@
 ---
 id: 377
-title: 'SoftGrid: Sequencing Adobe Acrobat 8 &#8211; The Story So Far'
+title: 'SoftGrid: Sequencing Adobe Acrobat 8 - The Story So Far'
 date: 2007-11-27T17:45:38+10:00
 author: Aaron Parker
 layout: post

@@ -1,6 +1,6 @@
 ---
 id: 2871
-title: 'App-V 5 PowerShell One Liners &#8211; Adding and Publishing App-V Server Packages'
+title: 'App-V 5 PowerShell One Liners - Adding and Publishing App-V Server Packages'
 date: 2012-10-28T21:36:12+10:00
 author: Aaron Parker
 layout: post

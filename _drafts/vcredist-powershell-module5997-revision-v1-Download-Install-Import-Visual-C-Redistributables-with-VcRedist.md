@@ -9,17 +9,17 @@ permalink: /5997-revision-v1/
 ---
 **Note**: for a more up to date version of the content in this article, VcRedist now has documentation available here:&nbsp;<https://docs.stealthpuppy.com/vcredist>
 
-Last year I wrote [a PowerShell script that can download, install or import](https://stealthpuppy.com/visual-c-redistributable-installer/) the Visual C++ Redistributables into MDT or ConfigMgr. Long-term maintenance of the full feature set in a single script is a little unwieldy so I&#8217;ve re-written the script and created [a PowerShell module](https://github.com/aaronparker/Install-VisualCRedistributables) &#8211; VcRedist.
+Last year I wrote [a PowerShell script that can download, install or import](https://stealthpuppy.com/visual-c-redistributable-installer/) the Visual C++ Redistributables into MDT or ConfigMgr. Long-term maintenance of the full feature set in a single script is a little unwieldy so I've re-written the script and created [a PowerShell module](https://github.com/aaronparker/Install-VisualCRedistributables) - VcRedist.
 
 Refactoring the script into a module has been a great little project for creating my first PowerShell function and publishing it to&nbsp;[the PowerShell Gallery](https://www.powershellgallery.com/packages/VcRedist/).
 
 # Why VcRedist?
 
-At this point, I&#8217;m sure you&#8217;re saying to yourself &#8211; &#8220;Aaron, haven&#8217;t you just created [Chocolatey](https://chocolatey.org/)?&#8221;. In a way yes, this module does exactly what you can do with Chocolatey &#8211; install the [Visual C++ Redistributables](https://chocolatey.org/packages/vcredist140) directly to the local machine. Although you can download and install all of the supported (and unsupported) Redistributables, the primary aim of the module is to provide a fast way to download and import the&nbsp;Redistributables into the Microsoft Deployment Toolkit or System Center Configuration Manager for operating system deployments.
+At this point, I'm sure you're saying to yourself - &#8220;Aaron, haven't you just created [Chocolatey](https://chocolatey.org/)?&#8221;. In a way yes, this module does exactly what you can do with Chocolatey - install the [Visual C++ Redistributables](https://chocolatey.org/packages/vcredist140) directly to the local machine. Although you can download and install all of the supported (and unsupported) Redistributables, the primary aim of the module is to provide a fast way to download and import the&nbsp;Redistributables into the Microsoft Deployment Toolkit or System Center Configuration Manager for operating system deployments.
 
 # Module
 
-The VcRedist module is [published to the PowerShell Gallery](https://www.powershellgallery.com/packages/VcRedist/), which means that it&#8217;s simple to install the module and starting importing with a few lines of PowerShell. For example, here&#8217;s how you could install the module, download all of [the supported Redistributables](https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads) and import them into an MDT deployment share:
+The VcRedist module is [published to the PowerShell Gallery](https://www.powershellgallery.com/packages/VcRedist/), which means that it's simple to install the module and starting importing with a few lines of PowerShell. For example, here's how you could install the module, download all of [the supported Redistributables](https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads) and import them into an MDT deployment share:
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Install-Module -Name VcRedist
 Import-Module VcRedist

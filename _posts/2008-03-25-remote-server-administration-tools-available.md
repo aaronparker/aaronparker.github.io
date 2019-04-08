@@ -13,7 +13,7 @@ categories:
 tags:
   - RSAT
 ---
-The wait is finally over &#8211; the Microsoft Remote Server Administration Tools are available. The RSAT also includes a the command line version of the tools as well. There is a knowledge base article, [KB941314](http://support.microsoft.com/kb/941314), but it&#8217;s not yet available.
+The wait is finally over - the Microsoft Remote Server Administration Tools are available. The RSAT also includes a the command line version of the tools as well. There is a knowledge base article, [KB941314](http://support.microsoft.com/kb/941314), but it&#8217;s not yet available.
 
 > Microsoft Remote Server Administration Tools (RSAT) enables IT administrators to remotely manage roles and features in Windows Server 2008 from a computer running Windows Vista SP1. It includes support for remote management of computers running either a Server Core or full installation option of Windows Server 2008. After you install this item, you may have to restart your computer.
 

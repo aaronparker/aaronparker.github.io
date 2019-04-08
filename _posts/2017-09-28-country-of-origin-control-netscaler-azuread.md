@@ -24,7 +24,7 @@ Back in March of this year, I was working on a project to design a solution for 
 
 By configuring [Citrix FAS](http://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/secure/federated-authentication-service.html) and [NetScaler with SAML authentication to Azure AD](https://stealthpuppy.com/netscaler-azure-ad-conditional-access/), we were able to use [Named Locations in Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-named-locations) Conditional Access policies to achieve the desired goal. For instance we could allow Office 365 only from compliant or domain-joined PCs and ensure access to XenApp only from specific locations. Thus for a certain group of users, they could only access Office 365 applications from XenApp and then only from a specific physical location.
 
-All was well, until Microsoft pulled the ability to use Named Locations in Conditional Access policies half-way through the project. Lesson learned &#8211; never rely on preview features in Azure.
+All was well, until Microsoft pulled the ability to use Named Locations in Conditional Access policies half-way through the project. Lesson learned - never rely on preview features in Azure.
 
 At Ignite 2017 this week, Microsoft announced a number of new conditions that includes the ability again to use Named Locations in conditions. What&#8217;s new here is the ability to pick from a list of countries when defining those locations. With the number of new conditions available, including Terms of Use, VPN connectivity and Custom controls, I am hoping that Microsoft will not pull these features in the future and instead get them out of preview as quickly as possible.
 
@@ -32,7 +32,7 @@ At Ignite 2017 this week, Microsoft announced a number of new conditions that in
 
 In my previous article on [integrating Citrix NetScaler with Azure AD and Conditional Access](https://stealthpuppy.com/netscaler-azure-ad-conditional-access/), I&#8217;ve described the steps to enable SAML authentication to Azure AD from NetScaler to enable a single authentication experience across remote published apps (or desktops) and Office 365. You could extend this of course to additional applications, provide users with single sign-on across all sorts of applications.
 
-Doing so allows IT to control access to any application, whether that be legacy Win32 apps, or new SaaS applications from a single administrative experience with Conditional Access. Seen in the screenshot below, I have policies providing access to various applications &#8211; it&#8217;s a beautiful thing.
+Doing so allows IT to control access to any application, whether that be legacy Win32 apps, or new SaaS applications from a single administrative experience with Conditional Access. Seen in the screenshot below, I have policies providing access to various applications - it&#8217;s a beautiful thing.
 
 <figure id="attachment_5798" aria-describedby="caption-attachment-5798" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5798" src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-1024x587.png" alt="Azure AD Conditional Access policies" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies.png)<figcaption id="caption-attachment-5798" class="wp-caption-text">Azure AD Conditional Access policies</figcaption></figure>
 
@@ -40,9 +40,9 @@ Doing so allows IT to control access to any application, whether that be legacy 
 
 The new conditions and controls should be available now, in preview, for just about everyone. These include:
 
-  * Custom controls &#8211;&nbsp;JSON for customised controls from 3rd party claim providers. This should enable just about any type of user or device control in a CA policy
-  * Terms of use &#8211; require a user to consent to your organisation’s terms of use before they get access to an application
-  * VPN connectivity &#8211; force device compliance (for Windows 10 devices) before being allowed access to a corporate VPN
+  * Custom controls -&nbsp;JSON for customised controls from 3rd party claim providers. This should enable just about any type of user or device control in a CA policy
+  * Terms of use - require a user to consent to your organisation’s terms of use before they get access to an application
+  * VPN connectivity - force device compliance (for Windows 10 devices) before being allowed access to a corporate VPN
 
 <figure id="attachment_5804" aria-describedby="caption-attachment-5804" style="width: 818px" class="wp-caption alignnone">[<img class="size-full wp-image-5804" src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom.png" alt="New conditions and controls in preview" width="818" height="519" srcset="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom.png 818w, https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom-150x95.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom-300x190.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom-768x487.png 768w" sizes="(max-width: 818px) 100vw, 818px" />](https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom.png)<figcaption id="caption-attachment-5804" class="wp-caption-text">New conditions and controls in preview</figcaption></figure>
 

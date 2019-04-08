@@ -139,4 +139,4 @@ You may additionally like to add _%CSIDL_WINDOWS%\Installer_ as an exclusion to 
 
 Capturing QuickTime should be straight-forward; however you will most likely need to create separate packages if you support multiple operating systems. Sequence on the lowest common denominator and test to see if this is required.
 
-You will also need to create a shortcut to Internet Explorer (or your browser of choice) so that users can use QuickTime to view media on the web &#8211; just as you would when virtualising any other ActiveX controls.
+You will also need to create a shortcut to Internet Explorer (or your browser of choice) so that users can use QuickTime to view media on the web - just as you would when virtualising any other ActiveX controls.

@@ -24,15 +24,15 @@ When install Office 2007 on your Terminal Servers there are a few things you&#82
 
 There are a number of options I recommend setting by using the [Office Customisation Tool](http://technet2.microsoft.com/Office/en-us/library/8faae8a0-a12c-4f7b-839c-24a66a531bb51033.mspx) (SETUP.EXE /ADMIN). These first couple of options aren&#8217;t really Terminal Server specific and are worth setting for all Office deployments. You can enforce these via Group Policy, however if you configure them with a custom installation they will be the default settings:
 
-  * Disable the Customer Experience Improvement Program from running when users start an Office application: _Modify user settings &#8211; Microsoft Office 2007 system / Privacy / Trust Center / Enable Customer Experience Improvement Program_
-  * Disable Outlook from prompting users to archive their mailboxes: _Modify user settings &#8211; Microsoft Office Outlook 2007 / Tools | Options.. / Other / AutoArchive / AutoArchive Settings_
+  * Disable the Customer Experience Improvement Program from running when users start an Office application: _Modify user settings - Microsoft Office 2007 system / Privacy / Trust Center / Enable Customer Experience Improvement Program_
+  * Disable Outlook from prompting users to archive their mailboxes: _Modify user settings - Microsoft Office Outlook 2007 / Tools | Options.. / Other / AutoArchive / AutoArchive Settings_
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1390.ModifyUserSettings.png" border="0" alt="" /> 
 
-You&#8217;ll also want to take a look at the feature installation states &#8211; set each of these to either ON or OFF, don&#8217;t set any feature to Install on First Use. A subset of the options I disable when installing Office on a Terminal Server are:
+You&#8217;ll also want to take a look at the feature installation states - set each of these to either ON or OFF, don&#8217;t set any feature to Install on First Use. A subset of the options I disable when installing Office on a Terminal Server are:
 
-  * Office Shared Features / Proofing Tools / French Proofing Tools / English &#8211; French Translation
-  * Office Shared Features / Proofing Tools / Spanish Proofing Tools / Spanish &#8211; French Translation
+  * Office Shared Features / Proofing Tools / French Proofing Tools / English - French Translation
+  * Office Shared Features / Proofing Tools / Spanish Proofing Tools / Spanish - French Translation
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1391.FeatureInstallationStates.png" border="0" alt="" /> 
 

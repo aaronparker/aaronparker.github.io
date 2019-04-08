@@ -20,7 +20,7 @@ tags:
   - Group Policy
   - Office-2007
 ---
-In a previous post I discussed what you need to do to start [deploying Office 2007](http://www.stealthpuppy.com/blogs/travelling/archive/2007/04/12/office-2007-deployment-via-group-policy.aspx). In that post I referenced a page that Microsoft linked to, but have not actually posted ([Use Group Policy to Assign Startup Scripts for 2007 Office Deployment](http://technet2.microsoft.com/Office/en-us/library/a57c8446-b959-4025-a866-b690ddcaa66d1033.mspx)). So in this article I&#8217;ll go through a couple of ways you can use Group Policy startup scripts to deploy Office.
+In a previous post I discussed what you need to do to start [deploying Office 2007](http://www.stealthpuppy.com/blogs/travelling/archive/2007/04/12/office-2007-deployment-via-group-policy.aspx). In that post I referenced a page that Microsoft linked to, but have not actually posted ([Use Group Policy to Assign Startup Scripts for 2007 Office Deployment](http://technet2.microsoft.com/Office/en-us/library/a57c8446-b959-4025-a866-b690ddcaa66d1033.mspx)). So in this article I'll go through a couple of ways you can use Group Policy startup scripts to deploy Office.
 
 To get the most out of your Office 2007 deployment you will need to deploy using SETUP.EXE, not the MSI file. The reason for this is the changes Microsoft has made to Office 2007 setup there are no more transform files, instead customisation is achieved via Windows Installer patch files (.MSP). Using SETUP.EXE for deployment will automatically apply the patch file during installation.
 
@@ -58,7 +58,7 @@ The simplest way to detect if Office is installed before starting the setup prog
 
 [code]IF NOT EXIST "%ProgramFiles%\Microsoft Office\Office12\WINWORD.EXE" START /WAIT \\company.local\Public\Applications\Office2007\SETUP.EXE[/code]
 
-Deploying Office 2007 via Group Policy will be challenging and may require you to perform more testing than with previous versions. For smaller organisations that have relied on Group Policy previously Office deployment can still be achieved, however perhaps it&#8217;s time to look into something a little more flexible. What I&#8217;ve seen of [System Centre Essentials](http://www.microsoft.com/systemcenter/sce/default.mspx) so far is pretty impressive and I think it&#8217;s just the tool for small organisations. Hopefully I&#8217;ve given you enough here to get your Office deployment started. I&#8217;d be interested in hearing how others are going with their own deployments.
+Deploying Office 2007 via Group Policy will be challenging and may require you to perform more testing than with previous versions. For smaller organisations that have relied on Group Policy previously Office deployment can still be achieved, however perhaps it's time to look into something a little more flexible. What I've seen of [System Centre Essentials](http://www.microsoft.com/systemcenter/sce/default.mspx) so far is pretty impressive and I think it's just the tool for small organisations. Hopefully I've given you enough here to get your Office deployment started. I'd be interested in hearing how others are going with their own deployments.
 
 <p class="note">
   Microsoft have recently blogged about <a href="http://blogs.technet.com/office_resource_kit/archive/2008/06/06/how-to-deploy-office-2007-by-using-group-policy-to-assign-startup-scripts.aspx">Office 2007 deployment via Group Policy</a>, which is worth checking out too.

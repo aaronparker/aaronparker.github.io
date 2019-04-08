@@ -20,7 +20,7 @@ tags:
 ---
 If you&#8217;re deploying Office 2007 and haven&#8217;t yet standardised on the new file formats, you&#8217;re probably already aware of how to set the default file formats via [Group Policy](http://technet2.microsoft.com/Office/en-us/library/07946c8e-9311-42a6-979b-5bc89afb7a661033.mspx?mfr=true), or using the [Office Customization Tool](http://technet2.microsoft.com/Office/en-us/library/9c14db60-b591-41f9-a94b-50627d2daa811033.mspx?mfr=true) to set the defaults before installing Office.
 
-There&#8217;s another avenue to creating new Office documents that I hadn&#8217;t thought about until I was asked to change the defaults today &#8211; creating new documents directly from within Windows Explorer:
+There&#8217;s another avenue to creating new Office documents that I hadn&#8217;t thought about until I was asked to change the defaults today - creating new documents directly from within Windows Explorer:
 
 ![newbeforecropped.png](http://stealthpuppy.com/wp-content/uploads/2007/12/newbeforecropped.png) 
 

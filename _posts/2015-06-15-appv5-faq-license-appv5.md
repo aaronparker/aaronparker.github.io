@@ -18,7 +18,7 @@ tags:
 ---
 _This article is part of the [Microsoft Application Virtualization 5 FAQ series](http://stealthpuppy.com/appv5-faqs/). Last update: September 1st, 2015_
 
-Microsoft Application Virtualization (App-V) 5 has three main components &#8211; Client, Server and Sequencer. For licensing purposes, you only need a license for App-V for wherever the App-V Client is installed. The App-V Server and Sequencer are not directly licensed, although you may require a Windows license to run those components.
+Microsoft Application Virtualization (App-V) 5 has three main components - Client, Server and Sequencer. For licensing purposes, you only need a license for App-V for wherever the App-V Client is installed. The App-V Server and Sequencer are not directly licensed, although you may require a Windows license to run those components.
 
 App-V 5 is licensed in one of 2 ways:
 

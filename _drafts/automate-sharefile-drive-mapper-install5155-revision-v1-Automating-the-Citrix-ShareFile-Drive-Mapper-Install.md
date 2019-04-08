@@ -7,11 +7,11 @@ layout: revision
 guid: https://stealthpuppy.com/5155-revision-v1/
 permalink: /5155-revision-v1/
 ---
-Automating the installation of the Citrix ShareFile Drive Mapper requires deploying a code signing certificate to target machines before setup will complete. If you&#8217;ve installed the Drive Mapper client, you will have seen the following dialog box during setup:
+Automating the installation of the Citrix ShareFile Drive Mapper requires deploying a code signing certificate to target machines before setup will complete. If you've installed the Drive Mapper client, you will have seen the following dialog box during setup:
 
 <figure id="attachment_4416" aria-describedby="caption-attachment-4416" style="width: 501px" class="wp-caption alignnone">[<img class="size-full wp-image-4416" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png" alt="Citrix ShareFile Driver" width="501" height="232" srcset="https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png 501w, https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver-150x69.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver-300x139.png 300w" sizes="(max-width: 501px) 100vw, 501px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png)<figcaption id="caption-attachment-4416" class="wp-caption-text">Citrix ShareFile Driver prompt during install</figcaption></figure>
 
-[Mike Nelson](https://twitter.com/nelmedia)&nbsp;had some challenges deploying the client, so I&#8217;ve documented the process here.
+[Mike Nelson](https://twitter.com/nelmedia)&nbsp;had some challenges deploying the client, so I've documented the process here.
 
 # Extract the Code Signing Certificate
 
@@ -19,7 +19,7 @@ Manually install the Driver Mapper on a target machine and view the local certif
 
 <figure id="attachment_5158" aria-describedby="caption-attachment-5158" style="width: 982px" class="wp-caption alignnone">[<img class="wp-image-5158 size-full" src="http://stealthpuppy.com/wp-content/uploads/2016/09/Capture.png" alt="The code signing certificate in Certificate Manager" width="982" height="520" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/Capture.png 982w, https://stealthpuppy.com/wp-content/uploads/2016/09/Capture-150x79.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/Capture-300x159.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/Capture-768x407.png 768w" sizes="(max-width: 982px) 100vw, 982px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/Capture.png)<figcaption id="caption-attachment-5158" class="wp-caption-text">Citrix ShareFile Drive Mapper DigiCert code signing certificate</figcaption></figure>
 
-View the properties of the certificate and you can see that it&#8217;s been issued by DigiCert:
+View the properties of the certificate and you can see that it's been issued by DigiCert:
 
 <figure id="attachment_5159" aria-describedby="caption-attachment-5159" style="width: 405px" class="wp-caption alignnone">[<img class="size-full wp-image-5159" src="http://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png" alt="Citrix ShareFile Drive Mapper Digicert code signing certificate" width="405" height="515" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png 405w, https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties-118x150.png 118w, https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties-236x300.png 236w" sizes="(max-width: 405px) 100vw, 405px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png)<figcaption id="caption-attachment-5159" class="wp-caption-text">Citrix ShareFile Drive Mapper Digicert code signing certificate</figcaption></figure>
 
@@ -47,10 +47,10 @@ This method provides some flexibility to enable a controlled deployment or insta
 
 # Deploying the Drive Mapper client
 
-To deploy the Drive Mapper client is very simple &#8211; no customisation of the installer should be required, unless you want to change the default installation path. Download the [Drive Mapper client in EXE or MSI](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/sharefile-drive-mapper.html) format. An installation guide can be found in article&nbsp;[CTX207791](http://support.citrix.com/article/CTX207791).
+To deploy the Drive Mapper client is very simple - no customisation of the installer should be required, unless you want to change the default installation path. Download the [Drive Mapper client in EXE or MSI](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/sharefile-drive-mapper.html) format. An installation guide can be found in article&nbsp;[CTX207791](http://support.citrix.com/article/CTX207791).
 
-I&#8217;ve been able to deploy the client via MDM-enrolled Windows 10 machines using the Windows Installer deployment option. The particular environment is using Windows 10 joined to Azure AD with SSO enabled for ShareFile, which flows through to the Drive Mapper and ShareFile Outlook plug-in.
+I've been able to deploy the client via MDM-enrolled Windows 10 machines using the Windows Installer deployment option. The particular environment is using Windows 10 joined to Azure AD with SSO enabled for ShareFile, which flows through to the Drive Mapper and ShareFile Outlook plug-in.
 
 # Summary
 
-Citrix has not yet certified the Citrix ShareFile Drive Mapper client driver for the [WHQL](https://msdn.microsoft.com/en-us/windows/hardware/gg463010.aspx), so until then you&#8217;ll need&nbsp;to follow this process to get the certificate onto target machines to automate the installation or avoid having to disable Secure Boot to install it.
+Citrix has not yet certified the Citrix ShareFile Drive Mapper client driver for the [WHQL](https://msdn.microsoft.com/en-us/windows/hardware/gg463010.aspx), so until then you'll need&nbsp;to follow this process to get the certificate onto target machines to automate the installation or avoid having to disable Secure Boot to install it.

@@ -34,7 +34,7 @@ Application Virtualisation has a number of benefits over traditional method of a
   * Fast application provisioning to the desktop based upon where the user is logging on from
   * Streams applications on demand to desktops, Remote Desktop Servers, and laptops
   * Automates and simplifies the application management lifecycle by significantly reducing regression and application interoperability testing
-  * Reduces the end-user impacts associated with application upgrades, patching, and terminations &#8211; No reboots required, no waiting for applications to install, and no need to uninstall when retiring applications
+  * Reduces the end-user impacts associated with application upgrades, patching, and terminations - No reboots required, no waiting for applications to install, and no need to uninstall when retiring applications
 
 ### How Application Virtualisation Works
 

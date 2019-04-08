@@ -21,19 +21,19 @@ Chicken Little seems to be working overtime when it comes to the Windows Store i
 
 There are a number of the in-box Universal apps that I would consider to be useful, at least if you&#8217;re deploying Current Branch / Current Branch for Business. These include Edge, Calculator, Photos, Weather, News and perhaps even Sticky Notes (in 1607). Some organisations would find the growing list of 3rd party apps including Twitter and Facebook (think marketing) useful for deployment.
 
-While it remains to be seen how many line-of-business applications that will embrace the Universal app platform, deploying and updating Universal apps is far simpler than traditional Win32 apps &#8211; roaming preferences notwithstanding.
+While it remains to be seen how many line-of-business applications that will embrace the Universal app platform, deploying and updating Universal apps is far simpler than traditional Win32 apps - roaming preferences notwithstanding.
 
 # Managing the Windows Store without Disabling It
 
 If you&#8217;re looking to embrace or at least maintaining some of the in-box Universal apps, there are a number of steps you should be taking:
 
-  * [Extend your on-premises Active Directory into Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-aadconnect/). Whether you&#8217;re considering rolling out Microsoft services such as Office 365 or [other services on the Azure platform](http://azureplatform.azurewebsites.net/en-us/), extending into Azure AD will a part of almost organisation&#8217;s Windows 10 deployments. Extending into Azure AD does not require you to purchase any Azure services &#8211; [Azure AD Basic](https://azure.microsoft.com/en-us/documentation/articles/active-directory-editions/) is free and provides what is needed for integration into cloud services.
+  * [Extend your on-premises Active Directory into Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-aadconnect/). Whether you&#8217;re considering rolling out Microsoft services such as Office 365 or [other services on the Azure platform](http://azureplatform.azurewebsites.net/en-us/), extending into Azure AD will a part of almost organisation&#8217;s Windows 10 deployments. Extending into Azure AD does not require you to purchase any Azure services - [Azure AD Basic](https://azure.microsoft.com/en-us/documentation/articles/active-directory-editions/) is free and provides what is needed for integration into cloud services.
   * Microsoft provides [AD Connect to enable synchronisation into Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-aadconnect-topologies/). The minimum amount of effort to enable synchronisation is surprisingly simple to setup.
   * Setup the Windows [Store for Business](https://www.microsoft.com/business-store/), enabling IT to curate a list of Universal apps for their users (you could even curate no apps and hide the public links). [Setting up the Store for Business](https://technet.microsoft.com/en-us/windows/store-for-business.aspx) is very straight-forward. Note that you&#8217;ll get all of the Office Mobile apps by default and adding a new app takes around 24 hours for it to appear in the Store on devices.
 
 With these components in place, the following scenarios are enabled:
 
-  * Users logging with their cloud credentials (credentials in the cloud or synchronised from Active Directory) onto [Azure AD joined Windows 10 PCs](https://blogs.technet.microsoft.com/enterprisemobility/2015/05/28/azure-ad-join-on-windows-10-devices/) are enabled for single sign-on to the Store and other apps that leverage Azure AD or Office 365 services. Azure AD join is a great use case for greenfield deployments, but be certain of current and future PC management requirements &#8211; the case for Active Directory joined PCs is still valid.
+  * Users logging with their cloud credentials (credentials in the cloud or synchronised from Active Directory) onto [Azure AD joined Windows 10 PCs](https://blogs.technet.microsoft.com/enterprisemobility/2015/05/28/azure-ad-join-on-windows-10-devices/) are enabled for single sign-on to the Store and other apps that leverage Azure AD or Office 365 services. Azure AD join is a great use case for greenfield deployments, but be certain of current and future PC management requirements - the case for Active Directory joined PCs is still valid.
   * Users on Windows 10 stand-alone (typically personal devices) or Active Directory domain member PCs (without Azure AD sync or Azure AD Premium) can [manually add their work credentials to their PC](https://blogs.technet.microsoft.com/enterprisemobility/2015/05/21/azure-ad-on-windows-10-personal-devices/) and sign into the Store.
   * Windows 10 domain members with AD Connect/ADFS and Azure AD Premium are single signed-on into the Store (and other apps that Azure AD or Office 365 services) once [Workplace Join](https://technet.microsoft.com/en-us/library/dn280945(v=ws.11).aspx) is configured.
 
@@ -66,7 +66,7 @@ So without resorting hacking our Windows 10 image or AppLocker or Windows Firewa
 
 # Bypassing the Business Store
 
-It&#8217;s not all roses though &#8211; users can still directly access applications from the public Store via direct links to those apps. Direct links are available from a couple of places &#8211; suggestions shown by default on the Start menu and on the web. If you want to control the app suggestions on the Start menu, PCs will need to be running Windows 10 Enterprise or Education editions.
+It&#8217;s not all roses though - users can still directly access applications from the public Store via direct links to those apps. Direct links are available from a couple of places - suggestions shown by default on the Start menu and on the web. If you want to control the app suggestions on the Start menu, PCs will need to be running Windows 10 Enterprise or Education editions.
 
 To see bypassing the Business Store, search the web for an example app, e.g. <a href="https://www.microsoft.com/en-au/store/apps/facebook/9wzdncrfj2wl" target="_blank">the Windows 10 Facebook app</a>. A user can click on the &#8216;Get the app&#8217; button on that page which will launch the Store:
 

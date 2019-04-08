@@ -26,7 +26,7 @@ This means that we need to remove the service from inside the bubble. Directly a
 
 [quickcode:noclick]&#8221;%ProgramFiles%\Bonjour\mDNSResponder.exe&#8221; -remove[/quickcode]
 
-Then delete the Bonjour folder &#8211; _%ProgramFiles%\Bonjour_. Users can then connect to the Version Cue Servers manually when running a CS3 application:
+Then delete the Bonjour folder - _%ProgramFiles%\Bonjour_. Users can then connect to the Version Cue Servers manually when running a CS3 application:
 
 > Note: Removing Bonjour prevents Version Cue clients (Photoshop, Illustrator, InDesign, Flash, Bridge) from automatically discovering Version Cue Servers and Version Cue projects in your local network. You will need to connect manually using Connect to Server and the URL or IP address of the machine running Version Cue Server instead.
 

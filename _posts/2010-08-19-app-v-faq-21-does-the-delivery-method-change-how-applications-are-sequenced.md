@@ -53,7 +53,7 @@ So if what you choose to place in the OSD URL does not impact your deployment so
 
 ### Conclusion
 
-The method and processes you use for sequencing an application is not affected by the delivery method. There are some basic guidelines that you should follow when sequencing; however if they haven&#8217;t been followed you can still deliver those packages, you just may have some client configuration to take care of. Bottom-line: create a standard for your environment and stick to it.
+The method and processes you use for sequencing an application is not affected by the delivery method. There are some basic guidelines that you should follow when sequencing; however if they haven't been followed you can still deliver those packages, you just may have some client configuration to take care of. Bottom-line: create a standard for your environment and stick to it.
 
 ### Resources
 
@@ -61,5 +61,5 @@ The method and processes you use for sequencing an application is not affected b
   * [How to Configure the App-V System for Package Upgrade](http://technet.microsoft.com/en-us/library/cc843817.aspx)
   * [About the Deployment Tab](http://technet.microsoft.com/en-us/library/cc843635.aspx)
   * [How to Change Deployment Properties](http://technet.microsoft.com/en-us/library/cc843624.aspx)
-  * [The Top Three Rookie Mistakes &#8211; Part 3](http://blogs.technet.com/b/appv/archive/2008/09/15/the-top-three-rookie-mistakes-part-3.aspx)
+  * [The Top Three Rookie Mistakes - Part 3](http://blogs.technet.com/b/appv/archive/2008/09/15/the-top-three-rookie-mistakes-part-3.aspx)
   * [Error message when you start an application or update a Desktop Configuration Server in Microsoft SoftGrid: &#8220;The SoftGrid Client could not update desktop configuration information&#8221;](http://technet.microsoft.com/en-us/library/cc843817.aspx)

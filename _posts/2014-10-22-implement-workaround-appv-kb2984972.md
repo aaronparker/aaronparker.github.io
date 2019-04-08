@@ -34,7 +34,7 @@ The workaround requires implementing a Registry change to the App-V client to ad
 
 # Implementing the Workaround
 
-There&#8217;s a few ways that you could implement the fix &#8211; Group Policy Preferences, scripting etc. You will need to pay attention to the entires in the HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions (for App-V 5.0) or HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\SystemGuard\ObjExclusions (for App-V 4.6) as each entry requires a unique value name &#8211; you don&#8217;t want to overwrite an existing entry.
+There&#8217;s a few ways that you could implement the fix - Group Policy Preferences, scripting etc. You will need to pay attention to the entires in the HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions (for App-V 5.0) or HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\SystemGuard\ObjExclusions (for App-V 4.6) as each entry requires a unique value name - you don&#8217;t want to overwrite an existing entry.
 
 Here&#8217;s the ObjExclusions key on an App-V 5.0 client:
 

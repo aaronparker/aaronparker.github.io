@@ -29,6 +29,6 @@ Also, contrary to what the blog post says, Windows 7 is not required for the cli
 
 [<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="InternetExplorer8RemoteAppOnXP" src="http://stealthpuppy.com/wp-content/uploads/2009/12/InternetExplorer8RemoteAppOnXP_thumb.png" border="0" alt="InternetExplorer8RemoteAppOnXP" width="640" height="408" />](http://stealthpuppy.com/wp-content/uploads/2009/12/InternetExplorer8RemoteAppOnXP.png)
 
-What is missing from the blog post is specific steps required to get this functionality working under Windows XP and Windows Vista. Hopefully we may see those instructions soon &#8211; I’ve been having some trouble getting RemoteApp working on those older operating systems:
+What is missing from the blog post is specific steps required to get this functionality working under Windows XP and Windows Vista. Hopefully we may see those instructions soon - I’ve been having some trouble getting RemoteApp working on those older operating systems:
 
 <img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="RemoteAppNotSupported" src="http://stealthpuppy.com/wp-content/uploads/2009/12/RemoteAppNotSupported.png" border="0" alt="RemoteAppNotSupported" width="430" height="203" />

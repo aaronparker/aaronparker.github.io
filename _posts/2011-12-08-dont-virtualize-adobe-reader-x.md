@@ -27,7 +27,7 @@ Since the release of Reader and Acrobat X, there have been no malware that has b
 
 > I’d like to take this moment to encourage any remaining users still running Adobe Reader or Acrobat 9.x (or worse, older unsupported versions) to PLEASE upgrade to Adobe Reader or Acrobat X. We put a tremendous amount of work into securing Adobe Reader and Acrobat X, and, to date, there has not been a single piece of malware identified that is effective against a version X install. Help us help you by running the latest version of the software!
 
-If you have any version of Adobe Reader other than X deployed, you should seriously consider migrating to the new version as a matter of priority. That&#8217;s not &#8220;lets consider doing this in the next month&#8221; &#8211; you should stop reading this post and [get started deploying Reader X now](http://stealthpuppy.com/deployment/deploying-adobe-reader-x/).
+If you have any version of Adobe Reader other than X deployed, you should seriously consider migrating to the new version as a matter of priority. That&#8217;s not &#8220;lets consider doing this in the next month&#8221; - you should stop reading this post and [get started deploying Reader X now](http://stealthpuppy.com/deployment/deploying-adobe-reader-x/).
 
 Furthermore if are deploying or have deployed Reader X, I can&#8217;t recommend virtualizing it with application virtualization. The reason for this is that Protected Mode is not compatible and is not supported with application virtualization. It doesn&#8217;t work with [Citrix App Streaming](http://kb2.adobe.com/cps/907/cpsid_90705.html), [Microsoft App-V](http://stealthpuppy.com/virtualisation/virtualising-adobe-reader-x/) or [VMware](http://communities.vmware.com/thread/329118) [ThinApp](http://communities.vmware.com/message/1714001) (it may be possible with the current version of ThinApp, but I haven&#8217;t confirmed).
 
@@ -35,6 +35,6 @@ Furthermore if are deploying or have deployed Reader X, I can&#8217;t recommend 
 
 [Update 2: Protected Mode in Reader X is confirmed to work under ThinApp 4.6.2 and 4.7. You&#8217;ll have to update your virtual applications and re-enable Protected Mode with the latest releases]
 
-In short &#8211; leaving Protected Mode enabled will protect your users and devices and because Protected Mode has been incompatible with the isolation that application virtualisation introduces, I recommend that you do not deploy Reader X with application virtualization solutions unless you are using the very latest versions.
+In short - leaving Protected Mode enabled will protect your users and devices and because Protected Mode has been incompatible with the isolation that application virtualisation introduces, I recommend that you do not deploy Reader X with application virtualization solutions unless you are using the very latest versions.
 
 But.. what about those scenarios when a virtualized application needs to call a locally installed Reader X? Until the app virt vendors fully support Protected Mode, the best you can do is ensure that Protected Mode is only disabled when Reader runs within the virtualization environment (using a tool like [PolicyPak](http://www.gpanswers.com/1.html?w=PPXEND&p=parker)) and is not completely disabled. Until then, the best we can do is cross our fingers and hope it doesn&#8217;t happen to us.

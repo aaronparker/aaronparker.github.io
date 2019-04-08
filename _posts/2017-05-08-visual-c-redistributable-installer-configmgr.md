@@ -23,7 +23,7 @@ I recently [posted an article](http://stealthpuppy.com/visual-c-redistributable-
 Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you can [download from&nbsp;the releases page](https://github.com/aaronparker/Install-VisualCRedistributables/releases)&nbsp;and includes the following updates:
 
   * VisualCRedistributables.xml updated with MSI Product codes for the redistributables
-  * Install-VisualCRedistributables.ps1 updated with ConfigMgr support &#8211; create applications for the redistributables in ConfigMgr
+  * Install-VisualCRedistributables.ps1 updated with ConfigMgr support - create applications for the redistributables in ConfigMgr
   * Updated with additional parameter validation, parameter sets, inline comments
 
 # Overview
@@ -57,11 +57,11 @@ Each major version of the redistributables is grouped by that defines the major 
 
 The properties of each redistributable are defined in each node:
 
-  * Name &#8211; the name of the redistributable as displayed on the download page. Not used in the script, but useful for reading the XML file.
-  * ShortName &#8211; the redistributable will be downloaded to Release\Architecture\ShortName
-  * URL &#8211; this is the URL to the page at microsoft.com/downloads. Not used in the script, but useful for referencing the download as needed
-  * ProductCode &#8211; this is the MSI Product Code for the specified VC++ App that will be used to import the package into Configuration Manager
-  * Download &#8211; this is the URL to the installer so that the script can download each redistributable
+  * Name - the name of the redistributable as displayed on the download page. Not used in the script, but useful for reading the XML file.
+  * ShortName - the redistributable will be downloaded to Release\Architecture\ShortName
+  * URL - this is the URL to the page at microsoft.com/downloads. Not used in the script, but useful for referencing the download as needed
+  * ProductCode - this is the MSI Product Code for the specified VC++ App that will be used to import the package into Configuration Manager
+  * Download - this is the URL to the installer so that the script can download each redistributable
 
 ## Parameters
 

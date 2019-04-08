@@ -23,7 +23,7 @@ The default behaviour of the SoftGrid Application Virtualisation 4.5 client is t
 > 
 > Error code: 450260-14901604-0000180B
 
-The fix for this is pretty simple &#8211; change the following registry DWORD value from 0 to 1
+The fix for this is pretty simple - change the following registry DWORD value from 0 to 1
 
 [code]HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\Client\Configuration\AllowIndependentFileStreaming[/code]
 

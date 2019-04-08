@@ -18,7 +18,7 @@ tags:
 
 First up, I would not rely on Offline Files as a method of fault tolerance. It will work as a solution for laptops operating disconnected from the network, but won&#8217;t provide effective fault tolerance. Offline Files are also not available on Terminal Server.
 
-If you were to rely on Offline Files, you will have issues if the server the share is located goes down and can&#8217;t be restored. Using Group Policy to redirect user folders requires that the original source location is available if you ever want to change the redirection path. This is why DFS Namespace is a good match for folder redirection &#8211; the DFS path remains static, while the real path can change.
+If you were to rely on Offline Files, you will have issues if the server the share is located goes down and can&#8217;t be restored. Using Group Policy to redirect user folders requires that the original source location is available if you ever want to change the redirection path. This is why DFS Namespace is a good match for folder redirection - the DFS path remains static, while the real path can change.
 
 DFS Namespaces and DFS Replication offer a far better solution for fault tolerance and DFS is available in Windows 2000 Server and above. If you want FT without using a 3rd party solution take a look at [DFS Replication](http://technet2.microsoft.com/WindowsServer/en/Library/8c4cf2e7-0b92-4643-acbd-abfa9f189d031033.mspx?mfr=true).
 

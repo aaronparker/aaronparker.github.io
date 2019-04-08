@@ -19,8 +19,8 @@ The new [Windows Live Installer](http://get.live.com/) is a great way for every 
 
 There are two ways to get access to the source MSI files for installing these applications. The first way is install the Live applications on a single computer, you can then find a copy of the installers locally:
 
-  * 32-bit Windows &#8211; C:\Program Files\Common Files\WindowsLiveInstaller\MsiSources
-  * 64-bit Windows &#8211; C:\Program Files (x86)\Common Files\WindowsLiveInstaller\MsiSources<br class="webkit-block-placeholder" />
+  * 32-bit Windows - C:\Program Files\Common Files\WindowsLiveInstaller\MsiSources
+  * 64-bit Windows - C:\Program Files (x86)\Common Files\WindowsLiveInstaller\MsiSources<br class="webkit-block-placeholder" />
 
 Alternatively you can download the installers directly from the [Live Suite SkyDrive folder](http://cid-9e63a4688135fd45.skydrive.live.com/browse.aspx/LiveWave2EN):
 

@@ -17,7 +17,7 @@ tags:
 ---
 When Windows just won&#8217;t stay in sleep mode there&#8217;s a simple fix. First you need to identify which component keeps bringing Windows out of sleep mode.
 
-To do that, [open the System event log](http://support.microsoft.com/kb/308427) and find any events from source &#8216;Power-Troubleshooter&#8217; that indicate that the system has returned from sleep mode &#8211; similar to this:
+To do that, [open the System event log](http://support.microsoft.com/kb/308427) and find any events from source &#8216;Power-Troubleshooter&#8217; that indicate that the system has returned from sleep mode - similar to this:
 
 <img class="alignnone size-full wp-image-1098" title="power-troubleshooter1" src="http://stealthpuppy.com/wp-content/uploads/2009/05/power-troubleshooter1.png" alt="power-troubleshooter1" width="590" height="409" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/power-troubleshooter1.png 590w, https://stealthpuppy.com/wp-content/uploads/2009/05/power-troubleshooter1-150x103.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/power-troubleshooter1-300x207.png 300w" sizes="(max-width: 590px) 100vw, 590px" /> 
 

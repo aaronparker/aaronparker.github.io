@@ -12,7 +12,7 @@ tags:
   - Microsoft Press
   - NAP
 ---
-[](http://stealthpuppy.com/wp-content/uploads/2008/01/0063980v.jpg)<img border="0" vspace="5" align="left" width="119" src="http://stealthpuppy.com/wp-content/uploads/2008/01/0063980v-thumb.jpg" hspace="10" alt="0063980v" height="150" />Â My copy of [Windows ServerÂ® 2008 Networking and Network Access Protection (NAP)](http://www.microsoft.com/MSPress/books/11160.aspx) has turned up from Amazon today. This is a hefty book &#8211; at 816 pages it weighs a ton but there&#8217;s plenty of detail.
+[](http://stealthpuppy.com/wp-content/uploads/2008/01/0063980v.jpg)<img border="0" vspace="5" align="left" width="119" src="http://stealthpuppy.com/wp-content/uploads/2008/01/0063980v-thumb.jpg" hspace="10" alt="0063980v" height="150" />Â My copy of [Windows ServerÂ® 2008 Networking and Network Access Protection (NAP)](http://www.microsoft.com/MSPress/books/11160.aspx) has turned up from Amazon today. This is a hefty book - at 816 pages it weighs a ton but there&#8217;s plenty of detail.
 
 It&#8217;s a bit early for me to give you an idea of what the book is like, but from the brief look I&#8217;ve had it&#8217;s worth a place in your library if you&#8217;ll be dealing with Windows 2008&#8217;s networking features. The section dedicated to NAP takes up just under 1/2 of the book with some clear explanations of it&#8217;s components.
 

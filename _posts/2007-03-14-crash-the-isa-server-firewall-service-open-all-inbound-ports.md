@@ -1,6 +1,6 @@
 ---
 id: 81
-title: 'Crash the ISA Server Firewall Service &#8211; Open All Inbound Ports'
+title: 'Crash the ISA Server Firewall Service - Open All Inbound Ports'
 date: 2007-03-14T15:00:00+10:00
 author: Aaron Parker
 layout: post
@@ -11,9 +11,9 @@ categories:
 tags:
   - ISA Server
 ---
-Here&#8217;s an easy way to crash the Microsoft Firewall service in ISA Server &#8211; create a server publishing rule that allows all high ports inbound to an internal NATed IP address.
+Here&#8217;s an easy way to crash the Microsoft Firewall service in ISA Server - create a server publishing rule that allows all high ports inbound to an internal NATed IP address.
 
-Now this is something that it is not normally done and I don&#8217;t think that ISA Server was designed to work this way. I was doing some specific testing yesterday and as a shortcut, rather than find out what ports I needed inbound (which ended up being UDP 28000 &#8211; 29000), I allowed UDP 1024 &#8211; 65535 inbound with some unexpected results. The Microsoft Firewall service crashed with the following event logged:
+Now this is something that it is not normally done and I don&#8217;t think that ISA Server was designed to work this way. I was doing some specific testing yesterday and as a shortcut, rather than find out what ports I needed inbound (which ended up being UDP 28000 - 29000), I allowed UDP 1024 - 65535 inbound with some unexpected results. The Microsoft Firewall service crashed with the following event logged:
 
 > Event Type: Error  
 > Event Source: Microsoft ISA Server Control  

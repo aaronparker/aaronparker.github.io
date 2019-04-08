@@ -29,7 +29,7 @@ If I open the same location via a UNC path you will see that Explorer sees it as
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/06/intranetzoneunc.png" border="0" alt="IntranetZoneUNC" width="304" height="321" /> 
 
-Oddly enough, if I map a network drive to a path with only a single period on that path, the detection process works correctly and the location is seen as Intranet. In the example here, I&#8217;m mapping a drive to the same location as the previous two screen shots, but via a DFS path &#8211; [\\dev.local\Public\Apps](file://\\dev.local\Public\Apps) that redirects to [\\dc.dev.local\Apps](file://\\dc.dev.local\Apps).
+Oddly enough, if I map a network drive to a path with only a single period on that path, the detection process works correctly and the location is seen as Intranet. In the example here, I&#8217;m mapping a drive to the same location as the previous two screen shots, but via a DFS path - [\\dev.local\Public\Apps](file://\\dev.local\Public\Apps) that redirects to [\\dc.dev.local\Apps](file://\\dc.dev.local\Apps).
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/06/intranetzonedrive.png" border="0" alt="IntranetZoneDrive" width="304" height="321" /> 
 

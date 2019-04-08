@@ -32,4 +32,4 @@ The script can be broken down into this process:
 
 The script uses a function to add privileges to the Application or Server folders. Pass the folder name, the folder type (MetaFrameAppFolder or MetaFrameSrvFolder), the account domain and account name and the privilege set as an array and the function does the rest.
 
-During testing I have noticed that the privileges are not set on the last Application folder in the list &#8211; if you take a look at the code you can see that I am setting the privileges on that folder a second time. If anyone else is seeing this behaviour please let me know.
+During testing I have noticed that the privileges are not set on the last Application folder in the list - if you take a look at the code you can see that I am setting the privileges on that folder a second time. If anyone else is seeing this behaviour please let me know.

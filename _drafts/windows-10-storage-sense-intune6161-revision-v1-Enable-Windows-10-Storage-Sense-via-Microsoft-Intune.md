@@ -7,7 +7,7 @@ layout: revision
 guid: https://stealthpuppy.com/6161-revision-v1/
 permalink: /6161-revision-v1/
 ---
-In a modern management scenario, enabling end-points to perform automatic maintenance tasks will reduce TCO by avoiding scenarios that might result in support calls. Storage Sense in Windows 10 is a great way to [manage free disk space](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space) on PCs by clearing caches, temporary files, old downloads, Windows Update cleanup, previous Windows Versions, and more, but it it&#8217;s not fully enabled by default. Here&#8217;s how to enable Storage Sense with Microsoft Intune.
+In a modern management scenario, enabling end-points to perform automatic maintenance tasks will reduce TCO by avoiding scenarios that might result in support calls. Storage Sense in Windows 10 is a great way to [manage free disk space](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space) on PCs by clearing caches, temporary files, old downloads, Windows Update cleanup, previous Windows Versions, and more, but it it's not fully enabled by default. Here's how to enable Storage Sense with Microsoft Intune.
 
 # Storage Sense Settings
 

@@ -1,6 +1,6 @@
 ---
 id: 4161
-title: 'OS Automation Survey Results &#8211; What Virtual Desktop Platforms are Deployed?'
+title: 'OS Automation Survey Results - What Virtual Desktop Platforms are Deployed?'
 date: 2015-10-09T22:28:52+10:00
 author: Aaron Parker
 layout: post
@@ -30,7 +30,7 @@ First, let&#8217;s take a look at an overview of the major RDS / VDI platforms i
 
 <figure id="attachment_4162" aria-describedby="caption-attachment-4162" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4162" src="http://stealthpuppy.com/wp-content/uploads/2015/10/WhatVDIPlatforms-1024x513.png" alt="Across all respondents, which virtual desktop environments are in use" width="1024" height="513" srcset="https://stealthpuppy.com/wp-content/uploads/2015/10/WhatVDIPlatforms-1024x513.png 1024w, https://stealthpuppy.com/wp-content/uploads/2015/10/WhatVDIPlatforms-150x75.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/10/WhatVDIPlatforms-300x150.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2015/10/WhatVDIPlatforms.png)<figcaption id="caption-attachment-4162" class="wp-caption-text">Across all respondents, which virtual desktop environments are in use</figcaption></figure>
 
-It&#8217;s not surprising that Citrix XenApp and XenDesktop come out on top; however I would have expected VMware Horizon deployments to be higher than this. The very high usage of Citrix solutions in these responses could be due to a number of factors &#8211; XenApp and XenDesktop usage is actually that high, especially for consultants managing or deploying several environments; and, as discussed previously the audience of xenappblog.com is quite Citrix focussed.
+It&#8217;s not surprising that Citrix XenApp and XenDesktop come out on top; however I would have expected VMware Horizon deployments to be higher than this. The very high usage of Citrix solutions in these responses could be due to a number of factors - XenApp and XenDesktop usage is actually that high, especially for consultants managing or deploying several environments; and, as discussed previously the audience of xenappblog.com is quite Citrix focussed.
 
 # Individual Virtual Desktop Solution Breakdown
 
@@ -48,7 +48,7 @@ Now this graph surprised me and I&#8217;m sure it will make [David Cottingham](h
 
 <figure id="attachment_4164" aria-describedby="caption-attachment-4164" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4164" src="http://stealthpuppy.com/wp-content/uploads/2015/10/XD-XA-Only-1024x556.png" alt="Hypervisor usage where a respondent is using Citrix desktop solutions only" width="1024" height="556" srcset="https://stealthpuppy.com/wp-content/uploads/2015/10/XD-XA-Only-1024x556.png 1024w, https://stealthpuppy.com/wp-content/uploads/2015/10/XD-XA-Only-150x81.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/10/XD-XA-Only-300x163.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/10/XD-XA-Only.png 1542w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2015/10/XD-XA-Only.png)<figcaption id="caption-attachment-4164" class="wp-caption-text">Hypervisor usage where a respondent is using Citrix desktop solutions only</figcaption></figure>
 
-While vSphere is by and far the most deployed hypervisor across all responses, looking at Citrix-only shops, XenServer is the most popular hypervisor. This is great to see actually &#8211; XenServer is available for free for XenApp and XenDesktop customers, so why not use it?
+While vSphere is by and far the most deployed hypervisor across all responses, looking at Citrix-only shops, XenServer is the most popular hypervisor. This is great to see actually - XenServer is available for free for XenApp and XenDesktop customers, so why not use it?
 
 What about the size of these environments? XenServer isn&#8217;t limited to small environments:
 

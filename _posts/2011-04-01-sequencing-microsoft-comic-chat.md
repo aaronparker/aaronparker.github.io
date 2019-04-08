@@ -51,4 +51,4 @@ And that&#8217;s about it. I&#8217;ve tested execution on a Windows 7 SP1 64-bit
 
 ### Comic Chat Package Accelerator
 
-If you&#8217;d like to sequence Comic Chat yourself, I&#8217;ve uploaded a Package Accelerator to the TechNet Gallery &#8211; [App-V Package Accelerator for Microsoft Comic Chat 2.5](http://gallery.technet.microsoft.com/Package-Accelerator-for-97080d2c)
+If you&#8217;d like to sequence Comic Chat yourself, I&#8217;ve uploaded a Package Accelerator to the TechNet Gallery - [App-V Package Accelerator for Microsoft Comic Chat 2.5](http://gallery.technet.microsoft.com/Package-Accelerator-for-97080d2c)

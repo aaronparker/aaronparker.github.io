@@ -15,7 +15,7 @@ tags:
 ---
 <img src="http://stealthpuppy.com/wp-content/uploads/2007/05/exchange4.png" alt="" align="left" />Dear Diary,
 
-I am currently in the process of upgrading an Exchange Server 2003 organisation to Exchange Server 2007, so I thought it might be a good idea to tell you about my experience whilst I perform the upgrade. This will mostly be in point format but I&#8217;ll expand on some points where required.
+I am currently in the process of upgrading an Exchange Server 2003 organisation to Exchange Server 2007, so I thought it might be a good idea to tell you about my experience whilst I perform the upgrade. This will mostly be in point format but I'll expand on some points where required.
 
 **Where Are We At?**
 
@@ -40,7 +40,7 @@ To upgrade this organisation, we are migrating to this (the server hardware has 
 
   * Two IBM xSeries 336 server running Windows Server 2003 R2 Enterprise Edition x64 SP2 on dual Intel Xeon 3GHz CPUs with 4 GB of RAM. These servers will run the CAS, HT and UM roles.
   * Two IBM xSeries 346 servers running Windows Server 2003 R2 Enterprise Edition x64 SP2 on dual Intel Xeon 3GHz CPUs with 8 GB of RAM. These servers will be clustered to run the new Cluster Continuous Replication model for Exchange 2007
-  * At this stage we won&#8217;t be installing an Edge Transport server because the anti-spam/anti-virus software in the DMZ doesn&#8217;t support Exchange 2007
+  * At this stage we won't be installing an Edge Transport server because the anti-spam/anti-virus software in the DMZ doesn't support Exchange 2007
   * Mailboxes on the Exchange 5.5 server will be migrated using EXMERGE
 
-In the next entry I&#8217;ll detail installation of the OS, update of AD and install of Exchange and some lessons learnt.
+In the next entry I'll detail installation of the OS, update of AD and install of Exchange and some lessons learnt.

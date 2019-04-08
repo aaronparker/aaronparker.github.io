@@ -38,7 +38,7 @@ The Enrolment Status page [tracks security policies and line-of-business (MSI) a
 
 ## Packaging a Start menu Customisation
 
-To package a customised Start menu, we need to create the desired layout and [export](https://docs.microsoft.com/en-us/powershell/module/startlayout/export-startlayout?view=win10-ps) it with the`Export-StartLayout`&nbsp;command. It&#8217;s likely you&#8217;re familiar with this approach. To export the Start menu layout, I&#8217;ve used the following command &#8211; note the use of the `UseDesktopApplicationID`&nbsp;switch which will make pinning desktop application shortcuts as tiles successful.
+To package a customised Start menu, we need to create the desired layout and [export](https://docs.microsoft.com/en-us/powershell/module/startlayout/export-startlayout?view=win10-ps) it with the`Export-StartLayout`&nbsp;command. It&#8217;s likely you&#8217;re familiar with this approach. To export the Start menu layout, I&#8217;ve used the following command - note the use of the `UseDesktopApplicationID`&nbsp;switch which will make pinning desktop application shortcuts as tiles successful.
 
 `Export-StartLayout -Path .\LayoutModification.xml -UseDesktopApplicationID`
 
@@ -46,7 +46,7 @@ The next step is to create a custom Windows Installer package to deliver the lay
 
 ### Create a Windows Installer Package
 
-Advanced Installer makes short work of creating the package &#8211; create a new Simple Installer package and configure the product name, version and publisher. Note that if you want to update the package, save your project and update the version number each time you produce an updated installer.<figure class="wp-block-image">
+Advanced Installer makes short work of creating the package - create a new Simple Installer package and configure the product name, version and publisher. Note that if you want to update the package, save your project and update the version number each time you produce an updated installer.<figure class="wp-block-image">
 
 [<img src="https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller01-ProductDetails-1024x569.png" alt="Advanced Installer package Product details" class="wp-image-6227" srcset="https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller01-ProductDetails-1024x569.png 1024w, https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller01-ProductDetails-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller01-ProductDetails-300x167.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller01-ProductDetails-768x427.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller01-ProductDetails.png)</figure> 
 
@@ -60,9 +60,9 @@ And add the `LayoutModification.xml` file that you&#8217;ve exported with `Expor
 
 For this package, I&#8217;ve configured the following install parameters:
 
-  * Package type &#8211; 64-bit package
-  * Installation type &#8211; Per-machine only
-  * Reboot behaviour &#8211; Suppress all reboots and Reboot prompts<figure class="wp-block-image">
+  * Package type - 64-bit package
+  * Installation type - Per-machine only
+  * Reboot behaviour - Suppress all reboots and Reboot prompts<figure class="wp-block-image">
 
 <img src="https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller02a-InstallParameters-1024x569.png" alt="Configure Install Parameters in Advanced Installer " class="wp-image-6237" srcset="https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller02a-InstallParameters-1024x569.png 1024w, https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller02a-InstallParameters-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller02a-InstallParameters-300x167.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller02a-InstallParameters-768x427.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
 
@@ -82,11 +82,11 @@ Here&#8217;s the applications that I&#8217;ve configured in my test environment:
 
 [<img src="https://stealthpuppy.com/wp-content/uploads/2018/12/EnrollmentStatusPage-1024x539.png" alt="Configure the Enrolment Status Page with the list of apps and the default Start menu" class="wp-image-6231" srcset="https://stealthpuppy.com/wp-content/uploads/2018/12/EnrollmentStatusPage-1024x539.png 1024w, https://stealthpuppy.com/wp-content/uploads/2018/12/EnrollmentStatusPage-150x79.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/12/EnrollmentStatusPage-300x158.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/12/EnrollmentStatusPage-768x404.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2018/12/EnrollmentStatusPage.png)</figure> 
 
-Today the ESP [tracks specific application deployments](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/enrollment-status) &#8211; Microsoft Store apps and single MSI files, while Office 365 ProPlus applications are tracked on Windows 10 1809 and above.
+Today the ESP [tracks specific application deployments](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/enrollment-status) - Microsoft Store apps and single MSI files, while Office 365 ProPlus applications are tracked on Windows 10 1809 and above.
 
 ## User Experience
 
-Most of my testing is on Windows 10 1809 &#8211; with a PC enrolled into Azure AD and Microsoft Intune during the out of box experience, the Enrolment Status Page tracks the installation of policies and applications, including our Start menu customisation.&nbsp;
+Most of my testing is on Windows 10 1809 - with a PC enrolled into Azure AD and Microsoft Intune during the out of box experience, the Enrolment Status Page tracks the installation of policies and applications, including our Start menu customisation.&nbsp;
 
 After the enrollment and deployment is complete, the user sees a customised Start menu after first logon. There&#8217;s a few tiles that didn&#8217;t remain pinned from the default customisation, but this is much cleaner and enterprise ready than what we end up with out of the box.<figure class="wp-block-image">
 

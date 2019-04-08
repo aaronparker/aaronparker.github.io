@@ -23,7 +23,7 @@ tags:
 ---
 Microsoft Application Virtualisation 4.6 (RTM) has been made available, which you can download from the Microsoft Download Centre, including some new and updated support tools:
 
-[Microsoft Application Virtualization for Remote Desktop Services 4.6](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=e633164f-9729-43a8-9149-de651944a7fe) &#8211; Here you can download an ISO that includes the App-V client for RDS/Terminal Server. The ISO includes the server components as well. You will need a TechNet, MSDN subscription or [access to the Microsoft Licensing site](http://blogs.technet.com/virtualworld/archive/2008/09/15/how-to-download-app-v-4-5-rtm.aspx) to get access to the desktop client (as of writing, it does not appear to be available yet).
+[Microsoft Application Virtualization for Remote Desktop Services 4.6](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=e633164f-9729-43a8-9149-de651944a7fe) - Here you can download an ISO that includes the App-V client for RDS/Terminal Server. The ISO includes the server components as well. You will need a TechNet, MSDN subscription or [access to the Microsoft Licensing site](http://blogs.technet.com/virtualworld/archive/2008/09/15/how-to-download-app-v-4-5-rtm.aspx) to get access to the desktop client (as of writing, it does not appear to be available yet).
 
 [Microsoft Application Virtualization Administrative Template (ADM Template)](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=67cdf9d2-7e8e-4d76-a552-fd82dbbff9bc) – An additional template has been created to support the 64-bit client and includes one additional policy (setting the virtual drive letter).
 

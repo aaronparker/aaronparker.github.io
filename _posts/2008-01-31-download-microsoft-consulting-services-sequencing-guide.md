@@ -23,5 +23,5 @@ There&#8217;s some great details in this document, including some things you sho
 This document is essential for anyone sequencing applications.
 
 <p class="pdf">
-  <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=1c6a73b8-5da8-4a1a-838b-a41ca492c488&DisplayLang=en">Microsoft SoftGrid Application Virtualization &#8211; MCS Sequencing Guidelines</a>
+  <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=1c6a73b8-5da8-4a1a-838b-a41ca492c488&DisplayLang=en">Microsoft SoftGrid Application Virtualization - MCS Sequencing Guidelines</a>
 </p>

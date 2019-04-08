@@ -16,10 +16,10 @@ tags:
 ---
 I&#8217;ve got a very simple setup in [my home lab](http://stealthpuppy.com/lab-server-to-run-esxi-hyper-v/) with a couple of machine running either Hyper-V or ESXi. I typically don&#8217;t have monitoring solutions running and manage each host directly, rather than part of a cluster or with SCVMM or vCenter. For Hyper-V, I try to manage it remotely via PowerShell as much as I can and so it&#8217;s handy to be able to see memory utilisation on the remote host to understand how much capacity I&#8217;ve got before powering on a VM. I&#8217;ve written a PowerShell function to return various memory stats:
 
-  * Total RAM available in the host &#8211; using [Get-VMHost](http://go.microsoft.com/fwlink/?LinkID=306853).
-  * Total memory in use by running VMs &#8211; by returning the running VMs and finding the current amount of RAM assigned to each VM with [Get-VM](http://go.microsoft.com/fwlink/?LinkID=306845). This works with dynamic memory.
-  * Available memory to run additional VMs &#8211; using [Get-Counter](http://go.microsoft.com/fwlink/p/?linkid=289625) to gather the &#8216;\Memory\Available Bytes&#8217; performance counter
-  * How much memory is used by the system &#8211; this is calculated by adding what&#8217;s in use by VMs, to the available memory and subtracting the results from the physical RAM in the host. This is a rough calculation, but an interesting metric to view.
+  * Total RAM available in the host - using [Get-VMHost](http://go.microsoft.com/fwlink/?LinkID=306853).
+  * Total memory in use by running VMs - by returning the running VMs and finding the current amount of RAM assigned to each VM with [Get-VM](http://go.microsoft.com/fwlink/?LinkID=306845). This works with dynamic memory.
+  * Available memory to run additional VMs - using [Get-Counter](http://go.microsoft.com/fwlink/p/?linkid=289625) to gather the &#8216;\Memory\Available Bytes&#8217; performance counter
+  * How much memory is used by the system - this is calculated by adding what&#8217;s in use by VMs, to the available memory and subtracting the results from the physical RAM in the host. This is a rough calculation, but an interesting metric to view.
 
 The function returns an array that includes each stat. Here&#8217;s an example of what the function returns. All values are in gigabytes and multiple hosts can be specified to gather details from.
 

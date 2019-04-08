@@ -22,7 +22,7 @@ _Preface_: I don&#8217;t speak legalese and this post is based on my own intepre
 
 I&#8217;ve previously talked about [virtualizing Apple iTunes with App-V](http://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/); however after taking a look through the distribution agreements that you&#8217;re supposed to accept, I&#8217;m under the impression that doing so doesn&#8217;t adhere to the agreement.
 
-If you&#8217;re looking to distribute iTunes and QuickTime in your environment, Apple requires that you [obtain an agreement to do so](http://developer.apple.com/softwarelicensing/agreements/itunes.html). There are two agreements &#8211; one for universities and another for corporations (uni&#8217;s actually have 2 &#8211; one for [CD distribution](http://developer.apple.com/softwarelicensing/agreements/pdf/itns.qt.univ.cd.pdf), another for [distribution from a server](http://developer.apple.com/softwarelicensing/agreements/pdf/itunesqt.univ.server.pdf)).
+If you&#8217;re looking to distribute iTunes and QuickTime in your environment, Apple requires that you [obtain an agreement to do so](http://developer.apple.com/softwarelicensing/agreements/itunes.html). There are two agreements - one for universities and another for corporations (uni&#8217;s actually have 2 - one for [CD distribution](http://developer.apple.com/softwarelicensing/agreements/pdf/itns.qt.univ.cd.pdf), another for [distribution from a server](http://developer.apple.com/softwarelicensing/agreements/pdf/itunesqt.univ.server.pdf)).
 
 Here&#8217;s a quote from the university CD distribution agreement:
 
@@ -34,7 +34,7 @@ And here&#8217;s a quote from the corporate site license:
 
 Based on [my recipe for iTunes](http://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/), I understand the process of virtualising the application to be breaking the agreement because we are doing a few things:
 
-  * Extracting the MSI&#8217;s from the iTunes installer &#8211; breaking the Apple installer
+  * Extracting the MSI&#8217;s from the iTunes installer - breaking the Apple installer
   * Accepting the End User Agreement during the monitoring phase
   * Probably not delivering the iTunes and QuickTime shortcuts to the desktop
 
@@ -42,6 +42,6 @@ I could configure my package such that the user still needs to accept the licens
 
 I could also deliver the iTunes and QuickTime shortcuts to the user&#8217;s desktop, but most users already have enough shortcuts and files on their desktops, I&#8217;m not going to force more on them. Forcing desktop shortcuts on users isn&#8217;t great user experience and quite frankly, Apple&#8217;s not going to dictate the user experience in my environment.
 
-But ultimately it&#8217;s point 1 that has me concerned &#8211; if you interpret the agreement to the letter, then it sounds like application virtualization is breaking that agreement.
+But ultimately it&#8217;s point 1 that has me concerned - if you interpret the agreement to the letter, then it sounds like application virtualization is breaking that agreement.
 
 What do you think?

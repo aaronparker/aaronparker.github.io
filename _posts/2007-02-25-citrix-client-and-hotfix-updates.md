@@ -17,11 +17,11 @@ Citrix have released version 10 of the Presentation Server Client and the new Ci
   * Â [Web Client Version 10.0 Win32](http://www.citrix.com/English/SS/downloads/details.asp?dID=2755&downloadID=164539&pID=186#top)
   * Â [Citrix Presentation Server Client Version 10.0 Linux](http://www.citrix.com/English/SS/downloads/details.asp?dID=2755&downloadID=3323&pID=186)
 
-The new client is one ugly looking application &#8211; 16 colour icons, a splash screen and icon that looks like it was drawn by a 5 year old in Paint and the default location for the cache is **still** in the roaming portion of the users profile. Hey guys when are we going to get a client worthy of 2007? This version of the client does have a very interesting and welcome feature:
+The new client is one ugly looking application - 16 colour icons, a splash screen and icon that looks like it was drawn by a 5 year old in Paint and the default location for the cache is **still** in the roaming portion of the users profile. Hey guys when are we going to get a client worthy of 2007? This version of the client does have a very interesting and welcome feature:
 
 > **Non-administrator client installation**. This feature allows client users who do not have administrator privileges on a â€œlocked downâ€ computer, such as an Internet cafe or kiosk, to download the Ica32pkg.msi package and install a modified Web Client on a per-user basis. In this way, users can have secure, remote access to their applications.
 
-Â [Hotfix Rollup Pack PSE400W2K3R03 &#8211; For Citrix Presentation Server 4.0, Citrix Access Essentials 1.0 and 1.5 for Windows Server 2003](http://support.citrix.com/article/CTX111419)
+Â [Hotfix Rollup Pack PSE400W2K3R03 - For Citrix Presentation Server 4.0, Citrix Access Essentials 1.0 and 1.5 for Windows Server 2003](http://support.citrix.com/article/CTX111419)
 
 Here&#8217;s some important notes from the readme:
 

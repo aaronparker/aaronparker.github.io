@@ -1,6 +1,6 @@
 ---
 id: 3756
-title: 'Measuring the Impact of Folder Redirection &#8211; User Logon'
+title: 'Measuring the Impact of Folder Redirection - User Logon'
 date: 2014-11-19T09:29:42+10:00
 author: Aaron Parker
 layout: post
@@ -46,7 +46,7 @@ The following graph shows the logon time of user account configured for a roamin
 
 <figure id="attachment_3772" aria-describedby="caption-attachment-3772" style="width: 1702px" class="wp-caption alignnone">[<img class="wp-image-3772 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile.png" alt="" width="1702" height="1078" srcset="https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile.png 1702w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-150x95.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-300x190.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-1024x648.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-624x395.png 624w" sizes="(max-width: 1702px) 100vw, 1702px" />](http://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile.png)<figcaption id="caption-attachment-3772" class="wp-caption-text">Logon impact of profile sizes with no folder redirection</figcaption></figure>
 
-This shows a predictable increase in logon time as the profile grows &#8211; the larger the profile, the longer the logon time takes. In this case, because we&#8217;re using roaming profiles with no folder redirection, the entire profile is copied locally at user logon.
+This shows a predictable increase in logon time as the profile grows - the larger the profile, the longer the logon time takes. In this case, because we&#8217;re using roaming profiles with no folder redirection, the entire profile is copied locally at user logon.
 
 ## Logon Times of Different Profile Sizes with Folder Redirection Enabled
 
@@ -78,7 +78,7 @@ With the first test, we&#8217;ll again use standard roaming user profiles and no
 
 <figure id="attachment_3768" aria-describedby="caption-attachment-3768" style="width: 1703px" class="wp-caption alignnone">[<img class="wp-image-3768 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1.png" alt="" width="1703" height="1083" srcset="https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1.png 1703w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1-150x95.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1-300x190.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1-1024x651.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1-624x396.png 624w" sizes="(max-width: 1703px) 100vw, 1703px" />](http://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1.png)<figcaption id="caption-attachment-3768" class="wp-caption-text">Logon impact of profile sizes with roaming profiles and file server under load</figcaption></figure>
 
-This produces some interesting results &#8211; with a small roaming profile, there&#8217;s little impact on logon times when the file server CPU is at 80%, but for each of the remaining tests, we can see that file server CPU load, even at 80%, more than doubles the logon time.
+This produces some interesting results - with a small roaming profile, there&#8217;s little impact on logon times when the file server CPU is at 80%, but for each of the remaining tests, we can see that file server CPU load, even at 80%, more than doubles the logon time.
 
 When the file server effectively runs out of CPU resources (at 99%) the direct effect on the user experience is clearly visible. For the medium profile, there&#8217;s a 1200% increase in logon time and for the large profile, a 2071% increase! Don&#8217;t let your file server/s run out of CPU resources.
 

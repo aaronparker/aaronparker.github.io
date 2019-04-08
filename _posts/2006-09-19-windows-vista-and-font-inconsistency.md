@@ -11,7 +11,7 @@ categories:
 tags:
   - Fonts
 ---
-I&#8217;m not alone in my frustration with Windows Vista (or Windows XP) and the inconsistency in font usage. Fonts are definitely in your face and consistent font usage helps the user distinguish between a UI element and content. David Vronay, Research Manager for Windows User Experience Compliance, has posted a response to [a thread that I started](http://shellrevealed.com/forums/thread/493.aspx) on font inconsistency at [shell: revealed](http://shellrevealed.com/). Here&#8217;s what he had to say on the topic:
+I'm not alone in my frustration with Windows Vista (or Windows XP) and the inconsistency in font usage. Fonts are definitely in your face and consistent font usage helps the user distinguish between a UI element and content. David Vronay, Research Manager for Windows User Experience Compliance, has posted a response to [a thread that I started](http://shellrevealed.com/forums/thread/493.aspx) on font inconsistency at [shell: revealed](http://shellrevealed.com/). Here's what he had to say on the topic:
 
 > The inconsistencies are mostly in two categories:
 > 
@@ -19,6 +19,6 @@ I&#8217;m not alone in my frustration with Windows Vista (or Windows XP) and the
 > 
 > 2) Oops! Someone just did it wrong and no one has noticed yet (or they noticed but they were past the localization freeze date for their feature, or they noticed but have too many crashing bugs to fix it, etc.) We are working hard to correct these, especially in common UI. So if you think you see stuff in this category, post it here or file a bug.
 
-Essentially then, things will stay them same and won&#8217;t change until a particular feature is updated. Perhaps if we keep logging it as a bug.. Anyway check out the shell: revealed site, it&#8217;s shaping up to be a good resource to understand why and how the Windows UI comes together.
+Essentially then, things will stay them same and won't change until a particular feature is updated. Perhaps if we keep logging it as a bug.. Anyway check out the shell: revealed site, it's shaping up to be a good resource to understand why and how the Windows UI comes together.
 
-If you want to see Segoe UI or Tahoma used across more of the Windows UI you can make a registry change that I&#8217;ve detailed [here](http://www.trustedaccess.info/blogs/travelling/archive/2006/08/25/UI-consistency-and-Microsoft-Sans-Serif.aspx). This tweak doesn&#8217;t work for all applications and UI elements but it works surprisingly well on Windows Vista.
+If you want to see Segoe UI or Tahoma used across more of the Windows UI you can make a registry change that I've detailed [here](http://www.trustedaccess.info/blogs/travelling/archive/2006/08/25/UI-consistency-and-Microsoft-Sans-Serif.aspx). This tweak doesn't work for all applications and UI elements but it works surprisingly well on Windows Vista.

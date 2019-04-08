@@ -86,7 +86,7 @@ The page appears to be intermittently available at the moment, so here’s the f
   * [App-V Configuration Options](http://download.microsoft.com/download/C/C/4/CC49D1B1-DCDE-4F03-8A28-B11D0949A672/App-V_Configuration_Options.wmv)
   * [App-V with AppLocker Executable Rules](http://download.microsoft.com/download/C/C/4/CC49D1B1-DCDE-4F03-8A28-B11D0949A672/App-V_with_AppLocker_Executable_Rules.wmv)
   * [App-V with AppLocker Windows Installer Rules](http://download.microsoft.com/download/C/C/4/CC49D1B1-DCDE-4F03-8A28-B11D0949A672/App-V_with_AppLocker_Windows_Installer_Rules.wmv)
-  * [Creating an App-V Virtual Application &#8211; Using the Sequencer](http://download.microsoft.com/download/C/C/4/CC49D1B1-DCDE-4F03-8A28-B11D0949A672/Create_Virtual_App.wmv)
+  * [Creating an App-V Virtual Application - Using the Sequencer](http://download.microsoft.com/download/C/C/4/CC49D1B1-DCDE-4F03-8A28-B11D0949A672/Create_Virtual_App.wmv)
   * [Deprovision a Virtual Application Using App-V](http://download.microsoft.com/download/C/C/4/CC49D1B1-DCDE-4F03-8A28-B11D0949A672/Deprovision_Virtual_App.wmv)
   * [Launching an App-V Virtual Application and Reviewing Client Configuration](http://download.microsoft.com/download/C/C/4/CC49D1B1-DCDE-4F03-8A28-B11D0949A672/Launch_Virtual_App.wmv)
   * [Using App-V Metering to Manage Application Licenses](http://download.microsoft.com/download/C/C/4/CC49D1B1-DCDE-4F03-8A28-B11D0949A672/Manage_App_Licences.wmv)

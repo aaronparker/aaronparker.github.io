@@ -35,4 +35,4 @@ This is where the similarities between the two gateway solutions end. Secure Gat
 
 **Conclusion** 
 
-If you are looking to implement remote access with either of the Citrix offerings, don&#8217;t listen to the hype &#8211; choose the option that best fits. Before you choose the Access Gateway (and I&#8217;m sure you&#8217;ll be happy you did) answer the question of user identity first. I recommend starting [here](http://www.citrix.com/English/ps2/products/feature.asp?contentID=26143) for information on the Access Gateway.
+If you are looking to implement remote access with either of the Citrix offerings, don&#8217;t listen to the hype - choose the option that best fits. Before you choose the Access Gateway (and I&#8217;m sure you&#8217;ll be happy you did) answer the question of user identity first. I recommend starting [here](http://www.citrix.com/English/ps2/products/feature.asp?contentID=26143) for information on the Access Gateway.

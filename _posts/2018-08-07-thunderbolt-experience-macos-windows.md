@@ -20,11 +20,11 @@ Thunderbolt 3 (and USB-C) are here to provide [a single cable for everything](ht
 
 # Thunderbolt 3 on macOS
 
-Thunderbolt&nbsp;[on macOS just works](https://www.apple.com/thunderbolt/) &#8211; plug-in a TB device and off you go. This makes sense given that the standard was [designed by Intel and Apple](https://en.wikipedia.org/wiki/Thunderbolt_(interface)). Unpacking and plugging in a Thunderbolt dock with external displays, ethernet, audio etc., on macOS in just about every case will work without installing drivers.
+Thunderbolt&nbsp;[on macOS just works](https://www.apple.com/thunderbolt/) - plug-in a TB device and off you go. This makes sense given that the standard was [designed by Intel and Apple](https://en.wikipedia.org/wiki/Thunderbolt_(interface)). Unpacking and plugging in a Thunderbolt dock with external displays, ethernet, audio etc., on macOS in just about every case will work without installing drivers.
 
 <figure id="attachment_6108" aria-describedby="caption-attachment-6108" style="width: 1560px" class="wp-caption aligncenter">[<img class="size-full wp-image-6108" src="https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed.jpg" alt="Thunderbolt ports on the MacBook Pro" width="1560" height="140" srcset="https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed.jpg 1560w, https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed-150x13.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed-300x27.jpg 300w, https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed-768x69.jpg 768w, https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed-1024x92.jpg 1024w" sizes="(max-width: 1560px) 100vw, 1560px" />](https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed.jpg)<figcaption id="caption-attachment-6108" class="wp-caption-text">Thunderbolt ports on the MacBook Pro</figcaption></figure>
 
-Here&#8217;s Apple&#8217;s dirty (not so) secret though &#8211; excluding the MacBook Air (and the Mini that comes with TB2), all current Macs have TB3 ports, [except for the MacBook](https://support.apple.com/en-au/HT207443). It has a single USB-C port only. Maybe that&#8217;s OK &#8211; the TB target market is likely to be purchasing the Pro line anyway, but Apple isn&#8217;t a fan of labelling their ports, so caveat emptor.
+Here&#8217;s Apple&#8217;s dirty (not so) secret though - excluding the MacBook Air (and the Mini that comes with TB2), all current Macs have TB3 ports, [except for the MacBook](https://support.apple.com/en-au/HT207443). It has a single USB-C port only. Maybe that&#8217;s OK - the TB target market is likely to be purchasing the Pro line anyway, but Apple isn&#8217;t a fan of labelling their ports, so caveat emptor.
 
 macOS provides a good look at the devices plugged into your TB ports:
 
@@ -58,7 +58,7 @@ Thunderbolt on Windows isn&#8217;t as simple as it could be. It would be great t
 
 Thunderbolt will unlikely see as wide spread adoption as USB 3.1, but users with specialised requirements such as video editors, CAD, etc., will benefit from the available bandwidth, which today is 40 Gbit/s vs. 10 Gbit/s. Early [USB 3.2 hardware with 20 Gbit/s speeds has been demonstrated](https://www.tomshardware.com/news/usb-3.2-synopsys-20gbps,37124.html) recently and this may further reduce the need for some users to go to devices providing the higher bandwidth.
 
-The end-user experience of TB on macOS vs. Windows 10 is kind of disappointing &#8211; Windows requires that you install drivers and the software requires administrative rights. Not an ideal experience for home or SMB users and&nbsp;these requirements might preclude the usage of Thunderbolt in enterprise environments. However my own personal experience on a MacBook is pretty awesome &#8211; just plug in and go. Looks like I&#8217;ll be on macOS for the foreseeable future.
+The end-user experience of TB on macOS vs. Windows 10 is kind of disappointing - Windows requires that you install drivers and the software requires administrative rights. Not an ideal experience for home or SMB users and&nbsp;these requirements might preclude the usage of Thunderbolt in enterprise environments. However my own personal experience on a MacBook is pretty awesome - just plug in and go. Looks like I&#8217;ll be on macOS for the foreseeable future.
 
 ## Update
 

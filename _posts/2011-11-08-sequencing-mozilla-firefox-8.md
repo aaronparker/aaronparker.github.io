@@ -31,8 +31,8 @@ Virtualizing Firefox with App-V will isolate the application from the OS, so the
 
 There are a couple of features that should be disabled when running Firefox under App-V:
 
-  * Automatic updates for Firefox – _Options / Advanced / Update &#8211; Automatically check for updates to: Firefox_. Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
-  * Default browser check – _Options / Advanced / General &#8211; Always check to see if Firefox is the default browser on startup_. Once Firefox is isolated from the OS, the user won&#8217;t be able to make it the default browser
+  * Automatic updates for Firefox – _Options / Advanced / Update - Automatically check for updates to: Firefox_. Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
+  * Default browser check – _Options / Advanced / General - Always check to see if Firefox is the default browser on startup_. Once Firefox is isolated from the OS, the user won&#8217;t be able to make it the default browser
 
 I will cover using a couple of customisation to ensure these features are disabled for any new Firefox profile.
 
@@ -43,7 +43,7 @@ I will cover using a couple of customisation to ensure these features are disabl
   * %APPDATA%\Mozilla (preferences, bookmarks etc.); and
   * %LOCALAPPDATA%\Mozilla (browser cache)
 
-The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% &#8211; this is a good thing and I don&#8217;t recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla_to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time. There are several reasons why this approach is a good idea:
+The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this is a good thing and I don&#8217;t recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla_to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time. There are several reasons why this approach is a good idea:
 
   * Some of the configuration files within the Firefox profile include hard-codes paths – challenging if your App-V virtual drive changes between clients
   * Virtualizing the profile increases the complexity of upgrading Firefox packages especially challenging given [Mozilla&#8217;s new approach to Firefox releases](http://www.zdnet.com/blog/bott/mozilla-to-enterprise-customers-drop-dead/3497). By storing the Firefox profile on the real file system, Firefox can be deployed via completely unrelated packages – no need to create upgrade versions
@@ -131,7 +131,7 @@ ECHO ; InstallDirectoryPath=Q:\MozillaFirefox8_en-GB >> %SOURCE%\Firefox8.ini
 ECHO QuickLaunchShortcut=false >> %SOURCE%\Firefox8.ini  
 ECHO DesktopShortcut=false >> %SOURCE%\Firefox8.ini  
 ECHO StartMenuShortcuts=true >> %SOURCE%\Firefox8.ini  
-REM Install Firefox &#8211; the START command will not work if the Firefox setup filename includes spaces  
+REM Install Firefox - the START command will not work if the Firefox setup filename includes spaces  
 START /WAIT FirefoxSetup8.exe /INI=%SOURCE%\Firefox8.ini
 
 REM Configure Firefox profile defaults  

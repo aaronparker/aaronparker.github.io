@@ -52,7 +52,7 @@ There are four tables in the MSI where I need to make changes:
 
 ### Component Table
 
-Go to the Component table and create a new entry. This will require a unique name (I’ve used _AppVShellValues_) and GUID &#8211; your MSI editor should be able to generate the GUID for you.
+Go to the Component table and create a new entry. This will require a unique name (I’ve used _AppVShellValues_) and GUID - your MSI editor should be able to generate the GUID for you.
 
 [<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Component-Table" border="0" alt="Component-Table" src="http://stealthpuppy.com/wp-content/uploads/2011/04/Component-Table_thumb.png" width="660" height="382" />](http://stealthpuppy.com/wp-content/uploads/2011/04/Component-Table.png)
 
@@ -81,7 +81,7 @@ The command stored in the Value column must launch the application via the App-V
 
 ### FeatureComponents Table
 
-Add a new entry to the FeatureComponents table &#8211; use _VirtualApp_ in the Feature_ column and select the same component used in the previous tables in the Component_ column
+Add a new entry to the FeatureComponents table - use _VirtualApp_ in the Feature_ column and select the same component used in the previous tables in the Component_ column
 
 [<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="FeatureComponents-Table" border="0" alt="FeatureComponents-Table" src="http://stealthpuppy.com/wp-content/uploads/2011/04/FeatureComponents-Table_thumb.png" width="660" height="382" />](http://stealthpuppy.com/wp-content/uploads/2011/04/FeatureComponents-Table.png)
 

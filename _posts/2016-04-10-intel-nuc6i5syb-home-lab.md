@@ -17,7 +17,7 @@ tags:
   - Intel NUC
   - NUC6i5SYB
 ---
-I&#8217;ve recently added a new PC to my home lab &#8211; the Intel NUC6i5SYB, to replace a Lenovo laptop that I&#8217;ve been using to host VMs on Hyper-V. In this article, I&#8217;ll cover an overview of the NUC, how I&#8217;ve configured this device and some details on performance.
+I&#8217;ve recently added a new PC to my home lab - the Intel NUC6i5SYB, to replace a Lenovo laptop that I&#8217;ve been using to host VMs on Hyper-V. In this article, I&#8217;ll cover an overview of the NUC, how I&#8217;ve configured this device and some details on performance.
 
 For the past couple of years I&#8217;ve been using a [Lenovo ThinkPad 440s ultrabook](http://shop.lenovo.com/us/en/laptops/thinkpad/t-series/t440s/) with an i5, 12GB RAM and a 256GB SSD running Windows Server 2012 R2 with Hyper-V as a host for some infrastructure VMs (XenDesktop, App-V infrastructure, vCenter, SQL Server etc.), but it&#8217;s come time to replace it. I looked at another low power device as a hypervisor host and the Intel NUC was the go to PC.
 
@@ -56,7 +56,7 @@ I&#8217;ve purchased G.Skill RAM previously and found them to be reliable and pe
 
 ## Installing RAM and SSDs
 
-Installing the RAM and drives into a NUC is simple enough &#8211; pop the top off, install the RAM into the two slots, install the M.2 drive with a screw to keep it into place and the SATA SSD just pushes into the slot in the top of the NUC. Here&#8217;s a view of the installed hardware:
+Installing the RAM and drives into a NUC is simple enough - pop the top off, install the RAM into the two slots, install the M.2 drive with a screw to keep it into place and the SATA SSD just pushes into the slot in the top of the NUC. Here&#8217;s a view of the installed hardware:
 
 <figure id="attachment_4329" aria-describedby="caption-attachment-4329" style="width: 1024px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/04/Open-NUC.jpg" rel="attachment wp-att-4329"><img class="wp-image-4329 size-large" title="Intel NUC open with RAM and SSDs installed." src="http://stealthpuppy.com/wp-content/uploads/2016/04/Open-NUC-1024x768.jpg" alt="Intel NUC open with RAM and SSDs installed." width="1024" height="768" srcset="https://stealthpuppy.com/wp-content/uploads/2016/04/Open-NUC-1024x768.jpg 1024w, https://stealthpuppy.com/wp-content/uploads/2016/04/Open-NUC-150x113.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2016/04/Open-NUC-300x225.jpg 300w, https://stealthpuppy.com/wp-content/uploads/2016/04/Open-NUC-768x576.jpg 768w, https://stealthpuppy.com/wp-content/uploads/2016/04/Open-NUC.jpg 1224w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption id="caption-attachment-4329" class="wp-caption-text">Intel NUC open with RAM and SSDs installed.</figcaption></figure>
 
@@ -64,7 +64,7 @@ Screw the lid back on and power up the PC. The 1.5 amp power supply comes with 
 
 # Configuration
 
-The Intel NUC comes with the Intel Visual BIOS, which is a nice change from text-based UIs we&#8217;re used to. Here&#8217;s a short walk-through of the BIOS configuration &#8211; as a hypervisor I&#8217;ve disabled hardware such as audio, Bluetooth and Wi-Fi etc.
+The Intel NUC comes with the Intel Visual BIOS, which is a nice change from text-based UIs we&#8217;re used to. Here&#8217;s a short walk-through of the BIOS configuration - as a hypervisor I&#8217;ve disabled hardware such as audio, Bluetooth and Wi-Fi etc.
 
 <img class="ngg_displayed_gallery mceItem" src="http://stealthpuppy.com/nextgen-attach_to_post/preview/id--4351" alt="" data-mce-placeholder="1" /> 
 
@@ -72,9 +72,9 @@ The Intel NUC comes with the Intel Visual BIOS, which is a nice change from text
 
 Installing Windows 10is straight-forward, Windows 10 will recognise most devices and will require updates for the chipset and display driver. Support for Windows Server, however, is a bit more tricky.
 
-Windows Server does not provide support for the [Intel I219-V](http://ark.intel.com/products/82186/Intel-Ethernet-Connection-I219-V) network adapter in-box. So installing manually or via an automated deployment requires a manual installation of the network driver &#8211; because the driver is not signed for Windows Server, there is no automated install.
+Windows Server does not provide support for the [Intel I219-V](http://ark.intel.com/products/82186/Intel-Ethernet-Connection-I219-V) network adapter in-box. So installing manually or via an automated deployment requires a manual installation of the network driver - because the driver is not signed for Windows Server, there is no automated install.
 
-At this time, I have Windows Server 2016 installed but I would prefer to be running Nano Server &#8211; without a signed network driver there&#8217;s no way to get Nano Server working on this PC. To get a driver signed, I&#8217;m getting a code signing certificate from [DigiCert](https://www.digicert.com/) to enable me to sign the drivers. I&#8217;ll write an article in the future on getting Nano Server onto the Intel NUC.
+At this time, I have Windows Server 2016 installed but I would prefer to be running Nano Server - without a signed network driver there&#8217;s no way to get Nano Server working on this PC. To get a driver signed, I&#8217;m getting a code signing certificate from [DigiCert](https://www.digicert.com/) to enable me to sign the drivers. I&#8217;ll write an article in the future on getting Nano Server onto the Intel NUC.
 
 With Windows Server or Windows Server Core and with devices disabled in the BIOS, Device Manager looks like this:
 
@@ -94,7 +94,7 @@ To test both SSDs, I&#8217;ve used Iometer with a 4K block size, 80% write, 80% 
 
 Here&#8217;s the result for the Samsung 850 EVO 120GB M.2 drive:
 
-<figure id="attachment_4353" aria-describedby="caption-attachment-4353" style="width: 764px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive.png" rel="attachment wp-att-4353"><img class="wp-image-4353 size-full" title="Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random" src="http://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive.png" alt="Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random" width="764" height="472" srcset="https://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive.png 764w, https://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive-150x93.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive-300x185.png 300w" sizes="(max-width: 764px) 100vw, 764px" /></a><figcaption id="caption-attachment-4353" class="wp-caption-text">Samsung 850 EVO M.2 drive: Iometer performance &#8211; 4K blocks, 80% write, 80% random</figcaption></figure>
+<figure id="attachment_4353" aria-describedby="caption-attachment-4353" style="width: 764px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive.png" rel="attachment wp-att-4353"><img class="wp-image-4353 size-full" title="Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random" src="http://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive.png" alt="Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random" width="764" height="472" srcset="https://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive.png 764w, https://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive-150x93.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/04/Iometer-CDrive-300x185.png 300w" sizes="(max-width: 764px) 100vw, 764px" /></a><figcaption id="caption-attachment-4353" class="wp-caption-text">Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random</figcaption></figure>
 
 And results for the Samsung EVO 850 256GB SATA drive:
 
@@ -106,7 +106,7 @@ I&#8217;m very happy with the Intel NUC6i5SYB, especially with this configuratio
 
 I would, however, have done two things differently:
 
-  1. Swapped the drive configurations &#8211; make the M.2 the larger drive for VM storage. As this is drive 1, it would simplify OS deployment to the SATA SSD as drive 0.
+  1. Swapped the drive configurations - make the M.2 the larger drive for VM storage. As this is drive 1, it would simplify OS deployment to the SATA SSD as drive 0.
   2. Extended my budget and gone with the Samsung 50GB M.2 SSD at $235AU. While I&#8217;m using deduplication built into Windows Server, there&#8217;s not a huge price difference between the 256GB and 512GB SSDs.
 
 Overall though this is a great addition to my home lab environment.

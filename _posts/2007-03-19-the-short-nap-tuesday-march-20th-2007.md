@@ -15,11 +15,11 @@ I&#8217;ve been speedlinking some interesting Network Access Protection links in
 
   * [MVP Summit â€“ NAP Deep Dive Results](http://blogs.technet.com/nap/archive/2007/03/19/mvp-summit-nap-deep-dive-results.aspx)  
     Jeff Sigman prays to the demo gods at the MVP summit but they weren&#8217;t listening, so he fixes it himself, also setting up a NAP server in Longhorn beta 3 takes about 15 minutes after improvements in the server console.
-  * Upcoming chat &#8211; [Network Policy Server in Longhorn, April 10](http://www.microsoft.com/technet/community/chats/default.mspx)  
+  * Upcoming chat - [Network Policy Server in Longhorn, April 10](http://www.microsoft.com/technet/community/chats/default.mspx)  
     Add the chat to your calendar [here](http://www.microsoft.com/communities/chats/vcs/07_0410_TN_Longhorn.ics).
-  * Upcoming chat &#8211; [DHCP enhancements in Windows Vista: NAP enforcement and DHCPv6 &#8211; Part 2, April 19](http://www.microsoft.com/technet/community/chats/default.mspx)  
+  * Upcoming chat - [DHCP enhancements in Windows Vista: NAP enforcement and DHCPv6 - Part 2, April 19](http://www.microsoft.com/technet/community/chats/default.mspx)  
     Add the chat to your calendar [here](http://www.microsoft.com/communities/chats/vcs/07_0419_TN_DHCP.ics).
-  * Previous chat &#8211; [Deploying NAP end to end in your Enterprise](http://blogs.technet.com/ianhamer/archive/2007/03/12/it-s-nap-chat-time-again-march-13th.aspx)  
+  * Previous chat - [Deploying NAP end to end in your Enterprise](http://blogs.technet.com/ianhamer/archive/2007/03/12/it-s-nap-chat-time-again-march-13th.aspx)  
     Keep an eye out for the transcript on the [TechNet Chat Transcripts](http://www.microsoft.com/technet/community/chats/trans/default.mspx) page.
   * [NAP compliancy rates at Redmond above 80%](http://blogs.technet.com/nap/archive/2007/03/16/time-for-your-nap-follow-up-corrections.aspx)  
     Jeff Sigmans follow up to [Adam Carter&#8217;s original post](http://blogs.technet.com/nap/archive/2007/03/01/time-for-your-nap.aspx) about the rollout of NAP at Redmond.

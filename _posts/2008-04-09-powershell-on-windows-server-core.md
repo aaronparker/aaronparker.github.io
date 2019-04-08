@@ -20,4 +20,4 @@ tags:
 ---
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/04/servercorepowershell1.png" alt="PowerShell running on Server Core" width="678" height="534" border="0" />
 
-PowerShell running directly on Windows Server Core &#8211; no need to wait for Windows Server 2008 R2&#8230;  If you look closely you can see how I got it working.
+PowerShell running directly on Windows Server Core - no need to wait for Windows Server 2008 R2&#8230;  If you look closely you can see how I got it working.

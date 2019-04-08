@@ -1,6 +1,6 @@
 ---
 id: 4203
-title: 'OS Automation Survey Results &#8211; What Solution is Used to Deliver Images?'
+title: 'OS Automation Survey Results - What Solution is Used to Deliver Images?'
 date: 2015-11-16T18:21:20+10:00
 author: Aaron Parker
 layout: post
@@ -22,7 +22,7 @@ tags:
 ---
 In the previous article, we covered [which automation solutions are in use to create](http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/) (and manage) master images. In this article we&#8217;ll cover what tools or technologies are used to deliver an image to an end-point (that being a virtual machine or a physical device).
 
-This is an important distinction &#8211; often the solution for delivering the master image is relied upon for &#8220;image management&#8221;; however these solutions aren&#8217;t typically capable of creating a framework for repeatable, consistent image creation. Solutions available for VDI (and RDS) for image delivery might differ depending on the product and some of those include image versioning, but they do not enable complete recreation of an image from scratch without some form of automation.
+This is an important distinction - often the solution for delivering the master image is relied upon for &#8220;image management&#8221;; however these solutions aren&#8217;t typically capable of creating a framework for repeatable, consistent image creation. Solutions available for VDI (and RDS) for image delivery might differ depending on the product and some of those include image versioning, but they do not enable complete recreation of an image from scratch without some form of automation.
 
 # Image Delivery Solutions
 
@@ -30,7 +30,7 @@ Based on 524 responses to this question, we are able to see the following usage:
 
 <figure id="attachment_4205" aria-describedby="caption-attachment-4205" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4205" src="http://stealthpuppy.com/wp-content/uploads/2015/11/WhatIsUsedToDeliverImage-1024x554.png" alt="What is used to deliver a standardised image to VMs or end-points." width="1024" height="554" srcset="https://stealthpuppy.com/wp-content/uploads/2015/11/WhatIsUsedToDeliverImage-1024x554.png 1024w, https://stealthpuppy.com/wp-content/uploads/2015/11/WhatIsUsedToDeliverImage-150x81.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/11/WhatIsUsedToDeliverImage-300x162.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2015/11/WhatIsUsedToDeliverImage.png)<figcaption id="caption-attachment-4205" class="wp-caption-text">What is used to deliver a standardised image to VMs or end-points.</figcaption></figure>
 
-This result is similar to [the overall usage of VDI solutions](http://stealthpuppy.com/automation-survey-results-vdi-platforms/) &#8211; Citrix PVS and MCS usage is higher than other solutions because the amount of XenDesktop and XenApp deployments is far higher than competing products. Based on this usage, we can make a reasonable assumption that the majority of Citrix-based deployments are non-persistent; however &#8220;persistent desktops&#8221; based on MCS is common, so the numbers won&#8217;t be completely reflective of this chart.
+This result is similar to [the overall usage of VDI solutions](http://stealthpuppy.com/automation-survey-results-vdi-platforms/) - Citrix PVS and MCS usage is higher than other solutions because the amount of XenDesktop and XenApp deployments is far higher than competing products. Based on this usage, we can make a reasonable assumption that the majority of Citrix-based deployments are non-persistent; however &#8220;persistent desktops&#8221; based on MCS is common, so the numbers won&#8217;t be completely reflective of this chart.
 
 ## Observations
 

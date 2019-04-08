@@ -21,7 +21,7 @@ If you’re a seasoned sequencing engineer the Sequencer has some major UI chang
 
 ### Sequencer Installation
 
-Built-in best practices are implemented right from installation &#8211; the first change you’ll see is during the installation of the Sequencer. Setup will ask for the virtual drive letter:
+Built-in best practices are implemented right from installation - the first change you’ll see is during the installation of the Sequencer. Setup will ask for the virtual drive letter:
 
 <img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice12" src="http://stealthpuppy.com/wp-content/uploads/2011/03/AppV-Sequencer-BestPractice12.png" border="0" alt="AppV-Sequencer-BestPractice12" width="504" height="382" /> 
 

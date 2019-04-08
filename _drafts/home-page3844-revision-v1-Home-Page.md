@@ -39,7 +39,7 @@ Recent articles
 
 [<img width="480" height="340" src="https://stealthpuppy.com/wp-content/uploads/2018/08/angela-compagnone-371298-unsplash-480x340.jpg" />](https://stealthpuppy.com/thunderbolt-3/) 
 
-[Thunderbolt 3 &#8211; One Cable to Rule Them All](https://stealthpuppy.com/thunderbolt-3/)
+[Thunderbolt 3 - One Cable to Rule Them All](https://stealthpuppy.com/thunderbolt-3/)
 
 [<img width="480" height="340" src="https://stealthpuppy.com/wp-content/uploads/2018/07/russ-mccabe-5461-unsplash-480x340.jpg" />](https://stealthpuppy.com/deploy-adobe-reader-dc-intune-part2/) 
 
@@ -75,7 +75,7 @@ Recent articles
 
 [<img width="480" height="340" src="https://stealthpuppy.com/wp-content/uploads/2016/11/MelbourneCUCG-white-480x340.png" />](https://stealthpuppy.com/melbourne-cugc-october-2017-meetup/) 
 
-[Melbourne CUGC IV &#8211; It&#8217;s LTSR in the Spotlight!](https://stealthpuppy.com/melbourne-cugc-october-2017-meetup/)
+[Melbourne CUGC IV - It's LTSR in the Spotlight!](https://stealthpuppy.com/melbourne-cugc-october-2017-meetup/)
 
 <!-- /row -->
 

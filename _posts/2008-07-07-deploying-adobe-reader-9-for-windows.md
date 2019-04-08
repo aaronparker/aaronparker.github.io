@@ -224,34 +224,34 @@ Here’s the code you’ll need to hide those items. Copy and paste into `HideIt
 
 [code]//HideMenu.js
 
-// [File &#8211; Create Adobe PDF Using Acrobat.com], plus toolbar button  
+// [File - Create Adobe PDF Using Acrobat.com], plus toolbar button  
 app.hideMenuItem("WebServices:CreatePDF");  
 app.hideToolbarButton("Weblink:CreatePDF");
 
-// [File &#8211; Collaborate], plus toolbar button  
+// [File - Collaborate], plus toolbar button  
 app.hideMenuItem("Annots:FileCollaboration");  
 app.hideToolbarButton("Annots:CollabToolButton");
 
-// [File &#8211; Digital Editions]  
+// [File - Digital Editions]  
 app.hideMenuItem("eBook:Digital Edition Services");
 
-// [Help &#8211; Improvement Program Options]  
+// [Help - Improvement Program Options]  
 app.hideMenuItem("UsageMeasurement");
 
-// [Help &#8211; Online Support], plus sub menu items  
+// [Help - Online Support], plus sub menu items  
 app.hideMenuItem("OnlineSupport");  
 app.hideMenuItem("KnowledgeBase");  
 app.hideMenuItem("AdobeExpertSupport");  
 app.hideMenuItem("AccessOnline");  
 app.hideMenuItem("SystemInformation");
 
-// [Help &#8211; Repair Adobe Reader Installation]  
+// [Help - Repair Adobe Reader Installation]  
 app.hideMenuItem("DetectAndRepair");
 
-// [Help &#8211; Check for Updates]  
+// [Help - Check for Updates]  
 app.hideMenuItem("Updates");
 
-// [Help &#8211; Purchase Adobe Acrobat]  
+// [Help - Purchase Adobe Acrobat]  
 app.hideMenuItem("Weblink:BuyAcrobat");[/code]
 
 ### Deploying Reader

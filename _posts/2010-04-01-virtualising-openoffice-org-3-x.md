@@ -26,9 +26,9 @@ Virtualising OpenOffice is a basic three-step process:
 
 ### Sun Java Runtime Environment
 
-[OpenOffice relies on Java for some functions](http://download.openoffice.org/common/java.html), but will install without it &#8211; if you don’t need those features, you can avoid installing Java. Take note when downloading OpenOffice – you can get two installers, one with Java and one without; however when I attempted to download the installer with Java, I kept getting the one without. It’s probably best to download OpenOffice and the JRE separately so that you have a bit more control over what gets installed.
+[OpenOffice relies on Java for some functions](http://download.openoffice.org/common/java.html), but will install without it - if you don’t need those features, you can avoid installing Java. Take note when downloading OpenOffice – you can get two installers, one with Java and one without; however when I attempted to download the installer with Java, I kept getting the one without. It’s probably best to download OpenOffice and the JRE separately so that you have a bit more control over what gets installed.
 
-To install the JRE, download the latest offline installer &#8211; [Sun JRE 1.6 Update 18 offline installer](http://javadl.sun.com/webapps/download/AutoDL?BundleId=37981) and use this install script:
+To install the JRE, download the latest offline installer - [Sun JRE 1.6 Update 18 offline installer](http://javadl.sun.com/webapps/download/AutoDL?BundleId=37981) and use this install script:
 
 <p class="download">
   [download id=&#8221;33&#8243; format=&#8221;1&#8243;]

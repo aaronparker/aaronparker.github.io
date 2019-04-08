@@ -1,13 +1,13 @@
 ---
 id: 5961
-title: 'Install-VisualCRedistributables.ps1 &#8211; A Visual C++ Redistributable Installer'
+title: 'Install-VisualCRedistributables.ps1 - A Visual C++ Redistributable Installer'
 date: 2018-02-12T11:45:20+10:00
 author: Aaron Parker
 layout: revision
 guid: https://stealthpuppy.com/5434-revision-v1/
 permalink: /5434-revision-v1/
 ---
-In updating my [MDT](http://stealthpuppy.com/tag/mdt/) deployment shares recently, I got tired of having to do something about the Visual C++&nbsp;Redistributable installers and finally decided to do something about it, so I&#8217;ve written a script that will download the installers and optionally install them &#8211;&nbsp;[Install-VisualCRedistributables.ps1](https://github.com/aaronparker/Install-VisualCRedistributables).
+In updating my [MDT](http://stealthpuppy.com/tag/mdt/) deployment shares recently, I got tired of having to do something about the Visual C++&nbsp;Redistributable installers and finally decided to do something about it, so I've written a script that will download the installers and optionally install them -&nbsp;[Install-VisualCRedistributables.ps1](https://github.com/aaronparker/Install-VisualCRedistributables).
 
 This script reads [an external XML file](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml) that contains the installer information for each of the&nbsp;Visual C++&nbsp;Redistributables so that changes to URLs, install options and new redistributables can be made without making changes to the script. The XML file lists the download URL and install instructions for each installer and looks like this:
 
@@ -48,9 +48,9 @@ The script will install the redistributables in the order listed in the XML file
 
 # Using Install-VisualCRedistributables.ps1
 
-Download&nbsp;[Install-VisualCRedistributables.ps1](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/Install-VisualCRedistributables.ps1 "Install-VisualCRedistributables.ps1"){#6688ca8243a1ff4cb920b2f5b0eb5d4f-fc78b16fb52218a5ca1961809bece9155c302c06.js-navigation-open}&nbsp;and&nbsp;[VisualCRedistributablesSupported.xml](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml "VisualCRedistributables.xml"){#ae2b8c9175203ac3b93b3a45bf39ac3f-2392f8cdffa2c6a99fa7b73e04bccc284321c434.js-navigation-open}&nbsp;from the repository and edit the XML as required. As this includes all supported redistributables from 2008 to 2017, all will be downloaded and installed by default. If you don&#8217;t need all of them in your environment, remove those that aren&#8217;t required.
+Download&nbsp;[Install-VisualCRedistributables.ps1](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/Install-VisualCRedistributables.ps1 "Install-VisualCRedistributables.ps1"){#6688ca8243a1ff4cb920b2f5b0eb5d4f-fc78b16fb52218a5ca1961809bece9155c302c06.js-navigation-open}&nbsp;and&nbsp;[VisualCRedistributablesSupported.xml](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml "VisualCRedistributables.xml"){#ae2b8c9175203ac3b93b3a45bf39ac3f-2392f8cdffa2c6a99fa7b73e04bccc284321c434.js-navigation-open}&nbsp;from the repository and edit the XML as required. As this includes all supported redistributables from 2008 to 2017, all will be downloaded and installed by default. If you don't need all of them in your environment, remove those that aren't required.
 
-The script can be run in two phases &#8211; one to download the installers and again to install the redistributables &#8211; this is useful for downloading the installers to add to your reference image via MDT, for example. The script can also be used to download and install in one action.
+The script can be run in two phases - one to download the installers and again to install the redistributables - this is useful for downloading the installers to add to your reference image via MDT, for example. The script can also be used to download and install in one action.
 
 ## Parameters
 
@@ -60,7 +60,7 @@ The parameters for the script are:
 
 This points to the XML file that contains the details about the Visual C++ Redistributables. This must be in the expected format, otherwise, the script will fail.
 
-Example &#8211; Downloads the Visual C++ Redistributables listed in VisualCRedistributables.xml.
+Example - Downloads the Visual C++ Redistributables listed in VisualCRedistributables.xml.
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml"</pre>
 
@@ -68,7 +68,7 @@ Example &#8211; Downloads the Visual C++ Redistributables listed in VisualCRedis
 
 Specify a target folder to download the Redistributables to, otherwise, use the current folder.
 
-Example &#8211; Downloads the Visual C++ Redistributables listed in VisualCRedistributables.xml to C:\Redist.
+Example - Downloads the Visual C++ Redistributables listed in VisualCRedistributables.xml to C:\Redist.
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml" -Path C:\Redist</pre>
 
@@ -76,7 +76,7 @@ Example &#8211; Downloads the Visual C++ Redistributables listed in VisualCRedis
 
 By default, the script will only download the Redistributables. This allows you to download the Redistributables for separate deployment (e.g. in a reference image). Add -Install to install each of the Redistributables as well.
 
-Example &#8211; Downloads and installs the Visual C++ Redistributables listed in VisualCRedistributables.xml.
+Example - Downloads and installs the Visual C++ Redistributables listed in VisualCRedistributables.xml.
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml" -Install:$True</pre>
 

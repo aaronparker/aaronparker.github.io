@@ -12,7 +12,7 @@ tags:
   - Folder Redirection
   - Windows-Vista
 ---
-If you are redirecting the Desktop folder for users on Windows Vista laptops, a knowledgebase article just been published that might be useful to you. Here&#8217;s details of what this article addresses:
+If you are redirecting the Desktop folder for users on Windows Vista laptops, a knowledgebase article just been published that might be useful to you. Here's details of what this article addresses:
 
 > SYMPTOMS  
 > Consider the following scenario:

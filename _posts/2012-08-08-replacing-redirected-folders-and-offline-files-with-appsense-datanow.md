@@ -33,7 +33,7 @@ There&#8217;s various 3<sup>rd</sup> party &#8220;cloud&#8221; solutions aimed a
 
 # What is AppSense DataNow?
 
-[DataNow](http://www.appsense.com/appsense-datanow) is AppSense&#8217;s new data management product, currently in public beta &#8211; available for download for testing and feedback. In its current form (as least as far as this beta in concerned), DataNow provides an easy way to access to corporate data (stored on user home drives) from mobile devices, Windows PCs and Macs.
+[DataNow](http://www.appsense.com/appsense-datanow) is AppSense&#8217;s new data management product, currently in public beta - available for download for testing and feedback. In its current form (as least as far as this beta in concerned), DataNow provides an easy way to access to corporate data (stored on user home drives) from mobile devices, Windows PCs and Macs.
 
 Access is proxied through a virtual appliance, located in the DMZ or on the Internal network, whilst the data remains in its existing location (i.e. file servers inside the trusted network). The DataNow client then accesses that data over HTTP.
 

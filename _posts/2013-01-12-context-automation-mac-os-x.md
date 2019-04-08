@@ -18,9 +18,9 @@ tags:
   - ControlPlane
   - OS X
 ---
-<img class="alignright size-full wp-image-3021" alt="ControlPlane Icon" src="http://stealthpuppy.com/wp-content/uploads/2013/01/controlplane.png" width="128" height="128" />I currently use a MacBook Pro for my personal and work use every day &#8211; it&#8217;s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).
+<img class="alignright size-full wp-image-3021" alt="ControlPlane Icon" src="http://stealthpuppy.com/wp-content/uploads/2013/01/controlplane.png" width="128" height="128" />I currently use a MacBook Pro for my personal and work use every day - it&#8217;s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).
 
-Each location therefore, has different contexts &#8211; at home I might connect to my [Synology](http://www.synology.com/) NAS and I don&#8217;t need to lock the laptop when I walk away from it. Work is a very different context &#8211; I don&#8217;t have access to the NAS and I&#8217;m in a public location where I should be locking the desktop when it&#8217;s not in use.
+Each location therefore, has different contexts - at home I might connect to my [Synology](http://www.synology.com/) NAS and I don&#8217;t need to lock the laptop when I walk away from it. Work is a very different context - I don&#8217;t have access to the NAS and I&#8217;m in a public location where I should be locking the desktop when it&#8217;s not in use.
 
 Manually mounting remote shares or changing security settings for each locations is repetitive and time consuming. Surely there&#8217;s a better way?
 
@@ -30,7 +30,7 @@ So here&#8217;s how I&#8217;m using [ControlPlane](http://www.controlplaneapp.co
 
 # Installing ControlPlane
 
-Downloading and installing ControlPlane is very simple &#8211; download the disk image (DMG file) and drag ControlPlane to your Applications folder.
+Downloading and installing ControlPlane is very simple - download the disk image (DMG file) and drag ControlPlane to your Applications folder.
 
 Launch ControlPlane and enable &#8216;Start ControlPlane at login&#8217; (if it&#8217;s not running, actions won&#8217;t fire). Here I&#8217;ve also set a default context (Secure). This is important because I want the secure actions firing by default with other actions only firing if I connect to a specific context (such as Home).
 
@@ -44,7 +44,7 @@ I&#8217;ve enabled the display of the context name in the menu bar so that I can
 
 Create a Context with a name, Evidence Sources (properties of a location, physical configuration, peripherals, time of day etc) and Rules (these define evidence sources that describe the context).
 
-I&#8217;ve created three Contexts &#8211; Home, Mobile (for use with a MiFi-style device) and Secure. Rules are applied to Home and Mobile, whilst Secure has no rules applied and thus applies to any location that isn&#8217;t Home or Mobile.
+I&#8217;ve created three Contexts - Home, Mobile (for use with a MiFi-style device) and Secure. Rules are applied to Home and Mobile, whilst Secure has no rules applied and thus applies to any location that isn&#8217;t Home or Mobile.
 
 <img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png 507w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts-150x150.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /> 
 

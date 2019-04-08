@@ -16,7 +16,7 @@ To get the best out of Windows requires the wipe and load approach when confront
 
 Windows&#8217; greatest strength and weakness is the ecosystem that Microsoft has built around it and I think that OEM&#8217;s aren&#8217;t doing enough to give consumers the best Windows experience. OEMs should be brought to task for much of Vistas&#8217; failings in its first 12 months.
 
-Anyway that&#8217;s a topic for another day, here&#8217;s what this post is about &#8211; If you are troubleshooting slow performance in Windows Vista, there are some knowledgebase articles that were published last month and are worth referring to for assistance:
+Anyway that&#8217;s a topic for another day, here&#8217;s what this post is about - If you are troubleshooting slow performance in Windows Vista, there are some knowledgebase articles that were published last month and are worth referring to for assistance:
 
   * [How to troubleshoot performance issues with standby, hibernate, and resume in Windows Vista](http://support.microsoft.com/kb/950686)
   * [How to troubleshoot performance issues during startup in Windows Vista](http://support.microsoft.com/kb/950684)

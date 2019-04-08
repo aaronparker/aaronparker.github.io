@@ -21,13 +21,13 @@ tags:
   - ShareFile
   - Windows 10
 ---
-If you&#8217;re deploying Windows 10 with Modern Management (Azure AD joined, MDM managed), you&#8217;ll likely have wondered about data protection &#8211; if users aren&#8217;t intentionally&nbsp;saving documents to their OneDrive folder, that data is likely, not synchronised and therefore not protected against data loss.
+If you&#8217;re deploying Windows 10 with Modern Management (Azure AD joined, MDM managed), you&#8217;ll likely have wondered about data protection - if users aren&#8217;t intentionally&nbsp;saving documents to their OneDrive folder, that data is likely, not synchronised and therefore not protected against data loss.
 
 Traditionally managed PCs will have folder redirection (and offline files) so that user&#8217;s documents are synchronised when connected to the corporate network. Some organisations will even have implemented folder redirection into the OneDrive folder via Group Policy, as a better alternative.
 
 Implementing folder redirection for Windows 10 via Intune currently isn&#8217;t possible, so we need a creative solution to this challenge. With [PowerShell scripts available to deploy via Intune](https://docs.microsoft.com/en-us/intune/intune-management-extension), we can create a custom approach for redirecting essential folders into OneDrive.
 
-**[Update &#8211; December 29, 2017]** [A GitHub repository has been established for the scripts in this article](https://github.com/aaronparker/intune/tree/master/Folder-Redirection). Going forward any additional development will occur there. Testing, feedback and improvements can be logged on the repository.
+**[Update - December 29, 2017]** [A GitHub repository has been established for the scripts in this article](https://github.com/aaronparker/intune/tree/master/Folder-Redirection). Going forward any additional development will occur there. Testing, feedback and improvements can be logged on the repository.
 
 # How Folder Redirection Works
 
@@ -55,9 +55,9 @@ Because we also need to move the folder contents, I&#8217;ve forked the script a
 
 My version updates the **Set-KnownFolderPath** function to ensure all known folders for Documents, Pictures etc. are covered and adds:
 
-  * **Get-KownFolderPath** &#8211; we need to know what the existing physical path is before redirecting the folder
-  * **Move-Files** &#8211; a wrapper for Robocopy.exe. Rather than implement the same functionality of Robocopy in PowerShell, the script references it directly to move the contents of the folder to the new location. This&nbsp;function ensures that we also get a full log of all files moved to the new path.
-  * **Redirect-Folder** &#8211; this function wraps some testing around the redirect + move functionality
+  * **Get-KownFolderPath** - we need to know what the existing physical path is before redirecting the folder
+  * **Move-Files** - a wrapper for Robocopy.exe. Rather than implement the same functionality of Robocopy in PowerShell, the script references it directly to move the contents of the folder to the new location. This&nbsp;function ensures that we also get a full log of all files moved to the new path.
+  * **Redirect-Folder** - this function wraps some testing around the redirect + move functionality
   * Reads the OneDrive for Business sync folder from the registry to avoid hard-coding the target path
   * Implements redirection for the Desktop, Documents and Pictures folders.
 
@@ -67,9 +67,9 @@ My script could do with some additional error checking and robustness; however, 
 
 Intune allows you to implement PowerShell scripts that run&nbsp;in the user context or Local System contexts.&nbsp;
 
-<figure id="attachment_5898" aria-describedby="caption-attachment-5898" style="width: 1164px" class="wp-caption aligncenter">[<img class="wp-image-5898 size-full" src="https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings.png" alt="Intune PowerShell script settings, OneDrive" width="1164" height="306" srcset="https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings.png 1164w, https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings-150x39.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings-300x79.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings-768x202.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings-1024x269.png 1024w" sizes="(max-width: 1164px) 100vw, 1164px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings.png)<figcaption id="caption-attachment-5898" class="wp-caption-text">Intune PowerShell script settings &#8211; user context. Not what we want.</figcaption></figure>
+<figure id="attachment_5898" aria-describedby="caption-attachment-5898" style="width: 1164px" class="wp-caption aligncenter">[<img class="wp-image-5898 size-full" src="https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings.png" alt="Intune PowerShell script settings, OneDrive" width="1164" height="306" srcset="https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings.png 1164w, https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings-150x39.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings-300x79.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings-768x202.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings-1024x269.png 1024w" sizes="(max-width: 1164px) 100vw, 1164px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/ScriptSettings.png)<figcaption id="caption-attachment-5898" class="wp-caption-text">Intune PowerShell script settings - user context. Not what we want.</figcaption></figure>
 
-Implementing the redirection script in the user context though fails when adding the&nbsp;SHSetKnownFolderPath class to the script session. Additionally, deploying the script in this manner will only run the script once &#8211; if the OneDrive client is not configured correctly when the script runs, the folder redirection will then never work.
+Implementing the redirection script in the user context though fails when adding the&nbsp;SHSetKnownFolderPath class to the script session. Additionally, deploying the script in this manner will only run the script once - if the OneDrive client is not configured correctly when the script runs, the folder redirection will then never work.
 
 Instead of deploying the folder redirection script with Intune, we can instead implement a script that downloads the folder redirection script to a local path and creates a scheduled task that runs at user login to run the script. That way, we can be sure that the redirection script will run after the user has logged into the OneDrive client and set up the local sync folder in their profile. Additionally, this approach will enable folder redirection to run for any user logging onto the PC.
 
@@ -79,7 +79,7 @@ _Note that this downloads the redirection script from my public gist repository.
 
 
 
-Right now this script is quite simple &#8211; it will need to be updated to remove or update an existing script in the event you need to remove the script from Intune and re-add it.
+Right now this script is quite simple - it will need to be updated to remove or update an existing script in the event you need to remove the script from Intune and re-add it.
 
 To deploy the script via Intune, save it locally as&nbsp;Set-RedirectOneDriveTask.ps1 and add as a new PowerShell script under Device Configuration. Ensure that the scheduled task is created successfully with the script run as Local System by setting &#8216;Run this script using the logged on credentials&#8217; to No.&nbsp;
 
@@ -97,7 +97,7 @@ When the folder redirection script runs Robocopy to move documents, it will log 
 
 <figure id="attachment_5906" aria-describedby="caption-attachment-5906" style="width: 1568px" class="wp-caption aligncenter">[<img class="size-full wp-image-5906" src="https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectLogs.png" alt="Data copy/move logs" width="1568" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectLogs.png 1568w, https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectLogs-150x56.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectLogs-300x112.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectLogs-768x288.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectLogs-1024x383.png 1024w" sizes="(max-width: 1568px) 100vw, 1568px" />](https://stealthpuppy.com/wp-content/uploads/2017/12/RedirectLogs.png)<figcaption id="caption-attachment-5906" class="wp-caption-text">Data copy/move logs</figcaption></figure>
 
-When implemented in this way, the script will run at user login and successfully enable folder redirection into the OneDrive for Business sync folder. The user will see a PowerShell script window &#8211; pointing the scheduled task trigger to a VBscript wrapper could fix this.
+When implemented in this way, the script will run at user login and successfully enable folder redirection into the OneDrive for Business sync folder. The user will see a PowerShell script window - pointing the scheduled task trigger to a VBscript wrapper could fix this.
 
 ## Configuring OneDrive
 

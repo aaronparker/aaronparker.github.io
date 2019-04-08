@@ -1,6 +1,6 @@
 ---
 id: 2776
-title: 'White Paper &#8211; The Definitive Guide to Delivering Microsoft Office with App-V'
+title: 'White Paper - The Definitive Guide to Delivering Microsoft Office with App-V'
 date: 2012-07-19T16:52:15+10:00
 author: Aaron Parker
 layout: post
@@ -20,7 +20,7 @@ tags:
 ---
 <img class="alignnone  wp-image-2717" title="The Definitive Guide to Virtualizing Office header" src="http://stealthpuppy.com/wp-content/uploads/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png" alt="The Definitive Guide to Virtualizing Office header" width="660" height="208" srcset="https://stealthpuppy.com/wp-content/uploads/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png 778w, https://stealthpuppy.com/wp-content/uploads/2012/05/Screen-Shot-2012-05-18-at-13.52.51-150x47.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/05/Screen-Shot-2012-05-18-at-13.52.51-300x94.png 300w" sizes="(max-width: 660px) 100vw, 660px" />
 
-Using application virtualization to simplify your gold image by delivering what&#8217;s most likely the most common component of any image &#8211; Microsoft Office, continues to be a popular topic. But is it the right approach?
+Using application virtualization to simplify your gold image by delivering what&#8217;s most likely the most common component of any image - Microsoft Office, continues to be a popular topic. But is it the right approach?
 
 Microsoft has some great guidance on using App-V 4.6 to deliver various versions of Office, but there&#8217;s no single place that brings them together with a discussion on what you need to consider before virtualizing Office. This is where community discussion can help.
 
@@ -32,8 +32,8 @@ I&#8217;m extremely happy to make this white paper available, which is the resul
 
 The paper is divided into two parts:
 
-  * _Part 1: To virtualize or not to virtualize_ &#8211; a discussion on the pros and cons of  virtualizing Office and what you should be considering if you are going to virtualize Office rather than deliver it as a component of your core gold image
-  * _Part 2: Virtualizing Office with App-V_ &#8211; a detailed walkthrough that goes beyond the Microsoft documentation for sequencing and delivering Office 2010, 2007 and 2003 with App-V 4.6
+  * _Part 1: To virtualize or not to virtualize_ - a discussion on the pros and cons of  virtualizing Office and what you should be considering if you are going to virtualize Office rather than deliver it as a component of your core gold image
+  * _Part 2: Virtualizing Office with App-V_ - a detailed walkthrough that goes beyond the Microsoft documentation for sequencing and delivering Office 2010, 2007 and 2003 with App-V 4.6
 
 The aim of this document is to be the best resource for virtualizing Office 2010, 2007 and 2003 with App-V 4.6 SP1 & SP2 available. Feedback, corrections and criticisms are welcome.
 

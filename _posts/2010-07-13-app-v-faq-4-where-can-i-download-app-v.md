@@ -52,9 +52,9 @@ If you have a TechNet or MSDN subscription you can download several versions of 
 
 The following downloads should be available to TechNet and MSDN subscribers
 
-  * Application Virtualization 4.6 for Remote Desktop Services Service Pack 1 (x86) &#8211; CD (Multiple Languages)
-  * Application Virtualization Hosting for Desktops, Version 4.6 Service Pack 1 (x86) &#8211; CD (Multiple Languages)
-  * Microsoft Desktop Optimization Pack 2012 (x86 and x64) &#8211; DVD
+  * Application Virtualization 4.6 for Remote Desktop Services Service Pack 1 (x86) - CD (Multiple Languages)
+  * Application Virtualization Hosting for Desktops, Version 4.6 Service Pack 1 (x86) - CD (Multiple Languages)
+  * Microsoft Desktop Optimization Pack 2012 (x86 and x64) - DVD
 
 ### App-V 4.6 Service Packs
 
@@ -65,7 +65,7 @@ App-V 4.6 Service Packs are available from the Microsoft Downloads Center:
 
 ### Is a trial version of App-V available?
 
-Microsoft does not provide a trial version of App-V, there are a couple of ways that you can start testing App-V before deciding on whether it&#8217;s the right product for your environment. The App-V for RDS software is freely available on the Microsoft Download Center (although make sure you are licensed before you use it in production). Alternatively Microsoft provides a set of labs that you can use to become familiar with App-V:
+Microsoft does not provide a trial version of App-V, there are a couple of ways that you can start testing App-V before deciding on whether it's the right product for your environment. The App-V for RDS software is freely available on the Microsoft Download Center (although make sure you are licensed before you use it in production). Alternatively Microsoft provides a set of labs that you can use to become familiar with App-V:
 
 <div id="_mcePaste">
   <ul>

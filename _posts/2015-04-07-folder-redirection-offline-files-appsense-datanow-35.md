@@ -1,6 +1,6 @@
 ---
 id: 3831
-title: 'File Sync Solutions as Alternatives to Folder Redirection &#8211; AppSense DataNow'
+title: 'File Sync Solutions as Alternatives to Folder Redirection - AppSense DataNow'
 date: 2015-04-07T04:00:17+10:00
 author: Aaron Parker
 layout: post
@@ -37,7 +37,7 @@ Let&#8217;s take another look at the integration between AppSense DataNow and t
 
 [DataNow](http://www.appsense.com/products/data/datanow)[<img class="alignleft wp-image-3879 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/04/logo_lg_dn.png" alt="logo_lg_dn" width="260" height="100" srcset="https://stealthpuppy.com/wp-content/uploads/2015/04/logo_lg_dn.png 260w, https://stealthpuppy.com/wp-content/uploads/2015/04/logo_lg_dn-150x58.png 150w" sizes="(max-width: 260px) 100vw, 260px" />](http://www.appsense.com/products/data/datanow) is a data management or file sync solution from AppSense. DataNow is available as a stand alone product or [as a component of DesktopNow Plus](http://www.appsense.com/products/desktop/desktopnow-plus) and it provides an easy way to access to corporate data (stored on user home drives) from mobile devices, Windows PCs and Macs. Since I last looked at this product, AppSense has released version 3.5 and also provided the ability to provide users with access to any SMB location on your internal network.
 
-DataNow is a completely on-premises solution &#8211; there&#8217;s no public cloud-based component, instead you host the control plane and connect it to your existing data. Access is proxied through a virtual appliance, which you would locate in a DMZ or on the internal network depending on your environment, while the file data remains in its existing location (i.e. file servers inside the trusted network). The DataNow client (for Windows, Mac, iOS and Android) then accesses that data over HTTPS. This allows you to provide access to user data from any location.
+DataNow is a completely on-premises solution - there&#8217;s no public cloud-based component, instead you host the control plane and connect it to your existing data. Access is proxied through a virtual appliance, which you would locate in a DMZ or on the internal network depending on your environment, while the file data remains in its existing location (i.e. file servers inside the trusted network). The DataNow client (for Windows, Mac, iOS and Android) then accesses that data over HTTPS. This allows you to provide access to user data from any location.
 
 With this overview in mind, I should be able to use DataNow to synchronise data to physical PCs, instead of using Offline Files. I could then continue to use standard folder redirection for hosted desktops in the data centre (i.e. those desktops right next to the file storage).
 
@@ -55,7 +55,7 @@ When installing the DataNow client, the user&#8217;s data is synchronised locall
 
 The first two approaches are far from ideal whilst using Folder Redirection with EM holds the most promise, as Folder Redirection is arguably the easiest to implement and undo. At a high level, here&#8217;s how this would work:
 
-  * The DataNow client creates a local folder for storing data &#8211; C:\Users\Aaron\DataNow
+  * The DataNow client creates a local folder for storing data - C:\Users\Aaron\DataNow
   * User folders are redirected to this location, for example, C:\Users\Aaron\Documents is redirected to C:\Users\Aaron\DataNow\Home\Documents. While I&#8217;m still using folder redirection, this keeps the user folder local and avoids the latency in redirecting to the network
   * The DataNow client keeps the local Documents folder (C:\Users\Aaron\DataNow\Home\Documents) in sync with my home drive (e.g. H:\Documents) and provide offline access with the ability to sync across the Internet
 
@@ -63,7 +63,7 @@ The first two approaches are far from ideal whilst using Folder Redirection with
 
 In the previous version of this article, I didn&#8217;t cover setting up DataNow, so here&#8217;s the steps I&#8217;ve gone through to setup DataNow in my lab.
 
-The [DataNow appliance](https://www.myappsense.com/datanow/v3.5/admin/Admin/The_DataNow_Appliance.htm) is available for vSphere, XenServer and Hyper-V &#8211; it&#8217;s a hardened Linux-based VM that can be [clustered and load-balanced for high availability](https://www.myappsense.com/datanow/v3.5/admin/Admin/Clustering.htm). For my lab environment, I&#8217;ve used the Hyper-V version, but the download and configuration is the same for all platforms.
+The [DataNow appliance](https://www.myappsense.com/datanow/v3.5/admin/Admin/The_DataNow_Appliance.htm) is available for vSphere, XenServer and Hyper-V - it&#8217;s a hardened Linux-based VM that can be [clustered and load-balanced for high availability](https://www.myappsense.com/datanow/v3.5/admin/Admin/Clustering.htm). For my lab environment, I&#8217;ve used the Hyper-V version, but the download and configuration is the same for all platforms.
 
 <figure id="attachment_3880" aria-describedby="caption-attachment-3880" style="width: 667px" class="wp-caption alignnone"><img class="wp-image-3880 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/04/DataNowApplianceDownload.png" alt="DataNowApplianceDownload" width="667" height="282" srcset="https://stealthpuppy.com/wp-content/uploads/2015/04/DataNowApplianceDownload.png 667w, https://stealthpuppy.com/wp-content/uploads/2015/04/DataNowApplianceDownload-150x63.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/04/DataNowApplianceDownload-300x127.png 300w" sizes="(max-width: 667px) 100vw, 667px" /><figcaption id="caption-attachment-3880" class="wp-caption-text">The DataNow appliance is available for the most popular virtualization platforms</figcaption></figure>
 
@@ -71,11 +71,11 @@ After importing the VM and [assigning an IP address via the console](https://www
 
 <figure id="attachment_3874" aria-describedby="caption-attachment-3874" style="width: 1000px" class="wp-caption alignnone">[<img class="wp-image-3874 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/04/ConfigurationDNS.png" alt="AppSense DataNow 3.5 appliance DNS configuration" width="1000" height="591" srcset="https://stealthpuppy.com/wp-content/uploads/2015/04/ConfigurationDNS.png 1000w, https://stealthpuppy.com/wp-content/uploads/2015/04/ConfigurationDNS-150x89.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/04/ConfigurationDNS-300x177.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" />](http://stealthpuppy.com/wp-content/uploads/2015/04/ConfigurationDNS.png)<figcaption id="caption-attachment-3874" class="wp-caption-text">AppSense DataNow 3.5 appliance DNS configuration</figcaption></figure>
 
-[Connection to Active Directory](https://www.myappsense.com/datanow/v3.5/admin/Admin/Configure_the_Active_Directory_connection.htm) in straight-forward, specify one or more AD controllers, an LDAP port and an account to connect to AD with. Don&#8217;t use the Administrator account like I have done here &#8211; this is only lab. Preferably create a dedicated service account for DataNow.
+[Connection to Active Directory](https://www.myappsense.com/datanow/v3.5/admin/Admin/Configure_the_Active_Directory_connection.htm) in straight-forward, specify one or more AD controllers, an LDAP port and an account to connect to AD with. Don&#8217;t use the Administrator account like I have done here - this is only lab. Preferably create a dedicated service account for DataNow.
 
 <figure id="attachment_3871" aria-describedby="caption-attachment-3871" style="width: 1000px" class="wp-caption alignnone">[<img class="size-full wp-image-3871" src="http://stealthpuppy.com/wp-content/uploads/2015/04/ConfigurationAD.png" alt="AppSense DataNow 3.5 appliance AD configuration" width="1000" height="532" srcset="https://stealthpuppy.com/wp-content/uploads/2015/04/ConfigurationAD.png 1000w, https://stealthpuppy.com/wp-content/uploads/2015/04/ConfigurationAD-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/04/ConfigurationAD-300x160.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" />](http://stealthpuppy.com/wp-content/uploads/2015/04/ConfigurationAD.png)<figcaption id="caption-attachment-3871" class="wp-caption-text">AppSense DataNow 3.5 appliance AD configuration</figcaption></figure>
 
-To provide users with access to data, DataNow provides configuration for what are called [Map Points](https://www.myappsense.com/datanow/v3.5/admin/Admin/Map_Point_Access.htm) &#8211; essentially SMB or WebDav locations in the corporate network. The location of Home drives can be set via the user properties in Active Directory &#8211; so rather than explicitly setting the location, the DataNow appliance will read the homeDirectory attribute from the authenticated user account to find the user&#8217;s home directory.
+To provide users with access to data, DataNow provides configuration for what are called [Map Points](https://www.myappsense.com/datanow/v3.5/admin/Admin/Map_Point_Access.htm) - essentially SMB or WebDav locations in the corporate network. The location of Home drives can be set via the user properties in Active Directory - so rather than explicitly setting the location, the DataNow appliance will read the homeDirectory attribute from the authenticated user account to find the user&#8217;s home directory.
 
 <figure id="attachment_3888" aria-describedby="caption-attachment-3888" style="width: 1000px" class="wp-caption alignnone">[<img class="size-full wp-image-3888" src="http://stealthpuppy.com/wp-content/uploads/2015/04/Config-MapPoints.png" alt="AppSense DataNow 3.5 appliance Map Point configuration" width="1000" height="634" srcset="https://stealthpuppy.com/wp-content/uploads/2015/04/Config-MapPoints.png 1000w, https://stealthpuppy.com/wp-content/uploads/2015/04/Config-MapPoints-150x95.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/04/Config-MapPoints-300x190.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" />](http://stealthpuppy.com/wp-content/uploads/2015/04/Config-MapPoints.png)<figcaption id="caption-attachment-3888" class="wp-caption-text">AppSense DataNow 3.5 appliance Map Point configuration</figcaption></figure>
 
@@ -152,7 +152,7 @@ I really like the approach that AppSense has taken with DataNow. While they face
 
 There are a couple items that I would like to see AppSense improve or implement in future versions of DataNow that would assist with this approach:
 
-  * Provide conflict resolution policies &#8211; in the event of file versions conflicting, I would like to be able to specify which version of the file should take precedence, i.e. the local or server copy
+  * Provide conflict resolution policies - in the event of file versions conflicting, I would like to be able to specify which version of the file should take precedence, i.e. the local or server copy
   * Control the Sync Mode on a device basis to allow me to configure how specific types of devices sync data (on access on desktops; automatic on laptops)
 
 **Note**: please don&#8217;t take this article as a recommendation from me for synchronising the _AppData\Roaming_ folder.

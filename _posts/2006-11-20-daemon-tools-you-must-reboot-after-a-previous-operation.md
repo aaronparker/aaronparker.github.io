@@ -15,6 +15,6 @@ categories:
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/11/1000.14.191.DaemonToolsInstall.PNG" /> 
 
-No amount of rebooting would fix the issue. After digging around I found [this forum post](http://www.daemon-tools.cc/dtcc/showthread.php?t=11666). The fix was easy &#8211; delete the following registry key and try the installer again:
+No amount of rebooting would fix the issue. After digging around I found [this forum post](http://www.daemon-tools.cc/dtcc/showthread.php?t=11666). The fix was easy - delete the following registry key and try the installer again:
 
 `HKEY_LOCAL_MACHINESOFTWARE19659239224e364682fa4baf72c53ea4`

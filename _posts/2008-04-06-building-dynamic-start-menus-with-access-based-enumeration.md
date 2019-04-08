@@ -83,7 +83,7 @@ And the second user sees a different Start Menu:
 
 ### Summary
 
-Using Access-Based Enumeration in Windows Server 2003 SP1 and above, we can create a Start Menu solution customised for each user. There are numerous ways to achieve this (perhaps even more flexible), but ABE gives us a no script, no 3rd party solution &#8211; nice and simple.
+Using Access-Based Enumeration in Windows Server 2003 SP1 and above, we can create a Start Menu solution customised for each user. There are numerous ways to achieve this (perhaps even more flexible), but ABE gives us a no script, no 3rd party solution - nice and simple.
 
 ### More Resources
 

@@ -18,4 +18,4 @@ What&#8217;s the best [new feature of Microsoft Application Virtualisation 4.5](
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/06/softgrid-icons.png" border="0" alt="SoftGrid Icons" width="600" height="140" /> 
 
-SoftGrid has suffered from some clunky UI in the past, but thankfully 4.5 had made plenty of changes in the client, sequencer and server console which are most welcome. There are still some icons that haven&#8217;t been updated yet &#8211; here&#8217;s hoping they don&#8217;t get missed for the final release.
+SoftGrid has suffered from some clunky UI in the past, but thankfully 4.5 had made plenty of changes in the client, sequencer and server console which are most welcome. There are still some icons that haven&#8217;t been updated yet - here&#8217;s hoping they don&#8217;t get missed for the final release.

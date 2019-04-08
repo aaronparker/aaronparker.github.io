@@ -1,6 +1,6 @@
 ---
 id: 2404
-title: 'Delivering Office with App-V &#8211; The User Profile'
+title: 'Delivering Office with App-V - The User Profile'
 date: 2011-10-24T16:30:00+10:00
 author: Aaron Parker
 layout: post

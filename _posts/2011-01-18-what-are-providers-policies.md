@@ -21,11 +21,11 @@ _This is a guest post from Jurjen van Leeuwen, an App-V MVP (_[_new for 2011_](h
 
 The ‘rules’ allow App-V administrators to control the following settings:
 
-  * **Server access &#8211;** The Active Directory group that can connect to the server through the Provider Policy.
-  * **Authentication &#8211;** If authentication is required to connect to the server or the use of applications.
-  * **Logging &#8211;** Record application usage data in the App-V data store.
-  * **Licensing &#8211;** Whether or not to audit or enforce application licenses.
-  * **Client refresh behaviour &#8211;** At which interval and events the client checks with the server for application changes. For example new applications and shortcuts, removed or disabled applications. At a refresh, the client will also communicate the application usage logging with the server if configured.
+  * **Server access -** The Active Directory group that can connect to the server through the Provider Policy.
+  * **Authentication -** If authentication is required to connect to the server or the use of applications.
+  * **Logging -** Record application usage data in the App-V data store.
+  * **Licensing -** Whether or not to audit or enforce application licenses.
+  * **Client refresh behaviour -** At which interval and events the client checks with the server for application changes. For example new applications and shortcuts, removed or disabled applications. At a refresh, the client will also communicate the application usage logging with the server if configured.
 
 ### Why would I use them?
 

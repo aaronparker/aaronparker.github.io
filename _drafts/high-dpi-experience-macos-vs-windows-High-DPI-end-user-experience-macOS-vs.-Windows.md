@@ -12,4 +12,4 @@ image: /wp-content/uploads/2018/08/scott-webb-465839-unsplash.jpg
 categories:
   - General
 ---
-If you look at a screen for extended periods of time (and I assume that if you&#8217;re here you do), a high DPI display makes all the difference.
+If you look at a screen for extended periods of time (and I assume that if you're here you do), a high DPI display makes all the difference.

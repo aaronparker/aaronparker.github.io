@@ -1,6 +1,6 @@
 ---
 id: 3081
-title: 'Retrieving a Virtual Machine&#8217;s UUID from vSphere'
+title: 'Retrieving a Virtual Machine's UUID from vSphere'
 date: 2013-03-24T22:19:03+10:00
 author: Aaron Parker
 layout: post
@@ -18,11 +18,11 @@ tags:
   - PowerShell
   - vSphere
 ---
-While working on a PowerShell script to drive OS deployment through MDT, I&#8217;ve needed to obtain the UUID from a target virtual machine. Unfortunately this isn&#8217;t just a property of the VM that you get through [Get-VM](http://www.vmware.com/support/developer/PowerCLI/PowerCLI41U1/html/Get-VM.html). Instead you&#8217;ll need jump through a few hoops to retrieve the right UUID.
+While working on a PowerShell script to drive OS deployment through MDT, I've needed to obtain the UUID from a target virtual machine. Unfortunately this isn't just a property of the VM that you get through [Get-VM](http://www.vmware.com/support/developer/PowerCLI/PowerCLI41U1/html/Get-VM.html). Instead you'll need jump through a few hoops to retrieve the right UUID.
 
-I&#8217;ve haven&#8217;t had to re-invent the wheel on this one, as I&#8217;ve taken some tips from this [VMware Community thread](http://communities.vmware.com/thread/239735) and [a blog post by Ken Smith](http://www.keithsmithonline.com/2013/02/powershell-show-vmware-vm-UUID.html). I have simplified things a little by writing a function that you can use to return the UUID as a string from a virtual machine object (gathered from Get-VM) to the function.
+I've haven't had to re-invent the wheel on this one, as I've taken some tips from this [VMware Community thread](http://communities.vmware.com/thread/239735) and [a blog post by Ken Smith](http://www.keithsmithonline.com/2013/02/powershell-show-vmware-vm-UUID.html). I have simplified things a little by writing a function that you can use to return the UUID as a string from a virtual machine object (gathered from Get-VM) to the function.
 
-To use the function, first ensure that [PowerCLI](http://communities.vmware.com/community/vmtn/server/vsphere/automationtools/powercli) is installed and that you&#8217;ve connected to a host or vCenter, so that a target VM can be returned and then passed to the function.
+To use the function, first ensure that [PowerCLI](http://communities.vmware.com/community/vmtn/server/vsphere/automationtools/powercli) is installed and that you've connected to a host or vCenter, so that a target VM can be returned and then passed to the function.
 
 For example, I could use the following command to retrieve the UUID from a target VM:
 

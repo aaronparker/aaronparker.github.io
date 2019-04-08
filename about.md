@@ -10,9 +10,9 @@ layers:
 ---
 # About Aaron Parker
 
-<img class="alignleft wp-image-3930 size-full" style="padding-right: 20px; padding-bottom: 20px;" src="http://stealthpuppy.com/wp-content/uploads/2009/02/HeadShotCircle.png" alt="Aaron Parker" width="195" height="195" srcset="https://stealthpuppy.com/wp-content/uploads/2009/02/HeadShotCircle.png 195w, https://stealthpuppy.com/wp-content/uploads/2009/02/HeadShotCircle-150x150.png 150w" sizes="(max-width: 195px) 100vw, 195px" /> My name is Aaron Parker and I&#8217;m a Solutions Architect in the Office of the CTO at [Insentra](http://www.insentra.com.au) responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
+<img class="alignleft wp-image-3930 size-full" style="padding-right: 20px; padding-bottom: 20px;" src="http://stealthpuppy.com/wp-content/uploads/2009/02/HeadShotCircle.png" alt="Aaron Parker" width="195" height="195" srcset="https://stealthpuppy.com/wp-content/uploads/2009/02/HeadShotCircle.png 195w, https://stealthpuppy.com/wp-content/uploads/2009/02/HeadShotCircle-150x150.png 150w" sizes="(max-width: 195px) 100vw, 195px" /> My name is Aaron Parker and I'm a Solutions Architect in the Office of the CTO at [Insentra](http://www.insentra.com.au) responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
 
-I&#8217;ve been in the IT industry for over 20 years and bring a wide range of experience in enterprise level End-user computing solutions, including Server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
+I've been in the IT industry for over 20 years and bring a wide range of experience in enterprise level End-user computing solutions, including Server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
 
 I have experience with primarily Microsoft, Citrix and VMware-based solutions and implemented these technologies across government, private sector & not-for-profit organizations. My interests lie in continuous improvements to IT to better enable business, by and taking advantage of existing solutions and new technologies and process.
 
@@ -20,11 +20,11 @@ I have spent the majority of my career in the channel working for system integra
 
 # About stealthpuppy.com
 
-This site (generally) focuses on end-user computing based topics and is a way for me to not only write about interesting topics, but a way to give back the IT community. If I&#8217;ve been able to help you in your work in any way, that provides me with much satisfaction.
+This site (generally) focuses on end-user computing based topics and is a way for me to not only write about interesting topics, but a way to give back the IT community. If I've been able to help you in your work in any way, that provides me with much satisfaction.
 
 # Awards
 
-I&#8217;ve been speaking events such as at Citrix Synergy, BriForum & E2EVC conferences in the US and Europe since 2011, writing here since 2006 and contributing to the community in a number of other areas and am very happy and fortunate to have been awarded the following community recognitions:  
+I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conferences in the US and Europe since 2011, writing here since 2006 and contributing to the community in a number of other areas and am very happy and fortunate to have been awarded the following community recognitions:  
 **Current Awards**
 
 <table border="0" width="660" cellspacing="5" cellpadding="0">
@@ -34,7 +34,7 @@ I&#8217;ve been speaking events such as at Citrix Synergy, BriForum & E2EVC conf
     </td>
     
     <td valign="top" width="472">
-      <a href="https://www.citrix.com/community/ctp/awardees.html">Citrix Technology Professional</a> (CTP) &#8211;&nbsp;2012, 2013, 2014, 2015, 2016, 2017, 2018
+      <a href="https://www.citrix.com/community/ctp/awardees.html">Citrix Technology Professional</a> (CTP) -&nbsp;2012, 2013, 2014, 2015, 2016, 2017, 2018
     </td>
   </tr>
 </table>
@@ -48,7 +48,7 @@ I&#8217;ve been speaking events such as at Citrix Synergy, BriForum & E2EVC conf
     </td>
     
     <td valign="top" width="472">
-      <a href="https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523">Microsoft Most Valued Professional</a> (MVP) for Windows and Devices for IT ( previously App-V) – 2011 &#8211; 2018
+      <a href="https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523">Microsoft Most Valued Professional</a> (MVP) for Windows and Devices for IT ( previously App-V) – 2011 - 2018
     </td>
   </tr>
   
@@ -58,7 +58,7 @@ I&#8217;ve been speaking events such as at Citrix Synergy, BriForum & E2EVC conf
     </td>
     
     <td valign="top" width="472">
-      <a href="http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html">VMware vExpert</a> &#8211; 2016
+      <a href="http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html">VMware vExpert</a> - 2016
     </td>
   </tr>
   
@@ -68,7 +68,7 @@ I&#8217;ve been speaking events such as at Citrix Synergy, BriForum & E2EVC conf
     </td>
     
     <td valign="top" width="472">
-      VMware EUC Champion &#8211; 2016
+      VMware EUC Champion - 2016
     </td>
   </tr>
   
@@ -78,7 +78,7 @@ I&#8217;ve been speaking events such as at Citrix Synergy, BriForum & E2EVC conf
     </td>
     
     <td valign="top" width="472">
-      <a href="http://blog.appsense.com/2012/11/appsense-community-advisor-program/">AppSense Community Advisor</a>&nbsp;2012 &#8211; 2016
+      <a href="http://blog.appsense.com/2012/11/appsense-community-advisor-program/">AppSense Community Advisor</a>&nbsp;2012 - 2016
     </td>
   </tr>
 </table>
@@ -107,20 +107,20 @@ Below is a selection of upcoming and recent speaking engagements and recordings,
 **2015**
 
   * VMware vForum Sydney, October 2015: [How to Right-Size File Servers](https://www.youtube.com/watch?v=v-bpqq2Xxq4)
-  * BriForum Denver, July 2015: [I&#8217;ve got 99 Problems and Folder Redirection is Every One of Them](http://www.brianmadden.com/video/BriForum-2015-Ive-Got-99-Problems-and-Folder-Redirection-is-Every-One-of-Them)
-  * Citrix Synergy Orlando, May 2015: [I&#8217;ve got 99 Problems and Folder Redirection is Every One of Them](https://www.mycugc.org/p/do/sd/sid=25)
-  * Citrix TechXperts, May 2015: I&#8217;ve got 99 Problems and Folder Redirection is Every One of Them
+  * BriForum Denver, July 2015: [I've got 99 Problems and Folder Redirection is Every One of Them](http://www.brianmadden.com/video/BriForum-2015-Ive-Got-99-Problems-and-Folder-Redirection-is-Every-One-of-Them)
+  * Citrix Synergy Orlando, May 2015: [I've got 99 Problems and Folder Redirection is Every One of Them](https://www.mycugc.org/p/do/sd/sid=25)
+  * Citrix TechXperts, May 2015: I've got 99 Problems and Folder Redirection is Every One of Them
   * xenappblog.com Webcast, January 2015:&nbsp;How Folder Redirection Impacts User Experience and Breaks Applications
 
 **2014**
 
-  * BriForum Boston, July 2014 &#8211; [How Folder Redirection Impacts User Experience and Breaks Applications](http://www.brianmadden.com/video/BriForum-2014-Boston-How-Folder-Redirection-Impacts-User-Experience-and-Breaks-Applications)
-  * BriForum Boston, July 2014 &#8211; Hands Off My Gold Image!
-  * Citrix Synergy, Los Angeles &#8211; Hands Off My Gold Image!
+  * BriForum Boston, July 2014 - [How Folder Redirection Impacts User Experience and Breaks Applications](http://www.brianmadden.com/video/BriForum-2014-Boston-How-Folder-Redirection-Impacts-User-Experience-and-Breaks-Applications)
+  * BriForum Boston, July 2014 - Hands Off My Gold Image!
+  * Citrix Synergy, Los Angeles - Hands Off My Gold Image!
 
 # Publications
 
-Below is a list of publications that I&#8217;ve written, co-authored or contributed to:
+Below is a list of publications that I've written, co-authored or contributed to:
 
   * July 2012:&nbsp;[The Definitive Guide to Delivering Microsoft Office with App-V](http://blog.stealthpuppy.com/community/white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/)
   * October 2013: [User Environment Management Smackdown](http://www.brianmadden.com/opinion/Fight-Appsense-Citrix-Immidio-Microsoft-Liquidware-Labs-PolicyPak-RES-Scense-and-others)

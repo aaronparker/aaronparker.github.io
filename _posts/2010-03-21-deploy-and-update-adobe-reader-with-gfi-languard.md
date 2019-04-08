@@ -19,14 +19,14 @@ tags:
   - GFI LANguard
 ---
 <p class="note">
-  This post has been sitting in my drafts since June 2009 and for whatever reason I haven&#8217;t gotten around to posting it. So rather than delete it, I&#8217;m posting it as is &#8211; apologies in advance for quality of this post
+  This post has been sitting in my drafts since June 2009 and for whatever reason I haven&#8217;t gotten around to posting it. So rather than delete it, I&#8217;m posting it as is - apologies in advance for quality of this post
 </p>
 
 I have used LANguard in the past for vulnerability testing and network discovery but frankly that&#8217;s kind of boring stuff. What is interesting in the latest version is the ability to deploy software.
 
 [LANguard 9](http://www.gfi.com/lannetscan) includes application deployment functions that make deploying software to remote machines quite simple.  I&#8217;m going to detail deploying Adobe Reader 9, using the deployment notes outlined in my [Deploying Adobe Reader 9](http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows) post, then deploy the Reader 9.1.1 update, using that functionality.
 
-I&#8217;m going to skip over most of the details of installing LANguard &#8211; it&#8217;s a simple process, you&#8217;ll just need to choose the type of datebase you
+I&#8217;m going to skip over most of the details of installing LANguard - it&#8217;s a simple process, you&#8217;ll just need to choose the type of datebase you
 
 In my test environment I have configured three machines:
 
@@ -70,7 +70,7 @@ So how is this actually working? The deployment feature on LANguard is not dissi
 
 I can also use the same process to update Reader 9.1 with the 9.11. update patch.
 
-I have downloaded the [Adobe Reader 9.1.1 Update](http://www.adobe.com/support/downloads/detail.jsp?ftpID=4452) (which comes as a Windows Installer Patch file &#8211; .MSP) and added it to the the same deployment location (\\dc\common\Adobe\Reader911Update). Again I have created a batch file that will install the 9.1.1 update from the same location:
+I have downloaded the [Adobe Reader 9.1.1 Update](http://www.adobe.com/support/downloads/detail.jsp?ftpID=4452) (which comes as a Windows Installer Patch file - .MSP) and added it to the the same deployment location (\\dc\common\Adobe\Reader911Update). Again I have created a batch file that will install the 9.1.1 update from the same location:
 
 `@ECHO OFF<br />
 SET SOURCE=\\dc\common\Adobe\Reader911Update<br />
@@ -78,4 +78,4 @@ MSIEXEC /P %SOURCE%\AdbeRdrUpd911_all_incr.msp ALLUSERS=TRUE REBOOT=SUPRESS /QB`
 
 By going through the same deployment configuration, but instead using the batch file that will install the update, I can deploy to the machines that have Reader 9.1.
 
-I&#8217;ve tested deploying the update while Reader is open on the remote machine and the install was successful. Once I closed and reopened Reader, I could see the 9.1.1 version. This may not work for all applications &#8211; I don&#8217;t think that my example worked specifically because of LANguard, but you should at least have some success when updating in-use applications.
+I&#8217;ve tested deploying the update while Reader is open on the remote machine and the install was successful. Once I closed and reopened Reader, I could see the 9.1.1 version. This may not work for all applications - I don&#8217;t think that my example worked specifically because of LANguard, but you should at least have some success when updating in-use applications.

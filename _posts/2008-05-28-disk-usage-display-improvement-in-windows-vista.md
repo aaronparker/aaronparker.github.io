@@ -13,7 +13,7 @@ categories:
 tags:
   - Windows Explorer
 ---
-I&#8217;ve stumbled across a nice usability improvement in Windows Vista that had escaped me until today &#8211; the display of free disk space. Of course this feature has been in Windows Explorer since Windows 95, but the improvement in Windows Vista and Windows Server 2008 is the reporting of disk space when a drive is mapped to a remote share with disk quotas enabled.
+I&#8217;ve stumbled across a nice usability improvement in Windows Vista that had escaped me until today - the display of free disk space. Of course this feature has been in Windows Explorer since Windows 95, but the improvement in Windows Vista and Windows Server 2008 is the reporting of disk space when a drive is mapped to a remote share with disk quotas enabled.
 
 In my demo environment, I have configured 200Mb quota for all users&#8217; home drives. If you look at the drive properties under Windows XP you will see the complete capacity of the remote disk including used and free space with no indication that any quotas are in place.
 

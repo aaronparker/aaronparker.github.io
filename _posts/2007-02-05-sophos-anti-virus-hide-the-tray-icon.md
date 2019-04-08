@@ -11,7 +11,7 @@ dsq_thread_id:
 categories:
   - Automation
 ---
-During my quest to disable as many tray icons as I possibly can, I&#8217;ve had to track down how to disable the tray icon for Sophos Anti-Virus in a Terminal Server environment. This one is pretty easy, it&#8217;s just a single DWORD registry value:
+During my quest to disable as many tray icons as I possibly can, I've had to track down how to disable the tray icon for Sophos Anti-Virus in a Terminal Server environment. This one is pretty easy, it's just a single DWORD registry value:
 
 HKEY\_LOCAL\_MACHINE\SOFTWARE\Sophos\AutoUpdate, HideTrayIcon, 0x00000001
 

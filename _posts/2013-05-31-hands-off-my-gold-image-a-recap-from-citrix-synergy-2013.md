@@ -16,11 +16,11 @@ tags:
   - MDT
   - PVS
 ---
-Here&#8217;s an overview of my talk from Citrix Synergy 2013 &#8211; [Hands off my gold image!](https://citrix.g2planet.com/synergylosangeles2013/public_session_view.php?agenda_session_id=274&conference=synergy)  If you were unable to attend Synergy or missed my session, this is a short version of the talk, but hopefully it will give you an idea of what was covered.
+Here&#8217;s an overview of my talk from Citrix Synergy 2013 - [Hands off my gold image!](https://citrix.g2planet.com/synergylosangeles2013/public_session_view.php?agenda_session_id=274&conference=synergy)  If you were unable to attend Synergy or missed my session, this is a short version of the talk, but hopefully it will give you an idea of what was covered.
 
 [<img class="alignnone  wp-image-3322" style="border: 1px solid black;" alt="Slide01" src="http://stealthpuppy.com/wp-content/uploads/2013/05/Slide01.png" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide01.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide01-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide01-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide01-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />](http://stealthpuppy.com/wp-content/uploads/2013/05/Slide01.png)
 
-In this session I&#8217;ve covered three main topics &#8211; why I believe that automating your gold iamges is important, who is and who isn&#8217;t automating their gold images based on the results of [a poll](http://stealthpuppy.com/community/take-part-in-the-os-deployment-automation-survey/) that I conducted earlier this year, and then an overview of how to achieve automation with the [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-gb/solutionaccelerators/dd407791.aspx).
+In this session I&#8217;ve covered three main topics - why I believe that automating your gold iamges is important, who is and who isn&#8217;t automating their gold images based on the results of [a poll](http://stealthpuppy.com/community/take-part-in-the-os-deployment-automation-survey/) that I conducted earlier this year, and then an overview of how to achieve automation with the [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-gb/solutionaccelerators/dd407791.aspx).
 
 [<img class="alignnone  wp-image-3325" style="border: 1px solid black;" alt="Slide03" src="http://stealthpuppy.com/wp-content/uploads/2013/05/Slide03.png" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide03.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide03-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide03-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide03-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />](http://stealthpuppy.com/wp-content/uploads/2013/05/Slide03.png)
 
@@ -38,7 +38,7 @@ How easy is it to achieve build automation? One of the great benefits of MDT is 
 
 [<img class="alignnone size-full wp-image-3328" style="border: 1px solid black;" alt="Slide11" src="http://stealthpuppy.com/wp-content/uploads/2013/05/Slide11.png" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide11.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide11-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide11-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide11-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />](http://stealthpuppy.com/wp-content/uploads/2013/05/Slide11.png)
 
-That said, there&#8217;s no way around it &#8211; automation takes time and effort. Automation requires discipline and process must be followed (perhaps even created to start with). Third party (or even in-house) application developers can make also automation particularly challenging on the Windows platform.
+That said, there&#8217;s no way around it - automation takes time and effort. Automation requires discipline and process must be followed (perhaps even created to start with). Third party (or even in-house) application developers can make also automation particularly challenging on the Windows platform.
 
 The reward though, is a better user experience and a lower total cost of ownership of the desktop environment. Build automation provides a management framework that will always beat (but never replace) documentation. An engineer can look into the build process and see exactly what has been delivered into an environment, because no guesses have to be made or documentation translated.
 
@@ -46,7 +46,7 @@ At what point though, do you spend too much time trying to automate the desktop 
 
 [<img class="alignnone  wp-image-3331" style="border: 1px solid black;" alt="Slide12" src="http://stealthpuppy.com/wp-content/uploads/2013/05/Slide12.png" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide12-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />](http://xkcd.com/1205/ "Thanks to xkcd for a timely and awesome comic. Click the image for the original page.")
 
-For a solutions provider or consulting practice, build automation speeds many of the common tasks required for a desktop environment. This is why a framework such as MDT is so important &#8211; it  provides faster deployment times but only as long as you&#8217;ve put the work in to start with.
+For a solutions provider or consulting practice, build automation speeds many of the common tasks required for a desktop environment. This is why a framework such as MDT is so important - it  provides faster deployment times but only as long as you&#8217;ve put the work in to start with.
 
 In an engagement for smaller environments, automation can sometimes be a tough sell. There will invariably many additional tasks that might be time consuming to automate (typically application installs) and it&#8217;s not uncommon to find a single task that takes an inordinate amount of time to get right.
 
@@ -56,7 +56,7 @@ Here&#8217;s an excellent example of where build automation can directly impact 
 
 [<img class="alignnone size-full wp-image-3334" style="border: 1px solid black;" alt="Slide14" src="http://stealthpuppy.com/wp-content/uploads/2013/05/Slide14.png" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide14.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide14-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide14-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide14-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />](http://stealthpuppy.com/wp-content/uploads/2013/05/Slide14.png)
 
-This is far from ideal from a user perspective &#8211; administrative tools are pinned to the taskbar by default, the wallpaper has Windows Server stamped on it and on first run of Internet Explorer the user is prompted with a first run wizard. This is just too noisy and creates a jarring experience for the user. Citrix [provides a partial solution](http://support.citrix.com/article/CTX133429) to this in XenApp 6.5, but this relies on Group Policy.
+This is far from ideal from a user perspective - administrative tools are pinned to the taskbar by default, the wallpaper has Windows Server stamped on it and on first run of Internet Explorer the user is prompted with a first run wizard. This is just too noisy and creates a jarring experience for the user. Citrix [provides a partial solution](http://support.citrix.com/article/CTX133429) to this in XenApp 6.5, but this relies on Group Policy.
 
 Most of these user experience issues could fixed with Group Policy; however that approach requires that Group Policy is processed at each logon (especially in a non-persistent desktop environment) and Group Policy typically enforces settings, instead of being a preference. If your goal is to reduce logon times, then move those settings in to your gold image instead. An automated build is an opportunity to ensure the default user experience (i.e. the default profile) is configured for first logon without a reliance on Group Policy or another UEM toolset.
 
@@ -76,7 +76,7 @@ Here&#8217;s the tools used to creation the gold image for those desktops. The O
 
 [<img class="alignnone size-full wp-image-3338" style="border: 1px solid black;" alt="Slide19" src="http://stealthpuppy.com/wp-content/uploads/2013/05/Slide19.png" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide19.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide19-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide19-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide19-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />](http://stealthpuppy.com/wp-content/uploads/2013/05/Slide19.png)
 
-Finally, here what I was interested in &#8211; who is using automated build process and who is still manually building images from the Windows ISO.
+Finally, here what I was interested in - who is using automated build process and who is still manually building images from the Windows ISO.
 
 [<img class="alignnone size-full wp-image-3339" style="border: 1px solid black;" alt="Slide20" src="http://stealthpuppy.com/wp-content/uploads/2013/05/Slide20.png" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide20.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide20-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide20-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide20-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />](http://stealthpuppy.com/wp-content/uploads/2013/05/Slide20.png)
 
@@ -100,14 +100,14 @@ By now, you must get the idea I&#8217;m a fan of the Microsoft Deployment Toolki
 
 [<img class="alignnone size-full wp-image-3344" style="border: 1px solid black;" alt="Slide22" src="http://stealthpuppy.com/wp-content/uploads/2013/05/Slide26.png" width="720" height="405" srcset="https://stealthpuppy.com/wp-content/uploads/2013/05/Slide26.png 720w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide26-150x84.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide26-300x168.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/05/Slide26-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />](http://stealthpuppy.com/wp-content/uploads/2013/05/Slide26.png)
 
-It&#8217;s important to note that MDT provides light (or lite) touch deployments &#8211; user intervention is generally required to start a deployment. MDT is not agent based like System Center Configuration Manager and therefore does not provide any post-deployment management.
+It&#8217;s important to note that MDT provides light (or lite) touch deployments - user intervention is generally required to start a deployment. MDT is not agent based like System Center Configuration Manager and therefore does not provide any post-deployment management.
 
 MDT has several major components:
 
-  * MDT deployment share &#8211; a share on a network locations that supports SMB
-  * <span style="line-height: 14px;"><a href="http://deploymentbunny.com/2012/04/21/back-to-basic-customsettings-ini-explained/">CustomSettings.ini</a> &#8211; this is used to control OS deployments and is a surprising flexible way of managing OS and application deployments and control of an end-point. If you are using </span>
-  * WinPE boot image &#8211; you can use the MDT console to create custom boot images used to start an OS deployment. Alternatively you could use [Windows Deployment Services](http://technet.microsoft.com/en-us/windowsserver/dd448616.aspx) to boot the WinPE image across the network
-  * The target PC &#8211; a single task sequence in MDT can be used to deploy Windows to either physical or virtual machines (on any hypervisor), providing consistency across machine types
+  * MDT deployment share - a share on a network locations that supports SMB
+  * <span style="line-height: 14px;"><a href="http://deploymentbunny.com/2012/04/21/back-to-basic-customsettings-ini-explained/">CustomSettings.ini</a> - this is used to control OS deployments and is a surprising flexible way of managing OS and application deployments and control of an end-point. If you are using </span>
+  * WinPE boot image - you can use the MDT console to create custom boot images used to start an OS deployment. Alternatively you could use [Windows Deployment Services](http://technet.microsoft.com/en-us/windowsserver/dd448616.aspx) to boot the WinPE image across the network
+  * The target PC - a single task sequence in MDT can be used to deploy Windows to either physical or virtual machines (on any hypervisor), providing consistency across machine types
 
 I have spent quite some time building our MDT deployment share out to become not only a standardised framework but also a library of core application installs. MDT allows anyone to build this in their own environments.
 

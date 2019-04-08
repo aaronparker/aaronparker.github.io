@@ -44,4 +44,4 @@ Data: 1
 
 _User Configuration / Policies / Administrative Templates / Microsoft Office 2010 / Global Options / Customize / Allow roaming of all user customizations_
 
-Note &#8211; Microsoft does provide a fix for Office 2007 (a hotfix and a registry change) which you can implement to make Office store Quick Access Toolbar files in the roaming portion of the profile: [Quick Access Toolbar files for 2007 Office applications do not roam with your profile](http://support.microsoft.com/kb/958062).
+Note - Microsoft does provide a fix for Office 2007 (a hotfix and a registry change) which you can implement to make Office store Quick Access Toolbar files in the roaming portion of the profile: [Quick Access Toolbar files for 2007 Office applications do not roam with your profile](http://support.microsoft.com/kb/958062).

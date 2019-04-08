@@ -24,7 +24,7 @@ You may recall from [my last post on RemoteApp](http://stealthpuppy.com/virtuali
 
 Kind of annoying, because the original [RemoteApp for Hyper-V post](http://blogs.msdn.com/rds/archive/2009/12/15/remoteapp-for-hyper-v.aspx) on the RDS blog, showed us something cool but left out the important part on how to get it working. Well, thanks to [Justin](http://blogs.technet.com/virtualworld) and [this comment](http://blogs.msdn.com/rds/archive/2009/12/15/remoteapp-for-hyper-v.aspx#9964757), I’ve been able to fix the issue and get RemoteApp running on XP and Vista (unfortunately I can’t take any of the credit).
 
-Liam Westley has already done a great job of [documenting the complete process for setting up RemoteApp](http://geekswithblogs.net/twickers/archive/2009/12/18/137048.aspx), so for full details go there &#8211; I’ll just summarise and fill in the missing pieces.
+Liam Westley has already done a great job of [documenting the complete process for setting up RemoteApp](http://geekswithblogs.net/twickers/archive/2009/12/18/137048.aspx), so for full details go there - I’ll just summarise and fill in the missing pieces.
 
 ### What You’ll Need
 
@@ -127,7 +127,7 @@ If the RemoteApp host is Windows XP, the user will be required to click the Deta
 
 <a href="http://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappauth-2/" rel="attachment wp-att-1368"><img class="alignnone size-full wp-image-1368" title="RemoteAppAuth" src="http://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1.png" alt="" width="660" height="609" srcset="https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1-150x138.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1-300x276.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
-If the client is Windows XP or above and the host is Windows Vista or above, you can configure [credential pass-through (single sign-on)](http://blogs.msdn.com/rds/archive/2007/04/19/how-to-enable-single-sign-on-for-my-terminal-server-connections.aspx) to make connecting seamless. You must first [enable CredSSP](http://support.microsoft.com/kb/951608) on Windows XP SP3 clients. Pass-through won&#8217;t work for Windows XP hosts &#8211; although you may be able to save the username and password in the .RDP file instead.
+If the client is Windows XP or above and the host is Windows Vista or above, you can configure [credential pass-through (single sign-on)](http://blogs.msdn.com/rds/archive/2007/04/19/how-to-enable-single-sign-on-for-my-terminal-server-connections.aspx) to make connecting seamless. You must first [enable CredSSP](http://support.microsoft.com/kb/951608) on Windows XP SP3 clients. Pass-through won&#8217;t work for Windows XP hosts - although you may be able to save the username and password in the .RDP file instead.
 
 So finally with all of the pieces in place, here’s what you’ll see with applications running via RemoteApp. In this screenshot I have Calculator running remotely from Windows XP and Windows Vista next to the local version.
 
@@ -137,7 +137,7 @@ One thing to note is that the remote applications are all group together on the 
 
 ### So What&#8217;s Left?
 
-Use of RemoteApp is [not restricted to the brand of hypervisor](http://stealthpuppy.com/virtualisation/remoteapp-for-hyper-v-hyper-what) &#8211; RemoteApp will be available on Windows XP+ regardless of where it is running. You could, for example, use blade PCs as hosts.
+Use of RemoteApp is [not restricted to the brand of hypervisor](http://stealthpuppy.com/virtualisation/remoteapp-for-hyper-v-hyper-what) - RemoteApp will be available on Windows XP+ regardless of where it is running. You could, for example, use blade PCs as hosts.
 
 If you have Citrix XenApp or Quest vWorkspace, you already have tools to publishing applications from virtual desktops, so where would this actually be useful? SMBs without either product would benefit (although I have had one enterprise customer ask me about this feature) or perhaps this would work as a replacement for Windows XP Mode if you don&#8217;t like Windows Virtual PC (and who does?).
 

@@ -32,7 +32,7 @@ You can move this folder just like you can with other user folders:
 
 <img class="alignnone" title="Virtual Machine properties" src="http://prmkgw.blu.livefilestore.com/y1pFOuUsXr8NbeeFsR51JvJdGtLd9CCIHHtEOZZV4bzCrFKC4L4WgVzTPDgM5TkE1UNDB2sy3HkzwpCdejtG1ts2Q/VirtualMachinesProperties.png" alt="" width="409" height="519" /> 
 
-Virtual machines are managed directly within Windows Explorer &#8211; the old management/admin application window from older versions of Virtual PC is no more:
+Virtual machines are managed directly within Windows Explorer - the old management/admin application window from older versions of Virtual PC is no more:
 
 [<img class="alignnone" title="Virtual Machines in Explorer" src="http://prmkgw.blu.livefilestore.com/y1p6YH1ZXPuGAurpBwiXMGnvvCgUnh_-18bHx998dD1oVLxRJwfDbnPauzjfZ6rihbuHl_6wvW_wHhXinPQaGJzGQ/VirtualMachinesSmall.png" alt="" width="584" height="392" />](http://prmkgw.blu.livefilestore.com/y1pJjXdQYnujFTvRy42FUqpdKPsuaEDifW2Ds9tUnksDOxpA7z7ch7SWCksvJ6yWpOAdu3tPgECRVBE97e0Tl_XEw/VirtualMachines.png)
 
@@ -44,7 +44,7 @@ Creating a new virtual machine is just as you would expect, except very simplifi
 
 <img class="alignnone" title="Create a virtual machine, step 1" src="http://prmkgw.blu.livefilestore.com/y1p_jc1OStTzp16_xbbcVzyXTWntZGpMq6Mh5r13J29hj5xY3bUtdJSlaaOOPjfWPTlEml7787POBSyZjiOY6s6yg/Createavirtualmachine.png" alt="" width="581" height="456" /> 
 
-Configure memory and networking (I have two network cards in this machine and VPC keep choosing the disconnected card &#8211; yay..)
+Configure memory and networking (I have two network cards in this machine and VPC keep choosing the disconnected card - yay..)
 
 <img class="alignnone" title="Create a new virtual machine, step 2" src="http://prmkgw.blu.livefilestore.com/y1p3oE9DjjDxe5DV3KLSnbLlS1uCKeaHS7LtpABDXO4TYJT12uk1bdj0tgr1b5l9U1iyQu7N14ksK9qLPiWCbG7vA/Createavirtualmachine2.png" alt="" width="581" height="456" /> 
 

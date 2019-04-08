@@ -20,7 +20,7 @@ tags:
 ---
 If you are starting to deploy Windows Vista you may have noticed that any user who has administrative access to their workstation will not receive mapped drives or printers. This is due to the new privilege model introduced in Windows Vista with [User Account Control](http://technet.microsoft.com/en-us/windowsvista/aa905117.aspx).
 
-Microsoft has a complete explanation of why this behaviour with Group Policy scripts occurs at the TechNet site &#8211; [Deploying Group Policy Using Windows Vista](http://technet2.microsoft.com/WindowsVista/en/library/5ae8da2a-878e-48db-a3c1-4be6ac7cf7631033.mspx?mfr=true). Just over half way down the page you&#8217;ll find a section titled &#8216;**Group Policy Scripts can fail due to User Account Control**&#8216;, however here&#8217;s a quote from that page that summarises the issue:
+Microsoft has a complete explanation of why this behaviour with Group Policy scripts occurs at the TechNet site - [Deploying Group Policy Using Windows Vista](http://technet2.microsoft.com/WindowsVista/en/library/5ae8da2a-878e-48db-a3c1-4be6ac7cf7631033.mspx?mfr=true). Just over half way down the page you&#8217;ll find a section titled &#8216;**Group Policy Scripts can fail due to User Account Control**&#8216;, however here&#8217;s a quote from that page that summarises the issue:
 
 > When the administrative user logs on, Windows processes the logon scripts using the elevated token. The script actually works and maps the drive. However, Windows blocks the view of the mapped network drives because the desktop uses the limited token while the drives were mapped using the elevated token.
 
@@ -34,7 +34,7 @@ My first recommendation, don&#8217;t add users to the local Administrators group
 
 If this method is not for you, then you will have to follow the instructions listed in the [Deploying Group Policy Using Windows Vista](http://technet2.microsoft.com/WindowsVista/en/library/5ae8da2a-878e-48db-a3c1-4be6ac7cf7631033.mspx?mfr=true) article and run a logon script using the task scheduler. To do this you will have to detect the presence of Windows Vista and then use [LaunchApp.WSF](http://www.stealthpuppy.com/blogs/travelling/pages/launchapp-wsf.aspx) to create a scheduled task to run the actual logon script.
 
-I think the easiest way is to use a [WMI Filter](http://technet2.microsoft.com/WindowsServer/en/library/6237b9b2-4a21-425e-8976-2065d28b31471033.mspx) to ensure a Group Policy runs only on Windows Vista. This will require two separate Group Policy objects &#8211; one GPO used for Windows Server 2003 and below and another for Windows Vista and above. The WMI Filters would then look like this:
+I think the easiest way is to use a [WMI Filter](http://technet2.microsoft.com/WindowsServer/en/library/6237b9b2-4a21-425e-8976-2065d28b31471033.mspx) to ensure a Group Policy runs only on Windows Vista. This will require two separate Group Policy objects - one GPO used for Windows Server 2003 and below and another for Windows Vista and above. The WMI Filters would then look like this:
 
 Windows Server 2003 and below:
 

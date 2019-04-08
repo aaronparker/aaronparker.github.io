@@ -18,22 +18,22 @@ tags:
   - App-V
   - Firefox
 ---
-<img alt="" src="http://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" align="right" />It&#8217;s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I&#8217;ve previously shown you how to sequence [Firefox 8](http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-8/), [Firefox 7](http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-7/) and [Firefox 5](http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-5/). Before embarking on sequencing Firefox, please refer to this companion article &#8211; [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization](http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) &#8211; which covers configuring a Firefox installation for virtualizing. It&#8217;s important that Firefox is configured correctly for virtualization by disabling specific features..
+<img alt="" src="http://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" align="right" />It&#8217;s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I&#8217;ve previously shown you how to sequence [Firefox 8](http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-8/), [Firefox 7](http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-7/) and [Firefox 5](http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-5/). Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization](http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It&#8217;s important that Firefox is configured correctly for virtualization by disabling specific features..
 
 # User Experience
 
 Typically, virtualizing an application changes the user experience due to the introduction of isolation. Virtualizing Firefox with App-V 4.6 will isolate the application from the OS, so the following features will not be available once Firefox has been sequenced:
 
-  * The ability set the browser as default &#8211; isolation prevents this from working
+  * The ability set the browser as default - isolation prevents this from working
   * Firefox Jump Lists in the Start Menu and Taskbar do work, but they don&#8217;t display icons correctly
 
 # Firefox features to disable
 
 There are a couple of features that should be disabled when running Firefox under App-V:
 
-  * Default browser check – _Options / Advanced / General &#8211; Always check to see if Firefox is the default browser on startup_. Once Firefox is isolated from the OS, the user won&#8217;t be able to make it the default browser
+  * Default browser check – _Options / Advanced / General - Always check to see if Firefox is the default browser on startup_. Once Firefox is isolated from the OS, the user won&#8217;t be able to make it the default browser
   * Automatic updates for Firefox – _Options / Advanced / Update / Firefox updates._ Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
-  * _Mozilla Maintenance Service_ &#8211; [Firefox installs an updater service](http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service) that allows updating whilst avoiding UAC prompts. This service should be disabled or not installed
+  * _Mozilla Maintenance Service_ - [Firefox installs an updater service](http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service) that allows updating whilst avoiding UAC prompts. This service should be disabled or not installed
 
 I will cover using a couple of customisations to ensure these user features are disabled in the UI for any new Firefox profile. This service is simple enough to handle by disabling it
 
@@ -44,7 +44,7 @@ I will cover using a couple of customisations to ensure these user features are 
   * %APPDATA%\Mozilla (preferences, bookmarks etc.); and
   * %LOCALAPPDATA%\Mozilla (browser cache)
 
-The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% &#8211; this is a good thing and I don&#8217;t recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla _to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time. There are several reasons why this approach is a good idea:
+The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this is a good thing and I don&#8217;t recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla _to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time. There are several reasons why this approach is a good idea:
 
   * Some of the configuration files within the Firefox profile include hard-coded paths – challenging if your App-V virtual drive changes between clients
   * Virtualizing the profile increases the complexity of upgrading Firefox packages especially challenging given [Mozilla&#8217;s approach to Firefox releases](http://www.zdnet.com/blog/bott/mozilla-to-enterprise-customers-drop-dead/3497). By storing the Firefox profile on the real file system, Firefox can be deployed via completely unrelated packages – no need to create upgrade versions

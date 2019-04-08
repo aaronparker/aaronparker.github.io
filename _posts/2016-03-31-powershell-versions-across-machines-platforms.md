@@ -24,8 +24,8 @@ This isn&#8217;t an ideal scenario for effectively writing scripts and managing 
 
 There are two tools that I&#8217;ve recently added to my toolkit that is now making it more effective to manage PowerShell scripts across various machines, versioning those scripts and even allowing me to write PowerShell scripts on OS X:
 
-  1. [Visual Studio Code](https://code.visualstudio.com/) &#8211; this tool has made coding far more enjoyable
-  2. [GitHub](https://github.com) &#8211; I&#8217;ve been aware of Git and GitHub for some time but not taken advantage of GitHub until recently
+  1. [Visual Studio Code](https://code.visualstudio.com/) - this tool has made coding far more enjoyable
+  2. [GitHub](https://github.com) - I&#8217;ve been aware of Git and GitHub for some time but not taken advantage of GitHub until recently
 
 In this article, I&#8217;ll briefly cover using these tools for use with PowerShell.
 
@@ -37,7 +37,7 @@ Providing the same experience across OS X and Windows is fantastic and it&#8217;
 
 ## User Interface
 
-Visual Studio Code provides as consistent UI across platforms &#8211; here it is on OS X with support for PowerShell added via an extension:
+Visual Studio Code provides as consistent UI across platforms - here it is on OS X with support for PowerShell added via an extension:
 
 <figure id="attachment_4308" aria-describedby="caption-attachment-4308" style="width: 1024px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/03/Visual-Studio-Code-OSX.png" rel="attachment wp-att-4308"><img class="wp-image-4308 size-large" title="Visual Studio Code on OS X" src="http://stealthpuppy.com/wp-content/uploads/2016/03/Visual-Studio-Code-OSX-1024x709.png" alt="Visual Studio Code on OS X" width="1024" height="709" srcset="https://stealthpuppy.com/wp-content/uploads/2016/03/Visual-Studio-Code-OSX-1024x709.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/03/Visual-Studio-Code-OSX-150x104.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/03/Visual-Studio-Code-OSX-300x208.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/03/Visual-Studio-Code-OSX-768x531.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/03/Visual-Studio-Code-OSX.png 1500w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption id="caption-attachment-4308" class="wp-caption-text">Visual Studio Code on OS X</figcaption></figure>
 

@@ -36,7 +36,7 @@ _In this session, you will learn:_
   * _How to build systems that are easy to manage and great to use_
   * _Common mistakes and how to avoid them_
 
-# Session Video: UX and the Enterprise Desktop &#8211; like Oil and Water?
+# Session Video: UX and the Enterprise Desktop - like Oil and Water?
 
 You can view our session on YouTube with the slides and audio only, embedded below. The [session is also available on Citrix Synergy TV](http://live.citrixsynergy.com/2016/player/ondemandplayer.php?presentation_id=39c96fe1-6e26-4569-9392-9048dbb68510) where you can see the accompanying video.
 

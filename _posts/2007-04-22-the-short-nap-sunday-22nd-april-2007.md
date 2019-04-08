@@ -21,7 +21,7 @@ The Short NAP is a quick list of Microsoft Network Access Protection and Server/
 
   * [Bypassing NAC v2.0 by Ofir Arkin](http://www.sys-security.com/archive/conferences/shmoocon/ShmooCon_07_Bypassing_NAC.pdf)  
     Death by PowerPoint (112 slides..) but a worthwhile read none the less.
-  * [TechNet Radio &#8211; Community Corner: An interview with five time SMS MVP, Ed Aldrich](http://download.microsoft.com/download/D/8/9/D899E1CE-A89F-40D9-ACCE-0B5C0BA8C328/TechNetRadio-070417-RSS.wma)  
+  * [TechNet Radio - Community Corner: An interview with five time SMS MVP, Ed Aldrich](http://download.microsoft.com/download/D/8/9/D899E1CE-A89F-40D9-ACCE-0B5C0BA8C328/TechNetRadio-070417-RSS.wma)  
     This interview includes a short overview of System Centre Operations Manager 2007 and NAP ( listen from 9:06 to 11:33)
   * [Microsoft Network Infrastructure Servers Forum](http://forums.microsoft.com/TechNet/ShowForum.aspx?ForumID=1510&SiteID=17)  
     A new forum for discussions on DHCP, DNS, NPS, and RRAS

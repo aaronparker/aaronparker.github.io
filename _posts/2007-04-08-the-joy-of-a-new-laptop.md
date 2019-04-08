@@ -30,7 +30,7 @@ categories:
   * 3 year international warranty
   * Windows Vista Home Premium
 
-When I ran it up I was surprised at the amount of applications installed out of the box. There was Google desktop, McAfee Internet Security, Microsoft Works, Roxio MyDVD plus a couple of others &#8211; in all about 73 processes running at boot. Compare that with about 43 with a clean Windows Vista install and you&#8217;ve got a lot of crap there. The hard drive was also partitioned into two drives â€“ the D: drive, which was about 6GB, had a copy of a Windows PE recovery environment. Probably useful for most normal consumers but not so for me.
+When I ran it up I was surprised at the amount of applications installed out of the box. There was Google desktop, McAfee Internet Security, Microsoft Works, Roxio MyDVD plus a couple of others - in all about 73 processes running at boot. Compare that with about 43 with a clean Windows Vista install and you&#8217;ve got a lot of crap there. The hard drive was also partitioned into two drives â€“ the D: drive, which was about 6GB, had a copy of a Windows PE recovery environment. Probably useful for most normal consumers but not so for me.
 
 So the first thing I did after saving a copy of the drivers was to wipe the drive and install the 64 bit version of Windows Vista Ultimate. Unfortunately there doesn&#8217;t appear to be 64 bit drivers for the card reader or the sound card and as I don&#8217;t really see the point in going 64 bit yet I went back to the 32 bit version of Windows Vista Ultimate. Now I&#8217;ve got a far better install I think
 

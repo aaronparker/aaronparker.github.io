@@ -1,6 +1,6 @@
 ---
 id: 2623
-title: 'Reducing Profile Size with a Profile Clean Up Script &#8211; PowerShell Edition'
+title: 'Reducing Profile Size with a Profile Clean Up Script - PowerShell Edition'
 date: 2012-01-05T16:09:55+10:00
 author: Aaron Parker
 layout: post
@@ -22,7 +22,7 @@ tags:
 ---
 [<img class="size-full wp-image-2624 alignnone" title="Delete by Cari McGee" src="http://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell.png" alt="Delete by Cari McGee" width="640" height="317" srcset="https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell.png 640w, https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell-150x74.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell-300x148.png 300w" sizes="(max-width: 640px) 100vw, 640px" />](http://www.flickr.com/photos/pleeker/5379549514/)
 
-I recently posted a script for removing unnecessary&nbsp;files and pruning files based on their age, which can be used at logoff to keep profile sizes manageable &#8211;&nbsp;[Reducing Profile Size with a Profile Clean Up Script](http://stealthpuppy.com/user-virtualization/profile-clean-up-script/).
+I recently posted a script for removing unnecessary&nbsp;files and pruning files based on their age, which can be used at logoff to keep profile sizes manageable -&nbsp;[Reducing Profile Size with a Profile Clean Up Script](http://stealthpuppy.com/user-virtualization/profile-clean-up-script/).
 
 [Andrew Morgan](http://andrewmorgan.ie/about-2/)&nbsp;([@andyjmorgan](http://twitter.com/andyjmorgan)) has kindly translated my very basic VBscript to PowerShell. This can be used as a standalone script or the function (_remove-itembyage_)&nbsp;could be integrated into your own scripts and has the added benefit of in-built help and the ability to run silently.
 

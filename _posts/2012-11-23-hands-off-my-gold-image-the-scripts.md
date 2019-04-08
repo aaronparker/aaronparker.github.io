@@ -1,6 +1,6 @@
 ---
 id: 2937
-title: 'Hands off my gold image &#8211; The Scripts'
+title: 'Hands off my gold image - The Scripts'
 date: 2012-11-23T00:39:51+10:00
 author: Aaron Parker
 layout: post
@@ -20,15 +20,15 @@ tags:
   - PVS
   - XenApp
 ---
-<img class="alignright size-full wp-image-2946" style="margin: 5px;" title="HandsOff" src="http://stealthpuppy.com/wp-content/uploads/2012/11/HandsOff.jpg" alt="" width="125" height="127" />This is the last article in a series that covers in more detail the approach to automating XenApp and PVS image creation, from my [Geek Speak talk at Citrix Synergy in Barcelona &#8211; Hands off my gold image.](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy)
+<img class="alignright size-full wp-image-2946" style="margin: 5px;" title="HandsOff" src="http://stealthpuppy.com/wp-content/uploads/2012/11/HandsOff.jpg" alt="" width="125" height="127" />This is the last article in a series that covers in more detail the approach to automating XenApp and PVS image creation, from my [Geek Speak talk at Citrix Synergy in Barcelona - Hands off my gold image.](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy)
 
-The first article gives an overview of the approach &#8211; [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation](http://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/) and you can find more detail in [Hands off my gold image – Microsoft Deployment Toolkit details](http://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/) and [Hands off my gold image – The Task Sequence](http://stealthpuppy.com/deployment/hands-off-my-gold-image-the-task-sequence/). In this article I&#8217;ll briefly cover the scripts referenced in the task sequence.
+The first article gives an overview of the approach - [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation](http://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/) and you can find more detail in [Hands off my gold image – Microsoft Deployment Toolkit details](http://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/) and [Hands off my gold image – The Task Sequence](http://stealthpuppy.com/deployment/hands-off-my-gold-image-the-task-sequence/). In this article I&#8217;ll briefly cover the scripts referenced in the task sequence.
 
 # Approach to Scripting
 
 Each included script is just a batch file. You won&#8217;t find too much error handling going on and each script will make certain assumptions about where things such as binaries are located. This has been done to keep each script as simple and as portable as possible.
 
-Where possible, I&#8217;ve tried to use the original un-modified installer &#8211; that is, I&#8217;ve avoided extracting an installer if can get away with it. This should be that updating a binary requires as little changes to the scripts as possible.
+Where possible, I&#8217;ve tried to use the original un-modified installer - that is, I&#8217;ve avoided extracting an installer if can get away with it. This should be that updating a binary requires as little changes to the scripts as possible.
 
 # Script Details
 
@@ -55,7 +55,7 @@ The included script will install and configure XenApp 6.5 as a Worker (or sessio
 
 ## Citrix XenApp Hotfixes
 
-The approach used to install XenApp updates is very simple &#8211; the script will install every MSI and MSP file in the same folder as the script. That way you can add and remove hotfixes without changing the script.
+The approach used to install XenApp updates is very simple - the script will install every MSI and MSP file in the same folder as the script. That way you can add and remove hotfixes without changing the script.
 
 ## Citrix Provisioning Services Device Target x64
 

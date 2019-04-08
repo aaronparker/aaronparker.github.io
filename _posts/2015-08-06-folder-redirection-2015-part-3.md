@@ -26,7 +26,7 @@ This is a multi-part article detailing our testing results and presentations fo
 
 # File Access Performance
 
-[Magnar Johnsen](http://twitter.com/magnarjohnsen) detailed an interesting scenario where application performance suffered when [moving a XenApp environment from Windows Server 2008 R2 to Windows Server 2o12 R2](http://j.mp/ini-smb). Magnar documented the results of the changing of OS versions had on application performance &#8211; due to the way in which a specific application reads settings from an INI file, a mismatch between the client and server was creating file access performance issues.
+[Magnar Johnsen](http://twitter.com/magnarjohnsen) detailed an interesting scenario where application performance suffered when [moving a XenApp environment from Windows Server 2008 R2 to Windows Server 2o12 R2](http://j.mp/ini-smb). Magnar documented the results of the changing of OS versions had on application performance - due to the way in which a specific application reads settings from an INI file, a mismatch between the client and server was creating file access performance issues.
 
 To replicate the testing, Helge wrote a small utility that can be used to simulate the file access performance by reading and writing from a file using different methods. The tool, [FileIOTest](https://helgeklein.com/blog/2015/08/fileiotest-times-duration-file-io-operations/) runs 4 different tests:
 
@@ -67,25 +67,25 @@ Folder redirection is a feature that most environments will not be able to avoid
 
 To that end, here are our recommendations for getting the best out of folder redirection. In no particular order:
 
-  * **Simulate client load to determine file server breaking point** &#8211; the [File Server Capacity Tool](http://stealthpuppy.com/replicate-2015-folder-redirection-test/) is, so far, the best solution I&#8217;ve seen for simulating user access to home folders. This is a useful tool for determining the expected load on your file server/s and working out the number of servers required to support your environment.
-  * **Multiple vCPUs in file servers** &#8211; file servers will require multiple CPUs to provide good performance. Servicing multiple simultaneous connections will require more than a single CPU &#8211; start with 2 and scale up as required.
-  * **Size for peaks** &#8211; just like we do with VDI workloads, size for your expected peaks to ensure continued good user experience as your environment becomes busy.
-  * **Hypervisor resource sharing, watch overcommit** &#8211; resource contention at multiple levels including storage and compute will impact how well file servers can response to requests.
-  * **Scale out** &#8211; Scaling out across multiple physical hosts and making sure you don&#8217;t over commit compute resources will ensure file servers remain responsive. Scaling out may require solutions such as [DFS](https://technet.microsoft.com/en-us/library/dn281957.aspx) and even third party solutions such as Citrix Melio might be worth investigating.
-  * **High performance mode** &#8211; put hypervisor hosts in high performance mode to ensure good response for 4K and 8K blocks. You can schedule placing hosts into low performance mode after hours if power consumption is of concern.
-  * **Expect performance impacts of anti-virus** &#8211; there are very few environments that can do without anti-virus and the performance impact is very high as we&#8217;ve shown. Test various anti-virus solutions to find the best performing product if you can; however expect that AV will contribute to high CPU.
-  * **Update Windows versions, especially on servers** &#8211; best results might be gained from matching client and server, but we have shown that SMB 3+ reduces the CPU load on the file server.
-  * **Update client and servers** &#8211; keep clients and servers updated with the latest service packs and available hotfixes for folder redirection and file services. Here are some knowledgebase articles that are important references: 
+  * **Simulate client load to determine file server breaking point** - the [File Server Capacity Tool](http://stealthpuppy.com/replicate-2015-folder-redirection-test/) is, so far, the best solution I&#8217;ve seen for simulating user access to home folders. This is a useful tool for determining the expected load on your file server/s and working out the number of servers required to support your environment.
+  * **Multiple vCPUs in file servers** - file servers will require multiple CPUs to provide good performance. Servicing multiple simultaneous connections will require more than a single CPU - start with 2 and scale up as required.
+  * **Size for peaks** - just like we do with VDI workloads, size for your expected peaks to ensure continued good user experience as your environment becomes busy.
+  * **Hypervisor resource sharing, watch overcommit** - resource contention at multiple levels including storage and compute will impact how well file servers can response to requests.
+  * **Scale out** - Scaling out across multiple physical hosts and making sure you don&#8217;t over commit compute resources will ensure file servers remain responsive. Scaling out may require solutions such as [DFS](https://technet.microsoft.com/en-us/library/dn281957.aspx) and even third party solutions such as Citrix Melio might be worth investigating.
+  * **High performance mode** - put hypervisor hosts in high performance mode to ensure good response for 4K and 8K blocks. You can schedule placing hosts into low performance mode after hours if power consumption is of concern.
+  * **Expect performance impacts of anti-virus** - there are very few environments that can do without anti-virus and the performance impact is very high as we&#8217;ve shown. Test various anti-virus solutions to find the best performing product if you can; however expect that AV will contribute to high CPU.
+  * **Update Windows versions, especially on servers** - best results might be gained from matching client and server, but we have shown that SMB 3+ reduces the CPU load on the file server.
+  * **Update client and servers** - keep clients and servers updated with the latest service packs and available hotfixes for folder redirection and file services. Here are some knowledgebase articles that are important references: 
       * [Current hotfixes for Windows 7 SP1 enterprise clients that have folder redirection enabled](https://support.microsoft.com/en-us/kb/2820927)
       * [List of currently available hotfixes for the File Services technologies in Windows Server 2012 and in Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/2899011)
 
 These are general recommendations for all environments and depending on your own requirements and how you are managing your virtual or physical desktop estate, there may be additional considerations.
 
-We do continue to recommend looking at alternatives to AppData redirection &#8211; there are plenty of user environment management / profile management solutions available to you.
+We do continue to recommend looking at alternatives to AppData redirection - there are plenty of user environment management / profile management solutions available to you.
 
 ## Determining the Version of SMB Negotiated
 
-If you are using Windows 8 and above, PowerShell now includes a cmdlet to determine the version of SMB that is negotiated for each connection &#8211; [Get-SmbConnection](https://technet.microsoft.com/en-us/library/jj635713). PoweShell must be elevated, but this will show all connections from the local client.
+If you are using Windows 8 and above, PowerShell now includes a cmdlet to determine the version of SMB that is negotiated for each connection - [Get-SmbConnection](https://technet.microsoft.com/en-us/library/jj635713). PoweShell must be elevated, but this will show all connections from the local client.
 
 <figure id="attachment_4060" aria-describedby="caption-attachment-4060" style="width: 1166px" class="wp-caption alignnone">[<img class="wp-image-4060 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2.png" alt="" width="1166" height="670" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2.png 1166w, https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2-1024x588.png 1024w" sizes="(max-width: 1166px) 100vw, 1166px" />](http://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2.png)<figcaption id="caption-attachment-4060" class="wp-caption-text">Use PowerShell to View SMB Connections</figcaption></figure>
 

@@ -11,7 +11,7 @@ categories:
 tags:
   - Windows-Vista
 ---
-Microsoft have posted **the** Windows Vista Product Guide on their Downloads Centre. At 61Mb and 316 pages this document is huge, but it&#8217;s go some great detail about what Windows Vista is all about. If you&#8217;re one of those people who thinks that Windows Vista is Windows XP Service Pack 3, then this document is for you, if you&#8217;re not, then this document is still for you too. This is the document to give to your sales team (you may have to read it to them &#8211; could take a while and you might need a little bell handy to let them know when to turn the page..). Here&#8217;s a break down of what the document covers:
+Microsoft have posted **the** Windows Vista Product Guide on their Downloads Centre. At 61Mb and 316 pages this document is huge, but it&#8217;s go some great detail about what Windows Vista is all about. If you&#8217;re one of those people who thinks that Windows Vista is Windows XP Service Pack 3, then this document is for you, if you&#8217;re not, then this document is still for you too. This is the document to give to your sales team (you may have to read it to them - could take a while and you might need a little bell handy to let them know when to turn the page..). Here&#8217;s a break down of what the document covers:
 
   * Section 1: Introduction to Windows Vista
   * Section 2: Windows Vista Edition
@@ -25,7 +25,7 @@ The document comes in Word 2007 and XPS formats, so you&#8217;ll need either the
 
   * Â  [Windows Vista Product Guide](http://www.microsoft.com/downloads/details.aspx?FamilyID=bbc16ebf-4823-4a12-afe1-5b40b2ad3725&DisplayLang=en)
 
-Another interesting download posted today is the [Microsoft Windows Vista Readiness Assessment tool](http://www.microsoft.com/downloads/details.aspx?FamilyID=5cafd2ab-2397-45eb-81b1-9e915c157485&DisplayLang=en), although at the moment, it looks to me like someone hasn&#8217;t finished uploading the correct files. There are only XML files available for download &#8211; no WSSADS.EXE link, which should contain the assessment tool. Keep an eye on this one for updates:
+Another interesting download posted today is the [Microsoft Windows Vista Readiness Assessment tool](http://www.microsoft.com/downloads/details.aspx?FamilyID=5cafd2ab-2397-45eb-81b1-9e915c157485&DisplayLang=en), although at the moment, it looks to me like someone hasn&#8217;t finished uploading the correct files. There are only XML files available for download - no WSSADS.EXE link, which should contain the assessment tool. Keep an eye on this one for updates:
 
 > The Windows Vista Readiness Assessment (WVRA) is an automated tool designed for customers and parters to quickly assess network-wide their PCs&#8217; readiness for Windows Vista. It provides detailed reporting on hardware and device driver compatibility for upgrades to Windows Vista:
 

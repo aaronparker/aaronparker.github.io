@@ -27,10 +27,10 @@ Receiver can be silent installed using a command-line like this:
 
 Taking a look at the installer&#8217;s log file (search in %TEMP% for the logs with the prefix CtxInstall- or TrollyExpress-) gives an indication of what the issue is. Looking for any time discrepancies, reveals a large gap between actions (which matchs the installer kicking off and me interacting with the target VM)
 
-[code]15:12:29: Information &#8211; CInstallationManager::InstallComponent(426) &#8211; Running InstallComponent method for: USB.  
-15:12:29: Information &#8211; CInstallationManager::InstallComponent(462) &#8211; Installing Component: ID = USB  
-15:12:29: Information &#8211; CInstallationManager::InstallComponent(598) &#8211; Component Install Commandline: REBOOT=ReallySuppress MSIDISABLERMRESTART=0 MSIRESTARTMANAGERCONTROL=0 ARPSYSTEMCOMPONENT=1 NEED\_RECEIVER=n SILENT=1 SERVER\_LOCATION="http://storefront.demolab.test/Citrix/DemoLabStore/PNAgent/config.xml" ALLUSERS=1  
-16:52:49: Information &#8211; CComponent::CreateRegistryRecords(621) &#8211; Writing registry records for uninstall.[/code]
+[code]15:12:29: Information - CInstallationManager::InstallComponent(426) - Running InstallComponent method for: USB.  
+15:12:29: Information - CInstallationManager::InstallComponent(462) - Installing Component: ID = USB  
+15:12:29: Information - CInstallationManager::InstallComponent(598) - Component Install Commandline: REBOOT=ReallySuppress MSIDISABLERMRESTART=0 MSIRESTARTMANAGERCONTROL=0 ARPSYSTEMCOMPONENT=1 NEED\_RECEIVER=n SILENT=1 SERVER\_LOCATION="http://storefront.demolab.test/Citrix/DemoLabStore/PNAgent/config.xml" ALLUSERS=1  
+16:52:49: Information - CComponent::CreateRegistryRecords(621) - Writing registry records for uninstall.[/code]
 
 Something to do with the USB support provided by Receiver for XenDesktop doesn&#8217;t install correctly when the virtual machine&#8217;s console does not have focus. Unfortunately the root cause might be a little more difficult to find.
 

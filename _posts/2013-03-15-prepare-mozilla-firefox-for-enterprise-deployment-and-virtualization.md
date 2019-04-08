@@ -31,8 +31,8 @@ These might include:
 
   * Import Wizard – Firefox starts a wizard on first run that imports settings from other browsers. You may want to remove this wizard to simplify the startup of Firefox
   * Automatic updates for Firefox – _Options / Advanced / Update / Firefox updates._ Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
-  * _Mozilla Maintenance Service_ &#8211; [Firefox installs an updater service](http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service) that allows updating Firefox automatically, whilst avoiding UAC prompts. This service should be disabled or not installed in a controlled environment including under application virtualization
-  * Default browser check – _Options / Advanced / General &#8211; Always check to see if Firefox is the default browser on startup_. Under App-V 4,x, once Firefox is isolated from the OS, the user won&#8217;t be able to make it the default browser (this will work under App-V 5)
+  * _Mozilla Maintenance Service_ - [Firefox installs an updater service](http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service) that allows updating Firefox automatically, whilst avoiding UAC prompts. This service should be disabled or not installed in a controlled environment including under application virtualization
+  * Default browser check – _Options / Advanced / General - Always check to see if Firefox is the default browser on startup_. Under App-V 4,x, once Firefox is isolated from the OS, the user won&#8217;t be able to make it the default browser (this will work under App-V 5)
   * The ‘Welcome to Firefox’ tab, the ‘Know your rights’ and ‘Improve Firefox’ notifications
 
 There is a way to [control many of these settings through Group Policy](http://sourceforge.net/projects/gpofirefox/), but if we get these right at install time, there’s no need for the overhead of GPOs. I will cover using a few of these customisations to ensure these features are disabled for any new Firefox profile.
@@ -90,13 +90,13 @@ Mozilla has made it a fairly straight forward process to remove browser user int
 [code lang=&#8221;css&#8221; highlight=&#8221;5&#8243;]/\* UserChrome.css for Mozilla Firefox \*/  
 /\* Remove access to user interface elements that aren&#8217;t suitable for application virtualization \*/
 
-/\* Options &#8211; Advanced &#8211; General &#8211; System Defaults \*/  
+/\* Options - Advanced - General - System Defaults \*/  
 #systemDefaultsGroup { display: none !important; }
 
 /\* Options / Advanced / Update / Firefox updates group box \*/  
 #updateApp { display: none !important; }
 
-/\* Help &#8211; About &#8211; Check for Updates button \*/  
+/\* Help - About - Check for Updates button \*/  
 #updateButton { display: none !important; }[/code]
 
 # Installing Firefox

@@ -11,9 +11,9 @@ categories:
 tags:
   - Access-Gateway
 ---
-Upgrading our Access Gateway last night proved to be a bit of a challenge where perhaps it should not have been. The problem was not with the product, more due to the time between installs. Access Gateway is generally requires little administration after deployment and it&#8217;s certainly not a product I get to work with every day. So what problems did I run into? Well, things that should have been quite obvious from the start, so here&#8217;s how I got there and fixed them and how I won&#8217;t make the same mistakes twice.
+Upgrading our Access Gateway last night proved to be a bit of a challenge where perhaps it should not have been. The problem was not with the product, more due to the time between installs. Access Gateway is generally requires little administration after deployment and it's certainly not a product I get to work with every day. So what problems did I run into? Well, things that should have been quite obvious from the start, so here's how I got there and fixed them and how I won't make the same mistakes twice.
 
-We run Access Gateway Advanced, so I needed to throw an [Advanced Access Control upgrade](http://support.citrix.com/article/CTX109104) into the mix. Rather than migrate directly from version 4.2, I started with a fresh server and built a new configuration from scratch. I did this because I wanted to go through the whole process again to make sure there wasn&#8217;t a better way of doing things. When I built the new AAC server, I used Windows Server 2003 Service Pack 2 and SQL Server 2005 Express Service Pack 2 (we have a small implementation internally, so a single server makes sense for us). I was a little worried about this because both service packs are new and Citrix don&#8217;t appear to have official word on either service pack.
+We run Access Gateway Advanced, so I needed to throw an [Advanced Access Control upgrade](http://support.citrix.com/article/CTX109104) into the mix. Rather than migrate directly from version 4.2, I started with a fresh server and built a new configuration from scratch. I did this because I wanted to go through the whole process again to make sure there wasn't a better way of doing things. When I built the new AAC server, I used Windows Server 2003 Service Pack 2 and SQL Server 2005 Express Service Pack 2 (we have a small implementation internally, so a single server makes sense for us). I was a little worried about this because both service packs are new and Citrix don't appear to have official word on either service pack.
 
 The first issue I ran into was a problem with the Access Gateway COM server after installation of Advanced Access Control. The following errors were reported when attempting to start the COM server:
 
@@ -26,7 +26,7 @@ The first issue I ran into was a problem with the Access Gateway COM server afte
 > User: DOMAINserviceaccount  
 > Computer: SERVER  
 > Description:  
-> Login failed for user &#8216;DOMAINserviceaccount&#8217;. [CLIENT: <local machine>]  
+> Login failed for user &#8216;DOMAINserviceaccount'. [CLIENT: <local machine>]  
 > For more information, see Help and Support Center at http://go.microsoft.com/fwlink/events.asp.  
 > Data:  
 > 0000: 18 48 00 00 0e 00 00 00 .H&#8230;&#8230;  
@@ -61,18 +61,18 @@ The first issue I ran into was a problem with the Access Gateway COM server afte
 > File: d:ntcomcomplussrccomsvcssrgtapicsrgtserv.cpp, Line: 371  
 > Comsvcs.dll file version: ENU 2001.12.4720.3959 shp  
 > For more information, see Help and Support Center at http://go.microsoft.com/fwlink/events.asp.</p>
-So this appeared to be an issue with the permissions on database access for the service account to SQL Server Express. No amount of adding or changing permissions helped so I rebuilt the box from scratch. Luckily I had [a scripted installation](http://www.stealthpuppy.com/blogs/travelling/archive/2007/03/23/unattended-citrix-advanced-access-control-part-1.aspx), so this didn&#8217;t take long.
+So this appeared to be an issue with the permissions on database access for the service account to SQL Server Express. No amount of adding or changing permissions helped so I rebuilt the box from scratch. Luckily I had [a scripted installation](http://www.stealthpuppy.com/blogs/travelling/archive/2007/03/23/unattended-citrix-advanced-access-control-part-1.aspx), so this didn't take long.
 
 The second time around these errors were gone, however I found that when selecting SQL Server 2005 Express in the Server Configuration tool I was still having some database issues. I had installed SQL Server manually before the installation of AAC so I can only assume that was the cause. So instead of that I connected to the database instance just like it was full blown SQL Server and the Server Configuration tool completed successfully.
 
-Now that I had AAC up and running, I configured a logon point, some resources and access policy and customised the awful, awful graphics Citrix have added to 4.5. Here&#8217;s what I whipped up:
+Now that I had AAC up and running, I configured a logon point, some resources and access policy and customised the awful, awful graphics Citrix have added to 4.5. Here's what I whipped up:
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1177.AccessGateway.gif" /> 
 
-Far more appealing don&#8217;t you think? A little &#8216;Microsofty&#8217; I know, but much better. On graphics too, don&#8217;t forget that the Access Gateway only handles GIF files; don&#8217;t use PNGs like I did.
+Far more appealing don't you think? A little &#8216;Microsofty' I know, but much better. On graphics too, don't forget that the Access Gateway only handles GIF files; don't use PNGs like I did.
 
 The upgrade of the Access Gateway appliance itself was very straightforward. I made a backup of the configuration and then uploaded the 4.5 upgrade. After a reboot, I uploaded the 4.5.1 hotfix and it looked good â€“ just as expected. I then connected the Access Gateway to my new AAC farm and then thought that all was well until I ran into the dreaded &#8216;[Protocol Driver Error](http://www.google.com/search?hl=en&rls=com.microsoft%3Aen-AU&q=%22protocol+driver+error%22+site%3Asupport.citrix.com)&#8216;.
 
-What I&#8217;d missed was adding the Secure Ticket Authorities to the Access Gateway properties (through Gateway Appliances properties / Secure Ticket Authority option). Something so simple that cost me about Â½ hour of my time chasing my tail. What have I learnt from this? 1. Blog about it so I won&#8217;t forget for next time and 2. Use a checklist when installing the Access Gateway.
+What I'd missed was adding the Secure Ticket Authorities to the Access Gateway properties (through Gateway Appliances properties / Secure Ticket Authority option). Something so simple that cost me about Â½ hour of my time chasing my tail. What have I learnt from this? 1. Blog about it so I won't forget for next time and 2. Use a checklist when installing the Access Gateway.
 
-Now all that I&#8217;m left with is a &#8216;500 Internal Server Error&#8217; when I restart the AAC services but that can wait for another time.
+Now all that I'm left with is a &#8216;500 Internal Server Error' when I restart the AAC services but that can wait for another time.
