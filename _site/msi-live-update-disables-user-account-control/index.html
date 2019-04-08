@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -54,11 +54,11 @@
 
 <p>For some reason that I can’t quite fathom, it appears that MSI has decided that User Account Control needs to be disabled for their application to run. After installing MSI Live Update and running the main application, you are presented with this dialog box:</p>
 
-<p><img class="alignnone size-full wp-image-1088" title="msiuacwarning" src="http://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning.png" alt="msiuacwarning" width="423" height="157" srcset="http://192.168.0.89/wp-content/uploads/2009/05/msiuacwarning.png 423w, http://192.168.0.89/wp-content/uploads/2009/05/msiuacwarning-150x55.png 150w, http://192.168.0.89/wp-content/uploads/2009/05/msiuacwarning-300x111.png 300w" sizes="(max-width: 423px) 100vw, 423px" /></p>
+<p><img class="alignnone size-full wp-image-1088" title="msiuacwarning" src="http://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning.png" alt="msiuacwarning" width="423" height="157" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning.png 423w, https://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning-150x55.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning-300x111.png 300w" sizes="(max-width: 423px) 100vw, 423px" /></p>
 
 <p>Clicking the only option available to you – the OK button, results in a UAC prompt:</p>
 
-<p><img class="alignnone size-full wp-image-1089" title="msidisableuacprompt" src="http://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt.png" alt="msidisableuacprompt" width="460" height="417" srcset="http://192.168.0.89/wp-content/uploads/2009/05/msidisableuacprompt.png 460w, http://192.168.0.89/wp-content/uploads/2009/05/msidisableuacprompt-150x135.png 150w, http://192.168.0.89/wp-content/uploads/2009/05/msidisableuacprompt-300x271.png 300w" sizes="(max-width: 460px) 100vw, 460px" /></p>
+<p><img class="alignnone size-full wp-image-1089" title="msidisableuacprompt" src="http://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt.png" alt="msidisableuacprompt" width="460" height="417" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt.png 460w, https://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt-150x135.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt-300x271.png 300w" sizes="(max-width: 460px) 100vw, 460px" /></p>
 
 <p>Hmm.. DUAC.EXE, I wonder what that does. Let’s cancel that prompt and try the another tool included with Live Updater – Live Monitor. This one not only requires elevation to initially execute, but you just will not get anything useful out of it with UAC enabled.</p>
 

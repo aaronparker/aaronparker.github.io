@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -52,7 +52,7 @@
 
 <p>An odd occurrence when deploying Windows Server to these boxes is that the adapter names often change between each deployment. So what might be <em>HP NC373i Multifunction Gigabit Server Adapter #13</em> today becomes <em>HP NC373i Multifunction Gigabit Server Adapter #14</em> when I next re-deploy Windows to that box.</p>
 
-<p><img class="alignnone size-full wp-image-2676" title="Hyper-V Virtual Networks" src="http://stealthpuppy.com/wp-content/uploads/2012/03/HyperVVirtualNetworks.png" alt="Hyper-V Virtual Networks" width="660" height="324" srcset="http://192.168.0.89/wp-content/uploads/2012/03/HyperVVirtualNetworks.png 660w, http://192.168.0.89/wp-content/uploads/2012/03/HyperVVirtualNetworks-150x73.png 150w, http://192.168.0.89/wp-content/uploads/2012/03/HyperVVirtualNetworks-300x147.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
+<p><img class="alignnone size-full wp-image-2676" title="Hyper-V Virtual Networks" src="http://stealthpuppy.com/wp-content/uploads/2012/03/HyperVVirtualNetworks.png" alt="Hyper-V Virtual Networks" width="660" height="324" srcset="https://stealthpuppy.com/wp-content/uploads/2012/03/HyperVVirtualNetworks.png 660w, https://stealthpuppy.com/wp-content/uploads/2012/03/HyperVVirtualNetworks-150x73.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/03/HyperVVirtualNetworks-300x147.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
 
 <p>Because the <em>New-VMExternalSwitch</em> and <em>Remove-VMSwitchNic</em> commandlets to used configure the virtual networks require the adapter description, I’ve had to come up with a way to grab the description based on some that remains static – the MAC address. List below is a script that contains a list of MAC addresses (you could improve on this by keeping the list in a file) for each target MAC address in each server.</p>
 

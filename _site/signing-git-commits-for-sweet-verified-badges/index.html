@@ -32,7 +32,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -58,7 +58,7 @@
 
 <p>If you’ve ever edited a file directly on github.com and committed the changes, you would surely have noticed those Verified badges:<figure class="wp-block-image"></figure></p>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2019/03/GitHubCommit.png"><img src="https://stealthpuppy.com/wp-content/uploads/2019/03/GitHubCommit-1024x397.png" alt="Signing Git Commits" class="wp-image-6275" srcset="http://192.168.0.89/wp-content/uploads/2019/03/GitHubCommit-1024x397.png 1024w, http://192.168.0.89/wp-content/uploads/2019/03/GitHubCommit-150x58.png 150w, http://192.168.0.89/wp-content/uploads/2019/03/GitHubCommit-300x116.png 300w, http://192.168.0.89/wp-content/uploads/2019/03/GitHubCommit-768x298.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>&lt;figcaption&gt;Verified signature through a GitHib.com commit &lt;/figcaption&gt;&lt;/figure&gt;</p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2019/03/GitHubCommit.png"><img src="https://stealthpuppy.com/wp-content/uploads/2019/03/GitHubCommit-1024x397.png" alt="Signing Git Commits" class="wp-image-6275" srcset="https://stealthpuppy.com/wp-content/uploads/2019/03/GitHubCommit-1024x397.png 1024w, https://stealthpuppy.com/wp-content/uploads/2019/03/GitHubCommit-150x58.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/03/GitHubCommit-300x116.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/03/GitHubCommit-768x298.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>&lt;figcaption&gt;Verified signature through a GitHib.com commit &lt;/figcaption&gt;&lt;/figure&gt;</p>
 
 <p>To be honest, the GitHub documentation on <a href="https://help.github.com/en/articles/managing-commit-signature-verification">managing commit signature verification</a> is pretty good, but here’s how I stumbled my way through setting up a signature to <a href="https://help.github.com/en/articles/managing-commit-signature-verification">enable signed commits</a>.</p>
 
@@ -73,7 +73,7 @@
   <li>Finally I’ve uploaded my public key to the key server with the ‘Send Public Key to the Key Server’ option. Some <a href="https://sks-keyservers.net/overview-of-pools.php">GPG nerd would know what exactly that does</a>, but I don’t believe it actually required for signing commits and pushing to GitHub, because we need to update the public key to GtiHub anyway.<figure class="wp-block-image"></figure></li>
 </ol>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key.png"><img src="https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-1024x645.png" alt="GPG key view in the GPG Keychain and Signing Git Commits" class="wp-image-6277" srcset="http://192.168.0.89/wp-content/uploads/2019/03/GPG-Key-1024x645.png 1024w, http://192.168.0.89/wp-content/uploads/2019/03/GPG-Key-150x94.png 150w, http://192.168.0.89/wp-content/uploads/2019/03/GPG-Key-300x189.png 300w, http://192.168.0.89/wp-content/uploads/2019/03/GPG-Key-768x483.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>&lt;figcaption&gt;GPG key view in the GPG Keychain&lt;/figcaption&gt;&lt;/figure&gt;</p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key.png"><img src="https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-1024x645.png" alt="GPG key view in the GPG Keychain and Signing Git Commits" class="wp-image-6277" srcset="https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-1024x645.png 1024w, https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-300x189.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key-768x483.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>&lt;figcaption&gt;GPG key view in the GPG Keychain&lt;/figcaption&gt;&lt;/figure&gt;</p>
 
 <h2 id="add-your-public-key-to-github">Add Your Public Key to GitHub</h2>
 
@@ -85,7 +85,7 @@
   <li>Paste in the key and click <strong>Add GPG Key</strong><figure class="wp-block-image"></figure></li>
 </ol>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey.png"><img src="https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey-1024x482.png" alt="Adding your public GPG key to GitHub and Signing Git Commits" class="wp-image-6279" srcset="http://192.168.0.89/wp-content/uploads/2019/03/AddGPGKey-1024x482.png 1024w, http://192.168.0.89/wp-content/uploads/2019/03/AddGPGKey-150x71.png 150w, http://192.168.0.89/wp-content/uploads/2019/03/AddGPGKey-300x141.png 300w, http://192.168.0.89/wp-content/uploads/2019/03/AddGPGKey-768x361.png 768w, http://192.168.0.89/wp-content/uploads/2019/03/AddGPGKey.png 1578w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>&lt;figcaption&gt;Adding your public GPG key to GitHub&lt;/figcaption&gt;&lt;/figure&gt;</p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey.png"><img src="https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey-1024x482.png" alt="Adding your public GPG key to GitHub and Signing Git Commits" class="wp-image-6279" srcset="https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey-1024x482.png 1024w, https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey-150x71.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey-300x141.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey-768x361.png 768w, https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey.png 1578w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>&lt;figcaption&gt;Adding your public GPG key to GitHub&lt;/figcaption&gt;&lt;/figure&gt;</p>
 
 <h2 id="add-your-signing-key-to-git">Add Your Signing Key to Git</h2>
 
@@ -102,7 +102,7 @@
 </p>
 <figure class="wp-block-image is-resized">
 
-[<img src="https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig-1024x696.png" alt="Finding your key ID and adding the key to git" class="wp-image-6281" width="580" height="394" srcset="http://192.168.0.89/wp-content/uploads/2019/03/gitconfig-1024x696.png 1024w, http://192.168.0.89/wp-content/uploads/2019/03/gitconfig-150x102.png 150w, http://192.168.0.89/wp-content/uploads/2019/03/gitconfig-300x204.png 300w, http://192.168.0.89/wp-content/uploads/2019/03/gitconfig-768x522.png 768w" sizes="(max-width: 580px) 100vw, 580px" />](https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig.png)<figcaption>Finding your key ID and adding the key to git</figcaption></figure>
+[<img src="https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig-1024x696.png" alt="Finding your key ID and adding the key to git" class="wp-image-6281" width="580" height="394" srcset="https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig-1024x696.png 1024w, https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig-150x102.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig-300x204.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig-768x522.png 768w" sizes="(max-width: 580px) 100vw, 580px" />](https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig.png)<figcaption>Finding your key ID and adding the key to git</figcaption></figure>
 
 <p>On Windows the process for signing git commits is much the same. First install <a href="https://gitforwindows.org/">Git for Windows</a> and use git bash instead of Terminal.</p>
 
@@ -112,7 +112,7 @@
 
 <p>In Preferences, search for ‘git signing’ and select ‘Git: Enable Commit Signing’:<figure class="wp-block-image"></figure></p>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning.png"><img src="https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-1024x625.png" alt="Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits" class="wp-image-6282" srcset="http://192.168.0.89/wp-content/uploads/2019/03/VSCode-GitSigning-1024x625.png 1024w, http://192.168.0.89/wp-content/uploads/2019/03/VSCode-GitSigning-150x92.png 150w, http://192.168.0.89/wp-content/uploads/2019/03/VSCode-GitSigning-300x183.png 300w, http://192.168.0.89/wp-content/uploads/2019/03/VSCode-GitSigning-768x469.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>&lt;figcaption&gt;Enable Commit Signing in Visual Studio Code preferences&lt;/figcaption&gt;&lt;/figure&gt;</p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning.png"><img src="https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-1024x625.png" alt="Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits" class="wp-image-6282" srcset="https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-1024x625.png 1024w, https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-150x92.png 150w, https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-300x183.png 300w, https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning-768x469.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>&lt;figcaption&gt;Enable Commit Signing in Visual Studio Code preferences&lt;/figcaption&gt;&lt;/figure&gt;</p>
 
 <p><a href="https://code.visualstudio.com/docs/introvideos/versioncontrol">VSCode supports version control using git</a> from directly within the VSCode window. On your first commit, you’ll be prompted to enter the password for your GPG key before the commit will complete.</p>
 

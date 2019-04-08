@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -62,11 +62,11 @@
 
 <p>Launch ControlPlane and enable ‘Start ControlPlane at login’ (if it’s not running, actions won’t fire). Here I’ve also set a default context (Secure). This is important because I want the secure actions firing by default with other actions only firing if I connect to a specific context (such as Home).</p>
 
-<p><img class="alignnone size-full wp-image-3022" alt="ControlPlane General" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General.png" width="527" height="491" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-General.png 527w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-General-150x139.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-General-300x279.png 300w" sizes="(max-width: 527px) 100vw, 527px" /></p>
+<p><img class="alignnone size-full wp-image-3022" alt="ControlPlane General" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General.png" width="527" height="491" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General.png 527w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General-150x139.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General-300x279.png 300w" sizes="(max-width: 527px) 100vw, 527px" /></p>
 
 <p>I’ve enabled the display of the context name in the menu bar so that I can easily see which context the laptop is in:</p>
 
-<p><img class="alignnone size-full wp-image-3027" alt="ControlPlane Menubar" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar.png" width="539" height="63" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Menubar.png 539w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Menubar-150x17.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Menubar-300x35.png 300w" sizes="(max-width: 539px) 100vw, 539px" /></p>
+<p><img class="alignnone size-full wp-image-3027" alt="ControlPlane Menubar" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar.png" width="539" height="63" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar.png 539w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar-150x17.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar-300x35.png 300w" sizes="(max-width: 539px) 100vw, 539px" /></p>
 
 <h1 id="configuring-contexts">Configuring Contexts</h1>
 
@@ -74,11 +74,11 @@
 
 <p>I’ve created three Contexts – Home, Mobile (for use with a MiFi-style device) and Secure. Rules are applied to Home and Mobile, whilst Secure has no rules applied and thus applies to any location that isn’t Home or Mobile.</p>
 
-<p><img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Contexts.png 507w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Contexts-150x150.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></p>
+<p><img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png 507w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts-150x150.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></p>
 
 <p>To define the Home context, I’ve used the ‘WiFi BSSID’ rule to define that if the MacBook has a connection to my home router, then I must be at home. 100% confidence is enabled on this rule because I know it’s highly unlikely that I’ll be connected to the same SSID and MAC address at any other location.</p>
 
-<p><img class="alignnone size-full wp-image-3024" alt="ControlPlane Rules" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules.png" width="591" height="476" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Rules.png 591w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Rules-150x120.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Rules-300x241.png 300w" sizes="(max-width: 591px) 100vw, 591px" /></p>
+<p><img class="alignnone size-full wp-image-3024" alt="ControlPlane Rules" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules.png" width="591" height="476" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules.png 591w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules-150x120.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules-300x241.png 300w" sizes="(max-width: 591px) 100vw, 591px" /></p>
 
 <p>I could use various other evidence sources; however I’ve found that a WiFi connection is the simplest approach for my needs.</p>
 
@@ -105,7 +105,7 @@
 
 <p>Mounting or dismounting a remote share requires the full path to that share. That full path can be found via Get Info from the right-click context menu on the share.</p>
 
-<p><img class="alignnone size-full wp-image-3028" alt="ControlPlane Mount" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount.png" width="612" height="605" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Mount.png 612w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Mount-150x148.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Mount-300x296.png 300w" sizes="(max-width: 612px) 100vw, 612px" /></p>
+<p><img class="alignnone size-full wp-image-3028" alt="ControlPlane Mount" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount.png" width="612" height="605" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount.png 612w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount-150x148.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount-300x296.png 300w" sizes="(max-width: 612px) 100vw, 612px" /></p>
 
 <p>I could also unmount the same share when I leave the Home context.</p>
 

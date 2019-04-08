@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/appv-faqs.html">App-V 4.x FAQs</a><a class="page-link" href="/appv5-faqs.html">Microsoft Application Virtualization 5 FAQs</a><a class="page-link" href="/appvrecipes.html">App-V Recipes</a><a class="page-link" href="/home-page.html">Home Page</a><a class="page-link" href="/scriptcorner.html">Script Corner</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">About</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -50,13 +50,13 @@
 
 <p>To do that, <a href="http://support.microsoft.com/kb/308427">open the System event log</a> and find any events from source ‘Power-Troubleshooter’ that indicate that the system has returned from sleep mode – similar to this:</p>
 
-<p><img class="alignnone size-full wp-image-1098" title="power-troubleshooter1" src="http://stealthpuppy.com/wp-content/uploads/2009/05/power-troubleshooter1.png" alt="power-troubleshooter1" width="590" height="409" srcset="http://192.168.0.89/wp-content/uploads/2009/05/power-troubleshooter1.png 590w, http://192.168.0.89/wp-content/uploads/2009/05/power-troubleshooter1-150x103.png 150w, http://192.168.0.89/wp-content/uploads/2009/05/power-troubleshooter1-300x207.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></p>
+<p><img class="alignnone size-full wp-image-1098" title="power-troubleshooter1" src="http://stealthpuppy.com/wp-content/uploads/2009/05/power-troubleshooter1.png" alt="power-troubleshooter1" width="590" height="409" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/power-troubleshooter1.png 590w, https://stealthpuppy.com/wp-content/uploads/2009/05/power-troubleshooter1-150x103.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/power-troubleshooter1-300x207.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></p>
 
 <p>In my case, the network adapter was the problem. I think my router is sending some weird packets around the network. I can’t fix the source of the problem (it’s a pretty basic router), but I can configure the network adapter to prevent it from waking the computer.</p>
 
 <p>Open the properties of the adapter in Device Manager and either untick ‘Allow the device to wake the computer’ or tick ‘Only allow a magic packet to wake the computer’ and the computer will stay in sleep mode.</p>
 
-<p><img class="alignnone size-full wp-image-1099" title="networkadapterproperties" src="http://stealthpuppy.com/wp-content/uploads/2009/05/networkadapterproperties.png" alt="networkadapterproperties" width="414" height="335" srcset="http://192.168.0.89/wp-content/uploads/2009/05/networkadapterproperties.png 414w, http://192.168.0.89/wp-content/uploads/2009/05/networkadapterproperties-150x121.png 150w, http://192.168.0.89/wp-content/uploads/2009/05/networkadapterproperties-300x242.png 300w" sizes="(max-width: 414px) 100vw, 414px" /></p>
+<p><img class="alignnone size-full wp-image-1099" title="networkadapterproperties" src="http://stealthpuppy.com/wp-content/uploads/2009/05/networkadapterproperties.png" alt="networkadapterproperties" width="414" height="335" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/networkadapterproperties.png 414w, https://stealthpuppy.com/wp-content/uploads/2009/05/networkadapterproperties-150x121.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/networkadapterproperties-300x242.png 300w" sizes="(max-width: 414px) 100vw, 414px" /></p>
 
 <p>Related links:</p>
 
