@@ -1,0 +1,39 @@
+@ECHO OFF
+SET INSTALLDIR=Q:\OOo3.001\Java
+SET SOURCE=%CD%
+START /WAIT /d %SOURCE% jre-6u18-windows-i586-s.exe /s INSTALLDIR=%INSTALLDIR% ADDLOCAL=jrecore IEXPLORER=1 MOZILLA=1 JAVAUPDATE=0 AUTOUPDATECHECK=0 REBOOT=Suppress
+IF EXIST "%PUBLIC%\Desktop\Java Web Start.LNK" DEL "%PUBLIC%\Desktop\Java Web Start.LNK"
+IF EXIST "%ALLUSERSPROFILE%\Desktop\Java Web Start.LNK" DEL "%ALLUSERSPROFILE%\Desktop\Java Web Start.LNK"
+IF EXIST "%ALLUSERSPROFILE%\Start Menu\Programs\Java Web Start\Java Web Start.LNK" RD /Q /S "%ALLUSERSPROFILE%\Start Menu\Programs\Java Web Start"
+IF EXIST "%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Java Web Start\Java Web Start.LNK" RD /Q /S "%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Java Web Start"
+
+REM Configure on x86 systems
+IF "%PROCESSOR_ARCHITECTURE%"=="x86" (
+REG.EXE ADD "HKLM\SOFTWARE\JavaSoft\Java Plug-in\1.6.0_18" /v HideSystemTrayIcon /t REG_DWORD /d 1 /f
+REG.EXE ADD "HKLM\SOFTWARE\JavaSoft\Java Update\Policy" /v EnableJavaUpdate /t REG_DWORD /d 0 /f
+REG.EXE ADD "HKLM\SOFTWARE\JavaSoft\Java Update\Policy" /v EnableAutoUpdateCheck /t REG_DWORD /d 0 /f
+REG.EXE ADD "HKLM\SOFTWARE\JavaSoft\Java Update\Policy" /v NotifyDownload /t REG_DWORD /d 0 /f
+REG.EXE ADD "HKLM\SOFTWARE\JavaSoft\Java Update\Policy" /v NotifyInstall /t REG_DWORD /d 0 /f
+REG.EXE DELETE "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v SunJavaUpdateSched /f
+
+REM Uninstall Java Quick Start service
+"%INSTALLDIR%\jre6\bin\jqs" -unregister
+)
+
+REM Configure on x64 systems
+IF "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
+%SYSTEMROOT%\SysWOW64\REG.EXE ADD "HKLM\SOFTWARE\JavaSoft\Java Plug-in\1.6.0_18" /v HideSystemTrayIcon /t REG_DWORD /d 1 /f
+%SYSTEMROOT%\SysWOW64\REG.EXE ADD "HKLM\SOFTWARE\JavaSoft\Java Update\Policy" /v EnableJavaUpdate /t REG_DWORD /d 0 /f
+%SYSTEMROOT%\SysWOW64\REG.EXE ADD "HKLM\SOFTWARE\JavaSoft\Java Update\Policy" /v EnableAutoUpdateCheck /t REG_DWORD /d 0 /f
+%SYSTEMROOT%\SysWOW64\REG.EXE ADD "HKLM\SOFTWARE\JavaSoft\Java Update\Policy" /v NotifyDownload /t REG_DWORD /d 0 /f
+%SYSTEMROOT%\SysWOW64\REG.EXE ADD "HKLM\SOFTWARE\JavaSoft\Java Update\Policy" /v NotifyInstall /t REG_DWORD /d 0 /f
+%SYSTEMROOT%\SysWOW64\REG.EXE DELETE "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v SunJavaUpdateSched /f
+
+REM Uninstall Java Quick Start service
+"%INSTALLDIR%\jre6\bin\jqs" -unregister
+)
+
+REM Cleanup installer source
+IF EXIST "%APPDATA%\Sun\Java\jre1.6.0_18" RD /Q /S "%APPDATA%\Sun\Java\jre1.6.0_18"
+IF EXIST "%APPDATA%\LocalLow\Sun\Java\jre1.6.0_18" /RD /Q /S "%APPDATA%\LocalLow\Sun\Java\jre1.6.0_18"
+
