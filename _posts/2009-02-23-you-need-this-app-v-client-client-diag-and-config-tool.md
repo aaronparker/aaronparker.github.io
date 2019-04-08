@@ -1,0 +1,29 @@
+---
+id: 916
+title: 'You need this &#8211; App-V Client Client Diag and Config tool'
+date: 2009-02-23T14:15:01+10:00
+author: Aaron Parker
+layout: post
+guid: http://blog.stealthpuppy.com/?p=916
+permalink: /you-need-this-app-v-client-client-diag-and-config-tool/
+aktt_notify_twitter:
+  - 'no'
+categories:
+  - Applications
+tags:
+  - App-V
+---
+[Ment van der Plas](http://desktopcontrol.blogspot.com/), of [Login Consultants](http://www.loginconsultants.com/), has gone and created the most awesome App-V client tool &#8211; the [App-V 4.5 Client Diagnostic and Configuration tool:](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=34&Itemid=62)
+
+> ACDC makes it possible for administrators or users to troubleshoot virtual applications and the environment they run in:
+> 
+>   * Launch predefined and custom commands within the virtual environment of each application.
+>   * See the impact of the App-V Client and the available virtual applications on your system by calculating package size, cache size, user delta file size, log file size etc.
+>   * Diagnose problems with App-V applications by parsing the App-V Client log file (in real time) and search any message online.
+>   * Configure settings that are not visible in the App-V Client GUI, such as &#8220;Predictive Streaming&#8221;, &#8220;Allow Stream from File&#8221;, &#8220;Max Package Age&#8221; and many more.
+>   * Give an overview of application and package information by merging important WMI, registry and OSD information in one single window.
+>   * ACDC can be run both as an Administrator and as a Limited User. Running as a limited user will limit the functionality of the tool due to the fact that it has less permission on the system.
+
+I&#8217;ve not had time yet to go through the tool in detail, but I&#8217;m definitely adding this one to my toolkit. Thanks Ment!
+
+<img class="aligncenter size-full wp-image-920" title="App-V 4.5 Client Config and Diag tool screenshot" src="http://stealthpuppy.com/wp-content/uploads/2009/02/appvclientdiagtool1.png" alt="App-V 4.5 Client Config and Diag tool screenshot" width="590" height="389" srcset="http://192.168.0.89/wp-content/uploads/2009/02/appvclientdiagtool1.png 590w, http://192.168.0.89/wp-content/uploads/2009/02/appvclientdiagtool1-300x197.png 300w" sizes="(max-width: 590px) 100vw, 590px" />
