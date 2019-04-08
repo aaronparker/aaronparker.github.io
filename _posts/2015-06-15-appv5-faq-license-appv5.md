@@ -28,7 +28,7 @@ App-V is licensed as a component of the [Microsoft Desktop Optimisation Pack](ht
 
 > If the underlying Windows Software Assurance or Windows VDA is licensed per device, then MDOP covers the licensed device. If the underlying Windows Software Assurance or Windows VDA is licensed per user, then MDOP extends across all of the licensed user&#8217;s devices.
 
-[<img class="alignnone size-full wp-image-4071" src="http://stealthpuppy.com/wp-content/uploads/2015/06/SoftwareAssurance.png" alt="SoftwareAssurance" width="1077" height="253" srcset="http://192.168.0.89/wp-content/uploads/2015/06/SoftwareAssurance.png 1077w, http://192.168.0.89/wp-content/uploads/2015/06/SoftwareAssurance-150x35.png 150w, http://192.168.0.89/wp-content/uploads/2015/06/SoftwareAssurance-300x70.png 300w, http://192.168.0.89/wp-content/uploads/2015/06/SoftwareAssurance-1024x241.png 1024w" sizes="(max-width: 1077px) 100vw, 1077px" />](http://stealthpuppy.com/wp-content/uploads/2015/06/SoftwareAssurance.png)
+[<img class="alignnone size-full wp-image-4071" src="http://stealthpuppy.com/wp-content/uploads/2015/06/SoftwareAssurance.png" alt="SoftwareAssurance" width="1077" height="253" srcset="https://stealthpuppy.com/wp-content/uploads/2015/06/SoftwareAssurance.png 1077w, https://stealthpuppy.com/wp-content/uploads/2015/06/SoftwareAssurance-150x35.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/06/SoftwareAssurance-300x70.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/06/SoftwareAssurance-1024x241.png 1024w" sizes="(max-width: 1077px) 100vw, 1077px" />](http://stealthpuppy.com/wp-content/uploads/2015/06/SoftwareAssurance.png)
 
 # Remote Desktop Services
 

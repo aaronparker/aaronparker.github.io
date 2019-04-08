@@ -17,7 +17,7 @@ categories:
 ---
 While attempting to unzip a file this afternoon, Windows was just not going to play ball:
 
-<img class="size-full wp-image-1199 alignnone" title="Copy Folder" src="http://stealthpuppy.com/wp-content/uploads/2009/08/Copy-Folder.png" alt="Copy Folder" width="480" height="295" srcset="http://192.168.0.89/wp-content/uploads/2009/08/Copy-Folder.png 480w, http://192.168.0.89/wp-content/uploads/2009/08/Copy-Folder-150x92.png 150w, http://192.168.0.89/wp-content/uploads/2009/08/Copy-Folder-300x184.png 300w" sizes="(max-width: 480px) 100vw, 480px" /> 
+<img class="size-full wp-image-1199 alignnone" title="Copy Folder" src="http://stealthpuppy.com/wp-content/uploads/2009/08/Copy-Folder.png" alt="Copy Folder" width="480" height="295" srcset="https://stealthpuppy.com/wp-content/uploads/2009/08/Copy-Folder.png 480w, https://stealthpuppy.com/wp-content/uploads/2009/08/Copy-Folder-150x92.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/08/Copy-Folder-300x184.png 300w" sizes="(max-width: 480px) 100vw, 480px" /> 
 
 That&#8217;s 5.99 [**petabytes**](http://en.wikipedia.org/wiki/Petabyte) &#8211; I&#8217;m probably not going to see that much storage space in a desktop machine for a few years. Although <span style="background-color: #ffffff;">I&#8217;m not sure why there is a &#8216;Try Again&#8217; button on this dialog box, maybe it&#8217;s expecting me to wait for Western Digital&#8217;s new line of  10PB VelociRaptors.</span>
 

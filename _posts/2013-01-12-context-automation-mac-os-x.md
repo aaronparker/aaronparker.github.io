@@ -34,11 +34,11 @@ Downloading and installing ControlPlane is very simple &#8211; download the disk
 
 Launch ControlPlane and enable &#8216;Start ControlPlane at login&#8217; (if it&#8217;s not running, actions won&#8217;t fire). Here I&#8217;ve also set a default context (Secure). This is important because I want the secure actions firing by default with other actions only firing if I connect to a specific context (such as Home).
 
-<img class="alignnone size-full wp-image-3022" alt="ControlPlane General" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General.png" width="527" height="491" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-General.png 527w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-General-150x139.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-General-300x279.png 300w" sizes="(max-width: 527px) 100vw, 527px" /> 
+<img class="alignnone size-full wp-image-3022" alt="ControlPlane General" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General.png" width="527" height="491" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General.png 527w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General-150x139.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-General-300x279.png 300w" sizes="(max-width: 527px) 100vw, 527px" /> 
 
 I&#8217;ve enabled the display of the context name in the menu bar so that I can easily see which context the laptop is in:
 
-<img class="alignnone size-full wp-image-3027" alt="ControlPlane Menubar" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar.png" width="539" height="63" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Menubar.png 539w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Menubar-150x17.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Menubar-300x35.png 300w" sizes="(max-width: 539px) 100vw, 539px" /> 
+<img class="alignnone size-full wp-image-3027" alt="ControlPlane Menubar" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar.png" width="539" height="63" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar.png 539w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar-150x17.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Menubar-300x35.png 300w" sizes="(max-width: 539px) 100vw, 539px" /> 
 
 # Configuring Contexts
 
@@ -46,11 +46,11 @@ Create a Context with a name, Evidence Sources (properties of a location, physic
 
 I&#8217;ve created three Contexts &#8211; Home, Mobile (for use with a MiFi-style device) and Secure. Rules are applied to Home and Mobile, whilst Secure has no rules applied and thus applies to any location that isn&#8217;t Home or Mobile.
 
-<img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Contexts.png 507w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Contexts-150x150.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /> 
+<img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts.png 507w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts-150x150.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /> 
 
 To define the Home context, I&#8217;ve used the &#8216;WiFi BSSID&#8217; rule to define that if the MacBook has a connection to my home router, then I must be at home. 100% confidence is enabled on this rule because I know it&#8217;s highly unlikely that I&#8217;ll be connected to the same SSID and MAC address at any other location.
 
-<img class="alignnone size-full wp-image-3024" alt="ControlPlane Rules" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules.png" width="591" height="476" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Rules.png 591w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Rules-150x120.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Rules-300x241.png 300w" sizes="(max-width: 591px) 100vw, 591px" /> 
+<img class="alignnone size-full wp-image-3024" alt="ControlPlane Rules" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules.png" width="591" height="476" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules.png 591w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules-150x120.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Rules-300x241.png 300w" sizes="(max-width: 591px) 100vw, 591px" /> 
 
 I could use various other evidence sources; however I&#8217;ve found that a WiFi connection is the simplest approach for my needs.
 
@@ -73,7 +73,7 @@ ControlPlane provides a plethora of actions and enabling or disabling Time Machi
 
 Mounting or dismounting a remote share requires the full path to that share. That full path can be found via Get Info from the right-click context menu on the share.
 
-<img class="alignnone size-full wp-image-3028" alt="ControlPlane Mount" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount.png" width="612" height="605" srcset="http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Mount.png 612w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Mount-150x148.png 150w, http://192.168.0.89/wp-content/uploads/2013/01/ControlPlane-Mount-300x296.png 300w" sizes="(max-width: 612px) 100vw, 612px" /> 
+<img class="alignnone size-full wp-image-3028" alt="ControlPlane Mount" src="http://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount.png" width="612" height="605" srcset="https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount.png 612w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount-150x148.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/01/ControlPlane-Mount-300x296.png 300w" sizes="(max-width: 612px) 100vw, 612px" /> 
 
 I could also unmount the same share when I leave the Home context.
 

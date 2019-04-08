@@ -96,7 +96,7 @@ Automating this process as much as possible will create a cleaner package and ma
 
 <span style="line-height: 1.714285714; font-size: 1rem;">Before sequencing, copy all of the required files into the sequencing VM, which should like something like this:</span>
 
-<img class="alignnone size-full wp-image-3064" alt="AppVFirefoxSetupFolder_thumb.png" src="http://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb.png" width="660" height="253" srcset="http://192.168.0.89/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb.png 660w, http://192.168.0.89/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb-150x57.png 150w, http://192.168.0.89/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb-300x115.png 300w, http://192.168.0.89/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb-624x239.png 624w" sizes="(max-width: 660px) 100vw, 660px" /> 
+<img class="alignnone size-full wp-image-3064" alt="AppVFirefoxSetupFolder_thumb.png" src="http://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb.png" width="660" height="253" srcset="https://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb.png 660w, https://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb-150x57.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb-300x115.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/03/AppVFirefoxSetupFolder_thumb-624x239.png 624w" sizes="(max-width: 660px) 100vw, 660px" /> 
 
 # Shortcuts
 

@@ -7,7 +7,7 @@ layout: revision
 guid: https://stealthpuppy.com/2593-autosave-v1/
 permalink: /2593-autosave-v1/
 ---
-[<img class="alignleft size-full wp-image-2604" title="Delete by Cari McGee" src="http://stealthpuppy.com/wp-content/uploads/2011/12/AppleKeyboardDelete.jpg" alt="Delete by Cari McGee" width="640" height="317" srcset="http://192.168.0.89/wp-content/uploads/2011/12/AppleKeyboardDelete.jpg 640w, http://192.168.0.89/wp-content/uploads/2011/12/AppleKeyboardDelete-150x74.jpg 150w, http://192.168.0.89/wp-content/uploads/2011/12/AppleKeyboardDelete-300x148.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />](http://www.flickr.com/photos/pleeker/5379549514/)
+[<img class="alignleft size-full wp-image-2604" title="Delete by Cari McGee" src="http://stealthpuppy.com/wp-content/uploads/2011/12/AppleKeyboardDelete.jpg" alt="Delete by Cari McGee" width="640" height="317" srcset="https://stealthpuppy.com/wp-content/uploads/2011/12/AppleKeyboardDelete.jpg 640w, https://stealthpuppy.com/wp-content/uploads/2011/12/AppleKeyboardDelete-150x74.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2011/12/AppleKeyboardDelete-300x148.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />](http://www.flickr.com/photos/pleeker/5379549514/)
 
 Windows profiles become larger over time &#8211; it&#8217;s an inescapable fact. This means that if you are using roaming profiles, logons (and logoff) will be longer and longer. It&#8217;s not just individual file sizes, but also the number of files stored in a profile that will make the&nbsp;synchronisation&nbsp;process slower.
 

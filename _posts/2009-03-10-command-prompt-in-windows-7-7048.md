@@ -24,4 +24,4 @@ Check out Command Prompt sporting the Consolas font:
 
 <img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="CommandPromptProperties" src="http://stealthpuppy.com/wp-content/uploads/2009/03/commandpromptproperties.png" border="0" alt="CommandPromptProperties" width="418" height="506" />  
 
-<img class="size-full wp-image-992 alignnone" title="commandprompt1" src="http://stealthpuppy.com/wp-content/uploads/2009/03/commandprompt1.png" alt="commandprompt1" width="581" height="507" srcset="http://192.168.0.89/wp-content/uploads/2009/03/commandprompt1.png 581w, http://192.168.0.89/wp-content/uploads/2009/03/commandprompt1-300x261.png 300w" sizes="(max-width: 581px) 100vw, 581px" />
+<img class="size-full wp-image-992 alignnone" title="commandprompt1" src="http://stealthpuppy.com/wp-content/uploads/2009/03/commandprompt1.png" alt="commandprompt1" width="581" height="507" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/commandprompt1.png 581w, https://stealthpuppy.com/wp-content/uploads/2009/03/commandprompt1-300x261.png 300w" sizes="(max-width: 581px) 100vw, 581px" />

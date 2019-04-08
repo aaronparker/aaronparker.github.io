@@ -21,7 +21,7 @@ I&#8217;ve been fortunate enough to have performed technical editor duties on a 
 
 [Packt Microsoft Carnival](http://www.packtpub.com/news/packt-microsoft-carnival) is a special offer by Packt Publishing during **May** where you can acquire several Microsoft’s titles with discounts.
 
-<img class="alignleft size-full wp-image-2721" title="Packt Publishing App-V discount" src="http://stealthpuppy.com/wp-content/uploads/2012/05/appv_discount.png" alt="Packt Publishing App-V discount" width="660" height="390" srcset="http://192.168.0.89/wp-content/uploads/2012/05/appv_discount.png 660w, http://192.168.0.89/wp-content/uploads/2012/05/appv_discount-150x88.png 150w, http://192.168.0.89/wp-content/uploads/2012/05/appv_discount-300x177.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
+<img class="alignleft size-full wp-image-2721" title="Packt Publishing App-V discount" src="http://stealthpuppy.com/wp-content/uploads/2012/05/appv_discount.png" alt="Packt Publishing App-V discount" width="660" height="390" srcset="https://stealthpuppy.com/wp-content/uploads/2012/05/appv_discount.png 660w, https://stealthpuppy.com/wp-content/uploads/2012/05/appv_discount-150x88.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/05/appv_discount-300x177.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
 
 Packt’s Microsoft Carnival includes a variety of titles on App-V, BizTalk, SharePoint, SQL Server, Silverlight, .NET Framework stack, XNA, Forefront, System Center and more. Packt has reduce the prices on its selected Microsoft titles by **up to 30%.** Some of the books include:
 

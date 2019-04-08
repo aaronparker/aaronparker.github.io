@@ -76,7 +76,7 @@ Once extracted, you should have the following files required for Reader deployme
   * setup.exe
   * Setup.ini
 
-<a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/attachment/adobereaderxextractedfiles/" rel="attachment wp-att-2048"><img class="alignnone size-full wp-image-2048" title="AdobeReaderXExtractedFiles" src="http://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderXExtractedFiles.png" alt="" width="660" height="242" srcset="http://192.168.0.89/wp-content/uploads/2010/10/AdobeReaderXExtractedFiles.png 660w, http://192.168.0.89/wp-content/uploads/2010/10/AdobeReaderXExtractedFiles-150x55.png 150w, http://192.168.0.89/wp-content/uploads/2010/10/AdobeReaderXExtractedFiles-300x110.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
+<a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/attachment/adobereaderxextractedfiles/" rel="attachment wp-att-2048"><img class="alignnone size-full wp-image-2048" title="AdobeReaderXExtractedFiles" src="http://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderXExtractedFiles.png" alt="" width="660" height="242" srcset="https://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderXExtractedFiles.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderXExtractedFiles-150x55.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderXExtractedFiles-300x110.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
 # Creating a custom Transform for Reader X
 
@@ -171,7 +171,7 @@ To disable the Adobe Acrobat Update Service introduced with Reader 10.1, navigat
   * Drop the row _ServiceInstall1_ to prevent the install of the service
   * Change the value of StartType to 3 (manual) or 4 (disabled)
 
-<a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/attachment/msi-service/" rel="attachment wp-att-2291"><img class="alignnone size-full wp-image-2291" title="MSI-Service" src="http://stealthpuppy.com/wp-content/uploads/2010/10/MSI-Service.png" alt="" width="660" height="369" srcset="http://192.168.0.89/wp-content/uploads/2010/10/MSI-Service.png 660w, http://192.168.0.89/wp-content/uploads/2010/10/MSI-Service-150x83.png 150w, http://192.168.0.89/wp-content/uploads/2010/10/MSI-Service-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
+<a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/attachment/msi-service/" rel="attachment wp-att-2291"><img class="alignnone size-full wp-image-2291" title="MSI-Service" src="http://stealthpuppy.com/wp-content/uploads/2010/10/MSI-Service.png" alt="" width="660" height="369" srcset="https://stealthpuppy.com/wp-content/uploads/2010/10/MSI-Service.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/10/MSI-Service-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/10/MSI-Service-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
 # Disabling Additional Menu Items
 
@@ -239,13 +239,13 @@ app.hideMenuItem("SystemInformation");[/code]
 
 To deliver the script with the Reader package, use the Files and Folders section in the Customization Wizard. Add the files to _Destination Computer / ProgramFilesFolder / Adobe / Reader 10.0 / Reader / JavaScripts_ (see Step 3 above).
 
-<a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/attachment/hideitems/" rel="attachment wp-att-2292"><img class="alignnone size-full wp-image-2292" title="HideItems" src="http://stealthpuppy.com/wp-content/uploads/2010/10/HideItems.png" alt="" width="660" height="369" srcset="http://192.168.0.89/wp-content/uploads/2010/10/HideItems.png 660w, http://192.168.0.89/wp-content/uploads/2010/10/HideItems-150x83.png 150w, http://192.168.0.89/wp-content/uploads/2010/10/HideItems-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
+<a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/attachment/hideitems/" rel="attachment wp-att-2292"><img class="alignnone size-full wp-image-2292" title="HideItems" src="http://stealthpuppy.com/wp-content/uploads/2010/10/HideItems.png" alt="" width="660" height="369" srcset="https://stealthpuppy.com/wp-content/uploads/2010/10/HideItems.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/10/HideItems-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/10/HideItems-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
 # Enforcing Protected Mode
 
 [Adobe Reader X Protected Mode](http://blogs.adobe.com/asset/2010/07/introducing-adobe-reader-protected-mode.html) will assist in reducing the potential security threats when opening or viewing PDF files, so it&#8217;s a feature you&#8217;ll want to ensure remains enabled on client computers. However, by default, users can turn this feature off &#8211; this option is available in the Preferences dialog box under General:
 
-[<img class="alignnone size-full wp-image-2024" title="EnableProtectedModeAtStartup" src="http://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup.png" alt="" width="660" height="231" srcset="http://192.168.0.89/wp-content/uploads/2010/10/EnableProtectedModeAtStartup.png 660w, http://192.168.0.89/wp-content/uploads/2010/10/EnableProtectedModeAtStartup-150x52.png 150w, http://192.168.0.89/wp-content/uploads/2010/10/EnableProtectedModeAtStartup-300x105.png 300w" sizes="(max-width: 660px) 100vw, 660px" />](http://stealthpuppy.com/?attachment_id=2024)
+[<img class="alignnone size-full wp-image-2024" title="EnableProtectedModeAtStartup" src="http://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup.png" alt="" width="660" height="231" srcset="https://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup-150x52.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup-300x105.png 300w" sizes="(max-width: 660px) 100vw, 660px" />](http://stealthpuppy.com/?attachment_id=2024)
 
 In the user&#8217;s context, Protected Mode is controlled with the following Registry value:
 
@@ -283,7 +283,7 @@ To find the complete list of preferences for Reader and Acrobat you should refer
 
 > The Administrator&#8217;s Information Manager (AIM) is an auto-updating and customizable AIR application containing the Preference Reference. AIM also includes and a growing list of other resources of interest to administrators in enterprise settings.
 
-<a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/attachment/admininformaitonmanager/" rel="attachment wp-att-2051"><img class="alignnone size-full wp-image-2051" title="AdminInformaitonManager" src="http://stealthpuppy.com/wp-content/uploads/2010/10/AdminInformaitonManager.png" alt="" width="660" height="353" srcset="http://192.168.0.89/wp-content/uploads/2010/10/AdminInformaitonManager.png 660w, http://192.168.0.89/wp-content/uploads/2010/10/AdminInformaitonManager-150x80.png 150w, http://192.168.0.89/wp-content/uploads/2010/10/AdminInformaitonManager-300x160.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
+<a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/attachment/admininformaitonmanager/" rel="attachment wp-att-2051"><img class="alignnone size-full wp-image-2051" title="AdminInformaitonManager" src="http://stealthpuppy.com/wp-content/uploads/2010/10/AdminInformaitonManager.png" alt="" width="660" height="353" srcset="https://stealthpuppy.com/wp-content/uploads/2010/10/AdminInformaitonManager.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/10/AdminInformaitonManager-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/10/AdminInformaitonManager-300x160.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
 # Additional Reading
 

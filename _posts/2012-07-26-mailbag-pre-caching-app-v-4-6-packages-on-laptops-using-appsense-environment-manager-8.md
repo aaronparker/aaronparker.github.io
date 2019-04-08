@@ -23,7 +23,7 @@ tags:
 [Rory](https://twitter.com/Rorymon) [asks via Twitter](https://twitter.com/Rorymon/status/228536440403931136) &#8211; can we pre-cache App-V packages on laptop clients so that all applications are available offline, using [AppSense Environment Manager](http://www.appsense.com/policy-and-governance)?:
 
 <p style="text-align: center;">
-  <img class="size-full wp-image-2796 aligncenter" title="Rory Asks" src="http://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks.png" alt="Rory Asks" width="519" height="138" srcset="http://192.168.0.89/wp-content/uploads/2012/07/RoryAsks.png 519w, http://192.168.0.89/wp-content/uploads/2012/07/RoryAsks-150x39.png 150w, http://192.168.0.89/wp-content/uploads/2012/07/RoryAsks-300x79.png 300w" sizes="(max-width: 519px) 100vw, 519px" />
+  <img class="size-full wp-image-2796 aligncenter" title="Rory Asks" src="http://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks.png" alt="Rory Asks" width="519" height="138" srcset="https://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks.png 519w, https://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks-150x39.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/07/RoryAsks-300x79.png 300w" sizes="(max-width: 519px) 100vw, 519px" />
 </p>
 
 <p style="text-align: left;">

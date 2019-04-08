@@ -9,7 +9,7 @@ permalink: /5378-revision-v1/
 ---
 # About Aaron Parker
 
-<img class="alignleft wp-image-3930 size-full" style="padding-right: 20px; padding-bottom: 20px;" src="http://stealthpuppy.com/wp-content/uploads/2009/02/HeadShotCircle.png" alt="Aaron Parker" width="195" height="195" srcset="http://192.168.0.89/wp-content/uploads/2009/02/HeadShotCircle.png 195w, http://192.168.0.89/wp-content/uploads/2009/02/HeadShotCircle-150x150.png 150w" sizes="(max-width: 195px) 100vw, 195px" /> My name is Aaron Parker and I&#8217;m a Solutions Architect in the Office of the CTO at [Insentra](http://www.insentra.com.au) responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
+<img class="alignleft wp-image-3930 size-full" style="padding-right: 20px; padding-bottom: 20px;" src="http://stealthpuppy.com/wp-content/uploads/2009/02/HeadShotCircle.png" alt="Aaron Parker" width="195" height="195" srcset="https://stealthpuppy.com/wp-content/uploads/2009/02/HeadShotCircle.png 195w, https://stealthpuppy.com/wp-content/uploads/2009/02/HeadShotCircle-150x150.png 150w" sizes="(max-width: 195px) 100vw, 195px" /> My name is Aaron Parker and I&#8217;m a Solutions Architect in the Office of the CTO at [Insentra](http://www.insentra.com.au) responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
 
 I&#8217;ve been in the IT industry for over 20 years and bring a wide range of experience in enterprise level End-user computing solutions, including Server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
 
@@ -53,7 +53,7 @@ I&#8217;ve been speaking events such as at Citrix Synergy, BriForum & E2EVC conf
   
   <tr>
     <td valign="top" width="171">
-      <img class="alignnone size-full wp-image-4537" src="http://stealthpuppy.com/wp-content/uploads/2009/02/vexpert_logo.jpg" alt="VMware vExpert logo" width="165" height="92" srcset="http://192.168.0.89/wp-content/uploads/2009/02/vexpert_logo.jpg 165w, http://192.168.0.89/wp-content/uploads/2009/02/vexpert_logo-150x84.jpg 150w" sizes="(max-width: 165px) 100vw, 165px" />
+      <img class="alignnone size-full wp-image-4537" src="http://stealthpuppy.com/wp-content/uploads/2009/02/vexpert_logo.jpg" alt="VMware vExpert logo" width="165" height="92" srcset="https://stealthpuppy.com/wp-content/uploads/2009/02/vexpert_logo.jpg 165w, https://stealthpuppy.com/wp-content/uploads/2009/02/vexpert_logo-150x84.jpg 150w" sizes="(max-width: 165px) 100vw, 165px" />
     </td>
     
     <td valign="top" width="472">
@@ -63,7 +63,7 @@ I&#8217;ve been speaking events such as at Citrix Synergy, BriForum & E2EVC conf
   
   <tr>
     <td valign="top" width="171">
-      <img class="alignnone size-full wp-image-4949" src="http://stealthpuppy.com/wp-content/uploads/2016/06/EUC-Champion-certification-logo.png" alt="VMware EUC Champions logo" width="165" height="91" srcset="http://192.168.0.89/wp-content/uploads/2016/06/EUC-Champion-certification-logo.png 165w, http://192.168.0.89/wp-content/uploads/2016/06/EUC-Champion-certification-logo-150x83.png 150w" sizes="(max-width: 165px) 100vw, 165px" />
+      <img class="alignnone size-full wp-image-4949" src="http://stealthpuppy.com/wp-content/uploads/2016/06/EUC-Champion-certification-logo.png" alt="VMware EUC Champions logo" width="165" height="91" srcset="https://stealthpuppy.com/wp-content/uploads/2016/06/EUC-Champion-certification-logo.png 165w, https://stealthpuppy.com/wp-content/uploads/2016/06/EUC-Champion-certification-logo-150x83.png 150w" sizes="(max-width: 165px) 100vw, 165px" />
     </td>
     
     <td valign="top" width="472">

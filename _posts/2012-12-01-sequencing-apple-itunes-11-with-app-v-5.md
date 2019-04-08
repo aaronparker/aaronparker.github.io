@@ -138,7 +138,7 @@ iTunes includes some DCOM components &#8211; the report shows:
 
 With the Apple Mobile Device Support, syncing with a virtualized iTunes should still work. The iTunesAdmin component appears to be related restricting access to Parental controls in Preferences. Clicking the lock will result the following error:
 
-<img class="alignnone size-full wp-image-2983" title="iTunes Parental error" alt="" src="http://stealthpuppy.com/wp-content/uploads/2012/12/Parental.png" width="381" height="109" srcset="http://192.168.0.89/wp-content/uploads/2012/12/Parental.png 381w, http://192.168.0.89/wp-content/uploads/2012/12/Parental-150x42.png 150w, http://192.168.0.89/wp-content/uploads/2012/12/Parental-300x85.png 300w" sizes="(max-width: 381px) 100vw, 381px" /> 
+<img class="alignnone size-full wp-image-2983" title="iTunes Parental error" alt="" src="http://stealthpuppy.com/wp-content/uploads/2012/12/Parental.png" width="381" height="109" srcset="https://stealthpuppy.com/wp-content/uploads/2012/12/Parental.png 381w, https://stealthpuppy.com/wp-content/uploads/2012/12/Parental-150x42.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/12/Parental-300x85.png 300w" sizes="(max-width: 381px) 100vw, 381px" /> 
 
 ## Driver
 

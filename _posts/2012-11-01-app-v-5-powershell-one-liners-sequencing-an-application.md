@@ -29,7 +29,7 @@ I&#8217;ve placed all binaries and files, including a Sequencer Template into a 
 [code]@ECHO OFF  
 START /WAIT C:\Packages\Paint.NET.3.5.10.Install.exe /skipConfig /auto PDNUPDATING=0 CHECKFORUPDATES=0 DESKTOPSHORTCUT=0[/code]
 
-<img class="alignnone size-full wp-image-2895" title="PackagesFolder" src="http://stealthpuppy.com/wp-content/uploads/2012/11/PackagesFolder.png" alt="" width="660" height="190" srcset="http://192.168.0.89/wp-content/uploads/2012/11/PackagesFolder.png 660w, http://192.168.0.89/wp-content/uploads/2012/11/PackagesFolder-150x43.png 150w, http://192.168.0.89/wp-content/uploads/2012/11/PackagesFolder-300x86.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
+<img class="alignnone size-full wp-image-2895" title="PackagesFolder" src="http://stealthpuppy.com/wp-content/uploads/2012/11/PackagesFolder.png" alt="" width="660" height="190" srcset="https://stealthpuppy.com/wp-content/uploads/2012/11/PackagesFolder.png 660w, https://stealthpuppy.com/wp-content/uploads/2012/11/PackagesFolder-150x43.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/11/PackagesFolder-300x86.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
 
 Before running the **New-AppvSequencerPackage** command, I have changed directory to C:\Packages. To capture Paint.NET as a new App-V 5.0 package, I have used the following command:
 

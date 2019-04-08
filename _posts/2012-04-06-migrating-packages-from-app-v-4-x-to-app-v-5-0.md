@@ -23,7 +23,7 @@ To perform a migration of packages, I&#8217;ve setup a Windows 7 virtual machine
 
 Installing the App-V 5.0 Sequencer is very straight-forward process. Start the Sequencer setup from _appv\_sequencer\_setup.exe_:
 
-<img class="alignnone size-full wp-image-2887" title="SequencerSetup" src="http://stealthpuppy.com/wp-content/uploads/2012/04/SequencerSetup.png" alt="" width="660" height="461" srcset="http://192.168.0.89/wp-content/uploads/2012/04/SequencerSetup.png 660w, http://192.168.0.89/wp-content/uploads/2012/04/SequencerSetup-150x104.png 150w, http://192.168.0.89/wp-content/uploads/2012/04/SequencerSetup-300x209.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
+<img class="alignnone size-full wp-image-2887" title="SequencerSetup" src="http://stealthpuppy.com/wp-content/uploads/2012/04/SequencerSetup.png" alt="" width="660" height="461" srcset="https://stealthpuppy.com/wp-content/uploads/2012/04/SequencerSetup.png 660w, https://stealthpuppy.com/wp-content/uploads/2012/04/SequencerSetup-150x104.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/04/SequencerSetup-300x209.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
 
 You&#8217;ll need to accept the license agreement and join the Customer Experience Improvement Program if you wish to to so. Once the Sequencer is installed, two PowerShell modules are available – AppVPkgConverter and AppVSequencer. AppVPkgConverter is used for converting legacy packages to the new format.
 

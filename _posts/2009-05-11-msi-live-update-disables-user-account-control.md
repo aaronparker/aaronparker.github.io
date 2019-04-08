@@ -25,11 +25,11 @@ MSI supplies a [Live Update application](http://www.msi.com/index.php?func=html
 
 For some reason that I can&#8217;t quite fathom, it appears that MSI has decided that User Account Control needs to be disabled for their application to run. After installing MSI Live Update and running the main application, you are presented with this dialog box:
 
-<img class="alignnone size-full wp-image-1088" title="msiuacwarning" src="http://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning.png" alt="msiuacwarning" width="423" height="157" srcset="http://192.168.0.89/wp-content/uploads/2009/05/msiuacwarning.png 423w, http://192.168.0.89/wp-content/uploads/2009/05/msiuacwarning-150x55.png 150w, http://192.168.0.89/wp-content/uploads/2009/05/msiuacwarning-300x111.png 300w" sizes="(max-width: 423px) 100vw, 423px" /> 
+<img class="alignnone size-full wp-image-1088" title="msiuacwarning" src="http://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning.png" alt="msiuacwarning" width="423" height="157" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning.png 423w, https://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning-150x55.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/msiuacwarning-300x111.png 300w" sizes="(max-width: 423px) 100vw, 423px" /> 
 
 Clicking the only option available to you &#8211; the OK button, results in a UAC prompt:
 
-<img class="alignnone size-full wp-image-1089" title="msidisableuacprompt" src="http://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt.png" alt="msidisableuacprompt" width="460" height="417" srcset="http://192.168.0.89/wp-content/uploads/2009/05/msidisableuacprompt.png 460w, http://192.168.0.89/wp-content/uploads/2009/05/msidisableuacprompt-150x135.png 150w, http://192.168.0.89/wp-content/uploads/2009/05/msidisableuacprompt-300x271.png 300w" sizes="(max-width: 460px) 100vw, 460px" /> 
+<img class="alignnone size-full wp-image-1089" title="msidisableuacprompt" src="http://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt.png" alt="msidisableuacprompt" width="460" height="417" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt.png 460w, https://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt-150x135.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/msidisableuacprompt-300x271.png 300w" sizes="(max-width: 460px) 100vw, 460px" /> 
 
 Hmm.. DUAC.EXE, I wonder what that does. Let&#8217;s cancel that prompt and try the another tool included with Live Updater &#8211; Live Monitor. This one not only requires elevation to initially execute, but you just will not get anything useful out of it with UAC enabled.
 

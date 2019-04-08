@@ -24,11 +24,11 @@ Here&#8217;s a side-by-side comparison:
 <table border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td valign="top">
-      <img class="alignleft size-full wp-image-1015" title="7048 Start Menu" src="http://stealthpuppy.com/wp-content/uploads/2009/03/7048-startmenu1.png" alt="7048 Start Menu" width="152" height="554" srcset="http://192.168.0.89/wp-content/uploads/2009/03/7048-startmenu1.png 152w, http://192.168.0.89/wp-content/uploads/2009/03/7048-startmenu1-82x300.png 82w" sizes="(max-width: 152px) 100vw, 152px" />
+      <img class="alignleft size-full wp-image-1015" title="7048 Start Menu" src="http://stealthpuppy.com/wp-content/uploads/2009/03/7048-startmenu1.png" alt="7048 Start Menu" width="152" height="554" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/7048-startmenu1.png 152w, https://stealthpuppy.com/wp-content/uploads/2009/03/7048-startmenu1-82x300.png 82w" sizes="(max-width: 152px) 100vw, 152px" />
     </td>
     
     <td valign="top">
-      <img class="alignleft size-full wp-image-1016" title="7057 Start Menu" src="http://stealthpuppy.com/wp-content/uploads/2009/03/7057-startmenu.png" alt="7057 Start Menu" width="412" height="520" srcset="http://192.168.0.89/wp-content/uploads/2009/03/7057-startmenu.png 412w, http://192.168.0.89/wp-content/uploads/2009/03/7057-startmenu-237x300.png 237w" sizes="(max-width: 412px) 100vw, 412px" />
+      <img class="alignleft size-full wp-image-1016" title="7057 Start Menu" src="http://stealthpuppy.com/wp-content/uploads/2009/03/7057-startmenu.png" alt="7057 Start Menu" width="412" height="520" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/7057-startmenu.png 412w, https://stealthpuppy.com/wp-content/uploads/2009/03/7057-startmenu-237x300.png 237w" sizes="(max-width: 412px) 100vw, 412px" />
     </td>
   </tr>
 </table>

@@ -18,7 +18,7 @@ tags:
   - Login VSI
   - Performance
 ---
-<img class="alignleft size-full wp-image-2665" title="Login VSI" src="http://stealthpuppy.com/wp-content/uploads/2012/03/loginvsiheader.png" alt="Login VSI" width="186" height="35" srcset="http://192.168.0.89/wp-content/uploads/2012/03/loginvsiheader.png 186w, http://192.168.0.89/wp-content/uploads/2012/03/loginvsiheader-150x28.png 150w" sizes="(max-width: 186px) 100vw, 186px" />I was invited to sit in on a preview of the new Client Side Performance Testing module for [the Login VSI testing suite](http://www.loginvsi.com/en/product-overview). The session was led by [Mark Plettenberg](https://twitter.com/#!/markplettenberg), the lead developer of Login VSI. This new module looks very interesting because it will allow us to objectively measure and analyse the performance of remoting protocols such as Teradici PCoIP, Microsoft RDP, Citrix ICA/HDX and Quest EOP.
+<img class="alignleft size-full wp-image-2665" title="Login VSI" src="http://stealthpuppy.com/wp-content/uploads/2012/03/loginvsiheader.png" alt="Login VSI" width="186" height="35" srcset="https://stealthpuppy.com/wp-content/uploads/2012/03/loginvsiheader.png 186w, https://stealthpuppy.com/wp-content/uploads/2012/03/loginvsiheader-150x28.png 150w" sizes="(max-width: 186px) 100vw, 186px" />I was invited to sit in on a preview of the new Client Side Performance Testing module for [the Login VSI testing suite](http://www.loginvsi.com/en/product-overview). The session was led by [Mark Plettenberg](https://twitter.com/#!/markplettenberg), the lead developer of Login VSI. This new module looks very interesting because it will allow us to objectively measure and analyse the performance of remoting protocols such as Teradici PCoIP, Microsoft RDP, Citrix ICA/HDX and Quest EOP.
 
 # What is Login VSI?
 
@@ -26,13 +26,13 @@ If you&#8217;re not familiar with [Login VSI](http://www.loginvsi.com/en/product
 
 Login VSI was developed to solve the problem of sizing an environment correctly. Login VSI allows you to test and compare different hardware and software configurations in your environment. The results of those tests will ensure that you can scale your infrastructure confidently as well as understand the impact of changes to your environment.
 
-<img class="alignleft size-full wp-image-2666" title="Login VSI Archtecture" src="http://stealthpuppy.com/wp-content/uploads/2012/03/LoginVSIArchtecture.png" alt="Login VSI Archtecture" width="660" height="408" srcset="http://192.168.0.89/wp-content/uploads/2012/03/LoginVSIArchtecture.png 660w, http://192.168.0.89/wp-content/uploads/2012/03/LoginVSIArchtecture-150x92.png 150w, http://192.168.0.89/wp-content/uploads/2012/03/LoginVSIArchtecture-300x185.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
+<img class="alignleft size-full wp-image-2666" title="Login VSI Archtecture" src="http://stealthpuppy.com/wp-content/uploads/2012/03/LoginVSIArchtecture.png" alt="Login VSI Archtecture" width="660" height="408" srcset="https://stealthpuppy.com/wp-content/uploads/2012/03/LoginVSIArchtecture.png 660w, https://stealthpuppy.com/wp-content/uploads/2012/03/LoginVSIArchtecture-150x92.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/03/LoginVSIArchtecture-300x185.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
 
 # Client Side Performance Testing
 
 [Login Consultants](http://loginconsultants.com/) have been working to extend the testing of desktop virtualization environments to the client with the ability to test performance of remoting protocols. This is important because it gives us a full end-to-end picture of the user experience in desktop virtualization environments. Remoting protocols can now be tested for network characteristics like bandwidth and latency and the effects on the performance on the protocol.
 
-<img class="alignleft size-full wp-image-2667" title="Login VSI Overview" src="http://stealthpuppy.com/wp-content/uploads/2012/03/LoginVSIClideOverview.png" alt="Login VSI Overview" width="660" height="472" srcset="http://192.168.0.89/wp-content/uploads/2012/03/LoginVSIClideOverview.png 660w, http://192.168.0.89/wp-content/uploads/2012/03/LoginVSIClideOverview-150x107.png 150w, http://192.168.0.89/wp-content/uploads/2012/03/LoginVSIClideOverview-300x214.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
+<img class="alignleft size-full wp-image-2667" title="Login VSI Overview" src="http://stealthpuppy.com/wp-content/uploads/2012/03/LoginVSIClideOverview.png" alt="Login VSI Overview" width="660" height="472" srcset="https://stealthpuppy.com/wp-content/uploads/2012/03/LoginVSIClideOverview.png 660w, https://stealthpuppy.com/wp-content/uploads/2012/03/LoginVSIClideOverview-150x107.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/03/LoginVSIClideOverview-300x214.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
 
 The client-side measure launcher can now be used to perform these tests:
 

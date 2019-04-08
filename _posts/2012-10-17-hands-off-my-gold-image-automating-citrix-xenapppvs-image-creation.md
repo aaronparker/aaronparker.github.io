@@ -20,7 +20,7 @@ tags:
   - PVS
   - XenApp
 ---
-<img class="alignright size-full wp-image-2861" title="hands-off" src="http://stealthpuppy.com/wp-content/uploads/2012/10/hands-off.png" alt="" width="256" height="247" srcset="http://192.168.0.89/wp-content/uploads/2012/10/hands-off.png 256w, http://192.168.0.89/wp-content/uploads/2012/10/hands-off-150x144.png 150w" sizes="(max-width: 256px) 100vw, 256px" />Citrix Provisioning Services is a great solution for the rapid deployment of Windows workloads from a master image. However, rapid deployment is not a replacement for a consistent, repeatable method of creating that master image.
+<img class="alignright size-full wp-image-2861" title="hands-off" src="http://stealthpuppy.com/wp-content/uploads/2012/10/hands-off.png" alt="" width="256" height="247" srcset="https://stealthpuppy.com/wp-content/uploads/2012/10/hands-off.png 256w, https://stealthpuppy.com/wp-content/uploads/2012/10/hands-off-150x144.png 150w" sizes="(max-width: 256px) 100vw, 256px" />Citrix Provisioning Services is a great solution for the rapid deployment of Windows workloads from a master image. However, rapid deployment is not a replacement for a consistent, repeatable method of creating that master image.
 
 Today I covered this in my talk at Citrix Synergy, along with my colleague [Jonathan Eyton-Williams](https://twitter.com/jonathanew) &#8211; &#8220;[Hands off my gold image!](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy)&#8220;. This article will show you how to automate the deployment of a Windows image from bare metal to a finalised PVS image. This is part of an approach that we use for deployment within [Kelway](http://www.kelway.co.uk).
 
