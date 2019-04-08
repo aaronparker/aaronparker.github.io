@@ -1,6 +1,6 @@
 ---
 id: 5378
-title: About
+title: ABOUT
 date: 2017-02-24T21:05:08+10:00
 author: Aaron Parker
 layout: page
