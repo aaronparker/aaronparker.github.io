@@ -49,51 +49,52 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>Automating the installation of the Citrix ShareFile Drive Mapper requires deploying a code signing certificate to target machines before setup will complete. If you’ve installed the Drive Mapper client, you will have seen the following dialog box during setup:</p>
 
-<figure id="attachment_4416" aria-describedby="caption-attachment-4416" style="width: 501px" class="wp-caption alignnone">[<img class="size-full wp-image-4416" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png" alt="Citrix ShareFile Driver" width="501" height="232" srcset="https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png 501w, https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver-150x69.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver-300x139.png 300w" sizes="(max-width: 501px) 100vw, 501px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png)<figcaption id="caption-attachment-4416" class="wp-caption-text">Citrix ShareFile Driver prompt during install</figcaption></figure>
+<figure id="attachment_4416" aria-describedby="caption-attachment-4416" style="width: 501px" class="wp-caption alignnone">[<img class="size-full wp-image-4416" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png" alt="Citrix ShareFile Driver" width="501" height="232" srcset="https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png 501w, https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver-150x69.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver-300x139.png 300w" sizes="(max-width: 501px) 100vw, 501px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png)<figcaption id="caption-attachment-4416" class="wp-caption-text">Citrix ShareFile Driver prompt during install*&lt;/figure&gt;
 
-<p><a href="https://twitter.com/nelmedia">Mike Nelson</a> had some challenges deploying the client, so I’ve documented the process here.</p>
+[Mike Nelson](https://twitter.com/nelmedia) had some challenges deploying the client, so I've documented the process here.
 
-<h1 id="extract-the-code-signing-certificate">Extract the Code Signing Certificate</h1>
+# Extract the Code Signing Certificate
 
-<p>Manually install the Driver Mapper on a target machine and view the local certificates of the local computer with the Certificates snap-in (via mmc.exe). Open the <strong>Trusted Publishers</strong> folder to view the Citrix code signing certificate:</p>
+Manually install the Driver Mapper on a target machine and view the local certificates of the local computer with the Certificates snap-in (via mmc.exe). Open the **Trusted Publishers** folder to view the Citrix code signing certificate:
 
-<figure id="attachment_5158" aria-describedby="caption-attachment-5158" style="width: 982px" class="wp-caption alignnone">[<img class="wp-image-5158 size-full" src="http://stealthpuppy.com/wp-content/uploads/2016/09/Capture.png" alt="The code signing certificate in Certificate Manager" width="982" height="520" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/Capture.png 982w, https://stealthpuppy.com/wp-content/uploads/2016/09/Capture-150x79.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/Capture-300x159.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/Capture-768x407.png 768w" sizes="(max-width: 982px) 100vw, 982px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/Capture.png)<figcaption id="caption-attachment-5158" class="wp-caption-text">Citrix ShareFile Drive Mapper DigiCert code signing certificate</figcaption></figure>
+<figure id="attachment_5158" aria-describedby="caption-attachment-5158" style="width: 982px" class="wp-caption alignnone">[<img class="wp-image-5158 size-full" src="http://stealthpuppy.com/wp-content/uploads/2016/09/Capture.png" alt="The code signing certificate in Certificate Manager" width="982" height="520" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/Capture.png 982w, https://stealthpuppy.com/wp-content/uploads/2016/09/Capture-150x79.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/Capture-300x159.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/Capture-768x407.png 768w" sizes="(max-width: 982px) 100vw, 982px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/Capture.png)<figcaption id="caption-attachment-5158" class="wp-caption-text">Citrix ShareFile Drive Mapper DigiCert code signing certificate*&lt;/figure&gt;
 
-<p>View the properties of the certificate and you can see that it’s been issued by DigiCert:</p>
+View the properties of the certificate and you can see that it's been issued by DigiCert:
 
-<figure id="attachment_5159" aria-describedby="caption-attachment-5159" style="width: 405px" class="wp-caption alignnone">[<img class="size-full wp-image-5159" src="http://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png" alt="Citrix ShareFile Drive Mapper Digicert code signing certificate" width="405" height="515" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png 405w, https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties-118x150.png 118w, https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties-236x300.png 236w" sizes="(max-width: 405px) 100vw, 405px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png)<figcaption id="caption-attachment-5159" class="wp-caption-text">Citrix ShareFile Drive Mapper Digicert code signing certificate</figcaption></figure>
+<figure id="attachment_5159" aria-describedby="caption-attachment-5159" style="width: 405px" class="wp-caption alignnone">[<img class="size-full wp-image-5159" src="http://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png" alt="Citrix ShareFile Drive Mapper Digicert code signing certificate" width="405" height="515" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png 405w, https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties-118x150.png 118w, https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties-236x300.png 236w" sizes="(max-width: 405px) 100vw, 405px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png)<figcaption id="caption-attachment-5159" class="wp-caption-text">Citrix ShareFile Drive Mapper Digicert code signing certificate*&lt;/figure&gt;
 
-<p>Export the certificate to a local file (from the <strong>Details</strong> tab with <strong>Copy to File…</strong>) using the default DER encoded binary X.509 format.</p>
+Export the certificate to a local file (from the **Details** tab with **Copy to File...**) using the default DER encoded binary X.509 format.
 
-<h1 id="installing-the-sharefile-drive-mapper-certificate">Installing the ShareFile Drive Mapper Certificate</h1>
+# Installing the ShareFile Drive Mapper Certificate
 
-<p>Here is a couple of ways of deploying the code signing certificate to clients:</p>
+Here is a couple of ways of deploying the code signing certificate to clients:
 
-<h2 id="deploy-the-certificate-via-group-policy">Deploy the certificate via Group Policy</h2>
+## Deploy the certificate via Group Policy
 
-<p>Certificates can be deployed to the <strong>Trusted Publishers</strong> store via a Group Policy Object. Import the certificate into the <strong>Public Key Policies</strong> node under <strong>Security Settings</strong> in a GPO applied to an OU containing the target computer accounts.</p>
+Certificates can be deployed to the **Trusted Publishers** store via a Group Policy Object. Import the certificate into the **Public Key Policies** node under **Security Settings** in a GPO applied to an OU containing the target computer accounts.
 
-<figure id="attachment_5160" aria-describedby="caption-attachment-5160" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5160" src="http://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-1024x531.png" alt="Deploying the code signing certificate via Group Policy" width="1024" height="531" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-1024x531.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-150x78.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-300x156.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-768x398.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy.png 1306w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy.png)<figcaption id="caption-attachment-5160" class="wp-caption-text">Deploying the code signing certificate via Group Policy</figcaption></figure>
+<figure id="attachment_5160" aria-describedby="caption-attachment-5160" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5160" src="http://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-1024x531.png" alt="Deploying the code signing certificate via Group Policy" width="1024" height="531" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-1024x531.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-150x78.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-300x156.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-768x398.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy.png 1306w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy.png)<figcaption id="caption-attachment-5160" class="wp-caption-text">Deploying the code signing certificate via Group Policy*&lt;/figure&gt;
 
-<p>Target computer will, of course, need to be Active Directory domain members for the certificate to be deployed in this manner. As well as this, the policy will have to be processed before the client is installed.</p>
+Target computer will, of course, need to be Active Directory domain members for the certificate to be deployed in this manner. As well as this, the policy will have to be processed before the client is installed.
 
-<h2 id="install-the-certificate-via-certutilexe">Install the certificate via certutil.exe</h2>
+## Install the certificate via certutil.exe
 
-<p>To install the certificate via other means, including via a script or embedded into a setup process. The <a href="https://technet.microsoft.com/en-us/library/cc732443(v=ws.11).aspx">certutil.exe</a> command line tool can be used to import the certificate via the following command:</p>
+To install the certificate via other means, including via a script or embedded into a setup process. The [certutil.exe](https://technet.microsoft.com/en-us/library/cc732443(v=ws.11).aspx) command line tool can be used to import the certificate via the following command:
 
 <pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">certutil -addstore -Enterprise -f "TrustedPublisher" ".\CitrixCodeSigningCert.cer"</pre>
 
-<p>This method provides some flexibility to enable a controlled deployment or installation of the certificate on machines not managed via Group Policy.</p>
+This method provides some flexibility to enable a controlled deployment or installation of the certificate on machines not managed via Group Policy.
 
-<h1 id="deploying-the-drive-mapper-client">Deploying the Drive Mapper client</h1>
+# Deploying the Drive Mapper client
 
-<p>To deploy the Drive Mapper client is very simple - no customisation of the installer should be required, unless you want to change the default installation path. Download the <a href="https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/sharefile-drive-mapper.html">Drive Mapper client in EXE or MSI</a> format. An installation guide can be found in article <a href="http://support.citrix.com/article/CTX207791">CTX207791</a>.</p>
+To deploy the Drive Mapper client is very simple - no customisation of the installer should be required, unless you want to change the default installation path. Download the [Drive Mapper client in EXE or MSI](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/sharefile-drive-mapper.html) format. An installation guide can be found in article [CTX207791](http://support.citrix.com/article/CTX207791).
 
-<p>I’ve been able to deploy the client via MDM-enrolled Windows 10 machines using the Windows Installer deployment option. The particular environment is using Windows 10 joined to Azure AD with SSO enabled for ShareFile, which flows through to the Drive Mapper and ShareFile Outlook plug-in.</p>
+I've been able to deploy the client via MDM-enrolled Windows 10 machines using the Windows Installer deployment option. The particular environment is using Windows 10 joined to Azure AD with SSO enabled for ShareFile, which flows through to the Drive Mapper and ShareFile Outlook plug-in.
 
-<h1 id="summary">Summary</h1>
+# Summary
 
-<p>Citrix has not yet certified the Citrix ShareFile Drive Mapper client driver for the <a href="https://msdn.microsoft.com/en-us/windows/hardware/gg463010.aspx">WHQL</a>, so until then you’ll need to follow this process to get the certificate onto target machines to automate the installation or avoid having to disable Secure Boot to install it.</p>
+Citrix has not yet certified the Citrix ShareFile Drive Mapper client driver for the [WHQL](https://msdn.microsoft.com/en-us/windows/hardware/gg463010.aspx), so until then you'll need to follow this process to get the certificate onto target machines to automate the installation or avoid having to disable Secure Boot to install it.
+</figcaption></figure></figcaption></figure></figcaption></figure></figcaption></figure>
 
   </div><a class="u-url" href="/automate-sharefile-drive-mapper-install/" hidden></a>
 </article>

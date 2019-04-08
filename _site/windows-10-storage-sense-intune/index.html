@@ -55,82 +55,82 @@
 
 <p>Storage Sense can be found in the Windows 10 Settings app and has only a few settings that can be changed. Typically a user may enable Storage Sense and accept the default settings and for most PCs, the defaults are likely good enough. Here’s what’s available in Windows 10 1803:</p>
 
-<figure id="attachment_6164" aria-describedby="caption-attachment-6164" style="width: 2494px" class="wp-caption aligncenter">[<img class="size-full wp-image-6164" src="https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense.png" alt="Enabling Storage Sense in Windows 10 Settings" width="2494" height="1578" srcset="https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense.png 2494w, https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense-150x95.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense-300x190.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense-768x486.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense-1024x648.png 1024w" sizes="(max-width: 2494px) 100vw, 2494px" />](https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense.png)<figcaption id="caption-attachment-6164" class="wp-caption-text">Enabling Storage Sense in Windows 10 Settings</figcaption>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense.png" alt="Enabling Storage Sense in Windows 10 Settings" /><em>Enabling Storage Sense in Windows 10 Settings</em></p>
 
-Settings are stored in the user profile at:
+<p>Settings are stored in the user profile at:</p>
 
-<pre class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy</pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy
+</code></pre></div></div>
 
- Settings are stored somewhat cryptically with numbers representing various options.
+<p>Settings are stored somewhat cryptically with numbers representing various options.</p>
 
-<figure id="attachment_6168" aria-describedby="caption-attachment-6168" style="width: 1700px" class="wp-caption aligncenter">[<img class="size-full wp-image-6168" src="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry.png" alt="Storage Sense settings in the Registry" width="1700" height="763" srcset="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry.png 1700w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry-150x67.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry-300x135.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry-768x345.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry-1024x460.png 1024w" sizes="(max-width: 1700px) 100vw, 1700px" />](https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry.png)<figcaption id="caption-attachment-6168" class="wp-caption-text">Storage Sense settings in the Registry</figcaption>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry.png" alt="Storage Sense settings in the Registry" /><em>Storage Sense settings in the Registry</em></p>
 
-These values translate to following options and values in the table below:
+<p>These values translate to following options and values in the table below:</p>
 
-[table id=47 /]
+<p>[table id=47 /]</p>
 
-Now that we know what the options are, we can decide on what to deploy and deliver them to enrolled end-points.
+<p>Now that we know what the options are, we can decide on what to deploy and deliver them to enrolled end-points.</p>
 
-# Configure via PowerShell
+<h1 id="configure-via-powershell">Configure via PowerShell</h1>
 
-Using the values from the table above, a PowerShell script can be deployed via Intune to configure our desired settings. The script below will enable Storage Sense along with several settings to regularly remove outdated or temporary files.
+<p>Using the values from the table above, a PowerShell script can be deployed via Intune to configure our desired settings. The script below will enable Storage Sense along with several settings to regularly remove outdated or temporary files.</p>
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption=""># Enable Storage Sense
-# Ensure the StorageSense key exists
-$key = "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense"
-If (!(Test-Path "$key")) {
-    New-Item -Path "$key" | Out-Null
-}
-If (!(Test-Path "$key\Parameters")) {
-    New-Item -Path "$key\Parameters" | Out-Null
-}
-If (!(Test-Path "$key\Parameters\StoragePolicy")) {
-    New-Item -Path "$key\Parameters\StoragePolicy" | Out-Null
-}
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Enable Storage Sense</span>
+<span class="c1"># Ensure the StorageSense key exists</span>
+<span class="nv">$key</span> <span class="o">=</span> <span class="s2">"HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense"</span>
+<span class="k">If</span> <span class="o">(!(</span><span class="nb">Test-Path</span> <span class="s2">"</span><span class="nv">$key</span><span class="s2">"</span><span class="o">))</span> <span class="o">{</span>
+    <span class="nb">New-Item</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">"</span> | Out-Null
+<span class="o">}</span>
+<span class="k">If</span> <span class="o">(!(</span><span class="nb">Test-Path</span> <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters"</span><span class="o">))</span> <span class="o">{</span>
+    <span class="nb">New-Item</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters"</span> | Out-Null
+<span class="o">}</span>
+<span class="k">If</span> <span class="o">(!(</span><span class="nb">Test-Path</span> <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters\StoragePolicy"</span><span class="o">))</span> <span class="o">{</span>
+    <span class="nb">New-Item</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters\StoragePolicy"</span> | Out-Null
+<span class="o">}</span>
 
-# Set Storage Sense settings
-# Enable Storage Sense
-Set-ItemProperty -Path "$key\Parameters\StoragePolicy" -Name "01" -Type DWord -Value 1
+<span class="c1"># Set Storage Sense settings</span>
+<span class="c1"># Enable Storage Sense</span>
+<span class="nb">Set-ItemProperty</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters\StoragePolicy"</span> -Name <span class="s2">"01"</span> -Type DWord -Value 1
 
-# Set 'Run Storage Sense' to Every Week
-Set-ItemProperty -Path "$key\Parameters\StoragePolicy" -Name "2048" -Type DWord -Value 7
+<span class="c1"># Set 'Run Storage Sense' to Every Week</span>
+<span class="nb">Set-ItemProperty</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters\StoragePolicy"</span> -Name <span class="s2">"2048"</span> -Type DWord -Value 7
 
-# Enable 'Delete temporary files that my apps aren't using'
-Set-ItemProperty -Path "$key\Parameters\StoragePolicy" -Name "04" -Type DWord -Value 1
+<span class="c1"># Enable 'Delete temporary files that my apps aren't using'</span>
+<span class="nb">Set-ItemProperty</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters\StoragePolicy"</span> -Name <span class="s2">"04"</span> -Type DWord -Value 1
 
-# Set 'Delete files in my recycle bin if they have been there for over' to 14 days
-Set-ItemProperty -Path "$key\Parameters\StoragePolicy" -Name "08" -Type DWord -Value 1
-Set-ItemProperty -Path "$key\Parameters\StoragePolicy" -Name "256" -Type DWord -Value 14
+<span class="c1"># Set 'Delete files in my recycle bin if they have been there for over' to 14 days</span>
+<span class="nb">Set-ItemProperty</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters\StoragePolicy"</span> -Name <span class="s2">"08"</span> -Type DWord -Value 1
+<span class="nb">Set-ItemProperty</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters\StoragePolicy"</span> -Name <span class="s2">"256"</span> -Type DWord -Value 14
 
-# Set 'Delete files in my Downloads folder if they have been there for over' to 60 days
-Set-ItemProperty -Path "$key\Parameters\StoragePolicy" -Name "32" -Type DWord -Value 1
-Set-ItemProperty -Path "$key\Parameters\StoragePolicy" -Name "512" -Type DWord -Value 60
+<span class="c1"># Set 'Delete files in my Downloads folder if they have been there for over' to 60 days</span>
+<span class="nb">Set-ItemProperty</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters\StoragePolicy"</span> -Name <span class="s2">"32"</span> -Type DWord -Value 1
+<span class="nb">Set-ItemProperty</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters\StoragePolicy"</span> -Name <span class="s2">"512"</span> -Type DWord -Value 60
 
-# Set value that Storage Sense has already notified the user
-Set-ItemProperty -Path "$key\Parameters\StoragePolicy" -Name "StoragePoliciesNotified" -Type DWord -Value 1</pre>
+<span class="c1"># Set value that Storage Sense has already notified the user</span>
+<span class="nb">Set-ItemProperty</span> -Path <span class="s2">"</span><span class="nv">$key</span><span class="s2">\Parameters\StoragePolicy"</span> -Name <span class="s2">"StoragePoliciesNotified"</span> -Type DWord -Value 1
+</code></pre></div></div>
 
-Modify the script as desired - at the very least the script should enable Storage Sense and leave the remaining settings as default. Save the script as a PowerShell file and [deploy via the Intune console in the Azure portal](https://docs.microsoft.com/en-us/intune/intune-management-extension). Ensure that the script runs with the logged on user's credentials because it will write to HKCU.
+<p>Modify the script as desired - at the very least the script should enable Storage Sense and leave the remaining settings as default. Save the script as a PowerShell file and <a href="https://docs.microsoft.com/en-us/intune/intune-management-extension">deploy via the Intune console in the Azure portal</a>. Ensure that the script runs with the logged on user’s credentials because it will write to HKCU.</p>
 
-<figure id="attachment_6171" aria-describedby="caption-attachment-6171" style="width: 1800px" class="wp-caption aligncenter">[<img class="size-full wp-image-6171" src="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune.png" alt="Enabling Storage Sense with a PowerShell script in Intune" width="1800" height="622" srcset="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune.png 1800w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune-150x52.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune-300x104.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune-768x265.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune-1024x354.png 1024w" sizes="(max-width: 1800px) 100vw, 1800px" />](https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune.png)<figcaption id="caption-attachment-6171" class="wp-caption-text">Enabling Storage Sense with a PowerShell script in Intune</figcaption>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune.png" alt="Enabling Storage Sense with a PowerShell script in Intune" /><em>Enabling Storage Sense with a PowerShell script in Intune</em></p>
 
-Assign the script to All Users and their PC will receive the script. It's important to note that, because the settings are stored in HKCU and are not policies, the user can either disable Storage Sense or change other settings.
+<p>Assign the script to All Users and their PC will receive the script. It’s important to note that, because the settings are stored in HKCU and are not policies, the user can either disable Storage Sense or change other settings.</p>
 
-# Wrapping Up
+<h1 id="wrapping-up">Wrapping Up</h1>
 
-Storage Sense is a great feature to enable on Windows 10 PCs for both personal and corporate PCs. In a modern management scenario, it's another tool in our kit for enabling end-points to be self-sufficient, so I highly recommend testing and enabling the feature by default. This article has shown you how to configure Storage Sense via Intune and PowerShell with all of the possible combinations required to configure it to suit your requirements.
+<p>Storage Sense is a great feature to enable on Windows 10 PCs for both personal and corporate PCs. In a modern management scenario, it’s another tool in our kit for enabling end-points to be self-sufficient, so I highly recommend testing and enabling the feature by default. This article has shown you how to configure Storage Sense via Intune and PowerShell with all of the possible combinations required to configure it to suit your requirements.</p>
 
-## Hold On...
+<h2 id="hold-on">Hold On…</h2>
 
-Storage Sense shows you how much disk capacity has been cleaned in the previous month in the Settings app. For a bit of a laugh, you can modify the value where this is stored so that Settings displays spaced saved that's clearly not genuine.
+<p>Storage Sense shows you how much disk capacity has been cleaned in the previous month in the Settings app. For a bit of a laugh, you can modify the value where this is stored so that Settings displays spaced saved that’s clearly not genuine.</p>
 
-<figure id="attachment_6172" aria-describedby="caption-attachment-6172" style="width: 1598px" class="wp-caption aligncenter">[<img class="size-full wp-image-6172" src="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved.png" alt="Messing around with the value of saved space" width="1598" height="697" srcset="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved.png 1598w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved-150x65.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved-300x131.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved-768x335.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved-1024x447.png 1024w" sizes="(max-width: 1598px) 100vw, 1598px" />](https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved.png)<figcaption id="caption-attachment-6172" class="wp-caption-text">Messing around with the value of saved space</figcaption>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved.png" alt="Messing around with the value of saved space" /><em>Messing around with the value of saved space</em></p>
 
-You'll find the registry value (20180901) in this key:
+<p>You’ll find the registry value (20180901) in this key:</p>
 
-<pre class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy\SpaceHistory</pre>
-
-Image Credit: Photo by [Florian Pérennès](https://unsplash.com/photos/wloRJGS6Y34?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/disk?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText)
-</figure></figure></figure></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy\SpaceHistory
+</code></pre></div></div>
 
   </div><a class="u-url" href="/windows-10-storage-sense-intune/" hidden></a>
 </article>

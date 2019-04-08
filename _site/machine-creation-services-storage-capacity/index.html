@@ -69,48 +69,45 @@
 
 <p>I’ve updated that image for XenDesktop 7.11. Now the available deployment options for MCS are:</p>
 
-<figure id="attachment_5179" aria-describedby="caption-attachment-5179" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5179 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-1024x438.png" alt="Deployment options available in XenDesktop Machine Creation Services" width="1024" height="438" srcset="https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-1024x438.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-150x64.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-300x128.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-768x329.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options.png)<figcaption id="caption-attachment-5179" class="wp-caption-text">Deployment options available in XenDesktop Machine Creation Services (credit: Kees Baggerman &amp; Martijn Bosschaart)</figcaption></figure>
+<figure id="attachment_5179" aria-describedby="caption-attachment-5179" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5179 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-1024x438.png" alt="Deployment options available in XenDesktop Machine Creation Services" width="1024" height="438" srcset="https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-1024x438.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-150x64.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-300x128.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options-768x329.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-deployment-options.png)<figcaption id="caption-attachment-5179" class="wp-caption-text">Deployment options available in XenDesktop Machine Creation Services (credit: Kees Baggerman &amp; Martijn Bosschaart)*&lt;/figure&gt;
 
-<p>As you can see, there are quite a number of deployment options in MCS now, so this can’t make sizing straight-forward.</p>
+As you can see, there are quite a number of deployment options in MCS now, so this can't make sizing straight-forward.
 
-<h1 id="machine-creation-servicesvm-components">Machine Creation Services VM Components</h1>
+# Machine Creation Services VM Components
 
-<p>To determine the storage capacity we require for MCS, we should start with knowing what makes up a virtual machine deployed via Machine Creation Services. This will differ for each hypervisor and machine catalog configuration:</p>
+To determine the storage capacity we require for MCS, we should start with knowing what makes up a virtual machine deployed via Machine Creation Services. This will differ for each hypervisor and machine catalog configuration:
 
-<ul>
-  <li>Base image - there will be at least 1 base image per machine catalog. Multiple base images can exist if updates are applied to the catalog or multiple catalogs are deployed to a single data store</li>
-  <li>Identity disk - each virtual machine will have an identity disk that contains the bits that provide each VMs its unique identity. This disk is only deleted when the VM is deleted</li>
-  <li>Differencing or delta disk - while running a virtual machine needs a location to write changes from the base image. This disk is deleted if you’ve configured the machine catalog to refresh VMs on reboot</li>
-  <li>Cache overflow disk - with XenDesktop 7.9 and above you can configure Cache in RAM with Overflow to Disk. If so, the delta disk is not used and this overflow disk is used instead. This disk will be deleted at VM reboot</li>
-  <li>Snapshots - depending on the deployment options used, some VMs may also have snapshots applied to them</li>
-  <li>VM configuration files, logs, swap files etc. - Hyper-V and ESXi have configuration files and others for each VM, while XenServer and AHV store these descriptors differently. These may not have a large impact on storage, but we can include them for completeness.</li>
-</ul>
+  * Base image - there will be at least 1 base image per machine catalog. Multiple base images can exist if updates are applied to the catalog or multiple catalogs are deployed to a single data store
+  * Identity disk - each virtual machine will have an identity disk that contains the bits that provide each VMs its unique identity. This disk is only deleted when the VM is deleted
+  * Differencing or delta disk - while running a virtual machine needs a location to write changes from the base image. This disk is deleted if you've configured the machine catalog to refresh VMs on reboot
+  * Cache overflow disk - with XenDesktop 7.9 and above you can configure Cache in RAM with Overflow to Disk. If so, the delta disk is not used and this overflow disk is used instead. This disk will be deleted at VM reboot
+  * Snapshots - depending on the deployment options used, some VMs may also have snapshots applied to them
+  * VM configuration files, logs, swap files etc. - Hyper-V and ESXi have configuration files and others for each VM, while XenServer and AHV store these descriptors differently. These may not have a large impact on storage, but we can include them for completeness.
 
-<p>Because each hypervisor has its own idiosyncracies our calculations for storage capacity will differ depending on the platform choice.</p>
+Because each hypervisor has its own idiosyncracies our calculations for storage capacity will differ depending on the platform choice.
 
-<h1 id="what-about-dedupe-and-compression">What about Dedupe and Compression?</h1>
+# What about Dedupe and Compression?
 
-<p>For the purposes of this exercise, I’m going to ignore deduplication and compression. Each storage vendor has different approaches - some do inline dedupe, some do post-process dedupe, while others do both and not all vendors support compression. Additionally, storage vendors are using different approaches for block sizes so may have different results for reclaiming capacity.</p>
+For the purposes of this exercise, I'm going to ignore deduplication and compression. Each storage vendor has different approaches - some do inline dedupe, some do post-process dedupe, while others do both and not all vendors support compression. Additionally, storage vendors are using different approaches for block sizes so may have different results for reclaiming capacity.
 
-<p>Think about deploying XenDesktop on Azure - deduplication or compression are not exposed to the administrator, so for sizing on Azure, we’d need to consider the total capacity consumed to understand storage costs.</p>
+Think about deploying XenDesktop on Azure - deduplication or compression are not exposed to the administrator, so for sizing on Azure, we'd need to consider the total capacity consumed to understand storage costs.
 
-<p>If we start with calculating the maximum capacity we’ll require based on our deployment options, then testing on specific storage configurations that include dedupe and/or compression means that we can only reduce our storage capacity requirements.</p>
+If we start with calculating the maximum capacity we'll require based on our deployment options, then testing on specific storage configurations that include dedupe and/or compression means that we can only reduce our storage capacity requirements.
 
-<h1 id="conclusion">Conclusion</h1>
+# Conclusion
 
-<p>MCS helps to take the pain out of virtual desktop deployments but you’ll still need to carefully consider the storage capacity requirements. Because the approach for each hypervisor is slightly different, I’ll cover each platform individually in upcoming articles. I’m going to start with what I think is the easiest and simplest platform - Hyper-V in Windows Server 2012 R2 and Windows Server 2016.</p>
+MCS helps to take the pain out of virtual desktop deployments but you'll still need to carefully consider the storage capacity requirements. Because the approach for each hypervisor is slightly different, I'll cover each platform individually in upcoming articles. I'm going to start with what I think is the easiest and simplest platform - Hyper-V in Windows Server 2012 R2 and Windows Server 2016.
 
-<p>Note that for this series, I’m only interested in Windows deployments, so I won’t cover Linux at this time.</p>
+Note that for this series, I'm only interested in Windows deployments, so I won't cover Linux at this time.
 
-<h2 id="articles">Articles</h2>
+## Articles
 
-<p>The articles for specific platforms can be found here:</p>
+The articles for specific platforms can be found here:
 
-<ul>
-  <li><a href="http://stealthpuppy.com/mcs-capacity-sizing-hyper-v/">MCS Capacity Sizing on Hyper-V</a></li>
-  <li>MCS Capacity Sizing on vSphere</li>
-  <li>MCS Capacity Sizing on XenServer</li>
-</ul>
+  * [MCS Capacity Sizing on Hyper-V](http://stealthpuppy.com/mcs-capacity-sizing-hyper-v/)
+  * MCS Capacity Sizing on vSphere
+  * MCS Capacity Sizing on XenServer
+</figcaption></figure>
 
   </div><a class="u-url" href="/machine-creation-services-storage-capacity/" hidden></a>
 </article>

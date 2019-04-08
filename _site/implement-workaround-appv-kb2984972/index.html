@@ -70,34 +70,35 @@
 
 <p>Here’s the ObjExclusions key on an App-V 5.0 client:</p>
 
-<figure id="attachment_3716" aria-describedby="caption-attachment-3716" style="width: 1204px" class="wp-caption alignnone">[<img class="size-full wp-image-3716" src="http://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions.png" alt="AppV Client ObjExclusions registry key" width="1204" height="572" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions.png 1204w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-150x71.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-300x142.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-1024x486.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-624x296.png 624w" sizes="(max-width: 1204px) 100vw, 1204px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions.png)<figcaption id="caption-attachment-3716" class="wp-caption-text">AppV Client ObjExclusions registry key</figcaption></figure>
+<figure id="attachment_3716" aria-describedby="caption-attachment-3716" style="width: 1204px" class="wp-caption alignnone">[<img class="size-full wp-image-3716" src="http://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions.png" alt="AppV Client ObjExclusions registry key" width="1204" height="572" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions.png 1204w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-150x71.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-300x142.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-1024x486.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-624x296.png 624w" sizes="(max-width: 1204px) 100vw, 1204px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions.png)<figcaption id="caption-attachment-3716" class="wp-caption-text">AppV Client ObjExclusions registry key*&lt;/figure&gt;
 
-<p>Most environments will have the default entries (92 for App-V 5.0, 94 for App-V 4.6). For customised environments you would need to ensure that a unique value is used (perhaps above 93).</p>
+Most environments will have the default entries (92 for App-V 5.0, 94 for App-V 4.6). For customised environments you would need to ensure that a unique value is used (perhaps above 93).
 
-<h1 id="group-policy-preferences">Group Policy Preferences</h1>
+# Group Policy Preferences
 
-<p>Group Policy Preferences is the most straight forward method of implementing the workaround. Most environments are already managing the App-V client with Group Policy, so adding a Preference item in the same GPO make sense.</p>
+Group Policy Preferences is the most straight forward method of implementing the workaround. Most environments are already managing the App-V client with Group Policy, so adding a Preference item in the same GPO make sense.
 
-<p>Add a new GPP Registry item with the necessary Registry configuration. Ensure the value name is unique (any number above the existing values). This could be a high number (e.g. 256) to ensure there is no clash with an existing value.</p>
+Add a new GPP Registry item with the necessary Registry configuration. Ensure the value name is unique (any number above the existing values). This could be a high number (e.g. 256) to ensure there is no clash with an existing value.
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-Key.png"><img class="alignnone size-full wp-image-3717" src="http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-Key.png" alt="Adding TermSrvReadyEvent via Group Policy Preferences" width="414" height="462" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-Key.png 414w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-Key-134x150.png 134w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-Key-268x300.png 268w" sizes="(max-width: 414px) 100vw, 414px" /></a></p>
+[<img class="alignnone size-full wp-image-3717" src="http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-Key.png" alt="Adding TermSrvReadyEvent via Group Policy Preferences" width="414" height="462" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-Key.png 414w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-Key-134x150.png 134w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-Key-268x300.png 268w" sizes="(max-width: 414px) 100vw, 414px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-Key.png)
 
-<p>I recommend enabling <em>Item-level targeting</em> to ensure the value is added to the right machines.</p>
+I recommend enabling _Item-level targeting_ to ensure the value is added to the right machines.
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-ItemLevelTargeting.png"><img class="alignnone size-full wp-image-3718" src="http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-ItemLevelTargeting.png" alt="Enabling Item Level Targeting" width="414" height="462" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-ItemLevelTargeting.png 414w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-ItemLevelTargeting-134x150.png 134w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-ItemLevelTargeting-268x300.png 268w" sizes="(max-width: 414px) 100vw, 414px" /></a></p>
+[<img class="alignnone size-full wp-image-3718" src="http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-ItemLevelTargeting.png" alt="Enabling Item Level Targeting" width="414" height="462" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-ItemLevelTargeting.png 414w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-ItemLevelTargeting-134x150.png 134w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-ItemLevelTargeting-268x300.png 268w" sizes="(max-width: 414px) 100vw, 414px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-ItemLevelTargeting.png)
 
-<p>For example, only apply the update if the HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions key actually exists. This ensures the value is only added once the App-V client is installed.</p>
+For example, only apply the update if the HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions key actually exists. This ensures the value is only added once the App-V client is installed.
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-TargetingEditor.png"><img class="alignnone size-full wp-image-3719" src="http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-TargetingEditor.png" alt="Adding a Key Exists match to Item Level Targeting" width="613" height="462" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-TargetingEditor.png 613w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-TargetingEditor-150x113.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-TargetingEditor-300x226.png 300w" sizes="(max-width: 613px) 100vw, 613px" /></a></p>
+[<img class="alignnone size-full wp-image-3719" src="http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-TargetingEditor.png" alt="Adding a Key Exists match to Item Level Targeting" width="613" height="462" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-TargetingEditor.png 613w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-TargetingEditor-150x113.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/10/2984972-TargetingEditor-300x226.png 300w" sizes="(max-width: 613px) 100vw, 613px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/2984972-TargetingEditor.png)
 
-<h1 id="powershell">PowerShell</h1>
+# PowerShell
 
-<p>PowerShell makes it easy to generate a unique number by first counting the exiting entries. Here’s some code that will count the existing entires and use that count as the unique number Note the <em>(Default)</em> entry is also returned, so I can be confident that I’m using a value that is one higher than the existing entries.</p>
+PowerShell makes it easy to generate a unique number by first counting the exiting entries. Here's some code that will count the existing entires and use that count as the unique number Note the _(Default)_ entry is also returned, so I can be confident that I'm using a value that is one higher than the existing entries.
 
 <pre class="lang:ps decode:true  ">$items = Get-Item -Path Registry::HKLM\Software\Microsoft\AppV\Subsystem\ObjExclusions
 New-ItemProperty -Path Registry::HKLM\Software\Microsoft\AppV\Subsystem\ObjExclusions -Name $items.ValueCount -PropertyType String -Value "TermSrvReadyEvent"</pre>
 
-<p> </p>
+ 
+</figcaption></figure>
 
   </div><a class="u-url" href="/implement-workaround-appv-kb2984972/" hidden></a>
 </article>

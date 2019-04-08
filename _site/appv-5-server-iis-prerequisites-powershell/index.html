@@ -8,15 +8,15 @@
 <meta property="og:title" content="Configuring IIS Prerequisites for the App-V 5 Server with PowerShell" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="[](http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png)App-V Server 5.0 Setup with missing prerequisites" />
-<meta property="og:description" content="[](http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png)App-V Server 5.0 Setup with missing prerequisites" />
+<meta name="description" content="[](http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png)App-V Server 5.0 Setup with missing prerequisites*&lt;/figure&gt;" />
+<meta property="og:description" content="[](http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png)App-V Server 5.0 Setup with missing prerequisites*&lt;/figure&gt;" />
 <link rel="canonical" href="/appv-5-server-iis-prerequisites-powershell/" />
 <meta property="og:url" content="/appv-5-server-iis-prerequisites-powershell/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2014-09-05T01:04:23+10:00" />
 <script type="application/ld+json">
-{"description":"[](http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png)App-V Server 5.0 Setup with missing prerequisites","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/appv-5-server-iis-prerequisites-powershell/","headline":"Configuring IIS Prerequisites for the App-V 5 Server with PowerShell","dateModified":"2014-09-05T01:04:23+10:00","datePublished":"2014-09-05T01:04:23+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/appv-5-server-iis-prerequisites-powershell/"},"@context":"https://schema.org"}</script>
+{"description":"[](http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png)App-V Server 5.0 Setup with missing prerequisites*&lt;/figure&gt;","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/appv-5-server-iis-prerequisites-powershell/","headline":"Configuring IIS Prerequisites for the App-V 5 Server with PowerShell","dateModified":"2014-09-05T01:04:23+10:00","datePublished":"2014-09-05T01:04:23+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/appv-5-server-iis-prerequisites-powershell/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -46,11 +46,11 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <figure id="attachment_3697" aria-describedby="caption-attachment-3697" style="width: 756px" class="wp-caption alignnone">[<img class="size-full wp-image-3697" src="http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png" alt="App-V Server 5.0 Setup with missing prerequisites" width="756" height="570" srcset="https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png 756w, https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs-150x113.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs-300x226.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs-624x470.png 624w" sizes="(max-width: 756px) 100vw, 756px" />](http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png)<figcaption id="caption-attachment-3697" class="wp-caption-text">App-V Server 5.0 Setup with missing prerequisites</figcaption></figure>
+    <figure id="attachment_3697" aria-describedby="caption-attachment-3697" style="width: 756px" class="wp-caption alignnone">[<img class="size-full wp-image-3697" src="http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png" alt="App-V Server 5.0 Setup with missing prerequisites" width="756" height="570" srcset="https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png 756w, https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs-150x113.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs-300x226.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs-624x470.png 624w" sizes="(max-width: 756px) 100vw, 756px" />](http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png)<figcaption id="caption-attachment-3697" class="wp-caption-text">App-V Server 5.0 Setup with missing prerequisites*&lt;/figure&gt;
 
-<p>While I’d much rather recommend that you configure a Windows Server that will host the App-V 5.0 server components via <a href="http://stealthpuppy.com/briforum-2014-hands-off-my-gold-image-the-slides/">a solution such as MDT</a> with the required IIS components enabled in an automated build, here’s how to add the components with PowerShell.</p>
+While I'd much rather recommend that you configure a Windows Server that will host the App-V 5.0 server components via [a solution such as MDT](http://stealthpuppy.com/briforum-2014-hands-off-my-gold-image-the-slides/) with the required IIS components enabled in an automated build, here's how to add the components with PowerShell.
 
-<p>The following code uses the <a href="http://go.microsoft.com/fwlink/p/?linkid=287571">Add-WindowsFeature</a> to add the IIS components that are required to support the App-V 5.0 Management and Publishing Servers. These are the minimum required components as requested by the setup application.</p>
+The following code uses the [Add-WindowsFeature](http://go.microsoft.com/fwlink/p/?linkid=287571) to add the IIS components that are required to support the App-V 5.0 Management and Publishing Servers. These are the minimum required components as requested by the setup application.
 
 <pre class="lang:ps decode:true " title="Adding IIS features to support App-V Server 5.0"># Import the ServerManager module which we will need to use the Add-WindowsFeature cmdlet
 Import-Module ServerManager
@@ -69,11 +69,11 @@ If ($Features.Success -eq $True) {
     Write-Error "Adding IIS features failed with error: $Features.ExitCode"
 }</pre>
 
-<p>To keep an App-V 5.0 environment as simple as possible, you should be use port 80 for the Publishing Server. This ensures that the standard HTTP port is used for publishing and no-one has to remember or configure an obscure port on the App-V client.</p>
+To keep an App-V 5.0 environment as simple as possible, you should be use port 80 for the Publishing Server. This ensures that the standard HTTP port is used for publishing and no-one has to remember or configure an obscure port on the App-V client.
 
-<p>As an added bonus, I’ve created some PowerShell code to change the IIS configuration to move an existing web site off port 80 to another port. In most cases that will be the Default Web Site.</p>
+As an added bonus, I've created some PowerShell code to change the IIS configuration to move an existing web site off port 80 to another port. In most cases that will be the Default Web Site.
 
-<p>The following code will find any web site currently bound to port 80, calculate the next available port by adding 1 to the highest port in use and then set the site to use that port.</p>
+The following code will find any web site currently bound to port 80, calculate the next available port by adding 1 to the highest port in use and then set the site to use that port.
 
 <pre class="lang:ps decode:true " title="Moving any IIS website off port 80"># Import the WebAdministration module required for managing IIS
 Import-Module WebAdministration
@@ -93,7 +93,8 @@ If ( $port80 ) {
     Get-WebSite | ForEach-Object { If ($_.Bindings.Collection.bindingInformation -like "*:80:*") { Set-WebBinding -Name $_.Name -BindingInformation "*:80:" -PropertyName Port -Value $port } }
 }</pre>
 
-<p>Once you’ve run the code, you can then install the App-V 5.0 server components and use port 80 for the Publishing Server.</p>
+Once you've run the code, you can then install the App-V 5.0 server components and use port 80 for the Publishing Server.
+</figcaption></figure>
 
   </div><a class="u-url" href="/appv-5-server-iis-prerequisites-powershell/" hidden></a>
 </article>

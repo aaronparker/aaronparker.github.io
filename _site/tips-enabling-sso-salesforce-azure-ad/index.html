@@ -77,83 +77,74 @@
 
 <p>To configure SSO for Salesforce, log into the Azure Portal and open <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview">the Azure Active Directory blade</a>, click on <strong>Enterprise Applications</strong>, click <strong>Add</strong>, find and select Salesforce then click <strong>Add</strong>. Once the application has been added, click on <strong>Single sign-on</strong> to start the configuration steps.</p>
 
-<figure id="attachment_5365" aria-describedby="caption-attachment-5365" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5365" src="http://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO-1024x587.png" alt="Configuring SSO for Salesforce in the Azure RM portal" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO.png)<figcaption id="caption-attachment-5365" class="wp-caption-text">Configuring SSO for Salesforce in the Azure RM portal</figcaption></figure>
+<figure id="attachment_5365" aria-describedby="caption-attachment-5365" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5365" src="http://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO-1024x587.png" alt="Configuring SSO for Salesforce in the Azure RM portal" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/ConfigureSalesforceSSO.png)<figcaption id="caption-attachment-5365" class="wp-caption-text">Configuring SSO for Salesforce in the Azure RM portal*&lt;/figure&gt;
 
-<p>During the Salesforce SAML configuration, I came across an issue with <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-certs">the SAML signing certificate issued by Azure</a>.</p>
+During the Salesforce SAML configuration, I came across an issue with [the SAML signing certificate issued by Azure](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-certs).
 
-<h2 id="request-signing-certificate-issue">Request Signing Certificate Issue</h2>
+## Request Signing Certificate Issue
 
-<p>When configuring SAML from within Salesforce using the certificate from Azure, the following error is shown when attempting to save the configuration.</p>
+When configuring SAML from within Salesforce using the certificate from Azure, the following error is shown when attempting to save the configuration.
 
-<blockquote>
-  <p>Uploaded file isn’t a certificate. (Related field: Identity Provider Certificate)</p>
-</blockquote>
+&gt; Uploaded file isn't a certificate. (Related field: Identity Provider Certificate)
 
-<p>Which looks like this:</p>
+Which looks like this:
 
-<figure id="attachment_5362" aria-describedby="caption-attachment-5362" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5362 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate-1024x587.png" alt="Receiving &quot;Uploaded file isn't a certificate. (Related field: Identity Provider Certificate)&quot; when saving the Salesforce SSO settings" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate.png)<figcaption id="caption-attachment-5362" class="wp-caption-text">Receiving &#8220;Uploaded file isn't a certificate. (Related field: Identity Provider Certificate)&#8221; when saving the Salesforce SSO settings</figcaption></figure>
+<figure id="attachment_5362" aria-describedby="caption-attachment-5362" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5362 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate-1024x587.png" alt="Receiving &quot;Uploaded file isn't a certificate. (Related field: Identity Provider Certificate)&quot; when saving the Salesforce SSO settings" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/Error-SalesforceCertificate.png)<figcaption id="caption-attachment-5362" class="wp-caption-text">Receiving &#8220;Uploaded file isn't a certificate. (Related field: Identity Provider Certificate)&#8221; when saving the Salesforce SSO settings*&lt;/figure&gt;
 
-<p>This was a little disconcerting as the certificate is automatically generated by Azure, but not recognised by Salesforce. In this case, I’m using the Azure RM portal rather than the Classic portal, so perhaps there’s an issue with the generation of certificates through the new portal.</p>
+This was a little disconcerting as the certificate is automatically generated by Azure, but not recognised by Salesforce. In this case, I'm using the Azure RM portal rather than the Classic portal, so perhaps there's an issue with the generation of certificates through the new portal.
 
-<p>The certificate properties don’t reveal anything out of the ordinary.</p>
+The certificate properties don't reveal anything out of the ordinary.
 
-<figure id="attachment_5368" aria-describedby="caption-attachment-5368" style="width: 405px" class="wp-caption alignnone">[<img class="size-full wp-image-5368" src="http://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties.png" alt="Azure SAML certificate properties" width="405" height="515" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties.png 405w, https://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties-118x150.png 118w, https://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties-236x300.png 236w" sizes="(max-width: 405px) 100vw, 405px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties.png)<figcaption id="caption-attachment-5368" class="wp-caption-text">Azure SAML certificate properties</figcaption></figure>
+<figure id="attachment_5368" aria-describedby="caption-attachment-5368" style="width: 405px" class="wp-caption alignnone">[<img class="size-full wp-image-5368" src="http://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties.png" alt="Azure SAML certificate properties" width="405" height="515" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties.png 405w, https://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties-118x150.png 118w, https://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties-236x300.png 236w" sizes="(max-width: 405px) 100vw, 405px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties.png)<figcaption id="caption-attachment-5368" class="wp-caption-text">Azure SAML certificate properties*&lt;/figure&gt;
 
-<p>I thought it worth exporting the certificate to DER format to test. Open the certificate, click <strong>Details</strong> / <strong>Copy to File…</strong> (as shown above) and export it to <strong>DER encoded binary X.509 format</strong>. Use that version of the certificate when configuring SAML in Salesforce and it will save successfully.</p>
+I thought it worth exporting the certificate to DER format to test. Open the certificate, click **Details** / **Copy to File...** (as shown above) and export it to **DER encoded binary X.509 format**. Use that version of the certificate when configuring SAML in Salesforce and it will save successfully.
 
-<h2 id="recommendations">Recommendations</h2>
+## Recommendations
 
-<p>When configuring SAML single sign-on in Salesforce here’s a quick list of my recommendations:</p>
+When configuring SAML single sign-on in Salesforce here's a quick list of my recommendations:
 
-<ul>
-  <li>Export the SAML signing certificate generated by Azure to DER format</li>
-  <li>Set the <strong>Request Signature Method</strong> to RSA-SHA256. Note in the screenshot above that the signature algorithm and signature hash algorithm are in SHA256.</li>
-  <li>The <strong>Name</strong> field in the Salesforce Single Sign-on settings will be displayed to end-users on the Salesforce login page. Use text here that is descriptive to ensure users (“Azure AD” might not make sense)</li>
-  <li><strong>SAML Identity Type</strong> needs to be set to <strong>Assertion contains the User’s salesforce.com username</strong>. When configuring account provisioning, this must instead be set to <strong>Assertion contains the Federation ID from the User object</strong></li>
-</ul>
+  * Export the SAML signing certificate generated by Azure to DER format
+  * Set the **Request Signature Method** to RSA-SHA256. Note in the screenshot above that the signature algorithm and signature hash algorithm are in SHA256. 
+  * The **Name** field in the Salesforce Single Sign-on settings will be displayed to end-users on the Salesforce login page. Use text here that is descriptive to ensure users (&#8220;Azure AD&#8221; might not make sense)
+  * **SAML Identity Type** needs to be set to **Assertion contains the User's salesforce.com username**. When configuring account provisioning, this must instead be set to **Assertion contains the Federation ID from the User object**
 
-<p>This then leads me to enabling account provisioning.</p>
+This then leads me to enabling account provisioning.
 
-<h1 id="account-provisioning">Account Provisioning</h1>
+# Account Provisioning
 
-<p>Salesforce is one of the handful of SaaS apps that are supported for <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-saas-app-provisioning">Automated User Provisioning with Azure AD</a>. Just follow the steps provided by Microsoft for enabling user provisioning; however, once enabled the following message is displayed when attempting single sign-on:</p>
+Salesforce is one of the handful of SaaS apps that are supported for [Automated User Provisioning with Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-saas-app-provisioning). Just follow the steps provided by Microsoft for enabling user provisioning; however, once enabled the following message is displayed when attempting single sign-on:
 
-<blockquote>
-  <p>We can’t log you in. Check for an invalid assertion in the SAML Assertion Validator (available in Single Sign-On Settings) or check the login history for failed logins.</p>
-</blockquote>
+&gt; We can't log you in. Check for an invalid assertion in the SAML Assertion Validator (available in Single Sign-On Settings) or check the login history for failed logins.
 
-<p>Checking the <a href="https://developer.salesforce.com/docs/atlas.en-us.sso.meta/sso/sso_saml_validation.htm">SAML Validator</a>, we can see this error for the target account:</p>
+Checking the [SAML Validator](https://developer.salesforce.com/docs/atlas.en-us.sso.meta/sso/sso_saml_validation.htm), we can see this error for the target account:
 
-<blockquote>
-  <p>Unable to map the subject to a Salesforce.com user</p>
-</blockquote>
+&gt; Unable to map the subject to a Salesforce.com user
 
-<p>In the Salesforce user properties, I can see that the <strong>Federation ID</strong> under Single Sign-On is blank. Adding the user’s account name (i.e. email address or UPN) manually, then successfully enabled SSO.</p>
+In the Salesforce user properties, I can see that the **Federation ID** under Single Sign-On is blank. Adding the user's account name (i.e. email address or UPN) manually, then successfully enabled SSO.
 
-<p>So what’s the problem? Turns out that we need to add an attribute mapping in Azure AD to ensure that this field is populated when the user account provisioning process creates accounts. I’m not sure why this mapping isn’t there by default.</p>
+So what's the problem? Turns out that we need to add an attribute mapping in Azure AD to ensure that this field is populated when the user account provisioning process creates accounts. I'm not sure why this mapping isn't there by default.
 
-<p>In the Azure portal, navigate to <strong>Azure AD</strong>, <strong>Enterprise applications</strong>, Salesforce and click on <strong>Provisioning</strong>. Under <strong>Mappings</strong>, click on the enabled mapping to open the attribute properties blade. At the bottom of that blade, you will find <strong>Add New Mapping</strong>.</p>
+In the Azure portal, navigate to **Azure AD**, **Enterprise applications**, Salesforce and click on **Provisioning**. Under **Mappings**, click on the enabled mapping to open the attribute properties blade. At the bottom of that blade, you will find **Add New Mapping**.
 
-<p>Add a new mapping with these values:</p>
+Add a new mapping with these values:
 
-<ul>
-  <li>Mapping Type: Direct</li>
-  <li>Source Attribute: userPrincipalName</li>
-  <li>Default Value: <blank></blank></li>
-  <li>Source Attribute: FederationIdentifier</li>
-  <li>Match objects using this attribute: No</li>
-  <li>Apply this mapping: Always</li>
-</ul>
+  * Mapping Type: Direct
+  * Source Attribute: userPrincipalName
+  * Default Value: <blank>
+  * Source Attribute: FederationIdentifier
+  * Match objects using this attribute: No
+  * Apply this mapping: Always
 
-<p>This should look similar to the screenshot below:</p>
+This should look similar to the screenshot below:
 
-<figure id="attachment_5363" aria-describedby="caption-attachment-5363" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5363" src="http://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping-1024x587.png" alt="Adding the FederationIdentity Attribute Mapping for Salesforce" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping.png)<figcaption id="caption-attachment-5363" class="wp-caption-text">Adding the FederationIdentity Attribute Mapping for Salesforce</figcaption></figure>
+<figure id="attachment_5363" aria-describedby="caption-attachment-5363" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5363" src="http://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping-1024x587.png" alt="Adding the FederationIdentity Attribute Mapping for Salesforce" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/SalesforceAttributeMapping.png)<figcaption id="caption-attachment-5363" class="wp-caption-text">Adding the FederationIdentity Attribute Mapping for Salesforce*&lt;/figure&gt;
 
-<p>Save the configuration and start the provisioning synchronisation and single sign-ins should now work.</p>
+Save the configuration and start the provisioning synchronisation and single sign-ins should now work.
 
-<h1 id="conclusion">Conclusion</h1>
+# Conclusion
 
-<p>Being able to setup an enterprise SaaS application for single sign-on and user account provisioning from Azure AD in a lab environment is ideal. While in this instance I should have been done with the configuration within an hour, a couple of hurdles were in the way. Hopefully, this article will ensure anyone configuring SSO for this application in the future won’t have the same challenges.</p>
+Being able to setup an enterprise SaaS application for single sign-on and user account provisioning from Azure AD in a lab environment is ideal. While in this instance I should have been done with the configuration within an hour, a couple of hurdles were in the way. Hopefully, this article will ensure anyone configuring SSO for this application in the future won't have the same challenges.
+</figcaption></figure></blank></figcaption></figure></figcaption></figure></figcaption></figure>
 
   </div><a class="u-url" href="/tips-enabling-sso-salesforce-azure-ad/" hidden></a>
 </article>
