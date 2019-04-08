@@ -20,7 +20,7 @@ The promise of a modern management approach to deployment and management of Wind
 
 The default Start menu, especially on Windows 10 Pro, is far from enterprise ready right? Take a look at this mess:
 
-<img src="https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-1024x717.png" alt="Windows 10 Pro 1809 default Start menu" class="wp-image-6220" srcset="https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-1024x717.png 1024w, https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-150x105.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-300x210.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-768x537.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>Windows 10 Pro 1809 default Start menu</figcaption>
+<img src="https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-1024x717.png" alt="Windows 10 Pro 1809 default Start menu" class="wp-image-6220" srcset="https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-1024x717.png 1024w, https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-150x105.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-300x210.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-768x537.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> *Windows 10 Pro 1809 default Start menu*
 
 Over-the-air provisioning of PCs via Windows AutoPilot & Azure AD, Microsoft Intune (or insert your MDM solution here), limits the possibilities of customising the target PC before the user logs on. The administrator can [define a Start menu](https://docs.microsoft.com/en-us/windows/configuration/customize-windows-10-start-screens-by-using-mobile-device-management), but that's a policy, not a preference. One size does not fit all, and users should be able to customise the Start menu to suit their style. 
 
@@ -94,4 +94,4 @@ After the enrollment and deployment is complete, the user sees a customised Star
 
 ## Wrapping Up
 
-Provisioning PCs via Windows AutoPilot and Microsoft Intune is a rapidly changing landscape. So what may not be possible today, is likely to be addressed quickly. In the meantime, there's usually a custom approach to achieving the end-user experience that you need and this is a great example. 
+Provisioning PCs via Windows AutoPilot and Microsoft Intune is a rapidly changing landscape. So what may not be possible today, is likely to be addressed quickly. In the meantime, there's usually a custom approach to achieving the end-user experience that you need and this is a great example.

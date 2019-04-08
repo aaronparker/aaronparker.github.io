@@ -42,10 +42,10 @@ If you want to return the latest version for a specific platform, e.g. Windows, 
 
 Here's the script in action:
 
-<figure id="attachment_5972" aria-describedby="caption-attachment-5972" style="width: 1296px" class="wp-caption aligncenter">[<img class="size-full wp-image-5972" src="https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions.gif" alt="Get-CitrixReceiverVersions in action" width="1296" height="810" />](https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions.gif)<figcaption id="caption-attachment-5972" class="wp-caption-text">Get-CitrixReceiverVersions in action on Windows</figcaption>
+<figure id="attachment_5972" aria-describedby="caption-attachment-5972" style="width: 1296px" class="wp-caption aligncenter">[<img class="size-full wp-image-5972" src="https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions.gif" alt="Get-CitrixReceiverVersions in action" width="1296" height="810" />](https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions.gif)<figcaption id="caption-attachment-5972" class="wp-caption-text">Get-CitrixReceiverVersions in action on Windows*
 
 An added bonus, the script also works on PowerShell Core:
 
-<figure id="attachment_5980" aria-describedby="caption-attachment-5980" style="width: 960px" class="wp-caption aligncenter">[<img class="size-full wp-image-5980" src="https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions-Pwsh.gif" alt="Get-CitrixReceiverVersions in action on macOS" width="960" height="533" />](https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions-Pwsh.gif)<figcaption id="caption-attachment-5980" class="wp-caption-text">Get-CitrixReceiverVersions in action on macOS</figcaption>
+<figure id="attachment_5980" aria-describedby="caption-attachment-5980" style="width: 960px" class="wp-caption aligncenter">[<img class="size-full wp-image-5980" src="https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions-Pwsh.gif" alt="Get-CitrixReceiverVersions in action on macOS" width="960" height="533" />](https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions-Pwsh.gif)<figcaption id="caption-attachment-5980" class="wp-caption-text">Get-CitrixReceiverVersions in action on macOS*
 
 I've written this primarily for my purposes, but perhaps there are other purposes that I've not yet considered. Feedback, issues and improvements to the script are welcome.
