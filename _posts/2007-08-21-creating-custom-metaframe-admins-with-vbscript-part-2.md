@@ -18,7 +18,7 @@ tags:
 **Creating the Administrator**  
 Now that we can read the privileges from an existing administrator object we can determine which privileges to write to a new administrator. In this post I have listed a script that you can use to create the custom administrator account.
 
-This script uses arrays of values for the privileges (I&#8217;ve used the value rather than their names to reduce the size of the script. See the SDK documentation if you would rather refer to the privileges by their names). The arrays listed in the code will set every single privilege so you will need to edit them when setting your own administrator accounts.
+This script uses arrays of values for the privileges (I've used the value rather than their names to reduce the size of the script. See the SDK documentation if you would rather refer to the privileges by their names). The arrays listed in the code will set every single privilege so you will need to edit them when setting your own administrator accounts.
 
 The script can be broken down into this process:
 

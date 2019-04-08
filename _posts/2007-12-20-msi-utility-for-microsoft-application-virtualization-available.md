@@ -21,6 +21,6 @@ No official word from the SoftGrid/Application Virtualisation blog yet, but Micr
 
 ![msiutility.PNG](http://stealthpuppy.com/wp-content/uploads/2007/12/msiutility.PNG) 
 
-This functionality is supported natively in Application Virtualisation 4.5 and is built directly into the Sequencer. Converting your sequenced applications into MSI installs would also be great for Terminal Server environments where you don&#8217;t specifically need or want to stream the applications and are probably pre-caching them anyway.
+This functionality is supported natively in Application Virtualisation 4.5 and is built directly into the Sequencer. Converting your sequenced applications into MSI installs would also be great for Terminal Server environments where you don't specifically need or want to stream the applications and are probably pre-caching them anyway.
 
 Conversion is prettty simple -just point the MSI utility to your project file (SPRJ) and it outputs a small MSI and XML file. You will need to update to version 4.1.2.21 or 4.2.1.21 of the SoftGrid Client (depending on whether you have Software Assurance or not) to use the MSI files created with this utility.

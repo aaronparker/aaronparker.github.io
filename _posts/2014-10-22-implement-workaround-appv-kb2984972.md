@@ -34,9 +34,9 @@ The workaround requires implementing a Registry change to the App-V client to ad
 
 # Implementing the Workaround
 
-There&#8217;s a few ways that you could implement the fix - Group Policy Preferences, scripting etc. You will need to pay attention to the entires in the HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions (for App-V 5.0) or HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\SystemGuard\ObjExclusions (for App-V 4.6) as each entry requires a unique value name - you don&#8217;t want to overwrite an existing entry.
+There's a few ways that you could implement the fix - Group Policy Preferences, scripting etc. You will need to pay attention to the entires in the HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions (for App-V 5.0) or HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\SystemGuard\ObjExclusions (for App-V 4.6) as each entry requires a unique value name - you don't want to overwrite an existing entry.
 
-Here&#8217;s the ObjExclusions key on an App-V 5.0 client:
+Here's the ObjExclusions key on an App-V 5.0 client:
 
 <figure id="attachment_3716" aria-describedby="caption-attachment-3716" style="width: 1204px" class="wp-caption alignnone">[<img class="size-full wp-image-3716" src="http://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions.png" alt="AppV Client ObjExclusions registry key" width="1204" height="572" srcset="https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions.png 1204w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-150x71.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-300x142.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-1024x486.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions-624x296.png 624w" sizes="(max-width: 1204px) 100vw, 1204px" />](http://stealthpuppy.com/wp-content/uploads/2014/10/AppV-Client-ObjExclusions.png)<figcaption id="caption-attachment-3716" class="wp-caption-text">AppV Client ObjExclusions registry key</figcaption></figure>
 
@@ -60,7 +60,7 @@ For example, only apply the update if the HKLM\SOFTWARE\Microsoft\AppV\Subsyste
 
 # PowerShell
 
-PowerShell makes it easy to generate a unique number by first counting the exiting entries. Here&#8217;s some code that will count the existing entires and use that count as the unique number Note the _(Default)_ entry is also returned, so I can be confident that I&#8217;m using a value that is one higher than the existing entries.
+PowerShell makes it easy to generate a unique number by first counting the exiting entries. Here's some code that will count the existing entires and use that count as the unique number Note the _(Default)_ entry is also returned, so I can be confident that I'm using a value that is one higher than the existing entries.
 
 <pre class="lang:ps decode:true  ">$items = Get-Item -Path Registry::HKLM\Software\Microsoft\AppV\Subsystem\ObjExclusions
 New-ItemProperty -Path Registry::HKLM\Software\Microsoft\AppV\Subsystem\ObjExclusions -Name $items.ValueCount -PropertyType String -Value "TermSrvReadyEvent"</pre>

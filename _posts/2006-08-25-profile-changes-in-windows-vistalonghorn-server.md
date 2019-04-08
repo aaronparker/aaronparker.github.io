@@ -9,7 +9,7 @@ permalink: /profile-changes-in-windows-vistalonghorn-server/
 categories:
   - Microsoft
 ---
-Windows Vista and Windows Server 2008 introduce a number of new user profile paths and environment variables that differ from earlier versions of Windows and these changes may have an impact on scripts such as logon scripts and application install scripts. Most scripts should work correctly - VBScript scripts that use system functions to find folder paths should work as expected, however batch scripts that use environment variables or hard codes scripts will require modifications. Here&#8217;s a short run down of the changes.
+Windows Vista and Windows Server 2008 introduce a number of new user profile paths and environment variables that differ from earlier versions of Windows and these changes may have an impact on scripts such as logon scripts and application install scripts. Most scripts should work correctly - VBScript scripts that use system functions to find folder paths should work as expected, however batch scripts that use environment variables or hard codes scripts will require modifications. Here's a short run down of the changes.
 
 The following table lists the old profile path and the corresponding new path under Windows Vista/Windows Server 2008:
 
@@ -43,8 +43,8 @@ TEMP=C:\Users\aaronp\AppData\Local\Temp<br />
 TMP=C:\Users\aaronp\AppData\Local\Temp<br />
 USERPROFILE=C:\Users\aaronp`
 
-In practice, I&#8217;ve found that scripts that reference locations such as %ALLUSERSPROFILE%\Desktop, are not performing actions as intended and will have to be updated to use %PUBLIC% instead. Certainly something that requires more investigation.
+In practice, I've found that scripts that reference locations such as %ALLUSERSPROFILE%\Desktop, are not performing actions as intended and will have to be updated to use %PUBLIC% instead. Certainly something that requires more investigation.
 
-**UPDATE**: Microsoft have an excellent reference document that details the profile changes in Windows Vista and how roaming profiles should managed in a Windows Vista environment. Check it out for more information that what I&#8217;ve listed here:
+**UPDATE**: Microsoft have an excellent reference document that details the profile changes in Windows Vista and how roaming profiles should managed in a Windows Vista environment. Check it out for more information that what I've listed here:
 
 [Managing Roaming User Data Deployment Guide](http://www.microsoft.com/technet/windowsvista/library/fb3681b2-da39-4944-93ad-dd3b6e8ca4dc.mspx)

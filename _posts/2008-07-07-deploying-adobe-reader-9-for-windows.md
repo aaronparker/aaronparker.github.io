@@ -278,7 +278,7 @@ Managing Reader via Group Policy is pretty simple – Reader 8 and 9 are even po
 
 So it’s Group Policy Preferences or your favourite user workspace management tool for managing Reader. [Paul](http://www.capslockassassin.com/2008/07/06/adobe-acrobat-reader-9-silent-install/) has taken the time to create a simple [ADM file](http://www.capslockassassin.com/wp-content/uploads/2008/07/acrobatreader9.zip) for managing some of Readers features that might suit you.
 
-I&#8217;ve also created my own custom Administrative template, which you can download in ADM and ADMX format. There is still some work to go on this template, so use at your own risk:
+I've also created my own custom Administrative template, which you can download in ADM and ADMX format. There is still some work to go on this template, so use at your own risk:
 
 <p class="download">
   <a href="http://stealthpuppy.com/wp-content/uploads/2008/07/AdobeAcrobatAndReader9.zip">Adobe Acrobat and Reader 9 Administrative Template v0.1</a>

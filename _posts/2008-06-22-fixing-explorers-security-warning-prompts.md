@@ -11,9 +11,9 @@ dsq_thread_id:
 categories:
   - Microsoft
 ---
-Last week I wrote about [avoiding Explorer&#8217;s Security Warning prompts](http://stealthpuppy.com/windows/avoiding-explorers-security-warning-prompts), this time around I want to document a related fix that I&#8217;ve had to implement because Explorer&#8217;s expected behaviour was not just not working.
+Last week I wrote about [avoiding Explorer's Security Warning prompts](http://stealthpuppy.com/windows/avoiding-explorers-security-warning-prompts), this time around I want to document a related fix that I've had to implement because Explorer's expected behaviour was not just not working.
 
-First a quick background on what we&#8217;re trying to solve. By default, Windows Explorer will place network locations (mapped drives and UNC paths) with a period (.) in the path, into the the Internet zone. This means that when users access files from these locations, they will see security warnings like these:
+First a quick background on what we're trying to solve. By default, Windows Explorer will place network locations (mapped drives and UNC paths) with a period (.) in the path, into the the Internet zone. This means that when users access files from these locations, they will see security warnings like these:
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/06/securityrisk.png" border="0" alt="SecurityRisk" width="345" height="136" /> 
 
@@ -21,7 +21,7 @@ First a quick background on what we&#8217;re trying to solve. By default, Window
 
 These warnings attempt to ensure users are aware of the potential risks when opening files from un-trusted locations. You can make a location trusted by adding it to the Local Intranet or Trusted Sites zones. This is exactly what you would do via script, Group Policy or some other workspace management tool, for your internal network locations, so that users do not see these prompts. However, a bug exists where drives mapped to these network locations are not placed into the right zone.
 
-If you map a drive to a UNC path that that includes two or more periods in the name you will see that the network drive is marked as being in the Internet zone even though you may have added the location to the Local Intranet zone. In my example here, I&#8217;ve mapped drive S: to [\\dc.dev.local\Apps](file://\\dc.dev.local\Apps), and as you can see, it’s in the Internet zone:
+If you map a drive to a UNC path that that includes two or more periods in the name you will see that the network drive is marked as being in the Internet zone even though you may have added the location to the Local Intranet zone. In my example here, I've mapped drive S: to [\\dc.dev.local\Apps](file://\\dc.dev.local\Apps), and as you can see, it’s in the Internet zone:
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/06/internetzonedrive.png" border="0" alt="InternetZoneDrive" width="304" height="336" /> 
 
@@ -29,7 +29,7 @@ If I open the same location via a UNC path you will see that Explorer sees it as
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/06/intranetzoneunc.png" border="0" alt="IntranetZoneUNC" width="304" height="321" /> 
 
-Oddly enough, if I map a network drive to a path with only a single period on that path, the detection process works correctly and the location is seen as Intranet. In the example here, I&#8217;m mapping a drive to the same location as the previous two screen shots, but via a DFS path - [\\dev.local\Public\Apps](file://\\dev.local\Public\Apps) that redirects to [\\dc.dev.local\Apps](file://\\dc.dev.local\Apps).
+Oddly enough, if I map a network drive to a path with only a single period on that path, the detection process works correctly and the location is seen as Intranet. In the example here, I'm mapping a drive to the same location as the previous two screen shots, but via a DFS path - [\\dev.local\Public\Apps](file://\\dev.local\Public\Apps) that redirects to [\\dc.dev.local\Apps](file://\\dc.dev.local\Apps).
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/06/intranetzonedrive.png" border="0" alt="IntranetZoneDrive" width="304" height="321" /> 
 

@@ -20,11 +20,11 @@ tags:
 ---
 <img class="alignnone  wp-image-2717" title="The Definitive Guide to Virtualizing Office header" src="http://stealthpuppy.com/wp-content/uploads/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png" alt="The Definitive Guide to Virtualizing Office header" width="660" height="208" srcset="https://stealthpuppy.com/wp-content/uploads/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png 778w, https://stealthpuppy.com/wp-content/uploads/2012/05/Screen-Shot-2012-05-18-at-13.52.51-150x47.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/05/Screen-Shot-2012-05-18-at-13.52.51-300x94.png 300w" sizes="(max-width: 660px) 100vw, 660px" />
 
-Using application virtualization to simplify your gold image by delivering what&#8217;s most likely the most common component of any image - Microsoft Office, continues to be a popular topic. But is it the right approach?
+Using application virtualization to simplify your gold image by delivering what's most likely the most common component of any image - Microsoft Office, continues to be a popular topic. But is it the right approach?
 
-Microsoft has some great guidance on using App-V 4.6 to deliver various versions of Office, but there&#8217;s no single place that brings them together with a discussion on what you need to consider before virtualizing Office. This is where community discussion can help.
+Microsoft has some great guidance on using App-V 4.6 to deliver various versions of Office, but there's no single place that brings them together with a discussion on what you need to consider before virtualizing Office. This is where community discussion can help.
 
-I&#8217;m extremely happy to make this white paper available, which is the result of a lot of time and effort and a companion piece to [a talk that I gave at BriForum London back in May](http://stealthpuppy.com/community/briforum-talk-office-and-app-v/).
+I'm extremely happy to make this white paper available, which is the result of a lot of time and effort and a companion piece to [a talk that I gave at BriForum London back in May](http://stealthpuppy.com/community/briforum-talk-office-and-app-v/).
 
 <p class="important">
   [download id=&#8221;56&#8243; format=&#8221;1&#8243;]

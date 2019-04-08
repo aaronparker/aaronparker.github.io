@@ -26,11 +26,11 @@ _This is the forth in a series of articles on folder redirection by Aaron Parke
 
 # Previously in this Series
 
-So far in this series on folder redirection, we&#8217;ve covered [the basics of how folder redirection works](https://helgeklein.com/blog/2014/10/folder-redirection-impacts-ux-breaks-applications), what [the impact of folder redirection is on logon and application launch](http://stealthpuppy.com/visualizing-impact-folder-redirection-logon/) and in the previous article, [Helge covered the impact on search in the Start menu](https://helgeklein.com/blog/2014/11/visualizing-impact-folder-redirection-start-menu-search/). In this article, we&#8217;ll focus on actual measurements of that impact.
+So far in this series on folder redirection, we've covered [the basics of how folder redirection works](https://helgeklein.com/blog/2014/10/folder-redirection-impacts-ux-breaks-applications), what [the impact of folder redirection is on logon and application launch](http://stealthpuppy.com/visualizing-impact-folder-redirection-logon/) and in the previous article, [Helge covered the impact on search in the Start menu](https://helgeklein.com/blog/2014/11/visualizing-impact-folder-redirection-start-menu-search/). In this article, we'll focus on actual measurements of that impact.
 
 # Measuring the Impact on Logon Performance
 
-To measure the impact on performance of different configurations, including different profile sizes, folder redirection enabled or disabled and the file server under different stress conditions, we&#8217;ve used Helge&#8217;s own [uberAgent](https://helgeklein.com/uberagent-for-splunk/) in each of our environments. So while each environment was different, we&#8217;ve used the same methodology to measure the impact.
+To measure the impact on performance of different configurations, including different profile sizes, folder redirection enabled or disabled and the file server under different stress conditions, we've used Helge's own [uberAgent](https://helgeklein.com/uberagent-for-splunk/) in each of our environments. So while each environment was different, we've used the same methodology to measure the impact.
 
 When we discuss profile sizes we referring to both the total size of the profile as well as the number of files in the profile. For these tests, we have 3 profile sizes:
 
@@ -42,19 +42,19 @@ Before capturing metrics, each user account/profile has completed the first logo
 
 ## Logon Times of Different Profile Sizes and No Folder Redirection
 
-The following graph shows the logon time of user account configured for a roaming profile and with no folder redirection configured. We&#8217;ve averaged the logon times over a number of tests for small, medium and large roaming user profiles.
+The following graph shows the logon time of user account configured for a roaming profile and with no folder redirection configured. We've averaged the logon times over a number of tests for small, medium and large roaming user profiles.
 
 <figure id="attachment_3772" aria-describedby="caption-attachment-3772" style="width: 1702px" class="wp-caption alignnone">[<img class="wp-image-3772 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile.png" alt="" width="1702" height="1078" srcset="https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile.png 1702w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-150x95.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-300x190.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-1024x648.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-624x395.png 624w" sizes="(max-width: 1702px) 100vw, 1702px" />](http://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile.png)<figcaption id="caption-attachment-3772" class="wp-caption-text">Logon impact of profile sizes with no folder redirection</figcaption></figure>
 
-This shows a predictable increase in logon time as the profile grows - the larger the profile, the longer the logon time takes. In this case, because we&#8217;re using roaming profiles with no folder redirection, the entire profile is copied locally at user logon.
+This shows a predictable increase in logon time as the profile grows - the larger the profile, the longer the logon time takes. In this case, because we're using roaming profiles with no folder redirection, the entire profile is copied locally at user logon.
 
 ## Logon Times of Different Profile Sizes with Folder Redirection Enabled
 
-Let&#8217;s use the same tests (same user account with the same small, medium and large profiles) and enable folder redirection for each of the user profile folders.
+Let's use the same tests (same user account with the same small, medium and large profiles) and enable folder redirection for each of the user profile folders.
 
 <figure id="attachment_3771" aria-describedby="caption-attachment-3771" style="width: 1700px" class="wp-caption alignnone">[<img class="wp-image-3771 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection.png" alt="" width="1700" height="1086" srcset="https://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection.png 1700w, https://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-150x95.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-300x191.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-1024x654.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-624x398.png 624w" sizes="(max-width: 1700px) 100vw, 1700px" />](http://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection.png)<figcaption id="caption-attachment-3771" class="wp-caption-text">Logon impact of profile sizes with folder redirection</figcaption></figure>
 
-In this test, there is no statistically significant difference between logon times. The reason for a more consistent logon time is that with folder redirection, we aren&#8217;t copying data locally at logon, other than the user&#8217;s registry (NTUSER.DAT). In these tests, there won&#8217;t be much difference in the size of the registry, therefore the logon times are similar.
+In this test, there is no statistically significant difference between logon times. The reason for a more consistent logon time is that with folder redirection, we aren't copying data locally at logon, other than the user's registry (NTUSER.DAT). In these tests, there won't be much difference in the size of the registry, therefore the logon times are similar.
 
 ## Logon Times of Different Profile Sizes with Citrix Profile Management
 
@@ -68,19 +68,19 @@ The improvement in logon times over roaming profiles are significant for the med
 
 # Measuring the Impact on File Server Load on Logon Performance
 
-We&#8217;ve looked at different types of profile and folder redirection configurations which have produced reasonable results for logon performance, but each test was done with the file server hosting the user profile or the redirected folders in an idle state.
+We've looked at different types of profile and folder redirection configurations which have produced reasonable results for logon performance, but each test was done with the file server hosting the user profile or the redirected folders in an idle state.
 
-Let&#8217;s look at what happens if the file server is under 0% (idle), 80% and 99% CPU load. I&#8217;ve covered some common reasons for [file server CPU load in my previous article](http://stealthpuppy.com/visualizing-impact-folder-redirection-logon/), but as a refresher these could include AV scans, run away processes, servicing a large number of SMB requests, or CPU resource contention.
+Let's look at what happens if the file server is under 0% (idle), 80% and 99% CPU load. I've covered some common reasons for [file server CPU load in my previous article](http://stealthpuppy.com/visualizing-impact-folder-redirection-logon/), but as a refresher these could include AV scans, run away processes, servicing a large number of SMB requests, or CPU resource contention.
 
 ## Logon Times of Different Profile Sizes and No Folder Redirection
 
-With the first test, we&#8217;ll again use standard roaming user profiles and no folder redirection configured, so the entire profile is copied to the Windows desktop at logon.
+With the first test, we'll again use standard roaming user profiles and no folder redirection configured, so the entire profile is copied to the Windows desktop at logon.
 
 <figure id="attachment_3768" aria-describedby="caption-attachment-3768" style="width: 1703px" class="wp-caption alignnone">[<img class="wp-image-3768 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1.png" alt="" width="1703" height="1083" srcset="https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1.png 1703w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1-150x95.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1-300x190.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1-1024x651.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1-624x396.png 624w" sizes="(max-width: 1703px) 100vw, 1703px" />](http://stealthpuppy.com/wp-content/uploads/2014/11/roaming-profile-file-server-load1.png)<figcaption id="caption-attachment-3768" class="wp-caption-text">Logon impact of profile sizes with roaming profiles and file server under load</figcaption></figure>
 
-This produces some interesting results - with a small roaming profile, there&#8217;s little impact on logon times when the file server CPU is at 80%, but for each of the remaining tests, we can see that file server CPU load, even at 80%, more than doubles the logon time.
+This produces some interesting results - with a small roaming profile, there's little impact on logon times when the file server CPU is at 80%, but for each of the remaining tests, we can see that file server CPU load, even at 80%, more than doubles the logon time.
 
-When the file server effectively runs out of CPU resources (at 99%) the direct effect on the user experience is clearly visible. For the medium profile, there&#8217;s a 1200% increase in logon time and for the large profile, a 2071% increase! Don&#8217;t let your file server/s run out of CPU resources.
+When the file server effectively runs out of CPU resources (at 99%) the direct effect on the user experience is clearly visible. For the medium profile, there's a 1200% increase in logon time and for the large profile, a 2071% increase! Don't let your file server/s run out of CPU resources.
 
 ## Logon Times of Different Profile Sizes with Folder Redirection Enabled
 
@@ -88,31 +88,31 @@ The same CPU load tests run again with folder redirection now enabled on the sam
 
 <figure id="attachment_3774" aria-describedby="caption-attachment-3774" style="width: 1703px" class="wp-caption alignnone">[<img class="size-full wp-image-3774" src="http://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-file-server-load.png" alt="Logon impact of profile sizes with folder redirection enabled and file server under load" width="1703" height="1083" srcset="https://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-file-server-load.png 1703w, https://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-file-server-load-150x95.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-file-server-load-300x190.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-file-server-load-1024x651.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-file-server-load-624x396.png 624w" sizes="(max-width: 1703px) 100vw, 1703px" />](http://stealthpuppy.com/wp-content/uploads/2014/11/folder-redirection-file-server-load.png)<figcaption id="caption-attachment-3774" class="wp-caption-text">Logon impact of profile sizes with folder redirection enabled and file server under load</figcaption></figure>
 
-At 80% load on the file server, there&#8217;s an impact on the logon. Users sensitive to changes in logon times will probably notice, but I suspect that the majority of users would not be affected.
+At 80% load on the file server, there's an impact on the logon. Users sensitive to changes in logon times will probably notice, but I suspect that the majority of users would not be affected.
 
 However, looking at scenarios when the file server runs out of CPU resources (around 99%), it is just unable to service SMB requests in a reasonable time and the user logon times more than triple or quadruple.
 
-Even though we&#8217;ve implemented folder redirection, by itself it&#8217;s not a silver bullet. It helps considerably for large profiles, but once the file serve is busy, users will see the impact on performance.
+Even though we've implemented folder redirection, by itself it's not a silver bullet. It helps considerably for large profiles, but once the file serve is busy, users will see the impact on performance.
 
 ## Logon Times of Different Profile Sizes with Citrix Profile Management
 
-Let&#8217;s look again at the effectiveness of a streaming approach to profile and data access instead of folder redirection, while the file server is under load.
+Let's look again at the effectiveness of a streaming approach to profile and data access instead of folder redirection, while the file server is under load.
 
 <figure id="attachment_3776" aria-describedby="caption-attachment-3776" style="width: 1703px" class="wp-caption alignnone">[<img class="size-full wp-image-3776" src="http://stealthpuppy.com/wp-content/uploads/2014/11/citrix-profile-management-file-server-load.png" alt="Logon impact of profile sizes with Citrix Profile Management and file server under load" width="1703" height="1082" srcset="https://stealthpuppy.com/wp-content/uploads/2014/11/citrix-profile-management-file-server-load.png 1703w, https://stealthpuppy.com/wp-content/uploads/2014/11/citrix-profile-management-file-server-load-150x95.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/11/citrix-profile-management-file-server-load-300x190.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/11/citrix-profile-management-file-server-load-1024x650.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/11/citrix-profile-management-file-server-load-624x396.png 624w" sizes="(max-width: 1703px) 100vw, 1703px" />](http://stealthpuppy.com/wp-content/uploads/2014/11/citrix-profile-management-file-server-load.png)<figcaption id="caption-attachment-3776" class="wp-caption-text">Logon impact of profile sizes with Citrix Profile Management and file server under load</figcaption></figure>
 
-What&#8217;s interesting here, is that where folder redirection reduced the differences between the logon times of the different profiles sizes, Citrix Profile Management does not. This can be explained by the need to transfer additional file data locally. Files are streamed to the client as they are accessed, so it&#8217;s likely that more data is transferred than when using folder redirection.
+What's interesting here, is that where folder redirection reduced the differences between the logon times of the different profiles sizes, Citrix Profile Management does not. This can be explained by the need to transfer additional file data locally. Files are streamed to the client as they are accessed, so it's likely that more data is transferred than when using folder redirection.
 
 This approach is still a significant improvement over roaming user profiles. So, if you combine folder redirection and profile management, you should get the best of both worlds to improve the logon experience.
 
-But... don&#8217;t let your file server run out of CPU resources.
+But... don't let your file server run out of CPU resources.
 
 # Conclusion
 
-Based on these results, we can see the benefits of enabling folder redirection, especially if you&#8217;re using roaming user profiles. Combining folder redirection with 3rd party profile management solutions should further improve the logon experience.
+Based on these results, we can see the benefits of enabling folder redirection, especially if you're using roaming user profiles. Combining folder redirection with 3rd party profile management solutions should further improve the logon experience.
 
 For hosted desktop customers (Citrix XenApp, XenDesktop, VMware Horizon etc.) there are usually inbox solutions to profile management; however for physical desktops 3rd party licensing is often required (or UE-V is available as a part of MDOP).
 
-Whatever the approach, these are only parts of the equation, as we&#8217;ve seen, file server performance is crucial to providing good user experience. More importantly, consistent file server performance is important.
+Whatever the approach, these are only parts of the equation, as we've seen, file server performance is crucial to providing good user experience. More importantly, consistent file server performance is important.
 
 Logon storms, transient environment issues and undersized file servers can have a direct impact on logon times.
 

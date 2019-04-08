@@ -1,6 +1,6 @@
 ---
 id: 3030
-title: 'Don&#8217;t miss out on the greatest (App-V) show on Earth'
+title: 'Don't miss out on the greatest (App-V) show on Earth'
 date: 2013-01-14T09:30:40+10:00
 author: Aaron Parker
 layout: post
@@ -31,4 +31,4 @@ The initiative is focused on bringing people from the App-V community together t
 
 If you would like to participate, seats are limited to be sure to <a href="http://www.amiando.com/appvug2013.html?page=795415" target="_blank">register</a> ASAP. See the <a href="http://www.amiando.com/appvug2013.html?page=795416" target="_blank">agenda</a> for a list of all topics for the day.
 
-Unfortunately, I can&#8217;t make it this year - I&#8217;ll be sipping some lagers in <a href="http://goo.gl/maps/549Et" target="_blank">Bruges</a>.
+Unfortunately, I can't make it this year - I'll be sipping some lagers in <a href="http://goo.gl/maps/549Et" target="_blank">Bruges</a>.

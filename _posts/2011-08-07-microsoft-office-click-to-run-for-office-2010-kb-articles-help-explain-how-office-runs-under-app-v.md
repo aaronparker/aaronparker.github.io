@@ -14,7 +14,7 @@ tags:
   - App-V
   - Office
 ---
-A number of knowledgebase articles have been updated recently that are interesting reading if you&#8217;re looking to understand how Microsoft Office works under App-V, and the limitations if you deploy Office in this method. If you&#8217;re already not aware, [Office delivered by Click-to-Run is actually a modified version of App-V under the hood](http://office.microsoft.com/en-us/products/what-is-click-to-run-HA101868855.aspx). There&#8217;s also [an overview of Microsoft Office Click-to-Run for Office 2010](An overview of Microsoft Office Click-to-Run for Office 2010) worth reading.
+A number of knowledgebase articles have been updated recently that are interesting reading if you're looking to understand how Microsoft Office works under App-V, and the limitations if you deploy Office in this method. If you're already not aware, [Office delivered by Click-to-Run is actually a modified version of App-V under the hood](http://office.microsoft.com/en-us/products/what-is-click-to-run-HA101868855.aspx). There's also [an overview of Microsoft Office Click-to-Run for Office 2010](An overview of Microsoft Office Click-to-Run for Office 2010) worth reading.
 
 Articles that detail limitations and workarounds that have been updated recently include:
 
@@ -26,10 +26,10 @@ Articles that detail limitations and workarounds that have been updated recently
   * [&#8220;This product must be installed to Q:&#8221; error message when you try to install Office 2010 that is delivered by Click-to-Run](http://support.microsoft.com/kb/982757/)
   * [How to use command-line switches in Office Click-to-Run for Office 2010](http://support.microsoft.com/kb/982432/)
 
-There&#8217;s even an article on getting into the virtual environment (which is good for a laugh):
+There's even an article on getting into the virtual environment (which is good for a laugh):
 
   * [How to access the registry information of Office 2010 that is delivered by Click-to-Run](http://support.microsoft.com/kb/982429/)
 
 For even more articles on Click-to-Run, start with [this search on the Microsoft Support site](http://support.microsoft.com/search/default.aspx?query=Click-to-Run&catalog=LCID%3D1033&mode=r).
 
-Although some of the same limitation don&#8217;t apply if you are creating your own App-V package for Office, these articles are still worthwhile resources.
+Although some of the same limitation don't apply if you are creating your own App-V package for Office, these articles are still worthwhile resources.

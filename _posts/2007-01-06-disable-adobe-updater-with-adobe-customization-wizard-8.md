@@ -39,7 +39,7 @@ If you already have Adobe Reader installed and are looking for a simple way to d
 
 ### Creating a Transform File
 
-If you are invovled in deploying Adobe Reader or want an automated method of disabling Updater, you&#8217;ll need to create a transform file. Editing the transform to remove Updater 5 is a simple process. You will have to extract the installation files from the download of Adobe Reader 8 before beginning:
+If you are invovled in deploying Adobe Reader or want an automated method of disabling Updater, you'll need to create a transform file. Editing the transform to remove Updater 5 is a simple process. You will have to extract the installation files from the download of Adobe Reader 8 before beginning:
 
   1. Launch the Adobe Customization Wizard and then open an Adobe Reader 8 install package (the .MSI file)
   2. Click **Direct** **Editor** and choose **File** under Tables
@@ -54,7 +54,7 @@ If you are invovled in deploying Adobe Reader or want an automated method of dis
   I have added <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-81">new transform files for Adobe Reader 8.1</a> and Reader 8.1.1. The transform files listed here support Reader 8.0 only.
 </p>
 
-So you don&#8217;t have to, I&#8217;ve created a few transform files for use in [deploying Adobe Reader 8](http://www.stealthpuppy.com/blogs/travelling/archive/2006/12/07/deploying-adobe-reader-8.aspx). The first file will remove all of those new online features that come with Reader 8, the second file will do the same as well as _completely_ prevent the installation of Adobe Updater 5 and the third file will prevent the installation of Adobe Updater 5 only (leaving the online features intact):
+So you don't have to, I've created a few transform files for use in [deploying Adobe Reader 8](http://www.stealthpuppy.com/blogs/travelling/archive/2006/12/07/deploying-adobe-reader-8.aspx). The first file will remove all of those new online features that come with Reader 8, the second file will do the same as well as _completely_ prevent the installation of Adobe Updater 5 and the third file will prevent the installation of Adobe Updater 5 only (leaving the online features intact):
 
   * Adobe Reader 8 Transform File: [Disables online features only](http://stealthpuppy.com/wp-content/uploads/2007/01/AdobeReader8NoOnlineOnly.mst)
   * Adobe Reader 8 Transform File: [Disables online features and prevents installation of Updater 5](http://stealthpuppy.com/wp-content/uploads/2007/01/AdobeReader8NoOnlineNoUpdater.mst)
@@ -65,11 +65,11 @@ Please note that if you install Adobe Reader using one of the above transform fi
 
 ### Installing Adobe Reader 8
 
-I&#8217;ve updated my [Adobe Reader 8 install script](http://www.stealthpuppy.com/blogs/travelling/pages/adobe-reader-8-0.aspx) to reflect some of the things we can do with the Customisation Wizard, however here&#8217;s the quick lowdown on how to install Adobe Reader 8 without all of the new in your face features:
+I've updated my [Adobe Reader 8 install script](http://www.stealthpuppy.com/blogs/travelling/pages/adobe-reader-8-0.aspx) to reflect some of the things we can do with the Customisation Wizard, however here's the quick lowdown on how to install Adobe Reader 8 without all of the new in your face features:
 
   1. Download the [Adobe Reader 8 package](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.0/enu/AdbeRdr80_en_US.exe) from the Adobe web site
   2. Run the package and save the extracted setup files to from `C:Users<username>AppDataLocalLowNetopsystemstempAdobe Reader 8.0` on Windows Vista or `C:Documents and Settings<username>Local SettingsTemp1Adobe Reader 8.0` on Windows 2000/XP/2003, to a folder elsewhere on your system (e.g. C:TempAdobe)
-  3. Download [this zip file](http://stealthpuppy.com/wp-content/uploads/2007/01/AdobeReader8Install.zip) that contains the install script and a copy of the transform file that will disable Adobe Reader&#8217;s new online features and Updater 5
+  3. Download [this zip file](http://stealthpuppy.com/wp-content/uploads/2007/01/AdobeReader8Install.zip) that contains the install script and a copy of the transform file that will disable Adobe Reader's new online features and Updater 5
   4. Extract `InstallAdobeReader8.CMD` and `AdobeReader8NoOnlineNoUpdater.MST` into the same folder to where you have copied the Adobe Reader 8 setup files in step 2
   5. Run `InstallAdobeReader8.CMD` from Windows Explorer or a command prompt (an elevated command prompt in Windows Vista) and your custom installation of Adobe Reader 8 will complete
   6. Voila! No more Updater5 folder inside your Documents folder and no annoying online features of Adobe Reader 8.

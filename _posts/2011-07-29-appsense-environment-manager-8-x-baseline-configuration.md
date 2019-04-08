@@ -18,7 +18,7 @@ tags:
   - AppSense
   - Environment Manager
 ---
-Here&#8217;s something that I&#8217;ve been looking to share with the community for some time - something to get you started when implementing AppSense Environment Manager 8.x.
+Here's something that I've been looking to share with the community for some time - something to get you started when implementing AppSense Environment Manager 8.x.
 
 Comments and feedback welcome.
 

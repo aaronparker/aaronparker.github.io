@@ -23,7 +23,7 @@ The new client is one ugly looking application - 16 colour icons, a splash scree
 
 Â [Hotfix Rollup Pack PSE400W2K3R03 - For Citrix Presentation Server 4.0, Citrix Access Essentials 1.0 and 1.5 for Windows Server 2003](http://support.citrix.com/article/CTX111419)
 
-Here&#8217;s some important notes from the readme:
+Here's some important notes from the readme:
 
 >   1. Caution: Do not install this hotfix rollup pack on 64-bit operating systems.
 >   2. Before installing this hotfix rollup pack, you must uninstall Hotfixes PSE400W2K3029 and PSE400R01W2K3053, if present, from Add/Remove Programs on the Control Panel. Failing to do so may lead to system inconsistencies.

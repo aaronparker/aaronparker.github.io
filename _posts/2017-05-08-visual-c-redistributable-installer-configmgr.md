@@ -18,7 +18,7 @@ tags:
   - PowerShell
   - Visual C++ Redistributable
 ---
-I recently [posted an article](http://stealthpuppy.com/visual-c-redistributable-installer/) on a script I&#8217;ve written for downloading and installing the Microsoft&nbsp;[Visual C++ Redistributables](https://github.com/aaronparker/Install-VisualCRedistributables). Thanks to&nbsp;[Cornelius Schuchardt](https://twitter.com/techdecline), the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).
+I recently [posted an article](http://stealthpuppy.com/visual-c-redistributable-installer/) on a script I've written for downloading and installing the Microsoft&nbsp;[Visual C++ Redistributables](https://github.com/aaronparker/Install-VisualCRedistributables). Thanks to&nbsp;[Cornelius Schuchardt](https://twitter.com/techdecline), the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).
 
 Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you can [download from&nbsp;the releases page](https://github.com/aaronparker/Install-VisualCRedistributables/releases)&nbsp;and includes the following updates:
 

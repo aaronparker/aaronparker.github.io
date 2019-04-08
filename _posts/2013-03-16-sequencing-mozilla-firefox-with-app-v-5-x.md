@@ -20,11 +20,11 @@ tags:
   - App-V
   - Firefox
 ---
-<img style="background-image: none; float: right; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" src="http://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" alt="" align="right" border="0" />It&#8217;s a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little preparation. Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization](http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It&#8217;s important that Firefox is configured correctly for virtualization by disabling specific features.
+<img style="background-image: none; float: right; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" src="http://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" alt="" align="right" border="0" />It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little preparation. Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization](http://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features.
 
 # User Experience
 
-Typically, virtualizing an application changes the user experience due to the introduction of isolation. With App-V 5 there&#8217;s no such change to the way users might interact with Firefox. Users can even set a virtualized Firefox as their default browser.
+Typically, virtualizing an application changes the user experience due to the introduction of isolation. With App-V 5 there's no such change to the way users might interact with Firefox. Users can even set a virtualized Firefox as their default browser.
 
 # Firefox features to disable
 
@@ -42,9 +42,9 @@ Read the article [Prepare Mozilla Firefox for Enterprise Deployment and Virtuali
   * %APPDATA%\Mozilla (preferences, bookmarks etc.); and
   * %LOCALAPPDATA%\Mozilla (browser cache)
 
-The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this is a good thing and I don&#8217;t recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding **[{AppData}]\Mozilla** to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time.
+The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this is a good thing and I don't recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding **[{AppData}]\Mozilla** to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time.
 
-Virtualizing the profile increases the complexity of upgrading Firefox packages especially challenging given [Mozilla&#8217;s approach to Firefox releases](http://www.zdnet.com/blog/bott/mozilla-to-enterprise-customers-drop-dead/3497). By storing the Firefox profile on the real file system, Firefox can be deployed via completely unrelated packages – no need to create upgrade versions. By excluding %APPDATA% and not virtualizing the user profile you will gain some flexibility with your Firefox deployment.
+Virtualizing the profile increases the complexity of upgrading Firefox packages especially challenging given [Mozilla's approach to Firefox releases](http://www.zdnet.com/blog/bott/mozilla-to-enterprise-customers-drop-dead/3497). By storing the Firefox profile on the real file system, Firefox can be deployed via completely unrelated packages – no need to create upgrade versions. By excluding %APPDATA% and not virtualizing the user profile you will gain some flexibility with your Firefox deployment.
 
 # Sequencing Platform
 
@@ -90,7 +90,7 @@ For a walkthrough of the sequencing process, using the installation script outli
 
 # First Run Tasks and Primary Feature Block
 
-If the steps above have been followed for exclusions, installation and configuration of Firefox, there will be no first run tasks to complete. Additionally the resultant package will be reasonably small so there is no need to create the Primary Feature Block. Because you don&#8217;t need to complete first run tasks or create the Primary Feature Block, you could automate the entire end-to-end process of creating a Firefox package using the App-V 5 Sequencer PowerShell module.
+If the steps above have been followed for exclusions, installation and configuration of Firefox, there will be no first run tasks to complete. Additionally the resultant package will be reasonably small so there is no need to create the Primary Feature Block. Because you don't need to complete first run tasks or create the Primary Feature Block, you could automate the entire end-to-end process of creating a Firefox package using the App-V 5 Sequencer PowerShell module.
 
 # Automating the Firefox sequence
 

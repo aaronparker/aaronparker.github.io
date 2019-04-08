@@ -13,7 +13,7 @@ categories:
 tags:
   - Web-Interface
 ---
-I&#8217;ve never previously had to change the font face in Web Interface, but I&#8217;ve had to it today for the first time ever. Now one would think that this would be in a custom style sheet, but the CSS is actually inline in the Web Interface web pages.
+I've never previously had to change the font face in Web Interface, but I've had to it today for the first time ever. Now one would think that this would be in a custom style sheet, but the CSS is actually inline in the Web Interface web pages.
 
 To change the font face you will need to edit one of the language files. In my case this was the English language file - **common_strings.properties**. At about line 374 you will find the following line which you modify to change the font:
 

@@ -11,17 +11,17 @@ categories:
 tags:
   - Terminal Server
 ---
-On our internal Terminal Servers the CEO has been having an issue whereby files or folders are not sent to the Recycle Bin, rather they are immediately deleted. If you logon with administrative rights on the machine, you can send files to the Recycle Bin. To date, he&#8217;d been told that this would be fixed once we move to some new boxes (which I did last week). Unfortunately the problem also exists on the new Terminal Servers which I only found out after the CEO pointed the problem out to me (luckily he&#8217;s a pretty understanding guy).
+On our internal Terminal Servers the CEO has been having an issue whereby files or folders are not sent to the Recycle Bin, rather they are immediately deleted. If you logon with administrative rights on the machine, you can send files to the Recycle Bin. To date, he'd been told that this would be fixed once we move to some new boxes (which I did last week). Unfortunately the problem also exists on the new Terminal Servers which I only found out after the CEO pointed the problem out to me (luckily he's a pretty understanding guy).
 
 So where do you start troubleshooting a problem like this? Well this is where my crusade for scripting everything has come in handy. Because I can go back through the unattended build for the Terminal Servers I can see exactly what happens during the build process and I came across a file system rights issue.
 
-If you&#8217;ve ever administered Terminal Servers (or desktops for that matter) you will have seen that on occasion the root of the system partition can collect user files. How users can do this I don&#8217;t know, but they able to write to this location because the default permissions allow CREATOR OWNER write access. When I build Terminal Servers I like to restrict these permissions and run a command during the build to give users read-only access:
+If you've ever administered Terminal Servers (or desktops for that matter) you will have seen that on occasion the root of the system partition can collect user files. How users can do this I don't know, but they able to write to this location because the default permissions allow CREATOR OWNER write access. When I build Terminal Servers I like to restrict these permissions and run a command during the build to give users read-only access:
 
 [code]CACLS %SystemDrive%\ /E /R "CREATOR OWNER" Users /P Everyone:R[/code]
 
-This helps to keep the file system clean but does have side effects such as applications failing to write (why are they writing there in the first place?) or users can&#8217;t send object to the recycle bin (I&#8217;ve learnt my lesson now).
+This helps to keep the file system clean but does have side effects such as applications failing to write (why are they writing there in the first place?) or users can't send object to the recycle bin (I've learnt my lesson now).
 
-It turns out that the Recycle Bin folder (C:\RECYCLER on Windows XP/2003) is not created until the first user sends an object to the Recycle Bin. Of course on a system where I&#8217;ve restricted user access to the System partition, this will fail. If you run Process Monitor you&#8217;ll see an ACCESS DENIED result when the user attempts to delete an object. So how do we fix this? In my script I&#8217;ve added a command that creates the RECYCLER folder before the permissions are modified, thus giving users the rights to create their own Recycle Bin folder within C:\RECYCLER:
+It turns out that the Recycle Bin folder (C:\RECYCLER on Windows XP/2003) is not created until the first user sends an object to the Recycle Bin. Of course on a system where I've restricted user access to the System partition, this will fail. If you run Process Monitor you'll see an ACCESS DENIED result when the user attempts to delete an object. So how do we fix this? In my script I've added a command that creates the RECYCLER folder before the permissions are modified, thus giving users the rights to create their own Recycle Bin folder within C:\RECYCLER:
 
 [code]MD %SystemDrive%\RECYCLER  
 ATTRIB %SystemDrive%\RECYCLER +S +H  

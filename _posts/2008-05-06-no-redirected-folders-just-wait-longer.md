@@ -12,7 +12,7 @@ tags:
   - Redirected Folders
   - Windows-Vista
 ---
-No, [Ace Ventura](http://www.imdb.com/title/tt0109040/quotes) hasn&#8217;t started writing knowledgebase articles, it&#8217;s the advice given about an issue with redirected folders in Windows Vista and Windows Server 2008. I haven&#8217;t seen this myself, but fortunately there&#8217;s a better workaround than waiting 12 minutes.
+No, [Ace Ventura](http://www.imdb.com/title/tt0109040/quotes) hasn't started writing knowledgebase articles, it's the advice given about an issue with redirected folders in Windows Vista and Windows Server 2008. I haven't seen this myself, but fortunately there's a better workaround than waiting 12 minutes.
 
 [Folder redirection does not work correctly after you restart a computer that is running Windows Server 2008 or Windows Vista](http://support.microsoft.com/kb/951049)
 

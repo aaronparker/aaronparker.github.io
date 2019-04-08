@@ -18,7 +18,7 @@ tags:
   - Virtual-PC
   - Windows 7
 ---
-Of course, Windows Virtual PC has been [covered in detail already](http://www.winsupersite.com/win7/xp_mode_preview.asp), but I got a chance to play with the product and there&#8217;s some neat UI experiences that I hadn&#8217;t seen covered yet. Here&#8217;s a quick overview of interacting with Windows Virtual PC.
+Of course, Windows Virtual PC has been [covered in detail already](http://www.winsupersite.com/win7/xp_mode_preview.asp), but I got a chance to play with the product and there's some neat UI experiences that I hadn't seen covered yet. Here's a quick overview of interacting with Windows Virtual PC.
 
 Windows Virtual PC gets a spanking new icon:
 
@@ -52,6 +52,6 @@ Finally you get options for creating the VHD:
 
 <img class="alignnone" title="Create a new virtual machine, step 3" src="http://prmkgw.blu.livefilestore.com/y1peFfQeCnkrjcdWzRahpcoSdA8DvBJX3UajEIXQfC3X0J9iWleMCY1J2y_FfjfCahaLbp-1BY0UgZinlRsyOkr1g/Createavirtualmachine3.png" alt="" width="581" height="456" /> 
 
-This revision looks pretty good for some basic virtualisation tasks (in now way is it taking aim at VMware Workstations and others). Now where&#8217;s the 64-bit guest support?
+This revision looks pretty good for some basic virtualisation tasks (in now way is it taking aim at VMware Workstations and others). Now where's the 64-bit guest support?
 
-If you&#8217;re having issues seeing the screenshots, you might have more luck by going directly to my SkyDrive folder:
+If you're having issues seeing the screenshots, you might have more luck by going directly to my SkyDrive folder:

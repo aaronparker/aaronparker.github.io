@@ -12,7 +12,7 @@ tags:
   - Access-Gateway
 ---
 <p class="MsoNormal" style="margin: 0cm 0cm 10pt">
-  <font face="verdana,geneva">According to </font><a href="http://citrite.org/blogs/samj/2006/10/17/access-gateway-advanced-45-released/"><u><font face="verdana,geneva">Sam Johnston</font></u></a><font face="verdana,geneva">, Access Gateway and Access Gateway Advanced Edition (Access Gateway with Advanced Access Control) 4.5 have been released as of last Friday 13<sup>th</sup> October. Check out Sam&#8217;s post for an excellent description of what to expect of the new version.</font>
+  <font face="verdana,geneva">According to </font><a href="http://citrite.org/blogs/samj/2006/10/17/access-gateway-advanced-45-released/"><u><font face="verdana,geneva">Sam Johnston</font></u></a><font face="verdana,geneva">, Access Gateway and Access Gateway Advanced Edition (Access Gateway with Advanced Access Control) 4.5 have been released as of last Friday 13<sup>th</sup> October. Check out Sam's post for an excellent description of what to expect of the new version.</font>
 </p>
 
 > <p class="MsoNormal" style="margin: 0cm 0cm 10pt">
@@ -20,7 +20,7 @@ tags:
 > </p>
 
 <p class="MsoNormal" style="margin: 0cm 0cm 10pt">
-  <font face="verdana,geneva">I donâ€™t know how I missed this one, I think itâ€™s been slipped in under the radar and I think Sam means 1 January 2007. I donâ€™t seem to have access to it from the MyCitrix web site, but I no longer have access to the beta. So I&#8217;m yet to see the final 4.5 code.</font>
+  <font face="verdana,geneva">I donâ€™t know how I missed this one, I think itâ€™s been slipped in under the radar and I think Sam means 1 January 2007. I donâ€™t seem to have access to it from the MyCitrix web site, but I no longer have access to the beta. So I'm yet to see the final 4.5 code.</font>
 </p>
 
 <p class="MsoNormal" style="margin: 0cm 0cm 10pt">

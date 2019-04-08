@@ -1,6 +1,6 @@
 ---
 id: 265
-title: 'Citrix AAC and Microsoft&#8217;s NAP'
+title: 'Citrix AAC and Microsoft's NAP'
 date: 2006-07-18T14:17:00+10:00
 author: Aaron Parker
 layout: post
@@ -18,4 +18,4 @@ Microsoft are implementing their own tools for controlling access to the network
 
 Given the fairly broad install base that the NAP client will eventually enjoy and what I expect to be broad support from third party vendors, surely it would be advantageous to remove the End Point Analysis components from AAC andÂ support NAP instead. This way AAC could interoperate with complete platform including any components that will extend NAP beyond what is out if the box. AAC could also then support other clients rather than just Windows 2000 Service Pack 4 and Windows XP Service Pack 2 that the current version supports. As as network engineer, it would be far simpler to support a single policy framework.
 
-There&#8217;s a reasonably detailed webcast about NAP worth checking out that can be found [here](https://www118.livemeeting.com/cc/mseventsbmo/view?id=1032297525&role=attend&pw=63A049C8).
+There's a reasonably detailed webcast about NAP worth checking out that can be found [here](https://www118.livemeeting.com/cc/mseventsbmo/view?id=1032297525&role=attend&pw=63A049C8).

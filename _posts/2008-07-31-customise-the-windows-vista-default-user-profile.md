@@ -21,16 +21,16 @@ tags:
 
 The first option carries over to Windows Vista and Windows Server 2008 however the second option is not available in quite the same way. Windows Vista’s setup is a very different beast and customising the default profile with scripts requires using the [auditUser](http://technet2.microsoft.com/WindowsVista/en/library/ae42b355-002d-45c4-b6d1-62313ff53fc71033.mspx?mfr=true) pass and setting the [CopyProfile](http://technet2.microsoft.com/WindowsVista/en/library/1471caf1-440a-4d54-bbe8-3b33c5effaa21033.mspx?mfr=true) value.
 
-There&#8217;s some great detail about using this process to [modify the default user profile](http://firegeier.unattended-sponsor.de/en/copy_profile_to_default_user.html) at [FireGeier&#8217;s Unattended Vista Guide](http://firegeier.unattended-sponsor.de/en/sitemap.html) plus there&#8217;s [a post at MSFN.org](http://www.msfn.org/board/Is-there-way-to-modify-default-profile-s-t119440.html) that my help you understand the process too. However, I think there&#8217;s a simpler way. It&#8217;s perhaps not a flexible as deploying via the UNATTEND.XML file but it doesn&#8217;t require running SYSPREP to get the job done.
+There's some great detail about using this process to [modify the default user profile](http://firegeier.unattended-sponsor.de/en/copy_profile_to_default_user.html) at [FireGeier's Unattended Vista Guide](http://firegeier.unattended-sponsor.de/en/sitemap.html) plus there's [a post at MSFN.org](http://www.msfn.org/board/Is-there-way-to-modify-default-profile-s-t119440.html) that my help you understand the process too. However, I think there's a simpler way. It's perhaps not a flexible as deploying via the UNATTEND.XML file but it doesn't require running SYSPREP to get the job done.
 
 You can edit the default profile by directly modifying the Windows Vista or Windows Server 2008 image. This involves mounting the image and making your changes:
 
   * Mount the image in read/write mode;
-  * Load the _\Users\Default\NTUSER.DAT_ hive into the Registry. It&#8217;s worth looking around at this registry hive to see the differences between it and the user hive once a user has logged in;
+  * Load the _\Users\Default\NTUSER.DAT_ hive into the Registry. It's worth looking around at this registry hive to see the differences between it and the user hive once a user has logged in;
   * Add the required modifications and unload the hive;
   * Commit changes to the Windows image.
 
-Be sure to set the CopyProfile value to False in the UNATTEND.XML, otherwise these changes will be overwritten. Here&#8217;s a script that performs those steps for me:
+Be sure to set the CopyProfile value to False in the UNATTEND.XML, otherwise these changes will be overwritten. Here's a script that performs those steps for me:
 
 [code]@ECHO OFF  
 REM &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-  
@@ -101,21 +101,21 @@ REG UNLOAD HKU\Default
 REM Unmount the Windows image and commit changes  
 IMAGEX /UNMOUNT /COMMIT D:\mount[/code]
 
-As you can see I&#8217;m adding registry entries that will configure the user environment which does mean that there&#8217;s a bit of work required to find them in the first place, but it does allow me to document every change to the profile, so I think the effort is worth it.
+As you can see I'm adding registry entries that will configure the user environment which does mean that there's a bit of work required to find them in the first place, but it does allow me to document every change to the profile, so I think the effort is worth it.
 
 Extending this process, there are a few other things we can change in the Windows image that will impact the default environment:
 
-  * Modify the default theme file in _\Windows\Resources\Themes\aero.theme_. I&#8217;ve used this file to do things such as remove the default wallpaper. Theme files are just text files so they&#8217;re easy to maintain;
+  * Modify the default theme file in _\Windows\Resources\Themes\aero.theme_. I've used this file to do things such as remove the default wallpaper. Theme files are just text files so they're easy to maintain;
   * Configure Internet Explorer defaults by using INSTALL.INS created with the [Internet Explorer Administration Kit](http://technet.microsoft.com/en-us/ie/bb219556.aspx). This is useful for preventing IE from adding the default favourites or RSS feeds at first launch. Place a copy of INSTALL.INS in _\Program Files\Internet Explorer\SIGNUP_ and _\Program Files\Internet Explorer\CUSTOM_.
 
-Then there are a couple of additional tools that I&#8217;ve used to make changes to the default user environment once Windows has been installed and added to the domain:
+Then there are a couple of additional tools that I've used to make changes to the default user environment once Windows has been installed and added to the domain:
 
   * Group Policy. Some settings such as preventing Windows Media Player from displaying the first run dialog are useful;
   * [Group Policy Preferences](http://support.microsoft.com/Default.aspx?kbid=943729). GPP allows you to set registry values as a preference, i.e. apply once only.
 
 By modifying the Windows image directly, your custom default profile will be available on machines whether you use an unattended or manual deployment.
 
-Here&#8217;s a few more articles worth reading:
+Here's a few more articles worth reading:
 
   * [Configuring default settings for Windows image deployment](http://blogs.technet.com/deploymentguys/archive/2008/02/18/configuring-default-user-and-computer-settings-for-windows-image-deployment.aspx)
   * [Support guidelines for migrating roaming user profiles data to Windows Vista or to Windows Server 2008](http://support.microsoft.com/default.aspx/kb/947025)

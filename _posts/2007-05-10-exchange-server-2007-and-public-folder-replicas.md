@@ -35,13 +35,13 @@ In addition to this, the following error was logged on the Exchange Server:
 > Description:  
 > Error updating public folder with free/busy information on virtual machine exchsrvr. The error number is 0x80004005.
 
-After a bit of digging around, it occurred to me that I&#8217;d missed adding the new server to the Public Folder replicas. To add the replicas you will need to get the list of the sub-folders of the SCHEDULE+ FREE BUSY folder. You can see this list with this command (replace _exchsrvr_ with the name of your server):
+After a bit of digging around, it occurred to me that I'd missed adding the new server to the Public Folder replicas. To add the replicas you will need to get the list of the sub-folders of the SCHEDULE+ FREE BUSY folder. You can see this list with this command (replace _exchsrvr_ with the name of your server):
 
 [code]Get-PublicFolder -server exchsvr "non\_ipm\_subtreeSCHEDULE+ FREE BUSY" -recurse | Format-List[/code]
 
-Then to add the replicas run these commands (you&#8217;ll have to add your own server and organisation names):
+Then to add the replicas run these commands (you'll have to add your own server and organisation names):
 
 [code]Set-PublicFolder -Identity "NON\_IPM\_SUBTREESCHEDULE+ FREE BUSYEX:/o=Company/ou=First Administrative Group" -Replicas "exchsrvrPublic Folder Database"  
 Set-PublicFolder -Identity "NON\_IPM\_SUBTREESCHEDULE+ FREE BUSYEX:/o=Company/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)" -Replicas "exchsrvrPublic Folder Database"[/code]
 
-Once I did this and ran OUTLOOK.EXE /cleanfreebusy, so I didn&#8217;t have to wait for the free/busy data to be published, all was well.
+Once I did this and ran OUTLOOK.EXE /cleanfreebusy, so I didn't have to wait for the free/busy data to be published, all was well.

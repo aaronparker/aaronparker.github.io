@@ -17,9 +17,9 @@ tags:
   For an Adobe Reader 9 version of this post, go <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">here</a>. For an Adobe Reader 8.x version of this post, go <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-81">here</a>
 </p>
 
-Now that [Adobe Reader 8 has been released](http://www.adobe.com/products/acrobat/readstep2.html) and the setup routine has changed slightly, we&#8217;ll have to jump through hoops again to get this new version deployed. Here are a few things that I&#8217;ve found in regards to deployment in a corporate environment:
+Now that [Adobe Reader 8 has been released](http://www.adobe.com/products/acrobat/readstep2.html) and the setup routine has changed slightly, we'll have to jump through hoops again to get this new version deployed. Here are a few things that I've found in regards to deployment in a corporate environment:
 
-  * Here&#8217;s [a direct link to the download](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.0/enu/AdbeRdr80_en_US.exe) for Adobe Reader 8.0;
+  * Here's [a direct link to the download](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.0/enu/AdbeRdr80_en_US.exe) for Adobe Reader 8.0;
   * The installer weighs in at 20.8Mb;
   * It requires Windows Installer 3.0 and appears to require a minimum of Internet Explorer 6.0;
   * Adobe Reader 8 uses a newer version of the Netopsystems FEAD setup routine;
@@ -27,7 +27,7 @@ Now that [Adobe Reader 8 has been released](http://www.adobe.com/products/acroba
   * On Windows Vista, setup files are unpacked to <span style="font-family: Courier New">%USERPROFILE%AppDataLocalLowNetopsystemstempAdobe Reader 8.0</span>
   * On Windows XP/2003, setup files are unpacked to <font face="courier new,courier">%USERPROFILE%\Local SettingsTemp1Adobe Reader 8.0</font> (The folder 1 may change);
   * After Reader is installed, setup files are located at <span style="font-family: Courier New">%ProgramFilesAdobeReader 8.0Setup Files{AC76BA86-7AD7-1033-7B44-A80000000002}</span>
-  * Setup switches have changed, here&#8217;s the full list:
+  * Setup switches have changed, here's the full list:
 
 [table id=10 /]
 
@@ -51,7 +51,7 @@ or
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.225.Reader.png" /><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.226.PDFFile.png" /> 
 
-There are a lot of things left to find and I&#8217;ll update this post as I find them.
+There are a lot of things left to find and I'll update this post as I find them.
 
 **UPDATES**:
 
@@ -60,7 +60,7 @@ There are a lot of things left to find and I&#8217;ll update this post as I find
   * The Adobe Updater is installed along with Reader to here: <font face="courier new,courier">%CommonProgramFiles%AdobeUpdater5</font>
   * Adobe Updater has created a folder in my Documents folder: <font face="courier new,courier">DocumentsUpdater5AdobeUpdaterreader8rdr-en_US</font>
   * So Joe... has an excellent post on installing Adobe Reader 8: [A Step-by-Step Guide to Silently Installing and Configuring Adobe Reader 8](http://sojoe.info/2006/12/09/a-step-by-step-guide-to-silently-installing-and-configuring-adobe-reader-8/)
-  * Disable the Adobe Updater with the following DWORD (set it to 0x00000001) <font face="courier new,courier">HKLMSoftwareAdobeUpdaterEnterprise</font>. I&#8217;m still confirming this one, but I found the registry key on the Adobe knowledgebase site: [Perform a silent installation of Photoshop](http://www.adobe.com/support/techdocs/331261.html)
+  * Disable the Adobe Updater with the following DWORD (set it to 0x00000001) <font face="courier new,courier">HKLMSoftwareAdobeUpdaterEnterprise</font>. I'm still confirming this one, but I found the registry key on the Adobe knowledgebase site: [Perform a silent installation of Photoshop](http://www.adobe.com/support/techdocs/331261.html)
 
 <p class="important">
   <strong>NOTE</strong>: See <a href="http://www.stealthpuppy.com/blogs/travelling/pages/adobe-reader-8-0.aspx">Unattended Install: Adobe Reader 8.0</a> and <a href="http://www.stealthpuppy.com/blogs/travelling/archive/2007/01/06/adobe-customization-wizard-8.aspx">Disable Adobe Updater with Adobe Customization Wizard 8</a> for information on silent or unattended installations of Adobe Reader 8.

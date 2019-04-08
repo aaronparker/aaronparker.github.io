@@ -11,9 +11,9 @@ categories:
 tags:
   - Presentation-Server
 ---
-Citrix provide a nice installer for the [Access Management Console](https://www.citrix.com/English/SS/downloads/details.asp?dID=8218&downloadID=164650&pID=186#top) that you can automate to [script the installation of the AMC](http://stealthpuppy.com/deployment/unattended-citrix-access-management-console). However, if you&#8217;ve ever needed to remove the AMC you&#8217;ll find that you need to remove each component one at a time. Because there are 9 components, this can become a little tedious.
+Citrix provide a nice installer for the [Access Management Console](https://www.citrix.com/English/SS/downloads/details.asp?dID=8218&downloadID=164650&pID=186#top) that you can automate to [script the installation of the AMC](http://stealthpuppy.com/deployment/unattended-citrix-access-management-console). However, if you've ever needed to remove the AMC you'll find that you need to remove each component one at a time. Because there are 9 components, this can become a little tedious.
 
-So here&#8217;s a script that you can use to uninstall the current version of the AMC and its components in one step:
+So here's a script that you can use to uninstall the current version of the AMC and its components in one step:
 
 [code]@ECHO OFF  
 REM Citrix Access Management Console - Hotfix Management  

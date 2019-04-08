@@ -17,11 +17,11 @@ categories:
 tags:
   - App-V
 ---
-I&#8217;m a little slow off the mark here (I&#8217;ve got my head buried in something unrelated), but I&#8217;ve just found out today that the [App-V 4.5 Cumulative Update 1](http://support.microsoft.com/kb/963693), although only available on [Connect](http://connect.microsoft.com), is not actually a beta, it is the final code that you can start deploying.
+I'm a little slow off the mark here (I've got my head buried in something unrelated), but I've just found out today that the [App-V 4.5 Cumulative Update 1](http://support.microsoft.com/kb/963693), although only available on [Connect](http://connect.microsoft.com), is not actually a beta, it is the final code that you can start deploying.
 
 <img class="alignnone size-full wp-image-1065" title="app-vonconnect" src="http://stealthpuppy.com/wp-content/uploads/2009/03/app-vonconnect.png" alt="app-vonconnect" width="515" height="288" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/app-vonconnect.png 515w, https://stealthpuppy.com/wp-content/uploads/2009/03/app-vonconnect-300x167.png 300w" sizes="(max-width: 515px) 100vw, 515px" /> 
 
-The MDOP blog [covered this release last month](http://blogs.technet.com/mdop/archive/2009/02/26/get-your-applications-virtualized-on-windows-7-beta-with-microsoft-app-v.aspx), but I think I heard &#8220;Windows 7 support&#8221; and didn&#8217;t hear much after that. My bad, I need to pay more attention.
+The MDOP blog [covered this release last month](http://blogs.technet.com/mdop/archive/2009/02/26/get-your-applications-virtualized-on-windows-7-beta-with-microsoft-app-v.aspx), but I think I heard &#8220;Windows 7 support&#8221; and didn't hear much after that. My bad, I need to pay more attention.
 
 So what is new in CU1 (4.5.1.15580)?
 

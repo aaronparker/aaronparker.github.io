@@ -104,7 +104,7 @@ In previous versions of the Sequencer, it wasn’t very clear that you should pe
 
 How do you record excluded files and registry keys or even features that won’t work once an application has been virtualised and isolated from the OS today? It’s not simple and I would guess that for many organisations this information is not documented. Thankfully the new Sequencer exposes much of this information with package reports – excluded files and unsupported application features (such as shell extensions) are recorded and listed and the end of the sequencing process.
 
-The screenshot below shows a couple of examples when [sequencing Adobe Reader](http://stealthpuppy.com/virtualisation/virtualising-adobe-reader-x/) – shell extensions that won&#8217;t be available once Reader has been virtualised and files that have been excluded from the package:
+The screenshot below shows a couple of examples when [sequencing Adobe Reader](http://stealthpuppy.com/virtualisation/virtualising-adobe-reader-x/) – shell extensions that won't be available once Reader has been virtualised and files that have been excluded from the package:
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice05" src="http://stealthpuppy.com/wp-content/uploads/2011/03/AppV-Sequencer-BestPractice05_thumb.png" border="0" alt="AppV-Sequencer-BestPractice05" width="660" height="470" />](http://stealthpuppy.com/wp-content/uploads/2011/03/AppV-Sequencer-BestPractice05.png)
 

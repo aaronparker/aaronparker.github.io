@@ -22,7 +22,7 @@ If you are looking to preconfigure the client you will need to edit PN.SRC and A
 
 You can then reference [PN.ini Parameters Deciphered](http://ctxex10.citrix.com/article/entry.jspa?entryID=876) and [Appsrv.ini Parameters Deciphered](http://ctxex10.citrix.com/article/entry.jspa?entryID=850) to make the required customisations. An alternative to this, is to configure Program Neighbourhood and then copy PN.INI and APPSRV.INI from the <font face="courier new,courier">%APPDATA%ICAClient</font> folder.
 
-One thing you will have to note is that when you push out your custom client, if users already have an PN.INI and APPSRV.INI in their <font face="courier new,courier">%APPDATAICAClient</font> folder they will not be overwritten. So if you are looking to disable the Quick Launch bar and the Custom ICA Connections, these won&#8217;t work unless you overwrite or modify the users ICAClient folder or the user has never run Program Neighbourghood.
+One thing you will have to note is that when you push out your custom client, if users already have an PN.INI and APPSRV.INI in their <font face="courier new,courier">%APPDATAICAClient</font> folder they will not be overwritten. So if you are looking to disable the Quick Launch bar and the Custom ICA Connections, these won't work unless you overwrite or modify the users ICAClient folder or the user has never run Program Neighbourghood.
 
 If you are disabling the Quick Launch Bar and the Custom ICA Connections add the following lines to APPSRV.SRC:
 
@@ -39,12 +39,12 @@ Once you have made your required modifications to the client, which could also b
   1. Create your custom client package as an uncompressed image.
   2. Make the required modifications.
   3. Run <font face="courier new,courier">MSIEXEC /A ICA32PKG.MSI</font> again this time using the modified client package installer.
-  4. Choose to create a Single Windows Installer package. You should notice that the only option that hasn&#8217;t stuck from the original custom client package is the client type. You will have to modify this again.
+  4. Choose to create a Single Windows Installer package. You should notice that the only option that hasn't stuck from the original custom client package is the client type. You will have to modify this again.
   5. Finish the client packager wizard saving the client to a new emtpy folder and you should be left with your customised and single Windows Installer client package.
 
 **Enabling Pass-Through Authentication when deploying via Group Policy**
 
-When deploying the client via Group Policy, there&#8217;s a good chance that you&#8217;ll find that pass-through authentication will be disabled even though you&#8217;ve disabled it. Although I&#8217;ve never seen this issue myself, [Jason Conger addresses the issue](http://www.jasonconger.com/ShowPost.aspx?strID=87a0885c-a0f1-4b85-b28f-a25813ed8119) in his client deployment article and there is [a custom transform file available from Citrix](http://support.citrix.com/article/entry.jspa?entryID=3936) to ensure that pass-through authentication is enabled. Here&#8217;s an explaination of the issue from Citrix:
+When deploying the client via Group Policy, there's a good chance that you'll find that pass-through authentication will be disabled even though you've disabled it. Although I've never seen this issue myself, [Jason Conger addresses the issue](http://www.jasonconger.com/ShowPost.aspx?strID=87a0885c-a0f1-4b85-b28f-a25813ed8119) in his client deployment article and there is [a custom transform file available from Citrix](http://support.citrix.com/article/entry.jspa?entryID=3936) to ensure that pass-through authentication is enabled. Here's an explaination of the issue from Citrix:
 
 > **Issue**  
 > When using a Microsoft Group Policy to automatically distribute/install the MetaFrame Presentation Server Client for 32-bit Windows to users, pass-through authentication is disabled.
@@ -56,7 +56,7 @@ When deploying the client via Group Policy, there&#8217;s a good chance that you
 > **Workaround  
 >** Citrix is providing a Windows Installer Transform File, Slfregfix.mst, so that administrators may bypass the imposed security restriction.
 
-Unfortunately the transform file provided by Citrix doesn&#8217;t work with the Presentation Server Client 10, so I&#8217;ve recreated it to work with version 10. Here&#8217;s the file for you to download and test in your own environment. Just a quick word of warning - I&#8217;ve only performed some very quick testing at this stage. Before you use this, test it out to ensure it works for you in your network.
+Unfortunately the transform file provided by Citrix doesn't work with the Presentation Server Client 10, so I've recreated it to work with version 10. Here's the file for you to download and test in your own environment. Just a quick word of warning - I've only performed some very quick testing at this stage. Before you use this, test it out to ensure it works for you in your network.
 
 <p class="download">
   <a href="http://stealthpuppy.com/wp-content/uploads/2007/03/slfregfix2.mst">Transform to enable Pass-through authentication</a>

@@ -17,7 +17,7 @@ tags:
 ---
 [<img style="background-image: none; margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 10px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ReaderXVirtualise" src="http://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise_thumb.png" alt="ReaderXVirtualise" width="128" height="124" align="right" border="0" />](http://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise.png)This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.
 
-### Don&#8217;t Virtualize Reader
+### Don't Virtualize Reader
 
 Before I get to the details I would like you to first consider the implications of virtualising Reader. Adobe Reader is often a common component of any desktop deployment and like Microsoft Office and Internet Explorer, it usually becomes a core application on which other applications depend.
 
@@ -27,7 +27,7 @@ _Internet Explorer_: if Reader is isolated from Windows, Internet Explorer will 
 
 <img title="ComparingReaderInstallTypes" src="http://stealthpuppy.com/wp-content/uploads/2010/10/ComparingReaderInstallTypes.png" alt="" width="660" height="241" /> 
 
-You could solve this my launching Internet Explorer inside the Reader package, but this will require covering all of the ways a user can launch Internet Explorer. If you do that, what happens when you want IE to launch inside the environment of another package? App-V doesn&#8217;t handle integration with these entry points elegantly today.
+You could solve this my launching Internet Explorer inside the Reader package, but this will require covering all of the ways a user can launch Internet Explorer. If you do that, what happens when you want IE to launch inside the environment of another package? App-V doesn't handle integration with these entry points elegantly today.
 
 _Virtualised applications_: Additionally, if you need to provide other virtualised applications with Reader support, you will need to maintain [Dynamic Suite Composition](http://www.microsoft.com/systemcenter/appv/dynamic.mspx) links to the Reader package for each primary package that requires it. Because Reader is used so often, managing DSC links is something that could get out of hand very quickly.
 
@@ -35,11 +35,11 @@ In most cases I do not recommend virtualizing Reader – your mileage may vary, 
 
 ### Configuring the Adobe Reader installation
 
-If I haven&#8217;t convinced you that virtualizing Reader is more trouble that it&#8217;s worth, then here&#8217;s how to do it:
+If I haven't convinced you that virtualizing Reader is more trouble that it's worth, then here's how to do it:
 
-I&#8217;ve previously covered [how to create a customised deployment of Reader X](http://stealthpuppy.com/deployment/deploying-adobe-reader-x/) to suit your environment. If you have read that article yet, I recommend that you do before proceeding further. Automating the installation and configuration of Reader during sequencing will make it easier to re-create the package and will simplify documentation.
+I've previously covered [how to create a customised deployment of Reader X](http://stealthpuppy.com/deployment/deploying-adobe-reader-x/) to suit your environment. If you have read that article yet, I recommend that you do before proceeding further. Automating the installation and configuration of Reader during sequencing will make it easier to re-create the package and will simplify documentation.
 
-Here&#8217;s my recommendations for settings that you should configure when creating a transform to install Reader during sequencing:
+Here's my recommendations for settings that you should configure when creating a transform to install Reader during sequencing:
 
   * _Personalisation Options_: change the install path if required. You can choose to install to the virtual drive; however a VFS install will work as well
   * _Installation Options_: disable the caching of the Reader installer files to reduce the size of the package. Choose an unattended install and supress reboot
@@ -48,12 +48,12 @@ Here&#8217;s my recommendations for settings that you should configure when crea
   * _Shortcuts_: disable the shortcut added to the Desktop
   * _Server Locations_: additional server locations should not be required when virtualising Reader
   * _EULA_: ensure that the End User License Agreement is suppressed
-  * _Online and Acrobat.com Features_: disabling the Adobe Updater is important so that user&#8217;s can&#8217;t attempt to update Reader after deployment
+  * _Online and Acrobat.com Features_: disabling the Adobe Updater is important so that user's can't attempt to update Reader after deployment
   * _Direct Editor_: you can edit the Transform directly to prevent the installation of Adobe Updater (although you can just delete the ARM folder during sequencing).
 
-Reader X 10.1 introduces a new _Adobe Acrobat Updater Service_, you can use the Direct Editor to prevent the service from being installed, because it won&#8217;t be required once virtualized.
+Reader X 10.1 introduces a new _Adobe Acrobat Updater Service_, you can use the Direct Editor to prevent the service from being installed, because it won't be required once virtualized.
 
-Create a script to perform the installation. Here&#8217;s a sample script that will install Reader, perform some additional actions that can be done in the transform file instead and will then launch Reader after setup has completed.
+Create a script to perform the installation. Here's a sample script that will install Reader, perform some additional actions that can be done in the transform file instead and will then launch Reader after setup has completed.
 
 [sourcecode toolbar=&#8221;true&#8221; language=&#8221;plain&#8221;]@ECHO OFF  
 START /WAIT MSIEXEC /I AcroRead.MSI TRANSFORMS=VirtualisedReaderX.MSI ALLUSERS=TRUE /QB-  
@@ -77,11 +77,11 @@ I have provided here a copy of the App-V 4.6 SP1 Package Template which includes
   [download id=&#8221;43&#8243; format=&#8221;1&#8243;]
 </p>
 
-There is one issue though – the Adobe Reader Protected Mode doesn&#8217;t like running under App-V. During the monitoring phase the application may not launch on first run and on the second launch the following dialog box will be displayed:
+There is one issue though – the Adobe Reader Protected Mode doesn't like running under App-V. During the monitoring phase the application may not launch on first run and on the second launch the following dialog box will be displayed:
 
 <img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AdobeReaderProtectedModePrompt" src="http://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderProtectedModePrompt_thumb.png" alt="AdobeReaderProtectedModePrompt" width="660" height="232" border="0" /> 
 
-Choosing the option 'Always open with Protected Mode disabled&#8217; will save the setting in HKCU in the Registry, but until a fix is found (either by Adobe or Microsoft) you can disable Protected Mode using the following Registry key:
+Choosing the option 'Always open with Protected Mode disabled' will save the setting in HKCU in the Registry, but until a fix is found (either by Adobe or Microsoft) you can disable Protected Mode using the following Registry key:
 
   * Key: HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\10.0\FeatureLockDown
   * Value: bProtectedMode
@@ -94,7 +94,7 @@ If Protected Mode is not disabled when Reader is virtualized or when it is runni
 
 ### Conclusion
 
-Virtualizing Reader is straightforward and it performs well under App-V, although I would consider the implications of isolating Reader from the OS, even before you start the Sequencer. A virtualized Reader will require managing DSC links and you&#8217;ll need ensure that users understand the difference in behaviour with IE integration.
+Virtualizing Reader is straightforward and it performs well under App-V, although I would consider the implications of isolating Reader from the OS, even before you start the Sequencer. A virtualized Reader will require managing DSC links and you'll need ensure that users understand the difference in behaviour with IE integration.
 
 Hopefully an update of either Reader or App-V in the future will enable Protected Mode support to improve security.
 

@@ -11,7 +11,7 @@ categories:
 tags:
   - NAP
 ---
-Here&#8217;s a few NAP links worth checking out:
+Here's a few NAP links worth checking out:
 
   * [An Introduction to Network Access Protection (Part 2)](http://www.windowsnetworking.com/articles_tutorials/Introduction-Network-Access-Protection-Part2.html)
   * [An Introduction to Network Access Protection (Part 3)](http://www.windowsnetworking.com/articles_tutorials/Introduction-Network-Access-Protection-Part3.html)

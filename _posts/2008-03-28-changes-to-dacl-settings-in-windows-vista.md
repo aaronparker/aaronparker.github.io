@@ -17,4 +17,4 @@ A new knowledge base article was published a couple of days ago, that details th
 
 > In Windows Vista, the NTFS file system Discretionary Access Control Lists (DACLs) have been changed to enable data sharing and collaboration in data directories that are outside protected directories.
 
-This is a great reference, especially if you are managing co-existence with Windows XP and Windows Vista. It details the default DACL changes in Windows Vista, why these changes were made and how to reset the defaults if you&#8217;ve changed them.
+This is a great reference, especially if you are managing co-existence with Windows XP and Windows Vista. It details the default DACL changes in Windows Vista, why these changes were made and how to reset the defaults if you've changed them.

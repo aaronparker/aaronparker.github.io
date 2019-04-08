@@ -11,7 +11,7 @@ categories:
 tags:
   - Access-Gateway
 ---
-I&#8217;ve put together a diagram detailing the flow of IP traffic between the different components of an Access Gateway with Advanced Access Control implementation. This is designed to give everyone involved in implementation of the Access Gateway an understanding of each component and the communication required between each host. This diagram details these components:
+I've put together a diagram detailing the flow of IP traffic between the different components of an Access Gateway with Advanced Access Control implementation. This is designed to give everyone involved in implementation of the Access Gateway an understanding of each component and the communication required between each host. This diagram details these components:
 
   * Access Gateway with a single connected NIC in the Perimeter/DMZ network for relaying connections into the Internal network
   * Advanced Access Control in the Internal network to control access to internal resources. This could be multiple or a single AAC server

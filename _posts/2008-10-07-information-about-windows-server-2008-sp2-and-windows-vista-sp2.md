@@ -11,7 +11,7 @@ dsq_thread_id:
 categories:
   - Microsoft
 ---
-Well actually, there&#8217;s none at the moment, but a there is [a knowledgebase article available on SP2](http://support.microsoft.com/kb/948465) as a place holder for future information:
+Well actually, there's none at the moment, but a there is [a knowledgebase article available on SP2](http://support.microsoft.com/kb/948465) as a place holder for future information:
 
 > Beta Information
 > 

@@ -17,7 +17,7 @@ tags:
 ---
 Two great tools for managing App-V applications have appeared in the last few weeks - [SoftBar](http://www.jagtechnical.com/softbar/) and the [App-V 4.5 Client Diagnostic and Configuration tool](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=34&Itemid=62) (ACDC). Thanks to the efforts of Greg Brownstein and Ment van der Plas, we have some excellent choices for improving the way we can manage and troubleshoot virtual applications on the client. 
 
-Both tools are aimed at anyone virtualising applications with App-V and make it a snap to get into those applications for testing and troubleshooting as well as managing the App-V client. Here&#8217;s SoftBar and ACDC in action:
+Both tools are aimed at anyone virtualising applications with App-V and make it a snap to get into those applications for testing and troubleshooting as well as managing the App-V client. Here's SoftBar and ACDC in action:
 
 <img class="size-full wp-image-963 alignnone" title="Softbar and ACDC screenshot" src="http://stealthpuppy.com/wp-content/uploads/2009/03/softbar-acdc-screenshot.png" alt="Softbar and ACDC screenshot" width="590" height="432" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/softbar-acdc-screenshot.png 590w, https://stealthpuppy.com/wp-content/uploads/2009/03/softbar-acdc-screenshot-300x219.png 300w" sizes="(max-width: 590px) 100vw, 590px" /> 
 
@@ -253,9 +253,9 @@ I thought it might be interesting to give you an idea of their feature sets and 
   </tr>
 </table>
 
-*OK, completely pointless for comparison, but ACDC only gets a point here because the name is similar to these [these guys](http://en.wikipedia.org/wiki/Acdc). (I&#8217;m hoping it was deliberate..)
+*OK, completely pointless for comparison, but ACDC only gets a point here because the name is similar to these [these guys](http://en.wikipedia.org/wiki/Acdc). (I'm hoping it was deliberate..)
 
-I&#8217;ve only scratched the surface with what I think I can get out of each tool and so far my favourite is ACDC, but if you&#8217;re virtualising applications with App-V, either of these tools should be in your bag of tricks:
+I've only scratched the surface with what I think I can get out of each tool and so far my favourite is ACDC, but if you're virtualising applications with App-V, either of these tools should be in your bag of tricks:
 
   * [SoftBar](http://www.jagtechnical.com/softbar/), for support [go here](http://groups.google.com/group/softbar?pli=1)
   * [App-V 4.5 Client Diagnostic and Configuration tool](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=34&Itemid=62), for support [go here](http://www.loginconsultants.com/forum/viewforum.php?f=4&sid=c009ae32acc09973b894cd436106fdb5)

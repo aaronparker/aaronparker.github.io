@@ -12,7 +12,7 @@ tags:
   - App-V
   - SoftGrid
 ---
-Now this looks good: [Microsoft Application Virtualization Management Pack for Systems Center Operations Manager 2007](http://www.microsoft.com/downloads/details.aspx?FamilyID=82b0397f-fac8-4c5a-b906-e87d0e57982a&DisplayLang=en). If you&#8217;re deploying applications via any virtualisation/streaming solution, monitoring is essential.
+Now this looks good: [Microsoft Application Virtualization Management Pack for Systems Center Operations Manager 2007](http://www.microsoft.com/downloads/details.aspx?FamilyID=82b0397f-fac8-4c5a-b906-e87d0e57982a&DisplayLang=en). If you're deploying applications via any virtualisation/streaming solution, monitoring is essential.
 
 > The Microsoft Application Virtualization 4.5 (App-V) Management Pack enables IT professionals to use Microsoft System Center Operations Manager 2007 to monitor App-V server systems. The Management Pack is designed to maximize Application Virtualization Server availability for handling Application Virtualization Client requests. This component delivers an enterprise-level solution to proactively monitor Microsoft Application Virtualization 4.5 server systems.
 > 

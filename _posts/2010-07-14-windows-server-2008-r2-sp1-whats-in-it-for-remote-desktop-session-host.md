@@ -23,6 +23,6 @@ The table below is filtered for just those fixes, each of which is available now
 
 [table id=23 /]
 
-If you can&#8217;t wait for SP1, a list of recommended updates for RDS is available here: [Recommended Updates for the Remote Desktop Services (Terminal Services) in Windows Server 2008 and Windows Server 2008 R2](http://support.microsoft.com/kb/2312539)
+If you can't wait for SP1, a list of recommended updates for RDS is available here: [Recommended Updates for the Remote Desktop Services (Terminal Services) in Windows Server 2008 and Windows Server 2008 R2](http://support.microsoft.com/kb/2312539)
 
 If you’re interested in the Group Policy fixes in SP1, [Alan has listed those here](http://www.grouppolicy.biz/2010/07/the-complete-list-of-group-policy-hotfixs-in-windows-72008-r2-service-pack-1/).

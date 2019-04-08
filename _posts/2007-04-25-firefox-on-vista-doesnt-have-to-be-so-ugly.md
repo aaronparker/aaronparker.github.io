@@ -1,6 +1,6 @@
 ---
 id: 54
-title: 'Firefox on Vista doesn&#8217;t have to be so ugly'
+title: 'Firefox on Vista doesn't have to be so ugly'
 date: 2007-04-25T16:40:00+10:00
 author: Aaron Parker
 layout: post
@@ -12,7 +12,7 @@ tags:
   - Firefox
   - Windows-Vista
 ---
-Because [non-native UI sucks](http://www.codinghorror.com/blog/archives/000789.html), here&#8217;s a couple of extensions that help to make Firefox look much better on Windows Vista. These extensions mimic the Internet Explorer 7 interface, including the Windows Vista menus, making Firefox feel far more at home.
+Because [non-native UI sucks](http://www.codinghorror.com/blog/archives/000789.html), here's a couple of extensions that help to make Firefox look much better on Windows Vista. These extensions mimic the Internet Explorer 7 interface, including the Windows Vista menus, making Firefox feel far more at home.
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1338.VistaFirefox2.png" /> 
 

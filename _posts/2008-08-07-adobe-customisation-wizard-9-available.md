@@ -19,4 +19,4 @@ Adobe have made the [Adobe Customisation Wizard 9](http://www.adobe.com/support/
 
 <img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="416" alt="AdobeCustomisationWizard" src="http://stealthpuppy.com/wp-content/uploads/2008/08/adobecustomisationwizard.png" width="595" border="0" /> 
 
-Good news is that this allows you to disable the Adobe Product Improvement Program window that some people have been having trouble disabling. I&#8217;m now in the process of updating my post on deploying [Adobe Reader 9](http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows).
+Good news is that this allows you to disable the Adobe Product Improvement Program window that some people have been having trouble disabling. I'm now in the process of updating my post on deploying [Adobe Reader 9](http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows).

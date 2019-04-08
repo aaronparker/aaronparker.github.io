@@ -182,7 +182,7 @@ To sequence iTunes, follow the basic outline here:
 6. First Run tasks
 
   * QuickTime – follow the recommendations for configuration in this article: [Virtualising Apple QuickTime 7.x](http://stealthpuppy.com/virtualisation/sequencing-apple-quicktime-7x/)
-  * iTunes – iTunes will prompt to make itself the default for media files – set this if required and be sure to disable the option 'Warn me if iTunes is not the default player for audio files&#8217;
+  * iTunes – iTunes will prompt to make itself the default for media files – set this if required and be sure to disable the option 'Warn me if iTunes is not the default player for audio files'
 
 7. Customize shortcuts
 
@@ -233,11 +233,11 @@ Deploying the iTunes package will require the deployment of Apple Application Su
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="NoAppleAppSupport" src="http://stealthpuppy.com/wp-content/uploads/2011/06/NoAppleAppSupport_thumb.png" alt="NoAppleAppSupport" width="510" height="260" border="0" />](http://stealthpuppy.com/wp-content/uploads/2011/06/NoAppleAppSupport.png)
 
-While I&#8217;ve been able to test iTunes successfully running on an App-V Client, there appears (at this stage at least) to be only one issue – when plugging in a mobile device, the following error is displayed, twice:
+While I've been able to test iTunes successfully running on an App-V Client, there appears (at this stage at least) to be only one issue – when plugging in a mobile device, the following error is displayed, twice:
 
 <img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppleMobileDeviceService" src="http://stealthpuppy.com/wp-content/uploads/2011/06/AppleMobileDeviceService.png" alt="This iPhone cannot be used because the Apple Mobile Device service is not started" width="421" height="162" border="0" /> 
 
-Although iTunes reports this error and I can confirm that the service is started (it&#8217;s running natively, not within the package), once acknowledged device sync works anyway. I&#8217;ve tested with LOCALINTERACTIONALLOWED which hasn&#8217;t helped. I&#8217;ll update this post if I find a solution.
+Although iTunes reports this error and I can confirm that the service is started (it's running natively, not within the package), once acknowledged device sync works anyway. I've tested with LOCALINTERACTIONALLOWED which hasn't helped. I'll update this post if I find a solution.
 
 Last, but not least, for media sharing to work, firewall exceptions will be required for the following processes:
 

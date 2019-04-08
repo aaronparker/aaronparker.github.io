@@ -11,7 +11,7 @@ categories:
 tags:
   - Compatibility
 ---
-Here&#8217;s a download that&#8217;s quite timely as I&#8217;m looking at application compatibility as a component of my Windows Vista deployment project: [Windows Vista Application Compatibility Downloadable List for IT Professionals](http://www.microsoft.com/downloads/details.aspx?FamilyID=9df23606-7276-4ce2-8993-143e101ddbcd&DisplayLang=en)
+Here's a download that's quite timely as I'm looking at application compatibility as a component of my Windows Vista deployment project: [Windows Vista Application Compatibility Downloadable List for IT Professionals](http://www.microsoft.com/downloads/details.aspx?FamilyID=9df23606-7276-4ce2-8993-143e101ddbcd&DisplayLang=en)
 
 > The Application Compatibility List for IT Professionals is a Microsoft Office Excel-based spreadsheet containing software applications which have earned the status of “Certified for Windows Vista” or “Works with Windows Vista.” 
 > 

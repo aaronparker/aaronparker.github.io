@@ -20,15 +20,15 @@ tags:
   - XenApp
   - XenDesktop
 ---
-Adding [Microsoft App-V publishing information to a XenDesktop or XenApp 7.x site](http://support.citrix.com/proddocs/topic/xenapp-xendesktop-76/xad-app-v.html) is very easy via the Citrix Studio UI, but what if you want to automate this process? Of course, you&#8217;ll need to reach for PowerShell.
+Adding [Microsoft App-V publishing information to a XenDesktop or XenApp 7.x site](http://support.citrix.com/proddocs/topic/xenapp-xendesktop-76/xad-app-v.html) is very easy via the Citrix Studio UI, but what if you want to automate this process? Of course, you'll need to reach for PowerShell.
 
 What may not be widely known is that you can add additional App-V publishing configuration to a XenDesktop site beyond what you see in the UI. This allows you to set publishing information per delivery group. Useful for complex XenDesktop sites such as multi-tenant environments.
 
-Creating the App-V publishing information with PowerShell is a multi step process. You&#8217;ll need to create the publishing information with [New-CtxAppVServer](http://support.citrix.com/proddocs/topic/citrix-appv-admin-v1-xd75/new-ctxappvserver-xd75.html) and then apply the configuration with [New-BrokerMachineConfiguration](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokermachineconfiguration-xd75.html).
+Creating the App-V publishing information with PowerShell is a multi step process. You'll need to create the publishing information with [New-CtxAppVServer](http://support.citrix.com/proddocs/topic/citrix-appv-admin-v1-xd75/new-ctxappvserver-xd75.html) and then apply the configuration with [New-BrokerMachineConfiguration](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokermachineconfiguration-xd75.html).
 
 Applying this in practice however may ultimately require testing the App-V management and publishing servers and ensuring that the configuration does not already exist before adding it.
 
-So to do that, I&#8217;ve written a function that will take the App-V Management and Publishing servers as parameters, ensure that they test OK and check that the configuration does not already exist before importing the configuration into the site.
+So to do that, I've written a function that will take the App-V Management and Publishing servers as parameters, ensure that they test OK and check that the configuration does not already exist before importing the configuration into the site.
 
 This function is fairly basic and while it does do some error checking, it could probably go a little further to ensure the configuration is applied successfully.
 

@@ -14,11 +14,11 @@ tags:
   - Adobe
   - SoftGrid
 ---
-<img src="http://stealthpuppy.com/wp-content/uploads/2008/02/illustrator-softgridbox.png" align="left" alt="illustrator-softgridbox.png" />As with my earlier posts on sequencing [Adobe Acrobat 8](http://stealthpuppy.com/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far) and [Adobe Photoshop CS3](http://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3), I&#8217;ve struck the same manifest issues with Illustrator CS3. Here&#8217;s a quick breakdown on what I needed to do to get this application working:
+<img src="http://stealthpuppy.com/wp-content/uploads/2008/02/illustrator-softgridbox.png" align="left" alt="illustrator-softgridbox.png" />As with my earlier posts on sequencing [Adobe Acrobat 8](http://stealthpuppy.com/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far) and [Adobe Photoshop CS3](http://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3), I've struck the same manifest issues with Illustrator CS3. Here's a quick breakdown on what I needed to do to get this application working:
 
 ### Sequencing Illustrator CS3
 
-Before sequencing Illustrator, you will need to obtain the [volume license version of the media](http://www.adobe.com/aboutadobe/openoptions/) so that you won&#8217;t have to worry about activation. If you use standard media that requires activation the application will refuse to run on your SoftGrid/MAV client machines.
+Before sequencing Illustrator, you will need to obtain the [volume license version of the media](http://www.adobe.com/aboutadobe/openoptions/) so that you won't have to worry about activation. If you use standard media that requires activation the application will refuse to run on your SoftGrid/MAV client machines.
 
 When sequencing Illustrator CS3 you will run into errors as the Sequencer is going through the post-monitoring phase. You will see the sequencer fail and report &#8220;`SystemGuard download failed (error code 53256)`&#8220;.
 

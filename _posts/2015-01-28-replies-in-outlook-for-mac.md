@@ -18,7 +18,7 @@ tags:
   - OS X
   - Outlook
 ---
-There&#8217;s a particular behaviour in Outlook for Mac, that for several years I have thought was a bug. If you reply to an email, you often only get some of the text from the original email, rather than the entire email being copied into the reply. Like this:
+There's a particular behaviour in Outlook for Mac, that for several years I have thought was a bug. If you reply to an email, you often only get some of the text from the original email, rather than the entire email being copied into the reply. Like this:
 
 <img class="alignnone size-full wp-image-3814" src="http://stealthpuppy.com/wp-content/uploads/2015/01/Outook-QuotedText.png" alt="Outook-QuotedText" width="1020" height="757" srcset="https://stealthpuppy.com/wp-content/uploads/2015/01/Outook-QuotedText.png 1020w, https://stealthpuppy.com/wp-content/uploads/2015/01/Outook-QuotedText-150x111.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/01/Outook-QuotedText-300x223.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/01/Outook-QuotedText-624x463.png 624w" sizes="(max-width: 1020px) 100vw, 1020px" /> 
 

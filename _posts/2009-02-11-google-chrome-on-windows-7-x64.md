@@ -23,9 +23,9 @@ tags:
   The latest<a href="http://www.google.com/landing/chrome/beta/"> beta of Chrome</a> (2.0.169.1) now works unmodified on Windows 7 x64
 </p>
 
-I&#8217;ve had some issues with Google Chrome (1.0.154.48) running on Windows 7 x64, but [thanks to these](http://www.google.com/support/forum/p/Chrome/thread?tid=5111f112bcd233e1&hl=en) [two links](http://code.google.com/p/chromium/issues/detail?id=4788), it&#8217;s now working great.
+I've had some issues with Google Chrome (1.0.154.48) running on Windows 7 x64, but [thanks to these](http://www.google.com/support/forum/p/Chrome/thread?tid=5111f112bcd233e1&hl=en) [two links](http://code.google.com/p/chromium/issues/detail?id=4788), it's now working great.
 
-To get Chome working you&#8217;ll need to add switches to your Chrome shortcut. Most people look to be getting good results by adding the '-in-process-plugins&#8217; switch but my experience has been mixed. I&#8217;ve found that adding '-no-sandbox&#8217; as well as worked. So your shortcut should look something like this:
+To get Chome working you'll need to add switches to your Chrome shortcut. Most people look to be getting good results by adding the '-in-process-plugins' switch but my experience has been mixed. I've found that adding '-no-sandbox' as well as worked. So your shortcut should look something like this:
 
 [code]C:\Users\Aaron\AppData\Local\Google\Chrome\Application\chrome.exe -no-sandbox -in-process-plugins[/code]
 

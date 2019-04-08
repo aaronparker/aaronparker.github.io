@@ -13,7 +13,7 @@ categories:
 tags:
   - App-V
 ---
-<img style="border-right-width: 0px; margin: 0px 0px 0px 5px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="softgridclosedbox" border="0" alt="softgridclosedbox" align="right" src="http://stealthpuppy.com/wp-content/uploads/2008/12/softgridclosedbox.png" width="96" height="96" />This Thursday I&#8217;ll be presenting at the Microsoft Virtualisation User Group here in London. If you are in town and would like to come along (and we&#8217;d love to see you there), you can [register at the MVUG web site](http://www.mvug.co.uk/forums/t/49.aspx) and here are details of the event:
+<img style="border-right-width: 0px; margin: 0px 0px 0px 5px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="softgridclosedbox" border="0" alt="softgridclosedbox" align="right" src="http://stealthpuppy.com/wp-content/uploads/2008/12/softgridclosedbox.png" width="96" height="96" />This Thursday I'll be presenting at the Microsoft Virtualisation User Group here in London. If you are in town and would like to come along (and we'd love to see you there), you can [register at the MVUG web site](http://www.mvug.co.uk/forums/t/49.aspx) and here are details of the event:
 
 **Location**:  
 Microsoft London (Cardinal Place)  

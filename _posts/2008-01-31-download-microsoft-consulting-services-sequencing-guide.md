@@ -13,9 +13,9 @@ tags:
 ---
 Microsoft have posted [a guide from Microsoft Consulting Services](http://www.microsoft.com/downloads/details.aspx?FamilyID=1c6a73b8-5da8-4a1a-838b-a41ca492c488&DisplayLang=en) that details their best practises when sequencing applications.
 
-> Properly sequencing applications is the key to a successful Microsoft SoftGrid Application Virtualizaiton implementation. As such, it&#8217;s important to follow Microsoftâ€Ÿs recommended practices and be aware of the different options when sequencing. This document covers MCS practices for setting up the sequencer, sequencing best practices, an example of sequencing, important information related to updating packages, and finally examples of advanced OSD scripting.
+> Properly sequencing applications is the key to a successful Microsoft SoftGrid Application Virtualizaiton implementation. As such, it's important to follow Microsoftâ€Ÿs recommended practices and be aware of the different options when sequencing. This document covers MCS practices for setting up the sequencer, sequencing best practices, an example of sequencing, important information related to updating packages, and finally examples of advanced OSD scripting.
 
-There&#8217;s some great details in this document, including some things you should be configuringÂ in the Sequencer base image that I was unaware of:
+There's some great details in this document, including some things you should be configuringÂ in the Sequencer base image that I was unaware of:
 
   * Create an ODBC DSN setting as part of the Sequencer base image
   * Add a dummy printer device as part of the Sequencer base image

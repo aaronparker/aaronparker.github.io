@@ -22,7 +22,7 @@ tags:
 
 # What is Login VSI?
 
-If you&#8217;re not familiar with [Login VSI](http://www.loginvsi.com/en/product-overview), it&#8217;s essentially the gold standard in vendor independent testing suite for measuring the performance and scalability of desktop virtualization evironments (hosted virtual desktop and session-based desktops).
+If you're not familiar with [Login VSI](http://www.loginvsi.com/en/product-overview), it's essentially the gold standard in vendor independent testing suite for measuring the performance and scalability of desktop virtualization evironments (hosted virtual desktop and session-based desktops).
 
 Login VSI was developed to solve the problem of sizing an environment correctly. Login VSI allows you to test and compare different hardware and software configurations in your environment. The results of those tests will ensure that you can scale your infrastructure confidently as well as understand the impact of changes to your environment.
 
@@ -36,7 +36,7 @@ Login VSI was developed to solve the problem of sizing an environment correctly.
 
 The client-side measure launcher can now be used to perform these tests:
 
-  * Character response - what&#8217;s the response time from pressing a key on the keyboard to that character being displayed on screen
+  * Character response - what's the response time from pressing a key on the keyboard to that character being displayed on screen
   * Desktop filling text - how long does it take to copy text from the local client clipboard and paste that text into a remote application
   * Mouse click feedback - how long does it take to register the a mouse click and show that change to the user
   * Image quality and loading times - how long does it take for an image to load and what is the resulting quality. This is very interesting because Login VSI can objectively measure the client-side image quality against the original lossless image
@@ -52,9 +52,9 @@ With very little between the performance of the most common remoting protocols o
 
 # Additional Points
 
-This is the first release of the Client Side Performance Testing module, so there&#8217;s a few things to consider:
+This is the first release of the Client Side Performance Testing module, so there's a few things to consider:
 
-  * Linux clients aren&#8217;t yet available - the client-side module is Windows only
+  * Linux clients aren't yet available - the client-side module is Windows only
   * This first version is aimed at typical office and line-of-business applications. Video and audio testing is planned for the next version and will be able to test audio and video sync
   * A (beta?) release is planned within 2 weeks
   * This module will be included in the Login VSI license

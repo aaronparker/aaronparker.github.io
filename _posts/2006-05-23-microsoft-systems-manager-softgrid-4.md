@@ -21,4 +21,4 @@ Now that Microsoft intends to expand their virtualisation strategy with the purc
 
 It would also be great to see the SoftGrid client component come as a part of the operating system or as a free download. Management would then require SMS, of course. Providing the client free with the OS would help us address application issues greatly. Altiris and Citrix may have some issues with this however.
 
-(* I&#8217;m taking a wild guess at product names here)
+(* I'm taking a wild guess at product names here)

@@ -30,17 +30,17 @@ you will end up with a package that will include the following folders in the vi
 
 The folders captured under %CSIDL_APPDATA%\Microsoft are those folders that have been created during the first-run tasks – folders created when you launch an Office application and perform some standard tasks.
 
-If you&#8217;re familiar with delivering applications with App-V (or any type of application virtualization platform) and managing the user environment, the portions of the user profile for an application will also be virtualized (unless you do something like [this](http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-7/)) and will end up in the PKG file.
+If you're familiar with delivering applications with App-V (or any type of application virtualization platform) and managing the user environment, the portions of the user profile for an application will also be virtualized (unless you do something like [this](http://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-7/)) and will end up in the PKG file.
 
-To see what this looks like at runtime, here&#8217;s a view of a profile before running Office applications that have been delivered by App-V:
+To see what this looks like at runtime, here's a view of a profile before running Office applications that have been delivered by App-V:
 
 <img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="BeforeOffice" src="http://stealthpuppy.com/wp-content/uploads/2011/10/BeforeOffice.png" alt="BeforeOffice" width="660" height="331" border="0" /> 
 
-After executing each of the Office applications in the package (I&#8217;ve used a package with Office 2010 Professional Plus with Visio and Project) and using just about every feature in those applications:
+After executing each of the Office applications in the package (I've used a package with Office 2010 Professional Plus with Visio and Project) and using just about every feature in those applications:
 
 <img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AfterOffice" src="http://stealthpuppy.com/wp-content/uploads/2011/10/AfterOffice.png" alt="AfterOffice" width="660" height="410" border="0" /> 
 
-There&#8217;s an additional 10 folders that have been created with 8 of those related to Office. This has left me with the majority of the Office user profile being virtualized and stored in the PKG file, whilst the rest is now stored on the real file system. This probably doesn&#8217;t have too much impact to the user if I&#8217;m using Roaming Profiles so that Office settings follow the user, but what happens for support?
+There's an additional 10 folders that have been created with 8 of those related to Office. This has left me with the majority of the Office user profile being virtualized and stored in the PKG file, whilst the rest is now stored on the real file system. This probably doesn't have too much impact to the user if I'm using Roaming Profiles so that Office settings follow the user, but what happens for support?
 
 The service desk now has to manage Office settings for the user in two places. If the aim is repair the Office settings by resetting the App-V package deleting the PKG file, a portion of the Office settings will remain. This is not an ideal solution – the profile for an application should virtualized entirely or not be virtualized at all.
 

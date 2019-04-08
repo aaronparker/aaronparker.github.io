@@ -11,7 +11,7 @@ categories:
 tags:
   - Visio
 ---
-I&#8217;ve seen some Visio resources popup around the place recently and though that these were worth sharing.
+I've seen some Visio resources popup around the place recently and though that these were worth sharing.
 
 First up, check out the [Visio Toolbox](http://visiotoolbox.com) site where you [learn](http://visiotoolbox.com/traininglanding.aspx) how to use Visio, download some [connectors](http://visiotoolbox.com/downloads.aspx?resourceid=2) and check out some [whitepapers](http://visiotoolbox.com/downloads.aspx?resourceid=2).&#160; A free version of [SolarWinds LANsurveyor Express](http://www.solarwinds.com/visio_promo/index.aspx?CMP=LEC-Visio-Toolbox-HP-LSE-DL) (available until June 30) is also available:
 

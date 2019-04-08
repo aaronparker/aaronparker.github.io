@@ -12,7 +12,7 @@ tags:
   - Domain-Isolation
   - ISA Server
 ---
-Microsoft have posted a whitepaper on utilising ISA Server as an IPSec gateway/proxy in a domain or server isolation environment to extend IPSSec protecttion to machines that do not support IPSec. This essentially involves ISA Server terminating the IPSec connection and passing traffic into a NAT&#8217;d network. It&#8217;s a 23 page document and applies to both ISA Server 2004 and 2006:
+Microsoft have posted a whitepaper on utilising ISA Server as an IPSec gateway/proxy in a domain or server isolation environment to extend IPSSec protecttion to machines that do not support IPSec. This essentially involves ISA Server terminating the IPSec connection and passing traffic into a NAT'd network. It's a 23 page document and applies to both ISA Server 2004 and 2006:
 
 > This white paper details how to use ISA Server as an IPsec gateway or proxy within a Server and Domain Isolation solution, from preparation to installation and configuration, and includes best practices to keep in mind during the process. It is written for enterprise technical decision makers, IT administrators, and architects who want to gain a better understanding of the processes and implementation of ISA Server as an IPsec gateway or proxy to extend IPsec interoperability.
 

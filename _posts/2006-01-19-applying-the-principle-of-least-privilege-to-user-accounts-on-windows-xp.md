@@ -11,7 +11,7 @@ categories:
 tags:
   - Least-Privilege
 ---
-Here&#8217;s an excellent document I&#8217;ve added to my list of articles to give to clients:
+Here's an excellent document I've added to my list of articles to give to clients:
 
 **Applying the Principle of Least Privilege to User Accounts on Windows XP**  
 <http://www.microsoft.com/technet/prodtechnol/winxppro/maintain/luawinxp.mspx>
@@ -22,4 +22,4 @@ Here&#8217;s an excellent document I&#8217;ve added to my list of articles to gi
 > 
 > A significant factor that increases the risks from malicious software is the tendency to give users administrative rights on their client computers. When a user or administrator logs on with administrative rights, any programs that they run, such as browsers, e-mail clients, and instant messaging programs, also have administrative rights. If these programs activate malicious software, that malicious software can install itself, manipulate services such as antivirus programs, and even hide from the operating system. Users can run malicious software unintentionally and unknowingly, for example, by visiting a compromised Web site or by clicking a link in an e-mail message.
 > 
-> Malicious software poses numerous threats to organizations, from intercepting a user&#8217;s logon credentials with a keystroke logger to achieving complete control over a computer or an entire network by using a rootkit. Malicious software can cause Web sites to become inaccessible, destroy or corrupt data, and reformat hard disks. Effects can include additional costs such as to disinfect computers, restore files, re-enter or re-create lost data. Virus attacks can also cause project teams to miss deadlines, leading to breach of contract or loss of customer confidence. Organizations that are subject to regulatory compliance can be prosecuted and fined.&#8221;
+> Malicious software poses numerous threats to organizations, from intercepting a user's logon credentials with a keystroke logger to achieving complete control over a computer or an entire network by using a rootkit. Malicious software can cause Web sites to become inaccessible, destroy or corrupt data, and reformat hard disks. Effects can include additional costs such as to disinfect computers, restore files, re-enter or re-create lost data. Virus attacks can also cause project teams to miss deadlines, leading to breach of contract or loss of customer confidence. Organizations that are subject to regulatory compliance can be prosecuted and fined.&#8221;

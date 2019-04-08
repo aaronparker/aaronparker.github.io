@@ -11,7 +11,7 @@ categories:
 tags:
   - NAP
 ---
-Here&#8217;s a quick list of interesting NAP and Domain/Server Isolation related links from Microsoft for September:
+Here's a quick list of interesting NAP and Domain/Server Isolation related links from Microsoft for September:
 
   * [Webcast: Enabling Trusted Communications and Health Policy Enforcement with NAP](https://www119.livemeeting.com/cc/mseventsbmo/view?id=1032308032&pw=89B67592&fmt=wmm)
   * [NAP Chat Transcript](http://blogs.technet.com/nap/archive/2006/09/14/456231.aspx)

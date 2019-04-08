@@ -26,7 +26,7 @@ To configure a client to connect to its closest streaming source, modify the [Ap
 
 > If you want the client to obtain the package content (SFT file) from a local App-V Streaming Server or other alternate source such as a Web server or file server, instead of from the App-V Management Server, you can configure the ApplicationSourceRoot registry key value on the computer to point to the local content share on the other server. The OSD file still defines the original source path for the package content. However the client uses the value of the ApplicationSourceRoot setting in place of the server and share that are specified in the content path in the OSD file. This redirects the client to retrieve the content from the other server.
 
-I&#8217;ll go through a few ways that you can do this dynamically based on various client properties.
+I'll go through a few ways that you can do this dynamically based on various client properties.
 
 ### Configuring ApplicationSourceRoot with Group Policy
 
@@ -86,7 +86,7 @@ Next, enable item-level targeting so that the path specified in this preference 
 
 To filter this preference, I have added three items:
 
-  1. An check for the PROCESSOR_ARCHITECTURE environment variable to apply the preference to 64-bit Windows (because I&#8217;m setting a Registry path that only exists on 64-bit versions of Windows)
+  1. An check for the PROCESSOR_ARCHITECTURE environment variable to apply the preference to 64-bit Windows (because I'm setting a Registry path that only exists on 64-bit versions of Windows)
   2. A check to ensure that the App-V client Configuration Registry key exists (i.e. the App-V Client is installed)
   3. An Active Directory Site check, in this example the AD site name is London
 
@@ -98,13 +98,13 @@ GPP would be a simpler approach to using the Administrative Template as the App-
 
 ### Other Methods
 
-I&#8217;m sure that the number of environments that don&#8217;t have access to Group Policy or Group Policy Preferences will be small; however if you have one of those environments there are plenty of alternatives available. These include, but are not limited to:
+I'm sure that the number of environments that don't have access to Group Policy or Group Policy Preferences will be small; however if you have one of those environments there are plenty of alternatives available. These include, but are not limited to:
 
   * [AppSense Environment Manager](http://www.appsense.com/products/environmentmanager/)
   * [RES Wisdom](http://www.ressoftware.com/pm-products.aspx?PageID=72)
   * [ScriptLogic Desktop Authority](http://www.scriptlogic.com/products/desktopauthority/)
 
-Here&#8217;s an example configuration using AppSense Environment Manager.  EM provides checks for Active Directory Sites or IP Address Ranges. Checks for processor architecture or determining if a registry location exists can be performed with custom conditions (currently handled by VBscript).
+Here's an example configuration using AppSense Environment Manager.  EM provides checks for Active Directory Sites or IP Address Ranges. Checks for processor architecture or determining if a registry location exists can be performed with custom conditions (currently handled by VBscript).
 
 Setting or changing the ApplicationSourceRoot value can be performed on a number of triggers such as Computer Start-up and User Logon, but most useful (e.g. laptops) will be using the Network Connected trigger. This trigger can be used to detect the network location whenever a physical network connection is made and it will then action the applicable registry change.
 

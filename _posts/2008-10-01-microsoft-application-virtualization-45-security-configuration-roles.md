@@ -22,7 +22,7 @@ Security configuration roles for Application Virtualisation 4.5, which makes the
 >   * Microsoft Application Virtualization 4.5 Streaming Server
 >   * Microsoft Application Virtualization 4.5 Management Service
 
-You’ll first need to register these roles with the SCW to use them. This script will register the files on Windows Server 2003 (after you&#8217;ve first installed the roles on the Management or Streaming server):
+You’ll first need to register these roles with the SCW to use them. This script will register the files on Windows Server 2003 (after you've first installed the roles on the Management or Streaming server):
 
 [code]@ECHO OFF  
 PUSHD "%USERPROFILE%"  

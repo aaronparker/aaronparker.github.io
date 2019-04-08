@@ -32,7 +32,7 @@ These might include:
   * Import Wizard – Firefox starts a wizard on first run that imports settings from other browsers. You may want to remove this wizard to simplify the startup of Firefox
   * Automatic updates for Firefox – _Options / Advanced / Update / Firefox updates._ Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
   * _Mozilla Maintenance Service_ - [Firefox installs an updater service](http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service) that allows updating Firefox automatically, whilst avoiding UAC prompts. This service should be disabled or not installed in a controlled environment including under application virtualization
-  * Default browser check – _Options / Advanced / General - Always check to see if Firefox is the default browser on startup_. Under App-V 4,x, once Firefox is isolated from the OS, the user won&#8217;t be able to make it the default browser (this will work under App-V 5)
+  * Default browser check – _Options / Advanced / General - Always check to see if Firefox is the default browser on startup_. Under App-V 4,x, once Firefox is isolated from the OS, the user won't be able to make it the default browser (this will work under App-V 5)
   * The ‘Welcome to Firefox’ tab, the ‘Know your rights’ and ‘Improve Firefox’ notifications
 
 There is a way to [control many of these settings through Group Policy](http://sourceforge.net/projects/gpofirefox/), but if we get these right at install time, there’s no need for the overhead of GPOs. I will cover using a few of these customisations to ensure these features are disabled for any new Firefox profile.
@@ -88,7 +88,7 @@ EnableProfileMigrator=false[/code]
 Mozilla has made it a fairly straight forward process to remove browser user interface elements using userChrome.css. Where browser functionality has been disabled, we can remove the corresponding UI to avoid user confusion. Enter the following lines into userChrome.css; however remove the highlighted line if you would like users to be able to set Firefox as the default browser:
 
 [code lang=&#8221;css&#8221; highlight=&#8221;5&#8243;]/\* UserChrome.css for Mozilla Firefox \*/  
-/\* Remove access to user interface elements that aren&#8217;t suitable for application virtualization \*/
+/\* Remove access to user interface elements that aren't suitable for application virtualization \*/
 
 /\* Options - Advanced - General - System Defaults \*/  
 #systemDefaultsGroup { display: none !important; }
@@ -101,7 +101,7 @@ Mozilla has made it a fairly straight forward process to remove browser user int
 
 # Installing Firefox
 
-Download the [Firefox installer in your target language from the Mozilla site](http://www.mozilla.com/firefox/all.html). For most deployments the installer won&#8217;t require modification and installation can be automated by passing an INI file with setup configuration details to the installer. This enables you to control setup and set options such as preventing the desktop shortcut from being added, or control the target directory that Firefox is installed to (useful when virtualizing).
+Download the [Firefox installer in your target language from the Mozilla site](http://www.mozilla.com/firefox/all.html). For most deployments the installer won't require modification and installation can be automated by passing an INI file with setup configuration details to the installer. This enables you to control setup and set options such as preventing the desktop shortcut from being added, or control the target directory that Firefox is installed to (useful when virtualizing).
 
 An installation script for Firefox should perform the following tasks:
 
@@ -144,7 +144,7 @@ If the installation has been configured correctly, Firefox should start and not 
 
 [<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FirefoxSettings" alt="FirefoxSettings" src="http://stealthpuppy.com/wp-content/uploads/2013/03/FirefoxSettings_thumb.png" width="660" height="319" border="0" />](http://stealthpuppy.com/wp-content/uploads/2013/03/FirefoxSettings.png)
 
-To make it easier, I&#8217;ve included the configuration files and the installation script listed above in a single ZIP file that you can download here:
+To make it easier, I've included the configuration files and the installation script listed above in a single ZIP file that you can download here:
 
 <p class="download">
   [download id=&#8221;60&#8243; format=&#8221;1&#8243;]
@@ -152,7 +152,7 @@ To make it easier, I&#8217;ve included the configuration files and the installat
 
 # Finally
 
-The approach outlined in this article should provide you with a deployment of Firefox that can be used in an enterprise where control of the browser is required. I&#8217;ve only covered a few of the things that are possible when customising the installation and if you dig a little deeper you can come up with a setup to suit your own environment.
+The approach outlined in this article should provide you with a deployment of Firefox that can be used in an enterprise where control of the browser is required. I've only covered a few of the things that are possible when customising the installation and if you dig a little deeper you can come up with a setup to suit your own environment.
 
 This is also a key approach to use when virtualising Firefox. Controlling the browser options and automating the installation will assist in producing better application virtualization packages.
 

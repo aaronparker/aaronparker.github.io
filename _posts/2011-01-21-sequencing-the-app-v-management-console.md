@@ -15,7 +15,7 @@ categories:
 tags:
   - App-V
 ---
-<a rel="attachment wp-att-2110" href="http://stealthpuppy.com/virtualisation/sequencing-the-app-v-management-console/attachment/appvconsolebox/"><img class="alignright size-full wp-image-2110" title="AppVConsoleBox" src="http://stealthpuppy.com/wp-content/uploads/2011/01/AppVConsoleBox.png" alt="" width="131" height="128" /></a>Sequencing the the App-V Management Console is reasonably straight-forward; however it wasn&#8217;t quite as simple as you would expect.
+<a rel="attachment wp-att-2110" href="http://stealthpuppy.com/virtualisation/sequencing-the-app-v-management-console/attachment/appvconsolebox/"><img class="alignright size-full wp-image-2110" title="AppVConsoleBox" src="http://stealthpuppy.com/wp-content/uploads/2011/01/AppVConsoleBox.png" alt="" width="131" height="128" /></a>Sequencing the the App-V Management Console is reasonably straight-forward; however it wasn't quite as simple as you would expect.
 
 ### Prerequisites
 

@@ -55,7 +55,7 @@ tags:
 ### Scripts
 
   * [PowerShell Script Lists App-V Package Dependencies](http://www.sepago.de/helge/2010/01/06/powershell-script-lists-app-v-package-dependencies-dynamic-suite-composition-dsc/) by [Helge Klein](http://www.sepago.de/helge/)
-  * [SoftGridProfileJanitor](http://www.virtualapp.net/scripts.html#SoftGridProfileJanitor) by **Kalle Saunamäki** – cleanup/maintenance script to be run under user&#8217;s context in order to clear out leftover files from App-V data directory
+  * [SoftGridProfileJanitor](http://www.virtualapp.net/scripts.html#SoftGridProfileJanitor) by **Kalle Saunamäki** – cleanup/maintenance script to be run under user's context in order to clear out leftover files from App-V data directory
   * [SoftGridPreloadApps](http://www.virtualapp.net/scripts.html#SoftGridPreloadApps) by **Kalle Saunamäki** – package pre-loading script that can be run on client machines to cache all applications to 100%
   * [SoftGrid/App-V Preload Client script](http://www.koekies.org/pivot/entry.php?id=10) by **Erwin Koekoek** – another package pre-loading script to cache applications to 100%
 

@@ -11,7 +11,7 @@ categories:
 tags:
   - IIS
 ---
-I&#8217;m sure the use of adding .ICA files to web servers to launch published applications from Presentation Server doesn&#8217;t happen as often as it used to, but it&#8217;s still useful for adding a link to an application on an intranet site. After adding a .ICA file to IIS6, however, users may receive a file not found error:
+I'm sure the use of adding .ICA files to web servers to launch published applications from Presentation Server doesn't happen as often as it used to, but it's still useful for adding a link to an application on an intranet site. After adding a .ICA file to IIS6, however, users may receive a file not found error:
 
 > HTTP Error 404 - File or directory not found
 

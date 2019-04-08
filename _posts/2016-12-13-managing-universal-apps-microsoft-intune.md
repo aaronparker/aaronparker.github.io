@@ -20,7 +20,7 @@ tags:
   - Windows Store
   - Windows Store for Business
 ---
-I am excited about the opportunities that managing Windows 10 devices with [Azure AD Join](https://blogs.technet.microsoft.com/enterprisemobility/2015/05/28/azure-ad-join-on-windows-10-devices/) and MDM (i.e. modern management) provides for both users and admins. In this article, I&#8217;ll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution - Microsoft Intune standalone for managing Universal apps.
+I am excited about the opportunities that managing Windows 10 devices with [Azure AD Join](https://blogs.technet.microsoft.com/enterprisemobility/2015/05/28/azure-ad-join-on-windows-10-devices/) and MDM (i.e. modern management) provides for both users and admins. In this article, I'll cover deploying and managing modern applications (Universal apps) on a modern platform with a modern device management solution - Microsoft Intune standalone for managing Universal apps.
 
 Consider that with Windows 10, an organisation can provision and manage Windows 10 PCs [without a custom SOE](https://technet.microsoft.com/en-us/itpro/windows/deploy/provisioning-packages) and with a fully [cloud-based authentication](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis) and management solution, requiring no infrastructure (other than networking) on-premises. This approach comes with some caveats today, of course, but PC and application lifecycle can be achieved without exhaustive architectural consideration or deployment of complex management solutions.
 
@@ -28,7 +28,7 @@ Using Intune to manage Windows 10 PCs (and Windows 10 mobile devices) along with
 
 # Requirements for Microsoft Intune
 
-Deploying and configuring Microsoft Intune requires two things - Azure AD and licensing Intune. In this article, I&#8217;m concentrating on Intune standalone only, i.e. Intune as a standalone cloud solution, not [integrated with Configuration Manager](https://technet.microsoft.com/en-us/library/jj884158.aspx).
+Deploying and configuring Microsoft Intune requires two things - Azure AD and licensing Intune. In this article, I'm concentrating on Intune standalone only, i.e. Intune as a standalone cloud solution, not [integrated with Configuration Manager](https://technet.microsoft.com/en-us/library/jj884158.aspx).
 
 ## Azure Active Directory
 
@@ -36,18 +36,18 @@ Like the [Windows Store for Business](http://stealthpuppy.com/setup-windows-stor
 
 ## Licensing Microsoft Intune
 
-While Intune can be licensed on its own, the ideal way of licensing Intune is as a component of [the Microsoft Enterprise Mobility + Security suite](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security)&nbsp;(EMS). The primary reason is to enable advanced features you get with an Azure AD Premium subscription. If you&#8217;re not familiar with EMS, you can read up on the components and licensing&nbsp;details here:&nbsp;[Enterprise Mobility + Security Pricing](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security-pricing).
+While Intune can be licensed on its own, the ideal way of licensing Intune is as a component of [the Microsoft Enterprise Mobility + Security suite](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security)&nbsp;(EMS). The primary reason is to enable advanced features you get with an Azure AD Premium subscription. If you're not familiar with EMS, you can read up on the components and licensing&nbsp;details here:&nbsp;[Enterprise Mobility + Security Pricing](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security-pricing).
 
-For this solution, we&#8217;re interested in:
+For this solution, we're interested in:
 
   * **Azure Active Directory Premium** - this enables a[utomatic MDM enrollment](https://blogs.technet.microsoft.com/enterprisemobility/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/) when a device is provisioned and connected to Azure AD. Additionally Azure AD Premium provides branding customisation which improves the sign on user experience; multi-factor authentication onto devices as well as cloud applications and conditional access to protect resources such as Exchange and SharePoint Online.
   * **Microsoft Intune** - Intune is included in the EMS license which is the primary reason for deploying modern management.
 
-Additional components that make sense in a cloud-based management approach include [Azure Information Protection](https://www.microsoft.com/en-au/cloud-platform/azure-information-protection) and [Microsoft Advanced Threat Analytics](https://www.microsoft.com/en-au/cloud-platform/advanced-threat-analytics). These are entire topics on their own, so I won&#8217;t be covering those in the context of this article.
+Additional components that make sense in a cloud-based management approach include [Azure Information Protection](https://www.microsoft.com/en-au/cloud-platform/azure-information-protection) and [Microsoft Advanced Threat Analytics](https://www.microsoft.com/en-au/cloud-platform/advanced-threat-analytics). These are entire topics on their own, so I won't be covering those in the context of this article.
 
 ## Setting up Intune
 
-I&#8217;m not going to cover [the setup of Intune](https://docs.microsoft.com/en-us/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune-step-1) in detail as there are plenty of existing resources available including the official Microsoft document. I highly recommend reading [the getting started guide](https://docs.microsoft.com/en-us/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune) and using the [Microsoft IT Pro Cloud Essentials](https://www.microsoft.com/itprocloudessentials/) site to setup a trial environment if you&#8217;re new to Intune.
+I'm not going to cover [the setup of Intune](https://docs.microsoft.com/en-us/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune-step-1) in detail as there are plenty of existing resources available including the official Microsoft document. I highly recommend reading [the getting started guide](https://docs.microsoft.com/en-us/intune/get-started/start-with-a-paid-subscription-to-microsoft-intune) and using the [Microsoft IT Pro Cloud Essentials](https://www.microsoft.com/itprocloudessentials/) site to setup a trial environment if you're new to Intune.
 
 Once you have Azure AD and Intune provisioned, we can connect Intune to the Windows Store for Business and start managing Universal apps.
 
@@ -67,7 +67,7 @@ To start managing Universal apps with Intune, we need to first [associate our In
   </li>
 </ol>
 
-You should see a screen similar to the below. This sets Intune as the device management authority. Note that I&#8217;ve already associated my Intune tenant.
+You should see a screen similar to the below. This sets Intune as the device management authority. Note that I've already associated my Intune tenant.
 
 <figure id="attachment_5326" aria-describedby="caption-attachment-5326" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5326" src="http://stealthpuppy.com/wp-content/uploads/2016/12/AssociateIntuneWSfB-1024x587.png" alt="Associating Intune with the Windows Store for Business to start managing Universal apps" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/AssociateIntuneWSfB-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/AssociateIntuneWSfB-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/AssociateIntuneWSfB-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/AssociateIntuneWSfB-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/AssociateIntuneWSfB.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/AssociateIntuneWSfB.png)<figcaption id="caption-attachment-5326" class="wp-caption-text">Associating Intune with the Windows Store for Business to start managing Universal apps</figcaption></figure>
 
@@ -91,7 +91,7 @@ Now navigate to **Apps** / **Apps** / **Volume-Purchased Apps**. The list of Uni
 
 <figure id="attachment_5329" aria-describedby="caption-attachment-5329" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5329" src="http://stealthpuppy.com/wp-content/uploads/2016/12/Volume-Purchased-Apps-1024x640.png" alt="Volume Purchased Apps in the Intune console, synchronised from the Windows Store for Business" width="1024" height="640" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/Volume-Purchased-Apps-1024x640.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/Volume-Purchased-Apps-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/Volume-Purchased-Apps-300x188.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/Volume-Purchased-Apps-768x480.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/Volume-Purchased-Apps.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/Volume-Purchased-Apps.png)<figcaption id="caption-attachment-5329" class="wp-caption-text">Volume Purchased Apps in the Intune console, synchronised from the Windows Store for Business</figcaption></figure>
 
-Apps added to the Business Store inventory will appear immediately after a sync, so unlike the Windows Store app on devices, we don&#8217;t need to wait 12-24 hours for apps to appear in the list.
+Apps added to the Business Store inventory will appear immediately after a sync, so unlike the Windows Store app on devices, we don't need to wait 12-24 hours for apps to appear in the list.
 
 ## Targeting Apps
 
@@ -135,8 +135,8 @@ With an Azure AD joined Windows 10 PC, enrolled for Intune MDM, the Company Port
 
 In&nbsp;this scenario where Universal apps are synchronised with the Business Store and deployed via Volume-Purchased Apps, app distribution is _Online_. Where devices are connected to the Internet and managed via a cloud-based device management solution, this type of distribution mechanism makes sense.
 
-Intune does support _Offline_ distribution of Universal apps; however, this doesn&#8217;t necessarily make sense for connected devices plus access to download apps from the Windows Store for Business for offline distribution is controlled by the vendor of the app. If they don&#8217;t make the app available for offline distribution you must deliver the app online.
+Intune does support _Offline_ distribution of Universal apps; however, this doesn't necessarily make sense for connected devices plus access to download apps from the Windows Store for Business for offline distribution is controlled by the vendor of the app. If they don't make the app available for offline distribution you must deliver the app online.
 
 # Conclusion
 
-In this article, I&#8217;ve detailed the steps required for managing Universal apps on Windows 10 PCs enrolled for MDM management with Microsoft Intune. While this approach may not yet be right for every organisation, I do see this gaining traction for smaller organisations in the future.
+In this article, I've detailed the steps required for managing Universal apps on Windows 10 PCs enrolled for MDM management with Microsoft Intune. While this approach may not yet be right for every organisation, I do see this gaining traction for smaller organisations in the future.

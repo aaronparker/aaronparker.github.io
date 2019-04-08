@@ -23,7 +23,7 @@ Once Windows has finished flushing the file system cache, the following dialog i
 
 <img border="0" width="410" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1096.SafeToRemoveHardware.png" height="184" style="width: 410px; height: 184px" /> 
 
-The problem with this approach is this dialog is a little in-your-face and you must respond to it with a mouse click. Surely a balloon notification would be a more pleasant experience? Well, let&#8217;s see what we get when you use the second method to safely remove a device. This method is accessed via the right-click menu on a device such as a USB hard drive in My Computer:
+The problem with this approach is this dialog is a little in-your-face and you must respond to it with a mouse click. Surely a balloon notification would be a more pleasant experience? Well, let's see what we get when you use the second method to safely remove a device. This method is accessed via the right-click menu on a device such as a USB hard drive in My Computer:
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1093.Computer.png" /> 
 
@@ -33,4 +33,4 @@ This results in a balloon notification in the tray, far more elegant than a popu
 
 <a target="_blank" href="http://www.stealthpuppy.com/photos/images/images/1096/original.aspx"></a>
 
-So essentially we have two ways of achieving the same thing, but we get two different notifications. To me balloon notifications are far more effective and since they took the time to implement it, why not update the original notification too? Now as I don&#8217;t work for Microsoft I can&#8217;t possibly have an understanding of the design process, but updating the first method to match the new one just makes sense.
+So essentially we have two ways of achieving the same thing, but we get two different notifications. To me balloon notifications are far more effective and since they took the time to implement it, why not update the original notification too? Now as I don't work for Microsoft I can't possibly have an understanding of the design process, but updating the first method to match the new one just makes sense.

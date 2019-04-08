@@ -15,6 +15,6 @@ categories:
   <img src="http://stealthpuppy.com/wp-content/uploads/2007/10/terminalserverhelp.png" alt="terminalserverhelp.png" />
 </p>
 
-If it&#8217;s the 834th time you&#8217;ve seen the Terminal Server help file open after you&#8217;ve enabled Terminal Server and you would like to stop this from happening in your automated builds, just delete this registry value before anyone logs onto the box (i.e. via CMDLINES.TXT or SysPrep):
+If it's the 834th time you've seen the Terminal Server help file open after you've enabled Terminal Server and you would like to stop this from happening in your automated builds, just delete this registry value before anyone logs onto the box (i.e. via CMDLINES.TXT or SysPrep):
 
 `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\TerminalServerInstalled`

@@ -14,7 +14,7 @@ tags:
   - Access-Based Enumeration
   - Windows-Server
 ---
-You remember [Access Based Enumeration](http://www.microsoft.com/windowsserver2003/techinfo/overview/abe.mspx) right? I&#8217;m often surprised by people who didn&#8217;t know this features exists, so here&#8217;s refresher.
+You remember [Access Based Enumeration](http://www.microsoft.com/windowsserver2003/techinfo/overview/abe.mspx) right? I'm often surprised by people who didn't know this features exists, so here's refresher.
 
 Access Based Enumeration is the add-on to Windows Server 2003 and included in Windows Server 2008 that controls the display of files and folders in remote shares based on user-rights. This is the tool that helps you create [dynamic Start Menus for Terminal Servers](http://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration) or turn a user home share view from this:
 
@@ -24,9 +24,9 @@ into this:
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/04/abeshareafter.png" border="0" alt="ABEShareAfter" width="409" height="251" /> 
 
-It&#8217;s also especially good for those common file shares that everyone has access but are full of folders they can&#8217;t access.
+It's also especially good for those common file shares that everyone has access but are full of folders they can't access.
 
-To use ABE in Windows Server 2003, you&#8217;ll need to download and install [the installer for Windows 2003 Service Pack 1 and above](http://www.microsoft.com/downloads/details.aspx?FamilyID=04a563d9-78d9-4342-a485-b030ac442084&DisplayLang=en). You can then enabled access-based enumeration on each share:
+To use ABE in Windows Server 2003, you'll need to download and install [the installer for Windows 2003 Service Pack 1 and above](http://www.microsoft.com/downloads/details.aspx?FamilyID=04a563d9-78d9-4342-a485-b030ac442084&DisplayLang=en). You can then enabled access-based enumeration on each share:
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/04/accessbasedenumeration2003.png" border="0" alt="AccessBasedEnumeration2003" width="294" height="394" /> 
 
@@ -34,7 +34,7 @@ For Windows Server 2008, ABE is built in and you can enable it by opening the _S
 
 <img src="http://stealthpuppy.com/wp-content/uploads/2008/04/accessbasedenumeration2008.png" border="0" alt="AccessBasedEnumeration2008" width="573" height="359" /> 
 
-Nice and easy, so stop reading this post and going and enable ABE now.. Here&#8217;s more on ABE if you&#8217;re interested:
+Nice and easy, so stop reading this post and going and enable ABE now.. Here's more on ABE if you're interested:
 
   * [Windows Server 2003 Access-based Enumeration](http://www.microsoft.com/downloads/details.aspx?FamilyID=04a563d9-78d9-4342-a485-b030ac442084&DisplayLang=en)
   * [Windows Server 2003 Access-based Enumeration](http://www.microsoft.com/windowsserver2003/techinfo/overview/abe.mspx)

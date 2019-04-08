@@ -19,6 +19,6 @@ I came across these couple of videos last night that tickled my fancy, so I had 
 
 
 
-If you&#8217;re wondering why the Dr. and Race sleep in the same room, I&#8217;ve got no answers, but I suggest checking out the 'Bannon Custody Battle&#8217; episode of [Harvey Birdman](http://en.wikipedia.org/wiki/Harvey_Birdman%2C_Attorney_at_Law). Funny stuff.
+If you're wondering why the Dr. and Race sleep in the same room, I've got no answers, but I suggest checking out the 'Bannon Custody Battle' episode of [Harvey Birdman](http://en.wikipedia.org/wiki/Harvey_Birdman%2C_Attorney_at_Law). Funny stuff.
 
-And then there&#8217;s  [Batman and Robin in Ancient Rome](http://www.youtube.com/watch?v=0jojOqtzKD8)..
+And then there's  [Batman and Robin in Ancient Rome](http://www.youtube.com/watch?v=0jojOqtzKD8)..

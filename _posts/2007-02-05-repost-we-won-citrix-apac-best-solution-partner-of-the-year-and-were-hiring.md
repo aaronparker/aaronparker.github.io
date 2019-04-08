@@ -1,6 +1,6 @@
 ---
 id: 107
-title: 'Repost: We won Citrix APAC Best Solution Partner of the year - and we&#8217;re hiring'
+title: 'Repost: We won Citrix APAC Best Solution Partner of the year - and we're hiring'
 date: 2007-02-05T21:21:00+10:00
 author: Aaron Parker
 layout: post
@@ -17,7 +17,7 @@ I briefly thought about posting this but I knew [Dugie would do a better job of 
 > 
 > Well Ok, I may be biased but I think its way cool. APAC covers Japan, Korea, Taiwan, Hong Kong, Greater China, Singapore, India, PNG, Australia, and New Zealand. Close to 700 Citrix partners, and US$100M in sales &#8212; and we won!
 > 
-> We&#8217;re also hiring (actually we&#8217;re always looking for great people) for:
+> We're also hiring (actually we're always looking for great people) for:
 > 
 >   * Pre-Sales, Technical Architects
 >   * Team Leaders

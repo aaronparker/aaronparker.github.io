@@ -17,6 +17,6 @@ tags:
 
 No concrete details are in place yet, but expect a high level of involvement from App-V MVPs, so you can be guaranteed that the information presented will be of high quality. Login Consultants are looking to gauge the level of interest in the event and what topics attendees would like to see and you can register your details now.
 
-If you&#8217;ve not been to previous events, videos of last years presentations are [available on Nicke Källén&#8217;s blog](http://www.applepie.se/category/app-v/european-app-v-user-group-app-v).
+If you've not been to previous events, videos of last years presentations are [available on Nicke Källén's blog](http://www.applepie.se/category/app-v/european-app-v-user-group-app-v).
 
  

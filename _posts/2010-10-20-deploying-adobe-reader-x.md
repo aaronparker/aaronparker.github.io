@@ -31,13 +31,13 @@ Adobe Reader X [is here](http://blogs.adobe.com/adobereader/2010/11/adobe-reader
 
 # Licensing Your Deployment
 
-Although Adobe Reader is free you&#8217;ll need to agree to and obtain a license to distribute it in your own environment. Obtaining a license is simple, you&#8217;ll just need to answer a few questions such as the number of copies, how you will distribute Reader, which platforms and some information on your company including contact information. The same license can be used for distributing Flash player and Adobe AIR. To apply for the license go to the [Adobe Runtimes / Reader Distribution License Agreement](http://www.adobe.com/go/rdr_apply_dist).
+Although Adobe Reader is free you'll need to agree to and obtain a license to distribute it in your own environment. Obtaining a license is simple, you'll just need to answer a few questions such as the number of copies, how you will distribute Reader, which platforms and some information on your company including contact information. The same license can be used for distributing Flash player and Adobe AIR. To apply for the license go to the [Adobe Runtimes / Reader Distribution License Agreement](http://www.adobe.com/go/rdr_apply_dist).
 
 # Obtaining the Adobe Customization Wizard
 
-Unfortunately Adobe doesn&#8217;t use the same installer across all of their products - the installers for the Acrobat products are different to the [Creative Suite](http://www.adobe.com/devnet/creativesuite/enterprisedeployment.html) products. For anyone who&#8217;s attempted deployment of the CS products would probably consider this a good thing.
+Unfortunately Adobe doesn't use the same installer across all of their products - the installers for the Acrobat products are different to the [Creative Suite](http://www.adobe.com/devnet/creativesuite/enterprisedeployment.html) products. For anyone who's attempted deployment of the CS products would probably consider this a good thing.
 
-To start customising Reader before deploying, you&#8217;ll need access to the Adobe Customization Wizard. The Customization Wizard X hasn&#8217;t changed much since the [Customization Wizard 9](http://www.adobe.com/support/downloads/detail.jsp?ftpID=3993), so if you have experience deploying [Adobe Reader 8](http://stealthpuppy.com/deployment/deploying-adobe-reader-81) or [Reader 9](http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows/), you&#8217;ll be comfortable customising and deploying the new version.
+To start customising Reader before deploying, you'll need access to the Adobe Customization Wizard. The Customization Wizard X hasn't changed much since the [Customization Wizard 9](http://www.adobe.com/support/downloads/detail.jsp?ftpID=3993), so if you have experience deploying [Adobe Reader 8](http://stealthpuppy.com/deployment/deploying-adobe-reader-81) or [Reader 9](http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows/), you'll be comfortable customising and deploying the new version.
 
 The Adobe Customization Wizard X should be available from here - [Adobe Customization Wizard X](http://www.adobe.com/support/downloads/detail.jsp?ftpID=4950). Otherwise you can use this direct download link: [Adobe Customization Wizard X](http://ardownload.adobe.com/pub/adobe/acrobat/win/10.x/10.0.0/misc/CustWiz1000_en_US.exe). An FTP site is also available - [Adobe FTP site](ftp://ftp.adobe.com/pub/adobe/acrobat/win/10.x/10.0.0/misc/).
 
@@ -48,22 +48,22 @@ The Customization Wizard should be installed to an administrative workstation an
   * Suppress the EULA, registration prompts, and the Getting Started window
   * Customise key application preferences — turn off automatic updates, add and set default job options, and customize collaboration and security settings
   * Remove shortcuts from the desktop and the Start menu
-  * Edit each Adobe Acrobat application&#8217;s registry and installer tables
+  * Edit each Adobe Acrobat application's registry and installer tables
   * Customize file attachment handling within PDF files, including specifying which file types you want to block
   * Add or edit files that will be installed, including customized JavaScript or plug-ins
   * Preconfigure and lock Enhanced Security settings
 
 # Downloading the Reader X MSI
 
-When creating a custom installer for Reader, always start with the latest version which you may need to obtain from the [Adobe Reader download page](http://get.adobe.com/reader/). For an installer that you can extract and doesn&#8217;t include Google Chrome or Toolbar download the EXE installer from Adobe&#8217;s FTP site: [ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0](ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/)
+When creating a custom installer for Reader, always start with the latest version which you may need to obtain from the [Adobe Reader download page](http://get.adobe.com/reader/). For an installer that you can extract and doesn't include Google Chrome or Toolbar download the EXE installer from Adobe's FTP site: [ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0](ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/)
 
 **Note**: if you need to download the latest installer, always grab a copy from the Adobe site to guarantee you have a source you can trust
 
-Once you&#8217;ve downloaded the Reader installer, extract the setup files so that you can create a custom transform file. To extract, run the following command line:
+Once you've downloaded the Reader installer, extract the setup files so that you can create a custom transform file. To extract, run the following command line:
 
 [code]AdbeRdr1010\_en\_US.exe.exe -nos\_o"C:\Folder" -nos\_ne[/code]
 
-Replace _C:\Folder_ with the path to a local folder. If you don&#8217;t specific the -nos_o switch, the files will be extracted here:
+Replace _C:\Folder_ with the path to a local folder. If you don't specific the -nos_o switch, the files will be extracted here:
 
   * %ProgramData%\Adobe\Setup (Windows Vista and above)
   * %ALLUSERSPROFILE%\Application Data\Adobe\Setup (Windows XP / Windows Server 2003)
@@ -80,7 +80,7 @@ Once extracted, you should have the following files required for Reader deployme
 
 # Creating a custom Transform for Reader X
 
-Here I&#8217;ll step through creating a custom installation for Reader, providing some recommended settings for your deployment and add links to further information that you may need to consider for your specific environment.
+Here I'll step through creating a custom installation for Reader, providing some recommended settings for your deployment and add links to further information that you may need to consider for your specific environment.
 
 **Step 1 Personalisation Options**: Open the Customization Wizard, click File / Open Package… and browse to AcroRead.MSI located in the folder that contains the extract Reader setup files. You can change the installation path if required:
 
@@ -100,18 +100,18 @@ Here I&#8217;ll step through creating a custom installation for Reader, providin
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - files and folders" src="http://stealthpuppy.com/wp-content/uploads/2010/10/customisation04_thumb.png" alt="Adobe Customization Wizard - files and folders" width="660" height="458" border="0" />](http://stealthpuppy.com/wp-content/uploads/2010/10/customisation04.png)
 
-**Step 4 Registry**: add additional Registry values here to control the Reader installation. You can browse the local computer&#8217;s Registry to make adding entries simpler.
+**Step 4 Registry**: add additional Registry values here to control the Reader installation. You can browse the local computer's Registry to make adding entries simpler.
 
 There are two edits I recommend making – browse to Destination Computer / _HKEY\_LOCAL\_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run_ and modify these startup items, if they exist:
 
   * Adobe ARM
   * Adobe Reader Speed Launcher
 
-Right-click each of these entries and choose _Modify_. Set _Action_ to _Remove value_. This will prevent the installer from adding these entries and starting unnecessary processes at user logon. This step is very important for Terminal Server / Remote Desktop Session Host environments to reduce the processes that will run in each user&#8217;s session.
+Right-click each of these entries and choose _Modify_. Set _Action_ to _Remove value_. This will prevent the installer from adding these entries and starting unnecessary processes at user logon. This step is very important for Terminal Server / Remote Desktop Session Host environments to reduce the processes that will run in each user's session.
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="customization01" src="http://stealthpuppy.com/wp-content/uploads/2010/10/customization01_thumb.png" alt="customization01" width="660" height="438" border="0" />](http://stealthpuppy.com/wp-content/uploads/2010/10/customization01.png)
 
-**Step 5 Shortcuts**: for whatever reason, Adobe deems in necessary to add a superfluous shortcut for Reader to the desktop. Don&#8217;t forget to remove that here – if you don&#8217;t remove the shortcut in the transform, it will be created when you patch Reader.
+**Step 5 Shortcuts**: for whatever reason, Adobe deems in necessary to add a superfluous shortcut for Reader to the desktop. Don't forget to remove that here – if you don't remove the shortcut in the transform, it will be created when you patch Reader.
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - shortcuts" src="http://stealthpuppy.com/wp-content/uploads/2010/10/customisation06_thumb.png" alt="Adobe Customization Wizard - shortcuts" width="660" height="458" border="0" />](http://stealthpuppy.com/wp-content/uploads/2010/10/customisation06.png)
 
@@ -137,7 +137,7 @@ Right-click each of these entries and choose _Modify_. Set _Action_ to _Remove v
 
 **Step 10 Online and Acrobat.com Features**: access to several features can be controlled here:
 
-  * Disable all updates: this will prevent the Adobe Updater from running automatically (but won&#8217;t prevent it from installing). The Check for Updates menu option will also be removed.
+  * Disable all updates: this will prevent the Adobe Updater from running automatically (but won't prevent it from installing). The Check for Updates menu option will also be removed.
 
 <span style="color: #ff0000;"><strong>Warning</strong></span>: It is extremely important to disable Adobe Updater on shared systems such as Terminal Server/Remote Desktop Servers - a standard user can initiate a reboot of a computer if Updater applies a Reader update. This is because the update is applied using Windows Installer which runs in the System context.
 
@@ -243,11 +243,11 @@ To deliver the script with the Reader package, use the Files and Folders section
 
 # Enforcing Protected Mode
 
-[Adobe Reader X Protected Mode](http://blogs.adobe.com/asset/2010/07/introducing-adobe-reader-protected-mode.html) will assist in reducing the potential security threats when opening or viewing PDF files, so it&#8217;s a feature you&#8217;ll want to ensure remains enabled on client computers. However, by default, users can turn this feature off - this option is available in the Preferences dialog box under General:
+[Adobe Reader X Protected Mode](http://blogs.adobe.com/asset/2010/07/introducing-adobe-reader-protected-mode.html) will assist in reducing the potential security threats when opening or viewing PDF files, so it's a feature you'll want to ensure remains enabled on client computers. However, by default, users can turn this feature off - this option is available in the Preferences dialog box under General:
 
 [<img class="alignnone size-full wp-image-2024" title="EnableProtectedModeAtStartup" src="http://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup.png" alt="" width="660" height="231" srcset="https://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup-150x52.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/10/EnableProtectedModeAtStartup-300x105.png 300w" sizes="(max-width: 660px) 100vw, 660px" />](http://stealthpuppy.com/?attachment_id=2024)
 
-In the user&#8217;s context, Protected Mode is controlled with the following Registry value:
+In the user's context, Protected Mode is controlled with the following Registry value:
 
 <div id="_mcePaste">
   <ul>
@@ -279,9 +279,9 @@ With the release of Reader 10.1, Protected Mode is now supported on Terminal Ser
 
 # Finding more Reader Preferences and Policies
 
-To find the complete list of preferences for Reader and Acrobat you should refer to the [Administrator&#8217;s Information Manager](http://learn.adobe.com/wiki/download/attachments/46432650/AIM.air?version=1). This tool also contains the Reader and Acrobat Admin and Security guides.
+To find the complete list of preferences for Reader and Acrobat you should refer to the [Administrator's Information Manager](http://learn.adobe.com/wiki/download/attachments/46432650/AIM.air?version=1). This tool also contains the Reader and Acrobat Admin and Security guides.
 
-> The Administrator&#8217;s Information Manager (AIM) is an auto-updating and customizable AIR application containing the Preference Reference. AIM also includes and a growing list of other resources of interest to administrators in enterprise settings.
+> The Administrator's Information Manager (AIM) is an auto-updating and customizable AIR application containing the Preference Reference. AIM also includes and a growing list of other resources of interest to administrators in enterprise settings.
 
 <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/attachment/admininformaitonmanager/" rel="attachment wp-att-2051"><img class="alignnone size-full wp-image-2051" title="AdminInformaitonManager" src="http://stealthpuppy.com/wp-content/uploads/2010/10/AdminInformaitonManager.png" alt="" width="660" height="353" srcset="https://stealthpuppy.com/wp-content/uploads/2010/10/AdminInformaitonManager.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/10/AdminInformaitonManager-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/10/AdminInformaitonManager-300x160.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 

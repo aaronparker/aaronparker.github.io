@@ -20,7 +20,7 @@ tags:
 > 
 > Since I often receive questions about user based and machine based deployment with App-V 4.5, I thought I would be nice to explain the two scenarios using Configuration Manager 2007 R2.
 > 
-> First let&#8217;s get the terms straight: User Based deployment means that you target a user (usually via a group) to deliver a piece a software. Machine Based deployment is when you target a specific machine to deliver a piece of software to. 
+> First let's get the terms straight: User Based deployment means that you target a user (usually via a group) to deliver a piece a software. Machine Based deployment is when you target a specific machine to deliver a piece of software to. 
 > 
 > The difference in Configuration Manager lies in the creation of the collections
 

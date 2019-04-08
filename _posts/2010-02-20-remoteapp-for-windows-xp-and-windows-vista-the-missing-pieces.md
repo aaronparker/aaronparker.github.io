@@ -39,7 +39,7 @@ First up there is a set of minimum components that will need to be in place:
 
 When configuring the host, I’ve been using been using a 1-to-1 setup, I haven’t tested this with pooled virtual desktops yet.
 
-To enable RemoteApp on the host, install the hotfix, then configure the `TsAppAllowList` key in the registry. In this example, I&#8217;ve configured the required entries for running Calculator. Here&#8217;s a listing of the registry values I added with the pertinent values highlighted.
+To enable RemoteApp on the host, install the hotfix, then configure the `TsAppAllowList` key in the registry. In this example, I've configured the required entries for running Calculator. Here's a listing of the registry values I added with the pertinent values highlighted.
 
 \[code highlight=&#8221;2,9,12&#8243; wraplines=&#8221;true&#8221;\]\[HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\TSAppAllowList\]  
 "fDisabledAllowList"=dword:00000001
@@ -61,7 +61,7 @@ The simplest method of discovering the required registry keys for each RemoteApp
 
 I’ve originally based the .RDP file on those created by the RemoteApp Manager in Windows Server. There is documentation on TechNet on how to configure RemoteApp programs and creating the .RDP file for each application here: [Configuring RemoteApp Programs](http://technet.microsoft.com/en-us/library/cc733174.aspx).
 
-The important entries for connecting to Windows XP and Windows Vista, that you may need to add manually, are `disableremoteappcapscheck` (set to 1) and `alternate shell` (set to rdpinit.exe). These were the only additional entries I need to add the .RDP file to get this working. DisableRemoteAppCapsCheck fixes the 'remote computer does not support RemoteApp&#8217; error, and Alternate Shell makes sure you actually get a published application and not a remote desktop.
+The important entries for connecting to Windows XP and Windows Vista, that you may need to add manually, are `disableremoteappcapscheck` (set to 1) and `alternate shell` (set to rdpinit.exe). These were the only additional entries I need to add the .RDP file to get this working. DisableRemoteAppCapsCheck fixes the 'remote computer does not support RemoteApp' error, and Alternate Shell makes sure you actually get a published application and not a remote desktop.
 
 An .RDP file to connect to a RemoteApp program then looks like this (the added lines are highlighted):
 
@@ -119,7 +119,7 @@ use redirection server name:i:0[/code]
 
 ### RemoteApp in Action
 
-When launching the RemoteApp program, the UI isn&#8217;t quite as seamless as you get with the XenApp client. You will first see a warning prompt if the .RDP file is not signed, and then a dialog box while the client connects:
+When launching the RemoteApp program, the UI isn't quite as seamless as you get with the XenApp client. You will first see a warning prompt if the .RDP file is not signed, and then a dialog box while the client connects:
 
 <a href="http://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappconnect-2/" rel="attachment wp-att-1369"><img class="alignnone size-full wp-image-1369" title="RemoteAppConnect" src="http://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1.png" alt="" width="453" height="285" srcset="https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1.png 453w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1-300x188.png 300w" sizes="(max-width: 453px) 100vw, 453px" /></a>
 
@@ -127,21 +127,21 @@ If the RemoteApp host is Windows XP, the user will be required to click the Deta
 
 <a href="http://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappauth-2/" rel="attachment wp-att-1368"><img class="alignnone size-full wp-image-1368" title="RemoteAppAuth" src="http://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1.png" alt="" width="660" height="609" srcset="https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1-150x138.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1-300x276.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
-If the client is Windows XP or above and the host is Windows Vista or above, you can configure [credential pass-through (single sign-on)](http://blogs.msdn.com/rds/archive/2007/04/19/how-to-enable-single-sign-on-for-my-terminal-server-connections.aspx) to make connecting seamless. You must first [enable CredSSP](http://support.microsoft.com/kb/951608) on Windows XP SP3 clients. Pass-through won&#8217;t work for Windows XP hosts - although you may be able to save the username and password in the .RDP file instead.
+If the client is Windows XP or above and the host is Windows Vista or above, you can configure [credential pass-through (single sign-on)](http://blogs.msdn.com/rds/archive/2007/04/19/how-to-enable-single-sign-on-for-my-terminal-server-connections.aspx) to make connecting seamless. You must first [enable CredSSP](http://support.microsoft.com/kb/951608) on Windows XP SP3 clients. Pass-through won't work for Windows XP hosts - although you may be able to save the username and password in the .RDP file instead.
 
 So finally with all of the pieces in place, here’s what you’ll see with applications running via RemoteApp. In this screenshot I have Calculator running remotely from Windows XP and Windows Vista next to the local version.
 
 [<img style="display: inline; border: 0px;" title="DesktopWithCalculator" src="http://stealthpuppy.com/wp-content/uploads/2010/02/DesktopWithCalculator_thumb.png" alt="DesktopWithCalculator" width="660" height="432" border="0" />](http://stealthpuppy.com/wp-content/uploads/2010/02/DesktopWithCalculator.png)
 
-One thing to note is that the remote applications are all group together on the taskbar; in this screenshot, the two remote Calculators are grouped with Remote Desktop Connection – users&#8217; won’t see separate remote buttons as you get in competing products.
+One thing to note is that the remote applications are all group together on the taskbar; in this screenshot, the two remote Calculators are grouped with Remote Desktop Connection – users' won’t see separate remote buttons as you get in competing products.
 
-### So What&#8217;s Left?
+### So What's Left?
 
 Use of RemoteApp is [not restricted to the brand of hypervisor](http://stealthpuppy.com/virtualisation/remoteapp-for-hyper-v-hyper-what) - RemoteApp will be available on Windows XP+ regardless of where it is running. You could, for example, use blade PCs as hosts.
 
-If you have Citrix XenApp or Quest vWorkspace, you already have tools to publishing applications from virtual desktops, so where would this actually be useful? SMBs without either product would benefit (although I have had one enterprise customer ask me about this feature) or perhaps this would work as a replacement for Windows XP Mode if you don&#8217;t like Windows Virtual PC (and who does?).
+If you have Citrix XenApp or Quest vWorkspace, you already have tools to publishing applications from virtual desktops, so where would this actually be useful? SMBs without either product would benefit (although I have had one enterprise customer ask me about this feature) or perhaps this would work as a replacement for Windows XP Mode if you don't like Windows Virtual PC (and who does?).
 
-Deploying and managing the .RDP files could be fun. A simple method of deployment would involve the use of [Windows Installer packages adapted from those generated by RemoteApp Manager](http://technet.microsoft.com/en-us/library/cc771468.aspx). You could also use your user environment management tool of choice; however the option that holds most promise is [extending RD Web Access](http://blogs.msdn.com/rds/archive/2009/11/11/remoteapp-and-desktop-connection-management-extensibility-for-provisioning-apps-via-rd-web-access.aspx). Custom code will be required, but it would replace copying .RDP files to users&#8217; desktops and could even support pooled virtual desktops.
+Deploying and managing the .RDP files could be fun. A simple method of deployment would involve the use of [Windows Installer packages adapted from those generated by RemoteApp Manager](http://technet.microsoft.com/en-us/library/cc771468.aspx). You could also use your user environment management tool of choice; however the option that holds most promise is [extending RD Web Access](http://blogs.msdn.com/rds/archive/2009/11/11/remoteapp-and-desktop-connection-management-extensibility-for-provisioning-apps-via-rd-web-access.aspx). Custom code will be required, but it would replace copying .RDP files to users' desktops and could even support pooled virtual desktops.
 
 Ultimately it would be nice to see this documented on TechNet. Apparently though, the RDS team are working on a follow up post that should give us all the info we need and more.
 

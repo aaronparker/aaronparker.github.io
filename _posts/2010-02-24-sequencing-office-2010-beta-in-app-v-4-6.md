@@ -18,7 +18,7 @@ A new knowledge-base article, released on the 22nd, is available from Microsoft 
 
 <a href="http://support.microsoft.com/kb/980861" mce_href="http://support.microsoft.com/kb/980861">Prescriptive guidance for sequencing the Beta version of the 2010 Office system in Microsoft App-V</a>
 
-It&#8217;s interesting to note that the article states that this is not the only way to sequence Office 2010. Does the Office team have something else up their sleeve?
+It's interesting to note that the article states that this is not the only way to sequence Office 2010. Does the Office team have something else up their sleeve?
 
 > No formal product support is available from Microsoft for this beta product. For information about how to obtain support for a beta release, see the documentation that is included with the beta product files, or check the Web location where you downloaded the release.
 > 

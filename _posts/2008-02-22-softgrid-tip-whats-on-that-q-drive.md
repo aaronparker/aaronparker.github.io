@@ -1,6 +1,6 @@
 ---
 id: 479
-title: 'SoftGrid Tip: What&#8217;s On That Q: Drive?'
+title: 'SoftGrid Tip: What's On That Q: Drive?'
 date: 2008-02-22T18:30:16+10:00
 author: Aaron Parker
 layout: post
@@ -13,7 +13,7 @@ categories:
 tags:
   - SoftGrid
 ---
-<img align="left" src="http://stealthpuppy.com/wp-content/uploads/2008/02/softgridtip.png" alt="softgridtip.png" />Here&#8217;s a nice SoftGrid tip from one of the guys in the team here.
+<img align="left" src="http://stealthpuppy.com/wp-content/uploads/2008/02/softgridtip.png" alt="softgridtip.png" />Here's a nice SoftGrid tip from one of the guys in the team here.
 
 If you want to take a look at the SoftGrid client drive, there a several methods. The most common would be to add a PRE LAUNCH script to the OSD file that would launchÂ a Command Prompt window inside the SoftGrid bubble.
 
@@ -23,4 +23,4 @@ This is as easy as running a NET USE command, so to map drive X to my client dri
 
 [code]NET USE X: \\%computername%\Q$[/code]
 
-I can now launch Windows Explorer and navigate to X: drive to see the contents of the SoftGrid client drive. You&#8217;ll be able to see you asset folders, however you must have an application running to be able to browse inside those folders to see the application within. This is great for a quick way to get inside the client drive, however for real troubleshooting, you can&#8217;t go past [SFT Explorer](http://www.virtualapp.net/sft-explorer.html).
+I can now launch Windows Explorer and navigate to X: drive to see the contents of the SoftGrid client drive. You'll be able to see you asset folders, however you must have an application running to be able to browse inside those folders to see the application within. This is great for a quick way to get inside the client drive, however for real troubleshooting, you can't go past [SFT Explorer](http://www.virtualapp.net/sft-explorer.html).

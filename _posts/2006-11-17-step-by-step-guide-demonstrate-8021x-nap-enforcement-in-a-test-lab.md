@@ -11,7 +11,7 @@ categories:
 tags:
   - NAP
 ---
-No, I haven&#8217;t written a step by step guide, but Microsoft has and they have released a document detailing 802.1X NAP enforcement for demonstration purposes. This is a very detailed resource that will require some time and effort to setup, but if you are interested in NAP and 801.2X then this document is for you. Here&#8217;s a view of the test lab configuration to give you an idea of what&#8217;s involved:
+No, I haven't written a step by step guide, but Microsoft has and they have released a document detailing 802.1X NAP enforcement for demonstration purposes. This is a very detailed resource that will require some time and effort to setup, but if you are interested in NAP and 801.2X then this document is for you. Here's a view of the test lab configuration to give you an idea of what's involved:
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/11/1000.14.186.8021xNAPLab.png" /> 
 

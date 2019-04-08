@@ -25,7 +25,7 @@ I recently ran into a spot of trouble with integrating Windows Server 2003 Servi
 
 A bit of digging around resulted in [this page on TechNet](http://technet2.microsoft.com/WindowsServer/en/library/c050419b-98a2-4802-b719-629a33a332391033.mspx) that indicates that you should be able to run the R2 components installation directly on a server with Service Pack 2 installed.
 
-Obviously this isn&#8217;t the case and until Microsoft release R2 media with SP2 integrated you will need to modify one of the R2 source files. Open <span style="font-family: Courier New">R2INTL.INF</span> in the <span style="font-family: Courier New">\CMPNENTS\R2</span> folder from disc 2 and change the following line from:
+Obviously this isn't the case and until Microsoft release R2 media with SP2 integrated you will need to modify one of the R2 source files. Open <span style="font-family: Courier New">R2INTL.INF</span> in the <span style="font-family: Courier New">\CMPNENTS\R2</span> folder from disc 2 and change the following line from:
 
 <p class="code">
   R2SPLevel = 1
@@ -37,7 +37,7 @@ to:
   R2SPLevel = 2
 </p>
 
-and your R2 installation should work. I&#8217;ve tested this on a single machine and everything is working as expected.
+and your R2 installation should work. I've tested this on a single machine and everything is working as expected.
 
 Alternatively you can follow this process to create a single ISO/DVD that includes both Windows 2003 R2 CDs slipstreamed with Service Pack 2:
 

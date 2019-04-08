@@ -15,7 +15,7 @@ tags:
 ---
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Step3" src="http://stealthpuppy.com/wp-content/uploads/2011/04/Step3_thumb.jpg" border="0" alt="Step3" width="264" height="264" />](http://stealthpuppy.com/wp-content/uploads/2011/04/Step3.jpg)
 
-No, this isn&#8217;t an April Fools joke – I wanted to see if I could sequence [Microsoft Comic Chat](http://en.wikipedia.org/wiki/Microsoft_Comic_Chat) using App-V. After seeing [Raymond Chen&#8217;s latest post on Comic Chat](http://blogs.msdn.com/b/oldnewthing/archive/2011/04/01/10148494.aspx), I had to take a look.
+No, this isn't an April Fools joke – I wanted to see if I could sequence [Microsoft Comic Chat](http://en.wikipedia.org/wiki/Microsoft_Comic_Chat) using App-V. After seeing [Raymond Chen's latest post on Comic Chat](http://blogs.msdn.com/b/oldnewthing/archive/2011/04/01/10148494.aspx), I had to take a look.
 
 > Comic Chat is a radically different kind of internet chat program, released by Microsoft in 1996. Instead of representing chat dialogs as text, like the majority of internet chat programs, or as graphical worlds like some emerging chat programs, Comic Chat visually represents conversations as sequences of comic panels.
 
@@ -27,13 +27,13 @@ Comic Chat is expecting to be able to write to the HKEY\_LOCAL\_MACHINE key in t
 
 ### Getting ready to sequence Comic Chat
 
-You can download Microsoft Comic Chat 2.5 from [David Kurlander&#8217;s site](http://kurlander.net/DJ/Projects/ComicChat/resources.html) (Kurlander is the designer of Comic Chat). See [the Getting Started page](http://kurlander.net/DJ/Projects/ComicChat/GettingStarted.html) for installation and usage instructions.
+You can download Microsoft Comic Chat 2.5 from [David Kurlander's site](http://kurlander.net/DJ/Projects/ComicChat/resources.html) (Kurlander is the designer of Comic Chat). See [the Getting Started page](http://kurlander.net/DJ/Projects/ComicChat/GettingStarted.html) for installation and usage instructions.
 
 Although Comic Chat installs OK on Windows 7, during sequencing Setup produces this error:
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="INFInstallFailure" src="http://stealthpuppy.com/wp-content/uploads/2011/04/INFInstallFailure_thumb.png" border="0" alt="INFInstallFailure" width="391" height="161" />](http://stealthpuppy.com/wp-content/uploads/2011/04/INFInstallFailure.png)
 
-Fortunately, there&#8217;s an easy fix – before starting the monitoring phase, configure mschat25.exe to start in Windows XP Compatibility Mode:
+Fortunately, there's an easy fix – before starting the monitoring phase, configure mschat25.exe to start in Windows XP Compatibility Mode:
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="MSChat-Compat" src="http://stealthpuppy.com/wp-content/uploads/2011/04/MSChat-Compat_thumb.png" border="0" alt="MSChat-Compat" width="419" height="292" />](http://stealthpuppy.com/wp-content/uploads/2011/04/MSChat-Compat.png)
 
@@ -47,8 +47,8 @@ You might also like to remove the extra shortcut created by Setup in _Start Menu
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="05" src="http://stealthpuppy.com/wp-content/uploads/2011/04/05_thumb.png" border="0" alt="05" width="660" height="470" />](http://stealthpuppy.com/wp-content/uploads/2011/04/05.png)
 
-And that&#8217;s about it. I&#8217;ve tested execution on a Windows 7 SP1 64-bit installation. Other than taking some time to connect to an IRC server, Comic Chat works under App-V on Windows 7.
+And that's about it. I've tested execution on a Windows 7 SP1 64-bit installation. Other than taking some time to connect to an IRC server, Comic Chat works under App-V on Windows 7.
 
 ### Comic Chat Package Accelerator
 
-If you&#8217;d like to sequence Comic Chat yourself, I&#8217;ve uploaded a Package Accelerator to the TechNet Gallery - [App-V Package Accelerator for Microsoft Comic Chat 2.5](http://gallery.technet.microsoft.com/Package-Accelerator-for-97080d2c)
+If you'd like to sequence Comic Chat yourself, I've uploaded a Package Accelerator to the TechNet Gallery - [App-V Package Accelerator for Microsoft Comic Chat 2.5](http://gallery.technet.microsoft.com/Package-Accelerator-for-97080d2c)

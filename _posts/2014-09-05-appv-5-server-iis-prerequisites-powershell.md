@@ -16,7 +16,7 @@ tags:
 ---
 <figure id="attachment_3697" aria-describedby="caption-attachment-3697" style="width: 756px" class="wp-caption alignnone">[<img class="size-full wp-image-3697" src="http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png" alt="App-V Server 5.0 Setup with missing prerequisites" width="756" height="570" srcset="https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png 756w, https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs-150x113.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs-300x226.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs-624x470.png 624w" sizes="(max-width: 756px) 100vw, 756px" />](http://stealthpuppy.com/wp-content/uploads/2014/09/AppV-Prereqs.png)<figcaption id="caption-attachment-3697" class="wp-caption-text">App-V Server 5.0 Setup with missing prerequisites</figcaption></figure>
 
-While I&#8217;d much rather recommend that you configure a Windows Server that will host the App-V 5.0 server components via [a solution such as MDT](http://stealthpuppy.com/briforum-2014-hands-off-my-gold-image-the-slides/) with the required IIS components enabled in an automated build, here&#8217;s how to add the components with PowerShell.
+While I'd much rather recommend that you configure a Windows Server that will host the App-V 5.0 server components via [a solution such as MDT](http://stealthpuppy.com/briforum-2014-hands-off-my-gold-image-the-slides/) with the required IIS components enabled in an automated build, here's how to add the components with PowerShell.
 
 The following code uses the [Add-WindowsFeature](http://go.microsoft.com/fwlink/p/?linkid=287571) to add the IIS components that are required to support the App-V 5.0 Management and Publishing Servers. These are the minimum required components as requested by the setup application.
 
@@ -39,7 +39,7 @@ If ($Features.Success -eq $True) {
 
 To keep an App-V 5.0 environment as simple as possible, you should be use port 80 for the Publishing Server. This ensures that the standard HTTP port is used for publishing and no-one has to remember or configure an obscure port on the App-V client.
 
-As an added bonus, I&#8217;ve created some PowerShell code to change the IIS configuration to move an existing web site off port 80 to another port. In most cases that will be the Default Web Site.
+As an added bonus, I've created some PowerShell code to change the IIS configuration to move an existing web site off port 80 to another port. In most cases that will be the Default Web Site.
 
 The following code will find any web site currently bound to port 80, calculate the next available port by adding 1 to the highest port in use and then set the site to use that port.
 
@@ -61,4 +61,4 @@ If ( $port80 ) {
     Get-WebSite | ForEach-Object { If ($_.Bindings.Collection.bindingInformation -like "*:80:*") { Set-WebBinding -Name $_.Name -BindingInformation "*:80:" -PropertyName Port -Value $port } }
 }</pre>
 
-Once you&#8217;ve run the code, you can then install the App-V 5.0 server components and use port 80 for the Publishing Server.
+Once you've run the code, you can then install the App-V 5.0 server components and use port 80 for the Publishing Server.

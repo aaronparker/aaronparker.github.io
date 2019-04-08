@@ -12,7 +12,7 @@ tags:
   - Terminal Server
   - Visio
 ---
-Got both Visio Viewer 2007 and Visio 2007 on the same machine but want to set Visio Viewer as the default for some users? Here&#8217;s what you&#8217;ll need to do.
+Got both Visio Viewer 2007 and Visio 2007 on the same machine but want to set Visio Viewer as the default for some users? Here's what you'll need to do.
 
 With Visio 2007 and Visio Viewer on the same machine, Visio will the default application for .VSD files, so we need change the default application per user, taking advantage of the HKCU\Software\Classes key.
 

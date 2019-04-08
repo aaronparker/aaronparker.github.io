@@ -18,9 +18,9 @@ _<img style="margin: 0px 10px 10px 0px; display: inline; border: 0px;" title="Qu
 
 Here’s how to create a custom Apple QuickTime 7.x installation for virtualisation. This post specifically deals with virtualising QuickTime with Microsoft App-V, but the general process should be similar for any application virtualisation product.
 
-If you&#8217;ve ever looked at deploying Apple QuickTime on Windows you have no doubt run into the challenges in configuring settings for this application. Successfully virtualising QuickTime requires that users receive the correct preferences before they run the application.
+If you've ever looked at deploying Apple QuickTime on Windows you have no doubt run into the challenges in configuring settings for this application. Successfully virtualising QuickTime requires that users receive the correct preferences before they run the application.
 
-For some absurd reason QuickTime stores part of it&#8217;s preferences in the registry, while the other half is stored in the file system. It&#8217;s the those preferences that have the most visual impact on users that are stored in the file system.
+For some absurd reason QuickTime stores part of it's preferences in the registry, while the other half is stored in the file system. It's the those preferences that have the most visual impact on users that are stored in the file system.
 
 Preferences are stored in the local portion of the user profile, which by default is not virtualised. Because of this, any settings you may configure will not be included in a QuickTime App-V package. Preferences are stored here:
 
@@ -37,7 +37,7 @@ There are several ways of addressing this issue when virtualising QuickTime:
 
 ### Installing QuickTime
 
-Before I look at setting preferences, I&#8217;ll address automating the installation of QuickTime, because I want to make this sequence repeatable and I want to control which components are installed. Specifically I want to avoid installing the Apple Software Updater.
+Before I look at setting preferences, I'll address automating the installation of QuickTime, because I want to make this sequence repeatable and I want to control which components are installed. Specifically I want to avoid installing the Apple Software Updater.
 
 Download the QuickTime installer (without iTunes), available from the [Apple web site](http://www.apple.com/quicktime/download/) (7.6.6 at the time of writing). Extract this file to obtain the included Windows Installer files.
 
@@ -98,7 +98,7 @@ This will tell QuickTime to store preferences in the roaming profile and thus an
 
 ### Copy the preferences file at runtime
 
-If you would prefer to leave the preferences file in it&#8217;s default location, you will have to copy a pre-configured preferences file at launch.
+If you would prefer to leave the preferences file in it's default location, you will have to copy a pre-configured preferences file at launch.
 
 Create the QuickTime preferences by first installing QuickTime onto a test machine, configuring the required preferences, then copy the preferences file to a folder under the asset folder. Then modify the OSD file to copy the configured preferences file when QuickTime is launched:
 
@@ -106,7 +106,7 @@ Create the QuickTime preferences by first installing QuickTime onto a test machi
 <SCRIPTBODY>@XCOPY /E /I /Q Q:\QTIME7.001\Prefs "%USERPROFILE%\Local Settings\Application Data\Apple Computer\QuickTime"</SCRIPTBODY>  
 </script>[/code]
 
-If you&#8217;re using Windows Vista or above change the path slightly:
+If you're using Windows Vista or above change the path slightly:
 
 [code]<script event="LAUNCH" wait="TRUE" protect="TRUE" timing="PRE">  
 <SCRIPTBODY>@XCOPY /E /I /Q Q:\QTIME7.001\Prefs "%LOCALAPPDATA%\Apple Computer\QuickTime"</SCRIPTBODY>  

@@ -9,7 +9,7 @@ permalink: /powershell-10-released-for-windows-vista/
 categories:
   - Microsoft
 ---
-Yay! (it is so very geeky to get excited over a scripting tool isn&#8217;t it?) Microsoft have released PowerShell 1.0 for Windows Vista today. It comes as a [Microsoft Update Standalone Package](http://support.microsoft.com/kb/928636).
+Yay! (it is so very geeky to get excited over a scripting tool isn't it?) Microsoft have released PowerShell 1.0 for Windows Vista today. It comes as a [Microsoft Update Standalone Package](http://support.microsoft.com/kb/928636).
 
   * [Windows PowerShell 1.0 Installation Package for Windows Vista (KB928439)](http://www.microsoft.com/downloads/details.aspx?FamilyID=c6ef4735-c7de-46a2-997a-ea58fdfcba63&DisplayLang=en)
   * [ [Direct link](http://download.microsoft.com/download/4/b/8/4b8e4fac-bf73-49d0-8b98-ce1f58ba26b8/Windows6.0-KB928439-x86.msu) ]

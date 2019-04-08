@@ -20,6 +20,6 @@ The Short NAP is a quick list of NAP and Server/Domain Isolation links from arou
   * Chat transcript: [Network Access Protection System Health Agent/Validator](http://www.microsoft.com/technet/community/chats/trans/network/07_0212_tn_nap.mspx).  
     Unusually short chat about SH agents and validators.
   * An Introduction to Network Access Protection, [Part 4](http://www.windowsnetworking.com/articles_tutorials/Introduction-Network-Access-Protection-Part4.html) and [Part 5](http://www.windowsnetworking.com/articles_tutorials/Introduction-Network-Access-Protection-Part5.html).  
-    Brian Posey&#8217;s ongoing series on NAP at windowsnetworking.com
+    Brian Posey's ongoing series on NAP at windowsnetworking.com
   * Upcoming chat: [The Network Access Protection (NAP) Server](http://blogs.technet.com/nap/archive/2007/04/02/longhorn-web-chat-the-network-access-protection-nap-server.aspx).  
     The NAP team will be hosting a chat all about the Network Policy Server

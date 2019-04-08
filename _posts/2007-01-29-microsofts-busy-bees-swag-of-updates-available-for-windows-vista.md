@@ -1,6 +1,6 @@
 ---
 id: 112
-title: 'Microsoft&#8217;s Busy Bees: Swag of updates available for Windows Vista'
+title: 'Microsoft's Busy Bees: Swag of updates available for Windows Vista'
 date: 2007-01-29T17:17:00+10:00
 author: Aaron Parker
 layout: post
@@ -11,7 +11,7 @@ categories:
 tags:
   - Windows-Vista
 ---
-Someone at Microsoft didn&#8217;t get to take holidays between the RTM of Vista and the consumer release. Check out the updates available for Windows Vista today:
+Someone at Microsoft didn't get to take holidays between the RTM of Vista and the consumer release. Check out the updates available for Windows Vista today:
 
   * [Update for Windows Vista (KB929427)](http://www.microsoft.com/downloads/info.aspx?na=22&p=1&SrcDisplayLang=en&SrcCategoryId=&SrcFamilyId=&u=%2fdownloads%2fdetails.aspx%3fFamilyID%3d099e0a88-da06-4ac9-aa13-a701c57bb4b8%26DisplayLang%3den) [ Application compatibility fix ]
   * [Update for Windows Vista (KB928089)](http://www.microsoft.com/downloads/info.aspx?na=22&p=5&SrcDisplayLang=en&SrcCategoryId=&SrcFamilyId=&u=%2fdownloads%2fdetails.aspx%3fFamilyID%3db0aa2270-d034-4a49-b3bd-c7fbd0ca90df%26DisplayLang%3den) [ Internet Explorer Phishing Filter performance fix ]

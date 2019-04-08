@@ -19,6 +19,6 @@ Via [Boing Boing](http://www.boingboing.net/2007/02/17/tech_support_for_boo.html
 
 [youtube=http://youtube.com/watch?v=eRjVeRbhtRU]
 
-> It&#8217;s from a show called Ã˜ystein & Meg (Ã˜ystein & I) produced by the Norwegian Broadcasting television channel (NRK) in 2001. The spoken language is Norwegian, the subs in Danish. It&#8217;s written by Knut NÃ¦rum and performed by Ã˜ystein Bache and Rune Gokstad.
+> It's from a show called Ã˜ystein & Meg (Ã˜ystein & I) produced by the Norwegian Broadcasting television channel (NRK) in 2001. The spoken language is Norwegian, the subs in Danish. It's written by Knut NÃ¦rum and performed by Ã˜ystein Bache and Rune Gokstad.
 
-That&#8217;s when a desktop was a desktop, and if you put wallpaper on it, you might get some wierd looks.
+That's when a desktop was a desktop, and if you put wallpaper on it, you might get some wierd looks.

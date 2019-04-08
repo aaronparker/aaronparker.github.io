@@ -50,7 +50,7 @@ END POLICY[/code]
 
 5. Save the template and add it back into your Group Policy object and it should now work.
 
-It&#8217;s a little odd that this problem is there right out of the box but I don&#8217;t know if anyone else is experiencing this issue. You can get the Office 2007 ADM files from here:
+It's a little odd that this problem is there right out of the box but I don't know if anyone else is experiencing this issue. You can get the Office 2007 ADM files from here:
 
 <p class="download">
   <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=92d8519a-e143-4aee-8f7a-e4bbaeba13e7&DisplayLang=en">2007 Office System Administrative Templates</a>

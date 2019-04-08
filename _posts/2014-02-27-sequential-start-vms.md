@@ -13,9 +13,9 @@ categories:
 tags:
   - PowerShell
 ---
-In my lab environment, I often want to start a list of virtual machines, but without taxing the system in the process by starting them all at the same time.  I could do that manually, but that&#8217;s no fun.
+In my lab environment, I often want to start a list of virtual machines, but without taxing the system in the process by starting them all at the same time.  I could do that manually, but that's no fun.
 
-Here&#8217;s a short function I wrote to sequentially start a list of virtual machines - the script will start a VM and wait for that VM to boot before starting the next VM. You can optionally also wait additional time before starting the next VM to give the first one some time to finish starting it&#8217;s services etc.
+Here's a short function I wrote to sequentially start a list of virtual machines - the script will start a VM and wait for that VM to boot before starting the next VM. You can optionally also wait additional time before starting the next VM to give the first one some time to finish starting it's services etc.
 
 This version currently supports Hyper-V only. The script does not currently return anything, but has a number of parameters:
 

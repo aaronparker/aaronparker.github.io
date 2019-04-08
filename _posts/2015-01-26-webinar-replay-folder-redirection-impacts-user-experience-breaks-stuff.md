@@ -21,7 +21,7 @@ Last week, thanks to [xenappblog.com](http://xenappblog.com), [Helge Klein](htt
 
 We had approximately 240 attendees, which as fantastic interest in this topic and [the webinar reply is now available for viewing](http://xenapptraining.com/citrix-xenapp-7-6-with-folder-redirection) for xenapptraining.com members.
 
-We had time to answer a couple of questions at the end of the presentation; however there were some additional questions, and I&#8217;ll attempt to answer a selection of them here:
+We had time to answer a couple of questions at the end of the presentation; however there were some additional questions, and I'll attempt to answer a selection of them here:
 
 _**Q**: I stream AppData\Roaming, and redirect Documents and Favourites, but exclude the other two AppFata folders: LocalLow and Local. These folder contents are destroyed on each user log off. Is this bad practice?_
 
@@ -29,15 +29,15 @@ _**Q**: I stream AppData\Roaming, and redirect Documents and Favourites, but exc
 
 _**Q**: We are currently excluding AppData\Local and AppData\LocalLow in Citrix PM policy. We logged a call with Citrix about an issue and they questioned why they were excluded. I have seen articles that say to exclude them which I followed. Are those folders meant to be excluded or not?_
 
-**A**: I think we answered this on the webinar, but it&#8217;s worth pointing out that, again, this is what happens with Windows Roaming Profiles and I don&#8217;t agree with any reasoning to roam the entire folders. If there are specific folders with applications preferences, explicitly list those folders only for roaming.
+**A**: I think we answered this on the webinar, but it's worth pointing out that, again, this is what happens with Windows Roaming Profiles and I don't agree with any reasoning to roam the entire folders. If there are specific folders with applications preferences, explicitly list those folders only for roaming.
 
 _**Q**: Is SMB 3.x possible to use in a file server on Windows Server 2012 R2. Would this have a performance impact ? _
 
-**A**: SMB 3.x will be negotiated by default for those servers and clients that speak SMB 3.x (Windows 8.0 and Windows Server 2012 and above). While we haven&#8217;t yet tested the performance impacts of SMB 3.x, but have plans for testing this year.
+**A**: SMB 3.x will be negotiated by default for those servers and clients that speak SMB 3.x (Windows 8.0 and Windows Server 2012 and above). While we haven't yet tested the performance impacts of SMB 3.x, but have plans for testing this year.
 
-_**Q**: What&#8217;s the best practise with redirecting AppData when use Roaming Profiles or Citrix Profiles?_
+_**Q**: What's the best practise with redirecting AppData when use Roaming Profiles or Citrix Profiles?_
 
-**A**: Best practice will depend on what&#8217;s best for your specific scenario; however I would recommend the following approach:
+**A**: Best practice will depend on what's best for your specific scenario; however I would recommend the following approach:
 
   * Avoid redirecting AppData and use a profile management solution instead, especially if you can manage the user profile on a per-application basis. If you must redirect application data ensure that you:
   * Use the latest version of SMB supported by the client and server
@@ -46,11 +46,11 @@ _**Q**: What&#8217;s the best practise with redirecting AppData when use Roaming
   * Validate the performance of various configurations with tools such as [Login VSI](http://www.loginvsi.com). This is important for initial deployments, but also ideal for understanding the impacts of configuration changes post deployment
   * Ensure applications are tested with AppData redirection to ensure they works as expected
 
-_**Q**: What&#8217;s the best solution if my customer wants to have the same profile/desktop when they use their computer locally or if they connect to a XenApp server .. The goal ... they should not see any differences on for example their desktop_
+_**Q**: What's the best solution if my customer wants to have the same profile/desktop when they use their computer locally or if they connect to a XenApp server .. The goal ... they should not see any differences on for example their desktop_
 
 **A**: If you want to provide consistency across multiple device types, I would recommend using [a 3rd party solution for user environment management](http://www.brianmadden.com/blogs/rubenspruijt/archive/2013/12/09/application-virtualization-smackdown-head-to-head-analysis-of-cameyo-citrix-numecent-microsoft-spoon-symantec-and-vmware.aspx) such as AppSense Environment Manager. While you can provide users with a largely consistent experience across devices, not all settings can be applied to all versions of Windows (even across the same version of client and server). Only with a 3rd party solution can you dynamically apply preferences and policies required to implement such an approach.
 
-_**Q**: When I&#8217;m using Citrix XenApp with only seamless published Applications - it has no negative impacts when I redirect the Desktop? Correct?_
+_**Q**: When I'm using Citrix XenApp with only seamless published Applications - it has no negative impacts when I redirect the Desktop? Correct?_
 
 **A**: As we showed in a couple of the videos in the webinar, there can be side effects of redirecting any folder, including the Desktop; however long with Documents, Pictures etc. Desktop is a folder that will often contain user data, so folder redirection is useful for moving the folder to a file server for data protection.
 

@@ -11,7 +11,7 @@ categories:
 tags:
   - Access-Gateway
 ---
-We&#8217;ve been accepted into the Citrix Access Gateway 4.5, Standard and Advanced Editions Beta Program. No word on a NDA yet, but hopefully I might get a chance to post some details.
+We've been accepted into the Citrix Access Gateway 4.5, Standard and Advanced Editions Beta Program. No word on a NDA yet, but hopefully I might get a chance to post some details.
 
 > Congratulations! You are participating in the Citrix Access Gateway 4.5, Standard and Advanced Editions Beta Program. The Access Gateway product team is delighted that you agreed to be a beta tester. We genuinely look forward to working with you on this important project!
 > 

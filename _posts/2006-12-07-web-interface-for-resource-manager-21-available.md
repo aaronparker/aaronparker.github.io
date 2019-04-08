@@ -11,7 +11,7 @@ categories:
 tags:
   - Presentation-Server
 ---
-Jason Conger has released [Web Interface for Resource Manager 2.1](http://www.jasonconger.com/ShowPost.aspx?strID=f0d11211-b409-462b-83e7-db1c17020ce5). This couldn&#8217;t be more timely for me as I&#8217;m in the middle of a Presentation Server 4.0 implementation using Oracle 10g to host the data store and Resource Manager databases. Here&#8217;s what&#8217;s new in this release:
+Jason Conger has released [Web Interface for Resource Manager 2.1](http://www.jasonconger.com/ShowPost.aspx?strID=f0d11211-b409-462b-83e7-db1c17020ce5). This couldn't be more timely for me as I'm in the middle of a Presentation Server 4.0 implementation using Oracle 10g to host the data store and Resource Manager databases. Here's what's new in this release:
 
   * Graphical Configuration Tool
   * Oracle Support

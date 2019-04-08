@@ -29,7 +29,7 @@ Other than Windows XP Service Pack 2 or above, there are no specific prerequisit
 
 ### Creating a custom installation of Safari
 
-The default installation of Safari will install Apple Software Update so it&#8217;s important to prevent this from installing during sequencing so that the package is not automatically updated once deployed. [Bonjour](http://en.wikipedia.org/wiki/Apple_Bonjour) is also installed; however this is optional.
+The default installation of Safari will install Apple Software Update so it's important to prevent this from installing during sequencing so that the package is not automatically updated once deployed. [Bonjour](http://en.wikipedia.org/wiki/Apple_Bonjour) is also installed; however this is optional.
 
 There are a few ways to extract the Safari installer, but I find this process is simplest - [Download the Safari installer](http://www.apple.com/safari/download/) and execute it, but do not step through the installation. The setup files will be extracted to your Temp folder (%TEMP%), so grab a copy from there. The following files will be extracted:
 
@@ -40,7 +40,7 @@ There are a few ways to extract the Safari installer, but I find this process is
   * Safari.msi
   * SetupAdmin.exe
 
-We don&#8217;t need _AppleSoftwareUpdate.msi_ because automatic updates for this package will be disabled and we also don&#8217;t need SetupAdmin.exe. Using the remaining files, we can script an installation of Safari and its&#8217; dependant components. The following script listing will automate the installation of Safari for sequencing with App-V:
+We don't need _AppleSoftwareUpdate.msi_ because automatic updates for this package will be disabled and we also don't need SetupAdmin.exe. Using the remaining files, we can script an installation of Safari and its' dependant components. The following script listing will automate the installation of Safari for sequencing with App-V:
 
 [code]@ECHO OFF  
 START /WAIT MSIEXEC /I AppleApplicationSupport.msi ALLUSERS=TRUE REBOOT=SUPRESS /QB  

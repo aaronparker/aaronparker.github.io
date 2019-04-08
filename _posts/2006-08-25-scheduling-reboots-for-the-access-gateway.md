@@ -27,7 +27,7 @@ tags:
 
 <font face="courier new,courier">mkdir /cag</font>
 
-  1. Mount the filesystem. If this is successful you should be able to list the contents of the appliances&#8217; filesystem:
+  1. Mount the filesystem. If this is successful you should be able to list the contents of the appliances' filesystem:
 
 <font face="courier new,courier">mount /dev/sda1 /cag</font>
 
@@ -35,8 +35,8 @@ tags:
 
 <font face="courier new,courier">chroot /cag</font>
 
-  1. Run <font face="courier new,courier">setup</font> and change the firewall settings from 'high&#8217; to 'disabled&#8217;.
-  2. Go to system services, deselect 'iptables&#8217;, make sure sshd and xinetd are selected, and press quit to save changes.
+  1. Run <font face="courier new,courier">setup</font> and change the firewall settings from 'high' to 'disabled'.
+  2. Go to system services, deselect 'iptables', make sure sshd and xinetd are selected, and press quit to save changes.
   3. Now run the SSH daemon to generate the key pairs:
 
 <font face="courier new,courier">/etc/init.d/sshd</font>
@@ -53,7 +53,7 @@ Now that SSH is enabled, we can schedule a reboot of the Access Gateway.
 
 <font face="courier new,courier">crontab -e</font>
 
-  1. This will open the crontab file in vi. Insert a line by pressing 'i&#8217;.
+  1. This will open the crontab file in vi. Insert a line by pressing 'i'.
   2. Enable a reboot by entering the following:
 
 <font face="courier new,courier">0<tab>0<tab>*<tab>*<tab>*<tab>reboot</font>

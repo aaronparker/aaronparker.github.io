@@ -25,7 +25,7 @@ tags:
 
 To [understand sizing Machine Creation Services](http://stealthpuppy.com/machine-creation-services-storage-capacity/) on Hyper-V, we should first look at how XenDesktop creates virtual machines across the various deployment choices. XenDesktop 7.9 and 7.11 have introduced new features to MCS that will require additional consideration for storage requirements over previous versions.
 
-In this article, I&#8217;ll cover the deployment options at a high level, including:
+In this article, I'll cover the deployment options at a high level, including:
 
   * **Delta Clones** - this has been the traditional deployment approach for MCS, where virtual machines reference a base image and store changes in a delta disk. In Hyper-V parlance, this is referred to as a differencing disk. Delta clones work for XenApp, pooled and dedicated clone VMs
   * **Delta Clones with Storage Optimisation** - this is the new default option for MCS deployments since XenDesktop 7.9. IO optimisation enables a cache in RAM with overflow to disk
@@ -37,15 +37,15 @@ To keep this size exercise simple, I have used a single data store that contains
 
 The master image is Windows Server 2012 R2 or 2016 with a set of applications including Office. Initially, the image has two snapshots (or checkpoints) created in the process of provisioning and updating the image. Thus the image consists of:
 
-  * **Virtual disk of 13.63GB** - this is the image as I&#8217;ve built it including Windows, applications, and the XenDesktop 7.9 VDA. This is using a thin-provisioned (or dynamic) disk with the default size of 127GB
+  * **Virtual disk of 13.63GB** - this is the image as I've built it including Windows, applications, and the XenDesktop 7.9 VDA. This is using a thin-provisioned (or dynamic) disk with the default size of 127GB
   * **Snapshot 1 of 4MB** - the initial snapshot taken before creating the Machine Catalog. 4MB is the default size for new snapshots on Hyper-V
-  * **Snapshot 2 of 8.63GB** - an update that included installing the 7.11 VDA. This sizeable given the changes in this snapshot include only a months&#8217; worth of Windows updates (at around 90Mb) and an upgrade from the VDA 7.9 to 7.11.
+  * **Snapshot 2 of 8.63GB** - an update that included installing the 7.11 VDA. This sizeable given the changes in this snapshot include only a months' worth of Windows updates (at around 90Mb) and an upgrade from the VDA 7.9 to 7.11.
 
 <figure id="attachment_5186" aria-describedby="caption-attachment-5186" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5186 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-Disks-1024x482.png" alt="MCS Master Image on Hyper-V with 2 snapshots" width="1024" height="482" srcset="https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-Disks-1024x482.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-Disks-150x71.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-Disks-300x141.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-Disks-768x361.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-Disks.png 1061w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-Disks.png)<figcaption id="caption-attachment-5186" class="wp-caption-text">MCS Master Image on Hyper-V with 2 snapshots</figcaption></figure>
 
 Note the time stamps of the snapshots here - when creating a snapshot via Virtual Machine Manager the previous snapshot is touched and the update in time stamp on the new 4MB snapshot.
 
-Each virtual machine has a corresponding configuration file and runtime state file, although these won&#8217;t have a noticeable effect on overall storage capacity consumed.
+Each virtual machine has a corresponding configuration file and runtime state file, although these won't have a noticeable effect on overall storage capacity consumed.
 
 <figure id="attachment_5187" aria-describedby="caption-attachment-5187" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5187 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-VMs-1024x482.png" alt="Virtual Machines folder for the MCS Master Image on Hyper-V" width="1024" height="482" srcset="https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-VMs-1024x482.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-VMs-150x71.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-VMs-300x141.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-VMs-768x361.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-VMs.png 1061w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-VMs.png)<figcaption id="caption-attachment-5187" class="wp-caption-text">Virtual Machines folder for the MCS Master Image on Hyper-V</figcaption></figure>
 
@@ -57,7 +57,7 @@ Additional versions of these files are created per snapshot so that changes to t
 
 Not all master images will be the same size due to environmental differences; however, count on a minimum of 14GB for Windows + Office for all current Windows versions. I recommend [cleaning up your master image](http://stealthpuppy.com/cleaning-up-and-reducing-the-size-of-your-master-image/) to reduce the size as much as is possible.
 
-With each update to the master image, you&#8217;ll see snapshots growing. Looking at my test environment after making 3 updates to the image my master image has grown considerably with what should be relatively small changes (i.e. booting the VM to install applications or updates).
+With each update to the master image, you'll see snapshots growing. Looking at my test environment after making 3 updates to the image my master image has grown considerably with what should be relatively small changes (i.e. booting the VM to install applications or updates).
 
 <figure id="attachment_5193" aria-describedby="caption-attachment-5193" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5193 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-Master-Image-3-Snapshots-1024x467.png" alt="Master Image and snapshots after 3 updates" width="1024" height="467" srcset="https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-Master-Image-3-Snapshots-1024x467.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-Master-Image-3-Snapshots-150x68.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-Master-Image-3-Snapshots-300x137.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-Master-Image-3-Snapshots-768x350.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-Master-Image-3-Snapshots.png 1093w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-Master-Image-3-Snapshots.png)<figcaption id="caption-attachment-5193" class="wp-caption-text">Master Image and snapshots after 3 updates</figcaption></figure>
 
@@ -108,7 +108,7 @@ MCS requires a copy of the master image on each target data store. During the cr
 
 <figure id="attachment_5196" aria-describedby="caption-attachment-5196" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5196 size-large" src="http://stealthpuppy.com/wp-content/uploads/2016/10/04_Preparing-Catalog-1024x450.png" alt="Machine Creation Services preparing the catalog via a temporary VM" width="1024" height="450" srcset="https://stealthpuppy.com/wp-content/uploads/2016/10/04_Preparing-Catalog-1024x450.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/10/04_Preparing-Catalog-150x66.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/10/04_Preparing-Catalog-300x132.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/10/04_Preparing-Catalog-768x337.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/10/04_Preparing-Catalog.png 1125w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/10/04_Preparing-Catalog.png)<figcaption id="caption-attachment-5196" class="wp-caption-text">Machine Creation Services preparing the catalogue via a temporary VM</figcaption></figure>
 
-This VM is deleted after use, so we don&#8217;t need to include it in our capacity calculations. Once the Machine Catalog is created we have the base image, which is an exact copy of our initial master image.
+This VM is deleted after use, so we don't need to include it in our capacity calculations. Once the Machine Catalog is created we have the base image, which is an exact copy of our initial master image.
 
 <figure id="attachment_5197" aria-describedby="caption-attachment-5197" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5197" src="http://stealthpuppy.com/wp-content/uploads/2016/10/03_Base-Disk-1024x450.png" alt="MCS machine catalog base image after initial deployment" width="1024" height="450" srcset="https://stealthpuppy.com/wp-content/uploads/2016/10/03_Base-Disk-1024x450.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/10/03_Base-Disk-150x66.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/10/03_Base-Disk-300x132.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/10/03_Base-Disk-768x337.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/10/03_Base-Disk.png 1125w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/10/03_Base-Disk.png)<figcaption id="caption-attachment-5197" class="wp-caption-text">MCS Machine Catalog base image after initial deployment</figcaption></figure>
 
@@ -163,7 +163,7 @@ XenDesktop and XenApp 7.8 and below, used differencing (or delta) disks that con
 
 <figure id="attachment_5223" aria-describedby="caption-attachment-5223" style="width: 1018px" class="wp-caption alignnone">[<img class="size-full wp-image-5223" src="http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-creation.png" alt="MCS Virtual Machines without storage optimisation (as per XenApp/XenDesktop 7.8 and below)" width="1018" height="494" srcset="https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-creation.png 1018w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-creation-150x73.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-creation-300x146.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-creation-768x373.png 768w" sizes="(max-width: 1018px) 100vw, 1018px" />](http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-creation.png)<figcaption id="caption-attachment-5223" class="wp-caption-text">MCS Virtual Machines without storage optimisation (as per XenApp/XenDesktop 7.8 and below)</figcaption></figure>
 
-After booting the virtual machine, all changes are written to the differencing disk and you can see the growth in storage capacity consumed. In this example, I&#8217;ve booted a non-optimised Windows Server 2016 image and even without user sessions on that VM, the differencing disk size increases pretty readily.
+After booting the virtual machine, all changes are written to the differencing disk and you can see the growth in storage capacity consumed. In this example, I've booted a non-optimised Windows Server 2016 image and even without user sessions on that VM, the differencing disk size increases pretty readily.
 
 <figure id="attachment_5224" aria-describedby="caption-attachment-5224" style="width: 1018px" class="wp-caption alignnone">[<img class="size-full wp-image-5224" src="http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-boot.png" alt="MCS Delta Clones after boot showing growth in the differencing disk" width="1018" height="494" srcset="https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-boot.png 1018w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-boot-150x73.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-boot-300x146.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-boot-768x373.png 768w" sizes="(max-width: 1018px) 100vw, 1018px" />](http://stealthpuppy.com/wp-content/uploads/2016/10/MCS-delta-disk-boot.png)<figcaption id="caption-attachment-5224" class="wp-caption-text">MCS Delta Clones after boot showing growth in the differencing disk</figcaption></figure>
 
@@ -179,14 +179,14 @@ Once a full clone is deployed, it is persistent while managed and updated throug
 
 # Virtual Machine Sizing on Hyper-V
 
-To correctly size for Machine Creation Services on Hyper-V, let&#8217;s summarise the storage impact that MCS has with Hyper-V deployments:
+To correctly size for Machine Creation Services on Hyper-V, let's summarise the storage impact that MCS has with Hyper-V deployments:
 
 ## Common Files
 
 Virtual machine components that are common to all deployment types:
 
   * **Virtual machine configuration files** - each virtual machine has virtual machine configuration and runtime state files (including versions for snapshots) that are typically very small and should not have an impact on overall sizing
-  * **Smart Paging files** - Smart Paging only kicks in during machine boot when the host is under memory pressure. [I actually haven&#8217;t been able to get my host to generate these as yet]
+  * **Smart Paging files** - Smart Paging only kicks in during machine boot when the host is under memory pressure. [I actually haven't been able to get my host to generate these as yet]
   * **Master images** - count on a minimum of **12GB** for Windows 7/Windows Server 2008 R2 and above with Office. Create a maximum virtual disk size to fit your requirements - it would be best to reduce the size from the default of **127GB** to only what is required. Master images can exist on datastores that are accessible by all hosts, rather than the same datastore as the virtual machines
   * **Master image snapshots** - changes in the master image can count for several GB even with small changes to the image. Several snapshots can exist as changes are made to the master image and the amount of change of size between snapshots can vary as well
   * **Base images** - master image snapshots are merged, so the base image shows the real size of the master image. Up to **3 copies of the** **base image** can exist in a single datastore and the sizes will vary based on the actual changes to the master image. That 3rd copy is transient and should be removed after all machines have applied the latest update
@@ -209,9 +209,9 @@ Other files used in virtual machine deployment include:
 
 # Recommendations
 
-Sizing storage capacity for Machine Creation Services isn&#8217;t something that you&#8217;ll do in isolation or perhaps even do once - design, testing, piloting and monitoring in production will be key to a successful deployment. Here are a few recommendations for sizing storage capacity:
+Sizing storage capacity for Machine Creation Services isn't something that you'll do in isolation or perhaps even do once - design, testing, piloting and monitoring in production will be key to a successful deployment. Here are a few recommendations for sizing storage capacity:
 
-  * Size the virtual disk assigned to the master image to be as small as possible; however, don&#8217;t undersize the disk. Differencing disks and temporary cache disks sizes will match the size of the master image virtual disk, therefore they can grow to that maximum size
+  * Size the virtual disk assigned to the master image to be as small as possible; however, don't undersize the disk. Differencing disks and temporary cache disks sizes will match the size of the master image virtual disk, therefore they can grow to that maximum size
   * Monitor the cache in RAM size to understand when overflow to disk kicks in. Resize the cache in RAM if it is undersized and you have available RAM to assign to VMs
   * Boot virtual machines and watch the sizes of temporary cache disks and differencing disks to understand disk growth
   * AppDisks or 3rd party layering solutions can enable you to reduce MCS storage capacity by sharing application images across VM instances
@@ -240,6 +240,6 @@ Calculating storage capacity with this approach should provide you with a reason
 
 While MCS itself is simple to design for and implement, recent flexibility and performance improvements introduced with XenDesktop 7.9 and 7.11, requires some additional considerations for storage capacity.
 
-This article has walked through the MCS deployment options on Hyper-V and shown you the various capacity consumption scenarios so that we can go through a sizing exercise. In a future article, I&#8217;ll provide to tool to simplify calculating storage capacity.
+This article has walked through the MCS deployment options on Hyper-V and shown you the various capacity consumption scenarios so that we can go through a sizing exercise. In a future article, I'll provide to tool to simplify calculating storage capacity.
 
 Thanks to [Carl Webster](https://twitter.com/CarlWebster) for reviewing this article. Feedback and corrections are welcome.

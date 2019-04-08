@@ -24,7 +24,7 @@ We covered quite a number of test scenarios, so in this article, I want to share
 
 # Test Environment
 
-In my lab, I&#8217;ve used Windows Server 2012 R2 Hyper-V; however the hypervisor isn&#8217;t really that important, as long as you&#8217;re performing all of your tests on the same hypervisor.
+In my lab, I've used Windows Server 2012 R2 Hyper-V; however the hypervisor isn't really that important, as long as you're performing all of your tests on the same hypervisor.
 
 The virtual machine configuration used for the file server VMs, were configured with 2 vCPUs and 4 GB of RAM. I typically use Dynamic Memory on Hyper-V; however for these tests a fixed RAM sizing was used to ensure that as RAM demand in the VM changed, that performance metrics are not adversely affected.
 
@@ -36,7 +36,7 @@ All virtual machines were deployed with the latest updates as at May 2015.
 
 # Throughput Tests with DiskSpd
 
-To test the throughput capabilities of SMB 3.02 and SMB 2.1, I&#8217;ve used the [DiskSpd 2.0.15 utility available from Microsoft](http://aka.ms/DiskSpd).
+To test the throughput capabilities of SMB 3.02 and SMB 2.1, I've used the [DiskSpd 2.0.15 utility available from Microsoft](http://aka.ms/DiskSpd).
 
 > DiskSpd is a storage load generator / performance test tool from the Windows/Windows Server and Cloud Server Infrastructure Engineering teams.
 
@@ -48,26 +48,26 @@ One very useful part from that article that I will replicate here is the paramet
 
 [table id=36 /]
 
-For the DiskSpd tests that I ran in my environment, I ran DiskSpd against a 256Mb file for 120 seconds with various block sizes with separate tests for read and write (i.e. I ran 100% read or 100% write). Here&#8217;s two sample commands for running 4K block sizes and using read or write tests:
+For the DiskSpd tests that I ran in my environment, I ran DiskSpd against a 256Mb file for 120 seconds with various block sizes with separate tests for read and write (i.e. I ran 100% read or 100% write). Here's two sample commands for running 4K block sizes and using read or write tests:
 
 <pre class="lang:ps decode:true" title="DiskSpd running with a 256Mb for 120 seconds, 4K blocks, 100% read">diskspd.exe -c256M -d120 -si -w0 -t2 -o8 -b4K -h -L \\mb-win81\diskspd\testfile.dat</pre>
 
 <pre class="lang:ps decode:true" title="DiskSpd running with a 256Mb for 120 seconds, 4K blocks, 100% write">diskspd.exe -c256M -d120 -si -w100 -t2 -o8 -b4K -h -L \\mb-win81\diskspd\testfile.dat</pre>
 
-Each of these tests uses 2 threads (1 per vCPU) and then from the output I&#8217;ve used the total MB/s seen from both threads as the result.
+Each of these tests uses 2 threads (1 per vCPU) and then from the output I've used the total MB/s seen from both threads as the result.
 
 # File Server Capacity Tool
 
 To appropriate some type of folder redirection tests, I used the File Server Capacity Tool - this was about the best tool that I could find that could simulate home folder access (if you know of another, please let me know).
 
-I won&#8217;t go into detail on how to use FSCT, instead I recommend reading this article by Mark Morowczynski - [How to use the File Server Capacity Tool (FSCT) on Server 2012 R2](http://blogs.technet.com/b/askpfeplat/archive/2014/04/28/how-to-use-the-file-server-capacity-tool-fsct-on-server-2012-r2.aspx).
+I won't go into detail on how to use FSCT, instead I recommend reading this article by Mark Morowczynski - [How to use the File Server Capacity Tool (FSCT) on Server 2012 R2](http://blogs.technet.com/b/askpfeplat/archive/2014/04/28/how-to-use-the-file-server-capacity-tool-fsct-on-server-2012-r2.aspx).
 
 The File Server Capacity Tool binaries are available from the following links:
 
   * [File Server Capacity Tool v1.2- (64 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=27284)
   * [File Server Capacity Tool v1.2 - (32 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=27283)
 
-In my lab environment, I&#8217;ve used two physical hosts with the file server targets on one host (to ensure no resource contention) and the controller and clients on a separate host. The two hosts are connected via a 1GB switch.
+In my lab environment, I've used two physical hosts with the file server targets on one host (to ensure no resource contention) and the controller and clients on a separate host. The two hosts are connected via a 1GB switch.
 
 Other than specific tests where we wanted to know the effect of anti-virus on the file server, no AV application was installed on any server or client (physical or virtual).
 
@@ -79,11 +79,11 @@ FSCT comes with a single work load - Home Folders. Which is fortunately great fo
 
 A single run of an FSCT workload simulation can take a very long time, so expect each simulation to run from 3 hours or more depending on the total number of user sessions that you want to get to. In each workload simulation, I ran from 50 to 800 user sessions, stepping by 50 user sessions for each test.
 
-Here&#8217;s what a workload simulation looks like:
+Here's what a workload simulation looks like:
 
 <figure id="attachment_3959" aria-describedby="caption-attachment-3959" style="width: 1197px" class="wp-caption alignnone">[<img class="size-full wp-image-3959" src="http://stealthpuppy.com/wp-content/uploads/2015/05/fsct.png" alt="How File Server Capacity Tool workload simulations are run" width="1197" height="278" srcset="https://stealthpuppy.com/wp-content/uploads/2015/05/fsct.png 1197w, https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-150x35.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-300x70.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/05/fsct-1024x238.png 1024w" sizes="(max-width: 1197px) 100vw, 1197px" />](http://stealthpuppy.com/wp-content/uploads/2015/05/fsct.png)<figcaption id="caption-attachment-3959" class="wp-caption-text">How File Server Capacity Tool workload simulations are run</figcaption></figure>
 
-To demonstrate an example, here&#8217;s an overview of the environment and the FSCT commands that I used to run the workloads for each test.
+To demonstrate an example, here's an overview of the environment and the FSCT commands that I used to run the workloads for each test.
 
   * **File Server**: FILE3 (192.168.0.79, Windows Server 2012 R2)
   * **Controller**: CNTRLR (Windows 8.1)
@@ -116,7 +116,7 @@ Each command is run on the respective virtual machine - the FSCT binaries were r
 
 # uberAgent for Splunk
 
-To make it simple to measure logon times, there&#8217;s only one tool worth using to view metrics and that&#8217;s of course [uberAgent for Splunk](https://helgeklein.com/uberagent-for-splunk/). uberAgent makes it simple to report on logon times - so all you&#8217;ll need to do is setup roaming profiles, log onto a machine with the agent installed and view the Logon Duration report.
+To make it simple to measure logon times, there's only one tool worth using to view metrics and that's of course [uberAgent for Splunk](https://helgeklein.com/uberagent-for-splunk/). uberAgent makes it simple to report on logon times - so all you'll need to do is setup roaming profiles, log onto a machine with the agent installed and view the Logon Duration report.
 
 I recommend creating a large enough profile, or one that is indicative of profiles that you may have in production. For real stress testing, the number of files in the profile is more important than the total profile size.
 

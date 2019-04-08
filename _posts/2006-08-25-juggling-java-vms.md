@@ -15,7 +15,7 @@ tags:
   - Presentation-Server
   - Terminal Server
 ---
-I&#8217;ve just spent yesterday and today working on a site where the client had a need to run both the Microsoft Java VM and the Sun Java VM on their Terminal Servers. (The Microsoft Java VM is used for one site only, yes developers strike again). I was pretty happy when I was able to use Presentation Server 4.0 and Application Isolation Environments to get these to work on the same server, in Internet Explorer, at the same time. Here&#8217;s how:
+I've just spent yesterday and today working on a site where the client had a need to run both the Microsoft Java VM and the Sun Java VM on their Terminal Servers. (The Microsoft Java VM is used for one site only, yes developers strike again). I was pretty happy when I was able to use Presentation Server 4.0 and Application Isolation Environments to get these to work on the same server, in Internet Explorer, at the same time. Here's how:
 
 **1**. Install the Microsoft Java VM to the Terminal Server and then install the latest [Sun Java Runtime Environment](http://www.java.com/en/download/manual.jsp) and ensure that Internet Explorer is configured to this as the default (This is a machine level setting).
 
@@ -39,8 +39,8 @@ Where &#8220;Microsoft Java VM&#8221; is the name of the Isolation Environment a
 
 **5**. Associate this published application with the Isolation Environment.
 
-**6**. Test and voila! The Sun Java VM as the default and the Microsoft Java VM only for those sites that require it. Of course there will be some user training involved but the solution works. My next step is to take this a little further and add registry settings to remove the address bar and toolbar so that users won&#8217;t be tempted to navigate to other sites in the published instance.
+**6**. Test and voila! The Sun Java VM as the default and the Microsoft Java VM only for those sites that require it. Of course there will be some user training involved but the solution works. My next step is to take this a little further and add registry settings to remove the address bar and toolbar so that users won't be tempted to navigate to other sites in the published instance.
 
-The only issue I found with this approach is that when launching the published application there is a 2 minute (yes, 2 minute) delay before Internet Explorer launches (you will see the AIERUN window displayed in the mean time). I&#8217;ll update this post if I find the reason. I don&#8217;t think that this document gives a suitable explaination:
+The only issue I found with this approach is that when launching the published application there is a 2 minute (yes, 2 minute) delay before Internet Explorer launches (you will see the AIERUN window displayed in the mean time). I'll update this post if I find the reason. I don't think that this document gives a suitable explaination:
 
 [Application launch performance is slower when applications are launched into an isolation environment](http://support.citrix.com/kb/click.jspa?categoryID=618&externalID=CTX106618&searchID=7426930)

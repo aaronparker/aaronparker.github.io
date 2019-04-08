@@ -12,7 +12,7 @@ tags:
   - Presentation-Server
 ---
 <p dir="ltr" style="margin-right: 0px">
-  If the Citrix Program Neighbourhood Agent is slow to connect to the PNAgent web service and then takes time to display a list of applications, it&#8217;s probably related to folder redirection of the Application Data folder. Program Neighbourhood Agent, by default, stores cache information in the following folder:
+  If the Citrix Program Neighbourhood Agent is slow to connect to the PNAgent web service and then takes time to display a list of applications, it's probably related to folder redirection of the Application Data folder. Program Neighbourhood Agent, by default, stores cache information in the following folder:
 </p>
 
 <font face="Courier New">%APPDATA%\Citrix\PNAgent\AppCache</font>

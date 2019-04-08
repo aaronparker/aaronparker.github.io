@@ -20,7 +20,7 @@ tags:
   - XenApp
   - XenDesktop
 ---
-Now that we&#8217;ve covered the main questions in the survey - [which hypervisors are in use](http://stealthpuppy.com/automation-survey-results-hypervisor/), the [VDI solutions are run on those hypervisors](http://stealthpuppy.com/automation-survey-results-vdi-platforms/), [how master images are built](http://stealthpuppy.com/automation-survey-results-build-master-images/), [the automation solutions used to build images](http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/) and the [solutions used to deliver images to SBC and VDI environments](http://stealthpuppy.com/automation-survey-results-deliver-images/), we&#8217;ll take a short look at how often master images are updated.
+Now that we've covered the main questions in the survey - [which hypervisors are in use](http://stealthpuppy.com/automation-survey-results-hypervisor/), the [VDI solutions are run on those hypervisors](http://stealthpuppy.com/automation-survey-results-vdi-platforms/), [how master images are built](http://stealthpuppy.com/automation-survey-results-build-master-images/), [the automation solutions used to build images](http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/) and the [solutions used to deliver images to SBC and VDI environments](http://stealthpuppy.com/automation-survey-results-deliver-images/), we'll take a short look at how often master images are updated.
 
 # Updating Master Images
 
@@ -30,7 +30,7 @@ Here are the results for how often master images are updated based on 501 respon
 
 Monthly patching is ideal and the majority of organisations appear to be standardising on monthly updates. Adding those respondents who patch every 2 months, 62.7% of organisations patch quite regularly.
 
-Patch schedules that are every quarter or longer are of concern - perhaps understandable in environments sensitive to changes, but still concerning to see that many desktops are running un-patched for considerable periods of time. We only need to look at [last year&#8217;s most vulnerable operating systems and applications](http://www.gfi.com/blog/most-vulnerable-operating-systems-and-applications-in-2014/) to get a sense of what risk our desktops are at. 2015 is looking to provide [a record number of updates from Microsoft](http://news.softpedia.com/news/Record-Number-of-Microsoft-Patches-in-2015-Less-Secure-Windows-or-More-Active-Hackers-481007.shtml).
+Patch schedules that are every quarter or longer are of concern - perhaps understandable in environments sensitive to changes, but still concerning to see that many desktops are running un-patched for considerable periods of time. We only need to look at [last year's most vulnerable operating systems and applications](http://www.gfi.com/blog/most-vulnerable-operating-systems-and-applications-in-2014/) to get a sense of what risk our desktops are at. 2015 is looking to provide [a record number of updates from Microsoft](http://news.softpedia.com/news/Record-Number-of-Microsoft-Patches-in-2015-Less-Secure-Windows-or-More-Active-Hackers-481007.shtml).
 
 ## Patching by Average Organisation Size
 
@@ -43,7 +43,7 @@ Based on our data, here is the average user base for organisations based on patc
   * Quarterly - 1671 seats
   * Every 6 months - 2718
 
-It would be nice to be able to analyse a much larger sample set, as we see a clear trend to smaller organisation sizes when patch schedules change from Monthly to Every 2 months to Quarterly, but the average goes up again for Every 6 months. So I would have drawn the conclusion that larger organisations have better resources for testing OS and application updates before deployment. This might be true; however it&#8217;s difficult to draw a definitive conclusion based on our data.
+It would be nice to be able to analyse a much larger sample set, as we see a clear trend to smaller organisation sizes when patch schedules change from Monthly to Every 2 months to Quarterly, but the average goes up again for Every 6 months. So I would have drawn the conclusion that larger organisations have better resources for testing OS and application updates before deployment. This might be true; however it's difficult to draw a definitive conclusion based on our data.
 
 Do larger organisation fare best? This table lists the patch schedules for organisations 10,000 users and over.
 
@@ -53,10 +53,10 @@ Do larger organisation fare best? This table lists the patch schedules for organ
 
 ## What About Other?
 
-In this question we asked respondents to use Other, if their patching schedules didn&#8217;t fit into the Here are the responses that we received from respondents who selected Other for this question:
+In this question we asked respondents to use Other, if their patching schedules didn't fit into the Here are the responses that we received from respondents who selected Other for this question:
 
   * Never
-  * Yearly, if ever. I don&#8217;t touch what isn&#8217;t broken
+  * Yearly, if ever. I don't touch what isn't broken
   * As infrequently as possible
   * As needed, typically more than a year
   * Depends on request cycle
@@ -77,6 +77,6 @@ Patching can be challenging to manage, especially in persistent desktop environm
 
 # Conclusion
 
-Patching is hard; users and desktops are at risk. While automation won&#8217;t solve everything, it does reduce risk and helps provide consistency. Automation as a part of your patch schedule will improve responsiveness in the event of wayward updates.
+Patching is hard; users and desktops are at risk. While automation won't solve everything, it does reduce risk and helps provide consistency. Automation as a part of your patch schedule will improve responsiveness in the event of wayward updates.
 
-[We&#8217;d](http://xenappblog.com) like to thank everyone who took part in this survey and hope the results and interpretation were useful. Any and all feedback is welcome and look forward to continuing the conversation next year.
+[We'd](http://xenappblog.com) like to thank everyone who took part in this survey and hope the results and interpretation were useful. Any and all feedback is welcome and look forward to continuing the conversation next year.

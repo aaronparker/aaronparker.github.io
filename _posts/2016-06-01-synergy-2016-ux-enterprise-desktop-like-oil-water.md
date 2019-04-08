@@ -18,7 +18,7 @@ tags:
   - Citrix Synergy
   - Performance
 ---
-I had the pleasure recently to present a session at [Citrix Synergy](http://www.citrixsynergy.com) 2016 in Las Vegas with [Helge Klein](https://helgeklein.com/) (of [uberAgent](https://uberagent.com/) and UPM fame) on enterprise desktop performance in a session titled: [SYN239](https://citrix.g2planet.com/citrixsynergy2016/public_session_view.php?agenda_session_id=259): UX and the enterprise desktop: like oil and water?. We&#8217;ve previously presented on [performance related topics with folder redirection](http://stealthpuppy.com/synergy-2015-replay/), and this year we wanted to take a wider look at performance on an enterprise desktop and how user experience is affected.
+I had the pleasure recently to present a session at [Citrix Synergy](http://www.citrixsynergy.com) 2016 in Las Vegas with [Helge Klein](https://helgeklein.com/) (of [uberAgent](https://uberagent.com/) and UPM fame) on enterprise desktop performance in a session titled: [SYN239](https://citrix.g2planet.com/citrixsynergy2016/public_session_view.php?agenda_session_id=259): UX and the enterprise desktop: like oil and water?. We've previously presented on [performance related topics with folder redirection](http://stealthpuppy.com/synergy-2015-replay/), and this year we wanted to take a wider look at performance on an enterprise desktop and how user experience is affected.
 
 # Session Overview
 
@@ -42,4 +42,4 @@ You can view our session on YouTube with the slides and audio only, embedded bel
 
 <https://www.youtube.com/watch?v=8TpXl80fkKQ>
 
-If you&#8217;re making it to [BriForum 2016 in Boston](http://briforum.com/2016/US/), we&#8217;ll be presenting a 75-minute version of this session that will provide us the opportunity to delve into this topic in more detail and present some additional testing scenarios.
+If you're making it to [BriForum 2016 in Boston](http://briforum.com/2016/US/), we'll be presenting a 75-minute version of this session that will provide us the opportunity to delve into this topic in more detail and present some additional testing scenarios.

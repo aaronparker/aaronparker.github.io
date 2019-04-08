@@ -13,7 +13,7 @@ tags:
 ---
 An update to the documentation included in the Windows Automated Installation Kit are available:
 
-[Windows AIK User&#8217;s Guide and Unattended Setup Reference (Documentation Update 1)](http://www.microsoft.com/downloads/details.aspx?FamilyID=993c567d-f12c-4676-917f-05d9de73ada4&DisplayLang=en)
+[Windows AIK User's Guide and Unattended Setup Reference (Documentation Update 1)](http://www.microsoft.com/downloads/details.aspx?FamilyID=993c567d-f12c-4676-917f-05d9de73ada4&DisplayLang=en)
 
 > This documentation update includes revised content that addresses known help issues, workarounds, and other changes. These files replace the release-to-manufacturing (RTM) .chm files.
 

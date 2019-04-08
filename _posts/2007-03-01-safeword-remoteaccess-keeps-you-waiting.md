@@ -11,10 +11,10 @@ categories:
 tags:
   - SafeWord
 ---
-If you are ever installing SafeWord RemoteAccess, don&#8217;t be in a hurry. Be prepared to wait while the Setup application downloads the application updates from the SafeWord site, you could be there a while. It&#8217;s clocked just over an hour now and it&#8217;s not my end:
+If you are ever installing SafeWord RemoteAccess, don't be in a hurry. Be prepared to wait while the Setup application downloads the application updates from the SafeWord site, you could be there a while. It's clocked just over an hour now and it's not my end:
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1060.SafeWord.png" /> 
 
-So you don&#8217;t have to go through the pain again, once the download is complete you can find the SafeWord download files here:
+So you don't have to go through the pain again, once the download is complete you can find the SafeWord download files here:
 
 <font face="courier new,courier">C:Program FilesSecure ComputingInstalls</font>

@@ -1,6 +1,6 @@
 ---
 id: 4035
-title: 'I&#8217;ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2.'
+title: 'I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2.'
 date: 2015-08-04T19:30:41+10:00
 author: Aaron Parker
 layout: post
@@ -20,13 +20,13 @@ tags:
 ---
 This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:
 
-  * [I&#8217;ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1](http://stealthpuppy.com/folder-redirection-2015-part-1/).
-  * I&#8217;ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2. (this article)
-  * [I&#8217;ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3](http://stealthpuppy.com/folder-redirection-2015-part-3/).
+  * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1](http://stealthpuppy.com/folder-redirection-2015-part-1/).
+  * I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2. (this article)
+  * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3](http://stealthpuppy.com/folder-redirection-2015-part-3/).
 
 # File Server Capacity Tool
 
-The File Server Capacity Tool (FSCT) is great for modelling a user home drive hosted on Windows file servers. I&#8217;ve covered [how to use the FSCT previously](http://stealthpuppy.com/replicate-2015-folder-redirection-test/), and the results of our tests have included various scenarios looking at CPU and disk performance.
+The File Server Capacity Tool (FSCT) is great for modelling a user home drive hosted on Windows file servers. I've covered [how to use the FSCT previously](http://stealthpuppy.com/replicate-2015-folder-redirection-test/), and the results of our tests have included various scenarios looking at CPU and disk performance.
 
 ## File Server Capacity Tool CPU Performance
 
@@ -44,13 +44,13 @@ Running the same test with Windows Server 2012 R2, but this time with one of the
 
 <figure id="attachment_4027" aria-describedby="caption-attachment-4027" style="width: 912px" class="wp-caption alignnone">[<img class="size-full wp-image-4027" src="http://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV.png" alt="Anti-Virus Has a Large Impact on CPU" width="912" height="461" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV.png 912w, https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV-150x76.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV-300x152.png 300w" sizes="(max-width: 912px) 100vw, 912px" />](http://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV.png)<figcaption id="caption-attachment-4027" class="wp-caption-text">Anti-Virus Has a Large Impact on CPU</figcaption></figure>
 
-With anti-virus installed, the average CPU is now getting up around the maximum CPU seen without AV, especially from 600 users and beyond. Look at that maximum CPU recorded with anti-virus, that&#8217;s a massive difference from the previous test and will have a large impact on the file server!
+With anti-virus installed, the average CPU is now getting up around the maximum CPU seen without AV, especially from 600 users and beyond. Look at that maximum CPU recorded with anti-virus, that's a massive difference from the previous test and will have a large impact on the file server!
 
 To see if we could improve on this result, we re-ran the test with on-access scans disabled in the anti-virus configuration. This had little impact on the result, which could be explained by the FSCT workload being very write heavy.
 
 <figure id="attachment_4029" aria-describedby="caption-attachment-4029" style="width: 912px" class="wp-caption alignnone">[<img class="size-full wp-image-4029" src="http://stealthpuppy.com/wp-content/uploads/2015/08/OnAccessScans.png" alt="Disabling On Access Scans for AV Had Little Impact" width="912" height="461" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/OnAccessScans.png 912w, https://stealthpuppy.com/wp-content/uploads/2015/08/OnAccessScans-150x76.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/OnAccessScans-300x152.png 300w" sizes="(max-width: 912px) 100vw, 912px" />](http://stealthpuppy.com/wp-content/uploads/2015/08/OnAccessScans.png)<figcaption id="caption-attachment-4029" class="wp-caption-text">Disabling On Access Scans for AV Had Little Impact</figcaption></figure>
 
-There might be additional tweaking that may improve performance; however given the massive difference between with and without AV, I&#8217;m not confident that any considerable gains could be made. We haven&#8217;t yet had a chance to test with multiple anti-virus products.
+There might be additional tweaking that may improve performance; however given the massive difference between with and without AV, I'm not confident that any considerable gains could be made. We haven't yet had a chance to test with multiple anti-virus products.
 
 ## File Server Capacity Tool Disk Performance
 
@@ -70,8 +70,8 @@ This higher CPU on HDDs is, in part, explained by the higher disk queue length s
 
 <figure id="attachment_4032" aria-describedby="caption-attachment-4032" style="width: 912px" class="wp-caption alignnone">[<img class="size-full wp-image-4032" src="http://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SSDs.png" alt="Higher Avg. Disk Queue Length with HDDs" width="912" height="461" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SSDs.png 912w, https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SSDs-150x76.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SSDs-300x152.png 300w" sizes="(max-width: 912px) 100vw, 912px" />](http://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SSDs.png)<figcaption id="caption-attachment-4032" class="wp-caption-text">Higher Avg. Disk Queue Length with HDDs</figcaption></figure>
 
-It&#8217;s clear then that any [high performing storage platform](http://www.atlantiscomputing.com/hyperscale) will not only improve storage performance, it will reduce the load on your compute, providing improved user experience across multiple layers of your infrastructure.
+It's clear then that any [high performing storage platform](http://www.atlantiscomputing.com/hyperscale) will not only improve storage performance, it will reduce the load on your compute, providing improved user experience across multiple layers of your infrastructure.
 
 # Part 3
 
-In part 3, I&#8217;ll cover [file access performance and summarise our recommendations](http://stealthpuppy.com/folder-redirection-2015-part-3) for what you should be doing to get the best performance out of folder redirection.
+In part 3, I'll cover [file access performance and summarise our recommendations](http://stealthpuppy.com/folder-redirection-2015-part-3) for what you should be doing to get the best performance out of folder redirection.

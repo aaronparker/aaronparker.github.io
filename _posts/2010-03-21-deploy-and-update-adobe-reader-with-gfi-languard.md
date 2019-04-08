@@ -19,14 +19,14 @@ tags:
   - GFI LANguard
 ---
 <p class="note">
-  This post has been sitting in my drafts since June 2009 and for whatever reason I haven&#8217;t gotten around to posting it. So rather than delete it, I&#8217;m posting it as is - apologies in advance for quality of this post
+  This post has been sitting in my drafts since June 2009 and for whatever reason I haven't gotten around to posting it. So rather than delete it, I'm posting it as is - apologies in advance for quality of this post
 </p>
 
-I have used LANguard in the past for vulnerability testing and network discovery but frankly that&#8217;s kind of boring stuff. What is interesting in the latest version is the ability to deploy software.
+I have used LANguard in the past for vulnerability testing and network discovery but frankly that's kind of boring stuff. What is interesting in the latest version is the ability to deploy software.
 
-[LANguard 9](http://www.gfi.com/lannetscan) includes application deployment functions that make deploying software to remote machines quite simple.  I&#8217;m going to detail deploying Adobe Reader 9, using the deployment notes outlined in my [Deploying Adobe Reader 9](http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows) post, then deploy the Reader 9.1.1 update, using that functionality.
+[LANguard 9](http://www.gfi.com/lannetscan) includes application deployment functions that make deploying software to remote machines quite simple.  I'm going to detail deploying Adobe Reader 9, using the deployment notes outlined in my [Deploying Adobe Reader 9](http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows) post, then deploy the Reader 9.1.1 update, using that functionality.
 
-I&#8217;m going to skip over most of the details of installing LANguard - it&#8217;s a simple process, you&#8217;ll just need to choose the type of datebase you
+I'm going to skip over most of the details of installing LANguard - it's a simple process, you'll just need to choose the type of datebase you
 
 In my test environment I have configured three machines:
 
@@ -36,11 +36,11 @@ In my test environment I have configured three machines:
 
 To deploy software to a remote machine, I need to be able to authenticate to that machine. Because I am using a domain, authentication is made simple; however I could actually deploy software to workgroup machines if I know an admin username and password for that those machines.
 
-The deployment feature of LANguard is geared around installing a single file with parameters; however it&#8217;s simple enough to deploy applications like Office or Reader by using a batch file:
+The deployment feature of LANguard is geared around installing a single file with parameters; however it's simple enough to deploy applications like Office or Reader by using a batch file:
 
 <img class="alignnone size-full wp-image-1141" title="addcustomsoftware" src="http://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware.png" alt="addcustomsoftware" width="327" height="303" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware.png 327w, https://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware-150x138.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware-300x277.png 300w" sizes="(max-width: 327px) 100vw, 327px" /> 
 
-Before I start deployment, I&#8217;ve configured a source location (\\dc\common\Adobe\Reader91) for Adobe Reader 9.1:
+Before I start deployment, I've configured a source location (\\dc\common\Adobe\Reader91) for Adobe Reader 9.1:
 
   * I have extracted the Reader 9.1 install files from the setup file downloaded from Adobe;
   * I have created a transform that will configure Reader as it is installed; and
@@ -52,7 +52,7 @@ INSTALL.CMD looks like this:
 SET SOURCE=\\dc\Common\Adobe\Reader91<br />
 MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALLUSERS=TRUE REBOOT=SUPRESS /QB`
 
-The script will install Adobe Reader directly from the network, so the only file being copied to the remote machine is the script. Here&#8217;s what the install source for Adobe Reader looks like:
+The script will install Adobe Reader directly from the network, so the only file being copied to the remote machine is the script. Here's what the install source for Adobe Reader looks like:
 
 <img class="alignnone size-full wp-image-1135" title="reader91" src="http://stealthpuppy.com/wp-content/uploads/2009/05/reader91.png" alt="reader91" width="590" height="341" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/reader91.png 590w, https://stealthpuppy.com/wp-content/uploads/2009/05/reader91-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/reader91-300x173.png 300w" sizes="(max-width: 590px) 100vw, 590px" /> 
 
@@ -78,4 +78,4 @@ MSIEXEC /P %SOURCE%\AdbeRdrUpd911_all_incr.msp ALLUSERS=TRUE REBOOT=SUPRESS /QB`
 
 By going through the same deployment configuration, but instead using the batch file that will install the update, I can deploy to the machines that have Reader 9.1.
 
-I&#8217;ve tested deploying the update while Reader is open on the remote machine and the install was successful. Once I closed and reopened Reader, I could see the 9.1.1 version. This may not work for all applications - I don&#8217;t think that my example worked specifically because of LANguard, but you should at least have some success when updating in-use applications.
+I've tested deploying the update while Reader is open on the remote machine and the install was successful. Once I closed and reopened Reader, I could see the 9.1.1 version. This may not work for all applications - I don't think that my example worked specifically because of LANguard, but you should at least have some success when updating in-use applications.

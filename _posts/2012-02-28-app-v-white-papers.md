@@ -21,7 +21,7 @@ _Update (28/03/2012)_: This list of white papers are now available on the Micros
 
 Microsoft TechNet recently went through a redesign that seems to have removed some content and in particular a list of App-V white papers that was on the previous [Application Virtualization TechCenter](http://technet.microsoft.com/en-us/hh710199) no longer exists.
 
-A couple of the white papers are currently available on TechNet, but the full list still includes a number of useful documents that are not. Here&#8217;s the original list of documents available for download:
+A couple of the white papers are currently available on TechNet, but the full list still includes a number of useful documents that are not. Here's the original list of documents available for download:
 
 <table border="1" cellspacing="0" cellpadding="1">
   <tr>

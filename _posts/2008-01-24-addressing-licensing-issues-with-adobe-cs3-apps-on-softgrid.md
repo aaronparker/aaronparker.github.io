@@ -28,7 +28,7 @@ In a MAV environment this service can be successfully virtualised, however you m
 
 Fortunately the FLEXnet Licensing service only needs to run when the application starts - you can subsequently stop the service and the application will continue to run. With a script we can stop this service to get more than one CS3 application running.
 
-Originally I had attempted using WMI to detect the state of the service, wait for it to start and then stop it. However, the virtual services are not detectable via WMI so I&#8217;ve had to resort to something a little more crude. This script reads the output from a NET START command until the FLEXnet service starts and then stops the service. It&#8217;s not a robust script by any means but it gets the job done.
+Originally I had attempted using WMI to detect the state of the service, wait for it to start and then stop it. However, the virtual services are not detectable via WMI so I've had to resort to something a little more crude. This script reads the output from a NET START command until the FLEXnet service starts and then stops the service. It's not a robust script by any means but it gets the job done.
 
 [code lang=&#8221;vb&#8221;]Dim WshShell, oExec  
 Set WshShell = CreateObject("WScript.Shell")  
@@ -53,4 +53,4 @@ Run the script by adding a POST LAUNCH script event in the OSD file:
 <HREF>CMDOW.EXE /RUN /HID CSCRIPT //NOLOGO \\SERVER\Scripts\StopFLEXnet.VBS</HREF>  
 </SCRIPT>[/code]
 
-I&#8217;m using [CMDOW](http://www.commandline.co.uk/cmdow/) here to hide the command window that users will see every few seconds. Unfortunately this method is a little clunky, but if you have a better suggest please let me know.
+I'm using [CMDOW](http://www.commandline.co.uk/cmdow/) here to hide the command window that users will see every few seconds. Unfortunately this method is a little clunky, but if you have a better suggest please let me know.

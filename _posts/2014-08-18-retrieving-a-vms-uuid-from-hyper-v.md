@@ -1,6 +1,6 @@
 ---
 id: 3642
-title: 'Retrieving a VM&#8217;s UUID from Hyper-V'
+title: 'Retrieving a VM's UUID from Hyper-V'
 date: 2014-08-18T12:15:13+10:00
 author: Aaron Parker
 layout: post
@@ -14,11 +14,11 @@ tags:
   - Hyper-V
   - MDT
 ---
-I&#8217;ve previously posted about retrieving the [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) from [a virtual machine hosted on vSphere](http://stealthpuppy.com/retrieving-a-vms-uuid-from-vsphere/). UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here&#8217;s how to obtain the UUID from a virtual machine hosted on Hyper-V.
+I've previously posted about retrieving the [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) from [a virtual machine hosted on vSphere](http://stealthpuppy.com/retrieving-a-vms-uuid-from-vsphere/). UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here's how to obtain the UUID from a virtual machine hosted on Hyper-V.
 
-Just like with vSphere, the UUID isn&#8217;t a property of the virtual machine that can be queried directly. We need to go via WMI to query the target virtual machine. Note that in this function, I&#8217;m using [version 2 of the Root\Virtualization WMI namespace](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/05/30/the-v2-wmi-namespace-in-hyper-v-on-windows-8.aspx) (root\virtualization\v2. This means the function as written, will [only work on Windows 8 and Windows Server 2012](http://msdn.microsoft.com/en-us/library/hh850319(v=vs.85)) (and above). If you want to use this function on earlier versions of Hyper-V, remove the &#8220;\v2&#8221; from the namespace.
+Just like with vSphere, the UUID isn't a property of the virtual machine that can be queried directly. We need to go via WMI to query the target virtual machine. Note that in this function, I'm using [version 2 of the Root\Virtualization WMI namespace](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/05/30/the-v2-wmi-namespace-in-hyper-v-on-windows-8.aspx) (root\virtualization\v2. This means the function as written, will [only work on Windows 8 and Windows Server 2012](http://msdn.microsoft.com/en-us/library/hh850319(v=vs.85)) (and above). If you want to use this function on earlier versions of Hyper-V, remove the &#8220;\v2&#8221; from the namespace.
 
-As an example, here&#8217;s how to retrieve the UUIDs from a set of VMs on a target Hyper-V host named _hv1_:
+As an example, here's how to retrieve the UUIDs from a set of VMs on a target Hyper-V host named _hv1_:
 
 <pre class="theme:powershell-ise toolbar:2 striped:false nums:false nums-toggle:false lang:ps decode:true ">PS C:\&gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, file3, pvs1
 
@@ -28,7 +28,7 @@ WIN71		E6E1A176-0713-4BB0-99E9-4570A1A3A94A
 FILE3		9E9D788A-15E2-4760-A049-9F6EB88677A9 
 PVS1		74EFF5BC-A24E-48C3-85BE-12D758FE7AB6</pre>
 
-Here&#8217;s the full function code listing. Please let me know if you find any bugs:
+Here's the full function code listing. Please let me know if you find any bugs:
 
 <pre class="lang:ps decode:true " title="Get-HypervVMUUID">#---------------------------------------------------------------------------
 # Author: Aaron Parker

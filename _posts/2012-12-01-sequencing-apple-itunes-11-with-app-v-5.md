@@ -18,7 +18,7 @@ tags:
   - App-V
   - iTunes
 ---
-<img class="alignright size-full wp-image-2976" style="margin-left: 5px; margin-right: 5px;" title="iTunes 11 128x128" alt="" src="http://stealthpuppy.com/wp-content/uploads/2012/12/iTunes-128.png" width="128" height="128" />Two recent releases presents an opportunity to revisit the state of virtualizing Apple iTunes. iTunes 11 looks great, but is it just lipstick on a pig? Under the hood, it doesn&#8217;t appear to differ that much from previous versions, but lets see whether a combination of Apple&#8217;s latest and greatest along with App-V 5 offers a better virtualisation experience.
+<img class="alignright size-full wp-image-2976" style="margin-left: 5px; margin-right: 5px;" title="iTunes 11 128x128" alt="" src="http://stealthpuppy.com/wp-content/uploads/2012/12/iTunes-128.png" width="128" height="128" />Two recent releases presents an opportunity to revisit the state of virtualizing Apple iTunes. iTunes 11 looks great, but is it just lipstick on a pig? Under the hood, it doesn't appear to differ that much from previous versions, but lets see whether a combination of Apple's latest and greatest along with App-V 5 offers a better virtualisation experience.
 
 # iTunes 10 with App-V 4.6
 
@@ -26,7 +26,7 @@ Previously delivering [iTunes 10 with App-V 4.6](http://stealthpuppy.com/virtual
 
 # iTunes Components
 
-To virtualize iTunes, you&#8217;ll need to extract the installer - simply run the installer and find the extracted MSI files in a folder under %TEMP%. This results in several files:
+To virtualize iTunes, you'll need to extract the installer - simply run the installer and find the extracted MSI files in a folder under %TEMP%. This results in several files:
 
   * SetupAdmin.exe – the setup wrapper application. This can be discarded
   * AppleSoftwareUpdate.msi – Software Update is used to download and Apple software and updates
@@ -50,7 +50,7 @@ It is possible to include Apple Application Support in the iTunes package. This 
 
 # User Profile
 
-iTunes has the potential to store a massive amount of data in the user&#8217;s profile:
+iTunes has the potential to store a massive amount of data in the user's profile:
 
 [<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="09AppData" alt="09AppData" src="http://stealthpuppy.com/wp-content/uploads/2011/06/09AppData_thumb.png" width="377" height="302" border="0" />](http://stealthpuppy.com/wp-content/uploads/2011/06/09AppData.png)
 
@@ -105,7 +105,7 @@ When installing iTunes, be sure to install to C:\iTunes11\iTunes and remove the 
 
 7. Finish the install and continue to the Configure Software step. There is no need to launch any applications at this point
 
-8. Review the installation report. This will list a couple of issues which I&#8217;ll discuss later.
+8. Review the installation report. This will list a couple of issues which I'll discuss later.
 
 9. Continue and customize the package (do not stop at this point).
 

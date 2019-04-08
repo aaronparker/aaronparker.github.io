@@ -15,7 +15,7 @@ Looking to write to CD or DVD media via a script? Did you know that Windows incl
 
 > IMAPI is the optical burning engine in Windows products. Version 2 of IMAPI will extend Windows Vista support for DVD media to Windows XP and to Windows Server 2003.
 
-I wasn&#8217;t previously aware of this API and it looks pretty cool, TechNet has full details on the API and how to use it:
+I wasn't previously aware of this API and it looks pretty cool, TechNet has full details on the API and how to use it:
 
   * [Introduction to IMAPIv2 for Script Writers](http://www.microsoft.com/technet/scriptcenter/topics/imapi/imapi2-1.mspx)
   * [Burning CDs and DVDs from Scripts](http://www.microsoft.com/technet/scriptcenter/topics/imapi/imapi2-2.mspx)

@@ -16,7 +16,7 @@ tags:
   - MSDN
   - TechNet
 ---
-<span style="color: #993300;">[<strong>Update</strong>] August 8, 2015 - Microsoft have discontinued the Microsoft Download Manager as of March 2015, so the below workload will no longer work. If fact there are no workaround now, you&#8217;ll need to rely on your browser&#8217;s download manager. See this article for more info: <a style="color: #993300;" href="https://msdn.microsoft.com/en-us/subscriptions/aa948864.aspx">Using Subscriber Downloads</a></span>
+<span style="color: #993300;">[<strong>Update</strong>] August 8, 2015 - Microsoft have discontinued the Microsoft Download Manager as of March 2015, so the below workload will no longer work. If fact there are no workaround now, you'll need to rely on your browser's download manager. See this article for more info: <a style="color: #993300;" href="https://msdn.microsoft.com/en-us/subscriptions/aa948864.aspx">Using Subscriber Downloads</a></span>
 
 > <span style="color: #993300;">Downloading from MSDN</span>
 > 
@@ -29,20 +29,20 @@ The subtitle to this post should be - &#8220;How to get faster downloads from Te
 
 I download quite a bit of stuff from TechNet and/or MSDN fairly regularly for deploying into a lab. With downloads typically in the gigabytes and often needing those downloads as soon as possible, I need to be able to download files consistently and faster than a browser alone might be able to.
 
-Microsoft has used [File Transfer Manager](http://transfers.one.microsoft.com/ftm/) (FTM) for some time to make downloads easier and faster from TechNet and MSDN. Apparently Microsoft is transitioning over to [Download Manager](http://www.microsoft.com/en-au/download/details.aspx?id=27960), but I&#8217;m yet to see it in action.
+Microsoft has used [File Transfer Manager](http://transfers.one.microsoft.com/ftm/) (FTM) for some time to make downloads easier and faster from TechNet and MSDN. Apparently Microsoft is transitioning over to [Download Manager](http://www.microsoft.com/en-au/download/details.aspx?id=27960), but I'm yet to see it in action.
 
-Recently (perhaps the last 12 months), I&#8217;ve noticed that FTM hasn&#8217;t been launching to download a target file and instead the download has been via the browser directly. This hasn&#8217;t been an issue for me until I&#8217;ve moved from 60Mbps cable in the UK to ~7.5Mbps ADSL in Australia. Things take a little longer to download here, as you might guess. Here&#8217;s the download speeds I&#8217;ve typically been seeing from TechNet:
+Recently (perhaps the last 12 months), I've noticed that FTM hasn't been launching to download a target file and instead the download has been via the browser directly. This hasn't been an issue for me until I've moved from 60Mbps cable in the UK to ~7.5Mbps ADSL in Australia. Things take a little longer to download here, as you might guess. Here's the download speeds I've typically been seeing from TechNet:
 
 [<img class="alignnone  wp-image-3548" src="http://stealthpuppy.com/wp-content/uploads/2014/01/IESlowDownload.png" alt="Slow download speed in IE" width="861" height="480" srcset="https://stealthpuppy.com/wp-content/uploads/2014/01/IESlowDownload.png 861w, https://stealthpuppy.com/wp-content/uploads/2014/01/IESlowDownload-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/01/IESlowDownload-300x167.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/01/IESlowDownload-624x347.png 624w" sizes="(max-width: 861px) 100vw, 861px" />](http://stealthpuppy.com/wp-content/uploads/2014/01/IESlowDownload.png)
 
-I know FTM does a far better job than this, so why won&#8217;t it launch when downloading files? Turns out that because FTM is ActiveX based and uses scripting and for whatever reason, it won&#8217;t actually launch from IE10 or IE11. The exact details on why are a bit of mystery but it seems that Microsoft haven&#8217;t gotten around to supporting their latest browsers.
+I know FTM does a far better job than this, so why won't it launch when downloading files? Turns out that because FTM is ActiveX based and uses scripting and for whatever reason, it won't actually launch from IE10 or IE11. The exact details on why are a bit of mystery but it seems that Microsoft haven't gotten around to supporting their latest browsers.
 
 Fortunately a work around is straight-forward - enable emulation mode to view the TechNet or MSDN sites as IE9. Emulation is enabled via the following steps:
 
   1. For Internet Explorer 11, press F12 to bring up the developer tools window
   2. Click the Emulation icon (bottom left) or press Ctrl+8
-  3. Select '9&#8217; under Document Mode
-  4. Choose 'Internet Explorer 9&#8217; under User Agent String
+  3. Select '9' under Document Mode
+  4. Choose 'Internet Explorer 9' under User Agent String
 
 [<img class="alignnone size-full wp-image-3549" src="http://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools.png" alt="Emulation with Developer Tools" width="1027" height="517" srcset="https://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools.png 1027w, https://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools-150x75.png 150w, https://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools-300x151.png 300w, https://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools-1024x515.png 1024w, https://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools-624x314.png 624w" sizes="(max-width: 1027px) 100vw, 1027px" />](http://stealthpuppy.com/wp-content/uploads/2014/01/DeveloperTools.png)
 

@@ -19,7 +19,7 @@ tags:
 ---
 Enabling the App-V client and UE-V client in Windows 10 Enterprise Build 14316 via PowerShell and viewing the behaviour of filter drivers for each client.
 
-If you&#8217;re following Microsoft App-V and [User Experience&nbsp;Virtualization (UE-V)](https://technet.microsoft.com/en-au/windows/hh943107.aspx), then you&#8217;re probably aware that these products are being built into Windows 10 Enterprise (and presumably Windows Server 2016). This means no longer having to download and install each client - it will already be available in Windows and just requires enabling to use.
+If you're following Microsoft App-V and [User Experience&nbsp;Virtualization (UE-V)](https://technet.microsoft.com/en-au/windows/hh943107.aspx), then you're probably aware that these products are being built into Windows 10 Enterprise (and presumably Windows Server 2016). This means no longer having to download and install each client - it will already be available in Windows and just requires enabling to use.
 
 I previously tweeted a view of the App-V and UE-V client files available in the latest build:
 
@@ -37,7 +37,7 @@ I previously tweeted a view of the App-V and UE-V client files available in the 
 
 # Filter Drivers
 
-Before we enable the clients, let&#8217;s take a quick look at the filter drivers in Windows 10 build 14136 (note, I&#8217;m looking at a VM with the Office 365 apps installed, so I may have picked up a filter driver or two already). The _fltmc_ command from an elevated Command Prompt or PowerShell instance displays the currently running filters:
+Before we enable the clients, let's take a quick look at the filter drivers in Windows 10 build 14136 (note, I'm looking at a VM with the Office 365 apps installed, so I may have picked up a filter driver or two already). The _fltmc_ command from an elevated Command Prompt or PowerShell instance displays the currently running filters:
 
 <figure id="attachment_4369" aria-describedby="caption-attachment-4369" style="width: 950px" class="wp-caption alignnone"><a href="http://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable.png" rel="attachment wp-att-4369"><img class="wp-image-4369 size-full" title="Viewing filter drivers before enabling App-V and UE-V clients." src="http://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable.png" alt="Viewing filter drivers before enabling App-V and UE-V clients." width="950" height="528" srcset="https://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable.png 950w, https://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable-300x167.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/04/fltmc-before-enable-768x427.png 768w" sizes="(max-width: 950px) 100vw, 950px" /></a><figcaption id="caption-attachment-4369" class="wp-caption-text">Viewing filter drivers before enabling App-V and UE-V clients.</figcaption></figure>
 
@@ -122,6 +122,6 @@ This is the first build of Windows 10, available to testers, where the App-V and
 In going through this exercise, there are two things that stand out:
 
   * <del>The Enable and Disable cmdlets should return a True or False if the command was successful or not. This is expected to be fixed before release</del>. [24th April 2016 - build 14328 has updated the cmdlets to return a status]
-  * I would like to see the App-V and UE-V clients enable and disabled as Windows Features (to enable/disable via DISM or 'Programs and Features&#8217;), rather than just be in-box disabled. I&#8217;m not confident that this approach will change.
+  * I would like to see the App-V and UE-V clients enable and disabled as Windows Features (to enable/disable via DISM or 'Programs and Features'), rather than just be in-box disabled. I'm not confident that this approach will change.
 
 If you are a Windows Insider, I would recommend testing the App-V and UE-V functionality delivered as a part of this build. In addition, if you encounter challenges or bug, be sure to log them on [Connect](http://connect.microsoft.com).

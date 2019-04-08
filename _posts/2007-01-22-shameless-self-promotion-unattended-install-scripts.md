@@ -11,7 +11,7 @@ categories:
 tags:
   - Unattended
 ---
-In case you were&#8217;nt aware, I have a number of install scripts for various applications that might be helpful for you if you are involved in any aspect of application deployment. A couple of these I have modified from an original script gleamed from [AppDeploy.com](http://www.appdeploy.com/). Hopefully you may find these useful:
+In case you were'nt aware, I have a number of install scripts for various applications that might be helpful for you if you are involved in any aspect of application deployment. A couple of these I have modified from an original script gleamed from [AppDeploy.com](http://www.appdeploy.com/). Hopefully you may find these useful:
 
   * [Sun Java Runtime Environment 1.6](http://www.stealthpuppy.com/blogs/travelling/pages/unattended-install-sun-java-runtime-environment-1-6.aspx)
   * [Windows Live Messenger](http://www.stealthpuppy.com/blogs/travelling/pages/unattended-install-windows-live-messenger.aspx)

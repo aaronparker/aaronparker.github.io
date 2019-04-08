@@ -31,7 +31,7 @@ Most users are not going to know which option they should choose (and they certa
 
 ### The feature does exist!
 
-Last week I came across a knowledgebase article that Microsoft recently updated – [Automatic resolution policy for an offline file synchronization conflict does not work if the &#8220;keep all changes&#8221; setting is enabled in Windows Vista or in Windows Server 2008](http://support.microsoft.com/kb/2189014). It appears that an automatic resolution policy does exist even though there&#8217;s no documentation on this feature, beyond one page on MSDN on the [OFFLINEFILES\_SYNC\_CONFLICT_RESOLVE](http://msdn.microsoft.com/en-us/library/bb530653(v=VS.85).aspx) enumerator in the Offline Files API.
+Last week I came across a knowledgebase article that Microsoft recently updated – [Automatic resolution policy for an offline file synchronization conflict does not work if the &#8220;keep all changes&#8221; setting is enabled in Windows Vista or in Windows Server 2008](http://support.microsoft.com/kb/2189014). It appears that an automatic resolution policy does exist even though there's no documentation on this feature, beyond one page on MSDN on the [OFFLINEFILES\_SYNC\_CONFLICT_RESOLVE](http://msdn.microsoft.com/en-us/library/bb530653(v=VS.85).aspx) enumerator in the Offline Files API.
 
 ### Configuring an Automatic Resolution Policy
 
@@ -71,7 +71,7 @@ To deploy the policy you could use a script or a tool such as Group Policy Prefe
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GPPrefReg" src="http://stealthpuppy.com/wp-content/uploads/2010/08/GPPrefReg_thumb.png" border="0" alt="GPPrefReg" width="404" height="448" />](http://stealthpuppy.com/wp-content/uploads/2010/08/GPPrefReg.png)
 
-Continuing the App-V User Data Directory as my example, I&#8217;ve hosted this on a network share and I want to ensure that the laptop copy always wins any conflict resolution. Therefore I&#8217;m using a value of 1 to ensure that in the event of changes on both the laptop and another machine, the changes on the laptop will be written back to the network.
+Continuing the App-V User Data Directory as my example, I've hosted this on a network share and I want to ensure that the laptop copy always wins any conflict resolution. Therefore I'm using a value of 1 to ensure that in the event of changes on both the laptop and another machine, the changes on the laptop will be written back to the network.
 
 ### Conclusion
 
