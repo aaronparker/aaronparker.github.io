@@ -6,99 +6,96 @@
 
 <p>For example, I could use the following command to retrieve the UUID from a target VM:</p>
 
-<p>[code language=”ps”]PS C:&gt; Get-VM -VM “W7VM1” | Get-vSphereVMUUID<br />
-554c0342-c2c7-c3b7-8258-96eb00f62b0c[/code]</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">PS </span>C:\&gt; Get-VM -VM <span class="s2">"W7VM1"</span> | Get-vSphereVMUUID  
+554c0342-c2c7-c3b7-8258-96eb00f62b0c
+</code></pre></div></div>
 
 <p>Code listing below:</p>
 
-<p>[code language=”ps”]#—————————————————————————<br />
-# Author: Aaron Parker<br />
-# Desc: Function that uses retrieves the UUID from a specified VM and<br />
-# transposes it into the right format for use with MDT/SCCM etc<br />
-# Date: Mar 24, 2013<br />
-# Site: http://stealthpuppy.com<br />
-#<br />
-# Original code snippets from:<br />
-# http://communities.vmware.com/thread/239735<br />
-# http://www.keithsmithonline.com/2013/02/powershell-show-vmware-vm-UUID.html<br />
-#—————————————————————————</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Author: Aaron Parker  </span>
+<span class="c1"># Desc: Function that uses retrieves the UUID from a specified VM and  </span>
+<span class="c1"># transposes it into the right format for use with MDT/SCCM etc  </span>
+<span class="c1"># Date: Mar 24, 2013  </span>
+<span class="c1"># Site: http://stealthpuppy.com  </span>
+<span class="c1">#  </span>
+<span class="c1"># Original code snippets from:  </span>
+<span class="c1"># http://communities.vmware.com/thread/239735  </span>
+<span class="c1"># http://www.keithsmithonline.com/2013/02/powershell-show-vmware-vm-UUID.html  </span>
+<span class="k">Function </span>Get-vSphereVMUUID <span class="o">{</span>  
+    <span class="cm">&lt;#  
+        .SYNOPSIS  
+        Retrieves the UUID from a specified VM and formats it correctly for use with MDT/SCCM etc.
 
-<p>Function Get-vSphereVMUUID {<br />
-&lt;#<br />
-.SYNOPSIS<br />
-Retrieves the UUID from a specified VM and formats it correctly for use with MDT/SCCM etc.</p>
+        .DESCRIPTION  
+        Retrieves the UUID from a specified VM and formats it correctly for use with MDT/SCCM etc. Returns the UUID as a string that can be passed to other functions.
 
-<p>.DESCRIPTION<br />
-Retrieves the UUID from a specified VM and formats it correctly for use with MDT/SCCM etc. Returns the UUID as a string that can be passed to other functions.</p>
+        Requires that a VM object is passed to the function. That object will first have to be created before being passed to this function.
 
-<p>Requires that a VM object is passed to the function. That object will first have to be created before being passed to this function.</p>
+        .PARAMETER VM  
+        Specifies the VM to retrieve the UUID from.
 
-<p>.PARAMETER VM<br />
-Specifies the VM to retrieve the UUID from.</p>
+        .EXAMPLE  
+        PS C:\&gt; Get-vSphereVMUUID -VM "W7VM1"
 
-<p>.EXAMPLE<br />
-PS C:&gt; Get-vSphereVMUUID -VM “W7VM1”</p>
+        Retrieves the UUID from a VM named W7VM1.
 
-<p>Retrieves the UUID from a VM named W7VM1.</p>
+        .EXAMPLE  
+        PS C:\&gt; $VM | Get-vSphereVMUUID
 
-<p>.EXAMPLE<br />
-PS C:&gt; $VM | Get-vSphereVMUUID</p>
+        Retrieves the UUID from a VM piped to this function.
 
-<p>Retrieves the UUID from a VM piped to this function.</p>
+        .NOTES  
+        See https://stealthpuppy.com/ for support information.
 
-<p>.NOTES<br />
-See http://stealthpuppy.com/ for support information.</p>
+        .LINK  
+        https://stealthpuppy.com/code/retrieving-a-vms-uuid-from-vsphere/
+    #&gt;</span>
+    <span class="o">[</span><span class="na">CmdletBinding</span><span class="o">(</span><span class="na">SupportsShouldProcess</span> <span class="o">=</span> <span class="nv">$True</span><span class="o">)]</span>  
+    <span class="k">Param</span><span class="o">(</span>  
+        <span class="o">[</span>Parameter<span class="o">(</span>Mandatory <span class="o">=</span> <span class="nv">$True</span>, ValueFromPipeline <span class="o">=</span> <span class="nv">$True</span>, HelpMessage <span class="o">=</span> <span class="s2">"Specify the VM to retrive the UUID from."</span><span class="o">)]</span>  
+        <span class="o">[</span>System.Object]<span class="nv">$VM</span>  
+    <span class="o">)</span>
 
-<p>.LINK<br />
-http://stealthpuppy.com/code/retrieving-a-vms-uuid-from-vsphere/</p>
+    <span class="k">BEGIN</span> <span class="o">{</span>  
+    <span class="o">}</span>
 
-<p>#&gt;</p>
+    <span class="k">PROCESS</span> <span class="o">{</span>  
+        <span class="c1"># Retrive UUID from vSphere  </span>
+        <span class="nv">$UUID</span> <span class="o">=</span> <span class="nv">$VM</span> | <span class="k">ForEach</span>-Object <span class="o">{</span> <span class="o">(</span>Get-View <span class="nv">$_</span>.Id<span class="o">)</span>.config.UUID <span class="o">}</span>
 
-<p>[CmdletBinding(SupportsShouldProcess=$True)]<br />
-Param(<br />
-[Parameter(Mandatory=$True, ValueFromPipeline=$True, HelpMessage=”Specify the VM to retrive the UUID from.”)]<br />
-[System.Object]$VM<br />
-)</p>
+        <span class="c1">#Transpose UUID into expected format  </span>
+        <span class="c1"># Section 1  </span>
+        <span class="nv">$UUID11</span> <span class="o">=</span> <span class="nv">$UUID</span>.Substring<span class="o">(</span>0, 2<span class="o">)</span>  
+        <span class="nv">$UUID12</span> <span class="o">=</span> <span class="nv">$UUID</span>.Substring<span class="o">(</span>2, 2<span class="o">)</span>  
+        <span class="nv">$UUID13</span> <span class="o">=</span> <span class="nv">$UUID</span>.Substring<span class="o">(</span>4, 2<span class="o">)</span>  
+        <span class="nv">$UUID14</span> <span class="o">=</span> <span class="nv">$UUID</span>.Substring<span class="o">(</span>6, 2<span class="o">)</span>
 
-<p>BEGIN {<br />
-}</p>
+        <span class="c1"># Section 2  </span>
+        <span class="nv">$UUID21</span> <span class="o">=</span> <span class="nv">$UUID</span>.Substring<span class="o">(</span>9, 2<span class="o">)</span>  
+        <span class="nv">$UUID22</span> <span class="o">=</span> <span class="nv">$UUID</span>.Substring<span class="o">(</span>11, 2<span class="o">)</span>
 
-<p>PROCESS {<br />
-# Retrive UUID from vSphere<br />
-$UUID = $VM | %{(Get-View $_.Id).config.UUID}</p>
+        <span class="c1"># Section 3  </span>
+        <span class="nv">$UUID31</span> <span class="o">=</span> <span class="nv">$UUID</span>.Substring<span class="o">(</span>14, 2<span class="o">)</span>  
+        <span class="nv">$UUID32</span> <span class="o">=</span> <span class="nv">$UUID</span>.Substring<span class="o">(</span>16, 2<span class="o">)</span>
 
-<p>#Transpose UUID into expected format<br />
-# Section 1<br />
-$UUID11 = $UUID.Substring(0,2)<br />
-$UUID12 = $UUID.Substring(2,2)<br />
-$UUID13 = $UUID.Substring(4,2)<br />
-$UUID14 = $UUID.Substring(6,2)</p>
+        <span class="c1"># Section 4  </span>
+        <span class="nv">$UUID41</span> <span class="o">=</span> <span class="nv">$UUID</span>.Substring<span class="o">(</span>19, 4<span class="o">)</span>
 
-<p># Section 2<br />
-$UUID21 = $UUID.Substring(9,2)<br />
-$UUID22 = $UUID.Substring(11,2)</p>
+        <span class="c1"># Section 5  </span>
+        <span class="nv">$UUID51</span> <span class="o">=</span> <span class="nv">$UUID</span>.Substring<span class="o">(</span>24, 12<span class="o">)</span>
 
-<p># Section 3<br />
-$UUID31 = $UUID.Substring(14,2)<br />
-$UUID32 = $UUID.Substring(16,2)</p>
+        <span class="c1"># Piece the strings together  </span>
+        <span class="o">[</span><span class="kt">string</span><span class="o">]</span><span class="nv">$UUIDa</span> <span class="o">=</span> <span class="s2">"</span><span class="nv">$UUID14$UUID13$UUID12$UUID11</span><span class="s2">"</span>  
+        <span class="o">[</span><span class="kt">string</span><span class="o">]</span><span class="nv">$UUIDb</span> <span class="o">=</span> <span class="s2">"</span><span class="nv">$UUID22$UUID21</span><span class="s2">"</span>  
+        <span class="o">[</span><span class="kt">string</span><span class="o">]</span><span class="nv">$UUIDc</span> <span class="o">=</span> <span class="s2">"</span><span class="nv">$UUID32$UUID31</span><span class="s2">"</span>  
+        <span class="o">[</span><span class="kt">string</span><span class="o">]</span><span class="nv">$UUIDd</span> <span class="o">=</span> <span class="s2">"</span><span class="nv">$UUID41</span><span class="s2">"</span>  
+        <span class="o">[</span><span class="kt">string</span><span class="o">]</span><span class="nv">$UUIDe</span> <span class="o">=</span> <span class="s2">"</span><span class="nv">$UUID51</span><span class="s2">"</span>  
+        <span class="o">[</span><span class="kt">string</span><span class="o">]</span><span class="nv">$UUIDfixed</span> <span class="o">=</span> <span class="s2">"</span><span class="nv">$UUIDa</span><span class="s2">-</span><span class="nv">$UUIDb</span><span class="s2">-</span><span class="nv">$UUIDc</span><span class="s2">-</span><span class="nv">$UUIDd</span><span class="s2">-</span><span class="nv">$UUIDe</span><span class="s2">"</span>  
+    <span class="o">}</span>
 
-<p># Section 4<br />
-$UUID41 = $UUID.Substring(19,4)</p>
-
-<p># Section 5<br />
-$UUID51 = $UUID.Substring(24,12)</p>
-
-<p># Piece the strings together<br />
-[string]$UUIDa = “$UUID14$UUID13$UUID12$UUID11”<br />
-[string]$UUIDb = “$UUID22$UUID21”<br />
-[string]$UUIDc = “$UUID32$UUID31”<br />
-[string]$UUIDd = “$UUID41”<br />
-[string]$UUIDe = “$UUID51”<br />
-[string]$UUIDfixed = “$UUIDa-$UUIDb-$UUIDc-$UUIDd-$UUIDe”<br />
-}</p>
-
-<p>END {<br />
-# Return the UUID<br />
-Return $UUIDfixed<br />
-}<br />
-}[/code]</p>
+    <span class="k">END</span> <span class="o">{</span>  
+        <span class="c1"># Return the UUID  </span>
+        <span class="k">Return</span> <span class="nv">$UUIDfixed</span>  
+    <span class="o">}</span>  
+<span class="o">}</span>
+</code></pre></div></div>

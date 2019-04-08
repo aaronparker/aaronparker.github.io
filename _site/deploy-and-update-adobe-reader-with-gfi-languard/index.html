@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -52,7 +52,7 @@
 
 <p>I have used LANguard in the past for vulnerability testing and network discovery but frankly that’s kind of boring stuff. What is interesting in the latest version is the ability to deploy software.</p>
 
-<p><a href="http://www.gfi.com/lannetscan">LANguard 9</a> includes application deployment functions that make deploying software to remote machines quite simple.  I’m going to detail deploying Adobe Reader 9, using the deployment notes outlined in my <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">Deploying Adobe Reader 9</a> post, then deploy the Reader 9.1.1 update, using that functionality.</p>
+<p><a href="http://www.gfi.com/lannetscan">LANguard 9</a> includes application deployment functions that make deploying software to remote machines quite simple.  I’m going to detail deploying Adobe Reader 9, using the deployment notes outlined in my <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">Deploying Adobe Reader 9</a> post, then deploy the Reader 9.1.1 update, using that functionality.</p>
 
 <p>I’m going to skip over most of the details of installing LANguard - it’s a simple process, you’ll just need to choose the type of datebase you</p>
 
@@ -68,7 +68,7 @@
 
 <p>The deployment feature of LANguard is geared around installing a single file with parameters; however it’s simple enough to deploy applications like Office or Reader by using a batch file:</p>
 
-<p><img class="alignnone size-full wp-image-1141" title="addcustomsoftware" src="http://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware.png" alt="addcustomsoftware" width="327" height="303" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware.png 327w, https://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware-150x138.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware-300x277.png 300w" sizes="(max-width: 327px) 100vw, 327px" /></p>
+<p><img class="alignnone size-full wp-image-1141" title="addcustomsoftware" src="https://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware.png" alt="addcustomsoftware" width="327" height="303" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware.png 327w, https://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware-150x138.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/addcustomsoftware-300x277.png 300w" sizes="(max-width: 327px) 100vw, 327px" /></p>
 
 <p>Before I start deployment, I’ve configured a source location (\dc\common\Adobe\Reader91) for Adobe Reader 9.1:</p>
 
@@ -86,7 +86,7 @@ MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALL
 
 <p>The script will install Adobe Reader directly from the network, so the only file being copied to the remote machine is the script. Here’s what the install source for Adobe Reader looks like:</p>
 
-<p><img class="alignnone size-full wp-image-1135" title="reader91" src="http://stealthpuppy.com/wp-content/uploads/2009/05/reader91.png" alt="reader91" width="590" height="341" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/reader91.png 590w, https://stealthpuppy.com/wp-content/uploads/2009/05/reader91-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/reader91-300x173.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></p>
+<p><img class="alignnone size-full wp-image-1135" title="reader91" src="https://stealthpuppy.com/wp-content/uploads/2009/05/reader91.png" alt="reader91" width="590" height="341" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/reader91.png 590w, https://stealthpuppy.com/wp-content/uploads/2009/05/reader91-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/reader91-300x173.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></p>
 
 <p>Deploying software is a three step process:</p>
 
@@ -96,11 +96,11 @@ MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALL
   <li>then deploy immediately or choose to install using a schedule:</li>
 </ol>
 
-<p><img class="alignnone size-full wp-image-1140" style="border: black 1px solid;" title="deploycustomsoftware-1b" src="http://stealthpuppy.com/wp-content/uploads/2009/05/deploycustomsoftware-1b.png" alt="deploycustomsoftware-1b" width="590" height="496" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/deploycustomsoftware-1b.png 590w, https://stealthpuppy.com/wp-content/uploads/2009/05/deploycustomsoftware-1b-150x126.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/deploycustomsoftware-1b-300x252.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></p>
+<p><img class="alignnone size-full wp-image-1140" style="border: black 1px solid;" title="deploycustomsoftware-1b" src="https://stealthpuppy.com/wp-content/uploads/2009/05/deploycustomsoftware-1b.png" alt="deploycustomsoftware-1b" width="590" height="496" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/deploycustomsoftware-1b.png 590w, https://stealthpuppy.com/wp-content/uploads/2009/05/deploycustomsoftware-1b-150x126.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/deploycustomsoftware-1b-300x252.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></p>
 
 <p>So how is this actually working? The deployment feature on LANguard is not dissimilar to the Sysinternals tool PSEXEC, where a temporary service is installed on the remote machine to deliver the install commands. Essentially to deploy Adobe Reader 9, I am using LANguard to remotely execute INSTALL.CMD. I need admin rights on the target computers and LANguard does the rest. I even get to see the progress of the deployment:</p>
 
-<p><img class="alignnone size-full wp-image-1145" style="border: black 1px solid;" title="deploymenprogess" src="http://stealthpuppy.com/wp-content/uploads/2009/05/deploymenprogess.png" alt="deploymenprogess" width="434" height="270" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/deploymenprogess.png 434w, https://stealthpuppy.com/wp-content/uploads/2009/05/deploymenprogess-150x93.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/deploymenprogess-300x186.png 300w" sizes="(max-width: 434px) 100vw, 434px" /></p>
+<p><img class="alignnone size-full wp-image-1145" style="border: black 1px solid;" title="deploymenprogess" src="https://stealthpuppy.com/wp-content/uploads/2009/05/deploymenprogess.png" alt="deploymenprogess" width="434" height="270" srcset="https://stealthpuppy.com/wp-content/uploads/2009/05/deploymenprogess.png 434w, https://stealthpuppy.com/wp-content/uploads/2009/05/deploymenprogess-150x93.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/05/deploymenprogess-300x186.png 300w" sizes="(max-width: 434px) 100vw, 434px" /></p>
 
 <p>I can also use the same process to update Reader 9.1 with the 9.11. update patch.</p>
 

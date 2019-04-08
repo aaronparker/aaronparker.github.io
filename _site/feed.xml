@@ -1,508 +1,276 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-04-09T08:21:52+10:00</updated><id>/feed.xml</id><title type="html">stealthpuppy</title><subtitle>on end user computing and enterprise mobility</subtitle><entry><title type="html"></title><link href="/2019/04/09/2015-08-02-folder-redirection-2015-part-1.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T08:21:52+10:00</published><updated>2019-04-09T08:21:52+10:00</updated><id>/2019/04/09/2015-08-02-folder-redirection-2015-part-1</id><content type="html" xml:base="/2019/04/09/2015-08-02-folder-redirection-2015-part-1.html">&lt;p&gt;This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-04-09T09:49:05+10:00</updated><id>/feed.xml</id><title type="html">stealthpuppy</title><subtitle>on end user computing and enterprise mobility</subtitle><entry><title type="html"></title><link href="/2019/04/09/2007-02-13-software-quality-whats-that.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T09:49:05+10:00</published><updated>2019-04-09T09:49:05+10:00</updated><id>/2019/04/09/2007-02-13-software-quality-whats-that</id><content type="html" xml:base="/2019/04/09/2007-02-13-software-quality-whats-that.html">&lt;p&gt;I’ve seen some dumb software in my travels and &lt;a href=&quot;http://www.mercury.com/us/products/quality-center/&quot;&gt;Mercury Quality Center&lt;/a&gt; is no exception; however this one has got me scratching my head.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1. (this article)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stealthpuppy.com/folder-redirection-2015-part-2/&quot;&gt;I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://stealthpuppy.com/folder-redirection-2015-part-3/&quot;&gt;I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Mercury Quality Center “provides a web-based system for &lt;em&gt;automated&lt;/em&gt; software quality testing and management”. It uses a browser front-end with ActiveX controls connecting to a back-end process (I really don’t know much about the back-end). Now, as you would expect from the product description, Mercury Quality Center should be a nice quality package from end to end. In my view this would include a scriptable client installation package. Scripting any client software installation is important because it should be a consistent repeatable process.&lt;/p&gt;
 
-&lt;p&gt;Last year, &lt;a href=&quot;http://twitter.com/helgeklein&quot;&gt;Helge Klein&lt;/a&gt;, &lt;a href=&quot;http://twitter.com/shawnbass&quot;&gt;Shawn Bass&lt;/a&gt; and myself presented the results of around of testing on Folder Redirection at events such as Citrix Synergy and BriForum and via &lt;a href=&quot;https://helgeklein.com/blog/2014/10/folder-redirection-impacts-ux-breaks-applications/&quot;&gt;a series of blog posts&lt;/a&gt;. This year, we again delved into various testing scenarios, presented to well attended sessions and this blog post summarises our 2015 results.&lt;/p&gt;
+&lt;p&gt;Except that’s where they strike out. The incredibly dumb thing about this is the client software is packaged up in an &lt;em&gt;InstallShield&lt;/em&gt; package which is only used to unpack some files and launch another custom installer. (See the screenshot). No silent install for you!&lt;/p&gt;
 
-&lt;h1 id=&quot;why-folder-redirection&quot;&gt;Why Folder Redirection?&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2007/02/1000.14.897.MercuryQualityCenterInstall.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Why does Folder Redirection continue to a topic of discussion? With the release of Windows 10, Folder Redirection will continue to remain a component of the enterprise desktop, as the basic architecture in Windows that requires it, has not changed. A Windows profile still contains user folders such as Documents, Desktop, etc. that need to be protected. Additionally the basic structure of the profile has not changed.&lt;/p&gt;
-
-&lt;p&gt;From our perspective, we’re interested in providing our audience with an overview of the pitfalls and challenges involved in implementing folder redirection, providing tips and tricks for managing folder redirection performance effectively and putting forward some potential alternatives.&lt;/p&gt;
-
-&lt;p&gt;Just as we continue to discuss printing in VDI and SBC environments because users still print, so to shall the discussion around folder redirection continue.&lt;/p&gt;
-
-&lt;p&gt;Folder redirection remains a popular method of user data and profile management because it can improve the user experience by achieving two things:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Faster logons - redirecting AppData out of the profile reduces the amount of data required to be copied locally at user logon&lt;/li&gt;
-  &lt;li&gt;Abstracting user data - moving user data out of the profile to a home folder ensures data is available on any desktop and allows IT to protect that data&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;However, by implementing folder redirection, we’ve moved data that applications constantly interact with from the local machine to a shared resource. This means that good user experience now requires your storage back-end and network to be responsive and highly available.&lt;/p&gt;
-
-&lt;p&gt;Those shared resources (network, storage, hypervisor, CPU etc.) contend for resources, especially in today’s data centre with traditional shared storage and with most applications and file services on a virtualized platform. This is what has driven us to to do this testing and present the results to the community - many organisations don’t consider the ramifications of implementing folder redirection. Performance on day 1 may be good, but as an environment grows organically and resources become further contended, user experience suffers.&lt;/p&gt;
-
-&lt;h1 id=&quot;2015-testing-focus&quot;&gt;2015 Testing Focus&lt;/h1&gt;
-
-&lt;p&gt;This year, we focussed our testing on several areas:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Comparing SMB 2.1 with SMB 3.02 - last year we tested primarily with Windows 7 as the client. In this round we’ve used Windows 8.1 as the client to see whether SMB 3.02 provides any improvements over SMB 2.1&lt;/li&gt;
-  &lt;li&gt;IO performance - does SMB 3.02 improve raw IO performance and throughput over SMB 2.1?&lt;/li&gt;
-  &lt;li&gt;Workload simulations - we’ve used the File Server Capacity Toolkit to model how users work with home folders to demonstrate the performance profiles of various scenarios and show you how you can do performance modelling for your file servers&lt;/li&gt;
-  &lt;li&gt;Folder redirection alternatives - newer file sync and share solutions that have been popular of the past several years may make interesting alternatives to folder redirection. I’ve &lt;a href=&quot;http://stealthpuppy.com/folder-redirection-offline-files-appsense-datanow-35/&quot;&gt;written about one of these previously&lt;/a&gt; and we have covered several more alternatives. I’ll cover some additional alternatives in seperate articles.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;All of our testing this year was performed with Windows 8.1 or Windows Server 2012 R2 on the client end, with Windows Server 2008 R2 or Windows Server 2012 R2 on the server end.&lt;/p&gt;
-
-&lt;p&gt;Utilising a specific version of SMB requires that both the client and server are capable of speaking that particular version of the protocol. If you want to read a thorough explanation of SMB versions and how they are negotiated, this article is recommended reading - &lt;a href=&quot;http://stealthpuppy.com/folder-redirection-offline-files-appsense-datanow-35/&quot;&gt;Windows Server 2012 R2: Which version of the SMB protocol (SMB 1.0, SMB 2.0, SMB 2.1, SMB 3.0 or SMB 3.02) are you using?&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I’ve already covered the tools that we’ve used in our testing in this blog post - &lt;a href=&quot;http://stealthpuppy.com/replicate-2015-folder-redirection-test/&quot;&gt;Replicating Our 2015 Folder Redirection Performance Tests In Your Own Lab&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In my own lab, all of the testing was done on the following hardware and software:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Core i5, 1 x SSD, Hyper-V 2012 R2&lt;/li&gt;
-  &lt;li&gt;Core i7, 3 x SSD, Hyper-V 2012 R2&lt;/li&gt;
-  &lt;li&gt;1 GbE physical network&lt;/li&gt;
-  &lt;li&gt;All compute and storage resources were uncontested (i.e. no other workloads were running)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;smb-21-vs-smb-302-io-and-throughput-performance&quot;&gt;SMB 2.1 vs. SMB 3.02 IO and Throughput Performance&lt;/h1&gt;
-
-&lt;p&gt;To determine any difference in throughput performance between SMB 2.1 and SMB 3.02, we’ve used the &lt;a href=&quot;http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx&quot;&gt;DiskSpd&lt;/a&gt; tool from Microsoft. With this tool, I performed tests from the client at various block sizes using a 256MB file hosted on an SMB share on the server. This was repeated for servers running Windows Server 2008 R2 and Windows Server 2012 R2.&lt;/p&gt;
-
-&lt;p&gt;In essence, we there are no performance differences between the two SMB versions:&lt;/p&gt;
-
-&lt;figure id=&quot;attachment_4018&quot; aria-describedby=&quot;caption-attachment-4018&quot; style=&quot;width: 1823px&quot; class=&quot;wp-caption alignnone&quot;&gt;[&lt;img class=&quot;size-full wp-image-4018&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2015/08/NetworkThroughput.png&quot; alt=&quot;No Difference in Network Throughput between SMB 2.1 and SMB 3.02&quot; width=&quot;1823&quot; height=&quot;914&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/NetworkThroughput.png 1823w, https://stealthpuppy.com/wp-content/uploads/2015/08/NetworkThroughput-150x75.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/NetworkThroughput-300x150.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/08/NetworkThroughput-1024x513.png 1024w&quot; sizes=&quot;(max-width: 1823px) 100vw, 1823px&quot; /&gt;](http://stealthpuppy.com/wp-content/uploads/2015/08/NetworkThroughput.png)&lt;figcaption id=&quot;caption-attachment-4018&quot; class=&quot;wp-caption-text&quot;&gt;No difference in network throughput between SMB 2.1 and SMB 3.02*&amp;lt;/figure&amp;gt;
-
-In the above test, the underlying hypervisor host was set to high performance mode, so I re-ran the same tests with the host set to balanced performance. This had an interesting result:
-
-&lt;figure id=&quot;attachment_4020&quot; aria-describedby=&quot;caption-attachment-4020&quot; style=&quot;width: 1823px&quot; class=&quot;wp-caption alignnone&quot;&gt;[&lt;img class=&quot;size-full wp-image-4020&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2015/08/4K8Kblocks-powerprofile.png&quot; alt=&quot;Power profile of the hypervisor host impacts 4K/8K block performance&quot; width=&quot;1823&quot; height=&quot;914&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/4K8Kblocks-powerprofile.png 1823w, https://stealthpuppy.com/wp-content/uploads/2015/08/4K8Kblocks-powerprofile-150x75.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/4K8Kblocks-powerprofile-300x150.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/08/4K8Kblocks-powerprofile-1024x513.png 1024w&quot; sizes=&quot;(max-width: 1823px) 100vw, 1823px&quot; /&gt;](http://stealthpuppy.com/wp-content/uploads/2015/08/4K8Kblocks-powerprofile.png)&lt;figcaption id=&quot;caption-attachment-4020&quot; class=&quot;wp-caption-text&quot;&gt;Power profile of the hypervisor host impacts 4K/8K block performance*&amp;lt;/figure&amp;gt;
-
-The throughput performance at 4K and 8K block sizes dropped off when compared to high performance mode. This makes sense when you consider that transferring a file at smaller block sizes requires more transactions between the client and server, so the server must process more. With less CPU resources available, performance suffers.
-
-Interestingly, it appears that SMB 2.1 read performance may suffer in the configuration more than SMB 3.02. Keep this in mind when we show results of some workloads tests and result with SMB 3.02, in part 2.
-
-Nimble Storage has [a great blog post that shows that across various workloads, the majority of block sizes are below 16K in size](http://www.nimblestorage.com/blog/technology/storage-performance-benchmarks-are-useful-if-you-read-them-carefully/). If this is the case for user home drives and user profiles, then there should be a performance gain by setting the hypervisor host (or even the physical file server host) to high-performance mode.
-
-Another tool was used ([i/o performance tool](http://sourceforge.net/projects/io-performance/)) to measure file copies from server to client. This showed very little overall performance difference between the two protocols but for whatever reason those file copies with SMB 3.02 on average were slightly longer than SMB 2.01.
-
-&lt;figure id=&quot;attachment_4023&quot; aria-describedby=&quot;caption-attachment-4023&quot; style=&quot;width: 912px&quot; class=&quot;wp-caption alignnone&quot;&gt;[&lt;img class=&quot;size-full wp-image-4023&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2.png&quot; alt=&quot;Choppier performance with SMB 3.02&quot; width=&quot;912&quot; height=&quot;461&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2.png 912w, https://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2-150x76.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2-300x152.png 300w&quot; sizes=&quot;(max-width: 912px) 100vw, 912px&quot; /&gt;](http://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2.png)&lt;figcaption id=&quot;caption-attachment-4023&quot; class=&quot;wp-caption-text&quot;&gt;Choppier performance with SMB 3.02*&amp;lt;/figure&amp;gt;
-
-Any difference between the two protocols wasn't shown in our user logon tests - a practical measure of any performance difference.
-
-# SMB 2.1 vs. 3.02 Logon Times
-
-To test logon times, we configured what we consider to be an enormous user profile and test environment with the following details:
-
-  * User profile - the same profile was used across client and server tests: 
-      * 151 Mb
-      * 18,460 file
-      * 2,206 folders (while the profile file size is not huge, the number of files has a significant impact on logon times)
-  * No folder redirection
-  * Idle CPU on the file server/s
-  * No locally cached copy of the profile at each logon
-
-The logon process was repeated across both Windows Server 2008 R2 and Windows Server 2012 R2 as the client and server, to test with hosts only capable of SMB 2.1 and clients and servers capable of both SMB 2.1 and SMB 3.02.
-
-&lt;figure id=&quot;attachment_4024&quot; aria-describedby=&quot;caption-attachment-4024&quot; style=&quot;width: 912px&quot; class=&quot;wp-caption alignnone&quot;&gt;[&lt;img class=&quot;size-full wp-image-4024&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2015/08/LogonTimes.png&quot; alt=&quot;No difference in logon times.&quot; width=&quot;912&quot; height=&quot;457&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/LogonTimes.png 912w, https://stealthpuppy.com/wp-content/uploads/2015/08/LogonTimes-150x75.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/LogonTimes-300x150.png 300w&quot; sizes=&quot;(max-width: 912px) 100vw, 912px&quot; /&gt;](http://stealthpuppy.com/wp-content/uploads/2015/08/LogonTimes.png)&lt;figcaption id=&quot;caption-attachment-4024&quot; class=&quot;wp-caption-text&quot;&gt;No difference in logon times.*&amp;lt;/figure&amp;gt;
-
-In short, there are no differences in logon times between the two protocol versions.
-
-# Part 2
-
-In part 2, I'll cover [the results of the File Server Capacity Tool tests](http://stealthpuppy.com/folder-redirection-2015-part-2).
-
-#
-&lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2015-05-28-synergy-2015-replay.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T08:21:52+10:00</published><updated>2019-04-09T08:21:52+10:00</updated><id>/2019/04/09/2015-05-28-synergy-2015-replay</id><content type="html" xml:base="/2019/04/09/2015-05-28-synergy-2015-replay.html">&lt;p&gt;Citrix have made available the recording of &lt;a href=&quot;http://stealthpuppy.com/citrix-synergy-2015/&quot;&gt;our session&lt;/a&gt; at Synergy 2015 in Orlando - &lt;a href=&quot;https://www.mycugc.org/p/do/sd/sid=25&quot;&gt;I’ve Got 99 Problems and Folder Redirection is Every One of Them&lt;/a&gt;. This is a standard 45-minute, level 400 session. &lt;a href=&quot;https://twitter.com/shawnbass&quot;&gt;Shawn&lt;/a&gt; and I will be repeating this as &lt;a href=&quot;http://briforum.com/US/sessions.html&quot;&gt;a 75-minute session at BriForum Denver&lt;/a&gt; with additional content and testing scenarios.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073.jpg&quot;&gt;&lt;img class=&quot;alignnone size-full wp-image-3955&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073.jpg&quot; alt=&quot;IMG_2073&quot; width=&quot;816&quot; height=&quot;370&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073.jpg 816w, https://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073-150x68.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073-300x136.jpg 300w&quot; sizes=&quot;(max-width: 816px) 100vw, 816px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;As a part of the Geek Speak Live track at Synergy 2015, this was the first time that these sessions have been recorded. Previous to this year, no recordings were made available.&lt;/p&gt;
-
-&lt;p&gt;Going forward all of the Geek Speak sessions will be made available the new &lt;a href=&quot;https://www.mycugc.org/p/do/sd/sid=25&quot;&gt;Citrix User Group Community&lt;/a&gt; (CUGC) site, so if you didn’t get to Synergy or unable to attend one of the Geek Speak sessions while you where there, &lt;a href=&quot;https://www.mycugc.org/p/do/si/topic=18&quot;&gt;you can catch up with all of them&lt;/a&gt; over at the new community site.&lt;/p&gt;
-
-&lt;p&gt;To watch these you’ll need to sign up for the CUGC site, so you can take full advantage of the additional great content there and contribute to the wider Citrix community.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2014-08-18-retrieving-a-vms-uuid-from-hyper-v.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T08:21:52+10:00</published><updated>2019-04-09T08:21:52+10:00</updated><id>/2019/04/09/2014-08-18-retrieving-a-vms-uuid-from-hyper-v</id><content type="html" xml:base="/2019/04/09/2014-08-18-retrieving-a-vms-uuid-from-hyper-v.html">&lt;p&gt;I’ve previously posted about retrieving the &lt;a href=&quot;http://en.wikipedia.org/wiki/Universally_unique_identifier&quot;&gt;UUID&lt;/a&gt; from &lt;a href=&quot;http://stealthpuppy.com/retrieving-a-vms-uuid-from-vsphere/&quot;&gt;a virtual machine hosted on vSphere&lt;/a&gt;. UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here’s how to obtain the UUID from a virtual machine hosted on Hyper-V.&lt;/p&gt;
-
-&lt;p&gt;Just like with vSphere, the UUID isn’t a property of the virtual machine that can be queried directly. We need to go via WMI to query the target virtual machine. Note that in this function, I’m using &lt;a href=&quot;http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/05/30/the-v2-wmi-namespace-in-hyper-v-on-windows-8.aspx&quot;&gt;version 2 of the Root\Virtualization WMI namespace&lt;/a&gt; (root\virtualization\v2. This means the function as written, will &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/hh850319(v=vs.85)&quot;&gt;only work on Windows 8 and Windows Server 2012&lt;/a&gt; (and above). If you want to use this function on earlier versions of Hyper-V, remove the “\v2” from the namespace.&lt;/p&gt;
-
-&lt;p&gt;As an example, here’s how to retrieve the UUIDs from a set of VMs on a target Hyper-V host named &lt;em&gt;hv1&lt;/em&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:\&amp;gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, file3, pvs1
-
-Name		BIOSGUID
-----		----
-WIN71		E6E1A176-0713-4BB0-99E9-4570A1A3A94A 
-FILE3		9E9D788A-15E2-4760-A049-9F6EB88677A9 
-PVS1		74EFF5BC-A24E-48C3-85BE-12D758FE7AB6
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here’s the full function code listing. Please let me know if you find any bugs:&lt;/p&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#---------------------------------------------------------------------------&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Author: Aaron Parker&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Desc:   Function that uses retrieves the UUID from a specified VM and&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#         formats it into the right format for use with MDT/SCCM etc&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Date:   Aug 18, 2014&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Site:   http://stealthpuppy.com&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#---------------------------------------------------------------------------&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;Function &lt;/span&gt;Get-HypervVMUUID &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;cm&quot;&gt;&amp;lt;#
-        .SYNOPSIS
-            Retrieve the UUID from a virtual machine or set of virtual machines.
- 
-        .DESCRIPTION
-            This function will retrieve the UUID from from a virtual machine or set of virtual machines from a Hyper-V host.
- 
-        .PARAMETER ComputerName
-            Specifies the host from which to query the virtual machine or set of virtual machines.
- 
-        .PARAMETER VM
-            Specifies the virtual machine or set of virtual machines (a comma delimited list) from which to obtain the UUID/s.
- 
-         .EXAMPLE
-            PS C:\&amp;amp;gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, win72
- 
-            This command retrieves the UUIDs from the virtual machines win71 and win72 from the host hv1.
- 
-        .EXAMPLE
-            PS C:\&amp;amp;gt; Get-HypervVMUUID -VM win71, win72
- 
-            This command retrieves the UUIDs from the virtual machines win71 and win72 from the local host.
- 
-        .EXAMPLE
-            PS C:\&amp;amp;gt; Get-HypervVMUUID
- 
-            This command retrieves the UUIDs from the all of the virtual machines on the local host.
- 
-        .NOTES
-            http://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/ for support information.
- 
-        .LINK
-            http://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/
-    #&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cmdletbinding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SupportsShouldProcess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$True&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Parameter&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Mandatory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;,HelpMessage&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Specifies one or more Hyper-V hosts from which virtual machine UUIDs are to be retrieved. NetBIOS names, IP addresses, and fully-qualified domain names are allowable. The default is the local computer — use &quot;&quot;localhost&quot;&quot; or a dot (&quot;&quot;.&quot;&quot;) to specify the local computer explicitly.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ComputerName&lt;/span&gt;,
-
-        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Parameter&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Mandatory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;, &lt;span class=&quot;nv&quot;&gt;Position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0,HelpMessage&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Specifies the virtual machine from which to retrieve the UUID.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VM&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# If ComputerName parameter is not specified, set value to the local host&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ComputerName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ComputerName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# If VM parameter is specified, return those VMs, else return all VMs&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nv&quot;&gt;$UUIDs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-VM -ComputerName &lt;span class=&quot;nv&quot;&gt;$ComputerName&lt;/span&gt; -VM &lt;span class=&quot;nv&quot;&gt;$VM&lt;/span&gt; -ErrorAction SilentlyContinue | &lt;span class=&quot;nb&quot;&gt;Select-Object &lt;/span&gt;Name,@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BIOSGUID&quot;&lt;/span&gt;;&lt;span class=&quot;nv&quot;&gt;Expression&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;={(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-WmiObject&lt;/span&gt; -ComputerName &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.ComputerName -Namespace &lt;span class=&quot;s2&quot;&gt;&quot;root\virtualization\v2&quot;&lt;/span&gt; -Class Msvm_VirtualSystemSettingData -Property BIOSGUID -Filter &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;InstanceID = 'Microsoft:{0}'&quot;&lt;/span&gt; -f &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.VMId.Guid&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.BIOSGUID&lt;span class=&quot;o&quot;&gt;}}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nv&quot;&gt;$UUIDs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-VM -ComputerName &lt;span class=&quot;nv&quot;&gt;$ComputerName&lt;/span&gt; -ErrorAction SilentlyContinue | &lt;span class=&quot;nb&quot;&gt;Select-Object &lt;/span&gt;Name,@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BIOSGUID&quot;&lt;/span&gt;;&lt;span class=&quot;nv&quot;&gt;Expression&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;={(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-WmiObject&lt;/span&gt; -ComputerName &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.ComputerName -Namespace &lt;span class=&quot;s2&quot;&gt;&quot;root\virtualization\v2&quot;&lt;/span&gt; -Class Msvm_VirtualSystemSettingData -Property BIOSGUID -Filter &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;InstanceID = 'Microsoft:{0}'&quot;&lt;/span&gt; -f &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.VMId.Guid&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.BIOSGUID&lt;span class=&quot;o&quot;&gt;}}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# Remove curly brackets from the UUIDs and return the array&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;ForEach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UUIDs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt;.BIOSGUID &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt;.BIOSGUID -replace &lt;span class=&quot;s2&quot;&gt;&quot;}&quot;&lt;/span&gt;; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt;.BIOSGUID &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt;.BIOSGUID -replace &lt;span class=&quot;s2&quot;&gt;&quot;{&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;Return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UUIDs&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2013-10-23-customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T08:21:52+10:00</published><updated>2019-04-09T08:21:52+10:00</updated><id>/2019/04/09/2013-10-23-customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance</id><content type="html" xml:base="/2019/04/09/2013-10-23-customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance.html">&lt;p&gt;&lt;a href=&quot;http://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen.png&quot;&gt;&lt;img class=&quot;alignright size-full wp-image-3506&quot; alt=&quot;WIndows81StartScreen&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen.png&quot; width=&quot;1020&quot; height=&quot;696&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen.png 1020w, https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen-150x102.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen-300x204.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen-624x425.png 624w&quot; sizes=&quot;(max-width: 1020px) 100vw, 1020px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;For enterprises, Windows 8.1 delivers the control around the Start Screen that should have been there in Windows 8.0, although I’m sure what they’ve delivered won’t appease everyone as there’s still no programmatic way to pin or unpin shortcuts from the Start Screen.&lt;/p&gt;
-
-&lt;p&gt;Windows 8.1 introduces &lt;a href=&quot;http://www.grouppolicy.biz/2013/06/customising-windows-8-1-start-screen-layout-with-group-policy/&quot;&gt;a Group Policy method for distributing a Start Screen layout&lt;/a&gt;, but that’s a policy - i.e. it’s enforced and unless you’re a control freak, that approach only makes sense in specific cases (e.g. schools, kiosks etc.). Note that &lt;a href=&quot;http://www.microsoft.com/en-us/windows/enterprise/products-and-technologies/windows-8-1/compare/default.aspx&quot;&gt;Start Screen control is only available in Windows 8.1 Enterprise and Windows RT 8.1&lt;/a&gt;, so you’re either paying SA or delivering the Surface RT/2 (or maybe even the &lt;a href=&quot;http://blogs.windows.com/windows/b/windowsexperience/archive/2013/10/22/nokia-announces-the-lumia-2520-windows-tablet-at-nokia-world.aspx&quot;&gt;Lumia 2520&lt;/a&gt;) to your users.&lt;/p&gt;
-
-&lt;p&gt;Microsoft have an article available on TechNet that describes a number of ways that you can configure the default Start Screen experience that will work for Windows 8/8.1, Window Server 2012 and Windows Server 2012 R2, but the choices are:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Create a reference image and use &lt;a href=&quot;http://technet.microsoft.com/en-us/library/hh825135.aspx&quot;&gt;the CopyProfile setting in unattend.xml to customise the default profile&lt;/a&gt; including the Start Screen&lt;/li&gt;
-  &lt;li&gt;Use the &lt;a href=&quot;http://technet.microsoft.com/en-us/library/jj552650.aspx&quot;&gt;StartTiles setting in unattend.xml&lt;/a&gt; to specify a list of tiles to add to the Start Screen&lt;/li&gt;
-  &lt;li&gt;Use SysPrep to generate AppsFolderLayout.bin and then copy that to the default profile&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Each one of those approaches looks tedious.&lt;/p&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;
-  Fortunately, there's a far easier way. Microsoft has added a couple of PowerShell cmdlets that provide for a way of getting your custom Start Screen layout into the default profile. These works for all edition of Windows 8.1 (even RT).
-&lt;/p&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;
-  This approach is really about customising the default Start Screen experience (i.e. first logon). If you want control of the Start Screen (users receive the same screen every session) you will need Windows 8.1 Enterprise or Windows Server 2012 R2. You can use this method to customise a reference image, an unattended deployment using RTM media or even an existing Windows installation.
-&lt;/p&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;
-  Here's what you need to do at a high level:
-&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Deploy and/or log onto a machine that has the applications that you want to pin to the Start Screen&lt;/li&gt;
-  &lt;li&gt;Customise that Start Screen to your heart’s content&lt;/li&gt;
-  &lt;li&gt;Export the Start Screen configuration with &lt;a href=&quot;http://technet.microsoft.com/en-us/library/dn283401.aspx&quot;&gt;Export-StartLayout&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Import the Start Screen configuration with &lt;a href=&quot;http://technet.microsoft.com/en-us/library/dn283403.aspx&quot;&gt;Import-StartLayout&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Exporting the Start Screen layout is simple, just ensure you export the configuration file in binary format, as Import-StartLayout won’t import XML files. Here’s the export command:&lt;/p&gt;
-
-&lt;pre class=&quot;lang:ps decode:true&quot;&gt;Export-StartLayout -As BIN -Path CustomStartScreenLayout.bin -Verbose&lt;/pre&gt;
-
-&lt;p&gt;Which should look like this:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout.png&quot;&gt;&lt;img class=&quot;alignright size-full wp-image-3510&quot; alt=&quot;Export-StartLayout&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout.png&quot; width=&quot;1216&quot; height=&quot;548&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout.png 1216w, https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout-150x67.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout-300x135.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout-1024x461.png 1024w, https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout-624x281.png 624w&quot; sizes=&quot;(max-width: 1216px) 100vw, 1216px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The documentation for &lt;a href=&quot;http://technet.microsoft.com/en-us/library/dn283403.aspx&quot;&gt;Import-StartLayout&lt;/a&gt; seems to indicate that this cmdlet only works against offline images (mounted with ImageX); however this isn’t the case - the cmdlet can be run against the current Windows installation.&lt;/p&gt;
-
-&lt;p&gt;That means that we can import a custom Start Screen layout during any type of deployment. For example, you could script the import of the customisation during an MDT or SCCM task sequence. The following command will import the customisation into the default profile of the local desktop. This will need to be run from an elevated command prompt.&lt;/p&gt;
-
-&lt;pre class=&quot;lang:batch decode:true&quot;&gt;POWERSHELL -NonInteractive -Command Import-StartLayout -LayoutPath .\CustomStartScreenLayout.bin -MountPath %SystemDrive%\&lt;/pre&gt;
-
-&lt;p&gt;Using MDT, this command runs as part of a script that customises the default profile. The process is ultimately pretty painless.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default.png&quot;&gt;&lt;img class=&quot;alignright size-full wp-image-3511&quot; alt=&quot;Windows8Default&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default.png&quot; width=&quot;841&quot; height=&quot;403&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default.png 841w, https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default-150x71.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default-300x143.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default-624x299.png 624w&quot; sizes=&quot;(max-width: 841px) 100vw, 841px&quot; /&gt;&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2013-03-24-retrieving-a-vms-uuid-from-vsphere.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T08:21:52+10:00</published><updated>2019-04-09T08:21:52+10:00</updated><id>/2019/04/09/2013-03-24-retrieving-a-vms-uuid-from-vsphere</id><content type="html" xml:base="/2019/04/09/2013-03-24-retrieving-a-vms-uuid-from-vsphere.html">&lt;p&gt;While working on a PowerShell script to drive OS deployment through MDT, I’ve needed to obtain the UUID from a target virtual machine. Unfortunately this isn’t just a property of the VM that you get through &lt;a href=&quot;http://www.vmware.com/support/developer/PowerCLI/PowerCLI41U1/html/Get-VM.html&quot;&gt;Get-VM&lt;/a&gt;. Instead you’ll need jump through a few hoops to retrieve the right UUID.&lt;/p&gt;
-
-&lt;p&gt;I’ve haven’t had to re-invent the wheel on this one, as I’ve taken some tips from this &lt;a href=&quot;http://communities.vmware.com/thread/239735&quot;&gt;VMware Community thread&lt;/a&gt; and &lt;a href=&quot;http://www.keithsmithonline.com/2013/02/powershell-show-vmware-vm-UUID.html&quot;&gt;a blog post by Ken Smith&lt;/a&gt;. I have simplified things a little by writing a function that you can use to return the UUID as a string from a virtual machine object (gathered from Get-VM) to the function.&lt;/p&gt;
-
-&lt;p&gt;To use the function, first ensure that &lt;a href=&quot;http://communities.vmware.com/community/vmtn/server/vsphere/automationtools/powercli&quot;&gt;PowerCLI&lt;/a&gt; is installed and that you’ve connected to a host or vCenter, so that a target VM can be returned and then passed to the function.&lt;/p&gt;
-
-&lt;p&gt;For example, I could use the following command to retrieve the UUID from a target VM:&lt;/p&gt;
-
-&lt;p&gt;[code language=”ps”]PS C:&amp;gt; Get-VM -VM “W7VM1” | Get-vSphereVMUUID&lt;br /&gt;
-554c0342-c2c7-c3b7-8258-96eb00f62b0c[/code]&lt;/p&gt;
-
-&lt;p&gt;Code listing below:&lt;/p&gt;
-
-&lt;p&gt;[code language=”ps”]#—————————————————————————&lt;br /&gt;
-# Author: Aaron Parker&lt;br /&gt;
-# Desc: Function that uses retrieves the UUID from a specified VM and&lt;br /&gt;
-# transposes it into the right format for use with MDT/SCCM etc&lt;br /&gt;
-# Date: Mar 24, 2013&lt;br /&gt;
-# Site: http://stealthpuppy.com&lt;br /&gt;
-#&lt;br /&gt;
-# Original code snippets from:&lt;br /&gt;
-# http://communities.vmware.com/thread/239735&lt;br /&gt;
-# http://www.keithsmithonline.com/2013/02/powershell-show-vmware-vm-UUID.html&lt;br /&gt;
-#—————————————————————————&lt;/p&gt;
-
-&lt;p&gt;Function Get-vSphereVMUUID {&lt;br /&gt;
-&amp;lt;#&lt;br /&gt;
-.SYNOPSIS&lt;br /&gt;
-Retrieves the UUID from a specified VM and formats it correctly for use with MDT/SCCM etc.&lt;/p&gt;
-
-&lt;p&gt;.DESCRIPTION&lt;br /&gt;
-Retrieves the UUID from a specified VM and formats it correctly for use with MDT/SCCM etc. Returns the UUID as a string that can be passed to other functions.&lt;/p&gt;
-
-&lt;p&gt;Requires that a VM object is passed to the function. That object will first have to be created before being passed to this function.&lt;/p&gt;
-
-&lt;p&gt;.PARAMETER VM&lt;br /&gt;
-Specifies the VM to retrieve the UUID from.&lt;/p&gt;
-
-&lt;p&gt;.EXAMPLE&lt;br /&gt;
-PS C:&amp;gt; Get-vSphereVMUUID -VM “W7VM1”&lt;/p&gt;
-
-&lt;p&gt;Retrieves the UUID from a VM named W7VM1.&lt;/p&gt;
-
-&lt;p&gt;.EXAMPLE&lt;br /&gt;
-PS C:&amp;gt; $VM | Get-vSphereVMUUID&lt;/p&gt;
-
-&lt;p&gt;Retrieves the UUID from a VM piped to this function.&lt;/p&gt;
-
-&lt;p&gt;.NOTES&lt;br /&gt;
-See http://stealthpuppy.com/ for support information.&lt;/p&gt;
-
-&lt;p&gt;.LINK&lt;br /&gt;
-http://stealthpuppy.com/code/retrieving-a-vms-uuid-from-vsphere/&lt;/p&gt;
-
-&lt;p&gt;#&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;[CmdletBinding(SupportsShouldProcess=$True)]&lt;br /&gt;
-Param(&lt;br /&gt;
-[Parameter(Mandatory=$True, ValueFromPipeline=$True, HelpMessage=”Specify the VM to retrive the UUID from.”)]&lt;br /&gt;
-[System.Object]$VM&lt;br /&gt;
-)&lt;/p&gt;
-
-&lt;p&gt;BEGIN {&lt;br /&gt;
-}&lt;/p&gt;
-
-&lt;p&gt;PROCESS {&lt;br /&gt;
-# Retrive UUID from vSphere&lt;br /&gt;
-$UUID = $VM | %{(Get-View $_.Id).config.UUID}&lt;/p&gt;
-
-&lt;p&gt;#Transpose UUID into expected format&lt;br /&gt;
-# Section 1&lt;br /&gt;
-$UUID11 = $UUID.Substring(0,2)&lt;br /&gt;
-$UUID12 = $UUID.Substring(2,2)&lt;br /&gt;
-$UUID13 = $UUID.Substring(4,2)&lt;br /&gt;
-$UUID14 = $UUID.Substring(6,2)&lt;/p&gt;
-
-&lt;p&gt;# Section 2&lt;br /&gt;
-$UUID21 = $UUID.Substring(9,2)&lt;br /&gt;
-$UUID22 = $UUID.Substring(11,2)&lt;/p&gt;
-
-&lt;p&gt;# Section 3&lt;br /&gt;
-$UUID31 = $UUID.Substring(14,2)&lt;br /&gt;
-$UUID32 = $UUID.Substring(16,2)&lt;/p&gt;
-
-&lt;p&gt;# Section 4&lt;br /&gt;
-$UUID41 = $UUID.Substring(19,4)&lt;/p&gt;
-
-&lt;p&gt;# Section 5&lt;br /&gt;
-$UUID51 = $UUID.Substring(24,12)&lt;/p&gt;
-
-&lt;p&gt;# Piece the strings together&lt;br /&gt;
-[string]$UUIDa = “$UUID14$UUID13$UUID12$UUID11”&lt;br /&gt;
-[string]$UUIDb = “$UUID22$UUID21”&lt;br /&gt;
-[string]$UUIDc = “$UUID32$UUID31”&lt;br /&gt;
-[string]$UUIDd = “$UUID41”&lt;br /&gt;
-[string]$UUIDe = “$UUID51”&lt;br /&gt;
-[string]$UUIDfixed = “$UUIDa-$UUIDb-$UUIDc-$UUIDd-$UUIDe”&lt;br /&gt;
-}&lt;/p&gt;
-
-&lt;p&gt;END {&lt;br /&gt;
-# Return the UUID&lt;br /&gt;
-Return $UUIDfixed&lt;br /&gt;
-}&lt;br /&gt;
-}[/code]&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2013-01-14-dont-miss-out-on-the-greatest-app-v-show-on-earth.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T08:21:52+10:00</published><updated>2019-04-09T08:21:52+10:00</updated><id>/2019/04/09/2013-01-14-dont-miss-out-on-the-greatest-app-v-show-on-earth</id><content type="html" xml:base="/2019/04/09/2013-01-14-dont-miss-out-on-the-greatest-app-v-show-on-earth.html">&lt;p&gt;&lt;img class=&quot;size-full wp-image-542 alignleft&quot; alt=&quot;softgridpresentation.png&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2008/04/softgridpresentation.png&quot; width=&quot;128&quot; height=&quot;128&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;February 8&lt;sup&gt;th&lt;/sup&gt; 2013 is the date for the &lt;a href=&quot;http://www.amiando.com/appvug2013.html?page=795419&quot; target=&quot;_blank&quot;&gt;2&lt;sup&gt;nd&lt;/sup&gt; European App-V User Group Conference&lt;/a&gt;, which will take place at &lt;a href=&quot;http://goo.gl/maps/6zkzc&quot; target=&quot;_blank&quot;&gt;Microsoft Netherlands HQ&lt;/a&gt; (right next to Schiphol Airport).&lt;/p&gt;
-
-&lt;p&gt;The first European App-V User Group in 2011 was a great success also due the overwhelming number of attendants. Over 100 people from 14 different countries took part in the event.&lt;/p&gt;
-
-&lt;p&gt;This is the chance to hear from a number of App-V MVPs, including &lt;a href=&quot;https://twitter.com/kirk_tn&quot;&gt;Falko Gräfe&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/znackattack&quot;&gt;Nicke Källén,&lt;/a&gt; &lt;a href=&quot;https://twitter.com/mentvanderplas&quot;&gt;Ment van der Plas&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/rspruijt&quot;&gt;Ruben Spruijt&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/Leodesk_IT&quot;&gt;Jurjen van Leeuwen&lt;/a&gt;, &lt;a href=&quot;https://twitter.com/ksaunamaki&quot;&gt;Kalle Saunamäki&lt;/a&gt; and &lt;a href=&quot;https://twitter.com/Rodney_Medina&quot;&gt;Rodney Medina&lt;/a&gt;. In addition, Madelinde Walraven and &lt;a href=&quot;http://blogs.msdn.com/b/sgern/&quot; target=&quot;_blank&quot;&gt;Sebastian Gernert&lt;/a&gt; from Microsoft Support will also be present.&lt;/p&gt;
-
-&lt;p&gt;The initiative is focused on bringing people from the App-V community together to learn about Microsoft App-V from the experts and to share experiences and real-world knowledge, plus it will be an excellent opportunity to learn about Microsoft App-V 5.0. The events is sponsored by Login Consultants, but is free from commercial messaging.&lt;/p&gt;
-
-&lt;p&gt;If you would like to participate, seats are limited to be sure to &lt;a href=&quot;http://www.amiando.com/appvug2013.html?page=795415&quot; target=&quot;_blank&quot;&gt;register&lt;/a&gt; ASAP. See the &lt;a href=&quot;http://www.amiando.com/appvug2013.html?page=795416&quot; target=&quot;_blank&quot;&gt;agenda&lt;/a&gt; for a list of all topics for the day.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, I can’t make it this year - I’ll be sipping some lagers in &lt;a href=&quot;http://goo.gl/maps/549Et&quot; target=&quot;_blank&quot;&gt;Bruges&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2012-05-18-slide-deck-from-synergy-geek-speak-session-user-environment-management-smackdown.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T08:21:52+10:00</published><updated>2019-04-09T08:21:52+10:00</updated><id>/2019/04/09/2012-05-18-slide-deck-from-synergy-geek-speak-session-user-environment-management-smackdown</id><content type="html" xml:base="/2019/04/09/2012-05-18-slide-deck-from-synergy-geek-speak-session-user-environment-management-smackdown.html">&lt;p&gt;At &lt;a href=&quot;http://www.citrixsynergy.com/sanfrancisco/index.html&quot;&gt;Citrix Synergy 2012&lt;/a&gt;, I had the distinct pleasure of moderating a Geek Speak panel:  ”User Environment Management smackdown 2012” with &lt;a href=&quot;http://twitter.com/shawnbass&quot;&gt;Shawn Bass&lt;/a&gt;, &lt;a href=&quot;http://twitter.com/helgeklein&quot;&gt;Helge Klein&lt;/a&gt;, &lt;a href=&quot;http://twitter.com/harrylabana&quot;&gt;Harry Labana&lt;/a&gt; from AppSense, &lt;a href=&quot;http://twitter.com/bobtopus&quot;&gt;Bob Janssen&lt;/a&gt; from RES Software and &lt;a href=&quot;http://twitter.com/mlarkin2012&quot;&gt;Mike Larkin&lt;/a&gt; from Citrix on the state of User Environment Management.&lt;/p&gt;
-
-&lt;p&gt;Feedback was good and I’m hoping that we might be able to do something new on this topic in Barcelona later this year.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately I don’t think it was recorded, but if you’d like to see the slide deck, I’ve embedded it (via SkyDrive) below:&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2011-12-08-dont-virtualize-adobe-reader-x.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T08:21:52+10:00</published><updated>2019-04-09T08:21:52+10:00</updated><id>/2019/04/09/2011-12-08-dont-virtualize-adobe-reader-x</id><content type="html" xml:base="/2019/04/09/2011-12-08-dont-virtualize-adobe-reader-x.html">&lt;p&gt;&lt;img class=&quot;alignright size-full wp-image-2581&quot; title=&quot;DontVirtualizeReader&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2011/12/DontVirtualizeReader.png&quot; alt=&quot;&quot; width=&quot;128&quot; height=&quot;128&quot; /&gt;Adobe released a new &lt;a href=&quot;http://www.adobe.com/support/security/advisories/apsa11-04.html&quot;&gt;security advisory for Reader and Acrobat 9 and X&lt;/a&gt; this week to address details of an upcoming fix to these versions for a 0 day vulnerability. Exploits for this vulnerability exist for Reader and Acrobat 9 and are currently active:&lt;/p&gt;
+&lt;p&gt;Who’s the dolt who created this? InstallShield’s not good enough to install your software? Surely quality software should extend to the installation experience as well? It makes you wonder.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2007-01-18-ts-logon-issues-its-not-what-you-think.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T09:49:05+10:00</published><updated>2019-04-09T09:49:05+10:00</updated><id>/2019/04/09/2007-01-18-ts-logon-issues-its-not-what-you-think</id><content type="html" xml:base="/2019/04/09/2007-01-18-ts-logon-issues-its-not-what-you-think.html">&lt;p&gt;Every six to eight months or so, I have an issue logging onto a Terminal Server and then have to research the issue each time from scratch because I can’t remember how I fixed it. Here’s how it starts - after logging onto a Terminal Server I receive the following helpful error message:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;A critical vulnerability has been identified in Adobe Reader X (10.1.1) and earlier versions for Windows and Macintosh, Adobe Reader 9.4.6 and earlier 9.x versions for UNIX, and Adobe Acrobat X (10.1.1) and earlier versions for Windows and Macintosh. This vulnerability (CVE-2011-2462) could cause a crash and potentially allow an attacker to take control of the affected system. There are reports that the vulnerability is being actively exploited in limited, targeted attacks in the wild against Adobe Reader 9.x on Windows.&lt;/p&gt;
+  &lt;p&gt;To log on to this computer, you must have Terminal Server User Access permissions on this computer. By default, members of the Remote Desktop Users group have these permissions. If you are not a member of the Remote Desktop User group or another group that has these permissions, or if the Remote Desktop User group does not have these permissions, you must be granted these permissions manually.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Since the release of Reader and Acrobat X, there have been no malware that has been effective against the &lt;a href=&quot;http://blogs.adobe.com/pdfitmatters/2011/06/protected-view-in-acrobat-x-version-10-1.html&quot;&gt;Protected Mode&lt;/a&gt; (sandbox) feature of version X. From &lt;a href=&quot;http://blogs.adobe.com/asset/2011/12/background-on-cve-2011-2462.html&quot;&gt;Adobe’s blog post on this issue&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;After troubleshooting by checking and double checking that the account I am using has the correct privileges to login remotely, I realise that I can still login to the console via MSTSC /CONSOLE. Sounds like licensing, so sure enough in the System log; an event with ID 1010 from source TermService is logged:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;I’d like to take this moment to encourage any remaining users still running Adobe Reader or Acrobat 9.x (or worse, older unsupported versions) to PLEASE upgrade to Adobe Reader or Acrobat X. We put a tremendous amount of work into securing Adobe Reader and Acrobat X, and, to date, there has not been a single piece of malware identified that is effective against a version X install. Help us help you by running the latest version of the software!&lt;/p&gt;
+  &lt;p&gt;The terminal server could not locate a license server. Confirm that all license servers on the network are registered in WINS/DNS, accepting network requests, and the Terminal Server Licensing Service is running.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;If you have any version of Adobe Reader other than X deployed, you should seriously consider migrating to the new version as a matter of priority. That’s not “lets consider doing this in the next month” - you should stop reading this post and &lt;a href=&quot;http://stealthpuppy.com/deployment/deploying-adobe-reader-x/&quot;&gt;get started deploying Reader X now&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Fixing the licensing issue fixes the logon issue and I can logon to the server remotely, but I’ve still wasted a 1/2 hour troubleshooting because the original error message lead me in a wrong direction. Surely Windows could present a dialog detailing the correct problem rather than something else completely, especially given that it logs a licensing related event at the same time.&lt;/p&gt;
 
-&lt;p&gt;Furthermore if are deploying or have deployed Reader X, I can’t recommend virtualizing it with application virtualization. The reason for this is that Protected Mode is not compatible and is not supported with application virtualization. It doesn’t work with &lt;a href=&quot;http://kb2.adobe.com/cps/907/cpsid_90705.html&quot;&gt;Citrix App Streaming&lt;/a&gt;, &lt;a href=&quot;http://stealthpuppy.com/virtualisation/virtualising-adobe-reader-x/&quot;&gt;Microsoft App-V&lt;/a&gt; or &lt;a href=&quot;http://communities.vmware.com/thread/329118&quot;&gt;VMware&lt;/a&gt; &lt;a href=&quot;http://communities.vmware.com/message/1714001&quot;&gt;ThinApp&lt;/a&gt; (it may be possible with the current version of ThinApp, but I haven’t confirmed).&lt;/p&gt;
-
-&lt;p&gt;[Update: thanks to prompting from &lt;a href=&quot;https://twitter.com/packageologist/&quot;&gt;Dan Gough&lt;/a&gt;, I’ve confirmed that Protected Mode in Reader X (10.1.1), works under App-V 4.6.1.30091 (Hotfix 4)]&lt;/p&gt;
-
-&lt;p&gt;[Update 2: Protected Mode in Reader X is confirmed to work under ThinApp 4.6.2 and 4.7. You’ll have to update your virtual applications and re-enable Protected Mode with the latest releases]&lt;/p&gt;
-
-&lt;p&gt;In short - leaving Protected Mode enabled will protect your users and devices and because Protected Mode has been incompatible with the isolation that application virtualisation introduces, I recommend that you do not deploy Reader X with application virtualization solutions unless you are using the very latest versions.&lt;/p&gt;
-
-&lt;p&gt;But.. what about those scenarios when a virtualized application needs to call a locally installed Reader X? Until the app virt vendors fully support Protected Mode, the best you can do is ensure that Protected Mode is only disabled when Reader runs within the virtualization environment (using a tool like &lt;a href=&quot;http://www.gpanswers.com/1.html?w=PPXEND&amp;amp;p=parker&quot;&gt;PolicyPak&lt;/a&gt;) and is not completely disabled. Until then, the best we can do is cross our fingers and hope it doesn’t happen to us.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2010-09-24-troubleshoot-with-the-app-v-client-log.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T08:21:52+10:00</published><updated>2019-04-09T08:21:52+10:00</updated><id>/2019/04/09/2010-09-24-troubleshoot-with-the-app-v-client-log</id><content type="html" xml:base="/2019/04/09/2010-09-24-troubleshoot-with-the-app-v-client-log.html">&lt;p&gt;&lt;img style=&quot;margin: 0px 10px 5px 0px; display: inline;&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png&quot; alt=&quot;&quot; align=&quot;right&quot; /&gt;If you have successfully virtualised an application, imported the package into the Management Server but you are having issues publishing the package, streaming the application or getting it to launch, the first place to start is the &lt;a href=&quot;http://technet.microsoft.com/en-us/library/cc817165.aspx&quot;&gt;the App-V client log&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The client log settings are managed in the Application Virtualization Client console (SFTCMC.MSC) – start the console and the logging settings can be viewed on the General tab:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties.png&quot;&gt;&lt;img style=&quot;background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&quot; title=&quot;ClientProperties&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties_thumb.png&quot; border=&quot;0&quot; alt=&quot;ClientProperties&quot; width=&quot;414&quot; height=&quot;479&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;There are actually two places to which the the client will log errors – the Application event log (shown in the image under &lt;em&gt;System Log Level&lt;/em&gt;) and the client log file; however the log file is generally the easiest to use when troubleshooting because it’s a flat text file.&lt;/p&gt;
-
-&lt;h3 id=&quot;using-the-client-log-file&quot;&gt;Using the client log file&lt;/h3&gt;
-
-&lt;p&gt;The default location for the log file is &lt;em&gt;%ProgramData%\Microsoft\Application Virtualization Client\sftlog.txt&lt;/em&gt;. To view the log you can use something as simple as Notepad, but if you want to view it in real time, use SMS Trace (Trace32) from the &lt;a href=&quot;http://www.microsoft.com/downloads/en/details.aspx?displaylang=en&amp;amp;FamilyID=5a47b972-95d2-46b1-ab14-5d0cbce54eb8&quot;&gt;ConfigMgr 2007 Toolkit&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To get more information out of the client, enable verbose mode, which will enable you to better identify the cause.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Open the client console and view the client properties&lt;/li&gt;
-  &lt;li&gt;Set the Log Level to &lt;em&gt;Verbose&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Click the &lt;em&gt;Reset Log&lt;/em&gt; button to start with a clean log file&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Resetting the log will rename the existing file and start a new one:&lt;/p&gt;
-
-&lt;p&gt;&lt;img style=&quot;background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&quot; title=&quot;LogLocation&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2010/09/LogLocation.png&quot; border=&quot;0&quot; alt=&quot;LogLocation&quot; width=&quot;660&quot; height=&quot;200&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: once you have finished troubleshooting, don’t forget to set the logging level back to &lt;em&gt;Information&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;heres-an-example&quot;&gt;Here’s an example&lt;/h3&gt;
-
-&lt;p&gt;In my test environment, I have a client machine (WIN71) and an App-V Management Server (APPV). I’ve imported a virtualised copy of Adobe Reader and assigned it to a set of users. On the client I have configured APPV as a publishing server; however when refreshing the client no shortcuts for Reader are created.&lt;/p&gt;
-
-&lt;p&gt;Viewing the App-V client log, I’ve narrowed down the following lines that show what’s going on during the refresh:&lt;/p&gt;
-
-&lt;p&gt;[code][09/23/2010 22:03:50:885 SWAP WRN] {tid=B60:usr=aaron}&lt;br /&gt;
-Could not load OSD file \domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd&lt;/p&gt;
-
-&lt;p&gt;[09/23/2010 22:03:50:900 AMGR INF] {tid=B60:usr=aaron}&lt;br /&gt;
-The app manager could not create an application from ‘\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd’ (rc 0C405564-00000002).[/code]&lt;/p&gt;
-
-&lt;p&gt;If I set the log to verbose and try the refresh action again, I get more detail:&lt;/p&gt;
-
-&lt;p&gt;[code][09/23/2010 22:45:28:684 AMGR VRB] {tid=B14:usr=woody}CreateApp(osd=\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, icon=\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9_x86 Icons\AdobeReader9.ico)&lt;/p&gt;
-
-&lt;p&gt;[09/23/2010 22:45:28:685 AMGR VRB] {tid=B14:usr=woody}&lt;br /&gt;
-Parsing type from url \domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd&lt;/p&gt;
-
-&lt;p&gt;[09/23/2010 22:45:28:686 SWAP VRB] {tid=B14:usr=woody}&lt;br /&gt;
-Initialize(osd=\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, origUrl=NULL)&lt;/p&gt;
-
-&lt;p&gt;[09/23/2010 22:45:28:687 OMGR VRB] {tid=B14:usr=woody}&lt;br /&gt;
-GetOsdFile(url=\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, origUrl=NULL name=NULL, ver=NULL)&lt;/p&gt;
-
-&lt;p&gt;[09/23/2010 22:45:28:688 OSDF VRB] {tid=B14:usr=woody}&lt;br /&gt;
-SWOsdFile(url=\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, origUrl=NULL, name=NULL, ver=NULL)&lt;/p&gt;
-
-&lt;p&gt;[09/23/2010 22:45:28:710 OSDF VRB] {tid=B14:usr=woody}&lt;br /&gt;
-~SWOsdFile()&lt;/p&gt;
-
-&lt;p&gt;[09/23/2010 22:45:28:712 OSDF VRB] {tid=B14:usr=woody}&lt;br /&gt;
-~SWOsdFile() complete&lt;/p&gt;
-
-&lt;p&gt;[09/23/2010 22:45:28:726 SWAP WRN] {tid=B14:usr=woody}&lt;br /&gt;
-Could not load OSD file \domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd&lt;/p&gt;
-
-&lt;p&gt;[09/23/2010 22:45:28:727 AMGR INF] {tid=B14:usr=woody}&lt;br /&gt;
-The app manager could not create an application from ‘\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd’ (rc 0C405564-00000002).[/code]&lt;/p&gt;
-
-&lt;p&gt;If check the actual location of the OSD file, I can see that the package is not in the correct path (its actually located at \domain.local\Public\Apps\Adobe\AdobeReader9_x86):&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stealthpuppy.com/wp-content/uploads/2010/09/OSDLocation.png&quot;&gt;&lt;img style=&quot;background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&quot; title=&quot;OSDLocation&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2010/09/OSDLocation_thumb.png&quot; border=&quot;0&quot; alt=&quot;OSDLocation&quot; width=&quot;660&quot; height=&quot;200&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;To fix this issue, I need to update the application properties in the App-V Management console, I can then refresh the client again and the application will be published correctly.&lt;/p&gt;
-
-&lt;h3 id=&quot;error-codes&quot;&gt;Error Codes&lt;/h3&gt;
-
-&lt;p&gt;This was a very simple example and the fix was quite obvious. In all cases though, the client log will include an error code – the same code will often be displayed in a dialog box:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://stealthpuppy.com/wp-content/uploads/2010/09/ClientError.png&quot;&gt;&lt;img style=&quot;background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;&quot; title=&quot;ClientError&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2010/09/ClientError_thumb.png&quot; border=&quot;0&quot; alt=&quot;ClientError&quot; width=&quot;466&quot; height=&quot;244&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;If the problem is not immediately apparent in the log, start looking for a solution by using the error code. Falko Gräfe has an excellent article that explains &lt;a href=&quot;http://www.kirx.org/app-v/read/error-codes-en.html&quot;&gt;how to interpret these error codes&lt;/a&gt;. In most cases, there will be &lt;a href=&quot;http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code&quot;&gt;an associated Microsoft knowledgebase article&lt;/a&gt; that should give a solution for the error.&lt;/p&gt;
-
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+&lt;p&gt;The Citrix support site has detailed documents on troubleshooting Terminal Server logon issues, far better than anything I could find on the Microsoft support site:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://technet.microsoft.com/en-us/library/cc817103.aspx&quot;&gt;Log File for the Application Virtualization Client&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://technet.microsoft.com/en-us/library/cc817165.aspx&quot;&gt;How to Configure the Client Log File&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blogs.technet.com/b/appv/archive/2009/01/26/troubleshooting-app-v-with-log-files.aspx&quot;&gt;Troubleshooting App-V with log files&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/939896/&quot;&gt;﻿﻿How to use the Process Monitor tool to generate a log file for an application in the App-V virtual environment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.microsoft.com/downloads/en/details.aspx?displaylang=en&amp;amp;FamilyID=5a47b972-95d2-46b1-ab14-5d0cbce54eb8&quot;&gt;System Center Configuration Manager 2007 Toolkit V2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;amp;FamilyID=72876c60-3a87-4705-b722-f73eb56219bf&quot;&gt;Application Virtualization Client Log Parser Utility&lt;/a&gt; (and &lt;a href=&quot;http://blogs.technet.com/b/appv/archive/2008/11/06/app-v-4-5-resource-kit-application-virtualization-client-log-parser-utility.aspx&quot;&gt;how to use it&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/AppPubandClientInteraction.docx&quot;&gt;App-V Application Publishing and Client Interaction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.kirx.org/app-v/read/error-codes-en.html&quot;&gt;App-V Client Error Codes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code&quot;&gt;App-V Error Codes search&lt;/a&gt; on Microsoft Support&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2010-03-27-virtualising-firefox-dont-forget-to-disable-updates-2.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T08:21:52+10:00</published><updated>2019-04-09T08:21:52+10:00</updated><id>/2019/04/09/2010-03-27-virtualising-firefox-dont-forget-to-disable-updates-2</id><content type="html" xml:base="/2019/04/09/2010-03-27-virtualising-firefox-dont-forget-to-disable-updates-2.html">&lt;p&gt;If you are virtualising Mozilla Firefox, you should probably consider disabling the update functionality within the browser, to ensure consistency of the virtual package. There are several items that need to be configured or removed:&lt;/p&gt;
+  &lt;li&gt;&lt;a href=&quot;http://support.citrix.com/article/CTX106920&quot;&gt;CTX106920 - Error: You do not have access to logon to this Session….&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://support.citrix.com/article/CTX564283&quot;&gt;CTX564283 - Troubleshooting 1003 and 1004 Terminal Server Licensing Errors&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2006-12-07-access-gateway-vs-secure-gateway-part-2-its-in-the-details.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T09:49:05+10:00</published><updated>2019-04-09T09:49:05+10:00</updated><id>/2019/04/09/2006-12-07-access-gateway-vs-secure-gateway-part-2-its-in-the-details</id><content type="html" xml:base="/2019/04/09/2006-12-07-access-gateway-vs-secure-gateway-part-2-its-in-the-details.html">&lt;p&gt;In &lt;a href=&quot;http://www.stealthpuppy.com/blogs/travelling/archive/2006/10/24/Access-Gateway-vs-Secure-Gateway-and-a-case-of-mistaken-Identity.aspx&quot;&gt;part 1&lt;/a&gt; I discussed how I believe that proving identity should be your most important consideration when deciding to implement the Citrix Access Gateway or Secure Gateway for remote access. In this second part I want to discuss some of the features of both the Access Gateway (CAG) and the Secure Gateway (CSG) and how they compare.&lt;/p&gt;
+
+&lt;h2 id=&quot;licensing&quot;&gt;Licensing&lt;/h2&gt;
+
+&lt;p&gt;One of the biggest differences between these two solutions is licensing. CSG comes as a part of Presentation Server and does not require any additional licensing. You will have to pay for a Windows Server license on which to run CSG however. The CAG, on the other hand, uses concurrent user licenses that are purchased separately to your Presentation Server licenses. You will also have to purchase the CAG hardware as the license agreement prohibits you from running the CAG software on any device not purchased from Citrix.&lt;/p&gt;
+
+&lt;h2 id=&quot;presentation-server-integration&quot;&gt;Presentation Server Integration&lt;/h2&gt;
+
+&lt;p&gt;Strictly speaking, Presentation Server is not integrated into either the CAG or the CSG, though they do both provide an SSL relay function to Presentation Server. User interface access to published applications is provided via Web Interface (WI) or Advanced Access Control (AAC, a component of Access Gateway Advanced Edition). What the CAG has over the CSG is integration with AAC. AAC makes it simple to control what users can do in their ICA sessions and what applications are available externally. In this sense, it’s easier to manage application access via AAC than it is via CAG and WI or CSG and WI alone.&lt;/p&gt;
+
+&lt;h2 id=&quot;other-features&quot;&gt;Other Features&lt;/h2&gt;
+
+&lt;p&gt;This is where the similarities between the two gateway solutions end. Secure Gateway does not offer any of the advanced features of the Access Gateway such as:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;The automatic updates functionality&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Help / Check for Updates…&lt;/em&gt; menu item&lt;/li&gt;
-  &lt;li&gt;The &lt;em&gt;Firefox&lt;/em&gt; check-box in the &lt;em&gt;Option / Advanced / Updates&lt;/em&gt; dialog box&lt;/li&gt;
+  &lt;li&gt;SSL: this is essentially a Winsock redirector client that’s improves on an L2TP/IPSec or PPTP VPN by not relying on routes and using SSL only;&lt;/li&gt;
+  &lt;li&gt;Web Application Access: users can access internal web applications including integration with SharePoint Server;&lt;/li&gt;
+  &lt;li&gt;Web-based File Share Access: users are able access internal file shares via a web browser with access to features such as uploading files control depending on the access scenario. Word, Excel, PowerPoint, Visio and PDF files can also be viewed directly in the browser without the requirement for local applications;&lt;/li&gt;
+  &lt;li&gt;Web-based E-mail: provide users integrated access to Outlook Web Access or iNotes. Citrix also provides a custom interface which allows the administrator to define what users can do in their session such as downloading attachments.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Fortunately doing so is fairly straight-forward:&lt;/p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
-&lt;h3 id=&quot;disable-automatic-updates&quot;&gt;Disable Automatic Updates&lt;/h3&gt;
+&lt;p&gt;If you are looking to implement remote access with either of the Citrix offerings, don’t listen to the hype - choose the option that best fits. Before you choose the Access Gateway (and I’m sure you’ll be happy you did) answer the question of user identity first. I recommend starting &lt;a href=&quot;http://www.citrix.com/English/ps2/products/feature.asp?contentID=26143&quot;&gt;here&lt;/a&gt; for information on the Access Gateway.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2006-10-31-now-thats-not-what-i-expected.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T09:49:05+10:00</published><updated>2019-04-09T09:49:05+10:00</updated><id>/2019/04/09/2006-10-31-now-thats-not-what-i-expected</id><content type="html" xml:base="/2019/04/09/2006-10-31-now-thats-not-what-i-expected.html">&lt;p&gt;I’ve been checking out the excellent &lt;a href=&quot;http://www.ultramon.com/&quot;&gt;UltraMon&lt;/a&gt; on Windows Vista, which provides some cool hacks for multiple displays under Windows. One of the excellent hacks is the ability to assign a hotkey that moves an application between screens - when you hit the hotkey the application or window appears on the next screen, very handy. However, this appears to work on the Start Menu too. I’m not sure if this happens on Windows XP but here’s what you get with the Start Menu open and then hit the hotkey:&lt;/p&gt;
 
-&lt;p&gt;Updates are disabled in the &lt;em&gt;Options / Advanced / Updates&lt;/em&gt; dialog box (under Windows), which you can do when running Firefox during the sequencing/capture process - untick the &lt;em&gt;Firefox&lt;/em&gt; check box and change &lt;em&gt;When updates to Firefox are found&lt;/em&gt; to &lt;em&gt;Ask me what to do&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2007/06/1000_14_167_startmenu1.jpg&amp;quot;&quot; alt=&quot;Start menu&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Alternatively set &lt;em&gt;app.update.auto&lt;/em&gt; and &lt;em&gt;app.update.enabled&lt;/em&gt; to false in about:config or directly in &lt;code class=&quot;highlighter-rouge&quot;&gt;%APPDATA%\Mozilla\Firefox\Profiles\&amp;lt;profile&amp;gt;.default\prefs.js&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;When you hit the hotkey again you get this:&lt;/p&gt;
 
-&lt;p&gt;Leave &lt;em&gt;Add-ons&lt;/em&gt; and &lt;em&gt;Search Engines&lt;/em&gt; enabled as these are stored within the user profile and can be updated when running under application virtualisation.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2007/06/1000_14_168_startmenu2.jpg&quot; alt=&quot;Start menu&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;disable-the-updates-ui&quot;&gt;Disable the Updates UI&lt;/h3&gt;
+&lt;p&gt;As you can see the user tile stays where it is and if you keep hitting your hotkey the start menu moves back and forth between these two locations. It must be a feature ;).&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2006-07-18-citrix-aac-and-microsofts-nap.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T09:49:05+10:00</published><updated>2019-04-09T09:49:05+10:00</updated><id>/2019/04/09/2006-07-18-citrix-aac-and-microsofts-nap</id><content type="html" xml:base="/2019/04/09/2006-07-18-citrix-aac-and-microsofts-nap.html">&lt;p&gt;One of the great features of Citrix Advanced Access Control is the ability to control access to internal resources from trusted machines with End Point Analysis. Citrix have implemented their own client and server components to perform end-point analysis and ensure that client machines are safe for access.&lt;/p&gt;
 
-&lt;p&gt;Disabling the user interface elements to these update preferences and launch points is also important. To hide UI elements in Firefox, create &lt;em&gt;&lt;a href=&quot;http://www.mozilla.org/unix/customizing.html&quot;&gt;UserChrome.css&lt;/a&gt;&lt;/em&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;%APPDATA%\Mozilla\Firefox\Profiles\&amp;lt;profile&amp;gt;.default\chrome&lt;/code&gt;. This file does not exist by default, although you will find an example file in the chrome folder. Create the file and add the following lines to hide the updates menu item and the Firefox check-box in the Updates dialog box.&lt;/p&gt;
+&lt;p&gt;Microsoft are implementing their own tools for controlling access to the network with &lt;a href=&quot;http://www.microsoft.com/nap&quot;&gt;Network Access Protection&lt;/a&gt;. Microsoft are touting NAP as a platform rather than a product. Third parties will be able to extend NAP with server components (Symantec for example, will be able to make their AntiVirus server NAP aware). The client from Microsoft will be integrated into Windows Vista and Longhorn Server, plus supported on Windows XP Service Pack 2 and Windows Server 2003 Service Pack 1. Support for third party clients will also be made available (from 3rd party vendors, not Microsoft), so that NAP can be extended to Linux and Mac OS machines.&lt;/p&gt;
 
-&lt;p&gt;[code]/* remove the Check for Updates menu item */&lt;br /&gt;
-#updateSeparator, #checkForUpdates { display: none !important; }&lt;br /&gt;
-/* remove the Updates / Firefox checkbox */&lt;br /&gt;
-#enableAppUpdate { display: none !important; }[/code]&lt;/p&gt;
+&lt;p&gt;Given the fairly broad install base that the NAP client will eventually enjoy and what I expect to be broad support from third party vendors, surely it would be advantageous to remove the End Point Analysis components from AAC and support NAP instead. This way AAC could interoperate with complete platform including any components that will extend NAP beyond what is out if the box. AAC could also then support other clients rather than just Windows 2000 Service Pack 4 and Windows XP Service Pack 2 that the current version supports. As as network engineer, it would be far simpler to support a single policy framework.&lt;/p&gt;
 
-&lt;p&gt;If it is working correctly, you should see something like this (before and after):&lt;/p&gt;
+&lt;p&gt;There’s a reasonably detailed webcast about NAP worth checking out that can be found &lt;a href=&quot;https://www118.livemeeting.com/cc/mseventsbmo/view?id=1032297525&amp;amp;role=attend&amp;amp;pw=63A049C8&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2006-05-22-we-dont-need-no-stinking-anti-virus.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T09:49:05+10:00</published><updated>2019-04-09T09:49:05+10:00</updated><id>/2019/04/09/2006-05-22-we-dont-need-no-stinking-anti-virus</id><content type="html" xml:base="/2019/04/09/2006-05-22-we-dont-need-no-stinking-anti-virus.html">&lt;p&gt;I’ve recently had conversations about running anti-virus software on some specialised servers. Specifically Windows Servers running ISA Server 2004 or VMware Server (or Virtual Server). The argument for installing anti-virus software on these servers is to ensure they are protected against viruses and worms. I’ve been arguing against installing anti-virus software to ensure maximum performance. The reasons I have argued against are the following:&lt;/p&gt;
 
-&lt;p&gt;&lt;img style=&quot;display: inline; border: 0px;&quot; title=&quot;FirefoxOptions&quot; src=&quot;http://stealthpuppy.com/wp-content/uploads/2010/03/FirefoxOptions.png&quot; border=&quot;0&quot; alt=&quot;FirefoxOptions&quot; width=&quot;660&quot; height=&quot;501&quot; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The server should utilise a known, good configuration. That is, a scripted build so that installation can be repeated or easily documented, and good change management;&lt;/li&gt;
+  &lt;li&gt;Other than services, code should not be executed on the server. The administrator should never browse the Internet on the server, for example;&lt;/li&gt;
+  &lt;li&gt;A patch managment process should be in place to keep the operating system and applications current;&lt;/li&gt;
+  &lt;li&gt;A host-based firewall should be implemented (ISA Server 2004 firewalls all interfaces). Firewall rules should be stringent, only allowing trusted traffic to the host;&lt;/li&gt;
+  &lt;li&gt;Management of the servers should be performed remotely with the administration tools installed on an administrators workstation. It could be argued, however, that for ISA Server, perhaps only allowing RDP inbound would be more secure.&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;This method is not completely fool-proof (the modified files all exist in the user profile and are thus writeable) but it should stop users from unwittingly attempting to update Firefox and allow you to control when updates are deployed.&lt;/p&gt;</content><author><name></name></author></entry></feed>
+&lt;p&gt;I don’t run anti-virus software on my home machine - I actually haven’t done for about two years. It comes down to how the machine is used:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The Windows XP host-based firewall is enabled;&lt;/li&gt;
+  &lt;li&gt;The machine is patched and applications are kept up-to-date as well;&lt;/li&gt;
+  &lt;li&gt;I use a second copy of Windows XP in a VM to test software and control what is installed on the host;&lt;/li&gt;
+  &lt;li&gt;E-mail is scanned before being downloaded locally.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The point is controlling what can run rather than attempting to control what cannot run. Apparently this is the way the original version of Norton AntiVirus worked, until they found there was more money in definition updates. Windows XP and Windows Server 2003 include &lt;a href=&quot;http://technet2.microsoft.com/WindowsServer/en/Library/90b75a83-bca7-4871-a661-d67eafcfd86c1033.mspx&quot;&gt;Software Restriction Policy&lt;/a&gt; that can be used to define what software can run on a system. This is not a new concept, but it make far more sense than, in this age of 0 day exploits, ensuring definitions are up-to-date.&lt;/p&gt;
+
+&lt;p&gt;Software Restriction Policy can be a challenge to implement in complex scenarios, however there are a number of third party tools available, including &lt;a href=&quot;http://www.appsense.com/default.asp&quot;&gt;AppSense Application Manager&lt;/a&gt; (excellent gear) and &lt;a href=&quot;http://www.desktopstandard.com/PolicyMakerApplicationSecurity.aspx&quot;&gt;DesktopStandard PolicyMaker Application Security&lt;/a&gt; (haven’t tested this tool yet). I’ve also come across &lt;a href=&quot;http://force.coresecurity.com/&quot;&gt;Core Force&lt;/a&gt;. This tool is free but only for the technically advanced.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2005-08-25-didnt-we-just-have-an-ad.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T09:49:05+10:00</published><updated>2019-04-09T09:49:05+10:00</updated><id>/2019/04/09/2005-08-25-didnt-we-just-have-an-ad</id><content type="html" xml:base="/2019/04/09/2005-08-25-didnt-we-just-have-an-ad.html">&lt;p&gt;There are 3 reasons why I use Firefox:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Standards support;&lt;/li&gt;
+  &lt;li&gt;Tabs;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://adblock.mozdev.org/&quot;&gt;Adblock&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Adblock makes using the Internet usable again by blocking unwanted elements in web pages and it does this very well. Unfortunately there is no version for Internet Explorer, and I’m painfully reminded of that everytime I go back to IE. You can utilise the HOSTS file but this is a little cumbersome. However I found &lt;a href=&quot;http://hostsman.abelhadigital.com/&quot;&gt;HostsMan&lt;/a&gt; via &lt;a href=&quot;http://www.mvps.org/winhelp2002/hosts.htm&quot;&gt;MVPS.org&lt;/a&gt; yesterday. This is a very well designed tool that works extremely well and allows for automatically downloading HOSTS lists from MVPS.org and &lt;a href=&quot;http://www.hosts-file.net/&quot;&gt;hpHosts&lt;/a&gt;, integrating this into your local HOSTS file and for quickly editing the hosts file. It even includes a HTTP server for serving a page for the blocked host (It listens on 127.0.0.x only).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://pwp.netcabo.pt/0413933601/abelhadigital/pics/hostsman201.jpg&amp;quot;&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This then got me thinking about blocking hosts in an ISA Server rule. At the moment I import the list via a custom VBScript into a domain set and create a rule to redirect access to those hosts to an internal web server that returns a simple white page. However, managment of the domain list is cumbersome when that list is very large. By using HostsMan, I could import the list into the local HOSTS file, create a rule that redirects all requests for some IP address, e.g. 172.16.100.200, configure the HOSTs file appropriately and voila! A nice easy method for blocking access to and maintaining a list of ad sites and even spyware/nasty sites. Would this be faster? ISA Server doesn’t have to check the domain set. Hmm.. need to test.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2015-08-06-folder-redirection-2015-part-3.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T09:49:05+10:00</published><updated>2019-04-09T09:49:05+10:00</updated><id>/2019/04/09/2015-08-06-folder-redirection-2015-part-3</id><content type="html" xml:base="/2019/04/09/2015-08-06-folder-redirection-2015-part-3.html">&lt;p&gt;This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stealthpuppy.com/folder-redirection-2015-part-1/&quot;&gt;I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stealthpuppy.com/folder-redirection-2015-part-2/&quot;&gt;I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3. (this article)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;file-access-performance&quot;&gt;File Access Performance&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://twitter.com/magnarjohnsen&quot;&gt;Magnar Johnsen&lt;/a&gt; detailed an interesting scenario where application performance suffered when &lt;a href=&quot;http://j.mp/ini-smb&quot;&gt;moving a XenApp environment from Windows Server 2008 R2 to Windows Server 2o12 R2&lt;/a&gt;. Magnar documented the results of the changing of OS versions had on application performance - due to the way in which a specific application reads settings from an INI file, a mismatch between the client and server was creating file access performance issues.&lt;/p&gt;
+
+&lt;p&gt;To replicate the testing, Helge wrote a small utility that can be used to simulate the file access performance by reading and writing from a file using different methods. The tool, &lt;a href=&quot;https://helgeklein.com/blog/2015/08/fileiotest-times-duration-file-io-operations/&quot;&gt;FileIOTest&lt;/a&gt; runs 4 different tests:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Write with custom function (creates a file and writes &lt;em&gt;iteration&lt;/em&gt; lines individually opening and closing the handle for each line)&lt;/li&gt;
+  &lt;li&gt;ReadPrivateProfileString (calls the GetPrivateProfileString API to read &lt;em&gt;iteration&lt;/em&gt; lines individually)&lt;/li&gt;
+  &lt;li&gt;Read with custom function (opens the file once and reads &lt;em&gt;iteration&lt;/em&gt; lines individually)&lt;/li&gt;
+  &lt;li&gt;Create/delete loop (creates the file, writes one line, deletes the file. This happens &lt;em&gt;iteration&lt;/em&gt; times)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is useful for testing this scenario and is quite flexible:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Can be pointed at any UNC path (makes comparing different targets easy)&lt;/li&gt;
+  &lt;li&gt;All file names generated are unique&lt;/li&gt;
+  &lt;li&gt;Iteration count was 10,000&lt;/li&gt;
+  &lt;li&gt;Antivirus off on client &amp;amp; server (otherwise you measure AV not SMB performance)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This testing showed that file IO performance is generally not significantly impacted by client and server SMB versions. As long as both are capable of SMB 2.x or better performance is stable. The chart below details the results across 4 scenarios:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Both client and server capable of using (and having negotiated) SMB 3.02&lt;/li&gt;
+  &lt;li&gt;The client capable of using SMB 3.02 (Windows 8.1), but the server only capable of SMB 2.1 (Windows Server 2008 R2)&lt;/li&gt;
+  &lt;li&gt;The client only capable of using SMB 2.1 (Windows Server 2008 R2), but the server able to use SMB 3.02 (Windows Server 2012 R2)&lt;/li&gt;
+  &lt;li&gt;The client and server only able to use SMB 2.1 (both Windows Server 2008 R2)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The exception here is the API function GetPrivateProfileString() which performs significantly better when called on a client using SMB 2.1, targeting a server capable of SMB 3.02. SMB improvements in Windows Server 2012 R2 have actually benefited older clients, but seem to have had the reverse effect on more recent versions of Windows.&lt;/p&gt;
+
+&lt;p&gt;While all VMs in our environments are patched via Windows Update, we did not get a chance to re-run the tests with all of the currently &lt;a href=&quot;https://support.microsoft.com/en-us/kb/2899011&quot;&gt;available hotfixes for file services&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests.png&quot; alt=&quot;SMB Versions Have Little Impact on IO Performance&quot; /&gt;&lt;em&gt;SMB Versions Have Little Impact on IO Performance&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If you’re redirecting AppData, you’ll need to understand how your applications are interacting with files in the user profile. If they use this method (which is very common), performance could suffer as a result if you aren’t matching your client and server versions of Windows.&lt;/p&gt;
+
+&lt;p&gt;One additional behaviour that we noticed, contrary to Magnar’s article, is that the negotiation between client and server only happens once, rather than for each file IO access. This can be shown by capturing traffic between client and server with a Wireshark trace. The screenshot below shows the protocol negotiation and then several read requests by the client to the server:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString.png&quot; alt=&quot;SMB Negotiations Occur only Once Per Session&quot; /&gt;&lt;em&gt;SMB Negotiations Occur only Once Per Session&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;recommendations&quot;&gt;Recommendations&lt;/h2&gt;
+
+&lt;p&gt;Folder redirection is a feature that most environments will not be able to avoid. The various reasons including abstracting data or specific architecture choices for virtual or physical desktops, means that folder redirection will remain an integral part of the enterprise desktop. While there are a number of 3rd party alternatives and approaches, I may cover those in seperate articles.&lt;/p&gt;
+
+&lt;p&gt;To that end, here are our recommendations for getting the best out of folder redirection. In no particular order:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Simulate client load to determine file server breaking point&lt;/strong&gt; - the &lt;a href=&quot;https://stealthpuppy.com/replicate-2015-folder-redirection-test/&quot;&gt;File Server Capacity Tool&lt;/a&gt; is, so far, the best solution I’ve seen for simulating user access to home folders. This is a useful tool for determining the expected load on your file server/s and working out the number of servers required to support your environment.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Multiple vCPUs in file servers&lt;/strong&gt; - file servers will require multiple CPUs to provide good performance. Servicing multiple simultaneous connections will require more than a single CPU - start with 2 and scale up as required.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Size for peaks&lt;/strong&gt; - just like we do with VDI workloads, size for your expected peaks to ensure continued good user experience as your environment becomes busy.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Hypervisor resource sharing, watch overcommit&lt;/strong&gt; - resource contention at multiple levels including storage and compute will impact how well file servers can response to requests.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Scale out&lt;/strong&gt; - Scaling out across multiple physical hosts and making sure you don’t over commit compute resources will ensure file servers remain responsive. Scaling out may require solutions such as &lt;a href=&quot;https://technet.microsoft.com/en-us/library/dn281957.aspx&quot;&gt;DFS&lt;/a&gt; and even third party solutions such as Citrix Melio might be worth investigating.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;High performance mode&lt;/strong&gt; - put hypervisor hosts in high performance mode to ensure good response for 4K and 8K blocks. You can schedule placing hosts into low performance mode after hours if power consumption is of concern.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Expect performance impacts of anti-virus&lt;/strong&gt; - there are very few environments that can do without anti-virus and the performance impact is very high as we’ve shown. Test various anti-virus solutions to find the best performing product if you can; however expect that AV will contribute to high CPU.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Update Windows versions, especially on servers&lt;/strong&gt; - best results might be gained from matching client and server, but we have shown that SMB 3+ reduces the CPU load on the file server.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Update client and servers&lt;/strong&gt; - keep clients and servers updated with the latest service packs and available hotfixes for folder redirection and file services. Here are some knowledgebase articles that are important references:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://support.microsoft.com/en-us/kb/2820927&quot;&gt;Current hotfixes for Windows 7 SP1 enterprise clients that have folder redirection enabled&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://support.microsoft.com/en-us/kb/2899011&quot;&gt;List of currently available hotfixes for the File Services technologies in Windows Server 2012 and in Windows Server 2012 R2&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These are general recommendations for all environments and depending on your own requirements and how you are managing your virtual or physical desktop estate, there may be additional considerations.&lt;/p&gt;
+
+&lt;p&gt;We do continue to recommend looking at alternatives to AppData redirection - there are plenty of user environment management / profile management solutions available to you.&lt;/p&gt;
+
+&lt;h3 id=&quot;determining-the-version-of-smb-negotiated&quot;&gt;Determining the Version of SMB Negotiated&lt;/h3&gt;
+
+&lt;p&gt;If you are using Windows 8 and above, PowerShell now includes a cmdlet to determine the version of SMB that is negotiated for each connection - &lt;a href=&quot;https://technet.microsoft.com/en-us/library/jj635713&quot;&gt;Get-SmbConnection&lt;/a&gt;. PoweShell must be elevated, but this will show all connections from the local client.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2.png&quot; alt=&quot;Use PowerShell to View SMB Connections&quot; /&gt;&lt;em&gt;Use PowerShell to View SMB Connections&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;This year, we’ve covered additional scenarios, and there are always additional tests to cover. Future editions of these presentations will include the impact of folder redirection on Login VSI results and we’ll look at whether Windows 10 and Windows Server 2016 improves performance.&lt;/p&gt;
+
+&lt;p&gt;To summarise this round, I’ll leave you with these key points:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Little effective performance difference between SMB 2.1 &amp;amp; 3.02; however SMB 3.02 lowers file server CPU utilisation&lt;/li&gt;
+  &lt;li&gt;Size file servers for peak workload&lt;/li&gt;
+  &lt;li&gt;Simulate workloads using FSCT&lt;/li&gt;
+  &lt;li&gt;Anti-virus has a big impact&lt;/li&gt;
+  &lt;li&gt;Don’t overcommit resources&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Want good user experience for your users with folder redirection enabled? You’ll need to put in the effort to determine the optimal configuration in your environment.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2017-10-04-melbourne-cugc-october-2017-meetup.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T09:49:05+10:00</published><updated>2019-04-09T09:49:05+10:00</updated><id>/2019/04/09/2017-10-04-melbourne-cugc-october-2017-meetup</id><content type="html" xml:base="/2019/04/09/2017-10-04-melbourne-cugc-october-2017-meetup.html">&lt;p&gt;We’ve been busy planning our next CUGC meet-up for 2017, which will be on the 24th of October at the Telstra Conference Center at 242 Exhibition St. To attend the meet-up, ensure you’ve signed up at the MyCUGC.org site: &lt;a href=&quot;https://www.mycugc.org/page/melbourne-oct24-2017Meeting&quot;&gt;Melbourne Citrix User Group Local Meeting&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;agenda&quot;&gt;Agenda&lt;/h2&gt;
+
+&lt;p&gt;We’ve got Christian Lloyd from Citrix to take us through the XenDesktop / XenApp 7.15 LTSR release. This release is not to be underestimated and I’m expecting to see many organisations finally moving off XenApp 6.5 and those still on 7.6 LTSR, upgrade to 7.15 to take advantage of the new features. Because the latest release has so many features, the theme for this meeting will be ‘&lt;em&gt;Doing more with what you have&lt;/em&gt;’; so we’ll also take you through some of the really interesting features (e.g. &lt;a href=&quot;https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/secure/federated-authentication-service/fas-architectures.html&quot;&gt;FAS&lt;/a&gt;, App Layering, &lt;a href=&quot;https://docs.citrix.com/en-us/workspace-environment-management/current-release.html&quot;&gt;Workspace Environment Management&lt;/a&gt;, etc.) that you can be taking advantage of to improve your XD/XA environments. Plus get your questions about how to migrate answered.&lt;/p&gt;
+
+&lt;h3 id=&quot;cugc-community-presentation&quot;&gt;CUGC Community Presentation&lt;/h3&gt;
+
+&lt;p&gt;We still have space for a community presentation - if you’re interested in presenting on any topic related to Citrix technologies, we would love for you to present.&lt;/p&gt;
+
+&lt;h2 id=&quot;sponsor&quot;&gt;Sponsor&lt;/h2&gt;
+
+&lt;p&gt;This month, we’re really happy to have &lt;a href=&quot;https://www.eginnovations.com/&quot;&gt;eG Innovations&lt;/a&gt; sponsoring our meet-up and to discuss proactive monitoring, assessment and management of your Citrix XenDesktop and XenApp environments. To get an idea what eG Innovations is doing, check out this recent Citrix blog article: &lt;a href=&quot;https://www.citrix.com/blogs/2017/09/26/monitor-logon-performance-seamlessly-with-eg-innovations/&quot;&gt;Monitor Logon Performance Seamlessly with eG Innovations&lt;/a&gt;. Did you know they have a logon simulator? Check it out:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2017/10/eG-Enterprise-Express-Free-Logon-Simulator-Image-02-720x478.png&quot; alt=&quot;eG Enterprise Express-Free-Logon Simulator&quot; /&gt;&lt;em&gt;eG Enterprise Express-Free-Logon Simulator screenshot&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;eG Innovations enables us to rent the venue and also provide beer and pizza for XenBeers afterwards, so we’d love to see you there. Even better, they’ll be giving away a &lt;a href=&quot;https://madeby.google.com/home/&quot;&gt;Google Home&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2017/10/GoogleHome.jpg&quot; alt=&quot;Win Google Home at our next CUGC meet-up&quot; /&gt;&lt;em&gt;Win Google Home at our next CUGC meet-up&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;special-announcement&quot;&gt;Special Announcement&lt;/h2&gt;
+
+&lt;p&gt;Be sure to come along to this month’s event to hear about our extra special December event. This is not something you’re going to want to miss.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2015-08-04-folder-redirection-2015-part-2.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T09:49:05+10:00</published><updated>2019-04-09T09:49:05+10:00</updated><id>/2019/04/09/2015-08-04-folder-redirection-2015-part-2</id><content type="html" xml:base="/2019/04/09/2015-08-04-folder-redirection-2015-part-2.html">&lt;p&gt;This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stealthpuppy.com/folder-redirection-2015-part-1/&quot;&gt;I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2. (this article)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stealthpuppy.com/folder-redirection-2015-part-3/&quot;&gt;I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;file-server-capacity-tool&quot;&gt;File Server Capacity Tool&lt;/h2&gt;
+
+&lt;p&gt;The File Server Capacity Tool (FSCT) is great for modelling a user home drive hosted on Windows file servers. I’ve covered &lt;a href=&quot;https://stealthpuppy.com/replicate-2015-folder-redirection-test/&quot;&gt;how to use the FSCT previously&lt;/a&gt;, and the results of our tests have included various scenarios looking at CPU and disk performance.&lt;/p&gt;
+
+&lt;h3 id=&quot;file-server-capacity-toolcpu-performance&quot;&gt;File Server Capacity Tool CPU Performance&lt;/h3&gt;
+
+&lt;p&gt;In this test with Windows Server 2008 R2 running on the file server, SMB 2.1 shows quite a large difference between the average and maximum CPU seen across each test, especially from 400 users and beyond.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB21-CPU.png&quot; alt=&quot;SMB 2.1 showed a big difference between the average and maximum CPU seen across each test.&quot; /&gt;&lt;em&gt;SMB 2.1 showed a big difference between the average and maximum CPU seen across each test.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The results from the tests with Windows Server 2012 R2 on the file server shows very similar average CPU, but a greatly reduced maximum CPU, which is great for overall file server resource consumption.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPU.png&quot; alt=&quot;Lower CPU Utilization with SMB 3.02&quot; /&gt;&lt;em&gt;Lower CPU Utilization with SMB 3.02&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;looking-at-the-impact-of-anti-virus&quot;&gt;Looking at the Impact of Anti-Virus&lt;/h3&gt;
+
+&lt;p&gt;Running the same test with Windows Server 2012 R2, but this time with one of the major anti-virus products installed on the file server. This was installed with all of the default settings. This test shows a very interesting result when compared against the previous test - the chart below displays the same results as the previous test with the results from a testing run with AV:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV.png&quot; alt=&quot;Anti-Virus Has a Large Impact on CPU&quot; /&gt;&lt;em&gt;Anti-Virus Has a Large Impact on CPU&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;With anti-virus installed, the average CPU is now getting up around the maximum CPU seen without AV, especially from 600 users and beyond. Look at that maximum CPU recorded with anti-virus, that’s a massive difference from the previous test and will have a large impact on the file server!&lt;/p&gt;
+
+&lt;p&gt;To see if we could improve on this result, we re-ran the test with on-access scans disabled in the anti-virus configuration. This had little impact on the result, which could be explained by the FSCT workload being very write heavy.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/OnAccessScans.png&quot; alt=&quot;Disabling On Access Scans for AV Had Little Impact&quot; /&gt;&lt;em&gt;Disabling On Access Scans for AV Had Little Impact&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;There might be additional tweaking that may improve performance; however given the massive difference between with and without AV, I’m not confident that any considerable gains could be made. We haven’t yet had a chance to test with multiple anti-virus products.&lt;/p&gt;
+
+&lt;h3 id=&quot;file-server-capacity-tooldisk-performance&quot;&gt;File Server Capacity Tool Disk Performance&lt;/h3&gt;
+
+&lt;p&gt;The FSCT workloads show some interesting results in regards to disk performance. First up is a correlation between high IO and high CPU - the more blocks generated on the storage (i.e. more blocks that are read or written from and to the file server, requires the file server to process it).&lt;/p&gt;
+
+&lt;p&gt;In the result below, we can see that when the IO peaks at near 2500 IOPS, the CPU makes a big jump as well:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/DiskIO-CorrelateCPU.png&quot; alt=&quot;CPU Peaks Correlate With IO Peaks&quot; /&gt;&lt;em&gt;CPU Peaks Correlate With IO Peaks&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;While all of the previous FSCT tests have been performed on SSDs, we also looked at comparing performance when running FSCT workloads on HDDs and comparing that against SSDs.&lt;/p&gt;
+
+&lt;p&gt;When comparing the CPU load of the same workload running on HDD and SSDs, the average CPU is higher on HDDs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-HDDs.png&quot; alt=&quot;Higher CPU with HDDs&quot; /&gt;&lt;em&gt;Higher CPU with HDDs&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This higher CPU on HDDs is, in part, explained by the higher disk queue length seen with HDDs. The chart below shows the results of these tests with the disk queue length on HDDs significantly higher as the number of users in the tests increases.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SSDs.png&quot; alt=&quot;Higher Avg. Disk Queue Length with HDDs&quot; /&gt;&lt;em&gt;Higher Avg. Disk Queue Length with HDDs&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s clear then that any &lt;a href=&quot;http://www.atlantiscomputing.com/hyperscale&quot;&gt;high performing storage platform&lt;/a&gt; will not only improve storage performance, it will reduce the load on your compute, providing improved user experience across multiple layers of your infrastructure.&lt;/p&gt;
+
+&lt;h2 id=&quot;part-3&quot;&gt;Part 3&lt;/h2&gt;
+
+&lt;p&gt;In part 3, I’ll cover &lt;a href=&quot;https://stealthpuppy.com/folder-redirection-2015-part-3&quot;&gt;file access performance and summarise our recommendations&lt;/a&gt; for what you should be doing to get the best performance out of folder redirection.&lt;/p&gt;</content><author><name></name></author></entry></feed>

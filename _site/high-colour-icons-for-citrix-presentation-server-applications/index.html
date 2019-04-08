@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -51,19 +51,19 @@
 <p>Well perhaps a little perspective is in order ;), but I do think this is an important feature for usability. Here’s what you get - before:</p>
 
 <p style="text-align: center">
-  <img src="http://stealthpuppy.com/wp-content/uploads/2007/08/webinterfacelowcolouricons.PNG" alt="webinterfacelowcolouricons.PNG" />
+  <img src="https://stealthpuppy.com/wp-content/uploads/2007/08/webinterfacelowcolouricons.PNG" alt="webinterfacelowcolouricons.PNG" />
 </p>
 
 <p>and after:</p>
 
 <p style="text-align: center">
-  <img src="http://stealthpuppy.com/wp-content/uploads/2007/08/webinterfacehighcolouricons.png" alt="webinterfacehighcolouricons.png" />
+  <img src="https://stealthpuppy.com/wp-content/uploads/2007/08/webinterfacehighcolouricons.png" alt="webinterfacehighcolouricons.png" />
 </p>
 
 <p>As well as high colour icons with the Program Neighbourhood Agent client:</p>
 
 <p style="text-align: center">
-  <img src="http://stealthpuppy.com/wp-content/uploads/2007/08/pnagenthighcolouricons.png" alt="pnagenthighcolouricons.png" />
+  <img src="https://stealthpuppy.com/wp-content/uploads/2007/08/pnagenthighcolouricons.png" alt="pnagenthighcolouricons.png" />
 </p>
 
 <p>What do you need to get this going? You’ll need to install the following updates, so unfortunately it’s no small undertaking.</p>
@@ -77,12 +77,12 @@
   <li>Enable 32-bit colour icon support (this is the default behaviour) - Farm properties / Presentation Server / General;</li>
   <li>
     <strike>Delete and republish your published applications</strike>
-    <p>. Although Citrix says you need to delete and republish your applications, can can just reselect an icon for each application. Check out <a href="http://stealthpuppy.com/scripting/script-update-published-application-icons">a script I’ve written to do this</a>.</p>
+    <p>. Although Citrix says you need to delete and republish your applications, can can just reselect an icon for each application. Check out <a href="https://stealthpuppy.com/scripting/script-update-published-application-icons">a script I’ve written to do this</a>.</p>
   </li>
 </ol>
 
 <strike>Yes, that last part is right, delete and re-publish your applications</strike>
-<p>. You can check out <a href="http://support.citrix.com/article/CTX107934">FarmAppUtil</a> for this or take a look at <a href="http://stealthpuppy.com/unattended/wsf-import-published-applications-10">a script I’ve written to do the same</a>. This script will recreate published applications using the XML files exported from the Access Management Console. You can first export the XML files to a folder and then pass the folder to the script which will parse each XML file and create the published application. There are some caveats with this script though:</p>
+<p>. You can check out <a href="http://support.citrix.com/article/CTX107934">FarmAppUtil</a> for this or take a look at <a href="https://stealthpuppy.com/unattended/wsf-import-published-applications-10">a script I’ve written to do the same</a>. This script will recreate published applications using the XML files exported from the Access Management Console. You can first export the XML files to a folder and then pass the folder to the script which will parse each XML file and create the published application. There are some caveats with this script though:</p>
 
 <ol>
   <li>This is version 1.0, please test the script before you run it in a production environment;</li>

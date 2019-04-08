@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,27 +46,27 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Last week I wrote about <a href="http://stealthpuppy.com/windows/avoiding-explorers-security-warning-prompts">avoiding Explorer’s Security Warning prompts</a>, this time around I want to document a related fix that I’ve had to implement because Explorer’s expected behaviour was not just not working.</p>
+    <p>Last week I wrote about <a href="https://stealthpuppy.com/windows/avoiding-explorers-security-warning-prompts">avoiding Explorer’s Security Warning prompts</a>, this time around I want to document a related fix that I’ve had to implement because Explorer’s expected behaviour was not just not working.</p>
 
 <p>First a quick background on what we’re trying to solve. By default, Windows Explorer will place network locations (mapped drives and UNC paths) with a period (.) in the path, into the the Internet zone. This means that when users access files from these locations, they will see security warnings like these:</p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/securityrisk.png" border="0" alt="SecurityRisk" width="345" height="136" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/06/securityrisk.png" border="0" alt="SecurityRisk" width="345" height="136" /></p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/securitywarning.png" alt="" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/06/securitywarning.png" alt="" /></p>
 
 <p>These warnings attempt to ensure users are aware of the potential risks when opening files from un-trusted locations. You can make a location trusted by adding it to the Local Intranet or Trusted Sites zones. This is exactly what you would do via script, Group Policy or some other workspace management tool, for your internal network locations, so that users do not see these prompts. However, a bug exists where drives mapped to these network locations are not placed into the right zone.</p>
 
 <p>If you map a drive to a UNC path that that includes two or more periods in the name you will see that the network drive is marked as being in the Internet zone even though you may have added the location to the Local Intranet zone. In my example here, I’ve mapped drive S: to <a href="file://\\dc.dev.local\Apps">\dc.dev.local\Apps</a>, and as you can see, it’s in the Internet zone:</p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/internetzonedrive.png" border="0" alt="InternetZoneDrive" width="304" height="336" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/06/internetzonedrive.png" border="0" alt="InternetZoneDrive" width="304" height="336" /></p>
 
 <p>If I open the same location via a UNC path you will see that Explorer sees it as being in the Local Intranet zone:</p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/intranetzoneunc.png" border="0" alt="IntranetZoneUNC" width="304" height="321" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/06/intranetzoneunc.png" border="0" alt="IntranetZoneUNC" width="304" height="321" /></p>
 
 <p>Oddly enough, if I map a network drive to a path with only a single period on that path, the detection process works correctly and the location is seen as Intranet. In the example here, I’m mapping a drive to the same location as the previous two screen shots, but via a DFS path - <a href="file://\\dev.local\Public\Apps">\dev.local\Public\Apps</a> that redirects to <a href="file://\\dc.dev.local\Apps">\dc.dev.local\Apps</a>.</p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/intranetzonedrive.png" border="0" alt="IntranetZoneDrive" width="304" height="321" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/06/intranetzonedrive.png" border="0" alt="IntranetZoneDrive" width="304" height="321" /></p>
 
 <p>This issue is addressed in the following knowledge base article:</p>
 

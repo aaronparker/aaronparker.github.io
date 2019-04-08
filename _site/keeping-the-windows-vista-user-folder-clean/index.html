@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -48,7 +48,7 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>Because I’m a stickler for clean UI, I want to ensure users don’t see extra files or folders in their User folder on Windows Vista. I’m trying to avoid something similar to what you can see in the screenshot below, which looks a little out of place:</p>
 
-<p><img style="display: inline" title="Computer" src="http://stealthpuppy.com/wp-content/uploads/2008/09/computer.png" border="0" alt="Computer" width="566" height="419" /></p>
+<p><img style="display: inline" title="Computer" src="https://stealthpuppy.com/wp-content/uploads/2008/09/computer.png" border="0" alt="Computer" width="566" height="419" /></p>
 
 <p>This location in the UI replaces the Documents folder as the top level navigation tool but it essentially gives you a view of the user profile (%USERPROFILE%). As such, this location cannot be redirected to the network, so it would be advantageous to prevent users from adding data to this folder - otherwise you will need to manage that data. Leaving it inside the roaming profile is probably not the best solution.</p>
 
@@ -58,11 +58,11 @@
   <li>User Configuration / Policies / Administrative Templates / Windows Components / Windows Explorer / Prevent users from adding files to the root of their User Files folder</li>
 </ul>
 
-<p><img style="display: inline" title="ExplainPolicy" src="http://stealthpuppy.com/wp-content/uploads/2008/09/explainpolicy.png" border="0" alt="ExplainPolicy" width="357" height="280" /></p>
+<p><img style="display: inline" title="ExplainPolicy" src="https://stealthpuppy.com/wp-content/uploads/2008/09/explainpolicy.png" border="0" alt="ExplainPolicy" width="357" height="280" /></p>
 
 <p>When this policy is enabled users will see this behaviour when attempting to copy files into their User folder:</p>
 
-<p><img style="display: inline" title="ComputerDragDrop" src="http://stealthpuppy.com/wp-content/uploads/2008/09/computerdragdrop.png" border="0" alt="ComputerDragDrop" width="566" height="423" /></p>
+<p><img style="display: inline" title="ComputerDragDrop" src="https://stealthpuppy.com/wp-content/uploads/2008/09/computerdragdrop.png" border="0" alt="ComputerDragDrop" width="566" height="423" /></p>
 
 <p>This works well for Explorer but unfortunately I’m struggling to find applications that honour this setting, with Office Communicator and even Windows Live Messenger 9 the biggest culprits so far. These applications create a Tracing folder that is used for <a href="http://support.microsoft.com/kb/871023/en-us">diagnostic logging</a>. These keys control where the log is created:</p>
 
@@ -75,7 +75,7 @@
 
 <p>For each key I’ve changed %USERPROFILE% to %APPDATA% (scripted of course..)</p>
 
-<p><img style="display: inline" title="AppData" src="http://stealthpuppy.com/wp-content/uploads/2008/09/appdata.png" border="0" alt="AppData" width="341" height="164" /></p>
+<p><img style="display: inline" title="AppData" src="https://stealthpuppy.com/wp-content/uploads/2008/09/appdata.png" border="0" alt="AppData" width="341" height="164" /></p>
 
 <p>So as we rollout Windows Vista, I’m going to have to keep an eye on more applications but I think I could be in for a losing battle.</p>
 

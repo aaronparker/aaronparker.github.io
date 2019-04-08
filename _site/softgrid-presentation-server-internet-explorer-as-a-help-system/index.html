@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img border="0" alt="internetexplorer-softgridbox" align="left" src="http://stealthpuppy.com/wp-content/uploads/2008/05/internetexplorer-softgridbox.png" width="142" height="128" /> If you’re deploying applications on Citrix Presentation Server via Application Virtualisation/SoftGrid, you may run into issues with applications that utilise a local HTML based help system. These applications will generally launch Internet Explorer as the viewer and in our case, we’ve found that IE is launched outside of the protected environment and thus never sees the help content located inside the environment.</p>
+    <p><img border="0" alt="internetexplorer-softgridbox" align="left" src="https://stealthpuppy.com/wp-content/uploads/2008/05/internetexplorer-softgridbox.png" width="142" height="128" /> If you’re deploying applications on Citrix Presentation Server via Application Virtualisation/SoftGrid, you may run into issues with applications that utilise a local HTML based help system. These applications will generally launch Internet Explorer as the viewer and in our case, we’ve found that IE is launched outside of the protected environment and thus never sees the help content located inside the environment.</p>
 
 <p>This behaviour only happens inside an ICA session and does not occur in an RDP session or on the console. Exactly why Internet Explorer is executed outside the environment but it has something to do with WFSHELL.EXE being the calling process.</p>
 
@@ -75,7 +75,7 @@ Citrix have a knowledgebase article that details a related error: <a href="http:
 
                             <p>Fortunately through a little bit of digging around and testing, I’ve found that by adding the following registry entry to your OSD files will execute Internet Explorer directly and keep the process within the protected environment, allowing the user to view Help:</p>
 
-                            <p><a href="http://stealthpuppy.com/wp-content/uploads/2008/05/softgridiereg1.png"><img border="0" alt="SoftGridIEReg" src="http://stealthpuppy.com/wp-content/uploads/2008/05/softgridiereg-thumb.png" width="733" height="77" /></a></p>
+                            <p><a href="https://stealthpuppy.com/wp-content/uploads/2008/05/softgridiereg1.png"><img border="0" alt="SoftGridIEReg" src="https://stealthpuppy.com/wp-content/uploads/2008/05/softgridiereg-thumb.png" width="733" height="77" /></a></p>
 
                             <p>(I’ve had to use an image here because WordPress keeps formatting the code)</p>
                           </li>

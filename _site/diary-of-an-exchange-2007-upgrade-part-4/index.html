@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,9 +46,9 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img align="left" width="82" src="http://stealthpuppy.com/wp-content/uploads/2007/05/exchange1.png" height="82" style="width: 82px; height: 82px" />Dear Diary,</p>
+    <p><img align="left" width="82" src="https://stealthpuppy.com/wp-content/uploads/2007/05/exchange1.png" height="82" style="width: 82px; height: 82px" />Dear Diary,</p>
 
-<p>I’ve fixed the <a href="http://stealthpuppy.com/exchange/diary-of-an-exchange-2007-upgrade-part-3">issue I was having with the Majority Node Set cluster</a> - it pays to check your information against more than one source. This particular issue was caused by disabling <em>Client for Microsoft Networks</em> and <em>File and Printer Sharing for Microsoft Networks</em> on the heartbeat/private network adapater on each node in the cluster.</p>
+<p>I’ve fixed the <a href="https://stealthpuppy.com/exchange/diary-of-an-exchange-2007-upgrade-part-3">issue I was having with the Majority Node Set cluster</a> - it pays to check your information against more than one source. This particular issue was caused by disabling <em>Client for Microsoft Networks</em> and <em>File and Printer Sharing for Microsoft Networks</em> on the heartbeat/private network adapater on each node in the cluster.</p>
 
 <p>You would normally do this on a standard quorum cluster, however because a Majority Node Cluster does not use shared storage, each node needs to view cluster information via a UNC path on the other node or nodes. The following error was recorded in the cluster log file (C:WINDOWSCLUSTERcluster.log):</p>
 

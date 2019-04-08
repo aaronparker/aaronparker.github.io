@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,11 +46,11 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img class="alignright size-full wp-image-2976" style="margin-left: 5px; margin-right: 5px;" title="iTunes 11 128x128" alt="" src="http://stealthpuppy.com/wp-content/uploads/2012/12/iTunes-128.png" width="128" height="128" />Two recent releases presents an opportunity to revisit the state of virtualizing Apple iTunes. iTunes 11 looks great, but is it just lipstick on a pig? Under the hood, it doesn’t appear to differ that much from previous versions, but lets see whether a combination of Apple’s latest and greatest along with App-V 5 offers a better virtualisation experience.</p>
+    <p><img class="alignright size-full wp-image-2976" style="margin-left: 5px; margin-right: 5px;" title="iTunes 11 128x128" alt="" src="https://stealthpuppy.com/wp-content/uploads/2012/12/iTunes-128.png" width="128" height="128" />Two recent releases presents an opportunity to revisit the state of virtualizing Apple iTunes. iTunes 11 looks great, but is it just lipstick on a pig? Under the hood, it doesn’t appear to differ that much from previous versions, but lets see whether a combination of Apple’s latest and greatest along with App-V 5 offers a better virtualisation experience.</p>
 
 <h1 id="itunes-10-with-app-v-46">iTunes 10 with App-V 4.6</h1>
 
-<p>Previously delivering <a href="http://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/">iTunes 10 with App-V 4.6</a>, resulted in some loss of functionality and some minor annoyances with benign error messages. A lack of the Jumpt List under Windows 7 changed the user experience. App-V 5 now fixes this.</p>
+<p>Previously delivering <a href="https://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/">iTunes 10 with App-V 4.6</a>, resulted in some loss of functionality and some minor annoyances with benign error messages. A lack of the Jumpt List under Windows 7 changed the user experience. App-V 5 now fixes this.</p>
 
 <h1 id="itunes-components">iTunes Components</h1>
 
@@ -84,7 +84,7 @@
 
 <p>iTunes has the potential to store a massive amount of data in the user’s profile:</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/06/09AppData.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="09AppData" alt="09AppData" src="http://stealthpuppy.com/wp-content/uploads/2011/06/09AppData_thumb.png" width="377" height="302" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2011/06/09AppData.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="09AppData" alt="09AppData" src="https://stealthpuppy.com/wp-content/uploads/2011/06/09AppData_thumb.png" width="377" height="302" border="0" /></a></p>
 
 <p>It is highly recommended to exclude %APPDATA% in the iTunes package to avoid this data being virtualized at runtime.</p>
 
@@ -198,7 +198,7 @@ MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE_ASUW=0 REGSRCH_DES
 
 <p>With the Apple Mobile Device Support, syncing with a virtualized iTunes should still work. The iTunesAdmin component appears to be related restricting access to Parental controls in Preferences. Clicking the lock will result the following error:</p>
 
-<p><img class="alignnone size-full wp-image-2983" title="iTunes Parental error" alt="" src="http://stealthpuppy.com/wp-content/uploads/2012/12/Parental.png" width="381" height="109" srcset="https://stealthpuppy.com/wp-content/uploads/2012/12/Parental.png 381w, https://stealthpuppy.com/wp-content/uploads/2012/12/Parental-150x42.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/12/Parental-300x85.png 300w" sizes="(max-width: 381px) 100vw, 381px" /></p>
+<p><img class="alignnone size-full wp-image-2983" title="iTunes Parental error" alt="" src="https://stealthpuppy.com/wp-content/uploads/2012/12/Parental.png" width="381" height="109" srcset="https://stealthpuppy.com/wp-content/uploads/2012/12/Parental.png 381w, https://stealthpuppy.com/wp-content/uploads/2012/12/Parental-150x42.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/12/Parental-300x85.png 300w" sizes="(max-width: 381px) 100vw, 381px" /></p>
 
 <h2 id="driver">Driver</h2>
 
@@ -218,7 +218,7 @@ MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE_ASUW=0 REGSRCH_DES
 
 <p>Without Apple Application Support the following will be the result of launching iTunes:</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2011/06/NoAppleAppSupport.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="NoAppleAppSupport" alt="NoAppleAppSupport" src="http://stealthpuppy.com/wp-content/uploads/2011/06/NoAppleAppSupport_thumb.png" width="510" height="260" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2011/06/NoAppleAppSupport.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="NoAppleAppSupport" alt="NoAppleAppSupport" src="https://stealthpuppy.com/wp-content/uploads/2011/06/NoAppleAppSupport_thumb.png" width="510" height="260" border="0" /></a></p>
 
 <p>Last, but not least, for media sharing to work, firewall exceptions will be required for the following processes:</p>
 
@@ -233,7 +233,7 @@ MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE_ASUW=0 REGSRCH_DES
 
 <p>Running iTunes on the client for the first time will result in a prompt to the user to set iTunes as the default audio player. With App-V 5 this is now supported and should work just like an installed application.</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2012/12/iTunesFirstRun.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="iTunesFirstRun" alt="iTunesFirstRun" src="http://stealthpuppy.com/wp-content/uploads/2012/12/iTunesFirstRun_thumb.png" width="660" height="410" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2012/12/iTunesFirstRun.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="iTunesFirstRun" alt="iTunesFirstRun" src="https://stealthpuppy.com/wp-content/uploads/2012/12/iTunesFirstRun_thumb.png" width="660" height="410" border="0" /></a></p>
 
 <p>View the gallery below for a screenshot walkthrough of sequencing iTunes 11:</p>
 

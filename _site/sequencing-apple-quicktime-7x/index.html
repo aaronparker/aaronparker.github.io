@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><em><img style="margin: 0px 10px 10px 0px; display: inline; border: 0px;" title="QuickTime App-V box" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime011.png" border="0" alt="QuickTime App-V box" width="149" height="145" align="left" /> Updated 04/05/2010</em></p>
+    <p><em><img style="margin: 0px 10px 10px 0px; display: inline; border: 0px;" title="QuickTime App-V box" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime011.png" border="0" alt="QuickTime App-V box" width="149" height="145" align="left" /> Updated 04/05/2010</em></p>
 
 <p>Here’s how to create a custom Apple QuickTime 7.x installation for virtualisation. This post specifically deals with virtualising QuickTime with Microsoft App-V, but the general process should be similar for any application virtualisation product.</p>
 
@@ -77,7 +77,7 @@
 
 <p>Download the QuickTime installer (without iTunes), available from the <a href="http://www.apple.com/quicktime/download/">Apple web site</a> (7.6.6 at the time of writing). Extract this file to obtain the included Windows Installer files.</p>
 
-<p><img style="display: inline; border: 0px;" title="Extracted QuickTime installer" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime02.png" border="0" alt="Extracted QuickTime installer" width="660" height="230" /></p>
+<p><img style="display: inline; border: 0px;" title="Extracted QuickTime installer" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime02.png" border="0" alt="Extracted QuickTime installer" width="660" height="230" /></p>
 
 <p>Automating the installation of QuickTime is very simple once you know how. An excellent source for finding that information is at <a href="http://www.appdeploy.com/packages/detail.asp?id=520">AppDeploy.com</a>. The installation script I have created does not use custom transforms and will perform the following basic steps:</p>
 
@@ -102,23 +102,23 @@
 
 <p>File type associations – don’t forget to prevent QuickTime from attempting to re-associate file types at launch. Selecting Yes here, will capture the default file types.</p>
 
-<p><img style="display: inline; border: 0px;" title="QuickTime file type associate" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime03.png" border="0" alt="QuickTime file type associate" width="429" height="160" /></p>
+<p><img style="display: inline; border: 0px;" title="QuickTime file type associate" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime03.png" border="0" alt="QuickTime file type associate" width="429" height="160" /></p>
 
 <p>When the player starts, open <em>Edit / Preferences / Player Preferences</em> and prevent the Content Guide from displaying at application start.</p>
 
-<p><img style="display: inline; border: 0px;" title="QuickTime Player Preferences" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime04.png" border="0" alt="QuickTime Player Preferences" width="390" height="486" /></p>
+<p><img style="display: inline; border: 0px;" title="QuickTime Player Preferences" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime04.png" border="0" alt="QuickTime Player Preferences" width="390" height="486" /></p>
 
 <p>Open <em>Edit / Preferences / QuickTime Preferences</em> to star the QuickTime Control Panel. You may want to prevent movies from playing automatically. Useful for the HD videos that may take some time to download.</p>
 
-<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Browser" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime05.png" border="0" alt="QuickTime Preferences Browser" width="426" height="564" /></p>
+<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Browser" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime05.png" border="0" alt="QuickTime Preferences Browser" width="426" height="564" /></p>
 
 <p>Prevent QuickTime from checking for updates on launch. When virtualising it would also be useful to prevent access to this control with a 3rd party tool such as AppSense Environment Manager (or hack the DLL with <a href="http://www.wilsonc.demon.co.uk/d10resourceeditor.htm">Resource Explorer</a> yourself).</p>
 
-<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Update" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime06.png" border="0" alt="QuickTime Preferences Update" width="426" height="564" /></p>
+<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Update" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime06.png" border="0" alt="QuickTime Preferences Update" width="426" height="564" /></p>
 
 <p>The QuickTime notification area icon should be disabled by default, but check that here:</p>
 
-<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Advanced" src="http://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime07.png" border="0" alt="QuickTime Preferences Advanced" width="426" height="564" /></p>
+<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Advanced" src="https://stealthpuppy.com/wp-content/uploads/2010/05/QuickTime07.png" border="0" alt="QuickTime Preferences Advanced" width="426" height="564" /></p>
 
 <p>If you configure QuickTime via a standard installation, you can automate this process by copying the preferences files to the correct locations during installation.</p>
 

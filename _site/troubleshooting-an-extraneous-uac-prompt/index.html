@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -50,15 +50,15 @@
 
 <p>To see what was going on I used Process Explorer to see the differences in privileges between a standard process and an elevated Registry Editor. Here’s Notepad running with my standard token:</p>
 
-<p><img style="display: inline" title="Notepad" src="http://stealthpuppy.com/wp-content/uploads/2008/10/notepad.png" border="0" alt="Notepad" width="447" height="373" /></p>
+<p><img style="display: inline" title="Notepad" src="https://stealthpuppy.com/wp-content/uploads/2008/10/notepad.png" border="0" alt="Notepad" width="447" height="373" /></p>
 
 <p>And here’s REGEDIT running with the elevated token. As you can see, the difference is the <em>SeLoadDriverPrivilege</em> privilege:</p>
 
-<p><img style="border-right: 0px; border-top: 0px; display: inline; border-left: 0px; border-bottom: 0px" title="Regedit" src="http://stealthpuppy.com/wp-content/uploads/2008/10/regedit.png" border="0" alt="Regedit" width="447" height="373" /></p>
+<p><img style="border-right: 0px; border-top: 0px; display: inline; border-left: 0px; border-bottom: 0px" title="Regedit" src="https://stealthpuppy.com/wp-content/uploads/2008/10/regedit.png" border="0" alt="Regedit" width="447" height="373" /></p>
 
 <p>I use <a href="http://www.truecrypt.org/">TrueCrypt</a> to protect data on one of my USB thumb drives. TrueCrypt, of course, loads a driver when you mount an encrypted disk, and some time back I had been attempting to avoid the UAC prompt involved with mounting the encrypted disk. Sure enough when I took a look in the Local Security Policy editor (SECPOL.MSC), I had given the Users group the ability to Load and unload device drivers:</p>
 
-<p><img style="display: inline" title="LoadDriverPrivilege" src="http://stealthpuppy.com/wp-content/uploads/2008/10/loaddriverprivilege.png" border="0" alt="LoadDriverPrivilege" width="431" height="248" /></p>
+<p><img style="display: inline" title="LoadDriverPrivilege" src="https://stealthpuppy.com/wp-content/uploads/2008/10/loaddriverprivilege.png" border="0" alt="LoadDriverPrivilege" width="431" height="248" /></p>
 
 <p>Removing the right for the Users group, didn’t help me with TrueCrypt, but at least now I can open REGEDIT (which I use far more often) without a UAC prompt.</p>
 

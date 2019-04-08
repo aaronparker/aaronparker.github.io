@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,13 +46,13 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img border="0" alt="SoftGrid Box" align="left" src="http://stealthpuppy.com/wp-content/uploads/2008/04/softgridbox.png" width="112" height="120" />This error seems to popup <a href="http://www.softgridguru.com/viewtopic.php?t=2493&amp;highlight=shortcutsex+dat">every</a> <a href="http://www.softgridguru.com/viewtopic.php?t=2184&amp;highlight=icons">now</a> and <a href="http://www.softgridguru.com/viewtopic.php?t=2323">then</a> and I’m currently seeing this in my own lab environment - SoftGrid application shortcuts are created even though the application has been disabled, deleted or the user account has been removed from the application group.</p>
+    <p><img border="0" alt="SoftGrid Box" align="left" src="https://stealthpuppy.com/wp-content/uploads/2008/04/softgridbox.png" width="112" height="120" />This error seems to popup <a href="http://www.softgridguru.com/viewtopic.php?t=2493&amp;highlight=shortcutsex+dat">every</a> <a href="http://www.softgridguru.com/viewtopic.php?t=2184&amp;highlight=icons">now</a> and <a href="http://www.softgridguru.com/viewtopic.php?t=2323">then</a> and I’m currently seeing this in my own lab environment - SoftGrid application shortcuts are created even though the application has been disabled, deleted or the user account has been removed from the application group.</p>
 
 <p>When a user logs onto the computer, the SoftGrid client contacts the Virtual Application Server to retrieve a list of applications for that user. The list is cached on the local machine and the required files for each application (OSD files, application and file type icons) are copied locally.</p>
 
 <p>The list of application shortcuts are cached in a file called SHORTCUTS_EX.DAT saved in the SoftGrid Client folder. This is an XML file that contains the information required for the creation of shortcuts:</p>
 
-<p><img border="0" alt="shortcuts_ex.dat Contents" src="http://stealthpuppy.com/wp-content/uploads/2008/04/shortcuts-exdatfilecontents.png" width="484" height="186" /></p>
+<p><img border="0" alt="shortcuts_ex.dat Contents" src="https://stealthpuppy.com/wp-content/uploads/2008/04/shortcuts-exdatfilecontents.png" width="484" height="186" /></p>
 
 <p>During the user session, the SoftGrid client works on a temporary copy of SHORTCUTS_EX.DAT . This file is not written to disk until the SoftGrid client, specifically SFTDCC.EXE, exits.</p>
 

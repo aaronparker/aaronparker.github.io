@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -74,7 +74,7 @@
 
 <p>Organisational unit structure will differ for every organisation, however if you apply these guidelines to application deployment, here’s all that you need to create:</p>
 
-<p><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1368.OrganisationalUnitStructure.png" /></p>
+<p><img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1368.OrganisationalUnitStructure.png" /></p>
 
 <p><strong>DNS</strong></p>
 
@@ -88,7 +88,7 @@
 
 <p>Another great thing about DFS is that you can take advantage of your AD sites - DFS is site aware. If you have a copy of your application share close to your workstations they will pull the installation from a local server rather than across a WAN link. For example, if we have a DFS path <strong>\company.localPublicApplications</strong> that points to <strong>\SERVER1Apps</strong> at site A and <strong>\SERVER2Apps</strong> at site B, workstations at site B will connect to <strong>\SERVER2Apps</strong> when Group Policy is applied to deploy applications.</p>
 
-<p><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1360.DFS.png" /></p>
+<p><img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1360.DFS.png" /></p>
 
 <p>A third advantage to using DFS is replication. With Windows 2000 and Windows Server 2003 you can use DFS to replicate your applications from a ‘master’ copy to your other sites, thus keeping them in sync. DFS Replication released as <a href="http://technet2.microsoft.com/windowsserver/en/library/d3afe6ee-3083-4950-a093-8ab748651b761033.mspx?mfr=true">a feature of Windows Server 2003 R2</a> is a huge improvement over the older FRS based replication method and provides the ability to replicate only the changes within files, making replication more efficient.</p>
 

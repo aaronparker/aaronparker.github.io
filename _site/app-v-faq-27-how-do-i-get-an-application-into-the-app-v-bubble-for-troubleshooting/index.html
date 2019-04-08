@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img style="margin: 0px 0px 5px 10px; display: inline;" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="right" />There are instances in which you will need to troubleshoot applications running in the App-V bubble (or the virtualised environment). Although applications delivered by App-V are running locally, they are separated from other applications and the operating system by the App-V client (the feature known as the <a href="http://blogs.technet.com/b/appv/archive/2007/08/02/inside-the-grid-part-1.aspx">SystemGuard</a>, although usually referred to as the bubble).</p>
+    <p><img style="margin: 0px 0px 5px 10px; display: inline;" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="right" />There are instances in which you will need to troubleshoot applications running in the App-V bubble (or the virtualised environment). Although applications delivered by App-V are running locally, they are separated from other applications and the operating system by the App-V client (the feature known as the <a href="http://blogs.technet.com/b/appv/archive/2007/08/02/inside-the-grid-part-1.aspx">SystemGuard</a>, although usually referred to as the bubble).</p>
 
 <p>This poses some challenges – how do you use troubleshooting tools such as <a href="http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx">Process Monitor</a> if it can’t see the application? To do this you will need to launch a Command Prompt into the bubble.</p>
 
@@ -70,7 +70,7 @@
 
 <p>This will return the list of applications for the current user context (or all of the applications if you run the command as an administrator). Don’t forget the /SHORT switch otherwise you’ll get a lot more information that you need. Use SFTTRAY /? to see the complete list of switches.</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="CommandPrompt-LaunchAppV" src="http://stealthpuppy.com/wp-content/uploads/2010/09/CommandPromptLaunchAppV_thumb.png" border="0" alt="SFTMIME and SFTTRAY commands to launch an alternate process" width="660" height="263" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="CommandPrompt-LaunchAppV" src="https://stealthpuppy.com/wp-content/uploads/2010/09/CommandPromptLaunchAppV_thumb.png" border="0" alt="SFTMIME and SFTTRAY commands to launch an alternate process" width="660" height="263" /></p>
 
 <p>To launch an alternate executable, copy the application name as listed and use the SFTTRAY command like this:</p>
 
@@ -80,15 +80,15 @@
 
 <h3 id="bonus-methods">Bonus Methods</h3>
 
-<p>A couple of the <a href="http://stealthpuppy.com/virtualisation/app-v-faq-26-what-3rd-party-tools-are-there-for-managing-app-v">3rd party tools</a> such as the <a href="http://www.loginconsultants.com/index.php?option=com_docman&amp;task=doc_details&amp;gid=69&amp;Itemid=149">App-V Client Diagnostic and Configuration tool (ACDC) 1.1</a> from Login Consultants or <a href="http://www.jagtechnical.com/softbar/">SoftBar</a> by Greg Brownstein provide a simpler way to get an application into the bubble via a GUI.</p>
+<p>A couple of the <a href="https://stealthpuppy.com/virtualisation/app-v-faq-26-what-3rd-party-tools-are-there-for-managing-app-v">3rd party tools</a> such as the <a href="http://www.loginconsultants.com/index.php?option=com_docman&amp;task=doc_details&amp;gid=69&amp;Itemid=149">App-V Client Diagnostic and Configuration tool (ACDC) 1.1</a> from Login Consultants or <a href="http://www.jagtechnical.com/softbar/">SoftBar</a> by Greg Brownstein provide a simpler way to get an application into the bubble via a GUI.</p>
 
 <p>ACDC is my preferred troubleshooting tool, which gives you a plethora of options for managing applications with the ability to launch a tool in the bubble of a specific application:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ACDC-RunCommandPrompt" src="http://stealthpuppy.com/wp-content/uploads/2010/09/ACDCRunCommandPrompt_thumb.png" border="0" alt="ACDC-RunCommandPrompt" width="660" height="393" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ACDC-RunCommandPrompt" src="https://stealthpuppy.com/wp-content/uploads/2010/09/ACDCRunCommandPrompt_thumb.png" border="0" alt="ACDC-RunCommandPrompt" width="660" height="393" /></p>
 
 <p>And here’s SoftBar in action, which can do the same type of thing:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="va_menu" src="http://stealthpuppy.com/wp-content/uploads/2010/09/va_menu.jpg" border="0" alt="va_menu" width="631" height="263" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="va_menu" src="https://stealthpuppy.com/wp-content/uploads/2010/09/va_menu.jpg" border="0" alt="va_menu" width="631" height="263" /></p>
 
 <p>Both tools allow you to extend the launch menu with additional executables.</p>
 

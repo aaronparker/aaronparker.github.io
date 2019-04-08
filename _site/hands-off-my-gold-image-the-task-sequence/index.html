@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>If you’ve been following along so far you’ll have read my follow up coverage of  my (and co-host, <a href="https://twitter.com/jonathanew">Jonathan Eyton-Williams</a>) <a href="https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&amp;conference=synergy">Geek Speak talk at Citrix Synergy in Barcelona</a>, with  <a href="http://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/">Hands off my gold image – Automating Citrix XenApp/PVS Image Creation</a> and <a href="http://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/">Hands off my gold image – Microsoft Deployment Toolkit details</a>. In this article I’ll cover the task sequence that deploys Windows Server, installs XenApp and captures the image into PVS.</p>
+    <p>If you’ve been following along so far you’ll have read my follow up coverage of  my (and co-host, <a href="https://twitter.com/jonathanew">Jonathan Eyton-Williams</a>) <a href="https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&amp;conference=synergy">Geek Speak talk at Citrix Synergy in Barcelona</a>, with  <a href="https://stealthpuppy.com/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/">Hands off my gold image – Automating Citrix XenApp/PVS Image Creation</a> and <a href="https://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/">Hands off my gold image – Microsoft Deployment Toolkit details</a>. In this article I’ll cover the task sequence that deploys Windows Server, installs XenApp and captures the image into PVS.</p>
 
 <p>Task sequences in the Microsoft Deployment Toolkit (MDT) are core of what makes MDT tick. Think of a task sequence as the steps that will deploy and configure Windows. Note that there is no post-deployment management with MDT, as there is no agent (that’s what ConfigMgr is for).</p>
 
@@ -66,15 +66,15 @@
 
 <p>Re-open the task sequence properties and you should see something like this:</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2012/11/XenApp-PVS-TaskSequence-Final.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="XenApp-PVS-TaskSequence-Final" src="http://stealthpuppy.com/wp-content/uploads/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png" alt="XenApp-PVS-TaskSequence-Final" width="660" height="337" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2012/11/XenApp-PVS-TaskSequence-Final.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="XenApp-PVS-TaskSequence-Final" src="https://stealthpuppy.com/wp-content/uploads/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png" alt="XenApp-PVS-TaskSequence-Final" width="660" height="337" border="0" /></a></p>
 
 <p>Importing the supplied pre-configured task sequence into your own Deployment Share, will result in some errors because the task sequence will reference applications and operating systems that either don’t exist in your Deployment Share or have different names.</p>
 
-<p><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-Errors" src="http://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-Errors.png" alt="MDT-TS-Errors" width="416" height="152" border="0" /></p>
+<p><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-Errors" src="https://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-Errors.png" alt="MDT-TS-Errors" width="416" height="152" border="0" /></p>
 
 <p>For example, after I’ve imported this task sequence, I need to fix the reference to the Windows Server 2008 R2 SP1 source files:</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-FixOS.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-FixOS" src="http://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-FixOS_thumb.png" alt="MDT-TS-FixOS" width="660" height="325" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-FixOS.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-FixOS" src="https://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-FixOS_thumb.png" alt="MDT-TS-FixOS" width="660" height="325" border="0" /></a></p>
 
 <p>The download also includes the scripts/applications referenced by the task sequence, so you’ll need to ensure they exist in your Deployment Share before fixing the task sequence.</p>
 
@@ -95,7 +95,7 @@
   <li>Install some additional XenApp related components including hotfixes, Receiver, the Offline Plugin etc</li>
   <li>Install core applications using an Application Bundle (this might include Office, Reader, Flash etc)</li>
   <li>Run a Windows Update task again once the dependencies and applications have been deployed</li>
-  <li>Prepare and capture the image into PVS using <a href="http://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/">custom properties</a>. This might install and configure the EdgeSight Agent, but will install XenConvert, prep the image and then perform a capture</li>
+  <li>Prepare and capture the image into PVS using <a href="https://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/">custom properties</a>. This might install and configure the EdgeSight Agent, but will install XenConvert, prep the image and then perform a capture</li>
 </ol>
 
 <h1 id="about-unattendxml">About Unattend.xml</h1>
@@ -115,13 +115,13 @@
   <li><a href="http://technet.microsoft.com/en-us/library/cc748990(v=ws.10).aspx">oobeSystem</a></li>
 </ul>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2012/11/unattend-xml.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="unattend-xml" src="http://stealthpuppy.com/wp-content/uploads/2012/11/unattend-xml_thumb.png" alt="unattend-xml" width="660" height="365" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2012/11/unattend-xml.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="unattend-xml" src="https://stealthpuppy.com/wp-content/uploads/2012/11/unattend-xml_thumb.png" alt="unattend-xml" width="660" height="365" border="0" /></a></p>
 
 <p>Together the task sequence and unattend.xml create what should be a fairly clean (and importantly, repeatable) deployment of a XenApp server.</p>
 
 <p>In the last article of this series, I’ll discuss some of the included scripts, but as always, if you’d like to ask some specific questions, email me - aaron (at) stealthpuppy.com.</p>
 
-<p>Next up: <a href="http://stealthpuppy.com/deployment/hands-off-my-gold-image-the-scripts/">Hands off my gold image – The Scripts</a></p>
+<p>Next up: <a href="https://stealthpuppy.com/deployment/hands-off-my-gold-image-the-scripts/">Hands off my gold image – The Scripts</a></p>
 
   </div><a class="u-url" href="/hands-off-my-gold-image-the-task-sequence/" hidden></a>
 </article>

@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,8 +46,8 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>You may recall from <a href="http://stealthpuppy.com/virtualisation/remoteapp-for-hyper-v-hyper-what">my last post on RemoteApp</a>, that we can get RemoteApp for Hyper-V works on other platforms too. While it was straight-forward publishing applications from a Windows 7 host, the client would report this error when connecting to Windows XP and Windows Vista hosts:<br />
-<img style="display: inline; margin-top: 5px;" title="RemoteAppNotSupported" src="http://stealthpuppy.com/wp-content/uploads/2009/12/RemoteAppNotSupported.png" alt="RemoteAppNotSupported" width="430" height="203" border="0" /></p>
+    <p>You may recall from <a href="https://stealthpuppy.com/virtualisation/remoteapp-for-hyper-v-hyper-what">my last post on RemoteApp</a>, that we can get RemoteApp for Hyper-V works on other platforms too. While it was straight-forward publishing applications from a Windows 7 host, the client would report this error when connecting to Windows XP and Windows Vista hosts:<br />
+<img style="display: inline; margin-top: 5px;" title="RemoteAppNotSupported" src="https://stealthpuppy.com/wp-content/uploads/2009/12/RemoteAppNotSupported.png" alt="RemoteAppNotSupported" width="430" height="203" border="0" /></p>
 
 <p>Kind of annoying, because the original <a href="http://blogs.msdn.com/rds/archive/2009/12/15/remoteapp-for-hyper-v.aspx">RemoteApp for Hyper-V post</a> on the RDS blog, showed us something cool but left out the important part on how to get it working. Well, thanks to <a href="http://blogs.technet.com/virtualworld">Justin</a> and <a href="http://blogs.msdn.com/rds/archive/2009/12/15/remoteapp-for-hyper-v.aspx#9964757">this comment</a>, I’ve been able to fix the issue and get RemoteApp running on XP and Vista (unfortunately I can’t take any of the credit).</p>
 
@@ -150,23 +150,23 @@ use redirection server name:i:0[/code]</p>
 
 <p>When launching the RemoteApp program, the UI isn’t quite as seamless as you get with the XenApp client. You will first see a warning prompt if the .RDP file is not signed, and then a dialog box while the client connects:</p>
 
-<p><a href="http://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappconnect-2/" rel="attachment wp-att-1369"><img class="alignnone size-full wp-image-1369" title="RemoteAppConnect" src="http://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1.png" alt="" width="453" height="285" srcset="https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1.png 453w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1-300x188.png 300w" sizes="(max-width: 453px) 100vw, 453px" /></a></p>
+<p><a href="https://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappconnect-2/" rel="attachment wp-att-1369"><img class="alignnone size-full wp-image-1369" title="RemoteAppConnect" src="https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1.png" alt="" width="453" height="285" srcset="https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1.png 453w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppConnect1-300x188.png 300w" sizes="(max-width: 453px) 100vw, 453px" /></a></p>
 
 <p>If the RemoteApp host is Windows XP, the user will be required to click the Details button to see the remote login dialog box and enter their credentials:</p>
 
-<p><a href="http://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappauth-2/" rel="attachment wp-att-1368"><img class="alignnone size-full wp-image-1368" title="RemoteAppAuth" src="http://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1.png" alt="" width="660" height="609" srcset="https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1-150x138.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1-300x276.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a></p>
+<p><a href="https://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappauth-2/" rel="attachment wp-att-1368"><img class="alignnone size-full wp-image-1368" title="RemoteAppAuth" src="https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1.png" alt="" width="660" height="609" srcset="https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1.png 660w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1-150x138.png 150w, https://stealthpuppy.com/wp-content/uploads/2010/02/RemoteAppAuth1-300x276.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a></p>
 
 <p>If the client is Windows XP or above and the host is Windows Vista or above, you can configure <a href="http://blogs.msdn.com/rds/archive/2007/04/19/how-to-enable-single-sign-on-for-my-terminal-server-connections.aspx">credential pass-through (single sign-on)</a> to make connecting seamless. You must first <a href="http://support.microsoft.com/kb/951608">enable CredSSP</a> on Windows XP SP3 clients. Pass-through won’t work for Windows XP hosts - although you may be able to save the username and password in the .RDP file instead.</p>
 
 <p>So finally with all of the pieces in place, here’s what you’ll see with applications running via RemoteApp. In this screenshot I have Calculator running remotely from Windows XP and Windows Vista next to the local version.</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/02/DesktopWithCalculator.png"><img style="display: inline; border: 0px;" title="DesktopWithCalculator" src="http://stealthpuppy.com/wp-content/uploads/2010/02/DesktopWithCalculator_thumb.png" alt="DesktopWithCalculator" width="660" height="432" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2010/02/DesktopWithCalculator.png"><img style="display: inline; border: 0px;" title="DesktopWithCalculator" src="https://stealthpuppy.com/wp-content/uploads/2010/02/DesktopWithCalculator_thumb.png" alt="DesktopWithCalculator" width="660" height="432" border="0" /></a></p>
 
 <p>One thing to note is that the remote applications are all group together on the taskbar; in this screenshot, the two remote Calculators are grouped with Remote Desktop Connection – users’ won’t see separate remote buttons as you get in competing products.</p>
 
 <h3 id="so-whats-left">So What’s Left?</h3>
 
-<p>Use of RemoteApp is <a href="http://stealthpuppy.com/virtualisation/remoteapp-for-hyper-v-hyper-what">not restricted to the brand of hypervisor</a> - RemoteApp will be available on Windows XP+ regardless of where it is running. You could, for example, use blade PCs as hosts.</p>
+<p>Use of RemoteApp is <a href="https://stealthpuppy.com/virtualisation/remoteapp-for-hyper-v-hyper-what">not restricted to the brand of hypervisor</a> - RemoteApp will be available on Windows XP+ regardless of where it is running. You could, for example, use blade PCs as hosts.</p>
 
 <p>If you have Citrix XenApp or Quest vWorkspace, you already have tools to publishing applications from virtual desktops, so where would this actually be useful? SMBs without either product would benefit (although I have had one enterprise customer ask me about this feature) or perhaps this would work as a replacement for Windows XP Mode if you don’t like Windows Virtual PC (and who does?).</p>
 

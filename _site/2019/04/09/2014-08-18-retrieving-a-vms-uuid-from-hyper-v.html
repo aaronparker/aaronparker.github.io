@@ -1,4 +1,4 @@
-<p>I’ve previously posted about retrieving the <a href="http://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> from <a href="http://stealthpuppy.com/retrieving-a-vms-uuid-from-vsphere/">a virtual machine hosted on vSphere</a>. UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here’s how to obtain the UUID from a virtual machine hosted on Hyper-V.</p>
+<p>I’ve previously posted about retrieving the <a href="http://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a> from <a href="https://stealthpuppy.com/retrieving-a-vms-uuid-from-vsphere/">a virtual machine hosted on vSphere</a>. UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here’s how to obtain the UUID from a virtual machine hosted on Hyper-V.</p>
 
 <p>Just like with vSphere, the UUID isn’t a property of the virtual machine that can be queried directly. We need to go via WMI to query the target virtual machine. Note that in this function, I’m using <a href="http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/05/30/the-v2-wmi-namespace-in-hyper-v-on-windows-8.aspx">version 2 of the Root\Virtualization WMI namespace</a> (root\virtualization\v2. This means the function as written, will <a href="http://msdn.microsoft.com/en-us/library/hh850319(v=vs.85)">only work on Windows 8 and Windows Server 2012</a> (and above). If you want to use this function on earlier versions of Hyper-V, remove the “\v2” from the namespace.</p>
 
@@ -52,10 +52,10 @@ PVS1		74EFF5BC-A24E-48C3-85BE-12D758FE7AB6
             This command retrieves the UUIDs from the all of the virtual machines on the local host.
  
         .NOTES
-            http://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/ for support information.
+            https://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/ for support information.
  
         .LINK
-            http://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/
+            https://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/
     #&gt;</span>
     <span class="o">[</span><span class="na">cmdletbinding</span><span class="o">(</span><span class="na">SupportsShouldProcess</span><span class="o">=</span><span class="nv">$True</span><span class="o">)]</span>
     <span class="k">param</span><span class="o">(</span>

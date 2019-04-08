@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img align="left" src="http://stealthpuppy.com/wp-content/uploads/2007/04/exchange.png" />I’ve upgraded our internal Exchange organisation over the last week and I’ve got to say Exchange 2007 is a completely different ball game. Now for seasoned Exchange architects and administrators a lot of the Exchange 2007 upgrade process is probably not new, but for those of us who don’t look after Exchange full time it’s a steep learning curve. The biggest challenges for me have been around the new Exchange Management Shell. I think the implementation of PowerShell as the basis for all Exchange management is a good thing €“ there’s nothing like being able to paste the exact command line into your change log. However there’s been a couple of issue that I’ve got with Exchange 2007:</p>
+    <p><img align="left" src="https://stealthpuppy.com/wp-content/uploads/2007/04/exchange.png" />I’ve upgraded our internal Exchange organisation over the last week and I’ve got to say Exchange 2007 is a completely different ball game. Now for seasoned Exchange architects and administrators a lot of the Exchange 2007 upgrade process is probably not new, but for those of us who don’t look after Exchange full time it’s a steep learning curve. The biggest challenges for me have been around the new Exchange Management Shell. I think the implementation of PowerShell as the basis for all Exchange management is a good thing €“ there’s nothing like being able to paste the exact command line into your change log. However there’s been a couple of issue that I’ve got with Exchange 2007:</p>
 
 <ol>
   <li>The lack of detailed command line examples; and</li>
@@ -61,11 +61,11 @@
 
 <p>Note that command doesn’t actually upgrade the policy, it recreates it. Why there isn’t and upgrade option I don’t know. So what happens when you want to “upgrade” a custom e-mail policy? Well you can use the wizard to create a new policy, but what do you do when you need to create a policy that uses a custom attribute (i.e. and LDAP query). In Exchange 2003 there was a nice GUI that you could use to construct the LDAP query:</p>
 
-<p><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1298.ExchangeRecipients.png" /></p>
+<p><img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1298.ExchangeRecipients.png" /></p>
 
 <p>Now in Exchange 2007 there is no query builder, instead you get just this:</p>
 
-<p><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1299.Exchange2007CustomAttribute.png" /></p>
+<p><img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1299.Exchange2007CustomAttribute.png" /></p>
 
 <p>Then check out the documentation on the <a href="http://technet.microsoft.com/en-us/library/bb124517.aspx">Set-EmailAddressPolicy</a> command. There’s actually no detail there about what a custom attribute is let alone a link to how to create one. How’s that for a kick in the teeth?</p>
 

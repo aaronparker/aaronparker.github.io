@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,11 +46,11 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>I have previously detailed some efforts on sequencing some of the Adobe CS3 applications (<a href="http://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3">Photoshop</a>, <a href="http://stealthpuppy.com/virtualisation/sequencing-adobe-illustrator-cs3">Illustrator</a> and <a href="http://stealthpuppy.com/virtualisation/sequencing-adobe-indesign-cs3">InDesign</a>) and some <a href="http://stealthpuppy.com/virtualisation/addressing-licensing-issues-with-adobe-cs3-apps-on-softgrid">challenges related to the FLEXnet licensing</a> component that comes with each application. It’s only recently that we’ve been able to do some user acceptance testing and we’ve found that the applications have failed.</p>
+    <p>I have previously detailed some efforts on sequencing some of the Adobe CS3 applications (<a href="https://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3">Photoshop</a>, <a href="https://stealthpuppy.com/virtualisation/sequencing-adobe-illustrator-cs3">Illustrator</a> and <a href="https://stealthpuppy.com/virtualisation/sequencing-adobe-indesign-cs3">InDesign</a>) and some <a href="https://stealthpuppy.com/virtualisation/addressing-licensing-issues-with-adobe-cs3-apps-on-softgrid">challenges related to the FLEXnet licensing</a> component that comes with each application. It’s only recently that we’ve been able to do some user acceptance testing and we’ve found that the applications have failed.</p>
 
 <p>During initial testing I found that I could not get multiple CS3 application bubbles executing because the FLEXnet service in the second bubble would fail. Exactly why we’re unsure, but I had found that stopping the service post launch would allow multiple CS3 applications to run successfully. Unfortunately that assumption was incorrect.</p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/06/flexnet.png" border="0" alt="FlexNet" width="599" height="28" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/06/flexnet.png" border="0" alt="FlexNet" width="599" height="28" /></p>
 
 <p>My mate <a href="http://www.dougandjodie.com/">Doug</a>, who’s now working with us, has taken up the challenge and come up with a solution. This involves installing the FLEXnet licensing service natively on the sequencer before sequencing and ensuring this service is deployed to your client machines.</p>
 

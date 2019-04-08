@@ -18,15 +18,16 @@
 
 <h3 id="disable-the-updates-ui">Disable the Updates UI</h3>
 
-<p>Disabling the user interface elements to these update preferences and launch points is also important. To hide UI elements in Firefox, create <em><a href="http://www.mozilla.org/unix/customizing.html">UserChrome.css</a></em> in <code class="highlighter-rouge">%APPDATA%\Mozilla\Firefox\Profiles\&lt;profile&gt;.default\chrome</code>. This file does not exist by default, although you will find an example file in the chrome folder. Create the file and add the following lines to hide the updates menu item and the Firefox check-box in the Updates dialog box.</p>
+<p>Disabling the user interface elements to these update preferences and launch points is also important. To hide UI elements in Firefox, create <a href="http://www.mozilla.org/unix/customizing.html">UserChrome.css</a> in <code class="highlighter-rouge">%APPDATA%\Mozilla\Firefox\Profiles\&lt;profile&gt;.default\chrome</code>. This file does not exist by default, although you will find an example file in the chrome folder. Create the file and add the following lines to hide the updates menu item and the Firefox check-box in the Updates dialog box.</p>
 
-<p>[code]/* remove the Check for Updates menu item */<br />
-#updateSeparator, #checkForUpdates { display: none !important; }<br />
-/* remove the Updates / Firefox checkbox */<br />
-#enableAppUpdate { display: none !important; }[/code]</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/\<span class="k">*</span> remove the Check <span class="k">for </span>Updates menu item \<span class="k">*</span>/  
+<span class="c1">#updateSeparator, #checkForUpdates { display: none !important; }  </span>
+/\<span class="k">*</span> remove the Updates / Firefox checkbox \<span class="k">*</span>/  
+<span class="c1">#enableAppUpdate { display: none !important; }</span>
+</code></pre></div></div>
 
 <p>If it is working correctly, you should see something like this (before and after):</p>
 
-<p><img style="display: inline; border: 0px;" title="FirefoxOptions" src="http://stealthpuppy.com/wp-content/uploads/2010/03/FirefoxOptions.png" border="0" alt="FirefoxOptions" width="660" height="501" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2010/03/FirefoxOptions.png" alt="Firefox options" /></p>
 
 <p>This method is not completely fool-proof (the modified files all exist in the user profile and are thus writeable) but it should stop users from unwittingly attempting to update Firefox and allow you to control when updates are deployed.</p>

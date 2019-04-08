@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -50,13 +50,13 @@
 
 <p>Here’s one I’ve been troubleshooting on and off for a while - an unattended Windows deployment via MDT fails with error 0x80004005, which is about as helpful as a brick life vest.</p>
 
-<p><img class="size-full wp-image-2742 aligncenter" title="Failed MDT Deployment" src="http://stealthpuppy.com/wp-content/uploads/2012/06/FailedMDTDeployment.png" alt="Failed MDT Deployment" width="559" height="399" srcset="https://stealthpuppy.com/wp-content/uploads/2012/06/FailedMDTDeployment.png 559w, https://stealthpuppy.com/wp-content/uploads/2012/06/FailedMDTDeployment-150x107.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/06/FailedMDTDeployment-300x214.png 300w" sizes="(max-width: 559px) 100vw, 559px" /></p>
+<p><img class="size-full wp-image-2742 aligncenter" title="Failed MDT Deployment" src="https://stealthpuppy.com/wp-content/uploads/2012/06/FailedMDTDeployment.png" alt="Failed MDT Deployment" width="559" height="399" srcset="https://stealthpuppy.com/wp-content/uploads/2012/06/FailedMDTDeployment.png 559w, https://stealthpuppy.com/wp-content/uploads/2012/06/FailedMDTDeployment-150x107.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/06/FailedMDTDeployment-300x214.png 300w" sizes="(max-width: 559px) 100vw, 559px" /></p>
 
 <p>Similarly, the MDT log files are pretty useless in narrowing down a root cause. Whilst I couldn’t use the log files to help me discover the issue, I have been using MDT to deliver the same task sequence on multiple hypervisors in our lab environment.</p>
 
 <p>As it turns out the issue can be caused by a fairly specific configuration - delivering Windows Server 2008 R2 with the Remote Desktop Services Session Host (RDSH) role enabled via UNATTEND.XML to a virtual machine on Hyper-V with <a href="http://technet.microsoft.com/en-gb/library/ff817651(WS.10).aspx">Dynamic Memory</a> enabled and the Startup RAM set to 512MB.</p>
 
-<p><img class="size-full wp-image-2743 aligncenter" title="Hyper-V Dynamic Memory" src="http://stealthpuppy.com/wp-content/uploads/2012/06/DynamicMemory.png" alt="Hyper-V Dynamic Memory" width="660" height="368" srcset="https://stealthpuppy.com/wp-content/uploads/2012/06/DynamicMemory.png 660w, https://stealthpuppy.com/wp-content/uploads/2012/06/DynamicMemory-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/06/DynamicMemory-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
+<p><img class="size-full wp-image-2743 aligncenter" title="Hyper-V Dynamic Memory" src="https://stealthpuppy.com/wp-content/uploads/2012/06/DynamicMemory.png" alt="Hyper-V Dynamic Memory" width="660" height="368" srcset="https://stealthpuppy.com/wp-content/uploads/2012/06/DynamicMemory.png 660w, https://stealthpuppy.com/wp-content/uploads/2012/06/DynamicMemory-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/06/DynamicMemory-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
 
 <p>Dynamic Memory is probably something you would not run for RDSH in production, so there’s a few workarounds:</p>
 

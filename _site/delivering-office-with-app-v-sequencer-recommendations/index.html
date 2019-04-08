@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -125,7 +125,7 @@
   <li>2 x vDisks – use fixed size disks if you have the space. Fixed size disks will offer better IO performance. Additionally the App-V 4.6 SP1 Sequencer can automatically create a Q: drive if none already exists; however a second vDisk is a better approach.</li>
 </ul>
 
-<p><img class="alignleft" style="margin-right: 10px;" src="http://stealthpuppy.com/wp-content/uploads/2012/02/021412_1854_DeliveringO1.png" alt="" width="48" height="48" align="left" /> If no secondary partition exists, the Sequencer setup will create a substituted drive letter for the virtual drive. A known issue exists where this configuration can cause an issue with new and upgraded packages because the Sequencer resolves the full path instead of the substituted drive letter.</p>
+<p><img class="alignleft" style="margin-right: 10px;" src="https://stealthpuppy.com/wp-content/uploads/2012/02/021412_1854_DeliveringO1.png" alt="" width="48" height="48" align="left" /> If no secondary partition exists, the Sequencer setup will create a substituted drive letter for the virtual drive. A known issue exists where this configuration can cause an issue with new and upgraded packages because the Sequencer resolves the full path instead of the substituted drive letter.</p>
 
 <p>This issue looks to be fixed with <a href="http://support.microsoft.com/kb/2571168">Hotfix 3 for the 4.6 SP1 Sequencer</a>; however it is still recommended that you create a second vDisk, rather than let setup create the drive for you.</p>
 
@@ -142,7 +142,7 @@
   </li>
   <li>Install the hypervisor tools or additions to install drivers and services required by the hypervisor to support the VM correctly</li>
   <li>Enable Windows Firewall including the File and Printer Sharing rule to prevent remote PCs from connecting to the virtual machine</li>
-  <li>Active Windows inside the VM. A KMS will be make this simple; however if you are using a MAK key provided by your TechNet or MSDN subscription, this article is recommended reading: <a href="http://stealthpuppy.com/general/managing-product-activation-with-a-technet-subscription-and-msdn-too/">Managing product activation with a TechNet subscription</a></li>
+  <li>Active Windows inside the VM. A KMS will be make this simple; however if you are using a MAK key provided by your TechNet or MSDN subscription, this article is recommended reading: <a href="https://stealthpuppy.com/general/managing-product-activation-with-a-technet-subscription-and-msdn-too/">Managing product activation with a TechNet subscription</a></li>
   <li>Disable System Restore on Windows XP or System Protection on Windows 7</li>
   <li>Disable Windows Defender on Windows 7 (or disable the service)</li>
   <li>If deploying Windows 7, leave the following Optional Components enabled:
@@ -273,7 +273,7 @@
 
 <p>Additional pre-requisites should only be installed when required by an application. For example, if Office is a pre-requisite of another application (such as SAP products or a plug-in) only install Office when sequencing that application.</p>
 
-<p><img class="alignleft" style="margin-right: 10px;" src="http://stealthpuppy.com/wp-content/uploads/2012/02/021412_1854_DeliveringO2.png" alt="" width="48" height="48" align="left" /> At this point you will have a VM that can be used as a sequencing environment as well as an App-V client. It is highly recommended that you create two VMs based on this environment so that you have a second VM to perform testing of packages to confirm that the sequenced applications work at runtime.</p>
+<p><img class="alignleft" style="margin-right: 10px;" src="https://stealthpuppy.com/wp-content/uploads/2012/02/021412_1854_DeliveringO2.png" alt="" width="48" height="48" align="left" /> At this point you will have a VM that can be used as a sequencing environment as well as an App-V client. It is highly recommended that you create two VMs based on this environment so that you have a second VM to perform testing of packages to confirm that the sequenced applications work at runtime.</p>
 
 <h1 id="sequencer">Sequencer</h1>
 

@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img align="left" src="http://stealthpuppy.com/wp-content/uploads/2006/12/exchange.png" />We recently had client with a requirement to provide Outlook Web Access and Exchange over the Internet/Outlook Anywhere (RPC over HTTPS) access using a single IP address on ISA Server. The problem with making both of these services available on a single IP address is that both utilise HTTPS which by default is TCP 443. RPC over HTTPS with Outlook can’t use an alternate port - if you attempt to specify and alternate port Outlook UI you receive the following error:</p>
+    <p><img align="left" src="https://stealthpuppy.com/wp-content/uploads/2006/12/exchange.png" />We recently had client with a requirement to provide Outlook Web Access and Exchange over the Internet/Outlook Anywhere (RPC over HTTPS) access using a single IP address on ISA Server. The problem with making both of these services available on a single IP address is that both utilise HTTPS which by default is TCP 443. RPC over HTTPS with Outlook can’t use an alternate port - if you attempt to specify and alternate port Outlook UI you receive the following error:</p>
 
 <font face="courier new,courier">The proxy server you have specified is invalid. Correct it and try again.</font>
 
@@ -54,7 +54,7 @@
 
 <p>“<font face="courier new,courier">Moving or copying items between Exchange servers is not supported</font>” and “<font face="courier new,courier">502 Bad Gateway</font>”</p>
 
-<p><img border="0" width="369" src="http://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.220.OWAError1.PNG" height="113" style="width: 369px; height: 113px" /><img border="0" src="http://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.221.OWAError2.PNG" /></p>
+<p><img border="0" width="369" src="https://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.220.OWAError1.PNG" height="113" style="width: 369px; height: 113px" /><img border="0" src="https://stealthpuppy.com/wp-content/uploads/2006/12/1000.14.221.OWAError2.PNG" /></p>
 
 <p>The solution to this was to configure IIS on the Exchange server to use TCP 444 for HTTPS/SSL and reconfigure the ISA Server web publishing rule to specify TCP 444 for SSL for the web listenter and the published server. I presume this has something to do with the dynamic nature of the Outlook Web Access application, but I’ve not had a chance to investigate any deeper.</p>
 

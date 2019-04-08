@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -47,10 +47,10 @@
 
   <div class="post-content e-content" itemprop="articleBody">
     <p class="alert">
-  Note, this post is now out of date; for an Adobe Reader 9 version of this post, go <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">here</a>.
+  Note, this post is now out of date; for an Adobe Reader 9 version of this post, go <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">here</a>.
 </p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/02/adobereader.png" alt="adobereader.png" align="left" /> Deployment of Adobe Reader in an enterprise environment has been much simplified since version 6, however there is still some important preparation before you think about deploying version 8. Adobe have compiled information on enterprise deployment which are available on the following pages - I prefer the developer page over the page aimed at IT professionals because it has more information and is a little easier to read:</p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/02/adobereader.png" alt="adobereader.png" align="left" /> Deployment of Adobe Reader in an enterprise environment has been much simplified since version 6, however there is still some important preparation before you think about deploying version 8. Adobe have compiled information on enterprise deployment which are available on the following pages - I prefer the developer page over the page aimed at IT professionals because it has more information and is a little easier to read:</p>
 
 <ul>
   <li><a href="http://www.adobe.com/devnet/acrobat/enterprise_deployment.html">Adobe Developer Centre: Enterprise deployment</a></li>
@@ -68,7 +68,7 @@
 
 <h3 id="disabling-unwanted-features">Disabling Unwanted Features</h3>
 
-<p>Simplifying Adobe Reader in an enterprise environment is something that we’re all looking to do, including disabling the infamous Adobe Updater 5. Disabling features is best done by creating custom transform files. I have instructions on <a href="http://stealthpuppy.com/deployment/disable-adobe-updater-with-adobe-customization-wizard-8">creating your own transform files using the Adobe Customisation Wizard</a>, or you can use the transforms files listed here:First up I have a basic transform that sets the following options:</p>
+<p>Simplifying Adobe Reader in an enterprise environment is something that we’re all looking to do, including disabling the infamous Adobe Updater 5. Disabling features is best done by creating custom transform files. I have instructions on <a href="https://stealthpuppy.com/deployment/disable-adobe-updater-with-adobe-customization-wizard-8">creating your own transform files using the Adobe Customisation Wizard</a>, or you can use the transforms files listed here:First up I have a basic transform that sets the following options:</p>
 
 <ul>
   <li>Supresses the EULA</li>
@@ -83,13 +83,13 @@
 </ul>
 
 <p class="download">
-  <a href="http://stealthpuppy.com/wp-content/uploads/2007/06/Reader8xBasic.mst">Adobe Reader 8.1.x Basic transform file</a>
+  <a href="https://stealthpuppy.com/wp-content/uploads/2007/06/Reader8xBasic.mst">Adobe Reader 8.1.x Basic transform file</a>
 </p>
 
 <p>The second transform provides the same settings as above in addition to completely preventing the installation of Adobe Updater:</p>
 
 <p class="download">
-  <a href="http://stealthpuppy.com/wp-content/uploads/2007/06/Reader8xAdvanced.mst">Adobe Reader 8.1.x Advanced transform file</a>
+  <a href="https://stealthpuppy.com/wp-content/uploads/2007/06/Reader8xAdvanced.mst">Adobe Reader 8.1.x Advanced transform file</a>
 </p>
 
 <h3 id="terminal-servers-and-browser-integration">Terminal Servers and Browser Integration</h3>
@@ -98,7 +98,7 @@
 
 <h3 id="hiding-menu-items">Hiding Menu Items</h3>
 
-<p>Thanks to <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-81#comment-609">David for the information</a>, you can remove a few more of the menu items in Reader that you might not want hanging around, such as the <em>Beyond Adobe Reader</em> link. Why Adobe has resorted to using JavaScript files to modify the interface is just beyond me. On one hand we can restrict some of the interface via the registry (which even uses the HKLMSoftwarePolicies key) but on the other we need to resort to a method that must be managed on each individual machine. Sometimes developers just floor me with their stupidity.The first listing here is code you can use to find the name of the menu or toolbar button. The second listing shows you the code required to hide the items. Copy the code and save them to Program FilesAdobeReader 8.0ReaderJavascripts.</p>
+<p>Thanks to <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-81#comment-609">David for the information</a>, you can remove a few more of the menu items in Reader that you might not want hanging around, such as the <em>Beyond Adobe Reader</em> link. Why Adobe has resorted to using JavaScript files to modify the interface is just beyond me. On one hand we can restrict some of the interface via the registry (which even uses the HKLMSoftwarePolicies key) but on the other we need to resort to a method that must be managed on each individual machine. Sometimes developers just floor me with their stupidity.The first listing here is code you can use to find the name of the menu or toolbar button. The second listing shows you the code required to hide the items. Copy the code and save them to Program FilesAdobeReader 8.0ReaderJavascripts.</p>
 
 <p>List menu items:</p>
 
@@ -202,14 +202,14 @@ app.hideMenuItem(“DetectAndRepair”);</p>
   <li>Apparently documentation for using IBM Tivoli Configuration Manager to deploy Reader/Acrobat is ‘coming in mid-2007’.</li>
 </ul>
 
-<p>Any organisation utilising Group Policy for application deployment may find things a little more challenging. Check out my post on <a href="http://stealthpuppy.com/deployment/group-policy-application-deployment-done-right">deploying applications with Group Policy</a> for details on doing it the right way.You will also find information on deploying Reader on:</p>
+<p>Any organisation utilising Group Policy for application deployment may find things a little more challenging. Check out my post on <a href="https://stealthpuppy.com/deployment/group-policy-application-deployment-done-right">deploying applications with Group Policy</a> for details on doing it the right way.You will also find information on deploying Reader on:</p>
 
 <ul>
   <li><a href="http://www.adobe.com/devnet/acrobat/pdfs/wts_8.pdf">Windows Terminal Server</a>; and</li>
   <li><a href="http://www.adobe.com/devnet/acrobat/pdfs/wts_8.pdf">Citrix Presentation Server</a></li>
 </ul>
 
-<p>Why two documents are required for Terminal Server and Presentation Server, I don’t know - deployment is exactly the same. If you are deploying via a script, I have details on scripting the installation of Adobe Reader 8.x - <a href="http://stealthpuppy.com/unattended/unattended-install-adobe-reader-8x">Unattended Install: Adobe Reader 8.x</a>.</p>
+<p>Why two documents are required for Terminal Server and Presentation Server, I don’t know - deployment is exactly the same. If you are deploying via a script, I have details on scripting the installation of Adobe Reader 8.x - <a href="https://stealthpuppy.com/unattended/unattended-install-adobe-reader-8x">Unattended Install: Adobe Reader 8.x</a>.</p>
 
   </div><a class="u-url" href="/deploying-adobe-reader-81/" hidden></a>
 </article>

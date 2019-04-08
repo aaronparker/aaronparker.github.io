@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img style="background-image: none; margin: 0px 0px 10px 10px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border: 0px;" title="CitrixWindows8Desktop128" src="http://stealthpuppy.com/wp-content/uploads/2012/08/CitrixWindows8Desktop128.png" alt="CitrixWindows8Desktop128" width="128" height="128" align="right" border="0" />Here’s a quick a dirty method of controlling whether your <a href="http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx">Microsoft Deployment Toolkit</a> (MDT) task sequence deploys a XenApp Controller (broker, XML service) or Worker (session host).</p>
+    <p><img style="background-image: none; margin: 0px 0px 10px 10px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border: 0px;" title="CitrixWindows8Desktop128" src="https://stealthpuppy.com/wp-content/uploads/2012/08/CitrixWindows8Desktop128.png" alt="CitrixWindows8Desktop128" width="128" height="128" align="right" border="0" />Here’s a quick a dirty method of controlling whether your <a href="http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx">Microsoft Deployment Toolkit</a> (MDT) task sequence deploys a XenApp Controller (broker, XML service) or Worker (session host).</p>
 
 <p>Let’s assume that you are automating the deployment of your XenApp image using MDT in an environment with XenApp Controllers and Workers. It makes sense to use the same task sequence to deploy both XenApp roles because there’s not a lot of difference between both server types (maybe on the Controllers we could avoid installing applications).</p>
 
@@ -75,15 +75,15 @@ XenAppRole=CONTROLLER[/code]</p>
 
 <p>Now in the task sequence, modify the conditions (on the Option tab) of each step. In my case I have the XenApp components as child items of a group. In this case I’ve also added a condition that only processes this group if the XenAppRole property exists (regardless of role):</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2012/08/XenAppRole.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppRole" src="http://stealthpuppy.com/wp-content/uploads/2012/08/XenAppRole_thumb.png" alt="XenAppRole" width="660" height="129" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppRole.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppRole" src="https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppRole_thumb.png" alt="XenAppRole" width="660" height="129" border="0" /></a></p>
 
 <p>On the XenApp Controller step, create a condition that detects whether XenAppRole has been set to CONTROLLER:</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2012/08/XenAppController.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppController" src="http://stealthpuppy.com/wp-content/uploads/2012/08/XenAppController_thumb.png" alt="XenAppController" width="660" height="219" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppController.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppController" src="https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppController_thumb.png" alt="XenAppController" width="660" height="219" border="0" /></a></p>
 
 <p>On the XenApp Worker step, create a condition that detects whether XenAppRole has been set to WORKER:</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2012/08/XenAppWorker.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppWorker" src="http://stealthpuppy.com/wp-content/uploads/2012/08/XenAppWorker_thumb.png" alt="XenAppWorker" width="660" height="218" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppWorker.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppWorker" src="https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppWorker_thumb.png" alt="XenAppWorker" width="660" height="218" border="0" /></a></p>
 
 <p>Simple and straightforward - I get a clean, consistent build of XenApp 6.5 and control over which role is deployed to an end-point by changing one line in CustomSettings.ini.</p>
 

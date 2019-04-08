@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -48,23 +48,23 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>You remember <a href="http://www.microsoft.com/windowsserver2003/techinfo/overview/abe.mspx">Access Based Enumeration</a> right? I’m often surprised by people who didn’t know this features exists, so here’s refresher.</p>
 
-<p>Access Based Enumeration is the add-on to Windows Server 2003 and included in Windows Server 2008 that controls the display of files and folders in remote shares based on user-rights. This is the tool that helps you create <a href="http://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration">dynamic Start Menus for Terminal Servers</a> or turn a user home share view from this:</p>
+<p>Access Based Enumeration is the add-on to Windows Server 2003 and included in Windows Server 2008 that controls the display of files and folders in remote shares based on user-rights. This is the tool that helps you create <a href="https://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration">dynamic Start Menus for Terminal Servers</a> or turn a user home share view from this:</p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/04/abesharebefore.png" border="0" alt="ABEShareBefore" width="409" height="251" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/04/abesharebefore.png" border="0" alt="ABEShareBefore" width="409" height="251" /></p>
 
 <p>into this:</p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/04/abeshareafter.png" border="0" alt="ABEShareAfter" width="409" height="251" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/04/abeshareafter.png" border="0" alt="ABEShareAfter" width="409" height="251" /></p>
 
 <p>It’s also especially good for those common file shares that everyone has access but are full of folders they can’t access.</p>
 
 <p>To use ABE in Windows Server 2003, you’ll need to download and install <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=04a563d9-78d9-4342-a485-b030ac442084&amp;DisplayLang=en">the installer for Windows 2003 Service Pack 1 and above</a>. You can then enabled access-based enumeration on each share:</p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/04/accessbasedenumeration2003.png" border="0" alt="AccessBasedEnumeration2003" width="294" height="394" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/04/accessbasedenumeration2003.png" border="0" alt="AccessBasedEnumeration2003" width="294" height="394" /></p>
 
 <p>For Windows Server 2008, ABE is built in and you can enable it by opening the <em>Share and Storage Management</em> MMC to view your list of shares, open the properties for the target share, click <em>Advanced</em> and add the tick to <em>Enable access-based enumeration</em>.</p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2008/04/accessbasedenumeration2008.png" border="0" alt="AccessBasedEnumeration2008" width="573" height="359" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2008/04/accessbasedenumeration2008.png" border="0" alt="AccessBasedEnumeration2008" width="573" height="359" /></p>
 
 <p>Nice and easy, so stop reading this post and going and enable ABE now.. Here’s more on ABE if you’re interested:</p>
 

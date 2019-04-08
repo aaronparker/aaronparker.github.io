@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -56,7 +56,7 @@
 
 <p>The problem with this approach is that when the laptop synchronises the folder, the user may need to resolve file conflicts and is presented with a dialog box that looks something like this:</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/08/OfflineFilesResolveConflict.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Offline Files Resolve Conflict" src="http://stealthpuppy.com/wp-content/uploads/2010/08/OfflineFilesResolveConflict_thumb.png" border="0" alt="Offline Files Resolve Conflict" width="498" height="429" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2010/08/OfflineFilesResolveConflict.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Offline Files Resolve Conflict" src="https://stealthpuppy.com/wp-content/uploads/2010/08/OfflineFilesResolveConflict_thumb.png" border="0" alt="Offline Files Resolve Conflict" width="498" height="429" /></a></p>
 
 <p>Most users are not going to know which option they should choose (and they certainly aren’t going to <a href="http://windows.microsoft.com/en-us/windows-vista/Resolving-sync-conflicts-frequently-asked-questions">read the help</a>). How many will know what the <em>UsrVol_sftfs_v.tmp</em> file is? I’d like to avoid this scenario as often as I can.</p>
 
@@ -82,7 +82,7 @@
 
 <p>When added to the Registry, it will look something like this:</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/08/SyncConflictHandling1.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="SyncConflictHandling" src="http://stealthpuppy.com/wp-content/uploads/2010/08/SyncConflictHandling_thumb1.png" border="0" alt="SyncConflictHandling" width="660" height="173" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2010/08/SyncConflictHandling1.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="SyncConflictHandling" src="https://stealthpuppy.com/wp-content/uploads/2010/08/SyncConflictHandling_thumb1.png" border="0" alt="SyncConflictHandling" width="660" height="173" /></a></p>
 
 <p>To test that the policy is working update a file at multiple locations when the file is offline (for example, delete the file in one location, but make changes to it in the other location). Connect back to the network and initiate a synchronisation operation (via Sync Centre) for the network share. Windows will trigger a conflict in the synchronisation process when it synchronises the file. Your policy should kick in and Sync Centre should automatically handle the conflict.</p>
 
@@ -104,7 +104,7 @@
   <li>Repeat for each share you want to manage</li>
 </ol>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/08/GPPrefReg.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GPPrefReg" src="http://stealthpuppy.com/wp-content/uploads/2010/08/GPPrefReg_thumb.png" border="0" alt="GPPrefReg" width="404" height="448" /></a></p>
+<p><a href="https://stealthpuppy.com/wp-content/uploads/2010/08/GPPrefReg.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GPPrefReg" src="https://stealthpuppy.com/wp-content/uploads/2010/08/GPPrefReg_thumb.png" border="0" alt="GPPrefReg" width="404" height="448" /></a></p>
 
 <p>Continuing the App-V User Data Directory as my example, I’ve hosted this on a network share and I want to ensure that the laptop copy always wins any conflict resolution. Therefore I’m using a value of 1 to ensure that in the event of changes on both the laptop and another machine, the changes on the laptop will be written back to the network.</p>
 

@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -64,7 +64,7 @@
   </li>
 </ul>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1390.ModifyUserSettings.png" border="0" alt="" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1390.ModifyUserSettings.png" border="0" alt="" /></p>
 
 <p>You’ll also want to take a look at the feature installation states - set each of these to either ON or OFF, don’t set any feature to Install on First Use. A subset of the options I disable when installing Office on a Terminal Server are:</p>
 
@@ -73,7 +73,7 @@
   <li>Office Shared Features / Proofing Tools / Spanish Proofing Tools / Spanish - French Translation</li>
 </ul>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1391.FeatureInstallationStates.png" border="0" alt="" /></p>
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1391.FeatureInstallationStates.png" border="0" alt="" /></p>
 
 <p>The first two options should be disabled as a part of <a href="http://support.microsoft.com/?kbid=823586">preventing CTFMON.EXE from running</a> in each user session. You will also have to unregister MSCTF.DLL as a part of your installation of Office (<code class="highlighter-rouge">REGSVR32 /S /U MSCTF.DLL</code>)</p>
 

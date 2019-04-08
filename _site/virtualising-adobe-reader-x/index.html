@@ -31,7 +31,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/securing-the-network-using-microsoft-isa-server-2004/">Securing the network using Microsoft ISA Server 2004</a><a class="page-link" href="/secure-access-to-exchange/">Secure access to Exchange</a><a class="page-link" href="/isa-client-spy/">ISA Client Spy</a><a class="page-link" href="/lessons-from-the-field-virtual-pc/">Lessons from the field: Virtual PC</a><a class="page-link" href="/troubleshooting-woes/">Troubleshooting Woes</a><a class="page-link" href="/active-directory-migration-tool-v30/">Active Directory Migration Tool v3.0</a><a class="page-link" href="/presentation-server-and-the-sun-java-vm/">Presentation Server and the Sun Java VM</a><a class="page-link" href="/citrix-application-isolation-environment-launch-delays/">Citrix Application Isolation Environment launch delays</a><a class="page-link" href="/iis-and-site-identifiers/">IIS and Site Identifiers</a><a class="page-link" href="/lessons-from-the-field-presentation-server/">Lessons from the field: Presentation Server</a><a class="page-link" href="/lessons-from-the-field-backup-active-directory/">Lessons from the field: Backup Active Directory</a><a class="page-link" href="/troubleshooting-applications/">Troubleshooting Applications</a><a class="page-link" href="/event-search/">Event Search</a><a class="page-link" href="/support-site-woes/">Support Site Woes</a><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a><a class="page-link" href="/smb-not-cifs.html">SMB not CIFS</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><a href="http://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise.png"><img style="background-image: none; margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 10px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ReaderXVirtualise" src="http://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise_thumb.png" alt="ReaderXVirtualise" width="128" height="124" align="right" border="0" /></a>This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.</p>
+    <p><a href="https://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise.png"><img style="background-image: none; margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 10px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ReaderXVirtualise" src="https://stealthpuppy.com/wp-content/uploads/2010/10/ReaderXVirtualise_thumb.png" alt="ReaderXVirtualise" width="128" height="124" align="right" border="0" /></a>This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.</p>
 
 <h3 id="dont-virtualize-reader">Don’t Virtualize Reader</h3>
 
@@ -56,7 +56,7 @@
 
 <p><em>Internet Explorer</em>: if Reader is isolated from Windows, Internet Explorer will be able to download PDFs which can then be opened with the virtualised Reader; however IE will have no knowledge of any application that is handling the PDF file type or MIME type. Launching Reader inside IE or viewing a PDF <a href="http://blogs.adobe.com/pdfdevjunkie/2007/08/using_the_html_embed_tag_to_di.html">embedded in a web page</a> will not be possible.</p>
 
-<p><img title="ComparingReaderInstallTypes" src="http://stealthpuppy.com/wp-content/uploads/2010/10/ComparingReaderInstallTypes.png" alt="" width="660" height="241" /></p>
+<p><img title="ComparingReaderInstallTypes" src="https://stealthpuppy.com/wp-content/uploads/2010/10/ComparingReaderInstallTypes.png" alt="" width="660" height="241" /></p>
 
 <p>You could solve this my launching Internet Explorer inside the Reader package, but this will require covering all of the ways a user can launch Internet Explorer. If you do that, what happens when you want IE to launch inside the environment of another package? App-V doesn’t handle integration with these entry points elegantly today.</p>
 
@@ -68,7 +68,7 @@
 
 <p>If I haven’t convinced you that virtualizing Reader is more trouble that it’s worth, then here’s how to do it:</p>
 
-<p>I’ve previously covered <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-x/">how to create a customised deployment of Reader X</a> to suit your environment. If you have read that article yet, I recommend that you do before proceeding further. Automating the installation and configuration of Reader during sequencing will make it easier to re-create the package and will simplify documentation.</p>
+<p>I’ve previously covered <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-x/">how to create a customised deployment of Reader X</a> to suit your environment. If you have read that article yet, I recommend that you do before proceeding further. Automating the installation and configuration of Reader during sequencing will make it easier to re-create the package and will simplify documentation.</p>
 
 <p>Here’s my recommendations for settings that you should configure when creating a transform to install Reader during sequencing:</p>
 
@@ -112,7 +112,7 @@ IF “%PROCESSOR_ARCHITECTURE%”==”x86” START /D “%ProgramFiles%\Adobe\Re
 
 <p>There is one issue though – the Adobe Reader Protected Mode doesn’t like running under App-V. During the monitoring phase the application may not launch on first run and on the second launch the following dialog box will be displayed:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AdobeReaderProtectedModePrompt" src="http://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderProtectedModePrompt_thumb.png" alt="AdobeReaderProtectedModePrompt" width="660" height="232" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AdobeReaderProtectedModePrompt" src="https://stealthpuppy.com/wp-content/uploads/2010/10/AdobeReaderProtectedModePrompt_thumb.png" alt="AdobeReaderProtectedModePrompt" width="660" height="232" border="0" /></p>
 
 <p>Choosing the option ‘Always open with Protected Mode disabled’ will save the setting in HKCU in the Registry, but until a fix is found (either by Adobe or Microsoft) you can disable Protected Mode using the following Registry key:</p>
 
