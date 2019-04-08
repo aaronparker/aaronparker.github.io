@@ -18,9 +18,9 @@ tags:
   - PowerShell
   - Visual C++ Redistributable
 ---
-I recently [posted an article](http://stealthpuppy.com/visual-c-redistributable-installer/) on a script I've written for downloading and installing the Microsoft&nbsp;[Visual C++ Redistributables](https://github.com/aaronparker/Install-VisualCRedistributables). Thanks to&nbsp;[Cornelius Schuchardt](https://twitter.com/techdecline), the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).
+I recently [posted an article](http://stealthpuppy.com/visual-c-redistributable-installer/) on a script I've written for downloading and installing the Microsoft [Visual C++ Redistributables](https://github.com/aaronparker/Install-VisualCRedistributables). Thanks to [Cornelius Schuchardt](https://twitter.com/techdecline), the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).
 
-Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you can [download from&nbsp;the releases page](https://github.com/aaronparker/Install-VisualCRedistributables/releases)&nbsp;and includes the following updates:
+Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you can [download from the releases page](https://github.com/aaronparker/Install-VisualCRedistributables/releases) and includes the following updates:
 
   * VisualCRedistributables.xml updated with MSI Product codes for the redistributables
   * Install-VisualCRedistributables.ps1 updated with ConfigMgr support - create applications for the redistributables in ConfigMgr
@@ -81,7 +81,7 @@ The XML file that contains the details about the Visual C++ Redistributables. Th
 
 Example: download the Visual C++ Redistributables listed in VisualCRedistributables.xml to the current folder.
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml"&nbsp;-Path .\</pre>
+<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path .\</pre>
 
 Specify a target folder to download the Redistributables to, otherwise use the current folder will be used.
 
@@ -113,7 +113,7 @@ Visual C++ Redistributables 2005 to 2017 (including 2015) installed:<figure>
 
 ### ConfigMgr
 
-Support for downloading the Redistributables and creating applications in System Center Configuration Manager&nbsp;has recently been added.
+Support for downloading the Redistributables and creating applications in System Center Configuration Manager has recently been added.
 
 #### CreateCMApp
 

@@ -51,4 +51,4 @@ Because App-V cannot be licensed on its own, understanding App-V licensing for 
 
   * [App-V 4.x FAQ: How is App-V licensed?](http://stealthpuppy.com/deployment/app-v-faq-3-how-is-app-v-licensed)
 
-&nbsp;
+ 

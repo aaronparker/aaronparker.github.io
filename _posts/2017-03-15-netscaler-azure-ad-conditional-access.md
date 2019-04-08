@@ -19,19 +19,19 @@ tags:
   - NetScaler
   - SAML
 ---
-Every so often a few of your favourite technologies intersect to create&nbsp;something magical and your passion for IT is renewed. That happened for me this week when configured Citrix NetScaler to authenticate to [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis) via [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) and enforce access to XenApp via [Azure Multi-factor Authentication](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication) and&nbsp;[Azure AD Conditional Access](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access) policies. The possibilities for securing remote access and the improved user experience that this configuration provides is so damn cool, everyone should know about it.
+Every so often a few of your favourite technologies intersect to create something magical and your passion for IT is renewed. That happened for me this week when configured Citrix NetScaler to authenticate to [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis) via [SAML](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language) and enforce access to XenApp via [Azure Multi-factor Authentication](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/multi-factor-authentication) and [Azure AD Conditional Access](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access) policies. The possibilities for securing remote access and the improved user experience that this configuration provides is so damn cool, everyone should know about it.
 
-Having said that, I'm pretty sure I'm late to the party&nbsp;-&nbsp;[Anton van Pelt](https://twitter.com/AntonvanPelt)&nbsp;has&nbsp;[covered most of the required configuration steps](https://www.antonvanpelt.com/use-azure-ad-idp-citrix-federated-authentication-service/) already; however, &nbsp;it's based on the Azure Classic portal. Here's I'll cover some of the configuration via the Azure Resource Manager portal.
+Having said that, I'm pretty sure I'm late to the party - [Anton van Pelt](https://twitter.com/AntonvanPelt) has [covered most of the required configuration steps](https://www.antonvanpelt.com/use-azure-ad-idp-citrix-federated-authentication-service/) already; however,  it's based on the Azure Classic portal. Here's I'll cover some of the configuration via the Azure Resource Manager portal.
 
 # Modern Authentication for NetScaler
 
-The use of cloud services is gaining traction rapidly - I'd be hard pressed to meet a customer that is not using a SaaS application. Organisations migrating to Microsoft's cloud offerings, such as&nbsp;Office 365, have access to Azure AD and can therefore enable&nbsp;Single Sign-on to across all SaaS&nbsp;apps.&nbsp;This can leave remote access to hosted applications through NetScaler stand out with a different authentication experience.&nbsp;Additionally traditional NetScaler Gateway configurations will have seperate access and authorisation policies from those SaaS apps.
+The use of cloud services is gaining traction rapidly - I'd be hard pressed to meet a customer that is not using a SaaS application. Organisations migrating to Microsoft's cloud offerings, such as Office 365, have access to Azure AD and can therefore enable Single Sign-on to across all SaaS apps. This can leave remote access to hosted applications through NetScaler stand out with a different authentication experience. Additionally traditional NetScaler Gateway configurations will have seperate access and authorisation policies from those SaaS apps.
 
 So, here's your traditional remote access front-end (with some nice branding, if you ask me).
 
 <figure id="attachment_5388" aria-describedby="caption-attachment-5388" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5388" src="http://stealthpuppy.com/wp-content/uploads/2017/03/StoreFrontLogin-1024x587.png" alt="Citrix StoreFront login page" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2017/03/StoreFrontLogin-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/03/StoreFrontLogin-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/03/StoreFrontLogin-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/03/StoreFrontLogin-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/03/StoreFrontLogin.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/03/StoreFrontLogin.png)<figcaption id="caption-attachment-5388" class="wp-caption-text">Citrix StoreFront login page*</figure>
 
-However, instead of authenticating directly to on-premises Active Directory and a 3rd party MFA solution&nbsp;([remember these?](https://www.google.com.au/search?q=rsa+token&espv=2&source=lnms&tbm=isch&sa=X&ved=0ahUKEwigqZn8msnSAhXlI8AKHbhYDCoQ_AUIBigB&biw=1920&bih=1006&dpr=1)) you can provide users with a consistent authentication experience, apply a single set of access policies against your hosted and SaaS apps and gain insights into user identity protection.
+However, instead of authenticating directly to on-premises Active Directory and a 3rd party MFA solution ([remember these?](https://www.google.com.au/search?q=rsa+token&espv=2&source=lnms&tbm=isch&sa=X&ved=0ahUKEwigqZn8msnSAhXlI8AKHbhYDCoQ_AUIBigB&biw=1920&bih=1006&dpr=1)) you can provide users with a consistent authentication experience, apply a single set of access policies against your hosted and SaaS apps and gain insights into user identity protection.
 
 Identity is the new control plane, where you can offload the entire authentication process away from NetScaler to Azure AD.
 
@@ -49,18 +49,18 @@ Your users now have a consistent method of accessing and authenticating to both 
 
 # Building the Solution
 
-To configure NetScaler to use&nbsp;SAML authentication for Azure AD and pass credentials successfully into the XenApp host there are a few required components. These are:
+To configure NetScaler to use SAML authentication for Azure AD and pass credentials successfully into the XenApp host there are a few required components. These are:
 
   * Citrix NetScaler - version 10+ is required to configure SAML authentication
   * StoreFront 3.6+ - StoreFront 3.5 or 3.0 will likely work; however, you'll want to ensure you are keeping StoreFront current with your XenApp or XenDesktop environment
-  * Citrix XenDesktop / XenApp 7.9+ - required to support Citrix Federated Authentication Service&nbsp;
-  * [Citrix Federated Authentication Service](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-13/secure/federated-authentication-service.html)&nbsp;- FAS is required to support SAML authentication. Users are issued with virtual smart cards when logging onto XenApp or XenDesktop resources
+  * Citrix XenDesktop / XenApp 7.9+ - required to support Citrix Federated Authentication Service 
+  * [Citrix Federated Authentication Service](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-13/secure/federated-authentication-service.html) - FAS is required to support SAML authentication. Users are issued with virtual smart cards when logging onto XenApp or XenDesktop resources
   * Active Directory Certificate Services - FAS integrates with ADCS to issue certificates. If you don't already have an enterprise PKI deployment, I have previously written about [deploying Active Directory Certificate Services](http://stealthpuppy.com/deploy-enterprise-root-certificate-authority/).
   * Azure AD Connect - to synchronise identities into Azure AD. You can deploy this configuration with [AD FS](https://technet.microsoft.com/en-us/windows-server-docs/identity/ad-fs/ad-fs-2016-overview) as well, but for my purposes, I'm using Azure AD for SAML authentication.
 
-In addition to the above, you'll of course require an Azure tenant to use Azure AD. While you can deploy this solution with the free tier of Azure AD, [Azure AD Basic or Premium](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-editions) is required for&nbsp;MFA or branding. In most cases, customers will be purchasing Azure AD Premium as a component of the [Microsoft Enterprise Security + Mobility](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security) suite.
+In addition to the above, you'll of course require an Azure tenant to use Azure AD. While you can deploy this solution with the free tier of Azure AD, [Azure AD Basic or Premium](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-editions) is required for MFA or branding. In most cases, customers will be purchasing Azure AD Premium as a component of the [Microsoft Enterprise Security + Mobility](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security) suite.
 
-The Citrix Federated Authentication Service architecture is shown in the&nbsp;diagram below. The Citrix documentation is aimed at configuring FAS with AD FS; however, it works just about the same way with Azure AD, so I've made some modifications to the diagram:
+The Citrix Federated Authentication Service architecture is shown in the diagram below. The Citrix documentation is aimed at configuring FAS with AD FS; however, it works just about the same way with Azure AD, so I've made some modifications to the diagram:
 
 <figure id="attachment_5402" aria-describedby="caption-attachment-5402" style="width: 707px" class="wp-caption alignnone">[<img class="size-full wp-image-5402" src="http://stealthpuppy.com/wp-content/uploads/2017/03/fas-architecture.png" alt="Citrix Federated Authentication Service architecture" width="707" height="371" srcset="https://stealthpuppy.com/wp-content/uploads/2017/03/fas-architecture.png 707w, https://stealthpuppy.com/wp-content/uploads/2017/03/fas-architecture-150x79.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/03/fas-architecture-300x157.png 300w" sizes="(max-width: 707px) 100vw, 707px" />](http://stealthpuppy.com/wp-content/uploads/2017/03/fas-architecture.png)<figcaption id="caption-attachment-5402" class="wp-caption-text">Citrix Federated Authentication Service architecture*</figure>
 
@@ -73,7 +73,7 @@ I did run into an issue after I'd gotten authentication to work - launching a de
 To add support for NetScaler, you'll need to [add a custom application to Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-integrating-applications). Sign into the Azure portal, select Azure Active Directory and [add a Non-gallery Application under Enterprise applications](https://portal.azure.com/#blade/Microsoft_AAD_IAM/AppGalleryApplicationsBlade/category/topapps). Once there, you'll need to define properties for your NetScaler Gateway.
 
   * **Name** - provide users with an application name that makes sense to your users. I've used 'My Hosted Apps' in my lab
-  * Azure AD **Identifier** maps to **Issuer name** in the NetScaler Gateway&nbsp;Authentication SAML Server page. Use the public URL to your NetScaler Gateway
+  * Azure AD **Identifier** maps to **Issuer name** in the NetScaler Gateway Authentication SAML Server page. Use the public URL to your NetScaler Gateway
   * The Reply URL should be the SAML endpoint URL on your NetScaler Gateway, e.g. https://apps.home.stealthpuppy.com**/cgi/samlauth**
 
 During testing I did run into an issue with SAML assertion - after authenticating to Azure AD, the browser presented &#8220;SAML Assertion verification failed&#8221;. This turned out to be an issue with the Azure AD SAML Signing Certificate. After creating a new certificate and deploying it to NetScaler, authentication worked.
@@ -92,14 +92,14 @@ Open the Configure blade to find the URLs you'll need when configuring SAML auth
 
 Now that your application is configured, you can move into configuring a SAML policy on your NetScaler.
 
-# Configuring NetScaler for&nbsp;SAML Authentication
+# Configuring NetScaler for SAML Authentication
 
-The Citrix documentation covers [the configuration of SAML](https://docs.citrix.com/en-us/netscaler-gateway/11-1/authentication-authorization/configure-saml.html); however, it's geared around AD FS, so some minor adjustments will be required. Your first step should be to download the Azure AD SAML signing certificate and add it to your appliance. I would also recommend adding a public certificate&nbsp;
+The Citrix documentation covers [the configuration of SAML](https://docs.citrix.com/en-us/netscaler-gateway/11-1/authentication-authorization/configure-saml.html); however, it's geared around AD FS, so some minor adjustments will be required. Your first step should be to download the Azure AD SAML signing certificate and add it to your appliance. I would also recommend adding a public certificate 
 
 When creating the SAML policy and creating a SAML server configuration use the following URLs:
 
   * Enter the **SAML Single Sign-On Service URL** into the **Redirect URL**
-  * **SAML Entity ID** is not used in the SAML server configuration, although NetScaler does see&nbsp;it during a user authentication
+  * **SAML Entity ID** is not used in the SAML server configuration, although NetScaler does see it during a user authentication
   * **Enter Sign-Out URL** into the **Single Logout URL**
   * Use the same URL used in the **Identifier** in Azure AD in the **Issuer Name** field
 
@@ -107,7 +107,7 @@ Your configuration should then look similar to the following screenshot:
 
 <figure id="attachment_5398" aria-describedby="caption-attachment-5398" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5398" src="http://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSAMLServer-1024x587.png" alt="Configuring the SAML server on NetScaler" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSAMLServer-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSAMLServer-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSAMLServer-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSAMLServer-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSAMLServer.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSAMLServer.png)<figcaption id="caption-attachment-5398" class="wp-caption-text">Configuring the SAML server on NetScaler*</figure>
 
-After successfully authenticating during my initial testing, StoreFront would display 'Cannot complete your request'. To fix that, remove the Single Sign-on Domain from the [Session Policies](http://www.carlstalhood.com/session-policies-for-storefront-netscaler-11/)&nbsp;bound to the virtual server.
+After successfully authenticating during my initial testing, StoreFront would display 'Cannot complete your request'. To fix that, remove the Single Sign-on Domain from the [Session Policies](http://www.carlstalhood.com/session-policies-for-storefront-netscaler-11/) bound to the virtual server.
 
 <figure id="attachment_5399" aria-describedby="caption-attachment-5399" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5399" src="http://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSessionPolicy-1024x587.png" alt="Remove the Single Sign-on domain from the NetScaler Session Policy" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSessionPolicy-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSessionPolicy-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSessionPolicy-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSessionPolicy-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSessionPolicy.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/03/NetScaler-ConfigureSessionPolicy.png)<figcaption id="caption-attachment-5399" class="wp-caption-text">Remove the Single Sign-on domain from the NetScaler Session Policy*</figure>
 
@@ -115,7 +115,7 @@ If you've configured each of the components correctly, logging into NetScaler Ga
 
 ## Callback URL
 
-[Update 19/03/2017] I ran into an issue whereby the StoreFront page would display &#8220;Cannot Complete your Request&#8221; after successfully logging in. The following error was displayed in the&nbsp;Citrix Delivery Services event log on the StoreFront server:
+[Update 19/03/2017] I ran into an issue whereby the StoreFront page would display &#8220;Cannot Complete your Request&#8221; after successfully logging in. The following error was displayed in the Citrix Delivery Services event log on the StoreFront server:
 
 > A CitrixAGBasic Login request has failed.  
 > Citrix.DeliveryServicesClients.Authentication.AG.AGAuthenticatorException, Citrix.DeliveryServicesClients.Authentication, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null  
@@ -133,7 +133,7 @@ If you've configured each of the components correctly, logging into NetScaler Ga
 > at Citrix.DeliveryServicesClients.Authentication.TokenIssuingClient.RequestToken(String url, RequestToken requestToken, String primaryToken, String languages, CookieContainer cookieContainer, IEnumerable\`1 acceptedResponseTypes, IDictionary\`2 additionalHeaders)  
 > at Citrix.DeliveryServicesClients.Authentication.AG.AGAuthenticator.Authenticate(HttpRequestBase clientRequest, Boolean& passwordSupplied)
 
-I had not added a Callback URL as it's optional since StoreFront 2.6&nbsp;and only required for the&nbsp;[SmartAccess](https://docs.citrix.com/en-us/netscaler-gateway/10-1/ng-xa-xd-integration-edocs-landing/ng-integrate-web-interface-apps-wrapper/ng-smartaccess-wrapper-con/ng-smartaccess-how-it-works-con.html) feature. Since I'm passing the conditional access control to Azure AD, I don't need SmartAccess and therefore don't really need to add the Callback URL. However, in this instance, adding the Callback URL fixed the&nbsp;&#8220;Cannot Complete your Request&#8221; issue.
+I had not added a Callback URL as it's optional since StoreFront 2.6 and only required for the [SmartAccess](https://docs.citrix.com/en-us/netscaler-gateway/10-1/ng-xa-xd-integration-edocs-landing/ng-integrate-web-interface-apps-wrapper/ng-smartaccess-wrapper-con/ng-smartaccess-how-it-works-con.html) feature. Since I'm passing the conditional access control to Azure AD, I don't need SmartAccess and therefore don't really need to add the Callback URL. However, in this instance, adding the Callback URL fixed the &#8220;Cannot Complete your Request&#8221; issue.
 
 ## Citrix Receiver
 
@@ -141,7 +141,7 @@ It's important to note here that Citrix Receiver does not yet support SAML authe
 
 ## Access Control
 
-Currently this approach doesn't work with Access Control on NetScaler Gateway connections. For example, you might want to restrict client-mapped drives or the clipboard if the user is logging on from an untrusted machine or location.&nbsp;
+Currently this approach doesn't work with Access Control on NetScaler Gateway connections. For example, you might want to restrict client-mapped drives or the clipboard if the user is logging on from an untrusted machine or location. 
 
 Conditional Access does have a Session Control feature to enforce application restrictions based on the conditions set in the access policy. Given the [statement of support from Citrix for Microsoft EMS](https://www.citrix.com/blogs/2017/01/09/better-together-netscaler-unified-gateway-microsoft-ems-2/), I hope to this this feature supported in the near future.
 
@@ -149,7 +149,7 @@ Conditional Access does have a Session Control feature to enforce application re
 
 ## Single Sign-On
 
-[Single sign-on is possible from AD domain-joined or Azure AD domain-joined PCs](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-appssoaccess-whatis), on both your internal network and the Internet. Here's an example user experience launching a XenApp desktop on the browser in the native Receiver, on&nbsp;Windows 10 joined directly to Azure AD:
+[Single sign-on is possible from AD domain-joined or Azure AD domain-joined PCs](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-appssoaccess-whatis), on both your internal network and the Internet. Here's an example user experience launching a XenApp desktop on the browser in the native Receiver, on Windows 10 joined directly to Azure AD:
 
 
 
@@ -161,7 +161,7 @@ Now you can choose to enforce [Conditional Access](https://docs.microsoft.com/en
 
 For example, you could choose :
 
-  * Enforce MFA - Azure AD handles the multi-factor authentication&nbsp;without NetScaler having to know anything about the MFA provider (being Azure AD in this instance)
+  * Enforce MFA - Azure AD handles the multi-factor authentication without NetScaler having to know anything about the MFA provider (being Azure AD in this instance)
   * Choose to not prompt for MFA when coming from a known network - don't prompt users for MFA if they are in the office
   * [Require a compliant device](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-policy-connected-applications) - the device must be enrolled in Intune and in a compliant state. With this requirement, the device becomes a 3rd factor for authentication and you can have some confidence that the device accessing your resources is secure
   * Require a domain joined devices - you may want to restrict access to Windows PCs joined to a traditional Active Directory domain. This requires configuring [registration of those devices into Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup) so that you can apply Conditional Access against them
@@ -169,11 +169,11 @@ For example, you could choose :
 
 <figure id="attachment_5405" aria-describedby="caption-attachment-5405" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5405" src="http://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls-1024x587.png" alt="Applying Conditional Access controls to NetScaler" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Controls.png)<figcaption id="caption-attachment-5405" class="wp-caption-text">Applying Conditional Access controls to NetScaler*</figure>
 
-Device based Conditional Access is a great way of further securing access to your on-premises resources; however, it's worth noting that today Microsoft&nbsp;does not yet include support for macOS. Support for macOS is &#8220;coming soon&#8221;.
+Device based Conditional Access is a great way of further securing access to your on-premises resources; however, it's worth noting that today Microsoft does not yet include support for macOS. Support for macOS is &#8220;coming soon&#8221;.
 
 <figure id="attachment_5414" aria-describedby="caption-attachment-5414" style="width: 624px" class="wp-caption alignnone">[<img class="size-full wp-image-5414" src="http://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Devices.png" alt="Device support for Conditional Access" width="624" height="293" srcset="https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Devices.png 624w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Devices-150x70.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Devices-300x141.png 300w" sizes="(max-width: 624px) 100vw, 624px" />](http://stealthpuppy.com/wp-content/uploads/2017/03/ConditionalAccess-Devices.png)<figcaption id="caption-attachment-5414" class="wp-caption-text">Device support for Conditional Access*</figure>
 
-## Non-compliant&nbsp;Devices
+## Non-compliant Devices
 
 The screenshot below shows the experience from a non-compliant device. Here I'm logging onto NetScaler from a machine that is not managed by my Intune instance, therefore it's non-compliant with my organisational policies. If this was a personal device, [I could enrol it](https://docs.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune) to be compliant with those policies.
 
@@ -181,8 +181,8 @@ The screenshot below shows the experience from a non-compliant device. Here I'm 
 
 # Conclusion
 
-Assuming you're embracing cloud identity, integrating NetScaler with Azure AD is an excellent way to deliver&nbsp;a consistent user experience across all on-premises and SaaS applications. If you've not yet extended into Azure AD, this could be a great driver to do so. Adding Azure AD Premium provides you with MFA and conditional access controls that you can apply consistently across all of your legacy and SaaS apps.
+Assuming you're embracing cloud identity, integrating NetScaler with Azure AD is an excellent way to deliver a consistent user experience across all on-premises and SaaS applications. If you've not yet extended into Azure AD, this could be a great driver to do so. Adding Azure AD Premium provides you with MFA and conditional access controls that you can apply consistently across all of your legacy and SaaS apps.
 
-Utilising Azure AD for authentication and conditional access provides you with more secure authentication and device trust capabilities than you could achieve using on-premises solutions and with [Identity Protection](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-identityprotection)&nbsp;you can extend this protect even further. It's my view that Azure AD Conditional Access is a better solution that End Point Analysis provided with NetScaler because you are relying on the capabilities built into the operating system with deep integration into the authentication mechanism.
+Utilising Azure AD for authentication and conditional access provides you with more secure authentication and device trust capabilities than you could achieve using on-premises solutions and with [Identity Protection](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-identityprotection) you can extend this protect even further. It's my view that Azure AD Conditional Access is a better solution that End Point Analysis provided with NetScaler because you are relying on the capabilities built into the operating system with deep integration into the authentication mechanism.
 
 Citrix has a couple of features to deliver in the near future, even so NetScaler + Azure AD is pretty damn cool.

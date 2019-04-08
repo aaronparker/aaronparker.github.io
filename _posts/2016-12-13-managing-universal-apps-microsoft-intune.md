@@ -36,7 +36,7 @@ Like the [Windows Store for Business](http://stealthpuppy.com/setup-windows-stor
 
 ## Licensing Microsoft Intune
 
-While Intune can be licensed on its own, the ideal way of licensing Intune is as a component of [the Microsoft Enterprise Mobility + Security suite](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security)&nbsp;(EMS). The primary reason is to enable advanced features you get with an Azure AD Premium subscription. If you're not familiar with EMS, you can read up on the components and licensing&nbsp;details here:&nbsp;[Enterprise Mobility + Security Pricing](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security-pricing).
+While Intune can be licensed on its own, the ideal way of licensing Intune is as a component of [the Microsoft Enterprise Mobility + Security suite](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security) (EMS). The primary reason is to enable advanced features you get with an Azure AD Premium subscription. If you're not familiar with EMS, you can read up on the components and licensing details here: [Enterprise Mobility + Security Pricing](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security-pricing).
 
 For this solution, we're interested in:
 
@@ -79,11 +79,11 @@ Synchronising the Business Store inventory with Intune will show the full list o
 
 Sign into the Intune console and configure sync:
 
-  1. Navigate to **Admin** /&nbsp;**Mobile Device Management** / **Windows** / **Store for Business**
+  1. Navigate to **Admin** / **Mobile Device Management** / **Windows** / **Store for Business**
   2. Click **Configure Sync**
   3. Select **Enable Windows Store for Business Sync** and click **OK**
 
-Which should look like the screenshot&nbsp;below. Once configured click the **Sync now** button and wait for the first synchronisation.
+Which should look like the screenshot below. Once configured click the **Sync now** button and wait for the first synchronisation.
 
 <figure id="attachment_5328" aria-describedby="caption-attachment-5328" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5328" src="http://stealthpuppy.com/wp-content/uploads/2016/12/IntuneStoreSync1-1024x640.png" alt="Configuring Windows Store for Business app sync in the Intune console" width="1024" height="640" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/IntuneStoreSync1-1024x640.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/12/IntuneStoreSync1-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/12/IntuneStoreSync1-300x188.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/12/IntuneStoreSync1-768x480.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/12/IntuneStoreSync1.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/IntuneStoreSync1.png)<figcaption id="caption-attachment-5328" class="wp-caption-text">Configuring Windows Store for Business app sync in the Intune console*</figure>
 
@@ -133,7 +133,7 @@ With an Azure AD joined Windows 10 PC, enrolled for Intune MDM, the Company Port
 
 # Online vs. Offline Distribution
 
-In&nbsp;this scenario where Universal apps are synchronised with the Business Store and deployed via Volume-Purchased Apps, app distribution is _Online_. Where devices are connected to the Internet and managed via a cloud-based device management solution, this type of distribution mechanism makes sense.
+In this scenario where Universal apps are synchronised with the Business Store and deployed via Volume-Purchased Apps, app distribution is _Online_. Where devices are connected to the Internet and managed via a cloud-based device management solution, this type of distribution mechanism makes sense.
 
 Intune does support _Offline_ distribution of Universal apps; however, this doesn't necessarily make sense for connected devices plus access to download apps from the Windows Store for Business for offline distribution is controlled by the vendor of the app. If they don't make the app available for offline distribution you must deliver the app online.
 

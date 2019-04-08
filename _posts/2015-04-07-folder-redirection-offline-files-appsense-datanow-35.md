@@ -110,7 +110,7 @@ After logging onto the desktop and ensuring the the DataNow client has logged in
 
 <figure id="attachment_3906" aria-describedby="caption-attachment-3906" style="width: 800px" class="wp-caption alignnone"><img class="wp-image-3906 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/04/AppSenseDataNow35UXWindows8.gif" alt="AppSenseDataNow35UXWindows8" width="800" height="700" /><figcaption id="caption-attachment-3906" class="wp-caption-text">User experience on Windows 8 with user folders redirected to the DataNow folder*</figure>
 
-&nbsp;
+ 
 
 With an on-access policy set for the home directory Map Point, files are downloaded by the client when they're accessed. Files that aren't yet synchronised locally are denoted with an overlay:
 
@@ -126,7 +126,7 @@ To provide an idea of access to my home directory on an alternative platform, I'
 
 <figure id="attachment_3907" aria-describedby="caption-attachment-3907" style="width: 668px" class="wp-caption alignnone"><img class="wp-image-3907 size-full" src="http://stealthpuppy.com/wp-content/uploads/2015/04/DataNow-MacClient-Setup.gif" alt="DataNow-MacClient-Setup" width="668" height="598" /><figcaption id="caption-attachment-3907" class="wp-caption-text">Setting up the DataNow client for OS X*</figure>
 
-&nbsp;
+ 
 
 Once authenticated, my files are synchronised locally to a DataNow folder. Note in the screenshot below, the a cloud icon indicates that the files have not yet been copied locally, similar to the grey arrow overlay on Windows.
 

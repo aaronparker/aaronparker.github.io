@@ -21,7 +21,7 @@ Automating the installation of the Citrix ShareFile Drive Mapper requires deploy
 
 <figure id="attachment_4416" aria-describedby="caption-attachment-4416" style="width: 501px" class="wp-caption alignnone">[<img class="size-full wp-image-4416" src="http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png" alt="Citrix ShareFile Driver" width="501" height="232" srcset="https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png 501w, https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver-150x69.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver-300x139.png 300w" sizes="(max-width: 501px) 100vw, 501px" />](http://stealthpuppy.com/wp-content/uploads/2016/05/ShareFileDriver.png)<figcaption id="caption-attachment-4416" class="wp-caption-text">Citrix ShareFile Driver prompt during install*</figure>
 
-[Mike Nelson](https://twitter.com/nelmedia)&nbsp;had some challenges deploying the client, so I've documented the process here.
+[Mike Nelson](https://twitter.com/nelmedia) had some challenges deploying the client, so I've documented the process here.
 
 # Extract the Code Signing Certificate
 
@@ -37,11 +37,11 @@ Export the certificate to a local file (from the **Details** tab with **Copy to 
 
 # Installing the ShareFile Drive Mapper Certificate
 
-Here is&nbsp;a couple of ways of deploying the code signing certificate to clients:
+Here is a couple of ways of deploying the code signing certificate to clients:
 
 ## Deploy the certificate via Group Policy
 
-Certificates can be deployed to the **Trusted Publishers** store via a Group Policy Object. Import the certificate into the **Public Key Policies** node under **Security Settings**&nbsp;in a GPO applied to an OU containing the target computer accounts.
+Certificates can be deployed to the **Trusted Publishers** store via a Group Policy Object. Import the certificate into the **Public Key Policies** node under **Security Settings** in a GPO applied to an OU containing the target computer accounts.
 
 <figure id="attachment_5160" aria-describedby="caption-attachment-5160" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5160" src="http://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-1024x531.png" alt="Deploying the code signing certificate via Group Policy" width="1024" height="531" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-1024x531.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-150x78.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-300x156.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy-768x398.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy.png 1306w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/DeployCertViaGroupPolicy.png)<figcaption id="caption-attachment-5160" class="wp-caption-text">Deploying the code signing certificate via Group Policy*</figure>
 
@@ -57,10 +57,10 @@ This method provides some flexibility to enable a controlled deployment or insta
 
 # Deploying the Drive Mapper client
 
-To deploy the Drive Mapper client is very simple - no customisation of the installer should be required, unless you want to change the default installation path. Download the [Drive Mapper client in EXE or MSI](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/sharefile-drive-mapper.html) format. An installation guide can be found in article&nbsp;[CTX207791](http://support.citrix.com/article/CTX207791).
+To deploy the Drive Mapper client is very simple - no customisation of the installer should be required, unless you want to change the default installation path. Download the [Drive Mapper client in EXE or MSI](https://www.citrix.com/downloads/sharefile/clients-and-plug-ins/sharefile-drive-mapper.html) format. An installation guide can be found in article [CTX207791](http://support.citrix.com/article/CTX207791).
 
 I've been able to deploy the client via MDM-enrolled Windows 10 machines using the Windows Installer deployment option. The particular environment is using Windows 10 joined to Azure AD with SSO enabled for ShareFile, which flows through to the Drive Mapper and ShareFile Outlook plug-in.
 
 # Summary
 
-Citrix has not yet certified the Citrix ShareFile Drive Mapper client driver for the [WHQL](https://msdn.microsoft.com/en-us/windows/hardware/gg463010.aspx), so until then you'll need&nbsp;to follow this process to get the certificate onto target machines to automate the installation or avoid having to disable Secure Boot to install it.
+Citrix has not yet certified the Citrix ShareFile Drive Mapper client driver for the [WHQL](https://msdn.microsoft.com/en-us/windows/hardware/gg463010.aspx), so until then you'll need to follow this process to get the certificate onto target machines to automate the installation or avoid having to disable Secure Boot to install it.

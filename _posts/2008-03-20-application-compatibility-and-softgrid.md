@@ -14,7 +14,7 @@ tags:
 ---
 <img border="0" alt="SoftGridAppCompat" align="left" src="http://stealthpuppy.com/wp-content/uploads/2008/03/softgridappcompat.png" width="140" height="128" />If there's ever a great example of the benefits of application virtualisation it can often be found in the little things.
 
-One of the guys in our team has been sequencing [Volo View](http://usa.autodesk.com/adsk/servlet/index?id=3239384&siteID=123112), which isn't a particularly well behaved piece of software to begin with. It has a menu option that launches Windows Explorer to view some config files and when&nbsp; run under Terminal Services, this fails to launch Explorer.
+One of the guys in our team has been sequencing [Volo View](http://usa.autodesk.com/adsk/servlet/index?id=3239384&siteID=123112), which isn't a particularly well behaved piece of software to begin with. It has a menu option that launches Windows Explorer to view some config files and when  run under Terminal Services, this fails to launch Explorer.
 
 Rather than use the [ShellExecute API](http://msdn2.microsoft.com/en-us/library/bb762153.aspx) to execute Explorer, it appears that the application is using [GetWindowsDirectory](http://msdn2.microsoft.com/en-us/library/ms724454.aspx) instead, then appending EXPLORER.EXE to the end of the returned folder name and attempting to launch the Explorer window.
 

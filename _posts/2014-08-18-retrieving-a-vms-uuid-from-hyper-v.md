@@ -102,4 +102,4 @@ http://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/
     Return $UUIDs
 }</pre>
 
-&nbsp;
+ 

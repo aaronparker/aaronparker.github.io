@@ -22,7 +22,7 @@ tags:
 
 Until now, you can deploy Office 365 ProPlus to MDM-managed Windows 10 PCs by using [the Toolkit available from GitHub](http://officedev.github.io/Office-IT-Pro-Deployment-Scripts/XmlEditor.html). Because traditional applications can only be deployed to Windows 10 MDM PCs via a single MSI, the Toolkit steps you through creating a custom Office deployment (e.g. specific apps, update channel etc.) and generating an MSI that you then upload into Intune. It too is a simple process; however it does require you to download software, create the package (or multiple packages) and upload into Intune.
 
-Here's how to create an Office 365 ProPlus package in the [new Intune console](https://docs.microsoft.com/en-us/intune/what-is-intune)&nbsp;with just a few mouse clicks and no uploads.
+Here's how to create an Office 365 ProPlus package in the [new Intune console](https://docs.microsoft.com/en-us/intune/what-is-intune) with just a few mouse clicks and no uploads.
 
 # Creating the Office 365 ProPlus application
 
@@ -56,7 +56,7 @@ In most cases, this application package will be assigned to users so that Office
 
 <figure id="attachment_5497" aria-describedby="caption-attachment-5497" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5497" src="http://stealthpuppy.com/wp-content/uploads/2017/07/08_AssignApp-1024x587.png" alt="Adding assignments to deploy the Office suite" width="1024" height="587" srcset="https://stealthpuppy.com/wp-content/uploads/2017/07/08_AssignApp-1024x587.png 1024w, https://stealthpuppy.com/wp-content/uploads/2017/07/08_AssignApp-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/07/08_AssignApp-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2017/07/08_AssignApp-768x441.png 768w, https://stealthpuppy.com/wp-content/uploads/2017/07/08_AssignApp.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2017/07/08_AssignApp.png)<figcaption id="caption-attachment-5497" class="wp-caption-text">Adding assignments to deploy the Office suite*</figure>
 
-If you would prefer to make the Office suite available for users to install themselves, you'll need to create a custom deployment using the [Office Toolkit](http://officedev.github.io/Office-IT-Pro-Deployment-Scripts/XmlEditor.html)&nbsp;to create a single MSI installer that you can upload to Intune as a Windows Line of Business application. This will allow you to chose Available as an assignment type.
+If you would prefer to make the Office suite available for users to install themselves, you'll need to create a custom deployment using the [Office Toolkit](http://officedev.github.io/Office-IT-Pro-Deployment-Scripts/XmlEditor.html) to create a single MSI installer that you can upload to Intune as a Windows Line of Business application. This will allow you to chose Available as an assignment type.
 
 # Summary
 

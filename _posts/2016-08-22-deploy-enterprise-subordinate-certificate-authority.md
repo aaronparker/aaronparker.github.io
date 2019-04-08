@@ -17,7 +17,7 @@ tags:
   - Certificate Authority
   - Certificate Services
 ---
-In the last article, I documented the steps for&nbsp;[deploying an offline Root Certificate Authority on Windows Server 2012 R2](http://stealthpuppy.com/deploy-enterprise-root-certificate-authority/). This article will continue the process and show how to install and configure a Subordinate Certificate Authority that will be used to issue certificates to users and devices.
+In the last article, I documented the steps for [deploying an offline Root Certificate Authority on Windows Server 2012 R2](http://stealthpuppy.com/deploy-enterprise-root-certificate-authority/). This article will continue the process and show how to install and configure a Subordinate Certificate Authority that will be used to issue certificates to users and devices.
 
 # Basics
 
@@ -29,7 +29,7 @@ In this article we will:
   2. Request and approve a CA certificate from the offline root CA
   3. Configure the subordinate CA for the CRL to work correctly
 
-To deploy an Enterprise Certificate Authority you'll need to be installing certificate services as a member of the Enterprise Admins group, or have [permissions delegated to your account](https://technet.microsoft.com/en-us/library/dn722303(v=ws.11).aspx). Remember, this means that you won't be installing an Enterprise CA in an environment using [Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds/)&nbsp;because you won't have rights.
+To deploy an Enterprise Certificate Authority you'll need to be installing certificate services as a member of the Enterprise Admins group, or have [permissions delegated to your account](https://technet.microsoft.com/en-us/library/dn722303(v=ws.11).aspx). Remember, this means that you won't be installing an Enterprise CA in an environment using [Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds/) because you won't have rights.
 
 # Further Reading
 
@@ -72,7 +72,7 @@ Before we go any further, remember that in setting up the Root CA, we [configure
 
 Configure the alias in DNS now, so that it has time to propagate and be available for resolution when we configure the subordinate certificate request later. If this step is missed, you will receive 'CRL unavailable' errors.
 
-## Configuring&nbsp;Certificate Services
+## Configuring Certificate Services
 
 After the Certificate Services roles are installed, start the configuration wizard from Server Manager - click the flag and yellow icon and click the **Configure Active Directory Certificate Services**... link.
 
@@ -96,7 +96,7 @@ Create a new private key for this CA as this is the first time we're configuring
 
 <figure id="attachment_5089" aria-describedby="caption-attachment-5089" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5089" src="http://stealthpuppy.com/wp-content/uploads/2016/08/05CAConfigure-1024x592.png" alt="Certificate Services wizard – create a new private key" width="1024" height="592" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/05CAConfigure-1024x592.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/08/05CAConfigure-150x87.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/05CAConfigure-300x173.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/05CAConfigure-768x444.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/08/05CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/05CAConfigure.png)<figcaption id="caption-attachment-5089" class="wp-caption-text">Certificate Services wizard – create a new private key*</figure>
 
-When selecting a cryptographic provider and a hash algorithm, SHA1 will be the default hashing algorithm; however, Windows will no longer accept certificates signed with [SHA1 after 1st of January&nbsp;2017](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx), so be sure to [choose at least SHA256](https://blogs.technet.microsoft.com/askds/2015/10/26/sha1-key-migration-to-sha256-for-a-two-tier-pki-hierarchy/).
+When selecting a cryptographic provider and a hash algorithm, SHA1 will be the default hashing algorithm; however, Windows will no longer accept certificates signed with [SHA1 after 1st of January 2017](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx), so be sure to [choose at least SHA256](https://blogs.technet.microsoft.com/askds/2015/10/26/sha1-key-migration-to-sha256-for-a-two-tier-pki-hierarchy/).
 
 <figure id="attachment_5090" aria-describedby="caption-attachment-5090" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5090" src="http://stealthpuppy.com/wp-content/uploads/2016/08/06CAConfigure-1024x592.png" alt="Certificate Services wizard – choose SHA256 as the hashing algorithm" width="1024" height="592" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/06CAConfigure-1024x592.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/08/06CAConfigure-150x87.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/06CAConfigure-300x173.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/06CAConfigure-768x444.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/08/06CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/06CAConfigure.png)<figcaption id="caption-attachment-5090" class="wp-caption-text">Certificate Services wizard – choose SHA256 as the hashing algorithm*</figure>
 
@@ -118,7 +118,7 @@ Click **Configure** and the wizard will configure the certificate services roles
 
 <figure id="attachment_5095" aria-describedby="caption-attachment-5095" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5095" src="http://stealthpuppy.com/wp-content/uploads/2016/08/11CAConfigure-1024x592.png" alt="Certificate Services wizard - configuration results" width="1024" height="592" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/11CAConfigure-1024x592.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/08/11CAConfigure-150x87.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/11CAConfigure-300x173.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/11CAConfigure-768x444.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/08/11CAConfigure.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/11CAConfigure.png)<figcaption id="caption-attachment-5095" class="wp-caption-text">Certificate Services wizard - configuration results*</figure>
 
-## Configuring the&nbsp;CRL Distribution Point
+## Configuring the CRL Distribution Point
 
 Before configuring the Certification Authority itself, we'll first copy across the certificate and CRL from the root CA.
 
@@ -138,7 +138,7 @@ On the root CA, open the Certificate Authority console and **submit a new certif
 
 <figure id="attachment_5096" aria-describedby="caption-attachment-5096" style="width: 1015px" class="wp-caption alignnone">[<img class="size-full wp-image-5096" src="http://stealthpuppy.com/wp-content/uploads/2016/08/12CAConfigure.png" alt="Submitting a new certificate request on the root CA" width="1015" height="538" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/12CAConfigure.png 1015w, https://stealthpuppy.com/wp-content/uploads/2016/08/12CAConfigure-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/12CAConfigure-300x159.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/12CAConfigure-768x407.png 768w" sizes="(max-width: 1015px) 100vw, 1015px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/12CAConfigure.png)<figcaption id="caption-attachment-5096" class="wp-caption-text">Submitting a new certificate request on the root CA*</figure>
 
-Browse to where the certificate request&nbsp;for the subordinate certificate authority is located and open the file. The certificate request will then be listed under **Pending Requests** on the root CA. Right-click the request, choose **All Tasks** and **Issue**.
+Browse to where the certificate request for the subordinate certificate authority is located and open the file. The certificate request will then be listed under **Pending Requests** on the root CA. Right-click the request, choose **All Tasks** and **Issue**.
 
 <figure id="attachment_5100" aria-describedby="caption-attachment-5100" style="width: 1015px" class="wp-caption alignnone">[<img class="size-full wp-image-5100" src="http://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert.png" alt="Issue the new certificate request from the subordinate CA" width="1015" height="538" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert.png 1015w, https://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert-300x159.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert-768x407.png 768w" sizes="(max-width: 1015px) 100vw, 1015px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert.png)<figcaption id="caption-attachment-5100" class="wp-caption-text">Issue the new certificate request from the subordinate CA*</figure>
 
@@ -170,11 +170,11 @@ Once imported, you should now be able to start the certificate service.
 
 If the CRL is online correctly, the service should start without issues.
 
-Just like the root CA, we should now open the properties of this certificate authority and configure the CRL and AIA distribution points. The difference with this subordinate certificate authority&nbsp;is that we will ensure that LDAP is left configured as this machine is a member of the domain.
+Just like the root CA, we should now open the properties of this certificate authority and configure the CRL and AIA distribution points. The difference with this subordinate certificate authority is that we will ensure that LDAP is left configured as this machine is a member of the domain.
 
 Open the properties of the CA, choose the **Extensions** tab and ensure that the options for the existing HTTP entry are _deselected_. Now add a new CRL distribution point.
 
-You can select the existing HTTP distribution point and press Ctrl-C to copy the existing location. For this CA we can leave the default&nbsp;<ServerDNSName> variable; however, to be consistent with the root CA, I've chosen to add the same crl alias:
+You can select the existing HTTP distribution point and press Ctrl-C to copy the existing location. For this CA we can leave the default <ServerDNSName> variable; however, to be consistent with the root CA, I've chosen to add the same crl alias:
 
 <figure id="attachment_5106" aria-describedby="caption-attachment-5106" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5106" src="http://stealthpuppy.com/wp-content/uploads/2016/08/CRLAddHTTP-1024x539.png" alt="Adding a new HTTP CRL distribution point to the CA" width="1024" height="539" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/CRLAddHTTP-1024x539.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLAddHTTP-150x79.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLAddHTTP-300x158.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLAddHTTP-768x404.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLAddHTTP.png 1088w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/CRLAddHTTP.png)<figcaption id="caption-attachment-5106" class="wp-caption-text">Adding a new HTTP CRL distribution point to the CA*</figure>
 
@@ -212,7 +212,7 @@ In my example, you can see the configuration in Active Directory and the act of 
 
 # Conclusion
 
-Setting up Active Directory Certificate Services consists of quite a reasonable number of steps and doing so successfully requires paying attention to the details. If you ensure that you've configured an offline root CA, a subordinate certificate authority&nbsp;and correct locations for the certificate revocation list, installing and configuring certificate services should be easy.
+Setting up Active Directory Certificate Services consists of quite a reasonable number of steps and doing so successfully requires paying attention to the details. If you ensure that you've configured an offline root CA, a subordinate certificate authority and correct locations for the certificate revocation list, installing and configuring certificate services should be easy.
 
 For those readers who are consultants, I would generally be recommending close to a day to deploy and test certificate services correctly and that's without looking at a design phase.
 

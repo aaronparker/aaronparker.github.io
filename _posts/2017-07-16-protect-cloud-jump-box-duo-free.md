@@ -27,7 +27,7 @@ In most Azure environments I've deployed, the customer is licensing [Azure AD](h
 
 So I went looking for a more cost effective way of securing remote access to cloud environments - something that's light weight, runs on a single VM and ideally wouldn't require additional licensing.
 
-Fellow [CTP](http://stealthpuppy.com/1about/) and all round knowledgeable guy, [Jarian Gibson](https://twitter.com/jariangibson) recommended checking out Duo. Duo are an [identity provider](https://duo.com/)&nbsp;including MFA who have a&nbsp;[a free version that gives you two-factor authentication for up to 10 users](https://duo.com/pricing/duo-free).
+Fellow [CTP](http://stealthpuppy.com/1about/) and all round knowledgeable guy, [Jarian Gibson](https://twitter.com/jariangibson) recommended checking out Duo. Duo are an [identity provider](https://duo.com/) including MFA who have a [a free version that gives you two-factor authentication for up to 10 users](https://duo.com/pricing/duo-free).
 
 # Adding MFA to a Jump Box
 
@@ -73,7 +73,7 @@ So setup of Microsoft RDP and a user account in the Duo console is quick and eas
 
 ## Installing the Duo Agent
 
-Logon to your target VM, download the [Duo Authentication for Windows Logon agent](https://dl.duosecurity.com/duo-win-login-latest.exe) and run the installer. During install you're asked for the account details setup previously in the admin console.&nbsp;
+Logon to your target VM, download the [Duo Authentication for Windows Logon agent](https://dl.duosecurity.com/duo-win-login-latest.exe) and run the installer. During install you're asked for the account details setup previously in the admin console. 
 
 <figure id="attachment_5524" aria-describedby="caption-attachment-5524" style="width: 500px" class="wp-caption alignnone">[<img class="size-full wp-image-5524" src="http://stealthpuppy.com/wp-content/uploads/2017/07/02_Install.png" alt="Adding the Duo account details to the agent" width="500" height="381" srcset="https://stealthpuppy.com/wp-content/uploads/2017/07/02_Install.png 500w, https://stealthpuppy.com/wp-content/uploads/2017/07/02_Install-150x114.png 150w, https://stealthpuppy.com/wp-content/uploads/2017/07/02_Install-300x229.png 300w" sizes="(max-width: 500px) 100vw, 500px" />](http://stealthpuppy.com/wp-content/uploads/2017/07/02_Install.png)<figcaption id="caption-attachment-5524" class="wp-caption-text">Adding the Duo account details to the agent*</figure>
 

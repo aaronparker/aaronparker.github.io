@@ -42,4 +42,4 @@ Before you decide, check out the following resources:
   * [Shell Extensions and Runtimes with App-V 5.0 SP2 on Virtual Vibes](http://virtualvibes.co.uk/shell-extensions-and-runtimes-with-app-v-5-0-sp2/)
   * [Effects of “VC Runtimes” in App-V 5 SP2 white paper by Tim Mangan](http://www.tmurgent.com/AppV/images/WhitePapers/Research_VCRuntimes.pdf)
 
-&nbsp;
+ 

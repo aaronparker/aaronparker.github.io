@@ -65,4 +65,4 @@ PowerShell makes it easy to generate a unique number by first counting the exiti
 <pre class="lang:ps decode:true  ">$items = Get-Item -Path Registry::HKLM\Software\Microsoft\AppV\Subsystem\ObjExclusions
 New-ItemProperty -Path Registry::HKLM\Software\Microsoft\AppV\Subsystem\ObjExclusions -Name $items.ValueCount -PropertyType String -Value "TermSrvReadyEvent"</pre>
 
-&nbsp;
+ 
