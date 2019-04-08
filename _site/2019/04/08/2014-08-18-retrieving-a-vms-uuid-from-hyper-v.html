@@ -4,28 +4,26 @@
 
 <p>As an example, here’s how to retrieve the UUIDs from a set of VMs on a target Hyper-V host named <em>hv1</em>:</p>
 
-<pre class="theme:powershell-ise toolbar:2 striped:false nums:false nums-toggle:false lang:ps decode:true ">PS C:\&gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, file3, pvs1
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\&gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, file3, pvs1
 
 Name		BIOSGUID
 ----		----
 WIN71		E6E1A176-0713-4BB0-99E9-4570A1A3A94A 
 FILE3		9E9D788A-15E2-4760-A049-9F6EB88677A9 
-PVS1		74EFF5BC-A24E-48C3-85BE-12D758FE7AB6</pre>
+PVS1		74EFF5BC-A24E-48C3-85BE-12D758FE7AB6
+</code></pre></div></div>
 
 <p>Here’s the full function code listing. Please let me know if you find any bugs:</p>
 
-<pre class="lang:ps decode:true " title="Get-HypervVMUUID">#---------------------------------------------------------------------------
-# Author: Aaron Parker
-# Desc:   Function that uses retrieves the UUID from a specified VM and
-#         formats it into the right format for use with MDT/SCCM etc
-# Date:   Aug 18, 2014
-# Site:   http://stealthpuppy.com
-#---------------------------------------------------------------------------
- 
-
-Function Get-HypervVMUUID {
-
-   &lt;#
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#---------------------------------------------------------------------------</span>
+<span class="c1"># Author: Aaron Parker</span>
+<span class="c1"># Desc:   Function that uses retrieves the UUID from a specified VM and</span>
+<span class="c1">#         formats it into the right format for use with MDT/SCCM etc</span>
+<span class="c1"># Date:   Aug 18, 2014</span>
+<span class="c1"># Site:   http://stealthpuppy.com</span>
+<span class="c1">#---------------------------------------------------------------------------</span>
+<span class="k">Function </span>Get-HypervVMUUID <span class="o">{</span>
+   <span class="cm">&lt;#
         .SYNOPSIS
             Retrieve the UUID from a virtual machine or set of virtual machines.
  
@@ -39,17 +37,17 @@ Function Get-HypervVMUUID {
             Specifies the virtual machine or set of virtual machines (a comma delimited list) from which to obtain the UUID/s.
  
          .EXAMPLE
-            PS C:\&gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, win72
+            PS C:\&amp;gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, win72
  
             This command retrieves the UUIDs from the virtual machines win71 and win72 from the host hv1.
  
         .EXAMPLE
-            PS C:\&gt; Get-HypervVMUUID -VM win71, win72
+            PS C:\&amp;gt; Get-HypervVMUUID -VM win71, win72
  
             This command retrieves the UUIDs from the virtual machines win71 and win72 from the local host.
  
         .EXAMPLE
-            PS C:\&gt; Get-HypervVMUUID
+            PS C:\&amp;gt; Get-HypervVMUUID
  
             This command retrieves the UUIDs from the all of the virtual machines on the local host.
  
@@ -57,32 +55,29 @@ Function Get-HypervVMUUID {
             http://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/ for support information.
  
         .LINK
- 
-http://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/
- 
-    #&gt;
+            http://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/
+    #&gt;</span>
+    <span class="o">[</span><span class="na">cmdletbinding</span><span class="o">(</span><span class="na">SupportsShouldProcess</span><span class="o">=</span><span class="nv">$True</span><span class="o">)]</span>
+    <span class="k">param</span><span class="o">(</span>
+        <span class="o">[</span>Parameter<span class="o">(</span><span class="nv">Mandatory</span><span class="o">=</span><span class="nv">$false</span>,HelpMessage<span class="o">=</span><span class="s2">"Specifies one or more Hyper-V hosts from which virtual machine UUIDs are to be retrieved. NetBIOS names, IP addresses, and fully-qualified domain names are allowable. The default is the local computer — use ""localhost"" or a dot (""."") to specify the local computer explicitly."</span><span class="o">)]</span>
+        <span class="o">[</span><span class="kt">string</span><span class="o">]</span><span class="nv">$ComputerName</span>,
 
-    [cmdletbinding(SupportsShouldProcess=$True)]
-    param(
-        [Parameter(Mandatory=$false,HelpMessage="Specifies one or more Hyper-V hosts from which virtual machine UUIDs are to be retrieved. NetBIOS names, IP addresses, and fully-qualified domain names are allowable. The default is the local computer — use ""localhost"" or a dot (""."") to specify the local computer explicitly.")]
-        [string]$ComputerName,
+        <span class="o">[</span>Parameter<span class="o">(</span><span class="nv">Mandatory</span><span class="o">=</span><span class="nv">$false</span>, <span class="nv">Position</span><span class="o">=</span>0,HelpMessage<span class="o">=</span><span class="s2">"Specifies the virtual machine from which to retrieve the UUID."</span><span class="o">)]</span>
+        <span class="o">[</span><span class="kt">string</span><span class="o">[]]</span><span class="nv">$VM</span>
+    <span class="o">)</span>
 
-        [Parameter(Mandatory=$false, Position=0,HelpMessage="Specifies the virtual machine from which to retrieve the UUID.")]
-        [string[]]$VM
-    )
+    <span class="c1"># If ComputerName parameter is not specified, set value to the local host</span>
+    <span class="k">If</span> <span class="o">(!</span><span class="nv">$ComputerName</span><span class="o">)</span> <span class="o">{</span> <span class="nv">$ComputerName</span> <span class="o">=</span> <span class="s2">"."</span> <span class="o">}</span>
 
-    # If ComputerName parameter is not specified, set value to the local host
-    If (!$ComputerName) { $ComputerName = "." }
+    <span class="c1"># If VM parameter is specified, return those VMs, else return all VMs</span>
+    <span class="k">If</span> <span class="o">(</span><span class="nv">$VM</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nv">$UUIDs</span> <span class="o">=</span> Get-VM -ComputerName <span class="nv">$ComputerName</span> -VM <span class="nv">$VM</span> -ErrorAction SilentlyContinue | <span class="nb">Select-Object </span>Name,@<span class="o">{</span><span class="nv">Name</span><span class="o">=</span><span class="s2">"BIOSGUID"</span>;<span class="nv">Expression</span><span class="o">={(</span><span class="nb">Get-WmiObject</span> -ComputerName <span class="nv">$_</span>.ComputerName -Namespace <span class="s2">"root\virtualization\v2"</span> -Class Msvm_VirtualSystemSettingData -Property BIOSGUID -Filter <span class="o">(</span><span class="s2">"InstanceID = 'Microsoft:{0}'"</span> -f <span class="nv">$_</span>.VMId.Guid<span class="o">))</span>.BIOSGUID<span class="o">}}</span>
+    <span class="o">}</span> <span class="k">Else</span> <span class="o">{</span>
+        <span class="nv">$UUIDs</span> <span class="o">=</span> Get-VM -ComputerName <span class="nv">$ComputerName</span> -ErrorAction SilentlyContinue | <span class="nb">Select-Object </span>Name,@<span class="o">{</span><span class="nv">Name</span><span class="o">=</span><span class="s2">"BIOSGUID"</span>;<span class="nv">Expression</span><span class="o">={(</span><span class="nb">Get-WmiObject</span> -ComputerName <span class="nv">$_</span>.ComputerName -Namespace <span class="s2">"root\virtualization\v2"</span> -Class Msvm_VirtualSystemSettingData -Property BIOSGUID -Filter <span class="o">(</span><span class="s2">"InstanceID = 'Microsoft:{0}'"</span> -f <span class="nv">$_</span>.VMId.Guid<span class="o">))</span>.BIOSGUID<span class="o">}}</span>
+    <span class="o">}</span>
 
-    # If VM parameter is specified, return those VMs, else return all VMs
-    If ($VM) {
-        $UUIDs = Get-VM -ComputerName $ComputerName -VM $VM -ErrorAction SilentlyContinue | Select-Object Name,@{Name="BIOSGUID";Expression={(Get-WmiObject -ComputerName $_.ComputerName -Namespace "root\virtualization\v2" -Class Msvm_VirtualSystemSettingData -Property BIOSGUID -Filter ("InstanceID = 'Microsoft:{0}'" -f $_.VMId.Guid)).BIOSGUID}}
-    } Else {
-        $UUIDs = Get-VM -ComputerName $ComputerName -ErrorAction SilentlyContinue | Select-Object Name,@{Name="BIOSGUID";Expression={(Get-WmiObject -ComputerName $_.ComputerName -Namespace "root\virtualization\v2" -Class Msvm_VirtualSystemSettingData -Property BIOSGUID -Filter ("InstanceID = 'Microsoft:{0}'" -f $_.VMId.Guid)).BIOSGUID}}
-    }
-
-    # Remove curly brackets from the UUIDs and return the array
-    ForEach ( $UID in $UUIDs ) { $UID.BIOSGUID = $UID.BIOSGUID -replace "}"; $UID.BIOSGUID = $UID.BIOSGUID -replace "{" }
-    Return $UUIDs
-}</pre>
-
+    <span class="c1"># Remove curly brackets from the UUIDs and return the array</span>
+    <span class="k">ForEach</span> <span class="o">(</span> <span class="nv">$UID</span> <span class="k">in</span> <span class="nv">$UUIDs</span> <span class="o">)</span> <span class="o">{</span> <span class="nv">$UID</span>.BIOSGUID <span class="o">=</span> <span class="nv">$UID</span>.BIOSGUID -replace <span class="s2">"}"</span>; <span class="nv">$UID</span>.BIOSGUID <span class="o">=</span> <span class="nv">$UID</span>.BIOSGUID -replace <span class="s2">"{"</span> <span class="o">}</span>
+    <span class="k">Return</span> <span class="nv">$UUIDs</span>
+<span class="o">}</span>
+</code></pre></div></div>
