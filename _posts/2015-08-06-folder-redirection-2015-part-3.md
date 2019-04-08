@@ -24,7 +24,7 @@ This is a multi-part article detailing our testing results and presentations fo
   * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2](https://stealthpuppy.com/folder-redirection-2015-part-2/).
   * I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3. (this article)
 
-# File Access Performance
+## File Access Performance
 
 [Magnar Johnsen](http://twitter.com/magnarjohnsen) detailed an interesting scenario where application performance suffered when [moving a XenApp environment from Windows Server 2008 R2 to Windows Server 2o12 R2](http://j.mp/ini-smb). Magnar documented the results of the changing of OS versions had on application performance - due to the way in which a specific application reads settings from an INI file, a mismatch between the client and server was creating file access performance issues.
 
@@ -53,15 +53,15 @@ The exception here is the API function GetPrivateProfileString() which performs 
 
 While all VMs in our environments are patched via Windows Update, we did not get a chance to re-run the tests with all of the currently [available hotfixes for file services](https://support.microsoft.com/en-us/kb/2899011).
 
-<figure id="attachment_4042" aria-describedby="caption-attachment-4042" style="width: 952px" class="wp-caption alignnone">[<img class="size-full wp-image-4042" src="https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests.png" alt="SMB Versions Have Little Impact on IO Performance" width="952" height="446" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests.png 952w, https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests-150x70.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests-300x141.png 300w" sizes="(max-width: 952px) 100vw, 952px" />](https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests.png)<figcaption id="caption-attachment-4042" class="wp-caption-text">SMB Versions Have Little Impact on IO Performance*</figure>
+![SMB Versions Have Little Impact on IO Performance](https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests.png)*SMB Versions Have Little Impact on IO Performance*
 
 If you're redirecting AppData, you'll need to understand how your applications are interacting with files in the user profile. If they use this method (which is very common), performance could suffer as a result if you aren't matching your client and server versions of Windows.
 
 One additional behaviour that we noticed, contrary to Magnar's article, is that the negotiation between client and server only happens once, rather than for each file IO access. This can be shown by capturing traffic between client and server with a Wireshark trace. The screenshot below shows the protocol negotiation and then several read requests by the client to the server:
 
-<figure id="attachment_4041" aria-describedby="caption-attachment-4041" style="width: 952px" class="wp-caption alignnone">[<img class="wp-image-4041 size-full" src="https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString.png" alt="SMB Negotiations Occur only Once Per Session" width="952" height="422" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString.png 952w, https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString-150x66.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString-300x133.png 300w" sizes="(max-width: 952px) 100vw, 952px" />](https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString.png)<figcaption id="caption-attachment-4041" class="wp-caption-text">SMB Negotiations Occur only Once Per Session*</figure>
+![SMB Negotiations Occur only Once Per Session](https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString.png)*SMB Negotiations Occur only Once Per Session*
 
-# Recommendations
+## Recommendations
 
 Folder redirection is a feature that most environments will not be able to avoid. The various reasons including abstracting data or specific architecture choices for virtual or physical desktops, means that folder redirection will remain an integral part of the enterprise desktop. While there are a number of 3rd party alternatives and approaches, I may cover those in seperate articles.
 
@@ -83,13 +83,13 @@ These are general recommendations for all environments and depending on your own
 
 We do continue to recommend looking at alternatives to AppData redirection - there are plenty of user environment management / profile management solutions available to you.
 
-## Determining the Version of SMB Negotiated
+### Determining the Version of SMB Negotiated
 
 If you are using Windows 8 and above, PowerShell now includes a cmdlet to determine the version of SMB that is negotiated for each connection - [Get-SmbConnection](https://technet.microsoft.com/en-us/library/jj635713). PoweShell must be elevated, but this will show all connections from the local client.
 
-<figure id="attachment_4060" aria-describedby="caption-attachment-4060" style="width: 1166px" class="wp-caption alignnone">[<img class="wp-image-4060 size-full" src="https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2.png" alt="" width="1166" height="670" srcset="https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2.png 1166w, https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2-150x86.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2-300x172.png 300w, https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2-1024x588.png 1024w" sizes="(max-width: 1166px) 100vw, 1166px" />](https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2.png)<figcaption id="caption-attachment-4060" class="wp-caption-text">Use PowerShell to View SMB Connections*</figure>
+![Use PowerShell to View SMB Connections](https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2.png)*Use PowerShell to View SMB Connections*
 
-# Summary
+## Summary
 
 This year, we've covered additional scenarios, and there are always additional tests to cover. Future editions of these presentations will include the impact of folder redirection on Login VSI results and we'll look at whether Windows 10 and Windows Server 2016 improves performance.
 

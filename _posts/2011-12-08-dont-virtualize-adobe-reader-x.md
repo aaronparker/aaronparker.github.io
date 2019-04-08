@@ -6,20 +6,14 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/?p=2578
 permalink: /dont-virtualize-adobe-reader-x/
-Hide SexyBookmarks:
-  - "0"
-Hide OgTags:
-  - "0"
 dsq_thread_id:
   - "497787306"
-pd_rating:
-  - 'a:8:{s:4:"type";s:1:"0";s:5:"votes";s:1:"1";s:6:"total1";s:1:"0";s:6:"total2";s:1:"0";s:6:"total3";s:1:"0";s:6:"total4";s:1:"0";s:6:"total5";s:1:"1";s:7:"average";s:6:"5.0000";}'
 categories:
   - Applications
 tags:
   - Adobe Reader
 ---
-<img class="alignright size-full wp-image-2581" title="DontVirtualizeReader" src="https://stealthpuppy.com/wp-content/uploads/2011/12/DontVirtualizeReader.png" alt="" width="128" height="128" />Adobe released a new [security advisory for Reader and Acrobat 9 and X](http://www.adobe.com/support/security/advisories/apsa11-04.html) this week to address details of an upcoming fix to these versions for a 0 day vulnerability. Exploits for this vulnerability exist for Reader and Acrobat 9 and are currently active:
+Adobe released a new [security advisory for Reader and Acrobat 9 and X](http://www.adobe.com/support/security/advisories/apsa11-04.html) this week to address details of an upcoming fix to these versions for a 0 day vulnerability. Exploits for this vulnerability exist for Reader and Acrobat 9 and are currently active:
 
 > A critical vulnerability has been identified in Adobe Reader X (10.1.1) and earlier versions for Windows and Macintosh, Adobe Reader 9.4.6 and earlier 9.x versions for UNIX, and Adobe Acrobat X (10.1.1) and earlier versions for Windows and Macintosh. This vulnerability (CVE-2011-2462) could cause a crash and potentially allow an attacker to take control of the affected system. There are reports that the vulnerability is being actively exploited in limited, targeted attacks in the wild against Adobe Reader 9.x on Windows.
 

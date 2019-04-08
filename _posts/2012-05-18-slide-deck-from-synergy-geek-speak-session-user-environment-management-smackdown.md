@@ -6,10 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/?p=2725
 permalink: /slide-deck-from-synergy-geek-speak-session-user-environment-management-smackdown/
-Hide SexyBookmarks:
-  - "0"
-Hide OgTags:
-  - "0"
 dsq_thread_id:
   - "694918401"
 categories:

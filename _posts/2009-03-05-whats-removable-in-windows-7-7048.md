@@ -6,8 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/?p=975
 permalink: /whats-removable-in-windows-7-7048/
-aktt_notify_twitter:
-  - 'no'
 dsq_thread_id:
   - "195381637"
 categories:
@@ -17,7 +15,7 @@ tags:
 ---
 A little more than just Internet Explorer 8 is removable in Windows 7 build 7048. This build allow you to remove Internet Explorer 8, Windows DVD Maker, Windows Media Center, Windows Media Player (no more N editions, I presume) and even Windows Search:
 
-<img class="alignnone size-full wp-image-976" title="windowsfeatures" src="https://stealthpuppy.com/wp-content/uploads/2009/03/windowsfeatures.png" alt="windowsfeatures" width="523" height="711" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/windowsfeatures.png 523w, https://stealthpuppy.com/wp-content/uploads/2009/03/windowsfeatures-220x300.png 220w" sizes="(max-width: 523px) 100vw, 523px" /> 
+![Windows 7 features](https://stealthpuppy.com/wp-content/uploads/2009/03/windowsfeatures.png)
 
 Given that Windows 7 Enterprise edition will be a superset of Home and Professional, being able to remove these components will be especially welcome for organisations deploying Enterprise edition .
 

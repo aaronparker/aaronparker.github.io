@@ -16,11 +16,10 @@ categories:
 tags:
   - Folder Redirection
 ---
- 
 
 Citrix have made available the recording of [our session](https://stealthpuppy.com/citrix-synergy-2015/) at Synergy 2015 in Orlando - [I've Got 99 Problems and Folder Redirection is Every One of Them](https://www.mycugc.org/p/do/sd/sid=25). This is a standard 45-minute, level 400 session. [Shawn](https://twitter.com/shawnbass) and I will be repeating this as [a 75-minute session at BriForum Denver](http://briforum.com/US/sessions.html) with additional content and testing scenarios.
 
-[<img class="alignnone size-full wp-image-3955" src="https://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073.jpg" alt="IMG_2073" width="816" height="370" srcset="https://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073.jpg 816w, https://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073-150x68.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073-300x136.jpg 300w" sizes="(max-width: 816px) 100vw, 816px" />](https://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073.jpg)
+![Synergy](https://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073.jpg)
 
 As a part of the Geek Speak Live track at Synergy 2015, this was the first time that these sessions have been recorded. Previous to this year, no recordings were made available.
 

@@ -6,10 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/?p=3081
 permalink: /retrieving-a-vms-uuid-from-vsphere/
-Hide SexyBookmarks:
-  - "0"
-Hide OgTags:
-  - "0"
 dsq_thread_id:
   - "1162222565"
 categories:
@@ -26,99 +22,98 @@ To use the function, first ensure that [PowerCLI](http://communities.vmware.com/
 
 For example, I could use the following command to retrieve the UUID from a target VM:
 
-[code language="ps"]PS C:\> Get-VM -VM "W7VM1" | Get-vSphereVMUUID  
-554c0342-c2c7-c3b7-8258-96eb00f62b0c[/code]
+```powershell
+PS C:\> Get-VM -VM "W7VM1" | Get-vSphereVMUUID  
+554c0342-c2c7-c3b7-8258-96eb00f62b0c
+```
 
 Code listing below:
 
-[code language="ps"]#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;  
-\# Author: Aaron Parker  
-\# Desc: Function that uses retrieves the UUID from a specified VM and  
-\# transposes it into the right format for use with MDT/SCCM etc  
-\# Date: Mar 24, 2013  
-\# Site: http://stealthpuppy.com  
+```powershell
+# Author: Aaron Parker  
+# Desc: Function that uses retrieves the UUID from a specified VM and  
+# transposes it into the right format for use with MDT/SCCM etc  
+# Date: Mar 24, 2013  
+# Site: http://stealthpuppy.com  
 #  
-\# Original code snippets from:  
-\# http://communities.vmware.com/thread/239735  
-\# http://www.keithsmithonline.com/2013/02/powershell-show-vmware-vm-UUID.html  
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;
-
+# Original code snippets from:  
+# http://communities.vmware.com/thread/239735  
+# http://www.keithsmithonline.com/2013/02/powershell-show-vmware-vm-UUID.html  
 Function Get-vSphereVMUUID {  
-<#  
-.SYNOPSIS  
-Retrieves the UUID from a specified VM and formats it correctly for use with MDT/SCCM etc.
+    <#  
+        .SYNOPSIS  
+        Retrieves the UUID from a specified VM and formats it correctly for use with MDT/SCCM etc.
 
-.DESCRIPTION  
-Retrieves the UUID from a specified VM and formats it correctly for use with MDT/SCCM etc. Returns the UUID as a string that can be passed to other functions.
+        .DESCRIPTION  
+        Retrieves the UUID from a specified VM and formats it correctly for use with MDT/SCCM etc. Returns the UUID as a string that can be passed to other functions.
 
-Requires that a VM object is passed to the function. That object will first have to be created before being passed to this function.
+        Requires that a VM object is passed to the function. That object will first have to be created before being passed to this function.
 
-.PARAMETER VM  
-Specifies the VM to retrieve the UUID from.
+        .PARAMETER VM  
+        Specifies the VM to retrieve the UUID from.
 
-.EXAMPLE  
-PS C:\> Get-vSphereVMUUID -VM "W7VM1"
+        .EXAMPLE  
+        PS C:\> Get-vSphereVMUUID -VM "W7VM1"
 
-Retrieves the UUID from a VM named W7VM1.
+        Retrieves the UUID from a VM named W7VM1.
 
-.EXAMPLE  
-PS C:\> $VM | Get-vSphereVMUUID
+        .EXAMPLE  
+        PS C:\> $VM | Get-vSphereVMUUID
 
-Retrieves the UUID from a VM piped to this function.
+        Retrieves the UUID from a VM piped to this function.
 
-.NOTES  
-See https://stealthpuppy.com/ for support information.
+        .NOTES  
+        See https://stealthpuppy.com/ for support information.
 
-.LINK  
-https://stealthpuppy.com/code/retrieving-a-vms-uuid-from-vsphere/
+        .LINK  
+        https://stealthpuppy.com/code/retrieving-a-vms-uuid-from-vsphere/
+    #>
+    [CmdletBinding(SupportsShouldProcess = $True)]  
+    Param(  
+        [Parameter(Mandatory = $True, ValueFromPipeline = $True, HelpMessage = "Specify the VM to retrive the UUID from.")]  
+        [System.Object]$VM  
+    )
 
-#>
+    BEGIN {  
+    }
 
-[CmdletBinding(SupportsShouldProcess=$True)]  
-Param(  
-[Parameter(Mandatory=$True, ValueFromPipeline=$True, HelpMessage="Specify the VM to retrive the UUID from.")]  
-[System.Object]$VM  
-)
+    PROCESS {  
+        # Retrive UUID from vSphere  
+        $UUID = $VM | ForEach-Object { (Get-View $_.Id).config.UUID }
 
-BEGIN {  
+        #Transpose UUID into expected format  
+        # Section 1  
+        $UUID11 = $UUID.Substring(0, 2)  
+        $UUID12 = $UUID.Substring(2, 2)  
+        $UUID13 = $UUID.Substring(4, 2)  
+        $UUID14 = $UUID.Substring(6, 2)
+
+        # Section 2  
+        $UUID21 = $UUID.Substring(9, 2)  
+        $UUID22 = $UUID.Substring(11, 2)
+
+        # Section 3  
+        $UUID31 = $UUID.Substring(14, 2)  
+        $UUID32 = $UUID.Substring(16, 2)
+
+        # Section 4  
+        $UUID41 = $UUID.Substring(19, 4)
+
+        # Section 5  
+        $UUID51 = $UUID.Substring(24, 12)
+
+        # Piece the strings together  
+        [string]$UUIDa = "$UUID14$UUID13$UUID12$UUID11"  
+        [string]$UUIDb = "$UUID22$UUID21"  
+        [string]$UUIDc = "$UUID32$UUID31"  
+        [string]$UUIDd = "$UUID41"  
+        [string]$UUIDe = "$UUID51"  
+        [string]$UUIDfixed = "$UUIDa-$UUIDb-$UUIDc-$UUIDd-$UUIDe"  
+    }
+
+    END {  
+        # Return the UUID  
+        Return $UUIDfixed  
+    }  
 }
-
-PROCESS {  
-\# Retrive UUID from vSphere  
-$UUID = $VM | %{(Get-View $_.Id).config.UUID}
-
-#Transpose UUID into expected format  
-\# Section 1  
-$UUID11 = $UUID.Substring(0,2)  
-$UUID12 = $UUID.Substring(2,2)  
-$UUID13 = $UUID.Substring(4,2)  
-$UUID14 = $UUID.Substring(6,2)
-
-\# Section 2  
-$UUID21 = $UUID.Substring(9,2)  
-$UUID22 = $UUID.Substring(11,2)
-
-\# Section 3  
-$UUID31 = $UUID.Substring(14,2)  
-$UUID32 = $UUID.Substring(16,2)
-
-\# Section 4  
-$UUID41 = $UUID.Substring(19,4)
-
-\# Section 5  
-$UUID51 = $UUID.Substring(24,12)
-
-\# Piece the strings together  
-[string]$UUIDa = "$UUID14$UUID13$UUID12$UUID11"  
-[string]$UUIDb = "$UUID22$UUID21"  
-[string]$UUIDc = "$UUID32$UUID31"  
-[string]$UUIDd = "$UUID41"  
-[string]$UUIDe = "$UUID51"  
-[string]$UUIDfixed = "$UUIDa-$UUIDb-$UUIDc-$UUIDd-$UUIDe"  
-}
-
-END {  
-\# Return the UUID  
-Return $UUIDfixed  
-}  
-}[/code]
+```

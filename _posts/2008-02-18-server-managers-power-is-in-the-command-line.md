@@ -15,7 +15,7 @@ tags:
   - Unattended
   - Windows-Server-2008
 ---
-<img src="https://stealthpuppy.com/wp-content/uploads/2008/02/servermanagercmd.png" alt="servermanagercmd.png" align="left" />Like most IT Pros deploying and managing Windows Server, I've avoided the wizard interfaces, like Manage Your Server, in previous versions of Windows. However with Windows Server 2008, Microsoft have actually succeeded in creating a tool that I think people will find indispensable.
+Like most IT Pros deploying and managing Windows Server, I've avoided the wizard interfaces, like Manage Your Server, in previous versions of Windows. However with Windows Server 2008, Microsoft have actually succeeded in creating a tool that I think people will find indispensable.
 
 Server Manager is an MMC-based front-end for anything you will need to manage on your servers running Windows 2008. As well as combining many of the individual management tools, it gives you a simple overview of what's happening on your server and integrates the old Add/Remove Programs interface too.
 
@@ -38,31 +38,29 @@ The real power of Server Manager and what makes this tool truly worthwhile is it
 
 So, for example, if I am looking to install to install the Network Policy and Access Server, in preparation for configuring Network Access Protection, I would install it via the following command:
 
-[code]SERVERMANAGERCMD -install NPAS -restart[/code]
+```powershell
+SERVERMANAGERCMD -install NPAS -restart
+```
 
 If I am installing Terminal Server components on an existing server, I could run the following command to install the Terminal Server, Licensing and Session Broker components.
 
-[code]SERVERMANAGERCMD -install TS-Terminal-Server,TS-Licensing,TS-Session-Broker -restart[/code]
+```powershell
+SERVERMANAGERCMD -install TS-Terminal-Server,TS-Licensing,TS-Session-Broker -restart
+```
 
 To install the complete Remote Server Administration Tools (RSAT) on a Windows Server 2008 server, run this command (curiously this requires a restart):
 
-[code]SERVERMANAGERCMD -install RSAT -allsubfeatures -restart[/code]
+```powershell
+SERVERMANAGERCMD -install RSAT -allsubfeatures -restart
+```
 
 Command line interaction with Server Manager also provides the ability to query what roles and features are installed on the server as well as export and import configurations via XML files. This is a great change from earlier versions of Windows and will help to reduce the time spent managing Windows Server 2008.
 
 I've included here the complete list of roles and features that you can use with SERVERMANAGER.CMD and OCSETUP.EXE in Windows Server 2008 and Windows Server Core. Don't reach for that GUI, real men (and women) use the command line.
 
-<p class="download">
-  [download id="25&#8243; format="1&#8243;]
-</p>
-
-<p class="download">
-  [download id="26&#8243; format="1&#8243;]
-</p>
-
 Here's something I really like: using SERVERMANAGERCMD -QUERY via Windows PowerShell makes seeing what's installed on your server nice and simple (**Update**: this works under Command Prompt too):
 
-<img src="https://stealthpuppy.com/wp-content/uploads/2008/02/query.png" border="0" alt="" width="446" height="313" /> 
+![Query](https://stealthpuppy.com/wp-content/uploads/2008/02/query.png)
 
 For more information on Server Manager with PowerShell , read Marc van Orsouw's post: [Dueling Command Lines in Windows Server 2008 ? .. or a happy end ?](http://thepowershellguy.com/blogs/posh/archive/2007/05/23/dueling-command-lines-in-windows-server-2008-or-a-happy-end.aspx).
 

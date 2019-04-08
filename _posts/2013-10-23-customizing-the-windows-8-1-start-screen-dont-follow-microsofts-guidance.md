@@ -13,7 +13,7 @@ categories:
 tags:
   - PowerShell
 ---
-[<img class="alignright size-full wp-image-3506" alt="WIndows81StartScreen" src="https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen.png" width="1020" height="696" srcset="https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen.png 1020w, https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen-150x102.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen-300x204.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen-624x425.png 624w" sizes="(max-width: 1020px) 100vw, 1020px" />](https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen.png)
+![Windows 8.1 Start screen](https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen.png)
 
 For enterprises, Windows 8.1 delivers the control around the Start Screen that should have been there in Windows 8.0, although I'm sure what they've delivered won't appease everyone as there's still no programmatic way to pin or unpin shortcuts from the Start Screen.
 
@@ -27,17 +27,11 @@ Microsoft have an article available on TechNet that describes a number of ways t
 
 Each one of those approaches looks tedious.
 
-<p style="text-align: left;">
   Fortunately, there's a far easier way. Microsoft has added a couple of PowerShell cmdlets that provide for a way of getting your custom Start Screen layout into the default profile. These works for all edition of Windows 8.1 (even RT).
-</p>
 
-<p style="text-align: left;">
   This approach is really about customising the default Start Screen experience (i.e. first logon). If you want control of the Start Screen (users receive the same screen every session) you will need Windows 8.1 Enterprise or Windows Server 2012 R2. You can use this method to customise a reference image, an unattended deployment using RTM media or even an existing Windows installation.
-</p>
 
-<p style="text-align: left;">
   Here's what you need to do at a high level:
-</p>
 
   1. Deploy and/or log onto a machine that has the applications that you want to pin to the Start Screen
   2. Customise that Start Screen to your heart's content
@@ -46,18 +40,22 @@ Each one of those approaches looks tedious.
 
 Exporting the Start Screen layout is simple, just ensure you export the configuration file in binary format, as Import-StartLayout won't import XML files. Here's the export command:
 
-<pre class="lang:ps decode:true">Export-StartLayout -As BIN -Path CustomStartScreenLayout.bin -Verbose</pre>
+```powershell
+Export-StartLayout -As BIN -Path CustomStartScreenLayout.bin -Verbose
+```
 
 Which should look like this:
 
-[<img class="alignright size-full wp-image-3510" alt="Export-StartLayout" src="https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout.png" width="1216" height="548" srcset="https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout.png 1216w, https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout-150x67.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout-300x135.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout-1024x461.png 1024w, https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout-624x281.png 624w" sizes="(max-width: 1216px) 100vw, 1216px" />](https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout.png)
+![Export-StartLayout](https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout.png)
 
 The documentation for [Import-StartLayout](http://technet.microsoft.com/en-us/library/dn283403.aspx) seems to indicate that this cmdlet only works against offline images (mounted with ImageX); however this isn't the case - the cmdlet can be run against the current Windows installation.
 
 That means that we can import a custom Start Screen layout during any type of deployment. For example, you could script the import of the customisation during an MDT or SCCM task sequence. The following command will import the customisation into the default profile of the local desktop. This will need to be run from an elevated command prompt.
 
-<pre class="lang:batch decode:true">POWERSHELL -NonInteractive -Command Import-StartLayout -LayoutPath .\CustomStartScreenLayout.bin -MountPath %SystemDrive%\</pre>
+```powershell
+POWERSHELL -NonInteractive -Command Import-StartLayout -LayoutPath .\CustomStartScreenLayout.bin -MountPath %SystemDrive%\
+```
 
 Using MDT, this command runs as part of a script that customises the default profile. The process is ultimately pretty painless.
 
-[<img class="alignright size-full wp-image-3511" alt="Windows8Default" src="https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default.png" width="841" height="403" srcset="https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default.png 841w, https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default-150x71.png 150w, https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default-300x143.png 300w, https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default-624x299.png 624w" sizes="(max-width: 841px) 100vw, 841px" />](https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default.png)
+![Windows 8 default](https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default.png)

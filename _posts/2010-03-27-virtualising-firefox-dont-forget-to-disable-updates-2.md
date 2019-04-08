@@ -6,8 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/?p=1434
 permalink: /virtualising-firefox-dont-forget-to-disable-updates-2/
-has_been_twittered:
-  - 'yes'
 dsq_thread_id:
   - "195382234"
 categories:
@@ -34,15 +32,17 @@ Leave _Add-ons_ and _Search Engines_ enabled as these are stored within the us
 
 ### Disable the Updates UI
 
-Disabling the user interface elements to these update preferences and launch points is also important. To hide UI elements in Firefox, create _[UserChrome.css](http://www.mozilla.org/unix/customizing.html)_ in `%APPDATA%\Mozilla\Firefox\Profiles\<profile>.default\chrome`. This file does not exist by default, although you will find an example file in the chrome folder. Create the file and add the following lines to hide the updates menu item and the Firefox check-box in the Updates dialog box.
+Disabling the user interface elements to these update preferences and launch points is also important. To hide UI elements in Firefox, create [UserChrome.css](http://www.mozilla.org/unix/customizing.html) in `%APPDATA%\Mozilla\Firefox\Profiles\<profile>.default\chrome`. This file does not exist by default, although you will find an example file in the chrome folder. Create the file and add the following lines to hide the updates menu item and the Firefox check-box in the Updates dialog box.
 
-[code]/\* remove the Check for Updates menu item \*/  
+```powershell
+/\* remove the Check for Updates menu item \*/  
 #updateSeparator, #checkForUpdates { display: none !important; }  
 /\* remove the Updates / Firefox checkbox \*/  
-#enableAppUpdate { display: none !important; }[/code]
+#enableAppUpdate { display: none !important; }
+```
 
 If it is working correctly, you should see something like this (before and after):
 
-<img style="display: inline; border: 0px;" title="FirefoxOptions" src="https://stealthpuppy.com/wp-content/uploads/2010/03/FirefoxOptions.png" border="0" alt="FirefoxOptions" width="660" height="501" /> 
+![Firefox options](https://stealthpuppy.com/wp-content/uploads/2010/03/FirefoxOptions.png)
 
 This method is not completely fool-proof (the modified files all exist in the user profile and are thus writeable) but it should stop users from unwittingly attempting to update Firefox and allow you to control when updates are deployed.
