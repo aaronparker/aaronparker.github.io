@@ -38,7 +38,31 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Paramet
 
 These values translate to following options and values in the table below:
 
-[table id=47 /]
+|Setting                                                             |Registry Value|Option              |Registry Data|
+|--------------------------------------------------------------------|--------------|--------------------|-------------|
+|Storage Sense                                                       |01            |Off                 |0            |
+|                                                                    |              |On                  |1            |
+|Run Storage Sense                                                   |2048          |Every Day           |1            |
+|                                                                    |              |Every Week          |7            |
+|                                                                    |              |Every Month         |30           |
+|                                                                    |              |When Windows decides|0            |
+|Delete temporary files that my apps aren't using                    |04            |Selected            |0            |
+|                                                                    |              |Not selected        |1            |
+|Delete files in my recycle bin if they have been there for over     |08            |Off                 |0            |
+|                                                                    |              |On                  |1            |
+|                                                                    |256           |Never               |0            |
+|                                                                    |              |1 day               |1            |
+|                                                                    |              |14 days             |14           |
+|                                                                    |              |30 days             |30           |
+|                                                                    |              |60 days             |60           |
+|Delete files in my Downloads folder if they have been there for over|32            |Off                 |0            |
+|                                                                    |              |On                  |1            |
+|                                                                    |512           |Never               |0            |
+|                                                                    |              |1 day               |1            |
+|                                                                    |              |14 days             |14           |
+|                                                                    |              |30 days             |30           |
+|                                                                    |              |60 days             |60           |
+
 
 Now that we know what the options are, we can decide on what to deploy and deliver them to enrolled end-points.
 
