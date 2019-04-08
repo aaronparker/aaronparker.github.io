@@ -14,7 +14,7 @@ tags:
   - Java
   - Presentation-Server
 ---
-If I could live in a world without Java, I&#8217;d be happy&#8230;
+If I could live in a world without Java, I&#8217;d be happy...
 
 The Citrix Presentation Server 4.0 Management Console requires a specific version of the Sun Java VM to be installed before the console&#8217;s setup program will run. The version required is 1.4.2\_06 and the latest version of the VM from Sun is 1.5\_02. I usually install the 1.5 version to support Java in Internet Explorer, so it&#8217;s a pain to have to install both. A little cheating can be used to get the 1.5 VM to support the Management Console. The following commands will fool the setup program into thinking that the correct version is installed and all will be well.
 

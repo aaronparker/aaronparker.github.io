@@ -33,11 +33,11 @@ Which looks like this:
 
 In the Application log on the subordinate CA, I can see event id 100 from source CertificationAuthority:
 
-> Active Directory Certificate Services did not start: Could not load or verify the current CA certificate. &nbsp;stealthpuppy Issuing CA The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT\_E\_REVOCATION_OFFLINE).
+> Active Directory Certificate Services did not start: Could not load or verify the current CA certificate.  stealthpuppy Issuing CA The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT\_E\_REVOCATION_OFFLINE).
 
-As well as, event id 48 from the same source,&nbsp;CertificationAuthority:
+As well as, event id 48 from the same source, CertificationAuthority:
 
-> Revocation status for a certificate in the chain for CA certificate 0 for stealthpuppy Issuing CA could not be verified because a server is currently unavailable. &nbsp;The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT\_E\_REVOCATION_OFFLINE).
+> Revocation status for a certificate in the chain for CA certificate 0 for stealthpuppy Issuing CA could not be verified because a server is currently unavailable.  The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT\_E\_REVOCATION_OFFLINE).
 
 Certificate 0 is the subordinate CA&#8217;s certificate, issued by the offline Root CA.
 
@@ -61,14 +61,14 @@ Run this from an elevated command prompt and you should now be able to start the
 
 # The Cause of an Offline CRL
 
-My CRL was online as it is available in Active Directory (for domain joined machines) and via HTTP at crl.home.stealthpuppy.com,&nbsp;an alias of the subordinate CA.&nbsp;I&#8217;ve tested that I can retrieve&nbsp;the CRL by putting the HTTP path into a browser and I&#8217;m prompted to download a file.
+My CRL was online as it is available in Active Directory (for domain joined machines) and via HTTP at crl.home.stealthpuppy.com, an alias of the subordinate CA. I&#8217;ve tested that I can retrieve the CRL by putting the HTTP path into a browser and I&#8217;m prompted to download a file.
 
 <pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Issuing CA.crl
 http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Offline Root CA.crl</pre>
 
 Through having spent some time recently with setting up an Enterprise PKI in my lab and for a project, I&#8217;ve come to know the command line tool [certutil.exe](https://technet.microsoft.com/en-us/library/cc732443(v=ws.11).aspx). This tool is available in all versions of Windows and should be the first tool to use to troubleshoot and manage certificates and certificate authorities on Windows.
 
-Certutil can be used to perform many functions, one of which is to verify a CRL. I know the path to the CRL file&nbsp;because I can view the CRLs on the file system (in C:\Windows\System32\certsrv\CertEnroll) and I&#8217;ve [previously configured CRLs for both CAs](http://stealthpuppy.com/deploy-enterprise-subordinate-certificate-authority/).
+Certutil can be used to perform many functions, one of which is to verify a CRL. I know the path to the CRL file because I can view the CRLs on the file system (in C:\Windows\System32\certsrv\CertEnroll) and I&#8217;ve [previously configured CRLs for both CAs](http://stealthpuppy.com/deploy-enterprise-subordinate-certificate-authority/).
 
 To verify the CRL, use the -URL switch with the HTTP (or LDAP) path to the CRL:
 
@@ -78,7 +78,7 @@ This will display the **URL Retrieval Tool** that shows that the CRLs are able t
 
 <figure id="attachment_5141" aria-describedby="caption-attachment-5141" style="width: 837px" class="wp-caption alignnone">[<img class="size-full wp-image-5141" src="http://stealthpuppy.com/wp-content/uploads/2016/09/certutilURLCRL.png" alt="Using certutil.exe to test the Offline CRL" width="837" height="507" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/certutilURLCRL.png 837w, https://stealthpuppy.com/wp-content/uploads/2016/09/certutilURLCRL-150x91.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/certutilURLCRL-300x182.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/certutilURLCRL-768x465.png 768w" sizes="(max-width: 837px) 100vw, 837px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/certutilURLCRL.png)<figcaption id="caption-attachment-5141" class="wp-caption-text">Using certutil.exe to test the Offline CRL</figcaption></figure>
 
-However, if we load a&nbsp;target certificate, in this case, the subordinate CA&#8217;s cert, we can start to see why we have an issue with the CRL.
+However, if we load a target certificate, in this case, the subordinate CA&#8217;s cert, we can start to see why we have an issue with the CRL.
 
 Select the certificate for the subordinate CA that has been previously exported to the file system (in C:\Windows\System32\certsrv\CertEnroll) - click **Select**, open the certificate and click **Retrieve** again. This time, we can see a new line that shows that the base CRL for the subordinate CA&#8217;s certificate is _Expired_.
 
@@ -104,7 +104,7 @@ Now publish a new CRL - right-click the **Revoked Certificates** node and click 
 
 <figure id="attachment_5149" aria-describedby="caption-attachment-5149" style="width: 968px" class="wp-caption alignnone">[<img class="size-full wp-image-5149" src="http://stealthpuppy.com/wp-content/uploads/2016/09/RootCAPublishingNewCRL.png" alt="Publishing a new CRL from the Root CA" width="968" height="570" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/RootCAPublishingNewCRL.png 968w, https://stealthpuppy.com/wp-content/uploads/2016/09/RootCAPublishingNewCRL-150x88.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/09/RootCAPublishingNewCRL-300x177.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/09/RootCAPublishingNewCRL-768x452.png 768w" sizes="(max-width: 968px) 100vw, 968px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/RootCAPublishingNewCRL.png)<figcaption id="caption-attachment-5149" class="wp-caption-text">Publishing a new CRL from the Root CA</figcaption></figure>
 
-Copy the updated CRL (from _C:\Windows\System32\certsrv\CertEnroll_ by default) from the Root CA to the CRL distribution point and overwrite the existing CRL file (_C:\Windows\System32\certsrv\CertEnroll_&nbsp;again on my subordinate CA).
+Copy the updated CRL (from _C:\Windows\System32\certsrv\CertEnroll_ by default) from the Root CA to the CRL distribution point and overwrite the existing CRL file (_C:\Windows\System32\certsrv\CertEnroll_ again on my subordinate CA).
 
 Now if we again use certutil.exe to verify the CRL, it comes up roses:
 
@@ -118,6 +118,6 @@ If you have re-published the CRL from the Root CA correctly, the service should 
 
 # Conclusion
 
-I&#8217;ve had this issue with an Offline CRL&nbsp;a few times now and not really understood what the issue is until I took the time to troubleshoot the issue properly. I don&#8217;t spend that much time with an enterprise PKI and it&#8217;s easy to underestimate&nbsp;the complexity of setting up AD Certificate Services correctly.
+I&#8217;ve had this issue with an Offline CRL a few times now and not really understood what the issue is until I took the time to troubleshoot the issue properly. I don&#8217;t spend that much time with an enterprise PKI and it&#8217;s easy to underestimate the complexity of setting up AD Certificate Services correctly.
 
 This same issue has also caused me headaches with a [Network Device Enrollment Service](http://social.technet.microsoft.com/wiki/contents/articles/9063.network-device-enrollment-service-ndes-in-active-directory-certificate-services-ad-cs.aspx) (NDES) deployment for issuing certificates to devices via Intune. The expired CRL has caused the NDES service to not start and the events logged do not mention in any way, an expired CRL.

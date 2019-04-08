@@ -107,7 +107,7 @@ Once run the services for both clients will be stopped:
 
 Once disabled, we would expect the filter drivers to be unloaded&nbsp;- the UE-V filter driver is unloaded immediately; however, the filter&nbsp;drivers for App-V are not unloaded until Windows restarts.
 
-From what I understand, even though the client services are stopped, requests will still be passed through&nbsp;the filter drivers (I reserve the right to be wrong though&#8230;). To unload the filter drivers immediately, use the _fltmc unload_ command:
+From what I understand, even though the client services are stopped, requests will still be passed through&nbsp;the filter drivers (I reserve the right to be wrong though...). To unload the filter drivers immediately, use the _fltmc unload_ command:
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Unloading the App-V filter drivers.">fltmc unload AppvVfs
 fltmc unload AppvStrm

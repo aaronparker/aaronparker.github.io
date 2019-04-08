@@ -59,7 +59,7 @@ There are a lot of things left to find and I&#8217;ll update this post as I find
   * Set this DWORD value to 1 <font face="courier new,courier">HKEY_LOCAL_MACHINESoftwareAdobeAcrobat Reader8.0DowntownbDontShowAtLaunch</font> and this DWORD value to 0 <font face="courier new,courier">HKEY_LOCAL_MACHINESoftwareAdobeAcrobat Reader8.0DowntownbGoOnline</font>, to supress the Beyond Adobe Reader window and feature;
   * The Adobe Updater is installed along with Reader to here: <font face="courier new,courier">%CommonProgramFiles%AdobeUpdater5</font>
   * Adobe Updater has created a folder in my Documents folder: <font face="courier new,courier">DocumentsUpdater5AdobeUpdaterreader8rdr-en_US</font>
-  * So Joe&#8230; has an excellent post on installing Adobe Reader 8: [A Step-by-Step Guide to Silently Installing and Configuring Adobe Reader 8](http://sojoe.info/2006/12/09/a-step-by-step-guide-to-silently-installing-and-configuring-adobe-reader-8/)
+  * So Joe... has an excellent post on installing Adobe Reader 8: [A Step-by-Step Guide to Silently Installing and Configuring Adobe Reader 8](http://sojoe.info/2006/12/09/a-step-by-step-guide-to-silently-installing-and-configuring-adobe-reader-8/)
   * Disable the Adobe Updater with the following DWORD (set it to 0x00000001) <font face="courier new,courier">HKLMSoftwareAdobeUpdaterEnterprise</font>. I&#8217;m still confirming this one, but I found the registry key on the Adobe knowledgebase site: [Perform a silent installation of Photoshop](http://www.adobe.com/support/techdocs/331261.html)
 
 <p class="important">

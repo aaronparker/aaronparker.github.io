@@ -52,7 +52,7 @@ The Workspace app installer is a single executable just it has been with Citrix 
 
 Deploying this way also means that the Workspace app will be deployed regardless of user choice and of course does not support deployment via the Intune Company Portal.
 
-Like we&#8217;ve done [previously with Citrix Receiver](https://stealthpuppy.com/deploy-citrix-receiver-intune/), the Workspace app can be [deployed to Windows 10 machines via Intune with PowerShell](https://docs.microsoft.com/en-us/intune/intune-management-extension) without requiring custom packaging. We need a consistent URL that will always download the latest version of Workspace app and [a command line to perform a silent installation](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install/cfg-command-line.html). Your command line options might differ depending on your target environment, but the example script below will download and install the Workspace app.&nbsp;&nbsp;
+Like we&#8217;ve done [previously with Citrix Receiver](https://stealthpuppy.com/deploy-citrix-receiver-intune/), the Workspace app can be [deployed to Windows 10 machines via Intune with PowerShell](https://docs.microsoft.com/en-us/intune/intune-management-extension) without requiring custom packaging. We need a consistent URL that will always download the latest version of Workspace app and [a command line to perform a silent installation](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install/cfg-command-line.html). Your command line options might differ depending on your target environment, but the example script below will download and install the Workspace app.  
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">$Url = "https://downloadplugins.citrix.com/Windows/CitrixWorkspaceApp.exe"
 $Target = "$env:SystemRoot\Temp\CitrixWorkspaceApp.exe"
@@ -60,7 +60,7 @@ $Arguments = '/AutoUpdateCheck=Auto /AutoUpdateStream=Current /DeferUpdateCount=
 Start-BitsTransfer -Source $Url -Destination $Target -Priority High -TransferPolicy Always -ErrorAction Continue
 Start-Process -FilePath $Target -ArgumentList $Arguments -Wait</pre>
 
-Once deployed, devices must then [rely on auto-updates](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure/receiver-update.html) to ensure that Workspace app is kept up-to-date.&nbsp;
+Once deployed, devices must then [rely on auto-updates](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure/receiver-update.html) to ensure that Workspace app is kept up-to-date. 
 
 ## Re-package Citrix Workspace app for Windows Installer
 
@@ -76,9 +76,9 @@ Citrix Workspace app extracted Windows Installer files
 
 The [Citrix HDX RealTime Media Engine](https://www.citrix.com/downloads/citrix-receiver/additional-client-software/hdx-realtime-media-engine-25.html) - required for optimising Skype for Business under XenApp and XenDesktop, does come as a single Windows Installer file. This makes it easy then to deploy the engine [to Windows PCs as a Required line-of-business application](https://docs.microsoft.com/en-us/intune/lob-apps-windows) without modification or custom packaging. This will ensure that no user interaction is required to install the engine since most users are unlikely to know what it does anyway.
 
-## Bonus:&nbsp;Citrix Workspace app for Chrome
+## Bonus: Citrix Workspace app for Chrome
 
-If&nbsp;you have Google Chrome deployed in your environment and you&#8217;d like to deploy the&nbsp;Citrix Workspace app for Chrome, this can be achieved with a PowerShell script that will either deploy it as a preference that users must approve or as a policy that will be automatically pushed out and users will be unable to remove from Chrome.
+If you have Google Chrome deployed in your environment and you&#8217;d like to deploy the Citrix Workspace app for Chrome, this can be achieved with a PowerShell script that will either deploy it as a preference that users must approve or as a policy that will be automatically pushed out and users will be unable to remove from Chrome.
 
 Google provides detailed documentation on [deploying Chrome extensions on Windows](https://developer.chrome.com/apps/external_extensions#registry).
 
@@ -104,7 +104,7 @@ Add the script to the Intune portal and assign to a user group to deploy. Ensure
 
 # macOS
 
-The Citrix Workspace app can be [deployed as a line-of-business application](https://docs.microsoft.com/en-us/intune/lob-apps-macos) with Microsoft Intune. The [Workspace app download](https://www.citrix.com.au/downloads/workspace-app/mac/workspace-app-for-mac-latest.html) comes as [an Installer package](https://en.wikipedia.org/wiki/Installer_(macOS))&nbsp;(inside an [Apple Disk Image](https://en.wikipedia.org/wiki/Apple_Disk_Image)) that can be converted into suitable file format with the&nbsp;[Microsoft Intune App Wrapping Tool](https://github.com/msintuneappsdk/intune-app-wrapping-tool-mac), ready to deploy with Intune.
+The Citrix Workspace app can be [deployed as a line-of-business application](https://docs.microsoft.com/en-us/intune/lob-apps-macos) with Microsoft Intune. The [Workspace app download](https://www.citrix.com.au/downloads/workspace-app/mac/workspace-app-for-mac-latest.html) comes as [an Installer package](https://en.wikipedia.org/wiki/Installer_(macOS)) (inside an [Apple Disk Image](https://en.wikipedia.org/wiki/Apple_Disk_Image)) that can be converted into suitable file format with the [Microsoft Intune App Wrapping Tool](https://github.com/msintuneappsdk/intune-app-wrapping-tool-mac), ready to deploy with Intune.
 
 <figure id="attachment_6133" aria-describedby="caption-attachment-6133" style="width: 1024px" class="wp-caption aligncenter">[<img class="size-full wp-image-6133" src="https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-DiskImage.png" alt="The Citrix Workspace app disk image" width="1024" height="1014" srcset="https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-DiskImage.png 1024w, https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-DiskImage-150x150.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-DiskImage-300x297.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-DiskImage-768x761.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-DiskImage.png)<figcaption id="caption-attachment-6133" class="wp-caption-text">The Citrix Workspace app disk image</figcaption></figure>
 
@@ -112,14 +112,14 @@ The Citrix Workspace app can be [deployed as a line-of-business application](htt
 
 Instructions for converting a .pkg file to a .intunemac file are outlined in the documentation, and the basic process I have followed to convert the Citrix Workspace app installer file is:
 
-  1. Download the&nbsp;Intune App Wrapping Tool for Mac executable -&nbsp;<code class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">IntuneAppUtil</code>&nbsp; - to a local folder. I&#8217;ve downloaded it to&nbsp;<code class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">~/bin</code>.
+  1. Download the Intune App Wrapping Tool for Mac executable - <code class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">IntuneAppUtil</code>  - to a local folder. I&#8217;ve downloaded it to <code class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">~/bin</code>.
   2. Mark the file as executable. In my example, I&#8217;ve done this with:
 
 <pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">chmod +x ~/bin/IntuneAppUtil</pre>
 
 <ol start="3">
   <li>
-    Optionally copy the&nbsp;<code class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Install Citrix Workspace.pkg</code>&nbsp;file to a local folder. You should also be able to run the converter against the copy stored in the disk image. In my example, I&#8217;ve copied the installer to <code class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">~/Projects/Intune-Apps</code>.&nbsp;Rename the installer to remove spaces, so rename the file to <code class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">InstallCitrixWorkspace.pkg</code>.
+    Optionally copy the <code class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Install Citrix Workspace.pkg</code> file to a local folder. You should also be able to run the converter against the copy stored in the disk image. In my example, I&#8217;ve copied the installer to <code class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">~/Projects/Intune-Apps</code>. Rename the installer to remove spaces, so rename the file to <code class="prettyprint lang-javascript" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">InstallCitrixWorkspace.pkg</code>.
   </li>
 </ol>
 
@@ -131,7 +131,7 @@ Instructions for converting a .pkg file to a .intunemac file are outlined in the
 
 <ol start="4">
   <li>
-    Convert the .pkg file into the required .intunemac format with a command similar to the following example - note that the&nbsp;<code class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">-o</code>&nbsp;switch should include a directory path only.
+    Convert the .pkg file into the required .intunemac format with a command similar to the following example - note that the <code class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">-o</code> switch should include a directory path only.
   </li>
 </ol>
 
@@ -147,15 +147,15 @@ The Workspace app installer will have been converted into a .intunemac format re
 
 ## Distribute with Intune
 
-With the prepared package, [create a new line-of-business app in the Intune portal,](https://docs.microsoft.com/en-us/intune/lob-apps-macos)&nbsp;select the .intunemac file and enter application information as follows:
+With the prepared package, [create a new line-of-business app in the Intune portal,](https://docs.microsoft.com/en-us/intune/lob-apps-macos) select the .intunemac file and enter application information as follows:
 
   * Name - Citrix Workspace
   * Description - copy and paste the [description from Workspace app on the Microsoft Store](https://businessstore.microsoft.com/en-au/store/details/citrix-workspace/9wzdncrfj2kj)
   * Publisher - Citrix
   * Ignore app version - Yes
   * Category - Business or Productivity
-  * Information URL -&nbsp;https://docs.citrix.com/en-us/citrix-workspace-app-for-mac.html
-  * Privacy URL -&nbsp;https://www.citrix.com.au/about/legal.html
+  * Information URL - https://docs.citrix.com/en-us/citrix-workspace-app-for-mac.html
+  * Privacy URL - https://www.citrix.com.au/about/legal.html
   * Logo - download the Workspace app [icon in PNG format here](https://github.com/Insentra/intune-icons/blob/master/icons/citrix-workspace-app.png)
 
 Once the details have been added, click OK to create the application. I initially had issues with uploading the application on Chrome on macOS. I was successful on Internet Explorer.
@@ -180,7 +180,7 @@ As at the time of writing, Citrix Receiver is still available on the iOS App Sto
   2. Search for &#8216;Citrix&#8217;, &#8216;Citrix Receiver&#8217; or &#8216;Citrix Workspace&#8217;
   3. Choose &#8216;Citrix Receiver&#8217; or &#8216;Citrix Workspace&#8217; depending on what is returned
   4. Save the change and Add the application
-  5. Assign the application as required&nbsp;
+  5. Assign the application as required 
 
 The application will be available in the Intune Company Portal:
 
@@ -200,10 +200,10 @@ The process for deploying Citrix Workspace app or Citrix Receiver on Android fol
   2. Name - &#8216;Citrix Workspace&#8217; or &#8216;Citrix Receiver&#8217;
   3. Description - copy and paste the [description from Workspace app on the Microsoft Store](https://businessstore.microsoft.com/en-au/store/details/citrix-workspace/9wzdncrfj2kj)
   4. Publisher - Citrix
-  5. Appstore URL -&nbsp;https://play.google.com/store/apps/details?id=com.citrix.Receiver
+  5. Appstore URL - https://play.google.com/store/apps/details?id=com.citrix.Receiver
   6. Minimum operating system - Android 4.4 (Kitkat)
   7. Category - Business or Productivity
-  8. Privacy URL -&nbsp;https://www.citrix.com.au/about/legal.html
+  8. Privacy URL - https://www.citrix.com.au/about/legal.html
   9. Logo - download the Workspace app [icon in PNG format here](https://github.com/Insentra/intune-icons/blob/master/icons/citrix-workspace-app.png)
 
 Assign the application and it will be available to users in the Intune Company Portal.

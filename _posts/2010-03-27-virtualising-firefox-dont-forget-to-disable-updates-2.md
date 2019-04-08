@@ -19,7 +19,7 @@ tags:
 If you are virtualising Mozilla Firefox, you should probably consider disabling the update functionality within the browser, to ensure consistency of the virtual package. There are several items that need to be configured or removed:
 
   * The automatic updates functionality
-  * _Help / Check for Updates&#8230;_ menu item
+  * _Help / Check for Updates..._ menu item
   * The _Firefox_ check-box in the _Option / Advanced / Updates_ dialog box
 
 Fortunately doing so is fairly straight-forward:

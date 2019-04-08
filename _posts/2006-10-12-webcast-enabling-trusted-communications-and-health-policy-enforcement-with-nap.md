@@ -11,7 +11,7 @@ categories:
 tags:
   - NAP
 ---
-Gene Ferioli, a Program Manager with the Customer Connection Team at Microsoft did [a webcast back in September](http://blogs.technet.com/nap/archive/2006/09/20/457816.aspx) on NAP, which is [available for download](https://www119.livemeeting.com/cc/mseventsbmo/view?id=1032308032&pw=89B67592&fmt=wmm). I&#8217;ve just gotten around watching this webcast and it weighs in at 1h 8m. Here&#8217;s my rough notes on what it covers:
+Gene Ferioli, a Program Manager with the Customer Connection Team at Microsoft did [a webcast back in September](http://blogs.technet.com/nap/archive/2006/09/20/457816.aspx) on NAP, which is [available for download](https://www119.livemeeting.com/cc/mseventsbmo/view?id=1032308032&pw=89B67592&fmt=wmm). I've just gotten around watching this webcast and it weighs in at 1h 8m. Here's my rough notes on what it covers:
 
   * NAP Overview and Architecture
   * Four Pillars of Network Access Protection: 
@@ -50,7 +50,7 @@ Gene Ferioli, a Program Manager with the Customer Connection Team at Microsoft d
       * You can deploy NAC today and add NAP once Longhorn Server is released
   * The NAP team is working on a provisioning service for a guest access scenarios (hotels, airport, contractors etc)
 
-Here&#8217;s a screen grab of the Trend Micro System Health Agent auto-remediating the local anti-virus to make the client machine healthy (click for a larger view):
+Here's a screen grab of the Trend Micro System Health Agent auto-remediating the local anti-virus to make the client machine healthy (click for a larger view):
 
 <img width="559" src="http://stealthpuppy.com/wp-content/uploads/2006/10/1000.14.148.TrendMicro.png" height="389" style="width: 559px; height: 389px" /> 
 

@@ -14,7 +14,7 @@ tags:
   - App-V
   - Office 2010
 ---
-A new&nbsp;knowledge-base&nbsp;article, released on the 22nd, is available from Microsoft for sequencing Office 2010 (32-bit and 64-bit) with App-V 4.6:
+A new knowledge-base article, released on the 22nd, is available from Microsoft for sequencing Office 2010 (32-bit and 64-bit) with App-V 4.6:
 
 <a href="http://support.microsoft.com/kb/980861" mce_href="http://support.microsoft.com/kb/980861">Prescriptive guidance for sequencing the Beta version of the 2010 Office system in Microsoft App-V</a>
 

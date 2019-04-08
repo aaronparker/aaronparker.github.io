@@ -22,16 +22,16 @@ tags:
 ---
 [<img class="size-full wp-image-2624 alignnone" title="Delete by Cari McGee" src="http://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell.png" alt="Delete by Cari McGee" width="640" height="317" srcset="https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell.png 640w, https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell-150x74.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/01/AppleKeyboardDeletePowerShell-300x148.png 300w" sizes="(max-width: 640px) 100vw, 640px" />](http://www.flickr.com/photos/pleeker/5379549514/)
 
-I recently posted a script for removing unnecessary&nbsp;files and pruning files based on their age, which can be used at logoff to keep profile sizes manageable -&nbsp;[Reducing Profile Size with a Profile Clean Up Script](http://stealthpuppy.com/user-virtualization/profile-clean-up-script/).
+I recently posted a script for removing unnecessary files and pruning files based on their age, which can be used at logoff to keep profile sizes manageable - [Reducing Profile Size with a Profile Clean Up Script](http://stealthpuppy.com/user-virtualization/profile-clean-up-script/).
 
-[Andrew Morgan](http://andrewmorgan.ie/about-2/)&nbsp;([@andyjmorgan](http://twitter.com/andyjmorgan)) has kindly translated my very basic VBscript to PowerShell. This can be used as a standalone script or the function (_remove-itembyage_)&nbsp;could be integrated into your own scripts and has the added benefit of in-built help and the ability to run silently.
+[Andrew Morgan](http://andrewmorgan.ie/about-2/) ([@andyjmorgan](http://twitter.com/andyjmorgan)) has kindly translated my very basic VBscript to PowerShell. This can be used as a standalone script or the function (_remove-itembyage_) could be integrated into your own scripts and has the added benefit of in-built help and the ability to run silently.
 
 Just like the original script, this could be executed at logoff, before the profile is saved back to the network, to perform two actions:
 
   1. Delete all files of a specific file type in a specified folder, including sub-folders
-  2. Delete all files older than X days&nbsp;in a specified folder, including sub-folders
+  2. Delete all files older than X days in a specified folder, including sub-folders
 
-For example, you could use the script to delete all .log or temporary files below %APPDATA% that aren&#8217;t required to be roamed, or delete all Cookies older than 90 days to keep the Cookies folder to a&nbsp;manageable&nbsp;size.
+For example, you could use the script to delete all .log or temporary files below %APPDATA% that aren&#8217;t required to be roamed, or delete all Cookies older than 90 days to keep the Cookies folder to a manageable size.
 
 **Note**: the script listing below has the -whatif parameter applied when calling the function, so no deletes will occur unless the parameter is removed.
 
@@ -124,4 +124,4 @@ remove-itembyage -days 14 -path $recent -silent -whatif
 remove-itembyage -days 21 -path $history -silent -whatif
 remove-itembyage -days 14 -path "$appdata\Microsoft\office\Recent" -silent -whatif</pre>
 
-&nbsp;
+ 

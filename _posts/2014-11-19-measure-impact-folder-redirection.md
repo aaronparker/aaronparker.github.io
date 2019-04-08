@@ -104,7 +104,7 @@ What&#8217;s interesting here, is that where folder redirection reduced the diff
 
 This approach is still a significant improvement over roaming user profiles. So, if you combine folder redirection and profile management, you should get the best of both worlds to improve the logon experience.
 
-But&#8230; don&#8217;t let your file server run out of CPU resources.
+But... don&#8217;t let your file server run out of CPU resources.
 
 # Conclusion
 
@@ -116,4 +116,4 @@ Whatever the approach, these are only parts of the equation, as we&#8217;ve seen
 
 Logon storms, transient environment issues and undersized file servers can have a direct impact on logon times.
 
-<figure id="attachment_3778" aria-describedby="caption-attachment-3778" style="width: 347px" class="wp-caption alignnone"><img class="wp-image-3778 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/11/ComputerDumpster.gif" alt="ComputerDumpster" width="347" height="200" /><figcaption id="caption-attachment-3778" class="wp-caption-text">Long logon times makes users unhappy&#8230;</figcaption></figure>
+<figure id="attachment_3778" aria-describedby="caption-attachment-3778" style="width: 347px" class="wp-caption alignnone"><img class="wp-image-3778 size-full" src="http://stealthpuppy.com/wp-content/uploads/2014/11/ComputerDumpster.gif" alt="ComputerDumpster" width="347" height="200" /><figcaption id="caption-attachment-3778" class="wp-caption-text">Long logon times makes users unhappy...</figcaption></figure>

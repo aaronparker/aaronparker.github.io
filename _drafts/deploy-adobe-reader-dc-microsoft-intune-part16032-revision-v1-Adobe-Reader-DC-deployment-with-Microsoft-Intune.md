@@ -7,13 +7,13 @@ layout: revision
 guid: https://stealthpuppy.com/6032-revision-v1/
 permalink: /6032-revision-v1/
 ---
-Adobe Reader is of course one of the most common applications on Windows desktops and if you're moving to a Modern Management approach you're likely looking at how to deploy Adobe Reader DC to Windows 10 via Microsoft Intune.&nbsp;
+Adobe Reader is of course one of the most common applications on Windows desktops and if you're moving to a Modern Management approach you're likely looking at how to deploy Adobe Reader DC to Windows 10 via Microsoft Intune. 
 
 This is a challenge today because Adobe Reader DC comes as an executable, that while it can be extracted for the MSI, it includes support files that cannot be deployed via Intune. Microsoft only enables Windows desktop applications to be [deployed from Intune where the installer is contained in a single file Windows Installer](https://docs.microsoft.com/en-us/intune/lob-apps-windows).
 
 # Adobe Reader DC Executable Installer
 
-The Adobe Reader installer hasn't changed much since as long [as I've been writing about it](https://stealthpuppy.com/tag/adobe/)&nbsp;(which has been way too long). What is different with Adobe Reader DC is that Adobe has moved to an evergreen model whereby they're largely moved away from major releases and instead [now deliver a continuous release cycle](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/whatsnewdc.html#continuous-vs-classic-comparison).
+The Adobe Reader installer hasn't changed much since as long [as I've been writing about it](https://stealthpuppy.com/tag/adobe/) (which has been way too long). What is different with Adobe Reader DC is that Adobe has moved to an evergreen model whereby they're largely moved away from major releases and instead [now deliver a continuous release cycle](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/whatsnewdc.html#continuous-vs-classic-comparison).
 
 The [current installer](https://get.adobe.com/reader/enterprise/) for Adobe Reader DC is a single executable that can run as is, or can be extracted for [customisation typical of enterprise environments](https://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/index.html). When extracted it looks like this:
 

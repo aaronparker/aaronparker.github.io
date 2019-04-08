@@ -18,7 +18,7 @@ While Office 365 overall is a great concept, the user experience of OneDrive for
 
 Perhaps a subjective view, but integrating Citrix ShareFile into Office 365 provides a better end-user experience than OneDrive for Business and SharePoint. Plus it works in virtual desktop environments (something you don't get without [3rd party solutions](https://www.fslogix.com)) and enables access to on-premises storage. Thus, an organisation may see value in going Office 365 **and** Citrix ShareFile, or perhaps may already be a ShareFile customer and is moving to Office 365.
 
-To integrate Citrix ShareFile into Office 365, there are a number of touch&nbsp;points worth spending time on to get the user experience just right.
+To integrate Citrix ShareFile into Office 365, there are a number of touch points worth spending time on to get the user experience just right.
 
 # Single Sign-On
 
@@ -36,7 +36,7 @@ d
 
 # Office 365 ProPlus Add-in
 
-d&nbsp;
+d 
 
 # Windows Information Protection
 

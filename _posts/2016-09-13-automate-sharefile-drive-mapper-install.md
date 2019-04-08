@@ -33,7 +33,7 @@ View the properties of the certificate and you can see that it&#8217;s been issu
 
 <figure id="attachment_5159" aria-describedby="caption-attachment-5159" style="width: 405px" class="wp-caption alignnone">[<img class="size-full wp-image-5159" src="http://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png" alt="Citrix ShareFile Drive Mapper Digicert code signing certificate" width="405" height="515" srcset="https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png 405w, https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties-118x150.png 118w, https://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties-236x300.png 236w" sizes="(max-width: 405px) 100vw, 405px" />](http://stealthpuppy.com/wp-content/uploads/2016/09/CitrixCodeCertificateProperties.png)<figcaption id="caption-attachment-5159" class="wp-caption-text">Citrix ShareFile Drive Mapper Digicert code signing certificate</figcaption></figure>
 
-Export the certificate to a local file (from the **Details** tab with **Copy to File&#8230;**) using the default DER encoded binary X.509 format.
+Export the certificate to a local file (from the **Details** tab with **Copy to File...**) using the default DER encoded binary X.509 format.
 
 # Installing the ShareFile Drive Mapper Certificate
 

@@ -1,6 +1,6 @@
 ---
 id: 2421
-title: 'One profile, or Two, or Three, or&#8230;'
+title: 'One profile, or Two, or Three, or...'
 date: 2011-10-28T17:27:40+10:00
 author: Aaron Parker
 layout: post

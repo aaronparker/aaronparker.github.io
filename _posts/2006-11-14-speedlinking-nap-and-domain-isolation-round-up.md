@@ -11,7 +11,7 @@ categories:
 tags:
   - NAP
 ---
-Here&#8217;s a quick list of interesting NAP and Domain/Server Isolation related links for November:
+Here's a quick list of interesting NAP and Domain/Server Isolation related links for November:
 
   * [Ian Hameroff: Come Together, Right Now: IPsec and VPN Co-Existence](http://blogs.technet.com/ianhamer/archive/2006/11/10/come-together-right-now-ipsec-and-vpn-co-existence.aspx)
   * [What is ForeFront Client Security and how will it protect my enterprise from malware?](http://blogs.technet.com/steve_lamb/archive/2006/11/13/what-is-forefront-client-security-and-how-will-it-protect-my-enterprise-from-malware.aspx) (This looks like a very compelling product and NAP integration makes it look even better)

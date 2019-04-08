@@ -48,7 +48,7 @@ If you are invovled in deploying Adobe Reader or want an automated method of dis
   5. Now select **FeatureComponents** under Tables
   6. Select all of the rows where Feature_ is listed as **AUM5** (Click the Feature_ header to order the rows starting with AUM5)
   7. Right click these rows and choose Drop Rows
-  8. Click **Transform** and then **Generate Transform&#8230;** to create a transform file
+  8. Click **Transform** and then **Generate Transform...** to create a transform file
 
 <p class="important">
   I have added <a href="http://stealthpuppy.com/deployment/deploying-adobe-reader-81">new transform files for Adobe Reader 8.1</a> and Reader 8.1.1. The transform files listed here support Reader 8.0 only.

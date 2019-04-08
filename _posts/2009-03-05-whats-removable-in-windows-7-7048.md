@@ -1,6 +1,6 @@
 ---
 id: 975
-title: 'What&#8217;s removable in Windows 7 7048'
+title: 'What's removable in Windows 7 7048'
 date: 2009-03-05T00:04:19+10:00
 author: Aaron Parker
 layout: post

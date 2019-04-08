@@ -82,7 +82,7 @@ Select the HKEY\_LOCAL\_MACHINE hive, add the key path for the correct machine t
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Properties of the ApplicationSourceRoot value in GPP" src="http://stealthpuppy.com/wp-content/uploads/2010/09/GPPApplicationSourceRoot_thumb.png" border="0" alt="Properties of the ApplicationSourceRoot value in GPP" width="446" height="493" />](http://stealthpuppy.com/wp-content/uploads/2010/09/GPPApplicationSourceRoot.png)
 
-Next, enable item-level targeting so that the path specified in this preference can be applied only to a subset of machines. Click on the _Common_ tab, select _Item-level targeting_ and click the _Targeting&#8230;_ button.
+Next, enable item-level targeting so that the path specified in this preference can be applied only to a subset of machines. Click on the _Common_ tab, select _Item-level targeting_ and click the _Targeting..._ button.
 
 To filter this preference, I have added three items:
 

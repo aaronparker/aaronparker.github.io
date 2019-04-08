@@ -13,4 +13,4 @@ tags:
   - Intune
   - Windows 10
 ---
-FSLogix have a suite of solutions for simplifying desktop management for both physical and virtual desktop deployments and until&nbsp;now&nbsp;
+FSLogix have a suite of solutions for simplifying desktop management for both physical and virtual desktop deployments and until now 

@@ -50,7 +50,7 @@ Regardless of what type of desktop a user receives, the user requires persistenc
 
 Ultimately we need to tailor the conversation to the audience and ensure we explain these concepts succinctly.
 
-# What&#8217;s Makes the Modern Desktop?
+# What's Makes the Modern Desktop?
 
 Data aside, we first need to establish whether a user requires a persistent state across sessions, before deciding on a way to manage the desktops. To do that, we should consider each of the major components of the modern Windows desktop:
 
@@ -78,13 +78,13 @@ RDSH servers provide a pool (or farm) of Windows instances that users can receiv
 
 # Considerations
 
-With a persistent desktop, each time the user connects to that desktop, their applications, data and user profile / preferences will be intact. No other management is required (that doesn&#8217;t mean that management should be ignored though) and no change to process from physical desktop management is needed (other than the introduction of a hypervisor).
+With a persistent desktop, each time the user connects to that desktop, their applications, data and user profile / preferences will be intact. No other management is required (that doesn't mean that management should be ignored though) and no change to process from physical desktop management is needed (other than the introduction of a hypervisor).
 
 On the other hand though, if you can ensure that even with non-persistent desktops, each time the user connects, their applications are installed, their data is abstracted from the desktop (using folder redirection or file sync solutions) and their profile (and application preferences) is available at logon, the illusion of a persistent environment will be presented.
 
 Delivering a persistent user environment on top of non-persistent desktops will take some effort can may require 3rd party tools to achieve the goal of running 100% non-persistent desktops.
 
-Here&#8217;s a short breakdown of the various differences between and considerations of persistent and non-persistent desktops:
+Here's a short breakdown of the various differences between and considerations of persistent and non-persistent desktops:
 
 [table id=35 /]
 

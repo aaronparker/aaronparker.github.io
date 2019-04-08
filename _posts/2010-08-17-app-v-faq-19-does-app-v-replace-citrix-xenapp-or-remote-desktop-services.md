@@ -38,7 +38,7 @@ Here’s the good news though, you can combine both solutions – deliver via Ap
   * [Using Application Virtualization (App-V) and Microsoft Enterprise Desktop Virtualization (MED-V) to Enhance Your Windows 7 Deployment](http://technet.microsoft.com/en-us/library/ee872305.aspx)
   * [Microsoft Application Virtualization for Remote Desktop Services 4.6](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=e633164f-9729-43a8-9149-de651944a7fe)
   * [Microsoft App-V and Hosted VM-Based VDI Desktops](http://community.citrix.com/display/ocb/2010/02/17/Microsoft+App-V+and+Hosted+VM-Based+VDI+Desktops)
-  * [Go ahead use App-V, no really, please&#8230;](http://community.citrix.com/display/ocb/2010/03/12/Go+ahead+use+App-V,+no+really,+please...)
+  * [Go ahead use App-V, no really, please...](http://community.citrix.com/display/ocb/2010/03/12/Go+ahead+use+App-V,+no+really,+please...)
   * [How to publish an App-V-enabled application in Citrix XenApp](http://support.microsoft.com/kb/931576)
   * [The deep integration of vWorkspace and App-V](http://www.vworkspace.com/aWinningPartnership/App-V.wmv) (video)
   * [Recommended configuration settings for Application Virtualization 4.5 Terminal Server clients](http://support.microsoft.com/kb/973366/)

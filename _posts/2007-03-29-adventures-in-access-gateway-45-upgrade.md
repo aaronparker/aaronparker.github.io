@@ -29,15 +29,15 @@ The first issue I ran into was a problem with the Access Gateway COM server afte
 > Login failed for user &#8216;DOMAINserviceaccount'. [CLIENT: <local machine>]  
 > For more information, see Help and Support Center at http://go.microsoft.com/fwlink/events.asp.  
 > Data:  
-> 0000: 18 48 00 00 0e 00 00 00 .H&#8230;&#8230;  
-> 0008: 13 00 00 00 43 00 4c 00 &#8230;.C.L.  
+> 0000: 18 48 00 00 0e 00 00 00 .H......  
+> 0008: 13 00 00 00 43 00 4c 00 ....C.L.  
 > 0010: 41 00 41 00 47 00 45 00 A.A.G.E.  
 > 0018: 30 00 31 00 5c 00 43 00 0.1..C.  
 > 0020: 49 00 54 00 52 00 49 00 I.T.R.I.  
 > 0028: 58 00 41 00 41 00 43 00 X.A.A.C.  
-> 0030: 00 00 07 00 00 00 6d 00 &#8230;&#8230;m.  
+> 0030: 00 00 07 00 00 00 6d 00 ......m.  
 > 0038: 61 00 73 00 74 00 65 00 a.s.t.e.  
-> 0040: 72 00 00 00 r&#8230;
+> 0040: 72 00 00 00 r...
 > 
 > * * *Event Type: Error
 > 

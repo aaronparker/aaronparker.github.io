@@ -15,6 +15,6 @@ Don&#8217;t get me started on the ridiculousness of wrapping an MMC console arou
 
 > The page cannot be displayed
 > 
-> The page you are looking for is currently unavailable. The Web site might be experiencing technical difficulties, or you may need to adjust your browser settings&#8230;
+> The page you are looking for is currently unavailable. The Web site might be experiencing technical difficulties, or you may need to adjust your browser settings...
 
 Internet Explorer 6.0 does not enable TLS support by default, so if you are seeing this you&#8217;ll need to enable TLS in Internet Options. It might then be time to [upgrade your browser](http://www.microsoft.com/windows/products/winfamily/ie/default.mspx) too.

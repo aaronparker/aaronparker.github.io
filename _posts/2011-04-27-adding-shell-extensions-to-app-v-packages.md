@@ -31,9 +31,9 @@ In this example, I&#8217;m using [WinRAR](http://www.rarlab.com/download.htm) (j
 
 In this example, I will add the following right-click options:
 
-  * _Add to archive&#8230;_ to folders
-  * _Compress and email&#8230;_ to folders
-  * _Extract files&#8230;_ to .RAR files
+  * _Add to archive..._ to folders
+  * _Compress and email..._ to folders
+  * _Extract files..._ to .RAR files
 
 Viewing the properties of the WINRAR.EXE process displays the command line used for each item:
 

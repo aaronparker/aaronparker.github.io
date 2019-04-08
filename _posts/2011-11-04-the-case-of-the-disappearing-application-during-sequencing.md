@@ -33,14 +33,14 @@ The next most obvious place to look then is the Sequencer log file, hopefully it
 
 In this file I can see a number of lines where the Sequencer is attempting to copy files that no longer exist:
 
-\[code\]\[11/03/2011 21:45:34 VRB VFSX\] &#8230;failed getting long path name for the file (C:\Program Files\Google\Chrome). Error: 2  
+\[code\]\[11/03/2011 21:45:34 VRB VFSX\] ...failed getting long path name for the file (C:\Program Files\Google\Chrome). Error: 2  
 [11/03/2011 21:45:34 VRB CORE] GetShortPathName failure using: C:\Program Files\Google\Chrome. Error is: 2  
 [11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
-[11/03/2011 21:45:34 VRB VFSX] &#8230;failed getting long path name for the file (C:\Program Files\Google\Chrome\Application). Error: 3  
+[11/03/2011 21:45:34 VRB VFSX] ...failed getting long path name for the file (C:\Program Files\Google\Chrome\Application). Error: 3  
 [11/03/2011 21:45:34 VRB CORE] GetShortPathName failure using: C:\Program Files\Google\Chrome. Error is: 2  
 [11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
 [11/03/2011 21:45:34 VRB CORE] CopyResourceToVFS failed.  
-[11/03/2011 21:45:34 VRB VFSX] &#8230;failed getting long path name for the file (C:\Program Files\Google\Chrome\Application\15.0.874.106). Error: 3  
+[11/03/2011 21:45:34 VRB VFSX] ...failed getting long path name for the file (C:\Program Files\Google\Chrome\Application\15.0.874.106). Error: 3  
 [11/03/2011 21:45:34 VRB CORE] GetShortPathName failure using: C:\Program Files\Google\Chrome. Error is: 2  
 [11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
 [11/03/2011 21:45:34 VRB CORE] CopyResourceToVFS failed.[/code]

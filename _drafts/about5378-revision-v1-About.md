@@ -15,7 +15,7 @@ I've been in the IT industry for over 20 years and bring a wide range of experie
 
 I have experience with primarily Microsoft, Citrix and VMware-based solutions and implemented these technologies across government, private sector & not-for-profit organizations. My interests lie in continuous improvements to IT to better enable business, by and taking advantage of existing solutions and new technologies and process.
 
-I have spent the majority of my career in the channel working for system integrators in Australia and the UK and have extensive experience in the finance and transport sectors. Prior to working at Insentra, I&nbsp;was the pre-sales lead for the APAC region for Atlantis Computing.
+I have spent the majority of my career in the channel working for system integrators in Australia and the UK and have extensive experience in the finance and transport sectors. Prior to working at Insentra, I was the pre-sales lead for the APAC region for Atlantis Computing.
 
 # About stealthpuppy.com
 
@@ -33,7 +33,7 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
     </td>
     
     <td valign="top" width="472">
-      <a href="https://www.citrix.com/community/ctp/awardees.html">Citrix Technology Professional</a> (CTP) -&nbsp;2012, 2013, 2014, 2015, 2016, 2017, 2018
+      <a href="https://www.citrix.com/community/ctp/awardees.html">Citrix Technology Professional</a> (CTP) - 2012, 2013, 2014, 2015, 2016, 2017, 2018
     </td>
   </tr>
 </table>
@@ -77,7 +77,7 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
     </td>
     
     <td valign="top" width="472">
-      <a href="http://blog.appsense.com/2012/11/appsense-community-advisor-program/">AppSense Community Advisor</a>&nbsp;2012 - 2016
+      <a href="http://blog.appsense.com/2012/11/appsense-community-advisor-program/">AppSense Community Advisor</a> 2012 - 2016
     </td>
   </tr>
 </table>
@@ -88,13 +88,13 @@ Below is a selection of upcoming and recent speaking engagements and recordings,
 
 **2017**
 
-  * [E2EVC Sydney](http://www.e2evc.com/home/HomeEU.aspx#SYDNEY), March 2017,&nbsp;Citrix XenDesktop Machine Creation Services Deep Dive
-  * [Experts Live Melbourne](https://www.expertslive.org.au/), April 2017,&nbsp;Modern Management for Windows 10
+  * [E2EVC Sydney](http://www.e2evc.com/home/HomeEU.aspx#SYDNEY), March 2017, Citrix XenDesktop Machine Creation Services Deep Dive
+  * [Experts Live Melbourne](https://www.expertslive.org.au/), April 2017, Modern Management for Windows 10
   * Citrix Synergy Orlando, May 207
 
 **2016**
 
-  * Virtual Expo, April 2016:&nbsp;Managing the Modern User Experience in a Hybrid World
+  * Virtual Expo, April 2016: Managing the Modern User Experience in a Hybrid World
   * Citrix Synergy Las Vegas, May 2016: [UX and the Enterprise Desktop: Like Oil and Water?](https://youtu.be/8TpXl80fkKQ)
   * E2EVC Las Vegas, May 2016: Managing the Modern User Experience in a Hybrid World
   * BriForum Boston, July 2016: [UX and the Enterprise Desktop: Like Oil and Water?](http://briforum.com/2016/US/)
@@ -109,7 +109,7 @@ Below is a selection of upcoming and recent speaking engagements and recordings,
   * BriForum Denver, July 2015: [I've got 99 Problems and Folder Redirection is Every One of Them](http://www.brianmadden.com/video/BriForum-2015-Ive-Got-99-Problems-and-Folder-Redirection-is-Every-One-of-Them)
   * Citrix Synergy Orlando, May 2015: [I've got 99 Problems and Folder Redirection is Every One of Them](https://www.mycugc.org/p/do/sd/sid=25)
   * Citrix TechXperts, May 2015: I've got 99 Problems and Folder Redirection is Every One of Them
-  * xenappblog.com Webcast, January 2015:&nbsp;How Folder Redirection Impacts User Experience and Breaks Applications
+  * xenappblog.com Webcast, January 2015: How Folder Redirection Impacts User Experience and Breaks Applications
 
 **2014**
 
@@ -121,9 +121,9 @@ Below is a selection of upcoming and recent speaking engagements and recordings,
 
 Below is a list of publications that I've written, co-authored or contributed to:
 
-  * July 2012:&nbsp;[The Definitive Guide to Delivering Microsoft Office with App-V](http://blog.stealthpuppy.com/community/white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/)
+  * July 2012: [The Definitive Guide to Delivering Microsoft Office with App-V](http://blog.stealthpuppy.com/community/white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/)
   * October 2013: [User Environment Management Smackdown](http://www.brianmadden.com/opinion/Fight-Appsense-Citrix-Immidio-Microsoft-Liquidware-Labs-PolicyPak-RES-Scense-and-others)
-  * May 2016:&nbsp;[Ultimate Desktop Virtualization Best Practices Guide](http://community.atlantiscomputing.com/blog/Atlantis/May-2016/Ultimate-Virtualization-Best-Practices-Guide)
+  * May 2016: [Ultimate Desktop Virtualization Best Practices Guide](http://community.atlantiscomputing.com/blog/Atlantis/May-2016/Ultimate-Virtualization-Best-Practices-Guide)
 
 # <span style="color: #ff0000;">Disclaimer</span>
 

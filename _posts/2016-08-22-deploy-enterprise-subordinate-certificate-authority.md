@@ -74,7 +74,7 @@ Configure the alias in DNS now, so that it has time to propagate and be availabl
 
 ## Configuring&nbsp;Certificate Services
 
-After the Certificate Services roles are installed, start the configuration wizard from Server Manager - click the flag and yellow icon and click the **Configure Active Directory Certificate Services**&#8230; link.
+After the Certificate Services roles are installed, start the configuration wizard from Server Manager - click the flag and yellow icon and click the **Configure Active Directory Certificate Services**... link.
 
 In the configuration wizard, set the credentials used to configure the certificate services as required. You&#8217;ll need to change this if your login account is different to the account with Enterprise Administrator rights.
 
@@ -142,7 +142,7 @@ Browse to where the certificate request&nbsp;for the subordinate certificate aut
 
 <figure id="attachment_5100" aria-describedby="caption-attachment-5100" style="width: 1015px" class="wp-caption alignnone">[<img class="size-full wp-image-5100" src="http://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert.png" alt="Issue the new certificate request from the subordinate CA" width="1015" height="538" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert.png 1015w, https://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert-300x159.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert-768x407.png 768w" sizes="(max-width: 1015px) 100vw, 1015px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/PendingCACert.png)<figcaption id="caption-attachment-5100" class="wp-caption-text">Issue the new certificate request from the subordinate CA</figcaption></figure>
 
-The subordinate CA&#8217;s certificate will now be issued and we can copy it to that CA. View the certificate under **Issued Certificates**. Right-click the certificate, click **Open** and choose **Copy to File&#8230;** from the **Details** tab on the certificate properties.
+The subordinate CA&#8217;s certificate will now be issued and we can copy it to that CA. View the certificate under **Issued Certificates**. Right-click the certificate, click **Open** and choose **Copy to File...** from the **Details** tab on the certificate properties.
 
 <figure id="attachment_5101" aria-describedby="caption-attachment-5101" style="width: 1015px" class="wp-caption alignnone">[<img class="size-full wp-image-5101" src="http://stealthpuppy.com/wp-content/uploads/2016/08/IssuedSubCA.png" alt="Open the properties of the issued certificate and copy to a file" width="1015" height="538" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/IssuedSubCA.png 1015w, https://stealthpuppy.com/wp-content/uploads/2016/08/IssuedSubCA-150x80.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/IssuedSubCA-300x159.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/IssuedSubCA-768x407.png 768w" sizes="(max-width: 1015px) 100vw, 1015px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/IssuedSubCA.png)<figcaption id="caption-attachment-5101" class="wp-caption-text">Open the properties of the issued certificate and copy to a file</figcaption></figure>
 
@@ -154,7 +154,7 @@ We have successfully issued and exported the subordinate CA&#8217;s certificate,
 
 ## Configuring the Subordinate CA
 
-With the certificate file stored locally to the subordinate CA, open the Certificate Authority console - note that the certificate service is stopped. Right-click the CA, select **All Tasks** and choose **Install CA Certificate&#8230;**
+With the certificate file stored locally to the subordinate CA, open the Certificate Authority console - note that the certificate service is stopped. Right-click the CA, select **All Tasks** and choose **Install CA Certificate...**
 
 <figure id="attachment_5104" aria-describedby="caption-attachment-5104" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5104" src="http://stealthpuppy.com/wp-content/uploads/2016/08/SubCAInstallCert-1024x523.png" alt="Install the subordinate CA certificate that we've just issued from the root CA" width="1024" height="523" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/SubCAInstallCert-1024x523.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/08/SubCAInstallCert-150x77.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/SubCAInstallCert-300x153.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/SubCAInstallCert-768x392.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/08/SubCAInstallCert.png 1081w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/SubCAInstallCert.png)<figcaption id="caption-attachment-5104" class="wp-caption-text">Install the subordinate CA certificate that we&#8217;ve just issued from the root CA</figcaption></figure>
 
@@ -180,7 +180,7 @@ You can select the existing HTTP distribution point and press Ctrl-C to copy the
 
 <pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">http://crl.home.stealthpuppy.com/CertEnroll/&lt;CaName&gt;&lt;CRLNameSuffix&gt;&lt;DeltaCRLAllowed&gt;.crl</pre>
 
-For this new DP, I&#8217;ve enabled &#8216;**Include in CRLs&#8217;** and &#8216;**Include in the CDP&#8230;&#8217;** options (and disabled these for the existing http:// DP). Also check that the ldap:// distribution is enabled, which it should be by default.
+For this new DP, I&#8217;ve enabled &#8216;**Include in CRLs&#8217;** and &#8216;**Include in the CDP...&#8217;** options (and disabled these for the existing http:// DP). Also check that the ldap:// distribution is enabled, which it should be by default.
 
 <figure id="attachment_5107" aria-describedby="caption-attachment-5107" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5107" src="http://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-1024x539.png" alt="HTTP CRL distribution point properties" width="1024" height="539" srcset="https://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-1024x539.png 1024w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-150x79.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-300x158.png 300w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties-768x404.png 768w, https://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties.png 1088w" sizes="(max-width: 1024px) 100vw, 1024px" />](http://stealthpuppy.com/wp-content/uploads/2016/08/CRLHTTPproperties.png)<figcaption id="caption-attachment-5107" class="wp-caption-text">HTTP CRL distribution point properties</figcaption></figure>
 

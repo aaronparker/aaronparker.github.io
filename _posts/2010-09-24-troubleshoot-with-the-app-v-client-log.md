@@ -1,6 +1,6 @@
 ---
 id: 1940
-title: 'App-V FAQ: My virtual application won&#8217;t start. Where do I start troubleshooting?'
+title: 'App-V FAQ: My virtual application won't start. Where do I start troubleshooting?'
 date: 2010-09-24T12:00:00+10:00
 author: Aaron Parker
 layout: post
@@ -22,7 +22,7 @@ The client log settings are managed in the Application Virtualization Client con
 
 [<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ClientProperties" src="http://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties_thumb.png" border="0" alt="ClientProperties" width="414" height="479" />](http://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties.png)
 
-There are actually two places to which the the client will log errors – the Application event log (shown in the image under _System Log Level_) and the client log file; however the log file is generally the easiest to use when troubleshooting because it&#8217;s a flat text file.
+There are actually two places to which the the client will log errors – the Application event log (shown in the image under _System Log Level_) and the client log file; however the log file is generally the easiest to use when troubleshooting because it's a flat text file.
 
 ### Using the client log file
 
@@ -38,19 +38,19 @@ Resetting the log will rename the existing file and start a new one:
 
 <img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="LogLocation" src="http://stealthpuppy.com/wp-content/uploads/2010/09/LogLocation.png" border="0" alt="LogLocation" width="660" height="200" /> 
 
-**Note**: once you have finished troubleshooting, don&#8217;t forget to set the logging level back to _Information_.
+**Note**: once you have finished troubleshooting, don't forget to set the logging level back to _Information_.
 
-### Here&#8217;s an example
+### Here's an example
 
-In my test environment, I have a client machine (WIN71) and an App-V Management Server (APPV). I&#8217;ve imported a virtualised copy of Adobe Reader and assigned it to a set of users. On the client I have configured APPV as a publishing server; however when refreshing the client no shortcuts for Reader are created.
+In my test environment, I have a client machine (WIN71) and an App-V Management Server (APPV). I've imported a virtualised copy of Adobe Reader and assigned it to a set of users. On the client I have configured APPV as a publishing server; however when refreshing the client no shortcuts for Reader are created.
 
-Viewing the App-V client log, I&#8217;ve narrowed down the following lines that show what&#8217;s going on during the refresh:
+Viewing the App-V client log, I've narrowed down the following lines that show what's going on during the refresh:
 
 \[code\]\[09/23/2010 22:03:50:885 SWAP WRN\] {tid=B60:usr=aaron}  
 Could not load OSD file \\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd
 
 [09/23/2010 22:03:50:900 AMGR INF] {tid=B60:usr=aaron}  
-The app manager could not create an application from &#8216;\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd&#8217; (rc 0C405564-00000002).[/code]
+The app manager could not create an application from &#8216;\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd' (rc 0C405564-00000002).[/code]
 
 If I set the log to verbose and try the refresh action again, I get more detail:
 
@@ -78,7 +78,7 @@ SWOsdFile(url=\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, orig
 Could not load OSD file \\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd
 
 [09/23/2010 22:45:28:727 AMGR INF] {tid=B14:usr=woody}  
-The app manager could not create an application from &#8216;\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd&#8217; (rc 0C405564-00000002).[/code]
+The app manager could not create an application from &#8216;\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd' (rc 0C405564-00000002).[/code]
 
 If check the actual location of the OSD file, I can see that the package is not in the correct path (its actually located at \\domain.local\Public\Apps\Adobe\AdobeReader9_x86):
 

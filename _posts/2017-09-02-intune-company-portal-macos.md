@@ -20,7 +20,7 @@ tags:
 ---
 Microsoft released a beta version of the Intune Company Portal for macOS just last month; however, it&#8217;s since been pulled from the Download Center. This app had been made available along with [the announcement of Conditional Access supporting macOS](https://blogs.technet.microsoft.com/enterprisemobility/2017/08/23/azure-ad-and-intune-now-support-macos-in-conditional-access/) in preview.
 
-**Edit**: the download is now available again:&nbsp;<https://www.microsoft.com/en-us/download/details.aspx?id=55770>
+**Edit**: the download is now available again: <https://www.microsoft.com/en-us/download/details.aspx?id=55770>
 
 Installing the Company Portal is required to [enable Conditional Access support on macOS](https://docs.microsoft.com/en-au/intune/compliance-policy-create-mac-os), so I imagine a new version will be made available soon. If you&#8217;re testing with Macs or looking for full support with Intune, this is an important part of the puzzle.
 
@@ -48,7 +48,7 @@ Here&#8217;s what that looks like:
 
 # Intune Company Portal for macOS Experience
 
-With the Company Portal, the user experience is streamlined, with the management profile installed automatically and you can see device compliance status from within the app. Here&#8217;s a quick look at the end-user experience with the&nbsp;Intune Company Portal for macOS on macOS Sierra.
+With the Company Portal, the user experience is streamlined, with the management profile installed automatically and you can see device compliance status from within the app. Here&#8217;s a quick look at the end-user experience with the Intune Company Portal for macOS on macOS Sierra.
 
 <div id='gallery-3' class='gallery galleryid-5775 gallery-columns-3 gallery-size-medium'>
   <figure class='gallery-item'> 
@@ -102,4 +102,4 @@ With the Company Portal, the user experience is streamlined, with the management
   </div><figcaption class='wp-caption-text gallery-caption' id='gallery-3-5786'> Intune Company Portal for macOS installing device details </figcaption></figure>
 </div>
 
-Hopefully we&#8217;ll see the portal app available for download again soon and available for wider testing. I&#8217;m also hoping that the availability of the Portal app means we&#8217;ll see the ability for Intune to install apps on macOS. As we see more Mac devices (either corporate or personally owned), the ability to deploy and manage apps on this platform becomes critical.&nbsp;
+Hopefully we&#8217;ll see the portal app available for download again soon and available for wider testing. I&#8217;m also hoping that the availability of the Portal app means we&#8217;ll see the ability for Intune to install apps on macOS. As we see more Mac devices (either corporate or personally owned), the ability to deploy and manage apps on this platform becomes critical. 

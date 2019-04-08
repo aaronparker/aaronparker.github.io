@@ -46,7 +46,7 @@ _**Q**: What&#8217;s the best practise with redirecting AppData when use Roaming
   * Validate the performance of various configurations with tools such as [Login VSI](http://www.loginvsi.com). This is important for initial deployments, but also ideal for understanding the impacts of configuration changes post deployment
   * Ensure applications are tested with AppData redirection to ensure they works as expected
 
-_**Q**: What&#8217;s the best solution if my customer wants to have the same profile/desktop when they use their computer locally or if they connect to a XenApp server .. The goal &#8230; they should not see any differences on for example their desktop_
+_**Q**: What&#8217;s the best solution if my customer wants to have the same profile/desktop when they use their computer locally or if they connect to a XenApp server .. The goal ... they should not see any differences on for example their desktop_
 
 **A**: If you want to provide consistency across multiple device types, I would recommend using [a 3rd party solution for user environment management](http://www.brianmadden.com/blogs/rubenspruijt/archive/2013/12/09/application-virtualization-smackdown-head-to-head-analysis-of-cameyo-citrix-numecent-microsoft-spoon-symantec-and-vmware.aspx) such as AppSense Environment Manager. While you can provide users with a largely consistent experience across devices, not all settings can be applied to all versions of Windows (even across the same version of client and server). Only with a 3rd party solution can you dynamically apply preferences and policies required to implement such an approach.
 

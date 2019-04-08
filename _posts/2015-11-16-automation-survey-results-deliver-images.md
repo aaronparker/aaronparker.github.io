@@ -48,4 +48,4 @@ What about physical hardware? 6% of respondents use no virtualization at all in 
 
 In the next article, we&#8217;ll take a look at how often people are [patching their master images](http://stealthpuppy.com/automation-survey-results-update-images/).
 
-&nbsp;
+ 

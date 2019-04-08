@@ -24,5 +24,5 @@ tags:
 <font face="Courier New">HKEY_CURRENT_USER\Software\Citrix\Program Neighborhood Agent\Application Cache</font>
 
 <p dir="ltr" style="margin-right: 0px">
-  Now if only the Citrix Program Neighbourhood and Program Neighborhood Agent would not store cache in the roaming profile by default&#8230;
+  Now if only the Citrix Program Neighbourhood and Program Neighborhood Agent would not store cache in the roaming profile by default...
 </p>

@@ -25,4 +25,4 @@ During an installation of WinZip you can set the following registry values to su
   * AutoMode - set to &#8220;0&#8221;
   * NoUpdateChecking - set to &#8220;1&#8221;
 
-AutoMode will supress the updater and NoUpdateChecking will actually disable the updater completely, removing the interface from WinZip (Options / Configuration&#8230; / Miscellaneous / Check for Updates:). If these values appear in the same key under HKEY\_CURRENT\_USER they will override the values set in HKEY\_LOCAL\_MACHINE, so you may want to ensure they don&#8217;t exist in each users regsitry.
+AutoMode will supress the updater and NoUpdateChecking will actually disable the updater completely, removing the interface from WinZip (Options / Configuration... / Miscellaneous / Check for Updates:). If these values appear in the same key under HKEY\_CURRENT\_USER they will override the values set in HKEY\_LOCAL\_MACHINE, so you may want to ensure they don&#8217;t exist in each users regsitry.

@@ -17,7 +17,7 @@ Here's the script:
 
 
 
-To use the script, save as&nbsp;Get-CitrixReceiverVersions.ps1 and run from the command line. With no parameters, it will return the releases and version numbers for all available platforms with the&nbsp;<code class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Get-CitrixReceiverVersions</code> function.
+To use the script, save as Get-CitrixReceiverVersions.ps1 and run from the command line. With no parameters, it will return the releases and version numbers for all available platforms with the <code class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Get-CitrixReceiverVersions</code> function.
 
 <pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">. .\Get-CitrixReceiverVersions.ps1
 Get-CitrixReceiverVersions</pre>

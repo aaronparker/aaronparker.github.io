@@ -19,4 +19,4 @@ No concrete details are in place yet, but expect a high level of involvement fro
 
 If you&#8217;ve not been to previous events, videos of last years presentations are [available on Nicke Källén&#8217;s blog](http://www.applepie.se/category/app-v/european-app-v-user-group-app-v).
 
-&nbsp;
+ 

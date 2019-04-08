@@ -18,15 +18,15 @@ tags:
   - Salesforce
   - SSO
 ---
-I was recently testing out the setup of single sign-on (SSO) and user provisioning with [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis) and Salesforce via the Azure Resource Manager portal and came across a couple of minor hiccups that I wanted to share. With Salesforce being&nbsp;as popular as it is, it&#8217;s a great target for enabling SSO in any organisation and improving the&nbsp;user experience.
+I was recently testing out the setup of single sign-on (SSO) and user provisioning with [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis) and Salesforce via the Azure Resource Manager portal and came across a couple of minor hiccups that I wanted to share. With Salesforce being as popular as it is, it&#8217;s a great target for enabling SSO in any organisation and improving the user experience.
 
 # Azure Active Directory
 
-If you happen to be new to Azure Active Directory (Azure AD),&nbsp;whether you&#8217;re an IT Pro looking to learn more about it or an organisation that is managing cloud-based or SaaS applications, Azure AD is a Microsoft technology that most certainly in your future.&nbsp;
+If you happen to be new to Azure Active Directory (Azure AD), whether you&#8217;re an IT Pro looking to learn more about it or an organisation that is managing cloud-based or SaaS applications, Azure AD is a Microsoft technology that most certainly in your future. 
 
-You can [create an Azure tenant and set up Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-howto-tenant) using the free tier, [integrating your on-premises identities](https://docs.microsoft.com/en-au/azure/active-directory/connect/active-directory-aadconnect)&nbsp;and start [configuring single sign-on](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-integrate-saas-apps) for [cloud-based applications](https://azure.microsoft.com/en-us/resources/videos/overview-of-single-sign-on/) without spending any money with Microsoft. Great for IT Pros with home labs and any organisation getting started on their cloud journey.
+You can [create an Azure tenant and set up Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-howto-tenant) using the free tier, [integrating your on-premises identities](https://docs.microsoft.com/en-au/azure/active-directory/connect/active-directory-aadconnect) and start [configuring single sign-on](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-integrate-saas-apps) for [cloud-based applications](https://azure.microsoft.com/en-us/resources/videos/overview-of-single-sign-on/) without spending any money with Microsoft. Great for IT Pros with home labs and any organisation getting started on their cloud journey.
 
-I won&#8217;t cover the&nbsp;setup of Azure AD here, but the links above are plenty to get you started&nbsp;if you&#8217;re not already using Azure. Note that in this article I&#8217;m covering a couple of tips for single sign-on and user account provisioning with Salesforce. While SSO comes with the free tier of Azure AD, user account provisioning requires an [Azure AD Premium](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-editions) subscription.
+I won&#8217;t cover the setup of Azure AD here, but the links above are plenty to get you started if you&#8217;re not already using Azure. Note that in this article I&#8217;m covering a couple of tips for single sign-on and user account provisioning with Salesforce. While SSO comes with the free tier of Azure AD, user account provisioning requires an [Azure AD Premium](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-editions) subscription.
 
 # Salesforce
 
@@ -38,7 +38,7 @@ To test out SSO and account provisioning functionality in a lab environment or b
 
 Setting up SSO for Salesforce is straight-forward; however due to a certificate issue, it took a bit longer that it should have. Starting with access to an Azure AD tenant and a Salesforce subscription, configuring SSO should take an hour or less.
 
-There are&nbsp;several articles on setting up SSO with Salesforce:
+There are several articles on setting up SSO with Salesforce:
 
   * For [the Azure Classic Portal a tutorial with videos on Azure Active Directory integration](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-saas-salesforce-tutorial)
   * From Salesforce, an article on [Login with Azure AD](https://developer.salesforce.com/page/Login_with_Azure_AD), also covering the Classic portal
@@ -66,16 +66,16 @@ The certificate properties don&#8217;t reveal anything out of the ordinary.
 
 <figure id="attachment_5368" aria-describedby="caption-attachment-5368" style="width: 405px" class="wp-caption alignnone">[<img class="size-full wp-image-5368" src="http://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties.png" alt="Azure SAML certificate properties" width="405" height="515" srcset="https://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties.png 405w, https://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties-118x150.png 118w, https://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties-236x300.png 236w" sizes="(max-width: 405px) 100vw, 405px" />](http://stealthpuppy.com/wp-content/uploads/2016/12/AzureSAMLCertificateProperties.png)<figcaption id="caption-attachment-5368" class="wp-caption-text">Azure SAML certificate properties</figcaption></figure>
 
-I thought it worth exporting the certificate to DER format to test. Open the certificate, click **Details** / **Copy to File&#8230;**&nbsp;(as shown above) and export it to **DER encoded binary X.509 format**.&nbsp;Use that version of the certificate when configuring SAML in Salesforce and it will save successfully.
+I thought it worth exporting the certificate to DER format to test. Open the certificate, click **Details** / **Copy to File...** (as shown above) and export it to **DER encoded binary X.509 format**. Use that version of the certificate when configuring SAML in Salesforce and it will save successfully.
 
 ## Recommendations
 
 When configuring SAML single sign-on in Salesforce here&#8217;s a quick list of my recommendations:
 
   * Export the SAML signing certificate generated by Azure to DER format
-  * Set the **Request Signature Method** to RSA-SHA256. Note in the screenshot above that the signature algorithm and signature hash algorithm are in SHA256.&nbsp;
+  * Set the **Request Signature Method** to RSA-SHA256. Note in the screenshot above that the signature algorithm and signature hash algorithm are in SHA256. 
   * The **Name** field in the Salesforce Single Sign-on settings will be displayed to end-users on the Salesforce login page. Use text here that is descriptive to ensure users (&#8220;Azure AD&#8221; might not make sense)
-  * **SAML Identity Type** needs to be set to **Assertion contains the User&#8217;s salesforce.com username**. When configuring account provisioning, this must instead be set to&nbsp;**Assertion contains the Federation ID from the User object**
+  * **SAML Identity Type** needs to be set to **Assertion contains the User&#8217;s salesforce.com username**. When configuring account provisioning, this must instead be set to **Assertion contains the Federation ID from the User object**
 
 This then leads me to enabling account provisioning.
 
@@ -91,9 +91,9 @@ Checking the [SAML Validator](https://developer.salesforce.com/docs/atlas.en-us.
 
 In the Salesforce user properties, I can see that the **Federation ID** under Single Sign-On is blank. Adding the user&#8217;s account name (i.e. email address or UPN) manually, then successfully enabled SSO.
 
-So what&#8217;s the problem? Turns out that we need to add&nbsp;an attribute mapping in Azure AD to ensure that this field is populated when the user account provisioning process creates accounts.&nbsp;I&#8217;m not sure why this mapping isn&#8217;t there by default.
+So what&#8217;s the problem? Turns out that we need to add an attribute mapping in Azure AD to ensure that this field is populated when the user account provisioning process creates accounts. I&#8217;m not sure why this mapping isn&#8217;t there by default.
 
-In the Azure portal, navigate to&nbsp;**Azure AD**, **Enterprise applications**, Salesforce and click on **Provisioning**. Under **Mappings**, click on the enabled mapping to open the attribute properties blade. At the bottom of that blade, you will find **Add New Mapping**.
+In the Azure portal, navigate to **Azure AD**, **Enterprise applications**, Salesforce and click on **Provisioning**. Under **Mappings**, click on the enabled mapping to open the attribute properties blade. At the bottom of that blade, you will find **Add New Mapping**.
 
 Add a new mapping with these values:
 

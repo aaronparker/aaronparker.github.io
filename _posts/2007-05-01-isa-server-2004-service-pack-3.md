@@ -20,4 +20,4 @@ Microsoft have released ISA Server 2004 Service Pack 3, which includes support f
   * [ISA Server Diagnostic Logging Viewer](http://www.microsoft.com/downloads/details.aspx?FamilyID=f8a0bf4c-639e-41ef-89f6-050db1b2725d&DisplayLang=en)
   * [New Warning event message that occurs in ISA Server 2004 SP3 to notify delay in logging](http://support.microsoft.com/kb/919468)
 
-There&#8217;s also a new diagnostic log viewer which looks interesting, I&#8217;ll have to check it out. Hopefully this means that ISA Server 2006 will get the same functionality updates as well.
+There's also a new diagnostic log viewer which looks interesting, I'll have to check it out. Hopefully this means that ISA Server 2006 will get the same functionality updates as well.

@@ -7,9 +7,9 @@ layout: revision
 guid: https://stealthpuppy.com/5441-autosave-v1/
 permalink: /5441-autosave-v1/
 ---
-I recently [posted an article](http://stealthpuppy.com/visual-c-redistributable-installer/) on a script I've written for downloading and installing the Microsoft&nbsp;[Visual C++ Redistributables](https://github.com/aaronparker/Install-VisualCRedistributables). Thanks to&nbsp;[Cornelius Schuchardt](https://twitter.com/techdecline), the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).
+I recently [posted an article](http://stealthpuppy.com/visual-c-redistributable-installer/) on a script I've written for downloading and installing the Microsoft [Visual C++ Redistributables](https://github.com/aaronparker/Install-VisualCRedistributables). Thanks to [Cornelius Schuchardt](https://twitter.com/techdecline), the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).
 
-Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you can [download from&nbsp;the releases page](https://github.com/aaronparker/Install-VisualCRedistributables/releases)&nbsp;and includes the following updates:
+Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you can [download from the releases page](https://github.com/aaronparker/Install-VisualCRedistributables/releases) and includes the following updates:
 
   * VisualCRedistributables.xml updated with MSI Product codes for the redistributables
   * Install-VisualCRedistributables.ps1 updated with ConfigMgr support - create applications for the redistributables in ConfigMgr
@@ -69,13 +69,13 @@ The XML file that contains the details about the Visual C++ Redistributables. Th
 
 Example: download the Visual C++ Redistributables listed in VisualCRedistributables.xml to the current folder.
 
-<pre><code class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml"</code>&nbsp;Path</pre>
+<pre><code class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml"</code> Path</pre>
 
 Specify a target folder to download the Redistributables to, otherwise use the current folder will be used.
 
 Example: download the Visual C++ Redistributables listed in VisualCRedistributables.xml to C:\Redist.
 
-<pre><code class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path C:\Redist</code>&nbsp;Install</pre>
+<pre><code class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path C:\Redist</code> Install</pre>
 
 To install the redistributables add the -Install parameter.
 
@@ -93,15 +93,15 @@ The Redistributables will installed in the order specified in the XML file.
 
 Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list.<figure> 
 
-<figure style="width: 1442px" class="wp-caption alignnone"><img title="Visual C++ Redistributables 2005-2015" src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/2005-2015.PNG" alt="Visual C++ Redistributables 2005-2015" width="1442" height="900" /><figcaption class="wp-caption-text">Visual C++ Redistributables 2005-2015</figcaption></figure></figure> 
+<figure style="width: 1442px" class="wp-caption alignnone"><img title="Visual C++ Redistributables 2005-2015" src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/2005-2015.PNG" alt="Visual C++ Redistributables 2005-2015" width="1442" height="900" /><figcaption class="wp-caption-text">Visual C++ Redistributables 2005-2015</figcaption> 
 
 Visual C++ Redistributables 2005 to 2017 (including 2015) installed:<figure> 
 
-<figure style="width: 1442px" class="wp-caption alignnone"><img title="Visual C++ Redistributables 2005-2017" src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/2005-2017.PNG" alt="Visual C++ Redistributables 2005-2017" width="1442" height="900" /><figcaption class="wp-caption-text">Visual C++ Redistributables 2005-2017</figcaption></figure></figure> 
+<figure style="width: 1442px" class="wp-caption alignnone"><img title="Visual C++ Redistributables 2005-2017" src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/2005-2017.PNG" alt="Visual C++ Redistributables 2005-2017" width="1442" height="900" /><figcaption class="wp-caption-text">Visual C++ Redistributables 2005-2017</figcaption> 
 
 ### ConfigMgr
 
-Support for downloading the Redistributables and creating applications in System Center Configuration Manager&nbsp;has recently been added.
+Support for downloading the Redistributables and creating applications in System Center Configuration Manager has recently been added.
 
 #### CreateCMApp
 
@@ -113,11 +113,11 @@ Specify SMS Site Code for the ConfigMgr app creation.
 
 Example: Download Visual C++ Redistributables listed in VisualCRedistributables.xml and create ConfigMgr Applications for the selected Site.
 
-<pre><code class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path \\server1.contoso.com\Sources\Apps\VSRedist -CreateCMApp -SMSSiteCode S01</code>&nbsp;Results</pre>
+<pre><code class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path \\server1.contoso.com\Sources\Apps\VSRedist -CreateCMApp -SMSSiteCode S01</code> Results</pre>
 
 This will look similar to the following in the Configuration Manager console:<figure> 
 
-<figure style="width: 1368px" class="wp-caption alignnone"><img src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/VCredist_ConfigMgr.PNG" alt="Visual C++ Redistributables in Configuration Manager" width="1368" height="727" /><figcaption class="wp-caption-text">Visual C++ Redistributables in Configuration Manager</figcaption></figure></figure> 
+<figure style="width: 1368px" class="wp-caption alignnone"><img src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/VCredist_ConfigMgr.PNG" alt="Visual C++ Redistributables in Configuration Manager" width="1368" height="727" /><figcaption class="wp-caption-text">Visual C++ Redistributables in Configuration Manager</figcaption> 
 
 # Finally
 

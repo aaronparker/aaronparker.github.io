@@ -25,7 +25,7 @@ After watching the video I was convinced enough to turn System Restore back on a
   2. Click the button labelled _Files from all users on this computer_
   3. You will be prompted by UAC to continue
   4. Choose the drive to scan and click OK
-  5. Click the _More Options_ tab and click the _Clean up&#8230;_ button under the _System Restore and Shadow Copies_ section
+  5. Click the _More Options_ tab and click the _Clean up..._ button under the _System Restore and Shadow Copies_ section
 
 <img border="0" src="http://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1078.DiskCleanupforVista2.png" /> 
 

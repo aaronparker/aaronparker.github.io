@@ -7,4 +7,4 @@ layout: revision
 guid: https://stealthpuppy.com/5936-revision-v1/
 permalink: /5936-revision-v1/
 ---
-FSLogix have a suite of solutions for simplifying desktop management for both physical and virtual desktop deployments and until&nbsp;now&nbsp;
+FSLogix have a suite of solutions for simplifying desktop management for both physical and virtual desktop deployments and until now 

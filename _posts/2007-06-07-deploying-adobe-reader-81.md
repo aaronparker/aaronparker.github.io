@@ -33,10 +33,10 @@ Adobe has details of [extracting the installation files for enterprise deploymen
 
 ### Disabling Unwanted Features
 
-Simplifying Adobe Reader in an enterprise environment is something that we&#8217;re all looking to do, including disabling the infamous Adobe Updater 5. Disabling features is best done by creating custom transform files. I have instructions on [creating your own transform files using the Adobe Customisation Wizard](http://stealthpuppy.com/deployment/disable-adobe-updater-with-adobe-customization-wizard-8), or you can use the transforms files listed here:First up I have a basic transform that sets the following options:
+Simplifying Adobe Reader in an enterprise environment is something that we're all looking to do, including disabling the infamous Adobe Updater 5. Disabling features is best done by creating custom transform files. I have instructions on [creating your own transform files using the Adobe Customisation Wizard](http://stealthpuppy.com/deployment/disable-adobe-updater-with-adobe-customization-wizard-8), or you can use the transforms files listed here:First up I have a basic transform that sets the following options:
 
   * Supresses the EULA
-  * Supresses any reboots after installation (I&#8217;ve had mixed results with this)
+  * Supresses any reboots after installation (I've had mixed results with this)
   * Stops the _Adobe Reader 8_ icon from being added to the Desktop
   * Removes the _Help/Check for updates_ menu item and prevents the Updater from running automatically
   * Removes the _Help/Purchase Adobe Acrobat_ menu item
@@ -57,7 +57,7 @@ The second transform provides the same settings as above in addition to complete
 
 ### Terminal Servers and Browser Integration
 
-When installing Adobe Reader on Terminal Servers, it might be advantageous to disable browser integration, i.e. opening PDF files from within the browser window. The reason for this is that the Reader executable (ACRORD32.EXE) does not exit until the browser is closed. This will cause Reader to continue to consume memory even though it is not in use.To disable browser integration set the **DISABLE\_BROWSER\_INTEGRATION** property to **YES** when installing Reader on Terminal Servers. You can do this by editing the transform or using DISABLE\_BROWSER\_INTEGRATION=YES on the command line. If the command line is not for you, I&#8217;ve created another transform which you can get here:
+When installing Adobe Reader on Terminal Servers, it might be advantageous to disable browser integration, i.e. opening PDF files from within the browser window. The reason for this is that the Reader executable (ACRORD32.EXE) does not exit until the browser is closed. This will cause Reader to continue to consume memory even though it is not in use.To disable browser integration set the **DISABLE\_BROWSER\_INTEGRATION** property to **YES** when installing Reader on Terminal Servers. You can do this by editing the transform or using DISABLE\_BROWSER\_INTEGRATION=YES on the command line. If the command line is not for you, I've created another transform which you can get here:
 
 ### Hiding Menu Items
 
@@ -161,11 +161,11 @@ Most medium to large enterprises will have some sort of application deployment t
 
   * [Group Policy and Active Directory](http://www.adobe.com/devnet/acrobat/pdfs/gpo_ad_8.pdf); and
   * [Systems Management Server](http://www.adobe.com/devnet/acrobat/pdfs/sms_8.pdf) (now System Centre Configuration Manager).
-  * Apparently documentation for using IBM Tivoli Configuration Manager to deploy Reader/Acrobat is &#8216;coming in mid-2007&#8217;.
+  * Apparently documentation for using IBM Tivoli Configuration Manager to deploy Reader/Acrobat is &#8216;coming in mid-2007'.
 
 Any organisation utilising Group Policy for application deployment may find things a little more challenging. Check out my post on [deploying applications with Group Policy](http://stealthpuppy.com/deployment/group-policy-application-deployment-done-right) for details on doing it the right way.You will also find information on deploying Reader on:
 
   * [Windows Terminal Server](http://www.adobe.com/devnet/acrobat/pdfs/wts_8.pdf); and
   * [Citrix Presentation Server](http://www.adobe.com/devnet/acrobat/pdfs/wts_8.pdf) 
 
-Why two documents are required for Terminal Server and Presentation Server, I don&#8217;t know - deployment is exactly the same. If you are deploying via a script, I have details on scripting the installation of Adobe Reader 8.x - [Unattended Install: Adobe Reader 8.x](http://stealthpuppy.com/unattended/unattended-install-adobe-reader-8x).
+Why two documents are required for Terminal Server and Presentation Server, I don't know - deployment is exactly the same. If you are deploying via a script, I have details on scripting the installation of Adobe Reader 8.x - [Unattended Install: Adobe Reader 8.x](http://stealthpuppy.com/unattended/unattended-install-adobe-reader-8x).
