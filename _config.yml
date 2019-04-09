@@ -26,7 +26,12 @@ github_username:  aaronparker
 markdown: kramdown
 theme: minima
 plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-avatar
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
