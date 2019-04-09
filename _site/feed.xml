@@ -1,462 +1,999 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-04-09T10:14:03+10:00</updated><id>/feed.xml</id><title type="html">stealthpuppy</title><subtitle>on end user computing and enterprise mobility</subtitle><entry><title type="html"></title><link href="/2019/04/09/2014-08-18-retrieving-a-vms-uuid-from-hyper-v.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T10:14:03+10:00</published><updated>2019-04-09T10:14:03+10:00</updated><id>/2019/04/09/2014-08-18-retrieving-a-vms-uuid-from-hyper-v</id><content type="html" xml:base="/2019/04/09/2014-08-18-retrieving-a-vms-uuid-from-hyper-v.html">&lt;p&gt;I’ve previously posted about retrieving the &lt;a href=&quot;http://en.wikipedia.org/wiki/Universally_unique_identifier&quot;&gt;UUID&lt;/a&gt; from &lt;a href=&quot;https://stealthpuppy.com/retrieving-a-vms-uuid-from-vsphere/&quot;&gt;a virtual machine hosted on vSphere&lt;/a&gt;. UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here’s how to obtain the UUID from a virtual machine hosted on Hyper-V.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-04-09T10:21:17+10:00</updated><id>/feed.xml</id><title type="html">stealthpuppy</title><subtitle>on end user computing and enterprise mobility</subtitle><entry><title type="html">Signing Git Commits for Sweet Verified Badges</title><link href="/signing-git-commits-for-sweet-verified-badges/" rel="alternate" type="text/html" title="Signing Git Commits for Sweet Verified Badges" /><published>2019-03-19T01:02:21+11:00</published><updated>2019-03-19T01:02:21+11:00</updated><id>/signing-git-commits-for-sweet-verified-badges</id><content type="html" xml:base="/signing-git-commits-for-sweet-verified-badges/">&lt;p&gt;Confession time - I’ve had a &lt;a href=&quot;https://github.com/aaronparker?tab=repositories&quot;&gt;GitHub account&lt;/a&gt; since 2014 and haven’t signed a single commit. I’ve read various tweets and articles about signing your commits, but never committed (git it? … see what I did there…) to setting up a signature until recently.&lt;/p&gt;
 
-&lt;p&gt;Just like with vSphere, the UUID isn’t a property of the virtual machine that can be queried directly. We need to go via WMI to query the target virtual machine. Note that in this function, I’m using &lt;a href=&quot;http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/05/30/the-v2-wmi-namespace-in-hyper-v-on-windows-8.aspx&quot;&gt;version 2 of the Root\Virtualization WMI namespace&lt;/a&gt; (root\virtualization\v2. This means the function as written, will &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/hh850319(v=vs.85)&quot;&gt;only work on Windows 8 and Windows Server 2012&lt;/a&gt; (and above). If you want to use this function on earlier versions of Hyper-V, remove the “\v2” from the namespace.&lt;/p&gt;
-
-&lt;p&gt;As an example, here’s how to retrieve the UUIDs from a set of VMs on a target Hyper-V host named &lt;em&gt;hv1&lt;/em&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;C:\&amp;gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, file3, pvs1
-
-Name		BIOSGUID
-----		----
-WIN71		E6E1A176-0713-4BB0-99E9-4570A1A3A94A 
-FILE3		9E9D788A-15E2-4760-A049-9F6EB88677A9 
-PVS1		74EFF5BC-A24E-48C3-85BE-12D758FE7AB6
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Here’s the full function code listing. Please let me know if you find any bugs:&lt;/p&gt;
-
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#---------------------------------------------------------------------------&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Author: Aaron Parker&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Desc:   Function that uses retrieves the UUID from a specified VM and&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#         formats it into the right format for use with MDT/SCCM etc&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Date:   Aug 18, 2014&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Site:   http://stealthpuppy.com&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#---------------------------------------------------------------------------&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;Function &lt;/span&gt;Get-HypervVMUUID &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;cm&quot;&gt;&amp;lt;#
-        .SYNOPSIS
-            Retrieve the UUID from a virtual machine or set of virtual machines.
- 
-        .DESCRIPTION
-            This function will retrieve the UUID from from a virtual machine or set of virtual machines from a Hyper-V host.
- 
-        .PARAMETER ComputerName
-            Specifies the host from which to query the virtual machine or set of virtual machines.
- 
-        .PARAMETER VM
-            Specifies the virtual machine or set of virtual machines (a comma delimited list) from which to obtain the UUID/s.
- 
-         .EXAMPLE
-            PS C:\&amp;amp;gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, win72
- 
-            This command retrieves the UUIDs from the virtual machines win71 and win72 from the host hv1.
- 
-        .EXAMPLE
-            PS C:\&amp;amp;gt; Get-HypervVMUUID -VM win71, win72
- 
-            This command retrieves the UUIDs from the virtual machines win71 and win72 from the local host.
- 
-        .EXAMPLE
-            PS C:\&amp;amp;gt; Get-HypervVMUUID
- 
-            This command retrieves the UUIDs from the all of the virtual machines on the local host.
- 
-        .NOTES
-            https://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/ for support information.
- 
-        .LINK
-            https://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/
-    #&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;cmdletbinding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;SupportsShouldProcess&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$True&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;param&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Parameter&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Mandatory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;,HelpMessage&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Specifies one or more Hyper-V hosts from which virtual machine UUIDs are to be retrieved. NetBIOS names, IP addresses, and fully-qualified domain names are allowable. The default is the local computer — use &quot;&quot;localhost&quot;&quot; or a dot (&quot;&quot;.&quot;&quot;) to specify the local computer explicitly.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ComputerName&lt;/span&gt;,
-
-        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Parameter&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Mandatory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$false&lt;/span&gt;, &lt;span class=&quot;nv&quot;&gt;Position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0,HelpMessage&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Specifies the virtual machine from which to retrieve the UUID.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)]&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VM&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# If ComputerName parameter is not specified, set value to the local host&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ComputerName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ComputerName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;.&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# If VM parameter is specified, return those VMs, else return all VMs&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$VM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nv&quot;&gt;$UUIDs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-VM -ComputerName &lt;span class=&quot;nv&quot;&gt;$ComputerName&lt;/span&gt; -VM &lt;span class=&quot;nv&quot;&gt;$VM&lt;/span&gt; -ErrorAction SilentlyContinue | &lt;span class=&quot;nb&quot;&gt;Select-Object &lt;/span&gt;Name,@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BIOSGUID&quot;&lt;/span&gt;;&lt;span class=&quot;nv&quot;&gt;Expression&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;={(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-WmiObject&lt;/span&gt; -ComputerName &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.ComputerName -Namespace &lt;span class=&quot;s2&quot;&gt;&quot;root\virtualization\v2&quot;&lt;/span&gt; -Class Msvm_VirtualSystemSettingData -Property BIOSGUID -Filter &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;InstanceID = 'Microsoft:{0}'&quot;&lt;/span&gt; -f &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.VMId.Guid&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.BIOSGUID&lt;span class=&quot;o&quot;&gt;}}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Else&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nv&quot;&gt;$UUIDs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Get-VM -ComputerName &lt;span class=&quot;nv&quot;&gt;$ComputerName&lt;/span&gt; -ErrorAction SilentlyContinue | &lt;span class=&quot;nb&quot;&gt;Select-Object &lt;/span&gt;Name,@&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;BIOSGUID&quot;&lt;/span&gt;;&lt;span class=&quot;nv&quot;&gt;Expression&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;={(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-WmiObject&lt;/span&gt; -ComputerName &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.ComputerName -Namespace &lt;span class=&quot;s2&quot;&gt;&quot;root\virtualization\v2&quot;&lt;/span&gt; -Class Msvm_VirtualSystemSettingData -Property BIOSGUID -Filter &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;InstanceID = 'Microsoft:{0}'&quot;&lt;/span&gt; -f &lt;span class=&quot;nv&quot;&gt;$_&lt;/span&gt;.VMId.Guid&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;.BIOSGUID&lt;span class=&quot;o&quot;&gt;}}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;# Remove curly brackets from the UUIDs and return the array&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;ForEach&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UUIDs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt;.BIOSGUID &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt;.BIOSGUID -replace &lt;span class=&quot;s2&quot;&gt;&quot;}&quot;&lt;/span&gt;; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt;.BIOSGUID &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt;.BIOSGUID -replace &lt;span class=&quot;s2&quot;&gt;&quot;{&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;Return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UUIDs&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2011-12-08-dont-virtualize-adobe-reader-x.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T10:14:03+10:00</published><updated>2019-04-09T10:14:03+10:00</updated><id>/2019/04/09/2011-12-08-dont-virtualize-adobe-reader-x</id><content type="html" xml:base="/2019/04/09/2011-12-08-dont-virtualize-adobe-reader-x.html">&lt;p&gt;Adobe released a new &lt;a href=&quot;http://www.adobe.com/support/security/advisories/apsa11-04.html&quot;&gt;security advisory for Reader and Acrobat 9 and X&lt;/a&gt; this week to address details of an upcoming fix to these versions for a 0 day vulnerability. Exploits for this vulnerability exist for Reader and Acrobat 9 and are currently active:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;A critical vulnerability has been identified in Adobe Reader X (10.1.1) and earlier versions for Windows and Macintosh, Adobe Reader 9.4.6 and earlier 9.x versions for UNIX, and Adobe Acrobat X (10.1.1) and earlier versions for Windows and Macintosh. This vulnerability (CVE-2011-2462) could cause a crash and potentially allow an attacker to take control of the affected system. There are reports that the vulnerability is being actively exploited in limited, targeted attacks in the wild against Adobe Reader 9.x on Windows.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Since the release of Reader and Acrobat X, there have been no malware that has been effective against the &lt;a href=&quot;http://blogs.adobe.com/pdfitmatters/2011/06/protected-view-in-acrobat-x-version-10-1.html&quot;&gt;Protected Mode&lt;/a&gt; (sandbox) feature of version X. From &lt;a href=&quot;http://blogs.adobe.com/asset/2011/12/background-on-cve-2011-2462.html&quot;&gt;Adobe’s blog post on this issue&lt;/a&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;I’d like to take this moment to encourage any remaining users still running Adobe Reader or Acrobat 9.x (or worse, older unsupported versions) to PLEASE upgrade to Adobe Reader or Acrobat X. We put a tremendous amount of work into securing Adobe Reader and Acrobat X, and, to date, there has not been a single piece of malware identified that is effective against a version X install. Help us help you by running the latest version of the software!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;If you have any version of Adobe Reader other than X deployed, you should seriously consider migrating to the new version as a matter of priority. That’s not “lets consider doing this in the next month” - you should stop reading this post and &lt;a href=&quot;https://stealthpuppy.com/deployment/deploying-adobe-reader-x/&quot;&gt;get started deploying Reader X now&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Furthermore if are deploying or have deployed Reader X, I can’t recommend virtualizing it with application virtualization. The reason for this is that Protected Mode is not compatible and is not supported with application virtualization. It doesn’t work with &lt;a href=&quot;http://kb2.adobe.com/cps/907/cpsid_90705.html&quot;&gt;Citrix App Streaming&lt;/a&gt;, &lt;a href=&quot;https://stealthpuppy.com/virtualisation/virtualising-adobe-reader-x/&quot;&gt;Microsoft App-V&lt;/a&gt; or &lt;a href=&quot;http://communities.vmware.com/thread/329118&quot;&gt;VMware&lt;/a&gt; &lt;a href=&quot;http://communities.vmware.com/message/1714001&quot;&gt;ThinApp&lt;/a&gt; (it may be possible with the current version of ThinApp, but I haven’t confirmed).&lt;/p&gt;
-
-&lt;p&gt;[Update: thanks to prompting from &lt;a href=&quot;https://twitter.com/packageologist/&quot;&gt;Dan Gough&lt;/a&gt;, I’ve confirmed that Protected Mode in Reader X (10.1.1), works under App-V 4.6.1.30091 (Hotfix 4)]&lt;/p&gt;
-
-&lt;p&gt;[Update 2: Protected Mode in Reader X is confirmed to work under ThinApp 4.6.2 and 4.7. You’ll have to update your virtual applications and re-enable Protected Mode with the latest releases]&lt;/p&gt;
-
-&lt;p&gt;In short - leaving Protected Mode enabled will protect your users and devices and because Protected Mode has been incompatible with the isolation that application virtualisation introduces, I recommend that you do not deploy Reader X with application virtualization solutions unless you are using the very latest versions.&lt;/p&gt;
-
-&lt;p&gt;But.. what about those scenarios when a virtualized application needs to call a locally installed Reader X? Until the app virt vendors fully support Protected Mode, the best you can do is ensure that Protected Mode is only disabled when Reader runs within the virtualization environment (using a tool like &lt;a href=&quot;http://www.gpanswers.com/1.html?w=PPXEND&amp;amp;p=parker&quot;&gt;PolicyPak&lt;/a&gt;) and is not completely disabled. Until then, the best we can do is cross our fingers and hope it doesn’t happen to us.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2010-09-24-troubleshoot-with-the-app-v-client-log.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T10:14:03+10:00</published><updated>2019-04-09T10:14:03+10:00</updated><id>/2019/04/09/2010-09-24-troubleshoot-with-the-app-v-client-log</id><content type="html" xml:base="/2019/04/09/2010-09-24-troubleshoot-with-the-app-v-client-log.html">&lt;p&gt;If you have successfully virtualised an application, imported the package into the Management Server but you are having issues publishing the package, streaming the application or getting it to launch, the first place to start is the &lt;a href=&quot;http://technet.microsoft.com/en-us/library/cc817165.aspx&quot;&gt;the App-V client log&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The client log settings are managed in the Application Virtualization Client console (SFTCMC.MSC) – start the console and the logging settings can be viewed on the General tab:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2010/09/ClientProperties.png&quot; alt=&quot;Client properties&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;There are actually two places to which the the client will log errors – the Application event log (shown in the image under &lt;em&gt;System Log Level&lt;/em&gt;) and the client log file; however the log file is generally the easiest to use when troubleshooting because it’s a flat text file.&lt;/p&gt;
-
-&lt;h3 id=&quot;using-the-client-log-file&quot;&gt;Using the client log file&lt;/h3&gt;
-
-&lt;p&gt;The default location for the log file is &lt;em&gt;%ProgramData%\Microsoft\Application Virtualization Client\sftlog.txt&lt;/em&gt;. To view the log you can use something as simple as Notepad, but if you want to view it in real time, use SMS Trace (Trace32) from the &lt;a href=&quot;http://www.microsoft.com/downloads/en/details.aspx?displaylang=en&amp;amp;FamilyID=5a47b972-95d2-46b1-ab14-5d0cbce54eb8&quot;&gt;ConfigMgr 2007 Toolkit&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;To get more information out of the client, enable verbose mode, which will enable you to better identify the cause.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Open the client console and view the client properties&lt;/li&gt;
-  &lt;li&gt;Set the Log Level to &lt;em&gt;Verbose&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Click the &lt;em&gt;Reset Log&lt;/em&gt; button to start with a clean log file&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Resetting the log will rename the existing file and start a new one:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2010/09/LogLocation.png&quot; alt=&quot;Log location&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: once you have finished troubleshooting, don’t forget to set the logging level back to &lt;em&gt;Information&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;heres-an-example&quot;&gt;Here’s an example&lt;/h3&gt;
-
-&lt;p&gt;In my test environment, I have a client machine (WIN71) and an App-V Management Server (APPV). I’ve imported a virtualised copy of Adobe Reader and assigned it to a set of users. On the client I have configured APPV as a publishing server; however when refreshing the client no shortcuts for Reader are created.&lt;/p&gt;
-
-&lt;p&gt;Viewing the App-V client log, I’ve narrowed down the following lines that show what’s going on during the refresh:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[09/23/2010 22:03:50:885 SWAP WRN\] {tid=B60:usr=aaron}  
-Could not load OSD file \\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd
-
-[09/23/2010 22:03:50:900 AMGR INF] {tid=B60:usr=aaron}  
-The app manager could not create an application from '\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd' (rc 0C405564-00000002).
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If I set the log to verbose and try the refresh action again, I get more detail:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[09/23/2010 22:45:28:684 AMGR VRB\] {tid=B14:usr=woody}CreateApp(osd=\\domain.local\Public\Apps\AdobeReader9\_x86\AdobeReader9.osd, icon=\\domain.local\Public\Apps\AdobeReader9\_x86\AdobeReader9_x86 Icons\AdobeReader9.ico)
-
-[09/23/2010 22:45:28:685 AMGR VRB] {tid=B14:usr=woody}  
-Parsing type from url \\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd
-
-[09/23/2010 22:45:28:686 SWAP VRB] {tid=B14:usr=woody}  
-Initialize(osd=\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, origUrl=NULL)
-
-[09/23/2010 22:45:28:687 OMGR VRB] {tid=B14:usr=woody}  
-GetOsdFile(url=\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, origUrl=NULL name=NULL, ver=NULL)
-
-[09/23/2010 22:45:28:688 OSDF VRB] {tid=B14:usr=woody}  
-SWOsdFile(url=\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd, origUrl=NULL, name=NULL, ver=NULL)
-
-[09/23/2010 22:45:28:710 OSDF VRB] {tid=B14:usr=woody}  
-~SWOsdFile()
-
-[09/23/2010 22:45:28:712 OSDF VRB] {tid=B14:usr=woody}  
-~SWOsdFile() complete
-
-[09/23/2010 22:45:28:726 SWAP WRN] {tid=B14:usr=woody}  
-Could not load OSD file \\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd
-
-[09/23/2010 22:45:28:727 AMGR INF] {tid=B14:usr=woody}  
-The app manager could not create an application from '\\domain.local\Public\Apps\AdobeReader9_x86\AdobeReader9.osd' (rc 0C405564-00000002).
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If check the actual location of the OSD file, I can see that the package is not in the correct path (its actually located at \domain.local\Public\Apps\Adobe\AdobeReader9_x86):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2010/09/OSDLocation.png&quot; alt=&quot;OSD Location&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;To fix this issue, I need to update the application properties in the App-V Management console, I can then refresh the client again and the application will be published correctly.&lt;/p&gt;
-
-&lt;h3 id=&quot;error-codes&quot;&gt;Error Codes&lt;/h3&gt;
-
-&lt;p&gt;This was a very simple example and the fix was quite obvious. In all cases though, the client log will include an error code – the same code will often be displayed in a dialog box:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2010/09/ClientError.png&quot; alt=&quot;Client error&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;If the problem is not immediately apparent in the log, start looking for a solution by using the error code. Falko Gräfe has an excellent article that explains &lt;a href=&quot;http://www.kirx.org/app-v/read/error-codes-en.html&quot;&gt;how to interpret these error codes&lt;/a&gt;. In most cases, there will be &lt;a href=&quot;http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code&quot;&gt;an associated Microsoft knowledgebase article&lt;/a&gt; that should give a solution for the error.&lt;/p&gt;
-
-&lt;h3 id=&quot;resources&quot;&gt;Resources&lt;/h3&gt;
+&lt;p&gt;I’m not a developer, &lt;a href=&quot;https://stealthpuppy.com/tag/powershell/&quot;&gt;I just write a bunch of scripts&lt;/a&gt;, but I like the idea of signing my commits so that others can see that all changes to my code are verified. There’s plenty of articles on why signing your commits is a good idea. Here’s a couple:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://technet.microsoft.com/en-us/library/cc817103.aspx&quot;&gt;Log File for the Application Virtualization Client&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://technet.microsoft.com/en-us/library/cc817165.aspx&quot;&gt;How to Configure the Client Log File&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blogs.technet.com/b/appv/archive/2009/01/26/troubleshooting-app-v-with-log-files.aspx&quot;&gt;Troubleshooting App-V with log files&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/939896/&quot;&gt;﻿﻿How to use the Process Monitor tool to generate a log file for an application in the App-V virtual environment&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.microsoft.com/downloads/en/details.aspx?displaylang=en&amp;amp;FamilyID=5a47b972-95d2-46b1-ab14-5d0cbce54eb8&quot;&gt;System Center Configuration Manager 2007 Toolkit V2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;amp;FamilyID=72876c60-3a87-4705-b722-f73eb56219bf&quot;&gt;Application Virtualization Client Log Parser Utility&lt;/a&gt; (and &lt;a href=&quot;http://blogs.technet.com/b/appv/archive/2008/11/06/app-v-4-5-resource-kit-application-virtualization-client-log-parser-utility.aspx&quot;&gt;how to use it&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/AppPubandClientInteraction.docx&quot;&gt;App-V Application Publishing and Client Interaction&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.kirx.org/app-v/read/error-codes-en.html&quot;&gt;App-V Client Error Codes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code&quot;&gt;App-V Error Codes search&lt;/a&gt; on Microsoft Support&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2010-03-27-virtualising-firefox-dont-forget-to-disable-updates-2.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T10:14:03+10:00</published><updated>2019-04-09T10:14:03+10:00</updated><id>/2019/04/09/2010-03-27-virtualising-firefox-dont-forget-to-disable-updates-2</id><content type="html" xml:base="/2019/04/09/2010-03-27-virtualising-firefox-dont-forget-to-disable-updates-2.html">&lt;p&gt;If you are virtualising Mozilla Firefox, you should probably consider disabling the update functionality within the browser, to ensure consistency of the virtual package. There are several items that need to be configured or removed:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The automatic updates functionality&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;Help / Check for Updates…&lt;/em&gt; menu item&lt;/li&gt;
-  &lt;li&gt;The &lt;em&gt;Firefox&lt;/em&gt; check-box in the &lt;em&gt;Option / Advanced / Updates&lt;/em&gt; dialog box&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits&quot;&gt;A Git Horror Story: Repository Integrity With Signed Commits&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.blog/2016-04-05-gpg-signature-verification/&quot;&gt;GPG signature verification&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Fortunately doing so is fairly straight-forward:&lt;/p&gt;
+&lt;p&gt;If you’ve ever edited a file directly on github.com and committed the changes, you would surely have noticed those Verified badges:&lt;/p&gt;
 
-&lt;h3 id=&quot;disable-automatic-updates&quot;&gt;Disable Automatic Updates&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2019/03/GitHubCommit.png&quot; alt=&quot;Signing Git Commits&quot; /&gt;&lt;em&gt;Verified signature through a GitHib.com commit&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;Updates are disabled in the &lt;em&gt;Options / Advanced / Updates&lt;/em&gt; dialog box (under Windows), which you can do when running Firefox during the sequencing/capture process - untick the &lt;em&gt;Firefox&lt;/em&gt; check box and change &lt;em&gt;When updates to Firefox are found&lt;/em&gt; to &lt;em&gt;Ask me what to do&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;To be honest, the GitHub documentation on &lt;a href=&quot;https://help.github.com/en/articles/managing-commit-signature-verification&quot;&gt;managing commit signature verification&lt;/a&gt; is pretty good, but here’s how I stumbled my way through setting up a signature to &lt;a href=&quot;https://help.github.com/en/articles/managing-commit-signature-verification&quot;&gt;enable signed commits&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Alternatively set &lt;em&gt;app.update.auto&lt;/em&gt; and &lt;em&gt;app.update.enabled&lt;/em&gt; to false in about:config or directly in &lt;code class=&quot;highlighter-rouge&quot;&gt;%APPDATA%\Mozilla\Firefox\Profiles\&amp;lt;profile&amp;gt;.default\prefs.js&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;setup-gpg&quot;&gt;Setup GPG&lt;/h2&gt;
 
-&lt;p&gt;Leave &lt;em&gt;Add-ons&lt;/em&gt; and &lt;em&gt;Search Engines&lt;/em&gt; enabled as these are stored within the user profile and can be updated when running under application virtualisation.&lt;/p&gt;
+&lt;p&gt;I write PowerShell scripts and modules primarily on macOS, so I’ve installed &lt;a href=&quot;https://gpgtools.org/&quot;&gt;GPG Suite&lt;/a&gt; to create and manage keys. &lt;a href=&quot;https://help.github.com/en/articles/generating-a-new-gpg-key&quot;&gt;Creating keys can be achieved on the command line&lt;/a&gt;, but the GPG Keychain makes managing keys simple.&lt;/p&gt;
 
-&lt;h3 id=&quot;disable-the-updates-ui&quot;&gt;Disable the Updates UI&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Create a new key pair using the same email address used when committing code to your git repository and also used to sign into GitHub&lt;/li&gt;
+  &lt;li&gt;Ensure you use a strong password to protect the key. I manage passwords in 1Password making it simple to create and store keys. It’s a 39 random character string which means relying on copy and paste of course&lt;/li&gt;
+  &lt;li&gt;I’ve also exported my public and private key to store in my 1Password vault as backup and a way to copy the key into a Windows VM&lt;/li&gt;
+  &lt;li&gt;Finally I’ve uploaded my public key to the key server with the ‘Send Public Key to the Key Server’ option. Some &lt;a href=&quot;https://sks-keyservers.net/overview-of-pools.php&quot;&gt;GPG nerd would know what exactly that does&lt;/a&gt;, but I don’t believe it actually required for signing commits and pushing to GitHub, because we need to update the public key to GtiHub anyway.&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;Disabling the user interface elements to these update preferences and launch points is also important. To hide UI elements in Firefox, create &lt;a href=&quot;http://www.mozilla.org/unix/customizing.html&quot;&gt;UserChrome.css&lt;/a&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;%APPDATA%\Mozilla\Firefox\Profiles\&amp;lt;profile&amp;gt;.default\chrome&lt;/code&gt;. This file does not exist by default, although you will find an example file in the chrome folder. Create the file and add the following lines to hide the updates menu item and the Firefox check-box in the Updates dialog box.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2019/03/GPG-Key.png&quot; alt=&quot;GPG key view in the GPG Keychain and Signing Git Commits&quot; /&gt;&lt;em&gt;GPG key view in the GPG Keychain&lt;/em&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/\&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; remove the Check &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;Updates menu item \&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/  
-&lt;span class=&quot;c1&quot;&gt;#updateSeparator, #checkForUpdates { display: none !important; }  &lt;/span&gt;
-/\&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; remove the Updates / Firefox checkbox \&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/  
-&lt;span class=&quot;c1&quot;&gt;#enableAppUpdate { display: none !important; }&lt;/span&gt;
+&lt;h2 id=&quot;add-your-public-key-to-github&quot;&gt;Add Your Public Key to GitHub&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account&quot;&gt;Adding your public key to your GitHub account&lt;/a&gt; is easy:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Right-click your key and choose Copy&lt;/li&gt;
+  &lt;li&gt;Open your GitHub settings, choose &lt;strong&gt;SSH and GPG keys&lt;/strong&gt; and click &lt;strong&gt;&lt;a href=&quot;https://github.com/settings/gpg/new&quot;&gt;New GPG Key&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Paste in the key and click &lt;strong&gt;Add GPG Key&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2019/03/AddGPGKey.png&quot; alt=&quot;Adding your public GPG key to GitHub and Signing Git Commits&quot; /&gt;&lt;em&gt;Adding your public GPG key to GitHub&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;add-your-signing-key-to-git&quot;&gt;Add Your Signing Key to Git&lt;/h2&gt;
+
+&lt;p&gt;To sign your commits, you of course need to &lt;a href=&quot;https://help.github.com/en/articles/telling-git-about-your-signing-key&quot;&gt;tell git about your GPG key&lt;/a&gt;. On macOS that looks like this - in Terminal, list your keys to find the key ID for the key added to your GitHub account:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gpg &lt;span class=&quot;nt&quot;&gt;-list-secret-keys&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-keyid-format&lt;/span&gt; LONG
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;If it is working correctly, you should see something like this (before and after):&lt;/p&gt;
+&lt;p&gt;With defaults, the key ID will be on the line that starts with ‘sec’. Copy the key ID and use git to configure the signing key. In my case, it looks like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2010/03/FirefoxOptions.png&quot; alt=&quot;Firefox options&quot; /&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config &lt;span class=&quot;nt&quot;&gt;-global&lt;/span&gt; user.signingkey C55D39F88CE9A2C5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This method is not completely fool-proof (the modified files all exist in the user profile and are thus writeable) but it should stop users from unwittingly attempting to update Firefox and allow you to control when updates are deployed.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2009-05-29-windows-server-2008-sp2-whats-in-it-for-terminal-servers.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T10:14:03+10:00</published><updated>2019-04-09T10:14:03+10:00</updated><id>/2019/04/09/2009-05-29-windows-server-2008-sp2-whats-in-it-for-terminal-servers</id><content type="html" xml:base="/2019/04/09/2009-05-29-windows-server-2008-sp2-whats-in-it-for-terminal-servers.html">&lt;p&gt;As you’re most likely aware, Microsoft has recently made available &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyID=a4dd31d5-f907-4406-9012-a5c3199ea2b3&amp;amp;DisplayLang=en&quot;&gt;Windows Vista and Windows Server 2008 Service Pack 2&lt;/a&gt;. If you would like to know the details of every single fix and feature in the service pack, download this spreadsheet: &lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;amp;FamilyID=d8b2cf4b-a2df-4664-8dd8-e840001e33f3&quot;&gt;Hotfix and Security Update List: Windows Server 2008 SP2 and Windows Vista SP2&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2019/03/gitconfig.png&quot; alt=&quot;Finding your key ID and adding the key to git&quot; /&gt;&lt;em&gt;Finding your key ID and adding the key to git&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;What’s always interesting to me is what is in the latest service packs that will directly benefit Terminal Servers. The table below lists all of the hotfixes in SP2 that directly relate to Terminal Services, and it’s quite the list. So it’s time to get testing and deploying:&lt;/p&gt;
+&lt;p&gt;On Windows the process for signing git commits is much the same. First install &lt;a href=&quot;https://gitforwindows.org/&quot;&gt;Git for Windows&lt;/a&gt; and use git bash instead of Terminal.&lt;/p&gt;
+
+&lt;h2 id=&quot;configure-visual-studio-code-and-sign-git-commits&quot;&gt;Configure Visual Studio Code and Sign Git Commits&lt;/h2&gt;
+
+&lt;p&gt;Finally, we can configure &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt; to sign our git commits. I typically rely on GitHub Desktop to commit and push code; however, it doesn’t support commit signing. While I could use &lt;a href=&quot;https://help.github.com/en/articles/signing-commits&quot;&gt;the command line to commit changes&lt;/a&gt;, I’d prefer manage commits from fewer tools, hence doing that in VSCode instead.&lt;/p&gt;
+
+&lt;p&gt;In Preferences, search for ‘git signing’ and select ‘Git: Enable Commit Signing’:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2019/03/VSCode-GitSigning.png&quot; alt=&quot;Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits&quot; /&gt;&lt;em&gt;Enable Commit Signing in Visual Studio Code preferences&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/docs/introvideos/versioncontrol&quot;&gt;VSCode supports version control using git&lt;/a&gt; from directly within the VSCode window. On your first commit, you’ll be prompted to enter the password for your GPG key before the commit will complete.&lt;/p&gt;
+
+&lt;p&gt;That’s about all the steps required for signing git commits. We have signed commits in a GitHub repository and a sweet, sweet Verified badge - now I can brag to all my friends and they’ll know that code came from me. My mum still won’t understand what I do for a living, but you can’t get a win every day.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2019/03/Verified.gif&quot; alt=&quot;Now I have a nice shiny verified badge on my commits&quot; /&gt;&lt;em&gt;Now I have a nice shiny verified badge on my commits&lt;/em&gt;&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="Git" /><category term="GitHub" /><category term="GPG" /><category term="Visual Studio Code" /><summary type="html">Confession time - I’ve had a GitHub account since 2014 and haven’t signed a single commit. I’ve read various tweets and articles about signing your commits, but never committed (git it? … see what I did there…) to setting up a signature until recently.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/wp-content/uploads/2019/03/helloquence-51716-unsplash.jpg" /></entry><entry><title type="html">Default Start Menu Customisation via Intune</title><link href="/custom-default-start-menu-intune/" rel="alternate" type="text/html" title="Default Start Menu Customisation via Intune" /><published>2018-12-18T23:28:30+11:00</published><updated>2018-12-18T23:28:30+11:00</updated><id>/custom-default-start-menu-intune</id><content type="html" xml:base="/custom-default-start-menu-intune/">&lt;p&gt;The promise of a modern management approach to deployment and management of Windows 10 is that you no longer create and manage a custom SOE image. User experience is still important though and a large part of that experience in an enterprise environment, is the default Start menu.&lt;/p&gt;
+
+&lt;p&gt;The default Start menu, especially on Windows 10 Pro, is far from enterprise ready right? Take a look at this mess:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-1024x717.png&quot; alt=&quot;Windows 10 Pro 1809 default Start menu&quot; /&gt;&lt;em&gt;Windows 10 Pro 1809 default Start menu&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Over-the-air provisioning of PCs via Windows AutoPilot &amp;amp; Azure AD, Microsoft Intune (or insert your MDM solution here), limits the possibilities of customising the target PC before the user logs on. The administrator can &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/configuration/customize-windows-10-start-screens-by-using-mobile-device-management&quot;&gt;define a Start menu&lt;/a&gt;, but that’s a policy, not a preference. One size does not fit all, and users should be able to customise the Start menu to suit their style. &lt;/p&gt;
+
+&lt;p&gt;UWP / Microsoft Store apps can be targeted for removal, but those apps won’t be removed until well after login. Compounding the issue of default apps pinned to the Start menu is that some of them aren’t actually installed, so removal won’t occur until the Store downloads and installs updates. That can be hours after the user has provisioned the PC.&lt;/p&gt;
+
+&lt;h2 id=&quot;customise-with-powershell&quot;&gt;Customise with PowerShell?&lt;/h2&gt;
+
+&lt;p&gt;PowerShell scripts can be used to remove user and system provisioned Store apps (I have a couple of &lt;a href=&quot;https://github.com/aaronparker/Intune/tree/master/Appx-Apps&quot;&gt;scripts in my Intune GitHub repository&lt;/a&gt;); however, PowerShell scripts in Intune can only be targeted to users and don’t fire until after the first logon. Additionally, I’ve had a crack at using &lt;a href=&quot;https://github.com/aaronparker/Intune/blob/master/Start-Menu/PinStartMenuTile.ps1&quot;&gt;PowerShell to pin and unpin tiles&lt;/a&gt; from the Start menu, but found that I can’t interact with the shell (or at least the pin / unpin has no effect) when the script is delivered via Intune.&lt;/p&gt;
+
+&lt;h2 id=&quot;looking-for-alternatives&quot;&gt;Looking for Alternatives&lt;/h2&gt;
+
+&lt;p&gt;With the availability of the &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/enrollment-status&quot;&gt;Windows Autopilot Enrolment Status&lt;/a&gt; page in Windows 10 1803 and above, plus the recent addition of the feature to ‘&lt;a href=&quot;https://docs.microsoft.com/en-us/intune/windows-enrollment-status#block-access-to-a-device-until-a-specific-application-is-installed&quot;&gt;Block device use until these required apps are installed&lt;/a&gt;’, we might have an opportunity to &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/configuration/customize-and-export-start-layout&quot;&gt;deploy a customised default Start menu&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The Enrolment Status page &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/windows-enrollment-status#enrollment-status-page-tracking-information&quot;&gt;tracks security policies and line-of-business (MSI) applications&lt;/a&gt;, so a custom default Start menu will have to be packaged into an MSI. Fingers and toes crossed then that this approach works.&lt;/p&gt;
+
+&lt;h2 id=&quot;packaging-a-start-menu-customisation&quot;&gt;Packaging a Start menu Customisation&lt;/h2&gt;
+
+&lt;p&gt;To package a customised Start menu, we need to create the desired layout and &lt;a href=&quot;https://docs.microsoft.com/en-us/powershell/module/startlayout/export-startlayout?view=win10-ps&quot;&gt;export&lt;/a&gt; it with the&lt;code class=&quot;highlighter-rouge&quot;&gt;Export-StartLayout&lt;/code&gt; command. It’s likely you’re familiar with this approach. To export the Start menu layout, I’ve used the following command - note the use of the &lt;code class=&quot;highlighter-rouge&quot;&gt;UseDesktopApplicationID&lt;/code&gt; switch which will make pinning desktop application shortcuts as tiles successful.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Export-StartLayout -Path .\LayoutModification.xml -UseDesktopApplicationID&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The next step is to create a custom Windows Installer package to deliver the layout file. I’m using &lt;a href=&quot;https://www.advancedinstaller.com/&quot;&gt;Advanced Installer&lt;/a&gt; to create my deployment package. For this particular project, &lt;a href=&quot;https://www.advancedinstaller.com/top-freeware-features.html&quot;&gt;the Freeware version&lt;/a&gt; of Advanced Installer provides all of the features you’ll need to deploy the custom layout file.&lt;/p&gt;
+
+&lt;h3 id=&quot;create-a-windows-installer-package&quot;&gt;Create a Windows Installer Package&lt;/h3&gt;
+
+&lt;p&gt;Advanced Installer makes short work of creating the package - create a new Simple Installer package and configure the product name, version and publisher. Note that if you want to update the package, save your project and update the version number each time you produce an updated installer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller01-ProductDetails.png&quot; alt=&quot;Advanced Installer package Product details&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Add the Start menu layout file to the project under Files and Folders. The project must define the correct target path and file name because it will be deployed into the default profile. Use this path:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Windows Volume\Users\Default\AppData\Local\Microsoft\Windows\Shell&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And add the &lt;code class=&quot;highlighter-rouge&quot;&gt;LayoutModification.xml&lt;/code&gt; file that you’ve exported with &lt;code class=&quot;highlighter-rouge&quot;&gt;Export-StartLayout&lt;/code&gt; into this path. If your target path and file name aren’t correct, this won’t work so ensure your package looks the same as the screenshots here.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller02-FilesFolders.png&quot; alt=&quot;Adding the Start menu layout file to Files and Folders in Advanced Installer&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For this package, I’ve configured the following install parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Package type - 64-bit package&lt;/li&gt;
+  &lt;li&gt;Installation type - Per-machine only&lt;/li&gt;
+  &lt;li&gt;Reboot behaviour - Suppress all reboots and Reboot prompts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller02a-InstallParameters.png&quot; alt=&quot;Configure Install Parameters in Advanced Installer&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Configure the default build to produce a Single MSI file and define the name. In the example below, I’ve used &lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultStartMenuLayout.msi&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller03-Builds.png&quot; alt=&quot;Configure Advanced Installer to build a single MSI file with all resources embedded&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Build your package and add the MSI into Microsoft Intune as &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/lob-apps-windows&quot;&gt;a line-of-business application&lt;/a&gt;. Assign the new application as &lt;strong&gt;Required&lt;/strong&gt; for &lt;strong&gt;All Devices&lt;/strong&gt;, so that the Enrolment Status Page can track the installation before the user logs on.&lt;/p&gt;
+
+&lt;h2 id=&quot;configure-the-enrolment-status-page&quot;&gt;Configure the Enrolment Status Page&lt;/h2&gt;
+
+&lt;p&gt;To ensure that the package is delivered to the target PCs before the user logs on, we’ll leverage the Enrolment Status Page (ESP). The ESP is supported on Windows 10 1803 and above, so if you’ve gotten this far into the article and haven’t yet updated to 1803 or higher, you should stop reading and update those machines.&lt;/p&gt;
+
+&lt;p&gt;Configure the ESP and enable the ‘Block device use until these required apps are installed if they are assigned to the user/device’ feature. Here select at least the applications whose shortcuts you have configured in your Start layout customisation. This list must include the MSI package containing the customisation itself.&lt;/p&gt;
+
+&lt;p&gt;Here’s the applications that I’ve configured in my test environment:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/12/EnrollmentStatusPage.png&quot; alt=&quot;Configure the Enrolment Status Page with the list of apps and the default Start menu&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Today the ESP &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/enrollment-status&quot;&gt;tracks specific application deployments&lt;/a&gt; - Microsoft Store apps and single MSI files, while Office 365 ProPlus applications are tracked on Windows 10 1809 and above.&lt;/p&gt;
+
+&lt;h2 id=&quot;user-experience&quot;&gt;User Experience&lt;/h2&gt;
+
+&lt;p&gt;Most of my testing is on Windows 10 1809 - with a PC enrolled into Azure AD and Microsoft Intune during the out of box experience, the Enrolment Status Page tracks the installation of policies and applications, including our Start menu customisation.&lt;/p&gt;
+
+&lt;p&gt;After the enrollment and deployment is complete, the user sees a customised Start menu after first logon. There’s a few tiles that didn’t remain pinned from the default customisation, but this is much cleaner and enterprise ready than what we end up with out of the box.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/12/UserDeployment-StartMenu.png&quot; alt=&quot;Start menu&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
+
+&lt;p&gt;Provisioning PCs via Windows AutoPilot and Microsoft Intune is a rapidly changing landscape. So what may not be possible today, is likely to be addressed quickly. In the meantime, there’s usually a custom approach to achieving the end-user experience that you need and this is a great example.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="enrolment status page" /><category term="Intune" /><category term="Start Menu" /><summary type="html">The promise of a modern management approach to deployment and management of Windows 10 is that you no longer create and manage a custom SOE image. User experience is still important though and a large part of that experience in an enterprise environment, is the default Start menu.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/wp-content/uploads/2018/12/Windows10ProDefaultStartMenu1080.png" /></entry><entry><title type="html">Dynamic Software Update Rings in Microsoft Intune</title><link href="/dynamic-software-update-rings/" rel="alternate" type="text/html" title="Dynamic Software Update Rings in Microsoft Intune" /><published>2018-10-10T14:27:43+11:00</published><updated>2018-10-10T14:27:43+11:00</updated><id>/dynamic-software-update-rings</id><content type="html" xml:base="/dynamic-software-update-rings/">&lt;p&gt;Microsoft Intune provides management of &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/windows-update-for-business-configure&quot;&gt;Window 10 Update Rings&lt;/a&gt; to enable &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/deployment/update/waas-overview#servicing-channels&quot;&gt;Windows as a Service&lt;/a&gt;, via the Software Updates feature. This enrols a Windows PC into Windows Update for Business to manage feature and quality updates the device receives and how quickly it updates to a new release. As you scale the number of devices managed by Microsoft Intune, the need to manage the software update or &lt;a href=&quot;https://blog.juriba.com/windows-10-deployment-rings&quot;&gt;deployment rings&lt;/a&gt; is key to adopting Windows 10 successfully. Being able to do so dynamically and empowering end-users by involving them in the process sounds like an idea that’s just crazy enough to work. This article details an approach to achieve dynamic software update rings.&lt;/p&gt;
+
+&lt;h1 id=&quot;dynamic-groups&quot;&gt;Dynamic Groups&lt;/h1&gt;
+
+&lt;p&gt;Azure AD Premium includes &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-create-rule&quot;&gt;Dynamic Device and User groups&lt;/a&gt; whose membership can change, well dynamically. This feature enables us to apply software update rings to dynamic groups where the membership can be based on just about any user or device property that suits our needs.&lt;/p&gt;
+
+&lt;p&gt;In most cases, applying Windows 10 Update Rings to devices, rather than users, is the best approach to ensure that updates can be better tracked across specific hardware and software combinations. I don’t necessarily want a user moving between PCs and have devices move back and forth between update rings. Basing update rings on dynamic device groups is then likely the better approach.&lt;/p&gt;
+
+&lt;h1 id=&quot;software-update-rings&quot;&gt;Software Update Rings&lt;/h1&gt;
+
+&lt;p&gt;For the purposes of illustration, I’ve created a basic approach to update rings with the 3 rings show here:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Semi-Annual Channel - we need a catch-all ring applied to All Devices. If our dynamic groups that are based on a device property don’t catch a device, it won’t get the correct update ring applied. This approach ensures that by default, a device is treated as generally production ready be being enrolled in the Semi-Annual Channel to receive well tested updates. This ring is assigned to All Devices, while &lt;em&gt;excluding&lt;/em&gt; Azure AD dynamic groups assigned to all other rings&lt;/li&gt;
+  &lt;li&gt;Semi-Annual Channel (Targeted) - here devices are enrolled for a pilot ring so that the latest Windows 10 release can be tested before rolling out the majority of PCs. This ring applies to a specific Azure AD dynamic group&lt;/li&gt;
+  &lt;li&gt;Windows Insider - to preview upcoming Windows 10 releases it’s important to be enrolled in the Windows Insider program. This ring applies to a specific Azure AD dynamic group&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My update rings in this example are quite simple, but the approach can be customised for specific environments and needs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/10/SoftwareUpdateRings.png&quot; alt=&quot;Dynamic Software Update Rings&quot; /&gt;&lt;em&gt;Update Rings configured within Intune Software Updates&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;assigning-devices&quot;&gt;Assigning Devices&lt;/h1&gt;
+
+&lt;p&gt;To assign a device to an update ring, we need to leverage a device property that can be dynamically set. Here, &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/device-group-mapping&quot;&gt;Device Category&lt;/a&gt; fits this bill in a number of ways - here, the administrator can view the device category and therefore the device’s update ring, by viewing the device properties in the Intune console. If device category is not set (it will be set to Unassigned), our catch-all update ring will ensure the device is set to a production ready state.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneDeviceProperties.png&quot; alt=&quot;Device properties in Intune&quot; /&gt;Device properties in Intune*&lt;/p&gt;
+
+&lt;p&gt;The device category can also be viewed in the Intune Company Portal, thus making it easy to view this property from multiple locations. This visibility makes device category a good choice for managing our update rings.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceDetails.png&quot; alt=&quot;Device details in the Intune Company Portal&quot; /&gt;&lt;em&gt;Device properties in the Intune Company Portal&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The Intune Administrator creates device categories in the console. As you can see in the image below, I’ve chosen &lt;strong&gt;Production&lt;/strong&gt;, &lt;strong&gt;Pilot&lt;/strong&gt; and &lt;strong&gt;Preview&lt;/strong&gt; as the device categories that provide, hopefully, clear indication as to what each category is for.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneDevcecategories.png&quot; alt=&quot;Intune Device categories&quot; /&gt;&lt;em&gt;Intune Device categories&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s where the choice of using Device Category for assigning update rings is possibly a bit out there - the end-user chooses the device category! When enrolling their device or launching the Intune Company Portal for the first time they see the device category choices:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/10/IntuneCompanyPortalDeviceCategory.png&quot; alt=&quot;Setting a device category in the Intune Company Portal&quot; /&gt;&lt;em&gt;Setting a device category in the Intune Company Portal&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;There’s no replacement for end-user education, so it would behoove an organisation to include instructions on which category to choose, but in my mind it’s obvious that most users should choose Production. Having device category descriptions displayed as well would help, but they don’t at this time. Device categories are only shown once and the user cannot change the category after enrolment. Bulk changes to or reporting on categories can be achieved using the new &lt;a href=&quot;https://github.com/Microsoft/Intune-PowerShell-SDK&quot;&gt;Intune PowerShell SDK&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;dynamic-software-update-rings&quot;&gt;Dynamic Software Update Rings&lt;/h1&gt;
+
+&lt;p&gt;Now that we have Update rings in place and an approach assigning them via Dynamic Device groups in Azure AD, we can create those groups based on membership rules that query Device Category. I’ve created two groups - &lt;strong&gt;Devices-Pilot&lt;/strong&gt; and &lt;strong&gt;Devices-Preview&lt;/strong&gt; that use a query where &lt;code class=&quot;highlighter-rouge&quot;&gt;deviceCategory&lt;/code&gt;equals &lt;strong&gt;Pilot&lt;/strong&gt; or &lt;strong&gt;Preview&lt;/strong&gt; respectively. A &lt;strong&gt;Devices-Production&lt;/strong&gt; group can also be created, but isn’t required because the production update ring applies to All Devices. A production devices group would assist with reporting.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/10/DynamicGroupRule.png&quot; alt=&quot;Dynamic group membership rules&quot; /&gt;&lt;em&gt;Dynamic group membership rules&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For these devices groups, the membership rules are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Devices-Production: &lt;code class=&quot;highlighter-rouge&quot;&gt;(device.deviceCategory -eq &quot;Production&quot;) -or (device.deviceCategory -eq &quot;Unknown&quot;)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Devices-Pilot: &lt;code class=&quot;highlighter-rouge&quot;&gt;(device.deviceCategory -eq &quot;Pilot&quot;)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Devices-Preview: &lt;code class=&quot;highlighter-rouge&quot;&gt;(device.deviceCategory -eq &quot;Preview&quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We can take this a step further and account for corporate vs. personal devices. Where users can enrol personal devices and you would prefer not to deploy Software update policies to them, membership can be filtered further. Using an advanced membership rule, update the group membership with:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Devices-Production: &lt;code class=&quot;highlighter-rouge&quot;&gt;((device.deviceCategory -eq &quot;Production&quot;) -or (device.deviceCategory -eq &quot;Unknown&quot;)) -and (device.deviceOwnership -eq &quot;Company&quot;)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Devices-Pilot: &lt;code class=&quot;highlighter-rouge&quot;&gt;(device.deviceCategory -eq &quot;Pilot&quot;) -and (device.deviceOwnership -eq &quot;Company&quot;)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Devices-Preview: &lt;code class=&quot;highlighter-rouge&quot;&gt;(device.deviceCategory -eq &quot;Preview&quot;) -and (device.deviceOwnership -eq &quot;Company&quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With these groups created, assignments for my Software update rings are:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Semi-Annual Channel - assign to All Devices and exclude Devices-Pilot and Devices-Preview.&lt;/li&gt;
+  &lt;li&gt;Semi-Annual Channel (Targeted) - assign to Devices-Pilot&lt;/li&gt;
+  &lt;li&gt;Windows Insider - assign to Devices-Preview&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When a category is assigned to a device, the dynamic group will &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-troubleshooting&quot;&gt;update at some point and the policy&lt;/a&gt; will apply on a subsequent &lt;a href=&quot;https://docs.microsoft.com/en-au/intune/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies&quot;&gt;device policy refresh&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;dynamic-software-updates&quot;&gt;Dynamic Software Updates&lt;/h1&gt;
+
+&lt;p&gt;The same approach can be used for deploying applications that provide preview channels similar to Windows. Microsoft Office 365 ProPlus is an obvious choice - we can create Office application deployments using Update Channels with assignments using our Dynamic Device groups.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/10/Office365ProPlus.png&quot; alt=&quot;Office 365 ProPlus apps in Intune to manage update channels&quot; /&gt;&lt;em&gt;Office 365 ProPlus apps in Intune to manage update channels&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The update rings I’ve implemented in my test environment include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Office 365 ProPlus Semi-Annual Channel or Semi-Annual Channel (Targeted) that is assigned to All Devices and excludes Devices-Pilot and Devices-Preview, we have a catch all Office deployment package that will go out to the majority of devices&lt;/li&gt;
+  &lt;li&gt;Office 365 ProPlus Semi-Annual Channel (Targeted) or Monthly Channel assigned to the Devices-Pilot group to receive the latest updates&lt;/li&gt;
+  &lt;li&gt;Office 365 ProPlus Monthly Channel (Targeted) assigned to the Devices-Preview group to test Office Insider updates for testing upcoming features&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Office 365 ProPlus then updates itself on the end-device based on the assigned channel. This actually works quite well for this application as you can pretty seamlessly move between channels as required.&lt;/p&gt;
+
+&lt;h1 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h1&gt;
+
+&lt;p&gt;In this article, I’ve shown you how to enable dynamic Software Update rings for Windows Office in Intune using Azure AD Device Dynamic groups. This uses what may be a controversial approach - devices category chosen by the end-user. Modern device management forces us to rethink our engagement with end-users and involving them more directly in the testing process can help make IT more personal.&lt;/p&gt;
+
+&lt;p&gt;For more controlled environments, the choice of category can be overwritten by the administrator, especially for users who may need to roll back to a more stable release.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="Intune" /><category term="Office 365 ProPlus" /><category term="Software Updates" /><category term="Windows 10" /><summary type="html">Microsoft Intune provides management of Window 10 Update Rings to enable Windows as a Service, via the Software Updates feature. This enrols a Windows PC into Windows Update for Business to manage feature and quality updates the device receives and how quickly it updates to a new release. As you scale the number of devices managed by Microsoft Intune, the need to manage the software update or deployment rings is key to adopting Windows 10 successfully. Being able to do so dynamically and empowering end-users by involving them in the process sounds like an idea that’s just crazy enough to work. This article details an approach to achieve dynamic software update rings.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/wp-content/uploads/2018/10/mathew-schwartz-397471-unsplash.jpg" /></entry><entry><title type="html">Visualising ConfigMgr, Intune and Windows 10 Releases</title><link href="/configmgr-intune-windows10-releases/" rel="alternate" type="text/html" title="Visualising ConfigMgr, Intune and Windows 10 Releases" /><published>2018-09-27T01:06:31+10:00</published><updated>2018-09-27T01:06:31+10:00</updated><id>/configmgr-intune-windows10-releases</id><content type="html" xml:base="/configmgr-intune-windows10-releases/">&lt;p&gt;I recently presented a session titled ‘&lt;a href=&quot;https://xenappblog.com/agenda/&quot;&gt;Modern Management Methodology Imaginarium&lt;/a&gt;’ at the &lt;a href=&quot;https://xenapptraining.lpages.co/xbve092018/&quot;&gt;xenappblog.com Virtual Expo September&lt;/a&gt; 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-modern-desktop&quot;&gt;The Modern Desktop&lt;/h1&gt;
+
+&lt;p&gt;While the ‘modern desktop’ is most certainly a popular topic in the EUC space today, how to implement a modern desktop approach I think, is not yet widely understood. Organisations are looking to solve the same desktop challenges we’ve had for the past 20 years, in a more efficient and secure manner. Implementing the modern desktop requires defining a methodology that follows the same basic process followed for any desktop project - discovery and assessment, design, build, test, pilot, deploy (rinse and repeat).&lt;/p&gt;
+
+&lt;p&gt;Successfully adopting the modern desktop requires leveraging analytics which is easier to achieve with current cloud-based toolsets (Microsoft has essentially &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/deployment/update/windows-analytics-overview&quot;&gt;made this free&lt;/a&gt;). Whilst analytics show you where you are, it’s important to understand where you need to get to, or at least what the journey will look like.&lt;/p&gt;
+
+&lt;h1 id=&quot;faster-release-schedules&quot;&gt;Faster Release Schedules&lt;/h1&gt;
+
+&lt;p&gt;Software vendors have changed their approach to releases and more regular smaller releases are common. I posit that the effect of this on our methodology or approach is seen primarily in the design phase - a design document can be out of date a week after you’ve written it. Thus we should ensure that we document design principles and business outcomes rather than get bogged down in the details.&lt;/p&gt;
+
+&lt;p&gt;In my session, I demonstrated this with current Microsoft products - System Center Configuration Manager, Microsoft Intune and, of course, Windows 10 itself. The pace of releases has increased, which while great for innovation, can out pressure IT groups implementing and managing these products. Microsoft Intune has weekly updates!&lt;/p&gt;
+
+&lt;p&gt;Here’s the slide I created to visualise this theme.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/09/MicrosoftReleases.png&quot; alt=&quot;Visualising ConfigMgr, Intune and Windows 10 Releases&quot; /&gt;&lt;em&gt;Visualising ConfigMgr, Intune and Windows 10 Releases&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;download-the-slide&quot;&gt;Download the Slide&lt;/h1&gt;
+
+&lt;p&gt;A number of people have asked about using the slide, so I’m making it available here for download to use in your own presentations. Download here in PowerPoint format: &lt;a href=&quot;https://stealthpuppy.sharefile.com/d-se48ec490d4c485f8&quot;&gt;Visualising ConfigMgr, Intune and Windows 10 Releases&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note that this is covered under the same license as all content on this site - a &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-sa/4.0/&quot; rel=&quot;license&quot;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a&gt;. If you use the slide, please keep the attribution intact. I welcome any updates or improvements you might have.&lt;/p&gt;
+
+&lt;h1 id=&quot;view-the-session&quot;&gt;View the Session&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/xenappblog&quot;&gt;Eric&lt;/a&gt; should making the recordings from last week’s Virtual Expo available soon, so you should be able to see my session in full.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="ConfigMgr" /><category term="Intune" /><category term="Windows 10" /><summary type="html">I recently presented a session titled ‘Modern Management Methodology Imaginarium’ at the xenappblog.com Virtual Expo September 2018 event. In this session, I discussed my thoughts and approach to modern management, primarily for Windows 10. The session provided a bit of background, some definitions for what makes up the modern desktop and a high-level approach to implementing it.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/wp-content/uploads/2018/09/alex-litvin-790876-unsplash.jpg" /></entry><entry><title type="html">Storage Sense on Windows 10 configured with Intune</title><link href="/windows-10-storage-sense-intune/" rel="alternate" type="text/html" title="Storage Sense on Windows 10 configured with Intune" /><published>2018-09-02T20:46:04+10:00</published><updated>2018-09-02T20:46:04+10:00</updated><id>/windows-10-storage-sense-intune</id><content type="html" xml:base="/windows-10-storage-sense-intune/">&lt;p&gt;In a modern management scenario, enabling end-points to perform automatic maintenance tasks will reduce TCO by avoiding scenarios that might result in support calls. Storage Sense in Windows 10 is a great way to &lt;a href=&quot;https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space&quot;&gt;manage free disk space&lt;/a&gt; on PCs by clearing caches, temporary files, old downloads, Windows Update cleanup, previous Windows Versions, and more, but it it’s not fully enabled by default. Storage Sense can potentially remove gigabytes of data, freeing up valuable space on smaller drives.&lt;/p&gt;
+
+&lt;p&gt;Here’s how to enable this feature on Windows 10 PCs enrolled in Microsoft Intune.&lt;/p&gt;
+
+&lt;h1 id=&quot;storage-sense-settings&quot;&gt;Storage Sense Settings&lt;/h1&gt;
+
+&lt;p&gt;Storage Sense can be found in the Windows 10 Settings app and has only a few settings that can be changed. Typically a user may enable Storage Sense and accept the default settings and for most PCs, the defaults are likely good enough. Here’s what’s available in Windows 10 1803:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense.png&quot; alt=&quot;Enabling Storage Sense in Windows 10 Settings&quot; /&gt;&lt;em&gt;Enabling Storage Sense in Windows 10 Settings&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Settings are stored in the user profile at:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Settings are stored somewhat cryptically with numbers representing various options.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry.png&quot; alt=&quot;Storage Sense settings in the Registry&quot; /&gt;&lt;em&gt;Storage Sense settings in the Registry&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;These values translate to following options and values in the table below:&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;KB,Title&lt;/th&gt;
+      &lt;th&gt;Setting&lt;/th&gt;
+      &lt;th&gt;Registry Value&lt;/th&gt;
+      &lt;th&gt;Option&lt;/th&gt;
+      &lt;th&gt;Registry Data&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/951149””   &amp;gt;951149&amp;lt;/a&amp;gt;“,Stop error on a   Windows Server 2008-based terminal server when the server is running under a   heavy load: &quot;0x0000000A&quot;&lt;/td&gt;
+      &lt;td&gt;Storage Sense&lt;/td&gt;
+      &lt;td&gt;01&lt;/td&gt;
+      &lt;td&gt;Off&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/957081””   &amp;gt;957081&amp;lt;/a&amp;gt;“,The query fails   when you enter the terminal server farm name in the TS Web Access   Administration window to query remote   program information in Windows Server 2008&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;On&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/946068””   &amp;gt;946068&amp;lt;/a&amp;gt;“,Stop error message   on a terminal server that is running Windows Server 2003 Service Pack 1 or   Windows Server 2003 Service Pack 2: &quot;Stop 0x000000AB   (SESSION_HAS_VALID_POOL_ON_EXIT)&quot;&lt;/td&gt;
+      &lt;td&gt;Run Storage Sense&lt;/td&gt;
+      &lt;td&gt;2048&lt;/td&gt;
+      &lt;td&gt;Every Day&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/950054””   &amp;gt;950054&amp;lt;/a&amp;gt;”,”When you browse a   Web page by using Internet Explorer 7 on a terminal server, the colors that   are displayed in the MDI child forms of the Web page may be incorrect”&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;Every Week&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/950086””   &amp;gt;950086&amp;lt;/a&amp;gt;“,A memory leak may   occur in the nonpaged pool memory on the Windows Server 2008-based terminal   server when you log on to and log off from a Windows Server 2008-based   terminal server through an RDP connection&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;Every Month&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/951749””   &amp;gt;951749&amp;lt;/a&amp;gt;“,Stop error message   on a terminal server that is running Windows Server 2003 SP1 or Windows   Server 2003 SP2: &quot;Stop 0x000000AB (SESSION_HAS_VALID_POOL_ON_EXIT)&quot;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;When Windows decides&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/951954””   &amp;gt;951954&amp;lt;/a&amp;gt;“,Error message when   you run an application on a terminal server that is running Windows Server   2008 or Windows Vista with Service Pack 1: &quot;Stop 0x0000008E&quot;&lt;/td&gt;
+      &lt;td&gt;Delete temporary files that my apps aren’t using&lt;/td&gt;
+      &lt;td&gt;04&lt;/td&gt;
+      &lt;td&gt;Selected&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/957877””   &amp;gt;957877&amp;lt;/a&amp;gt;“,Stop error on a   Windows Server 2003-based terminal server that has hotfix 951749 installed:   &quot;0x0000008E&quot;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;Not selected&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/966325””   &amp;gt;966325&amp;lt;/a&amp;gt;“,Some terminal   sessions stop responding and users cannot complete the logon process when a   Windows Server 2008 terminal server is under heavy stress&lt;/td&gt;
+      &lt;td&gt;Delete files in my recycle bin if they have been there for over&lt;/td&gt;
+      &lt;td&gt;08&lt;/td&gt;
+      &lt;td&gt;Off&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/958656””   &amp;gt;958656&amp;lt;/a&amp;gt;“,Client-side   rendering in Windows Server 2008 and in Windows Vista may decrease   performance on Windows Server 2008-based terminal servers&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;On&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/952234””   &amp;gt;952234&amp;lt;/a&amp;gt;”,”When you establish   a Terminal Services session that requires smart card authentication to log on   to a Windows Server 2008-based terminal server, the Terminal Services session   stops responding”&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;256&lt;/td&gt;
+      &lt;td&gt;Never&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/954910””   &amp;gt;954910&amp;lt;/a&amp;gt;“,Error message when   you use smart card authentication to log on to a Windows Server 2008-based   terminal server from a client computer that is running Windows Vista or   Windows Server 2008: &quot;0xC000040C&quot;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;1 day&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/949914””   &amp;gt;949914&amp;lt;/a&amp;gt;“,Citrix ICA clients   may crash when they are connecting to a Windows Server 2008-based terminal   server that has Citrix Presentation Server installed&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;14 days&lt;/td&gt;
+      &lt;td&gt;14&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/950118””   &amp;gt;950118&amp;lt;/a&amp;gt;“,You cannot reuse a   virtual channel handle after you disconnect and then reconnect a Terminal   Services session that is established on a Windows Server 2008-based terminal   server&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;30 days&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/951422””   &amp;gt;951422&amp;lt;/a&amp;gt;“,The   WTSQuerySessionInformation function on a Windows Server 2008-based terminal   server returns ambiguous IPv6 address data&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;60 days&lt;/td&gt;
+      &lt;td&gt;60&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/951674””   &amp;gt;951674&amp;lt;/a&amp;gt;“,Terminal Services   session limit values in Windows Server 2008 are interpreted incorrectly by   Windows Server 2003 terminal servers&lt;/td&gt;
+      &lt;td&gt;Delete files in my Downloads folder if they have been there for over&lt;/td&gt;
+      &lt;td&gt;32&lt;/td&gt;
+      &lt;td&gt;Off&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/955365””   &amp;gt;955365&amp;lt;/a&amp;gt;“,The Windows Server   2008 Terminal Services Session Broker service incorrectly balances the load   among terminal servers after it runs for a while&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;On&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/956438””   &amp;gt;956438&amp;lt;/a&amp;gt;”,”A Windows Server   2003-based or Windows Server 2008-based terminal server stops accepting new   connections, and existing connections stop responding”&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;512&lt;/td&gt;
+      &lt;td&gt;Never&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/957068””   &amp;gt;957068&amp;lt;/a&amp;gt;“,Event 1004 is   logged even though a user successfully logs on to a Windows Server 2008-based   terminal licensing server that has &quot;Per User&quot; terminal licenses   installed: &quot;The terminal server cannot issue a client license&quot;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;1 day&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/958106””   &amp;gt;958106&amp;lt;/a&amp;gt;”,”Some components of   an application may not be displayed correctly in a Terminal Services session   if you connect to a terminal server by using RDC 6.1 from a client computer   that is running Windows XP SP3, Windows Vista SP1, or Windows Server 2008”&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;14 days&lt;/td&gt;
+      &lt;td&gt;14&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/958612””   &amp;gt;958612&amp;lt;/a&amp;gt;“,Citrix ICA clients   are not disconnected from a Windows Server 2008 terminal server as expected   when the grace period has expired and a terminal license server is not   configured&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;30 days&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/958944””   &amp;gt;958944&amp;lt;/a&amp;gt;“,A Windows Server   2008-based server that is running the Terminal Server role reports a Stop   error when you control a session remotely from inside a session that is   already being controlled remotely: &quot;0x00000050&quot;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/960470””   &amp;gt;960470&amp;lt;/a&amp;gt;”,”The pointer   position behaves incorrectly when you use RDC to connect to a terminal server   from a Windows Vista-based or Windows Server 2008-based client computer, and   you run an application that calls the &quot;SetCursorPos&quot; function”&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/960742””   &amp;gt;960742&amp;lt;/a&amp;gt;“,Clients cannot log   on to a Windows Server 2008-based terminal server through RDP connections if   the terminal server is set to listen on only one of the network adapters&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;“&amp;lt;a href=”“http://support.microsoft.com/kb/967609””   &amp;gt;967609&amp;lt;/a&amp;gt;“,The application   compatibility scripts do not run on a terminal server that is running Windows   Server 2008 when a user creates a terminal session for the first time&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;60 days&lt;/td&gt;
+      &lt;td&gt;60&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2008-02-18-server-managers-power-is-in-the-command-line.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T10:14:03+10:00</published><updated>2019-04-09T10:14:03+10:00</updated><id>/2019/04/09/2008-02-18-server-managers-power-is-in-the-command-line</id><content type="html" xml:base="/2019/04/09/2008-02-18-server-managers-power-is-in-the-command-line.html">&lt;p&gt;Like most IT Pros deploying and managing Windows Server, I’ve avoided the wizard interfaces, like Manage Your Server, in previous versions of Windows. However with Windows Server 2008, Microsoft have actually succeeded in creating a tool that I think people will find indispensable.&lt;/p&gt;
+&lt;/table&gt;
 
-&lt;p&gt;Server Manager is an MMC-based front-end for anything you will need to manage on your servers running Windows 2008. As well as combining many of the individual management tools, it gives you a simple overview of what’s happening on your server and integrates the old Add/Remove Programs interface too.&lt;/p&gt;
+&lt;p&gt;Now that we know what the options are, we can decide on what to deploy and deliver them to enrolled end-points.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://stealthpuppy.com/wp-content/uploads/2008/02/servermanager.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;configure-via-powershell&quot;&gt;Configure via PowerShell&lt;/h1&gt;
 
-&lt;p&gt;If you’ve not taken a look at Windows Server 2008 and are interested in reading more about Server Manager, there is a plethora of resources available to you:&lt;/p&gt;
+&lt;p&gt;Using the values from the table above, a PowerShell script can be deployed via Intune to configure our desired settings. The script below will enable Storage Sense along with several settings to regularly remove outdated or temporary files.&lt;/p&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Enable Storage Sense&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Ensure the StorageSense key exists&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\StorageSense&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Test-Path&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;New-Item&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; | Out-Null
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Test-Path&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;New-Item&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters&quot;&lt;/span&gt; | Out-Null
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(!(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Test-Path&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters\StoragePolicy&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;New-Item&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters\StoragePolicy&quot;&lt;/span&gt; | Out-Null
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Set Storage Sense settings&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Enable Storage Sense&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Set-ItemProperty&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters\StoragePolicy&quot;&lt;/span&gt; -Name &lt;span class=&quot;s2&quot;&gt;&quot;01&quot;&lt;/span&gt; -Type DWord -Value 1
+
+&lt;span class=&quot;c1&quot;&gt;# Set 'Run Storage Sense' to Every Week&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Set-ItemProperty&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters\StoragePolicy&quot;&lt;/span&gt; -Name &lt;span class=&quot;s2&quot;&gt;&quot;2048&quot;&lt;/span&gt; -Type DWord -Value 7
+
+&lt;span class=&quot;c1&quot;&gt;# Enable 'Delete temporary files that my apps aren't using'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Set-ItemProperty&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters\StoragePolicy&quot;&lt;/span&gt; -Name &lt;span class=&quot;s2&quot;&gt;&quot;04&quot;&lt;/span&gt; -Type DWord -Value 1
+
+&lt;span class=&quot;c1&quot;&gt;# Set 'Delete files in my recycle bin if they have been there for over' to 14 days&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Set-ItemProperty&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters\StoragePolicy&quot;&lt;/span&gt; -Name &lt;span class=&quot;s2&quot;&gt;&quot;08&quot;&lt;/span&gt; -Type DWord -Value 1
+&lt;span class=&quot;nb&quot;&gt;Set-ItemProperty&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters\StoragePolicy&quot;&lt;/span&gt; -Name &lt;span class=&quot;s2&quot;&gt;&quot;256&quot;&lt;/span&gt; -Type DWord -Value 14
+
+&lt;span class=&quot;c1&quot;&gt;# Set 'Delete files in my Downloads folder if they have been there for over' to 60 days&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Set-ItemProperty&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters\StoragePolicy&quot;&lt;/span&gt; -Name &lt;span class=&quot;s2&quot;&gt;&quot;32&quot;&lt;/span&gt; -Type DWord -Value 1
+&lt;span class=&quot;nb&quot;&gt;Set-ItemProperty&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters\StoragePolicy&quot;&lt;/span&gt; -Name &lt;span class=&quot;s2&quot;&gt;&quot;512&quot;&lt;/span&gt; -Type DWord -Value 60
+
+&lt;span class=&quot;c1&quot;&gt;# Set value that Storage Sense has already notified the user&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Set-ItemProperty&lt;/span&gt; -Path &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\Parameters\StoragePolicy&quot;&lt;/span&gt; -Name &lt;span class=&quot;s2&quot;&gt;&quot;StoragePoliciesNotified&quot;&lt;/span&gt; -Type DWord -Value 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Modify the script as desired - at the very least the script should enable Storage Sense and leave the remaining settings as default. Save the script as a PowerShell file and &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/intune-management-extension&quot;&gt;deploy via the Intune console in the Azure portal&lt;/a&gt;. Ensure that the script runs with the logged on user’s credentials because it will write to HKCU.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune.png&quot; alt=&quot;Enabling Storage Sense with a PowerShell script in Intune&quot; /&gt;&lt;em&gt;Enabling Storage Sense with a PowerShell script in Intune&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Assign the script to All Users and their PC will receive the script. It’s important to note that, because the settings are stored in HKCU and are not policies, the user can either disable Storage Sense or change other settings.&lt;/p&gt;
+
+&lt;h1 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h1&gt;
+
+&lt;p&gt;Storage Sense is a great feature to enable on Windows 10 PCs for both personal and corporate PCs. In a modern management scenario, it’s another tool in our kit for enabling end-points to be self-sufficient, so I highly recommend testing and enabling the feature by default. This article has shown you how to configure Storage Sense via Intune and PowerShell with all of the possible combinations required to configure it to suit your requirements.&lt;/p&gt;
+
+&lt;h2 id=&quot;hold-on&quot;&gt;Hold On…&lt;/h2&gt;
+
+&lt;p&gt;Storage Sense shows you how much disk capacity has been cleaned in the previous month in the Settings app. For a bit of a laugh, you can modify the value where this is stored so that Settings displays spaced saved that’s clearly not genuine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved.png&quot; alt=&quot;Messing around with the value of saved space&quot; /&gt;&lt;em&gt;Messing around with the value of saved space&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;You’ll find the registry value (20180901) in this key:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy\SpaceHistory
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Aaron Parker</name></author><category term="Intune" /><category term="Storage Sense" /><category term="Windows 10" /><summary type="html">In a modern management scenario, enabling end-points to perform automatic maintenance tasks will reduce TCO by avoiding scenarios that might result in support calls. Storage Sense in Windows 10 is a great way to manage free disk space on PCs by clearing caches, temporary files, old downloads, Windows Update cleanup, previous Windows Versions, and more, but it it’s not fully enabled by default. Storage Sense can potentially remove gigabytes of data, freeing up valuable space on smaller drives.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/wp-content/uploads/2018/09/florian-perennes-583674-unsplash.jpg" /></entry><entry><title type="html">Citrix Workspace app deployed with Microsoft Intune</title><link href="/citrix-workspace-app-microsoft-intune/" rel="alternate" type="text/html" title="Citrix Workspace app deployed with Microsoft Intune" /><published>2018-08-13T14:55:54+10:00</published><updated>2018-08-13T14:55:54+10:00</updated><id>/citrix-workspace-app-microsoft-intune</id><content type="html" xml:base="/citrix-workspace-app-microsoft-intune/">&lt;p&gt;Citrix Workspace app is &lt;a href=&quot;https://www.citrix.com/blogs/2018/08/06/the-citrix-workspace-app-our-new-bundle-of-joy-is-born-today/&quot;&gt;here to replace Citrix Receiver&lt;/a&gt; with a new UI and capabilities (primarily for Citrix Cloud customers). Here’s how to deploy it across various supported platforms in a modern management capacity with Microsoft Intune.&lt;/p&gt;
+
+&lt;h2 id=&quot;windows-10&quot;&gt;Windows 10&lt;/h2&gt;
+
+&lt;p&gt;There are multiple deployment options for Workspace app on Windows via Microsoft Intune:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Start with the &lt;a href=&quot;http://technet2.microsoft.com/windowsserver2008/en/library/18dd1257-2cd1-48f0-91f1-3012cf0fcc831033.mspx?mfr=true&quot;&gt;Windows Server 2008 Server Manager Technical Overview&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;You can then use &lt;a href=&quot;http://technet2.microsoft.com/windowsserver2008/en/servermanager/default.mspx&quot;&gt;Server Manager page on TechNet&lt;/a&gt; to find links to more detailed information&lt;/li&gt;
-  &lt;li&gt;Read &lt;a href=&quot;http://go.microsoft.com/fwlink/?LinkId=92732&quot;&gt;Server Manager Compared to Earlier Windows Management Tools&lt;/a&gt; to get an idea of what Server Manager is all about in Windows Server 2008&lt;/li&gt;
-  &lt;li&gt;Take a look at &lt;a href=&quot;http://www.microsoft.com/events/EventDetails.aspx?CMTYSvcSource=MSCOMMedia&amp;amp;Params=%7eCMTYDataSvcParams%5e%7earg+Name%3d%22ID%22+Value%3d%221032358383%22%2f%5e%7earg+Name%3d%22ProviderID%22+Value%3d%22A6B43178-497C-4225-BA42-DF595171F04C%22%2f%5e%7earg+Name%3d%22lang%22+Value%3d%22en%22%2f%5e%7earg+Name%3d%22cr%22+Value%3d%22US%22%2f%5e%7esParams%5e%7e%2fsParams%5e%7e%2fCMTYDataSvcParams%5e&quot;&gt;TechNet Webcast: Managing Windows Server 2008 with Server Manager (Level 200)&lt;/a&gt; and&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://go.microsoft.com/fwlink/?LinkId=92591&quot;&gt;TechNet Webcast: Overview of Server Manager and Windows PowerShell in Windows Server 2008 (Level 300)&lt;/a&gt; to see Server Manager in action&lt;/li&gt;
-  &lt;li&gt;Read the &lt;a href=&quot;http://download.microsoft.com/download/b/1/0/b106fc39-936c-4857-a6ea-3fb9d1f37063/Server%20Manager%20Scenarios%20Step-by-Step%20Guide.doc&quot;&gt;Server Manager Scenarios Step-by-Step Guide&lt;/a&gt; to see how to use Server Manager.&lt;/li&gt;
+  &lt;li&gt;Workspace app from the Microsoft Store. This version has &lt;a href=&quot;https://docs.citrix.com/en-us/citrix-workspace-app-for-windows-store/downloads/Features_RfWinStore.pdf&quot;&gt;some feature limitations&lt;/a&gt; but requires the least amount of effort to deploy&lt;/li&gt;
+  &lt;li&gt;The full Workspace app that provides the best compatibility, but doesn’t ship as a Windows Installer file and therefore requires custom solutions to deploy&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The real power of Server Manager and what makes this tool truly worthwhile is it’s command line interface. SERVERMANAGERCMD.EXE replaces what SYSOCMGR.EXE provided in previous versions of Windows, but it does so much more:&lt;/p&gt;
+&lt;h3 id=&quot;microsoft-store&quot;&gt;Microsoft Store&lt;/h3&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;A new command-line feature in Server Manager allows unattended installation and removal of Windows Server 2008 technologies. The ServerManagerCmd.exe command-line tool exposes the key set of Server Manager tasks, such as installation or removal of roles, role services and features, validation, and querying the current state of the computer. It also allows for installation or removal of multiple roles, role services, or features in a single command instance by using XML answer files.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/intune/store-apps-windows&quot;&gt;Adding the Workspace app from the Microsoft Store&lt;/a&gt; is well documented and should take only 5 minutes to get the app from the Store, synchronise to Intune and &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/apps-deploy&quot;&gt;assign the app to your users&lt;/a&gt;. How’s that for done and dusted? - I’m sure you’ve got better things to do than package and maintain applications.&lt;/p&gt;
 
-  &lt;p&gt;Before the implementation of the Server Manager command line, the only command-line tools available for installing Windows software packages on a computer were ocsetup and pkgmgr. The command line syntax for these tools is complex, and the names of roles, role services, and features available for installation or removal by using these two tools were not intuitive. ServerManagerCmd.exe simplifies command-line installation and removal of roles, role services, and features&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-MicrosoftStore.png&quot; alt=&quot;Citrix Workspace in the Microsoft Store&quot; /&gt;&lt;em&gt;Citrix Workspace in the Microsoft Store&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The Workspace app can be assigned as available for end-users to install via the Intune Company Portal or required for automatic deployment. Once deployed, the Store will take care of updates, thus there is no further action required by the administrator.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-CompanyPortal.png&quot; alt=&quot;Citrix Workspace app in the Microsoft Intune Company Portal&quot; /&gt;&lt;em&gt;Citrix Workspace app in the Microsoft Intune Company Portal&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have already deployed Citrix Receiver from the Microsoft Store via Intune, it should be automatically updated to Citrix Workspace. One they key &lt;a href=&quot;https://docs.citrix.com/en-us/citrix-workspace-app-for-windows-store/downloads/Features_RfWinStore.pdf&quot;&gt;feature limitations&lt;/a&gt; of the Microsoft Store version is pass-through authentication, so you might need to consider alternative deployment options&lt;/p&gt;
+
+&lt;h3 id=&quot;powershell&quot;&gt;PowerShell&lt;/h3&gt;
+
+&lt;p&gt;The Workspace app installer is a single executable just it has been with Citrix Receiver. This presents a challenge to deploy Workspace app as a line-of-business application with Intune which requires Win32 applications to be packaged as a single Windows Installer file. PowerShell scripts are a simple alternative, but deploying applications via PowerShell has two key considerations:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;PowerShell scripts can’t be applied to computer groups&lt;/li&gt;
+  &lt;li&gt;PowerShell scripts are executed on devices only when an Azure Active Directory user is signed in to the device&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Deploying this way also means that the Workspace app will be deployed regardless of user choice and of course does not support deployment via the Intune Company Portal.&lt;/p&gt;
+
+&lt;p&gt;Like we’ve done &lt;a href=&quot;https://stealthpuppy.com/deploy-citrix-receiver-intune/&quot;&gt;previously with Citrix Receiver&lt;/a&gt;, the Workspace app can be &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/intune-management-extension&quot;&gt;deployed to Windows 10 machines via Intune with PowerShell&lt;/a&gt; without requiring custom packaging. We need a consistent URL that will always download the latest version of Workspace app and &lt;a href=&quot;https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install/cfg-command-line.html&quot;&gt;a command line to perform a silent installation&lt;/a&gt;. Your command line options might differ depending on your target environment, but the example script below will download and install the Workspace app.&lt;/p&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$Url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://downloadplugins.citrix.com/Windows/CitrixWorkspaceApp.exe&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$env&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:SystemRoot\Temp\CitrixWorkspaceApp.exe&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Arguments&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/AutoUpdateCheck=Auto /AutoUpdateStream=Current /DeferUpdateCount=3 /AURolloutPriority=Slow /NoReboot /Silent EnableCEIP=False'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Start-BitsTransfer&lt;/span&gt; -Source &lt;span class=&quot;nv&quot;&gt;$Url&lt;/span&gt; -Destination &lt;span class=&quot;nv&quot;&gt;$Target&lt;/span&gt; -Priority High -TransferPolicy Always -ErrorAction &lt;span class=&quot;k&quot;&gt;Continue
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Start-Process&lt;/span&gt; -FilePath &lt;span class=&quot;nv&quot;&gt;$Target&lt;/span&gt; -ArgumentList &lt;span class=&quot;nv&quot;&gt;$Arguments&lt;/span&gt; -Wait
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Once deployed, devices must then &lt;a href=&quot;https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure/receiver-update.html&quot;&gt;rely on auto-updates&lt;/a&gt; to ensure that Workspace app is kept up-to-date.&lt;/p&gt;
+
+&lt;h3 id=&quot;re-package-citrix-workspace-app-for-windows-installer&quot;&gt;Re-package Citrix Workspace app for Windows Installer&lt;/h3&gt;
+
+&lt;p&gt;With the right tools and a bit of effort, Citrix Workspace app can be &lt;a href=&quot;https://configmgrblog.com/2017/08/29/how-to-deploy-the-citrix-receiver-for-windows-10-via-microsoft-intune/&quot;&gt;re-packaged into a single Windows Installer file&lt;/a&gt;. Once you’ve packaged the app with this method you’ll need to maintain the package and update it regularly. As with the PowerShell method though, &lt;a href=&quot;https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure/receiver-update.html&quot;&gt;auto-updates&lt;/a&gt; will keep Workspace app up-to-date once deployed.&lt;/p&gt;
+
+&lt;p&gt;Is this approach right for you? This requires maintaining and deploying a custom package and is dependent on how the environment is managed and available skillsets. Only you can answer that for your projects or environments. A custom package isn’t ideal and I recommend using the Microsoft Store version as the default approach instead.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-Extracted.png&quot; alt=&quot;Citrix Workspace app extracted Windows Installer files&quot; /&gt;&lt;em&gt;Citrix Workspace app extracted Windows Installer files&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;hdx-realtime-media-engine&quot;&gt;HDX RealTime Media Engine&lt;/h3&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.citrix.com/downloads/citrix-receiver/additional-client-software/hdx-realtime-media-engine-25.html&quot;&gt;Citrix HDX RealTime Media Engine&lt;/a&gt; - required for optimising Skype for Business under XenApp and XenDesktop, does come as a single Windows Installer file. This makes it easy then to deploy the engine &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/lob-apps-windows&quot;&gt;to Windows PCs as a Required line-of-business application&lt;/a&gt; without modification or custom packaging. This will ensure that no user interaction is required to install the engine since most users are unlikely to know what it does anyway.&lt;/p&gt;
+
+&lt;h3 id=&quot;bonus-citrix-workspace-app-for-chrome&quot;&gt;Bonus: Citrix Workspace app for Chrome&lt;/h3&gt;
+
+&lt;p&gt;If you have Google Chrome deployed in your environment and you’d like to deploy the Citrix Workspace app for Chrome, this can be achieved with a PowerShell script that will either deploy it as a preference that users must approve or as a policy that will be automatically pushed out and users will be unable to remove from Chrome.&lt;/p&gt;
+
+&lt;p&gt;Google provides detailed documentation on &lt;a href=&quot;https://developer.chrome.com/apps/external_extensions#registry&quot;&gt;deploying Chrome extensions on Windows&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here’s a basic script to deploy Workspace app for Chrome via PowerShell that uses the app’s Chrome Web Store identifier (haiffjcadagjlijoggckpgfnoeiflnem) to tell Chrome to install the app on next launch. This shows both approaches - deploy as a preference or enforced.&lt;/p&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# Citrix Receiver / Workspace app as a preference&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Google\Chrome\Extensions&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;update_url&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://clients2.google.com/service/update2/crx&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$Path&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;\haiffjcadagjlijoggckpgfnoeiflnem&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;New-Item&lt;/span&gt; -Path &lt;span class=&quot;nv&quot;&gt;$Key&lt;/span&gt; -ErrorAction SilentlyContinue
+&lt;span class=&quot;nb&quot;&gt;New-ItemProperty&lt;/span&gt; -Path &lt;span class=&quot;nv&quot;&gt;$Key&lt;/span&gt; -Name &lt;span class=&quot;nv&quot;&gt;$Value&lt;/span&gt; -Value &lt;span class=&quot;nv&quot;&gt;$Data&lt;/span&gt; -Force -ErrorAction SilentlyContinue
+
+&lt;span class=&quot;c1&quot;&gt;# Citrix Receiver / Workspace app as a policy&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$Key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallForcelist&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$ExistingValues&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Get-Item&lt;/span&gt; -Path &lt;span class=&quot;nv&quot;&gt;$Key&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.Property
+&lt;span class=&quot;nv&quot;&gt;$Value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ExistingValues&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ExistingValues&lt;/span&gt;.Count-1] + 1
+&lt;span class=&quot;nv&quot;&gt;$Data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;haiffjcadagjlijoggckpgfnoeiflnem;https://clients2.google.com/service/update2/crx&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;New-Item&lt;/span&gt; -Path &lt;span class=&quot;nv&quot;&gt;$Key&lt;/span&gt; -ErrorAction SilentlyContinue
+&lt;span class=&quot;nb&quot;&gt;New-ItemProperty&lt;/span&gt; -Path &lt;span class=&quot;nv&quot;&gt;$Key&lt;/span&gt; -Name &lt;span class=&quot;nv&quot;&gt;$Value&lt;/span&gt; -Value &lt;span class=&quot;nv&quot;&gt;$Data&lt;/span&gt; -Force -ErrorAction SilentlyContinue
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add the script to the Intune portal and assign to a user group to deploy. Ensure the script runs in the system context because it needs to write to HKLM.&lt;/p&gt;
+
+&lt;h2 id=&quot;macos&quot;&gt;macOS&lt;/h2&gt;
+
+&lt;p&gt;The Citrix Workspace app can be &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/lob-apps-macos&quot;&gt;deployed as a line-of-business application&lt;/a&gt; with Microsoft Intune. The &lt;a href=&quot;https://www.citrix.com.au/downloads/workspace-app/mac/workspace-app-for-mac-latest.html&quot;&gt;Workspace app download&lt;/a&gt; comes as &lt;a href=&quot;https://en.wikipedia.org/wiki/Installer_(macOS)&quot;&gt;an Installer package&lt;/a&gt; (inside an &lt;a href=&quot;https://en.wikipedia.org/wiki/Apple_Disk_Image&quot;&gt;Apple Disk Image&lt;/a&gt;) that can be converted into suitable file format with the &lt;a href=&quot;https://github.com/msintuneappsdk/intune-app-wrapping-tool-mac&quot;&gt;Microsoft Intune App Wrapping Tool&lt;/a&gt;, ready to deploy with Intune.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-DiskImage.png&quot; alt=&quot;The Citrix Workspace app disk image&quot; /&gt;&lt;em&gt;The Citrix Workspace app disk image&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;convert-the-installer&quot;&gt;Convert the Installer&lt;/h3&gt;
+
+&lt;p&gt;Instructions for converting a .pkg file to a .intunemac file are outlined in the documentation, and the basic process I have followed to convert the Citrix Workspace app installer file is:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Download the Intune App Wrapping Tool for Mac executable - &lt;code class=&quot;highlighter-rouge&quot;&gt;IntuneAppUtil&lt;/code&gt;  - to a local folder. I’ve downloaded it to &lt;code class=&quot;highlighter-rouge&quot;&gt;~/bin&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Mark the file as executable. In my example, I’ve done this with:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;chmod&lt;/span&gt; +x ~/bin/IntuneAppUtil
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Optionally copy the &lt;code class=&quot;highlighter-rouge&quot;&gt;Install Citrix Workspace.pkg&lt;/code&gt; file to a local folder. You should also be able to run the converter against the copy stored in the disk image. In my example, I’ve copied the installer to &lt;code class=&quot;highlighter-rouge&quot;&gt;~/Projects/Intune-Apps&lt;/code&gt;. Rename the installer to remove spaces, so rename the file to &lt;code class=&quot;highlighter-rouge&quot;&gt;InstallCitrixWorkspace.pkg&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Removing the spaces from the installer name before converting is important, otherwise when installing the application, macOS will report the following error and the installing will fail to download and install:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MDM Invalid download asset URL https://fef.msua02.manage.microsoft.com/DownloadService/GetAppPassive/MacOS/Install Citrix Workspace.pkg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Convert the .pkg file into the required .intunemac format with a command similar to the following example - note that the &lt;code class=&quot;highlighter-rouge&quot;&gt;-o&lt;/code&gt; switch should include a directory path only.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;~/bin/IntuneAppUtil -c ~/Projects/Intune-Apps/InstallCitrixWorkspace.pkg -o ~/Projects/Intune-Apps -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If successful the command line will look similar to the following screenshot:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-IntuneAppUtil.png&quot; alt=&quot;Converting the Citrix Workspace app with IntuneAppUtil&quot; /&gt;&lt;em&gt;Converting the Citrix Workspace app with IntuneAppUtil&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The Workspace app installer will have been converted into a .intunemac format ready to import into the Intune portal for distributing to users.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-AppFiles.png&quot; alt=&quot;The converted Citrix Workspace app&quot; /&gt;&lt;em&gt;The converted Citrix Workspace app&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;distribute-with-intune&quot;&gt;Distribute with Intune&lt;/h3&gt;
+
+&lt;p&gt;With the prepared package, &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/lob-apps-macos&quot;&gt;create a new line-of-business app in the Intune portal,&lt;/a&gt; select the .intunemac file and enter application information as follows:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Name - Citrix Workspace&lt;/li&gt;
+  &lt;li&gt;Description - copy and paste the &lt;a href=&quot;https://businessstore.microsoft.com/en-au/store/details/citrix-workspace/9wzdncrfj2kj&quot;&gt;description from Workspace app on the Microsoft Store&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Publisher - Citrix&lt;/li&gt;
+  &lt;li&gt;Ignore app version - Yes&lt;/li&gt;
+  &lt;li&gt;Category - Business or Productivity&lt;/li&gt;
+  &lt;li&gt;Information URL - https://docs.citrix.com/en-us/citrix-workspace-app-for-mac.html&lt;/li&gt;
+  &lt;li&gt;Privacy URL - https://www.citrix.com.au/about/legal.html&lt;/li&gt;
+  &lt;li&gt;Logo - download the Workspace app &lt;a href=&quot;https://github.com/Insentra/intune-icons/blob/master/icons/citrix-workspace-app.png&quot;&gt;icon in PNG format here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once the details have been added, click OK to create the application. I initially had issues with uploading the application on Chrome on macOS. I was successful on Internet Explorer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-IntunePortal.png&quot; alt=&quot;Adding the Citrix Workspace app as a line-of-business app in Microsoft Intune&quot; /&gt;&lt;em&gt;Adding the Citrix Workspace app as a line-of-business app in Microsoft Intune&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Once the application has been created and assigned to users, it will be available for install in the Intune Company Portal. The application can also be set to required for automatic deployment.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-macOSCompanyPortal.png&quot; alt=&quot;Citrix Workspace available in the Intune Company Portal on macOS&quot; /&gt;Citrix Workspace available in the Intune Company Portal on macOS*&lt;/p&gt;
+
+&lt;p&gt;Just as on Windows, updates to the Citrix Workspace app can be managed with the inbuilt updater, post-deployment.&lt;/p&gt;
+
+&lt;h3 id=&quot;hdx-realtime-media-engine-1&quot;&gt;HDX RealTime Media Engine&lt;/h3&gt;
+
+&lt;p&gt;The Citrix HDX RealTime Media Engine is also available as an installer package that can be converted and deployed the same way as Workspace itself. Citrix Workspace app is now &lt;a href=&quot;https://support.apple.com/en-au/HT208436&quot;&gt;a 64-bit macOS application&lt;/a&gt; and will, therefore, require a 64-bit version of the HDX RealTime Media Engine. Right now, a &lt;a href=&quot;https://www.citrix.com.au/downloads/workspace-app/betas-and-tech-previews/hdx-realtime-media-engine-tp-for-mac.html&quot;&gt;64-bit HDX RealTime Media Engine is in tech preview&lt;/a&gt; that can be downloaded, packaged, uploaded as a line-of-business application and assigned.&lt;/p&gt;
+
+&lt;h2 id=&quot;ios&quot;&gt;iOS&lt;/h2&gt;
+
+&lt;p&gt;As at the time of writing, Citrix Receiver is still available on the iOS App Store and we should see it updated to Citrix Workspace app soon. &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/store-apps-ios&quot;&gt;Adding an iOS application in Microsoft Intune&lt;/a&gt; is, fortunately, a simple process:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Add an application and choose ‘Store app - iOS’, then search the app store&lt;/li&gt;
+  &lt;li&gt;Search for ‘Citrix’, ‘Citrix Receiver’ or ‘Citrix Workspace’&lt;/li&gt;
+  &lt;li&gt;Choose ‘Citrix Receiver’ or ‘Citrix Workspace’ depending on what is returned&lt;/li&gt;
+  &lt;li&gt;Save the change and Add the application&lt;/li&gt;
+  &lt;li&gt;Assign the application as required&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The application will be available in the Intune Company Portal:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-iOS.png&quot; alt=&quot;Citrix Workspace for iOS available in the Intune Company Portal&quot; /&gt;&lt;em&gt;Citrix Workspace for iOS available in the Intune Company Portal&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;For existing deployments of Citrix Receiver, they should be updated to Citrix Workspace app automatically.&lt;/p&gt;
+
+&lt;h2 id=&quot;android&quot;&gt;Android&lt;/h2&gt;
+
+&lt;h3 id=&quot;android-store-app&quot;&gt;Android Store app&lt;/h3&gt;
+
+&lt;p&gt;At the time of writing, the Workspace app for Android is not available in the Google Play Store, but &lt;a href=&quot;https://www.citrix.com.au/downloads/workspace-app/betas-and-tech-previews/workspace-app-tp-for-Android.html&quot;&gt;a tech preview is available&lt;/a&gt; for download as an APK. I would recommend deploying Citrix Receiver via the Google Play Store, but with access to an APK file, you can deploy Android applications directly to enrolled devices as a line-of-business application with Intune.&lt;/p&gt;
+
+&lt;p&gt;The process for deploying Citrix Workspace app or Citrix Receiver on Android follows &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/store-apps-android&quot;&gt;the standard Android store app deployment steps&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Add an application and choose ‘Store app - Android’, then search the app store&lt;/li&gt;
+  &lt;li&gt;Name - ‘Citrix Workspace’ or ‘Citrix Receiver’&lt;/li&gt;
+  &lt;li&gt;Description - copy and paste the &lt;a href=&quot;https://businessstore.microsoft.com/en-au/store/details/citrix-workspace/9wzdncrfj2kj&quot;&gt;description from Workspace app on the Microsoft Store&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Publisher - Citrix&lt;/li&gt;
+  &lt;li&gt;Appstore URL - https://play.google.com/store/apps/details?id=com.citrix.Receiver&lt;/li&gt;
+  &lt;li&gt;Minimum operating system - Android 4.4 (Kitkat)&lt;/li&gt;
+  &lt;li&gt;Category - Business or Productivity&lt;/li&gt;
+  &lt;li&gt;Privacy URL - https://www.citrix.com.au/about/legal.html&lt;/li&gt;
+  &lt;li&gt;Logo - download the Workspace app &lt;a href=&quot;https://github.com/Insentra/intune-icons/blob/master/icons/citrix-workspace-app.png&quot;&gt;icon in PNG format here&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Assign the application and it will be available to users in the Intune Company Portal.&lt;/p&gt;
+
+&lt;h3 id=&quot;android-work-profile-app&quot;&gt;Android Work Profile app&lt;/h3&gt;
+
+&lt;p&gt;In the future, it’s more likely that organisations will leverage the Android enterprise capabilities, previously known as Android for Work. This also simplifies Android app deployment with a connection between Microsoft Intune and the Google Play store. Once configured, &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/apps-add-android-for-work&quot;&gt;browse the Google Play store, approve a list of desired apps&lt;/a&gt; and these will then appear for assignment in the Mobile Apps node in Intune.&lt;/p&gt;
+
+&lt;p&gt;Here’s &lt;a href=&quot;https://play.google.com/work/apps/details?id=com.citrix.Receiver&quot;&gt;Citrix Receiver in the Google Play store&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CitrixWorkspace-PlayStore.png&quot; alt=&quot;Approving Citrix Receiver in the Google Play store&quot; /&gt;Approving Citrix Receiver in the Google Play store*&lt;/p&gt;
+
+&lt;p&gt;Once approved, you must choose how new permissions will be approved:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Keep approved when app requests new permissions - Users will be able to install the updated app. (Default)&lt;/li&gt;
+  &lt;li&gt;Revoke app approval when this app requests new permissions - App will be removed from the store until it is reapproved.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can approve and deploy Citrix Receiver today, which should be automatically updated to Citrix Workspace app once it is released.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap-up&lt;/h2&gt;
+
+&lt;p&gt;In this article, I’ve covered the high-level steps required for deployment of the Citrix Workspace app across the various major platforms supported by Microsoft Intune. Mobile platforms, including the Microsoft Store on Windows 10, will require the least amount of administrative effort to configure, deploy and update. For most organisations supporting Windows as their primary platform, even with Microsoft Intune, the choice of deployment solution will depend on Workpace app feature requirements.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="Android" /><category term="Citrix Receiver" /><category term="Citrix Workspace" /><category term="Intune" /><category term="iOS" /><category term="macOS" /><category term="Windows" /><summary type="html">Citrix Workspace app is here to replace Citrix Receiver with a new UI and capabilities (primarily for Citrix Cloud customers). Here’s how to deploy it across various supported platforms in a modern management capacity with Microsoft Intune.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/wp-content/uploads/2018/08/rawpixel-550994-unsplash.jpg" /></entry><entry><title type="html">Thunderbolt end-user experience macOS vs. Windows</title><link href="/thunderbolt-experience-macos-windows/" rel="alternate" type="text/html" title="Thunderbolt end-user experience macOS vs. Windows" /><published>2018-08-07T14:01:52+10:00</published><updated>2018-08-07T14:01:52+10:00</updated><id>/thunderbolt-experience-macos-windows</id><content type="html" xml:base="/thunderbolt-experience-macos-windows/">&lt;p&gt;Thunderbolt 3 (and USB-C) are here to provide &lt;a href=&quot;https://stealthpuppy.com/thunderbolt-3/&quot;&gt;a single cable for everything&lt;/a&gt;, although your experience with this technology will differ depending on your choice of operating system. Here’s a quick look at the end-user experience of TB on macOS and Windows.&lt;/p&gt;
+
+&lt;h2 id=&quot;thunderbolt-3-on-macos&quot;&gt;Thunderbolt 3 on macOS&lt;/h2&gt;
+
+&lt;p&gt;Thunderbolt &lt;a href=&quot;https://www.apple.com/thunderbolt/&quot;&gt;on macOS just works&lt;/a&gt; - plug-in a TB device and off you go. This makes sense given that the standard was &lt;a href=&quot;https://en.wikipedia.org/wiki/Thunderbolt_(interface)&quot;&gt;designed by Intel and Apple&lt;/a&gt;. Unpacking and plugging in a Thunderbolt dock with external displays, ethernet, audio etc., on macOS in just about every case will work without installing drivers.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/macbook-pro-spgray-psl-closed.jpg&quot; alt=&quot;Thunderbolt ports on the MacBook Pro&quot; /&gt;&lt;em&gt;Thunderbolt ports on the MacBook Pro&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Here’s Apple’s dirty (not so) secret though - excluding the MacBook Air (and the Mini that comes with TB2), all current Macs have TB3 ports, &lt;a href=&quot;https://support.apple.com/en-au/HT207443&quot;&gt;except for the MacBook&lt;/a&gt;. It has a single USB-C port only. Maybe that’s OK - the TB target market is likely to be purchasing the Pro line anyway, but Apple isn’t a fan of labelling their ports, so caveat emptor.&lt;/p&gt;
+
+&lt;p&gt;macOS provides a good look at the devices plugged into your TB ports:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/macOS-SystemReport-Thunderbolt.png&quot; alt=&quot;macOS System Report showing Thunderbolt devices&quot; /&gt;&lt;em&gt;macOS System Report showing Thunderbolt devices&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that while the MacBook Pro with Touch Bar has 4 Thunderbolt 3 ports, these are divided across 2 busses. If you have more than one device plugged in, ensure they’re plugged into either side of the laptop for best performance.&lt;/p&gt;
+
+&lt;h2 id=&quot;thunderbolt-3-on-windows&quot;&gt;Thunderbolt 3 on Windows&lt;/h2&gt;
+
+&lt;p&gt;Thunderbolt 3 &lt;a href=&quot;https://www.microsoft.com/en-us/store/collections/thunderbolt-3&quot;&gt;on Windows 10&lt;/a&gt;? That is unfortunately not so straight-forward.&lt;/p&gt;
+
+&lt;p&gt;I’ve been testing connection to my dock on an &lt;a href=&quot;http://h20386.www2.hp.com/AustraliaStore/Merch/Offer.aspx?p=elitebook-x360&quot;&gt;HP Elitebook x360 G2&lt;/a&gt; that comes equipped with 2 x TB3 ports. The default Windows 10 image for this machine is an absolute mess that has a whole lot of software that isn’t required. Resetting the machine back to defaults strips it right back to the bare essentials, excluding the Thunderbolt driver and software. After plugging in a TB device, it isn’t recognised and no driver or software is downloaded from Windows Update. Interestingly, no driver or software was offered by the HP Support Assistant app designed to help end-users keep their HP PCs up to date.&lt;/p&gt;
+
+&lt;p&gt;Windows PCs equipped with Thunderbolt ports will have the driver and software installed by default, so typically this won’t be an issue; however, if you’re resetting the PC or creating a corporate image, you’ll need to install that software. Every OEM should supply Thunderbolt software for download, which for HP PCs is listed as &lt;strong&gt;Intel Thunderbolt 3 Secure Connect&lt;/strong&gt;. The software is actually provided by Intel and &lt;a href=&quot;https://downloadcenter.intel.com/search?keyword=thunderbolt&quot;&gt;available in various downloads on their site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;With the software installed and a device plugged in, the user sees a message box asking to approve the connection to a Thunderbolt device. Management actions such as approving or removing a device requires administrator rights on the PC. Pluggable has a good article on the entire &lt;a href=&quot;https://plugable.com/thunderbolt-3/support/&quot;&gt;user experience and troubleshooting&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-ApprovePopup.png&quot; alt=&quot;Approving connection to TB devices on Windows 10&quot; /&gt;&lt;em&gt;Approving connection to TB devices on Windows 10&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Once approved, the device can then be viewed and managed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-AttachedDevices.png&quot; alt=&quot;Viewing attached TB devices on Windows 10&quot; /&gt;&lt;em&gt;Viewing attached TB devices on Windows 10&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Of course, once plugged in, Windows sees the peripherals and connects to them as usual.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/Thunderbolt-WIndowsDevices.png&quot; alt=&quot;Peripherals plugged into a TB dock on Windows 10&quot; /&gt;&lt;em&gt;Peripherals plugged into a TB dock on Windows 10&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Thunderbolt on Windows isn’t as simple as it could be. It would be great to see drivers installed directly from Windows Update instead of being available separately, but once installed everything works as you would expect.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap-up&lt;/h2&gt;
+
+&lt;p&gt;Thunderbolt will unlikely see as wide spread adoption as USB 3.1, but users with specialised requirements such as video editors, CAD, etc., will benefit from the available bandwidth, which today is 40 Gbit/s vs. 10 Gbit/s. Early &lt;a href=&quot;https://www.tomshardware.com/news/usb-3.2-synopsys-20gbps,37124.html&quot;&gt;USB 3.2 hardware with 20 Gbit/s speeds has been demonstrated&lt;/a&gt; recently and this may further reduce the need for some users to go to devices providing the higher bandwidth.&lt;/p&gt;
+
+&lt;p&gt;The end-user experience of TB on macOS vs. Windows 10 is kind of disappointing - Windows requires that you install drivers and the software requires administrative rights. Not an ideal experience for home or SMB users and these requirements might preclude the usage of Thunderbolt in enterprise environments. However my own personal experience on a MacBook is pretty awesome - just plug in and go. Looks like I’ll be on macOS for the foreseeable future.&lt;/p&gt;
+
+&lt;h2 id=&quot;update&quot;&gt;Update&lt;/h2&gt;
+
+&lt;p&gt;Microsoft has an article on &lt;a href=&quot;https://docs.microsoft.com/en-au/windows/security/information-protection/kernel-dma-protection-for-thunderbolt&quot;&gt;enabling Kernel DMA Protection&lt;/a&gt; for Thunderbolt 3. This requires Windows 10 1803 or above and must also be supported by the device drivers.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="macOS" /><category term="Thunderbolt" /><category term="Windows" /><summary type="html">Thunderbolt 3 (and USB-C) are here to provide a single cable for everything, although your experience with this technology will differ depending on your choice of operating system. Here’s a quick look at the end-user experience of TB on macOS and Windows.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/wp-content/uploads/2018/08/linda-xu-366558-unsplash.jpg" /></entry><entry><title type="html">Thunderbolt 3 - One Cable to Rule Them All</title><link href="/thunderbolt-3/" rel="alternate" type="text/html" title="Thunderbolt 3 - One Cable to Rule Them All" /><published>2018-08-04T23:51:34+10:00</published><updated>2018-08-04T23:51:34+10:00</updated><id>/thunderbolt-3</id><content type="html" xml:base="/thunderbolt-3/">&lt;p&gt;Thunderbolt 3 and USB-C have arrived to make our life easier and more confusing all at the same time. The promise of a single cable that does everything is appealing but for the average consumer, knowing what to purchase is challenging. This article is a view into my research into Thunderbolt, USB-C and 4K monitors and what I’ve ultimately purchased.&lt;/p&gt;
+
+&lt;p&gt;In an effort to reduce the clutter on my desk and improve my viewing experience for work, I’ve invested in a Thunderbolt 3 dock and a 4K monitor. This article isn’t necessarily a review of this hardware - instead consider this a walkthrough of how I made these specific choices and my experiences with a Thunderbolt 3 dock. In a follow up article, I’ll discuss Thunderbolt and high HPI experiences on macOS and Windows.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-quest-for-less-clutter&quot;&gt;The Quest for Less Clutter&lt;/h2&gt;
+
+&lt;p&gt;I work primarily from home and given my job, I’m in front of a computer for extended periods; thus, I need a clean and neat workspace to be able to focus. I’m not great at keeping my workspace tidy as I should be, so anything I can do to reduce clutter on my desk has got to assist. This is where the right choice in hardware comes in - I run a 13″ &lt;a href=&quot;https://stealthpuppy.com/?s=macbook&quot;&gt;MacBook&lt;/a&gt; Pro that comes with four Thunderbolt ports, as my primary driver, so I have the opportunity to do everything through a single cable.&lt;/p&gt;
+
+&lt;p&gt;With the right solution, I should be able to run power to the laptop plus all other inputs and outputs from a Thunderbolt dock, providing me the ability to cleanly route cables (as much as I can). This also means that I can arrive at my desk or leave by pulling out or plugging in a single cable. Everything else I then need for travel remains in my backpack, requiring me to only transfer my laptop.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-hunt-for-more-pixels&quot;&gt;The Hunt for More Pixels&lt;/h2&gt;
+
+&lt;p&gt;After upgrading to the MacBook Pro last year (from the MacBook Air), the biggest impact to my daily experience has been the quality of the display. Crisp text, icons and high quality OS and application artefacts in both macOS and Windows 10 is a joy to use.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot; data-lang=&quot;en&quot;&gt;
+  &lt;p dir=&quot;ltr&quot; lang=&quot;en&quot;&gt;
+    Did I mention this screen is amazing? I never want to see a pixel again &lt;a href=&quot;https://twitter.com/hashtag/macbook?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#macbook&lt;/a&gt; &lt;a href=&quot;https://twitter.com/hashtag/apple?src=hash&amp;amp;ref_src=twsrc%5Etfw&quot;&gt;#apple&lt;/a&gt;
+  &lt;/p&gt;
+  
+  &lt;p&gt;
+    — Aaron Parker (@stealthpuppy) &lt;a href=&quot;https://twitter.com/stealthpuppy/status/892717333730308098?ref_src=twsrc%5Etfw&quot;&gt;August 2, 2017&lt;/a&gt;
+  &lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;So, for example, if I am looking to install to install the Network Policy and Access Server, in preparation for configuring Network Access Protection, I would install it via the following command:&lt;/p&gt;
+&lt;p&gt;I’m of course spoilt by having access to &lt;a href=&quot;https://support.apple.com/kb/SP755?locale=en_AU&quot;&gt;a MacBook display&lt;/a&gt;, but it’s driven me to want a similar experience from my external monitor. To that end, I’ve looked at adding a 4K display to my layout. I have been plugging into an external 1080p monitor for dual screen work and the difference in quality to a 4K display is noticeable.&lt;/p&gt;
 
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SERVERMANAGERCMD -install NPAS -restart
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;playing-hardware-roulette&quot;&gt;Playing Hardware Roulette&lt;/h2&gt;
 
-&lt;p&gt;If I am installing Terminal Server components on an existing server, I could run the following command to install the Terminal Server, Licensing and Session Broker components.&lt;/p&gt;
+&lt;p&gt;When I first started looking at simplifying my setup, I started with the monitor - originally I was looking at a USB-C or Thunderbolt monitor that could drive everything rather than the seperate dock and monitor that I’ve ended up with. The choices for USB-C monitors are still limited in 2018 and Thunderbolt even more so; however, it seems we’re at an inflection point with USB-C and I suspect that within 12-months, USB-C will be everywhere. Thunderbolt 3 is even appearing in a good number of PCs.&lt;/p&gt;
 
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SERVERMANAGERCMD -install TS-Terminal-Server,TS-Licensing,TS-Session-Broker -restart
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;To make a choice for what works for you, I would recommend starting with a display with a resolution and size that suits your needs, then consider ports and how you’ll connect it to your MacBook or PC. However, unless you can test your hardware choices you’re often playing roulette when purchasing tech devices, so relying on reviews and crossing my fingers is what I’ve done with this purchase.&lt;/p&gt;
 
-&lt;p&gt;To install the complete Remote Server Administration Tools (RSAT) on a Windows Server 2008 server, run this command (curiously this requires a restart):&lt;/p&gt;
+&lt;h3 id=&quot;pixels-be-gone&quot;&gt;Pixels Be Gone!&lt;/h3&gt;
 
-&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SERVERMANAGERCMD -install RSAT -allsubfeatures -restart
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;High resolution displays are moving beyond 1080p with 4K monitors being a common option for both PC displays and TVs. With a pixel density matched to the right physical size of the display you can have resolutions where it’s impossible to see individual pixels providing an outstanding visual feast.&lt;/p&gt;
 
-&lt;p&gt;Command line interaction with Server Manager also provides the ability to query what roles and features are installed on the server as well as export and import configurations via XML files. This is a great change from earlier versions of Windows and will help to reduce the time spent managing Windows Server 2008.&lt;/p&gt;
-
-&lt;p&gt;I’ve included here the complete list of roles and features that you can use with SERVERMANAGER.CMD and OCSETUP.EXE in Windows Server 2008 and Windows Server Core. Don’t reach for that GUI, real men (and women) use the command line.&lt;/p&gt;
-
-&lt;p&gt;Here’s something I really like: using SERVERMANAGERCMD -QUERY via Windows PowerShell makes seeing what’s installed on your server nice and simple (&lt;strong&gt;Update&lt;/strong&gt;: this works under Command Prompt too):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2008/02/query.png&quot; alt=&quot;Query&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For more information on Server Manager with PowerShell , read Marc van Orsouw’s post: &lt;a href=&quot;http://thepowershellguy.com/blogs/posh/archive/2007/05/23/dueling-command-lines-in-windows-server-2008-or-a-happy-end.aspx&quot;&gt;Dueling Command Lines in Windows Server 2008 ? .. or a happy end ?&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-about-server-core&quot;&gt;What About Server Core?&lt;/h3&gt;
-
-&lt;p&gt;Server Manager is not included in a Server Core installation. Subsequently the command line version is not installed either. Management of features and roles in Server Core is performed via OCSETUP and OCLIST. OCSETUP is the same tool &lt;a href=&quot;http://technet2.microsoft.com/WindowsVista/en/library/ced21f54-456d-4936-88a1-a0e42eea3ca31033.mspx?mfr=true&quot;&gt;included in Windows Vista&lt;/a&gt; for managing features and works the same way on Server Core.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately we don’t get the ability to save OCLIST’s output to XML for import to another server, but OCSETUP does provide an answer file option for automating the installation or removal of features.&lt;/p&gt;
-
-&lt;h3 id=&quot;more-reading&quot;&gt;More Reading&lt;/h3&gt;
+&lt;p&gt;Here’s two articles I recommend reading on the topic of displays and pixel density - while written primarily for a Mac audience, they’re still applicable to Windows PCs:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://edge.technet.com/Media/539/&quot;&gt;Server Manager Command Line in Windows Server 2008&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://technet2.microsoft.com/WindowsServer2008/en/library/e7edce1d-442c-4ec3-b324-c748e4f937551033.mspx#BKMK_cmdline&quot;&gt;Server Manager Command Line Syntax&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2007-05-17-service-pack-integration-issues-its-probably-something-simple.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T10:14:03+10:00</published><updated>2019-04-09T10:14:03+10:00</updated><id>/2019/04/09/2007-05-17-service-pack-integration-issues-its-probably-something-simple</id><content type="html" xml:base="/2019/04/09/2007-05-17-service-pack-integration-issues-its-probably-something-simple.html">&lt;p&gt;I was having some issues integrating Windows Server 2003 Service Pack 2 into a copy of Windows Server 2003 Enterprise R2 x64. The updater would keep reporting this error and bomb out:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;---------  
-Service Pack 2 Setup  
----------  
-Failed to copy some or all of the files necessary for integrated install.
-
-Please check that:  
-a) No network or copy errors occurred during the integration process  
-b) The format of the destination directory is correct.  
-The files to be integrated must reside in an i386 and/or ia64 or nec98 directory  
-(i.e. for an i386 share, if you typed &quot;update /s:c:\cdshare&quot;, the files must be in the c:\cdshare\i386 directory).  
----------  
-OK  
----------
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This stumped me for a bit, even after recopying the installation files from the CDs again and getting the same error. I then tried starting from stratch again and deleted the source files using the RD command. This command failed on a couple of files and to delete them I had to remove the Read Only attribute. So after recopying the source files and then removing the Read Only attribute for all the files, the Service Pack integration worked. It’s funny sometimes how the simple things can trip you up.&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2007-04-25-firefox-on-vista-doesnt-have-to-be-so-ugly.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T10:14:03+10:00</published><updated>2019-04-09T10:14:03+10:00</updated><id>/2019/04/09/2007-04-25-firefox-on-vista-doesnt-have-to-be-so-ugly</id><content type="html" xml:base="/2019/04/09/2007-04-25-firefox-on-vista-doesnt-have-to-be-so-ugly.html">&lt;p&gt;Because &lt;a href=&quot;http://www.codinghorror.com/blog/archives/000789.html&quot;&gt;non-native UI sucks&lt;/a&gt;, here’s a couple of extensions that help to make Firefox look much better on Windows Vista. These extensions mimic the Internet Explorer 7 interface, including the Windows Vista menus, making Firefox feel far more at home.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1338.VistaFirefox2.png&amp;quot;&quot; alt=&quot;Firefox&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Install &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/4129&quot;&gt;MyFireFox&lt;/a&gt; to get the Internet Explorer 7 skin&lt;/li&gt;
-  &lt;li&gt;Install &lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/4762&quot;&gt;Hide MenuBar&lt;/a&gt; to hide the menu bar and display it when you press the Alt key&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2007-03-13-windows-server-2003-sp2-whate28099s-in-it-for-terminal-servers.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T10:14:03+10:00</published><updated>2019-04-09T10:14:03+10:00</updated><id>/2019/04/09/2007-03-13-windows-server-2003-sp2-whate28099s-in-it-for-terminal-servers</id><content type="html" xml:base="/2019/04/09/2007-03-13-windows-server-2003-sp2-whate28099s-in-it-for-terminal-servers.html">&lt;p&gt;Now that &lt;a href=&quot;http://www.microsoft.com/technet/windowsserver/sp2.mspx&quot;&gt;Service Pack 2 for Windows Server 2003&lt;/a&gt; has been released, I thought that I would take a brief look at what’s new for Terminal Servers:&lt;/p&gt;
-
-&lt;h2 id=&quot;new-features&quot;&gt;New Features&lt;/h2&gt;
-
-&lt;p&gt;Microsoft have a page that details &lt;a href=&quot;http://www.microsoft.com/technet/windowsserver/sp2/top-reasons.mspx&quot;&gt;ten reasons to install Windows Server 2003 SP2&lt;/a&gt;, here’s some of the highlights that I think are great for Terminal Server environments:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.microsoft.com/snp&quot;&gt;Windows Server 2003 SP2 Scalable Networking Pack (SNP)&lt;/a&gt;: Improvements in networking to take advantages of high speed networks.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.microsoft.com/windowsserver/longhorn/deployment/services.mspx&quot;&gt;Windows Deployment Services (WDS)&lt;/a&gt;: WDS is a great way to deploy Windows Server 2003 using Windows PE. I’ve just completed a project where I used WDS so that I could take advantage of Windows PE 2.0.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/914841&quot;&gt;IPsec management updates&lt;/a&gt;: Updates to IPsec in Windows that makes it easier to implement &lt;a href=&quot;http://www.microsoft.com/sdisolation&quot;&gt;server and domain isolation&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Microsoft Management Console 3.0: Updates the MMC to the same version included with Windows Server 2003 R2.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.caseyliss.com/2017/5/17/retina-monitors&quot;&gt;Retina Monitors&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://bjango.com/articles/macexternaldisplays/&quot;&gt;Displays for designers and developers&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;updates&quot;&gt;Updates&lt;/h2&gt;
+&lt;p&gt;The short version is this - the aim of a ‘Retina’ display is that you don’t see individual pixels, so as the screen size increases, you need to increase resolution.  Sounds simple enough, but I think it’s easy to believe that a 4K 27″ display will give you retina quality, which is just not the case.&lt;/p&gt;
 
-&lt;p&gt;Microsoft has a complete &lt;a href=&quot;http://support.microsoft.com/kb/914962/en-us&quot;&gt;list of updates in SP2&lt;/a&gt; and 19 of them are Terminal Server specific:&lt;/p&gt;
+&lt;p&gt;So with the desire to improve my external display options, I needed to find the right monitor and look at how to connect to it.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/811211/&quot;&gt;Your multiprocessor Microsoft Windows 2000 Server-based computer or multiprocessor Windows Server 2003-based computer may stop responding, and the keyboard may not work correctly&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/896679/&quot;&gt;The shadow session is disconnected between two Web client computers that are running Windows Server 2003 or Windows XP&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/899266/&quot;&gt;Error message when you try to paste data into Excel 2003 during a Terminal Services session: “Cannot empty the clipboard”&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/899591/&quot;&gt;MS05-041: Vulnerability in Remote Desktop Protocol could allow denial of service&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/900090/&quot;&gt;Print spooling operation in Windows Server 2003-based Terminal Services (TS) computer is slow when Remote Desktop Connection thin clients use printer redirection&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/901115/&quot;&gt;A Terminal Services client computer may make beep sounds after you connect to a Windows Server 2003 Service Pack 1-based computer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/905687/&quot;&gt;A Windows Server 2003-based terminal server in a forest cannot obtain a license from a license server in a different forest&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/905888/&quot;&gt;A memory leak occurs in the Wmiprvse.exe process when a program calls an instance of the “CWin32_TerminalService::ExecQuery” function in Windows Server 2003&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/906207/&quot;&gt;Terminal Services Licensing Manager may stop when you add a new license on a computer that is running the Brazilian Portuguese version of Windows Server 2003&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/908011/&quot;&gt;You cannot use a Group Policy setting to set the same mandatory profile for all the Terminal Services users in Windows Server 2003&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/910088/&quot;&gt;The Terminal Server Licensing tool may unexpectedly quit after you install Windows Server 2003 Service Pack 1 on a Terminal Server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/911288/&quot;&gt;A client computer does not receive a permanent Per Device CAL from a Windows Server 2003-based license server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/911913/&quot;&gt;How to redirect the default printer of a Terminal Services client to a Windows Server 2003 Terminal Server session&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/913948/&quot;&gt;The session redirection function does not work correctly on Windows Server 2003-based servers that have Terminal Server enabled&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/914539/&quot;&gt;The Terminal Server object and the object of the Terminal Server session for a Windows Server 2003 Terminal Server are unavailable when you use Performance Monitor on a remote computer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/915947/&quot;&gt;You cannot connect to a Windows Server 2003-based terminal server when the Remote Desktop Web Connection ActiveX control screen resolution is higher than 1600 by 1200 pixels on a client computer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/916667/&quot;&gt;An IBM DB2 program stops responding on a Windows Server 2003-based computer that is running Terminal Services&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/917046/&quot;&gt;FIX: You cannot reconnect a Citrix ICA client to an instance of Citrix Presentation Server that is running on a Windows Server 2003 Service Pack 1-based computer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/918679/&quot;&gt;You cannot connect to a Windows Server 2003-based terminal server when the screen resolution for the Remote Desktop Web Connection ActiveX control is higher than 1600 by 1200 pixels&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/918679/&quot;&gt;Stop error message when a Terminal Services client logs off from a session on a server that is running Windows Server 2003 with Service Pack 1: “Stop 0x000000AB (SESSION_HAS_VALID_POOL_ON_EXIT)”&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h3 id=&quot;choosing-a-4k-display&quot;&gt;Choosing a 4K Display&lt;/h3&gt;
 
-&lt;p&gt;There are also 12 Intellimirror updates, two of which I had experienced in my most recent project:&lt;/p&gt;
+&lt;p&gt;LG provides two purpose built monitors for the Mac both of which come with trade offs and caveats if you want to support cross platform:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/919614/&quot;&gt;Users experience an 11-second delay in folder redirection when a Windows Server 2003 SP1-based computer that is running Terminal Services uses mandatory profiles&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://support.microsoft.com/kb/899409/&quot;&gt;You may experience a 20-second delay when you try to access a redirected folder by logging on to a Windows Server 2003 Service Pack 1-based computer or to a Windows XP Service Pack 2-based computer&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://www.apple.com/au/shop/product/HKMY2X/A/lg-ultrafine-4k-display&quot;&gt;LG Ultrafine 4K monitor&lt;/a&gt;. This 21.5″ monitor has an amazing display with full macOS support (given that it was built for the Mac), but the additional 3 USB-C ports are USB 2 speeds only. With the peripherals I need to drive as well, this would just require too many additional dongles. On top of the $1010 AUD, I’d need to account for the price of additional dongles&lt;/li&gt;
+  &lt;li&gt;The LG Ultrafine 5K monitor, this model does come with USB-C 3.1 ports, but to drive this display, you’ll need the 15″ MacBook Pro. It has the same number of USB-C outputs and the same issue with dongles if you have more than 3 peripherals to plug into it. This is the model I’ve seen in person and the display is outstanding&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;So there are plenty of reasons to deploy Service Pack 2 including &lt;a href=&quot;http://www.microsoft.com/technet/windowsserver/sp2/security-bulletins.mspx&quot;&gt;two years worth of security updates&lt;/a&gt;. For those of us who use unattended setups to deploy Terminal Servers, I recommend updating your source and redeploying your machines from scratch rather than update in place. For everyone else, Microsoft has &lt;a href=&quot;http://technet2.microsoft.com/WindowsServer/en/library/ed5382af-e819-4d33-ace0-225d31b7ab751033.mspx?mfr=true&quot;&gt;details for deployment&lt;/a&gt; up on TechNet;&lt;a href=&quot;http://technet2.microsoft.com/WindowsServer/en/library/ed5382af-e819-4d33-ace0-225d31b7ab751033.mspx?mfr=true&quot;&gt;Internet Explorer 7 before you install Service Pack 2&lt;/a&gt; (you &lt;a href=&quot;http://blogs.msdn.com/ie/archive/2007/03/15/windows-server-2003-service-pack-2-released.aspx&quot;&gt;don’t need to uninstall IE7&lt;/a&gt; before installing Service Pack 2).&lt;/p&gt;
+&lt;p&gt;Both of these monitors should in theory work with Windows devices, but given that all control is provided in software (built into macOS), they aren’t really going to be a monitor to consider if you’re on PC. There’s &lt;a href=&quot;https://www.youtube.com/results?search_query=lg+ultrafine&quot;&gt;plenty of reviews on these monitors&lt;/a&gt; if you’re interested.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyId=95AC1610-C232-4644-B828-C55EEC605D55&quot;&gt;Windows Server 2003 Service Pack 2 x86&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;There is &lt;a href=&quot;https://www.techradar.com/au/deals/the-best-usb-c-monitor-2018-the-best-deals-for-macbook-pro-and-windows-laptops&quot;&gt;a range of USB-C monitors available in 2018&lt;/a&gt; which typically start at 27″ and for anything reasonable, you’ll be paying $500 USD and up, but I had three drivers for a choice in monitor:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.microsoft.com/downloads/details.aspx?FamilyId=08FEC2F5-6E3B-4E0D-9314-646414D0A421&quot;&gt;Windows Server 2003 Service Pack 2 x64&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author></entry><entry><title type="html"></title><link href="/2019/04/09/2007-02-13-software-quality-whats-that.html" rel="alternate" type="text/html" title="" /><published>2019-04-09T10:14:03+10:00</published><updated>2019-04-09T10:14:03+10:00</updated><id>/2019/04/09/2007-02-13-software-quality-whats-that</id><content type="html" xml:base="/2019/04/09/2007-02-13-software-quality-whats-that.html">&lt;p&gt;I’ve seen some dumb software in my travels and &lt;a href=&quot;http://www.mercury.com/us/products/quality-center/&quot;&gt;Mercury Quality Center&lt;/a&gt; is no exception; however this one has got me scratching my head.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;A 4K resolution to get to a Retina display as close as possible&lt;/li&gt;
+  &lt;li&gt;Keep the size 24″ to match my existing 1080p monitor and not go above a physical size that would show individual pixels&lt;/li&gt;
+  &lt;li&gt;Desk space - dual 24″ monitors takes up almost my entire desk, so anything larger would force me back to a single monitor setup&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;Mercury Quality Center “provides a web-based system for &lt;em&gt;automated&lt;/em&gt; software quality testing and management”. It uses a browser front-end with ActiveX controls connecting to a back-end process (I really don’t know much about the back-end). Now, as you would expect from the product description, Mercury Quality Center should be a nice quality package from end to end. In my view this would include a scriptable client installation package. Scripting any client software installation is important because it should be a consistent repeatable process.&lt;/p&gt;
+&lt;p&gt;The choices of 24″ 4K monitors is even more limited and considering that I need to connect to it, I need to factor in the cost of a dock. Sticking with a 4K 24″ monitor should match the scaling of my existing monitor at 200%, so items should appear at exactly the same size, but four times the fidelity. However, I had no way of determining exactly how it would look before purchasing.&lt;/p&gt;
 
-&lt;p&gt;Except that’s where they strike out. The incredibly dumb thing about this is the client software is packaged up in an &lt;em&gt;InstallShield&lt;/em&gt; package which is only used to unpack some files and launch another custom installer. (See the screenshot). No silent install for you!&lt;/p&gt;
+&lt;h4 id=&quot;picking-the-right-cable&quot;&gt;Picking the Right Cable&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2007/02/1000.14.897.MercuryQualityCenterInstall.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;To drive a &lt;a href=&quot;https://thewirecutter.com/reviews/best-4k-monitors/&quot;&gt;4K monitor&lt;/a&gt;, you have a choice of &lt;a href=&quot;https://www.techadvisor.co.uk/feature/digital-home/displayport-vs-hdmi-3535257/&quot;&gt;DisplayPort or HDMI&lt;/a&gt;, but today, DisplayPort is your best choice - this might change soon though as HDMI 2.1 devices arrive. DisplayPort and HDMI are a bit of a mess right now with multiple versions that support different resolutions and frame rates. &lt;a href=&quot;https://en.wikipedia.org/wiki/HDMI#Version_2.0&quot;&gt;HDMI 2.0&lt;/a&gt; is needed at a minimum, but &lt;a href=&quot;https://en.wikipedia.org/wiki/DisplayPort#1.4&quot;&gt;DisplayPort 1.4&lt;/a&gt; is pretty common.&lt;/p&gt;
 
-&lt;p&gt;Who’s the dolt who created this? InstallShield’s not good enough to install your software? Surely quality software should extend to the installation experience as well? It makes you wonder.&lt;/p&gt;</content><author><name></name></author></entry></feed>
+&lt;p&gt;With DisplayPort though, keep in mind you’re likely to require &lt;a href=&quot;https://www.startech.com/au/faq/displayport_converter_dp_multi_mode&quot;&gt;an Active DisplayPort cable&lt;/a&gt; when connecting over DP from a dock. This might be monitor and dock dependant and there’s no guarantee that the DP cable that comes with your monitor is an Active cable.&lt;/p&gt;
+
+&lt;h3 id=&quot;thunderbolt-3-docks&quot;&gt;Thunderbolt 3 Docks&lt;/h3&gt;
+
+&lt;p&gt;At this point, I should probably explain my choice of Thunderbolt over USB-C - it comes down to bandwidth. Thunderbolt is capable of 40 Gbit/s, while USB 3.1 over USB-C has a 10 Gbit/s maximum throughput. To drive 4K and 1080p monitors, 1 Gbit/s ethernet, a USB microphone, scanner, audio and an external HDD, I need no bottlenecks over a single cable. I could possibly replace the 1080p monitor with another 4K, but I may be pushed the Intel GPU a bit far at that point. So Thunderbolt ensures that I have no issue with bandwidth for the foreseeable future.&lt;/p&gt;
+
+&lt;p&gt;Here’s a couple of great articles that test and compare various docks and I used these to inform my choice of dock.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Guidemaster: Picking the right Thunderbolt 3 or USB-C dock for your desk at &lt;a href=&quot;https://arstechnica.com/features/2018/07/guidemaster-how-to-navigate-the-tricky-world-of-thunderbolt-3-and-usb-c-docks/&quot;&gt;ArsTechnica&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The Best Thunderbolt 3 Docks at &lt;a href=&quot;https://thewirecutter.com/reviews/best-thunderbolt-dock/&quot;&gt;WireCutter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;thunderbolt-cable-considerations&quot;&gt;Thunderbolt Cable Considerations&lt;/h4&gt;
+
+&lt;p&gt;If you do go down the Thunderbolt route, be aware that it too has requirements on cables - if you go beyond a 50cm cable, the bandwidth will half and you need to source &lt;a href=&quot;https://blog.startech.com/post/thunderbolt-3-the-basics/&quot;&gt;an Active Thunderbolt cable&lt;/a&gt; to keep the 40 Gbit/s bandwidth. My recommendation is to stick with a 50cm cable if you can.&lt;/p&gt;
+
+&lt;h2 id=&quot;hardware-experiences&quot;&gt;Hardware Experiences&lt;/h2&gt;
+
+&lt;p&gt;So what is the experience or usability like? Here’s a quick overview of my chosen hardware.&lt;/p&gt;
+
+&lt;h3 id=&quot;caldigit-ts3-plus&quot;&gt;Caldigit TS3 Plus&lt;/h3&gt;
+
+&lt;p&gt;Picking a Thunderbolt 3 docks was fairly simple - ensure I have enough ports, including DisplayPort, and see what the reviews recommend. With that info in hand, I settled on the &lt;a href=&quot;http://www.caldigit.com/thunderbolt-3-dock/thunderbolt-station-3-plus/index-asia.asp&quot;&gt;Caldigit TS3 Plus&lt;/a&gt;. This dock has plenty of ports for all of the peripherals I need to plug into it, including DisplayPort and Ethernet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/Caldigit-TS3Plus-Ports.png&quot; alt=&quot;Ports on the Caldigit TS3Pro Thunderbolt 3 dock&quot; /&gt;&lt;em&gt;Ports on the Caldigit TS3Pro Thunderbolt 3 dock&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I have added &lt;a href=&quot;https://www.startech.com/au/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD&quot;&gt;a USB-C to HDMI adapter&lt;/a&gt; to connect my existing 1080p monitor. I’ve found StarTech adapters and cables to be good quality at reasonable prices. Interestingly, I’ve had to plug this into the second Thunderbolt port on the dock to get video out, so even though the dock as 2 USB 3.1 Type-C ports, only the second Thunderbolt port must support DP Alt Mode.&lt;/p&gt;
+
+&lt;p&gt;The dock came with a 50cm Thunderbolt 3 port and 85W output, thus the single cable powers my laptop and connects to all external peripherals. It’s a solid unit in brushed aluminium with a power supply larger than the device itself, which should hopefully assist with heat dissipation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/CaldiditTS3Plus-Size.jpg&quot; alt=&quot;Comparing the size of the Caldigit TS3 Plus&quot; /&gt;&lt;em&gt;The Caldigit TS3 Plus next to a 60W Apple power supply and its own external power supply&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Thunderbolt on macOS is plug-and-play and  I was able to unbox the dock and plug-in within a few minutes. I have the dock on top of my desk rather than mounting underneath for access to the SD card slot and front facing USB slot. The only change I would have liked to see would be to have the audio ports on the back of the unit to make routing cables easier.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Purchase&lt;/strong&gt;? Yes, absolutely.&lt;/p&gt;
+
+&lt;h3 id=&quot;dell-p2415q&quot;&gt;Dell P2415Q&lt;/h3&gt;
+
+&lt;p&gt;In 24″ 4K monitors I had basically two choices:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://www.lg.com/au/it-monitors/lg-24UD58-B&quot;&gt;LG 24UD58-B&lt;/a&gt;; and&lt;/li&gt;
+  &lt;li&gt;The &lt;a href=&quot;https://www.dell.com/en-au/work/shop/dell-24-ultra-hd-4k-monitor-p2415q/apd/210-anfp/monitors-monitor-accessories&quot;&gt;Dell P2415Q&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Based on reviews, an in-built USB hub and an optional speaker that attaches to the bottom of the monitor, I went with the Dell. It has bezels that are thicker than I’d like, but overall it provides a pretty good display. It’s not near the LG Ultrafine in quality, but it’s reasonable for the price. The difference in display quality due to the sheer number of pixels between this screen and the 1080p next to it, is huge.&lt;/p&gt;
+
+&lt;p&gt;The monitor comes with a cable with DisplayPort to Mini DisplayPort connectors, which I assume is to either reduce cost, or enable input from Dell PCs with Mini DisplayPort. Thankfully it has work OK, going from full size DisplayPort into the dock and Mini DisplayPort into the monitor. Presumably then, the cable is an Active cable. There are two more full size DisplayPort ports available, so I should be able to plug in my desktop PC in the future.&lt;/p&gt;
+
+&lt;p&gt;Scaling in macOS and Windows 10 works a treat and I’ll discuss that in more detail in another article; however, what concerned me before the purchase is exactly how macOS would scale on screen windows. Fortunately, the default scaling is spot on.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/Dell-P2415Q-DisplayOptions.png&quot; alt=&quot;Dell P2415Q scaling options on macOS&quot; /&gt;&lt;em&gt;Dell P2415Q scaling options on macOS&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;My audio inputs and outputs are now a little over the top:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/08/macOS-Audio-InputOutput.png&quot; alt=&quot;macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort&quot; /&gt;macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort*&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Purchase&lt;/strong&gt;? Maybe - this depends on your space requirements and budget. Whatever you purchase, keep in mind the capabilities of your GPU and how sharp you want windows and text to appear on screen. The larger the screen the more chance you’ll see pixels.&lt;/p&gt;
+
+&lt;h2 id=&quot;wrap-up&quot;&gt;Wrap-Up&lt;/h2&gt;
+
+&lt;p&gt;Overall, I’m very happy with this setup. I’ve had a chance to tidy my workspace by connecting to a single cable that does it all. While I’ve chosen Thunderbolt, USB-C might work for you and the options for doing so are increasing.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, this particular setup has worked well and does support both Mac and PC. I started with the intention to discuss the software side as well and compare the experience of macOS and Windows 10 for Thunderbolt and high DPI screens,  but that will now have to wait for a follow up.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="4K" /><category term="Caldigit" /><category term="Thunderbolt" /><summary type="html">Thunderbolt 3 and USB-C have arrived to make our life easier and more confusing all at the same time. The promise of a single cable that does everything is appealing but for the average consumer, knowing what to purchase is challenging. This article is a view into my research into Thunderbolt, USB-C and 4K monitors and what I’ve ultimately purchased.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/wp-content/uploads/2018/08/angela-compagnone-371298-unsplash.jpg" /></entry><entry><title type="html">Adobe Reader DC deployment with Microsoft Intune Part 2</title><link href="/deploy-adobe-reader-dc-intune-part2/" rel="alternate" type="text/html" title="Adobe Reader DC deployment with Microsoft Intune Part 2" /><published>2018-07-22T21:36:58+10:00</published><updated>2018-07-22T21:36:58+10:00</updated><id>/deploy-adobe-reader-dc-intune-part2</id><content type="html" xml:base="/deploy-adobe-reader-dc-intune-part2/">&lt;p&gt;In &lt;a href=&quot;https://stealthpuppy.com/deploy-adobe-reader-dc-microsoft-intune-part1/&quot;&gt;the previous article&lt;/a&gt; we saw how to customise the Adobe Reader DC installation and deploy it via Microsoft Intune. Now that it’s installed on Windows 10 end-points let’s look at how updates work.&lt;/p&gt;
+
+&lt;p&gt;First though, it’s important to point out that the version of Adobe Reader DC deployed from the single file Windows Installer is &lt;strong&gt;2015.07.20033&lt;/strong&gt;, while the version that is &lt;a href=&quot;https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html&quot;&gt;current as of July 2018 is &lt;strong&gt;2018.011.20055&lt;/strong&gt;&lt;/a&gt;. The deployed version then is &lt;em&gt;extremely&lt;/em&gt; out of date, and given that Intune cannot deploy Windows Installer Patch (MSP) files directly, the end-point needs to rely on the Adobe Acrobat update service to download and install updates.&lt;/p&gt;
+
+&lt;h1 id=&quot;updating-adobe-reader-dc&quot;&gt;Updating Adobe Reader DC&lt;/h1&gt;
+
+&lt;p&gt;Adobe Reader (and Acrobat) installs the &lt;strong&gt;Adobe Acrobat Update Service&lt;/strong&gt;. On typical enterprise PCs or virtual desktop environments this service may not be desirable, because updates are managed by Configuration Manager or monthly image updates. On a Windows 10 desktop deployed modern management style, it can be up to the device to ensure the OS and applications are kept up to date; thus, this service should remain enabled on those end-points.&lt;/p&gt;
+
+&lt;p&gt;The updater is actually two components - the Update service and a scheduled task that runs ‘C:\Program Files (x86)\Common Files\Adobe\ARM\1.0\AdobeARM.exe’ to check for, download and install updates.&lt;/p&gt;
+
+&lt;p&gt;The task has two triggers - one after user logon, but with a delay of 12 minutes, and the other at a scheduled time that is possibly different per device. Here’s the scheduled task:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png&quot; alt=&quot;Adobe Acrobat Update Task&quot; /&gt;&lt;em&gt;Adobe Acrobat Update Task&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn’t exhaustive), it would take more than that to download an update and I resorted to using the ‘Check for Updates’ option from within Adobe Reader manually.&lt;/p&gt;
+
+&lt;h2 id=&quot;update-process&quot;&gt;Update Process&lt;/h2&gt;
+
+&lt;p&gt;Downloading and installing updates does not unfortunately go straight to the latest version. In my testing, my target PCs downloaded an intermediate update to &lt;strong&gt;2015.023.20070&lt;/strong&gt; before the second update to &lt;strong&gt;2018.011.20055&lt;/strong&gt;. This means that in the real world, it could be several days before a PC has the most recent version installed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png&quot; alt=&quot;Adobe Reader DC - An update is available&quot; /&gt;&lt;em&gt;Adobe Reader DC - An update is available&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Fortunately, the updates are downloaded and installed without user intervention, meaning that the update process works for users &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/user-driven&quot;&gt;without administrative rights to their PC&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;to-deploy-or-not-deploy&quot;&gt;To Deploy or Not Deploy&lt;/h1&gt;
+
+&lt;p&gt;So understanding that to deploy Adobe Reader DC via Microsoft Intune requires deploying a version that is more than 3 years old and relying on the end-point to download and install updates, the question that should be asked - should you deploy Adobe Reader to Windows 10 machines via Microsoft Intune?&lt;/p&gt;
+
+&lt;p&gt;Here’s what you should consider:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Many organisations prefer Adobe Reader over 3rd party PDF readers for first party features and support.&lt;/li&gt;
+  &lt;li&gt;Of the top 50 Windows desktop applications in 2018, Adobe Reader had the most vulnerabilities (source: &lt;a href=&quot;https://info.flexerasoftware.com/SVM-WP-Vulnerability-Review-2018-Desktop-Apps&quot;&gt;Flexera&lt;/a&gt;), beaten only by Windows itself. If the option is to install an old version of Adobe Reader and rely on the automatic updater on the end-point to install the latest version, the time to update may be unacceptable for some organisations&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://allthingscloud.blog/install-adobe-reader-dc-with-intune-and-powershell/&quot;&gt;PowerShell can be used to deploy Adobe Reader&lt;/a&gt; to Windows 10 PCs via Intune; however, this does not allow for user self-service installs and will require building in logic to account for failures in network connectivity during the download or retrying the installation if it were to fail&lt;/li&gt;
+  &lt;li&gt;Windows 10 includes a capable PDF Reader in Microsoft Edge and other browsers also implement native PDF viewing features&lt;/li&gt;
+  &lt;li&gt;Other PDF readers are available from the Microsoft Store, so it is possible to deploy and keep a PDF reader up to date simpler than the process I’ve outlined in these articles; however, many of these are less than ideal - the UI is often not great and many have up sell features built into them&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
+
+&lt;p&gt;In &lt;a href=&quot;https://stealthpuppy.com/deploy-adobe-reader-dc-microsoft-intune-part1/&quot;&gt;these articles&lt;/a&gt;, I’ve demonstrated how to package and deploy Adobe Reader DC as a native application via Microsoft Intune, while relying on the automatic updater installed by the application for an end-point to keep Reader up to date. This approach allows you to deploy Adobe Reader in the same way as other &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/lob-apps-windows&quot;&gt;line-of-business applications&lt;/a&gt; for required or optional user-driven installs and then reporting in the Intune console.&lt;/p&gt;
+
+&lt;p&gt;Because Adobe haven’t released a newer version of the single file Windows Installer for Adobe Reader, you should consider carefully whether this approach is right for your organisation. Deployment of an old version of a high-target, popular application on Windows with the highest number of patched vulnerabilities is probably not a great idea. You might though have good reason to deploy it for features that your users require.&lt;/p&gt;
+
+&lt;p&gt;So what can you do if you need to deploy it?&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make it an optional user-driven install and make most users rely on the PDF viewer built into their browser&lt;/li&gt;
+  &lt;li&gt;Deploy via PowerShell if you want to enforce the install on end-points (this could be targeted by Azure AD groups)&lt;/li&gt;
+  &lt;li&gt;Look at alternatives readers from the Store&lt;/li&gt;
+  &lt;li&gt;Request Adobe update their installer or make Adobe Reader available from the Microsoft Store&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I would prefer install from the Store but that will require enough organisations asking for this feature. &lt;a href=&quot;https://www.adobe.com/products/wishform.html&quot;&gt;Adobe has a Feature Request form&lt;/a&gt; and I would encourage you to use it.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="Adobe" /><category term="Adobe Reader" /><category term="Adobe Reader DC" /><category term="Intune" /><summary type="html">In the previous article we saw how to customise the Adobe Reader DC installation and deploy it via Microsoft Intune. Now that it’s installed on Windows 10 end-points let’s look at how updates work.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/wp-content/uploads/2018/07/russ-mccabe-5461-unsplash.jpg" /></entry><entry><title type="html">Adobe Reader DC deployment with Microsoft Intune Part 1</title><link href="/deploy-adobe-reader-dc-microsoft-intune-part1/" rel="alternate" type="text/html" title="Adobe Reader DC deployment with Microsoft Intune Part 1" /><published>2018-07-20T20:44:19+10:00</published><updated>2018-07-20T20:44:19+10:00</updated><id>/deploy-adobe-reader-dc-microsoft-intune-part1</id><content type="html" xml:base="/deploy-adobe-reader-dc-microsoft-intune-part1/">&lt;p&gt;Adobe Reader is of course one of the most common applications on Windows desktops and if you’re moving to a Modern Management approach you’re likely looking at how to deploy Adobe Reader DC to Windows 10 via Microsoft Intune.&lt;/p&gt;
+
+&lt;p&gt;This is a challenge today because Adobe Reader DC comes as an executable, that while it can be extracted for the MSI, it includes support files that cannot be deployed via Intune. Microsoft only enables Windows desktop applications to be &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/lob-apps-windows&quot;&gt;deployed from Intune where the installer is contained in a single file Windows Installer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;adobe-reader-dc-executable-installer&quot;&gt;Adobe Reader DC Executable Installer&lt;/h1&gt;
+
+&lt;p&gt;The Adobe Reader installer hasn’t changed much since as long &lt;a href=&quot;https://stealthpuppy.com/tag/adobe/&quot;&gt;as I’ve been writing about it&lt;/a&gt; (which has been way too long). What is different with Adobe Reader DC is that Adobe has moved to an evergreen model whereby they’re largely moved away from major releases and instead &lt;a href=&quot;https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/whatsnewdc.html#continuous-vs-classic-comparison&quot;&gt;now deliver a continuous release cycle&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://get.adobe.com/reader/enterprise/&quot;&gt;current installer&lt;/a&gt; for Adobe Reader DC is a single executable that can run as is, or can be extracted for &lt;a href=&quot;https://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/index.html&quot;&gt;customisation typical of enterprise environments&lt;/a&gt;. When extracted it looks like this:&lt;/p&gt;
+
+&lt;figure id=&quot;attachment_6035&quot; aria-describedby=&quot;caption-attachment-6035&quot; style=&quot;width: 2190px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6035&quot; src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-ExtractedFiles.png&quot; alt=&quot;Adobe Reader DC extracted files&quot; width=&quot;2190&quot; height=&quot;965&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-ExtractedFiles.png 2190w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-ExtractedFiles-150x66.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-ExtractedFiles-300x132.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-ExtractedFiles-768x338.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-ExtractedFiles-1024x451.png 1024w&quot; sizes=&quot;(max-width: 2190px) 100vw, 2190px&quot; /&gt;](https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-ExtractedFiles.png)&lt;figcaption id=&quot;caption-attachment-6035&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Reader DC extracted files*
+
+This just won't work for deployment via Intune or the Windows 10 MDM channel. We need that single Windows Installer file. Better yet, we need Adobe to make Reader DC available via the Windows Store, but that's a topic for another article.
+
+# Adobe Reader Windows Installer
+
+[Adobe does make a single file Windows Installer available](ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/) for Adobe Reader DC, in various languages; however, the file was released in 2015 and unfortunately they've not updated it since. There has been several major releases and updates since March 2005.
+
+&lt;figure id=&quot;attachment_6037&quot; aria-describedby=&quot;caption-attachment-6037&quot; style=&quot;width: 1768px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6037&quot; src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReader-FTPdownloads.png&quot; alt=&quot;Adobe Reader DC single file Windows Installer on the public FTP site&quot; width=&quot;1768&quot; height=&quot;976&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReader-FTPdownloads.png 1768w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReader-FTPdownloads-150x83.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReader-FTPdownloads-300x166.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReader-FTPdownloads-768x424.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReader-FTPdownloads-1024x565.png 1024w&quot; sizes=&quot;(max-width: 1768px) 100vw, 1768px&quot; /&gt;](https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReader-FTPdownloads.png)&lt;figcaption id=&quot;caption-attachment-6037&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Reader DC single file Windows Installer on the public FTP site*
+
+So, now we have a way to deploy the file, let's see how to customise it and deploy via Intune.
+
+## Customising the Installer
+
+Customisation of the Adobe Reader installer for [enterprise deployment is well documented](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/index.html) and [I've written about previous versions several times](https://stealthpuppy.com/adobe-reader-xi-deployment/). The same process applies but pay attention to [any version specific settings](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/index.html).
+
+Just like previous versions, you use the [Adobe Customization Wizard](https://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/WizardDC/index.html) to customise the installer for your needs and deploy a custom package.
+
+&lt;figure id=&quot;attachment_6040&quot; aria-describedby=&quot;caption-attachment-6040&quot; style=&quot;width: 2212px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6040&quot; src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-CustomizationWizard.png&quot; alt=&quot;Adobe Customization Wizard DC&quot; width=&quot;2212&quot; height=&quot;1206&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-CustomizationWizard.png 2212w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-CustomizationWizard-150x82.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-CustomizationWizard-300x164.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-CustomizationWizard-768x419.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-CustomizationWizard-1024x558.png 1024w&quot; sizes=&quot;(max-width: 2212px) 100vw, 2212px&quot; /&gt;](https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-CustomizationWizard.png)&lt;figcaption id=&quot;caption-attachment-6040&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Customization Wizard DC*
+
+However, we can't customise the single file Windows Installer directly because when saving the customisations, we get this:
+
+&lt;figure id=&quot;attachment_6041&quot; aria-describedby=&quot;caption-attachment-6041&quot; style=&quot;width: 2212px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6041&quot; src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-SetupIniNotFound.png&quot; alt=&quot;Adobe Customization Wizard DC - setup.ini was not found&quot; width=&quot;2212&quot; height=&quot;1206&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-SetupIniNotFound.png 2212w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-SetupIniNotFound-150x82.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-SetupIniNotFound-300x164.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-SetupIniNotFound-768x419.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-SetupIniNotFound-1024x558.png 1024w&quot; sizes=&quot;(max-width: 2212px) 100vw, 2212px&quot; /&gt;](https://stealthpuppy.com/wp-content/uploads/2018/07/ReaderDC-SetupIniNotFound.png)&lt;figcaption id=&quot;caption-attachment-6041&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Customization Wizard DC - setup.ini was not found*
+
+To customise the installer, we need to use a 3 step process:
+
+  1. Download and [extract](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/basics.html#expanding-exe-packages) Adobe Reader DC executable installer
+  2. [Create a custom transform](https://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/WizardDC/deployment.html) for this installer
+  3. Apply the transform to the single file Windows Installer, so that the customisations are embedded into the installer. [InstEd It! is a great free MSI editor](http://www.instedit.com/download.html) to do that
+
+I won't go into a detailed step-by-step on how to use the Adobe Customization Wizard here because the documentation is detailed enough, but I will include a list of options I recommend you embed into the installer. There are some additional defaults and you may have specific options applicable to your environment.
+
+[table id=46 /]
+
+As I've listed in the table, it's important to keep the Adobe Updater enabled, so that once Reader is deployed via Intune, end-points can manage updates themselves. I'll cover more on updates in the next article.
+
+Now that you have a customised single file Windows Installer for Adobe Reader DC, you can [import that into Microsoft Intune](https://docs.microsoft.com/en-us/intune/lob-apps-windows), and make it available for deployment.
+
+&lt;figure id=&quot;attachment_6044&quot; aria-describedby=&quot;caption-attachment-6044&quot; style=&quot;width: 2880px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6044&quot; src=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-Installed.png&quot; alt=&quot;Adobe Reader DC installed via Intune&quot; width=&quot;2880&quot; height=&quot;1800&quot; srcset=&quot;https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-Installed.png 2880w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-Installed-150x94.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-Installed-300x188.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-Installed-768x480.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-Installed-1024x640.png 1024w&quot; sizes=&quot;(max-width: 2880px) 100vw, 2880px&quot; /&gt;](https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-Installed.png)&lt;figcaption id=&quot;caption-attachment-6044&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Reader DC installed via Intune*
+
+# Summary
+
+In this article, I've taken a look at how to deploy Adobe Reader DC as a mobile application for Windows 10 devices enrolled in Microsoft Intune via MDM by creating a customised package based on a single file Windows Installer.
+
+[In part 2, I'll take a look at how Adobe Reader is updated](https://stealthpuppy.com/deploy-adobe-reader-dc-intune-part2/) post-deployment and discuss whether this type of deployment is the right approach. There are other options and ideally I'd like to see Adobe make Reader DC available via the Microsoft Store.
+&lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;</content><author><name>Aaron Parker</name></author><category term="Adobe" /><category term="Adobe Reader" /><category term="Adobe Reader DC" /><category term="Intune" /><summary type="html">Adobe Reader is of course one of the most common applications on Windows desktops and if you’re moving to a Modern Management approach you’re likely looking at how to deploy Adobe Reader DC to Windows 10 via Microsoft Intune.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/wp-content/uploads/2018/07/larry-costales-523576-unsplash.jpg" /></entry></feed>
