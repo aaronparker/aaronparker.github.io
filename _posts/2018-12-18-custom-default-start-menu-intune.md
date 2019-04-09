@@ -8,7 +8,7 @@ guid: https://stealthpuppy.com/?p=6216
 permalink: /custom-default-start-menu-intune/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2018/12/Windows10ProDefaultStartMenu1080.png
+image: media/2018/12/Windows10ProDefaultStartMenu1080.png
 categories:
   - Microsoft
 tags:
@@ -20,7 +20,7 @@ The promise of a modern management approach to deployment and management of Wind
 
 The default Start menu, especially on Windows 10 Pro, is far from enterprise ready right? Take a look at this mess:
 
-![Windows 10 Pro 1809 default Start menu]({{site.baseurl}}/media/2018/12/StartMenu-1024x717.png)*Windows 10 Pro 1809 default Start menu*
+![Windows 10 Pro 1809 default Start menu]({{site.baseurl}}/media/2018/12/StartMenu.png)*Windows 10 Pro 1809 default Start menu*
 
 Over-the-air provisioning of PCs via Windows AutoPilot & Azure AD, Microsoft Intune (or insert your MDM solution here), limits the possibilities of customising the target PC before the user logs on. The administrator can [define a Start menu](https://docs.microsoft.com/en-us/windows/configuration/customize-windows-10-start-screens-by-using-mobile-device-management), but that's a policy, not a preference. One size does not fit all, and users should be able to customise the Start menu to suit their style. 
 
