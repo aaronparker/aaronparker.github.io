@@ -66,7 +66,7 @@ Error code: 42012E-0B20490E-00002015</p>
 
 <p>You might think this long-winded but it works pretty well. I have noticed however that attempting to launch the application from the same elevated Explorer window results in the application hanging at launch. Quite odd.</p>
 
-<p>Finally, you have a third option available to you now - update to <a href="http://support.microsoft.com/kb/941408">the latest SoftGrid client</a> and package your application with the <a href="https://stealthpuppy.com/off-site-news/msi-utility-for-microsoft-application-virtualization-available">MSI Utility for Microsoft Application Virtualization</a>, then load the application via Windows Installer. Note, to do this you will need to set the following registry DWORD value to 0, when using version 4.2.x and <a href="https://stealthpuppy.com/virtualisation/enable-streaming-from-file-in-softgrid-45">this method</a> when using version 4.5.</p>
+<p>Finally, you have a third option available to you now - update to <a href="http://support.microsoft.com/kb/941408">the latest SoftGrid client</a> and package your application with the <a href="/off-site-news/msi-utility-for-microsoft-application-virtualization-available">MSI Utility for Microsoft Application Virtualization</a>, then load the application via Windows Installer. Note, to do this you will need to set the following registry DWORD value to 0, when using version 4.2.x and <a href="/virtualisation/enable-streaming-from-file-in-softgrid-45">this method</a> when using version 4.5.</p>
 
 <p>[quickcode:noclick]HKLM\SOFTWARE\Softricity\SoftGrid Client\CurrentVersion\Configuration\RequireAuthorizationIfCached[/quickcode]</p>
 

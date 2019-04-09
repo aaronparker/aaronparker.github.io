@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img src="https://stealthpuppy.com/media/2008/04/offlinestartmenu.png" border="0" alt="OfflineStartMenu" width="124" height="113" align="left" /> <a href="http://www.gilham.org/Blog/default.aspx">John</a> has <a href="https://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration#comment-13345">asked</a> about using Offline Files as a method of fault tolerance instead of DFS on <a href="https://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration">my previous post</a>. Sounds like a great blog post (and it gives my an excuse to avoid my eight other draft posts), so here’s my answer:</p>
+    <p><img src="https://stealthpuppy.com/media/2008/04/offlinestartmenu.png" border="0" alt="OfflineStartMenu" width="124" height="113" align="left" /> <a href="http://www.gilham.org/Blog/default.aspx">John</a> has <a href="/terminal-server/building-dynamic-start-menus-with-access-based-enumeration#comment-13345">asked</a> about using Offline Files as a method of fault tolerance instead of DFS on <a href="/terminal-server/building-dynamic-start-menus-with-access-based-enumeration">my previous post</a>. Sounds like a great blog post (and it gives my an excuse to avoid my eight other draft posts), so here’s my answer:</p>
 
 <p>First up, I would not rely on Offline Files as a method of fault tolerance. It will work as a solution for laptops operating disconnected from the network, but won’t provide effective fault tolerance. Offline Files are also not available on Terminal Server.</p>
 
@@ -56,13 +56,13 @@
 
 <p>I spent some time this evening to configure a redirected Start Menu for Windows Vista laptops in my test environment. Here’s my notes for recreating this setup and how it went:</p>
 
-<p>This is very similar to redirected <a href="https://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration">Start Menus for Terminal Servers</a> with some minor differences.</p>
+<p>This is very similar to redirected <a href="/terminal-server/building-dynamic-start-menus-with-access-based-enumeration">Start Menus for Terminal Servers</a> with some minor differences.</p>
 
 <p>Create a GPO linked to the OU that contains your target workstations and enable Group Policy loopback mode. You would generally target similarly configured workstations just like you would do for Terminal Servers. In my test environment I’m configuring this for Windows Vista, I’ve enabled a WMI filter on this GPO so that it only applies to Vista and above:</p>
 
 <p>[code]SELECT Version FROM Win32_OperatingSystem WHERE Version &gt;= ‘6’[/code]</p>
 
-<p>Edit the GPO and enable these settings (here’s the <a href="https://stealthpuppy.com/media/2008/04/WindowsVistaStartMenu.htm">full GPO report</a>):</p>
+<p>Edit the GPO and enable these settings (here’s the <a href="/media/2008/04/WindowsVistaStartMenu.htm">full GPO report</a>):</p>
 
 <ul>
   <li>Computer Configuration / Administrative Templates / System / Group Policy / User Group Policy loopback processing mode</li>
@@ -76,7 +76,7 @@
 
 <p>The last setting will ensure that the Start Menu will be cached by the workstation and available to the user offline. Here’s my configured folder which has been cached locally:</p>
 
-<p><a href="https://stealthpuppy.com/media/2008/04/windowsvistastartmenu.png"><img src="https://stealthpuppy.com/media/2008/04/windowsvistastartmenu-thumb.png" border="0" alt="WindowsVistaStartMenu" width="686" height="479" /></a></p>
+<p><a href="/media/2008/04/windowsvistastartmenu.png"><img src="https://stealthpuppy.com/media/2008/04/windowsvistastartmenu-thumb.png" border="0" alt="WindowsVistaStartMenu" width="686" height="479" /></a></p>
 
 <p>Make sure you configure your Start Menus with access-based enumeration and the right permissions before users access them. If you don’t and users’ workstations cache the shortcuts, you might end up unavailable shortcuts looking like this:</p>
 

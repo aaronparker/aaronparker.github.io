@@ -91,7 +91,7 @@
 
 <p>Go to the Component table and create a new entry. This will require a unique name (I’ve used <em>AppVShellValues</em>) and GUID - your MSI editor should be able to generate the GUID for you.</p>
 
-<p><a href="https://stealthpuppy.com/media/2011/04/Component-Table.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Component-Table" border="0" alt="Component-Table" src="https://stealthpuppy.com/media/2011/04/Component-Table_thumb.png" width="660" height="382" /></a></p>
+<p><a href="/media/2011/04/Component-Table.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Component-Table" border="0" alt="Component-Table" src="https://stealthpuppy.com/media/2011/04/Component-Table_thumb.png" width="660" height="382" /></a></p>
 
 <h3 id="registry-table">Registry Table</h3>
 
@@ -118,13 +118,13 @@
   <li>The rest of the command is what is passed to the application by SFTTRAY.EXE</li>
 </ul>
 
-<p><a href="https://stealthpuppy.com/media/2011/04/Registry-Table.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Registry-Table" border="0" alt="Registry-Table" src="https://stealthpuppy.com/media/2011/04/Registry-Table_thumb.png" width="660" height="382" /></a></p>
+<p><a href="/media/2011/04/Registry-Table.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Registry-Table" border="0" alt="Registry-Table" src="https://stealthpuppy.com/media/2011/04/Registry-Table_thumb.png" width="660" height="382" /></a></p>
 
 <h3 id="featurecomponents-table">FeatureComponents Table</h3>
 
 <p>Add a new entry to the FeatureComponents table - use <em>VirtualApp</em> in the Feature_ column and select the same component used in the previous tables in the Component_ column</p>
 
-<p><a href="https://stealthpuppy.com/media/2011/04/FeatureComponents-Table.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="FeatureComponents-Table" border="0" alt="FeatureComponents-Table" src="https://stealthpuppy.com/media/2011/04/FeatureComponents-Table_thumb.png" width="660" height="382" /></a></p>
+<p><a href="/media/2011/04/FeatureComponents-Table.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="FeatureComponents-Table" border="0" alt="FeatureComponents-Table" src="https://stealthpuppy.com/media/2011/04/FeatureComponents-Table_thumb.png" width="660" height="382" /></a></p>
 
 <h3 id="installexecutesequence-table">InstallExecuteSequence Table</h3>
 
@@ -132,7 +132,7 @@
 
 <p>To change the sequence find the <em>WriteRegistryValues</em> entry which will have a Sequence value of <em>5000</em>. Change this value to <em>6580</em> which will ensure that our custom Registry entries are added after the package is added and loaded but before the installer completes its finalize tasks.</p>
 
-<p><a href="https://stealthpuppy.com/media/2011/04/InstallExecuteSequence-Table.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="InstallExecuteSequence-Table" border="0" alt="InstallExecuteSequence-Table" src="https://stealthpuppy.com/media/2011/04/InstallExecuteSequence-Table_thumb.png" width="660" height="382" /></a></p>
+<p><a href="/media/2011/04/InstallExecuteSequence-Table.png"><img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="InstallExecuteSequence-Table" border="0" alt="InstallExecuteSequence-Table" src="https://stealthpuppy.com/media/2011/04/InstallExecuteSequence-Table_thumb.png" width="660" height="382" /></a></p>
 
 <h3 id="install-the-package">Install the Package</h3>
 

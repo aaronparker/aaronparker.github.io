@@ -47,7 +47,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>In <a href="https://stealthpuppy.com/deploy-adobe-reader-dc-microsoft-intune-part1/">the previous article</a> we saw how to customise the Adobe Reader DC installation and deploy it via Microsoft Intune. Now that it’s installed on Windows 10 end-points let’s look at how updates work.</p>
+    <p>In <a href="/deploy-adobe-reader-dc-microsoft-intune-part1/">the previous article</a> we saw how to customise the Adobe Reader DC installation and deploy it via Microsoft Intune. Now that it’s installed on Windows 10 end-points let’s look at how updates work.</p>
 
 <p>First though, it’s important to point out that the version of Adobe Reader DC deployed from the single file Windows Installer is <strong>2015.07.20033</strong>, while the version that is <a href="https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html">current as of July 2018 is <strong>2018.011.20055</strong></a>. The deployed version then is <em>extremely</em> out of date, and given that Intune cannot deploy Windows Installer Patch (MSP) files directly, the end-point needs to rely on the Adobe Acrobat update service to download and install updates.</p>
 
@@ -59,7 +59,7 @@
 
 <p>The task has two triggers - one after user logon, but with a delay of 12 minutes, and the other at a scheduled time that is possibly different per device. Here’s the scheduled task:</p>
 
-<p><img src="https://stealthpuppy.com/media/2018/07/AdobeReaderDC-UpdateTask.png" alt="Adobe Acrobat Update Task" /><em>Adobe Acrobat Update Task</em></p>
+<p><img src="/media/2018/07/AdobeReaderDC-UpdateTask.png" alt="Adobe Acrobat Update Task" /><em>Adobe Acrobat Update Task</em></p>
 
 <p>In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn’t exhaustive), it would take more than that to download an update and I resorted to using the ‘Check for Updates’ option from within Adobe Reader manually.</p>
 
@@ -67,7 +67,7 @@
 
 <p>Downloading and installing updates does not unfortunately go straight to the latest version. In my testing, my target PCs downloaded an intermediate update to <strong>2015.023.20070</strong> before the second update to <strong>2018.011.20055</strong>. This means that in the real world, it could be several days before a PC has the most recent version installed.</p>
 
-<p><img src="https://stealthpuppy.com/media/2018/07/AdobeReaderDC-1500720033.png" alt="Adobe Reader DC - An update is available" /><em>Adobe Reader DC - An update is available</em></p>
+<p><img src="/media/2018/07/AdobeReaderDC-1500720033.png" alt="Adobe Reader DC - An update is available" /><em>Adobe Reader DC - An update is available</em></p>
 
 <p>Fortunately, the updates are downloaded and installed without user intervention, meaning that the update process works for users <a href="https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/user-driven">without administrative rights to their PC</a>.</p>
 
@@ -87,7 +87,7 @@
 
 <h1 id="summary">Summary</h1>
 
-<p>In <a href="https://stealthpuppy.com/deploy-adobe-reader-dc-microsoft-intune-part1/">these articles</a>, I’ve demonstrated how to package and deploy Adobe Reader DC as a native application via Microsoft Intune, while relying on the automatic updater installed by the application for an end-point to keep Reader up to date. This approach allows you to deploy Adobe Reader in the same way as other <a href="https://docs.microsoft.com/en-us/intune/lob-apps-windows">line-of-business applications</a> for required or optional user-driven installs and then reporting in the Intune console.</p>
+<p>In <a href="/deploy-adobe-reader-dc-microsoft-intune-part1/">these articles</a>, I’ve demonstrated how to package and deploy Adobe Reader DC as a native application via Microsoft Intune, while relying on the automatic updater installed by the application for an end-point to keep Reader up to date. This approach allows you to deploy Adobe Reader in the same way as other <a href="https://docs.microsoft.com/en-us/intune/lob-apps-windows">line-of-business applications</a> for required or optional user-driven installs and then reporting in the Intune console.</p>
 
 <p>Because Adobe haven’t released a newer version of the single file Windows Installer for Adobe Reader, you should consider carefully whether this approach is right for your organisation. Deployment of an old version of a high-target, popular application on Windows with the highest number of patched vulnerabilities is probably not a great idea. You might though have good reason to deploy it for features that your users require.</p>
 

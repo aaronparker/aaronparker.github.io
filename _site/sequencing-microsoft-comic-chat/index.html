@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><a href="https://stealthpuppy.com/media/2011/04/Step3.jpg"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Step3" src="https://stealthpuppy.com/media/2011/04/Step3_thumb.jpg" border="0" alt="Step3" width="264" height="264" /></a></p>
+    <p><a href="/media/2011/04/Step3.jpg"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Step3" src="https://stealthpuppy.com/media/2011/04/Step3_thumb.jpg" border="0" alt="Step3" width="264" height="264" /></a></p>
 
 <p>No, this isn’t an April Fools joke – I wanted to see if I could sequence <a href="http://en.wikipedia.org/wiki/Microsoft_Comic_Chat">Microsoft Comic Chat</a> using App-V. After seeing <a href="http://blogs.msdn.com/b/oldnewthing/archive/2011/04/01/10148494.aspx">Raymond Chen’s latest post on Comic Chat</a>, I had to take a look.</p>
 
@@ -56,7 +56,7 @@
 
 <p>Using App-V to deliver this application is actually a great example of the power of using any application virtualization product to deliver your legacy applications. The first version of Comic Chat was release in 1996 when we were all running Windows 95, even to run our businesses. Running Comic Chat today under Windows 7 will result in this error:</p>
 
-<p><a href="https://stealthpuppy.com/media/2011/04/07.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="07" src="https://stealthpuppy.com/media/2011/04/07_thumb.png" border="0" alt="07" width="298" height="161" /></a></p>
+<p><a href="/media/2011/04/07.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="07" src="https://stealthpuppy.com/media/2011/04/07_thumb.png" border="0" alt="07" width="298" height="161" /></a></p>
 
 <p>Comic Chat is expecting to be able to write to the HKEY_LOCAL_MACHINE key in the Registry. App-V solves this issue two ways – capturing the writes at first launch and optional allowing standard users to write to protected locations because the writes occur within the virtual environment.</p>
 
@@ -66,21 +66,21 @@
 
 <p>Although Comic Chat installs OK on Windows 7, during sequencing Setup produces this error:</p>
 
-<p><a href="https://stealthpuppy.com/media/2011/04/INFInstallFailure.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="INFInstallFailure" src="https://stealthpuppy.com/media/2011/04/INFInstallFailure_thumb.png" border="0" alt="INFInstallFailure" width="391" height="161" /></a></p>
+<p><a href="/media/2011/04/INFInstallFailure.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="INFInstallFailure" src="https://stealthpuppy.com/media/2011/04/INFInstallFailure_thumb.png" border="0" alt="INFInstallFailure" width="391" height="161" /></a></p>
 
 <p>Fortunately, there’s an easy fix – before starting the monitoring phase, configure mschat25.exe to start in Windows XP Compatibility Mode:</p>
 
-<p><a href="https://stealthpuppy.com/media/2011/04/MSChat-Compat.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="MSChat-Compat" src="https://stealthpuppy.com/media/2011/04/MSChat-Compat_thumb.png" border="0" alt="MSChat-Compat" width="419" height="292" /></a></p>
+<p><a href="/media/2011/04/MSChat-Compat.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="MSChat-Compat" src="https://stealthpuppy.com/media/2011/04/MSChat-Compat_thumb.png" border="0" alt="MSChat-Compat" width="419" height="292" /></a></p>
 
 <h3 id="sequencing-comic-chat">Sequencing Comic Chat</h3>
 
 <p>I sequenced Comic Chat on Windows 7 using the App-V 4.6 SP1 Sequencer. Sequencing is simple enough – just install to the default folder. During first run, you can choose to enable the Comic Strip view:</p>
 
-<p><a href="https://stealthpuppy.com/media/2011/04/08.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="08" src="https://stealthpuppy.com/media/2011/04/08_thumb.png" border="0" alt="08" width="660" height="354" /></a></p>
+<p><a href="/media/2011/04/08.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="08" src="https://stealthpuppy.com/media/2011/04/08_thumb.png" border="0" alt="08" width="660" height="354" /></a></p>
 
 <p>You might also like to remove the extra shortcut created by Setup in <em>Start Menu\Programs\Internet Explorer</em>:</p>
 
-<p><a href="https://stealthpuppy.com/media/2011/04/05.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="05" src="https://stealthpuppy.com/media/2011/04/05_thumb.png" border="0" alt="05" width="660" height="470" /></a></p>
+<p><a href="/media/2011/04/05.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="05" src="https://stealthpuppy.com/media/2011/04/05_thumb.png" border="0" alt="05" width="660" height="470" /></a></p>
 
 <p>And that’s about it. I’ve tested execution on a Windows 7 SP1 64-bit installation. Other than taking some time to connect to an IRC server, Comic Chat works under App-V on Windows 7.</p>
 

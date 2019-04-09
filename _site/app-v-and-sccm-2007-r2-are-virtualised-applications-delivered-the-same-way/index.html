@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>This was a great question, at <a href="https://stealthpuppy.com/virtualisation/app-v-talk-slide-deck">this evenings talk</a>,  about deploying virtualised applications via ConfigMgr 2007 R2 - are virtualised applications delivered to clients in the same manner as installed applications?</p>
+    <p>This was a great question, at <a href="/virtualisation/app-v-talk-slide-deck">this evenings talk</a>,  about deploying virtualised applications via ConfigMgr 2007 R2 - are virtualised applications delivered to clients in the same manner as installed applications?</p>
 
 <p>There are several parts to this answer. First up <a href="http://technet.microsoft.com/en-gb/library/cc161915.aspx">virtual applications are imported</a>, added to distribution points and <a href="http://technet.microsoft.com/en-gb/library/cc161935.aspx">advertised</a>, just like installed applications. There are two differences to installed applications here:</p>
 
@@ -55,7 +55,7 @@
   <li>Just like the existing Virtual Application/Management Server in App-V, SCCM 2007 R2 supports application versions, so that you can <a href="http://technet.microsoft.com/en-gb/library/cc161773.aspx">upgrade</a> and rollback on the fly</li>
 </ol>
 
-<p>If you choose to deliver the whole application instead of stream it, applications are downloaded into the SCCM cache just like installed applications. Here’s a virtualised <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">Adobe Reader 9</a> in the SCCM cache:</p>
+<p>If you choose to deliver the whole application instead of stream it, applications are downloaded into the SCCM cache just like installed applications. Here’s a virtualised <a href="/deployment/deploying-adobe-reader-9-for-windows">Adobe Reader 9</a> in the SCCM cache:</p>
 
 <p><img src="https://stealthpuppy.com/media/2008/09/sccmcache.png" border="0" alt="SCCMCache" width="587" height="296" /></p>
 

@@ -96,15 +96,15 @@
 
 <p>Deploying the script via Intune is done just like any other PowerShell script. Save the script locally and then in the Azure Portal, Intune blade, under Device Configuration / PowerShell scripts, add a new script and upload the saved script.</p>
 
-<p><img src="https://stealthpuppy.com/media/2017/12/Script-Adding.png" alt="Adding the Install-CitrixReceiver.ps1 script to Intune" /><em>Adding the Install-CitrixReceiver.ps1 script to Intune</em></p>
+<p><img src="/media/2017/12/Script-Adding.png" alt="Adding the Install-CitrixReceiver.ps1 script to Intune" /><em>Adding the Install-CitrixReceiver.ps1 script to Intune</em></p>
 
 <p>Assign the script to an Azure AD group for target users or devices. Your script should then be listed as an assigned script.</p>
 
-<p><img src="https://stealthpuppy.com/media/2017/12/All-Scripts.png" alt="Install-CitrixReceiver.ps1 along side other PowerShell scripts" /><em>Install-CitrixReceiver.ps1 alongside other PowerShell scripts</em></p>
+<p><img src="/media/2017/12/All-Scripts.png" alt="Install-CitrixReceiver.ps1 along side other PowerShell scripts" /><em>Install-CitrixReceiver.ps1 alongside other PowerShell scripts</em></p>
 
 <p>Once deployed, we can track successful installations in the Overview blade. Note that the script will only run once per target device - it should be unlikely that the device will receive the script and have it fail (e.g. fail to download the CitrixReceiver.exe), but there could be edge cases where installation fails as a result of some very specific circumstances.</p>
 
-<p><img src="https://stealthpuppy.com/media/2017/12/Script-Overview.png" alt="Citrix Receiver deployment overview" /><em>Citrix Receiver deployment overview</em></p>
+<p><img src="/media/2017/12/Script-Overview.png" alt="Citrix Receiver deployment overview" /><em>Citrix Receiver deployment overview</em></p>
 
 <p>Post-deployment, we can rely on <a href="https://docs.citrix.com/en-us/receiver/windows/current-release/configure/receiver-update.html">the updater functionality built into the latest Receiver releases</a> to keep end-points up to date.</p>
 

@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-04-09T19:26:27+10:00</updated><id>/feed.xml</id><title type="html">stealthpuppy</title><subtitle>on end user computing and enterprise mobility</subtitle><entry><title type="html">Signing Git Commits for Sweet Verified Badges</title><link href="/signing-git-commits-for-sweet-verified-badges/" rel="alternate" type="text/html" title="Signing Git Commits for Sweet Verified Badges" /><published>2019-03-19T01:02:21+11:00</published><updated>2019-03-19T01:02:21+11:00</updated><id>/signing-git-commits-for-sweet-verified-badges</id><content type="html" xml:base="/signing-git-commits-for-sweet-verified-badges/">&lt;p&gt;Confession time - I’ve had a &lt;a href=&quot;https://github.com/aaronparker?tab=repositories&quot;&gt;GitHub account&lt;/a&gt; since 2014 and haven’t signed a single commit. I’ve read various tweets and articles about signing your commits, but never committed (git it? … see what I did there…) to setting up a signature until recently.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-04-09T21:16:30+10:00</updated><id>/feed.xml</id><title type="html">stealthpuppy</title><subtitle>on end user computing and enterprise mobility</subtitle><entry><title type="html">Signing Git Commits for Sweet Verified Badges</title><link href="/signing-git-commits-for-sweet-verified-badges/" rel="alternate" type="text/html" title="Signing Git Commits for Sweet Verified Badges" /><published>2019-03-19T01:02:21+11:00</published><updated>2019-03-19T01:02:21+11:00</updated><id>/signing-git-commits-for-sweet-verified-badges</id><content type="html" xml:base="/signing-git-commits-for-sweet-verified-badges/">&lt;p&gt;Confession time - I’ve had a &lt;a href=&quot;https://github.com/aaronparker?tab=repositories&quot;&gt;GitHub account&lt;/a&gt; since 2014 and haven’t signed a single commit. I’ve read various tweets and articles about signing your commits, but never committed (git it? … see what I did there…) to setting up a signature until recently.&lt;/p&gt;
 
-&lt;p&gt;I’m not a developer, &lt;a href=&quot;https://stealthpuppy.com/tag/powershell/&quot;&gt;I just write a bunch of scripts&lt;/a&gt;, but I like the idea of signing my commits so that others can see that all changes to my code are verified. There’s plenty of articles on why signing your commits is a good idea. Here’s a couple:&lt;/p&gt;
+&lt;p&gt;I’m not a developer, &lt;a href=&quot;/tag/powershell/&quot;&gt;I just write a bunch of scripts&lt;/a&gt;, but I like the idea of signing my commits so that others can see that all changes to my code are verified. There’s plenty of articles on why signing your commits is a good idea. Here’s a couple:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits&quot;&gt;A Git Horror Story: Repository Integrity With Signed Commits&lt;/a&gt;&lt;/li&gt;
@@ -9,7 +9,7 @@
 
 &lt;p&gt;If you’ve ever edited a file directly on github.com and committed the changes, you would surely have noticed those Verified badges:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2019/03/GitHubCommit.png&quot; alt=&quot;Signing Git Commits&quot; /&gt;&lt;em&gt;Verified signature through a GitHib.com commit&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2019/03/GitHubCommit.png&quot; alt=&quot;Signing Git Commits&quot; /&gt;&lt;em&gt;Verified signature through a GitHib.com commit&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;To be honest, the GitHub documentation on &lt;a href=&quot;https://help.github.com/en/articles/managing-commit-signature-verification&quot;&gt;managing commit signature verification&lt;/a&gt; is pretty good, but here’s how I stumbled my way through setting up a signature to &lt;a href=&quot;https://help.github.com/en/articles/managing-commit-signature-verification&quot;&gt;enable signed commits&lt;/a&gt;.&lt;/p&gt;
 
@@ -24,7 +24,7 @@
   &lt;li&gt;Finally I’ve uploaded my public key to the key server with the ‘Send Public Key to the Key Server’ option. Some &lt;a href=&quot;https://sks-keyservers.net/overview-of-pools.php&quot;&gt;GPG nerd would know what exactly that does&lt;/a&gt;, but I don’t believe it actually required for signing commits and pushing to GitHub, because we need to update the public key to GtiHub anyway.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2019/03/GPG-Key.png&quot; alt=&quot;GPG key view in the GPG Keychain and Signing Git Commits&quot; /&gt;&lt;em&gt;GPG key view in the GPG Keychain&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2019/03/GPG-Key.png&quot; alt=&quot;GPG key view in the GPG Keychain and Signing Git Commits&quot; /&gt;&lt;em&gt;GPG key view in the GPG Keychain&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;add-your-public-key-to-github&quot;&gt;Add Your Public Key to GitHub&lt;/h2&gt;
 
@@ -36,7 +36,7 @@
   &lt;li&gt;Paste in the key and click &lt;strong&gt;Add GPG Key&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2019/03/AddGPGKey.png&quot; alt=&quot;Adding your public GPG key to GitHub and Signing Git Commits&quot; /&gt;&lt;em&gt;Adding your public GPG key to GitHub&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2019/03/AddGPGKey.png&quot; alt=&quot;Adding your public GPG key to GitHub and Signing Git Commits&quot; /&gt;&lt;em&gt;Adding your public GPG key to GitHub&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;add-your-signing-key-to-git&quot;&gt;Add Your Signing Key to Git&lt;/h2&gt;
 
@@ -50,7 +50,7 @@
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config &lt;span class=&quot;nt&quot;&gt;-global&lt;/span&gt; user.signingkey C55D39F88CE9A2C5
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2019/03/gitconfig.png&quot; alt=&quot;Finding your key ID and adding the key to git&quot; /&gt;&lt;em&gt;Finding your key ID and adding the key to git&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2019/03/gitconfig.png&quot; alt=&quot;Finding your key ID and adding the key to git&quot; /&gt;&lt;em&gt;Finding your key ID and adding the key to git&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;On Windows the process for signing git commits is much the same. First install &lt;a href=&quot;https://gitforwindows.org/&quot;&gt;Git for Windows&lt;/a&gt; and use git bash instead of Terminal.&lt;/p&gt;
 
@@ -60,17 +60,17 @@
 
 &lt;p&gt;In Preferences, search for ‘git signing’ and select ‘Git: Enable Commit Signing’:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2019/03/VSCode-GitSigning.png&quot; alt=&quot;Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits&quot; /&gt;&lt;em&gt;Enable Commit Signing in Visual Studio Code preferences&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2019/03/VSCode-GitSigning.png&quot; alt=&quot;Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits&quot; /&gt;&lt;em&gt;Enable Commit Signing in Visual Studio Code preferences&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://code.visualstudio.com/docs/introvideos/versioncontrol&quot;&gt;VSCode supports version control using git&lt;/a&gt; from directly within the VSCode window. On your first commit, you’ll be prompted to enter the password for your GPG key before the commit will complete.&lt;/p&gt;
 
 &lt;p&gt;That’s about all the steps required for signing git commits. We have signed commits in a GitHub repository and a sweet, sweet Verified badge - now I can brag to all my friends and they’ll know that code came from me. My mum still won’t understand what I do for a living, but you can’t get a win every day.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2019/03/Verified.gif&quot; alt=&quot;Now I have a nice shiny verified badge on my commits&quot; /&gt;&lt;em&gt;Now I have a nice shiny verified badge on my commits&lt;/em&gt;&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="Git" /><category term="GitHub" /><category term="GPG" /><category term="Visual Studio Code" /><summary type="html">Confession time - I’ve had a GitHub account since 2014 and haven’t signed a single commit. I’ve read various tweets and articles about signing your commits, but never committed (git it? … see what I did there…) to setting up a signature until recently.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/media/2019/03/helloquence-51716-unsplash.jpg" /></entry><entry><title type="html">Default Start Menu Customisation via Intune</title><link href="/custom-default-start-menu-intune/" rel="alternate" type="text/html" title="Default Start Menu Customisation via Intune" /><published>2018-12-18T23:28:30+11:00</published><updated>2018-12-18T23:28:30+11:00</updated><id>/custom-default-start-menu-intune</id><content type="html" xml:base="/custom-default-start-menu-intune/">&lt;p&gt;The promise of a modern management approach to deployment and management of Windows 10 is that you no longer create and manage a custom SOE image. User experience is still important though and a large part of that experience in an enterprise environment, is the default Start menu.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2019/03/Verified.gif&quot; alt=&quot;Now I have a nice shiny verified badge on my commits&quot; /&gt;&lt;em&gt;Now I have a nice shiny verified badge on my commits&lt;/em&gt;&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="Git" /><category term="GitHub" /><category term="GPG" /><category term="Visual Studio Code" /><summary type="html">Confession time - I’ve had a GitHub account since 2014 and haven’t signed a single commit. I’ve read various tweets and articles about signing your commits, but never committed (git it? … see what I did there…) to setting up a signature until recently.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/media/2019/03/helloquence-51716-unsplash.jpg" /></entry><entry><title type="html">Default Start Menu Customisation via Intune</title><link href="/custom-default-start-menu-intune/" rel="alternate" type="text/html" title="Default Start Menu Customisation via Intune" /><published>2018-12-18T23:28:30+11:00</published><updated>2018-12-18T23:28:30+11:00</updated><id>/custom-default-start-menu-intune</id><content type="html" xml:base="/custom-default-start-menu-intune/">&lt;p&gt;The promise of a modern management approach to deployment and management of Windows 10 is that you no longer create and manage a custom SOE image. User experience is still important though and a large part of that experience in an enterprise environment, is the default Start menu.&lt;/p&gt;
 
 &lt;p&gt;The default Start menu, especially on Windows 10 Pro, is far from enterprise ready right? Take a look at this mess:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/12/StartMenu-1024x717.png&quot; alt=&quot;Windows 10 Pro 1809 default Start menu&quot; /&gt;&lt;em&gt;Windows 10 Pro 1809 default Start menu&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/12/StartMenu-1024x717.png&quot; alt=&quot;Windows 10 Pro 1809 default Start menu&quot; /&gt;&lt;em&gt;Windows 10 Pro 1809 default Start menu&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Over-the-air provisioning of PCs via Windows AutoPilot &amp;amp; Azure AD, Microsoft Intune (or insert your MDM solution here), limits the possibilities of customising the target PC before the user logs on. The administrator can &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/configuration/customize-windows-10-start-screens-by-using-mobile-device-management&quot;&gt;define a Start menu&lt;/a&gt;, but that’s a policy, not a preference. One size does not fit all, and users should be able to customise the Start menu to suit their style. &lt;/p&gt;
 
@@ -98,7 +98,7 @@
 
 &lt;p&gt;Advanced Installer makes short work of creating the package - create a new Simple Installer package and configure the product name, version and publisher. Note that if you want to update the package, save your project and update the version number each time you produce an updated installer.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/12/AdvancedInstaller01-ProductDetails.png&quot; alt=&quot;Advanced Installer package Product details&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/12/AdvancedInstaller01-ProductDetails.png&quot; alt=&quot;Advanced Installer package Product details&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Add the Start menu layout file to the project under Files and Folders. The project must define the correct target path and file name because it will be deployed into the default profile. Use this path:&lt;/p&gt;
 
@@ -106,7 +106,7 @@
 
 &lt;p&gt;And add the &lt;code class=&quot;highlighter-rouge&quot;&gt;LayoutModification.xml&lt;/code&gt; file that you’ve exported with &lt;code class=&quot;highlighter-rouge&quot;&gt;Export-StartLayout&lt;/code&gt; into this path. If your target path and file name aren’t correct, this won’t work so ensure your package looks the same as the screenshots here.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/12/AdvancedInstaller02-FilesFolders.png&quot; alt=&quot;Adding the Start menu layout file to Files and Folders in Advanced Installer&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/12/AdvancedInstaller02-FilesFolders.png&quot; alt=&quot;Adding the Start menu layout file to Files and Folders in Advanced Installer&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;For this package, I’ve configured the following install parameters:&lt;/p&gt;
 
@@ -116,11 +116,11 @@
   &lt;li&gt;Reboot behaviour - Suppress all reboots and Reboot prompts&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/12/AdvancedInstaller02a-InstallParameters.png&quot; alt=&quot;Configure Install Parameters in Advanced Installer&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/12/AdvancedInstaller02a-InstallParameters.png&quot; alt=&quot;Configure Install Parameters in Advanced Installer&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Configure the default build to produce a Single MSI file and define the name. In the example below, I’ve used &lt;code class=&quot;highlighter-rouge&quot;&gt;DefaultStartMenuLayout.msi&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/12/AdvancedInstaller03-Builds.png&quot; alt=&quot;Configure Advanced Installer to build a single MSI file with all resources embedded&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/12/AdvancedInstaller03-Builds.png&quot; alt=&quot;Configure Advanced Installer to build a single MSI file with all resources embedded&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Build your package and add the MSI into Microsoft Intune as &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/lob-apps-windows&quot;&gt;a line-of-business application&lt;/a&gt;. Assign the new application as &lt;strong&gt;Required&lt;/strong&gt; for &lt;strong&gt;All Devices&lt;/strong&gt;, so that the Enrolment Status Page can track the installation before the user logs on.&lt;/p&gt;
 
@@ -132,7 +132,7 @@
 
 &lt;p&gt;Here’s the applications that I’ve configured in my test environment:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/12/EnrollmentStatusPage.png&quot; alt=&quot;Configure the Enrolment Status Page with the list of apps and the default Start menu&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/12/EnrollmentStatusPage.png&quot; alt=&quot;Configure the Enrolment Status Page with the list of apps and the default Start menu&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Today the ESP &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/enrollment-status&quot;&gt;tracks specific application deployments&lt;/a&gt; - Microsoft Store apps and single MSI files, while Office 365 ProPlus applications are tracked on Windows 10 1809 and above.&lt;/p&gt;
 
@@ -142,7 +142,7 @@
 
 &lt;p&gt;After the enrollment and deployment is complete, the user sees a customised Start menu after first logon. There’s a few tiles that didn’t remain pinned from the default customisation, but this is much cleaner and enterprise ready than what we end up with out of the box.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/12/UserDeployment-StartMenu.png&quot; alt=&quot;Start menu&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/12/UserDeployment-StartMenu.png&quot; alt=&quot;Start menu&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;wrapping-up&quot;&gt;Wrapping Up&lt;/h2&gt;
 
@@ -166,25 +166,25 @@
 
 &lt;p&gt;My update rings in this example are quite simple, but the approach can be customised for specific environments and needs.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/10/SoftwareUpdateRings.png&quot; alt=&quot;Dynamic Software Update Rings&quot; /&gt;&lt;em&gt;Update Rings configured within Intune Software Updates&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/10/SoftwareUpdateRings.png&quot; alt=&quot;Dynamic Software Update Rings&quot; /&gt;&lt;em&gt;Update Rings configured within Intune Software Updates&lt;/em&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;assigning-devices&quot;&gt;Assigning Devices&lt;/h1&gt;
 
 &lt;p&gt;To assign a device to an update ring, we need to leverage a device property that can be dynamically set. Here, &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/device-group-mapping&quot;&gt;Device Category&lt;/a&gt; fits this bill in a number of ways - here, the administrator can view the device category and therefore the device’s update ring, by viewing the device properties in the Intune console. If device category is not set (it will be set to Unassigned), our catch-all update ring will ensure the device is set to a production ready state.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/10/IntuneDeviceProperties.png&quot; alt=&quot;Device properties in Intune&quot; /&gt;Device properties in Intune*&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/10/IntuneDeviceProperties.png&quot; alt=&quot;Device properties in Intune&quot; /&gt;Device properties in Intune*&lt;/p&gt;
 
 &lt;p&gt;The device category can also be viewed in the Intune Company Portal, thus making it easy to view this property from multiple locations. This visibility makes device category a good choice for managing our update rings.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/10/IntuneCompanyPortalDeviceDetails.png&quot; alt=&quot;Device details in the Intune Company Portal&quot; /&gt;&lt;em&gt;Device properties in the Intune Company Portal&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/10/IntuneCompanyPortalDeviceDetails.png&quot; alt=&quot;Device details in the Intune Company Portal&quot; /&gt;&lt;em&gt;Device properties in the Intune Company Portal&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The Intune Administrator creates device categories in the console. As you can see in the image below, I’ve chosen &lt;strong&gt;Production&lt;/strong&gt;, &lt;strong&gt;Pilot&lt;/strong&gt; and &lt;strong&gt;Preview&lt;/strong&gt; as the device categories that provide, hopefully, clear indication as to what each category is for.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/10/IntuneDevcecategories.png&quot; alt=&quot;Intune Device categories&quot; /&gt;&lt;em&gt;Intune Device categories&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/10/IntuneDevcecategories.png&quot; alt=&quot;Intune Device categories&quot; /&gt;&lt;em&gt;Intune Device categories&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Here’s where the choice of using Device Category for assigning update rings is possibly a bit out there - the end-user chooses the device category! When enrolling their device or launching the Intune Company Portal for the first time they see the device category choices:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/10/IntuneCompanyPortalDeviceCategory.png&quot; alt=&quot;Setting a device category in the Intune Company Portal&quot; /&gt;&lt;em&gt;Setting a device category in the Intune Company Portal&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/10/IntuneCompanyPortalDeviceCategory.png&quot; alt=&quot;Setting a device category in the Intune Company Portal&quot; /&gt;&lt;em&gt;Setting a device category in the Intune Company Portal&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;There’s no replacement for end-user education, so it would behoove an organisation to include instructions on which category to choose, but in my mind it’s obvious that most users should choose Production. Having device category descriptions displayed as well would help, but they don’t at this time. Device categories are only shown once and the user cannot change the category after enrolment. Bulk changes to or reporting on categories can be achieved using the new &lt;a href=&quot;https://github.com/Microsoft/Intune-PowerShell-SDK&quot;&gt;Intune PowerShell SDK&lt;/a&gt;.&lt;/p&gt;
 
@@ -192,7 +192,7 @@
 
 &lt;p&gt;Now that we have Update rings in place and an approach assigning them via Dynamic Device groups in Azure AD, we can create those groups based on membership rules that query Device Category. I’ve created two groups - &lt;strong&gt;Devices-Pilot&lt;/strong&gt; and &lt;strong&gt;Devices-Preview&lt;/strong&gt; that use a query where &lt;code class=&quot;highlighter-rouge&quot;&gt;deviceCategory&lt;/code&gt;equals &lt;strong&gt;Pilot&lt;/strong&gt; or &lt;strong&gt;Preview&lt;/strong&gt; respectively. A &lt;strong&gt;Devices-Production&lt;/strong&gt; group can also be created, but isn’t required because the production update ring applies to All Devices. A production devices group would assist with reporting.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/10/DynamicGroupRule.png&quot; alt=&quot;Dynamic group membership rules&quot; /&gt;&lt;em&gt;Dynamic group membership rules&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/10/DynamicGroupRule.png&quot; alt=&quot;Dynamic group membership rules&quot; /&gt;&lt;em&gt;Dynamic group membership rules&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;For these devices groups, the membership rules are:&lt;/p&gt;
 
@@ -224,7 +224,7 @@
 
 &lt;p&gt;The same approach can be used for deploying applications that provide preview channels similar to Windows. Microsoft Office 365 ProPlus is an obvious choice - we can create Office application deployments using Update Channels with assignments using our Dynamic Device groups.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/10/Office365ProPlus.png&quot; alt=&quot;Office 365 ProPlus apps in Intune to manage update channels&quot; /&gt;&lt;em&gt;Office 365 ProPlus apps in Intune to manage update channels&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/10/Office365ProPlus.png&quot; alt=&quot;Office 365 ProPlus apps in Intune to manage update channels&quot; /&gt;&lt;em&gt;Office 365 ProPlus apps in Intune to manage update channels&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The update rings I’ve implemented in my test environment include:&lt;/p&gt;
 
@@ -256,7 +256,7 @@
 
 &lt;p&gt;Here’s the slide I created to visualise this theme.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/09/MicrosoftReleases.png&quot; alt=&quot;Visualising ConfigMgr, Intune and Windows 10 Releases&quot; /&gt;&lt;em&gt;Visualising ConfigMgr, Intune and Windows 10 Releases&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/09/MicrosoftReleases.png&quot; alt=&quot;Visualising ConfigMgr, Intune and Windows 10 Releases&quot; /&gt;&lt;em&gt;Visualising ConfigMgr, Intune and Windows 10 Releases&lt;/em&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;download-the-slide&quot;&gt;Download the Slide&lt;/h1&gt;
 
@@ -274,7 +274,7 @@
 
 &lt;p&gt;Storage Sense can be found in the Windows 10 Settings app and has only a few settings that can be changed. Typically a user may enable Storage Sense and accept the default settings and for most PCs, the defaults are likely good enough. Here’s what’s available in Windows 10 1803:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/09/Windows10StorageSense.png&quot; alt=&quot;Enabling Storage Sense in Windows 10 Settings&quot; /&gt;&lt;em&gt;Enabling Storage Sense in Windows 10 Settings&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/09/Windows10StorageSense.png&quot; alt=&quot;Enabling Storage Sense in Windows 10 Settings&quot; /&gt;&lt;em&gt;Enabling Storage Sense in Windows 10 Settings&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Settings are stored in the user profile at:&lt;/p&gt;
 
@@ -283,7 +283,7 @@
 
 &lt;p&gt;Settings are stored somewhat cryptically with numbers representing various options.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/09/StorageSense-Registry.png&quot; alt=&quot;Storage Sense settings in the Registry&quot; /&gt;&lt;em&gt;Storage Sense settings in the Registry&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/09/StorageSense-Registry.png&quot; alt=&quot;Storage Sense settings in the Registry&quot; /&gt;&lt;em&gt;Storage Sense settings in the Registry&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;These values translate to following options and values in the table below:&lt;/p&gt;
 
@@ -475,7 +475,7 @@
 
 &lt;p&gt;Modify the script as desired - at the very least the script should enable Storage Sense and leave the remaining settings as default. Save the script as a PowerShell file and &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/intune-management-extension&quot;&gt;deploy via the Intune console in the Azure portal&lt;/a&gt;. Ensure that the script runs with the logged on user’s credentials because it will write to HKCU.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/09/StorageSense-PowerShellIntune.png&quot; alt=&quot;Enabling Storage Sense with a PowerShell script in Intune&quot; /&gt;&lt;em&gt;Enabling Storage Sense with a PowerShell script in Intune&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/09/StorageSense-PowerShellIntune.png&quot; alt=&quot;Enabling Storage Sense with a PowerShell script in Intune&quot; /&gt;&lt;em&gt;Enabling Storage Sense with a PowerShell script in Intune&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Assign the script to All Users and their PC will receive the script. It’s important to note that, because the settings are stored in HKCU and are not policies, the user can either disable Storage Sense or change other settings.&lt;/p&gt;
 
@@ -487,7 +487,7 @@
 
 &lt;p&gt;Storage Sense shows you how much disk capacity has been cleaned in the previous month in the Settings app. For a bit of a laugh, you can modify the value where this is stored so that Settings displays spaced saved that’s clearly not genuine.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/09/StorageSense-SpaceSaved.png&quot; alt=&quot;Messing around with the value of saved space&quot; /&gt;&lt;em&gt;Messing around with the value of saved space&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/09/StorageSense-SpaceSaved.png&quot; alt=&quot;Messing around with the value of saved space&quot; /&gt;&lt;em&gt;Messing around with the value of saved space&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;You’ll find the registry value (20180901) in this key:&lt;/p&gt;
 
@@ -507,11 +507,11 @@
 
 &lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/intune/store-apps-windows&quot;&gt;Adding the Workspace app from the Microsoft Store&lt;/a&gt; is well documented and should take only 5 minutes to get the app from the Store, synchronise to Intune and &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/apps-deploy&quot;&gt;assign the app to your users&lt;/a&gt;. How’s that for done and dusted? - I’m sure you’ve got better things to do than package and maintain applications.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CitrixWorkspace-MicrosoftStore.png&quot; alt=&quot;Citrix Workspace in the Microsoft Store&quot; /&gt;&lt;em&gt;Citrix Workspace in the Microsoft Store&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CitrixWorkspace-MicrosoftStore.png&quot; alt=&quot;Citrix Workspace in the Microsoft Store&quot; /&gt;&lt;em&gt;Citrix Workspace in the Microsoft Store&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The Workspace app can be assigned as available for end-users to install via the Intune Company Portal or required for automatic deployment. Once deployed, the Store will take care of updates, thus there is no further action required by the administrator.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CitrixWorkspace-CompanyPortal.png&quot; alt=&quot;Citrix Workspace app in the Microsoft Intune Company Portal&quot; /&gt;&lt;em&gt;Citrix Workspace app in the Microsoft Intune Company Portal&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CitrixWorkspace-CompanyPortal.png&quot; alt=&quot;Citrix Workspace app in the Microsoft Intune Company Portal&quot; /&gt;&lt;em&gt;Citrix Workspace app in the Microsoft Intune Company Portal&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;If you have already deployed Citrix Receiver from the Microsoft Store via Intune, it should be automatically updated to Citrix Workspace. One they key &lt;a href=&quot;https://docs.citrix.com/en-us/citrix-workspace-app-for-windows-store/downloads/Features_RfWinStore.pdf&quot;&gt;feature limitations&lt;/a&gt; of the Microsoft Store version is pass-through authentication, so you might need to consider alternative deployment options&lt;/p&gt;
 
@@ -526,7 +526,7 @@
 
 &lt;p&gt;Deploying this way also means that the Workspace app will be deployed regardless of user choice and of course does not support deployment via the Intune Company Portal.&lt;/p&gt;
 
-&lt;p&gt;Like we’ve done &lt;a href=&quot;https://stealthpuppy.com/deploy-citrix-receiver-intune/&quot;&gt;previously with Citrix Receiver&lt;/a&gt;, the Workspace app can be &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/intune-management-extension&quot;&gt;deployed to Windows 10 machines via Intune with PowerShell&lt;/a&gt; without requiring custom packaging. We need a consistent URL that will always download the latest version of Workspace app and &lt;a href=&quot;https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install/cfg-command-line.html&quot;&gt;a command line to perform a silent installation&lt;/a&gt;. Your command line options might differ depending on your target environment, but the example script below will download and install the Workspace app.&lt;/p&gt;
+&lt;p&gt;Like we’ve done &lt;a href=&quot;/deploy-citrix-receiver-intune/&quot;&gt;previously with Citrix Receiver&lt;/a&gt;, the Workspace app can be &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/intune-management-extension&quot;&gt;deployed to Windows 10 machines via Intune with PowerShell&lt;/a&gt; without requiring custom packaging. We need a consistent URL that will always download the latest version of Workspace app and &lt;a href=&quot;https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/install/cfg-command-line.html&quot;&gt;a command line to perform a silent installation&lt;/a&gt;. Your command line options might differ depending on your target environment, but the example script below will download and install the Workspace app.&lt;/p&gt;
 
 &lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$Url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://downloadplugins.citrix.com/Windows/CitrixWorkspaceApp.exe&quot;&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;$Target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$env&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:SystemRoot\Temp\CitrixWorkspaceApp.exe&quot;&lt;/span&gt;
@@ -543,7 +543,7 @@
 
 &lt;p&gt;Is this approach right for you? This requires maintaining and deploying a custom package and is dependent on how the environment is managed and available skillsets. Only you can answer that for your projects or environments. A custom package isn’t ideal and I recommend using the Microsoft Store version as the default approach instead.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CitrixWorkspace-Extracted.png&quot; alt=&quot;Citrix Workspace app extracted Windows Installer files&quot; /&gt;&lt;em&gt;Citrix Workspace app extracted Windows Installer files&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CitrixWorkspace-Extracted.png&quot; alt=&quot;Citrix Workspace app extracted Windows Installer files&quot; /&gt;&lt;em&gt;Citrix Workspace app extracted Windows Installer files&lt;/em&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;hdx-realtime-media-engine&quot;&gt;HDX RealTime Media Engine&lt;/h3&gt;
 
@@ -580,7 +580,7 @@
 
 &lt;p&gt;The Citrix Workspace app can be &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/lob-apps-macos&quot;&gt;deployed as a line-of-business application&lt;/a&gt; with Microsoft Intune. The &lt;a href=&quot;https://www.citrix.com.au/downloads/workspace-app/mac/workspace-app-for-mac-latest.html&quot;&gt;Workspace app download&lt;/a&gt; comes as &lt;a href=&quot;https://en.wikipedia.org/wiki/Installer_(macOS)&quot;&gt;an Installer package&lt;/a&gt; (inside an &lt;a href=&quot;https://en.wikipedia.org/wiki/Apple_Disk_Image&quot;&gt;Apple Disk Image&lt;/a&gt;) that can be converted into suitable file format with the &lt;a href=&quot;https://github.com/msintuneappsdk/intune-app-wrapping-tool-mac&quot;&gt;Microsoft Intune App Wrapping Tool&lt;/a&gt;, ready to deploy with Intune.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CitrixWorkspace-DiskImage.png&quot; alt=&quot;The Citrix Workspace app disk image&quot; /&gt;&lt;em&gt;The Citrix Workspace app disk image&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CitrixWorkspace-DiskImage.png&quot; alt=&quot;The Citrix Workspace app disk image&quot; /&gt;&lt;em&gt;The Citrix Workspace app disk image&lt;/em&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;convert-the-installer&quot;&gt;Convert the Installer&lt;/h3&gt;
 
@@ -612,11 +612,11 @@
 
 &lt;p&gt;If successful the command line will look similar to the following screenshot:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CitrixWorkspace-IntuneAppUtil.png&quot; alt=&quot;Converting the Citrix Workspace app with IntuneAppUtil&quot; /&gt;&lt;em&gt;Converting the Citrix Workspace app with IntuneAppUtil&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CitrixWorkspace-IntuneAppUtil.png&quot; alt=&quot;Converting the Citrix Workspace app with IntuneAppUtil&quot; /&gt;&lt;em&gt;Converting the Citrix Workspace app with IntuneAppUtil&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The Workspace app installer will have been converted into a .intunemac format ready to import into the Intune portal for distributing to users.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CitrixWorkspace-AppFiles.png&quot; alt=&quot;The converted Citrix Workspace app&quot; /&gt;&lt;em&gt;The converted Citrix Workspace app&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CitrixWorkspace-AppFiles.png&quot; alt=&quot;The converted Citrix Workspace app&quot; /&gt;&lt;em&gt;The converted Citrix Workspace app&lt;/em&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;distribute-with-intune&quot;&gt;Distribute with Intune&lt;/h3&gt;
 
@@ -635,11 +635,11 @@
 
 &lt;p&gt;Once the details have been added, click OK to create the application. I initially had issues with uploading the application on Chrome on macOS. I was successful on Internet Explorer.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CitrixWorkspace-IntunePortal.png&quot; alt=&quot;Adding the Citrix Workspace app as a line-of-business app in Microsoft Intune&quot; /&gt;&lt;em&gt;Adding the Citrix Workspace app as a line-of-business app in Microsoft Intune&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CitrixWorkspace-IntunePortal.png&quot; alt=&quot;Adding the Citrix Workspace app as a line-of-business app in Microsoft Intune&quot; /&gt;&lt;em&gt;Adding the Citrix Workspace app as a line-of-business app in Microsoft Intune&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Once the application has been created and assigned to users, it will be available for install in the Intune Company Portal. The application can also be set to required for automatic deployment.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CitrixWorkspace-macOSCompanyPortal.png&quot; alt=&quot;Citrix Workspace available in the Intune Company Portal on macOS&quot; /&gt;Citrix Workspace available in the Intune Company Portal on macOS*&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CitrixWorkspace-macOSCompanyPortal.png&quot; alt=&quot;Citrix Workspace available in the Intune Company Portal on macOS&quot; /&gt;Citrix Workspace available in the Intune Company Portal on macOS*&lt;/p&gt;
 
 &lt;p&gt;Just as on Windows, updates to the Citrix Workspace app can be managed with the inbuilt updater, post-deployment.&lt;/p&gt;
 
@@ -661,7 +661,7 @@
 
 &lt;p&gt;The application will be available in the Intune Company Portal:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CitrixWorkspace-iOS.png&quot; alt=&quot;Citrix Workspace for iOS available in the Intune Company Portal&quot; /&gt;&lt;em&gt;Citrix Workspace for iOS available in the Intune Company Portal&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CitrixWorkspace-iOS.png&quot; alt=&quot;Citrix Workspace for iOS available in the Intune Company Portal&quot; /&gt;&lt;em&gt;Citrix Workspace for iOS available in the Intune Company Portal&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;For existing deployments of Citrix Receiver, they should be updated to Citrix Workspace app automatically.&lt;/p&gt;
 
@@ -693,7 +693,7 @@
 
 &lt;p&gt;Here’s &lt;a href=&quot;https://play.google.com/work/apps/details?id=com.citrix.Receiver&quot;&gt;Citrix Receiver in the Google Play store&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CitrixWorkspace-PlayStore.png&quot; alt=&quot;Approving Citrix Receiver in the Google Play store&quot; /&gt;Approving Citrix Receiver in the Google Play store*&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CitrixWorkspace-PlayStore.png&quot; alt=&quot;Approving Citrix Receiver in the Google Play store&quot; /&gt;Approving Citrix Receiver in the Google Play store*&lt;/p&gt;
 
 &lt;p&gt;Once approved, you must choose how new permissions will be approved:&lt;/p&gt;
 
@@ -706,19 +706,19 @@
 
 &lt;h2 id=&quot;wrap-up&quot;&gt;Wrap-up&lt;/h2&gt;
 
-&lt;p&gt;In this article, I’ve covered the high-level steps required for deployment of the Citrix Workspace app across the various major platforms supported by Microsoft Intune. Mobile platforms, including the Microsoft Store on Windows 10, will require the least amount of administrative effort to configure, deploy and update. For most organisations supporting Windows as their primary platform, even with Microsoft Intune, the choice of deployment solution will depend on Workpace app feature requirements.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="Android" /><category term="Citrix Receiver" /><category term="Citrix Workspace" /><category term="Intune" /><category term="iOS" /><category term="macOS" /><category term="Windows" /><summary type="html">Citrix Workspace app is here to replace Citrix Receiver with a new UI and capabilities (primarily for Citrix Cloud customers). Here’s how to deploy it across various supported platforms in a modern management capacity with Microsoft Intune.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/media/2018/08/rawpixel-550994-unsplash.jpg" /></entry><entry><title type="html">Thunderbolt end-user experience macOS vs. Windows</title><link href="/thunderbolt-experience-macos-windows/" rel="alternate" type="text/html" title="Thunderbolt end-user experience macOS vs. Windows" /><published>2018-08-07T14:01:52+10:00</published><updated>2018-08-07T14:01:52+10:00</updated><id>/thunderbolt-experience-macos-windows</id><content type="html" xml:base="/thunderbolt-experience-macos-windows/">&lt;p&gt;Thunderbolt 3 (and USB-C) are here to provide &lt;a href=&quot;https://stealthpuppy.com/thunderbolt-3/&quot;&gt;a single cable for everything&lt;/a&gt;, although your experience with this technology will differ depending on your choice of operating system. Here’s a quick look at the end-user experience of TB on macOS and Windows.&lt;/p&gt;
+&lt;p&gt;In this article, I’ve covered the high-level steps required for deployment of the Citrix Workspace app across the various major platforms supported by Microsoft Intune. Mobile platforms, including the Microsoft Store on Windows 10, will require the least amount of administrative effort to configure, deploy and update. For most organisations supporting Windows as their primary platform, even with Microsoft Intune, the choice of deployment solution will depend on Workpace app feature requirements.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="Android" /><category term="Citrix Receiver" /><category term="Citrix Workspace" /><category term="Intune" /><category term="iOS" /><category term="macOS" /><category term="Windows" /><summary type="html">Citrix Workspace app is here to replace Citrix Receiver with a new UI and capabilities (primarily for Citrix Cloud customers). Here’s how to deploy it across various supported platforms in a modern management capacity with Microsoft Intune.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/media/2018/08/rawpixel-550994-unsplash.jpg" /></entry><entry><title type="html">Thunderbolt end-user experience macOS vs. Windows</title><link href="/thunderbolt-experience-macos-windows/" rel="alternate" type="text/html" title="Thunderbolt end-user experience macOS vs. Windows" /><published>2018-08-07T14:01:52+10:00</published><updated>2018-08-07T14:01:52+10:00</updated><id>/thunderbolt-experience-macos-windows</id><content type="html" xml:base="/thunderbolt-experience-macos-windows/">&lt;p&gt;Thunderbolt 3 (and USB-C) are here to provide &lt;a href=&quot;/thunderbolt-3/&quot;&gt;a single cable for everything&lt;/a&gt;, although your experience with this technology will differ depending on your choice of operating system. Here’s a quick look at the end-user experience of TB on macOS and Windows.&lt;/p&gt;
 
 &lt;h2 id=&quot;thunderbolt-3-on-macos&quot;&gt;Thunderbolt 3 on macOS&lt;/h2&gt;
 
 &lt;p&gt;Thunderbolt &lt;a href=&quot;https://www.apple.com/thunderbolt/&quot;&gt;on macOS just works&lt;/a&gt; - plug-in a TB device and off you go. This makes sense given that the standard was &lt;a href=&quot;https://en.wikipedia.org/wiki/Thunderbolt_(interface)&quot;&gt;designed by Intel and Apple&lt;/a&gt;. Unpacking and plugging in a Thunderbolt dock with external displays, ethernet, audio etc., on macOS in just about every case will work without installing drivers.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/macbook-pro-spgray-psl-closed.jpg&quot; alt=&quot;Thunderbolt ports on the MacBook Pro&quot; /&gt;&lt;em&gt;Thunderbolt ports on the MacBook Pro&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/macbook-pro-spgray-psl-closed.jpg&quot; alt=&quot;Thunderbolt ports on the MacBook Pro&quot; /&gt;&lt;em&gt;Thunderbolt ports on the MacBook Pro&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Here’s Apple’s dirty (not so) secret though - excluding the MacBook Air (and the Mini that comes with TB2), all current Macs have TB3 ports, &lt;a href=&quot;https://support.apple.com/en-au/HT207443&quot;&gt;except for the MacBook&lt;/a&gt;. It has a single USB-C port only. Maybe that’s OK - the TB target market is likely to be purchasing the Pro line anyway, but Apple isn’t a fan of labelling their ports, so caveat emptor.&lt;/p&gt;
 
 &lt;p&gt;macOS provides a good look at the devices plugged into your TB ports:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/macOS-SystemReport-Thunderbolt.png&quot; alt=&quot;macOS System Report showing Thunderbolt devices&quot; /&gt;&lt;em&gt;macOS System Report showing Thunderbolt devices&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/macOS-SystemReport-Thunderbolt.png&quot; alt=&quot;macOS System Report showing Thunderbolt devices&quot; /&gt;&lt;em&gt;macOS System Report showing Thunderbolt devices&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Note that while the MacBook Pro with Touch Bar has 4 Thunderbolt 3 ports, these are divided across 2 busses. If you have more than one device plugged in, ensure they’re plugged into either side of the laptop for best performance.&lt;/p&gt;
 
@@ -732,15 +732,15 @@
 
 &lt;p&gt;With the software installed and a device plugged in, the user sees a message box asking to approve the connection to a Thunderbolt device. Management actions such as approving or removing a device requires administrator rights on the PC. Pluggable has a good article on the entire &lt;a href=&quot;https://plugable.com/thunderbolt-3/support/&quot;&gt;user experience and troubleshooting&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/Thunderbolt-ApprovePopup.png&quot; alt=&quot;Approving connection to TB devices on Windows 10&quot; /&gt;&lt;em&gt;Approving connection to TB devices on Windows 10&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/Thunderbolt-ApprovePopup.png&quot; alt=&quot;Approving connection to TB devices on Windows 10&quot; /&gt;&lt;em&gt;Approving connection to TB devices on Windows 10&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Once approved, the device can then be viewed and managed.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/Thunderbolt-AttachedDevices.png&quot; alt=&quot;Viewing attached TB devices on Windows 10&quot; /&gt;&lt;em&gt;Viewing attached TB devices on Windows 10&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/Thunderbolt-AttachedDevices.png&quot; alt=&quot;Viewing attached TB devices on Windows 10&quot; /&gt;&lt;em&gt;Viewing attached TB devices on Windows 10&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Of course, once plugged in, Windows sees the peripherals and connects to them as usual.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/Thunderbolt-WIndowsDevices.png&quot; alt=&quot;Peripherals plugged into a TB dock on Windows 10&quot; /&gt;&lt;em&gt;Peripherals plugged into a TB dock on Windows 10&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/Thunderbolt-WIndowsDevices.png&quot; alt=&quot;Peripherals plugged into a TB dock on Windows 10&quot; /&gt;&lt;em&gt;Peripherals plugged into a TB dock on Windows 10&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Thunderbolt on Windows isn’t as simple as it could be. It would be great to see drivers installed directly from Windows Update instead of being available separately, but once installed everything works as you would expect.&lt;/p&gt;
 
@@ -758,7 +758,7 @@
 
 &lt;h2 id=&quot;the-quest-for-less-clutter&quot;&gt;The Quest for Less Clutter&lt;/h2&gt;
 
-&lt;p&gt;I work primarily from home and given my job, I’m in front of a computer for extended periods; thus, I need a clean and neat workspace to be able to focus. I’m not great at keeping my workspace tidy as I should be, so anything I can do to reduce clutter on my desk has got to assist. This is where the right choice in hardware comes in - I run a 13” &lt;a href=&quot;https://stealthpuppy.com/?s=macbook&quot;&gt;MacBook&lt;/a&gt; Pro that comes with four Thunderbolt ports, as my primary driver, so I have the opportunity to do everything through a single cable.&lt;/p&gt;
+&lt;p&gt;I work primarily from home and given my job, I’m in front of a computer for extended periods; thus, I need a clean and neat workspace to be able to focus. I’m not great at keeping my workspace tidy as I should be, so anything I can do to reduce clutter on my desk has got to assist. This is where the right choice in hardware comes in - I run a 13” &lt;a href=&quot;/?s=macbook&quot;&gt;MacBook&lt;/a&gt; Pro that comes with four Thunderbolt ports, as my primary driver, so I have the opportunity to do everything through a single cable.&lt;/p&gt;
 
 &lt;p&gt;With the right solution, I should be able to run power to the laptop plus all other inputs and outputs from a Thunderbolt dock, providing me the ability to cleanly route cables (as much as I can). This also means that I can arrive at my desk or leave by pulling out or plugging in a single cable. Everything else I then need for travel remains in my backpack, requiring me to only transfer my laptop.&lt;/p&gt;
 
@@ -841,13 +841,13 @@
 
 &lt;p&gt;Picking a Thunderbolt 3 docks was fairly simple - ensure I have enough ports, including DisplayPort, and see what the reviews recommend. With that info in hand, I settled on the &lt;a href=&quot;http://www.caldigit.com/thunderbolt-3-dock/thunderbolt-station-3-plus/index-asia.asp&quot;&gt;Caldigit TS3 Plus&lt;/a&gt;. This dock has plenty of ports for all of the peripherals I need to plug into it, including DisplayPort and Ethernet.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/Caldigit-TS3Plus-Ports.png&quot; alt=&quot;Ports on the Caldigit TS3Pro Thunderbolt 3 dock&quot; /&gt;&lt;em&gt;Ports on the Caldigit TS3Pro Thunderbolt 3 dock&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/Caldigit-TS3Plus-Ports.png&quot; alt=&quot;Ports on the Caldigit TS3Pro Thunderbolt 3 dock&quot; /&gt;&lt;em&gt;Ports on the Caldigit TS3Pro Thunderbolt 3 dock&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;I have added &lt;a href=&quot;https://www.startech.com/au/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD&quot;&gt;a USB-C to HDMI adapter&lt;/a&gt; to connect my existing 1080p monitor. I’ve found StarTech adapters and cables to be good quality at reasonable prices. Interestingly, I’ve had to plug this into the second Thunderbolt port on the dock to get video out, so even though the dock as 2 USB 3.1 Type-C ports, only the second Thunderbolt port must support DP Alt Mode.&lt;/p&gt;
 
 &lt;p&gt;The dock came with a 50cm Thunderbolt 3 port and 85W output, thus the single cable powers my laptop and connects to all external peripherals. It’s a solid unit in brushed aluminium with a power supply larger than the device itself, which should hopefully assist with heat dissipation.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/CaldiditTS3Plus-Size.jpg&quot; alt=&quot;Comparing the size of the Caldigit TS3 Plus&quot; /&gt;&lt;em&gt;The Caldigit TS3 Plus next to a 60W Apple power supply and its own external power supply&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/CaldiditTS3Plus-Size.jpg&quot; alt=&quot;Comparing the size of the Caldigit TS3 Plus&quot; /&gt;&lt;em&gt;The Caldigit TS3 Plus next to a 60W Apple power supply and its own external power supply&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Thunderbolt on macOS is plug-and-play and  I was able to unbox the dock and plug-in within a few minutes. I have the dock on top of my desk rather than mounting underneath for access to the SD card slot and front facing USB slot. The only change I would have liked to see would be to have the audio ports on the back of the unit to make routing cables easier.&lt;/p&gt;
 
@@ -868,11 +868,11 @@
 
 &lt;p&gt;Scaling in macOS and Windows 10 works a treat and I’ll discuss that in more detail in another article; however, what concerned me before the purchase is exactly how macOS would scale on screen windows. Fortunately, the default scaling is spot on.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/Dell-P2415Q-DisplayOptions.png&quot; alt=&quot;Dell P2415Q scaling options on macOS&quot; /&gt;&lt;em&gt;Dell P2415Q scaling options on macOS&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/Dell-P2415Q-DisplayOptions.png&quot; alt=&quot;Dell P2415Q scaling options on macOS&quot; /&gt;&lt;em&gt;Dell P2415Q scaling options on macOS&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;My audio inputs and outputs are now a little over the top:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/08/macOS-Audio-InputOutput.png&quot; alt=&quot;macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort&quot; /&gt;macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort*&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/08/macOS-Audio-InputOutput.png&quot; alt=&quot;macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort&quot; /&gt;macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort*&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Purchase&lt;/strong&gt;? Maybe - this depends on your space requirements and budget. Whatever you purchase, keep in mind the capabilities of your GPU and how sharp you want windows and text to appear on screen. The larger the screen the more chance you’ll see pixels.&lt;/p&gt;
 
@@ -880,7 +880,7 @@
 
 &lt;p&gt;Overall, I’m very happy with this setup. I’ve had a chance to tidy my workspace by connecting to a single cable that does it all. While I’ve chosen Thunderbolt, USB-C might work for you and the options for doing so are increasing.&lt;/p&gt;
 
-&lt;p&gt;Fortunately, this particular setup has worked well and does support both Mac and PC. I started with the intention to discuss the software side as well and compare the experience of macOS and Windows 10 for Thunderbolt and high DPI screens,  but that will now have to wait for a follow up.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="4K" /><category term="Caldigit" /><category term="Thunderbolt" /><summary type="html">Thunderbolt 3 and USB-C have arrived to make our life easier and more confusing all at the same time. The promise of a single cable that does everything is appealing but for the average consumer, knowing what to purchase is challenging. This article is a view into my research into Thunderbolt, USB-C and 4K monitors and what I’ve ultimately purchased.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/media/2018/08/angela-compagnone-371298-unsplash.jpg" /></entry><entry><title type="html">Adobe Reader DC deployment with Microsoft Intune Part 2</title><link href="/deploy-adobe-reader-dc-intune-part2/" rel="alternate" type="text/html" title="Adobe Reader DC deployment with Microsoft Intune Part 2" /><published>2018-07-22T21:36:58+10:00</published><updated>2018-07-22T21:36:58+10:00</updated><id>/deploy-adobe-reader-dc-intune-part2</id><content type="html" xml:base="/deploy-adobe-reader-dc-intune-part2/">&lt;p&gt;In &lt;a href=&quot;https://stealthpuppy.com/deploy-adobe-reader-dc-microsoft-intune-part1/&quot;&gt;the previous article&lt;/a&gt; we saw how to customise the Adobe Reader DC installation and deploy it via Microsoft Intune. Now that it’s installed on Windows 10 end-points let’s look at how updates work.&lt;/p&gt;
+&lt;p&gt;Fortunately, this particular setup has worked well and does support both Mac and PC. I started with the intention to discuss the software side as well and compare the experience of macOS and Windows 10 for Thunderbolt and high DPI screens,  but that will now have to wait for a follow up.&lt;/p&gt;</content><author><name>Aaron Parker</name></author><category term="4K" /><category term="Caldigit" /><category term="Thunderbolt" /><summary type="html">Thunderbolt 3 and USB-C have arrived to make our life easier and more confusing all at the same time. The promise of a single cable that does everything is appealing but for the average consumer, knowing what to purchase is challenging. This article is a view into my research into Thunderbolt, USB-C and 4K monitors and what I’ve ultimately purchased.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/media/2018/08/angela-compagnone-371298-unsplash.jpg" /></entry><entry><title type="html">Adobe Reader DC deployment with Microsoft Intune Part 2</title><link href="/deploy-adobe-reader-dc-intune-part2/" rel="alternate" type="text/html" title="Adobe Reader DC deployment with Microsoft Intune Part 2" /><published>2018-07-22T21:36:58+10:00</published><updated>2018-07-22T21:36:58+10:00</updated><id>/deploy-adobe-reader-dc-intune-part2</id><content type="html" xml:base="/deploy-adobe-reader-dc-intune-part2/">&lt;p&gt;In &lt;a href=&quot;/deploy-adobe-reader-dc-microsoft-intune-part1/&quot;&gt;the previous article&lt;/a&gt; we saw how to customise the Adobe Reader DC installation and deploy it via Microsoft Intune. Now that it’s installed on Windows 10 end-points let’s look at how updates work.&lt;/p&gt;
 
 &lt;p&gt;First though, it’s important to point out that the version of Adobe Reader DC deployed from the single file Windows Installer is &lt;strong&gt;2015.07.20033&lt;/strong&gt;, while the version that is &lt;a href=&quot;https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotesDC/index.html&quot;&gt;current as of July 2018 is &lt;strong&gt;2018.011.20055&lt;/strong&gt;&lt;/a&gt;. The deployed version then is &lt;em&gt;extremely&lt;/em&gt; out of date, and given that Intune cannot deploy Windows Installer Patch (MSP) files directly, the end-point needs to rely on the Adobe Acrobat update service to download and install updates.&lt;/p&gt;
 
@@ -892,7 +892,7 @@
 
 &lt;p&gt;The task has two triggers - one after user logon, but with a delay of 12 minutes, and the other at a scheduled time that is possibly different per device. Here’s the scheduled task:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/07/AdobeReaderDC-UpdateTask.png&quot; alt=&quot;Adobe Acrobat Update Task&quot; /&gt;&lt;em&gt;Adobe Acrobat Update Task&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/07/AdobeReaderDC-UpdateTask.png&quot; alt=&quot;Adobe Acrobat Update Task&quot; /&gt;&lt;em&gt;Adobe Acrobat Update Task&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn’t exhaustive), it would take more than that to download an update and I resorted to using the ‘Check for Updates’ option from within Adobe Reader manually.&lt;/p&gt;
 
@@ -900,7 +900,7 @@
 
 &lt;p&gt;Downloading and installing updates does not unfortunately go straight to the latest version. In my testing, my target PCs downloaded an intermediate update to &lt;strong&gt;2015.023.20070&lt;/strong&gt; before the second update to &lt;strong&gt;2018.011.20055&lt;/strong&gt;. This means that in the real world, it could be several days before a PC has the most recent version installed.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://stealthpuppy.com/media/2018/07/AdobeReaderDC-1500720033.png&quot; alt=&quot;Adobe Reader DC - An update is available&quot; /&gt;&lt;em&gt;Adobe Reader DC - An update is available&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/media/2018/07/AdobeReaderDC-1500720033.png&quot; alt=&quot;Adobe Reader DC - An update is available&quot; /&gt;&lt;em&gt;Adobe Reader DC - An update is available&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Fortunately, the updates are downloaded and installed without user intervention, meaning that the update process works for users &lt;a href=&quot;https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/user-driven&quot;&gt;without administrative rights to their PC&lt;/a&gt;.&lt;/p&gt;
 
@@ -920,7 +920,7 @@
 
 &lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt;
 
-&lt;p&gt;In &lt;a href=&quot;https://stealthpuppy.com/deploy-adobe-reader-dc-microsoft-intune-part1/&quot;&gt;these articles&lt;/a&gt;, I’ve demonstrated how to package and deploy Adobe Reader DC as a native application via Microsoft Intune, while relying on the automatic updater installed by the application for an end-point to keep Reader up to date. This approach allows you to deploy Adobe Reader in the same way as other &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/lob-apps-windows&quot;&gt;line-of-business applications&lt;/a&gt; for required or optional user-driven installs and then reporting in the Intune console.&lt;/p&gt;
+&lt;p&gt;In &lt;a href=&quot;/deploy-adobe-reader-dc-microsoft-intune-part1/&quot;&gt;these articles&lt;/a&gt;, I’ve demonstrated how to package and deploy Adobe Reader DC as a native application via Microsoft Intune, while relying on the automatic updater installed by the application for an end-point to keep Reader up to date. This approach allows you to deploy Adobe Reader in the same way as other &lt;a href=&quot;https://docs.microsoft.com/en-us/intune/lob-apps-windows&quot;&gt;line-of-business applications&lt;/a&gt; for required or optional user-driven installs and then reporting in the Intune console.&lt;/p&gt;
 
 &lt;p&gt;Because Adobe haven’t released a newer version of the single file Windows Installer for Adobe Reader, you should consider carefully whether this approach is right for your organisation. Deployment of an old version of a high-target, popular application on Windows with the highest number of patched vulnerabilities is probably not a great idea. You might though have good reason to deploy it for features that your users require.&lt;/p&gt;
 
@@ -939,11 +939,11 @@
 
 &lt;h1 id=&quot;adobe-reader-dc-executable-installer&quot;&gt;Adobe Reader DC Executable Installer&lt;/h1&gt;
 
-&lt;p&gt;The Adobe Reader installer hasn’t changed much since as long &lt;a href=&quot;https://stealthpuppy.com/tag/adobe/&quot;&gt;as I’ve been writing about it&lt;/a&gt; (which has been way too long). What is different with Adobe Reader DC is that Adobe has moved to an evergreen model whereby they’re largely moved away from major releases and instead &lt;a href=&quot;https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/whatsnewdc.html#continuous-vs-classic-comparison&quot;&gt;now deliver a continuous release cycle&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Adobe Reader installer hasn’t changed much since as long &lt;a href=&quot;/tag/adobe/&quot;&gt;as I’ve been writing about it&lt;/a&gt; (which has been way too long). What is different with Adobe Reader DC is that Adobe has moved to an evergreen model whereby they’re largely moved away from major releases and instead &lt;a href=&quot;https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/whatsnewdc.html#continuous-vs-classic-comparison&quot;&gt;now deliver a continuous release cycle&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The &lt;a href=&quot;https://get.adobe.com/reader/enterprise/&quot;&gt;current installer&lt;/a&gt; for Adobe Reader DC is a single executable that can run as is, or can be extracted for &lt;a href=&quot;https://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/index.html&quot;&gt;customisation typical of enterprise environments&lt;/a&gt;. When extracted it looks like this:&lt;/p&gt;
 
-&lt;figure id=&quot;attachment_6035&quot; aria-describedby=&quot;caption-attachment-6035&quot; style=&quot;width: 2190px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6035&quot; src=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles.png&quot; alt=&quot;Adobe Reader DC extracted files&quot; width=&quot;2190&quot; height=&quot;965&quot; srcset=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles.png 2190w, https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles-150x66.png 150w, https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles-300x132.png 300w, https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles-768x338.png 768w, https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles-1024x451.png 1024w&quot; sizes=&quot;(max-width: 2190px) 100vw, 2190px&quot; /&gt;](https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles.png)&lt;figcaption id=&quot;caption-attachment-6035&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Reader DC extracted files*
+&lt;figure id=&quot;attachment_6035&quot; aria-describedby=&quot;caption-attachment-6035&quot; style=&quot;width: 2190px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6035&quot; src=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles.png&quot; alt=&quot;Adobe Reader DC extracted files&quot; width=&quot;2190&quot; height=&quot;965&quot; srcset=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles.png 2190w, https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles-150x66.png 150w, https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles-300x132.png 300w, https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles-768x338.png 768w, https://stealthpuppy.com/media/2018/07/ReaderDC-ExtractedFiles-1024x451.png 1024w&quot; sizes=&quot;(max-width: 2190px) 100vw, 2190px&quot; /&gt;](/media/2018/07/ReaderDC-ExtractedFiles.png)&lt;figcaption id=&quot;caption-attachment-6035&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Reader DC extracted files*
 
 This just won't work for deployment via Intune or the Windows 10 MDM channel. We need that single Windows Installer file. Better yet, we need Adobe to make Reader DC available via the Windows Store, but that's a topic for another article.
 
@@ -951,21 +951,21 @@ This just won't work for deployment via Intune or the Windows 10 MDM channel. We
 
 [Adobe does make a single file Windows Installer available](ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/) for Adobe Reader DC, in various languages; however, the file was released in 2015 and unfortunately they've not updated it since. There has been several major releases and updates since March 2005.
 
-&lt;figure id=&quot;attachment_6037&quot; aria-describedby=&quot;caption-attachment-6037&quot; style=&quot;width: 1768px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6037&quot; src=&quot;https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads.png&quot; alt=&quot;Adobe Reader DC single file Windows Installer on the public FTP site&quot; width=&quot;1768&quot; height=&quot;976&quot; srcset=&quot;https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads.png 1768w, https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads-150x83.png 150w, https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads-300x166.png 300w, https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads-768x424.png 768w, https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads-1024x565.png 1024w&quot; sizes=&quot;(max-width: 1768px) 100vw, 1768px&quot; /&gt;](https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads.png)&lt;figcaption id=&quot;caption-attachment-6037&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Reader DC single file Windows Installer on the public FTP site*
+&lt;figure id=&quot;attachment_6037&quot; aria-describedby=&quot;caption-attachment-6037&quot; style=&quot;width: 1768px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6037&quot; src=&quot;https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads.png&quot; alt=&quot;Adobe Reader DC single file Windows Installer on the public FTP site&quot; width=&quot;1768&quot; height=&quot;976&quot; srcset=&quot;https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads.png 1768w, https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads-150x83.png 150w, https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads-300x166.png 300w, https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads-768x424.png 768w, https://stealthpuppy.com/media/2018/07/AdobeReader-FTPdownloads-1024x565.png 1024w&quot; sizes=&quot;(max-width: 1768px) 100vw, 1768px&quot; /&gt;](/media/2018/07/AdobeReader-FTPdownloads.png)&lt;figcaption id=&quot;caption-attachment-6037&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Reader DC single file Windows Installer on the public FTP site*
 
 So, now we have a way to deploy the file, let's see how to customise it and deploy via Intune.
 
 ## Customising the Installer
 
-Customisation of the Adobe Reader installer for [enterprise deployment is well documented](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/index.html) and [I've written about previous versions several times](https://stealthpuppy.com/adobe-reader-xi-deployment/). The same process applies but pay attention to [any version specific settings](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/index.html).
+Customisation of the Adobe Reader installer for [enterprise deployment is well documented](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/index.html) and [I've written about previous versions several times](/adobe-reader-xi-deployment/). The same process applies but pay attention to [any version specific settings](https://www.adobe.com/devnet-docs/acrobatetk/tools/AdminGuide/index.html).
 
 Just like previous versions, you use the [Adobe Customization Wizard](https://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/WizardDC/index.html) to customise the installer for your needs and deploy a custom package.
 
-&lt;figure id=&quot;attachment_6040&quot; aria-describedby=&quot;caption-attachment-6040&quot; style=&quot;width: 2212px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6040&quot; src=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard.png&quot; alt=&quot;Adobe Customization Wizard DC&quot; width=&quot;2212&quot; height=&quot;1206&quot; srcset=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard.png 2212w, https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard-150x82.png 150w, https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard-300x164.png 300w, https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard-768x419.png 768w, https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard-1024x558.png 1024w&quot; sizes=&quot;(max-width: 2212px) 100vw, 2212px&quot; /&gt;](https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard.png)&lt;figcaption id=&quot;caption-attachment-6040&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Customization Wizard DC*
+&lt;figure id=&quot;attachment_6040&quot; aria-describedby=&quot;caption-attachment-6040&quot; style=&quot;width: 2212px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6040&quot; src=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard.png&quot; alt=&quot;Adobe Customization Wizard DC&quot; width=&quot;2212&quot; height=&quot;1206&quot; srcset=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard.png 2212w, https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard-150x82.png 150w, https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard-300x164.png 300w, https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard-768x419.png 768w, https://stealthpuppy.com/media/2018/07/ReaderDC-CustomizationWizard-1024x558.png 1024w&quot; sizes=&quot;(max-width: 2212px) 100vw, 2212px&quot; /&gt;](/media/2018/07/ReaderDC-CustomizationWizard.png)&lt;figcaption id=&quot;caption-attachment-6040&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Customization Wizard DC*
 
 However, we can't customise the single file Windows Installer directly because when saving the customisations, we get this:
 
-&lt;figure id=&quot;attachment_6041&quot; aria-describedby=&quot;caption-attachment-6041&quot; style=&quot;width: 2212px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6041&quot; src=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound.png&quot; alt=&quot;Adobe Customization Wizard DC - setup.ini was not found&quot; width=&quot;2212&quot; height=&quot;1206&quot; srcset=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound.png 2212w, https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound-150x82.png 150w, https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound-300x164.png 300w, https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound-768x419.png 768w, https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound-1024x558.png 1024w&quot; sizes=&quot;(max-width: 2212px) 100vw, 2212px&quot; /&gt;](https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound.png)&lt;figcaption id=&quot;caption-attachment-6041&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Customization Wizard DC - setup.ini was not found*
+&lt;figure id=&quot;attachment_6041&quot; aria-describedby=&quot;caption-attachment-6041&quot; style=&quot;width: 2212px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6041&quot; src=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound.png&quot; alt=&quot;Adobe Customization Wizard DC - setup.ini was not found&quot; width=&quot;2212&quot; height=&quot;1206&quot; srcset=&quot;https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound.png 2212w, https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound-150x82.png 150w, https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound-300x164.png 300w, https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound-768x419.png 768w, https://stealthpuppy.com/media/2018/07/ReaderDC-SetupIniNotFound-1024x558.png 1024w&quot; sizes=&quot;(max-width: 2212px) 100vw, 2212px&quot; /&gt;](/media/2018/07/ReaderDC-SetupIniNotFound.png)&lt;figcaption id=&quot;caption-attachment-6041&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Customization Wizard DC - setup.ini was not found*
 
 To customise the installer, we need to use a 3 step process:
 
@@ -981,11 +981,11 @@ As I've listed in the table, it's important to keep the Adobe Updater enabled, s
 
 Now that you have a customised single file Windows Installer for Adobe Reader DC, you can [import that into Microsoft Intune](https://docs.microsoft.com/en-us/intune/lob-apps-windows), and make it available for deployment.
 
-&lt;figure id=&quot;attachment_6044&quot; aria-describedby=&quot;caption-attachment-6044&quot; style=&quot;width: 2880px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6044&quot; src=&quot;https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed.png&quot; alt=&quot;Adobe Reader DC installed via Intune&quot; width=&quot;2880&quot; height=&quot;1800&quot; srcset=&quot;https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed.png 2880w, https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed-150x94.png 150w, https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed-300x188.png 300w, https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed-768x480.png 768w, https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed-1024x640.png 1024w&quot; sizes=&quot;(max-width: 2880px) 100vw, 2880px&quot; /&gt;](https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed.png)&lt;figcaption id=&quot;caption-attachment-6044&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Reader DC installed via Intune*
+&lt;figure id=&quot;attachment_6044&quot; aria-describedby=&quot;caption-attachment-6044&quot; style=&quot;width: 2880px&quot; class=&quot;wp-caption aligncenter&quot;&gt;[&lt;img class=&quot;size-full wp-image-6044&quot; src=&quot;https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed.png&quot; alt=&quot;Adobe Reader DC installed via Intune&quot; width=&quot;2880&quot; height=&quot;1800&quot; srcset=&quot;https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed.png 2880w, https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed-150x94.png 150w, https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed-300x188.png 300w, https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed-768x480.png 768w, https://stealthpuppy.com/media/2018/07/AdobeReaderDC-Installed-1024x640.png 1024w&quot; sizes=&quot;(max-width: 2880px) 100vw, 2880px&quot; /&gt;](/media/2018/07/AdobeReaderDC-Installed.png)&lt;figcaption id=&quot;caption-attachment-6044&quot; class=&quot;wp-caption-text&quot;&gt;Adobe Reader DC installed via Intune*
 
 # Summary
 
 In this article, I've taken a look at how to deploy Adobe Reader DC as a mobile application for Windows 10 devices enrolled in Microsoft Intune via MDM by creating a customised package based on a single file Windows Installer.
 
-[In part 2, I'll take a look at how Adobe Reader is updated](https://stealthpuppy.com/deploy-adobe-reader-dc-intune-part2/) post-deployment and discuss whether this type of deployment is the right approach. There are other options and ideally I'd like to see Adobe make Reader DC available via the Microsoft Store.
+[In part 2, I'll take a look at how Adobe Reader is updated](/deploy-adobe-reader-dc-intune-part2/) post-deployment and discuss whether this type of deployment is the right approach. There are other options and ideally I'd like to see Adobe make Reader DC available via the Microsoft Store.
 &lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/figcaption&gt;&lt;/figure&gt;</content><author><name>Aaron Parker</name></author><category term="Adobe" /><category term="Adobe Reader" /><category term="Adobe Reader DC" /><category term="Intune" /><summary type="html">Adobe Reader is of course one of the most common applications on Windows desktops and if you’re moving to a Modern Management approach you’re likely looking at how to deploy Adobe Reader DC to Windows 10 via Microsoft Intune.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="/media/2018/07/larry-costales-523576-unsplash.jpg" /></entry></feed>

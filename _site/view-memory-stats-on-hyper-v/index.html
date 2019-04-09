@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>I’ve got a very simple setup in <a href="https://stealthpuppy.com/lab-server-to-run-esxi-hyper-v/">my home lab</a> with a couple of machine running either Hyper-V or ESXi. I typically don’t have monitoring solutions running and manage each host directly, rather than part of a cluster or with SCVMM or vCenter. For Hyper-V, I try to manage it remotely via PowerShell as much as I can and so it’s handy to be able to see memory utilisation on the remote host to understand how much capacity I’ve got before powering on a VM. I’ve written a PowerShell function to return various memory stats:</p>
+    <p>I’ve got a very simple setup in <a href="/lab-server-to-run-esxi-hyper-v/">my home lab</a> with a couple of machine running either Hyper-V or ESXi. I typically don’t have monitoring solutions running and manage each host directly, rather than part of a cluster or with SCVMM or vCenter. For Hyper-V, I try to manage it remotely via PowerShell as much as I can and so it’s handy to be able to see memory utilisation on the remote host to understand how much capacity I’ve got before powering on a VM. I’ve written a PowerShell function to return various memory stats:</p>
 
 <ul>
   <li>Total RAM available in the host - using <a href="http://go.microsoft.com/fwlink/?LinkID=306853">Get-VMHost</a>.</li>

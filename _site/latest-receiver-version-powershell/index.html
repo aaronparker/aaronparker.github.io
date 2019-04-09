@@ -47,7 +47,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>I’ve previously written about <a href="https://stealthpuppy.com/deploy-citrix-receiver-intune/">deploying Citrix Receiver to Windows 10 via Intune with PowerShell</a>. In that article, I included a script that will detect an installed version of Receiver and update to the latest version if it is out of date. To start with, I’ve hard-coded the current Receiver for Windows version into the script; however, that’s not necessarily the best approach, because it will require updating whenever a new version is released.</p>
+    <p>I’ve previously written about <a href="/deploy-citrix-receiver-intune/">deploying Citrix Receiver to Windows 10 via Intune with PowerShell</a>. In that article, I included a script that will detect an installed version of Receiver and update to the latest version if it is out of date. To start with, I’ve hard-coded the current Receiver for Windows version into the script; however, that’s not necessarily the best approach, because it will require updating whenever a new version is released.</p>
 
 <p>The <a href="https://www.citrix.com/downloads/citrix-receiver/">public download page</a> provides a source for querying Receiver versions for all platforms, so if we parse that page, we have a source for the latest versions for all platforms.</p>
 
@@ -75,11 +75,11 @@ Get-CitrixReceiverVersions
 
 <p>Here’s the script in action:</p>
 
-<p><img src="https://stealthpuppy.com/media/2018/01/Get-CitrixReceiverVersions.gif" alt="Get-CitrixReceiverVersions in action" /><em>Get-CitrixReceiverVersions in action on Windows</em></p>
+<p><img src="/media/2018/01/Get-CitrixReceiverVersions.gif" alt="Get-CitrixReceiverVersions in action" /><em>Get-CitrixReceiverVersions in action on Windows</em></p>
 
 <p>An added bonus, the script also works on PowerShell Core:</p>
 
-<p><img src="https://stealthpuppy.com/media/2018/01/Get-CitrixReceiverVersions-Pwsh.gif" alt="Get-CitrixReceiverVersions in action on macOS" /><em>Get-CitrixReceiverVersions in action on macOS</em></p>
+<p><img src="/media/2018/01/Get-CitrixReceiverVersions-Pwsh.gif" alt="Get-CitrixReceiverVersions in action on macOS" /><em>Get-CitrixReceiverVersions in action on macOS</em></p>
 
 <p>I’ve written this primarily for my purposes, but perhaps there are other purposes that I’ve not yet considered. Feedback, issues and improvements to the script are welcome.</p>
 

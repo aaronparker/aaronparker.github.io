@@ -51,7 +51,7 @@
 
 <p>Back in March of this year, I was working on a project to design a solution for hosting applications in an Azure data centre, with access provided by Citrix XenApp and NetScaler. This particular customer needed to control access to both Office 365 applications and XenApp from specific locations only.</p>
 
-<p>By configuring <a href="http://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/secure/federated-authentication-service.html">Citrix FAS</a> and <a href="https://stealthpuppy.com/netscaler-azure-ad-conditional-access/">NetScaler with SAML authentication to Azure AD</a>, we were able to use <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-named-locations">Named Locations in Azure AD</a> Conditional Access policies to achieve the desired goal. For instance we could allow Office 365 only from compliant or domain-joined PCs and ensure access to XenApp only from specific locations. Thus for a certain group of users, they could only access Office 365 applications from XenApp and then only from a specific physical location.</p>
+<p>By configuring <a href="http://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/secure/federated-authentication-service.html">Citrix FAS</a> and <a href="/netscaler-azure-ad-conditional-access/">NetScaler with SAML authentication to Azure AD</a>, we were able to use <a href="https://docs.microsoft.com/en-us/azure/active-directory/active-directory-named-locations">Named Locations in Azure AD</a> Conditional Access policies to achieve the desired goal. For instance we could allow Office 365 only from compliant or domain-joined PCs and ensure access to XenApp only from specific locations. Thus for a certain group of users, they could only access Office 365 applications from XenApp and then only from a specific physical location.</p>
 
 <p>All was well, until Microsoft pulled the ability to use Named Locations in Conditional Access policies half-way through the project. Lesson learned - never rely on preview features in Azure.</p>
 
@@ -59,11 +59,11 @@
 
 <h1 id="saml-all-the-things">SAML All The Things!</h1>
 
-<p>In my previous article on <a href="https://stealthpuppy.com/netscaler-azure-ad-conditional-access/">integrating Citrix NetScaler with Azure AD and Conditional Access</a>, I’ve described the steps to enable SAML authentication to Azure AD from NetScaler to enable a single authentication experience across remote published apps (or desktops) and Office 365. You could extend this of course to additional applications, provide users with single sign-on across all sorts of applications.</p>
+<p>In my previous article on <a href="/netscaler-azure-ad-conditional-access/">integrating Citrix NetScaler with Azure AD and Conditional Access</a>, I’ve described the steps to enable SAML authentication to Azure AD from NetScaler to enable a single authentication experience across remote published apps (or desktops) and Office 365. You could extend this of course to additional applications, provide users with single sign-on across all sorts of applications.</p>
 
 <p>Doing so allows IT to control access to any application, whether that be legacy Win32 apps, or new SaaS applications from a single administrative experience with Conditional Access. Seen in the screenshot below, I have policies providing access to various applications - it’s a beautiful thing.</p>
 
-<p><img src="https://stealthpuppy.com/media/2017/09/AzureAD-CA-Policies.png" alt="Azure AD Conditional Access policies" /></p>
+<p><img src="/media/2017/09/AzureAD-CA-Policies.png" alt="Azure AD Conditional Access policies" /></p>
 
 <h1 id="conditions-in-conditional-access-policies">Conditions in Conditional Access Policies</h1>
 
@@ -75,21 +75,21 @@
   <li>VPN connectivity - force device compliance (for Windows 10 devices) before being allowed access to a corporate VPN</li>
 </ul>
 
-<p><img src="https://stealthpuppy.com/media/2017/09/AzureAD-CA-Policies-Zoom.png" alt="New conditions and controls in preview" /></p>
+<p><img src="/media/2017/09/AzureAD-CA-Policies-Zoom.png" alt="New conditions and controls in preview" /></p>
 
 <h1 id="enabling-country-of-origin">Enabling Country of Origin</h1>
 
 <p>Previously Named Locations allow you to only provide locations via specific subnets to define egress locations, e.g. your corporate office. New in Named Locations is the ability to add specific countries that you could use in allow or block scenarios, effectively enabling a whitelist or blacklist of regions.</p>
 
-<p><img src="https://stealthpuppy.com/media/2017/09/AzureAD-CA-Countries-Regions.png" alt="Creating a Named Location to define country of origin" /></p>
+<p><img src="/media/2017/09/AzureAD-CA-Countries-Regions.png" alt="Creating a Named Location to define country of origin" /></p>
 
 <p>Once these Named Locations are defined, it’s possible to mix and match locations depending on your requirements. Within a Conditional Access policy, enable <strong>Locations</strong> under <strong>Conditions</strong>, and add the Named Locations. Use either Include or Exclude to whitelist or blacklist respectively.</p>
 
-<p><img src="https://stealthpuppy.com/media/2017/09/AzureAD-CA-SelectedLocations.png" alt="Allowing access from specific countries" /></p>
+<p><img src="/media/2017/09/AzureAD-CA-SelectedLocations.png" alt="Allowing access from specific countries" /></p>
 
 <p>And that’s it! We now have country of origin as a condition that we could use as one condition to ensure access is secure. Allow compliant device, enforce MFA, or a custom control to give you confidence that access to XenApp or XenDesktop applications (or perhaps even web apps) is secure.</p>
 
-<p><img src="https://stealthpuppy.com/media/2017/09/AzureAD-CA-GrantControl-MFA.png" alt="Granting access with MFA" /></p>
+<p><img src="/media/2017/09/AzureAD-CA-GrantControl-MFA.png" alt="Granting access with MFA" /></p>
 
 <p>If we were to compare setting up NetScaler Gateway with AD integration, 3rd party multi-factor authentication and <a href="https://support.citrix.com/article/CTX130701">country of</a> origin access by subscribing to a country database (see <a href="https://support.citrix.com/article/CTX130701">How to Use NetScaler to Block Access to a Website Using a Location Database Based on User’s Country</a>), I’m sure you would agree this method is simpler and easier to maintain.</p>
 

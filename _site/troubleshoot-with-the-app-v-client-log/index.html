@@ -50,7 +50,7 @@
 
 <p>The client log settings are managed in the Application Virtualization Client console (SFTCMC.MSC) – start the console and the logging settings can be viewed on the General tab:</p>
 
-<p><img src="https://stealthpuppy.com/media/2010/09/ClientProperties.png" alt="Client properties" /></p>
+<p><img src="/media/2010/09/ClientProperties.png" alt="Client properties" /></p>
 
 <p>There are actually two places to which the the client will log errors – the Application event log (shown in the image under <em>System Log Level</em>) and the client log file; however the log file is generally the easiest to use when troubleshooting because it’s a flat text file.</p>
 
@@ -68,7 +68,7 @@
 
 <p>Resetting the log will rename the existing file and start a new one:</p>
 
-<p><img src="https://stealthpuppy.com/media/2010/09/LogLocation.png" alt="Log location" /></p>
+<p><img src="/media/2010/09/LogLocation.png" alt="Log location" /></p>
 
 <p><strong>Note</strong>: once you have finished troubleshooting, don’t forget to set the logging level back to <em>Information</em>.</p>
 
@@ -116,7 +116,7 @@ The app manager could not create an application from '\\domain.local\Public\Apps
 
 <p>If check the actual location of the OSD file, I can see that the package is not in the correct path (its actually located at \domain.local\Public\Apps\Adobe\AdobeReader9_x86):</p>
 
-<p><img src="https://stealthpuppy.com/media/2010/09/OSDLocation.png" alt="OSD Location" /></p>
+<p><img src="/media/2010/09/OSDLocation.png" alt="OSD Location" /></p>
 
 <p>To fix this issue, I need to update the application properties in the App-V Management console, I can then refresh the client again and the application will be published correctly.</p>
 
@@ -124,7 +124,7 @@ The app manager could not create an application from '\\domain.local\Public\Apps
 
 <p>This was a very simple example and the fix was quite obvious. In all cases though, the client log will include an error code – the same code will often be displayed in a dialog box:</p>
 
-<p><img src="https://stealthpuppy.com/media/2010/09/ClientError.png" alt="Client error" /></p>
+<p><img src="/media/2010/09/ClientError.png" alt="Client error" /></p>
 
 <p>If the problem is not immediately apparent in the log, start looking for a solution by using the error code. Falko Gräfe has an excellent article that explains <a href="http://www.kirx.org/app-v/read/error-codes-en.html">how to interpret these error codes</a>. In most cases, there will be <a href="http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code">an associated Microsoft knowledgebase article</a> that should give a solution for the error.</p>
 

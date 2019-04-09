@@ -49,7 +49,7 @@
   <div class="post-content e-content" itemprop="articleBody">
     <p>Confession time - I’ve had a <a href="https://github.com/aaronparker?tab=repositories">GitHub account</a> since 2014 and haven’t signed a single commit. I’ve read various tweets and articles about signing your commits, but never committed (git it? … see what I did there…) to setting up a signature until recently.</p>
 
-<p>I’m not a developer, <a href="https://stealthpuppy.com/tag/powershell/">I just write a bunch of scripts</a>, but I like the idea of signing my commits so that others can see that all changes to my code are verified. There’s plenty of articles on why signing your commits is a good idea. Here’s a couple:</p>
+<p>I’m not a developer, <a href="/tag/powershell/">I just write a bunch of scripts</a>, but I like the idea of signing my commits so that others can see that all changes to my code are verified. There’s plenty of articles on why signing your commits is a good idea. Here’s a couple:</p>
 
 <ul>
   <li><a href="https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits">A Git Horror Story: Repository Integrity With Signed Commits</a></li>
@@ -58,7 +58,7 @@
 
 <p>If you’ve ever edited a file directly on github.com and committed the changes, you would surely have noticed those Verified badges:</p>
 
-<p><img src="https://stealthpuppy.com/media/2019/03/GitHubCommit.png" alt="Signing Git Commits" /><em>Verified signature through a GitHib.com commit</em></p>
+<p><img src="/media/2019/03/GitHubCommit.png" alt="Signing Git Commits" /><em>Verified signature through a GitHib.com commit</em></p>
 
 <p>To be honest, the GitHub documentation on <a href="https://help.github.com/en/articles/managing-commit-signature-verification">managing commit signature verification</a> is pretty good, but here’s how I stumbled my way through setting up a signature to <a href="https://help.github.com/en/articles/managing-commit-signature-verification">enable signed commits</a>.</p>
 
@@ -73,7 +73,7 @@
   <li>Finally I’ve uploaded my public key to the key server with the ‘Send Public Key to the Key Server’ option. Some <a href="https://sks-keyservers.net/overview-of-pools.php">GPG nerd would know what exactly that does</a>, but I don’t believe it actually required for signing commits and pushing to GitHub, because we need to update the public key to GtiHub anyway.</li>
 </ol>
 
-<p><img src="https://stealthpuppy.com/media/2019/03/GPG-Key.png" alt="GPG key view in the GPG Keychain and Signing Git Commits" /><em>GPG key view in the GPG Keychain</em></p>
+<p><img src="/media/2019/03/GPG-Key.png" alt="GPG key view in the GPG Keychain and Signing Git Commits" /><em>GPG key view in the GPG Keychain</em></p>
 
 <h2 id="add-your-public-key-to-github">Add Your Public Key to GitHub</h2>
 
@@ -85,7 +85,7 @@
   <li>Paste in the key and click <strong>Add GPG Key</strong></li>
 </ol>
 
-<p><img src="https://stealthpuppy.com/media/2019/03/AddGPGKey.png" alt="Adding your public GPG key to GitHub and Signing Git Commits" /><em>Adding your public GPG key to GitHub</em></p>
+<p><img src="/media/2019/03/AddGPGKey.png" alt="Adding your public GPG key to GitHub and Signing Git Commits" /><em>Adding your public GPG key to GitHub</em></p>
 
 <h2 id="add-your-signing-key-to-git">Add Your Signing Key to Git</h2>
 
@@ -99,7 +99,7 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config <span class="nt">-global</span> user.signingkey C55D39F88CE9A2C5
 </code></pre></div></div>
 
-<p><img src="https://stealthpuppy.com/media/2019/03/gitconfig.png" alt="Finding your key ID and adding the key to git" /><em>Finding your key ID and adding the key to git</em></p>
+<p><img src="/media/2019/03/gitconfig.png" alt="Finding your key ID and adding the key to git" /><em>Finding your key ID and adding the key to git</em></p>
 
 <p>On Windows the process for signing git commits is much the same. First install <a href="https://gitforwindows.org/">Git for Windows</a> and use git bash instead of Terminal.</p>
 
@@ -109,13 +109,13 @@
 
 <p>In Preferences, search for ‘git signing’ and select ‘Git: Enable Commit Signing’:</p>
 
-<p><img src="https://stealthpuppy.com/media/2019/03/VSCode-GitSigning.png" alt="Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits" /><em>Enable Commit Signing in Visual Studio Code preferences</em></p>
+<p><img src="/media/2019/03/VSCode-GitSigning.png" alt="Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits" /><em>Enable Commit Signing in Visual Studio Code preferences</em></p>
 
 <p><a href="https://code.visualstudio.com/docs/introvideos/versioncontrol">VSCode supports version control using git</a> from directly within the VSCode window. On your first commit, you’ll be prompted to enter the password for your GPG key before the commit will complete.</p>
 
 <p>That’s about all the steps required for signing git commits. We have signed commits in a GitHub repository and a sweet, sweet Verified badge - now I can brag to all my friends and they’ll know that code came from me. My mum still won’t understand what I do for a living, but you can’t get a win every day.</p>
 
-<p><img src="https://stealthpuppy.com/media/2019/03/Verified.gif" alt="Now I have a nice shiny verified badge on my commits" /><em>Now I have a nice shiny verified badge on my commits</em></p>
+<p><img src="/media/2019/03/Verified.gif" alt="Now I have a nice shiny verified badge on my commits" /><em>Now I have a nice shiny verified badge on my commits</em></p>
 
   </div><a class="u-url" href="/signing-git-commits-for-sweet-verified-badges/" hidden></a>
 </article>
