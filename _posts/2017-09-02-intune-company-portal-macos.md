@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "6113877109"
-image: /wp-content/uploads/2017/09/CompanyPortalMacOS.png
+image: /media/2017/09/CompanyPortalMacOS.png
 categories:
   - Microsoft
 tags:
@@ -30,38 +30,38 @@ Previous to the Company Portal on macOS, enrollment in Intune is a largely manua
 
 Here's what that looks like:
 
-![Intune web enrollment for macOS](https://stealthpuppy.com/wp-content/uploads/2017/09/Intune-WebEnroll.png)
+![Intune web enrollment for macOS](https://stealthpuppy.com/media/2017/09/Intune-WebEnroll.png)
 
-![Downloading the Intune management profile](https://stealthpuppy.com/wp-content/uploads/2017/09/Intune-WebEnroll2.png)
+![Downloading the Intune management profile](https://stealthpuppy.com/media/2017/09/Intune-WebEnroll2.png)
 
-![Installing the MDM management profile](https://stealthpuppy.com/wp-content/uploads/2017/09/Intune-WebEnroll-Profile.png)
+![Installing the MDM management profile](https://stealthpuppy.com/media/2017/09/Intune-WebEnroll-Profile.png)
 
 # Intune Company Portal for macOS Experience
 
 With the Company Portal, the user experience is streamlined, with the management profile installed automatically and you can see device compliance status from within the app. Here's a quick look at the end-user experience with the Intune Company Portal for macOS on macOS Sierra.
 
-![Launching the portal on macOS](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal1.png)
+![Launching the portal on macOS](https://stealthpuppy.com/media/2017/09/MacCompanyPortal1.png)
   
-![Signing in with a user account with modern authentication](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal2.png)
+![Signing in with a user account with modern authentication](https://stealthpuppy.com/media/2017/09/MacCompanyPortal2.png)
 
-![Entering your credentials](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal3.png)
+![Entering your credentials](https://stealthpuppy.com/media/2017/09/MacCompanyPortal3.png)
 
-![Establishing connection a to Intune](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal4.png)
+![Establishing connection a to Intune](https://stealthpuppy.com/media/2017/09/MacCompanyPortal4.png)
 
-![Walking the user through device enrollment](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal5.png)
+![Walking the user through device enrollment](https://stealthpuppy.com/media/2017/09/MacCompanyPortal5.png)
 
-![Why enroll your device?](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal6.png)
+![Why enroll your device?](https://stealthpuppy.com/media/2017/09/MacCompanyPortal6.png)
 
-![MacOS privacy details](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal7.png)
+![MacOS privacy details](https://stealthpuppy.com/media/2017/09/MacCompanyPortal7.png)
 
-![Providing the user with details on enrollment](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal8.png)
+![Providing the user with details on enrollment](https://stealthpuppy.com/media/2017/09/MacCompanyPortal8.png)
 
-![Installing the management profile](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal9.png)
+![Installing the management profile](https://stealthpuppy.com/media/2017/09/MacCompanyPortal9.png)
 
-![Enrollment is successful along with device compliance](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal10.png)
+![Enrollment is successful along with device compliance](https://stealthpuppy.com/media/2017/09/MacCompanyPortal10.png)
 
-![Intune enrollment complete](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal11.png)
+![Intune enrollment complete](https://stealthpuppy.com/media/2017/09/MacCompanyPortal11.png)
 
-![Intune Company Portal for macOS installing device details](https://stealthpuppy.com/wp-content/uploads/2017/09/MacCompanyPortal12a.png)
+![Intune Company Portal for macOS installing device details](https://stealthpuppy.com/media/2017/09/MacCompanyPortal12a.png)
 
 Hopefully we'll see the portal app available for download again soon and available for wider testing. I'm also hoping that the availability of the Portal app means we'll see the ability for Intune to install apps on macOS. As we see more Mac devices (either corporate or personally owned), the ability to deploy and manage apps on this platform becomes critical.

@@ -16,10 +16,10 @@ tags:
 ---
 I've updated my [Sun Java Runtime Environment 1.6 Update X script](https://stealthpuppy.com/unattended/unattended-install-sun-java-runtime-environment-16-update-3), again. Updating this script seems to be a never ending task, usually because I find mistakes but this time around I've made a couple of changes including Windows x64 support. The script will now supports installing the 32-bit version of the JRE on x86 and x64 Windows and configures the environment accordingly.
 
-A second change I've implemented is in the way the script adds registry entries to fool applications that expect earlier versions of the JRE to use the latest installed version. This change uses [a text file that lists the earlier versions](https://stealthpuppy.com/wp-content/uploads/2008/06/versions.txt) for import into the registry.
+A second change I've implemented is in the way the script adds registry entries to fool applications that expect earlier versions of the JRE to use the latest installed version. This change uses [a text file that lists the earlier versions](https://stealthpuppy.com/media/2008/06/versions.txt) for import into the registry.
 
 To use this script, save the script, the versions text file and the JRE installer to a folder on a local drive. Then elevate a command prompt to run the script and install.
 
-<img border="0" alt="SunJRE" src="https://stealthpuppy.com/wp-content/uploads/2008/06/sunjre.png" width="577" height="243" /> 
+<img border="0" alt="SunJRE" src="https://stealthpuppy.com/media/2008/06/sunjre.png" width="577" height="243" /> 
 
 Now I've got to get XenApp 5.0 Management Console using the latest JRE, but that's for another post.

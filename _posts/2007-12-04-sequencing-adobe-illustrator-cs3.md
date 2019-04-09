@@ -14,7 +14,7 @@ tags:
   - Adobe
   - SoftGrid
 ---
-<img src="https://stealthpuppy.com/wp-content/uploads/2008/02/illustrator-softgridbox.png" align="left" alt="illustrator-softgridbox.png" />As with my earlier posts on sequencing [Adobe Acrobat 8](https://stealthpuppy.com/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far) and [Adobe Photoshop CS3](https://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3), I've struck the same manifest issues with Illustrator CS3. Here's a quick breakdown on what I needed to do to get this application working:
+<img src="https://stealthpuppy.com/media/2008/02/illustrator-softgridbox.png" align="left" alt="illustrator-softgridbox.png" />As with my earlier posts on sequencing [Adobe Acrobat 8](https://stealthpuppy.com/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far) and [Adobe Photoshop CS3](https://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3), I've struck the same manifest issues with Illustrator CS3. Here's a quick breakdown on what I needed to do to get this application working:
 
 ### Sequencing Illustrator CS3
 

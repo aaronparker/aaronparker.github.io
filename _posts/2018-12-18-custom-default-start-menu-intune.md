@@ -8,7 +8,7 @@ guid: https://stealthpuppy.com/?p=6216
 permalink: /custom-default-start-menu-intune/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /wp-content/uploads/2018/12/Windows10ProDefaultStartMenu1080.png
+image: /media/2018/12/Windows10ProDefaultStartMenu1080.png
 categories:
   - Microsoft
 tags:
@@ -20,7 +20,7 @@ The promise of a modern management approach to deployment and management of Wind
 
 The default Start menu, especially on Windows 10 Pro, is far from enterprise ready right? Take a look at this mess:
 
-![Windows 10 Pro 1809 default Start menu](https://stealthpuppy.com/wp-content/uploads/2018/12/StartMenu-1024x717.png)*Windows 10 Pro 1809 default Start menu*
+![Windows 10 Pro 1809 default Start menu](https://stealthpuppy.com/media/2018/12/StartMenu-1024x717.png)*Windows 10 Pro 1809 default Start menu*
 
 Over-the-air provisioning of PCs via Windows AutoPilot & Azure AD, Microsoft Intune (or insert your MDM solution here), limits the possibilities of customising the target PC before the user logs on. The administrator can [define a Start menu](https://docs.microsoft.com/en-us/windows/configuration/customize-windows-10-start-screens-by-using-mobile-device-management), but that's a policy, not a preference. One size does not fit all, and users should be able to customise the Start menu to suit their style. 
 
@@ -48,7 +48,7 @@ The next step is to create a custom Windows Installer package to deliver the lay
 
 Advanced Installer makes short work of creating the package - create a new Simple Installer package and configure the product name, version and publisher. Note that if you want to update the package, save your project and update the version number each time you produce an updated installer.
 
-![Advanced Installer package Product details](https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller01-ProductDetails.png)
+![Advanced Installer package Product details](https://stealthpuppy.com/media/2018/12/AdvancedInstaller01-ProductDetails.png)
 
 Add the Start menu layout file to the project under Files and Folders. The project must define the correct target path and file name because it will be deployed into the default profile. Use this path:
 
@@ -56,7 +56,7 @@ Add the Start menu layout file to the project under Files and Folders. The proje
 
 And add the `LayoutModification.xml` file that you've exported with `Export-StartLayout` into this path. If your target path and file name aren't correct, this won't work so ensure your package looks the same as the screenshots here.
 
-![Adding the Start menu layout file to Files and Folders in Advanced Installer](https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller02-FilesFolders.png)
+![Adding the Start menu layout file to Files and Folders in Advanced Installer](https://stealthpuppy.com/media/2018/12/AdvancedInstaller02-FilesFolders.png)
 
 For this package, I've configured the following install parameters:
 
@@ -64,11 +64,11 @@ For this package, I've configured the following install parameters:
   * Installation type - Per-machine only
   * Reboot behaviour - Suppress all reboots and Reboot prompts
 
-![Configure Install Parameters in Advanced Installer](https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller02a-InstallParameters.png)
+![Configure Install Parameters in Advanced Installer](https://stealthpuppy.com/media/2018/12/AdvancedInstaller02a-InstallParameters.png)
 
 Configure the default build to produce a Single MSI file and define the name. In the example below, I've used `DefaultStartMenuLayout.msi`.
 
-![Configure Advanced Installer to build a single MSI file with all resources embedded](https://stealthpuppy.com/wp-content/uploads/2018/12/AdvancedInstaller03-Builds.png)
+![Configure Advanced Installer to build a single MSI file with all resources embedded](https://stealthpuppy.com/media/2018/12/AdvancedInstaller03-Builds.png)
 
 Build your package and add the MSI into Microsoft Intune as [a line-of-business application](https://docs.microsoft.com/en-us/intune/lob-apps-windows). Assign the new application as **Required** for **All Devices**, so that the Enrolment Status Page can track the installation before the user logs on.
 
@@ -80,7 +80,7 @@ Configure the ESP and enable the 'Block device use until these required apps are
 
 Here's the applications that I've configured in my test environment:
 
-![Configure the Enrolment Status Page with the list of apps and the default Start menu](https://stealthpuppy.com/wp-content/uploads/2018/12/EnrollmentStatusPage.png)
+![Configure the Enrolment Status Page with the list of apps and the default Start menu](https://stealthpuppy.com/media/2018/12/EnrollmentStatusPage.png)
 
 Today the ESP [tracks specific application deployments](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/enrollment-status) - Microsoft Store apps and single MSI files, while Office 365 ProPlus applications are tracked on Windows 10 1809 and above.
 
@@ -90,7 +90,7 @@ Most of my testing is on Windows 10 1809 - with a PC enrolled into Azure AD and 
 
 After the enrollment and deployment is complete, the user sees a customised Start menu after first logon. There's a few tiles that didn't remain pinned from the default customisation, but this is much cleaner and enterprise ready than what we end up with out of the box.
 
-![Start menu](https://stealthpuppy.com/wp-content/uploads/2018/12/UserDeployment-StartMenu.png)
+![Start menu](https://stealthpuppy.com/media/2018/12/UserDeployment-StartMenu.png)
 
 ## Wrapping Up
 

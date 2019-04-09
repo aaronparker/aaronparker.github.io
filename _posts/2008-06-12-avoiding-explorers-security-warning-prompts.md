@@ -13,13 +13,13 @@ categories:
 ---
 Windows XP Service Pack 2 and Windows Server 2003 Service Pack 1 made some changes to the way Windows handles specific file types opened or downloaded from certain locations, which results in Open File – Security Warning prompts like these:
 
-<img title="SecurityWarning" src="https://stealthpuppy.com/wp-content/uploads/2008/06/securitywarning.png" border="0" alt="SecurityWarning" width="579" height="268" /> 
+<img title="SecurityWarning" src="https://stealthpuppy.com/media/2008/06/securitywarning.png" border="0" alt="SecurityWarning" width="579" height="268" /> 
 
 Quite often users see these prompts in environments where files are opened from UNC paths (think mapped drives or redirected folders) on [Distributed File System](http://technet2.microsoft.com/windowsserver2008/en/library/1f0d326d-35af-4193-bda3-0d1688f90ea71033.mspx?mfr=true) namespaces. If you have this scenario (which I think you should be) because you are doing something like [redirecting Start Menus](https://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration), you can disable these prompts for your internal network locations.
 
 Ideally you would do this by deploying specific Intranet zone settings (as in the screenshots below) or adding your internal sites to the Intranet zone via a script, Group Policy (Preferences or Internet Explorer Maintenance) or your tool of choice.
 
-<img title="LocalIntranet1" src="https://stealthpuppy.com/wp-content/uploads/2008/06/localintranet1.png" border="0" alt="LocalIntranet1" width="357" height="210" /><img title="LocalIntranet2" src="https://stealthpuppy.com/wp-content/uploads/2008/06/localintranet2.png" border="0" alt="LocalIntranet2" width="341" height="302" />  
+<img title="LocalIntranet1" src="https://stealthpuppy.com/media/2008/06/localintranet1.png" border="0" alt="LocalIntranet1" width="357" height="210" /><img title="LocalIntranet2" src="https://stealthpuppy.com/media/2008/06/localintranet2.png" border="0" alt="LocalIntranet2" width="341" height="302" />  
 
 There’s a heap of information on how this stuff works at these links:
 

@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" alt="" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" align="left" />Microsoft App-V is available in two flavours: for desktops (this includes laptops and virtual desktops – essentially anything that will run Windows XP, Windows Vista or Windows 7) and for Remote Desktop Services (RDS).
+<img style="margin: 0px 10px 5px 0px; display: inline;" alt="" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" align="left" />Microsoft App-V is available in two flavours: for desktops (this includes laptops and virtual desktops – essentially anything that will run Windows XP, Windows Vista or Windows 7) and for Remote Desktop Services (RDS).
 
 ### Microsoft App-V for Desktops
 

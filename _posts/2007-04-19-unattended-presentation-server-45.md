@@ -19,7 +19,7 @@ tags:
 ---
 While things haven't changed much since Presentation Server 4.0, I've put together what you'll need to create an unattended install for Presentation Server 4.5. First up I've made a copy of the installation files from the CD and added them to a single folder. This includes a copy of the administration tools in the same folder:
 
-<img src="https://stealthpuppy.com/wp-content/uploads/2007/04/1000.14.1322.PresentationServer45.png" border="0" /> 
+<img src="https://stealthpuppy.com/media/2007/04/1000.14.1322.PresentationServer45.png" border="0" /> 
 
 <a href="http://www.stealthpuppy.com/photos/images/images/1322/original.aspx" target="_blank"></a>
 

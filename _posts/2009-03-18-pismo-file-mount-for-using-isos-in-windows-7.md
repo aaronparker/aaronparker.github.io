@@ -22,10 +22,10 @@ My old favourite [Daemon Tools](http://www.daemon-tools.cc/home) just hasn't bee
 
 File Mount has [a pretty impressive feature set](http://www.pismotechnic.com/pfm/doc/), but its' simple approach to handling ISOs is what I'm really enjoying. There's pleny of options to suit (hopefully) everyone when mounting an image:
 
-<img class="alignnone size-full wp-image-1056" title="mountoptions" src="https://stealthpuppy.com/wp-content/uploads/2009/03/mountoptions.png" alt="mountoptions" width="423" height="449" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/mountoptions.png 423w, https://stealthpuppy.com/wp-content/uploads/2009/03/mountoptions-282x300.png 282w" sizes="(max-width: 423px) 100vw, 423px" /> 
+<img class="alignnone size-full wp-image-1056" title="mountoptions" src="https://stealthpuppy.com/media/2009/03/mountoptions.png" alt="mountoptions" width="423" height="449" srcset="https://stealthpuppy.com/media/2009/03/mountoptions.png 423w, https://stealthpuppy.com/media/2009/03/mountoptions-282x300.png 282w" sizes="(max-width: 423px) 100vw, 423px" /> 
 
 If you don't need to mount an ISO to a drive letter, File Mount will convert the ISO to a folder which you can then view directly in Explorer:
 
-<img class="alignnone size-full wp-image-1057" title="windows7iso" src="https://stealthpuppy.com/wp-content/uploads/2009/03/windows7iso.png" alt="windows7iso" width="590" height="194" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/windows7iso.png 590w, https://stealthpuppy.com/wp-content/uploads/2009/03/windows7iso-300x98.png 300w" sizes="(max-width: 590px) 100vw, 590px" /> 
+<img class="alignnone size-full wp-image-1057" title="windows7iso" src="https://stealthpuppy.com/media/2009/03/windows7iso.png" alt="windows7iso" width="590" height="194" srcset="https://stealthpuppy.com/media/2009/03/windows7iso.png 590w, https://stealthpuppy.com/media/2009/03/windows7iso-300x98.png 300w" sizes="(max-width: 590px) 100vw, 590px" /> 
 
 Works well for in-place upgrades to newer Windows 7 builds.. 😉

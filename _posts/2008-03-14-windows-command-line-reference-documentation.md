@@ -11,7 +11,7 @@ categories:
 tags:
   - Command Line
 ---
-<img border="0" alt="CommandLine128" align="left" src="https://stealthpuppy.com/wp-content/uploads/2008/03/commandline128.png" width="142" height="115" /> There's a couple of command line reference documents available on Microsoft Download recently. Via [Aaron Tiensivu](http://blog.tiensivu.com/aaron/archives/1522-Windows-Command-Reference-updated-for-Vista-and-Server-2008.html), there's the [Windows Command Reference](http://www.microsoft.com/downloads/details.aspx?familyid=5fb255ff-72da-4b08-a504-1b10266cf72a&displaylang=en) for Windows Server 2003, Windows Vista and Windows Server 2008, which curiously doesn't include every command line tool in Windows.
+<img border="0" alt="CommandLine128" align="left" src="https://stealthpuppy.com/media/2008/03/commandline128.png" width="142" height="115" /> There's a couple of command line reference documents available on Microsoft Download recently. Via [Aaron Tiensivu](http://blog.tiensivu.com/aaron/archives/1522-Windows-Command-Reference-updated-for-Vista-and-Server-2008.html), there's the [Windows Command Reference](http://www.microsoft.com/downloads/details.aspx?familyid=5fb255ff-72da-4b08-a504-1b10266cf72a&displaylang=en) for Windows Server 2003, Windows Vista and Windows Server 2008, which curiously doesn't include every command line tool in Windows.
 
 For example [SERVERMANAGERCMD](https://stealthpuppy.com/windows/server-managers-power-is-in-the-command-line), in Windows Server 2008, is not included in this document, nor is NETSH. Everything you should need is there including the VBS file included in the OS.
 

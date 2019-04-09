@@ -11,7 +11,7 @@ categories:
 tags:
   - SoftGrid
 ---
-<img border="0" alt="SoftGridPresentation" align="left" src="https://stealthpuppy.com/wp-content/uploads/2008/04/softgridpresentation.png" width="128" height="128" /> I've got two user group presentations coming up next month where I'll be presenting on Microsoft SoftGrid and why I think application virtualisation is great stuff. Hopefully I'll be able to fit in a bit about some other appvirt products in there too. 
+<img border="0" alt="SoftGridPresentation" align="left" src="https://stealthpuppy.com/media/2008/04/softgridpresentation.png" width="128" height="128" /> I've got two user group presentations coming up next month where I'll be presenting on Microsoft SoftGrid and why I think application virtualisation is great stuff. Hopefully I'll be able to fit in a bit about some other appvirt products in there too. 
 
 The first presentation will be in Australia at the [Brisbane Infrastructure Group](http://www.aususergroups.org/big) on Tuesday May 13. I'm told the May meeting will be their first for the year and I'm the only presenter on the bill. So no pressure eh? No word on venue yet, but keep an eye on [Dugie's blog](http://blog.windowsvirtualization.com/) for more information.
 

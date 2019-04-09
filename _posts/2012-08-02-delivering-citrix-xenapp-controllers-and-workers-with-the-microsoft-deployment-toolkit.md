@@ -18,7 +18,7 @@ tags:
   - MDT
   - XenApp
 ---
-<img style="background-image: none; margin: 0px 0px 10px 10px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border: 0px;" title="CitrixWindows8Desktop128" src="https://stealthpuppy.com/wp-content/uploads/2012/08/CitrixWindows8Desktop128.png" alt="CitrixWindows8Desktop128" width="128" height="128" align="right" border="0" />Here's a quick a dirty method of controlling whether your [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx) (MDT) task sequence deploys a XenApp Controller (broker, XML service) or Worker (session host).
+<img style="background-image: none; margin: 0px 0px 10px 10px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border: 0px;" title="CitrixWindows8Desktop128" src="https://stealthpuppy.com/media/2012/08/CitrixWindows8Desktop128.png" alt="CitrixWindows8Desktop128" width="128" height="128" align="right" border="0" />Here's a quick a dirty method of controlling whether your [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-us/solutionaccelerators/dd407791.aspx) (MDT) task sequence deploys a XenApp Controller (broker, XML service) or Worker (session host).
 
 Let's assume that you are automating the deployment of your XenApp image using MDT in an environment with XenApp Controllers and Workers. It makes sense to use the same task sequence to deploy both XenApp roles because there's not a lot of difference between both server types (maybe on the Controllers we could avoid installing applications).
 
@@ -45,14 +45,14 @@ XenAppRole=CONTROLLER[/code]
 
 Now in the task sequence, modify the conditions (on the Option tab) of each step. In my case I have the XenApp components as child items of a group. In this case I've also added a condition that only processes this group if the XenAppRole property exists (regardless of role):
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppRole" src="https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppRole_thumb.png" alt="XenAppRole" width="660" height="129" border="0" />](https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppRole.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppRole" src="https://stealthpuppy.com/media/2012/08/XenAppRole_thumb.png" alt="XenAppRole" width="660" height="129" border="0" />](https://stealthpuppy.com/media/2012/08/XenAppRole.png)
 
 On the XenApp Controller step, create a condition that detects whether XenAppRole has been set to CONTROLLER:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppController" src="https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppController_thumb.png" alt="XenAppController" width="660" height="219" border="0" />](https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppController.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppController" src="https://stealthpuppy.com/media/2012/08/XenAppController_thumb.png" alt="XenAppController" width="660" height="219" border="0" />](https://stealthpuppy.com/media/2012/08/XenAppController.png)
 
 On the XenApp Worker step, create a condition that detects whether XenAppRole has been set to WORKER:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppWorker" src="https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppWorker_thumb.png" alt="XenAppWorker" width="660" height="218" border="0" />](https://stealthpuppy.com/wp-content/uploads/2012/08/XenAppWorker.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="XenAppWorker" src="https://stealthpuppy.com/media/2012/08/XenAppWorker_thumb.png" alt="XenAppWorker" width="660" height="218" border="0" />](https://stealthpuppy.com/media/2012/08/XenAppWorker.png)
 
 Simple and straightforward - I get a clean, consistent build of XenApp 6.5 and control over which role is deployed to an end-point by changing one line in CustomSettings.ini.

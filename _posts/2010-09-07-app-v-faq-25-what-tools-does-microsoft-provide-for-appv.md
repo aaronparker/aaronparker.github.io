@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline;" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="right" />Microsoft provides several tools that are useful for managing your App-V environment. Although Microsoft does make these applications freely available, they are not supported through the official Microsoft Support channels. Use the [Microsoft Application Virtualization TechNet forums](http://social.technet.microsoft.com/Forums/en-gb/category/appvirtualization) to provide feedback or report any problems. The tools include:
+<img style="margin: 0px 0px 5px 10px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />Microsoft provides several tools that are useful for managing your App-V environment. Although Microsoft does make these applications freely available, they are not supported through the official Microsoft Support channels. Use the [Microsoft Application Virtualization TechNet forums](http://social.technet.microsoft.com/Forums/en-gb/category/appvirtualization) to provide feedback or report any problems. The tools include:
 
 ### Application Virtualization Sequencing SuperFlow
 
@@ -48,7 +48,7 @@ The Microsoft Application Virtualization ADM template configures client settings
 
 The App-V Application Listing Tool (ListVApps) is a tool which lists all the virtual processes that are running at a specific time on a specific computer. You can use the tool to get information about the priority and owner of each process, the size of its virtual memory, its session identifier and processing time. User with administrator privileges will see all running virtual applications. The tool provides a listing similar to this:
 
-![](https://stealthpuppy.com/wp-content/uploads/2010/02/ListApps.png) 
+![](https://stealthpuppy.com/media/2010/02/ListApps.png) 
 
 ### Application Virtualization Cache Configuration Tool
 
@@ -83,7 +83,7 @@ You can use the Application Virtualization SFT Info utility to extract the follo
 
 You can use App-V SFT View to provide programs and automated tools with read-only access to .sft files. For example, you can install SFT View on App-V Management Servers to allow vulnerability scanners and file-based asset inventory tools to scan .sft files. You can also use App-V SFT View to interactively inspect .sft file contents by using any shell interface, for example, Windows Explorer or the command line. All valid .sft and .dsft file name extensions will be scanned by App-V SFT View and will be made available for inspection. For every valid .sft file, a corresponding .dir folder will be displayed. For example, if a file that is named Office.sft is located, a new folder will be displayed in a directory that is named Office.sft.dir.
 
-![](https://stealthpuppy.com/wp-content/uploads/2010/02/SFTDir_thumb.png) 
+![](https://stealthpuppy.com/media/2010/02/SFTDir_thumb.png) 
 
 SFT View runs in the background to automatically generate the .dir folder views of any .sft or .dsft files that are present in a directory; it does not require any user interaction. SFT View does not extract any .sft or .dsft file contents to disk; instead, it creates a view of the contents and represents them as .dir folders.
 

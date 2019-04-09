@@ -17,14 +17,14 @@ I've stumbled across a nice usability improvement in Windows Vista that had esca
 
 In my demo environment, I have configured 200Mb quota for all users' home drives. If you look at the drive properties under Windows XP you will see the complete capacity of the remote disk including used and free space with no indication that any quotas are in place.
 
-<img border="0" alt="DiskSpace1" src="https://stealthpuppy.com/wp-content/uploads/2008/05/diskspace1.png" width="303" height="358" /> 
+<img border="0" alt="DiskSpace1" src="https://stealthpuppy.com/media/2008/05/diskspace1.png" width="303" height="358" /> 
 
 The same disk properties dialog in Windows Vista shows only the capacity, used and free space that match the disk quota set for that user.
 
-<img border="0" alt="DiskSpace2" src="https://stealthpuppy.com/wp-content/uploads/2008/05/diskspace2.png" width="302" height="367" /> 
+<img border="0" alt="DiskSpace2" src="https://stealthpuppy.com/media/2008/05/diskspace2.png" width="302" height="367" /> 
 
 The Computer view in Windows Explorer shows similar information:
 
-<img border="0" alt="DiskSpace3" src="https://stealthpuppy.com/wp-content/uploads/2008/05/diskspace3.png" width="566" height="364" /> 
+<img border="0" alt="DiskSpace3" src="https://stealthpuppy.com/media/2008/05/diskspace3.png" width="566" height="364" /> 
 
 A simple change but if you are using disk quotas, its fantastic user experience.

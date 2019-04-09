@@ -12,7 +12,7 @@ pd_rating:
   - 'a:8:{s:4:"type";s:1:"0";s:5:"votes";s:1:"1";s:6:"total1";s:1:"0";s:6:"total2";s:1:"0";s:6:"total3";s:1:"0";s:6:"total4";s:1:"0";s:6:"total5";s:1:"1";s:7:"average";s:6:"5.0000";}'
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /wp-content/uploads/2014/10/AppV-XenDesktop-624x369.png
+image: /media/2014/10/AppV-XenDesktop-624x369.png
 categories:
   - Automation
 tags:

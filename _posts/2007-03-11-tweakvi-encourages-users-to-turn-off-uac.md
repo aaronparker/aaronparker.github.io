@@ -16,9 +16,9 @@ TweakVI is a tweaking and "optimisation" application from [Totalidea](http://www
 
 What has struck me about this software is that during setup you are encouraged to disable UAC because it "might cause warning message to appear". Here's the screenshots from the installer:
 
-<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1100.TweakVISetup3.png" /> 
+<img border="0" src="https://stealthpuppy.com/media/2007/03/1000.14.1100.TweakVISetup3.png" /> 
 
-<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1101.TweakVISetup4.png" /> 
+<img border="0" src="https://stealthpuppy.com/media/2007/03/1000.14.1101.TweakVISetup4.png" /> 
 
 Here's a couple of quotes from their FAQ page site about [TweakVI and UAC](http://www.totalidea.com/content/tweakvi/tweakvi-faq.html#15):
 

@@ -18,7 +18,7 @@ tags:
   - App-V
   - Firefox
 ---
-<img src="https://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" alt="" align="right" />It's easy to virtualize [Firefox with App-V](https://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-5/); however getting it right takes a little more effort. Here's how to successfully sequence [Mozilla Firefox 7.x](http://www.mozilla.com/en-US/firefox/).
+<img src="https://stealthpuppy.com/media/2011/06/062611_1120_SequencingM1.png" alt="" align="right" />It's easy to virtualize [Firefox with App-V](https://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-5/); however getting it right takes a little more effort. Here's how to successfully sequence [Mozilla Firefox 7.x](http://www.mozilla.com/en-US/firefox/).
 
 ### What you lose by virtualizing Firefox
 

@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline;" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="right" />There are several methods that you can use to deliver App-V packages in your environment – you could even combine the methods depending on your requirements. I will summarise the methods here and give you some links to existing Microsoft articles and white papers and some excellent blog posts that discuss these options in detail:
+<img style="margin: 0px 0px 5px 10px; display: inline;" src="http://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />There are several methods that you can use to deliver App-V packages in your environment – you could even combine the methods depending on your requirements. I will summarise the methods here and give you some links to existing Microsoft articles and white papers and some excellent blog posts that discuss these options in detail:
 
   * **Native infrastructure** - App-V includes [server infrastructure](http://technet.microsoft.com/en-gb/library/cc843634.aspx) that be used to stream packages to clients. A central management server is used to authorise applications and streaming servers can be used for branch offices. Replication (such as that provided by DFS-R) is required for keeping package sources in sync. This is the most dynamic method for delivering App-V packages but it doesn't scale as well as other methods - the App-V Management Server database does not support replication.
   * **System Centre Configuration Manager 2007 R2** - SCCM has [native support for App-V 4.5 and 4.6](http://technet.microsoft.com/en-us/library/cc161957.aspx). It supports importing App-V packages and deploying them to client computers and can stream packages or deliver them completely.
@@ -24,7 +24,7 @@ tags:
 
 The Microsoft infrastructure deployment solutions are outlined in this diagram:
 
-[<img src="http://stealthpuppy.com/wp-content/uploads/2010/06/MicrosoftApplicationVirtualisationComponents.png" alt="" width="660" height="528" />](http://stealthpuppy.com/wp-content/uploads/2010/06/MicrosoftApplicationVirtualisationComponents.png "App-V infrastructure solutions")
+[<img src="http://stealthpuppy.com/media/2010/06/MicrosoftApplicationVirtualisationComponents.png" alt="" width="660" height="528" />](http://stealthpuppy.com/media/2010/06/MicrosoftApplicationVirtualisationComponents.png "App-V infrastructure solutions")
 
   * **Stand-alone using the SFTMIME command** (or the roll-your-own deployment tool) - The final method is not widely used; however I have designed an App-V deployment for a client who use an in-house developed software deployment solution. The product has been extended to use SFTMIME commands to add packages to client machines and control user access to virtual applications. Tim Mangan makes this type of solution freely available from his site with [App-V_DeployNPublishApp](http://www.tmurgent.com/AppV_DeployNPublishApp/).
 

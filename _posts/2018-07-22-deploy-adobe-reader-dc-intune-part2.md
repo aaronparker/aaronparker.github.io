@@ -8,7 +8,7 @@ guid: https://stealthpuppy.com/?p=6053
 permalink: /deploy-adobe-reader-dc-intune-part2/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /wp-content/uploads/2018/07/russ-mccabe-5461-unsplash.jpg
+image: /media/2018/07/russ-mccabe-5461-unsplash.jpg
 categories:
   - Applications
 tags:
@@ -29,7 +29,7 @@ The updater is actually two components - the Update service and a scheduled task
 
 The task has two triggers - one after user logon, but with a delay of 12 minutes, and the other at a scheduled time that is possibly different per device. Here's the scheduled task:
 
-![Adobe Acrobat Update Task](https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png)*Adobe Acrobat Update Task*
+![Adobe Acrobat Update Task](https://stealthpuppy.com/media/2018/07/AdobeReaderDC-UpdateTask.png)*Adobe Acrobat Update Task*
 
 In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn't exhaustive), it would take more than that to download an update and I resorted to using the 'Check for Updates' option from within Adobe Reader manually. 
 
@@ -37,7 +37,7 @@ In theory, the service should download and apply an Adobe Reader update within 2
 
 Downloading and installing updates does not unfortunately go straight to the latest version. In my testing, my target PCs downloaded an intermediate update to **2015.023.20070** before the second update to **2018.011.20055**. This means that in the real world, it could be several days before a PC has the most recent version installed.
 
-![Adobe Reader DC - An update is available](https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png)*Adobe Reader DC - An update is available*
+![Adobe Reader DC - An update is available](https://stealthpuppy.com/media/2018/07/AdobeReaderDC-1500720033.png)*Adobe Reader DC - An update is available*
 
 Fortunately, the updates are downloaded and installed without user intervention, meaning that the update process works for users [without administrative rights to their PC](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/user-driven).
 

@@ -18,7 +18,7 @@ In my previous article on [customising the Presentation Server Client](http://ww
 
 If you are looking to preconfigure the client you will need to edit PN.SRC and APPSRV.SRC. To get to these files you will need to create an uncompressed custom client package. You will then find the files located in the <font face="courier new,courier">Program FilesCitrixICA Classic</font> folder below where you have created the package.
 
-<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1119.UncompressedClient.png" /> 
+<img border="0" src="https://stealthpuppy.com/media/2007/03/1000.14.1119.UncompressedClient.png" /> 
 
 You can then reference [PN.ini Parameters Deciphered](http://ctxex10.citrix.com/article/entry.jspa?entryID=876) and [Appsrv.ini Parameters Deciphered](http://ctxex10.citrix.com/article/entry.jspa?entryID=850) to make the required customisations. An alternative to this, is to configure Program Neighbourhood and then copy PN.INI and APPSRV.INI from the <font face="courier new,courier">%APPDATA%ICAClient</font> folder.
 
@@ -59,5 +59,5 @@ When deploying the client via Group Policy, there's a good chance that you'll fi
 Unfortunately the transform file provided by Citrix doesn't work with the Presentation Server Client 10, so I've recreated it to work with version 10. Here's the file for you to download and test in your own environment. Just a quick word of warning - I've only performed some very quick testing at this stage. Before you use this, test it out to ensure it works for you in your network.
 
 <p class="download">
-  <a href="https://stealthpuppy.com/wp-content/uploads/2007/03/slfregfix2.mst">Transform to enable Pass-through authentication</a>
+  <a href="https://stealthpuppy.com/media/2007/03/slfregfix2.mst">Transform to enable Pass-through authentication</a>
 </p>

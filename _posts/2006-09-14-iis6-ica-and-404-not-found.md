@@ -17,4 +17,4 @@ I'm sure the use of adding .ICA files to web servers to launch published applica
 
 To fix this error and ensure the browser downloads and executes the file, ensure the .ICA file/s are located in a virtual directory and edit the properties of that directory in IIS Manager. Ensure the execute permissions are set to None and things will work as expected. David Wang has a blog post on a similar situation with [.EXE files and IIS6](http://blogs.msdn.com/david.wang/archive/2005/07/11/Allow_file_downloads_on_IIS_6.aspx).
 
-![](https://stealthpuppy.com/wp-content/uploads/2006/09/1000.14.110.IISAppFolder.png)
+![](https://stealthpuppy.com/media/2006/09/1000.14.110.IISAppFolder.png)

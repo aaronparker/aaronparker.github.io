@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "3725252649"
-image: /wp-content/uploads/2015/04/citrix_x1_mouse.jpg
+image: /media/2015/04/citrix_x1_mouse.jpg
 categories:
   - Hardware
 tags:

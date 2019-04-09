@@ -19,4 +19,4 @@ An update to the documentation included in the Windows Automated Installation Ki
 
 Download the ZIP file and extract to _%ProgramFiles%\Windows AIK\Docs\CHMs_ to replace the installed files. All of the new content is highlighted so it’s easy to see what’s new:
 
-[<img title="WAIKUpdates" height="238" alt="WAIKUpdates" src="https://stealthpuppy.com/wp-content/uploads/2008/07/waikupdates-thumb.png" width="338" border="0" />](https://stealthpuppy.com/wp-content/uploads/2008/07/waikupdates.png)
+[<img title="WAIKUpdates" height="238" alt="WAIKUpdates" src="https://stealthpuppy.com/media/2008/07/waikupdates-thumb.png" width="338" border="0" />](https://stealthpuppy.com/media/2008/07/waikupdates.png)

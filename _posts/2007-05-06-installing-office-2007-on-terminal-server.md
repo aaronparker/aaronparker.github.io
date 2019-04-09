@@ -27,14 +27,14 @@ There are a number of options I recommend setting by using the [Office Customisa
   * Disable the Customer Experience Improvement Program from running when users start an Office application: _Modify user settings - Microsoft Office 2007 system / Privacy / Trust Center / Enable Customer Experience Improvement Program_
   * Disable Outlook from prompting users to archive their mailboxes: _Modify user settings - Microsoft Office Outlook 2007 / Tools | Options.. / Other / AutoArchive / AutoArchive Settings_
 
-<img src="https://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1390.ModifyUserSettings.png" border="0" alt="" /> 
+<img src="https://stealthpuppy.com/media/2007/05/1000.14.1390.ModifyUserSettings.png" border="0" alt="" /> 
 
 You'll also want to take a look at the feature installation states - set each of these to either ON or OFF, don't set any feature to Install on First Use. A subset of the options I disable when installing Office on a Terminal Server are:
 
   * Office Shared Features / Proofing Tools / French Proofing Tools / English - French Translation
   * Office Shared Features / Proofing Tools / Spanish Proofing Tools / Spanish - French Translation
 
-<img src="https://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1391.FeatureInstallationStates.png" border="0" alt="" /> 
+<img src="https://stealthpuppy.com/media/2007/05/1000.14.1391.FeatureInstallationStates.png" border="0" alt="" /> 
 
 The first two options should be disabled as a part of [preventing CTFMON.EXE from running](http://support.microsoft.com/?kbid=823586) in each user session. You will also have to unregister MSCTF.DLL as a part of your installation of Office (`REGSVR32 /S /U MSCTF.DLL`)
 

@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "3993251532"
-image: /wp-content/uploads/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png
+image: /media/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png
 categories:
   - Microsoft
 tags:
@@ -71,11 +71,11 @@ To determine any difference in throughput performance between SMB 2.1 and SMB 3.
 
 In essence, we there are no performance differences between the two SMB versions:
 
-![No Difference in Network Throughput between SMB 2.1 and SMB 3.02](https://stealthpuppy.com/wp-content/uploads/2015/08/NetworkThroughput.png)*No difference in network throughput between SMB 2.1 and SMB 3.02*
+![No Difference in Network Throughput between SMB 2.1 and SMB 3.02](https://stealthpuppy.com/media/2015/08/NetworkThroughput.png)*No difference in network throughput between SMB 2.1 and SMB 3.02*
 
 In the above test, the underlying hypervisor host was set to high performance mode, so I re-ran the same tests with the host set to balanced performance. This had an interesting result:
 
-![Power profile of the hypervisor host impacts 4K/8K block performance](https://stealthpuppy.com/wp-content/uploads/2015/08/4K8Kblocks-powerprofile.png)*Power profile of the hypervisor host impacts 4K/8K block performance*
+![Power profile of the hypervisor host impacts 4K/8K block performance](https://stealthpuppy.com/media/2015/08/4K8Kblocks-powerprofile.png)*Power profile of the hypervisor host impacts 4K/8K block performance*
 
 The throughput performance at 4K and 8K block sizes dropped off when compared to high performance mode. This makes sense when you consider that transferring a file at smaller block sizes requires more transactions between the client and server, so the server must process more. With less CPU resources available, performance suffers.
 
@@ -85,7 +85,7 @@ Nimble Storage has [a great blog post that shows that across various workloads,
 
 Another tool was used ([i/o performance tool](http://sourceforge.net/projects/io-performance/)) to measure file copies from server to client. This showed very little overall performance difference between the two protocols but for whatever reason those file copies with SMB 3.02 on average were slightly longer than SMB 2.01.
 
-![Choppier performance with SMB 3.02](https://stealthpuppy.com/wp-content/uploads/2015/08/IOperformance2.png)*Choppier performance with SMB 3.02*
+![Choppier performance with SMB 3.02](https://stealthpuppy.com/media/2015/08/IOperformance2.png)*Choppier performance with SMB 3.02*
 
 Any difference between the two protocols wasn't shown in our user logon tests - a practical measure of any performance difference.
 
@@ -103,7 +103,7 @@ To test logon times, we configured what we consider to be an enormous user profi
 
 The logon process was repeated across both Windows Server 2008 R2 and Windows Server 2012 R2 as the client and server, to test with hosts only capable of SMB 2.1 and clients and servers capable of both SMB 2.1 and SMB 3.02.
 
-![No difference in logon times.](https://stealthpuppy.com/wp-content/uploads/2015/08/LogonTimes.png)*No difference in logon times.*
+![No difference in logon times.](https://stealthpuppy.com/media/2015/08/LogonTimes.png)*No difference in logon times.*
 
 In short, there are no differences in logon times between the two protocol versions.
 

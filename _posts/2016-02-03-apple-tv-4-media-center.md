@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "4547131598"
-image: /wp-content/uploads/2016/01/Apple-TV-4-Home-Screen.png
+image: /media/2016/01/Apple-TV-4-Home-Screen.png
 categories:
   - Hardware
 tags:
@@ -42,7 +42,7 @@ Sticking with the Apple TV is then a simple choice for me given my history, we h
 
 It's likely you've heard that Apple has released a new version of the Apple TV, which now boasts an App Store as well as real local storage options (32GB and 64GB). Although the new Apple TV loses the optical audio connection, the potential that a real app platform provides for flexibility in streaming practically any media made the new device appealing.
 
-<figure id="attachment_4241" aria-describedby="caption-attachment-4241" style="width: 1024px" class="wp-caption alignnone"><a href="https://stealthpuppy.com/wp-content/uploads/2016/02/Apple-TV-4-Unboxed.jpg" rel="attachment wp-att-4241"><img class="size-large wp-image-4241" src="https://stealthpuppy.com/wp-content/uploads/2016/02/Apple-TV-4-Unboxed-1024x616.jpg" alt="Apple TV 4 Unboxed" width="1024" height="616" srcset="https://stealthpuppy.com/wp-content/uploads/2016/02/Apple-TV-4-Unboxed-1024x616.jpg 1024w, https://stealthpuppy.com/wp-content/uploads/2016/02/Apple-TV-4-Unboxed-150x90.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2016/02/Apple-TV-4-Unboxed-300x181.jpg 300w, https://stealthpuppy.com/wp-content/uploads/2016/02/Apple-TV-4-Unboxed-768x462.jpg 768w, https://stealthpuppy.com/wp-content/uploads/2016/02/Apple-TV-4-Unboxed.jpg 1196w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption id="caption-attachment-4241" class="wp-caption-text">Apple TV 4 Unboxed*</figure>
+<figure id="attachment_4241" aria-describedby="caption-attachment-4241" style="width: 1024px" class="wp-caption alignnone"><a href="https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed.jpg" rel="attachment wp-att-4241"><img class="size-large wp-image-4241" src="https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed-1024x616.jpg" alt="Apple TV 4 Unboxed" width="1024" height="616" srcset="https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed-1024x616.jpg 1024w, https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed-150x90.jpg 150w, https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed-300x181.jpg 300w, https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed-768x462.jpg 768w, https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed.jpg 1196w" sizes="(max-width: 1024px) 100vw, 1024px" /></a><figcaption id="caption-attachment-4241" class="wp-caption-text">Apple TV 4 Unboxed*</figure>
 
 From a hardware perspective, it's not much different from the previous model. The new remote that comes with touch, a microphone and an accelerometer is very different though, and I'll need to avoid losing or damaging it as [a replacement is $129AU](http://www.apple.com/au/shop/product/MLLC2/siri-remote)!
 
@@ -90,7 +90,7 @@ The Apple TV 4 is an _extremely_ low power device - one key decision for stickin
 
 [Ars Technica has a comparison table in their review of the Apple TV 4](http://arstechnica.com/apple/2015/11/new-apple-tv-wants-to-be-more-than-just-a-streaming-box-but-it-isnt-yet/2/) from November 2015.
 
-<figure id="attachment_4284" aria-describedby="caption-attachment-4284" style="width: 711px" class="wp-caption alignnone"><a href="https://stealthpuppy.com/wp-content/uploads/2016/02/Device-power-consumption.png" rel="attachment wp-att-4284"><img class="size-full wp-image-4284" src="https://stealthpuppy.com/wp-content/uploads/2016/02/Device-power-consumption.png" alt="Device power consumption" width="711" height="157" srcset="https://stealthpuppy.com/wp-content/uploads/2016/02/Device-power-consumption.png 711w, https://stealthpuppy.com/wp-content/uploads/2016/02/Device-power-consumption-150x33.png 150w, https://stealthpuppy.com/wp-content/uploads/2016/02/Device-power-consumption-300x66.png 300w" sizes="(max-width: 711px) 100vw, 711px" /></a><figcaption id="caption-attachment-4284" class="wp-caption-text">Device power consumption*</figure>
+<figure id="attachment_4284" aria-describedby="caption-attachment-4284" style="width: 711px" class="wp-caption alignnone"><a href="https://stealthpuppy.com/media/2016/02/Device-power-consumption.png" rel="attachment wp-att-4284"><img class="size-full wp-image-4284" src="https://stealthpuppy.com/media/2016/02/Device-power-consumption.png" alt="Device power consumption" width="711" height="157" srcset="https://stealthpuppy.com/media/2016/02/Device-power-consumption.png 711w, https://stealthpuppy.com/media/2016/02/Device-power-consumption-150x33.png 150w, https://stealthpuppy.com/media/2016/02/Device-power-consumption-300x66.png 300w" sizes="(max-width: 711px) 100vw, 711px" /></a><figcaption id="caption-attachment-4284" class="wp-caption-text">Device power consumption*</figure>
 
 Based on these numbers, I can't imagine using an Xbox or PlayStation as a streaming device based on the cost to run it. Although I'm not suggesting you rush out to buy an Apple TV if you already have an Xbox or PlayStation.
 

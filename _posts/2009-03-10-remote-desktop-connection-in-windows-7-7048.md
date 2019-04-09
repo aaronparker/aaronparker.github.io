@@ -20,12 +20,12 @@ tags:
 ---
 The Remote Desktop Connection client gets a facelift in build 7048 as well as Jump List integration, which is has been making life much simpler indeed:
 
-<img class="alignnone size-full wp-image-1007" title="rdcjumplist" src="https://stealthpuppy.com/wp-content/uploads/2009/03/rdcjumplist.png" alt="rdcjumplist" width="370" height="538" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/rdcjumplist.png 370w, https://stealthpuppy.com/wp-content/uploads/2009/03/rdcjumplist-206x300.png 206w" sizes="(max-width: 370px) 100vw, 370px" /> 
+<img class="alignnone size-full wp-image-1007" title="rdcjumplist" src="https://stealthpuppy.com/media/2009/03/rdcjumplist.png" alt="rdcjumplist" width="370" height="538" srcset="https://stealthpuppy.com/media/2009/03/rdcjumplist.png 370w, https://stealthpuppy.com/media/2009/03/rdcjumplist-206x300.png 206w" sizes="(max-width: 370px) 100vw, 370px" /> 
 
-<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="RDP1" src="https://stealthpuppy.com/wp-content/uploads/2009/03/rdp1.png" border="0" alt="RDP1" width="453" height="291" /> 
+<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="RDP1" src="https://stealthpuppy.com/media/2009/03/rdp1.png" border="0" alt="RDP1" width="453" height="291" /> 
 
-<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="RDP2" src="https://stealthpuppy.com/wp-content/uploads/2009/03/rdp2.png" border="0" alt="RDP2" width="453" height="512" /> 
+<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="RDP2" src="https://stealthpuppy.com/media/2009/03/rdp2.png" border="0" alt="RDP2" width="453" height="512" /> 
 
 Based on a comment by a 'softie, I believe that the new icon is about branding the Remote Desktop Services in Windows Server 2008 R2:
 
-<img class="alignnone size-full wp-image-999" title="Remote Desktop icon" src="https://stealthpuppy.com/wp-content/uploads/2009/03/remotedesktop.png" alt="Remote Desktop icon" width="256" height="256" srcset="https://stealthpuppy.com/wp-content/uploads/2009/03/remotedesktop.png 256w, https://stealthpuppy.com/wp-content/uploads/2009/03/remotedesktop-150x150.png 150w" sizes="(max-width: 256px) 100vw, 256px" />
+<img class="alignnone size-full wp-image-999" title="Remote Desktop icon" src="https://stealthpuppy.com/media/2009/03/remotedesktop.png" alt="Remote Desktop icon" width="256" height="256" srcset="https://stealthpuppy.com/media/2009/03/remotedesktop.png 256w, https://stealthpuppy.com/media/2009/03/remotedesktop-150x150.png 150w" sizes="(max-width: 256px) 100vw, 256px" />

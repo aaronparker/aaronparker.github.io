@@ -13,7 +13,7 @@ categories:
 tags:
   - PowerShell
 ---
-![Windows 8.1 Start screen](https://stealthpuppy.com/wp-content/uploads/2013/10/WIndows81StartScreen.png)
+![Windows 8.1 Start screen](https://stealthpuppy.com/media/2013/10/WIndows81StartScreen.png)
 
 For enterprises, Windows 8.1 delivers the control around the Start Screen that should have been there in Windows 8.0, although I'm sure what they've delivered won't appease everyone as there's still no programmatic way to pin or unpin shortcuts from the Start Screen.
 
@@ -46,7 +46,7 @@ Export-StartLayout -As BIN -Path CustomStartScreenLayout.bin -Verbose
 
 Which should look like this:
 
-![Export-StartLayout](https://stealthpuppy.com/wp-content/uploads/2013/10/Export-StartLayout.png)
+![Export-StartLayout](https://stealthpuppy.com/media/2013/10/Export-StartLayout.png)
 
 The documentation for [Import-StartLayout](http://technet.microsoft.com/en-us/library/dn283403.aspx) seems to indicate that this cmdlet only works against offline images (mounted with ImageX); however this isn't the case - the cmdlet can be run against the current Windows installation.
 
@@ -58,4 +58,4 @@ POWERSHELL -NonInteractive -Command Import-StartLayout -LayoutPath .\CustomStart
 
 Using MDT, this command runs as part of a script that customises the default profile. The process is ultimately pretty painless.
 
-![Windows 8 default](https://stealthpuppy.com/wp-content/uploads/2013/10/Windows8Default.png)
+![Windows 8 default](https://stealthpuppy.com/media/2013/10/Windows8Default.png)

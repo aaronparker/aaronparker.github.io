@@ -8,7 +8,7 @@ guid: https://stealthpuppy.com/?p=5997
 permalink: /vcredist-powershell-module/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /wp-content/uploads/2018/03/alexey-ruban-103990-unsplash.jpg
+image: /media/2018/03/alexey-ruban-103990-unsplash.jpg
 categories:
   - Microsoft
 tags:
@@ -38,7 +38,7 @@ Import-VcMdtApp -VcList $VcList -Path "C:\Temp\VcRedist" -MdtPath "\\server\shar
 
 This results in each of the Visual C++ Redistributables imported as a separate application with all necessary properties including Version, silent command line, Uninstall Key and 32-bit or 64-bot operating system support.
 
-![Visual C++ Redistributables imported into an MDT share with VcRedist](https://stealthpuppy.com/wp-content/uploads/2018/03/MdtVisualCApplications.png)*Visual C++ Redistributables imported into an MDT share with VcRedist*
+![Visual C++ Redistributables imported into an MDT share with VcRedist](https://stealthpuppy.com/media/2018/03/MdtVisualCApplications.png)*Visual C++ Redistributables imported into an MDT share with VcRedist*
 
 The same approach can be used to import the Redistributables into a ConfigMgr site:
 
@@ -51,7 +51,7 @@ Import-VcCmApp -VcList $VcList -Path "C:\Temp\VcRedist" -CMPath "\\server\share\
 
 Just like MDT, each Redistributable is imported into ConfigMgr; however, `Import-VcCmApp` copies the Redistributables to a share for distribution and creates and application with a single deployment for each one.
 
-![Visual C++ Redistributables imported into ConfigMgr with VcRedist](https://stealthpuppy.com/wp-content/uploads/2018/03/VcRedistConfigMgr.png)*Visual C++ Redistributables imported into ConfigMgr with VcRedist*
+![Visual C++ Redistributables imported into ConfigMgr with VcRedist](https://stealthpuppy.com/media/2018/03/VcRedistConfigMgr.png)*Visual C++ Redistributables imported into ConfigMgr with VcRedist*
 
 Of course, the module can download and install the Redistributables to the local machine:
 
@@ -64,7 +64,7 @@ $VcList | Install-VcRedist -Path C:\Temp\VcRedist
 
 By default, this installs all of the supported Redistributables:
 
-![Visual C++ Redistributables installed locally with VcRedist](https://stealthpuppy.com/wp-content/uploads/2018/03/VisualCPrograms.png)*Visual C++ Redistributables installed locally with VcRedist*
+![Visual C++ Redistributables installed locally with VcRedist](https://stealthpuppy.com/media/2018/03/VisualCPrograms.png)*Visual C++ Redistributables installed locally with VcRedist*
 
 Note that the 2015 and 2017 Redistributables are the same version, so the end result will include only the 2017 versions.
 

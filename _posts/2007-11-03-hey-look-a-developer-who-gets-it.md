@@ -13,6 +13,6 @@ Well they came close, really close, but full marks goes to Axialis for first mak
 
 Here's a couple of screenshots of what you see during installation::
 
-![axialis-iconworkshop-610-installation.PNG](https://stealthpuppy.com/wp-content/uploads/2007/11/axialis-iconworkshop-610-installation.PNG) 
+![axialis-iconworkshop-610-installation.PNG](https://stealthpuppy.com/media/2007/11/axialis-iconworkshop-610-installation.PNG) 
 
-![axialis-installation-command-line-help.png](https://stealthpuppy.com/wp-content/uploads/2007/11/axialis-installation-command-line-help.png)
+![axialis-installation-command-line-help.png](https://stealthpuppy.com/media/2007/11/axialis-installation-command-line-help.png)

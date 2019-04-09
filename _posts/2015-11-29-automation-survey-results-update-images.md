@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "4359573935"
-image: /wp-content/uploads/2015/11/16638657367_33486a6676_k.jpg
+image: /media/2015/11/16638657367_33486a6676_k.jpg
 categories:
   - Community
 tags:
@@ -26,7 +26,7 @@ Now that we've covered the main questions in the survey - [which hypervisors are
 
 Here are the results for how often master images are updated based on 501 responses to this question:
 
-<figure id="attachment_4211" aria-describedby="caption-attachment-4211" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4211" src="https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-1024x603.png" alt="How often master images are updated" width="1024" height="603" srcset="https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-1024x603.png 1024w, https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-150x88.png 150w, https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated-300x177.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/wp-content/uploads/2015/11/HowOftenAreImagesUpdated.png)<figcaption id="caption-attachment-4211" class="wp-caption-text">How often master images are updated*</figure>
+<figure id="attachment_4211" aria-describedby="caption-attachment-4211" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4211" src="https://stealthpuppy.com/media/2015/11/HowOftenAreImagesUpdated-1024x603.png" alt="How often master images are updated" width="1024" height="603" srcset="https://stealthpuppy.com/media/2015/11/HowOftenAreImagesUpdated-1024x603.png 1024w, https://stealthpuppy.com/media/2015/11/HowOftenAreImagesUpdated-150x88.png 150w, https://stealthpuppy.com/media/2015/11/HowOftenAreImagesUpdated-300x177.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/media/2015/11/HowOftenAreImagesUpdated.png)<figcaption id="caption-attachment-4211" class="wp-caption-text">How often master images are updated*</figure>
 
 Monthly patching is ideal and the majority of organisations appear to be standardising on monthly updates. Adding those respondents who patch every 2 months, 62.7% of organisations patch quite regularly.
 

@@ -10,7 +10,7 @@ dsq_thread_id:
   - "3455483741"
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /wp-content/uploads/2015/01/webinar25-01-624x351.png
+image: /media/2015/01/webinar25-01-624x351.png
 categories:
   - Community
 tags:

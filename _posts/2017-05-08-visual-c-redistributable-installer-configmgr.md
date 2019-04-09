@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "5797643210"
-image: /wp-content/uploads/2017/05/VCredist_ConfigMgr.png
+image: /media/2017/05/VCredist_ConfigMgr.png
 categories:
   - Microsoft
 tags:

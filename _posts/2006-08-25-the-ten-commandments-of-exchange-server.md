@@ -11,7 +11,7 @@ categories:
 tags:
   - Exchange
 ---
-<img align="left" src="https://stealthpuppy.com/wp-content/uploads/2006/08/exchange.png" />After performing two Exchange disaster recoveries in as many months, I've come up with a list of <strike>Fifteen</strike> Ten Commandments for Exchange Server 😉</p> 
+<img align="left" src="https://stealthpuppy.com/media/2006/08/exchange.png" />After performing two Exchange disaster recoveries in as many months, I've come up with a list of <strike>Fifteen</strike> Ten Commandments for Exchange Server 😉</p> 
 
   1. Thou shalt not place the log files and databases on the same physical disks
   2. Thou shalt not store the log files or the databases on the system partition

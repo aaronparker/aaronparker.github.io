@@ -10,13 +10,13 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "4152936596"
-image: /wp-content/uploads/2015/06/AppV5FAQ.png
+image: /media/2015/06/AppV5FAQ.png
 categories:
   - FAQs
 tags:
   - App-V
 ---
-_<img class="alignleft wp-image-4128" style="margin: 0px 15px 0px 0px;" src="https://stealthpuppy.com/wp-content/uploads/2015/09/KevinKaminski-150x150.jpg" alt="KevinKaminski" width="100" height="100" srcset="https://stealthpuppy.com/wp-content/uploads/2015/09/KevinKaminski-150x150.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2015/09/KevinKaminski-300x300.jpg 300w, https://stealthpuppy.com/wp-content/uploads/2015/09/KevinKaminski.jpg 351w" sizes="(max-width: 100px) 100vw, 100px" />This FAQ has been contributed by [Kevin Kaminski](https://twitter.com/kkaminsk), a long time App-V MVP based in Calgary, Canada. He's a long time presenter at events such as BriForum and MMS. As well as consulting on application delivery, he provides training services for App-V and application packaging._
+_<img class="alignleft wp-image-4128" style="margin: 0px 15px 0px 0px;" src="https://stealthpuppy.com/media/2015/09/KevinKaminski-150x150.jpg" alt="KevinKaminski" width="100" height="100" srcset="https://stealthpuppy.com/media/2015/09/KevinKaminski-150x150.jpg 150w, https://stealthpuppy.com/media/2015/09/KevinKaminski-300x300.jpg 300w, https://stealthpuppy.com/media/2015/09/KevinKaminski.jpg 351w" sizes="(max-width: 100px) 100vw, 100px" />This FAQ has been contributed by [Kevin Kaminski](https://twitter.com/kkaminsk), a long time App-V MVP based in Calgary, Canada. He's a long time presenter at events such as BriForum and MMS. As well as consulting on application delivery, he provides training services for App-V and application packaging._
 
 App-V training has evolved from being fairly limited to a large selection of offerings both free and paid, with in-person training to online delivery. Because of the variety, we recommend you take a look at the various offerings available to determine what best suits your needs from both a delivery and content perspective.
 

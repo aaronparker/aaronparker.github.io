@@ -20,11 +20,11 @@ In a MAV environment this service can be successfully virtualised, however you m
 
 > The licensing subsystem has failed catastrophically. You must reinstall or call customer support.
 
-<img border="0" width="483" src="https://stealthpuppy.com/wp-content/uploads/2008/01/licensing-error2.png" alt="Licensing Error" height="100" style="border-width: 0px" /> 
+<img border="0" width="483" src="https://stealthpuppy.com/media/2008/01/licensing-error2.png" alt="Licensing Error" height="100" style="border-width: 0px" /> 
 
 > You cannot use this product at this time. You must repair the problem by uninstalling and then reinstalling this product or contacting your IT administrator or Adobe customer support for help.
 
-[<img border="0" width="777" src="https://stealthpuppy.com/wp-content/uploads/2008/01/licensing-error-thumb1.png" alt="Licensing Error" height="113" style="border-width: 0px" />](https://stealthpuppy.com/wp-content/uploads/2008/01/licensing-error3.png)
+[<img border="0" width="777" src="https://stealthpuppy.com/media/2008/01/licensing-error-thumb1.png" alt="Licensing Error" height="113" style="border-width: 0px" />](https://stealthpuppy.com/media/2008/01/licensing-error3.png)
 
 Fortunately the FLEXnet Licensing service only needs to run when the application starts - you can subsequently stop the service and the application will continue to run. With a script we can stop this service to get more than one CS3 application running.
 

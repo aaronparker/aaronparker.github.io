@@ -17,7 +17,7 @@ tags:
 ---
 For the 10 people who [use](http://support.microsoft.com/kb/307885) [Windows Briefcase](http://en.wikipedia.org/wiki/Briefcase_%28Microsoft_Windows%29), this one is not for you. If you’re like me and can’t stand the rough edges in Windows that have yet to be cleaned up, the Windows Briefcase icon is a bit of an eye sore because it still uses a Windows XP style icon:
 
-[<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="OldMenu" src="https://stealthpuppy.com/wp-content/uploads/2009/01/oldmenu-thumb.png" border="0" alt="OldMenu" width="224" height="212" />](https://stealthpuppy.com/wp-content/uploads/2009/01/oldmenu.png)  [<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="OldBriefcase" src="https://stealthpuppy.com/wp-content/uploads/2009/01/oldbriefcase-thumb.png" border="0" alt="OldBriefcase" width="111" height="111" />](https://stealthpuppy.com/wp-content/uploads/2009/01/oldbriefcase.png)
+[<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="OldMenu" src="https://stealthpuppy.com/media/2009/01/oldmenu-thumb.png" border="0" alt="OldMenu" width="224" height="212" />](https://stealthpuppy.com/media/2009/01/oldmenu.png)  [<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="OldBriefcase" src="https://stealthpuppy.com/media/2009/01/oldbriefcase-thumb.png" border="0" alt="OldBriefcase" width="111" height="111" />](https://stealthpuppy.com/media/2009/01/oldbriefcase.png)
 
 In most cases I will just remove this menu item completely. To do that, the quick and dirty method is just to delete `HKEY_CLASSES_ROOT\Briefcase` from the registry. However, if you are one of those 10 people here’s how to make it pretty.
 
@@ -31,7 +31,7 @@ Extract this icon to a local folder - I usually place custom icons in _C:\Window
 
 Once you have updated the registry (you may have to logoff and back on to see the changes), Briefcase will look much smarter:
 
-[<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="NewMenu" src="https://stealthpuppy.com/wp-content/uploads/2009/01/newmenu-thumb.png" border="0" alt="NewMenu" width="224" height="212" />](https://stealthpuppy.com/wp-content/uploads/2009/01/newmenu.png)  [<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="NewBriefcase" src="https://stealthpuppy.com/wp-content/uploads/2009/01/newbriefcase-thumb.png" border="0" alt="NewBriefcase" width="111" height="111" />](https://stealthpuppy.com/wp-content/uploads/2009/01/newbriefcase.png)
+[<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="NewMenu" src="https://stealthpuppy.com/media/2009/01/newmenu-thumb.png" border="0" alt="NewMenu" width="224" height="212" />](https://stealthpuppy.com/media/2009/01/newmenu.png)  [<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="NewBriefcase" src="https://stealthpuppy.com/media/2009/01/newbriefcase-thumb.png" border="0" alt="NewBriefcase" width="111" height="111" />](https://stealthpuppy.com/media/2009/01/newbriefcase.png)
 
 If you want to script this change, here are the command lines to do it:
 

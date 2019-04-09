@@ -10,7 +10,7 @@ dsq_thread_id:
   - "3196341225"
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /wp-content/uploads/2014/11/demos-624x338.png
+image: /media/2014/11/demos-624x338.png
 categories:
   - Microsoft
 tags:
@@ -90,7 +90,7 @@ This test demonstrates the streaming approach to profiles that Citrix Profile Ma
 
 Logon times receive top billing as time wasters for users, so we focus on getting logon times as low as possible.
 
-<figure id="attachment_3747" aria-describedby="caption-attachment-3747" style="width: 500px" class="wp-caption alignnone">[<img class="wp-image-3747 size-full" src="https://stealthpuppy.com/wp-content/uploads/2014/11/wrap.gif" alt="wrap" width="500" height="230" />](https://stealthpuppy.com/wp-content/uploads/2014/11/wrap.gif)<figcaption id="caption-attachment-3747" class="wp-caption-text">Don't keep users waiting...*</figure>
+<figure id="attachment_3747" aria-describedby="caption-attachment-3747" style="width: 500px" class="wp-caption alignnone">[<img class="wp-image-3747 size-full" src="https://stealthpuppy.com/media/2014/11/wrap.gif" alt="wrap" width="500" height="230" />](https://stealthpuppy.com/media/2014/11/wrap.gif)<figcaption id="caption-attachment-3747" class="wp-caption-text">Don't keep users waiting...*</figure>
 
 There's nothing wrong with reducing logon times, it's a noble pursuit, but the simplest and easiest method of doing so is to implement folder redirection. It gets data out of the profile, is built into Windows and is therefore a quick win. Everyone does it, so it must be good, right?
 

@@ -15,4 +15,4 @@ Microsoft's [Windows Server 2003 Print Migrator 3.1](http://www.microsoft.com/Wi
 
 To run the Printer Migration tool, from an elevated command prompt run <font face="courier new,courier">PRINTBRMUI.EXE</font> for the GUI version or <font face="courier new,courier">PRINTBRM.EXE</font> for the command line version. PRINTBRM.EXE does not appear to be included in Windows Vista or Longhorn Server yet. I've not had a chance to check out the latest Longhorn Server CTP but one would assume that it will be there before RTM.
 
-<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1073.PrintMigrator.png" />
+<img border="0" src="https://stealthpuppy.com/media/2007/03/1000.14.1073.PrintMigrator.png" />

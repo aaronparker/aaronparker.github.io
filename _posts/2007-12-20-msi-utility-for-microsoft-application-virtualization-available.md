@@ -19,7 +19,7 @@ No official word from the SoftGrid/Application Virtualisation blog yet, but Micr
 > 
 > The MSI Utility extends application deployment methods to a broad range of ESD systems, including Systems Management Server 2003 and System Center Configuration Manager, as well as other methods such as network shares, removable disks, and memory keys. By using an ESD system to deploy virtualized application packages to disconnected SoftGrid Application Virtualization Desktop Clients, users can run virtualized applications without connecting to a computer running Microsoft System Center Virtual Application Server.
 
-![msiutility.PNG](https://stealthpuppy.com/wp-content/uploads/2007/12/msiutility.PNG) 
+![msiutility.PNG](https://stealthpuppy.com/media/2007/12/msiutility.PNG) 
 
 This functionality is supported natively in Application Virtualisation 4.5 and is built directly into the Sequencer. Converting your sequenced applications into MSI installs would also be great for Terminal Server environments where you don't specifically need or want to stream the applications and are probably pre-caching them anyway.
 

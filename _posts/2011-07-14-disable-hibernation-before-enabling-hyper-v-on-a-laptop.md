@@ -15,11 +15,11 @@ tags:
 ---
 If you enable [Hyper-V on a laptop](http://blog.drtritsch.com/?p=165) (or any other machine where hibernation is enabled automatically) you’ll find that you won’t be able to delete the hibernation file (hiberfil.sys).&#160; Although hibernation is effectively disabled, the file remains in use once Windows has booted:
 
-<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="delete-hiberfilesys" border="0" alt="delete-hiberfilesys" src="https://stealthpuppy.com/wp-content/uploads/2011/07/delete-hiberfilesys.png" width="660" height="365" /> 
+<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="delete-hiberfilesys" border="0" alt="delete-hiberfilesys" src="https://stealthpuppy.com/media/2011/07/delete-hiberfilesys.png" width="660" height="365" /> 
 
 Additionally, in an effort to remove the lock on the file, you can’t use [POWERCFG](http://technet.microsoft.com/en-us/library/cc748940(WS.10).aspx) to disable hibernation after Hyper-V is installed:
 
-<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="powercfg" border="0" alt="powercfg" src="https://stealthpuppy.com/wp-content/uploads/2011/07/powercfg.png" width="660" height="277" /> 
+<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="powercfg" border="0" alt="powercfg" src="https://stealthpuppy.com/media/2011/07/powercfg.png" width="660" height="277" /> 
 
 While there’s [a work-around to get hibernation working](http://blogs.technet.com/b/doxley/archive/2008/09/05/getting-some-sleep.aspx),&#160; there’s not much to gain with hibernation enabled on [a fast SSD drive](http://www.ocztechnology.com/ocz-vertex-3-sata-iii-2-5-ssd.html). Especially when dual-booting puts space at a premium and the hibernation file is 8GB.
 

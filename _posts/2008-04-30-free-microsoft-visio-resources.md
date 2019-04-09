@@ -15,7 +15,7 @@ I've seen some Visio resources popup around the place recently and though that t
 
 First up, check out the [Visio Toolbox](http://visiotoolbox.com) site where you [learn](http://visiotoolbox.com/traininglanding.aspx) how to use Visio, download some [connectors](http://visiotoolbox.com/downloads.aspx?resourceid=2) and check out some [whitepapers](http://visiotoolbox.com/downloads.aspx?resourceid=2).&#160; A free version of [SolarWinds LANsurveyor Express](http://www.solarwinds.com/visio_promo/index.aspx?CMP=LEC-Visio-Toolbox-HP-LSE-DL) (available until June 30) is also available:
 
-<img border="0" alt="LANsurveyorExpress" src="https://stealthpuppy.com/wp-content/uploads/2008/04/lansurveyorexpress.png" width="359" height="459" /> 
+<img border="0" alt="LANsurveyorExpress" src="https://stealthpuppy.com/media/2008/04/lansurveyorexpress.png" width="359" height="459" /> 
 
 A few other Visio related tools have been made available recently on the Microsoft Downloads site:
 

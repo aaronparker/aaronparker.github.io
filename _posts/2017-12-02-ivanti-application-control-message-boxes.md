@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "6324381112"
-image: /wp-content/uploads/2017/11/tim-mossholder-322350.jpg
+image: /media/2017/11/tim-mossholder-322350.jpg
 categories:
   - General
 tags:
@@ -24,13 +24,13 @@ Ivanti Application Control (previously [AppSense Application Manager](https://ww
 
 Let's take a look at a typical message box. Below is the default Access Denied message displayed to users on Windows 10 when attempting to start an application that hasn't been white-listed.
 
-![Ivanti Application Control default access denied dialog box](https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied.png)
+![Ivanti Application Control default access denied dialog box](https://stealthpuppy.com/media/2017/11/DefaultDenied.png)
 
 With [apologies to Guy Leech](https://twitter.com/guyrleech/status/925706951773827072) (the original developer of AppSense Application Manager), this message box doesn't fit with Microsoft's recommended [Windows 7 or Windows 10 desktop UI guidelines](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742446.aspx) nor display anything useful to the end user that is useful or actionable. Side note - on Windows 10, I'd love to see this particular message as a [notification](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/07/08/toast-notification-and-action-center-overview-for-windows-10/) instead because there's no immediate action the user can take.
 
 Here's another message box - this one is shown for privilege escalation. Similar in a sense to a UAC dialogue box, but this forces the user to complete the action for elevating an application with a reason for taking that action that can be audited.
 
-![Ivanti Application Control default self-elevation message box](https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultElevate.png)
+![Ivanti Application Control default self-elevation message box](https://stealthpuppy.com/media/2017/11/DefaultElevate.png)
 
 There are several scenarios where Application Control may display a message to the end user:
 
@@ -64,11 +64,11 @@ Microsoft has published user interface guidelines for Windows for many years, wi
 
 Microsoft has specific message boxes in User Account Control that I've used as the basis for improving the messages boxes from Application Control; both visually and in the language/text. Here's a typical UAC message box on Windows 10 - it provides some immediate visual feedback with colour and simple language for the user to act upon:
 
-![Windows User Account Control message box](https://stealthpuppy.com/wp-content/uploads/2017/11/WindowsUACLight.png)
+![Windows User Account Control message box](https://stealthpuppy.com/media/2017/11/WindowsUACLight.png)
 
 [UAC (and SmartScreen) displays various message boxes](https://en.wikipedia.org/wiki/User_Account_Control) depending on the action taken that have different colours to better provide the user with an immediate visual feedback.
 
-![From top to bottom: blocked app, app with unknown publisher, app with a known/trusted publisher](https://stealthpuppy.com/wp-content/uploads/2017/11/User_Account_Control.png)*From top to bottom: blocked app, app with unknown publisher, app with a known/trusted publisher*
+![From top to bottom: blocked app, app with unknown publisher, app with a known/trusted publisher](https://stealthpuppy.com/media/2017/11/User_Account_Control.png)*From top to bottom: blocked app, app with unknown publisher, app with a known/trusted publisher*
 
 Sticking with an established visual style, we can use these colours in our Application Control message boxes. I haven't found documentation on the colours from Microsoft, so the hex values below might not be 100% accurate.
 
@@ -96,7 +96,7 @@ These message boxes are customisable via HTML and CSS, so we have the ability to
 
 Here are the default Message Settings properties:
 
-![Ivanti Application Control message settings](https://stealthpuppy.com/wp-content/uploads/2017/11/MessageSettings.png)
+![Ivanti Application Control message settings](https://stealthpuppy.com/media/2017/11/MessageSettings.png)
 
 Under that advanced button, is the CSS used to customise the visuals. So the first thing we're going to do is customise that CSS to align the visuals with Windows 10. I am maintaining [an updated CSS file to completely replace the default CSS on GitHub](https://gist.github.com/aaronparker/68e8fd1c066c6ecc8b66bb9067120e2c), which means that anyone can fork the file, improve it and contribute.
 
@@ -116,7 +116,7 @@ At the moment, this CSS isn't perfect and requires updates to fix the cutting of
 
 Let's look again at the default Access Denied message box. This doesn't fit into the Windows UI, doesn't necessarily tell the user what's occurred or tell them whether any further action is required.
 
-![Ivanti Application Control default access denied dialog box](https://stealthpuppy.com/wp-content/uploads/2017/11/DefaultDenied.png)
+![Ivanti Application Control default access denied dialog box](https://stealthpuppy.com/media/2017/11/DefaultDenied.png)
 
 With our new CSS in place, we can modify the HTML behind this message to reflect what's going on, as well as provide the user with a link to a page with more information. Note that because my CSS isn't currently perfect, I'm cheating a bit by putting a carriage return after "Running this app might put" so that the text isn't cut off on the right-hand side of the message box.
 
@@ -137,7 +137,7 @@ app, you may need to raise a service request.
 
 Because we have a fixed height and width for the box, I've set the height to 690 pixels and the width to 440. Our new Access Denied message box now looks like this:
 
-![Ivanti Application Control access denied message box with improved styling](https://stealthpuppy.com/wp-content/uploads/2017/11/Denied.png)
+![Ivanti Application Control access denied message box with improved styling](https://stealthpuppy.com/media/2017/11/Denied.png)
 
 In this example, we are now providing the user with some immediate visual feedback, some reason as to why the application was blocked, some details on what was blocked and finally a link to more information (i.e. the action that the user can take). An external page can provide the user with a framework for understanding what's going on and whether they should pick up the phone for the service desk (or not), with better detail and interaction than a message box could provide.
 
@@ -156,7 +156,7 @@ Improper use of elevated applications are in violation of the <a href="https://s
 
 I've set the height to 770 pixels and the width to 460. Here's the result:
 
-![Ivanti Application Control self-elevation message box with improved styling](https://stealthpuppy.com/wp-content/uploads/2017/11/Elevate.png)
+![Ivanti Application Control self-elevation message box with improved styling](https://stealthpuppy.com/media/2017/11/Elevate.png)
 
 In this example, we aren't bombarding the end-user with text nor assuming what they're doing is a hostile action. If you're an IT Pro or a developer, there's a good chance you'll need to elevate an application several times during a single session, so this could be something you see multiple times a day.
 
@@ -171,7 +171,7 @@ For a simple example, let's update the System Controls message.
 
 Which then looks like this:
 
-![Ivanti Application Control system controls message box with improved styling](https://stealthpuppy.com/wp-content/uploads/2017/11/Uninstall.png)
+![Ivanti Application Control system controls message box with improved styling](https://stealthpuppy.com/media/2017/11/Uninstall.png)
 
 Here we've used blue to differentiate this from the previous two messages.
 
@@ -179,11 +179,11 @@ Here we've used blue to differentiate this from the previous two messages.
 
 Note that today Application Control doesn't support high DPI displays or scaling above 100% very well. Because those dialog boxes are a fixed size and the contents don't scale, you get something like this:
 
-![Ivanti Application Control Access Denied Dialog at 200% scaling](https://stealthpuppy.com/wp-content/uploads/2017/12/ivanti-highdpi.png)
+![Ivanti Application Control Access Denied Dialog at 200% scaling](https://stealthpuppy.com/media/2017/12/ivanti-highdpi.png)
 
 Ivanti is, of course, aware of the issue and I assume there'll be a fix in a future update. Until then, at least on Windows 10, you can override the high DPI scaling behaviour. The Application Control Agent folder has a number of executables that run each of the messages. For example, to fix the scaling on the Access Denied message box set compatibility of AMMessage.exe that the high DPI scaling behaviour is set to System (Enhanced).
 
-![Setting Application Control High DPI Scaling Compatibility](https://stealthpuppy.com/wp-content/uploads/2017/12/ivanti-agent-compatibility.png)
+![Setting Application Control High DPI Scaling Compatibility](https://stealthpuppy.com/media/2017/12/ivanti-agent-compatibility.png)
 
 Once set, the message box will be set to its correct size and scaled up on high DPI displays, thus the box may look fuzzy depending on resolution and scaling. To avoid setting this on each executable individually on each end-point, [use Group Policy or the Application Compatibility Toolkit](https://blogs.windows.com/buildingapps/2017/05/19/improving-high-dpi-experience-gdi-based-desktop-apps/) to set these properties.
 

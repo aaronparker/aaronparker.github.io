@@ -21,7 +21,7 @@ There are several parts to this answer. First up [virtual applications are impor
 
 If you choose to deliver the whole application instead of stream it, applications are downloaded into the SCCM cache just like installed applications. Here's a virtualised [Adobe Reader 9](https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows) in the SCCM cache:
 
-<img src="https://stealthpuppy.com/wp-content/uploads/2008/09/sccmcache.png" border="0" alt="SCCMCache" width="587" height="296" /> 
+<img src="https://stealthpuppy.com/media/2008/09/sccmcache.png" border="0" alt="SCCMCache" width="587" height="296" /> 
 
 You can also take advantage of all the deployment features of SCCM like branch deployments and BITS transfers. Here are some links worth reading about App-V and SCCM integrations:
 

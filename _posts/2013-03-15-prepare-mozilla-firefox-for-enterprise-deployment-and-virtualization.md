@@ -17,7 +17,7 @@ categories:
 tags:
   - Firefox
 ---
-<img style="float: right; margin-left: 0px; display: inline; margin-right: 0px;" alt="" src="https://stealthpuppy.com/wp-content/uploads/2011/06/062611_1120_SequencingM1.png" align="right" />I’ve previously written articles on [virtualizing Mozilla Firefox](https://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-13-with-app-v-4-6/), but with Firefox releases more regular these days and the release of App-V 5, it makes sense to split details on configuring Firefox for an enterprise deployment and virtualizing Firefox into separate articles.
+<img style="float: right; margin-left: 0px; display: inline; margin-right: 0px;" alt="" src="https://stealthpuppy.com/media/2011/06/062611_1120_SequencingM1.png" align="right" />I’ve previously written articles on [virtualizing Mozilla Firefox](https://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-13-with-app-v-4-6/), but with Firefox releases more regular these days and the release of App-V 5, it makes sense to split details on configuring Firefox for an enterprise deployment and virtualizing Firefox into separate articles.
 
 Whilst this article will cover some recommendations for configuring a Firefox deployment in an enterprise that can be used when virtualizing Firefox with various solutions, including App-V.
 
@@ -25,7 +25,7 @@ Whilst this article will cover some recommendations for configuring a Firefox de
 
 There are a number of features that might be considered for disabling or configuring in an enterprise environment where users generally won’t have administrative rights and IT may want to control the default user experience.
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FirefoxDefaultLaunch" alt="FirefoxDefaultLaunch" src="https://stealthpuppy.com/wp-content/uploads/2013/03/FirefoxDefaultLaunch_thumb.png" width="660" height="363" border="0" />](https://stealthpuppy.com/wp-content/uploads/2013/03/FirefoxDefaultLaunch.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FirefoxDefaultLaunch" alt="FirefoxDefaultLaunch" src="https://stealthpuppy.com/media/2013/03/FirefoxDefaultLaunch_thumb.png" width="660" height="363" border="0" />](https://stealthpuppy.com/media/2013/03/FirefoxDefaultLaunch.png)
 
 These might include:
 
@@ -142,7 +142,7 @@ sc config MozillaMaintenance start= disabled[/code]
 
 If the installation has been configured correctly, Firefox should start and not display the Import Wizard or any of the other prompts and start-up tabs. Additionally, if you navigate to about:config, a number of preferences should be listed as locked:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FirefoxSettings" alt="FirefoxSettings" src="https://stealthpuppy.com/wp-content/uploads/2013/03/FirefoxSettings_thumb.png" width="660" height="319" border="0" />](https://stealthpuppy.com/wp-content/uploads/2013/03/FirefoxSettings.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FirefoxSettings" alt="FirefoxSettings" src="https://stealthpuppy.com/media/2013/03/FirefoxSettings_thumb.png" width="660" height="319" border="0" />](https://stealthpuppy.com/media/2013/03/FirefoxSettings.png)
 
 To make it easier, I've included the configuration files and the installation script listed above in a single ZIP file that you can download here:
 

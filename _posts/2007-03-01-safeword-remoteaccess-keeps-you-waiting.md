@@ -13,7 +13,7 @@ tags:
 ---
 If you are ever installing SafeWord RemoteAccess, don't be in a hurry. Be prepared to wait while the Setup application downloads the application updates from the SafeWord site, you could be there a while. It's clocked just over an hour now and it's not my end:
 
-<img border="0" src="https://stealthpuppy.com/wp-content/uploads/2007/03/1000.14.1060.SafeWord.png" /> 
+<img border="0" src="https://stealthpuppy.com/media/2007/03/1000.14.1060.SafeWord.png" /> 
 
 So you don't have to go through the pain again, once the download is complete you can find the SafeWord download files here:
 
