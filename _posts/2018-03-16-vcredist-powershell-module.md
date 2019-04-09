@@ -15,7 +15,7 @@ tags:
   - PowerShell
   - Visual C++ Redistributable
 ---
-**Note**: for a more up to date version of the content in this article, VcRedist now has documentation available here: [https://docs.stealthpuppy.com/vcredist](https://docs.stealthpuppy.com/vcredist)
+**Note**: for a more up to date version of the content in this article, VcRedist now has documentation available here: [https://docs.stealthpuppy.com/docs/vcredist](https://docs.stealthpuppy.com/docs/vcredist)
 
 Last year I wrote [a PowerShell script that can download, install or import](https://stealthpuppy.com/visual-c-redistributable-installer/) the Visual C++ Redistributables into MDT or ConfigMgr. Long-term maintenance of the full feature set in a single script is a little unwieldy so I've re-written the script and created [a PowerShell module](https://github.com/aaronparker/Install-VisualCRedistributables) - VcRedist.
 
