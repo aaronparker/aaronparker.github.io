@@ -1,6 +1,6 @@
 ---
 id: 106
-title: 'Sophos Anti-Virus: Hide the Tray Icon'
+title: "Sophos Anti-Virus: Hide the Tray Icon"
 date: 2007-02-05T21:51:00+10:00
 author: Aaron Parker
 layout: post

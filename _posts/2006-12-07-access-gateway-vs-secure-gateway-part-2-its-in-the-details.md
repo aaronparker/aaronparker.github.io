@@ -1,6 +1,6 @@
 ---
 id: 137
-title: 'Access Gateway vs. Secure Gateway Part 2: It's In The Details'
+title: "Access Gateway vs. Secure Gateway Part 2: It's In The Details"
 date: 2006-12-07T06:24:00+10:00
 author: Aaron Parker
 layout: post

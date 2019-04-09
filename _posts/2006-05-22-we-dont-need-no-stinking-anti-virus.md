@@ -1,6 +1,6 @@
 ---
 id: 275
-title: 'We Don't Need No Stinking Anti-Virus'
+title: We Don't Need No Stinking Anti-Virus
 date: 2006-05-22T23:22:00+10:00
 author: Aaron Parker
 layout: post

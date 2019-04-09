@@ -1,6 +1,6 @@
 ---
 id: 2725
-title: 'Citrix Synergy 2012 - Slide deck for Geek Speak Live 'User Environment Management smackdown 2012''
+title: "Citrix Synergy 2012 - Slide deck for Geek Speak Live 'User Environment Management smackdown 2012'"
 date: 2012-05-18T15:05:33+10:00
 author: Aaron Parker
 layout: post

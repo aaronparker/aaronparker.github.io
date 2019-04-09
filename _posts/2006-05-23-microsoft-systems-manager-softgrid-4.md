@@ -1,6 +1,6 @@
 ---
 id: 273
-title: 'Microsoft Systems Manager SoftGrid 4*'
+title: Microsoft Systems Manager SoftGrid 4
 date: 2006-05-23T09:34:00+10:00
 author: Aaron Parker
 layout: post

@@ -1,6 +1,6 @@
 ---
 id: 286
-title: 'Lessons from the field: Backup Active Directory'
+title: Lessons from the field - Backup Active Directory
 date: 2005-10-31T20:37:00+10:00
 author: Aaron Parker
 layout: post

@@ -1,6 +1,6 @@
 ---
 id: 54
-title: 'Firefox on Vista doesn't have to be so ugly'
+title: "Firefox on Vista doesn't have to be so ugly"
 date: 2007-04-25T16:40:00+10:00
 author: Aaron Parker
 layout: post

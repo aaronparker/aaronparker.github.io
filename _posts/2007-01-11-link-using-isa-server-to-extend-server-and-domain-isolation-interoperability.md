@@ -1,6 +1,6 @@
 ---
 id: 124
-title: 'Link: Using ISA Server to Extend Server and Domain Isolation Interoperability'
+title: "Link: Using ISA Server to Extend Server and Domain Isolation Interoperability"
 date: 2007-01-11T23:23:00+10:00
 author: Aaron Parker
 layout: post

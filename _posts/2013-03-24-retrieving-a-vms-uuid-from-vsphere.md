@@ -1,6 +1,6 @@
 ---
 id: 3081
-title: 'Retrieving a Virtual Machine's UUID from vSphere'
+title: "Retrieving a Virtual Machine's UUID from vSphere"
 date: 2013-03-24T22:19:03+10:00
 author: Aaron Parker
 layout: post

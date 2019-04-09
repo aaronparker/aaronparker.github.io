@@ -1,6 +1,6 @@
 ---
 id: 265
-title: 'Citrix AAC and Microsoft's NAP'
+title: Citrix AAC and Microsoft's NAP
 date: 2006-07-18T14:17:00+10:00
 author: Aaron Parker
 layout: post

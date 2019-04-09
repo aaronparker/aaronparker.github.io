@@ -1,13 +1,11 @@
 ---
 id: 5809
-title: 'Melbourne CUGC IV - It's LTSR in the Spotlight!'
+title: "Melbourne CUGC IV - It's LTSR in the Spotlight!"
 date: 2017-10-04T22:20:14+10:00
 author: Aaron Parker
 layout: post
 guid: https://stealthpuppy.com/?p=5809
 permalink: /melbourne-cugc-october-2017-meetup/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
 image: /wp-content/uploads/2016/11/MelbourneCUCG-white.png
 categories:
   - Community
@@ -15,7 +13,8 @@ tags:
   - CUGC
   - myCUGC
 ---
-We've been busy planning our next CUGC meet-up for 2017, which will be on the 24th of October at the Telstra Conference Center at 242 Exhibition St. To attend the meet-up, ensure you've signed up at the MyCUGC.org site: [Melbourne Citrix User Group Local Meeting](https://www.mycugc.org/page/melbourne-oct24-2017Meeting) 
+
+We've been busy planning our next CUGC meet-up for 2017, which will be on the 24th of October at the Telstra Conference Center at 242 Exhibition St. To attend the meet-up, ensure you've signed up at the MyCUGC.org site: [Melbourne Citrix User Group Local Meeting](https://www.mycugc.org/page/melbourne-oct24-2017Meeting)
 
 ## Agenda
 

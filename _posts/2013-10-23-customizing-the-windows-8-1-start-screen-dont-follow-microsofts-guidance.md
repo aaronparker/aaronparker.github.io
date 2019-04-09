@@ -1,6 +1,6 @@
 ---
 id: 3505
-title: 'Customizing the Windows 8.1 Start Screen? Don't follow Microsoft's guidance'
+title: "Customizing the Windows 8.1 Start Screen? Don't follow Microsoft's guidance"
 date: 2013-10-23T21:08:22+10:00
 author: Aaron Parker
 layout: post

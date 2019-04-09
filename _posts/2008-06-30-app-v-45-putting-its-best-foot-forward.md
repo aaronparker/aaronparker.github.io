@@ -1,6 +1,6 @@
 ---
 id: 583
-title: 'App-V 4.5 Putting It's Best Face Forward'
+title: "App-V 4.5 Putting It's Best Face Forward"
 date: 2008-06-30T18:30:00+10:00
 author: Aaron Parker
 layout: post

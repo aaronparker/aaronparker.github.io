@@ -18,7 +18,8 @@ With Visio 2007 and Visio Viewer on the same machine, Visio will the default app
 
 The following registry entries will set Visio Viewer as the default. You can deploy this as a .REG file via a logon script or better yet, use a workspace management tool such as Group Policy Preferences, AppSense Environment Manager or RES PowerFuse.
 
-[code]Windows Registry Editor Version 5.00
+```
+Windows Registry Editor Version 5.00
 
 [HKEY\_CURRENT\_USER\Software\Classes\.vsd]  
 @="VisioViewer.Viewer"  
@@ -64,6 +65,6 @@ The following registry entries will set Visio Viewer as the default. You can dep
 
 [HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer.1\CLSID]  
 @="{279D6C9A-652E-4833-BEFC-312CA8887857}"  
-[/code]
+```
 
 Although Visio Viewer is installed as a component of Office 2007, you can download a separate installer [here](http://www.microsoft.com/downloads/details.aspx?FamilyID=d88e4542-b174-4198-ae31-6884e9edd524&DisplayLang=en) and SP1 [here](http://www.microsoft.com/downloads/details.aspx?FamilyID=14c4de7e-d940-45ec-8d56-ec2fcdf346a5&DisplayLang=en).

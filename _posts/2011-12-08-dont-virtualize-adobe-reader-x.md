@@ -1,6 +1,6 @@
 ---
 id: 2578
-title: 'Don't put yourself at risk by virtualizing Adobe Reader X'
+title: "Don't put yourself at risk by virtualizing Adobe Reader X"
 date: 2011-12-08T16:36:01+10:00
 author: Aaron Parker
 layout: post

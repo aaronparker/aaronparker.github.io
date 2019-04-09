@@ -1,6 +1,6 @@
 ---
 id: 178
-title: '0xc0040357: The Server referenced by Array &lt;SERVERNAME&gt; does not exist'
+title: "0xc0040357: The Server referenced by Array SERVERNAME does not exist"
 date: 2006-09-26T01:02:00+10:00
 author: Aaron Parker
 layout: post

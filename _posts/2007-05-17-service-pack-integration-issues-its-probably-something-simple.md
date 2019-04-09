@@ -1,6 +1,6 @@
 ---
 id: 41
-title: 'Service Pack integration issues? It's probably something simple'
+title: "Service Pack integration issues? It's probably something simple"
 date: 2007-05-17T16:32:00+10:00
 author: Aaron Parker
 layout: post

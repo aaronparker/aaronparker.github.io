@@ -1,6 +1,6 @@
 ---
 id: 92
-title: 'Configure Vista's KMS on Windows Server 2003'
+title: Configure Vista KMS on Windows Server 2003
 date: 2007-03-01T00:02:00+10:00
 author: Aaron Parker
 layout: post

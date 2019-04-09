@@ -1,6 +1,6 @@
 ---
 id: 1940
-title: 'App-V FAQ: My virtual application won't start. Where do I start troubleshooting?'
+title: "App-V FAQ: My virtual application won't start. Where do I start troubleshooting?"
 date: 2010-09-24T12:00:00+10:00
 author: Aaron Parker
 layout: post
@@ -107,4 +107,3 @@ If the problem is not immediately apparent in the log, start looking for a solut
   * [App-V Application Publishing and Client Interaction](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/AppPubandClientInteraction.docx)
   * [App-V Client Error Codes](http://www.kirx.org/app-v/read/error-codes-en.html)
   * [App-V Error Codes search](http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code) on Microsoft Support
-  

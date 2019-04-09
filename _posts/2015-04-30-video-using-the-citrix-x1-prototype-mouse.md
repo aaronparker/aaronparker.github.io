@@ -1,6 +1,6 @@
 ---
 id: 3934
-title: 'Video: Using the Citrix X1 Prototype Mouse'
+title: Using the Citrix X1 Prototype Mouse
 date: 2015-04-30T22:42:27+10:00
 author: Aaron Parker
 layout: post

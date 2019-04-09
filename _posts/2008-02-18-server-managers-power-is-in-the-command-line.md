@@ -1,6 +1,6 @@
 ---
 id: 469
-title: 'Server Manager's Power Is In The Command Line'
+title: "Server Manager's Power Is In The Command Line"
 date: 2008-02-18T21:54:54+10:00
 author: Aaron Parker
 layout: post

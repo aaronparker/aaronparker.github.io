@@ -52,53 +52,53 @@
 
 <p>The following registry entries will set Visio Viewer as the default. You can deploy this as a .REG file via a logon script or better yet, use a workspace management tool such as Group Policy Preferences, AppSense Environment Manager or RES PowerFuse.</p>
 
-<p>[code]Windows Registry Editor Version 5.00</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Windows Registry Editor Version 5.00
 
-<p>[HKEY_CURRENT_USER\Software\Classes.vsd]<br />
-@=”VisioViewer.Viewer”<br />
-“Content Type”=”application/vnd.ms-visio.viewer”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\.vsd]  
+@="VisioViewer.Viewer"  
+"Content Type"="application/vnd.ms-visio.viewer"
 
-<p>[HKEY_CURRENT_USER\Software\Classes.vsd\shellex]</p>
+[HKEY\_CURRENT\_USER\Software\Classes\.vsd\shellex]
 
-<p>[HKEY_CURRENT_USER\Software\Classes.vsd\shellex{8895b1c6-b41f-4c1c-a562-0d564250836f}]<br />
-@=”{21E17C2F-AD3A-4b89-841F-09CFE02D16B7}”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\.vsd\shellex\{8895b1c6-b41f-4c1c-a562-0d564250836f}]  
+@="{21E17C2F-AD3A-4b89-841F-09CFE02D16B7}"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer]<br />
-@=”Microsoft Visio Document”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer]  
+@="Microsoft Visio Document"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer\CLSID]<br />
-@=”{279D6C9A-652E-4833-BEFC-312CA8887857}”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer\CLSID]  
+@="{279D6C9A-652E-4833-BEFC-312CA8887857}"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer\CurVer]<br />
-@=”VisioViewer.Viewer.1”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer\CurVer]  
+@="VisioViewer.Viewer.1"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer\DefaultIcon]<br />
-@=”"C:\Program Files\Microsoft Office\Office12\VVIEWER.DLL",-2”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer\DefaultIcon]  
+@="\"C:\\Program Files\\Microsoft Office\\Office12\\VVIEWER.DLL\",-2"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer\shell]<br />
-@=””</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer\shell]  
+@=""
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer\shell\open]<br />
-@=”Open”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer\shell\open]  
+@="Open"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer\shell\open\command]<br />
-@=”"C:\Program Files\Internet Explorer\iexplore.exe" -nohome”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer\shell\open\command]  
+@="\"C:\\Program Files\\Internet Explorer\\iexplore.exe\" -nohome"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer\shell\open\ddeexec]<br />
-@=”"file:%1",,-1,,,,,”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer\shell\open\ddeexec]  
+@="\"file:%1\",,-1,,,,,"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer\shell\open\ddeexec\Application]<br />
-@=”IExplore”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer\shell\open\ddeexec\Application]  
+@="IExplore"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer\shell\open\ddeexec\Topic]<br />
-@=”WWW_OpenURL”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer\shell\open\ddeexec\Topic]  
+@="WWW_OpenURL"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer.1]<br />
-@=”Microsoft Visio Document”</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer.1]  
+@="Microsoft Visio Document"
 
-<p>[HKEY_CURRENT_USER\Software\Classes\VisioViewer.Viewer.1\CLSID]<br />
-@=”{279D6C9A-652E-4833-BEFC-312CA8887857}”<br />
-[/code]</p>
+[HKEY\_CURRENT\_USER\Software\Classes\VisioViewer.Viewer.1\CLSID]  
+@="{279D6C9A-652E-4833-BEFC-312CA8887857}"  
+</code></pre></div></div>
 
 <p>Although Visio Viewer is installed as a component of Office 2007, you can download a separate installer <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=d88e4542-b174-4198-ae31-6884e9edd524&amp;DisplayLang=en">here</a> and SP1 <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=14c4de7e-d940-45ec-8d56-ec2fcdf346a5&amp;DisplayLang=en">here</a>.</p>
 

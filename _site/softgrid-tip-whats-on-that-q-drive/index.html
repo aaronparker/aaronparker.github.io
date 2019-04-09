@@ -3,20 +3,20 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
-<title>Chicks on Decks | stealthpuppy</title>
+<title>SoftGrid Tip: What’s On That Q: Drive? | stealthpuppy</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Chicks on Decks" />
+<meta property="og:title" content="SoftGrid Tip: What’s On That Q: Drive?" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Best. Video. Ever.. (work safe)" />
-<meta property="og:description" content="Best. Video. Ever.. (work safe)" />
-<link rel="canonical" href="/chicks-on-decks/" />
-<meta property="og:url" content="/chicks-on-decks/" />
+<meta name="description" content="Here’s a nice SoftGrid tip from one of the guys in the team here." />
+<meta property="og:description" content="Here’s a nice SoftGrid tip from one of the guys in the team here." />
+<link rel="canonical" href="/softgrid-tip-whats-on-that-q-drive/" />
+<meta property="og:url" content="/softgrid-tip-whats-on-that-q-drive/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2006-11-19T21:22:00+11:00" />
+<meta property="article:published_time" content="2008-02-22T19:30:16+11:00" />
 <script type="application/ld+json">
-{"description":"Best. Video. Ever.. (work safe)","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/chicks-on-decks/","headline":"Chicks on Decks","dateModified":"2006-11-19T21:22:00+11:00","datePublished":"2006-11-19T21:22:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/chicks-on-decks/"},"@context":"https://schema.org"}</script>
+{"description":"Here’s a nice SoftGrid tip from one of the guys in the team here.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/softgrid-tip-whats-on-that-q-drive/","headline":"SoftGrid Tip: What’s On That Q: Drive?","dateModified":"2008-02-22T19:30:16+11:00","datePublished":"2008-02-22T19:30:16+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/softgrid-tip-whats-on-that-q-drive/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -39,18 +39,28 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Chicks on Decks</h1>
+    <h1 class="post-title p-name" itemprop="name headline">SoftGrid Tip: What&#39;s On That Q: Drive?</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2006-11-19T21:22:00+11:00" itemprop="datePublished">Nov 19, 2006
+      <time class="dt-published" datetime="2008-02-22T19:30:16+11:00" itemprop="datePublished">Feb 22, 2008
       </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Best. Video. Ever.. (work safe)</p>
+    <p>Here’s a nice SoftGrid tip from one of the guys in the team here.</p>
 
-<p>[youtube=http://youtube.com/watch?v=mNWYqs-p1Gk]</p>
+<p>If you want to take a look at the SoftGrid client drive, there a several methods. The most common would be to add a PRE LAUNCH script to the OSD file that would launch a Command Prompt window inside the SoftGrid bubble.</p>
 
-  </div><a class="u-url" href="/chicks-on-decks/" hidden></a>
+<p>Now, I like my command line, but if I want to just take a quick look around a file location a GUI makes things nice and simple. To do that on the SoftGrid client drive, I could <a href="https://stealthpuppy.com/virtualisation/softgrid-launch-windows-explorer-inside-the-bubble">run Windows Explorer within the bubble</a>, or I could just map another drive to the SoftGrid drive.</p>
+
+<p>This is as easy as running a NET USE command, so to map drive X to my client drive Q:, I can run:</p>
+
+<p><code class="highlighter-rouge">powershell
+NET USE X: \\%computername%\Q$
+</code>powershell</p>
+
+<p>I can now launch Windows Explorer and navigate to X: drive to see the contents of the SoftGrid client drive. You’ll be able to see you asset folders, however you must have an application running to be able to browse inside those folders to see the application within. This is great for a quick way to get inside the client drive, however for real troubleshooting, you can’t go past <a href="http://www.virtualapp.net/sft-explorer.html">SFT Explorer</a>.</p>
+
+  </div><a class="u-url" href="/softgrid-tip-whats-on-that-q-drive/" hidden></a>
 </article>
 
       </div>

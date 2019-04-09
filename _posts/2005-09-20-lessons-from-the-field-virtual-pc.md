@@ -1,6 +1,6 @@
 ---
 id: 296
-title: 'Lessons from the field: Virtual PC'
+title: Lessons from the field - Virtual PC
 date: 2005-09-20T23:42:00+10:00
 author: Aaron Parker
 layout: post

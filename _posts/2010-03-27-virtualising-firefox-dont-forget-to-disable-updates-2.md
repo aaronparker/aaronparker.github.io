@@ -1,6 +1,6 @@
 ---
 id: 1434
-title: 'Virtualising Firefox? Don't forget to disable Updates'
+title: "Virtualising Firefox? Don't forget to disable Updates"
 date: 2010-03-27T16:44:03+10:00
 author: Aaron Parker
 layout: post

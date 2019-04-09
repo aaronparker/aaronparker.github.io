@@ -1,6 +1,6 @@
 ---
 id: 162
-title: 'Better Together: Networking Scenarios with Vista and Longhorn Server'
+title: "Better Together: Networking Scenarios with Vista and Longhorn Server"
 date: 2006-10-18T03:51:00+10:00
 author: Aaron Parker
 layout: post

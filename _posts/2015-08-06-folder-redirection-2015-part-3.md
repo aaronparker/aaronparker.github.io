@@ -1,6 +1,6 @@
 ---
 id: 4040
-title: 'I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3.'
+title: "I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3."
 date: 2015-08-06T19:30:36+10:00
 author: Aaron Parker
 layout: post

@@ -1,6 +1,6 @@
 ---
 id: 410
-title: 'Tip Of The Day - Ain't Got No Tips'
+title: "Tip Of The Day - Ain't Got No Tips"
 date: 2008-01-07T16:31:14+10:00
 author: Aaron Parker
 layout: post

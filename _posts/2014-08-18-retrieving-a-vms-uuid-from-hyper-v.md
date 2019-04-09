@@ -1,6 +1,6 @@
 ---
 id: 3642
-title: 'Retrieving a VM's UUID from Hyper-V'
+title: "Retrieving a VM's UUID from Hyper-V"
 date: 2014-08-18T12:15:13+10:00
 author: Aaron Parker
 layout: post

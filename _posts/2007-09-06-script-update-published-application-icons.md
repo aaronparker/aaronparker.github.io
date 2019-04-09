@@ -1,6 +1,6 @@
 ---
 id: 343
-title: 'Script: Update Published Application Icons'
+title: "Script: Update Published Application Icons"
 date: 2007-09-06T14:33:05+10:00
 author: Aaron Parker
 layout: post
