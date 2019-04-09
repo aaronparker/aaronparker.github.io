@@ -15,7 +15,7 @@ tags:
   - PowerShell
   - Visual C++ Redistributable
 ---
-**Note**: for a more up to date version of the content in this article, VcRedist now has documentation available here: <https://docs.stealthpuppy.com/vcredist>
+**Note**: for a more up to date version of the content in this article, VcRedist now has documentation available here: [https://docs.stealthpuppy.com/vcredist](https://docs.stealthpuppy.com/vcredist)
 
 Last year I wrote [a PowerShell script that can download, install or import](https://stealthpuppy.com/visual-c-redistributable-installer/) the Visual C++ Redistributables into MDT or ConfigMgr. Long-term maintenance of the full feature set in a single script is a little unwieldy so I've re-written the script and created [a PowerShell module](https://github.com/aaronparker/Install-VisualCRedistributables) - VcRedist.
 
@@ -29,36 +29,42 @@ At this point, I'm sure you're saying to yourself - "Aaron, haven't you just cre
 
 The VcRedist module is [published to the PowerShell Gallery](https://www.powershellgallery.com/packages/VcRedist/), which means that it's simple to install the module and starting importing with a few lines of PowerShell. For example, here's how you could install the module, download all of [the supported Redistributables](https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads) and import them into an MDT deployment share:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Install-Module -Name VcRedist
+```powershell
+Install-Module -Name VcRedist
 Import-Module VcRedist
 $VcList = Get-VcList | Get-VcRedist -Path "C:\Temp\VcRedist"
-Import-VcMdtApp -VcList $VcList -Path "C:\Temp\VcRedist" -MdtPath "\\server\share\Reference"</pre>
+Import-VcMdtApp -VcList $VcList -Path "C:\Temp\VcRedist" -MdtPath "\\server\share\Reference"
+```
 
 This results in each of the Visual C++ Redistributables imported as a separate application with all necessary properties including Version, silent command line, Uninstall Key and 32-bit or 64-bot operating system support.
 
-<figure id="attachment_5999" aria-describedby="caption-attachment-5999" style="width: 2880px" class="wp-caption aligncenter">[<img class="size-full wp-image-5999" src="https://stealthpuppy.com/wp-content/uploads/2018/03/MdtVisualCApplications.png" alt="Visual C++ Redistributables imported into an MDT share with VcRedist" width="2880" height="778" srcset="https://stealthpuppy.com/wp-content/uploads/2018/03/MdtVisualCApplications.png 2880w, https://stealthpuppy.com/wp-content/uploads/2018/03/MdtVisualCApplications-150x41.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/03/MdtVisualCApplications-300x81.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/03/MdtVisualCApplications-768x207.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/03/MdtVisualCApplications-1024x277.png 1024w" sizes="(max-width: 2880px) 100vw, 2880px" />](https://stealthpuppy.com/wp-content/uploads/2018/03/MdtVisualCApplications.png)<figcaption id="caption-attachment-5999" class="wp-caption-text">Visual C++ Redistributables imported into an MDT share with VcRedist*</figure>
+![Visual C++ Redistributables imported into an MDT share with VcRedist](https://stealthpuppy.com/wp-content/uploads/2018/03/MdtVisualCApplications.png)*Visual C++ Redistributables imported into an MDT share with VcRedist*
 
 The same approach can be used to import the Redistributables into a ConfigMgr site:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Install-Module VcRedist
+```powershell
+Install-Module VcRedist
 Import-Module VcRedist
 $VcList = Get-VcList | Get-VcRedist -Path "C:\Temp\VcRedist"
-Import-VcCmApp -VcList $VcList -Path "C:\Temp\VcRedist" -CMPath "\\server\share\VcRedist" -SMSSiteCode LAB</pre>
+Import-VcCmApp -VcList $VcList -Path "C:\Temp\VcRedist" -CMPath "\\server\share\VcRedist" -SMSSiteCode LAB
+```
 
-Just like MDT, each Redistributable is imported into ConfigMgr; however, <code class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Import-VcCmApp</code> copies the Redistributables to a share for distribution and creates and application with a single deployment for each one.
+Just like MDT, each Redistributable is imported into ConfigMgr; however, `Import-VcCmApp` copies the Redistributables to a share for distribution and creates and application with a single deployment for each one.
 
-<figure id="attachment_6000" aria-describedby="caption-attachment-6000" style="width: 1145px" class="wp-caption aligncenter">[<img class="size-full wp-image-6000" src="https://stealthpuppy.com/wp-content/uploads/2018/03/VcRedistConfigMgr.png" alt="Visual C++ Redistributables imported into ConfigMgr with VcRedist" width="1145" height="477" srcset="https://stealthpuppy.com/wp-content/uploads/2018/03/VcRedistConfigMgr.png 1145w, https://stealthpuppy.com/wp-content/uploads/2018/03/VcRedistConfigMgr-150x62.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/03/VcRedistConfigMgr-300x125.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/03/VcRedistConfigMgr-768x320.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/03/VcRedistConfigMgr-1024x427.png 1024w" sizes="(max-width: 1145px) 100vw, 1145px" />](https://stealthpuppy.com/wp-content/uploads/2018/03/VcRedistConfigMgr.png)<figcaption id="caption-attachment-6000" class="wp-caption-text">Visual C++ Redistributables imported into ConfigMgr with VcRedist*</figure>
+![Visual C++ Redistributables imported into ConfigMgr with VcRedist](https://stealthpuppy.com/wp-content/uploads/2018/03/VcRedistConfigMgr.png)*Visual C++ Redistributables imported into ConfigMgr with VcRedist*
 
 Of course, the module can download and install the Redistributables to the local machine:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Install-Module VcRedist
+```powershell
+Install-Module VcRedist
 Import-Module VcRedist
 $VcList = Get-VcList | Get-VcRedist -Path "C:\Temp\VcRedist"
-$VcList | Install-VcRedist -Path C:\Temp\VcRedist</pre>
+$VcList | Install-VcRedist -Path C:\Temp\VcRedist
+```
 
 By default, this installs all of the supported Redistributables:
 
-<figure id="attachment_6001" aria-describedby="caption-attachment-6001" style="width: 1071px" class="wp-caption aligncenter">[<img class="size-full wp-image-6001" src="https://stealthpuppy.com/wp-content/uploads/2018/03/VisualCPrograms.png" alt="Visual C++ Redistributables installed locally with VcRedist" width="1071" height="583" srcset="https://stealthpuppy.com/wp-content/uploads/2018/03/VisualCPrograms.png 1071w, https://stealthpuppy.com/wp-content/uploads/2018/03/VisualCPrograms-150x82.png 150w, https://stealthpuppy.com/wp-content/uploads/2018/03/VisualCPrograms-300x163.png 300w, https://stealthpuppy.com/wp-content/uploads/2018/03/VisualCPrograms-768x418.png 768w, https://stealthpuppy.com/wp-content/uploads/2018/03/VisualCPrograms-1024x557.png 1024w" sizes="(max-width: 1071px) 100vw, 1071px" />](https://stealthpuppy.com/wp-content/uploads/2018/03/VisualCPrograms.png)<figcaption id="caption-attachment-6001" class="wp-caption-text">Visual C++ Redistributables installed locally with VcRedist*</figure>
+![Visual C++ Redistributables installed locally with VcRedist](https://stealthpuppy.com/wp-content/uploads/2018/03/VisualCPrograms.png)*Visual C++ Redistributables installed locally with VcRedist*
 
 Note that the 2015 and 2017 Redistributables are the same version, so the end result will include only the 2017 versions.
 
