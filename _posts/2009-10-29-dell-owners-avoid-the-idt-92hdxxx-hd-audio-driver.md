@@ -89,7 +89,7 @@ I've tested these on a 32-bit install of Windows 7 on two machines - a Latitude 
 If you have the same issue, open Device Manager and uninstall the device labelled _IDT High Definition Audio CODEC_, be sure to also tick the option _Delete the driver software for this device_ to remove the driver completely. Here's what you'll see in Device Manager:
 
 <p style="text-align: center;">
-  <img class="size-full wp-image-1218  aligncenter" title="AudioDrivers" src="https://stealthpuppy.com/wp-content/uploads/2009/10/AudioDrivers.png" alt="AudioDrivers" width="380" height="124" srcset="https://stealthpuppy.com/wp-content/uploads/2009/10/AudioDrivers.png 380w, https://stealthpuppy.com/wp-content/uploads/2009/10/AudioDrivers-150x48.png 150w, https://stealthpuppy.com/wp-content/uploads/2009/10/AudioDrivers-300x97.png 300w" sizes="(max-width: 380px) 100vw, 380px" />
+  <img class="size-full wp-image-1218  aligncenter" title="AudioDrivers" src="https://stealthpuppy.com/media/2009/10/AudioDrivers.png" alt="AudioDrivers" width="380" height="124" srcset="https://stealthpuppy.com/media/2009/10/AudioDrivers.png 380w, https://stealthpuppy.com/media/2009/10/AudioDrivers-150x48.png 150w, https://stealthpuppy.com/media/2009/10/AudioDrivers-300x97.png 300w" sizes="(max-width: 380px) 100vw, 380px" />
 </p>
 
 Now here's the weird part, these audio drivers also prevent the Hyper-V virtual machine remote console client (VMCONNECT.EXE) from connecting to a VM. You'll see the client window open but no remote console will be displayed. Odd stuff.

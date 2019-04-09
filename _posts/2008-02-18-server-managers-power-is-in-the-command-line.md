@@ -19,7 +19,7 @@ Like most IT Pros deploying and managing Windows Server, I've avoided the wizard
 
 Server Manager is an MMC-based front-end for anything you will need to manage on your servers running Windows 2008. As well as combining many of the individual management tools, it gives you a simple overview of what's happening on your server and integrates the old Add/Remove Programs interface too.
 
-[](https://stealthpuppy.com/wp-content/uploads/2008/02/servermanager.png)
+[](https://stealthpuppy.com/media/2008/02/servermanager.png)
 
 If you've not taken a look at Windows Server 2008 and are interested in reading more about Server Manager, there is a plethora of resources available to you:
 
@@ -60,7 +60,7 @@ I've included here the complete list of roles and features that you can use with
 
 Here's something I really like: using SERVERMANAGERCMD -QUERY via Windows PowerShell makes seeing what's installed on your server nice and simple (**Update**: this works under Command Prompt too):
 
-![Query](https://stealthpuppy.com/wp-content/uploads/2008/02/query.png)
+![Query](https://stealthpuppy.com/media/2008/02/query.png)
 
 For more information on Server Manager with PowerShell , read Marc van Orsouw's post: [Dueling Command Lines in Windows Server 2008 ? .. or a happy end ?](http://thepowershellguy.com/blogs/posh/archive/2007/05/23/dueling-command-lines-in-windows-server-2008-or-a-happy-end.aspx).
 

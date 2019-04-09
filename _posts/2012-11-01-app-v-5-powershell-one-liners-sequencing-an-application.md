@@ -18,7 +18,7 @@ tags:
   - App-V
   - PowerShell
 ---
-<img class="alignright size-full wp-image-2873" style="margin-left: 5px; margin-right: 5px;" title="AppV-PowerShell-Logo" src="https://stealthpuppy.com/wp-content/uploads/2012/10/AppV-PowerShell-Logo.png" alt="" width="128" height="128" />App-V 5.0 is PowerShell driven, which means opportunity for automating and scripting tasks that might have to be completed manually or might have been a challenge to script previously.
+<img class="alignright size-full wp-image-2873" style="margin-left: 5px; margin-right: 5px;" title="AppV-PowerShell-Logo" src="https://stealthpuppy.com/media/2012/10/AppV-PowerShell-Logo.png" alt="" width="128" height="128" />App-V 5.0 is PowerShell driven, which means opportunity for automating and scripting tasks that might have to be completed manually or might have been a challenge to script previously.
 
 Using PowerShell to drive the App-V Sequencer opens up some great automation scenarios. Here's how to use PowerShell to sequence an application without manually starting the Sequencer UI.
 
@@ -29,7 +29,7 @@ I've placed all binaries and files, including a Sequencer Template into a folder
 [code]@ECHO OFF  
 START /WAIT C:\Packages\Paint.NET.3.5.10.Install.exe /skipConfig /auto PDNUPDATING=0 CHECKFORUPDATES=0 DESKTOPSHORTCUT=0[/code]
 
-<img class="alignnone size-full wp-image-2895" title="PackagesFolder" src="https://stealthpuppy.com/wp-content/uploads/2012/11/PackagesFolder.png" alt="" width="660" height="190" srcset="https://stealthpuppy.com/wp-content/uploads/2012/11/PackagesFolder.png 660w, https://stealthpuppy.com/wp-content/uploads/2012/11/PackagesFolder-150x43.png 150w, https://stealthpuppy.com/wp-content/uploads/2012/11/PackagesFolder-300x86.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
+<img class="alignnone size-full wp-image-2895" title="PackagesFolder" src="https://stealthpuppy.com/media/2012/11/PackagesFolder.png" alt="" width="660" height="190" srcset="https://stealthpuppy.com/media/2012/11/PackagesFolder.png 660w, https://stealthpuppy.com/media/2012/11/PackagesFolder-150x43.png 150w, https://stealthpuppy.com/media/2012/11/PackagesFolder-300x86.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
 
 Before running the **New-AppvSequencerPackage** command, I have changed directory to C:\Packages. To capture Paint.NET as a new App-V 5.0 package, I have used the following command:
 

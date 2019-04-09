@@ -10,7 +10,7 @@ dsq_thread_id:
   - "3602034218"
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /wp-content/uploads/2015/03/5905589199_bdf215ec44_b-624x416.jpg
+image: /media/2015/03/5905589199_bdf215ec44_b-624x416.jpg
 categories:
   - Microsoft
 tags:

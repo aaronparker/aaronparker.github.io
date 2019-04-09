@@ -22,7 +22,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="left" />Depending on how you license App-V, you may need to download the ISO from different sources:
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />Depending on how you license App-V, you may need to download the ISO from different sources:
 
 ### App-V for Desktops
 

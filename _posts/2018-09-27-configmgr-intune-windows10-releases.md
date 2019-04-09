@@ -8,7 +8,7 @@ guid: https://stealthpuppy.com/?p=6179
 permalink: /configmgr-intune-windows10-releases/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /wp-content/uploads/2018/09/alex-litvin-790876-unsplash.jpg
+image: /media/2018/09/alex-litvin-790876-unsplash.jpg
 categories:
   - Microsoft
 tags:
@@ -32,7 +32,7 @@ In my session, I demonstrated this with current Microsoft products - System Cent
 
 Here's the slide I created to visualise this theme.
 
-![Visualising ConfigMgr, Intune and Windows 10 Releases](https://stealthpuppy.com/wp-content/uploads/2018/09/MicrosoftReleases.png)*Visualising ConfigMgr, Intune and Windows 10 Releases*
+![Visualising ConfigMgr, Intune and Windows 10 Releases](https://stealthpuppy.com/media/2018/09/MicrosoftReleases.png)*Visualising ConfigMgr, Intune and Windows 10 Releases*
 
 # Download the Slide
 

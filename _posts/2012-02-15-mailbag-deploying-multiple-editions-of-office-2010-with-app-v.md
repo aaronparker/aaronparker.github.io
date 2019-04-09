@@ -18,7 +18,7 @@ tags:
   - App-V
   - Office
 ---
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border: 0px;" title="Mail Bag" src="https://stealthpuppy.com/wp-content/uploads/2012/02/Mail-Bag_thumb.png" alt="Mail Bag" width="128" height="128" align="right" border="0" />](https://stealthpuppy.com/wp-content/uploads/2012/02/Mail-Bag.png)I'm not sure why I didn't think of this earlier – I get emails from readers fairly regularly and many of them make great topics for blog posts. So here's the first in a series of posts where I'll cover interesting questions I get via email and where I think other readers will benefit from a public response.
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border: 0px;" title="Mail Bag" src="https://stealthpuppy.com/media/2012/02/Mail-Bag_thumb.png" alt="Mail Bag" width="128" height="128" align="right" border="0" />](https://stealthpuppy.com/media/2012/02/Mail-Bag.png)I'm not sure why I didn't think of this earlier – I get emails from readers fairly regularly and many of them make great topics for blog posts. So here's the first in a series of posts where I'll cover interesting questions I get via email and where I think other readers will benefit from a public response.
 
 I've removed personally identifiable information from the original email.
 

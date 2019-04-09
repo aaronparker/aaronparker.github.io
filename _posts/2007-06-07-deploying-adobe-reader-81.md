@@ -19,7 +19,7 @@ tags:
   Note, this post is now out of date; for an Adobe Reader 9 version of this post, go <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">here</a>.
 </p>
 
-<img src="https://stealthpuppy.com/wp-content/uploads/2008/02/adobereader.png" alt="adobereader.png" align="left" /> Deployment of Adobe Reader in an enterprise environment has been much simplified since version 6, however there is still some important preparation before you think about deploying version 8. Adobe have compiled information on enterprise deployment which are available on the following pages - I prefer the developer page over the page aimed at IT professionals because it has more information and is a little easier to read:
+<img src="https://stealthpuppy.com/media/2008/02/adobereader.png" alt="adobereader.png" align="left" /> Deployment of Adobe Reader in an enterprise environment has been much simplified since version 6, however there is still some important preparation before you think about deploying version 8. Adobe have compiled information on enterprise deployment which are available on the following pages - I prefer the developer page over the page aimed at IT professionals because it has more information and is a little easier to read:
 
   * [Adobe Developer Centre: Enterprise deployment](http://www.adobe.com/devnet/acrobat/enterprise_deployment.html)
   * [Acrobat Solutions for IT professionals: Deploy Adobe Acrobat and Reader](http://www.adobe.com/products/acrobat/solutions/it/index.html)
@@ -46,13 +46,13 @@ Simplifying Adobe Reader in an enterprise environment is something that we're al
   * Disables the Adobe Online Services
 
 <p class="download">
-  <a href="https://stealthpuppy.com/wp-content/uploads/2007/06/Reader8xBasic.mst">Adobe Reader 8.1.x Basic transform file</a>
+  <a href="https://stealthpuppy.com/media/2007/06/Reader8xBasic.mst">Adobe Reader 8.1.x Basic transform file</a>
 </p>
 
 The second transform provides the same settings as above in addition to completely preventing the installation of Adobe Updater:
 
 <p class="download">
-  <a href="https://stealthpuppy.com/wp-content/uploads/2007/06/Reader8xAdvanced.mst">Adobe Reader 8.1.x Advanced transform file</a>
+  <a href="https://stealthpuppy.com/media/2007/06/Reader8xAdvanced.mst">Adobe Reader 8.1.x Advanced transform file</a>
 </p>
 
 ### Terminal Servers and Browser Integration

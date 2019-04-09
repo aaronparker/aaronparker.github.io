@@ -16,9 +16,9 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="left" />There are several [deployment methods available for App-V](https://stealthpuppy.com/deployment/app-v-faq-20-what-are-the-deployment-methods-for-app-v) and a number of ways to stream packages to clients – RTSP, HTTP, SMB and local disk. When creating an App-V package, the Sequencer provides protocol options (RTSPS, RTSP, FILE, HTTP and HTTPS), server hostname, port number and a folder path which are added to the generated the OSD file:
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />There are several [deployment methods available for App-V](https://stealthpuppy.com/deployment/app-v-faq-20-what-are-the-deployment-methods-for-app-v) and a number of ways to stream packages to clients – RTSP, HTTP, SMB and local disk. When creating an App-V package, the Sequencer provides protocol options (RTSPS, RTSP, FILE, HTTP and HTTPS), server hostname, port number and a folder path which are added to the generated the OSD file:
 
-[<img class="wlDisabledImage" style="display: inline; border-width: 0px;" title="Squencer-Protocols" src="https://stealthpuppy.com/wp-content/uploads/2010/08/SquencerProtocols_thumb.png" border="0" alt="Squencer-Protocols" width="660" height="198" />](https://stealthpuppy.com/wp-content/uploads/2010/08/SquencerProtocols.png)
+[<img class="wlDisabledImage" style="display: inline; border-width: 0px;" title="Squencer-Protocols" src="https://stealthpuppy.com/media/2010/08/SquencerProtocols_thumb.png" border="0" alt="Squencer-Protocols" width="660" height="198" />](https://stealthpuppy.com/media/2010/08/SquencerProtocols.png)
 
 The options chosen in the Sequencer will produce a URL to the SFT file (the file in the App-V packages that contains the application binaries), which will look something like this:
 
@@ -39,7 +39,7 @@ The [ApplicationSourceRoot](http://technet.microsoft.com/en-us/library/cc843817.
 
 Changing this value takes effect immediately and in the registry it looks something like this:
 
-[<img class="wlDisabledImage" style="display: inline; border: 0px;" title="Registry-ApplicationSourceRoot" src="https://stealthpuppy.com/wp-content/uploads/2010/08/RegistryApplicationSourceRoot_thumb.png" border="0" alt="Registry-ApplicationSourceRoot" width="660" height="232" />](https://stealthpuppy.com/wp-content/uploads/2010/08/RegistryApplicationSourceRoot.png)
+[<img class="wlDisabledImage" style="display: inline; border: 0px;" title="Registry-ApplicationSourceRoot" src="https://stealthpuppy.com/media/2010/08/RegistryApplicationSourceRoot_thumb.png" border="0" alt="Registry-ApplicationSourceRoot" width="660" height="232" />](https://stealthpuppy.com/media/2010/08/RegistryApplicationSourceRoot.png)
 
 This registry value (along with OSDSourceRoot and IconSourceRoot) is used by SCCM 2007 R2 to manage the App-V client and stream from distribution points or from the local SCCM client cache.
 

@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline" align="right" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" />If you’ve deployed [the native App-V infrastructure](http://technet.microsoft.com/en-gb/library/cc843686.aspx), you will have the following components in your environment:
+<img style="margin: 0px 10px 5px 0px; display: inline" align="right" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" />If you’ve deployed [the native App-V infrastructure](http://technet.microsoft.com/en-gb/library/cc843686.aspx), you will have the following components in your environment:
 
   * App-V Management Server (and optionally the App-V Streaming Server) 
   * Content share hosting the App-V packages 

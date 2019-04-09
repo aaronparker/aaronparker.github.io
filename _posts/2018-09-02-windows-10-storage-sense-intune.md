@@ -8,7 +8,7 @@ guid: https://stealthpuppy.com/?p=6161
 permalink: /windows-10-storage-sense-intune/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /wp-content/uploads/2018/09/florian-perennes-583674-unsplash.jpg
+image: /media/2018/09/florian-perennes-583674-unsplash.jpg
 categories:
   - Microsoft
 tags:
@@ -24,7 +24,7 @@ Here's how to enable this feature on Windows 10 PCs enrolled in Microsoft Intune
 
 Storage Sense can be found in the Windows 10 Settings app and has only a few settings that can be changed. Typically a user may enable Storage Sense and accept the default settings and for most PCs, the defaults are likely good enough. Here's what's available in Windows 10 1803:
 
-![Enabling Storage Sense in Windows 10 Settings](https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense.png)*Enabling Storage Sense in Windows 10 Settings*
+![Enabling Storage Sense in Windows 10 Settings](https://stealthpuppy.com/media/2018/09/Windows10StorageSense.png)*Enabling Storage Sense in Windows 10 Settings*
 
 Settings are stored in the user profile at:
 
@@ -34,7 +34,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Paramet
 
  Settings are stored somewhat cryptically with numbers representing various options.
 
-![Storage Sense settings in the Registry](https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry.png)*Storage Sense settings in the Registry*
+![Storage Sense settings in the Registry](https://stealthpuppy.com/media/2018/09/StorageSense-Registry.png)*Storage Sense settings in the Registry*
 
 These values translate to following options and values in the table below:
 
@@ -108,7 +108,7 @@ Set-ItemProperty -Path "$key\Parameters\StoragePolicy" -Name "StoragePoliciesNot
 
 Modify the script as desired - at the very least the script should enable Storage Sense and leave the remaining settings as default. Save the script as a PowerShell file and [deploy via the Intune console in the Azure portal](https://docs.microsoft.com/en-us/intune/intune-management-extension). Ensure that the script runs with the logged on user's credentials because it will write to HKCU.
 
-![Enabling Storage Sense with a PowerShell script in Intune](https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune.png)*Enabling Storage Sense with a PowerShell script in Intune*
+![Enabling Storage Sense with a PowerShell script in Intune](https://stealthpuppy.com/media/2018/09/StorageSense-PowerShellIntune.png)*Enabling Storage Sense with a PowerShell script in Intune*
 
 Assign the script to All Users and their PC will receive the script. It's important to note that, because the settings are stored in HKCU and are not policies, the user can either disable Storage Sense or change other settings.
 
@@ -120,7 +120,7 @@ Storage Sense is a great feature to enable on Windows 10 PCs for both personal a
 
 Storage Sense shows you how much disk capacity has been cleaned in the previous month in the Settings app. For a bit of a laugh, you can modify the value where this is stored so that Settings displays spaced saved that's clearly not genuine.
 
-![Messing around with the value of saved space](https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved.png)*Messing around with the value of saved space*
+![Messing around with the value of saved space](https://stealthpuppy.com/media/2018/09/StorageSense-SpaceSaved.png)*Messing around with the value of saved space*
 
 You'll find the registry value (20180901) in this key:
 

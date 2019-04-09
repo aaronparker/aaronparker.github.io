@@ -6,7 +6,7 @@ author: Aaron Parker
 layout: post
 guid: https://stealthpuppy.com/?p=3966
 permalink: /synergy-2015-replay/
-image: /wp-content/uploads/2015/05/SYN502-Folder-Redirection-Citrix-Synergy-2015.png
+image: /media/2015/05/SYN502-Folder-Redirection-Citrix-Synergy-2015.png
 categories:
   - Community
 tags:
@@ -15,7 +15,7 @@ tags:
 
 Citrix have made available the recording of [our session](https://stealthpuppy.com/citrix-synergy-2015/) at Synergy 2015 in Orlando - [I've Got 99 Problems and Folder Redirection is Every One of Them](https://www.mycugc.org/p/do/sd/sid=25). This is a standard 45-minute, level 400 session. [Shawn](https://twitter.com/shawnbass) and I will be repeating this as [a 75-minute session at BriForum Denver](http://briforum.com/US/sessions.html) with additional content and testing scenarios.
 
-![Synergy](https://stealthpuppy.com/wp-content/uploads/2015/05/IMG_2073.jpg)
+![Synergy](https://stealthpuppy.com/media/2015/05/IMG_2073.jpg)
 
 As a part of the Geek Speak Live track at Synergy 2015, this was the first time that these sessions have been recorded. Previous to this year, no recordings were made available.
 

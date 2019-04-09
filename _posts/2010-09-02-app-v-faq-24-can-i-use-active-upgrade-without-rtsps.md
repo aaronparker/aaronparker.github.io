@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-_<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="left" />Today’s FAQ has been written by Justin Zarb, all around good guy and a Premier Field Engineer with Microsoft in the UK. You can read more App-V articles written by Justin at his blog:_ [appvguy.com](http://appvguy.com/ "appvguy.com")
+_<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />Today’s FAQ has been written by Justin Zarb, all around good guy and a Premier Field Engineer with Microsoft in the UK. You can read more App-V articles written by Justin at his blog:_ [appvguy.com](http://appvguy.com/ "appvguy.com")
 
 This terminology is a little confusing. The "Active" was added in 4.x and referred to the fact that we could add and begin serving an updated version while the current version was still actively in use. The RTSP, HTTP, FILE (SMB) protocols all allow this functionality.
 

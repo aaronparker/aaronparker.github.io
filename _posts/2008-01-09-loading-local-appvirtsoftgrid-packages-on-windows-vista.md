@@ -11,7 +11,7 @@ categories:
 tags:
   - SoftGrid
 ---
-<img src="https://stealthpuppy.com/wp-content/uploads/2008/02/windowsvista-softgridbox.png" align="left" alt="windowsvista-softgridbox.png" />Testing applications inside the Microsoft Application Virtualisation (SoftGrid) bubble, from local packages (i.e. not streamed from the server) on Windows Vista requires a configuration change due to User Account Control. If you attempt to load an application from a local OSD file, you will receive the following error:
+<img src="https://stealthpuppy.com/media/2008/02/windowsvista-softgridbox.png" align="left" alt="windowsvista-softgridbox.png" />Testing applications inside the Microsoft Application Virtualisation (SoftGrid) bubble, from local packages (i.e. not streamed from the server) on Windows Vista requires a configuration change due to User Account Control. If you attempt to load an application from a local OSD file, you will receive the following error:
 
 > The SoftGrid Client could not load the application you requested.  
 > You are not authorized to perform the requested operation. You must have 'Add applications' permissions.  

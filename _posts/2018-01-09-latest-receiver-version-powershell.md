@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "6401018873"
-image: /wp-content/uploads/2018/01/marc-liu-255460.jpg
+image: /media/2018/01/marc-liu-255460.jpg
 categories:
   - Citrix
 tags:
@@ -49,10 +49,10 @@ Get-CitrixReceiverVersions -Platform Windows | Select-Object -First 1
 
 Here's the script in action:
 
-![Get-CitrixReceiverVersions in action](https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions.gif)*Get-CitrixReceiverVersions in action on Windows*
+![Get-CitrixReceiverVersions in action](https://stealthpuppy.com/media/2018/01/Get-CitrixReceiverVersions.gif)*Get-CitrixReceiverVersions in action on Windows*
 
 An added bonus, the script also works on PowerShell Core:
 
-![Get-CitrixReceiverVersions in action on macOS](https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions-Pwsh.gif)*Get-CitrixReceiverVersions in action on macOS*
+![Get-CitrixReceiverVersions in action on macOS](https://stealthpuppy.com/media/2018/01/Get-CitrixReceiverVersions-Pwsh.gif)*Get-CitrixReceiverVersions in action on macOS*
 
 I've written this primarily for my purposes, but perhaps there are other purposes that I've not yet considered. Feedback, issues and improvements to the script are welcome.

@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "3993442708"
-image: /wp-content/uploads/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png
+image: /media/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png
 categories:
   - Microsoft
 tags:
@@ -53,13 +53,13 @@ The exception here is the API function GetPrivateProfileString() which performs 
 
 While all VMs in our environments are patched via Windows Update, we did not get a chance to re-run the tests with all of the currently [available hotfixes for file services](https://support.microsoft.com/en-us/kb/2899011).
 
-![SMB Versions Have Little Impact on IO Performance](https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests.png)*SMB Versions Have Little Impact on IO Performance*
+![SMB Versions Have Little Impact on IO Performance](https://stealthpuppy.com/media/2015/08/FileIOTests.png)*SMB Versions Have Little Impact on IO Performance*
 
 If you're redirecting AppData, you'll need to understand how your applications are interacting with files in the user profile. If they use this method (which is very common), performance could suffer as a result if you aren't matching your client and server versions of Windows.
 
 One additional behaviour that we noticed, contrary to Magnar's article, is that the negotiation between client and server only happens once, rather than for each file IO access. This can be shown by capturing traffic between client and server with a Wireshark trace. The screenshot below shows the protocol negotiation and then several read requests by the client to the server:
 
-![SMB Negotiations Occur only Once Per Session](https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString.png)*SMB Negotiations Occur only Once Per Session*
+![SMB Negotiations Occur only Once Per Session](https://stealthpuppy.com/media/2015/08/GetPrivateProfileString.png)*SMB Negotiations Occur only Once Per Session*
 
 ## Recommendations
 
@@ -87,7 +87,7 @@ We do continue to recommend looking at alternatives to AppData redirection - the
 
 If you are using Windows 8 and above, PowerShell now includes a cmdlet to determine the version of SMB that is negotiated for each connection - [Get-SmbConnection](https://technet.microsoft.com/en-us/library/jj635713). PoweShell must be elevated, but this will show all connections from the local client.
 
-![Use PowerShell to View SMB Connections](https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2.png)*Use PowerShell to View SMB Connections*
+![Use PowerShell to View SMB Connections](https://stealthpuppy.com/media/2015/08/get-smbconnection2.png)*Use PowerShell to View SMB Connections*
 
 ## Summary
 

@@ -9,7 +9,7 @@ permalink: /flex-profiles-6-is-available/
 aktt_notify_twitter:
   - 'no'
 thesis_post_image:
-  - https://stealthpuppy.com/wp-content/uploads/2009/02/flex_download.png
+  - https://stealthpuppy.com/media/2009/02/flex_download.png
 thesis_post_image_alt:
   - FlexProfiles
 thesis_post_image_vertical:

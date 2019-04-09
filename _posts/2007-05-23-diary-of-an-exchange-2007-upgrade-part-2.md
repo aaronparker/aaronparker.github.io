@@ -11,7 +11,7 @@ categories:
 tags:
   - Exchange
 ---
-<img align="left" src="https://stealthpuppy.com/wp-content/uploads/2007/05/exchange5.png" />Dear Diary,
+<img align="left" src="https://stealthpuppy.com/media/2007/05/exchange5.png" />Dear Diary,
 
 In this second entry I want to tell you about the operating system installation and the initial Exchange Server install.
 

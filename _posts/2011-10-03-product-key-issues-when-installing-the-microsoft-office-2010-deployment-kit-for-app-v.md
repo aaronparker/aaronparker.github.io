@@ -24,7 +24,7 @@ When attempting to install the [Office 2010 Deployment Kit for App-V](http://www
 
 You might receive the following error:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Office-AppV-Activation" src="https://stealthpuppy.com/wp-content/uploads/2011/10/Office-AppV-Activation.png" alt="The product key you entered cannot be used on this machine. This is most likely due to previous Office 2010 trials being installed. (System error: -1073418219)" width="463" height="234" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Office-AppV-Activation" src="https://stealthpuppy.com/media/2011/10/Office-AppV-Activation.png" alt="The product key you entered cannot be used on this machine. This is most likely due to previous Office 2010 trials being installed. (System error: -1073418219)" width="463" height="234" border="0" /> 
 
 This is due to the key used on the command line and not actually any pre-existing component of Office, as the message suggests. If you are not using [a MAK key](http://technet.microsoft.com/en-us/office/ee691939) – that is a key available for a volume license deployment of Office, then the installation will result in the error above. The only way to fix this issue is to ensure you are using a MAK or KMS key for Office 2010.
 

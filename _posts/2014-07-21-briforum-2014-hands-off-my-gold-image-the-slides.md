@@ -13,7 +13,7 @@ categories:
 tags:
   - BriForum
 ---
-![Hands off my gold image](https://stealthpuppy.com/wp-content/uploads/2014/07/BriForum-2014-Hands-off-my-gold-image.png)
+![Hands off my gold image](https://stealthpuppy.com/media/2014/07/BriForum-2014-Hands-off-my-gold-image.png)
 
 Thanks to all who attended my BriForum 2014 session in Boston - [Hands Off My Gold Image!](http://briforum.com/US/sessions.html#gold) I was pleasantly surprised to have a full room and good feedback after the session.
 

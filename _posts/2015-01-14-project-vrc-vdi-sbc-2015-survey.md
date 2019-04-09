@@ -10,7 +10,7 @@ dsq_thread_id:
   - "3419252966"
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /wp-content/uploads/2015/01/vrc_logo_gr.gif
+image: /media/2015/01/vrc_logo_gr.gif
 categories:
   - Community
 ---

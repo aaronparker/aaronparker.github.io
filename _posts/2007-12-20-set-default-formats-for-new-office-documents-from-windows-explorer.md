@@ -22,7 +22,7 @@ If you're deploying Office 2007 and haven't yet standardised on the new file for
 
 There's another avenue to creating new Office documents that I hadn't thought about until I was asked to change the defaults today - creating new documents directly from within Windows Explorer:
 
-![newbeforecropped.png](https://stealthpuppy.com/wp-content/uploads/2007/12/newbeforecropped.png) 
+![newbeforecropped.png](https://stealthpuppy.com/media/2007/12/newbeforecropped.png) 
 
 If a user creates a new Office document in this manner, it will be created in the new Office 2007 formats. I have no idea how many users actually use this feature but here's how to change those defaults for Word, Excel and PowerPoint.
 
@@ -62,4 +62,4 @@ And create a new string (REG_SZ) value with data pointing to the new filename; i
 
 If you made the changes correctly, you should see this reflected in the New menu from within Explorer:
 
-![newaftercropped.png](https://stealthpuppy.com/wp-content/uploads/2007/12/newaftercropped.png)
+![newaftercropped.png](https://stealthpuppy.com/media/2007/12/newaftercropped.png)

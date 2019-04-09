@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "3868827864"
-image: /wp-content/uploads/2015/06/AppV5FAQ.png
+image: /media/2015/06/AppV5FAQ.png
 categories:
   - FAQs
 tags:

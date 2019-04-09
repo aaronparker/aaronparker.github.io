@@ -12,7 +12,7 @@ dsq_thread_id:
 ---
 Information Technology should be approached with a scientific methodology and therefore our language should be exact when we're discussing IT topics. It's way past time to drop the term CIFS and use the correct acronym when we're referring to SMB.
 
-![Even Inigo Montoya knows not to use 'CIFS'](https://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word.png)
+![Even Inigo Montoya knows not to use 'CIFS'](https://stealthpuppy.com/media/2016/09/CIFS-Word.png)
 
 CIFS has persisted well past its expiry date. No supported versions of Windows use CIFS and SMB has changed dramatically since the introduction of SMB 2.0 in Windows Vista and Windows Server 2008.
 

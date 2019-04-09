@@ -9,7 +9,7 @@ permalink: /the-short-nap-thursday-march-13-2008/
 categories:
   - Microsoft
 ---
-<img border="0" alt="NetworkAccessProtection" align="left" src="https://stealthpuppy.com/wp-content/uploads/2008/02/networkaccessprotection.png" width="144" height="128" /> The Short NAP is a quick list of links covering Microsoft [Network Access Protection](http://www.microsoft.com/nap) and [Server/Domain Isolation](http://www.microsoft.com/sdisolation) topics and related information.
+<img border="0" alt="NetworkAccessProtection" align="left" src="https://stealthpuppy.com/media/2008/02/networkaccessprotection.png" width="144" height="128" /> The Short NAP is a quick list of links covering Microsoft [Network Access Protection](http://www.microsoft.com/nap) and [Server/Domain Isolation](http://www.microsoft.com/sdisolation) topics and related information.
 
 Network Access Protection is a great new feature of Windows Server 2008 that will help you understand the health of your client machines (Windows Vista and Windows XP Service Pack 3) and increase the trust in your network.
 

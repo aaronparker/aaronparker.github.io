@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "3746232935"
-image: /wp-content/uploads/2015/05/SYN502-Folder-Redirection-Citrix-Synergy-2015.png
+image: /media/2015/05/SYN502-Folder-Redirection-Citrix-Synergy-2015.png
 categories:
   - Community
 tags:
@@ -22,7 +22,7 @@ Here's a just few things that I'm looking forward to getting involved in and see
 
 # I've Got 99 Problems and Folder Redirection is Every One of Them
 
-<img class="alignnone size-full wp-image-3941" src="https://stealthpuppy.com/wp-content/uploads/2015/05/GeakSpeakLive.jpg" alt="GeakSpeakLive" width="640" height="83" srcset="https://stealthpuppy.com/wp-content/uploads/2015/05/GeakSpeakLive.jpg 640w, https://stealthpuppy.com/wp-content/uploads/2015/05/GeakSpeakLive-150x19.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2015/05/GeakSpeakLive-300x39.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /> 
+<img class="alignnone size-full wp-image-3941" src="https://stealthpuppy.com/media/2015/05/GeakSpeakLive.jpg" alt="GeakSpeakLive" width="640" height="83" srcset="https://stealthpuppy.com/media/2015/05/GeakSpeakLive.jpg 640w, https://stealthpuppy.com/media/2015/05/GeakSpeakLive-150x19.jpg 150w, https://stealthpuppy.com/media/2015/05/GeakSpeakLive-300x39.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /> 
 
 Along with [Helge Klein](http://twitter.com/helgeklein) and [Shawn Bass](http://twitter.com/shawnbass), I'll be presenting a Geek Speak Live session on folder redirection. We presented on the same topic at BriForum Boston and London last year, and this time at Synergy we're taking another deep technical look at folder redirection.
 
@@ -34,7 +34,7 @@ We'll be presenting next Tuesday the 14th (the first day of Synergy) at 2:30pm.Â
 
 # Geek Speak Tonight
 
-<img class=" wp-image-3940 size-full alignnone" src="https://stealthpuppy.com/wp-content/uploads/2015/05/GeakSpeak.jpg" alt="GeakSpeak" width="445" height="83" srcset="https://stealthpuppy.com/wp-content/uploads/2015/05/GeakSpeak.jpg 445w, https://stealthpuppy.com/wp-content/uploads/2015/05/GeakSpeak-150x28.jpg 150w, https://stealthpuppy.com/wp-content/uploads/2015/05/GeakSpeak-300x56.jpg 300w" sizes="(max-width: 445px) 100vw, 445px" /> 
+<img class=" wp-image-3940 size-full alignnone" src="https://stealthpuppy.com/media/2015/05/GeakSpeak.jpg" alt="GeakSpeak" width="445" height="83" srcset="https://stealthpuppy.com/media/2015/05/GeakSpeak.jpg 445w, https://stealthpuppy.com/media/2015/05/GeakSpeak-150x28.jpg 150w, https://stealthpuppy.com/media/2015/05/GeakSpeak-300x56.jpg 300w" sizes="(max-width: 445px) 100vw, 445px" /> 
 
 I'm really looking forward to Geek Speak Tonight this year - a core team of some of the CTPs have been working on what I am sure will be [the best Synergy Geek Speak Tonight](https://citrix.g2planet.com/synergyorlando2015/public_session_view.php?agenda_session_id=157) yet.
 

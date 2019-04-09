@@ -18,7 +18,7 @@ tags:
   - App-V
   - Google Chrome
 ---
-<img style="background-image: none; margin: 0px 0px 0px 5px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border-width: 0px;" title="GoogleChrome" src="https://stealthpuppy.com/wp-content/uploads/2011/11/GoogleChrome.png" alt="GoogleChrome" width="128" height="128" align="right" border="0" />Here's how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions.
+<img style="background-image: none; margin: 0px 0px 0px 5px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border-width: 0px;" title="GoogleChrome" src="https://stealthpuppy.com/media/2011/11/GoogleChrome.png" alt="GoogleChrome" width="128" height="128" align="right" border="0" />Here's how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions.
 
 ### What you lose by virtualizing Chrome
 
@@ -159,13 +159,13 @@ For the full list of command-line parameters for Chrome and Chromium see this pa
 
 With the sandbox running, you will see an error similar to this when attempting to add an extension:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ChromeExtension" src="https://stealthpuppy.com/wp-content/uploads/2011/11/ChromeExtension.png" alt="ChromeExtension" width="511" height="215" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ChromeExtension" src="https://stealthpuppy.com/media/2011/11/ChromeExtension.png" alt="ChromeExtension" width="511" height="215" border="0" /> 
 
 **Note**: Note that disabling the sandbox will reduce the browser security. I recommend testing the browser functionality and see if you can get away without disabling the sandbox.
 
 The browser will notify you when the sandbox is disabled:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GoogleChromeNoSandbox" src="https://stealthpuppy.com/wp-content/uploads/2011/11/GoogleChromeNoSandbox_thumb.png" alt="GoogleChromeNoSandbox" width="660" height="114" border="0" />](https://stealthpuppy.com/wp-content/uploads/2011/11/GoogleChromeNoSandbox.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GoogleChromeNoSandbox" src="https://stealthpuppy.com/media/2011/11/GoogleChromeNoSandbox_thumb.png" alt="GoogleChromeNoSandbox" width="660" height="114" border="0" />](https://stealthpuppy.com/media/2011/11/GoogleChromeNoSandbox.png)
 
 ### First Run Tasks and Primary Feature Block
 
