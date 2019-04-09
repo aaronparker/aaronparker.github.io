@@ -13,11 +13,11 @@
 <link rel="canonical" href="/folder-redirection-2015-part-3/" />
 <meta property="og:url" content="/folder-redirection-2015-part-3/" />
 <meta property="og:site_name" content="stealthpuppy" />
-<meta property="og:image" content="/wp-content/uploads/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png" />
+<meta property="og:image" content="/media/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-08-06T19:30:36+10:00" />
 <script type="application/ld+json">
-{"description":"This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/folder-redirection-2015-part-3/","image":"/wp-content/uploads/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png","headline":"I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3.","dateModified":"2015-08-06T19:30:36+10:00","datePublished":"2015-08-06T19:30:36+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/folder-redirection-2015-part-3/"},"@context":"https://schema.org"}</script>
+{"description":"This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/folder-redirection-2015-part-3/","image":"/media/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png","headline":"I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3.","dateModified":"2015-08-06T19:30:36+10:00","datePublished":"2015-08-06T19:30:36+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/folder-redirection-2015-part-3/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -90,13 +90,13 @@
 
 <p>While all VMs in our environments are patched via Windows Update, we did not get a chance to re-run the tests with all of the currently <a href="https://support.microsoft.com/en-us/kb/2899011">available hotfixes for file services</a>.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2015/08/FileIOTests.png" alt="SMB Versions Have Little Impact on IO Performance" /><em>SMB Versions Have Little Impact on IO Performance</em></p>
+<p><img src="https://stealthpuppy.com/media/2015/08/FileIOTests.png" alt="SMB Versions Have Little Impact on IO Performance" /><em>SMB Versions Have Little Impact on IO Performance</em></p>
 
 <p>If you’re redirecting AppData, you’ll need to understand how your applications are interacting with files in the user profile. If they use this method (which is very common), performance could suffer as a result if you aren’t matching your client and server versions of Windows.</p>
 
 <p>One additional behaviour that we noticed, contrary to Magnar’s article, is that the negotiation between client and server only happens once, rather than for each file IO access. This can be shown by capturing traffic between client and server with a Wireshark trace. The screenshot below shows the protocol negotiation and then several read requests by the client to the server:</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2015/08/GetPrivateProfileString.png" alt="SMB Negotiations Occur only Once Per Session" /><em>SMB Negotiations Occur only Once Per Session</em></p>
+<p><img src="https://stealthpuppy.com/media/2015/08/GetPrivateProfileString.png" alt="SMB Negotiations Occur only Once Per Session" /><em>SMB Negotiations Occur only Once Per Session</em></p>
 
 <h2 id="recommendations">Recommendations</h2>
 
@@ -129,7 +129,7 @@
 
 <p>If you are using Windows 8 and above, PowerShell now includes a cmdlet to determine the version of SMB that is negotiated for each connection - <a href="https://technet.microsoft.com/en-us/library/jj635713">Get-SmbConnection</a>. PoweShell must be elevated, but this will show all connections from the local client.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2015/08/get-smbconnection2.png" alt="Use PowerShell to View SMB Connections" /><em>Use PowerShell to View SMB Connections</em></p>
+<p><img src="https://stealthpuppy.com/media/2015/08/get-smbconnection2.png" alt="Use PowerShell to View SMB Connections" /><em>Use PowerShell to View SMB Connections</em></p>
 
 <h2 id="summary">Summary</h2>
 

@@ -46,13 +46,13 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img style="margin: 0px 10px 5px 0px; display: inline;" src="http://stealthpuppy.com/wp-content/uploads/2010/06/AppVFAQLogo.png" alt="" align="left" />If you have decided on streaming your App-V packages to client machines (rather than deploying via Windows Installer or SCCM), you will most certainly need to control where clients stream packages from. This, of course, would be the source closest to the client computer.</p>
+    <p><img style="margin: 0px 10px 5px 0px; display: inline;" src="http://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />If you have decided on streaming your App-V packages to client machines (rather than deploying via Windows Installer or SCCM), you will most certainly need to control where clients stream packages from. This, of course, would be the source closest to the client computer.</p>
 
 <p>When deploying the native App-V infrastructure in a multi-site environment, you might deploy the Management Server in the main data centre and the Streaming Server or servers running IIS to stream packages to clients in remote sites.</p>
 
 <p>To configure a client to connect to its closest streaming source, modify the <a href="http://technet.microsoft.com/en-us/library/cc843817.aspx">ApplicationSourceRoot</a> value in the Registry.</p>
 
-<p><img src="http://stealthpuppy.com/wp-content/uploads/2010/08/RegistryApplicationSourceRoot.png" alt="ApplicationSourceRoot in the Registry" title="ApplicationSourceRoot in the Registry" /></p>
+<p><img src="http://stealthpuppy.com/media/2010/08/RegistryApplicationSourceRoot.png" alt="ApplicationSourceRoot in the Registry" title="ApplicationSourceRoot in the Registry" /></p>
 
 <blockquote>
   <p>If you want the client to obtain the package content (SFT file) from a local App-V Streaming Server or other alternate source such as a Web server or file server, instead of from the App-V Management Server, you can configure the ApplicationSourceRoot registry key value on the computer to point to the local content share on the other server. The OSD file still defines the original source path for the package content. However the client uses the value of the ApplicationSourceRoot setting in place of the server and share that are specified in the content path in the OSD file. This redirects the client to retrieve the content from the other server.</p>
@@ -75,7 +75,7 @@
 
 <p>Create a new Group Policy Object and add the template to the GPO.</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/ADMTemplateApplicationSourceRoot.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="The ApplicationSourceRoot policy in a Group Policy Object" src="http://stealthpuppy.com/wp-content/uploads/2010/09/ADMTemplateApplicationSourceRoot_thumb.png" border="0" alt="The ApplicationSourceRoot policy in a Group Policy Object" width="660" height="297" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRoot.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="The ApplicationSourceRoot policy in a Group Policy Object" src="http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRoot_thumb.png" border="0" alt="The ApplicationSourceRoot policy in a Group Policy Object" width="660" height="297" /></a></p>
 
 <p>The policy item can be found here:</p>
 
@@ -83,11 +83,11 @@
 
 <p>Set the value of ApplicationSourceRoot, which should include the streaming protocol, the source server hostname, optionally the port and finally the path to the packages. Examples can be found in the <a href="http://technet.microsoft.com/en-us/library/cc843817.aspx">ApplicationSourceRoot documentation on TechNet</a>.</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/GPOApplicationSourceRoot.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GPO-ApplicationSourceRootThe ApplicationSourceRoot policy in the Administrative template" src="http://stealthpuppy.com/wp-content/uploads/2010/09/GPOApplicationSourceRoot_thumb.png" border="0" alt="The ApplicationSourceRoot policy in the Administrative template" width="660" height="407" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/GPOApplicationSourceRoot.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GPO-ApplicationSourceRootThe ApplicationSourceRoot policy in the Administrative template" src="http://stealthpuppy.com/media/2010/09/GPOApplicationSourceRoot_thumb.png" border="0" alt="The ApplicationSourceRoot policy in the Administrative template" width="660" height="407" /></a></p>
 
 <p>Link the GPO to the AD Site that hosts the client computers that you are looking to target.</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/GPOAssingedADSite.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Assigning a GPO to an Active Directory Site" src="http://stealthpuppy.com/wp-content/uploads/2010/09/GPOAssingedADSite_thumb.png" border="0" alt="Assigning a GPO to an Active Directory Site" width="660" height="221" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/GPOAssingedADSite.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Assigning a GPO to an Active Directory Site" src="http://stealthpuppy.com/media/2010/09/GPOAssingedADSite_thumb.png" border="0" alt="Assigning a GPO to an Active Directory Site" width="660" height="221" /></a></p>
 
 <p>To ensure that the GPO only applies to a specific set of computers instead of all computers in that AD site</p>
 
@@ -101,13 +101,13 @@
 
 <p>Once complete, you should have something that looks like this:</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/GPOPermissions.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Changing permissions on a GPO" src="http://stealthpuppy.com/wp-content/uploads/2010/09/GPOPermissions_thumb.png" border="0" alt="Changing permissions on a GPO" width="446" height="493" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/GPOPermissions.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Changing permissions on a GPO" src="http://stealthpuppy.com/media/2010/09/GPOPermissions_thumb.png" border="0" alt="Changing permissions on a GPO" width="446" height="493" /></a></p>
 
 <p><strong>Using Group Policy Preferences</strong></p>
 
 <p>To use Group Policy Preferences, create a new GPO that is linked to an OU that contains the computer accounts and create a new Registry item in – <em>Computer Configuration / Preferences / Windows Settings / Registry:</em></p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/GPPPreferences.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Editing ApplicationSourceRoot in Group Policy Preferences" src="http://stealthpuppy.com/wp-content/uploads/2010/09/GPPPreferences_thumb.png" border="0" alt="Editing ApplicationSourceRoot in Group Policy Preferences" width="660" height="284" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/GPPPreferences.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Editing ApplicationSourceRoot in Group Policy Preferences" src="http://stealthpuppy.com/media/2010/09/GPPPreferences_thumb.png" border="0" alt="Editing ApplicationSourceRoot in Group Policy Preferences" width="660" height="284" /></a></p>
 
 <p>ApplicationSourceRoot is a string value (REG_SZ) that is located in:</p>
 
@@ -118,7 +118,7 @@
 
 <p>Select the HKEY_LOCAL_MACHINE hive, add the key path for the correct machine type, enter ApplicationSourceRoot as the value name and enter the path to your streaming source in the value data.</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/GPPApplicationSourceRoot.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Properties of the ApplicationSourceRoot value in GPP" src="http://stealthpuppy.com/wp-content/uploads/2010/09/GPPApplicationSourceRoot_thumb.png" border="0" alt="Properties of the ApplicationSourceRoot value in GPP" width="446" height="493" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/GPPApplicationSourceRoot.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Properties of the ApplicationSourceRoot value in GPP" src="http://stealthpuppy.com/media/2010/09/GPPApplicationSourceRoot_thumb.png" border="0" alt="Properties of the ApplicationSourceRoot value in GPP" width="446" height="493" /></a></p>
 
 <p>Next, enable item-level targeting so that the path specified in this preference can be applied only to a subset of machines. Click on the <em>Common</em> tab, select <em>Item-level targeting</em> and click the <em>Targeting…</em> button.</p>
 
@@ -130,7 +130,7 @@
   <li>An Active Directory Site check, in this example the AD site name is London</li>
 </ol>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/ADMTemplateApplicationSourceRootTargettingEditor.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Setting filters in Group Policy Preferences" src="http://stealthpuppy.com/wp-content/uploads/2010/09/ADMTemplateApplicationSourceRootTargettingEditor_thumb.png" border="0" alt="Setting filters in Group Policy Preferences" width="645" height="454" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRootTargettingEditor.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Setting filters in Group Policy Preferences" src="http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRootTargettingEditor_thumb.png" border="0" alt="Setting filters in Group Policy Preferences" width="645" height="454" /></a></p>
 
 <p>I can repeat the same preference (copy and paste will work) and change streaming source location and the selected site in the AD site check, to cover other streaming sources and clients. Group Policy Preferences also provides IP address ranges that could be used instead of Active Directory sites – this would be useful if an AD site is too broad and I need to be a little more granular when checking for the client location.</p>
 
@@ -152,7 +152,7 @@
 
 <p>The image below shows an example configuration that shows how setting ApplicationSourceRoot could be achieved:</p>
 
-<p><a href="http://stealthpuppy.com/wp-content/uploads/2010/09/EMApplicationSourceRootNetworkConnected.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Editing ApplicationSourceRoot with AppSense Environment Manager" src="http://stealthpuppy.com/wp-content/uploads/2010/09/EMApplicationSourceRootNetworkConnected_thumb.png" border="0" alt="Editing ApplicationSourceRoot with AppSense Environment Manager" width="660" height="332" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/EMApplicationSourceRootNetworkConnected.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Editing ApplicationSourceRoot with AppSense Environment Manager" src="http://stealthpuppy.com/media/2010/09/EMApplicationSourceRootNetworkConnected_thumb.png" border="0" alt="Editing ApplicationSourceRoot with AppSense Environment Manager" width="660" height="332" /></a></p>
 
 <h3 id="resources">Resources</h3>
 

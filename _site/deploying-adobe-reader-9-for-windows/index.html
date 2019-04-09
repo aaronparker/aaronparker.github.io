@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="AdobeReaderIcon" src="https://stealthpuppy.com/wp-content/uploads/2008/07/adobereadericon.png" border="0" alt="AdobeReaderIcon" width="110" height="110" align="left" /> The latest version of Adobe Reader is available, so here’s a few preliminary details on what you might need to know when deploying it. It seems like only yesterday we were pulling our collective hair out over <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-81">Adobe Reader 8</a> and now <a href="http://www.adobe.com/products/acrobat/readstep2.html">Adobe Reader 9</a> has been released and we’ve got to start over again. The Adobe Reader blog has <a href="http://blogs.adobe.com/adobereader/2008/06/adobe_reader_9_is_here_1.html">some details on what’s new</a> in this version. You can also find links to all sorts of Adobe Reader resources <a href="http://www.adobe.com/products/reader/">here</a> too.</p>
+    <p><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="AdobeReaderIcon" src="https://stealthpuppy.com/media/2008/07/adobereadericon.png" border="0" alt="AdobeReaderIcon" width="110" height="110" align="left" /> The latest version of Adobe Reader is available, so here’s a few preliminary details on what you might need to know when deploying it. It seems like only yesterday we were pulling our collective hair out over <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-81">Adobe Reader 8</a> and now <a href="http://www.adobe.com/products/acrobat/readstep2.html">Adobe Reader 9</a> has been released and we’ve got to start over again. The Adobe Reader blog has <a href="http://blogs.adobe.com/adobereader/2008/06/adobe_reader_9_is_here_1.html">some details on what’s new</a> in this version. You can also find links to all sorts of Adobe Reader resources <a href="http://www.adobe.com/products/reader/">here</a> too.</p>
 
 <h3 id="first-impressions">First Impressions</h3>
 
@@ -76,7 +76,7 @@
 
 <p>There are a few ways to do this. You can disable Updater by running it (click Help / Check for Updates) then click the Preferences link. You will then see the Preferences dialog like this, where you can choose to disable Updater:</p>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2008/07/updaterprefs.png"><img title="UpdaterPrefs" src="https://stealthpuppy.com/wp-content/uploads/2008/07/updaterprefs-thumb.png" border="0" alt="UpdaterPrefs" width="443" height="406" /></a></p>
+<p><a href="https://stealthpuppy.com/media/2008/07/updaterprefs.png"><img title="UpdaterPrefs" src="https://stealthpuppy.com/media/2008/07/updaterprefs-thumb.png" border="0" alt="UpdaterPrefs" width="443" height="406" /></a></p>
 
 <p>To problem with this approach is that you need Internet access just to get to the preferences dialog. A bit of a problem if you’ve got Internet access issues. To disable Updater from running automatically you can run the following command line as an administrator (or an elevated command prompt in Windows Vista):</p>
 
@@ -165,7 +165,7 @@
 <p>You can download a transform with all of the modifications listed above here (except disabling Syncronizer; use at your own risk):</p>
 
 <p class="download">
-  <a href="https://stealthpuppy.com/wp-content/uploads/2008/07/AdobeReader91Custom.mst">Adobe Reader 9.1 Custom Transform</a>
+  <a href="https://stealthpuppy.com/media/2008/07/AdobeReader91Custom.mst">Adobe Reader 9.1 Custom Transform</a>
 </p>
 
 <h3 id="creating-a-custom-transform-with-adobe-customisation-wizard-9">Creating a Custom Transform with Adobe Customisation Wizard 9</h3>
@@ -286,7 +286,7 @@ console.println(menuItems + “n”)[/code]</p>
 
 <p>This will open a dialog box when Reader is started, listing the names of each menu item and toolbar button. You can then create a JavaScript file to remove these items from the UI. Reader 9 includes a number of menu items you might want to remove:</p>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2008/07/menushighlighted.png"><img title="MenusHighlighted" src="https://stealthpuppy.com/wp-content/uploads/2008/07/menushighlighted-thumb.png" border="0" alt="MenusHighlighted" width="515" height="397" /></a></p>
+<p><a href="https://stealthpuppy.com/media/2008/07/menushighlighted.png"><img title="MenusHighlighted" src="https://stealthpuppy.com/media/2008/07/menushighlighted-thumb.png" border="0" alt="MenusHighlighted" width="515" height="397" /></a></p>
 
 <p>Here’s the code you’ll need to hide those items. Copy and paste into <code class="highlighter-rouge">HideItems.js</code>, then copy into <code class="highlighter-rouge">%ProgramFiles%AdobeReader 9.0ReaderJavaScripts</code>.</p>
 
@@ -344,12 +344,12 @@ app.hideMenuItem(“Weblink:BuyAcrobat”);[/code]</p>
 
 <p>Managing Reader via Group Policy is pretty simple – Reader 8 and 9 are even policy aware. That is they use the SoftwarePolicies key in the registry. Unfortunately Adobe don’t supply an ADM/ADMX template file for use with Group Policy. C’mon Adobe it wouldn’t take you much effort and we would be very grateful.</p>
 
-<p>So it’s Group Policy Preferences or your favourite user workspace management tool for managing Reader. <a href="http://www.capslockassassin.com/2008/07/06/adobe-acrobat-reader-9-silent-install/">Paul</a> has taken the time to create a simple <a href="http://www.capslockassassin.com/wp-content/uploads/2008/07/acrobatreader9.zip">ADM file</a> for managing some of Readers features that might suit you.</p>
+<p>So it’s Group Policy Preferences or your favourite user workspace management tool for managing Reader. <a href="http://www.capslockassassin.com/2008/07/06/adobe-acrobat-reader-9-silent-install/">Paul</a> has taken the time to create a simple <a href="http://www.capslockassassin.com/media/2008/07/acrobatreader9.zip">ADM file</a> for managing some of Readers features that might suit you.</p>
 
 <p>I’ve also created my own custom Administrative template, which you can download in ADM and ADMX format. There is still some work to go on this template, so use at your own risk:</p>
 
 <p class="download">
-  <a href="https://stealthpuppy.com/wp-content/uploads/2008/07/AdobeAcrobatAndReader9.zip">Adobe Acrobat and Reader 9 Administrative Template v0.1</a>
+  <a href="https://stealthpuppy.com/media/2008/07/AdobeAcrobatAndReader9.zip">Adobe Acrobat and Reader 9 Administrative Template v0.1</a>
 </p>
 
 <h3 id="what-now">What Now?</h3>

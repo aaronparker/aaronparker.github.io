@@ -66,15 +66,15 @@
 
 <p>Re-open the task sequence properties and you should see something like this:</p>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2012/11/XenApp-PVS-TaskSequence-Final.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="XenApp-PVS-TaskSequence-Final" src="https://stealthpuppy.com/wp-content/uploads/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png" alt="XenApp-PVS-TaskSequence-Final" width="660" height="337" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/media/2012/11/XenApp-PVS-TaskSequence-Final.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="XenApp-PVS-TaskSequence-Final" src="https://stealthpuppy.com/media/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png" alt="XenApp-PVS-TaskSequence-Final" width="660" height="337" border="0" /></a></p>
 
 <p>Importing the supplied pre-configured task sequence into your own Deployment Share, will result in some errors because the task sequence will reference applications and operating systems that either don’t exist in your Deployment Share or have different names.</p>
 
-<p><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-Errors" src="https://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-Errors.png" alt="MDT-TS-Errors" width="416" height="152" border="0" /></p>
+<p><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-Errors" src="https://stealthpuppy.com/media/2012/11/MDT-TS-Errors.png" alt="MDT-TS-Errors" width="416" height="152" border="0" /></p>
 
 <p>For example, after I’ve imported this task sequence, I need to fix the reference to the Windows Server 2008 R2 SP1 source files:</p>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-FixOS.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-FixOS" src="https://stealthpuppy.com/wp-content/uploads/2012/11/MDT-TS-FixOS_thumb.png" alt="MDT-TS-FixOS" width="660" height="325" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/media/2012/11/MDT-TS-FixOS.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-FixOS" src="https://stealthpuppy.com/media/2012/11/MDT-TS-FixOS_thumb.png" alt="MDT-TS-FixOS" width="660" height="325" border="0" /></a></p>
 
 <p>The download also includes the scripts/applications referenced by the task sequence, so you’ll need to ensure they exist in your Deployment Share before fixing the task sequence.</p>
 
@@ -115,7 +115,7 @@
   <li><a href="http://technet.microsoft.com/en-us/library/cc748990(v=ws.10).aspx">oobeSystem</a></li>
 </ul>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2012/11/unattend-xml.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="unattend-xml" src="https://stealthpuppy.com/wp-content/uploads/2012/11/unattend-xml_thumb.png" alt="unattend-xml" width="660" height="365" border="0" /></a></p>
+<p><a href="https://stealthpuppy.com/media/2012/11/unattend-xml.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="unattend-xml" src="https://stealthpuppy.com/media/2012/11/unattend-xml_thumb.png" alt="unattend-xml" width="660" height="365" border="0" /></a></p>
 
 <p>Together the task sequence and unattend.xml create what should be a fairly clean (and importantly, repeatable) deployment of a XenApp server.</p>
 

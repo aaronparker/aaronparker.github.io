@@ -13,11 +13,11 @@
 <link rel="canonical" href="/vcredist-powershell-module/" />
 <meta property="og:url" content="/vcredist-powershell-module/" />
 <meta property="og:site_name" content="stealthpuppy" />
-<meta property="og:image" content="/wp-content/uploads/2018/03/alexey-ruban-103990-unsplash.jpg" />
+<meta property="og:image" content="/media/2018/03/alexey-ruban-103990-unsplash.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-03-16T22:10:54+11:00" />
 <script type="application/ld+json">
-{"description":"Note: for a more up to date version of the content in this article, VcRedist now has documentation available here: https://docs.stealthpuppy.com/docs/vcredist","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/vcredist-powershell-module/","image":"/wp-content/uploads/2018/03/alexey-ruban-103990-unsplash.jpg","headline":"Download, Install, Import Visual C++ Redistributables with VcRedist","dateModified":"2018-03-16T22:10:54+11:00","datePublished":"2018-03-16T22:10:54+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/vcredist-powershell-module/"},"@context":"https://schema.org"}</script>
+{"description":"Note: for a more up to date version of the content in this article, VcRedist now has documentation available here: https://docs.stealthpuppy.com/docs/vcredist","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/vcredist-powershell-module/","image":"/media/2018/03/alexey-ruban-103990-unsplash.jpg","headline":"Download, Install, Import Visual C++ Redistributables with VcRedist","dateModified":"2018-03-16T22:10:54+11:00","datePublished":"2018-03-16T22:10:54+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/vcredist-powershell-module/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -69,7 +69,7 @@ Import-VcMdtApp -VcList <span class="nv">$VcList</span> -Path <span class="s2">"
 
 <p>This results in each of the Visual C++ Redistributables imported as a separate application with all necessary properties including Version, silent command line, Uninstall Key and 32-bit or 64-bot operating system support.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/03/MdtVisualCApplications.png" alt="Visual C++ Redistributables imported into an MDT share with VcRedist" /><em>Visual C++ Redistributables imported into an MDT share with VcRedist</em></p>
+<p><img src="https://stealthpuppy.com/media/2018/03/MdtVisualCApplications.png" alt="Visual C++ Redistributables imported into an MDT share with VcRedist" /><em>Visual C++ Redistributables imported into an MDT share with VcRedist</em></p>
 
 <p>The same approach can be used to import the Redistributables into a ConfigMgr site:</p>
 
@@ -81,7 +81,7 @@ Import-VcCmApp -VcList <span class="nv">$VcList</span> -Path <span class="s2">"C
 
 <p>Just like MDT, each Redistributable is imported into ConfigMgr; however, <code class="highlighter-rouge">Import-VcCmApp</code> copies the Redistributables to a share for distribution and creates and application with a single deployment for each one.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/03/VcRedistConfigMgr.png" alt="Visual C++ Redistributables imported into ConfigMgr with VcRedist" /><em>Visual C++ Redistributables imported into ConfigMgr with VcRedist</em></p>
+<p><img src="https://stealthpuppy.com/media/2018/03/VcRedistConfigMgr.png" alt="Visual C++ Redistributables imported into ConfigMgr with VcRedist" /><em>Visual C++ Redistributables imported into ConfigMgr with VcRedist</em></p>
 
 <p>Of course, the module can download and install the Redistributables to the local machine:</p>
 
@@ -93,7 +93,7 @@ Import-Module VcRedist
 
 <p>By default, this installs all of the supported Redistributables:</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/03/VisualCPrograms.png" alt="Visual C++ Redistributables installed locally with VcRedist" /><em>Visual C++ Redistributables installed locally with VcRedist</em></p>
+<p><img src="https://stealthpuppy.com/media/2018/03/VisualCPrograms.png" alt="Visual C++ Redistributables installed locally with VcRedist" /><em>Visual C++ Redistributables installed locally with VcRedist</em></p>
 
 <p>Note that the 2015 and 2017 Redistributables are the same version, so the end result will include only the 2017 versions.</p>
 

@@ -13,11 +13,11 @@
 <link rel="canonical" href="/folder-redirection-2015-part-2/" />
 <meta property="og:url" content="/folder-redirection-2015-part-2/" />
 <meta property="og:site_name" content="stealthpuppy" />
-<meta property="og:image" content="/wp-content/uploads/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png" />
+<meta property="og:image" content="/media/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-08-04T19:30:41+10:00" />
 <script type="application/ld+json">
-{"description":"This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/folder-redirection-2015-part-2/","image":"/wp-content/uploads/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png","headline":"I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2.","dateModified":"2015-08-04T19:30:41+10:00","datePublished":"2015-08-04T19:30:41+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/folder-redirection-2015-part-2/"},"@context":"https://schema.org"}</script>
+{"description":"This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/folder-redirection-2015-part-2/","image":"/media/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png","headline":"I’ve Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2.","dateModified":"2015-08-04T19:30:41+10:00","datePublished":"2015-08-04T19:30:41+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/folder-redirection-2015-part-2/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -63,23 +63,23 @@
 
 <p>In this test with Windows Server 2008 R2 running on the file server, SMB 2.1 shows quite a large difference between the average and maximum CPU seen across each test, especially from 400 users and beyond.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB21-CPU.png" alt="SMB 2.1 showed a big difference between the average and maximum CPU seen across each test." /><em>SMB 2.1 showed a big difference between the average and maximum CPU seen across each test.</em></p>
+<p><img src="https://stealthpuppy.com/media/2015/08/FSCT-SMB21-CPU.png" alt="SMB 2.1 showed a big difference between the average and maximum CPU seen across each test." /><em>SMB 2.1 showed a big difference between the average and maximum CPU seen across each test.</em></p>
 
 <p>The results from the tests with Windows Server 2012 R2 on the file server shows very similar average CPU, but a greatly reduced maximum CPU, which is great for overall file server resource consumption.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPU.png" alt="Lower CPU Utilization with SMB 3.02" /><em>Lower CPU Utilization with SMB 3.02</em></p>
+<p><img src="https://stealthpuppy.com/media/2015/08/FSCT-SMB3-CPU.png" alt="Lower CPU Utilization with SMB 3.02" /><em>Lower CPU Utilization with SMB 3.02</em></p>
 
 <h3 id="looking-at-the-impact-of-anti-virus">Looking at the Impact of Anti-Virus</h3>
 
 <p>Running the same test with Windows Server 2012 R2, but this time with one of the major anti-virus products installed on the file server. This was installed with all of the default settings. This test shows a very interesting result when compared against the previous test - the chart below displays the same results as the previous test with the results from a testing run with AV:</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SMB3-CPUwithAV.png" alt="Anti-Virus Has a Large Impact on CPU" /><em>Anti-Virus Has a Large Impact on CPU</em></p>
+<p><img src="https://stealthpuppy.com/media/2015/08/FSCT-SMB3-CPUwithAV.png" alt="Anti-Virus Has a Large Impact on CPU" /><em>Anti-Virus Has a Large Impact on CPU</em></p>
 
 <p>With anti-virus installed, the average CPU is now getting up around the maximum CPU seen without AV, especially from 600 users and beyond. Look at that maximum CPU recorded with anti-virus, that’s a massive difference from the previous test and will have a large impact on the file server!</p>
 
 <p>To see if we could improve on this result, we re-ran the test with on-access scans disabled in the anti-virus configuration. This had little impact on the result, which could be explained by the FSCT workload being very write heavy.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2015/08/OnAccessScans.png" alt="Disabling On Access Scans for AV Had Little Impact" /><em>Disabling On Access Scans for AV Had Little Impact</em></p>
+<p><img src="https://stealthpuppy.com/media/2015/08/OnAccessScans.png" alt="Disabling On Access Scans for AV Had Little Impact" /><em>Disabling On Access Scans for AV Had Little Impact</em></p>
 
 <p>There might be additional tweaking that may improve performance; however given the massive difference between with and without AV, I’m not confident that any considerable gains could be made. We haven’t yet had a chance to test with multiple anti-virus products.</p>
 
@@ -89,17 +89,17 @@
 
 <p>In the result below, we can see that when the IO peaks at near 2500 IOPS, the CPU makes a big jump as well:</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2015/08/DiskIO-CorrelateCPU.png" alt="CPU Peaks Correlate With IO Peaks" /><em>CPU Peaks Correlate With IO Peaks</em></p>
+<p><img src="https://stealthpuppy.com/media/2015/08/DiskIO-CorrelateCPU.png" alt="CPU Peaks Correlate With IO Peaks" /><em>CPU Peaks Correlate With IO Peaks</em></p>
 
 <p>While all of the previous FSCT tests have been performed on SSDs, we also looked at comparing performance when running FSCT workloads on HDDs and comparing that against SSDs.</p>
 
 <p>When comparing the CPU load of the same workload running on HDD and SSDs, the average CPU is higher on HDDs.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-HDDs.png" alt="Higher CPU with HDDs" /><em>Higher CPU with HDDs</em></p>
+<p><img src="https://stealthpuppy.com/media/2015/08/FSCT-HDDs.png" alt="Higher CPU with HDDs" /><em>Higher CPU with HDDs</em></p>
 
 <p>This higher CPU on HDDs is, in part, explained by the higher disk queue length seen with HDDs. The chart below shows the results of these tests with the disk queue length on HDDs significantly higher as the number of users in the tests increases.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2015/08/FSCT-SSDs.png" alt="Higher Avg. Disk Queue Length with HDDs" /><em>Higher Avg. Disk Queue Length with HDDs</em></p>
+<p><img src="https://stealthpuppy.com/media/2015/08/FSCT-SSDs.png" alt="Higher Avg. Disk Queue Length with HDDs" /><em>Higher Avg. Disk Queue Length with HDDs</em></p>
 
 <p>It’s clear then that any <a href="http://www.atlantiscomputing.com/hyperscale">high performing storage platform</a> will not only improve storage performance, it will reduce the load on your compute, providing improved user experience across multiple layers of your infrastructure.</p>
 

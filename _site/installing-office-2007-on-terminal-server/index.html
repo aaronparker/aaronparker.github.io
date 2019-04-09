@@ -64,7 +64,7 @@
   </li>
 </ul>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1390.ModifyUserSettings.png" border="0" alt="" /></p>
+<p><img src="https://stealthpuppy.com/media/2007/05/1000.14.1390.ModifyUserSettings.png" border="0" alt="" /></p>
 
 <p>You’ll also want to take a look at the feature installation states - set each of these to either ON or OFF, don’t set any feature to Install on First Use. A subset of the options I disable when installing Office on a Terminal Server are:</p>
 
@@ -73,7 +73,7 @@
   <li>Office Shared Features / Proofing Tools / Spanish Proofing Tools / Spanish - French Translation</li>
 </ul>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2007/05/1000.14.1391.FeatureInstallationStates.png" border="0" alt="" /></p>
+<p><img src="https://stealthpuppy.com/media/2007/05/1000.14.1391.FeatureInstallationStates.png" border="0" alt="" /></p>
 
 <p>The first two options should be disabled as a part of <a href="http://support.microsoft.com/?kbid=823586">preventing CTFMON.EXE from running</a> in each user session. You will also have to unregister MSCTF.DLL as a part of your installation of Office (<code class="highlighter-rouge">REGSVR32 /S /U MSCTF.DLL</code>)</p>
 

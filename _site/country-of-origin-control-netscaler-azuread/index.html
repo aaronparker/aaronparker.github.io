@@ -13,11 +13,11 @@
 <link rel="canonical" href="/country-of-origin-control-netscaler-azuread/" />
 <meta property="og:url" content="/country-of-origin-control-netscaler-azuread/" />
 <meta property="og:site_name" content="stealthpuppy" />
-<meta property="og:image" content="/wp-content/uploads/2017/09/8439088143_259e3f274f_k.jpg" />
+<meta property="og:image" content="/media/2017/09/8439088143_259e3f274f_k.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-09-28T16:29:39+10:00" />
 <script type="application/ld+json">
-{"description":"Great news! Microsoft has enabled a number of available conditions and custom controls in Azure AD for use in Conditional Access making these policies even more useful. This includes a simple method to control access to Citrix NetScaler by country of origin.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/country-of-origin-control-netscaler-azuread/","image":"/wp-content/uploads/2017/09/8439088143_259e3f274f_k.jpg","headline":"Simple Country of Origin Control for NetScaler with Azure AD","dateModified":"2017-09-28T16:29:39+10:00","datePublished":"2017-09-28T16:29:39+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/country-of-origin-control-netscaler-azuread/"},"@context":"https://schema.org"}</script>
+{"description":"Great news! Microsoft has enabled a number of available conditions and custom controls in Azure AD for use in Conditional Access making these policies even more useful. This includes a simple method to control access to Citrix NetScaler by country of origin.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/country-of-origin-control-netscaler-azuread/","image":"/media/2017/09/8439088143_259e3f274f_k.jpg","headline":"Simple Country of Origin Control for NetScaler with Azure AD","dateModified":"2017-09-28T16:29:39+10:00","datePublished":"2017-09-28T16:29:39+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/country-of-origin-control-netscaler-azuread/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -63,7 +63,7 @@
 
 <p>Doing so allows IT to control access to any application, whether that be legacy Win32 apps, or new SaaS applications from a single administrative experience with Conditional Access. Seen in the screenshot below, I have policies providing access to various applications - it’s a beautiful thing.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies.png" alt="Azure AD Conditional Access policies" /></p>
+<p><img src="https://stealthpuppy.com/media/2017/09/AzureAD-CA-Policies.png" alt="Azure AD Conditional Access policies" /></p>
 
 <h1 id="conditions-in-conditional-access-policies">Conditions in Conditional Access Policies</h1>
 
@@ -75,21 +75,21 @@
   <li>VPN connectivity - force device compliance (for Windows 10 devices) before being allowed access to a corporate VPN</li>
 </ul>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Policies-Zoom.png" alt="New conditions and controls in preview" /></p>
+<p><img src="https://stealthpuppy.com/media/2017/09/AzureAD-CA-Policies-Zoom.png" alt="New conditions and controls in preview" /></p>
 
 <h1 id="enabling-country-of-origin">Enabling Country of Origin</h1>
 
 <p>Previously Named Locations allow you to only provide locations via specific subnets to define egress locations, e.g. your corporate office. New in Named Locations is the ability to add specific countries that you could use in allow or block scenarios, effectively enabling a whitelist or blacklist of regions.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-Countries-Regions.png" alt="Creating a Named Location to define country of origin" /></p>
+<p><img src="https://stealthpuppy.com/media/2017/09/AzureAD-CA-Countries-Regions.png" alt="Creating a Named Location to define country of origin" /></p>
 
 <p>Once these Named Locations are defined, it’s possible to mix and match locations depending on your requirements. Within a Conditional Access policy, enable <strong>Locations</strong> under <strong>Conditions</strong>, and add the Named Locations. Use either Include or Exclude to whitelist or blacklist respectively.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-SelectedLocations.png" alt="Allowing access from specific countries" /></p>
+<p><img src="https://stealthpuppy.com/media/2017/09/AzureAD-CA-SelectedLocations.png" alt="Allowing access from specific countries" /></p>
 
 <p>And that’s it! We now have country of origin as a condition that we could use as one condition to ensure access is secure. Allow compliant device, enforce MFA, or a custom control to give you confidence that access to XenApp or XenDesktop applications (or perhaps even web apps) is secure.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2017/09/AzureAD-CA-GrantControl-MFA.png" alt="Granting access with MFA" /></p>
+<p><img src="https://stealthpuppy.com/media/2017/09/AzureAD-CA-GrantControl-MFA.png" alt="Granting access with MFA" /></p>
 
 <p>If we were to compare setting up NetScaler Gateway with AD integration, 3rd party multi-factor authentication and <a href="https://support.citrix.com/article/CTX130701">country of</a> origin access by subscribing to a country database (see <a href="https://support.citrix.com/article/CTX130701">How to Use NetScaler to Block Access to a Website Using a Location Database Based on User’s Country</a>), I’m sure you would agree this method is simpler and easier to maintain.</p>
 

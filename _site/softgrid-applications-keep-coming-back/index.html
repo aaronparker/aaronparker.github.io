@@ -46,13 +46,13 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img border="0" alt="SoftGrid Box" align="left" src="https://stealthpuppy.com/wp-content/uploads/2008/04/softgridbox.png" width="112" height="120" />This error seems to popup <a href="http://www.softgridguru.com/viewtopic.php?t=2493&amp;highlight=shortcutsex+dat">every</a> <a href="http://www.softgridguru.com/viewtopic.php?t=2184&amp;highlight=icons">now</a> and <a href="http://www.softgridguru.com/viewtopic.php?t=2323">then</a> and I’m currently seeing this in my own lab environment - SoftGrid application shortcuts are created even though the application has been disabled, deleted or the user account has been removed from the application group.</p>
+    <p><img border="0" alt="SoftGrid Box" align="left" src="https://stealthpuppy.com/media/2008/04/softgridbox.png" width="112" height="120" />This error seems to popup <a href="http://www.softgridguru.com/viewtopic.php?t=2493&amp;highlight=shortcutsex+dat">every</a> <a href="http://www.softgridguru.com/viewtopic.php?t=2184&amp;highlight=icons">now</a> and <a href="http://www.softgridguru.com/viewtopic.php?t=2323">then</a> and I’m currently seeing this in my own lab environment - SoftGrid application shortcuts are created even though the application has been disabled, deleted or the user account has been removed from the application group.</p>
 
 <p>When a user logs onto the computer, the SoftGrid client contacts the Virtual Application Server to retrieve a list of applications for that user. The list is cached on the local machine and the required files for each application (OSD files, application and file type icons) are copied locally.</p>
 
 <p>The list of application shortcuts are cached in a file called SHORTCUTS_EX.DAT saved in the SoftGrid Client folder. This is an XML file that contains the information required for the creation of shortcuts:</p>
 
-<p><img border="0" alt="shortcuts_ex.dat Contents" src="https://stealthpuppy.com/wp-content/uploads/2008/04/shortcuts-exdatfilecontents.png" width="484" height="186" /></p>
+<p><img border="0" alt="shortcuts_ex.dat Contents" src="https://stealthpuppy.com/media/2008/04/shortcuts-exdatfilecontents.png" width="484" height="186" /></p>
 
 <p>During the user session, the SoftGrid client works on a temporary copy of SHORTCUTS_EX.DAT . This file is not written to disk until the SoftGrid client, specifically SFTDCC.EXE, exits.</p>
 

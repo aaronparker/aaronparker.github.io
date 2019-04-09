@@ -13,11 +13,11 @@
 <link rel="canonical" href="/deploy-citrix-receiver-intune/" />
 <meta property="og:url" content="/deploy-citrix-receiver-intune/" />
 <meta property="og:site_name" content="stealthpuppy" />
-<meta property="og:image" content="/wp-content/uploads/2017/12/christian-fregnan-408973.jpg" />
+<meta property="og:image" content="/media/2017/12/christian-fregnan-408973.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2017-12-23T13:47:22+11:00" />
 <script type="application/ld+json">
-{"description":"If you’ve deployed Windows 10 Modern Management you’ll know that some applications present a challenge for deployment, because Windows 10 MDM supports the Win32 applications via a single MSI file only. Applications such as Citrix Receiver, that are a single EXE (that wraps multiple MSI files), can, therefore, be challenging. You can create a custom wrapper to deploy Receiver, but this requires a packaging tool and some specific knowledge on how to package applications.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/deploy-citrix-receiver-intune/","image":"/wp-content/uploads/2017/12/christian-fregnan-408973.jpg","headline":"Deploy Citrix Receiver to Windows 10 with Intune and PowerShell","dateModified":"2017-12-23T13:47:22+11:00","datePublished":"2017-12-23T13:47:22+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/deploy-citrix-receiver-intune/"},"@context":"https://schema.org"}</script>
+{"description":"If you’ve deployed Windows 10 Modern Management you’ll know that some applications present a challenge for deployment, because Windows 10 MDM supports the Win32 applications via a single MSI file only. Applications such as Citrix Receiver, that are a single EXE (that wraps multiple MSI files), can, therefore, be challenging. You can create a custom wrapper to deploy Receiver, but this requires a packaging tool and some specific knowledge on how to package applications.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/deploy-citrix-receiver-intune/","image":"/media/2017/12/christian-fregnan-408973.jpg","headline":"Deploy Citrix Receiver to Windows 10 with Intune and PowerShell","dateModified":"2017-12-23T13:47:22+11:00","datePublished":"2017-12-23T13:47:22+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/deploy-citrix-receiver-intune/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -96,15 +96,15 @@
 
 <p>Deploying the script via Intune is done just like any other PowerShell script. Save the script locally and then in the Azure Portal, Intune blade, under Device Configuration / PowerShell scripts, add a new script and upload the saved script.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2017/12/Script-Adding.png" alt="Adding the Install-CitrixReceiver.ps1 script to Intune" /><em>Adding the Install-CitrixReceiver.ps1 script to Intune</em></p>
+<p><img src="https://stealthpuppy.com/media/2017/12/Script-Adding.png" alt="Adding the Install-CitrixReceiver.ps1 script to Intune" /><em>Adding the Install-CitrixReceiver.ps1 script to Intune</em></p>
 
 <p>Assign the script to an Azure AD group for target users or devices. Your script should then be listed as an assigned script.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2017/12/All-Scripts.png" alt="Install-CitrixReceiver.ps1 along side other PowerShell scripts" /><em>Install-CitrixReceiver.ps1 alongside other PowerShell scripts</em></p>
+<p><img src="https://stealthpuppy.com/media/2017/12/All-Scripts.png" alt="Install-CitrixReceiver.ps1 along side other PowerShell scripts" /><em>Install-CitrixReceiver.ps1 alongside other PowerShell scripts</em></p>
 
 <p>Once deployed, we can track successful installations in the Overview blade. Note that the script will only run once per target device - it should be unlikely that the device will receive the script and have it fail (e.g. fail to download the CitrixReceiver.exe), but there could be edge cases where installation fails as a result of some very specific circumstances.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2017/12/Script-Overview.png" alt="Citrix Receiver deployment overview" /><em>Citrix Receiver deployment overview</em></p>
+<p><img src="https://stealthpuppy.com/media/2017/12/Script-Overview.png" alt="Citrix Receiver deployment overview" /><em>Citrix Receiver deployment overview</em></p>
 
 <p>Post-deployment, we can rely on <a href="https://docs.citrix.com/en-us/receiver/windows/current-release/configure/receiver-update.html">the updater functionality built into the latest Receiver releases</a> to keep end-points up to date.</p>
 

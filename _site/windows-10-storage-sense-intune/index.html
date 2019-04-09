@@ -13,11 +13,11 @@
 <link rel="canonical" href="/windows-10-storage-sense-intune/" />
 <meta property="og:url" content="/windows-10-storage-sense-intune/" />
 <meta property="og:site_name" content="stealthpuppy" />
-<meta property="og:image" content="/wp-content/uploads/2018/09/florian-perennes-583674-unsplash.jpg" />
+<meta property="og:image" content="/media/2018/09/florian-perennes-583674-unsplash.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-09-02T20:46:04+10:00" />
 <script type="application/ld+json">
-{"description":"In a modern management scenario, enabling end-points to perform automatic maintenance tasks will reduce TCO by avoiding scenarios that might result in support calls. Storage Sense in Windows 10 is a great way to manage free disk space on PCs by clearing caches, temporary files, old downloads, Windows Update cleanup, previous Windows Versions, and more, but it it’s not fully enabled by default. Storage Sense can potentially remove gigabytes of data, freeing up valuable space on smaller drives.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/windows-10-storage-sense-intune/","image":"/wp-content/uploads/2018/09/florian-perennes-583674-unsplash.jpg","headline":"Storage Sense on Windows 10 configured with Intune","dateModified":"2018-09-02T20:46:04+10:00","datePublished":"2018-09-02T20:46:04+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/windows-10-storage-sense-intune/"},"@context":"https://schema.org"}</script>
+{"description":"In a modern management scenario, enabling end-points to perform automatic maintenance tasks will reduce TCO by avoiding scenarios that might result in support calls. Storage Sense in Windows 10 is a great way to manage free disk space on PCs by clearing caches, temporary files, old downloads, Windows Update cleanup, previous Windows Versions, and more, but it it’s not fully enabled by default. Storage Sense can potentially remove gigabytes of data, freeing up valuable space on smaller drives.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/windows-10-storage-sense-intune/","image":"/media/2018/09/florian-perennes-583674-unsplash.jpg","headline":"Storage Sense on Windows 10 configured with Intune","dateModified":"2018-09-02T20:46:04+10:00","datePublished":"2018-09-02T20:46:04+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/windows-10-storage-sense-intune/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -55,7 +55,7 @@
 
 <p>Storage Sense can be found in the Windows 10 Settings app and has only a few settings that can be changed. Typically a user may enable Storage Sense and accept the default settings and for most PCs, the defaults are likely good enough. Here’s what’s available in Windows 10 1803:</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/09/Windows10StorageSense.png" alt="Enabling Storage Sense in Windows 10 Settings" /><em>Enabling Storage Sense in Windows 10 Settings</em></p>
+<p><img src="https://stealthpuppy.com/media/2018/09/Windows10StorageSense.png" alt="Enabling Storage Sense in Windows 10 Settings" /><em>Enabling Storage Sense in Windows 10 Settings</em></p>
 
 <p>Settings are stored in the user profile at:</p>
 
@@ -64,7 +64,7 @@
 
 <p>Settings are stored somewhat cryptically with numbers representing various options.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-Registry.png" alt="Storage Sense settings in the Registry" /><em>Storage Sense settings in the Registry</em></p>
+<p><img src="https://stealthpuppy.com/media/2018/09/StorageSense-Registry.png" alt="Storage Sense settings in the Registry" /><em>Storage Sense settings in the Registry</em></p>
 
 <p>These values translate to following options and values in the table below:</p>
 
@@ -256,7 +256,7 @@
 
 <p>Modify the script as desired - at the very least the script should enable Storage Sense and leave the remaining settings as default. Save the script as a PowerShell file and <a href="https://docs.microsoft.com/en-us/intune/intune-management-extension">deploy via the Intune console in the Azure portal</a>. Ensure that the script runs with the logged on user’s credentials because it will write to HKCU.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-PowerShellIntune.png" alt="Enabling Storage Sense with a PowerShell script in Intune" /><em>Enabling Storage Sense with a PowerShell script in Intune</em></p>
+<p><img src="https://stealthpuppy.com/media/2018/09/StorageSense-PowerShellIntune.png" alt="Enabling Storage Sense with a PowerShell script in Intune" /><em>Enabling Storage Sense with a PowerShell script in Intune</em></p>
 
 <p>Assign the script to All Users and their PC will receive the script. It’s important to note that, because the settings are stored in HKCU and are not policies, the user can either disable Storage Sense or change other settings.</p>
 
@@ -268,7 +268,7 @@
 
 <p>Storage Sense shows you how much disk capacity has been cleaned in the previous month in the Settings app. For a bit of a laugh, you can modify the value where this is stored so that Settings displays spaced saved that’s clearly not genuine.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/09/StorageSense-SpaceSaved.png" alt="Messing around with the value of saved space" /><em>Messing around with the value of saved space</em></p>
+<p><img src="https://stealthpuppy.com/media/2018/09/StorageSense-SpaceSaved.png" alt="Messing around with the value of saved space" /><em>Messing around with the value of saved space</em></p>
 
 <p>You’ll find the registry value (20180901) in this key:</p>
 

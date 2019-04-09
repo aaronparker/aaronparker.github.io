@@ -13,11 +13,11 @@
 <link rel="canonical" href="/deploy-adobe-reader-dc-intune-part2/" />
 <meta property="og:url" content="/deploy-adobe-reader-dc-intune-part2/" />
 <meta property="og:site_name" content="stealthpuppy" />
-<meta property="og:image" content="/wp-content/uploads/2018/07/russ-mccabe-5461-unsplash.jpg" />
+<meta property="og:image" content="/media/2018/07/russ-mccabe-5461-unsplash.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-07-22T21:36:58+10:00" />
 <script type="application/ld+json">
-{"description":"In the previous article we saw how to customise the Adobe Reader DC installation and deploy it via Microsoft Intune. Now that it’s installed on Windows 10 end-points let’s look at how updates work.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/deploy-adobe-reader-dc-intune-part2/","image":"/wp-content/uploads/2018/07/russ-mccabe-5461-unsplash.jpg","headline":"Adobe Reader DC deployment with Microsoft Intune Part 2","dateModified":"2018-07-22T21:36:58+10:00","datePublished":"2018-07-22T21:36:58+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/deploy-adobe-reader-dc-intune-part2/"},"@context":"https://schema.org"}</script>
+{"description":"In the previous article we saw how to customise the Adobe Reader DC installation and deploy it via Microsoft Intune. Now that it’s installed on Windows 10 end-points let’s look at how updates work.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/deploy-adobe-reader-dc-intune-part2/","image":"/media/2018/07/russ-mccabe-5461-unsplash.jpg","headline":"Adobe Reader DC deployment with Microsoft Intune Part 2","dateModified":"2018-07-22T21:36:58+10:00","datePublished":"2018-07-22T21:36:58+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/deploy-adobe-reader-dc-intune-part2/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header" role="banner">
@@ -59,7 +59,7 @@
 
 <p>The task has two triggers - one after user logon, but with a delay of 12 minutes, and the other at a scheduled time that is possibly different per device. Here’s the scheduled task:</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-UpdateTask.png" alt="Adobe Acrobat Update Task" /><em>Adobe Acrobat Update Task</em></p>
+<p><img src="https://stealthpuppy.com/media/2018/07/AdobeReaderDC-UpdateTask.png" alt="Adobe Acrobat Update Task" /><em>Adobe Acrobat Update Task</em></p>
 
 <p>In theory, the service should download and apply an Adobe Reader update within 24-hours after installation. In practice, your mileage will most certainly vary. In my testing (which wasn’t exhaustive), it would take more than that to download an update and I resorted to using the ‘Check for Updates’ option from within Adobe Reader manually.</p>
 
@@ -67,7 +67,7 @@
 
 <p>Downloading and installing updates does not unfortunately go straight to the latest version. In my testing, my target PCs downloaded an intermediate update to <strong>2015.023.20070</strong> before the second update to <strong>2018.011.20055</strong>. This means that in the real world, it could be several days before a PC has the most recent version installed.</p>
 
-<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/07/AdobeReaderDC-1500720033.png" alt="Adobe Reader DC - An update is available" /><em>Adobe Reader DC - An update is available</em></p>
+<p><img src="https://stealthpuppy.com/media/2018/07/AdobeReaderDC-1500720033.png" alt="Adobe Reader DC - An update is available" /><em>Adobe Reader DC - An update is available</em></p>
 
 <p>Fortunately, the updates are downloaded and installed without user intervention, meaning that the update process works for users <a href="https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/user-driven">without administrative rights to their PC</a>.</p>
 

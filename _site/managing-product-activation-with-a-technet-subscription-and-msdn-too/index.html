@@ -46,7 +46,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><a href="https://stealthpuppy.com/wp-content/uploads/2010/05/ComputerTick.png"><img style="margin: 0px 10px 10px 0px; display: inline; border-width: 0px;" title="ComputerTick" src="https://stealthpuppy.com/wp-content/uploads/2010/05/ComputerTick_thumb.png" border="0" alt="ComputerTick" width="128" height="128" align="left" /></a> I’ve been avoiding activating Windows installations in my home test environment with the product keys from my TechNet subscription because I’ve been afraid of running out of keys. Fortunately that fear has been mostly unfounded. I won’t go into what I really think about product activation but if you’re interested in how to manage your TechNet or MSDN keys, I have discussed how I’m doing that here.</p>
+    <p><a href="https://stealthpuppy.com/media/2010/05/ComputerTick.png"><img style="margin: 0px 10px 10px 0px; display: inline; border-width: 0px;" title="ComputerTick" src="https://stealthpuppy.com/media/2010/05/ComputerTick_thumb.png" border="0" alt="ComputerTick" width="128" height="128" align="left" /></a> I’ve been avoiding activating Windows installations in my home test environment with the product keys from my TechNet subscription because I’ve been afraid of running out of keys. Fortunately that fear has been mostly unfounded. I won’t go into what I really think about product activation but if you’re interested in how to manage your TechNet or MSDN keys, I have discussed how I’m doing that here.</p>
 
 <p>Microsoft delivered a webcast recently, entitled <a href="https://msevents.microsoft.com/CUI/WebCastEventDetails.aspx?culture=en-US&amp;EventID=1032448730">Product Activation in Development Environments</a>, which discusses Windows Product Activation for development and test environments. Although aimed at developers using an MSDN subscription (IT Pros don’t have to worry about licensing and product activation?) the concepts discussed apply to TechNet subscriptions as well.</p>
 
@@ -101,13 +101,13 @@
 
 <p>The tool itself is very simple. In the example screenshot below, I have imported a list of machines from Active Directory and this shows the status of machines that I have scanned:</p>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2010/05/VAMTAllProducts.png"><img style="display: inline; border-width: 0px;" title="VAMTAllProducts" src="https://stealthpuppy.com/wp-content/uploads/2010/05/VAMTAllProducts_thumb.png" border="0" alt="VAMTAllProducts" width="660" height="368" /></a></p>
+<p><a href="https://stealthpuppy.com/media/2010/05/VAMTAllProducts.png"><img style="display: inline; border-width: 0px;" title="VAMTAllProducts" src="https://stealthpuppy.com/media/2010/05/VAMTAllProducts_thumb.png" border="0" alt="VAMTAllProducts" width="660" height="368" /></a></p>
 
 <p>Once machines are imported, I can select a machine or a group of machines and update their status to view the installed products (Windows and Office 2010 will be reported). Remote machines must be powered up to gather their status, unfortunately this information isn’t stored in AD and I can’t scan powered down virtual machines. Product keys can be installed and activated on remote machines directly from the VAMT console.</p>
 
 <p>By importing product keys into the VAMT, you can track the number of activations for MAK and KMS keys (it doesn’t report on Retail keys). This will help you discover the total number of activations you have for each product and keep track of the number of actual activations.</p>
 
-<p><a href="https://stealthpuppy.com/wp-content/uploads/2010/05/VAMTProductKeys.png"><img style="display: inline; border-width: 0px;" title="VAMTProductKeys" src="https://stealthpuppy.com/wp-content/uploads/2010/05/VAMTProductKeys_thumb.png" border="0" alt="VAMTProductKeys" width="660" height="292" /></a></p>
+<p><a href="https://stealthpuppy.com/media/2010/05/VAMTProductKeys.png"><img style="display: inline; border-width: 0px;" title="VAMTProductKeys" src="https://stealthpuppy.com/media/2010/05/VAMTProductKeys_thumb.png" border="0" alt="VAMTProductKeys" width="660" height="292" /></a></p>
 
 <p>For more information on VAMT and how to use it to management production activation in your environment, see the following links:</p>
 
