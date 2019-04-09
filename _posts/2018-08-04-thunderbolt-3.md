@@ -22,7 +22,7 @@ In an effort to reduce the clutter on my desk and improve my viewing experience 
 
 ## The Quest for Less Clutter
 
-I work primarily from home and given my job, I'm in front of a computer for extended periods; thus, I need a clean and neat workspace to be able to focus. I'm not great at keeping my workspace tidy as I should be, so anything I can do to reduce clutter on my desk has got to assist. This is where the right choice in hardware comes in - I run a 13&#8243; [MacBook](https://stealthpuppy.com/?s=macbook) Pro that comes with four Thunderbolt ports, as my primary driver, so I have the opportunity to do everything through a single cable.
+I work primarily from home and given my job, I'm in front of a computer for extended periods; thus, I need a clean and neat workspace to be able to focus. I'm not great at keeping my workspace tidy as I should be, so anything I can do to reduce clutter on my desk has got to assist. This is where the right choice in hardware comes in - I run a 13" [MacBook](https://stealthpuppy.com/?s=macbook) Pro that comes with four Thunderbolt ports, as my primary driver, so I have the opportunity to do everything through a single cable.
 
 With the right solution, I should be able to run power to the laptop plus all other inputs and outputs from a Thunderbolt dock, providing me the ability to cleanly route cables (as much as I can). This also means that I can arrive at my desk or leave by pulling out or plugging in a single cable. Everything else I then need for travel remains in my backpack, requiring me to only transfer my laptop.
 
@@ -30,7 +30,7 @@ With the right solution, I should be able to run power to the laptop plus all ot
 
 After upgrading to the MacBook Pro last year (from the MacBook Air), the biggest impact to my daily experience has been the quality of the display. Crisp text, icons and high quality OS and application artefacts in both macOS and Windows 10 is a joy to use.
 
-{% twitter https://twitter.com/stealthpuppy/status/892717333730308098 maxwidth=500 %}
+{% twitter https://twitter.com/stealthpuppy/status/892717333730308098 %}
 
 I'm of course spoilt by having access to [a MacBook display](https://support.apple.com/kb/SP755?locale=en_AU), but it's driven me to want a similar experience from my external monitor. To that end, I've looked at adding a 4K display to my layout. I have been plugging into an external 1080p monitor for dual screen work and the difference in quality to a 4K display is noticeable.
 
@@ -101,7 +101,7 @@ Picking a Thunderbolt 3 docks was fairly simple - ensure I have enough ports, in
 
 I have added [a USB-C to HDMI adapter](https://www.startech.com/au/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD) to connect my existing 1080p monitor. I've found StarTech adapters and cables to be good quality at reasonable prices. Interestingly, I've had to plug this into the second Thunderbolt port on the dock to get video out, so even though the dock as 2 USB 3.1 Type-C ports, only the second Thunderbolt port must support DP Alt Mode.
 
-The dock came with a 50cm Thunderbolt 3 port and 85W output, thus the single cable powers my laptop and connects to all external peripherals. It's a solid unit in brushed aluminium with a power supply larger than the device itself, which should hopefully assist with heat dissipation. 
+The dock came with a 50cm Thunderbolt 3 port and 85W output, thus the single cable powers my laptop and connects to all external peripherals. It's a solid unit in brushed aluminium with a power supply larger than the device itself, which should hopefully assist with heat dissipation.
 
 ![Comparing the size of the Caldigit TS3 Plus](https://stealthpuppy.com/media/2018/08/CaldiditTS3Plus-Size.jpg)*The Caldigit TS3 Plus next to a 60W Apple power supply and its own external power supply*
 
