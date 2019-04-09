@@ -31,12 +31,12 @@ There's a full list of new features in this blog post: [Announcing Adobe Reader
 
 # Customisation
 
-Customisation of Reader XI with the Adobe Customization Wizard XI is the same approach as previous versions and I have a comprehensive post on [deploying Adobe Reader X](https://stealthpuppy.com/deployment/deploying-adobe-reader-x/) which will largely apply to XI, but Adobe does have customisation and deployment documentation available:
+Customisation of Reader XI with the Adobe Customization Wizard XI is the same approach as previous versions and I have a comprehensive post on [deploying Adobe Reader X]({{site.baseurl}}/deployment/deploying-adobe-reader-x/) which will largely apply to XI, but Adobe does have customisation and deployment documentation available:
 
   * [Enterprise Toolkit for Acrobat Products](http://www.adobe.com/devnet-docs/acrobatetk/#)
   * [Adobe Customization Wizard XI documentation](http://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/Customization%20Wizard%2011%20for%20Windows.pdf)
 
-The [Adobe Customization Wizard XI for Windows](http://www.adobe.com/support/downloads/thankyou.jsp?ftpID=5515&fileID=5526) is now available and the administration experience does not change massively (or at all) from [previous versions](https://stealthpuppy.com/deployment/deploying-adobe-reader-x/).
+The [Adobe Customization Wizard XI for Windows](http://www.adobe.com/support/downloads/thankyou.jsp?ftpID=5515&fileID=5526) is now available and the administration experience does not change massively (or at all) from [previous versions]({{site.baseurl}}/deployment/deploying-adobe-reader-x/).
 
 Extracting Reader XI from the installer is the same as previous versions - run the following command:
 

@@ -17,7 +17,7 @@ tags:
 ---
 **Note**: for a more up to date version of the content in this article, VcRedist now has documentation available here: [https://docs.stealthpuppy.com/docs/vcredist](https://docs.stealthpuppy.com/docs/vcredist)
 
-Last year I wrote [a PowerShell script that can download, install or import](https://stealthpuppy.com/visual-c-redistributable-installer/) the Visual C++ Redistributables into MDT or ConfigMgr. Long-term maintenance of the full feature set in a single script is a little unwieldy so I've re-written the script and created [a PowerShell module](https://github.com/aaronparker/Install-VisualCRedistributables) - VcRedist.
+Last year I wrote [a PowerShell script that can download, install or import]({{site.baseurl}}/visual-c-redistributable-installer/) the Visual C++ Redistributables into MDT or ConfigMgr. Long-term maintenance of the full feature set in a single script is a little unwieldy so I've re-written the script and created [a PowerShell module](https://github.com/aaronparker/Install-VisualCRedistributables) - VcRedist.
 
 Refactoring the script into a module has been a great little project for creating my first PowerShell function and publishing it to [the PowerShell Gallery](https://www.powershellgallery.com/packages/VcRedist/).
 
@@ -38,7 +38,7 @@ Import-VcMdtApp -VcList $VcList -Path "C:\Temp\VcRedist" -MdtPath "\\server\shar
 
 This results in each of the Visual C++ Redistributables imported as a separate application with all necessary properties including Version, silent command line, Uninstall Key and 32-bit or 64-bot operating system support.
 
-![Visual C++ Redistributables imported into an MDT share with VcRedist](https://stealthpuppy.com/media/2018/03/MdtVisualCApplications.png)*Visual C++ Redistributables imported into an MDT share with VcRedist*
+![Visual C++ Redistributables imported into an MDT share with VcRedist]({{site.baseurl}}/media/2018/03/MdtVisualCApplications.png)*Visual C++ Redistributables imported into an MDT share with VcRedist*
 
 The same approach can be used to import the Redistributables into a ConfigMgr site:
 
@@ -51,7 +51,7 @@ Import-VcCmApp -VcList $VcList -Path "C:\Temp\VcRedist" -CMPath "\\server\share\
 
 Just like MDT, each Redistributable is imported into ConfigMgr; however, `Import-VcCmApp` copies the Redistributables to a share for distribution and creates and application with a single deployment for each one.
 
-![Visual C++ Redistributables imported into ConfigMgr with VcRedist](https://stealthpuppy.com/media/2018/03/VcRedistConfigMgr.png)*Visual C++ Redistributables imported into ConfigMgr with VcRedist*
+![Visual C++ Redistributables imported into ConfigMgr with VcRedist]({{site.baseurl}}/media/2018/03/VcRedistConfigMgr.png)*Visual C++ Redistributables imported into ConfigMgr with VcRedist*
 
 Of course, the module can download and install the Redistributables to the local machine:
 
@@ -64,7 +64,7 @@ $VcList | Install-VcRedist -Path C:\Temp\VcRedist
 
 By default, this installs all of the supported Redistributables:
 
-![Visual C++ Redistributables installed locally with VcRedist](https://stealthpuppy.com/media/2018/03/VisualCPrograms.png)*Visual C++ Redistributables installed locally with VcRedist*
+![Visual C++ Redistributables installed locally with VcRedist]({{site.baseurl}}/media/2018/03/VisualCPrograms.png)*Visual C++ Redistributables installed locally with VcRedist*
 
 Note that the 2015 and 2017 Redistributables are the same version, so the end result will include only the 2017 versions.
 

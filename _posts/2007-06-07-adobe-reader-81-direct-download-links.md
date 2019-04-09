@@ -13,7 +13,7 @@ categories:
 tags:
   - Adobe
 ---
-For anyone [deploying Adobe Reader](https://stealthpuppy.com/deployment/deploying-adobe-reader-81), the direct download links for Adobe Reader are far more useful than the standard download that attempts sell you on how great Adobe Photoshop Album Starter Edition and the Google Toolbar are.
+For anyone [deploying Adobe Reader]({{site.baseurl}}/deployment/deploying-adobe-reader-81), the direct download links for Adobe Reader are far more useful than the standard download that attempts sell you on how great Adobe Photoshop Album Starter Edition and the Google Toolbar are.
 
 Ideally you should be obtaining a [Distribution Agreement](http://www.adobe.com/products/acrobat/distribute.html) for Adobe Reader if you are looking to distribute the application over your network or other means such as CDROM. Once you do obtain the agreement, you are given a link to the [direct download page](http://www.adobe.com/products/acrobat/readstep2.html?type=distrib) where you can get the direct download for various versions of Adobe Reader in your language of choice.
 

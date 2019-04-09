@@ -19,7 +19,7 @@ categories:
 tags:
   - RemoteApp
 ---
-You may recall from [my last post on RemoteApp](https://stealthpuppy.com/virtualisation/remoteapp-for-hyper-v-hyper-what), that we can get RemoteApp for Hyper-V works on other platforms too. While it was straight-forward publishing applications from a Windows 7 host, the client would report this error when connecting to Windows XP and Windows Vista hosts:  
+You may recall from [my last post on RemoteApp]({{site.baseurl}}/virtualisation/remoteapp-for-hyper-v-hyper-what), that we can get RemoteApp for Hyper-V works on other platforms too. While it was straight-forward publishing applications from a Windows 7 host, the client would report this error when connecting to Windows XP and Windows Vista hosts:  
 <img style="display: inline; margin-top: 5px;" title="RemoteAppNotSupported" src="https://stealthpuppy.com/media/2009/12/RemoteAppNotSupported.png" alt="RemoteAppNotSupported" width="430" height="203" border="0" /> 
 
 Kind of annoying, because the original [RemoteApp for Hyper-V post](http://blogs.msdn.com/rds/archive/2009/12/15/remoteapp-for-hyper-v.aspx) on the RDS blog, showed us something cool but left out the important part on how to get it working. Well, thanks to [Justin](http://blogs.technet.com/virtualworld) and [this comment](http://blogs.msdn.com/rds/archive/2009/12/15/remoteapp-for-hyper-v.aspx#9964757), I’ve been able to fix the issue and get RemoteApp running on XP and Vista (unfortunately I can’t take any of the credit).
@@ -131,13 +131,13 @@ If the client is Windows XP or above and the host is Windows Vista or above, you
 
 So finally with all of the pieces in place, here’s what you’ll see with applications running via RemoteApp. In this screenshot I have Calculator running remotely from Windows XP and Windows Vista next to the local version.
 
-[<img style="display: inline; border: 0px;" title="DesktopWithCalculator" src="https://stealthpuppy.com/media/2010/02/DesktopWithCalculator_thumb.png" alt="DesktopWithCalculator" width="660" height="432" border="0" />](https://stealthpuppy.com/media/2010/02/DesktopWithCalculator.png)
+[<img style="display: inline; border: 0px;" title="DesktopWithCalculator" src="https://stealthpuppy.com/media/2010/02/DesktopWithCalculator_thumb.png" alt="DesktopWithCalculator" width="660" height="432" border="0" />]({{site.baseurl}}/media/2010/02/DesktopWithCalculator.png)
 
 One thing to note is that the remote applications are all group together on the taskbar; in this screenshot, the two remote Calculators are grouped with Remote Desktop Connection – users' won’t see separate remote buttons as you get in competing products.
 
 ### So What's Left?
 
-Use of RemoteApp is [not restricted to the brand of hypervisor](https://stealthpuppy.com/virtualisation/remoteapp-for-hyper-v-hyper-what) - RemoteApp will be available on Windows XP+ regardless of where it is running. You could, for example, use blade PCs as hosts.
+Use of RemoteApp is [not restricted to the brand of hypervisor]({{site.baseurl}}/virtualisation/remoteapp-for-hyper-v-hyper-what) - RemoteApp will be available on Windows XP+ regardless of where it is running. You could, for example, use blade PCs as hosts.
 
 If you have Citrix XenApp or Quest vWorkspace, you already have tools to publishing applications from virtual desktops, so where would this actually be useful? SMBs without either product would benefit (although I have had one enterprise customer ask me about this feature) or perhaps this would work as a replacement for Windows XP Mode if you don't like Windows Virtual PC (and who does?).
 

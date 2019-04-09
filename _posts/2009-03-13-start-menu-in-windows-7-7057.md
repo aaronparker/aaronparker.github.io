@@ -17,7 +17,7 @@ categories:
 tags:
   - Windows 7
 ---
-In addition to the [new Start Menu customisation options available in build 7048](https://stealthpuppy.com/windows/start-menu-in-windows-7-7048), build 7057 introduces a very subtle change when using the Windows 7 Basic theme. The links on the right-hand side of the Start Menu gain a faux glass look, which gives the Start Menu a little more consistency across the Basic and Aero themes.
+In addition to the [new Start Menu customisation options available in build 7048]({{site.baseurl}}/windows/start-menu-in-windows-7-7048), build 7057 introduces a very subtle change when using the Windows 7 Basic theme. The links on the right-hand side of the Start Menu gain a faux glass look, which gives the Start Menu a little more consistency across the Basic and Aero themes.
 
 Here's a side-by-side comparison:
 

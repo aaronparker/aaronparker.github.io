@@ -15,7 +15,7 @@ tags:
 ---
 A little more than just Internet Explorer 8 is removable in Windows 7 build 7048. This build allow you to remove Internet Explorer 8, Windows DVD Maker, Windows Media Center, Windows Media Player (no more N editions, I presume) and even Windows Search:
 
-![Windows 7 features](https://stealthpuppy.com/media/2009/03/windowsfeatures.png)
+![Windows 7 features]({{site.baseurl}}/media/2009/03/windowsfeatures.png)
 
 Given that Windows 7 Enterprise edition will be a superset of Home and Professional, being able to remove these components will be especially welcome for organisations deploying Enterprise edition .
 

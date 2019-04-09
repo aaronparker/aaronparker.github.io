@@ -64,15 +64,15 @@ The script could be extended with some additional error checking and logging to 
 
 Deploying the script via Intune is done just like any other PowerShell script. Save the script locally and then in the Azure Portal, Intune blade, under Device Configuration / PowerShell scripts, add a new script and upload the saved script.
 
-![Adding the Install-CitrixReceiver.ps1 script to Intune](https://stealthpuppy.com/media/2017/12/Script-Adding.png)*Adding the Install-CitrixReceiver.ps1 script to Intune*
+![Adding the Install-CitrixReceiver.ps1 script to Intune]({{site.baseurl}}/media/2017/12/Script-Adding.png)*Adding the Install-CitrixReceiver.ps1 script to Intune*
 
 Assign the script to an Azure AD group for target users or devices. Your script should then be listed as an assigned script.
 
-![Install-CitrixReceiver.ps1 along side other PowerShell scripts](https://stealthpuppy.com/media/2017/12/All-Scripts.png)*Install-CitrixReceiver.ps1 alongside other PowerShell scripts*
+![Install-CitrixReceiver.ps1 along side other PowerShell scripts]({{site.baseurl}}/media/2017/12/All-Scripts.png)*Install-CitrixReceiver.ps1 alongside other PowerShell scripts*
 
 Once deployed, we can track successful installations in the Overview blade. Note that the script will only run once per target device - it should be unlikely that the device will receive the script and have it fail (e.g. fail to download the CitrixReceiver.exe), but there could be edge cases where installation fails as a result of some very specific circumstances.
 
-![Citrix Receiver deployment overview](https://stealthpuppy.com/media/2017/12/Script-Overview.png)*Citrix Receiver deployment overview*
+![Citrix Receiver deployment overview]({{site.baseurl}}/media/2017/12/Script-Overview.png)*Citrix Receiver deployment overview*
 
 Post-deployment, we can rely on [the updater functionality built into the latest Receiver releases](https://docs.citrix.com/en-us/receiver/windows/current-release/configure/receiver-update.html) to keep end-points up to date.
 

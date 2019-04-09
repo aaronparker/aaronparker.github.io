@@ -20,7 +20,7 @@ tags:
 ---
 <img class="alignright size-full wp-image-2873" style="margin-left: 5px; margin-right: 5px;" title="AppV-PowerShell-Logo" src="https://stealthpuppy.com/media/2012/10/AppV-PowerShell-Logo.png" alt="" width="128" height="128" />App-V 5.0 is PowerShell driven, which means opportunity for automating and scripting tasks that might have to be completed manually or might have been a challenge to script previously.
 
-Using PowerShell to drive the App-V Client opens up plenty of great scenarios. I've previously posted on how to [add, publish and stream a single package with a one line of PowerShell](https://stealthpuppy.com/virtualisation/app-v-5-powershell-one-liners-adding-and-publishing-app-v-client-packages/), but it might also be useful to import a number of packages the same way.
+Using PowerShell to drive the App-V Client opens up plenty of great scenarios. I've previously posted on how to [add, publish and stream a single package with a one line of PowerShell]({{site.baseurl}}/virtualisation/app-v-5-powershell-one-liners-adding-and-publishing-app-v-client-packages/), but it might also be useful to import a number of packages the same way.
 
 This is simple with a slight modification of the original command line with the use of _Get-ChildItem_ to return a list of .appv files from a folder. Adding the -recurse switch walk through a complete folder structure and return .appv files from sub-folders.
 

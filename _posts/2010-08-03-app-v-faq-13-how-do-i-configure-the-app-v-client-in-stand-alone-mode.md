@@ -20,7 +20,7 @@ tags:
 
 [Stand-alone mode](http://technet.microsoft.com/en-gb/library/cc817112.aspx) in App-V is useful where you are deploying App-V applications via Group Policy or a 3rd party ESD (using the MSI file), or you have the App-V packages available on a file share and import them with the SFTMIME command.
 
-There are a couple of [properties](http://technet.microsoft.com/en-us/library/cc843737.aspx) that you’ll need to set to allow the App-V Client to run in stand-alone mode, which you can set [at install time](https://stealthpuppy.com/deployment/app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client), or configure in the registry post-install:
+There are a couple of [properties](http://technet.microsoft.com/en-us/library/cc843737.aspx) that you’ll need to set to allow the App-V Client to run in stand-alone mode, which you can set [at install time]({{site.baseurl}}/deployment/app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client), or configure in the registry post-install:
 
 [table id=22 /]
 

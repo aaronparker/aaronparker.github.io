@@ -19,7 +19,7 @@ tags:
 ---
 <img class="alignleft size-full wp-image-2178" title="AppV46SequencerNew.png" src="https://stealthpuppy.com/media/2011/03/AppV46SequencerNew.png" alt="" width="128" height="123" />The App-V 5.0 Sequencer includes a couple of PowerShell modules and for converting packages is the only interface to use. Here's how to automate the migration of packages from the old 4.x format to the new App-V 5.0 format.
 
-To perform a migration of packages, I've setup a Windows 7 virtual machine for hosting the App-V 5.0 Sequencer. This virtual machine is configured in exactly the same way that I've been configuring Windows for sequencing with App-V 4.x with the exception of a Q drive as this is no longer needed. For more information on how I recommend configuring a virtual machine, see this article: [Delivering Office with App-V – Sequencer Recommendations & Best Practices](https://stealthpuppy.com/virtualisation/delivering-office-with-app-v-sequencer-recommendations/).
+To perform a migration of packages, I've setup a Windows 7 virtual machine for hosting the App-V 5.0 Sequencer. This virtual machine is configured in exactly the same way that I've been configuring Windows for sequencing with App-V 4.x with the exception of a Q drive as this is no longer needed. For more information on how I recommend configuring a virtual machine, see this article: [Delivering Office with App-V – Sequencer Recommendations & Best Practices]({{site.baseurl}}/virtualisation/delivering-office-with-app-v-sequencer-recommendations/).
 
 Installing the App-V 5.0 Sequencer is very straight-forward process. Start the Sequencer setup from _appv\_sequencer\_setup.exe_:
 

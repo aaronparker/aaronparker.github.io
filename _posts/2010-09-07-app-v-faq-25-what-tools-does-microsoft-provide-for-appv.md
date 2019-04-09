@@ -40,7 +40,7 @@ App-V OSD files can be edited manually to enable [Dynamic Suite Composition](htt
 
 **Download**: [Application Virtualization ADM Template](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=67cdf9d2-7e8e-4d76-a552-fd82dbbff9bc)
 
-The Microsoft Application Virtualization ADM template configures client settings for the App-V Windows Desktop Client and for the Remote Desktop Services client. The ADM template [centrally manages common client configurations by using an existing Group Policy](https://stealthpuppy.com/deployment/app-v-faq-14-can-i-configure-the-app-v-client-via-group-policy) infrastructure and includes settings for communication, client interface, and permissions.
+The Microsoft Application Virtualization ADM template configures client settings for the App-V Windows Desktop Client and for the Remote Desktop Services client. The ADM template [centrally manages common client configurations by using an existing Group Policy]({{site.baseurl}}/deployment/app-v-faq-14-can-i-configure-the-app-v-client-via-group-policy) infrastructure and includes settings for communication, client interface, and permissions.
 
 ### Application Virtualization Application Listing Tool
 
@@ -48,13 +48,13 @@ The Microsoft Application Virtualization ADM template configures client settings
 
 The App-V Application Listing Tool (ListVApps) is a tool which lists all the virtual processes that are running at a specific time on a specific computer. You can use the tool to get information about the priority and owner of each process, the size of its virtual memory, its session identifier and processing time. User with administrator privileges will see all running virtual applications. The tool provides a listing similar to this:
 
-![](https://stealthpuppy.com/media/2010/02/ListApps.png) 
+![]({{site.baseurl}}/media/2010/02/ListApps.png) 
 
 ### Application Virtualization Cache Configuration Tool
 
 **Download**: [Application Virtualization Cache Configuration Tool](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=5e7089fa-c6ab-4150-8562-3b5bc14cd881)
 
-The App-V client cache tool (AppVCacheSize) allows administrators to increase the Microsoft Application Virtualization client cache size through a scriptable command line interface. AppVCacheSize uses the specified parameters to configure the desired cache size, as well as toggle between using a free disk space threshold or set a maximum cache size. This tool is useful is you are [deploying the App-V Client](https://stealthpuppy.com/deployment/app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client) with a standard cache size and need to change the cache size post install.
+The App-V client cache tool (AppVCacheSize) allows administrators to increase the Microsoft Application Virtualization client cache size through a scriptable command line interface. AppVCacheSize uses the specified parameters to configure the desired cache size, as well as toggle between using a free disk space threshold or set a maximum cache size. This tool is useful is you are [deploying the App-V Client]({{site.baseurl}}/deployment/app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client) with a standard cache size and need to change the cache size post install.
 
 ### Application Virtualization Client Log Parser Utility
 
@@ -83,7 +83,7 @@ You can use the Application Virtualization SFT Info utility to extract the follo
 
 You can use App-V SFT View to provide programs and automated tools with read-only access to .sft files. For example, you can install SFT View on App-V Management Servers to allow vulnerability scanners and file-based asset inventory tools to scan .sft files. You can also use App-V SFT View to interactively inspect .sft file contents by using any shell interface, for example, Windows Explorer or the command line. All valid .sft and .dsft file name extensions will be scanned by App-V SFT View and will be made available for inspection. For every valid .sft file, a corresponding .dir folder will be displayed. For example, if a file that is named Office.sft is located, a new folder will be displayed in a directory that is named Office.sft.dir.
 
-![](https://stealthpuppy.com/media/2010/02/SFTDir_thumb.png) 
+![]({{site.baseurl}}/media/2010/02/SFTDir_thumb.png) 
 
 SFT View runs in the background to automatically generate the .dir folder views of any .sft or .dsft files that are present in a directory; it does not require any user interaction. SFT View does not extract any .sft or .dsft file contents to disk; instead, it creates a view of the contents and represents them as .dir folders.
 

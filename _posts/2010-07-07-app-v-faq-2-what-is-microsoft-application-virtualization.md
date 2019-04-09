@@ -40,7 +40,7 @@ Microsoft App-V components include the [App-V Sequencer](http://technet.microsof
 
 The image below gives you an overview of all of the App-V components (an actual implementation of App-V will generally include a subset of these components). Click for a larger view:
 
-[<img class="wlDisabledImage" style="display: inline; border-width: 0px;" title="Microsoft Application Virtualisation components" src="https://stealthpuppy.com/media/2010/06/MicrosoftApplicationVirtualisationComponents_thumb.png" alt="Microsoft Application Virtualisation components" width="660" height="528" border="0" />](https://stealthpuppy.com/media/2010/06/MicrosoftApplicationVirtualisationComponents.png)
+[<img class="wlDisabledImage" style="display: inline; border-width: 0px;" title="Microsoft Application Virtualisation components" src="https://stealthpuppy.com/media/2010/06/MicrosoftApplicationVirtualisationComponents_thumb.png" alt="Microsoft Application Virtualisation components" width="660" height="528" border="0" />]({{site.baseurl}}/media/2010/06/MicrosoftApplicationVirtualisationComponents.png)
 
 Sources and Links to more information about App-V:
 

@@ -22,7 +22,7 @@ In an effort to reduce the clutter on my desk and improve my viewing experience 
 
 ## The Quest for Less Clutter
 
-I work primarily from home and given my job, I'm in front of a computer for extended periods; thus, I need a clean and neat workspace to be able to focus. I'm not great at keeping my workspace tidy as I should be, so anything I can do to reduce clutter on my desk has got to assist. This is where the right choice in hardware comes in - I run a 13" [MacBook](https://stealthpuppy.com/?s=macbook) Pro that comes with four Thunderbolt ports, as my primary driver, so I have the opportunity to do everything through a single cable.
+I work primarily from home and given my job, I'm in front of a computer for extended periods; thus, I need a clean and neat workspace to be able to focus. I'm not great at keeping my workspace tidy as I should be, so anything I can do to reduce clutter on my desk has got to assist. This is where the right choice in hardware comes in - I run a 13" [MacBook]({{site.baseurl}}/?s=macbook) Pro that comes with four Thunderbolt ports, as my primary driver, so I have the opportunity to do everything through a single cable.
 
 With the right solution, I should be able to run power to the laptop plus all other inputs and outputs from a Thunderbolt dock, providing me the ability to cleanly route cables (as much as I can). This also means that I can arrive at my desk or leave by pulling out or plugging in a single cable. Everything else I then need for travel remains in my backpack, requiring me to only transfer my laptop.
 
@@ -97,13 +97,13 @@ So what is the experience or usability like? Here's a quick overview of my chose
 
 Picking a Thunderbolt 3 docks was fairly simple - ensure I have enough ports, including DisplayPort, and see what the reviews recommend. With that info in hand, I settled on the [Caldigit TS3 Plus](http://www.caldigit.com/thunderbolt-3-dock/thunderbolt-station-3-plus/index-asia.asp). This dock has plenty of ports for all of the peripherals I need to plug into it, including DisplayPort and Ethernet.
 
-![Ports on the Caldigit TS3Pro Thunderbolt 3 dock](https://stealthpuppy.com/media/2018/08/Caldigit-TS3Plus-Ports.png)*Ports on the Caldigit TS3Pro Thunderbolt 3 dock*
+![Ports on the Caldigit TS3Pro Thunderbolt 3 dock]({{site.baseurl}}/media/2018/08/Caldigit-TS3Plus-Ports.png)*Ports on the Caldigit TS3Pro Thunderbolt 3 dock*
 
 I have added [a USB-C to HDMI adapter](https://www.startech.com/au/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD) to connect my existing 1080p monitor. I've found StarTech adapters and cables to be good quality at reasonable prices. Interestingly, I've had to plug this into the second Thunderbolt port on the dock to get video out, so even though the dock as 2 USB 3.1 Type-C ports, only the second Thunderbolt port must support DP Alt Mode.
 
 The dock came with a 50cm Thunderbolt 3 port and 85W output, thus the single cable powers my laptop and connects to all external peripherals. It's a solid unit in brushed aluminium with a power supply larger than the device itself, which should hopefully assist with heat dissipation.
 
-![Comparing the size of the Caldigit TS3 Plus](https://stealthpuppy.com/media/2018/08/CaldiditTS3Plus-Size.jpg)*The Caldigit TS3 Plus next to a 60W Apple power supply and its own external power supply*
+![Comparing the size of the Caldigit TS3 Plus]({{site.baseurl}}/media/2018/08/CaldiditTS3Plus-Size.jpg)*The Caldigit TS3 Plus next to a 60W Apple power supply and its own external power supply*
 
 Thunderbolt on macOS is plug-and-play and  I was able to unbox the dock and plug-in within a few minutes. I have the dock on top of my desk rather than mounting underneath for access to the SD card slot and front facing USB slot. The only change I would have liked to see would be to have the audio ports on the back of the unit to make routing cables easier.
 
@@ -122,11 +122,11 @@ The monitor comes with a cable with DisplayPort to Mini DisplayPort connectors, 
 
 Scaling in macOS and Windows 10 works a treat and I'll discuss that in more detail in another article; however, what concerned me before the purchase is exactly how macOS would scale on screen windows. Fortunately, the default scaling is spot on.
 
-![Dell P2415Q scaling options on macOS](https://stealthpuppy.com/media/2018/08/Dell-P2415Q-DisplayOptions.png)*Dell P2415Q scaling options on macOS*
+![Dell P2415Q scaling options on macOS]({{site.baseurl}}/media/2018/08/Dell-P2415Q-DisplayOptions.png)*Dell P2415Q scaling options on macOS*
 
 My audio inputs and outputs are now a little over the top:
 
-![macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort](https://stealthpuppy.com/media/2018/08/macOS-Audio-InputOutput.png)macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort*
+![macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort]({{site.baseurl}}/media/2018/08/macOS-Audio-InputOutput.png)macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort*
 
 **Purchase**? Maybe - this depends on your space requirements and budget. Whatever you purchase, keep in mind the capabilities of your GPU and how sharp you want windows and text to appear on screen. The larger the screen the more chance you'll see pixels.
 

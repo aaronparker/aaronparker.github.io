@@ -28,11 +28,11 @@ We still have space for a community presentation - if you're interested in prese
 
 This month, we're really happy to have [eG Innovations](https://www.eginnovations.com/) sponsoring our meet-up and to discuss proactive monitoring, assessment and management of your Citrix XenDesktop and XenApp environments. To get an idea what eG Innovations is doing, check out this recent Citrix blog article: [Monitor Logon Performance Seamlessly with eG Innovations](https://www.citrix.com/blogs/2017/09/26/monitor-logon-performance-seamlessly-with-eg-innovations/). Did you know they have a logon simulator? Check it out:
 
-![eG Enterprise Express-Free-Logon Simulator](https://stealthpuppy.com/media/2017/10/eG-Enterprise-Express-Free-Logon-Simulator-Image-02-720x478.png)*eG Enterprise Express-Free-Logon Simulator screenshot*
+![eG Enterprise Express-Free-Logon Simulator]({{site.baseurl}}/media/2017/10/eG-Enterprise-Express-Free-Logon-Simulator-Image-02-720x478.png)*eG Enterprise Express-Free-Logon Simulator screenshot*
 
 eG Innovations enables us to rent the venue and also provide beer and pizza for XenBeers afterwards, so we'd love to see you there. Even better, they'll be giving away a [Google Home](https://madeby.google.com/home/)!
 
-![Win Google Home at our next CUGC meet-up](https://stealthpuppy.com/media/2017/10/GoogleHome.jpg)*Win Google Home at our next CUGC meet-up*
+![Win Google Home at our next CUGC meet-up]({{site.baseurl}}/media/2017/10/GoogleHome.jpg)*Win Google Home at our next CUGC meet-up*
 
 ## Special Announcement
 

@@ -71,4 +71,4 @@ More details on the full system requirements for Application Virtualization 5 ar
 
 ## Previously
 
-  * [App-V 4.x FAQ: What are the system requirements for App-V?](https://stealthpuppy.com/app-v-faq-6-what-are-the-system-requirements-for-app-v/)
+  * [App-V 4.x FAQ: What are the system requirements for App-V?]({{site.baseurl}}/app-v-faq-6-what-are-the-system-requirements-for-app-v/)

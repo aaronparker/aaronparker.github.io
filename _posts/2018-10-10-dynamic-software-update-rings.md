@@ -35,25 +35,25 @@ For the purposes of illustration, I've created a basic approach to update rings 
 
 My update rings in this example are quite simple, but the approach can be customised for specific environments and needs.
 
-![Dynamic Software Update Rings](https://stealthpuppy.com/media/2018/10/SoftwareUpdateRings.png)*Update Rings configured within Intune Software Updates*
+![Dynamic Software Update Rings]({{site.baseurl}}/media/2018/10/SoftwareUpdateRings.png)*Update Rings configured within Intune Software Updates*
 
 # Assigning Devices
 
 To assign a device to an update ring, we need to leverage a device property that can be dynamically set. Here, [Device Category](https://docs.microsoft.com/en-us/intune/device-group-mapping) fits this bill in a number of ways - here, the administrator can view the device category and therefore the device's update ring, by viewing the device properties in the Intune console. If device category is not set (it will be set to Unassigned), our catch-all update ring will ensure the device is set to a production ready state.
 
-![Device properties in Intune](https://stealthpuppy.com/media/2018/10/IntuneDeviceProperties.png)Device properties in Intune*
+![Device properties in Intune]({{site.baseurl}}/media/2018/10/IntuneDeviceProperties.png)Device properties in Intune*
 
 The device category can also be viewed in the Intune Company Portal, thus making it easy to view this property from multiple locations. This visibility makes device category a good choice for managing our update rings.
 
-![Device details in the Intune Company Portal](https://stealthpuppy.com/media/2018/10/IntuneCompanyPortalDeviceDetails.png)*Device properties in the Intune Company Portal*
+![Device details in the Intune Company Portal]({{site.baseurl}}/media/2018/10/IntuneCompanyPortalDeviceDetails.png)*Device properties in the Intune Company Portal*
 
 The Intune Administrator creates device categories in the console. As you can see in the image below, I've chosen **Production**, **Pilot** and **Preview** as the device categories that provide, hopefully, clear indication as to what each category is for.
 
-![Intune Device categories](https://stealthpuppy.com/media/2018/10/IntuneDevcecategories.png)*Intune Device categories*
+![Intune Device categories]({{site.baseurl}}/media/2018/10/IntuneDevcecategories.png)*Intune Device categories*
 
 Here's where the choice of using Device Category for assigning update rings is possibly a bit out there - the end-user chooses the device category! When enrolling their device or launching the Intune Company Portal for the first time they see the device category choices:
 
-![Setting a device category in the Intune Company Portal](https://stealthpuppy.com/media/2018/10/IntuneCompanyPortalDeviceCategory.png)*Setting a device category in the Intune Company Portal*
+![Setting a device category in the Intune Company Portal]({{site.baseurl}}/media/2018/10/IntuneCompanyPortalDeviceCategory.png)*Setting a device category in the Intune Company Portal*
 
 There's no replacement for end-user education, so it would behoove an organisation to include instructions on which category to choose, but in my mind it's obvious that most users should choose Production. Having device category descriptions displayed as well would help, but they don't at this time. Device categories are only shown once and the user cannot change the category after enrolment. Bulk changes to or reporting on categories can be achieved using the new [Intune PowerShell SDK](https://github.com/Microsoft/Intune-PowerShell-SDK).
 
@@ -61,7 +61,7 @@ There's no replacement for end-user education, so it would behoove an organisati
 
 Now that we have Update rings in place and an approach assigning them via Dynamic Device groups in Azure AD, we can create those groups based on membership rules that query Device Category. I've created two groups - **Devices-Pilot** and **Devices-Preview** that use a query where `deviceCategory`equals **Pilot** or **Preview** respectively. A **Devices-Production** group can also be created, but isn't required because the production update ring applies to All Devices. A production devices group would assist with reporting.
 
-![Dynamic group membership rules](https://stealthpuppy.com/media/2018/10/DynamicGroupRule.png)*Dynamic group membership rules*
+![Dynamic group membership rules]({{site.baseurl}}/media/2018/10/DynamicGroupRule.png)*Dynamic group membership rules*
 
 For these devices groups, the membership rules are:
 
@@ -87,7 +87,7 @@ When a category is assigned to a device, the dynamic group will [update at some 
 
 The same approach can be used for deploying applications that provide preview channels similar to Windows. Microsoft Office 365 ProPlus is an obvious choice - we can create Office application deployments using Update Channels with assignments using our Dynamic Device groups.
 
-![Office 365 ProPlus apps in Intune to manage update channels](https://stealthpuppy.com/media/2018/10/Office365ProPlus.png)*Office 365 ProPlus apps in Intune to manage update channels*
+![Office 365 ProPlus apps in Intune to manage update channels]({{site.baseurl}}/media/2018/10/Office365ProPlus.png)*Office 365 ProPlus apps in Intune to manage update channels*
 
 The update rings I've implemented in my test environment include:
 

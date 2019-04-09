@@ -43,6 +43,6 @@ Disabling the user interface elements to these update preferences and launch poi
 
 If it is working correctly, you should see something like this (before and after):
 
-![Firefox options](https://stealthpuppy.com/media/2010/03/FirefoxOptions.png)
+![Firefox options]({{site.baseurl}}/media/2010/03/FirefoxOptions.png)
 
 This method is not completely fool-proof (the modified files all exist in the user profile and are thus writeable) but it should stop users from unwittingly attempting to update Firefox and allow you to control when updates are deployed.

@@ -17,7 +17,7 @@ tags:
   - PowerShell
   - Visual C++ Redistributable
 ---
-In updating my [MDT](https://stealthpuppy.com/tag/mdt/) deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I've written a script that will download the installers and optionally install them - [Install-VisualCRedistributables.ps1](https://github.com/aaronparker/Install-VisualCRedistributables).
+In updating my [MDT]({{site.baseurl}}/tag/mdt/) deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I've written a script that will download the installers and optionally install them - [Install-VisualCRedistributables.ps1](https://github.com/aaronparker/Install-VisualCRedistributables).
 
 This script reads [an external XML file](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml) that contains the installer information for each of the Visual C++ Redistributables so that changes to URLs, install options and new redistributables can be made without making changes to the script. The XML file lists the download URL and install instructions for each installer and looks like this:
 
@@ -94,7 +94,7 @@ Example - Downloads and installs the Visual C++ Redistributables listed in Visua
 
 Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list. 2005 are not installed by default, as these are no longer supported.
 
-<figure id="attachment_5436" aria-describedby="caption-attachment-5436" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5436" src="https://stealthpuppy.com/media/2017/05/2005-2017-1024x639.png" alt="Microsoft Visual C++ Redistributable 2005-2015 installed" width="1024" height="639" srcset="https://stealthpuppy.com/media/2017/05/2005-2017-1024x639.png 1024w, https://stealthpuppy.com/media/2017/05/2005-2017-150x94.png 150w, https://stealthpuppy.com/media/2017/05/2005-2017-300x187.png 300w, https://stealthpuppy.com/media/2017/05/2005-2017-768x479.png 768w, https://stealthpuppy.com/media/2017/05/2005-2017.png 1442w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/media/2017/05/2005-2017.png)<figcaption id="caption-attachment-5436" class="wp-caption-text">Microsoft Visual C++ Redistributables*
+<figure id="attachment_5436" aria-describedby="caption-attachment-5436" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5436" src="https://stealthpuppy.com/media/2017/05/2005-2017-1024x639.png" alt="Microsoft Visual C++ Redistributable 2005-2015 installed" width="1024" height="639" srcset="https://stealthpuppy.com/media/2017/05/2005-2017-1024x639.png 1024w, https://stealthpuppy.com/media/2017/05/2005-2017-150x94.png 150w, https://stealthpuppy.com/media/2017/05/2005-2017-300x187.png 300w, https://stealthpuppy.com/media/2017/05/2005-2017-768x479.png 768w, https://stealthpuppy.com/media/2017/05/2005-2017.png 1442w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/05/2005-2017.png)<figcaption id="caption-attachment-5436" class="wp-caption-text">Microsoft Visual C++ Redistributables*
 
 # Finally
 

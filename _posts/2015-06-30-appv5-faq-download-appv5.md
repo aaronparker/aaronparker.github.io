@@ -47,4 +47,4 @@ No evaluation version of App-V or MDOP appears to exist; however the following e
 
 # Previously
 
-  * [App-V 4.x FAQ: Where can I download App-V?](https://stealthpuppy.com/virtualisation/app-v-faq-4-where-can-i-download-app-v)
+  * [App-V 4.x FAQ: Where can I download App-V?]({{site.baseurl}}/virtualisation/app-v-faq-4-where-can-i-download-app-v)

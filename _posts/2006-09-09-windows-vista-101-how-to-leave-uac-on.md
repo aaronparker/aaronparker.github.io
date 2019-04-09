@@ -18,11 +18,11 @@ How did Windows users get into this mess in the first place? This can be summed 
 
 So what does UAC actually mean to the end-user? UAC gives us the best of both worlds, it allows us to run as a limited user and protect Windows from malicious software yet still allows administrative access when required. Now it's not implemented in the same manner as something like [sudo](http://en.wikipedia.org/wiki/Sudo) but it still does the job. When logging onto a Windows Vista machine as an administrator, Windows does not grant the user's session a token for performing administrative tasks until UAC kicks in and elevates the user. This can be demonstrated with everyone's favourite word processing application - Notepad. The image below shows the privileges Notepad has when running with limited user privileges (check out the lower list box).
 
-![](https://stealthpuppy.com/media/2006/09/1000.14.95.NotepadAsUser.PNG) 
+![]({{site.baseurl}}/media/2006/09/1000.14.95.NotepadAsUser.PNG) 
 
 The screenshot below shows Notepad run with elevated privileges after running as administrator. As you can see Notepad now has many more access privileges and therefore the ability to have complete access to the operating system.
 
-![](https://stealthpuppy.com/media/2006/09/1000.14.96.NotepadAsAdministrator.PNG) 
+![]({{site.baseurl}}/media/2006/09/1000.14.96.NotepadAsAdministrator.PNG) 
 
 Fortunately there are a couple of methods that can be used to make life with UAC easier whilst still reaping the benefits of what UAC has to offer.
 

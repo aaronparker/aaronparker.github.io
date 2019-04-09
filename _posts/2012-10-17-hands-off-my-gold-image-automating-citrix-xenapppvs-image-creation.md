@@ -108,4 +108,4 @@ So that you don't need to reinvent the wheel completely, I've made available her
 
 Hopefully this is enough to get you started. In some future posts I'll discuss some of these steps in more detail. If you'd like to know some more detail before then, contact me at: aaron (at) stealthpuppy.com
 
-Next up: [Hands off my gold image – Microsoft Deployment Toolkit details](https://stealthpuppy.com/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/)
+Next up: [Hands off my gold image – Microsoft Deployment Toolkit details]({{site.baseurl}}/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/)

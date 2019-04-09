@@ -14,7 +14,7 @@ tags:
   - Adobe
   - SoftGrid
 ---
-<img src="https://stealthpuppy.com/media/2008/02/illustrator-softgridbox.png" align="left" alt="illustrator-softgridbox.png" />As with my earlier posts on sequencing [Adobe Acrobat 8](https://stealthpuppy.com/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far) and [Adobe Photoshop CS3](https://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3), I've struck the same manifest issues with Illustrator CS3. Here's a quick breakdown on what I needed to do to get this application working:
+<img src="https://stealthpuppy.com/media/2008/02/illustrator-softgridbox.png" align="left" alt="illustrator-softgridbox.png" />As with my earlier posts on sequencing [Adobe Acrobat 8]({{site.baseurl}}/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far) and [Adobe Photoshop CS3]({{site.baseurl}}/virtualisation/sequencing-adobe-photoshop-cs3), I've struck the same manifest issues with Illustrator CS3. Here's a quick breakdown on what I needed to do to get this application working:
 
 ### Sequencing Illustrator CS3
 
@@ -63,7 +63,7 @@ As with Photoshop, Illustrator runs quite well as a sequenced application; howev
 > 
 > Error code: 42012E-0060922C-800736B1
 
-The solution is the same as I [have done previously with Photoshop](https://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3) and that is to ensure the following files exist on the workstation before the application is launched.
+The solution is the same as I [have done previously with Photoshop]({{site.baseurl}}/virtualisation/sequencing-adobe-photoshop-cs3) and that is to ensure the following files exist on the workstation before the application is launched.
 
   * C:\Windows\WinSxS\Manifests\x86\_Microsoft.VC80.CRT\_1fc8b3b9a1e18e3b\_8.0.50727.163\_x-ww_681e29fb.manifest
   * C:\Windows\WinSxS\Manifests\x86\_Microsoft.VC80.CRT\_1fc8b3b9a1e18e3b\_8.0.50727.163\_x-ww_681e29fb.cat

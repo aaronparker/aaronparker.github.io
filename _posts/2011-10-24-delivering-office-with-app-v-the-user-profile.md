@@ -30,7 +30,7 @@ you will end up with a package that will include the following folders in the vi
 
 The folders captured under %CSIDL_APPDATA%\Microsoft are those folders that have been created during the first-run tasks – folders created when you launch an Office application and perform some standard tasks.
 
-If you're familiar with delivering applications with App-V (or any type of application virtualization platform) and managing the user environment, the portions of the user profile for an application will also be virtualized (unless you do something like [this](https://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-7/)) and will end up in the PKG file.
+If you're familiar with delivering applications with App-V (or any type of application virtualization platform) and managing the user environment, the portions of the user profile for an application will also be virtualized (unless you do something like [this]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-7/)) and will end up in the PKG file.
 
 To see what this looks like at runtime, here's a view of a profile before running Office applications that have been delivered by App-V:
 

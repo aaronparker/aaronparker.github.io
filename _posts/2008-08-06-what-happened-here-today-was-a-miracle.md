@@ -13,6 +13,6 @@ categories:
 ---
 “and I want you to f**king [acknowledge it](http://en.wikiquote.org/wiki/Pulp_Fiction#Jules_Winnfield)!”
 
-[<img title="error" height="113" alt="error" src="https://stealthpuppy.com/media/2008/08/error-thumb.png" width="406" border="0" />](https://stealthpuppy.com/media/2008/08/error.png) 
+[<img title="error" height="113" alt="error" src="https://stealthpuppy.com/media/2008/08/error-thumb.png" width="406" border="0" />]({{site.baseurl}}/media/2008/08/error.png) 
 
 I kid you not, this is a error message I saw yesterday in an [Oracle Forms](http://www.oracle.com/technology/products/forms/index.html) application.

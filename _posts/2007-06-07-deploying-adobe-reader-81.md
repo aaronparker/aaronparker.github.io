@@ -33,7 +33,7 @@ Adobe has details of [extracting the installation files for enterprise deploymen
 
 ### Disabling Unwanted Features
 
-Simplifying Adobe Reader in an enterprise environment is something that we're all looking to do, including disabling the infamous Adobe Updater 5. Disabling features is best done by creating custom transform files. I have instructions on [creating your own transform files using the Adobe Customisation Wizard](https://stealthpuppy.com/deployment/disable-adobe-updater-with-adobe-customization-wizard-8), or you can use the transforms files listed here:First up I have a basic transform that sets the following options:
+Simplifying Adobe Reader in an enterprise environment is something that we're all looking to do, including disabling the infamous Adobe Updater 5. Disabling features is best done by creating custom transform files. I have instructions on [creating your own transform files using the Adobe Customisation Wizard]({{site.baseurl}}/deployment/disable-adobe-updater-with-adobe-customization-wizard-8), or you can use the transforms files listed here:First up I have a basic transform that sets the following options:
 
   * Supresses the EULA
   * Supresses any reboots after installation (I've had mixed results with this)
@@ -61,7 +61,7 @@ When installing Adobe Reader on Terminal Servers, it might be advantageous to di
 
 ### Hiding Menu Items
 
-Thanks to [David for the information](https://stealthpuppy.com/deployment/deploying-adobe-reader-81#comment-609), you can remove a few more of the menu items in Reader that you might not want hanging around, such as the _Beyond Adobe Reader_ link. Why Adobe has resorted to using JavaScript files to modify the interface is just beyond me. On one hand we can restrict some of the interface via the registry (which even uses the HKLMSoftwarePolicies key) but on the other we need to resort to a method that must be managed on each individual machine. Sometimes developers just floor me with their stupidity.The first listing here is code you can use to find the name of the menu or toolbar button. The second listing shows you the code required to hide the items. Copy the code and save them to Program FilesAdobeReader 8.0ReaderJavascripts.
+Thanks to [David for the information]({{site.baseurl}}/deployment/deploying-adobe-reader-81#comment-609), you can remove a few more of the menu items in Reader that you might not want hanging around, such as the _Beyond Adobe Reader_ link. Why Adobe has resorted to using JavaScript files to modify the interface is just beyond me. On one hand we can restrict some of the interface via the registry (which even uses the HKLMSoftwarePolicies key) but on the other we need to resort to a method that must be managed on each individual machine. Sometimes developers just floor me with their stupidity.The first listing here is code you can use to find the name of the menu or toolbar button. The second listing shows you the code required to hide the items. Copy the code and save them to Program FilesAdobeReader 8.0ReaderJavascripts.
 
 List menu items:
 
@@ -163,9 +163,9 @@ Most medium to large enterprises will have some sort of application deployment t
   * [Systems Management Server](http://www.adobe.com/devnet/acrobat/pdfs/sms_8.pdf) (now System Centre Configuration Manager).
   * Apparently documentation for using IBM Tivoli Configuration Manager to deploy Reader/Acrobat is 'coming in mid-2007'.
 
-Any organisation utilising Group Policy for application deployment may find things a little more challenging. Check out my post on [deploying applications with Group Policy](https://stealthpuppy.com/deployment/group-policy-application-deployment-done-right) for details on doing it the right way.You will also find information on deploying Reader on:
+Any organisation utilising Group Policy for application deployment may find things a little more challenging. Check out my post on [deploying applications with Group Policy]({{site.baseurl}}/deployment/group-policy-application-deployment-done-right) for details on doing it the right way.You will also find information on deploying Reader on:
 
   * [Windows Terminal Server](http://www.adobe.com/devnet/acrobat/pdfs/wts_8.pdf); and
   * [Citrix Presentation Server](http://www.adobe.com/devnet/acrobat/pdfs/wts_8.pdf) 
 
-Why two documents are required for Terminal Server and Presentation Server, I don't know - deployment is exactly the same. If you are deploying via a script, I have details on scripting the installation of Adobe Reader 8.x - [Unattended Install: Adobe Reader 8.x](https://stealthpuppy.com/unattended/unattended-install-adobe-reader-8x).
+Why two documents are required for Terminal Server and Presentation Server, I don't know - deployment is exactly the same. If you are deploying via a script, I have details on scripting the installation of Adobe Reader 8.x - [Unattended Install: Adobe Reader 8.x]({{site.baseurl}}/unattended/unattended-install-adobe-reader-8x).

@@ -19,9 +19,9 @@ categories:
 tags:
   - Office 2010
 ---
-[<img style="margin: 0px 0px 10px 10px; display: inline; border-width: 0px;" title="OfficeSetup" src="https://stealthpuppy.com/media/2010/05/OfficeSetup_thumb.png" alt="OfficeSetup" width="128" height="128" align="right" border="0" />](https://stealthpuppy.com/media/2010/05/OfficeSetup.png)
+[<img style="margin: 0px 0px 10px 10px; display: inline; border-width: 0px;" title="OfficeSetup" src="https://stealthpuppy.com/media/2010/05/OfficeSetup_thumb.png" alt="OfficeSetup" width="128" height="128" align="right" border="0" />]({{site.baseurl}}/media/2010/05/OfficeSetup.png)
 
-The Office 2010 [planning, deployment and configuration documentation](http://technet.microsoft.com/en-gb/library/cc303401(office.14).aspx) is far better than what was available for Office 2007 at launch, however it’s worth updating my [Office 2007 deployment](https://stealthpuppy.com/tag/office-2007) notes for the changes in Office 2007.
+The Office 2010 [planning, deployment and configuration documentation](http://technet.microsoft.com/en-gb/library/cc303401(office.14).aspx) is far better than what was available for Office 2007 at launch, however it’s worth updating my [Office 2007 deployment]({{site.baseurl}}/tag/office-2007) notes for the changes in Office 2007.
 
 Here’s a walkthrough of the Office 2010 customisation process and some of the key considerations you should make when you’re ready to create your custom Office 2010 deployment.
 
@@ -65,13 +65,13 @@ In this section, I’ve outlined the key steps for creating a customisation file
 
 The process for [creating a customisation file for Office 2010](http://technet.microsoft.com/en-gb/library/ee460874(office.14).aspx) is almost the same as for Office 2007 – start the Office Customisation Tool (`SETUP /ADMIN`) and create a new file or [open an existing file for modifying](http://technet.microsoft.com/en-gb/library/ee681791(office.14).aspx).
 
-[<img style="display: inline; border-width: 0px;" title="Create a new customisation file or open an existing file" src="https://stealthpuppy.com/media/2010/05/Office01_thumb.png" alt="Create a new customisation file or open an existing file" width="385" height="262" border="0" />](https://stealthpuppy.com/media/2010/05/Office01.png)
+[<img style="display: inline; border-width: 0px;" title="Create a new customisation file or open an existing file" src="https://stealthpuppy.com/media/2010/05/Office01_thumb.png" alt="Create a new customisation file or open an existing file" width="385" height="262" border="0" />]({{site.baseurl}}/media/2010/05/Office01.png)
 
 **Tip**: to avoid the UAC prompt when running Setup, set the _\_COMPAT\_LAYER environment variable to run Setup in the current context. Run `SET __COMPAT_LAYER=RunAsInvoker` before running Setup (both commands should be run from the same Command Prompt).
 
 Just as you would be prompted once Office 2010 is installed, you will need to choose the default file types. Most organisations will probably choose to stick with the Microsoft Open XML formats. Making a choice here will modify the user settings that you will see in a later  step.
 
-[<img style="display: inline; border-width: 0px;" title="Office02" src="https://stealthpuppy.com/media/2010/05/Office02_thumb.png" alt="Office02" width="485" height="495" border="0" />](https://stealthpuppy.com/media/2010/05/Office02.png)
+[<img style="display: inline; border-width: 0px;" title="Office02" src="https://stealthpuppy.com/media/2010/05/Office02_thumb.png" alt="Office02" width="485" height="495" border="0" />]({{site.baseurl}}/media/2010/05/Office02.png)
 
 A install location for Office can be specified if you don’t want to accept the default. Change this location to a folder on the virtual drive, if you are virtualising Office 2010 with App-V.
 

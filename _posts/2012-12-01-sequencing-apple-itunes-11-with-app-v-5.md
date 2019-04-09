@@ -22,7 +22,7 @@ tags:
 
 # iTunes 10 with App-V 4.6
 
-Previously delivering [iTunes 10 with App-V 4.6](https://stealthpuppy.com/virtualisation/sequencing-apple-itunes-10/), resulted in some loss of functionality and some minor annoyances with benign error messages. A lack of the Jumpt List under Windows 7 changed the user experience. App-V 5 now fixes this.
+Previously delivering [iTunes 10 with App-V 4.6]({{site.baseurl}}/virtualisation/sequencing-apple-itunes-10/), resulted in some loss of functionality and some minor annoyances with benign error messages. A lack of the Jumpt List under Windows 7 changed the user experience. App-V 5 now fixes this.
 
 # iTunes Components
 
@@ -52,7 +52,7 @@ It is possible to include Apple Application Support in the iTunes package. This 
 
 iTunes has the potential to store a massive amount of data in the user's profile:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="09AppData" alt="09AppData" src="https://stealthpuppy.com/media/2011/06/09AppData_thumb.png" width="377" height="302" border="0" />](https://stealthpuppy.com/media/2011/06/09AppData.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="09AppData" alt="09AppData" src="https://stealthpuppy.com/media/2011/06/09AppData_thumb.png" width="377" height="302" border="0" />]({{site.baseurl}}/media/2011/06/09AppData.png)
 
 It is highly recommended to exclude %APPDATA% in the iTunes package to avoid this data being virtualized at runtime.
 
@@ -156,7 +156,7 @@ Deploying the iTunes package will require the deployment of Apple Application Su
 
 Without Apple Application Support the following will be the result of launching iTunes:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="NoAppleAppSupport" alt="NoAppleAppSupport" src="https://stealthpuppy.com/media/2011/06/NoAppleAppSupport_thumb.png" width="510" height="260" border="0" />](https://stealthpuppy.com/media/2011/06/NoAppleAppSupport.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="NoAppleAppSupport" alt="NoAppleAppSupport" src="https://stealthpuppy.com/media/2011/06/NoAppleAppSupport_thumb.png" width="510" height="260" border="0" />]({{site.baseurl}}/media/2011/06/NoAppleAppSupport.png)
 
 Last, but not least, for media sharing to work, firewall exceptions will be required for the following processes:
 
@@ -169,7 +169,7 @@ The path to each process will be dependent on your package.
 
 Running iTunes on the client for the first time will result in a prompt to the user to set iTunes as the default audio player. With App-V 5 this is now supported and should work just like an installed application.
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="iTunesFirstRun" alt="iTunesFirstRun" src="https://stealthpuppy.com/media/2012/12/iTunesFirstRun_thumb.png" width="660" height="410" border="0" />](https://stealthpuppy.com/media/2012/12/iTunesFirstRun.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="iTunesFirstRun" alt="iTunesFirstRun" src="https://stealthpuppy.com/media/2012/12/iTunesFirstRun_thumb.png" width="660" height="410" border="0" />]({{site.baseurl}}/media/2012/12/iTunesFirstRun.png)
 
 View the gallery below for a screenshot walkthrough of sequencing iTunes 11:
 

@@ -29,7 +29,7 @@ Creating a formula to perform the lookup, I've used the [INDEX](http://office.m
 
 Here's what it looks like in Excel:
 
-[<img class="alignnone wp-image-3636 size-full" src="https://stealthpuppy.com/media/2014/07/Excel-Lookup1.png" alt="" width="1180" height="575" srcset="https://stealthpuppy.com/media/2014/07/Excel-Lookup1.png 1180w, https://stealthpuppy.com/media/2014/07/Excel-Lookup1-150x73.png 150w, https://stealthpuppy.com/media/2014/07/Excel-Lookup1-300x146.png 300w, https://stealthpuppy.com/media/2014/07/Excel-Lookup1-1024x498.png 1024w, https://stealthpuppy.com/media/2014/07/Excel-Lookup1-624x304.png 624w" sizes="(max-width: 1180px) 100vw, 1180px" />](https://stealthpuppy.com/media/2014/07/Excel-Lookup1.png)
+[<img class="alignnone wp-image-3636 size-full" src="https://stealthpuppy.com/media/2014/07/Excel-Lookup1.png" alt="" width="1180" height="575" srcset="https://stealthpuppy.com/media/2014/07/Excel-Lookup1.png 1180w, https://stealthpuppy.com/media/2014/07/Excel-Lookup1-150x73.png 150w, https://stealthpuppy.com/media/2014/07/Excel-Lookup1-300x146.png 300w, https://stealthpuppy.com/media/2014/07/Excel-Lookup1-1024x498.png 1024w, https://stealthpuppy.com/media/2014/07/Excel-Lookup1-624x304.png 624w" sizes="(max-width: 1180px) 100vw, 1180px" />]({{site.baseurl}}/media/2014/07/Excel-Lookup1.png)
 
 The INDEX formula is used to return the amount of RAM overhead based on the vCPU and RAM values that we input into the spreadsheet. In this instance, I have two inputs - number of vCPUs (B3) and amount of RAM in GB (B4) assigned to my sample VM (for RDS/XenApp or VDI, I've assumed that all VMs on the host are configured identically.
 

@@ -50,7 +50,7 @@ This will launch the App-V package with Command Prompt as the primary executable
 
 ### Bonus Methods
 
-A couple of the [3rd party tools](https://stealthpuppy.com/virtualisation/app-v-faq-26-what-3rd-party-tools-are-there-for-managing-app-v) such as the [App-V Client Diagnostic and Configuration tool (ACDC) 1.1](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=69&Itemid=149) from Login Consultants or [SoftBar](http://www.jagtechnical.com/softbar/) by Greg Brownstein provide a simpler way to get an application into the bubble via a GUI.
+A couple of the [3rd party tools]({{site.baseurl}}/virtualisation/app-v-faq-26-what-3rd-party-tools-are-there-for-managing-app-v) such as the [App-V Client Diagnostic and Configuration tool (ACDC) 1.1](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=69&Itemid=149) from Login Consultants or [SoftBar](http://www.jagtechnical.com/softbar/) by Greg Brownstein provide a simpler way to get an application into the bubble via a GUI.
 
 ACDC is my preferred troubleshooting tool, which gives you a plethora of options for managing applications with the ability to launch a tool in the bubble of a specific application:
 

@@ -62,7 +62,7 @@ Microsoft does provide developers with tools for running the Internet Explorer 6
 
 There are some other ways that you could consider for delivering older versions of Internet Explorer:
 
-  * [RemoteApp](https://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces) – Internet Explorer can be published from Windows XP or Windows Vista using RemoteApp. The older operating systems could be running in a local or remote virtual machine.
+  * [RemoteApp]({{site.baseurl}}/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces) – Internet Explorer can be published from Windows XP or Windows Vista using RemoteApp. The older operating systems could be running in a local or remote virtual machine.
   * [VMware Workstation](http://www.vmware.com/products/workstation/) – Unity mode can be used to provide a seamless Internet Explorer on the host operating system.
   * [Oracle VirtualBox](http://www.virtualbox.org) – VirtualBox also offers a seamless window mode.
 

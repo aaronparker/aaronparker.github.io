@@ -12,7 +12,7 @@ tags:
   - Microsoft Press
   - NAP
 ---
-[](https://stealthpuppy.com/media/2008/01/0063980v.jpg)<img border="0" vspace="5" align="left" width="119" src="https://stealthpuppy.com/media/2008/01/0063980v-thumb.jpg" hspace="10" alt="0063980v" height="150" /> My copy of [Windows Server® 2008 Networking and Network Access Protection (NAP)](http://www.microsoft.com/MSPress/books/11160.aspx) has turned up from Amazon today. This is a hefty book - at 816 pages it weighs a ton but there's plenty of detail.
+[]({{site.baseurl}}/media/2008/01/0063980v.jpg)<img border="0" vspace="5" align="left" width="119" src="https://stealthpuppy.com/media/2008/01/0063980v-thumb.jpg" hspace="10" alt="0063980v" height="150" /> My copy of [Windows Server® 2008 Networking and Network Access Protection (NAP)](http://www.microsoft.com/MSPress/books/11160.aspx) has turned up from Amazon today. This is a hefty book - at 816 pages it weighs a ton but there's plenty of detail.
 
 It's a bit early for me to give you an idea of what the book is like, but from the brief look I've had it's worth a place in your library if you'll be dealing with Windows 2008's networking features. The section dedicated to NAP takes up just under 1/2 of the book with some clear explanations of it's components.
 
@@ -49,6 +49,6 @@ Here's a list of the contents so you can see for yourself what's in this book:
 >   * VPN Enforcement
 >   * DHCP Enforcement
 
-What was a pleasant surprise is that you get a _complete_ PDF version on the included CD, as well as 2 more books in PDF format: [Understanding IPv6 2nd Edition](https://stealthpuppy.com/wp-admin/Understanding%20IPv6%202nd%20Edition) (complete version too) and TCP/IP Fundamentals for Microsoft Windows. Not bad for £26.
+What was a pleasant surprise is that you get a _complete_ PDF version on the included CD, as well as 2 more books in PDF format: [Understanding IPv6 2nd Edition]({{site.baseurl}}/wp-admin/Understanding%20IPv6%202nd%20Edition) (complete version too) and TCP/IP Fundamentals for Microsoft Windows. Not bad for £26.
 
 Sadly for any Australian readers, you won't be getting anywhere near that price. These best I've found is [$89.95 AU from Booktopia](http://www.booktopia.com.au/windows-server-2008-networking-and-network-access-protection/prod9780735624221.html). That price difference doesn't sound fair to me.

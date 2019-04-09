@@ -24,7 +24,7 @@ tags:
 
 I have used LANguard in the past for vulnerability testing and network discovery but frankly that's kind of boring stuff. What is interesting in the latest version is the ability to deploy software.
 
-[LANguard 9](http://www.gfi.com/lannetscan) includes application deployment functions that make deploying software to remote machines quite simple.  I'm going to detail deploying Adobe Reader 9, using the deployment notes outlined in my [Deploying Adobe Reader 9](https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows) post, then deploy the Reader 9.1.1 update, using that functionality.
+[LANguard 9](http://www.gfi.com/lannetscan) includes application deployment functions that make deploying software to remote machines quite simple.  I'm going to detail deploying Adobe Reader 9, using the deployment notes outlined in my [Deploying Adobe Reader 9]({{site.baseurl}}/deployment/deploying-adobe-reader-9-for-windows) post, then deploy the Reader 9.1.1 update, using that functionality.
 
 I'm going to skip over most of the details of installing LANguard - it's a simple process, you'll just need to choose the type of datebase you
 

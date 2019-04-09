@@ -39,33 +39,33 @@ Microsoft positions ATP for enterprise customers, but given the integration with
 
 To give you an idea of what does the setup process for ATP looks like, I've documented the experience during setup in my own tenant. The gallery below shows a screenshot of each step including onboarding a device and performing a detection test.
 
-[Windows Defender ATP setup welcome page](https://stealthpuppy.com/media/2017/07/01-Welcome-1.png)*Windows Defender ATP setup welcome page*
+[Windows Defender ATP setup welcome page]({{site.baseurl}}/media/2017/07/01-Welcome-1.png)*Windows Defender ATP setup welcome page*
 
-[Step 1: Selecting the Windows Defender Advanced Threat Protection data storage location](https://stealthpuppy.com/media/2017/07/02-Storage.png)*Step 1: Selecting the Windows Defender Advanced Threat Protection data storage location*
+[Step 1: Selecting the Windows Defender Advanced Threat Protection data storage location]({{site.baseurl}}/media/2017/07/02-Storage.png)*Step 1: Selecting the Windows Defender Advanced Threat Protection data storage location*
 
-[Step 2: Select a data retention policy](https://stealthpuppy.com/media/2017/07/03-DataRetention.png)*Step 2: Select a data retention policy*
+[Step 2: Select a data retention policy]({{site.baseurl}}/media/2017/07/03-DataRetention.png)*Step 2: Select a data retention policy*
 
-[Step 3: Data retention up to 180 days is possible](https://stealthpuppy.com/media/2017/07/03a-DataRetentionDays.png)*Step 3: Data retention up to 180 days is possible*
+[Step 3: Data retention up to 180 days is possible]({{site.baseurl}}/media/2017/07/03a-DataRetentionDays.png)*Step 3: Data retention up to 180 days is possible*
 
-[Step 4: Select your organisation size](https://stealthpuppy.com/media/2017/07/04-OrgSize.png)*Step 4: Select your organisation size*
+[Step 4: Select your organisation size]({{site.baseurl}}/media/2017/07/04-OrgSize.png)*Step 4: Select your organisation size*
 
-[Step 5: Select your industry from a limited selection](https://stealthpuppy.com/media/2017/07/05-Industry.png)*Step 5: Select your industry from a limited selection*
+[Step 5: Select your industry from a limited selection]({{site.baseurl}}/media/2017/07/05-Industry.png)*Step 5: Select your industry from a limited selection*
 
-[Step 6: Choose to enable preview features](https://stealthpuppy.com/media/2017/07/06-PreviewExperience.png)*Step 6: Choose to enable preview features*
+[Step 6: Choose to enable preview features]({{site.baseurl}}/media/2017/07/06-PreviewExperience.png)*Step 6: Choose to enable preview features*
 
-[Step 7: Confirm creation of your Windows Defender ATP cloud instance](https://stealthpuppy.com/media/2017/07/07-CreateCloud.png)*Step 7: Confirm creation of your Windows Defender ATP cloud instance*
+[Step 7: Confirm creation of your Windows Defender ATP cloud instance]({{site.baseurl}}/media/2017/07/07-CreateCloud.png)*Step 7: Confirm creation of your Windows Defender ATP cloud instance*
 
-[Progress seen when creating the cloud instance](https://stealthpuppy.com/media/2017/07/08-CreateProgress.png)*Progress seen when creating the cloud instance*
+[Progress seen when creating the cloud instance]({{site.baseurl}}/media/2017/07/08-CreateProgress.png)*Progress seen when creating the cloud instance*
 
-[Step 8: Onboard and end-point and test detection](https://stealthpuppy.com/media/2017/07/09-OnboardTest.png)*Step 8: Onboard and end-point and test detection*
+[Step 8: Onboard and end-point and test detection]({{site.baseurl}}/media/2017/07/09-OnboardTest.png)*Step 8: Onboard and end-point and test detection*
 
-[Onboarding deployment methods](https://stealthpuppy.com/media/2017/07/09a-OnboardTest-DeploymentMethods.png)*Onboarding deployment methods*
+[Onboarding deployment methods]({{site.baseurl}}/media/2017/07/09a-OnboardTest-DeploymentMethods.png)*Onboarding deployment methods*
 
-[Step 9: Onboarding a Windows 10 device with a script](https://stealthpuppy.com/media/2017/07/10-OnboardTest-Enable-1.png)*Step 9: Onboarding a Windows 10 device with a script*
+[Step 9: Onboarding a Windows 10 device with a script]({{site.baseurl}}/media/2017/07/10-OnboardTest-Enable-1.png)*Step 9: Onboarding a Windows 10 device with a script*
 
-[Step 10: Running the detection test](https://stealthpuppy.com/media/2017/07/11-OnboardTest-Test-1.png)*Step 10: Running the detection test*
+[Step 10: Running the detection test]({{site.baseurl}}/media/2017/07/11-OnboardTest-Test-1.png)*Step 10: Running the detection test*
 
-[The Windows Defender ATP Dashboard](https://stealthpuppy.com/media/2017/07/12-Dashboard.png)*The Windows Defender ATP Dashboard*
+[The Windows Defender ATP Dashboard]({{site.baseurl}}/media/2017/07/12-Dashboard.png)*The Windows Defender ATP Dashboard*
 
 Provisioning ATP is as easy process - the hardest part for me was working out where to access to the console - if you're looking for it, here it is: <https://securitycenter.windows.com/>
 
@@ -77,14 +77,14 @@ Previously you would have to need to create a custom Intune policy to push out a
 
 Create a new profile for Windows 10, choose the 'Windows Defender ATP (Windows 10 Desktop)' profile type and select the onboarding package. In the screenshot below, I have populated both the onboarding and offboarding packages, but you would only deploy an onboarding package.
 
-![Configure the Windows ATP onboard and offboard package in Microsoft Intune](https://stealthpuppy.com/media/2017/07/15-ConfigureIntune-Policy.png)*Configure the Windows ATP onboard and offboard package in Microsoft Intune*
+![Configure the Windows ATP onboard and offboard package in Microsoft Intune]({{site.baseurl}}/media/2017/07/15-ConfigureIntune-Policy.png)*Configure the Windows ATP onboard and offboard package in Microsoft Intune*
 
 With the profile created, assign it to a group. In my example here, I'm assigning the profile to a Windows 10 [dynamic group](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-accessmanagement-groups-with-advanced-rules).
 
-![Target the Intune policy to a device (or user) group](https://stealthpuppy.com/media/2017/07/16-ConfigureIntune-TargetGroup.png)*Target the Intune policy to a device (or user) group*
+![Target the Intune policy to a device (or user) group]({{site.baseurl}}/media/2017/07/16-ConfigureIntune-TargetGroup.png)*Target the Intune policy to a device (or user) group*
 
 With devices onboarded, you can start monitoring them in the Windows Defender ATP console:
 
-![Machines List in the Windows Defender ATP console](https://stealthpuppy.com/media/2017/07/17-MachinesList.png)*Machines List in the Windows Defender ATP console*
+![Machines List in the Windows Defender ATP console]({{site.baseurl}}/media/2017/07/17-MachinesList.png)*Machines List in the Windows Defender ATP console*
 
 I may dig further into Windows Defender Advanced Threat Protection features in a future article.

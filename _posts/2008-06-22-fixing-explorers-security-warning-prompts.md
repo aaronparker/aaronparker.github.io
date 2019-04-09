@@ -11,13 +11,13 @@ dsq_thread_id:
 categories:
   - Microsoft
 ---
-Last week I wrote about [avoiding Explorer's Security Warning prompts](https://stealthpuppy.com/windows/avoiding-explorers-security-warning-prompts), this time around I want to document a related fix that I've had to implement because Explorer's expected behaviour was not just not working.
+Last week I wrote about [avoiding Explorer's Security Warning prompts]({{site.baseurl}}/windows/avoiding-explorers-security-warning-prompts), this time around I want to document a related fix that I've had to implement because Explorer's expected behaviour was not just not working.
 
 First a quick background on what we're trying to solve. By default, Windows Explorer will place network locations (mapped drives and UNC paths) with a period (.) in the path, into the the Internet zone. This means that when users access files from these locations, they will see security warnings like these:
 
 <img src="https://stealthpuppy.com/media/2008/06/securityrisk.png" border="0" alt="SecurityRisk" width="345" height="136" /> 
 
-![](https://stealthpuppy.com/media/2008/06/securitywarning.png) 
+![]({{site.baseurl}}/media/2008/06/securitywarning.png) 
 
 These warnings attempt to ensure users are aware of the potential risks when opening files from un-trusted locations. You can make a location trusted by adding it to the Local Intranet or Trusted Sites zones. This is exactly what you would do via script, Group Policy or some other workspace management tool, for your internal network locations, so that users do not see these prompts. However, a bug exists where drives mapped to these network locations are not placed into the right zone.
 

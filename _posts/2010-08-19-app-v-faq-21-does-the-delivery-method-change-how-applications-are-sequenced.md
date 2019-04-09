@@ -16,9 +16,9 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />There are several [deployment methods available for App-V](https://stealthpuppy.com/deployment/app-v-faq-20-what-are-the-deployment-methods-for-app-v) and a number of ways to stream packages to clients – RTSP, HTTP, SMB and local disk. When creating an App-V package, the Sequencer provides protocol options (RTSPS, RTSP, FILE, HTTP and HTTPS), server hostname, port number and a folder path which are added to the generated the OSD file:
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />There are several [deployment methods available for App-V]({{site.baseurl}}/deployment/app-v-faq-20-what-are-the-deployment-methods-for-app-v) and a number of ways to stream packages to clients – RTSP, HTTP, SMB and local disk. When creating an App-V package, the Sequencer provides protocol options (RTSPS, RTSP, FILE, HTTP and HTTPS), server hostname, port number and a folder path which are added to the generated the OSD file:
 
-[<img class="wlDisabledImage" style="display: inline; border-width: 0px;" title="Squencer-Protocols" src="https://stealthpuppy.com/media/2010/08/SquencerProtocols_thumb.png" border="0" alt="Squencer-Protocols" width="660" height="198" />](https://stealthpuppy.com/media/2010/08/SquencerProtocols.png)
+[<img class="wlDisabledImage" style="display: inline; border-width: 0px;" title="Squencer-Protocols" src="https://stealthpuppy.com/media/2010/08/SquencerProtocols_thumb.png" border="0" alt="Squencer-Protocols" width="660" height="198" />]({{site.baseurl}}/media/2010/08/SquencerProtocols.png)
 
 The options chosen in the Sequencer will produce a URL to the SFT file (the file in the App-V packages that contains the application binaries), which will look something like this:
 
@@ -33,13 +33,13 @@ Fortunately, this isn’t the case. There are two methods that can be used to ch
 
 The default hostname added to an OSD file is %SFT_SOFTGRIDSERVER%, which should then be defined on the client computer for the App-V client to be able to stream packages from the correct source. This makes changing the source server simple when using the native App-V infrastructure (such as when moving packages between test and production environments); however this approach isn’t as flexible as changing ApplicationSourceRoot as it only changes the source server hostname and requires a reboot (or a restart of the App-V client) to take effect.
 
-The [ApplicationSourceRoot](http://technet.microsoft.com/en-us/library/cc843817.aspx) registry value can be modified [during the client install](https://stealthpuppy.com/deployment/app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client) or [managed with Group Policy](https://stealthpuppy.com/deployment/app-v-faq-14-can-i-configure-the-app-v-client-via-group-policy) and it enables you to change the protocol, server hostname, port and the path from which packages are streamed.
+The [ApplicationSourceRoot](http://technet.microsoft.com/en-us/library/cc843817.aspx) registry value can be modified [during the client install]({{site.baseurl}}/deployment/app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client) or [managed with Group Policy]({{site.baseurl}}/deployment/app-v-faq-14-can-i-configure-the-app-v-client-via-group-policy) and it enables you to change the protocol, server hostname, port and the path from which packages are streamed.
 
 > If you want the client to obtain the package content (SFT file) from a local App-V Streaming Server or other alternate source such as a Web server or file server, instead of from the App-V Management Server, you can configure the ApplicationSourceRoot registry key value on the computer to point to the local content share on the other server. The OSD file still defines the original source path for the package content. However the client uses the value of the ApplicationSourceRoot setting in place of the server and share that are specified in the content path in the OSD file. This redirects the client to retrieve the content from the other server.
 
 Changing this value takes effect immediately and in the registry it looks something like this:
 
-[<img class="wlDisabledImage" style="display: inline; border: 0px;" title="Registry-ApplicationSourceRoot" src="https://stealthpuppy.com/media/2010/08/RegistryApplicationSourceRoot_thumb.png" border="0" alt="Registry-ApplicationSourceRoot" width="660" height="232" />](https://stealthpuppy.com/media/2010/08/RegistryApplicationSourceRoot.png)
+[<img class="wlDisabledImage" style="display: inline; border: 0px;" title="Registry-ApplicationSourceRoot" src="https://stealthpuppy.com/media/2010/08/RegistryApplicationSourceRoot_thumb.png" border="0" alt="Registry-ApplicationSourceRoot" width="660" height="232" />]({{site.baseurl}}/media/2010/08/RegistryApplicationSourceRoot.png)
 
 This registry value (along with OSDSourceRoot and IconSourceRoot) is used by SCCM 2007 R2 to manage the App-V client and stream from distribution points or from the local SCCM client cache.
 

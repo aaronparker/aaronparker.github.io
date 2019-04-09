@@ -60,4 +60,4 @@ To deploy Shockwave Player silently, follow this guide: [Silent installation an
 
 If you're unsure which installer to download, grab the MSI installers. If you are downloading the players to distribute them in your corporate network you must [obtain a license from Adobe](http://www.adobe.com/licensing/) before doing so.
 
-Here's a link to the original [unattend install script for these players](https://stealthpuppy.com/unattended/unattended-install-adobe-flash-and-shockwave-players) that started this and here's [how to uninstall Flash Player](http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_14157&sliceId=2) if you're having issues updating to the lastest version.
+Here's a link to the original [unattend install script for these players]({{site.baseurl}}/unattended/unattended-install-adobe-flash-and-shockwave-players) that started this and here's [how to uninstall Flash Player](http://kb.adobe.com/selfservice/viewContent.do?externalId=tn_14157&sliceId=2) if you're having issues updating to the lastest version.

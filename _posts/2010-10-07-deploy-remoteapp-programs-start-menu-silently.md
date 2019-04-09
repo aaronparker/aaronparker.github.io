@@ -22,7 +22,7 @@ Creating the connection on the client computer is easy – setup a new connectio
 
 The wizard is simple enough, just click the Next and Finish buttons when prompted, the wizard will do the rest:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Setup a new connection with RemoteApp and Desktop Connections" src="https://stealthpuppy.com/media/2010/10/SetupNewRemoteAppConnectionFinished_thumb.png" border="0" alt="Setup a new connection with RemoteApp and Desktop Connections" width="660" height="524" />](https://stealthpuppy.com/media/2010/10/SetupNewRemoteAppConnectionFinished.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Setup a new connection with RemoteApp and Desktop Connections" src="https://stealthpuppy.com/media/2010/10/SetupNewRemoteAppConnectionFinished_thumb.png" border="0" alt="Setup a new connection with RemoteApp and Desktop Connections" width="660" height="524" />]({{site.baseurl}}/media/2010/10/SetupNewRemoteAppConnectionFinished.png)
 
 But what if you want to deliver the connection silently? Fortunately that's easy, but it's one of those things that just isn't documented. Here's how to do it.
 
@@ -39,7 +39,7 @@ Now that you've configured your RemoteApp and Desktop sources and RD Web Access 
 
 Open the Remote Desktop Connection Manager tool on the Remote Desktop Connection Broker and choose _Create Configuration File_. Enter the URL to the RAD Connection feed, in my case this is [https://home.stealthpuppy.com/RDWeb/Feed/webfeed.aspx](https://home.stealthpuppy.com/RDWeb/Feed/webfeed.aspx "https://home.stealthpuppy.com/RDWeb/Feed/webfeed.aspx")
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Creating the RemoteApp and Desktop Connections Configuration File" src="https://stealthpuppy.com/media/2010/10/RemoteDesktopConnectionManager_thumb.png" border="0" alt="Creating the RemoteApp and Desktop Connections Configuration File" width="660" height="359" />](https://stealthpuppy.com/media/2010/10/RemoteDesktopConnectionManager.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Creating the RemoteApp and Desktop Connections Configuration File" src="https://stealthpuppy.com/media/2010/10/RemoteDesktopConnectionManager_thumb.png" border="0" alt="Creating the RemoteApp and Desktop Connections Configuration File" width="660" height="359" />]({{site.baseurl}}/media/2010/10/RemoteDesktopConnectionManager.png)
 
 Click the Save button and save the configuration file to a location that you can also access from the client machine. The configuration file is just simple XML, so open it in Notepad to view the contents.
 

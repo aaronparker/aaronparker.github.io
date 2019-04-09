@@ -18,7 +18,7 @@ tags:
   - Citrix Synergy
   - Performance
 ---
-I had the pleasure recently to present a session at [Citrix Synergy](http://www.citrixsynergy.com) 2016 in Las Vegas with [Helge Klein](https://helgeklein.com/) (of [uberAgent](https://uberagent.com/) and UPM fame) on enterprise desktop performance in a session titled: [SYN239](https://citrix.g2planet.com/citrixsynergy2016/public_session_view.php?agenda_session_id=259): UX and the enterprise desktop: like oil and water?. We've previously presented on [performance related topics with folder redirection](https://stealthpuppy.com/synergy-2015-replay/), and this year we wanted to take a wider look at performance on an enterprise desktop and how user experience is affected.
+I had the pleasure recently to present a session at [Citrix Synergy](http://www.citrixsynergy.com) 2016 in Las Vegas with [Helge Klein](https://helgeklein.com/) (of [uberAgent](https://uberagent.com/) and UPM fame) on enterprise desktop performance in a session titled: [SYN239](https://citrix.g2planet.com/citrixsynergy2016/public_session_view.php?agenda_session_id=259): UX and the enterprise desktop: like oil and water?. We've previously presented on [performance related topics with folder redirection]({{site.baseurl}}/synergy-2015-replay/), and this year we wanted to take a wider look at performance on an enterprise desktop and how user experience is affected.
 
 # Session Overview
 

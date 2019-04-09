@@ -14,7 +14,7 @@ tags:
   - Folder Redirection
   - Start Menu
 ---
-<img src="https://stealthpuppy.com/media/2008/04/offlinestartmenu.png" border="0" alt="OfflineStartMenu" width="124" height="113" align="left" /> [John](http://www.gilham.org/Blog/default.aspx) has [asked](https://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration#comment-13345) about using Offline Files as a method of fault tolerance instead of DFS on [my previous post](https://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration). Sounds like a great blog post (and it gives my an excuse to avoid my eight other draft posts), so here's my answer:
+<img src="https://stealthpuppy.com/media/2008/04/offlinestartmenu.png" border="0" alt="OfflineStartMenu" width="124" height="113" align="left" /> [John](http://www.gilham.org/Blog/default.aspx) has [asked]({{site.baseurl}}/terminal-server/building-dynamic-start-menus-with-access-based-enumeration#comment-13345) about using Offline Files as a method of fault tolerance instead of DFS on [my previous post]({{site.baseurl}}/terminal-server/building-dynamic-start-menus-with-access-based-enumeration). Sounds like a great blog post (and it gives my an excuse to avoid my eight other draft posts), so here's my answer:
 
 First up, I would not rely on Offline Files as a method of fault tolerance. It will work as a solution for laptops operating disconnected from the network, but won't provide effective fault tolerance. Offline Files are also not available on Terminal Server.
 
@@ -24,13 +24,13 @@ DFS Namespaces and DFS Replication offer a far better solution for fault toleran
 
 I spent some time this evening to configure a redirected Start Menu for Windows Vista laptops in my test environment. Here's my notes for recreating this setup and how it went:
 
-This is very similar to redirected [Start Menus for Terminal Servers](https://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration) with some minor differences.
+This is very similar to redirected [Start Menus for Terminal Servers]({{site.baseurl}}/terminal-server/building-dynamic-start-menus-with-access-based-enumeration) with some minor differences.
 
 Create a GPO linked to the OU that contains your target workstations and enable Group Policy loopback mode. You would generally target similarly configured workstations just like you would do for Terminal Servers. In my test environment I'm configuring this for Windows Vista, I've enabled a WMI filter on this GPO so that it only applies to Vista and above:
 
 [code]SELECT Version FROM Win32_OperatingSystem WHERE Version >= '6'[/code]
 
-Edit the GPO and enable these settings (here's the [full GPO report](https://stealthpuppy.com/media/2008/04/WindowsVistaStartMenu.htm)):
+Edit the GPO and enable these settings (here's the [full GPO report]({{site.baseurl}}/media/2008/04/WindowsVistaStartMenu.htm)):
 
   * Computer Configuration / Administrative Templates / System / Group Policy / User Group Policy loopback processing mode
   * User Configuration / Windows Settings / Folder Redirection / Start Menu / Basic (Redirect everyone's folder to the same location) / Redirect to the following path: In my test environment, I'm using this DFS path: _\dev.localPublicStartMenusWindowsVista_
@@ -42,7 +42,7 @@ Edit the GPO and enable these settings (here's the [full GPO report](https://ste
 
 The last setting will ensure that the Start Menu will be cached by the workstation and available to the user offline. Here's my configured folder which has been cached locally:
 
-[<img src="https://stealthpuppy.com/media/2008/04/windowsvistastartmenu-thumb.png" border="0" alt="WindowsVistaStartMenu" width="686" height="479" />](https://stealthpuppy.com/media/2008/04/windowsvistastartmenu.png)
+[<img src="https://stealthpuppy.com/media/2008/04/windowsvistastartmenu-thumb.png" border="0" alt="WindowsVistaStartMenu" width="686" height="479" />]({{site.baseurl}}/media/2008/04/windowsvistastartmenu.png)
 
 Make sure you configure your Start Menus with access-based enumeration and the right permissions before users access them. If you don't and users' workstations cache the shortcuts, you might end up unavailable shortcuts looking like this:
 

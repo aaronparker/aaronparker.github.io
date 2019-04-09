@@ -30,4 +30,4 @@ Other locations include:
   * The [Sequencing](http://www.appvirtguru.com/viewforum.php?f=9&sid=f90286f14b4a830b4b7b4855d4f476c6) forum on [AppVirtGuru.com](http://www.appvirtguru.com)
   * [AppDeploy.com](http://www.appdeploy.com/packages/) is a great resource for creating silent installs, plus it also includes details for virtualising many of those applications
 
-I have compiled a list of recipes, documents and forum links here at [stealthpuppy.com/AppVRecipes](https://stealthpuppy.com/appvrecipes). This page draws from [a list of App-V recipe bookmarks from my Delicious account](http://delicious.com/aaronparker/AppVRecipe) which is updated regularly.
+I have compiled a list of recipes, documents and forum links here at [stealthpuppy.com/AppVRecipes]({{site.baseurl}}/appvrecipes). This page draws from [a list of App-V recipe bookmarks from my Delicious account](http://delicious.com/aaronparker/AppVRecipe) which is updated regularly.

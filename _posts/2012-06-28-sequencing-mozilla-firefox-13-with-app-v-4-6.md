@@ -18,7 +18,7 @@ tags:
   - App-V
   - Firefox
 ---
-<img alt="" src="https://stealthpuppy.com/media/2011/06/062611_1120_SequencingM1.png" align="right" />It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I've previously shown you how to sequence [Firefox 8](https://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-8/), [Firefox 7](https://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-7/) and [Firefox 5](https://stealthpuppy.com/virtualisation/sequencing-mozilla-firefox-5/). Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization](https://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features..
+<img alt="" src="https://stealthpuppy.com/media/2011/06/062611_1120_SequencingM1.png" align="right" />It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I've previously shown you how to sequence [Firefox 8]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-8/), [Firefox 7]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-7/) and [Firefox 5]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-5/). Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features..
 
 # User Experience
 
@@ -108,6 +108,6 @@ If the steps above have been followed for exclusions, installation and configura
 
 # Finally
 
-Save your package and deploy. With compression enabled, the package should be around 24Mb. For a walkthrough of the sequencing process, using the installation script outlined in [the Firefox deployment article](https://stealthpuppy.com/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/), see the following screenshots:
+Save your package and deploy. With compression enabled, the package should be around 24Mb. For a walkthrough of the sequencing process, using the installation script outlined in [the Firefox deployment article]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/), see the following screenshots:
 
 [nggallery id=1]

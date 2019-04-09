@@ -16,7 +16,7 @@ tags:
 ---
 Microsoft Office used to be simple - Word, Excel, PowerPoint. And they only ran on Windows. A few apps that were added, others came and went, and Office even popped up on macOS just over 20 years ago.
 
-For enterprises, Microsoft Office on Windows was straight-forward - you licensed a version, [packaged](https://stealthpuppy.com/office-2013-customization/) and deployed it for your environment, and avoided upgrading as long as possible. To a certain extent that's still valid today, even with Office 2019.
+For enterprises, Microsoft Office on Windows was straight-forward - you licensed a version, [packaged]({{site.baseurl}}/office-2013-customization/) and deployed it for your environment, and avoided upgrading as long as possible. To a certain extent that's still valid today, even with Office 2019.
 
 ## Microsoft Office 365
 

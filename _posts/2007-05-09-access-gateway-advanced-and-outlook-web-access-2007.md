@@ -16,7 +16,7 @@ If you are looking at implementing remote access to Outlook Web Access 2007 thro
 
 After upgrading our internal Exchange organisation to Exchange Server 2007 (we have a single server implementation), I've found that Outlook Web Access no longer works through the Access Gateway Advanced Access Navigator interface. Instead of the user being presented with OWA they see this page:
 
-![1000141406aac-owa.gif](https://stealthpuppy.com/media/2007/05/1000141406aac-owa.gif) 
+![1000141406aac-owa.gif]({{site.baseurl}}/media/2007/05/1000141406aac-owa.gif) 
 
 No amount of attempting to log into OWA through this interface will result in a successful login. Looking at a packet capture of the initial logon attempt the Access Gateway sends the initial GET request and the Exchange server responds with a 401 and sends back the authentication options as you can see here:
 

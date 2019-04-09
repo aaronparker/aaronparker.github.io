@@ -56,10 +56,10 @@ If you are invovled in deploying Adobe Reader or want an automated method of dis
 
 So you don't have to, I've created a few transform files for use in [deploying Adobe Reader 8](http://www.stealthpuppy.com/blogs/travelling/archive/2006/12/07/deploying-adobe-reader-8.aspx). The first file will remove all of those new online features that come with Reader 8, the second file will do the same as well as _completely_ prevent the installation of Adobe Updater 5 and the third file will prevent the installation of Adobe Updater 5 only (leaving the online features intact):
 
-  * Adobe Reader 8 Transform File: [Disables online features only](https://stealthpuppy.com/media/2007/01/AdobeReader8NoOnlineOnly.mst)
-  * Adobe Reader 8 Transform File: [Disables online features and prevents installation of Updater 5](https://stealthpuppy.com/media/2007/01/AdobeReader8NoOnlineNoUpdater.mst)
-  * Adobe Reader 8 Transform File: [Prevents the installation of Updater 5 only](https://stealthpuppy.com/media/2007/01/AdobeReader8NoUpdaterOnly.mst)
-  * Adobe Reader 8 Transform File: [Disable online features, prevent installation of Updater 5 and the Collaboration Synchroniser](https://stealthpuppy.com/media/2007/01/AdobeReader8NoOnlineNoUpdaterNoCollabSync.mst)
+  * Adobe Reader 8 Transform File: [Disables online features only]({{site.baseurl}}/media/2007/01/AdobeReader8NoOnlineOnly.mst)
+  * Adobe Reader 8 Transform File: [Disables online features and prevents installation of Updater 5]({{site.baseurl}}/media/2007/01/AdobeReader8NoOnlineNoUpdater.mst)
+  * Adobe Reader 8 Transform File: [Prevents the installation of Updater 5 only]({{site.baseurl}}/media/2007/01/AdobeReader8NoUpdaterOnly.mst)
+  * Adobe Reader 8 Transform File: [Disable online features, prevent installation of Updater 5 and the Collaboration Synchroniser]({{site.baseurl}}/media/2007/01/AdobeReader8NoOnlineNoUpdaterNoCollabSync.mst)
 
 Please note that if you install Adobe Reader using one of the above transform files, a number of registry keys will be created at: `HKEY_LOCAL_MACHINESOFTWAREPoliciesAdobeAcrobat Reader8.0FeatureLockdown`. If you manually delete this key, it will be re-installed the next time you launch Adobe Reader.
 
@@ -69,7 +69,7 @@ I've updated my [Adobe Reader 8 install script](http://www.stealthpuppy.com/blog
 
   1. Download the [Adobe Reader 8 package](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.0/enu/AdbeRdr80_en_US.exe) from the Adobe web site
   2. Run the package and save the extracted setup files to from `C:Users<username>AppDataLocalLowNetopsystemstempAdobe Reader 8.0` on Windows Vista or `C:Documents and Settings<username>Local SettingsTemp1Adobe Reader 8.0` on Windows 2000/XP/2003, to a folder elsewhere on your system (e.g. C:TempAdobe)
-  3. Download [this zip file](https://stealthpuppy.com/media/2007/01/AdobeReader8Install.zip) that contains the install script and a copy of the transform file that will disable Adobe Reader's new online features and Updater 5
+  3. Download [this zip file]({{site.baseurl}}/media/2007/01/AdobeReader8Install.zip) that contains the install script and a copy of the transform file that will disable Adobe Reader's new online features and Updater 5
   4. Extract `InstallAdobeReader8.CMD` and `AdobeReader8NoOnlineNoUpdater.MST` into the same folder to where you have copied the Adobe Reader 8 setup files in step 2
   5. Run `InstallAdobeReader8.CMD` from Windows Explorer or a command prompt (an elevated command prompt in Windows Vista) and your custom installation of Adobe Reader 8 will complete
   6. Voila! No more Updater5 folder inside your Documents folder and no annoying online features of Adobe Reader 8.

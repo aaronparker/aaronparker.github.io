@@ -25,7 +25,7 @@ I’m unsure if this is a bug or by design, but if you are using SFTMIME to add 
 
 Which looks something like this:
 
-[<img style="display: inline; border-width: 0px;" title="HandleIsInvalid" src="https://stealthpuppy.com/media/2010/02/HandleIsInvalid_thumb.png" border="0" alt="HandleIsInvalid" width="660" height="259" />](https://stealthpuppy.com/media/2010/02/HandleIsInvalid.png)
+[<img style="display: inline; border-width: 0px;" title="HandleIsInvalid" src="https://stealthpuppy.com/media/2010/02/HandleIsInvalid_thumb.png" border="0" alt="HandleIsInvalid" width="660" height="259" />]({{site.baseurl}}/media/2010/02/HandleIsInvalid.png)
 
 The issue is in the path to the manifest XML file for the package – when executing the command like this, I’ll see the error every time:
 
@@ -47,7 +47,7 @@ When attempting to stream the package, the operation fails and the following err
 
 Which looks like this:
 
-[<img style="display: inline; border: 0px;" title="Error-000D3002" src="https://stealthpuppy.com/media/2010/02/Error000D3002_thumb.png" border="0" alt="Error-000D3002" width="480" height="234" />](https://stealthpuppy.com/media/2010/02/Error000D3002.png)
+[<img style="display: inline; border: 0px;" title="Error-000D3002" src="https://stealthpuppy.com/media/2010/02/Error000D3002_thumb.png" border="0" alt="Error-000D3002" width="480" height="234" />]({{site.baseurl}}/media/2010/02/Error000D3002.png)
 
 Thankfully a workaround is very easy to implement – just add an extra backslash to each path:
 

@@ -66,7 +66,7 @@ My script could do with some additional error checking and robustness; however, 
 
 Intune allows you to implement PowerShell scripts that run in the user context or Local System contexts.
 
-![Intune PowerShell script settings, OneDrive](https://stealthpuppy.com/media/2017/12/ScriptSettings.png)*Intune PowerShell script settings - user context. Not what we want.*
+![Intune PowerShell script settings, OneDrive]({{site.baseurl}}/media/2017/12/ScriptSettings.png)*Intune PowerShell script settings - user context. Not what we want.*
 
 Implementing the redirection script in the user context though fails when adding the SHSetKnownFolderPath class to the script session. Additionally, deploying the script in this manner will only run the script once - if the OneDrive client is not configured correctly when the script runs, the folder redirection will then never work.
 
@@ -82,19 +82,19 @@ Right now this script is quite simple - it will need to be updated to remove or 
 
 To deploy the script via Intune, save it locally as Set-RedirectOneDriveTask.ps1 and add as a new PowerShell script under Device Configuration. Ensure that the scheduled task is created successfully with the script run as Local System by setting 'Run this script using the logged on credentials' to No.
 
-![Adding the Create OneDrive Redirect Task script to Intune](https://stealthpuppy.com/media/2017/12/CreateOneDriveRedirectTask.png)*Adding the Create OneDrive Redirect Task script to Intune*
+![Adding the Create OneDrive Redirect Task script to Intune]({{site.baseurl}}/media/2017/12/CreateOneDriveRedirectTask.png)*Adding the Create OneDrive Redirect Task script to Intune*
 
 Assign the script to a user or device group and track deployment progress in the Overview blade. A successful deployment will result in a scheduled task on the target PCs.
 
-![OneDrive Folder Redirection Task Properties](https://stealthpuppy.com/media/2017/12/RedirectTaskProperties.png)*OneDrive Folder Redirection Task Properties*
+![OneDrive Folder Redirection Task Properties]({{site.baseurl}}/media/2017/12/RedirectTaskProperties.png)*OneDrive Folder Redirection Task Properties*
 
 When the Intune Management Extension runs the script and creates the task, you'll see the script and a transcript in `C:\ProgramData\Scripts`.
 
-![The downloaded folder redirection script](https://stealthpuppy.com/media/2017/12/Scripts.png)*The downloaded folder redirection script*
+![The downloaded folder redirection script]({{site.baseurl}}/media/2017/12/Scripts.png)*The downloaded folder redirection script*
 
 When the folder redirection script runs Robocopy to move documents, it will log those moves to `%LocalAppData%\RedirectLogs`.
 
-![Data copy/move logs](https://stealthpuppy.com/media/2017/12/RedirectLogs.png)*Data copy/move logs*
+![Data copy/move logs]({{site.baseurl}}/media/2017/12/RedirectLogs.png)*Data copy/move logs*
 
 When implemented in this way, the script will run at user login and successfully enable folder redirection into the OneDrive for Business sync folder. The user will see a PowerShell script window - pointing the scheduled task trigger to a VBscript wrapper could fix this.
 
@@ -110,7 +110,7 @@ In this article, I've outlined an approach to implementing folder redirection wi
 
 Redirecting the Desktop, Documents and Pictures to OneDrive should protect key user folders via data synchronisation. While redirecting additional folders is possible, they can often contain data that would be less this ideal for synchronising to OneDrive.
 
-![Redirected Documents folder in the OneDrive sync folder](https://stealthpuppy.com/media/2017/12/RedirectedDocumentsFolder.png)*Redirected Documents folder in the OneDrive sync folder*
+![Redirected Documents folder in the OneDrive sync folder]({{site.baseurl}}/media/2017/12/RedirectedDocumentsFolder.png)*Redirected Documents folder in the OneDrive sync folder*
 
 These scripts are provided as-is, and I highly recommend testing carefully before implementing in production.
 

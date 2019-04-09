@@ -24,7 +24,7 @@ Using application virtualization to simplify your gold image by delivering what'
 
 Microsoft has some great guidance on using App-V 4.6 to deliver various versions of Office, but there's no single place that brings them together with a discussion on what you need to consider before virtualizing Office. This is where community discussion can help.
 
-I'm extremely happy to make this white paper available, which is the result of a lot of time and effort and a companion piece to [a talk that I gave at BriForum London back in May](https://stealthpuppy.com/community/briforum-talk-office-and-app-v/).
+I'm extremely happy to make this white paper available, which is the result of a lot of time and effort and a companion piece to [a talk that I gave at BriForum London back in May]({{site.baseurl}}/community/briforum-talk-office-and-app-v/).
 
 <p class="important">
   [download id="56&#8243; format="1&#8243;]

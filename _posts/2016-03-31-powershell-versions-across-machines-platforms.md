@@ -18,7 +18,7 @@ tags:
   - PowerShell
   - Visual Studio Code
 ---
-I use several physical PCs and virtual machines. I use OS X and Windows. I (sometimes) write PowerShell [scripts](https://stealthpuppy.com/tag/powershell/) to perform various tasks.
+I use several physical PCs and virtual machines. I use OS X and Windows. I (sometimes) write PowerShell [scripts]({{site.baseurl}}/tag/powershell/) to perform various tasks.
 
 This isn't an ideal scenario for effectively writing scripts and managing versions. It's only recently occurred to me that I could be managing my scripts smarter that I have been. Not being a developer or needing to write code daily, I've gotten by, manually versioning scripts and syncing scripts across machines via Dropbox etc.; however I've always known that there are better ways.
 

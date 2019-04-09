@@ -25,7 +25,7 @@ To allow the ISA Server to authenticate against the RSA ACE server, an agent hos
   3. Enable the tick-box labelled 'Open to All Locally Known Users' if you want all users to be able to authenticate
   4. Click OK to save the changes and copy SDCONF.REC (located in <span style="font-size: 9pt; font-family: Courier New">WINDOWSSYSTEM32</span>) to ISA Server.
 
-[<img style="width: 318px; height: 311px;" src="https://stealthpuppy.com/media/2006/09/1000.14.127.AgentHost.gif" border="0" alt="" width="318" height="311" />](https://stealthpuppy.com/media/2006/09/1000.14.127.AgentHost.gif)
+[<img style="width: 318px; height: 311px;" src="https://stealthpuppy.com/media/2006/09/1000.14.127.AgentHost.gif" border="0" alt="" width="318" height="311" />]({{site.baseurl}}/media/2006/09/1000.14.127.AgentHost.gif)
 
 Configuring SecurID support in ISA Server as a simple process:
 

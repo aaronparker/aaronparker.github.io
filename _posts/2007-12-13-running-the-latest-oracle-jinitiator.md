@@ -55,6 +55,6 @@ Secondly you may also want to add another registry value that fools the JRE into
 
 You will then see each version listed in the JInitiator Control Panel applet:
 
-![jinitiator.PNG](https://stealthpuppy.com/media/2007/12/jinitiator.PNG) 
+![jinitiator.PNG]({{site.baseurl}}/media/2007/12/jinitiator.PNG) 
 
-This is pretty much the same approach you can use with t[he Sun JRE](https://stealthpuppy.com/unattended/unattended-install-sun-java-runtime-environment-16-update-3) to fool applications into seeing older versions, allowing to install only the latest (and greatest?).
+This is pretty much the same approach you can use with t[he Sun JRE]({{site.baseurl}}/unattended/unattended-install-sun-java-runtime-environment-16-update-3) to fool applications into seeing older versions, allowing to install only the latest (and greatest?).

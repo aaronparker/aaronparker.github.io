@@ -39,15 +39,15 @@ When installing the App-V Management Server one Provider Policy is created by de
 
 To create a new Provider Policy right click the Provider Policies node in the App-V Management Console and choose: _New Provider Policy_. The Properties screen allows for naming the new Provider Policy and the configuration of the client refresh behaviour. The minimum interval for a scheduled refresh is 30 minutes.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ProviderPolicyGeneral" src="https://stealthpuppy.com/media/2011/01/ProviderPolicyGeneral_thumb.png" border="0" alt="ProviderPolicyGeneral" width="600" height="460" />](https://stealthpuppy.com/media/2011/01/ProviderPolicyGeneral.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ProviderPolicyGeneral" src="https://stealthpuppy.com/media/2011/01/ProviderPolicyGeneral_thumb.png" border="0" alt="ProviderPolicyGeneral" width="600" height="460" />]({{site.baseurl}}/media/2011/01/ProviderPolicyGeneral.png)
 
 In the Group Assignment screen select the Active Directory groups that have access to the App-V server through this Provider Policy. A minimum of one group is required. The user has to be a member of this group when the Authentication checkbox is set on the Provider Pipeline screen.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProviderPolicyGroupAssignment" src="https://stealthpuppy.com/media/2011/01/ProviderPolicyGroupAssignment_thumb.png" border="0" alt="ProviderPolicyGroupAssignment" width="600" height="460" />](https://stealthpuppy.com/media/2011/01/ProviderPolicyGroupAssignment.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProviderPolicyGroupAssignment" src="https://stealthpuppy.com/media/2011/01/ProviderPolicyGroupAssignment_thumb.png" border="0" alt="ProviderPolicyGroupAssignment" width="600" height="460" />]({{site.baseurl}}/media/2011/01/ProviderPolicyGroupAssignment.png)
 
 The Provider Pipeline screen allows the following options to be set:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProviderPolicyProviderPipeline" src="https://stealthpuppy.com/media/2011/01/ProviderPolicyProviderPipeline_thumb.png" border="0" alt="ProviderPolicyProviderPipeline" width="600" height="460" />](https://stealthpuppy.com/media/2011/01/ProviderPolicyProviderPipeline.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProviderPolicyProviderPipeline" src="https://stealthpuppy.com/media/2011/01/ProviderPolicyProviderPipeline_thumb.png" border="0" alt="ProviderPolicyProviderPipeline" width="600" height="460" />]({{site.baseurl}}/media/2011/01/ProviderPolicyProviderPipeline.png)
 
 **Authentication**: This checkbox forces authentication in the session. If the App-V client can’t use the current user’s credentials, a login box is shown to the user to provide them. Disabling this checkbox allows any user to launch applications from the App-V server through this Provider Policy. The Authentication dropdown box only has one option: Windows Authentication.
 
@@ -63,7 +63,7 @@ There are two ways to control which Provider Policy applies in a session between
 
 1. The default Provider Policy configured for the Server Group: On the General tab of the Server Group properties specify the default Provider Policy to use:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ServerGroupProviderPolicy" src="https://stealthpuppy.com/media/2011/01/ServerGroupProviderPolicy_thumb.png" border="0" alt="ServerGroupProviderPolicy" width="486" height="420" />](https://stealthpuppy.com/media/2011/01/ServerGroupProviderPolicy.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ServerGroupProviderPolicy" src="https://stealthpuppy.com/media/2011/01/ServerGroupProviderPolicy_thumb.png" border="0" alt="ServerGroupProviderPolicy" width="486" height="420" />]({{site.baseurl}}/media/2011/01/ServerGroupProviderPolicy.png)
 
 In this case the Provider Policy applies when users connect to a server from this Server Group.
 
@@ -76,7 +76,7 @@ Any Provider Policy specifically assigned in an OSD file will overrule the Provi
 ### Additional Resources
 
   * [How to Customize an Application Virtualization System in the Server Management Console](http:// http://technet.microsoft.com/en-us/library/cc817174.aspx)
-  * For more information on App-V infrastructure scenarios take a look at the [App-V FAQ #20](https://stealthpuppy.com/deployment/app-v-faq-20-what-are-the-deployment-methods-for-app-v/)
+  * For more information on App-V infrastructure scenarios take a look at the [App-V FAQ #20]({{site.baseurl}}/deployment/app-v-faq-20-what-are-the-deployment-methods-for-app-v/)
   * [The Ultimate Guide to Application Licensing and Provider Policies for Application Virtualization 4.5](http://blogs.technet.com/b/appv/archive/2011/05/19/the-ultimate-guide-to-application-licensing-and-provider-policies-for-application-virtualization-4-5.aspx)
 
 For more information on streaming, publishing and client configuration when using HTTP take a look at these links:

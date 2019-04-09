@@ -13,7 +13,7 @@ categories:
 tags:
   - SoftGrid
 ---
-I have previously detailed some efforts on sequencing some of the Adobe CS3 applications ([Photoshop](https://stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3), [Illustrator](https://stealthpuppy.com/virtualisation/sequencing-adobe-illustrator-cs3) and [InDesign](https://stealthpuppy.com/virtualisation/sequencing-adobe-indesign-cs3)) and some [challenges related to the FLEXnet licensing](https://stealthpuppy.com/virtualisation/addressing-licensing-issues-with-adobe-cs3-apps-on-softgrid) component that comes with each application. It's only recently that we've been able to do some user acceptance testing and we've found that the applications have failed.
+I have previously detailed some efforts on sequencing some of the Adobe CS3 applications ([Photoshop]({{site.baseurl}}/virtualisation/sequencing-adobe-photoshop-cs3), [Illustrator]({{site.baseurl}}/virtualisation/sequencing-adobe-illustrator-cs3) and [InDesign]({{site.baseurl}}/virtualisation/sequencing-adobe-indesign-cs3)) and some [challenges related to the FLEXnet licensing]({{site.baseurl}}/virtualisation/addressing-licensing-issues-with-adobe-cs3-apps-on-softgrid) component that comes with each application. It's only recently that we've been able to do some user acceptance testing and we've found that the applications have failed.
 
 During initial testing I found that I could not get multiple CS3 application bubbles executing because the FLEXnet service in the second bubble would fail. Exactly why we're unsure, but I had found that stopping the service post launch would allow multiple CS3 applications to run successfully. Unfortunately that assumption was incorrect.
 

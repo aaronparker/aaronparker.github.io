@@ -16,7 +16,7 @@ categories:
 tags:
   - App-V
 ---
-_This article is part of the [Microsoft Application Virtualization 5 FAQ series](https://stealthpuppy.com/appv5-faqs/). Last update: September 1st, 2015_
+_This article is part of the [Microsoft Application Virtualization 5 FAQ series]({{site.baseurl}}/appv5-faqs/). Last update: September 1st, 2015_
 
 Microsoft Application Virtualization (App-V) 5 has three main components - Client, Server and Sequencer. For licensing purposes, you only need a license for App-V for wherever the App-V Client is installed. The App-V Server and Sequencer are not directly licensed, although you may require a Windows license to run those components.
 
@@ -28,7 +28,7 @@ App-V is licensed as a component of the [Microsoft Desktop Optimisation Pack](ht
 
 > If the underlying Windows Software Assurance or Windows VDA is licensed per device, then MDOP covers the licensed device. If the underlying Windows Software Assurance or Windows VDA is licensed per user, then MDOP extends across all of the licensed user's devices.
 
-[<img class="alignnone size-full wp-image-4071" src="https://stealthpuppy.com/media/2015/06/SoftwareAssurance.png" alt="SoftwareAssurance" width="1077" height="253" srcset="https://stealthpuppy.com/media/2015/06/SoftwareAssurance.png 1077w, https://stealthpuppy.com/media/2015/06/SoftwareAssurance-150x35.png 150w, https://stealthpuppy.com/media/2015/06/SoftwareAssurance-300x70.png 300w, https://stealthpuppy.com/media/2015/06/SoftwareAssurance-1024x241.png 1024w" sizes="(max-width: 1077px) 100vw, 1077px" />](https://stealthpuppy.com/media/2015/06/SoftwareAssurance.png)
+[<img class="alignnone size-full wp-image-4071" src="https://stealthpuppy.com/media/2015/06/SoftwareAssurance.png" alt="SoftwareAssurance" width="1077" height="253" srcset="https://stealthpuppy.com/media/2015/06/SoftwareAssurance.png 1077w, https://stealthpuppy.com/media/2015/06/SoftwareAssurance-150x35.png 150w, https://stealthpuppy.com/media/2015/06/SoftwareAssurance-300x70.png 300w, https://stealthpuppy.com/media/2015/06/SoftwareAssurance-1024x241.png 1024w" sizes="(max-width: 1077px) 100vw, 1077px" />]({{site.baseurl}}/media/2015/06/SoftwareAssurance.png)
 
 # Remote Desktop Services
 
@@ -49,6 +49,6 @@ Because App-V cannot be licensed on its own, understanding App-V licensing for 
 
 ## Previously
 
-  * [App-V 4.x FAQ: How is App-V licensed?](https://stealthpuppy.com/deployment/app-v-faq-3-how-is-app-v-licensed)
+  * [App-V 4.x FAQ: How is App-V licensed?]({{site.baseurl}}/deployment/app-v-faq-3-how-is-app-v-licensed)
 
  

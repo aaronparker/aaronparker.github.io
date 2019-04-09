@@ -22,7 +22,7 @@ tags:
   - XenApp
   - XenDesktop
 ---
-Previously we've looked at [which hypervisors are in use](https://stealthpuppy.com/automation-survey-results-hypervisor/) and the [virtual desktop solutions deployed on those hypervisors](https://stealthpuppy.com/automation-survey-results-vdi-platforms/), so now we'll take a look at how organisations are building their master images.
+Previously we've looked at [which hypervisors are in use]({{site.baseurl}}/automation-survey-results-hypervisor/) and the [virtual desktop solutions deployed on those hypervisors]({{site.baseurl}}/automation-survey-results-vdi-platforms/), so now we'll take a look at how organisations are building their master images.
 
 # Building A Master Image
 
@@ -38,7 +38,7 @@ In this survey we've concentrated on how organisations are building their master
 
 Although we had 724 good responses, on this question 705 people responded to it, and here's what we got:
 
-<figure id="attachment_4173" aria-describedby="caption-attachment-4173" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4173" src="https://stealthpuppy.com/media/2015/10/HowDoYouBuildMasterImages-1024x558.png" alt="Breakdown of how respondents are building master images" width="1024" height="558" srcset="https://stealthpuppy.com/media/2015/10/HowDoYouBuildMasterImages-1024x558.png 1024w, https://stealthpuppy.com/media/2015/10/HowDoYouBuildMasterImages-150x82.png 150w, https://stealthpuppy.com/media/2015/10/HowDoYouBuildMasterImages-300x163.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/media/2015/10/HowDoYouBuildMasterImages.png)<figcaption id="caption-attachment-4173" class="wp-caption-text">Breakdown of how respondents are building master images*
+<figure id="attachment_4173" aria-describedby="caption-attachment-4173" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-4173" src="https://stealthpuppy.com/media/2015/10/HowDoYouBuildMasterImages-1024x558.png" alt="Breakdown of how respondents are building master images" width="1024" height="558" srcset="https://stealthpuppy.com/media/2015/10/HowDoYouBuildMasterImages-1024x558.png 1024w, https://stealthpuppy.com/media/2015/10/HowDoYouBuildMasterImages-150x82.png 150w, https://stealthpuppy.com/media/2015/10/HowDoYouBuildMasterImages-300x163.png 300w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2015/10/HowDoYouBuildMasterImages.png)<figcaption id="caption-attachment-4173" class="wp-caption-text">Breakdown of how respondents are building master images*
 
 For the chart I've simplified the responses, so here's what we actually asked in the survey:
 
@@ -60,7 +60,7 @@ So what type of number is 23.5% of respondents using a completely manual process
 
 On average, the larger the environment the more that automation is leveraged. This could be due to the ability to invest more time into automation, more resources and/or skill sets around automation or perhaps even the use of third party products. Clearly the barrier to automation needs to drop further.
 
-23.5% is about what I expected for manual deployments - [the last time I ran a survey like this](https://stealthpuppy.com/hands-off-my-gold-image-a-recap-from-citrix-synergy-2013/), I saw manual builds at 26%, so a slight improvement over the past couple of years. 76.5% of organisations using some type of automation is really great to see.
+23.5% is about what I expected for manual deployments - [the last time I ran a survey like this]({{site.baseurl}}/hands-off-my-gold-image-a-recap-from-citrix-synergy-2013/), I saw manual builds at 26%, so a slight improvement over the past couple of years. 76.5% of organisations using some type of automation is really great to see.
 
 I will say this: VDI should not be treated as a panacea for desktop deployments - VDI doesn't improve desktop management in and of itself, it just gets your poor quality images out faster.
 

@@ -19,13 +19,13 @@ tags:
 ---
 Profile bloat – we’ve all seen it. Many applications, and even Windows itself, can store files in the most inappropriate places within the user profile. For example, here’s just part of what the Vodafone Mobile Connect application stores within the roaming portion of my profile:
 
-[<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="VodafoneMobileConnectAppData" border="0" alt="VodafoneMobileConnectAppData" src="https://stealthpuppy.com/media/2010/04/VodafoneMobileConnectAppData_thumb.png" width="660" height="408" />](https://stealthpuppy.com/media/2010/04/VodafoneMobileConnectAppData.png) 
+[<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="VodafoneMobileConnectAppData" border="0" alt="VodafoneMobileConnectAppData" src="https://stealthpuppy.com/media/2010/04/VodafoneMobileConnectAppData_thumb.png" width="660" height="408" />]({{site.baseurl}}/media/2010/04/VodafoneMobileConnectAppData.png) 
 
 Yes that’s **37.3**Mb of logs. Handy.
 
 Here’s iTunes storing **161**Mb in **3295** files in AppData\Roaming – imagine waiting for that to copy at logon.
 
-[<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="iTunesBackupAppData" border="0" alt="iTunesBackupAppData" src="https://stealthpuppy.com/media/2010/04/iTunesBackupAppData_thumb.png" width="660" height="381" />](https://stealthpuppy.com/media/2010/04/iTunesBackupAppData.png) 
+[<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="iTunesBackupAppData" border="0" alt="iTunesBackupAppData" src="https://stealthpuppy.com/media/2010/04/iTunesBackupAppData_thumb.png" width="660" height="381" />]({{site.baseurl}}/media/2010/04/iTunesBackupAppData.png) 
 
 I’ve been spending some time with some of the user profile virtualisation (or _user virtualisation_ / _user environment management_ / _user workspace virtualisation_ ) products lately and have started to compile a list of profile folders that I’ve needed to exclude from being managed.
 

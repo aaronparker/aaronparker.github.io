@@ -40,7 +40,7 @@ Kees also presented a session at Citrix Synergy 2016 on MCS and PVS that goes in
 
 I've updated that image for XenDesktop 7.11. Now the available deployment options for MCS are:
 
-<figure id="attachment_5179" aria-describedby="caption-attachment-5179" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5179 size-large" src="https://stealthpuppy.com/media/2016/10/MCS-deployment-options-1024x438.png" alt="Deployment options available in XenDesktop Machine Creation Services" width="1024" height="438" srcset="https://stealthpuppy.com/media/2016/10/MCS-deployment-options-1024x438.png 1024w, https://stealthpuppy.com/media/2016/10/MCS-deployment-options-150x64.png 150w, https://stealthpuppy.com/media/2016/10/MCS-deployment-options-300x128.png 300w, https://stealthpuppy.com/media/2016/10/MCS-deployment-options-768x329.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](https://stealthpuppy.com/media/2016/10/MCS-deployment-options.png)<figcaption id="caption-attachment-5179" class="wp-caption-text">Deployment options available in XenDesktop Machine Creation Services (credit: Kees Baggerman & Martijn Bosschaart)*</figure>
+<figure id="attachment_5179" aria-describedby="caption-attachment-5179" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5179 size-large" src="https://stealthpuppy.com/media/2016/10/MCS-deployment-options-1024x438.png" alt="Deployment options available in XenDesktop Machine Creation Services" width="1024" height="438" srcset="https://stealthpuppy.com/media/2016/10/MCS-deployment-options-1024x438.png 1024w, https://stealthpuppy.com/media/2016/10/MCS-deployment-options-150x64.png 150w, https://stealthpuppy.com/media/2016/10/MCS-deployment-options-300x128.png 300w, https://stealthpuppy.com/media/2016/10/MCS-deployment-options-768x329.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2016/10/MCS-deployment-options.png)<figcaption id="caption-attachment-5179" class="wp-caption-text">Deployment options available in XenDesktop Machine Creation Services (credit: Kees Baggerman & Martijn Bosschaart)*</figure>
 
 As you can see, there are quite a number of deployment options in MCS now, so this can't make sizing straight-forward.
 
@@ -75,6 +75,6 @@ Note that for this series, I'm only interested in Windows deployments, so I won'
 
 The articles for specific platforms can be found here:
 
-  * [MCS Capacity Sizing on Hyper-V](https://stealthpuppy.com/mcs-capacity-sizing-hyper-v/)
+  * [MCS Capacity Sizing on Hyper-V]({{site.baseurl}}/mcs-capacity-sizing-hyper-v/)
   * MCS Capacity Sizing on vSphere
   * MCS Capacity Sizing on XenServer

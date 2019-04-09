@@ -20,8 +20,8 @@ tags:
 ---
 This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:
 
-  * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1](https://stealthpuppy.com/folder-redirection-2015-part-1/).
-  * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2](https://stealthpuppy.com/folder-redirection-2015-part-2/).
+  * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1]({{site.baseurl}}/folder-redirection-2015-part-1/).
+  * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2]({{site.baseurl}}/folder-redirection-2015-part-2/).
   * I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3. (this article)
 
 ## File Access Performance
@@ -53,13 +53,13 @@ The exception here is the API function GetPrivateProfileString() which performs 
 
 While all VMs in our environments are patched via Windows Update, we did not get a chance to re-run the tests with all of the currently [available hotfixes for file services](https://support.microsoft.com/en-us/kb/2899011).
 
-![SMB Versions Have Little Impact on IO Performance](https://stealthpuppy.com/media/2015/08/FileIOTests.png)*SMB Versions Have Little Impact on IO Performance*
+![SMB Versions Have Little Impact on IO Performance]({{site.baseurl}}/media/2015/08/FileIOTests.png)*SMB Versions Have Little Impact on IO Performance*
 
 If you're redirecting AppData, you'll need to understand how your applications are interacting with files in the user profile. If they use this method (which is very common), performance could suffer as a result if you aren't matching your client and server versions of Windows.
 
 One additional behaviour that we noticed, contrary to Magnar's article, is that the negotiation between client and server only happens once, rather than for each file IO access. This can be shown by capturing traffic between client and server with a Wireshark trace. The screenshot below shows the protocol negotiation and then several read requests by the client to the server:
 
-![SMB Negotiations Occur only Once Per Session](https://stealthpuppy.com/media/2015/08/GetPrivateProfileString.png)*SMB Negotiations Occur only Once Per Session*
+![SMB Negotiations Occur only Once Per Session]({{site.baseurl}}/media/2015/08/GetPrivateProfileString.png)*SMB Negotiations Occur only Once Per Session*
 
 ## Recommendations
 
@@ -67,7 +67,7 @@ Folder redirection is a feature that most environments will not be able to avoid
 
 To that end, here are our recommendations for getting the best out of folder redirection. In no particular order:
 
-  * **Simulate client load to determine file server breaking point** - the [File Server Capacity Tool](https://stealthpuppy.com/replicate-2015-folder-redirection-test/) is, so far, the best solution I've seen for simulating user access to home folders. This is a useful tool for determining the expected load on your file server/s and working out the number of servers required to support your environment.
+  * **Simulate client load to determine file server breaking point** - the [File Server Capacity Tool]({{site.baseurl}}/replicate-2015-folder-redirection-test/) is, so far, the best solution I've seen for simulating user access to home folders. This is a useful tool for determining the expected load on your file server/s and working out the number of servers required to support your environment.
   * **Multiple vCPUs in file servers** - file servers will require multiple CPUs to provide good performance. Servicing multiple simultaneous connections will require more than a single CPU - start with 2 and scale up as required.
   * **Size for peaks** - just like we do with VDI workloads, size for your expected peaks to ensure continued good user experience as your environment becomes busy.
   * **Hypervisor resource sharing, watch overcommit** - resource contention at multiple levels including storage and compute will impact how well file servers can response to requests.
@@ -87,7 +87,7 @@ We do continue to recommend looking at alternatives to AppData redirection - the
 
 If you are using Windows 8 and above, PowerShell now includes a cmdlet to determine the version of SMB that is negotiated for each connection - [Get-SmbConnection](https://technet.microsoft.com/en-us/library/jj635713). PoweShell must be elevated, but this will show all connections from the local client.
 
-![Use PowerShell to View SMB Connections](https://stealthpuppy.com/media/2015/08/get-smbconnection2.png)*Use PowerShell to View SMB Connections*
+![Use PowerShell to View SMB Connections]({{site.baseurl}}/media/2015/08/get-smbconnection2.png)*Use PowerShell to View SMB Connections*
 
 ## Summary
 

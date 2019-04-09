@@ -15,7 +15,7 @@ categories:
 tags:
   - Adobe Reader
 ---
-[<img style="background-image: none; margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 10px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ReaderXVirtualise" src="https://stealthpuppy.com/media/2010/10/ReaderXVirtualise_thumb.png" alt="ReaderXVirtualise" width="128" height="124" align="right" border="0" />](https://stealthpuppy.com/media/2010/10/ReaderXVirtualise.png)This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.
+[<img style="background-image: none; margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 10px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ReaderXVirtualise" src="https://stealthpuppy.com/media/2010/10/ReaderXVirtualise_thumb.png" alt="ReaderXVirtualise" width="128" height="124" align="right" border="0" />]({{site.baseurl}}/media/2010/10/ReaderXVirtualise.png)This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.
 
 ### Don't Virtualize Reader
 
@@ -37,7 +37,7 @@ In most cases I do not recommend virtualizing Reader – your mileage may vary, 
 
 If I haven't convinced you that virtualizing Reader is more trouble that it's worth, then here's how to do it:
 
-I've previously covered [how to create a customised deployment of Reader X](https://stealthpuppy.com/deployment/deploying-adobe-reader-x/) to suit your environment. If you have read that article yet, I recommend that you do before proceeding further. Automating the installation and configuration of Reader during sequencing will make it easier to re-create the package and will simplify documentation.
+I've previously covered [how to create a customised deployment of Reader X]({{site.baseurl}}/deployment/deploying-adobe-reader-x/) to suit your environment. If you have read that article yet, I recommend that you do before proceeding further. Automating the installation and configuration of Reader during sequencing will make it easier to re-create the package and will simplify documentation.
 
 Here's my recommendations for settings that you should configure when creating a transform to install Reader during sequencing:
 

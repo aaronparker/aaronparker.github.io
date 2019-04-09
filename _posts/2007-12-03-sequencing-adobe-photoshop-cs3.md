@@ -14,7 +14,7 @@ tags:
   - Adobe
   - SoftGrid
 ---
-<img border="0" align="left" src="https://stealthpuppy.com/media/2008/02/photoshop-softgridbox.png" alt="photoshop-softgridbox.png" />Deploying Adobe applications with SoftGrid/Microsoft Application Virtualisation certainly takes a lot of patience, because like [Adobe Acrobat](https://stealthpuppy.com/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far), Photoshop took quite a long time to sequence and troubleshoot. Sequencing the application alone will take around 6 hours, but your mileage may vary.
+<img border="0" align="left" src="https://stealthpuppy.com/media/2008/02/photoshop-softgridbox.png" alt="photoshop-softgridbox.png" />Deploying Adobe applications with SoftGrid/Microsoft Application Virtualisation certainly takes a lot of patience, because like [Adobe Acrobat]({{site.baseurl}}/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far), Photoshop took quite a long time to sequence and troubleshoot. Sequencing the application alone will take around 6 hours, but your mileage may vary.
 
 ### Sequencing Photoshop CS3
 

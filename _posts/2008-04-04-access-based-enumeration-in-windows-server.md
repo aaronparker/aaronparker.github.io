@@ -16,7 +16,7 @@ tags:
 ---
 You remember [Access Based Enumeration](http://www.microsoft.com/windowsserver2003/techinfo/overview/abe.mspx) right? I'm often surprised by people who didn't know this features exists, so here's refresher.
 
-Access Based Enumeration is the add-on to Windows Server 2003 and included in Windows Server 2008 that controls the display of files and folders in remote shares based on user-rights. This is the tool that helps you create [dynamic Start Menus for Terminal Servers](https://stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration) or turn a user home share view from this:
+Access Based Enumeration is the add-on to Windows Server 2003 and included in Windows Server 2008 that controls the display of files and folders in remote shares based on user-rights. This is the tool that helps you create [dynamic Start Menus for Terminal Servers]({{site.baseurl}}/terminal-server/building-dynamic-start-menus-with-access-based-enumeration) or turn a user home share view from this:
 
 <img src="https://stealthpuppy.com/media/2008/04/abesharebefore.png" border="0" alt="ABEShareBefore" width="409" height="251" /> 
 

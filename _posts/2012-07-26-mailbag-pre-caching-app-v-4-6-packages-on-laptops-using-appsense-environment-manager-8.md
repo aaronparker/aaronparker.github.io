@@ -107,7 +107,7 @@ To put this into action, we'll need to think about when to run the SFTTRAY comma
 
 I've included a sample configuration below that uses each of these approaches by applying the logic in a Reusable Node linked to each of the triggers listed above.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Pre-cacheConfig" src="https://stealthpuppy.com/media/2012/07/Pre-cacheConfig_thumb.png" alt="Pre-cacheConfig" width="660" height="412" border="0" />](https://stealthpuppy.com/media/2012/07/Pre-cacheConfig.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Pre-cacheConfig" src="https://stealthpuppy.com/media/2012/07/Pre-cacheConfig_thumb.png" alt="Pre-cacheConfig" width="660" height="412" border="0" />]({{site.baseurl}}/media/2012/07/Pre-cacheConfig.png)
 
 Download the configuration shown above from here:
 

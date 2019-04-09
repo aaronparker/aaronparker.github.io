@@ -27,7 +27,7 @@ I tested this on a virtual machine running Windows 7 SP1 x86 and could see from 
 
 With this filter, I was able to see that the process that was deleting the folder is the Sequencer itself (SFTSequencer.exe). Click the screenshot for a larger view.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorDeletes" src="https://stealthpuppy.com/media/2011/11/ProcessMonitorDeletes_thumb.png" alt="ProcessMonitorDeletes" width="660" height="270" border="0" />](https://stealthpuppy.com/media/2011/11/ProcessMonitorDeletes.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorDeletes" src="https://stealthpuppy.com/media/2011/11/ProcessMonitorDeletes_thumb.png" alt="ProcessMonitorDeletes" width="660" height="270" border="0" />]({{site.baseurl}}/media/2011/11/ProcessMonitorDeletes.png)
 
 The next most obvious place to look then is the Sequencer log file, hopefully it will hold some information about why the folder is being deleted. To view the Sequencer log, browse to **C:\Program Files\Microsoft Application Virtualization Sequencer\Logs** and open **sft-seq-log.txt**.
 
@@ -63,7 +63,7 @@ Going through the sequencing process again and running WhyReboot before ending m
 
 So what's writing this entry to PendingFileRenameOperations and why does this only happen during sequencing? To find out, I've reached for Process Monitor again, but unfortunately I haven't been able find which process is writing to the PendingFileRenameOperations value, as Process Monitor didn't find any RegSetValue operations.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorPendingFileRenameOperations" src="https://stealthpuppy.com/media/2011/11/ProcessMonitorPendingFileRenameOperations_thumb.png" alt="ProcessMonitorPendingFileRenameOperations" width="660" height="167" border="0" />](https://stealthpuppy.com/media/2011/11/ProcessMonitorPendingFileRenameOperations.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorPendingFileRenameOperations" src="https://stealthpuppy.com/media/2011/11/ProcessMonitorPendingFileRenameOperations_thumb.png" alt="ProcessMonitorPendingFileRenameOperations" width="660" height="167" border="0" />]({{site.baseurl}}/media/2011/11/ProcessMonitorPendingFileRenameOperations.png)
 
 Circumstantial evidence points to SETUP.EXE, but without Process Monitor giving me more information I can't say for sure. I do however, have a workaround that allow me to sequence Chrome – before finishing the monitoring phase, I clear the PendingFileRenameOperations data with this command:
 

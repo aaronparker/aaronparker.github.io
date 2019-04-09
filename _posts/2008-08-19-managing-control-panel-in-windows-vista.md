@@ -23,15 +23,15 @@ I consider the task of restricting the available applets as a means of de-clutte
 
 Here’s what Control Panel applets I would consider to be relevant to most users in a Windows XP environment:
 
-[<img title="WindowsXPControlPanel" src="https://stealthpuppy.com/media/2008/08/windowsxpcontrolpanel-thumb.png" border="0" alt="WindowsXPControlPanel" width="538" height="374" />](https://stealthpuppy.com/media/2008/08/windowsxpcontrolpanel.png)
+[<img title="WindowsXPControlPanel" src="https://stealthpuppy.com/media/2008/08/windowsxpcontrolpanel-thumb.png" border="0" alt="WindowsXPControlPanel" width="538" height="374" />]({{site.baseurl}}/media/2008/08/windowsxpcontrolpanel.png)
 
 A couple of these may not be completely necessary, but they give users enough access to manage their environment to suit the way they work. Note that there’s nothing in these applets (yes, including Network Connections) that lets standard users change system settings. There are also many Group Policy settings that allow you to be fairly granular for settings within these applets.
 
 This is what I’m looking at providing for users in Windows Vista:
 
-[<img title="Control Panel Home" src="https://stealthpuppy.com/media/2008/08/controlpanelhome-thumb.png" border="0" alt="Control Panel Home" width="590" height="431" />](https://stealthpuppy.com/media/2008/08/controlpanelhome.png)
+[<img title="Control Panel Home" src="https://stealthpuppy.com/media/2008/08/controlpanelhome-thumb.png" border="0" alt="Control Panel Home" width="590" height="431" />]({{site.baseurl}}/media/2008/08/controlpanelhome.png)
 
-[<img title="WindowsVistaControlPanel" src="https://stealthpuppy.com/media/2008/08/windowsvistacontrolpanel-thumb.png" border="0" alt="WindowsVistaControlPanel" width="576" height="498" />](https://stealthpuppy.com/media/2008/08/windowsvistacontrolpanel.png)
+[<img title="WindowsVistaControlPanel" src="https://stealthpuppy.com/media/2008/08/windowsvistacontrolpanel-thumb.png" border="0" alt="WindowsVistaControlPanel" width="576" height="498" />]({{site.baseurl}}/media/2008/08/windowsvistacontrolpanel.png)
 
 As you can see there’s many more icons, but Vista does provide many more features. There are a few applets here that you may wonder why I’ve not hidden them:
 
@@ -54,6 +54,6 @@ There are also a couple of other settings that remove options that users don't n
 
 And finally, here’s what Control Panel under Windows 2008 Terminal Server might look like:
 
-[<img title="Windows2008ControlPanel" src="https://stealthpuppy.com/media/2008/08/windows2008controlpanel-thumb.png" border="0" alt="Windows2008ControlPanel" width="546" height="392" />](https://stealthpuppy.com/media/2008/08/windows2008controlpanel.png)
+[<img title="Windows2008ControlPanel" src="https://stealthpuppy.com/media/2008/08/windows2008controlpanel-thumb.png" border="0" alt="Windows2008ControlPanel" width="546" height="392" />]({{site.baseurl}}/media/2008/08/windows2008controlpanel.png)
 
 So, what do you think - am I off my tree for giving users so many options? Or can I get some support for the 'enabling users' camp?

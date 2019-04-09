@@ -21,13 +21,13 @@ categories:
 tags:
   - Office 2010
 ---
-**Note**: for a more complete article on customising your Office 2010 deployment see this article: [Customising Office 2010 before deployment](https://stealthpuppy.com/deployment/customising-office-2010-before-deployment/)
+**Note**: for a more complete article on customising your Office 2010 deployment see this article: [Customising Office 2010 before deployment]({{site.baseurl}}/deployment/customising-office-2010-before-deployment/)
 
-Good news! Office 2010 fixes the Office 2007 issue, where-by you need to [resort to implementing fixes yourself](http://blogs.sepago.de/helge/2009/12/09/fixing-office-2007s-quick-access-toolbars-with-citrix-user-profile-manager/), to get Quick Access Toolbar and the new [customisable Ribbon](http://msdn.microsoft.com/en-us/library/ee704589(office.14).aspx) to roam between computers. You’ll have to remember to enable this option yourself though – [create a Setup customisation with the Office Customization Tool](https://stealthpuppy.com/deployment/customising-office-2010-before-deployment) and enable the following option:
+Good news! Office 2010 fixes the Office 2007 issue, where-by you need to [resort to implementing fixes yourself](http://blogs.sepago.de/helge/2009/12/09/fixing-office-2007s-quick-access-toolbars-with-citrix-user-profile-manager/), to get Quick Access Toolbar and the new [customisable Ribbon](http://msdn.microsoft.com/en-us/library/ee704589(office.14).aspx) to roam between computers. You’ll have to remember to enable this option yourself though – [create a Setup customisation with the Office Customization Tool]({{site.baseurl}}/deployment/customising-office-2010-before-deployment) and enable the following option:
 
 _Features – Modify user settings – Microsoft Office 2010 System – Global Options – Customize – Allow roaming of all user customisations_
 
-[<img style="display: inline; border: 0pt none;" title="the Office 2010 Customization Tool" src="https://stealthpuppy.com/media/2009/12/AllowRoamingOfAllUserCustomisations_thumb.png" alt="the Office 2010 Customization Tool" width="640" height="376" border="0" />](https://stealthpuppy.com/media/2009/12/AllowRoamingOfAllUserCustomisations.png)
+[<img style="display: inline; border: 0pt none;" title="the Office 2010 Customization Tool" src="https://stealthpuppy.com/media/2009/12/AllowRoamingOfAllUserCustomisations_thumb.png" alt="the Office 2010 Customization Tool" width="640" height="376" border="0" />]({{site.baseurl}}/media/2009/12/AllowRoamingOfAllUserCustomisations.png)
 
 Nice and simple with no need for additional work in your user environment management tool of choice to roam those settings – happy users.
 

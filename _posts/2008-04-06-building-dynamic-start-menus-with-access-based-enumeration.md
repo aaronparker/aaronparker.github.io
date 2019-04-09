@@ -15,9 +15,9 @@ tags:
   - DFS
   - Start Menu
 ---
-<img src="https://stealthpuppy.com/media/2008/04/startmenu2.png" border="0" alt="StartMenu2" width="120" height="113" align="left" />In [my last article](https://stealthpuppy.com/windows/access-based-enumeration-in-windows-server) I hinted at creating dynamic Start Menus using Access-Based Enumeration (ABE) in Windows Server 2003 SP1 and above. I have read an article on this subject previously on the Internets, but the tubes must be clogged up as I can't find it anymore. If anyone has a link please let me know, because I would like to link to it.
+<img src="https://stealthpuppy.com/media/2008/04/startmenu2.png" border="0" alt="StartMenu2" width="120" height="113" align="left" />In [my last article]({{site.baseurl}}/windows/access-based-enumeration-in-windows-server) I hinted at creating dynamic Start Menus using Access-Based Enumeration (ABE) in Windows Server 2003 SP1 and above. I have read an article on this subject previously on the Internets, but the tubes must be clogged up as I can't find it anymore. If anyone has a link please let me know, because I would like to link to it.
 
-So because I can't find that article and [Dylan asked how this is done](https://stealthpuppy.com/windows/access-based-enumeration-in-windows-server#comment-13330), here's my own version:
+So because I can't find that article and [Dylan asked how this is done]({{site.baseurl}}/windows/access-based-enumeration-in-windows-server#comment-13330), here's my own version:
 
 In this example I'm configuring a Start Menu for a Windows 2003 Terminal Server. This is probably the most common scenario for managing Start Menus and ABE helps to create a dynamic Start Menu even though all users may be accessing the same menu items.
 
@@ -25,7 +25,7 @@ My test environment consists of a Windows Server 2008 domain controller/file ser
 
 ### Create A Share To Host The Start Menu
 
-Access-based enumeration won't work on local folders so you'll need to redirect the Start Menu to a network folder. In my example configuration I've created a share named _StartMenus_ which is located at _E:StartMenus_ on **DC**. Once the folder is shared, enable ABE. See [my previous article](https://stealthpuppy.com/windows/access-based-enumeration-in-windows-server) on how to do this.
+Access-based enumeration won't work on local folders so you'll need to redirect the Start Menu to a network folder. In my example configuration I've created a share named _StartMenus_ which is located at _E:StartMenus_ on **DC**. Once the folder is shared, enable ABE. See [my previous article]({{site.baseurl}}/windows/access-based-enumeration-in-windows-server) on how to do this.
 
 I've also set NTFS permissions on this folder so that Administrators and SYSTEM have Full Control and Authenticated Users have Read-only access. Ensure that the Administrators group has ownership on this and any sub-folders, otherwise, by default, folder redirection will not work.
 
@@ -63,7 +63,7 @@ I generally set this to Merge because most settings are configured by GPOs on th
 
 _User Configuration / Administrative Templates / Start Menu and Taskbar / Remove common program groups from Start Menu_
 
-Now enable folder redirection to your network share and be sure to set the option 'Redirect the folder back to the local userprofile location when policy is removed'. Here's a copy of [the GPO report](https://stealthpuppy.com/media/2008/04/TerminalServerLoopbackPolicy.htm) to see exactly how I've configured it.
+Now enable folder redirection to your network share and be sure to set the option 'Redirect the folder back to the local userprofile location when policy is removed'. Here's a copy of [the GPO report]({{site.baseurl}}/media/2008/04/TerminalServerLoopbackPolicy.htm) to see exactly how I've configured it.
 
 <img src="https://stealthpuppy.com/media/2008/04/startmenuredirection.png" border="0" alt="StartMenuRedirection" width="323" height="358" /> 
 

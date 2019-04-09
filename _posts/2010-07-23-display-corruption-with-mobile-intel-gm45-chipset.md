@@ -15,7 +15,7 @@ pd_rating:
 categories:
   - Hardware
 ---
-I have a [Dell Latitude XT2](https://stealthpuppy.com/hardware/windows-7-on-a-dell-latitiude-xt2), which includes the [Mobile Intel GM45 Chipset](http://www.intel.com/products/notebook/chipsets/gm45/gm45-overview.htm) (and the Mobile Intel Graphics Media Accelerator 4500MHD). On occasion I’ve experienced display corruptions issues that&#160; working with the laptop somewhat difficult.
+I have a [Dell Latitude XT2]({{site.baseurl}}/hardware/windows-7-on-a-dell-latitiude-xt2), which includes the [Mobile Intel GM45 Chipset](http://www.intel.com/products/notebook/chipsets/gm45/gm45-overview.htm) (and the Mobile Intel Graphics Media Accelerator 4500MHD). On occasion I’ve experienced display corruptions issues that&#160; working with the laptop somewhat difficult.
 
 Here’s an example with Calculator, but picture this across the whole screen:
 

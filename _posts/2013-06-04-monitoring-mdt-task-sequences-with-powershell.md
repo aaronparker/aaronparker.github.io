@@ -18,8 +18,8 @@ The [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-gb/solutionac
 
 Here's a couple of sample videos that demonstrate the use of PowerShell to automate OS deployments using MDT task sequences. Both of these examples are utilising [the monitoring feature in MDT 2012](http://blogs.technet.com/b/mniehaus/archive/2012/03/09/mdt-2012-new-feature-monitoring.aspx) to watch the progress of each task sequence to enable managing the complete deployment, both before and after the task sequence.
 
-  * [PowerShell, MDT, Atlantis ILIO and XenDesktop deployment](https://stealthpuppy.com/community/hands-off-my-gold-image-video-powershell-mdt-atlantis-ilio-and-xendesktop-deployment/)
-  * [Windows 8 zero-touch deployment](https://stealthpuppy.com/community/hands-off-my-gold-image-video-windows-8-zero-touch-deployment/)
+  * [PowerShell, MDT, Atlantis ILIO and XenDesktop deployment]({{site.baseurl}}/community/hands-off-my-gold-image-video-powershell-mdt-atlantis-ilio-and-xendesktop-deployment/)
+  * [Windows 8 zero-touch deployment]({{site.baseurl}}/community/hands-off-my-gold-image-video-windows-8-zero-touch-deployment/)
 
 # Using PowerShell with MDT
 
@@ -43,11 +43,11 @@ Once the target machine has booted into the Lite Touch WinPE environment, monito
 
 The screenshot below shows the monitoring data returned pre-task sequence. Typically, any machine name that starts with MININT will be the WinPE environment:
 
-[<img class="alignnone size-full wp-image-3365" alt="Pre-TaskSequence" src="https://stealthpuppy.com/media/2013/06/Pre-TaskSequence.png" width="1008" height="306" srcset="https://stealthpuppy.com/media/2013/06/Pre-TaskSequence.png 1008w, https://stealthpuppy.com/media/2013/06/Pre-TaskSequence-150x45.png 150w, https://stealthpuppy.com/media/2013/06/Pre-TaskSequence-300x91.png 300w, https://stealthpuppy.com/media/2013/06/Pre-TaskSequence-624x189.png 624w" sizes="(max-width: 1008px) 100vw, 1008px" />](https://stealthpuppy.com/media/2013/06/Pre-TaskSequence.png)
+[<img class="alignnone size-full wp-image-3365" alt="Pre-TaskSequence" src="https://stealthpuppy.com/media/2013/06/Pre-TaskSequence.png" width="1008" height="306" srcset="https://stealthpuppy.com/media/2013/06/Pre-TaskSequence.png 1008w, https://stealthpuppy.com/media/2013/06/Pre-TaskSequence-150x45.png 150w, https://stealthpuppy.com/media/2013/06/Pre-TaskSequence-300x91.png 300w, https://stealthpuppy.com/media/2013/06/Pre-TaskSequence-624x189.png 624w" sizes="(max-width: 1008px) 100vw, 1008px" />]({{site.baseurl}}/media/2013/06/Pre-TaskSequence.png)
 
 So, although we can start gathering data, we really need to wait or loop until the task sequence starts. When the task sequence has started, we can then get monitoring data for the target machine. The example below shows an in-progress task sequence:
 
-[<img class="alignnone size-full wp-image-3366" alt="TaskSequence-Progress" src="https://stealthpuppy.com/media/2013/06/TaskSequence-Progress.png" width="1008" height="306" srcset="https://stealthpuppy.com/media/2013/06/TaskSequence-Progress.png 1008w, https://stealthpuppy.com/media/2013/06/TaskSequence-Progress-150x45.png 150w, https://stealthpuppy.com/media/2013/06/TaskSequence-Progress-300x91.png 300w, https://stealthpuppy.com/media/2013/06/TaskSequence-Progress-624x189.png 624w" sizes="(max-width: 1008px) 100vw, 1008px" />](https://stealthpuppy.com/media/2013/06/TaskSequence-Progress.png)
+[<img class="alignnone size-full wp-image-3366" alt="TaskSequence-Progress" src="https://stealthpuppy.com/media/2013/06/TaskSequence-Progress.png" width="1008" height="306" srcset="https://stealthpuppy.com/media/2013/06/TaskSequence-Progress.png 1008w, https://stealthpuppy.com/media/2013/06/TaskSequence-Progress-150x45.png 150w, https://stealthpuppy.com/media/2013/06/TaskSequence-Progress-300x91.png 300w, https://stealthpuppy.com/media/2013/06/TaskSequence-Progress-624x189.png 624w" sizes="(max-width: 1008px) 100vw, 1008px" />]({{site.baseurl}}/media/2013/06/TaskSequence-Progress.png)
 
 To gather data, use the **Get-MDTMonitorData** cmdlet and save the output to a variable:
 
@@ -80,7 +80,7 @@ ComputerIdentities : {}[/plain]
 
 Using these properties and the **Write-Progress** cmdlet we can display the progress of the task sequence and some status info during execution of the script:
 
-[<img class="alignnone size-full wp-image-3370" alt="TaskSequenceWriteProgress" src="https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress.png" width="824" height="532" srcset="https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress.png 824w, https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress-150x96.png 150w, https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress-300x193.png 300w, https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress-624x402.png 624w" sizes="(max-width: 824px) 100vw, 824px" />](https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress.png)
+[<img class="alignnone size-full wp-image-3370" alt="TaskSequenceWriteProgress" src="https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress.png" width="824" height="532" srcset="https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress.png 824w, https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress-150x96.png 150w, https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress-300x193.png 300w, https://stealthpuppy.com/media/2013/06/TaskSequenceWriteProgress-624x402.png 624w" sizes="(max-width: 824px) 100vw, 824px" />]({{site.baseurl}}/media/2013/06/TaskSequenceWriteProgress.png)
 
 <span style="line-height: 1.714285714; font-size: 1rem;">Putting this together, we need a script that will perform the following high level tasks:</span>
 

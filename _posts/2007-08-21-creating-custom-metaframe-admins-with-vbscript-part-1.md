@@ -48,4 +48,4 @@ The full script will echo out the privleges in both the numerical value and the 
 
 
 
-Continue to [part 2 here](https://stealthpuppy.com/scripting/creating-custom-metaframe-admins-with-vbscript-part-2)
+Continue to [part 2 here]({{site.baseurl}}/scripting/creating-custom-metaframe-admins-with-vbscript-part-2)

@@ -16,7 +16,7 @@ tags:
   - Windows-Media-Player
   - Windows-Vista
 ---
-**UPDATE** (09/12/2007): Updated with the list of applications and components listed here: [Windows Vista components available for Windows XP](https://stealthpuppy.com/windows/windows-vista-components-available-for-windows-xp).
+**UPDATE** (09/12/2007): Updated with the list of applications and components listed here: [Windows Vista components available for Windows XP]({{site.baseurl}}/windows/windows-vista-components-available-for-windows-xp).
 
 With Microsoft releasing a number of applications developed for Windows Vista also available for Windows XP, I've put together a quick 'how to' guide for performing an unattended install for each application.
 
@@ -78,7 +78,7 @@ The LLTD Responder will install via CMDLINES.TXT. Here's a description of what t
 
 ### Full List
 
-I've updated this script with the applications listed [here](https://stealthpuppy.com/windows/windows-vista-components-available-for-windows-xp). Windows Installer 3.1 is a requirement for installing .NET Framework 3.5.
+I've updated this script with the applications listed [here]({{site.baseurl}}/windows/windows-vista-components-available-for-windows-xp). Windows Installer 3.1 is a requirement for installing .NET Framework 3.5.
 
 [code]@ECHO OFF  
 REM Windows Installer 3.1  

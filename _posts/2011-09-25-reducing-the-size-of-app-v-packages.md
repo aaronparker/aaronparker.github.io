@@ -21,7 +21,7 @@ If you're looking to reduce the size of your App-V packages, you can compress th
 
 In this post I'm using Office Professional 2010 as an example, where I've reduce the size of the package from potentially 2.8GB (uncompressed) to 606Mb (compressed). This screenshot shows a default install left uncompressed:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Package-Uncompressed" src="https://stealthpuppy.com/media/2011/09/Package-Uncompressed_thumb.png" alt="Package-Uncompressed" width="377" height="281" border="0" />](https://stealthpuppy.com/media/2011/09/Package-Uncompressed.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Package-Uncompressed" src="https://stealthpuppy.com/media/2011/09/Package-Uncompressed_thumb.png" alt="Package-Uncompressed" width="377" height="281" border="0" />]({{site.baseurl}}/media/2011/09/Package-Uncompressed.png)
 
 The default Office installation caches a copy of the Office installation files in the _C:\Windows\Installer_ and the _[MSOCache](http://support.microsoft.com/kb/825933)_ folders. These folders are generally required when installing Office so that repair operations can take place and features can be added post-installation. However when [virtualizing Office](http://support.microsoft.com/kb/983462), we won't want either of those actions taking place – we want consistency and predictability. So when capturing Office with the Sequencer, we configure setup and run applications to ensure they don't occur.
 
@@ -37,4 +37,4 @@ So instead of leaving them in the package, we could exclude them from the sequen
 
 The same Office 2010 package is now 606Mb - 22% of the size of the original package:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Office2010-After" src="https://stealthpuppy.com/media/2011/09/Office2010-After_thumb.png" alt="Office2010-After" width="377" height="282" border="0" />](https://stealthpuppy.com/media/2011/09/Office2010-After.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Office2010-After" src="https://stealthpuppy.com/media/2011/09/Office2010-After_thumb.png" alt="Office2010-After" width="377" height="282" border="0" />]({{site.baseurl}}/media/2011/09/Office2010-After.png)

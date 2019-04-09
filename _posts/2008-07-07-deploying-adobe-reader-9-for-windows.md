@@ -24,7 +24,7 @@ tags:
   - Transform
   - Unattend
 ---
-<img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="AdobeReaderIcon" src="https://stealthpuppy.com/media/2008/07/adobereadericon.png" border="0" alt="AdobeReaderIcon" width="110" height="110" align="left" /> The latest version of Adobe Reader is available, so here’s a few preliminary details on what you might need to know when deploying it. It seems like only yesterday we were pulling our collective hair out over [Adobe Reader 8](https://stealthpuppy.com/deployment/deploying-adobe-reader-81) and now [Adobe Reader 9](http://www.adobe.com/products/acrobat/readstep2.html) has been released and we’ve got to start over again. The Adobe Reader blog has [some details on what’s new](http://blogs.adobe.com/adobereader/2008/06/adobe_reader_9_is_here_1.html) in this version. You can also find links to all sorts of Adobe Reader resources [here](http://www.adobe.com/products/reader/) too.
+<img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="AdobeReaderIcon" src="https://stealthpuppy.com/media/2008/07/adobereadericon.png" border="0" alt="AdobeReaderIcon" width="110" height="110" align="left" /> The latest version of Adobe Reader is available, so here’s a few preliminary details on what you might need to know when deploying it. It seems like only yesterday we were pulling our collective hair out over [Adobe Reader 8]({{site.baseurl}}/deployment/deploying-adobe-reader-81) and now [Adobe Reader 9](http://www.adobe.com/products/acrobat/readstep2.html) has been released and we’ve got to start over again. The Adobe Reader blog has [some details on what’s new](http://blogs.adobe.com/adobereader/2008/06/adobe_reader_9_is_here_1.html) in this version. You can also find links to all sorts of Adobe Reader resources [here](http://www.adobe.com/products/reader/) too.
 
 ### First Impressions
 
@@ -52,7 +52,7 @@ Reader 9 continues to include the Adobe Updater application which has been updat
 
 There are a few ways to do this. You can disable Updater by running it (click Help / Check for Updates) then click the Preferences link. You will then see the Preferences dialog like this, where you can choose to disable Updater:
 
-[<img title="UpdaterPrefs" src="https://stealthpuppy.com/media/2008/07/updaterprefs-thumb.png" border="0" alt="UpdaterPrefs" width="443" height="406" />](https://stealthpuppy.com/media/2008/07/updaterprefs.png)
+[<img title="UpdaterPrefs" src="https://stealthpuppy.com/media/2008/07/updaterprefs-thumb.png" border="0" alt="UpdaterPrefs" width="443" height="406" />]({{site.baseurl}}/media/2008/07/updaterprefs.png)
 
 To problem with this approach is that you need Internet access just to get to the preferences dialog. A bit of a problem if you’ve got Internet access issues. To disable Updater from running automatically you can run the following command line as an administrator (or an elevated command prompt in Windows Vista):
 
@@ -87,7 +87,7 @@ When deploying Reader there are some customisations that I recommend making to t
   * Prevent the installation of Adobe Updater 6 (If you want control over the version of Reader)
   * Prevent the Adobe Acrobat SpeedLauncher from being added to the Run key in the registry
   * Prevent the ‘Adobe Reader 9’ shortcut from being added to the desktop (Keep the desktop and tidy)
-  * Prevent the installation of the [Adobe Syncronizer](http://blogs.adobe.com/barnaby.james/2006/12/the_adobe_synch_1.html) [See [this comment](https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows#comment-13491) before removing Syncronizer]
+  * Prevent the installation of the [Adobe Syncronizer](http://blogs.adobe.com/barnaby.james/2006/12/the_adobe_synch_1.html) [See [this comment]({{site.baseurl}}/deployment/deploying-adobe-reader-9-for-windows#comment-13491) before removing Syncronizer]
   * Accept the EULA
 
 Adobe usually provide a customisation tool for automating the installation of Reader, however the [Customisation Wizard for Reader and Acrobat 8](http://www.adobe.com/support/downloads/detail.jsp?ftpID=3564=ZQRI) wasn’t released until 6 months after the products themselves were released. To customise the installation I’ve used the excellent [InstEd](http://www.instedit.com/) instead. 
@@ -218,7 +218,7 @@ console.println(menuItems + "n")[/code]
 
 This will open a dialog box when Reader is started, listing the names of each menu item and toolbar button. You can then create a JavaScript file to remove these items from the UI. Reader 9 includes a number of menu items you might want to remove:
 
-[<img title="MenusHighlighted" src="https://stealthpuppy.com/media/2008/07/menushighlighted-thumb.png" border="0" alt="MenusHighlighted" width="515" height="397" />](https://stealthpuppy.com/media/2008/07/menushighlighted.png)
+[<img title="MenusHighlighted" src="https://stealthpuppy.com/media/2008/07/menushighlighted-thumb.png" border="0" alt="MenusHighlighted" width="515" height="397" />]({{site.baseurl}}/media/2008/07/menushighlighted.png)
 
 Here’s the code you’ll need to hide those items. Copy and paste into `HideItems.js`, then copy into `%ProgramFiles%AdobeReader 9.0ReaderJavaScripts`.
 

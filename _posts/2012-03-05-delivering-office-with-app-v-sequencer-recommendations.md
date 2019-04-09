@@ -95,7 +95,7 @@ Windows XP Professional or Windows 7 Enterprise editions are recommended for cli
       * Service Pack deployment is recommended via a slipstreamed Windows ISO (that is the ISO with the latest service pack integrated into it)
   * Install the hypervisor tools or additions to install drivers and services required by the hypervisor to support the VM correctly
   * Enable Windows Firewall including the File and Printer Sharing rule to prevent remote PCs from connecting to the virtual machine
-  * Active Windows inside the VM. A KMS will be make this simple; however if you are using a MAK key provided by your TechNet or MSDN subscription, this article is recommended reading: [Managing product activation with a TechNet subscription](https://stealthpuppy.com/general/managing-product-activation-with-a-technet-subscription-and-msdn-too/)
+  * Active Windows inside the VM. A KMS will be make this simple; however if you are using a MAK key provided by your TechNet or MSDN subscription, this article is recommended reading: [Managing product activation with a TechNet subscription]({{site.baseurl}}/general/managing-product-activation-with-a-technet-subscription-and-msdn-too/)
   * Disable System Restore on Windows XP or System Protection on Windows 7
   * Disable Windows Defender on Windows 7 (or disable the service)
   * If deploying Windows 7, leave the following Optional Components enabled: 

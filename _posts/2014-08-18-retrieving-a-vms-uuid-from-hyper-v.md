@@ -14,7 +14,7 @@ tags:
   - Hyper-V
   - MDT
 ---
-I've previously posted about retrieving the [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) from [a virtual machine hosted on vSphere](https://stealthpuppy.com/retrieving-a-vms-uuid-from-vsphere/). UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here's how to obtain the UUID from a virtual machine hosted on Hyper-V.
+I've previously posted about retrieving the [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) from [a virtual machine hosted on vSphere]({{site.baseurl}}/retrieving-a-vms-uuid-from-vsphere/). UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here's how to obtain the UUID from a virtual machine hosted on Hyper-V.
 
 Just like with vSphere, the UUID isn't a property of the virtual machine that can be queried directly. We need to go via WMI to query the target virtual machine. Note that in this function, I'm using [version 2 of the Root\Virtualization WMI namespace](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/05/30/the-v2-wmi-namespace-in-hyper-v-on-windows-8.aspx) (root\virtualization\v2. This means the function as written, will [only work on Windows 8 and Windows Server 2012](http://msdn.microsoft.com/en-us/library/hh850319(v=vs.85)) (and above). If you want to use this function on earlier versions of Hyper-V, remove the "\v2" from the namespace.
 

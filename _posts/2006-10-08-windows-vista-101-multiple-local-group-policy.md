@@ -27,7 +27,7 @@ In environments where Windows is installed and not connected to a domain, lockin
 
 <a target="_blank" href="http://www.trustedaccess.info/photos/images/images/141/original.aspx"></a>
 
-[<img border="0" width="555" src="https://stealthpuppy.com/media/2006/10/1000.14.141.AddingSnapIn.PNG" height="480" style="width: 555px; height: 480px" />](https://stealthpuppy.com/media/2006/10/1000.14.141.AddingSnapIn.PNG)
+[<img border="0" width="555" src="https://stealthpuppy.com/media/2006/10/1000.14.141.AddingSnapIn.PNG" height="480" style="width: 555px; height: 480px" />]({{site.baseurl}}/media/2006/10/1000.14.141.AddingSnapIn.PNG)
 
 It's a simple as that. Now you can apply policies to non-Administrators without affecting administrator accounts on the machine. For a full step by step guide and discussion on this feature check out the following document from Microsoft:
 
