@@ -30,7 +30,7 @@ With the right solution, I should be able to run power to the laptop plus all ot
 
 After upgrading to the MacBook Pro last year (from the MacBook Air), the biggest impact to my daily experience has been the quality of the display. Crisp text, icons and high quality OS and application artefacts in both macOS and Windows 10 is a joy to use.
 
-{% twitter https://twitter.com/stealthpuppy/status/892717333730308098 %}
+[https://twitter.com/stealthpuppy/status/892717333730308098](https://twitter.com/stealthpuppy/status/892717333730308098)
 
 I'm of course spoilt by having access to [a MacBook display](https://support.apple.com/kb/SP755?locale=en_AU), but it's driven me to want a similar experience from my external monitor. To that end, I've looked at adding a 4K display to my layout. I have been plugging into an external 1080p monitor for dual screen work and the difference in quality to a 4K display is noticeable.
 
