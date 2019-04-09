@@ -28,19 +28,11 @@ With the right solution, I should be able to run power to the laptop plus all ot
 
 ## The Hunt for More Pixels
 
-After upgrading to the MacBook Pro last year (from the MacBook Air), the biggest impact to my daily experience has been the quality of the display. Crisp text, icons and high quality OS and application artefacts in both macOS and Windows 10 is a joy to use. 
+After upgrading to the MacBook Pro last year (from the MacBook Air), the biggest impact to my daily experience has been the quality of the display. Crisp text, icons and high quality OS and application artefacts in both macOS and Windows 10 is a joy to use.
 
-<blockquote class="twitter-tweet" data-conversation="none" data-lang="en">
-  <p dir="ltr" lang="en">
-    Did I mention this screen is amazing? I never want to see a pixel again <a href="https://twitter.com/hashtag/macbook?src=hash&ref_src=twsrc%5Etfw">#macbook</a> <a href="https://twitter.com/hashtag/apple?src=hash&ref_src=twsrc%5Etfw">#apple</a>
-  </p>
-  
-  <p>
-    — Aaron Parker (@stealthpuppy) <a href="https://twitter.com/stealthpuppy/status/892717333730308098?ref_src=twsrc%5Etfw">August 2, 2017</a>
-  </p>
-</blockquote>
+{% twitter https://twitter.com/stealthpuppy/status/892717333730308098 maxwidth=500 %}
 
-I'm of course spoilt by having access to [a MacBook display](https://support.apple.com/kb/SP755?locale=en_AU), but it's driven me to want a similar experience from my external monitor. To that end, I've looked at adding a 4K display to my layout. I have been plugging into an external 1080p monitor for dual screen work and the difference in quality to a 4K display is noticeable. 
+I'm of course spoilt by having access to [a MacBook display](https://support.apple.com/kb/SP755?locale=en_AU), but it's driven me to want a similar experience from my external monitor. To that end, I've looked at adding a 4K display to my layout. I have been plugging into an external 1080p monitor for dual screen work and the difference in quality to a 4K display is noticeable.
 
 ## Playing Hardware Roulette
 
@@ -140,6 +132,6 @@ My audio inputs and outputs are now a little over the top:
 
 ## Wrap-Up
 
-Overall, I'm very happy with this setup. I've had a chance to tidy my workspace by connecting to a single cable that does it all. While I've chosen Thunderbolt, USB-C might work for you and the options for doing so are increasing. 
+Overall, I'm very happy with this setup. I've had a chance to tidy my workspace by connecting to a single cable that does it all. While I've chosen Thunderbolt, USB-C might work for you and the options for doing so are increasing.
 
-Fortunately, this particular setup has worked well and does support both Mac and PC. I started with the intention to discuss the software side as well and compare the experience of macOS and Windows 10 for Thunderbolt and high DPI screens,  but that will now have to wait for a follow up. 
+Fortunately, this particular setup has worked well and does support both Mac and PC. I started with the intention to discuss the software side as well and compare the experience of macOS and Windows 10 for Thunderbolt and high DPI screens,  but that will now have to wait for a follow up.
