@@ -55,29 +55,33 @@
 
 <p>Here’s the script:</p>
 
-<p>To use the script, save as Get-CitrixReceiverVersions.ps1 and run from the command line. With no parameters, it will return the releases and version numbers for all available platforms with the <code class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Get-CitrixReceiverVersions</code> function.</p>
+<script src="https://gist.github.com/aaronparker/8204e49405a78245301dae1ebaf1df71.js"></script>
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">. .\Get-CitrixReceiverVersions.ps1
-Get-CitrixReceiverVersions</pre>
+<p>To use the script, save as Get-CitrixReceiverVersions.ps1 and run from the command line. With no parameters, it will return the releases and version numbers for all available platforms with the <code class="highlighter-rouge">Get-CitrixReceiverVersions</code> function.</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">.</span> .\Get-CitrixReceiverVersions.ps1
+Get-CitrixReceiverVersions
+</code></pre></div></div>
 
 <p>The script returns specific platforms with the -Platform parameter. This only accepts valid values, such as ‘Windows’, ‘Mac’ and ‘Linux’ and the script will validate those values and supports tab completion.</p>
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Get-CitrixReceiverVersions -Platform Mac, Linux</pre>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Get-CitrixReceiverVersions -Platform Mac, Linux
+</code></pre></div></div>
 
 <p>If you want to return the latest version for a specific platform, e.g. Windows, then we can pipe the output to Select-Object:</p>
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Get-CitrixReceiverVersions -Platform Windows | Select-Object -First 1</pre>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Get-CitrixReceiverVersions -Platform Windows | <span class="nb">Select-Object</span> -First 1
+</code></pre></div></div>
 
 <p>Here’s the script in action:</p>
 
-<figure id="attachment_5972" aria-describedby="caption-attachment-5972" style="width: 1296px" class="wp-caption aligncenter">[<img class="size-full wp-image-5972" src="https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions.gif" alt="Get-CitrixReceiverVersions in action" width="1296" height="810" />](https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions.gif)<figcaption id="caption-attachment-5972" class="wp-caption-text">Get-CitrixReceiverVersions in action on Windows*
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions.gif" alt="Get-CitrixReceiverVersions in action" /><em>Get-CitrixReceiverVersions in action on Windows</em></p>
 
-An added bonus, the script also works on PowerShell Core:
+<p>An added bonus, the script also works on PowerShell Core:</p>
 
-<figure id="attachment_5980" aria-describedby="caption-attachment-5980" style="width: 960px" class="wp-caption aligncenter">[<img class="size-full wp-image-5980" src="https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions-Pwsh.gif" alt="Get-CitrixReceiverVersions in action on macOS" width="960" height="533" />](https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions-Pwsh.gif)<figcaption id="caption-attachment-5980" class="wp-caption-text">Get-CitrixReceiverVersions in action on macOS*
+<p><img src="https://stealthpuppy.com/wp-content/uploads/2018/01/Get-CitrixReceiverVersions-Pwsh.gif" alt="Get-CitrixReceiverVersions in action on macOS" /><em>Get-CitrixReceiverVersions in action on macOS</em></p>
 
-I've written this primarily for my purposes, but perhaps there are other purposes that I've not yet considered. Feedback, issues and improvements to the script are welcome.
-</figcaption></figure></figcaption></figure>
+<p>I’ve written this primarily for my purposes, but perhaps there are other purposes that I’ve not yet considered. Feedback, issues and improvements to the script are welcome.</p>
 
   </div><a class="u-url" href="/latest-receiver-version-powershell/" hidden></a>
 </article>
