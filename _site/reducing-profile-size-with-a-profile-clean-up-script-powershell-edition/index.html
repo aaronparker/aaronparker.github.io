@@ -18,8 +18,8 @@
 <script type="application/ld+json">
 {"description":"I recently posted a script for removing unnecessary files and pruning files based on their age, which can be used at logoff to keep profile sizes manageable - Reducing Profile Size with a Profile Clean Up Script. Andrew Morgan (@andyjmorgan) has kindly translated my very basic VBscript to PowerShell. This can be used as a standalone script or the function (remove-itembyage) could be integrated into your own scripts and has the added benefit of in-built help and the ability to run silently. Just like the original script, this could be executed at logoff, before the profile is saved back to the network, to perform two actions: Delete all files of a specific file type in a specified folder, including sub-folders Delete all files older than X days in a specified folder, including sub-folders For example, you could use the script to delete all .log or temporary files below %APPDATA% that aren’t required to be roamed, or delete all Cookies older than 90 days to keep the Cookies folder to a manageable size. Note: the script listing below has the -whatif parameter applied when calling the function, so no deletes will occur unless the parameter is removed. function remove-itembyage { &lt;# .SYNOPSIS remove items from folders recursively. .DESCRIPTION this function removes items older than a specified age from the target folder .PARAMETER Days Specifies the ammount of days since the file was last written to you wish to filter on. .PARAMETER Path Specifies the path to the folder you wish to search recursively. .PARAMETER Silent Instructs the function not to return any output. .EXAMPLE PS C:\\&gt; remove-itembyage -days 0 -path $recent This command searches the $recent directory, for any files, then deletes them. .EXAMPLE PS C:\\&gt; remove-itembyage -days 5 -path $recent This command searches the $recent directory, for files older than 5 days, then deletes them. .EXAMPLE PS C:\\&gt; remove-itembyage -days 10 -path $appdata -typefilter &quot;txt,log&quot; This command searches the $cookies directory, for files older than 10 days and end with txt or log extensions, then deletes them. .EXAMPLE PS C:\\&gt; remove-itembyage -days 10 -path $cookies -typefilter &quot;txt,log&quot; -silent This command searches the $cookies directory, for files older than 10 days and end with txt or log extensions, then deletes them without a report. .NOTES https://stealthpuppy.com/user-virtualization/profile-clean-up-script-powershell-edition/ for support information. .LINK https://stealthpuppy.com/user-virtualization/profile-clean-up-script-powershell-edition/ #&gt; [cmdletbinding(SupportsShouldProcess = $True)] param( [Parameter(Mandatory = $true, Position = 0, HelpMessage = &quot;Number of days to filter by, E.G. &quot;&quot;14&quot;&quot;&quot;)] [int]$days, [Parameter(Mandatory = $true, Position = 1, HelpMessage = &quot;Path to files you wish to delete&quot;)] [string]$path, [string]$typefilter, [switch]$silent) #check for silent switch if ($silent) {$ea = &quot;Silentlycontinue&quot;} Else {$ea = &quot;Continue&quot;} #check for typefilter, creates an array if specified. if (!($typefilter)) {$filter = &quot;*&quot;} Else {$filter = foreach ($item in $typefilter.split(&quot;,&quot;)) {$item.insert(0, &quot;*.&quot;)}} if (test-path $path) { $now = get-date $datefilter = $now.adddays( - $days) foreach ($file in get-childitem &quot;$path\\*&quot; -recurse -force -include $filter | where {$_.PSIsContainer -eq $false -and $_.lastwritetime -le $datefilter -and $_.name -ne &quot;desktop.ini&quot;}) { if (!($silent)) {write-host &quot;Deleting: $($file.fullname)&quot;} remove-item -literalPath $file.fullname -force -ea $ea }#end for }#end if Else { if (!($silent)) {write-warning &quot;the path specified does not exist! ($path)&quot;} }#end else }#end function #Get KnownFolder Paths $appdata = $env:appdata $Cookies = (new-object -com shell.application).namespace(289).Self.Path $History = (new-object -com shell.application).namespace(34).Self.Path $recent = (new-object -com shell.application).namespace(8).Self.Path $profile = $env:userprofile #commands remove-itembyage -days 0 -path $appdata -typefilter &quot;txt,log&quot; -silent -whatif remove-itembyage -days 90 -path $cookies -silent -whatif remove-itembyage -days 14 -path $recent -silent -whatif remove-itembyage -days 21 -path $history -silent -whatif remove-itembyage -days 14 -path &quot;$appdata\\Microsoft\\office\\Recent&quot; -silent -whatif","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/reducing-profile-size-with-a-profile-clean-up-script-powershell-edition/","headline":"Reducing Profile Size with a Profile Clean Up Script - PowerShell Edition","dateModified":"2012-01-05T17:09:55+11:00","datePublished":"2012-01-05T17:09:55+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/reducing-profile-size-with-a-profile-clean-up-script-powershell-edition/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
-<body><header class="site-header" role="banner">
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -162,20 +162,19 @@ remove-itembyage -days 14 -path "$appdata\Microsoft\office\Recent" -silent -what
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">stealthpuppy</h2>
-
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+      <div class="footer-col one-half">
+      <h2 class="footer-heading">stealthpuppy</h2>
         <ul class="contact-list">
           <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
+      <div class="footer-col one-half">
         <p>on end user computing and enterprise mobility</p>
       </div>
+
+      <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/aaronparker" title="aaronparker"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a href="https://www.linkedin.com/in/aaronedwardparker" title="aaronedwardparker"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a href="https://twitter.com/stealthpuppy" title="stealthpuppy"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li><li><a href="/feed.xml" title="rss"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a></li></ul>
+</div>
     </div>
 
   </div>

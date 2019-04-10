@@ -22,19 +22,47 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: stealthpuppy
 github_username:  aaronparker
 
-# name: "Affiliates Theme for Jekyll"
-# meta_description: "Jekyll theme for blogging."
-# logo: 'assets/images/logo.png'
-# favicon: 'assets/images/favicon.ico'
-paginate: 12
-# google_analytics: ''
-# disqus: ''
-# sharethis: '<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5a6b2fe4fb197a0011c589f6&product=sticky-share-buttons"></script>'
+show_excerpts: true
+
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  date_format: "%b %-d, %Y"
+
+  # generate social links in footer
+  social_links:
+    twitter: stealthpuppy
+    github:  aaronparker
+    rss: rss
+    # dribbble: jekyll
+    # facebook: jekyll
+    # flickr:   jekyll
+    # instagram: jekyll
+    linkedin: aaronedwardparker
+    # pinterest: jekyll
+    # youtube: jekyll
+    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+    # youtube_channel_name: CloudCannon
+    # telegram: jekyll
+    # googleplus: +jekyll
+    # microdotblog: jekyll
+
+    # Mastodon instances
+    # mastodon:
+    # - username: jekyll
+    #   instance: example.com
+    # - username: jekyll2
+    #   instance: example.com
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
 
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: jekyll-theme-cayman
+theme: minima
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -42,34 +70,3 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-avatar
-
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
-
-# Authors
-authors:
-  aaronparker:
-    name: Aaron Parker
-    display_name: Aaron Parker
-    gravatar: 914255233cb1be4dea2225535ab92959
-    email: aaron@stealthpuppy.com
-    web: https://stealthpuppy.com/
-    twitter: https://twitter.com/stealthpuppy
-    description: "Solution architect, End-user computing and enterprise mobility specalist. Citrix Technology Professional."
-
-# List of links in the navigation bar
-navbar-links:
-  About: "about"
-  Projects:
-    - VcRedist: "https://docs.stealthpuppy.com/docs/vcredist/"
-    - LatestUpdate: "https://docs.stealthpuppy.com/docs/latestupdate/"
-    - SMB not CIFS: "https://stealthpuppy.com/smb-not-cifs/"
-
-# Image to show in the navigation bar - image must be a square (width = height)
-# Remove this parameter if you don't want an image in the navbar
-avatar: "/media/stealthpuppy.png"

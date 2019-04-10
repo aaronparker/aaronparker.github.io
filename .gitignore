@@ -14,4 +14,9 @@ _book
 *.epub
 *.mobi
 *.pdf
+
+# Others
 .DS_Store
+_site
+.sass-cache
+.jekyll-metadata

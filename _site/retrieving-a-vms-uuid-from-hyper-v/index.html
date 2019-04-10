@@ -18,8 +18,8 @@
 <script type="application/ld+json">
 {"description":"I’ve previously posted about retrieving the UUID from a virtual machine hosted on vSphere. UUIDs are useful if you want to uniquely identify a target machine for OS deployment task sequences and the like (e.g. MDT). Here’s how to obtain the UUID from a virtual machine hosted on Hyper-V. Just like with vSphere, the UUID isn’t a property of the virtual machine that can be queried directly. We need to go via WMI to query the target virtual machine. Note that in this function, I’m using version 2 of the Root\\Virtualization WMI namespace (root\\virtualization\\v2. This means the function as written, will only work on Windows 8 and Windows Server 2012 (and above). If you want to use this function on earlier versions of Hyper-V, remove the “\\v2” from the namespace. As an example, here’s how to retrieve the UUIDs from a set of VMs on a target Hyper-V host named hv1: C:\\&gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, file3, pvs1 Name BIOSGUID ---- ---- WIN71 E6E1A176-0713-4BB0-99E9-4570A1A3A94A FILE3 9E9D788A-15E2-4760-A049-9F6EB88677A9 PVS1 74EFF5BC-A24E-48C3-85BE-12D758FE7AB6 Here’s the full function code listing. Please let me know if you find any bugs: #--------------------------------------------------------------------------- # Author: Aaron Parker # Desc: Function that uses retrieves the UUID from a specified VM and # formats it into the right format for use with MDT/SCCM etc # Date: Aug 18, 2014 # Site: http://stealthpuppy.com #--------------------------------------------------------------------------- Function Get-HypervVMUUID { &lt;# .SYNOPSIS Retrieve the UUID from a virtual machine or set of virtual machines. .DESCRIPTION This function will retrieve the UUID from from a virtual machine or set of virtual machines from a Hyper-V host. .PARAMETER ComputerName Specifies the host from which to query the virtual machine or set of virtual machines. .PARAMETER VM Specifies the virtual machine or set of virtual machines (a comma delimited list) from which to obtain the UUID/s. .EXAMPLE PS C:\\&amp;gt; Get-HypervVMUUID -ComputerName hv1 -VM win71, win72 This command retrieves the UUIDs from the virtual machines win71 and win72 from the host hv1. .EXAMPLE PS C:\\&amp;gt; Get-HypervVMUUID -VM win71, win72 This command retrieves the UUIDs from the virtual machines win71 and win72 from the local host. .EXAMPLE PS C:\\&amp;gt; Get-HypervVMUUID This command retrieves the UUIDs from the all of the virtual machines on the local host. .NOTES https://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/ for support information. .LINK https://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/ #&gt; [cmdletbinding(SupportsShouldProcess=$True)] param( [Parameter(Mandatory=$false,HelpMessage=&quot;Specifies one or more Hyper-V hosts from which virtual machine UUIDs are to be retrieved. NetBIOS names, IP addresses, and fully-qualified domain names are allowable. The default is the local computer — use &quot;&quot;localhost&quot;&quot; or a dot (&quot;&quot;.&quot;&quot;) to specify the local computer explicitly.&quot;)] [string]$ComputerName, [Parameter(Mandatory=$false, Position=0,HelpMessage=&quot;Specifies the virtual machine from which to retrieve the UUID.&quot;)] [string[]]$VM ) # If ComputerName parameter is not specified, set value to the local host If (!$ComputerName) { $ComputerName = &quot;.&quot; } # If VM parameter is specified, return those VMs, else return all VMs If ($VM) { $UUIDs = Get-VM -ComputerName $ComputerName -VM $VM -ErrorAction SilentlyContinue | Select-Object Name,@{Name=&quot;BIOSGUID&quot;;Expression={(Get-WmiObject -ComputerName $_.ComputerName -Namespace &quot;root\\virtualization\\v2&quot; -Class Msvm_VirtualSystemSettingData -Property BIOSGUID -Filter (&quot;InstanceID = &#39;Microsoft:{0}&#39;&quot; -f $_.VMId.Guid)).BIOSGUID}} } Else { $UUIDs = Get-VM -ComputerName $ComputerName -ErrorAction SilentlyContinue | Select-Object Name,@{Name=&quot;BIOSGUID&quot;;Expression={(Get-WmiObject -ComputerName $_.ComputerName -Namespace &quot;root\\virtualization\\v2&quot; -Class Msvm_VirtualSystemSettingData -Property BIOSGUID -Filter (&quot;InstanceID = &#39;Microsoft:{0}&#39;&quot; -f $_.VMId.Guid)).BIOSGUID}} } # Remove curly brackets from the UUIDs and return the array ForEach ( $UID in $UUIDs ) { $UID.BIOSGUID = $UID.BIOSGUID -replace &quot;}&quot;; $UID.BIOSGUID = $UID.BIOSGUID -replace &quot;{&quot; } Return $UUIDs }","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/retrieving-a-vms-uuid-from-hyper-v/","headline":"Retrieving a VM’s UUID from Hyper-V","dateModified":"2014-08-18T12:15:13+10:00","datePublished":"2014-08-18T12:15:13+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/retrieving-a-vms-uuid-from-hyper-v/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
-<body><header class="site-header" role="banner">
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
+<body><header class="site-header">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -139,20 +139,19 @@ PVS1		74EFF5BC-A24E-48C3-85BE-12D758FE7AB6
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">stealthpuppy</h2>
-
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+      <div class="footer-col one-half">
+      <h2 class="footer-heading">stealthpuppy</h2>
         <ul class="contact-list">
           <li class="p-name">stealthpuppy</li><li><a class="u-email" href="mailto:aaron@stealthpuppy.com">aaron@stealthpuppy.com</a></li></ul>
       </div>
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/aaronparker"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">aaronparker</span></a></li><li><a href="https://www.twitter.com/stealthpuppy"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">stealthpuppy</span></a></li></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
+      <div class="footer-col one-half">
         <p>on end user computing and enterprise mobility</p>
       </div>
+
+      <div class="social-links"><ul class="social-media-list"><li><a href="https://github.com/aaronparker" title="aaronparker"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a href="https://www.linkedin.com/in/aaronedwardparker" title="aaronedwardparker"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a href="https://twitter.com/stealthpuppy" title="stealthpuppy"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li><li><a href="/feed.xml" title="rss"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a></li></ul>
+</div>
     </div>
 
   </div>
