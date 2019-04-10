@@ -22,7 +22,20 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: stealthpuppy
 github_username:  aaronparker
 
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-avatar
+
 show_excerpts: true
+paginate: 10
 
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -58,15 +71,3 @@ minima:
 # this and add the path to the pages in order as they should show up
 #header_pages:
 # - about.md
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-theme: minima
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-avatar
