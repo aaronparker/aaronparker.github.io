@@ -46,7 +46,7 @@ minima:
   social_links:
     twitter: stealthpuppy
     github:  aaronparker
-    rss: rss
+    rss: atom
     # dribbble: jekyll
     # facebook: jekyll
     # flickr:   jekyll
