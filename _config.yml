@@ -34,7 +34,7 @@ paginate: 12
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
+theme: jekyll-theme-cayman
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
