@@ -4,7 +4,7 @@ title: Protecting a Cloud Jump Box with Duo Free
 date: 2017-07-16T11:28:39+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5501
+guid: {{site.baseurl}}.com/?p=5501
 permalink: /protect-cloud-jump-box-duo-free/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

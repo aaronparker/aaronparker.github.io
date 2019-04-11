@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: How Do I Suppress UAC Prompts in Applications Delivered wit
 date: 2015-10-06T20:49:52+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=4157
+guid: {{site.baseurl}}.com/?p=4157
 permalink: /appv5-faq-suppress-uac-prompts/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

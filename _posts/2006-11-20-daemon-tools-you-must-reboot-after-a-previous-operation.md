@@ -13,7 +13,7 @@ categories:
 ---
 [Daemon Tools](http://www.daemon-tools.cc/dtcc/announcements.php) was giving me some grief after upgrading to Windows Vista RTM and I had to update to version 4.08 which includes an updated SPTD driver for the virtual CDROM drive. When running the 4.08 installer for the first time, I had to uninstall the old version and reboot. After the reboot, I ran the installer again and the following error message would be displayed: "You must reboot after a previous operation"
 
-<img border="0" src="https://stealthpuppy.com/media/2006/11/1000.14.191.DaemonToolsInstall.PNG" /> 
+<img border="0" src="{{site.baseurl}}.com/media/2006/11/1000.14.191.DaemonToolsInstall.PNG" /> 
 
 No amount of rebooting would fix the issue. After digging around I found [this forum post](http://www.daemon-tools.cc/dtcc/showthread.php?t=11666). The fix was easy - delete the following registry key and try the installer again:
 

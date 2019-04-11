@@ -19,4 +19,4 @@ tags:
 ---
 For those looking to fit just about every link possible on their Start Menu, Windows 7 build 7048 and above are aiming to please. In addition to the options seen in earlier builds, 7048 adds Downloads, Homegroup and the ability to edit the number of recent items in Jump Lists:
 
-<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="CustomizeStartMenu" border="0" alt="CustomizeStartMenu" src="https://stealthpuppy.com/media/2009/03/customizestartmenu.png" width="424" height="1153" />
+<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" title="CustomizeStartMenu" border="0" alt="CustomizeStartMenu" src="{{site.baseurl}}.com/media/2009/03/customizestartmenu.png" width="424" height="1153" />

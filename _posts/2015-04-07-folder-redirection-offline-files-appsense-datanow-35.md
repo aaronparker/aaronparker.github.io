@@ -4,7 +4,7 @@ title: 'File Sync Solutions as Alternatives to Folder Redirection - AppSense Dat
 date: 2015-04-07T04:00:17+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3831
+guid: {{site.baseurl}}.com/?p=3831
 permalink: /folder-redirection-offline-files-appsense-datanow-35/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -35,7 +35,7 @@ Let's take another look at the integration between AppSense DataNow and the tra
 
 # What is AppSense DataNow?
 
-[DataNow](http://www.appsense.com/products/data/datanow)[<img class="alignleft wp-image-3879 size-full" src="https://stealthpuppy.com/media/2015/04/logo_lg_dn.png" alt="logo_lg_dn](http://www.appsense.com/products/desktop/desktopnow-plus) and it provides an easy way to access to corporate data (stored on user home drives) from mobile devices, Windows PCs and Macs. Since I last looked at this product, AppSense has released version 3.5 and also provided the ability to provide users with access to any SMB location on your internal network.
+[DataNow](http://www.appsense.com/products/data/datanow)[<img class="alignleft wp-image-3879 size-full" src="{{site.baseurl}}.com/media/2015/04/logo_lg_dn.png" alt="logo_lg_dn](http://www.appsense.com/products/desktop/desktopnow-plus) and it provides an easy way to access to corporate data (stored on user home drives) from mobile devices, Windows PCs and Macs. Since I last looked at this product, AppSense has released version 3.5 and also provided the ability to provide users with access to any SMB location on your internal network.
 
 DataNow is a completely on-premises solution - there's no public cloud-based component, instead you host the control plane and connect it to your existing data. Access is proxied through a virtual appliance, which you would locate in a DMZ or on the internal network depending on your environment, while the file data remains in its existing location (i.e. file servers inside the trusted network). The DataNow client (for Windows, Mac, iOS and Android) then accesses that data over HTTPS. This allows you to provide access to user data from any location.
 
@@ -65,7 +65,7 @@ In the previous version of this article, I didn't cover setting up DataNow, so h
 
 The [DataNow appliance](https://www.myappsense.com/datanow/v3.5/admin/Admin/The_DataNow_Appliance.htm) is available for vSphere, XenServer and Hyper-V - it's a hardened Linux-based VM that can be [clustered and load-balanced for high availability](https://www.myappsense.com/datanow/v3.5/admin/Admin/Clustering.htm). For my lab environment, I've used the Hyper-V version, but the download and configuration is the same for all platforms.
 
-![DataNowApplianceDownload" width="667" height="282" srcset="https://stealthpuppy.com/media/2015/04/DataNowApplianceDownload.png 667w, https://stealthpuppy.com/media/2015/04/DataNowApplianceDownload-150x63.png 150w, https://stealthpuppy.com/media/2015/04/DataNowApplianceDownload-300x127.png 300w" sizes="(max-width: 667px) 100vw, 667px" />*The DataNow appliance is available for the most popular virtualization platforms*
+![DataNowApplianceDownload" width="667" height="282" srcset="{{site.baseurl}}.com/media/2015/04/DataNowApplianceDownload.png 667w, {{site.baseurl}}.com/media/2015/04/DataNowApplianceDownload-150x63.png 150w, {{site.baseurl}}.com/media/2015/04/DataNowApplianceDownload-300x127.png 300w" sizes="(max-width: 667px) 100vw, 667px" />*The DataNow appliance is available for the most popular virtualization platforms*
 
 After importing the VM and [assigning an IP address via the console](https://www.myappsense.com/datanow/v3.5/admin/Admin/Installing_the_DataNow_Appliance.htm), the first step is to [configure DNS and domain settings](https://www.myappsense.com/datanow/v3.5/admin/Admin/Configure_DNS_for_file_server_location.htm). Here I've configured the appliance to use my AD DNS server and internal domain name for name resolution.
 
@@ -134,7 +134,7 @@ Once authenticated, my files are synchronised locally to a DataNow folder. Note 
 
 Once I access the file, the DataNow client will download it. The status of the DataNow client and settings are available from the OS X menu bar:
 
-![Viewing the DataNow client status on the Mac" width="484" height="540" srcset="https://stealthpuppy.com/media/2015/04/Mac-DataNow-status.png 484w, https://stealthpuppy.com/media/2015/04/Mac-DataNow-status-134x150.png 134w, https://stealthpuppy.com/media/2015/04/Mac-DataNow-status-269x300.png 269w" sizes="(max-width: 484px) 100vw, 484px" />*Viewing the DataNow client status on the Mac*
+![Viewing the DataNow client status on the Mac" width="484" height="540" srcset="{{site.baseurl}}.com/media/2015/04/Mac-DataNow-status.png 484w, {{site.baseurl}}.com/media/2015/04/Mac-DataNow-status-134x150.png 134w, {{site.baseurl}}.com/media/2015/04/Mac-DataNow-status-269x300.png 269w" sizes="(max-width: 484px) 100vw, 484px" />*Viewing the DataNow client status on the Mac*
 
 # Web Client Experience
 

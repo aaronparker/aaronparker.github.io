@@ -89,7 +89,7 @@ So using Internet Explorer (iexplore.exe) and the Connection Group for the plugi
 
 If the Package and Version ID are of a member package are provided, then the Connection Group VE is loaded, so we do get the desired effect. In my test case, I've added the Package and Version ID of the primary package (Flash) to the registry.
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="RunVirtualRegistryKey" alt="RunVirtualRegistryKey" src="https://stealthpuppy.com/media/2012/12/RunVirtualRegistryKey_thumb.png]({{site.baseurl}}/media/2012/12/RunVirtualRegistryKey.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="RunVirtualRegistryKey" alt="RunVirtualRegistryKey" src="{{site.baseurl}}.com/media/2012/12/RunVirtualRegistryKey_thumb.png]({{site.baseurl}}/media/2012/12/RunVirtualRegistryKey.png)
 
 Once the key is created and populated, start or restart the target process and the plugins will be available. Internet Explorer add-ons can now be virtualized and delivered to IE seamlessly. Even Adobe Reader can now be virtualized and embedded PDFs will still work.
 

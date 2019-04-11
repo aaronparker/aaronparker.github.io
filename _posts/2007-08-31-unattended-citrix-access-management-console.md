@@ -21,7 +21,7 @@ tags:
 Using the Windows Installer packages is fairly straight-forward, but you'l have to ensure you install the ASC_Framework.MSI package before installing any of the other packages.
 
 <p style="text-align: center">
-  <img src="https://stealthpuppy.com/media/2007/08/amcfolder.png" alt="amcfolder.png" />
+  <img src="{{site.baseurl}}.com/media/2007/08/amcfolder.png" alt="amcfolder.png" />
 </p>
 
 The second and probably simplest method to perform an unattended install is to use the SILENT* switch on with the CTXINSTALL application:

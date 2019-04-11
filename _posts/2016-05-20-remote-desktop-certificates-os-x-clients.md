@@ -4,7 +4,7 @@ title: Configuring Remote Desktop Certificates for OS X Clients
 date: 2016-05-20T00:34:23+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=4397
+guid: {{site.baseurl}}.com/?p=4397
 permalink: /remote-desktop-certificates-os-x-clients/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

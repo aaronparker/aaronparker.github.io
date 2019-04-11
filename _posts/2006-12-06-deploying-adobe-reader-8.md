@@ -13,7 +13,7 @@ categories:
 tags:
   - Adobe
 ---
-For an Adobe Reader 9 version of this post, go [here](https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows). For an Adobe Reader 8.x version of this post, go [here](https://stealthpuppy.com/deployment/deploying-adobe-reader-81).
+For an Adobe Reader 9 version of this post, go [here]({{site.baseurl}}.com/deployment/deploying-adobe-reader-9-for-windows). For an Adobe Reader 8.x version of this post, go [here]({{site.baseurl}}.com/deployment/deploying-adobe-reader-81).
 
 Now that [Adobe Reader 8 has been released](http://www.adobe.com/products/acrobat/readstep2.html) and the setup routine has changed slightly, we'll have to jump through hoops again to get this new version deployed. Here are a few things that I've found in regards to deployment in a corporate environment:
 
@@ -58,9 +58,9 @@ or
   * There are no ads in the toolbar as in previous versions;
   * It includes nice new fancy 256 x 256 pixel icons (click each one for a larger view):
 
-![](https://stealthpuppy.com/media/2006/12/1000.14.225.Reader.png)
+![]({{site.baseurl}}.com/media/2006/12/1000.14.225.Reader.png)
 
-![](https://stealthpuppy.com/media/2006/12/1000.14.226.PDFFile.png) 
+![]({{site.baseurl}}.com/media/2006/12/1000.14.226.PDFFile.png) 
 
 There are a lot of things left to find and I'll update this post as I find them.
 

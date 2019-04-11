@@ -29,7 +29,7 @@ Hide OgTags:
 categories:
   - Applications
 ---
-<a href="https://stealthpuppy.com/general/looking-for-adobe-flash-player-download-links/attachment/487/" rel="attachment wp-att-487"><img class="alignright size-full wp-image-487" title="Flash logo" src="https://stealthpuppy.com/media/2008/02/adobeflash.png" alt="Flash logo" width="112" height="108" /></a>
+<a href="{{site.baseurl}}.com/general/looking-for-adobe-flash-player-download-links/attachment/487/" rel="attachment wp-att-487"><img class="alignright size-full wp-image-487" title="Flash logo" src="{{site.baseurl}}.com/media/2008/02/adobeflash.png" alt="Flash logo" width="112" height="108" /></a>
 
 <span style="color: #ff0000;">Update</span> [November 2011]: Adobe has released Flash Player 11 in both 32-bit and 64-bit packages. The links below will only  provide you with Flash Player 10. To obtain the installers for Flash Player 11, see the following articles:
 

@@ -4,13 +4,13 @@ title: ABOUT
 date: 2017-02-24T21:05:08+10:00
 author: Aaron Parker
 layout: page
-guid: https://stealthpuppy.com/?page_id=5378
+guid: {{site.baseurl}}.com/?page_id=5378
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 ---
 ## About Aaron Parker
 
-<img class="alignleft wp-image-3930 size-full" style="padding-right: 20px; padding-bottom: 20px;" src="https://stealthpuppy.com/media/2009/02/HeadShotCircle.png" alt="Aaron Parker](http://www.insentra.com.au) responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
+<img class="alignleft wp-image-3930 size-full" style="padding-right: 20px; padding-bottom: 20px;" src="{{site.baseurl}}.com/media/2009/02/HeadShotCircle.png" alt="Aaron Parker](http://www.insentra.com.au) responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
 
 I've been in the IT industry for over 20 years and bring a wide range of experience in enterprise level End-user computing solutions, including Server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
 
@@ -30,7 +30,7 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
 <table border="0" width="660" cellspacing="5" cellpadding="0">
   <tr>
     <td valign="top" width="171">
-      <img src="https://stealthpuppy.com/media/2012/03/CTP_banner.jpg" alt="Citrix Technology Professional" />
+      <img src="{{site.baseurl}}.com/media/2012/03/CTP_banner.jpg" alt="Citrix Technology Professional" />
     </td>
     
     <td valign="top" width="472">
@@ -44,7 +44,7 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
 <table border="0" width="660" cellspacing="5" cellpadding="0">
   <tr>
     <td valign="top" width="171">
-      <img src="https://stealthpuppy.com/media/2012/07/MVP_Horizontal_BlueOnly.png" alt="MVP Award Logo" />
+      <img src="{{site.baseurl}}.com/media/2012/07/MVP_Horizontal_BlueOnly.png" alt="MVP Award Logo" />
     </td>
     
     <td valign="top" width="472">
@@ -54,7 +54,7 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
   
   <tr>
     <td valign="top" width="171">
-      <img class="alignnone size-full wp-image-4537" src="https://stealthpuppy.com/media/2009/02/vexpert_logo.jpg" alt="VMware vExpert logo" width="165" height="92" srcset="https://stealthpuppy.com/media/2009/02/vexpert_logo.jpg 165w, https://stealthpuppy.com/media/2009/02/vexpert_logo-150x84.jpg 150w" sizes="(max-width: 165px) 100vw, 165px" />
+      <img class="alignnone size-full wp-image-4537" src="{{site.baseurl}}.com/media/2009/02/vexpert_logo.jpg" alt="VMware vExpert logo" width="165" height="92" srcset="{{site.baseurl}}.com/media/2009/02/vexpert_logo.jpg 165w, {{site.baseurl}}.com/media/2009/02/vexpert_logo-150x84.jpg 150w" sizes="(max-width: 165px) 100vw, 165px" />
     </td>
     
     <td valign="top" width="472">
@@ -64,7 +64,7 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
   
   <tr>
     <td valign="top" width="171">
-      <img class="alignnone size-full wp-image-4949" src="https://stealthpuppy.com/media/2016/06/EUC-Champion-certification-logo.png" alt="VMware EUC Champions logo" width="165" height="91" srcset="https://stealthpuppy.com/media/2016/06/EUC-Champion-certification-logo.png 165w, https://stealthpuppy.com/media/2016/06/EUC-Champion-certification-logo-150x83.png 150w" sizes="(max-width: 165px) 100vw, 165px" />
+      <img class="alignnone size-full wp-image-4949" src="{{site.baseurl}}.com/media/2016/06/EUC-Champion-certification-logo.png" alt="VMware EUC Champions logo" width="165" height="91" srcset="{{site.baseurl}}.com/media/2016/06/EUC-Champion-certification-logo.png 165w, {{site.baseurl}}.com/media/2016/06/EUC-Champion-certification-logo-150x83.png 150w" sizes="(max-width: 165px) 100vw, 165px" />
     </td>
     
     <td valign="top" width="472">
@@ -74,7 +74,7 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
   
   <tr>
     <td valign="top" width="171">
-      <img src="https://stealthpuppy.com/media/2012/07/ACA_logo.png" alt="AppSense Community Advisor" />
+      <img src="{{site.baseurl}}.com/media/2012/07/ACA_logo.png" alt="AppSense Community Advisor" />
     </td>
     
     <td valign="top" width="472">

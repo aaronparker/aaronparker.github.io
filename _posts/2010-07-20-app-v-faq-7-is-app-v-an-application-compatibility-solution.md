@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />
 
 The short answer to this question is No, when it comes to migrating to newer versions of Windows, the [Application Compatibility Toolkit](http://www.microsoft.com/downloads/details.aspx?FamilyId=24DA89E9-B581-47B0-B45E-492DD6DA2971&displaylang=en) should be an essential component of your upgrade project. The longer answer is – it depends what you define as [Application Compatibility](http://technet.microsoft.com/windows/aa905066.aspx).
 

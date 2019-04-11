@@ -4,7 +4,7 @@ title: 'Visualizing the Impact of Folder Redirection - Logon and Application Lau
 date: 2014-11-06T17:20:20+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3737
+guid: {{site.baseurl}}.com/?p=3737
 permalink: /visualizing-impact-folder-redirection-logon/
 dsq_thread_id:
   - "3196341225"

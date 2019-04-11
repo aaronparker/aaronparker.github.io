@@ -26,7 +26,7 @@ If you follow any of the following guidance from Microsoft for sequencing Office
 
 you will end up with a package that will include the following folders in the virtualized user profile (those folders captured during sequencing that will end up in the PKG file):
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="CSIDL_APPDATA" src="https://stealthpuppy.com/media/2011/10/CSIDL_APPDATA.png" alt="CSIDL_APPDATA Folders" width="660" height="416" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="CSIDL_APPDATA" src="{{site.baseurl}}.com/media/2011/10/CSIDL_APPDATA.png" alt="CSIDL_APPDATA Folders" width="660" height="416" border="0" /> 
 
 The folders captured under %CSIDL_APPDATA%\Microsoft are those folders that have been created during the first-run tasks – folders created when you launch an Office application and perform some standard tasks.
 
@@ -34,11 +34,11 @@ If you're familiar with delivering applications with App-V (or any type of appli
 
 To see what this looks like at runtime, here's a view of a profile before running Office applications that have been delivered by App-V:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="BeforeOffice" src="https://stealthpuppy.com/media/2011/10/BeforeOffice.png" alt="BeforeOffice" width="660" height="331" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="BeforeOffice" src="{{site.baseurl}}.com/media/2011/10/BeforeOffice.png" alt="BeforeOffice" width="660" height="331" border="0" /> 
 
 After executing each of the Office applications in the package (I've used a package with Office 2010 Professional Plus with Visio and Project) and using just about every feature in those applications:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AfterOffice" src="https://stealthpuppy.com/media/2011/10/AfterOffice.png" alt="AfterOffice" width="660" height="410" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AfterOffice" src="{{site.baseurl}}.com/media/2011/10/AfterOffice.png" alt="AfterOffice" width="660" height="410" border="0" /> 
 
 There's an additional 10 folders that have been created with 8 of those related to Office. This has left me with the majority of the Office user profile being virtualized and stored in the PKG file, whilst the rest is now stored on the real file system. This probably doesn't have too much impact to the user if I'm using Roaming Profiles so that Office settings follow the user, but what happens for support?
 

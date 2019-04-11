@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />
+<img style="margin: 0px 0px 5px 10px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />
 
 [Stand-alone mode](http://technet.microsoft.com/en-gb/library/cc817112.aspx) in App-V is useful where you are deploying App-V applications via Group Policy or a 3rd party ESD (using the MSI file), or you have the App-V packages available on a file share and import them with the SFTMIME command.
 

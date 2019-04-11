@@ -25,7 +25,7 @@ To allow the ISA Server to authenticate against the RSA ACE server, an agent hos
   3. Enable the tick-box labelled 'Open to All Locally Known Users' if you want all users to be able to authenticate
   4. Click OK to save the changes and copy SDCONF.REC (located in `C:\Windows\SYSTEM32`) to ISA Server.
 
-[<img style="width: 318px; height: 311px;" src="https://stealthpuppy.com/media/2006/09/1000.14.127.AgentHost.gif" border="0" alt="]({{site.baseurl}}/media/2006/09/1000.14.127.AgentHost.gif)
+[<img style="width: 318px; height: 311px;" src="{{site.baseurl}}.com/media/2006/09/1000.14.127.AgentHost.gif" border="0" alt="]({{site.baseurl}}/media/2006/09/1000.14.127.AgentHost.gif)
 
 Configuring SecurID support in ISA Server as a simple process:
 
@@ -46,11 +46,11 @@ Once the rule and a corresponding web listener has been created, you will need t
   3. Then select the radio button labelled 'RSA SecurID'
   4. Click OK and apply your configuration changes.
 
-![WenListener](https://stealthpuppy.com/media/2006/09/1000.14.128.WebListener.png)
+![WenListener]({{site.baseurl}}.com/media/2006/09/1000.14.128.WebListener.png)
 
 Now you should have three fields listed on the Outlook Web Access authentication page: username, token code and password. ISA Server also provides for a scenario where the RSA username and the Windows username are different, adding a forth field for a Windows username.
 
-![OWA]https://stealthpuppy.com/media/2006/09/1000.14.129.OWA.png)
+![OWA]{{site.baseurl}}.com/media/2006/09/1000.14.129.OWA.png)
 
 This is an excellent method of taking authentication that one step further to ensure only trusted users have access to your corporate resources. The same authentication options offered in ISA Server also allow for other two-factor authentication solutions via RADIUS OTP (One Time Password). With this option you could authenticate against Secure Computing's [SafeWord PremierAccess](http://www.securecomputing.com/index.cfm?skey=643) or [Verisign's Unified Authentication](http://www.verisign.com/products-services/security-services/unified-authentication/index.html) to provide two-factor authentication.
 

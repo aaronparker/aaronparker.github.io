@@ -4,7 +4,7 @@ title: Thunderbolt end-user experience macOS vs. Windows
 date: 2018-08-07T14:01:52+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=6100
+guid: {{site.baseurl}}.com/?p=6100
 permalink: /thunderbolt-experience-macos-windows/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

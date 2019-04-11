@@ -4,7 +4,7 @@ title: Can the Apple TV 4 Make It As Our Primary Media Center?
 date: 2016-02-03T17:09:15+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=4225
+guid: {{site.baseurl}}.com/?p=4225
 permalink: /apple-tv-4-media-center/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -42,7 +42,7 @@ Sticking with the Apple TV is then a simple choice for me given my history, we h
 
 It's likely you've heard that Apple has released a new version of the Apple TV, which now boasts an App Store as well as real local storage options (32GB and 64GB). Although the new Apple TV loses the optical audio connection, the potential that a real app platform provides for flexibility in streaming practically any media made the new device appealing.
 
-![Apple TV 4 Unboxed](https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed.jpg)>*Apple TV 4 Unboxed*
+![Apple TV 4 Unboxed]({{site.baseurl}}.com/media/2016/02/Apple-TV-4-Unboxed.jpg)>*Apple TV 4 Unboxed*
 
 From a hardware perspective, it's not much different from the previous model. The new remote that comes with touch, a microphone and an accelerometer is very different though, and I'll need to avoid losing or damaging it as [a replacement is $129AU](http://www.apple.com/au/shop/product/MLLC2/siri-remote)!
 
@@ -88,7 +88,7 @@ The Apple TV 4 is an _extremely_ low power device - one key decision for stickin
 
 [Ars Technica has a comparison table in their review of the Apple TV 4](http://arstechnica.com/apple/2015/11/new-apple-tv-wants-to-be-more-than-just-a-streaming-box-but-it-isnt-yet/2/) from November 2015.
 
-![Device power consumption](https://stealthpuppy.com/media/2016/02/Device-power-consumption.png)*Device power consumption*
+![Device power consumption]({{site.baseurl}}.com/media/2016/02/Device-power-consumption.png)*Device power consumption*
 
 Based on these numbers, I can't imagine using an Xbox or PlayStation as a streaming device based on the cost to run it. Although I'm not suggesting you rush out to buy an Apple TV if you already have an Xbox or PlayStation.
 

@@ -4,7 +4,7 @@ title: Configuring IIS Prerequisites for the App-V 5 Server with PowerShell
 date: 2014-09-05T01:04:23+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3696
+guid: {{site.baseurl}}.com/?p=3696
 permalink: /appv-5-server-iis-prerequisites-powershell/
 dsq_thread_id:
   - "2987858354"

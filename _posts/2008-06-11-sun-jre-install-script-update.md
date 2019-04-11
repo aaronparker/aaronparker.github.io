@@ -20,6 +20,6 @@ A second change I've implemented is in the way the script adds registry entries 
 
 To use this script, save the script, the versions text file and the JRE installer to a folder on a local drive. Then elevate a command prompt to run the script and install.
 
-<img border="0" alt="SunJRE" src="https://stealthpuppy.com/media/2008/06/sunjre.png" width="577" height="243" /> 
+<img border="0" alt="SunJRE" src="{{site.baseurl}}.com/media/2008/06/sunjre.png" width="577" height="243" /> 
 
 Now I've got to get XenApp 5.0 Management Console using the latest JRE, but that's for another post.

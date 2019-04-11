@@ -11,7 +11,7 @@ dsq_thread_id:
 categories:
   - Automation
 ---
-<img border="0" align="right" src="https://stealthpuppy.com/media/2007/01/1000.14.770.UpdatePackage.png" hspace="4" />I can find very little information on the Update Standalone Packages on the Microsoft site, with [this knowledgebase article](http://support.microsoft.com/kb/928636) being it. What I do know about them is that they use a .MSU file extenstion and they display a dialog box similar to the Windows Update install dialog when installing.
+<img border="0" align="right" src="{{site.baseurl}}.com/media/2007/01/1000.14.770.UpdatePackage.png" hspace="4" />I can find very little information on the Update Standalone Packages on the Microsoft site, with [this knowledgebase article](http://support.microsoft.com/kb/928636) being it. What I do know about them is that they use a .MSU file extenstion and they display a dialog box similar to the Windows Update install dialog when installing.
 
 As they use the same switches as the existing Microsoft updates, installing them silently is very straightforward. They are processed by a command named WUSA.EXE (Windows Update Standalone Installer), so a command-line would look like this:
 

@@ -4,7 +4,7 @@ title: "Retrieving a VM's UUID from Hyper-V"
 date: 2014-08-18T12:15:13+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3642
+guid: {{site.baseurl}}.com/?p=3642
 permalink: /retrieving-a-vms-uuid-from-hyper-v/
 dsq_thread_id:
   - "2937041857"
@@ -70,10 +70,10 @@ Function Get-HypervVMUUID {
             This command retrieves the UUIDs from the all of the virtual machines on the local host.
  
         .NOTES
-            https://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/ for support information.
+            {{site.baseurl}}.com/retrieving-a-vms-uuid-from-hyperv/ for support information.
  
         .LINK
-            https://stealthpuppy.com/retrieving-a-vms-uuid-from-hyperv/
+            {{site.baseurl}}.com/retrieving-a-vms-uuid-from-hyperv/
     #>
     [cmdletbinding(SupportsShouldProcess=$True)]
     param(

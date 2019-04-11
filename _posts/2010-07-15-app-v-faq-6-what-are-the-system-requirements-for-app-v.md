@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />
 
 Operating system support for App-V is ultimately determined by the [Microsoft Product Support Lifecycle](http://support.microsoft.com/?pr=lifecycle). Note that the App-V 4.6 Client and Sequencer is required for 64-bit operating systems.
 

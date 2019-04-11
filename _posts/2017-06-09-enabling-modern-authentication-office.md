@@ -4,7 +4,7 @@ title: Enabling Modern Authentication for Office
 date: 2017-06-09T23:24:44+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5447
+guid: {{site.baseurl}}.com/?p=5447
 permalink: /enabling-modern-authentication-office/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

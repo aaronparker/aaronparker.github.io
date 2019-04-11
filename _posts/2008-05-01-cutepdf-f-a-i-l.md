@@ -13,8 +13,8 @@ categories:
 ---
 This:
 
-<img border="0" alt="CutePDF" src="https://stealthpuppy.com/media/2008/05/cutepdf.png" width="393" height="140" /> 
+<img border="0" alt="CutePDF" src="{{site.baseurl}}.com/media/2008/05/cutepdf.png" width="393" height="140" /> 
 
 is obviously not the case:
 
-<img border="0" alt="CutePDFError" src="https://stealthpuppy.com/media/2008/05/cutepdferror.png" width="521" height="244" />
+<img border="0" alt="CutePDFError" src="{{site.baseurl}}.com/media/2008/05/cutepdferror.png" width="521" height="244" />

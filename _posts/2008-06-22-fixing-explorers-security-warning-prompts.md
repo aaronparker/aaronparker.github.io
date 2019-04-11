@@ -15,7 +15,7 @@ Last week I wrote about [avoiding Explorer's Security Warning prompts]({{site.ba
 
 First a quick background on what we're trying to solve. By default, Windows Explorer will place network locations (mapped drives and UNC paths) with a period (.) in the path, into the the Internet zone. This means that when users access files from these locations, they will see security warnings like these:
 
-<img src="https://stealthpuppy.com/media/2008/06/securityrisk.png" border="0" alt="SecurityRisk" width="345" height="136" /> 
+<img src="{{site.baseurl}}.com/media/2008/06/securityrisk.png" border="0" alt="SecurityRisk" width="345" height="136" /> 
 
 ![]({{site.baseurl}}/media/2008/06/securitywarning.png) 
 
@@ -23,15 +23,15 @@ These warnings attempt to ensure users are aware of the potential risks when ope
 
 If you map a drive to a UNC path that that includes two or more periods in the name you will see that the network drive is marked as being in the Internet zone even though you may have added the location to the Local Intranet zone. In my example here, I've mapped drive S: to [\\dc.dev.local\Apps](file://\\dc.dev.local\Apps), and as you can see, it’s in the Internet zone:
 
-<img src="https://stealthpuppy.com/media/2008/06/internetzonedrive.png" border="0" alt="InternetZoneDrive" width="304" height="336" /> 
+<img src="{{site.baseurl}}.com/media/2008/06/internetzonedrive.png" border="0" alt="InternetZoneDrive" width="304" height="336" /> 
 
 If I open the same location via a UNC path you will see that Explorer sees it as being in the Local Intranet zone:
 
-<img src="https://stealthpuppy.com/media/2008/06/intranetzoneunc.png" border="0" alt="IntranetZoneUNC" width="304" height="321" /> 
+<img src="{{site.baseurl}}.com/media/2008/06/intranetzoneunc.png" border="0" alt="IntranetZoneUNC" width="304" height="321" /> 
 
 Oddly enough, if I map a network drive to a path with only a single period on that path, the detection process works correctly and the location is seen as Intranet. In the example here, I'm mapping a drive to the same location as the previous two screen shots, but via a DFS path - [\\dev.local\Public\Apps](file://\\dev.local\Public\Apps) that redirects to [\\dc.dev.local\Apps](file://\\dc.dev.local\Apps).
 
-<img src="https://stealthpuppy.com/media/2008/06/intranetzonedrive.png" border="0" alt="IntranetZoneDrive" width="304" height="321" /> 
+<img src="{{site.baseurl}}.com/media/2008/06/intranetzonedrive.png" border="0" alt="IntranetZoneDrive" width="304" height="321" /> 
 
 This issue is addressed in the following knowledge base article:
 

@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />Microsoft provides several tools that are useful for managing your App-V environment. Although Microsoft does make these applications freely available, they are not supported through the official Microsoft Support channels. Use the [Microsoft Application Virtualization TechNet forums](http://social.technet.microsoft.com/Forums/en-gb/category/appvirtualization) to provide feedback or report any problems. The tools include:
+<img style="margin: 0px 0px 5px 10px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />Microsoft provides several tools that are useful for managing your App-V environment. Although Microsoft does make these applications freely available, they are not supported through the official Microsoft Support channels. Use the [Microsoft Application Virtualization TechNet forums](http://social.technet.microsoft.com/Forums/en-gb/category/appvirtualization) to provide feedback or report any problems. The tools include:
 
 ### Application Virtualization Sequencing SuperFlow
 

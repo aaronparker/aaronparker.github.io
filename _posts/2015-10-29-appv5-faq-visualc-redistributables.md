@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: Visual C++ Redistributable as local installs or allow App-V
 date: 2015-10-29T21:21:32+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=4185
+guid: {{site.baseurl}}.com/?p=4185
 permalink: /appv5-faq-visualc-redistributables/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -16,11 +16,11 @@ categories:
 tags:
   - AppVFAQ
 ---
- _<img class="alignleft wp-image-4188" style="margin: 0px 15px 0px 0px;" src="https://stealthpuppy.com/media/2015/10/thamim.jpg" alt="ThamimKarim](https://twitter.com/ThamimKarim) has worked across the globe assisting customers with their user experience and application deployment strategies offering both consultancy and training services. He also has made many speaker appearances at conferences including TechEd, App-V User Groups and Microsoft Ignite._
+ _<img class="alignleft wp-image-4188" style="margin: 0px 15px 0px 0px;" src="{{site.baseurl}}.com/media/2015/10/thamim.jpg" alt="ThamimKarim](https://twitter.com/ThamimKarim) has worked across the globe assisting customers with their user experience and application deployment strategies offering both consultancy and training services. He also has made many speaker appearances at conferences including TechEd, App-V User Groups and Microsoft Ignite._
 
 Since the release of App-V 5.0 SP2 almost two years ago, the question regarding whether we should allow runtimes such as Visual C++ redistributables to be automatically packaged as part of App-V sequences or whether they should be individually managed on the base OS is on-going. Well there is no right or wrong approach to this, I know people who are massive fans of this feature and others who staunchly believe such SxS components should be managed locally.
 
-![App-V 5 Sequencer options" width="517" height="406" srcset="https://stealthpuppy.com/media/2015/10/SequencerOptions.png 517w, https://stealthpuppy.com/media/2015/10/SequencerOptions-150x118.png 150w, https://stealthpuppy.com/media/2015/10/SequencerOptions-300x236.png 300w" sizes="(max-width: 517px) 100vw, 517px" />*App-V 5 Sequencer options*
+![App-V 5 Sequencer options" width="517" height="406" srcset="{{site.baseurl}}.com/media/2015/10/SequencerOptions.png 517w, {{site.baseurl}}.com/media/2015/10/SequencerOptions-150x118.png 150w, {{site.baseurl}}.com/media/2015/10/SequencerOptions-300x236.png 300w" sizes="(max-width: 517px) 100vw, 517px" />*App-V 5 Sequencer options*
 
 Either way here are your three main options:
 

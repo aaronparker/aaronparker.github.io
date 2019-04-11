@@ -4,7 +4,7 @@ title: What is a Microsoft Office application?
 date: 2019-02-23T18:11:15+10:00
 author: Aaron Parker
 layout: revision
-guid: https://stealthpuppy.com/6252-revision-v1/
+guid: {{site.baseurl}}.com/6252-revision-v1/
 permalink: /6252-revision-v1/
 ---
 It used to be simple to understand what applications made up the Microsoft Office suite - Word, Excel, PowerPoint, and they only ran on Windows. There were a few apps that we added, others that came and went Office even popped up on macOS just over 20 years ago.
@@ -17,7 +17,7 @@ Windows
 
 dd
 
-[<img src="https://stealthpuppy.com/media/2019/02/Office365-Apps-StartMenu-v2-1024x576.png" alt="Microsoft Office applications on Windows" class="wp-image-6255" srcset="https://stealthpuppy.com/media/2019/02/Office365-Apps-StartMenu-v2-1024x576.png 1024w, https://stealthpuppy.com/media/2019/02/Office365-Apps-StartMenu-v2-150x84.png 150w, https://stealthpuppy.com/media/2019/02/Office365-Apps-StartMenu-v2-300x169.png 300w, https://stealthpuppy.com/media/2019/02/Office365-Apps-StartMenu-v2-768x432.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](blob:https://stealthpuppy.com/c9564118-065d-45b9-b640-6558f88fb6c7)*Microsoft Office applications on Windows*
+[<img src="{{site.baseurl}}.com/media/2019/02/Office365-Apps-StartMenu-v2-1024x576.png" alt="Microsoft Office applications on Windows" class="wp-image-6255" srcset="{{site.baseurl}}.com/media/2019/02/Office365-Apps-StartMenu-v2-1024x576.png 1024w, {{site.baseurl}}.com/media/2019/02/Office365-Apps-StartMenu-v2-150x84.png 150w, {{site.baseurl}}.com/media/2019/02/Office365-Apps-StartMenu-v2-300x169.png 300w, {{site.baseurl}}.com/media/2019/02/Office365-Apps-StartMenu-v2-768x432.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](blob:{{site.baseurl}}.com/c9564118-065d-45b9-b640-6558f88fb6c7)*Microsoft Office applications on Windows*
 
 dd
 
@@ -25,6 +25,6 @@ macOS
 
 dd
 
-<img src="https://stealthpuppy.com/media/2019/02/MicrosoftOffice-macOS-1024x640.png" alt="" class="wp-image-6256" srcset="https://stealthpuppy.com/media/2019/02/MicrosoftOffice-macOS-1024x640.png 1024w, https://stealthpuppy.com/media/2019/02/MicrosoftOffice-macOS-150x94.png 150w, https://stealthpuppy.com/media/2019/02/MicrosoftOffice-macOS-300x188.png 300w, https://stealthpuppy.com/media/2019/02/MicrosoftOffice-macOS-768x480.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> 
+<img src="{{site.baseurl}}.com/media/2019/02/MicrosoftOffice-macOS-1024x640.png" alt="" class="wp-image-6256" srcset="{{site.baseurl}}.com/media/2019/02/MicrosoftOffice-macOS-1024x640.png 1024w, {{site.baseurl}}.com/media/2019/02/MicrosoftOffice-macOS-150x94.png 150w, {{site.baseurl}}.com/media/2019/02/MicrosoftOffice-macOS-300x188.png 300w, {{site.baseurl}}.com/media/2019/02/MicrosoftOffice-macOS-768x480.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> 
 
 dd

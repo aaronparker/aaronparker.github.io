@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: How Do I License Microsoft Application Virtualization 5?'
 date: 2015-06-15T22:53:05+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3987
+guid: {{site.baseurl}}.com/?p=3987
 permalink: /appv5-faq-license-appv5/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -28,7 +28,7 @@ App-V is licensed as a component of the [Microsoft Desktop Optimisation Pack](ht
 
 > If the underlying Windows Software Assurance or Windows VDA is licensed per device, then MDOP covers the licensed device. If the underlying Windows Software Assurance or Windows VDA is licensed per user, then MDOP extends across all of the licensed user's devices.
 
-[<img class="alignnone size-full wp-image-4071" src="https://stealthpuppy.com/media/2015/06/SoftwareAssurance.png" alt="SoftwareAssurance]({{site.baseurl}}/media/2015/06/SoftwareAssurance.png)
+[<img class="alignnone size-full wp-image-4071" src="{{site.baseurl}}.com/media/2015/06/SoftwareAssurance.png" alt="SoftwareAssurance]({{site.baseurl}}/media/2015/06/SoftwareAssurance.png)
 
 # Remote Desktop Services
 

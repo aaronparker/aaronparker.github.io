@@ -4,7 +4,7 @@ title: 'Hands off my gold image! – Video: Windows 8 zero-touch deployment'
 date: 2013-05-23T18:43:44+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3299
+guid: {{site.baseurl}}.com/?p=3299
 permalink: /hands-off-my-gold-image-video-windows-8-zero-touch-deployment/
 dsq_thread_id:
   - "1310932232"
@@ -21,6 +21,6 @@ In a 45 minute session on MDT and automating gold image deployments there's not 
 
 Here’s a flow chart that gives an overview of what the script does:
 
-[<img class="alignnone  wp-image-3312" alt="Zero-touch-Windows8-deployment" src="https://stealthpuppy.com/media/2013/05/Zero-touch-Windows8-deployment.png]({{site.baseurl}}/media/2013/05/Zero-touch-Windows8-deployment.png)
+[<img class="alignnone  wp-image-3312" alt="Zero-touch-Windows8-deployment" src="{{site.baseurl}}.com/media/2013/05/Zero-touch-Windows8-deployment.png]({{site.baseurl}}/media/2013/05/Zero-touch-Windows8-deployment.png)
 
 The video is available in HD resolution (720) so you can see the full details.

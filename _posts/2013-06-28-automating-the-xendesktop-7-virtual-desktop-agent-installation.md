@@ -4,7 +4,7 @@ title: Automating the XenDesktop 7 Virtual Desktop Agent Installation
 date: 2013-06-28T17:26:58+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3385
+guid: {{site.baseurl}}.com/?p=3385
 permalink: /automating-the-xendesktop-7-virtual-desktop-agent-installation/
 dsq_thread_id:
   - "1445599060"
@@ -24,7 +24,7 @@ SET OPTIONS=%OPTIONS% /NOREBOOT</pre>
 
 When running the wizard, you're first asked whether you're deploying to a master image, or a persistent virtual machine/physical PC.
 
-[<img class="alignnone size-full wp-image-3386" alt="1_Configuration" src="https://stealthpuppy.com/media/2013/06/1_Configuration.png]({{site.baseurl}}/media/2013/06/1_Configuration.png)
+[<img class="alignnone size-full wp-image-3386" alt="1_Configuration" src="{{site.baseurl}}.com/media/2013/06/1_Configuration.png]({{site.baseurl}}/media/2013/06/1_Configuration.png)
 
 In this example, I'm deploying to a master image, so I'll set the MASTERIMAGE flag:
 
@@ -32,7 +32,7 @@ In this example, I'm deploying to a master image, so I'll set the MASTERIMAGE fl
 
 The next page lists the options to install the VDA and optionally Receiver:
 
-[<img class="alignnone size-full wp-image-3387" alt="2_CoreComponents" src="https://stealthpuppy.com/media/2013/06/2_CoreComponents.png]({{site.baseurl}}/media/2013/06/2_CoreComponents.png)
+[<img class="alignnone size-full wp-image-3387" alt="2_CoreComponents" src="{{site.baseurl}}.com/media/2013/06/2_CoreComponents.png]({{site.baseurl}}/media/2013/06/2_CoreComponents.png)
 
 I'm just looking to install the VDA, but I could also install Receiver, by adding PLUGINS to the COMPONENTS option:
 
@@ -40,7 +40,7 @@ I'm just looking to install the VDA, but I could also install Receiver, by addin
 
 Next up is configuring the location of the Delivery Controllers.
 
-[<img class="alignnone size-full wp-image-3388" alt="3_DeliveryController" src="https://stealthpuppy.com/media/2013/06/3_DeliveryController.png]({{site.baseurl}}/media/2013/06/3_DeliveryController.png)
+[<img class="alignnone size-full wp-image-3388" alt="3_DeliveryController" src="{{site.baseurl}}.com/media/2013/06/3_DeliveryController.png]({{site.baseurl}}/media/2013/06/3_DeliveryController.png)
 
 I'm going to specify a static list of Controllers using the aptly named CONTROLLERS property:
 
@@ -50,11 +50,11 @@ There are additional options at this point and the recommended approach is to s
 
 The last option - 'Let Machine Creation Services do it automatically' doesn't appear to be available as a command line option. From the command line perspective, I assume this is the same as not specifying CONTROLLERS or SITE_GUID at all.
 
-[<img class="alignnone size-full wp-image-3396" alt="ConfigurationOptions" src="https://stealthpuppy.com/media/2013/06/ConfigurationOptions.png]({{site.baseurl}}/media/2013/06/ConfigurationOptions.png)
+[<img class="alignnone size-full wp-image-3396" alt="ConfigurationOptions" src="{{site.baseurl}}.com/media/2013/06/ConfigurationOptions.png]({{site.baseurl}}/media/2013/06/ConfigurationOptions.png)
 
 The Features page lists a few options that look completely unrelated, but I assume they need to go somewhere.
 
-[<img class="alignnone size-full wp-image-3390" alt="4_Features" src="https://stealthpuppy.com/media/2013/06/4_Features1.png]({{site.baseurl}}/media/2013/06/4_Features1.png)
+[<img class="alignnone size-full wp-image-3390" alt="4_Features" src="{{site.baseurl}}.com/media/2013/06/4_Features1.png]({{site.baseurl}}/media/2013/06/4_Features1.png)
 
 Each feature has its own command line option. In my case, I don't really need to add the option for Remote Assistance, because I've used an automated deployment that has already enabled that feature, but it doesn't hurt to enable the option anyway.
 
@@ -64,7 +64,7 @@ SET OPTIONS=%OPTIONS% /ENABLE_REAL_TIME_TRANSPORT</pre>
 
 The VDA requires several inbound ports for core features to work.
 
-[<img class="alignnone size-full wp-image-3391" alt="5_Firewall" src="https://stealthpuppy.com/media/2013/06/5_Firewall.png]({{site.baseurl}}/media/2013/06/5_Firewall.png)
+[<img class="alignnone size-full wp-image-3391" alt="5_Firewall" src="{{site.baseurl}}.com/media/2013/06/5_Firewall.png]({{site.baseurl}}/media/2013/06/5_Firewall.png)
 
 Fortunately, Windows Firewall configuration is simple using the ENABLE\_HDX\_PORTS flag:
 
@@ -72,7 +72,7 @@ Fortunately, Windows Firewall configuration is simple using the ENABLE\_HDX\_POR
 
 Finally then, a summary of what the wizard is about to install and configure. It's worth pointing out that for Windows Server workloads, you will need to install the Remote Desktop Session Host **before** installing the VDA. If the RDSH role is not installed, setup will install it and reboot the server.  This will potentially break your automated deployment; however, if you've used the right approach and [automated the deployment of Windows]({{site.baseurl}}/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/), then this role will already be enabled.
 
-[<img class="alignnone size-full wp-image-3392" alt="6_Summary" src="https://stealthpuppy.com/media/2013/06/6_Summary.png]({{site.baseurl}}/media/2013/06/6_Summary.png)
+[<img class="alignnone size-full wp-image-3392" alt="6_Summary" src="{{site.baseurl}}.com/media/2013/06/6_Summary.png]({{site.baseurl}}/media/2013/06/6_Summary.png)
 
 With my script created now, I can automate the deployment of the VDA as a component of automating the entire deployment of the master image. Here's a sample script that will use the options listed above for 32-bit or 64-bit platforms.
 

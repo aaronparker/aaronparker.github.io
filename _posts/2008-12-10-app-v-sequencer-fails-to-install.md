@@ -15,7 +15,7 @@ tags:
 ---
 Attempting to install the App-V Sequencer may not be successful and result the message “The wizard was interrupted before Microsoft Application Virtualization Sequencer could be completely installed”. Of course the message in the dialog isn’t particularly helpful, so what’s going on?
 
-<img style="display: inline" title="SequencerInstallError" src="https://stealthpuppy.com/media/2008/12/sequencerinstallerror.png" border="0" alt="SequencerInstallError" width="504" height="338" /> 
+<img style="display: inline" title="SequencerInstallError" src="{{site.baseurl}}.com/media/2008/12/sequencerinstallerror.png" border="0" alt="SequencerInstallError" width="504" height="338" /> 
 
 Taking a deeper look at the issue by enabling a log file, reveals the problem – if Setup detects that the App-V client installed, it will abort. Here’s what you’ll see in the log:
 

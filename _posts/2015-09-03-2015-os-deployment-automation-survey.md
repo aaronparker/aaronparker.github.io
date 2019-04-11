@@ -4,7 +4,7 @@ title: Final Days To Take Part in the OS Deployment Automation Survey
 date: 2015-09-03T21:15:21+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=4074
+guid: {{site.baseurl}}.com/?p=4074
 permalink: /2015-os-deployment-automation-survey/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

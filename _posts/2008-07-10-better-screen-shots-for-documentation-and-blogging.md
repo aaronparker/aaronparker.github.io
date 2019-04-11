@@ -35,7 +35,7 @@ If you're still using the Print Screen button or the Snipping tool in Windows Vi
 
 Window Clippings gives me great screen shots like this:
 
-<img title="Computer" height="378" alt="Computer" src="https://stealthpuppy.com/media/2008/06/computer.png" width="635" border="0" /> 
+<img title="Computer" height="378" alt="Computer" src="{{site.baseurl}}.com/media/2008/06/computer.png" width="635" border="0" /> 
 
 I could also capture [multiple windows](http://weblogs.asp.net/kennykerr/archive/2008/04/05/window-clippings-2-1-how-to-select-multiple-windows.aspx), [parent windows](http://weblogs.asp.net/kennykerr/archive/2008/04/09/window-clippings-2-1-how-to-include-a-disabled-parent-window.aspx), or even [menus](http://weblogs.asp.net/kennykerr/archive/2008/04/10/window-clippings-2-1-how-to-capture-menus-and-other-interactive-effects.aspx). I loved it so much I even bought a license, which I think brings the number of software products I own licenses for to three.
 
@@ -53,7 +53,7 @@ There's a lot to like about Paint.NET too:
 
 Here's Paint.NET editing the previous screen shot:
 
-<img title="PaintDotNet" height="383" alt="PaintDotNet" src="https://stealthpuppy.com/media/2008/06/paintdotnet.png" width="602" border="0" /> 
+<img title="PaintDotNet" height="383" alt="PaintDotNet" src="{{site.baseurl}}.com/media/2008/06/paintdotnet.png" width="602" border="0" /> 
 
 Given that Paint.NET is maintained by a bunch of Microsoft devs, it would be great to see this or a derivative in Windows 7.
 
@@ -61,7 +61,7 @@ Given that Paint.NET is maintained by a bunch of Microsoft devs, it would be gre
 
 [PNG](http://en.wikipedia.org/wiki/Portable_Network_Graphics) is my file type of choice for screen shots because it looks great and still manages to keep files sizes small. But as [Jeff Atwood points out](http://www.codinghorror.com/blog/archives/000810.html), you can use [PNGOUT](http://www.advsys.net/ken/utils.htm) to squeeze the file sizes down further. In the screen shot below you can see the size difference between the before and after optimisation on the Computer screen shot above. 
 
-<img title="PngOut" height="203" alt="PngOut" src="https://stealthpuppy.com/media/2008/06/pngout.png" width="567" border="0" /> 
+<img title="PngOut" height="203" alt="PngOut" src="{{site.baseurl}}.com/media/2008/06/pngout.png" width="567" border="0" /> 
 
 The file has been reduce to 77% of the original size. Great for reducing my bandwidth requirements, but also excellent for keep my documents smaller too. You can read more about [using PNGOUT here](http://www.advsys.net/ken/util/pngout.htm).
 

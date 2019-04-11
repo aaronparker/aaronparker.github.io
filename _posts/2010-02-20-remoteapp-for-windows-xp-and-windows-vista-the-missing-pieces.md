@@ -20,7 +20,7 @@ tags:
   - RemoteApp
 ---
 You may recall from [my last post on RemoteApp]({{site.baseurl}}/virtualisation/remoteapp-for-hyper-v-hyper-what), that we can get RemoteApp for Hyper-V works on other platforms too. While it was straight-forward publishing applications from a Windows 7 host, the client would report this error when connecting to Windows XP and Windows Vista hosts:  
-<img style="display: inline; margin-top: 5px;" title="RemoteAppNotSupported" src="https://stealthpuppy.com/media/2009/12/RemoteAppNotSupported.png" alt="RemoteAppNotSupported" width="430" height="203" border="0" /> 
+<img style="display: inline; margin-top: 5px;" title="RemoteAppNotSupported" src="{{site.baseurl}}.com/media/2009/12/RemoteAppNotSupported.png" alt="RemoteAppNotSupported" width="430" height="203" border="0" /> 
 
 Kind of annoying, because the original [RemoteApp for Hyper-V post](http://blogs.msdn.com/rds/archive/2009/12/15/remoteapp-for-hyper-v.aspx) on the RDS blog, showed us something cool but left out the important part on how to get it working. Well, thanks to [Justin](http://blogs.technet.com/virtualworld) and [this comment](http://blogs.msdn.com/rds/archive/2009/12/15/remoteapp-for-hyper-v.aspx#9964757), I’ve been able to fix the issue and get RemoteApp running on XP and Vista (unfortunately I can’t take any of the credit).
 
@@ -121,17 +121,17 @@ use redirection server name:i:0[/code]
 
 When launching the RemoteApp program, the UI isn't quite as seamless as you get with the XenApp client. You will first see a warning prompt if the .RDP file is not signed, and then a dialog box while the client connects:
 
-<a href="https://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappconnect-2/" rel="attachment wp-att-1369"><img class="alignnone size-full wp-image-1369" title="RemoteAppConnect" src="https://stealthpuppy.com/media/2010/02/RemoteAppConnect1.png" alt="" width="453" height="285" srcset="https://stealthpuppy.com/media/2010/02/RemoteAppConnect1.png 453w, https://stealthpuppy.com/media/2010/02/RemoteAppConnect1-150x94.png 150w, https://stealthpuppy.com/media/2010/02/RemoteAppConnect1-300x188.png 300w" sizes="(max-width: 453px) 100vw, 453px" /></a>
+<a href="{{site.baseurl}}.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappconnect-2/" rel="attachment wp-att-1369"><img class="alignnone size-full wp-image-1369" title="RemoteAppConnect" src="{{site.baseurl}}.com/media/2010/02/RemoteAppConnect1.png" alt="" width="453" height="285" srcset="{{site.baseurl}}.com/media/2010/02/RemoteAppConnect1.png 453w, {{site.baseurl}}.com/media/2010/02/RemoteAppConnect1-150x94.png 150w, {{site.baseurl}}.com/media/2010/02/RemoteAppConnect1-300x188.png 300w" sizes="(max-width: 453px) 100vw, 453px" /></a>
 
 If the RemoteApp host is Windows XP, the user will be required to click the Details button to see the remote login dialog box and enter their credentials:
 
-<a href="https://stealthpuppy.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappauth-2/" rel="attachment wp-att-1368"><img class="alignnone size-full wp-image-1368" title="RemoteAppAuth" src="https://stealthpuppy.com/media/2010/02/RemoteAppAuth1.png" alt="" width="660" height="609" srcset="https://stealthpuppy.com/media/2010/02/RemoteAppAuth1.png 660w, https://stealthpuppy.com/media/2010/02/RemoteAppAuth1-150x138.png 150w, https://stealthpuppy.com/media/2010/02/RemoteAppAuth1-300x276.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
+<a href="{{site.baseurl}}.com/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappauth-2/" rel="attachment wp-att-1368"><img class="alignnone size-full wp-image-1368" title="RemoteAppAuth" src="{{site.baseurl}}.com/media/2010/02/RemoteAppAuth1.png" alt="" width="660" height="609" srcset="{{site.baseurl}}.com/media/2010/02/RemoteAppAuth1.png 660w, {{site.baseurl}}.com/media/2010/02/RemoteAppAuth1-150x138.png 150w, {{site.baseurl}}.com/media/2010/02/RemoteAppAuth1-300x276.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
 If the client is Windows XP or above and the host is Windows Vista or above, you can configure [credential pass-through (single sign-on)](http://blogs.msdn.com/rds/archive/2007/04/19/how-to-enable-single-sign-on-for-my-terminal-server-connections.aspx) to make connecting seamless. You must first [enable CredSSP](http://support.microsoft.com/kb/951608) on Windows XP SP3 clients. Pass-through won't work for Windows XP hosts - although you may be able to save the username and password in the .RDP file instead.
 
 So finally with all of the pieces in place, here’s what you’ll see with applications running via RemoteApp. In this screenshot I have Calculator running remotely from Windows XP and Windows Vista next to the local version.
 
-[<img style="display: inline; border: 0px;" title="DesktopWithCalculator" src="https://stealthpuppy.com/media/2010/02/DesktopWithCalculator_thumb.png" alt="DesktopWithCalculator]({{site.baseurl}}/media/2010/02/DesktopWithCalculator.png)
+[<img style="display: inline; border: 0px;" title="DesktopWithCalculator" src="{{site.baseurl}}.com/media/2010/02/DesktopWithCalculator_thumb.png" alt="DesktopWithCalculator]({{site.baseurl}}/media/2010/02/DesktopWithCalculator.png)
 
 One thing to note is that the remote applications are all group together on the taskbar; in this screenshot, the two remote Calculators are grouped with Remote Desktop Connection – users' won’t see separate remote buttons as you get in competing products.
 

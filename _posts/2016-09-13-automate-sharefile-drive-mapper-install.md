@@ -4,7 +4,7 @@ title: Automating the Citrix ShareFile Drive Mapper Install
 date: 2016-09-13T00:00:01+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5155
+guid: {{site.baseurl}}.com/?p=5155
 permalink: /automate-sharefile-drive-mapper-install/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

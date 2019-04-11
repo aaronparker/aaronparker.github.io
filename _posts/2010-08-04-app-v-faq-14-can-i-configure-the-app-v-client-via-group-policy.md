@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />
+<img style="margin: 0px 0px 5px 10px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />
 
 _Note_: while you can manage the App-V with Group Policy, I recommend that you first create a baseline configuration [via a custom App-V Client installer]({{site.baseurl}}/deployment/app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client), and then use Group Policy to either change or enforce your defaults. This will ensure that the client is configured correctly at install time without having to wait for Group Policy to apply.
 

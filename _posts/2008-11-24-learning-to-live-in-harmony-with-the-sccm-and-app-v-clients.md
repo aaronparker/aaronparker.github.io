@@ -22,7 +22,7 @@ However, in this scenario, SCCM takes over the role of the Management or Streami
 
 Ment’s post goes into detail about the changes to the client when the SCCM handles virtualised applications but here’s what turns the behaviour on:
 
-<img style="display: inline" title="AllowVirtualApplicationPackageAdverisement" border="0" alt="AllowVirtualApplicationPackageAdverisement" src="https://stealthpuppy.com/media/2008/11/allowvirtualapplicationpackageadverisement.png" width="404" height="448" /> 
+<img style="display: inline" title="AllowVirtualApplicationPackageAdverisement" border="0" alt="AllowVirtualApplicationPackageAdverisement" src="{{site.baseurl}}.com/media/2008/11/allowvirtualapplicationpackageadverisement.png" width="404" height="448" /> 
 
 To get there open the ConfigMgr Console, expand _Site Database_, _Site Management_, _<Site Name>_, _Site Settings_, _Client Agents_; then open the properties for _Advertised Programs Client Agent_. If you enable the option _Allow virtual application package advertisement_ option, the SCCM client will become the default handler for virtual applications. You can see that in the registry settings that Ment has documented.
 

@@ -50,4 +50,4 @@ REGSVR32 C:WindowsSystem32wdscsl.dll[/code]
 
 Add the Windows Deployment Services snap-in to a custom MMC console or run WdsMgmt.msc if you copied that file from the source machine.
 
-<img border="0" src="https://stealthpuppy.com/media/2007/02/1000.14.1051.WDSConsole.png" />
+<img border="0" src="{{site.baseurl}}.com/media/2007/02/1000.14.1051.WDSConsole.png" />

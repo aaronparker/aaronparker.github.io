@@ -4,7 +4,7 @@ title: Adding App-V Publishing Information to a XenDesktop Site with PowerShell
 date: 2014-10-23T22:49:04+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3722
+guid: {{site.baseurl}}.com/?p=3722
 permalink: /appv-publishing-xendesktop-powershell/
 dsq_thread_id:
   - "3147403871"
@@ -61,7 +61,7 @@ This function is fairly basic and while it does do some error checking, it could
             
 
 <blockquote class="wp-embedded-content" data-secret="G83Mrh3a9x">
-  <a href="https://stealthpuppy.com/appv-publishing-xendesktop-powershell/">Adding App-V Publishing Information to a XenDesktop Site with PowerShell</a>
+  <a href="{{site.baseurl}}.com/appv-publishing-xendesktop-powershell/">Adding App-V Publishing Information to a XenDesktop Site with PowerShell</a>
 </blockquote>
  
     #&gt;

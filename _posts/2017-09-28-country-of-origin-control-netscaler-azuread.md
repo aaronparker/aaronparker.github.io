@@ -4,7 +4,7 @@ title: Simple Country of Origin Control for NetScaler with Azure AD
 date: 2017-09-28T16:29:39+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5792
+guid: {{site.baseurl}}.com/?p=5792
 permalink: /country-of-origin-control-netscaler-azuread/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

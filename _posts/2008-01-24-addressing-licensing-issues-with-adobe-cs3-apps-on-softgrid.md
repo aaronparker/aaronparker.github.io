@@ -20,7 +20,7 @@ In a MAV environment this service can be successfully virtualised, however you m
 
 > The licensing subsystem has failed catastrophically. You must reinstall or call customer support.
 
-![Licensing Error](https://stealthpuppy.com/media/2008/01/licensing-error2.png)
+![Licensing Error]({{site.baseurl}}.com/media/2008/01/licensing-error2.png)
 
 > You cannot use this product at this time. You must repair the problem by uninstalling and then reinstalling this product or contacting your IT administrator or Adobe customer support for help.
 

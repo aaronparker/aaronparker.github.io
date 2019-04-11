@@ -4,7 +4,7 @@ title: FSLogix Apps on the Windows 10 Modern Desktop
 date: 2018-01-27T06:53:20+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5936
+guid: {{site.baseurl}}.com/?p=5936
 permalink: /?p=5936
 categories:
   - General

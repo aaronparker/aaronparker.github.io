@@ -14,7 +14,7 @@ tags:
 ---
 Here's an interesting new feature of Windows Vista that will be a help to shared computing environments such as public libraries or those still inflicted with Windows NT 4.0 domains €“ Multiple Local Group Policy.
 
-![Multiple Local Group Policy](https://stealthpuppy.com/media/2006/10/1000.14.140.MultipleLocalGroupPolicy.PNG)
+![Multiple Local Group Policy]({{site.baseurl}}.com/media/2006/10/1000.14.140.MultipleLocalGroupPolicy.PNG)
 
 In environments where Windows is installed and not connected to a domain, locking down the user interface with Group Policy has been a challenge because local Group Policy applies to all users including Administrators. Windows Vista and Longhorn Server now allow the administrator to create multiple local Group Policy objects that can be applied to specific users or groups. It's a simple process:
 

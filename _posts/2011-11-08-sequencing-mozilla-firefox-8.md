@@ -18,7 +18,7 @@ tags:
   - App-V
   - Firefox
 ---
-<img src="https://stealthpuppy.com/media/2011/06/062611_1120_SequencingM1.png" alt="" align="right" />Mozilla has just released Firefox 8, so it's time to look at virtualizing the new version. It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. Here's how to successfully sequence [Mozilla Firefox 8.x](http://www.mozilla.com/en-US/firefox/).
+<img src="{{site.baseurl}}.com/media/2011/06/062611_1120_SequencingM1.png" alt="" align="right" />Mozilla has just released Firefox 8, so it's time to look at virtualizing the new version. It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. Here's how to successfully sequence [Mozilla Firefox 8.x](http://www.mozilla.com/en-US/firefox/).
 
 ### What you lose by virtualizing Firefox
 

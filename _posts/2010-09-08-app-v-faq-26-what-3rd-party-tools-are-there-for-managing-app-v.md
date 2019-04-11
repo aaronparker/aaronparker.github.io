@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />Even in the absence of [an App-V SDK](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/App-V_Extensibility_Today_Before_the_SDK.docx), the 3rd party tools available for App-V are wide and varied. Here’s what I hope is a complete list. If I missed anything out, please let me know.
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />Even in the absence of [an App-V SDK](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/App-V_Extensibility_Today_Before_the_SDK.docx), the 3rd party tools available for App-V are wide and varied. Here’s what I hope is a complete list. If I missed anything out, please let me know.
 
 ### Paid Tools
 

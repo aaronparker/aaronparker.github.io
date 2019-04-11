@@ -4,7 +4,7 @@ title: Setting up Windows Defender Advanced Threat Protection
 date: 2017-07-25T18:21:27+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5550
+guid: {{site.baseurl}}.com/?p=5550
 permalink: /setup-windows-defender-advanced-threat-protection/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

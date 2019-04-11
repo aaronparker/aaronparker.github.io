@@ -16,7 +16,7 @@ Instead of waiting for Citrix to support Windows Vista icon sizes in their new b
 Here's the before and after shots:
 
 <p align="center">
-  <img border="0" alt="CitrixApplicationsIconBeforeAndAfter" src="https://stealthpuppy.com/media/2008/05/citrixapplicationsiconbeforeandafter.png" width="168" height="352" />
+  <img border="0" alt="CitrixApplicationsIconBeforeAndAfter" src="{{site.baseurl}}.com/media/2008/05/citrixapplicationsiconbeforeandafter.png" width="168" height="352" />
 </p>
 
 I'm sure you'll agree that 'after' looks much better. The crazy thing is that I've added the 256 x 256 PNG file that I originally downloaded from the official Citrix blogs site (I've lost the original link).
@@ -24,7 +24,7 @@ I'm sure you'll agree that 'after' looks much better. The crazy thing is that I'
 You can download the icon from [here]({{site.baseurl}}/media/2008/05/CitrixApplications.ico) and update your existing shortcuts or break out a resource editor to update the executables directly. Here's the original PNG file if you want to cook your own.
 
 <p align="center">
-  <img border="0" alt="CitrixApplicationsIcon" src="https://stealthpuppy.com/media/2008/05/citrixapplicationsicon.png" width="168" height="168" />
+  <img border="0" alt="CitrixApplicationsIcon" src="{{site.baseurl}}.com/media/2008/05/citrixapplicationsicon.png" width="168" height="168" />
 </p>
 
 I'm going to try to be optimistic and I know this is a beta product, but I'm not going to bet on Vista icon support in the final release.

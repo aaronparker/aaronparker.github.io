@@ -15,7 +15,7 @@ categories:
 tags:
   - App-V
 ---
-<a rel="attachment wp-att-1479" href="https://stealthpuppy.com/virtualisation/dynamic-suite-composition-and-short-names/attachment/appvlogo-png"><img class="alignleft size-full wp-image-1479" style="margin-right: 15px;" title="AppVLogo.png" src="https://stealthpuppy.com/media/2010/04/AppVLogo.png" alt="](http://www.microsoft.com/downloads/details.aspx?familyid=67CDF9D2-7E8E-4D76-A552-FD82DBBFF9BC&displaylang=en).
+<a rel="attachment wp-att-1479" href="{{site.baseurl}}.com/virtualisation/dynamic-suite-composition-and-short-names/attachment/appvlogo-png"><img class="alignleft size-full wp-image-1479" style="margin-right: 15px;" title="AppVLogo.png" src="{{site.baseurl}}.com/media/2010/04/AppVLogo.png" alt="](http://www.microsoft.com/downloads/details.aspx?familyid=67CDF9D2-7E8E-4D76-A552-FD82DBBFF9BC&displaylang=en).
 
 However, I generally recommend configuring as many settings as you can during install so that you don't have to rely on external tools (e.g. Group Policy) that may not apply in a timely manner.
 

@@ -49,7 +49,7 @@ Setup for OpenOffice is Windows Installer based which makes creating an unattend
 
 The screenshot below shows the available components for OpenOffice 3.2, with the options listed above (and the defaults) disabled:
 
-[<img style="display: inline; border-width: 0px;" title="OpenOfficeComponents" src="https://stealthpuppy.com/media/2010/04/OpenOfficeComponents_thumb.png" border="0" alt="OpenOfficeComponents]({{site.baseurl}}/media/2010/04/OpenOfficeComponents.png)
+[<img style="display: inline; border-width: 0px;" title="OpenOfficeComponents" src="{{site.baseurl}}.com/media/2010/04/OpenOfficeComponents_thumb.png" border="0" alt="OpenOfficeComponents]({{site.baseurl}}/media/2010/04/OpenOfficeComponents.png)
 
 The [unattended reference for OpenOffice](http://wiki.services.openoffice.org/wiki/Documentation/How_Tos/Automatic_Installation_on_Windows) appears to be based on OpenOffice 2, so you may have to refer to the MSI itself when customising the install. See the Feature table for the names for each of the components. I prefer to do everything on  the command-line, instead of creating a transform where I can, so my OpenOffice install looks like this:
 
@@ -69,15 +69,15 @@ Install both the Sun JRE and OpenOffice and launch at least one of the OpenOffic
 
 You can leave the user details blank if you like:
 
-[<img style="display: inline; border: 0px;" title="OpenOfficeFirstRunWizard1" src="https://stealthpuppy.com/media/2010/04/OpenOfficeFirstRunWizard1_thumb.png" border="0" alt="OpenOfficeFirstRunWizard1]({{site.baseurl}}/media/2010/04/OpenOfficeFirstRunWizard1.png)
+[<img style="display: inline; border: 0px;" title="OpenOfficeFirstRunWizard1" src="{{site.baseurl}}.com/media/2010/04/OpenOfficeFirstRunWizard1_thumb.png" border="0" alt="OpenOfficeFirstRunWizard1]({{site.baseurl}}/media/2010/04/OpenOfficeFirstRunWizard1.png)
 
 Of course you want to register.. 😉
 
-[<img style="display: inline; border: 0px;" title="OpenOfficeFirstRunWizard2" src="https://stealthpuppy.com/media/2010/04/OpenOfficeFirstRunWizard2_thumb.png" border="0" alt="OpenOfficeFirstRunWizard2]({{site.baseurl}}/media/2010/04/OpenOfficeFirstRunWizard2.png)
+[<img style="display: inline; border: 0px;" title="OpenOfficeFirstRunWizard2" src="{{site.baseurl}}.com/media/2010/04/OpenOfficeFirstRunWizard2_thumb.png" border="0" alt="OpenOfficeFirstRunWizard2]({{site.baseurl}}/media/2010/04/OpenOfficeFirstRunWizard2.png)
 
 After first run, a profile folder at _%APPDATA%\OpenOffice.org\3\user_ will be created, which should come to somewhere around 1.8 MB. It also might be a good idea to check that OpenOffice can detect the JRE (open _Tools / Options_):
 
-[<img style="display: inline; border: 0px;" title="OpenOfficeJavaOptions" src="https://stealthpuppy.com/media/2010/04/OpenOfficeJavaOptions_thumb.png" border="0" alt="OpenOfficeJavaOptions]({{site.baseurl}}/media/2010/04/OpenOfficeJavaOptions.png)
+[<img style="display: inline; border: 0px;" title="OpenOfficeJavaOptions" src="{{site.baseurl}}.com/media/2010/04/OpenOfficeJavaOptions_thumb.png" border="0" alt="OpenOfficeJavaOptions]({{site.baseurl}}/media/2010/04/OpenOfficeJavaOptions.png)
 
 If you already have the JRE installed on your workstations, OpenOffice should detect it at runtime. Alternatively, you can use DSC to add the JRE support to OpenOffice.
 
@@ -95,4 +95,4 @@ The only post-wizard change you should need to make to the package is to delete 
 
 So there’s how to virtualise OpenOffice without too much effort and you should be left with a pretty  clean package weighing at approximately 500Mb that looks a little like this:
 
-[<img style="display: inline; border: 0px;" title="OpenOfficeAppVPackage" src="https://stealthpuppy.com/media/2010/04/OpenOfficeAppVPackage_thumb.png" border="0" alt="OpenOfficeAppVPackage]({{site.baseurl}}/media/2010/04/OpenOfficeAppVPackage.png)
+[<img style="display: inline; border: 0px;" title="OpenOfficeAppVPackage" src="{{site.baseurl}}.com/media/2010/04/OpenOfficeAppVPackage_thumb.png" border="0" alt="OpenOfficeAppVPackage]({{site.baseurl}}/media/2010/04/OpenOfficeAppVPackage.png)

@@ -12,7 +12,7 @@ categories:
   - Microsoft
 ---
 <p style="text-align: center">
-  <img src="https://stealthpuppy.com/media/2007/10/terminalserverhelp.png" alt="terminalserverhelp.png" />
+  <img src="{{site.baseurl}}.com/media/2007/10/terminalserverhelp.png" alt="terminalserverhelp.png" />
 </p>
 
 If it's the 834th time you've seen the Terminal Server help file open after you've enabled Terminal Server and you would like to stop this from happening in your automated builds, just delete this registry value before anyone logs onto the box (i.e. via CMDLINES.TXT or SysPrep):

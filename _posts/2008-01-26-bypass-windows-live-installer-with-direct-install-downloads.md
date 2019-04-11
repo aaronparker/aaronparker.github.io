@@ -13,7 +13,7 @@ categories:
 tags:
   - Windows-Live
 ---
-<img src="https://stealthpuppy.com/media/2008/02/windowslive.png" align="left" alt="windowslive.png" />Looking to bypass the Windows Live Installer and want direct access to the Live suite application installers? Here's where to find them. Credits go to the [Vistax64 forums](http://www.vistax64.com/windows-live/92348-windows-live-suite-downloads.html) and [Snakodus](http://snakodus.blogspot.com/2007/11/once-again-windows-live-products.html).
+<img src="{{site.baseurl}}.com/media/2008/02/windowslive.png" align="left" alt="windowslive.png" />Looking to bypass the Windows Live Installer and want direct access to the Live suite application installers? Here's where to find them. Credits go to the [Vistax64 forums](http://www.vistax64.com/windows-live/92348-windows-live-suite-downloads.html) and [Snakodus](http://snakodus.blogspot.com/2007/11/once-again-windows-live-products.html).
 
 The new [Windows Live Installer](http://get.live.com/) is a great way for every day users to gain access to each of the new Live applications, but what if you are looking to create a silent install script, deploy them to multiple computers or just don't have Internet access at the time of install?
 

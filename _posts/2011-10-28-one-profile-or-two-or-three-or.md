@@ -15,7 +15,7 @@ dsq_thread_id:
 categories:
   - Community
 ---
-<img class="alignright size-full wp-image-2432" style="margin-left: 5px; margin-right: 5px;" title="User001" src="https://stealthpuppy.com/media/2011/10/User001.png" alt="" width="128" height="128" />Surely one of the main goals of any good desktop delivery project is to remove the user's reliance on any single device?
+<img class="alignright size-full wp-image-2432" style="margin-left: 5px; margin-right: 5px;" title="User001" src="{{site.baseurl}}.com/media/2011/10/User001.png" alt="" width="128" height="128" />Surely one of the main goals of any good desktop delivery project is to remove the user's reliance on any single device?
 
 To achieve that goal, we need to ensure that the user's environment is available across any device. Whether the desktop is a physical PC, Remote Desktop server or running on a virtual machine in the data centre, providing the user with a consistent view of their applications allows them to be productive as soon as they logon.
 

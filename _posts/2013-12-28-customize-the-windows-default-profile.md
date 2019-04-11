@@ -4,7 +4,7 @@ title: A Better Way to Customize the Windows Default Profile
 date: 2013-12-28T09:00:30+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3522
+guid: {{site.baseurl}}.com/?p=3522
 permalink: /customize-the-windows-default-profile/
 dsq_thread_id:
   - "2077733197"
@@ -54,11 +54,11 @@ To find the profile locations to modify there's a couple of methods that I rely 
 
 In most cases, someone (or even Microsoft) will have documented a registry value or profile location that is used to store a setting. More obscure or new settings will require detecting the location with Process Monitor. For example, to determine where a setting is stored in the Registry, create a filter in Process Monitor using the process name or process ID, additionally filtering on the operation such as RegSetValue, as shown below:
 
-[<img class="size-full wp-image-3525 alignnone" alt="Configuring Process Monitor filter " src="https://stealthpuppy.com/media/2013/12/ProcessMonitor-Explorer-Filter.png]({{site.baseurl}}/media/2013/12/ProcessMonitor-Explorer-Filter.png)
+[<img class="size-full wp-image-3525 alignnone" alt="Configuring Process Monitor filter " src="{{site.baseurl}}.com/media/2013/12/ProcessMonitor-Explorer-Filter.png]({{site.baseurl}}/media/2013/12/ProcessMonitor-Explorer-Filter.png)
 
 A trace with Process Monitor when making a preference change should result in something like this:
 
-[<img class="alignnone size-full wp-image-3532" alt="Process Monitor results" src="https://stealthpuppy.com/media/2013/12/ProcessMonitor-Explorer.png]({{site.baseurl}}/media/2013/12/ProcessMonitor-Explorer.png)
+[<img class="alignnone size-full wp-image-3532" alt="Process Monitor results" src="{{site.baseurl}}.com/media/2013/12/ProcessMonitor-Explorer.png]({{site.baseurl}}/media/2013/12/ProcessMonitor-Explorer.png)
 
 [Regshot](http://sourceforge.net/projects/regshot/) is also useful for comparing a before and after change to the profile for determining registry value locations.
 
@@ -82,7 +82,7 @@ A common requirement is to modify the the pinned shortcuts on the Taskbar or Sta
   [download id="62&#8243; format="1&#8243;]
 </p>
 
-Note that Windows 8 and above, do not expose a programatic method to pin and unpin shortcuts to the Start screen. If you're looking to customise the Start screen, refer to this existing article: <https://stealthpuppy.com/customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance/>.
+Note that Windows 8 and above, do not expose a programatic method to pin and unpin shortcuts to the Start screen. If you're looking to customise the Start screen, refer to this existing article: <{{site.baseurl}}.com/customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance/>.
 
 ## Modifying the Windows Libraries
 

@@ -4,28 +4,28 @@ title: Hands On with the Citrix ShareFile Drive Mapper
 date: 2016-05-25T02:43:59+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=4413
+guid: {{site.baseurl}}.com/?p=4413
 permalink: /citrix-sharefile-drive-mapper/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 enclosure:
   - |
-    https://stealthpuppy.com/media/2016/05/ShareFileDriveMapperBrowsing.mp4
+    {{site.baseurl}}.com/media/2016/05/ShareFileDriveMapperBrowsing.mp4
     2446669
     video/mp4
     
   - |
-    https://stealthpuppy.com/media/2016/05/ShareFileDriveMapperBrowsing.webm
+    {{site.baseurl}}.com/media/2016/05/ShareFileDriveMapperBrowsing.webm
     0
     video/webm
     
   - |
-    https://stealthpuppy.com/media/2016/05/ShareFileDriveRightClick.mp4
+    {{site.baseurl}}.com/media/2016/05/ShareFileDriveRightClick.mp4
     538743
     video/mp4
     
   - |
-    https://stealthpuppy.com/media/2016/05/ShareFileDriveRightClick.webm
+    {{site.baseurl}}.com/media/2016/05/ShareFileDriveRightClick.webm
     0
     video/webm
     
@@ -141,9 +141,9 @@ In my testing of the client, I'm using an Internet connection in the US with abo
 Here's a look at the client performance as I browse my ShareFile drive. In this instance I'm browsing folders with images and thumbnails are being generated as Explorer displays the image files. On first access of the file, it needs to be cached locally. Subsequent access is of course fast because file IO is handled from the local disk.
 
 <div style="width: 640px;" class="wp-video">
-  <!--[if lt IE 9]><![endif]--><video class="wp-video-shortcode" id="video-4413-1" width="640" height="400" loop="1" autoplay="1" preload="metadata" controls="controls"><source type="video/mp4" src="https://stealthpuppy.com/media/2016/05/ShareFileDriveMapperBrowsing.mp4?_=1" /><source type="video/webm" src="https://stealthpuppy.com/media/2016/05/ShareFileDriveMapperBrowsing.webm?_=1" />
+  <!--[if lt IE 9]><![endif]--><video class="wp-video-shortcode" id="video-4413-1" width="640" height="400" loop="1" autoplay="1" preload="metadata" controls="controls"><source type="video/mp4" src="{{site.baseurl}}.com/media/2016/05/ShareFileDriveMapperBrowsing.mp4?_=1" /><source type="video/webm" src="{{site.baseurl}}.com/media/2016/05/ShareFileDriveMapperBrowsing.webm?_=1" />
   
-  <a href="https://stealthpuppy.com/media/2016/05/ShareFileDriveMapperBrowsing.mp4">https://stealthpuppy.com/media/2016/05/ShareFileDriveMapperBrowsing.mp4</a></video>
+  <a href="{{site.baseurl}}.com/media/2016/05/ShareFileDriveMapperBrowsing.mp4">{{site.baseurl}}.com/media/2016/05/ShareFileDriveMapperBrowsing.mp4</a></video>
 </div>
 
 If we look at the cache folder again after files have been accessed, you'll see the files appearing the cache folder in real time.
@@ -157,7 +157,7 @@ I wanted to test accessing large files and see the impact on the user experience
 In the video below you can see the effect of right clicking on this large, un-cached file. Explorer halts while the file is downloaded and as soon as it is has been cached all subsequent access is just like local disk (because it is). At the end of the video, the second right click is very responsive.
 
 <div style="width: 640px;" class="wp-video">
-  <video class="wp-video-shortcode" id="video-4413-2" width="640" height="345" loop="1" autoplay="1" preload="metadata" controls="controls"><source type="video/mp4" src="https://stealthpuppy.com/media/2016/05/ShareFileDriveRightClick.mp4?_=2" /><source type="video/webm" src="https://stealthpuppy.com/media/2016/05/ShareFileDriveRightClick.webm?_=2" /><a href="https://stealthpuppy.com/media/2016/05/ShareFileDriveRightClick.mp4">https://stealthpuppy.com/media/2016/05/ShareFileDriveRightClick.mp4</a></video>
+  <video class="wp-video-shortcode" id="video-4413-2" width="640" height="345" loop="1" autoplay="1" preload="metadata" controls="controls"><source type="video/mp4" src="{{site.baseurl}}.com/media/2016/05/ShareFileDriveRightClick.mp4?_=2" /><source type="video/webm" src="{{site.baseurl}}.com/media/2016/05/ShareFileDriveRightClick.webm?_=2" /><a href="{{site.baseurl}}.com/media/2016/05/ShareFileDriveRightClick.mp4">{{site.baseurl}}.com/media/2016/05/ShareFileDriveRightClick.mp4</a></video>
 </div>
 
 While the behaviour of this client might work as in the example above, one of the key features looks to be reducing the local disk footprint, so downloading stubs or the entire file in the background may be counter-productive to that goal.

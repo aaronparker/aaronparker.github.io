@@ -17,6 +17,6 @@ Want the Remote Desktop Connection 6.1 client for Windows XP but can't update to
 
 > Install this update to use new Terminal Services features on a computer that is running Windows XP Service Pack 2 connecting to computers that are running either Windows Vista or Windows Server 2008 operating systems.
 
-<img border="0" alt="RDCXPSP2" src="https://stealthpuppy.com/media/2008/06/rdcxpsp2.png" width="345" height="310" /> 
+<img border="0" alt="RDCXPSP2" src="{{site.baseurl}}.com/media/2008/06/rdcxpsp2.png" width="345" height="310" /> 
 
 There's a [MUI pack](http://www.microsoft.com/downloads/details.aspx?FamilyID=e35296ed-fc0c-43e4-a99d-aec4505d7793&DisplayLang=en) available too. The [knowledge base article for this update](http://support.microsoft.com/kb/952155) should be available soon, hopefully. Unfortunately there doesn't appear to be an update available for Windows Server 2003.

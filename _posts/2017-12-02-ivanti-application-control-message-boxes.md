@@ -4,7 +4,7 @@ title: Improving Ivanti Application Control Message Boxes
 date: 2017-12-02T23:37:34+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5827
+guid: {{site.baseurl}}.com/?p=5827
 permalink: /ivanti-application-control-message-boxes/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

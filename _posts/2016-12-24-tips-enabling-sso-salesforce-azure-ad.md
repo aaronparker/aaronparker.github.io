@@ -4,7 +4,7 @@ title: Tips for Enabling SSO with Salesforce and Azure AD
 date: 2016-12-24T13:38:49+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5357
+guid: {{site.baseurl}}.com/?p=5357
 permalink: /tips-enabling-sso-salesforce-azure-ad/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

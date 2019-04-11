@@ -15,7 +15,7 @@ tags:
   - Exchange
   - PowerShell
 ---
-<img src="https://stealthpuppy.com/media/2007/05/exchange2.png" align="left" />TechNet has an article on [moving the database and log file paths for a Storage Group](http://technet.microsoft.com/en-us/library/aa996391.aspx) in an Exchange cluster running in a Cluster Continuous Replication environment, however it's missing a couple of steps which are fairly important to the process.
+<img src="{{site.baseurl}}.com/media/2007/05/exchange2.png" align="left" />TechNet has an article on [moving the database and log file paths for a Storage Group](http://technet.microsoft.com/en-us/library/aa996391.aspx) in an Exchange cluster running in a Cluster Continuous Replication environment, however it's missing a couple of steps which are fairly important to the process.
 
 If you attempt to move the database or log file locations on a clustered Exchange Server 2007 server you will receive the following error:
 

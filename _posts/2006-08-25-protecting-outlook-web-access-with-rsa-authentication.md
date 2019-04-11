@@ -12,7 +12,7 @@ tags:
   - ISA Server
   - Outlook-Web-Access
 ---
-<img align="left" src="https://stealthpuppy.com/media/2006/08/exchange1.png" />Outlook Web Access can be protected with an extra layer of authentication via RSA SecurID. This can be implemented in one of two ways:
+<img align="left" src="{{site.baseurl}}.com/media/2006/08/exchange1.png" />Outlook Web Access can be protected with an extra layer of authentication via RSA SecurID. This can be implemented in one of two ways:
 
 **1. ISA Server 2004**  
 ISA Server 2004 implements the SecurID Web Filter that allows ISA Server to authenticate connections before providing access to published web servers. See the ISA Server help for information, but the requirements are:

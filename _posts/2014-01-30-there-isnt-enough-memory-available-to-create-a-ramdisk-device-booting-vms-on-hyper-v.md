@@ -4,7 +4,7 @@ title: '"There isn’t enough memory available to create a ramdisk device" booti
 date: 2014-01-30T12:38:22+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3553
+guid: {{site.baseurl}}.com/?p=3553
 permalink: /there-isnt-enough-memory-available-to-create-a-ramdisk-device-booting-vms-on-hyper-v/
 dsq_thread_id:
   - "2195003334"
@@ -23,7 +23,7 @@ Booting a virtual machine under Windows Server 2012 R2 Hyper-V may result in the
 > There isn’t enough memory available to create a ramdisk device.  
 > Error code: 0x0000017
 
-[<img class="alignnone size-full wp-image-3554" alt="There isn’t enough memory available to create a ramdisk device" src="https://stealthpuppy.com/media/2014/01/NotEnoughMemory.png]({{site.baseurl}}/media/2014/01/NotEnoughMemory.png)
+[<img class="alignnone size-full wp-image-3554" alt="There isn’t enough memory available to create a ramdisk device" src="{{site.baseurl}}.com/media/2014/01/NotEnoughMemory.png]({{site.baseurl}}/media/2014/01/NotEnoughMemory.png)
 
 Thankfully, the error message is pretty self explanatory.
 
@@ -31,4 +31,4 @@ Booting a standard Windows ISO does not result in the above error, but in this p
 
 The VM is configured with [dynamic memory](http://technet.microsoft.com/en-us/library/hh831766.aspx) enabled and the default startup RAM size of 512Mb. This issue is easily remedied by increasing the startup RAM size. The minimum RAM size can then still be configured for 512Mb, if required.
 
-[<img class="alignnone size-full wp-image-3556" alt="DynamicMemory" src="https://stealthpuppy.com/media/2014/01/DynamicMemory.png]({{site.baseurl}}/media/2014/01/DynamicMemory.png)
+[<img class="alignnone size-full wp-image-3556" alt="DynamicMemory" src="{{site.baseurl}}.com/media/2014/01/DynamicMemory.png]({{site.baseurl}}/media/2014/01/DynamicMemory.png)

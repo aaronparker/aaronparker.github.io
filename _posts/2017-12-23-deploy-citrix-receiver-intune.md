@@ -4,7 +4,7 @@ title: Deploy Citrix Receiver to Windows 10 with Intune and PowerShell
 date: 2017-12-23T12:47:22+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5882
+guid: {{site.baseurl}}.com/?p=5882
 permalink: /deploy-citrix-receiver-intune/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

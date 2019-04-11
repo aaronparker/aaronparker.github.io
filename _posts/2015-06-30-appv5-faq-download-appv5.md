@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: Where Can I Download App-V 5.0?'
 date: 2015-06-30T08:00:12+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3995
+guid: {{site.baseurl}}.com/?p=3995
 permalink: /appv5-faq-download-appv5/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

@@ -4,7 +4,7 @@ title: Visualising ConfigMgr, Intune and Windows 10 Releases
 date: 2018-09-27T01:06:31+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=6179
+guid: {{site.baseurl}}.com/?p=6179
 permalink: /configmgr-intune-windows10-releases/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -36,7 +36,7 @@ Here's the slide I created to visualise this theme.
 
 ## Download the Slide
 
-A number of people have asked about using the slide, so I'm making it available here for download to use in your own presentations. Download here in PowerPoint format: [Visualising ConfigMgr, Intune and Windows 10 Releases](https://stealthpuppy.sharefile.com/d-se48ec490d4c485f8).
+A number of people have asked about using the slide, so I'm making it available here for download to use in your own presentations. Download here in PowerPoint format: [Visualising ConfigMgr, Intune and Windows 10 Releases]({{site.baseurl}}.sharefile.com/d-se48ec490d4c485f8).
 
 Note that this is covered under the same license as all content on this site - a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. If you use the slide, please keep the attribution intact. I welcome any updates or improvements you might have.
 

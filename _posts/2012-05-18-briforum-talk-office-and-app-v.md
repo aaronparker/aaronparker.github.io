@@ -18,7 +18,7 @@ tags:
   - App-V
   - BriForum
 ---
-<img class="alignleft  wp-image-2717" title="The Definitive Guide to Virtualizing Office header" src="https://stealthpuppy.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png" alt="The Definitive Guide to Virtualizing Office header" width="660" height="208" srcset="https://stealthpuppy.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png 778w, https://stealthpuppy.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51-150x47.png 150w, https://stealthpuppy.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51-300x94.png 300w" sizes="(max-width: 660px) 100vw, 660px" />
+<img class="alignleft  wp-image-2717" title="The Definitive Guide to Virtualizing Office header" src="{{site.baseurl}}.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png" alt="The Definitive Guide to Virtualizing Office header" width="660" height="208" srcset="{{site.baseurl}}.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png 778w, {{site.baseurl}}.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51-150x47.png 150w, {{site.baseurl}}.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51-300x94.png 300w" sizes="(max-width: 660px) 100vw, 660px" />
 
 If you're attending [BriForum London](http://briforum.com/Europe/index.html) next week, I have a couple of lightning round sessions on Thursday at 13:40:
 

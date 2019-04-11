@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline" align="right" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" />
+<img style="margin: 0px 0px 5px 10px; display: inline" align="right" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" />
 
 Microsoft has written an excellent white paper that explains in detail how the App-V Client and application publishing works. This is a 31 page Word document that is essential reading for anyone who is designing, implementing or administering App-V - [App-V Application Publishing and Client Interaction White Paper](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/AppPubandClientInteraction.docx) 
 

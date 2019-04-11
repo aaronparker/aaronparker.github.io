@@ -20,7 +20,7 @@ tags:
 
 Avert thy eyes lest you be turned to stone! Well not quite, but your users might be stoning you if your Oracle JInitiator applications look like this (I've spared you the hot pink version):
 
-<img src="https://stealthpuppy.com/media/2008/02/pinkjinitiator.png" border="0" alt="PinkJInitiator" width="410" height="296" /> 
+<img src="{{site.baseurl}}.com/media/2008/02/pinkjinitiator.png" border="0" alt="PinkJInitiator" width="410" height="296" /> 
 
 This behaviour is due to a couple of Presentation Server hotfixes - [PSE450R01W2K3035](http://support.citrix.com/article/CTX115275) and [PSE450R01W2K3042](http://support.citrix.com/article/CTX115629) (which supersedes the former). Ironically these hotfixes directly address some graphical display issues:
 

@@ -19,7 +19,7 @@ I have a [Dell Latitude XT2]({{site.baseurl}}/hardware/windows-7-on-a-dell-latit
 
 Here’s an example with Calculator, but picture this across the whole screen:
 
-<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" class="wlDisabledImage" title="Calculator showing graphics corruption" border="0" alt="Calculator showing graphics corruption" src="https://stealthpuppy.com/media/2010/07/Calc.png" width="260" height="354" /> 
+<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" class="wlDisabledImage" title="Calculator showing graphics corruption" border="0" alt="Calculator showing graphics corruption" src="{{site.baseurl}}.com/media/2010/07/Calc.png" width="260" height="354" /> 
 
 This has persisted between BIOS and firmware upgrades and display driver versions (even when using the latest display driver- Mobile Intel 4 Series Express Chipset Family driver version 8.15.10.2119) so there currently appears to be no fix.
 

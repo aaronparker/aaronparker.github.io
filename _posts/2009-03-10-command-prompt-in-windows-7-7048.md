@@ -22,6 +22,6 @@ I like the Command Prompt, it’s a little like those old worn out pair of shoes
 
 Check out Command Prompt sporting the Consolas font:
 
-<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="CommandPromptProperties" src="https://stealthpuppy.com/media/2009/03/commandpromptproperties.png" border="0" alt="CommandPromptProperties" width="418" height="506" />  
+<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="CommandPromptProperties" src="{{site.baseurl}}.com/media/2009/03/commandpromptproperties.png" border="0" alt="CommandPromptProperties" width="418" height="506" />  
 
-<img class="size-full wp-image-992 alignnone" title="commandprompt1" src="https://stealthpuppy.com/media/2009/03/commandprompt1.png" alt="commandprompt1" width="581" height="507" srcset="https://stealthpuppy.com/media/2009/03/commandprompt1.png 581w, https://stealthpuppy.com/media/2009/03/commandprompt1-300x261.png 300w" sizes="(max-width: 581px) 100vw, 581px" />
+<img class="size-full wp-image-992 alignnone" title="commandprompt1" src="{{site.baseurl}}.com/media/2009/03/commandprompt1.png" alt="commandprompt1" width="581" height="507" srcset="{{site.baseurl}}.com/media/2009/03/commandprompt1.png 581w, {{site.baseurl}}.com/media/2009/03/commandprompt1-300x261.png 300w" sizes="(max-width: 581px) 100vw, 581px" />

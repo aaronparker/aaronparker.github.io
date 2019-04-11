@@ -4,7 +4,7 @@ title: Signing Git Commits for Sweet Verified Badges
 date: 2019-03-19T00:02:21+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=6273
+guid: {{site.baseurl}}.com/?p=6273
 permalink: /signing-git-commits-for-sweet-verified-badges/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

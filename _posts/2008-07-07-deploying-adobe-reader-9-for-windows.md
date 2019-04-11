@@ -126,7 +126,7 @@ Also in the Property table, you could set the value of DISABLE\_BROWSER\_INTEGRA
 You can download a transform with all of the modifications listed above here (except disabling Syncronizer; use at your own risk):
 
 <p class="download">
-  <a href="https://stealthpuppy.com/media/2008/07/AdobeReader91Custom.mst">Adobe Reader 9.1 Custom Transform</a>
+  <a href="{{site.baseurl}}.com/media/2008/07/AdobeReader91Custom.mst">Adobe Reader 9.1 Custom Transform</a>
 </p>
 
 ## Creating a Custom Transform with Adobe Customisation Wizard 9
@@ -290,7 +290,7 @@ So it’s Group Policy Preferences or your favourite user workspace management t
 I've also created my own custom Administrative template, which you can download in ADM and ADMX format. There is still some work to go on this template, so use at your own risk:
 
 <p class="download">
-  <a href="https://stealthpuppy.com/media/2008/07/AdobeAcrobatAndReader9.zip">Adobe Acrobat and Reader 9 Administrative Template v0.1</a>
+  <a href="{{site.baseurl}}.com/media/2008/07/AdobeAcrobatAndReader9.zip">Adobe Acrobat and Reader 9 Administrative Template v0.1</a>
 </p>
 
 ## What Now?

@@ -4,7 +4,7 @@ title: 'VDI 101: Persistent vs. Non-persistent'
 date: 2015-03-17T18:12:39+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3818
+guid: {{site.baseurl}}.com/?p=3818
 permalink: /persistent-v-non-persistent/
 dsq_thread_id:
   - "3602034218"

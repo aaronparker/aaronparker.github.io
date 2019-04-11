@@ -4,7 +4,7 @@ title: Integrate Citrix ShareFile into Office 365
 date: 2017-11-07T00:29:15+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5817
+guid: {{site.baseurl}}.com/?p=5817
 permalink: /?p=5817
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

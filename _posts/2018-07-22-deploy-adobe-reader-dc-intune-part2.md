@@ -4,7 +4,7 @@ title: Adobe Reader DC deployment with Microsoft Intune Part 2
 date: 2018-07-22T21:36:58+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=6053
+guid: {{site.baseurl}}.com/?p=6053
 permalink: /deploy-adobe-reader-dc-intune-part2/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

@@ -23,7 +23,7 @@ I've taken the opportunity write something in PowerShell that can perform the co
 
 An odd occurrence when deploying Windows Server to these boxes is that the adapter names often change between each deployment. So what might be _HP NC373i Multifunction Gigabit Server Adapter #13_ today becomes _HP NC373i Multifunction Gigabit Server Adapter #14_ when I next re-deploy Windows to that box.
 
-<img class="alignnone size-full wp-image-2676" title="Hyper-V Virtual Networks" src="https://stealthpuppy.com/media/2012/03/HyperVVirtualNetworks.png" alt="Hyper-V Virtual Networks" width="660" height="324" srcset="https://stealthpuppy.com/media/2012/03/HyperVVirtualNetworks.png 660w, https://stealthpuppy.com/media/2012/03/HyperVVirtualNetworks-150x73.png 150w, https://stealthpuppy.com/media/2012/03/HyperVVirtualNetworks-300x147.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
+<img class="alignnone size-full wp-image-2676" title="Hyper-V Virtual Networks" src="{{site.baseurl}}.com/media/2012/03/HyperVVirtualNetworks.png" alt="Hyper-V Virtual Networks" width="660" height="324" srcset="{{site.baseurl}}.com/media/2012/03/HyperVVirtualNetworks.png 660w, {{site.baseurl}}.com/media/2012/03/HyperVVirtualNetworks-150x73.png 150w, {{site.baseurl}}.com/media/2012/03/HyperVVirtualNetworks-300x147.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
 
 Because the _New-VMExternalSwitch_ and _Remove-VMSwitchNic_ commandlets to used configure the virtual networks require the adapter description, I've had to come up with a way to grab the description based on some that remains static - the MAC address. List below is a script that contains a list of MAC addresses (you could improve on this by keeping the list in a file) for each target MAC address in each server.
 

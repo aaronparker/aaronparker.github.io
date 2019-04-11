@@ -24,7 +24,7 @@ Group Policy allows you to disable certain UI elements within Office application
 
 If you haven’t yet, or are not ever, planning to roll out [Active Directory Rights Management Services](http://technet.microsoft.com/en-us/library/cc534988.aspx) you’ll want to remove these features from Office which would lead users to dialog boxes such as this one (not particularly ideal):
 
-<img title="IRM-Dialog" src="https://stealthpuppy.com/media/2008/08/irmdialog.png" border="0" alt="IRM-Dialog" width="494" height="443" /> 
+<img title="IRM-Dialog" src="{{site.baseurl}}.com/media/2008/08/irmdialog.png" border="0" alt="IRM-Dialog" width="494" height="443" /> 
 
 To disable menu items in Office you'll first need to know the control ID's of those items. This means you'll need to wade through the 23 spreadsheets including in the [2007 Office System Document: Lists of Control IDs](http://www.microsoft.com/downloads/details.aspx?familyid=4329d9e9-4d11-46a5-898d-23e4f331e9ae&displaylang=en) to find the ID listed amongst thousands. Fortunately most of the IDs are the same across each of the Office applications.
 
@@ -41,4 +41,4 @@ These are the policy settings you'll need to enable and add the IDs to:
 
 Which then results in something like this:
 
-<img title="Restrict-Permissions" src="https://stealthpuppy.com/media/2008/08/restrictpermissions.png" border="0" alt="Restrict-Permissions" width="358" height="393" />
+<img title="Restrict-Permissions" src="{{site.baseurl}}.com/media/2008/08/restrictpermissions.png" border="0" alt="Restrict-Permissions" width="358" height="393" />

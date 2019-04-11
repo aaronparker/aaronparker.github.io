@@ -16,7 +16,7 @@ tags:
   - App-V
   - Paint.NET
 ---
-<img style="margin: 0px 0px 10px 10px; display: inline; border-width: 0px;" title="AppVPaintDotNet" src="https://stealthpuppy.com/media/2010/05/AppVPaintDotNet.png" border="0" alt="AppVPaintDotNet](http://getpaint.net) with Microsoft Application Virtualization; however the same basic steps should apply to any application virtualisation product.
+<img style="margin: 0px 0px 10px 10px; display: inline; border-width: 0px;" title="AppVPaintDotNet" src="{{site.baseurl}}.com/media/2010/05/AppVPaintDotNet.png" border="0" alt="AppVPaintDotNet](http://getpaint.net) with Microsoft Application Virtualization; however the same basic steps should apply to any application virtualisation product.
 
 Virtualising Paint.NET is a simple two step process:
 
@@ -37,7 +37,7 @@ The Paint.NET documentation explains [how to create an unattended installation](
 
 Unfortunately the updater component is in process so it is difficult to remove from the installation. Additionally deleting files associated with the updater results in Paint.NET attempting to repair itself on start-up:
 
-<img style="display: inline; border-width: 0px;" title="PaintDotNetRepairFiles" src="https://stealthpuppy.com/media/2010/05/PaintDotNetRepairFiles.png" border="0" alt="PaintDotNetRepairFiles" width="448" height="190" /> 
+<img style="display: inline; border-width: 0px;" title="PaintDotNetRepairFiles" src="{{site.baseurl}}.com/media/2010/05/PaintDotNetRepairFiles.png" border="0" alt="PaintDotNetRepairFiles" width="448" height="190" /> 
 
   * JPGPNGBMPEDITOR - if you want Paint.NET to be the default editor for JPG, PNG and BMP files, set this to 1
   * TGAEDITOR - if you want Paint.NET to be the default editor for TGA files, set this to 1
@@ -72,7 +72,7 @@ The sequencing process that should be followed will look like this:
 
 The Choose Defaults options are available from the Tool drop down button on the toolbar:
 
-<img style="display: inline; border-width: 0px;" title="PaintDotNetDefaults" src="https://stealthpuppy.com/media/2010/05/PaintDotNetDefaults.png" border="0" alt="PaintDotNetDefaults" width="588" height="585" /> 
+<img style="display: inline; border-width: 0px;" title="PaintDotNetDefaults" src="{{site.baseurl}}.com/media/2010/05/PaintDotNetDefaults.png" border="0" alt="PaintDotNetDefaults" width="588" height="585" /> 
 
 ### Conclusion
 

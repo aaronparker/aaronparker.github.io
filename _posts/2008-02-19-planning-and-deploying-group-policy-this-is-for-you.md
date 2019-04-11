@@ -13,7 +13,7 @@ categories:
 tags:
   - Group Policy
 ---
-<img src="https://stealthpuppy.com/media/2008/02/servertools.png" alt="servertools.png" align="left" border="0" />Here's a great document from the Microsoft writing team on planning and deploying Group Policy for Windows Server 2008. Many of the details in this document do apply to Windows Server 2003 and Windows 2000 Server as well. This document is the place to start for anyone dealing with Group Policy, no matter what your experience is.
+<img src="{{site.baseurl}}.com/media/2008/02/servertools.png" alt="servertools.png" align="left" border="0" />Here's a great document from the Microsoft writing team on planning and deploying Group Policy for Windows Server 2008. Many of the details in this document do apply to Windows Server 2003 and Windows 2000 Server as well. This document is the place to start for anyone dealing with Group Policy, no matter what your experience is.
 
 > This guide provides the information needed to successfully plan and deploy Group Policy using Windows Server 2008 and the Group Policy Management Console.
 

@@ -4,7 +4,7 @@ title: 'Webinar Replay: How Folder Redirection Impacts User Experience and Break
 date: 2015-01-26T13:57:09+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3804
+guid: {{site.baseurl}}.com/?p=3804
 permalink: /webinar-replay-folder-redirection-impacts-user-experience-breaks-stuff/
 dsq_thread_id:
   - "3455483741"

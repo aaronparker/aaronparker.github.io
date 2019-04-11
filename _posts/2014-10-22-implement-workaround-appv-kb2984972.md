@@ -4,7 +4,7 @@ title: Implementing a Workaround for issue affecting the App-V Client in KB29849
 date: 2014-10-22T18:07:30+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3715
+guid: {{site.baseurl}}.com/?p=3715
 permalink: /implement-workaround-appv-kb2984972/
 dsq_thread_id:
   - "3143075597"
@@ -48,15 +48,15 @@ Group Policy Preferences is the most straight forward method of implementing the
 
 Add a new GPP Registry item with the necessary Registry configuration. Ensure the value name is unique (any number above the existing values). This could be a high number (e.g. 256) to ensure there is no clash with an existing value.
 
-[<img class="alignnone size-full wp-image-3717" src="https://stealthpuppy.com/media/2014/10/2984972-Key.png" alt="Adding TermSrvReadyEvent via Group Policy Preferences]({{site.baseurl}}/media/2014/10/2984972-Key.png)
+[<img class="alignnone size-full wp-image-3717" src="{{site.baseurl}}.com/media/2014/10/2984972-Key.png" alt="Adding TermSrvReadyEvent via Group Policy Preferences]({{site.baseurl}}/media/2014/10/2984972-Key.png)
 
 I recommend enabling _Item-level targeting_ to ensure the value is added to the right machines.
 
-[<img class="alignnone size-full wp-image-3718" src="https://stealthpuppy.com/media/2014/10/2984972-ItemLevelTargeting.png" alt="Enabling Item Level Targeting]({{site.baseurl}}/media/2014/10/2984972-ItemLevelTargeting.png)
+[<img class="alignnone size-full wp-image-3718" src="{{site.baseurl}}.com/media/2014/10/2984972-ItemLevelTargeting.png" alt="Enabling Item Level Targeting]({{site.baseurl}}/media/2014/10/2984972-ItemLevelTargeting.png)
 
 For example, only apply the update if the HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions key actually exists. This ensures the value is only added once the App-V client is installed.
 
-[<img class="alignnone size-full wp-image-3719" src="https://stealthpuppy.com/media/2014/10/2984972-TargetingEditor.png" alt="Adding a Key Exists match to Item Level Targeting]({{site.baseurl}}/media/2014/10/2984972-TargetingEditor.png)
+[<img class="alignnone size-full wp-image-3719" src="{{site.baseurl}}.com/media/2014/10/2984972-TargetingEditor.png" alt="Adding a Key Exists match to Item Level Targeting]({{site.baseurl}}/media/2014/10/2984972-TargetingEditor.png)
 
 # PowerShell
 

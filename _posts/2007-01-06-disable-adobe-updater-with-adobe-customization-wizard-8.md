@@ -16,10 +16,10 @@ tags:
   - Adobe
 ---
 <p class="alert">
-  Note, this post is now out of date; for an Adobe Reader 9 version of this post, go <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-9-for-windows">here</a>.
+  Note, this post is now out of date; for an Adobe Reader 9 version of this post, go <a href="{{site.baseurl}}.com/deployment/deploying-adobe-reader-9-for-windows">here</a>.
 </p>
 
-<img align="left" src="https://stealthpuppy.com/media/2008/02/disableadobeupdater.png" alt="disableadobeupdater.png" />  
+<img align="left" src="{{site.baseurl}}.com/media/2008/02/disableadobeupdater.png" alt="disableadobeupdater.png" />  
 Adobe have released the [Adobe Customization Wizard 8](http://www.adobe.com/support/downloads/detail.jsp?ftpID=3564) to provide a method for customising the deployment of version 8 of the Acrobat products. This tool allows you to disable all of the most useless features included in the new release including Digital Editions, Adobe Online Services and even Adobe Updater 5. This means that you can get rid of the Updater5 folder that keeps appearing in your Documents folder.
 
 > Adobe Customization Wizard 8 is a free downloadable utility designed to help IT professionals take greater control of enterprise-wide deployments of Adobe Acrobat 8 and Adobe Reader 8. With it you can customize the Acrobat installer and application features prior to deployment. Providing a graphical interface to the Windows Installer for Acrobat, the Customization Wizard enables IT administrators to:
@@ -51,7 +51,7 @@ If you are invovled in deploying Adobe Reader or want an automated method of dis
   8. Click **Transform** and then **Generate Transform...** to create a transform file
 
 <p class="important">
-  I have added <a href="https://stealthpuppy.com/deployment/deploying-adobe-reader-81">new transform files for Adobe Reader 8.1</a> and Reader 8.1.1. The transform files listed here support Reader 8.0 only.
+  I have added <a href="{{site.baseurl}}.com/deployment/deploying-adobe-reader-81">new transform files for Adobe Reader 8.1</a> and Reader 8.1.1. The transform files listed here support Reader 8.0 only.
 </p>
 
 So you don't have to, I've created a few transform files for use in [deploying Adobe Reader 8](http://www.stealthpuppy.com/blogs/travelling/archive/2006/12/07/deploying-adobe-reader-8.aspx). The first file will remove all of those new online features that come with Reader 8, the second file will do the same as well as _completely_ prevent the installation of Adobe Updater 5 and the third file will prevent the installation of Adobe Updater 5 only (leaving the online features intact):

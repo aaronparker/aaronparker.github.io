@@ -4,7 +4,7 @@ title: Replicating Our 2015 Folder Redirection Performance Tests In Your Own Lab
 date: 2015-05-15T01:52:35+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3946
+guid: {{site.baseurl}}.com/?p=3946
 permalink: /replicate-2015-folder-redirection-test/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -18,7 +18,7 @@ tags:
 ---
 [Helge](https://twitter.com/helgeklein), [Shawn](https://twitter.com/shawnbass) and myself had a great session this week at Citrix Synergy with our session [SYN502: I’ve got 99 problems, and folder redirection is every one of them](https://citrix.g2planet.com/synergyorlando2015/public_session_view.php?agenda_session_id=185).
 
-<img class="alignnone size-full wp-image-3955" src="https://stealthpuppy.com/media/2015/05/IMG_2073.jpg" alt="IMG_2073" width="816" height="370" srcset="https://stealthpuppy.com/media/2015/05/IMG_2073.jpg 816w, https://stealthpuppy.com/media/2015/05/IMG_2073-150x68.jpg 150w, https://stealthpuppy.com/media/2015/05/IMG_2073-300x136.jpg 300w" sizes="(max-width: 816px) 100vw, 816px" /> 
+<img class="alignnone size-full wp-image-3955" src="{{site.baseurl}}.com/media/2015/05/IMG_2073.jpg" alt="IMG_2073" width="816" height="370" srcset="{{site.baseurl}}.com/media/2015/05/IMG_2073.jpg 816w, {{site.baseurl}}.com/media/2015/05/IMG_2073-150x68.jpg 150w, {{site.baseurl}}.com/media/2015/05/IMG_2073-300x136.jpg 300w" sizes="(max-width: 816px) 100vw, 816px" /> 
 
 We covered quite a number of test scenarios, so in this article, I want to share the approaches that we used for our tests, so that you can replicate them in your own environments.
 
@@ -71,7 +71,7 @@ In my lab environment, I've used two physical hosts with the file server targets
 
 Other than specific tests where we wanted to know the effect of anti-virus on the file server, no AV application was installed on any server or client (physical or virtual).
 
-![File Server Capacity Tool" width="565" height="399" srcset="https://stealthpuppy.com/media/2015/05/FSCT.png 565w, https://stealthpuppy.com/media/2015/05/FSCT-150x106.png 150w, https://stealthpuppy.com/media/2015/05/FSCT-300x212.png 300w, https://stealthpuppy.com/media/2015/05/FSCT-480x340.png 480w" sizes="(max-width: 565px) 100vw, 565px" />*File Server Capacity Tool architecture*
+![File Server Capacity Tool" width="565" height="399" srcset="{{site.baseurl}}.com/media/2015/05/FSCT.png 565w, {{site.baseurl}}.com/media/2015/05/FSCT-150x106.png 150w, {{site.baseurl}}.com/media/2015/05/FSCT-300x212.png 300w, {{site.baseurl}}.com/media/2015/05/FSCT-480x340.png 480w" sizes="(max-width: 565px) 100vw, 565px" />*File Server Capacity Tool architecture*
 
 FSCT comes with a single work load - Home Folders. Which is fortunately great for our use, should be as similar as possible to real work use of users interacting with their Documents or Desktop folders that are redirected to their home drive.
 

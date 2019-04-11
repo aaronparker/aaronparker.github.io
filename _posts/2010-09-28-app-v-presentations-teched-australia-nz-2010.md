@@ -32,7 +32,7 @@ tags:
   - App-V
   - TechEd
 ---
-<a href="https://stealthpuppy.com/community/may-user-group-presentations/attachment/softgridpresentationpng/" style="margin: 0px 0px 5px 10px; display: inline; border-width: 0px;" rel="attachment wp-att-542"><img src="https://stealthpuppy.com/media/2008/04/softgridpresentation.png" alt="" title="softgridpresentation.png](http://www.msteched.com/Speakers/Justin-Zarb).
+<a href="{{site.baseurl}}.com/community/may-user-group-presentations/attachment/softgridpresentationpng/" style="margin: 0px 0px 5px 10px; display: inline; border-width: 0px;" rel="attachment wp-att-542"><img src="{{site.baseurl}}.com/media/2008/04/softgridpresentation.png" alt="" title="softgridpresentation.png](http://www.msteched.com/Speakers/Justin-Zarb).
 
 I've embedded the videos here. You'll need an HTML 5 capable browser to view them, otherwise go to the TechEd Online site links I've provided, to view Silverlight and download MP4 versions plus access to the slide decks.
 
