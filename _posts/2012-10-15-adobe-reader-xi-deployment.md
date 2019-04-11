@@ -17,7 +17,7 @@ categories:
 tags:
   - Adobe Reader
 ---
-[<img class="alignright size-full wp-image-2848" style="margin-left: 5px; margin-right: 5px;" title="ReaderXI-Installer" src="{{site.baseurl}}/media/2012/10/ReaderXI-Installer.png" alt="](http://get.adobe.com/reader/) is now available and along with this release comes some interesting tools for deployment:
+[Adobe Reader XI](http://get.adobe.com/reader/) is now available and along with this release comes some interesting tools for deployment:
 
   * Citrix XenApp enhancements for better performance (it's not clear whether this specifically XenApp or RDS enhancements. Hopefully this means reduced memory requirements)
   * New App-V support, including a Package Accelerator (presumably this is App-V 4.6, not 5.0)
@@ -40,11 +40,14 @@ The [Adobe Customization Wizard XI for Windows](http://www.adobe.com/support/do
 
 Extracting Reader XI from the installer is the same as previous versions - run the following command:
 
-[code]AdbeRdr11000\_en\_US -nos\_o"C:\Folder" -nos\_ne[/code]
+```
+AdbeRdr11000\_en\_US -nos\_o"C:\Folder" -nos\_ne
+```
 
 Restricting user interface elements in Acrobat/Reader XI is the same as previous versions. This cannot be performed by Group Policy but requires Javascript instead. Here's an example Javascript that you can use to hide the most common menu items:
 
-[code]//HideMenu.js
+```javascript
+//HideMenu.js
 
 // [Help - Repair Adobe Reader Installation]  
 app.hideMenuItem("DetectAndRepair");
@@ -83,13 +86,32 @@ app.hideMenuItem("UsageMeasurement");
 app.hideMenuItem("SPAObject 51");
 
 // [File - CreatePDF Online]  
-app.hideMenuItem("SPAObject 47");[/code]
+app.hideMenuItem("SPAObject 47");
+```
 
-Save this file as _HideItems.js_ and copy the file into _%ProgramFiles%\Adobe\Reader 11.0\Reader\Javascripts_.
+Save this file as `HideItems.js` and copy the file into `%ProgramFiles%\Adobe\Reader 11.0\Reader\Javascripts`.
 
 To create a custom transform file, open the extracted AcroRead.msi, set your required options and save the transform file. The following table list some recommended options to set via the Customization Wizard. Review these settings to see how they might apply in your environment.
 
-[table id=30 /]
+|Section|Item and Settings                                                                                   |
+|-------|----------------------------------------------------------------------------------------------------|
+|Personalization Options|Suppress display of End User License Agreement (EULA) [Enabled]                                     |
+|Installation Options|Default viewer for PDF files [Installer will decide]                                                |
+|       |Remove all versions of Reader [Enabled]                                                             |
+|       |Enable Optimization [Enabled]                                                                       |
+|       |Enable Caching of installer files on local hard drive [Enabled]                                     |
+|       |Run Installation [Unattended]                                                                       |
+|       |If reboot required at the end of installation [Suppress reboot]                                     |
+|Files and Folders|Destination Computer [ProgramFilesFolder / Adobe /Reader 11.0 / Reader / Javascripts / HideItems.js]|
+|Shortcuts|Remove [Desktop / Aobe Reader XI shortcut]                                                          |
+|Security|Protected View [Off / Files from potentially unsafe locations / All files]                          |
+|WebMail Profiles|Prevent end user from configuring WebMail profile [Enabled]                                         |
+|Online and Adobe online services Features|Disable product updates [Enabled]                                                                   |
+|       |Load trusted root certificates from Adobe [Enable & Install silently]                               |
+|       |In Adobe Reader, disable Help > Purchase Adobe Acrobat [Enabled]                                    |
+|       |Disable Help > Digital Editions [Enabled]                                                           |
+|       |Disable Product Improvement Program [Enabled]                                                       |
+|       |Disable Viewin of PDF with Ads for Adobe PDF [Enabled]                                              |
 
 ## Deployment
 
@@ -101,7 +123,7 @@ To deploy Reader in your environment, you would continue to use the same approac
 
 Whilst the Group Policy management support is great and way overdue, there's currently only a handful of settings - don't expect the same level of policy configuration that we get with Microsoft Office. It remains to be seen whether more will be required in production environments.
 
-<img title="ReaderXI-GroupPolicy" src="{{site.baseurl}}/media/2012/10/ReaderXI-GroupPolicy.png" alt="" width="440" height="165" /> 
+![ReaderXI-GroupPolicy]({{site.baseurl}}/media/2012/10/ReaderXI-GroupPolicy.png)
 
 ## Finally..
 

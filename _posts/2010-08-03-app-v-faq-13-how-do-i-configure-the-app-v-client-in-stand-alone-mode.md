@@ -16,25 +16,28 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />
-
 [Stand-alone mode](http://technet.microsoft.com/en-gb/library/cc817112.aspx) in App-V is useful where you are deploying App-V applications via Group Policy or a 3rd party ESD (using the MSI file), or you have the App-V packages available on a file share and import them with the SFTMIME command.
 
 There are a couple of [properties](http://technet.microsoft.com/en-us/library/cc843737.aspx) that you’ll need to set to allow the App-V Client to run in stand-alone mode, which you can set [at install time]({{site.baseurl}}/deployment/app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client), or configure in the registry post-install:
 
-[table id=22 /]
+|Parameter|Values                                    |Description                                                                                                                                                                                                                                                                                           |
+|---------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|ALLOWINDEPENDENTFILESTREAMING|TRUE / FALSE                              |Indicates whether streaming from file will be enabled regardless of how the client has been configured with the APPLICATIONSOURCEROOT parameter. If set to FALSE, the transport will not enable streaming from files even if the OSD HREF or the APPLICATIONSOURCEROOT parameter contains a file path.|
+|REQUIREAUTHORIZATIONIFCACHED|TRUE / FALSE                              |Indicates whether authorization is always required, whether or not an application is already in cache.                                                                                                                                                                                                |
 
-### Importing a Package in Stand-Alone mode
+
+## Importing a Package in Stand-Alone mode
 
 A common scenario for stand-alone mode is to test packages. To import a package in this mode, you can use the [SFTMIME ADD PACKAGE](http://technet.microsoft.com/en-us/library/cc817181.aspx) command.
 
 The simplest way to use this command is to copy your package to the local computer and using an elevated Command Prompt, change to the folder were the package is located. For example, I have a Mozilla Firefox package stored locally - I can use the following commands to import the package:
 
-[code]CD C:\Common\Packages\MozillaFirefox4_US
+```powershell
+CD C:\Common\Packages\MozillaFirefox4_US
+SFTMIME /ADD PACKAGE:"Mozilla Firefox 4" /MANIFEST MozillaFirefox4\_US\_manifest.xml /OVERRIDEURL MozillaFirefox4_US.sft /CONSOLE
+```
 
-SFTMIME /ADD PACKAGE:"Mozilla Firefox 4" /MANIFEST MozillaFirefox4\_US\_manifest.xml /OVERRIDEURL MozillaFirefox4_US.sft /CONSOLE[/code]
-
-### Resources
+## Resources
 
 There are plenty of resources on the Internet that discuss the configuration of the App-V Client in stand-alone mode:
 
@@ -43,8 +46,3 @@ There are plenty of resources on the Internet that discuss the configuration of 
   * Tim Mangan has written [a white paper on configuration of the client and deployment of applications in a stand-alone environment](http://www.tmurgent.com/WhitePapers%5CMicrosoft_AppV_Stand-Alone.pdf)
   * Alex Verboon has an article on [Configuring App-V Standalone Mode through Group Policy](http://www.verboon.info/index.php/2010/03/configuring-app-v-standalone-mode-through-group-policy/)
   * Finally, you can see the stand-alone mode App-V Client in action in this video by Ruben Spruijt:
-
-<div id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:feb1c5df-0e38-4608-b406-88bdee5c62e3" class="wlWriterEditableSmartContent" style="margin: 0px; display: inline; float: none; padding: 0px;">
-  <div>
-  </div>
-</div>

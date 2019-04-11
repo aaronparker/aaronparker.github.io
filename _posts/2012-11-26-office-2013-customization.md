@@ -18,8 +18,6 @@ tags:
   - Office
   - Office 2013
 ---
-[<img style="background-image: none; float: right; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Office2013Logo" alt="Office2013Logo" src="{{site.baseurl}}/media/2012/11/Office2013Logo_thumb.png](http://www.microsoft.com/en-us/download/details.aspx?id=35554).
-
 User settings that might impact the default Office experience or may require special consideration in your environment, are worth investing in planning time because you’ll often have only one chance to get deployment right.
 
 ## Use Preference over Policy
@@ -47,19 +45,19 @@ To create an Office Setup Customization, download the  [Office 2013 Administrat
 
 The Office Customization Tool will launch:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="CreateCustomizationFile" alt="CreateCustomizationFile" src="{{site.baseurl}}/media/2012/11/CreateCustomizationFile_thumb.png]({{site.baseurl}}/media/2012/11/CreateCustomizationFile.png)
+![CreateCustomizationFile]({{site.baseurl}}/media/2012/11/CreateCustomizationFile_thumb.png]({{site.baseurl}}/media/2012/11/CreateCustomizationFile.png)
 
 Choose the default file types:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FileTypes" alt="FileTypes" src="{{site.baseurl}}/media/2012/11/FileTypes_thumb.png]({{site.baseurl}}/media/2012/11/FileTypes.png)
+![FileTypes]({{site.baseurl}}/media/2012/11/FileTypes_thumb.png)
 
 Set licensing options and the display level of the setup UI. These options will vary dependant on whether you're using KMS or MAK licensing and how you’re deploying Office:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Licensing" alt="Licensing" src="{{site.baseurl}}/media/2012/11/Licensing_thumb.png]({{site.baseurl}}/media/2012/11/Licensing.png)
+![Licensing]({{site.baseurl}}/media/2012/11/Licensing_thumb.png)
 
 Navigate to the ‘Modify user settings’ page and set the options applicable to your environment. This is the section where the administrator can make changes to the default user experience:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="UserSettings" alt="UserSettings" src="{{site.baseurl}}/media/2012/11/UserSettings_thumb.png]({{site.baseurl}}/media/2012/11/UserSettings.png)
+![UserSettings]({{site.baseurl}}/media/2012/11/UserSettings_thumb.png)
 
 When saving your customization file, you can choose to save it to the Updates folder where it will run automatically, or [use SETUP.EXE to run a specific customization file](http://technet.microsoft.com/en-us/library/cc178956.aspx).
 
@@ -71,4 +69,40 @@ The following table lists a number of user settings across each of the Office 20
 
 The status of each setting will vary dependant on the environment. Use at your own risk.
 
-[table id=31 /]
+|Product|Path                                                                                                |Setting                                                              |Recommended Values                       |
+|-------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|-----------------------------------------|
+|Microsoft Access 2013|Miscellaneous                                                                                       |Disable the Office Start Screen for Access                           |Enabled &#124; Not Configured                 |
+|Microsoft Excel 2013|Excel Options - Save                                                                                |Default file format                                                  |Enabled, Excel Workbook (*.xlsx)         |
+|Microsoft Excel 2013|Miscellaneous                                                                                       |Disable the Office Start Screen for Excel                            |Enabled &#124; Not Configured                 |
+|Microsoft Office 2013|Global Options - Customize                                                                          |Allow roaming of all user customizations                             |Enabled                                  |
+|Microsoft Office 2013|Privacy - Trust Center                                                                              |Disable Opt-in Wizard on first run                                   |Enabled                                  |
+|Microsoft Office 2013|Privacy - Trust Center                                                                              |Enable Customer Experirnce Improvement Program                       |Disabled &#124; Not Configured                |
+|Microsoft Office 2013|Privacy - Trust Center                                                                              |Automatically receive small updates to improve reliability           |Disabled &#124; Not Configured                |
+|Microsoft Office 2013|Privacy - Trust Center                                                                              |Send Office Feedback                                                 |Disabled &#124; Not Configured                |
+|Microsoft Office 2013|Privacy - Trust Center                                                                              |Allow including screenshot with Office Feedback                      |Disabled &#124; Not Configured                |
+|Microsoft Office 2013|Subscription Activation                                                                             |Do not show 'Manage Account' link for subscription licenses          |Enabled &#124; Not Configured                 |
+|Microsoft Office 2013|Subscription Activation                                                                             |Automatically activate Office with federated organization credentials|Disabled &#124; Not Configured                |
+|Microsoft Office 2013|Services                                                                                            |Disable Roaming Office User Settings                                 |Enabled &#124; Not Configured                 |
+|Microsoft Office 2013|Services - Fax                                                                                      |Disable Internet Fax feature                                         |Enabled                                  |
+|Microsoft Office 2013|Downloading Framework Components                                                                    |Hide missing component download links                                |Enabled                                  |
+|Microsoft Office 2013|Microsoft Office Picture Manager                                                                    |Disable File Types association dialog box on first launch            |Enabled                                  |
+|Microsoft Office 2013|Miscellaneous                                                                                       |Show SkyDrive Sign In                                                |Disabled &#124; Not Configured                |
+|Microsoft Office 2013|Miscellaneous                                                                                       |Block signing into Office                                            |Enabled &#124; Not Configured                 |
+|Microsoft Office 2013|Miscellaneous                                                                                       |Disable the Office Start screen for all Office applications          |Enabled &#124; Not Configured                 |
+|Microsoft Office 2013|Miscellaneous                                                                                       |Disable Office Backgrounds                                           |Enabled &#124; Not Configured                 |
+|Microsoft Office 2013|Miscellaneous                                                                                       |Suppress recommended settings dialog                                 |Enabled                                  |
+|Microsoft Office 2013|First Run                                                                                           |Disable First Run Movie                                              |Enabled &#124; Not Configured                 |
+|Microsoft Office 2013|First Run                                                                                           |Disable First Run on application boot                                |Enabled &#124; Not Configured                 |
+|Microsoft OneNote 2013|OneNote Options - Other                                                                             |Add OneNote icon to the notification area                            |Disabled &#124; Not Configured                |
+|Microsoft Outlook 2013|Outlook Social Connector                                                                            |Turn off Outlook Social Connector                                    |Enabled &#124; Not Configured                 |
+|Microsoft Outlook 2013|Outlook Social Connector                                                                            |Do not show social network info-bars                                 |Enabled &#124; Not Configured                 |
+|Microsoft Outlook 2013|Outlook Options - Preferences - Calendar Options - Office.com Sharing Service                       |Prevent publishing to Office.com                                     |Enabled &#124; Not Configured                 |
+|Microsoft Outlook 2013|Outlook Options - Other - AutoArchive                                                               |AutoArchive Settings                                                 |Disabled                                 |
+|Microsoft PowerPoint 2013|PowerPoint Options - Save                                                                           |Default file format                                                  |Enabled, PowerPoint Presentation (*.pptx)|
+|Microsoft PowerPoint 2013|Miscellaneous                                                                                       |Disable the Office Start Screen for PowerPoint                       |Enabled &#124; Not Configured                 |
+|Microsoft Project 2013|Miscellaneous                                                                                       |Disable the Office Start Screen for Project                          |Enabled &#124; Not Configured                 |
+|Microsoft Publisher 2013|Miscellaneous                                                                                       |Disable the Office Start Screen for Publisher                        |Enabled &#124; Not Configured                 |
+|Microsoft Visio 2013|Visio Options - Save - Save Documents                                                               |Save Visio files as                                                  |Enabled, Visio Document                  |
+|Microsoft Visio 2013|Visio Options - Advanced - General Options                                                          |Put all settings in Windows registry                                 |Enabled                                  |
+|Microsoft Word 2013|Word Options - Save                                                                                 |Default file format                                                  |Enabled, Word Document (*.docx)          |
+|Microsoft Word 2013|Miscellaneous                                                                                       |Disable the Office Start Screen for Word                             |Enabled &#124; Not Configured                 |

@@ -22,7 +22,7 @@ tags:
 ---
 Now that we've covered the main questions in the survey - [which hypervisors are in use]({{site.baseurl}}/automation-survey-results-hypervisor/), the [VDI solutions are run on those hypervisors]({{site.baseurl}}/automation-survey-results-vdi-platforms/), [how master images are built]({{site.baseurl}}/automation-survey-results-build-master-images/), [the automation solutions used to build images](http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/) and the [solutions used to deliver images to SBC and VDI environments]({{site.baseurl}}/automation-survey-results-deliver-images/), we'll take a short look at how often master images are updated.
 
-# Updating Master Images
+## Updating Master Images
 
 Here are the results for how often master images are updated based on 501 responses to this question:
 
@@ -32,7 +32,7 @@ Monthly patching is ideal and the majority of organisations appear to be standar
 
 Patch schedules that are every quarter or longer are of concern - perhaps understandable in environments sensitive to changes, but still concerning to see that many desktops are running un-patched for considerable periods of time. We only need to look at [last year's most vulnerable operating systems and applications](http://www.gfi.com/blog/most-vulnerable-operating-systems-and-applications-in-2014/) to get a sense of what risk our desktops are at. 2015 is looking to provide [a record number of updates from Microsoft](http://news.softpedia.com/news/Record-Number-of-Microsoft-Patches-in-2015-Less-Secure-Windows-or-More-Active-Hackers-481007.shtml).
 
-## Patching by Average Organisation Size
+### Patching by Average Organisation Size
 
 Based on our data, here is the average user base for organisations based on patch schedules:
 
@@ -45,9 +45,30 @@ It would be nice to be able to analyse a much larger sample set, as we see a cl
 
 Do larger organisation fare best? This table lists the patch schedules for organisations 10,000 users and over.
 
-[table id=39 /]
+|Number of Users|How often do you update your master images?                                                         |
+|---------------|----------------------------------------------------------------------------------------------------|
+|100000         |Monthly                                                                                             |
+|80000          |Every 6 Months                                                                                      |
+|55000          |Monthly                                                                                             |
+|35000          |Every 6 Months                                                                                      |
+|30000          |Monthly                                                                                             |
+|30000          |Weekly                                                                                              |
+|24000          |Every 2 Months                                                                                      |
+|20000          |Monthly                                                                                             |
+|20000          |Every 2 Months                                                                                      |
+|20000          |Every 2 Months                                                                                      |
+|18000          |Monthly                                                                                             |
+|17000          |Monthly                                                                                             |
+|15000          |Every Quarter (4 times per year)                                                                    |
+|15000          |Every 2 Months                                                                                      |
+|15000          |Monthly                                                                                             |
+|15000          |Monthly                                                                                             |
+|12000          |Monthly                                                                                             |
+|10000          |Monthly                                                                                             |
+|10000          |Monthly                                                                                             |
+|10000          |Every 2 Months                                                                                      |
 
-## What About Other?
+### What About Other?
 
 In this question we asked respondents to use Other, if their patching schedules didn't fit into the Here are the responses that we received from respondents who selected Other for this question:
 
@@ -67,11 +88,11 @@ In this question we asked respondents to use Other, if their patching schedules 
 
 These are very interesting responses - looking at the top 5 responses, we get the impression that updates are difficult to test, deploy and manage. User productivity is typically more important than security.
 
-## Automation Reduces Risk
+### Automation Reduces Risk
 
 Patching can be challenging to manage, especially in persistent desktop environments - rollback of an update can be disruptive. Improvements in delivering virtual desktop environments, with tools such as app layering and mature UEM solutions, are enabling non-persistent VDI easier to achieve. Automating the creation of a master image simplifies troubleshooting - rebuild in the event of a bad update, rather than take manual steps to remove an update. The image is guaranteed to be the same as the version before the update.
 
-# Conclusion
+## Conclusion
 
 Patching is hard; users and desktops are at risk. While automation won't solve everything, it does reduce risk and helps provide consistency. Automation as a part of your patch schedule will improve responsiveness in the event of wayward updates.
 

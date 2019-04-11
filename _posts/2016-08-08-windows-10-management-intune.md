@@ -24,7 +24,7 @@ Having spent some time with Intune recently, I’ve built what I think is a good
 
 Note that this article will not cover a hybrid deployment with Intune and System Center Configuration Manager. Additional scenarios are possible with a hybrid approach, but my interest lies in utilising Intune as complete cloud solution to Windows PC management.
 
-# Intune Management Choices
+## Intune Management Choices
 
 Intune provides two management approaches for Windows 10:
 
@@ -55,7 +55,7 @@ To summarise the key points:
   * 3 policies apply to the Intune client - the Intune client Settings, Intune Center Settings and Windows Firewall Settings
   * All other policies targeting Windows apply to Windows 8.1 and/or Windows 10 MDM.
 
-# Management Capabilities
+## Management Capabilities
 
 Based on the [article by Gert-Jan van de Werfhorst & Eric Dunnewijk](https://wow365.nl/mobiliteit/intune/modern-management/), I've created the following tables with some additional information to show the differences between managing a Windows 10 PC with the client vs. MDM.
 
@@ -67,45 +67,84 @@ Once the client is deployed to at least one Windows PC, the dashboard now shows 
 
 ![Intune with devices management via the client and potentially MDM]({{site.baseurl}}/media/2016/08/IntuneDashboard-AgentEdited.png)*Intune with devices management via the client and potentially MDM*
 
-## Features
+### Features
 
 First, let's take a look at an overview of the features available for the client and for Windows 10 MDM:
 
-[table id=41 /]
+|Feature|Intune Client                                                                                       |Windows 10 MDM|
+|-------|----------------------------------------------------------------------------------------------------|--------------|
+|Auto Enrollment via Azure AD|✗                                                                                                   |✓             |
+|Software Deployment via Single MSI|✓                                                                                                   |✓             |
+|Software Deployment via MSI + additional files|✓                                                                                                   |✗             |
+|Software Deployment via EXE + additional files|✓                                                                                                   |✗             |
+|Configuration Policies|✗                                                                                                   |✓             |
+|Compliance Policies|✗                                                                                                   |✓             |
+|Remote Assistance|via TeamViewer                                                                                      |✗             |
+|Windows Update Policy, Approved Updates & Reporting|✓                                                                                                   |Policy only   |
+|Endpoint Protection Policy & Reporting|✓                                                                                                   |Policy only   |
+|Software Inventory|✓                                                                                                   |UWA only      |
+|Software License Management|✓                                                                                                   |✗             |
+|Hardware Inventory|✓                                                                                                   |Limited       |
+|Conditional Access|✗                                                                                                   |✓             |
 
 Note 3 key items here - software deployment, Windows Update management and Endpoint Protection management:
 
-### Software Deployment
+#### Software Deployment
 
 While software deployment with Windows 10 MDM is possible, only applications consisting of a single MSI can be deployed. It's clear then that software deployment via MDM may require some custom packaging.
 
 Software deployment via the client is limited to EXE and MSI files; however, it also enables additional files in an application setup thus providing more flexibility.
 
-### Windows Update
+#### Windows Update
 
 For Windows Updates on PCs managed with the client, full control is possible (not quite the same as WSUS). Additionally reporting is available to understand which updates are deployed and those that are outstanding. Finally, it is possible to deploy 3rd party MSP updates as well.
 
-### Endpoint Protection
+#### Endpoint Protection
 
 The client provides for management of Windows Defender on the endpoint plus reporting on device status and malware found with remediation action taken.
 
 With the MDM approach, Windows Defender configuration is possible via OMA-URI policies; however, no reporting is possible. [Advanced Threat Analytics](https://www.microsoft.com/en-au/server-cloud/products/advanced-threat-analytics/) is a component the [Enterprise Mobility Suite](https://www.microsoft.com/en-au/server-cloud/enterprise-mobility/overview.aspx) (EMS), which is a popular way that organisations are licensing Intune. While I haven't seen how [Windows Defender Advanced Threat Protection](https://www.microsoft.com/en-us/WindowsForBusiness/windows-atp) is licensed, this too looks like a good alternative endpoint management solution.
 
-## Policies
+### Policies
 
 Understanding the configuration policies possible with either approach is important for getting a full picture of how much control you have over Windows 10 PCs:
 
-[table id=42 /]
+|Policy|Intune Client                                                                                       |Windows 10 MDM|
+|------|----------------------------------------------------------------------------------------------------|--------------|
+|Custom Configuration (OMA-URI)|✗                                                                                                   |✓             |
+|Edition Upgrade Policy|✗                                                                                                   |✓             |
+|Email Profile|✗                                                                                                   |✓             |
+|General Configuration|✗                                                                                                   |✓             |
+|PKCS #12 (.PFX) Certificate Profile|✗                                                                                                   |✓             |
+|SCEP Certificate Profile|✗                                                                                                   |✓             |
+|Trusted Certificate Profile|✗                                                                                                   |✓             |
+|VPN Profile|✗                                                                                                   |✓             |
+|Wi-Fi Import|✗                                                                                                   |✓             |
+|Windows Information Protection (Enterprise Data Protection)|✗                                                                                                   |✓             |
+|Microsoft Intune Agent Settings|✓                                                                                                   |N/A           |
+|Microsoft Intune Center Settings|✓                                                                                                   |N/A           |
+|Windows Firewall Settings|✓                                                                                                   |✗             |
+|Exchange ActiveSync|✗                                                                                                   |✓             |
+|Mobile Device Security|✗                                                                                                   |✓             |
 
 It's initially surprising to see most policy configuration possible only available to Windows 10 MDM, given that Intune has been available since before Windows 8 and Windows 10. It's important to note that policy configuration for Intune is a different approach than traditional Group Policy which can be filtered based on computer and user. With MDM policies, these will apply to all enrolled machines, regardless of which user is on the device.
 
-## Remote Administrative Actions
+### Remote Administrative Actions
 
 Given the difference in supported features, the remote actions possible for each management approach is, of course, different.
 
-[table id=43 /]
+|Remote Action|Intune Client                                                                                       |Windows 10 MDM|
+|-------------|----------------------------------------------------------------------------------------------------|--------------|
+|Run a Full Malware Scan|✓                                                                                                   |✗             |
+|Run a Quick Malware Scan|✓                                                                                                   |✗             |
+|Restart Computer|✓                                                                                                   |✗             |
+|Update Malware Definitions|✓                                                                                                   |✗             |
+|Refresh Policies|✓                                                                                                   |✗             |
+|Refresh Inventory|✓                                                                                                   |✗             |
+|Remote Lock  |✗                                                                                                   |✓             |
+|Passcode Reset|✗                                                                                                   |✗             |
 
-# Conclusion
+## Conclusion
 
 This information is correct to the best of my knowledge. I recommend checking the documentation and trialling Intune for yourself to determine which approach will apply for your specific requirements.
 

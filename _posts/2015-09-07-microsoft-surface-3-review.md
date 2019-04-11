@@ -64,7 +64,7 @@ A device of this type makes a lot of sense with a touch screen either in tablet 
 
 A few times now the touch screen has gone haywire as shown in the graphic below. I'm not sure whether this is a hardware or software issue, as I think this has only started since the post-RTM builds of Windows 10.
 
-![Touch in Windows 10 on the Surface 3 going haywire" width="640" height="360" />*Touch in Windows 10 on the Surface 3 going haywire*
+![Touch in Windows 10 on the Surface 3 going haywire]({{site.baseurl}}/media/2015/09/Windows10-Jitter.gif)
 
 The screen itself is awesome - it has a 1920&#215;1280 resolution in a 10.1&#8243; screen, so the pixel density is very high. Windows runs best at 150% scaling which works out well even for most desktop applications.
 
@@ -74,7 +74,7 @@ In short, the hardware is beautiful, a extra USB port would be nice and the keyb
 
 There's nothing installed on the Surface that differentiates it from other Windows 8.1/10 tablets, so from a software perspective you get all of the same operating system features and application software as any other Windows device. There is a Universal Surface app which provides you an overview of the device's features and from there you can calibrate touch and the pen and a couple of other settings. One the best features of the Surface from a software perspective is that you get just Windows and none of the extra unnecessary crap that typically comes with 3rd party hardware.
 
-![I have no idea what this feature does.]({{site.baseurl}}/media/2015/09/Surface-app.png)*I have no idea what this feature does.*
+![I have no idea what this feature does]({{site.baseurl}}/media/2015/09/Surface-app.png)*I have no idea what this feature does.*
 
 ## What I Use
 
@@ -82,7 +82,23 @@ I use the Surface 3 as a secondary mobile device with my MacBook as my primary d
 
 Here's a list of my most used software and equivalents across both devices:
 
-<span style="line-height: 1.5;">[table id=37 /]</span>
+|MacBook|Surface                                                                                             |
+|-------|----------------------------------------------------------------------------------------------------|
+|Microsoft Office (Outlook, Word, Excel, PowerPoint, OneNote)|Microsoft Office (Outlook, Word, Excel, PowerPoint, OneNote, Visio, etc.) including Windows Store versions of Word, Excel, PowerPoint and OneNote|
+|Mail - Outlook for corporate email. A browser for my personal email (hosted on Outlook.com)|Outlook for both corporate and personal email. The Mail app for personal email                      |
+|Browser - Chrome and Safari|Edge and occasionally Internet Explorer                                                             |
+|RSS reader - Reeder|Nextgen Reader (Windows Store app)                                                                  |
+|Tweetbot|Twitter (Windows Store app)                                                                         |
+|Skype  |Skype for desktop. New Messaging and Video apps coming to Windows 10                                |
+|Slack for OS X|Slack for Windows or pinning the Slack web site to the Start menu                                   |
+|Microsoft Remote Desktop and Microsoft Remote Desktop beta|Remote Desktop Preview (Windows Store app)                                                          |
+|Citrix Receiver|Citrix Receiver (Windows desktop app)                                                               |
+|1Password for OS X|1Password for Windows (unfortunately not as good as the OS X version, but functional). Windows Store app coming soon|
+|TextWrangler|Notepad (not as functional, of course)                                                              |
+|Spotify|Spotify (although when travelling, I generally use Spotify on my phone)                             |
+|Dropbox|Dropbox                                                                                             |
+|OneDrive|OneDrive (built into Windows 10. The new version can't arrive soon enough)                          |
+|Netflix - via a browser|Netflix (Windows Store app)                                                                         |
 
 Windows 10 has certainly improved since the first public beta and I'm now running the most recent builds and generally stick to the Windows Insider fast ring. Unfortunately it wasn't until [post 10130 builds that Windows 10 was compatible](https://twitter.com/GabeAul/status/608082912249061376) with the Surface 3, so an immediate upgrade from Windows 8.1 was not feasible. Since then though, I've been running Windows 10 full time on it.
 

@@ -23,7 +23,7 @@ A conversation about desktop virtualisation will invariably turn to the topic of
 
 I’ll avoid talking about any one particular desktop virtualization solution and instead discuss this topic as it applies to all environments.
 
-# Persistency
+## Persistency
 
 I think it was [Harry Labana](https://twitter.com/harrylabana) that I originally heard this statement from - “Persistency is a measure of time”. This is absolutely true - what is the time between deploying and re-deploying that desktop? How long before that PC is rebuilt because of an unrecoverable error?
 
@@ -31,7 +31,7 @@ If Windows is re-installed or the PC retired, the user must migrate to a new ins
 
 If we take persistency to mean a Windows install is immutable we live with a false sense of security. The same would apply to any general purpose OS - manage the data and configuration as though that install will fail tomorrow. If you can run all non-persistent desktops, you’re way ahead.
 
-# Defining Terms
+## Defining Terms
 
 Let me first list the various terms that you might hear when discussing this topic:
 
@@ -40,7 +40,7 @@ Let me first list the various terms that you might hear when discussing this top
 
 So many words to describe essentially the same thing. For clarity’s sake, let’s stick with persistent and non-persistent for the rest of this article.
 
-# Who Are We Talking To?
+## Who Are We Talking To?
 
 When discussing persistent and non-persistent, context is key - who’s perspective are we using - the administrator (admin, engineer, architecture etc.) or the user (end-user, IT Manager, CIO etc.)? These terms may have different meaning depending on the audience - non-persistent may sound scary to the uninitiated. Tell a user that their desktop is non-persistent and see what reaction you get.
 
@@ -50,7 +50,7 @@ Regardless of what type of desktop a user receives, the user requires persistenc
 
 Ultimately we need to tailor the conversation to the audience and ensure we explain these concepts succinctly.
 
-# What's Makes the Modern Desktop?
+## What's Makes the Modern Desktop?
 
 Data aside, we first need to establish whether a user requires a persistent state across sessions, before deciding on a way to manage the desktops. To do that, we should consider each of the major components of the modern Windows desktop:
 
@@ -60,7 +60,7 @@ Data aside, we first need to establish whether a user requires a persistent stat
   * Applications - what is your application delivery strategy. VDI/RDS has been historically been hard to manage as a result of application requirements, making persistent desktops the easy route
   * User applications - do you need to provide an environment that users can install applications? Do you have developers or IT Pros in-house who often need administrative rights to get their jobs done
 
-# Virtual Desktops
+## Virtual Desktops
 
 A user connects to an individual virtual machine running Windows (or perhaps soon this could be Linux). Virtual desktops usually run a desktop version of Windows, but this can also be Windows Server (Server VDI).
 
@@ -68,7 +68,7 @@ A virtual desktop can be delivered from a persistent virtual machine and they w
 
 Virtual desktops can also be provided from a pool of virtual machines that are might be deleted or refreshed within a short amount of time. If the user connects to a pool of desktops, they could connect to any desktop in that pool (i.e. random).
 
-# Remote Desktop Services
+## Remote Desktop Services
 
 Users connect to a shared Windows instance running Windows Server (individually known as a Remote Desktop Session Host).
 
@@ -76,7 +76,7 @@ From the administrators point of view, Remote Desktop Session Hosts (RDSH) are m
 
 RDSH servers provide a pool (or farm) of Windows instances that users can receive their desktops or applications from - a user could connect to any server in the pool. As such, they represent a non-persistent desktop, regardless of whether the underlying RDSH server is persistent or non-persistent.
 
-# Considerations
+## Considerations
 
 With a persistent desktop, each time the user connects to that desktop, their applications, data and user profile / preferences will be intact. No other management is required (that doesn't mean that management should be ignored though) and no change to process from physical desktop management is needed (other than the introduction of a hypervisor).
 
@@ -86,6 +86,15 @@ Delivering a persistent user environment on top of non-persistent desktops will 
 
 Here's a short breakdown of the various differences between and considerations of persistent and non-persistent desktops:
 
-[table id=35 /]
+|Persistent|Non-Persistent                                                                                      |
+|----------|----------------------------------------------------------------------------------------------------|
+|Persistent from the user perspective may be different from the administrator perspective. IT staff may require a persistent desktop|A users can still receive a persistent environment from a non-persistent desktop                    |
+|May be easier to manage because a persistent desktop is no different to a physical desktop|A change of management process which may primarily be managed by the VDI broker, but should enable faster updates of the gold image and ultimately a lower management cost|
+|Desktop management solutions such as System Center Configuration Manager would be required for most persistent desktops|System Center Configuration Manager can work with non-persistent desktops, but may not be required depending on how applications are delivered|
+|Backup may be required if users store data locally|All user must be redirected to a central file server, so backup is not required                     |
+|If the user's primary persistent desktop is unavailable, host and storage HA is required, otherwise the user could connect to a temporary non-persistent desktop|HA is provided with an N+1 architecture. If a desktop or host is unavailable, the user will reconnect and receive a new desktop|
+|Some form of shared storage is required to ensure the desktop is highly available|Local (physical or software defined) or shared storage can be used                                  |
+|Folder redirection and user environment management may not be required but it is recommended to reduce the reliance on a specific virtual desktop|Folder redirection and user environment management is required. This will ensure user data (Documents, Desktop etc.) is accessible from different desktops and will provide the user with the look and feel of persistence|
+|More storage is required for persistent desktops as the desktop can grow to consume the size of the vDisk|Non-persistent desktops can be destroyed and recreated as required, thus reducing the amount of capacity required|
 
 Understanding the types of desktops available to you is only the first step in determining how your VDI environment will be delivered.

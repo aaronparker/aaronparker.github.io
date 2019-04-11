@@ -18,11 +18,11 @@ tags:
 ---
 [Helge](https://twitter.com/helgeklein), [Shawn](https://twitter.com/shawnbass) and myself had a great session this week at Citrix Synergy with our session [SYN502: I’ve got 99 problems, and folder redirection is every one of them](https://citrix.g2planet.com/synergyorlando2015/public_session_view.php?agenda_session_id=185).
 
-<img class="alignnone size-full wp-image-3955" src="{{site.baseurl}}.com/media/2015/05/IMG_2073.jpg" alt="IMG_2073" width="816" height="370" srcset="{{site.baseurl}}.com/media/2015/05/IMG_2073.jpg 816w, {{site.baseurl}}.com/media/2015/05/IMG_2073-150x68.jpg 150w, {{site.baseurl}}.com/media/2015/05/IMG_2073-300x136.jpg 300w" sizes="(max-width: 816px) 100vw, 816px" /> 
+![IMG_2073]({{site.baseurl}}.com/media/2015/05/IMG_2073.jpg)
 
 We covered quite a number of test scenarios, so in this article, I want to share the approaches that we used for our tests, so that you can replicate them in your own environments.
 
-# Test Environment
+## Test Environment
 
 In my lab, I've used Windows Server 2012 R2 Hyper-V; however the hypervisor isn't really that important, as long as you're performing all of your tests on the same hypervisor.
 
@@ -34,7 +34,7 @@ This year, we have concentrated on testing SMB 3.02 as the primary version of S
 
 All virtual machines were deployed with the latest updates as at May 2015.
 
-# Throughput Tests with DiskSpd
+## Throughput Tests with DiskSpd
 
 To test the throughput capabilities of SMB 3.02 and SMB 2.1, I've used the [DiskSpd 2.0.15 utility available from Microsoft](http://aka.ms/DiskSpd).
 
@@ -46,17 +46,28 @@ Rather than cover complete details in this post on how DiskSpd works, I instead 
 
 One very useful part from that article that I will replicate here is the parameters table for DiskSpd. With this table, I was able to create the specific tests that were useful for me to determine the throughput performance for both SMB 2.1 and SMB 3.02.
 
-[table id=36 /]
+|Parameter|Description                                                                                         |Notes                                                                                                                                                                                                                                                                                    |
+|---------|----------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-c       |Size of file used.                                                                                  |Specify the number of bytes or use suffixes like K, M or G (KB, MB, or GB). You should use a large size (all of the disk) for HDDs, since small files will show unrealistically high performance (short stroking).                                                                       |
+|-d       |The duration of the test, in seconds.                                                               |You can use 10 seconds for a quick test. For any serious work, use at least 60 seconds.                                                                                                                                                                                                  |
+|-w       |Percentage of writes.                                                                               |0 means all reads, 100 means all writes, 30 means 30% writes and 70% reads. Be careful with using writes on SSDs for a long time, since they can wear out the drive. The default is 0.                                                                                                   |
+|-r       |Random                                                                                              |Random is common for OLTP workloads. Sequential (when r is not specified) is common for Reporting, Data Warehousing.                                                                                                                                                                    |
+|-b       |Size of the IO in KB                                                                                |Specify the number of bytes or use suffixes like K, M or G (KB, MB, or GB). 8K is the typical IO for OLTP workloads. 512K is common for Reporting, Data Warehousing.                                                                                                                     |
+|-t       |Threads per file                                                                                    |For large IOs, just a couple is enough. Sometimes just one. For small IOs, you could need as many as the number of CPU cores.                                                                                                                                                            |
+|-o       |Outstanding IOs or queue depth (per thread)                                                         |In RAID, SAN or Storage Spaces setups, a single disk can be made up of multiple physical disks. You can start with twice the number of physical disks used by the volume where the file sits. Using a higher number will increase your latency, but can get you more IOPs and throughput.|
+|-L       |Capture latency information                                                                         |Always important to know the average time to complete an IO, end-to-end.                                                                                                                                                                                                                 |
+|-h       |Disable hardware and software caching                                                               |No hardware or software buffering. Buffering plus a small file size will give you performance of the memory, not the disk.                                                                                                                                                               |
 
 For the DiskSpd tests that I ran in my environment, I ran DiskSpd against a 256Mb file for 120 seconds with various block sizes with separate tests for read and write (i.e. I ran 100% read or 100% write). Here's two sample commands for running 4K block sizes and using read or write tests:
 
-<pre class="lang:ps decode:true" title="DiskSpd running with a 256Mb for 120 seconds, 4K blocks, 100% read">diskspd.exe -c256M -d120 -si -w0 -t2 -o8 -b4K -h -L \\mb-win81\diskspd\testfile.dat</pre>
-
-<pre class="lang:ps decode:true" title="DiskSpd running with a 256Mb for 120 seconds, 4K blocks, 100% write">diskspd.exe -c256M -d120 -si -w100 -t2 -o8 -b4K -h -L \\mb-win81\diskspd\testfile.dat</pre>
+```powershell
+diskspd.exe -c256M -d120 -si -w0 -t2 -o8 -b4K -h -L \\mb-win81\diskspd\testfile.dat
+diskspd.exe -c256M -d120 -si -w100 -t2 -o8 -b4K -h -L \\mb-win81\diskspd\testfile.dat
+```
 
 Each of these tests uses 2 threads (1 per vCPU) and then from the output I've used the total MB/s seen from both threads as the result.
 
-# File Server Capacity Tool
+## File Server Capacity Tool
 
 To appropriate some type of folder redirection tests, I used the File Server Capacity Tool - this was about the best tool that I could find that could simulate home folder access (if you know of another, please let me know).
 
@@ -71,7 +82,7 @@ In my lab environment, I've used two physical hosts with the file server targets
 
 Other than specific tests where we wanted to know the effect of anti-virus on the file server, no AV application was installed on any server or client (physical or virtual).
 
-![File Server Capacity Tool" width="565" height="399" srcset="{{site.baseurl}}.com/media/2015/05/FSCT.png 565w, {{site.baseurl}}.com/media/2015/05/FSCT-150x106.png 150w, {{site.baseurl}}.com/media/2015/05/FSCT-300x212.png 300w, {{site.baseurl}}.com/media/2015/05/FSCT-480x340.png 480w" sizes="(max-width: 565px) 100vw, 565px" />*File Server Capacity Tool architecture*
+![File Server Capacity Tool]({{site.baseurl}}.com/media/2015/05/FSCT.png)*File Server Capacity Tool architecture*
 
 FSCT comes with a single work load - Home Folders. Which is fortunately great for our use, should be as similar as possible to real work use of users interacting with their Documents or Desktop folders that are redirected to their home drive.
 
@@ -100,21 +111,21 @@ The basic steps for running FSCT were as follows:
 
 So the commands I used for my environment (run on the various VMs used in the test) were:
 
-<pre class="lang:ps decode:true" title="Create 800 users accounts (200 user accounts per client, with 4 clients)">fsct prepare dc /users 200 /clients CLIENT1,CLIENT2,CLIENT3,CLIENT4 /password Passw0rd</pre>
+Create 800 users accounts (200 user accounts per client, with 4 clients): `fsct prepare dc /users 200 /clients CLIENT1,CLIENT2,CLIENT3,CLIENT4 /password Passw0rd`
 
-<pre class="lang:ps decode:true " title="Prepare the file server - create user data on the E: partition, using the HomeFolders workload">fsct prepare server /clients CLIENT1,CLIENT2,CLIENT3,CLIENT4 /password Passw0rd /users 200 /domain home.stealthpuppy.com /volumes E: /workload HomeFolders</pre>
+Prepare the file server - create user data on the E: partition, using the HomeFolders workload: `fsct prepare server /clients CLIENT1,CLIENT2,CLIENT3,CLIENT4 /password Passw0rd /users 200 /domain home.stealthpuppy.com /volumes E: /workload HomeFolders`
 
-<pre class="lang:ps decode:true " title="Prepare the Controller">fsct prepare controller</pre>
+Prepare the Controller: `fsct prepare controller`
 
-<pre class="lang:ps decode:true " title="Prepare the Client (run per client VM)">fsct prepare client /server fsctserver /password Passw0rd /users 200 /domain home.stealthpuppy.com /server_ip 192.168.0.79</pre>
+Prepare the Client (run per client VM): `fsct prepare client /server fsctserver /password Passw0rd /users 200 /domain home.stealthpuppy.com /server_ip 192.168.0.79`
 
-<pre class="lang:ps decode:true " title="Run the workload on each client (run per client VM)">fsct run client /controller CNTRLR /server fsctserver /password Passw0rd /domain home.stealthpuppy.com</pre>
+Run the workload on each client (run per client VM): `fsct run client /controller CNTRLR /server fsctserver /password Passw0rd /domain home.stealthpuppy.com`
 
-<pre class="lang:ps decode:true " title="Start the tests (run on the Controller VM)">fsct run controller /server FILE3 /password Passw0rd /volumes E: /clients CLIENT1,CLIENT2,CLIENT3,CLIENT4 /min_users 50 /max_users 800 /step 50 /duration 720 /workload HomeFolders</pre>
+Start the tests (run on the Controller VM): `fsct run controller /server FILE3 /password Passw0rd /volumes E: /clients CLIENT1,CLIENT2,CLIENT3,CLIENT4 /min_users 50 /max_users 800 /step 50 /duration 720 /workload HomeFolders`
 
 Each command is run on the respective virtual machine - the FSCT binaries were run from C:\FSCT.
 
-# uberAgent for Splunk
+## uberAgent for Splunk
 
 To make it simple to measure logon times, there's only one tool worth using to view metrics and that's of course [uberAgent for Splunk](https://helgeklein.com/uberagent-for-splunk/). uberAgent makes it simple to report on logon times - so all you'll need to do is setup roaming profiles, log onto a machine with the agent installed and view the Logon Duration report.
 

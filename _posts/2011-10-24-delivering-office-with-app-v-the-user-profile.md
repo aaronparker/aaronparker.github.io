@@ -8,10 +8,6 @@ guid: http://blog.stealthpuppy.com/virtualisation/delivering-office-with-app-v-t
 permalink: /delivering-office-with-app-v-the-user-profile/
 dsq_thread_id:
   - "452059123"
-Hide SexyBookmarks:
-  - "0"
-Hide OgTags:
-  - "0"
 categories:
   - Applications
 tags:
@@ -26,7 +22,7 @@ If you follow any of the following guidance from Microsoft for sequencing Office
 
 you will end up with a package that will include the following folders in the virtualized user profile (those folders captured during sequencing that will end up in the PKG file):
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="CSIDL_APPDATA" src="{{site.baseurl}}.com/media/2011/10/CSIDL_APPDATA.png" alt="CSIDL_APPDATA Folders" width="660" height="416" border="0" /> 
+![CSIDL_APPDATA]({{site.baseurl}}.com/media/2011/10/CSIDL_APPDATA.png)
 
 The folders captured under %CSIDL_APPDATA%\Microsoft are those folders that have been created during the first-run tasks – folders created when you launch an Office application and perform some standard tasks.
 
@@ -34,11 +30,11 @@ If you're familiar with delivering applications with App-V (or any type of appli
 
 To see what this looks like at runtime, here's a view of a profile before running Office applications that have been delivered by App-V:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="BeforeOffice" src="{{site.baseurl}}.com/media/2011/10/BeforeOffice.png" alt="BeforeOffice" width="660" height="331" border="0" /> 
+![BeforeOffice]({{site.baseurl}}.com/media/2011/10/BeforeOffice.png)
 
 After executing each of the Office applications in the package (I've used a package with Office 2010 Professional Plus with Visio and Project) and using just about every feature in those applications:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AfterOffice" src="{{site.baseurl}}.com/media/2011/10/AfterOffice.png" alt="AfterOffice" width="660" height="410" border="0" /> 
+![AfterOffice]({{site.baseurl}}.com/media/2011/10/AfterOffice.png)
 
 There's an additional 10 folders that have been created with 8 of those related to Office. This has left me with the majority of the Office user profile being virtualized and stored in the PKG file, whilst the rest is now stored on the real file system. This probably doesn't have too much impact to the user if I'm using Roaming Profiles so that Office settings follow the user, but what happens for support?
 
@@ -46,4 +42,43 @@ The service desk now has to manage Office settings for the user in two places. I
 
 Do that, you will need to add an additional step during sequencing – create those folders that during the monitoring phase. I do this via a script (that also installs and configures Office) that will create the folders listed in the table below. If you do that, the entire Office profile will now be virtualized.
 
-[table id=29 /]
+|Folder|
+|------|
+|%APPDATA%\Microsoft\AddIns|
+|%APPDATA%\Microsoft\Bibliography|
+|%APPDATA%\Microsoft\Clip Organizer|
+|%APPDATA%\Microsoft\CLView|
+|%APPDATA%\Microsoft\Document Building Blocks|
+|%APPDATA%\Microsoft\Excel|
+|%APPDATA%\Microsoft\Forms|
+|%APPDATA%\Microsoft\InterConnect|
+|%APPDATA%\Microsoft\MS Project|
+|%APPDATA%\Microsoft\Office|
+|%APPDATA%\Microsoft\OneNote|
+|%APPDATA%\Microsoft\Outlook|
+|%APPDATA%\Microsoft\PowerPoint|
+|%APPDATA%\Microsoft\Proof|
+|%APPDATA%\Microsoft\Publisher|
+|%APPDATA%\Microsoft\Publisher Building Blocks|
+|%APPDATA%\Microsoft\Queries|
+|%APPDATA%\Microsoft\QuickStyles|
+|%APPDATA%\Microsoft\SharePoint Designer|
+|%APPDATA%\Microsoft\Signatures|
+|%APPDATA%\Microsoft\Stationery|
+|%APPDATA%\Microsoft\Templates|
+|%APPDATA%\Microsoft\UProof|
+|%APPDATA%\Microsoft\Word|
+|%APPDATA%\Microsoft\Media Catalog|
+|%APPDATA%\Microsoft\Graph|
+|%APPDATA%\Microsoft\InfoPath|
+|%APPDATA%\Microsoft\Themes|
+|%APPDATA%\Microsoft\OIS|
+|%APPDATA%\Microsoft\VSTAHost|
+|%APPDATA%\Microsoft\VSCommon|
+|%APPDATA%\Microsoft\VSTA|
+|%APPDATA%\Microsoft\Web Server Extensions|
+|%APPDATA%\Microsoft\IMJP10|
+|%APPDATA%\Microsoft\IME12|
+|%APPDATA%\Microsoft\IMJP8_1|
+|%APPDATA%\Microsoft\IMJP9_0|
+|%APPDATA%\Microsoft\IMJP12|
