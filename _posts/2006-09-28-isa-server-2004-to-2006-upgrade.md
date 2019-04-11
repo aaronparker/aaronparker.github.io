@@ -21,7 +21,7 @@ Access to unauthenticated web sites was being blocked and displaying the followi
 
 Which looked like this in the browser:
 
-<img border="1" src="{{site.baseurl}}.com/media/2006/09/1000.14.124.403Forbidden.png" /> 
+<img border="1" src="{{site.baseurl}}/media/2006/09/1000.14.124.403Forbidden.png" /> 
 
 <a target="_blank" href="http://www.trustedaccess.info/photos/images/images/124/original.aspx"></a>
 

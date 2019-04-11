@@ -4,7 +4,7 @@ title: 'Install-VisualCRedistributables.ps1 - A Visual C++ Redistributable Insta
 date: 2017-05-01T19:26:58+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5434
+guid: {{site.baseurl}}/?p=5434
 permalink: /visual-c-redistributable-installer/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

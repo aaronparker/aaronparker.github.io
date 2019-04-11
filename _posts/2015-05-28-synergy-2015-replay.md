@@ -4,7 +4,7 @@ title: "Synergy 2015 Session Replay - I've Got 99 Problems and Folder Redirectio
 date: 2015-05-28T13:40:53+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3966
+guid: {{site.baseurl}}/?p=3966
 permalink: /synergy-2015-replay/
 image: /media/2015/05/SYN502-Folder-Redirection-Citrix-Synergy-2015.png
 categories:

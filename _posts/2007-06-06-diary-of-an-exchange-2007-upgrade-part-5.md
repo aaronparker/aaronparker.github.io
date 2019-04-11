@@ -12,7 +12,7 @@ tags:
   - Certificates
   - Exchange
 ---
-<img border="0" align="left" width="82" src="{{site.baseurl}}.com/media/2007/06/exchange.png" height="82" style="width: 82px; height: 82px" />Dear Diary,
+<img border="0" align="left" width="82" src="{{site.baseurl}}/media/2007/06/exchange.png" height="82" style="width: 82px; height: 82px" />Dear Diary,
 
 Since I've got the CCR cluster running I've run some performance tests with [JetStress](http://www.microsoft.com/downloads/info.aspx?na=22&p=2&SrcDisplayLang=en&SrcCategoryId=&SrcFamilyId=&u=%2fdownloads%2fdetails.aspx%3fFamilyID%3d73dfe056-0900-4dbb-b14a-0932338cecac%26DisplayLang%3den) to get an idea of how the disk subsytem will cope. I ran a 24 hour test with 6 databases of 60 GB each. JetStress has returned the tests with a pass. The test resulted in an average CPU usage of 25%, a little over 4GB of free RAM and disk stats looks fine as well, so I think the sizing of the servers has gone well. If network becomes an issue we can add a second adapter to each server to increase performance. Here's the [output from the JetStress]({{site.baseurl}}/media/2007/06/jetstress.htm) test to get an idea of how this system looks.
 

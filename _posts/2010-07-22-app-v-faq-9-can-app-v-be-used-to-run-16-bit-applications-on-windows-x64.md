@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="left" />
 
 No, [App-V is not a compatibility solution]({{site.baseurl}}/virtualisation/app-v-faq-7-is-app-v-an-application-compatibility-solution). App-V does not provide any additional layers that applications can use when executing on different versions of Windows. Although 16-bit applications can be deployed on 32-bit Windows via App-V, it cannot be used to run 16-bit applications on 64-bit Windows.
 

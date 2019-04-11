@@ -17,7 +17,7 @@ If you are deploying the [App-V ADM Template](http://go.microsoft.com/fwlink/?Li
 
 If you deploy the 4.5 client settings to existing 4.2 clients, you may encounter this dialog box when upgrading to 4.5:
 
-<img style="display: inline" title="SecurityDescriptorError" src="{{site.baseurl}}.com/media/2008/11/securitydescriptorerror.png" border="0" alt="SecurityDescriptorError" width="400" height="146" /> 
+<img style="display: inline" title="SecurityDescriptorError" src="{{site.baseurl}}/media/2008/11/securitydescriptorerror.png" border="0" alt="SecurityDescriptorError" width="400" height="146" /> 
 
 The message appears to be completely unrelated to the cause, but if you remove the registry settings from HKLM\SOFTWARE\Microsoft\SoftGrid\4.5, the upgrade will complete successfully.
 
@@ -32,4 +32,4 @@ There are a couple of ways to avoid this scenario:
 
 Your WMI filter should look something like this and your GPO will only apply once the App-V 4.5 client has been installed:
 
-<img style="display: inline" title="App-VWMIFilter" src="{{site.baseurl}}.com/media/2008/11/appvwmifilter.png" border="0" alt="App-VWMIFilter" width="476" height="340" />
+<img style="display: inline" title="App-VWMIFilter" src="{{site.baseurl}}/media/2008/11/appvwmifilter.png" border="0" alt="App-VWMIFilter" width="476" height="340" />

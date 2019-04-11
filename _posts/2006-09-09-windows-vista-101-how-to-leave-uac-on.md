@@ -34,8 +34,8 @@ Now this one will require returning to your command line roots or learning how t
 
 This will result in a Command Prompt window with the text "Administrator" in the title bar. Using the second option is easy, just open the properties of the Command Prompt shortcut, click Advanced and place a tick in the checkbox labelled "Run as administrator". Click on the screenshots below to see the shortcut properties and the resulting Command Prompt in more detail:
 
-<img border="0" src="{{site.baseurl}}.com/media/2006/09/1000.14.93.RunAsAdministrator.PNG" />  
-<img border="0" src="{{site.baseurl}}.com/media/2006/09/1000.14.94.AdministratorCommandPrompt.PNG" /> 
+<img border="0" src="{{site.baseurl}}/media/2006/09/1000.14.93.RunAsAdministrator.PNG" />  
+<img border="0" src="{{site.baseurl}}/media/2006/09/1000.14.94.AdministratorCommandPrompt.PNG" /> 
 
 The benefit of the approach is that applications launched via the elevated command prompt will also be elevated.
 
@@ -48,7 +48,7 @@ Most of the frustrations with UAC will stem from the requirement to click the UA
 
 The following screenshot shows this option:
 
-<img border="0" src="{{site.baseurl}}.com/media/2006/09/1000.14.92.SeperateProcess.PNG" /> 
+<img border="0" src="{{site.baseurl}}/media/2006/09/1000.14.92.SeperateProcess.PNG" /> 
 
 Now you can right click a Windows Explorer shortcut and choose 'Run as administrator' to elevate that window to perform administrative tasks from that single window without multiple UAC prompts.
 

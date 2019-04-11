@@ -63,10 +63,10 @@ Function Get-vSphereVMUUID {
         Retrieves the UUID from a VM piped to this function.
 
         .NOTES  
-        See {{site.baseurl}}.com/ for support information.
+        See {{site.baseurl}}/ for support information.
 
         .LINK  
-        {{site.baseurl}}.com/code/retrieving-a-vms-uuid-from-vsphere/
+        {{site.baseurl}}/code/retrieving-a-vms-uuid-from-vsphere/
     #>
     [CmdletBinding(SupportsShouldProcess = $True)]  
     Param(  

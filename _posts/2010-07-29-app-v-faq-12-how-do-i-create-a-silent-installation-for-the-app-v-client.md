@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline" align="left" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" />
+<img style="margin: 0px 10px 5px 0px; display: inline" align="left" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" />
 
 TechNet has the documentation you need for [creating a silent or unattended installation of the App-V client](http://technet.microsoft.com/library/ee956917.aspx) for deployment to existing workstations or during your base image build. Before embarking on customising the install, I usually recommend first understanding [how to perform a manual installation of the App-V Client](http://technet.microsoft.com/library/cc817122.aspx).
 
@@ -28,7 +28,7 @@ Whilst SETUP.EXE might be the easiest method, it won’t give most organisations
 
 When working with the App-V Client MSI installer, administrators most commonly come up against missing dependencies. This is usually due to the Application Error Reporting component which requires use of [a specific GUID that must match the App-V Client](http://technet.microsoft.com/en-us/library/ee956914.aspx). To test that the required dependencies are installed as the App-V Client setup expects, use SETUP.EXE to check the dependencies for you – just run SETUP.EXE manually and it will stop at the following dialog box that will list missing dependencies:
 
-[<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" class="wlDisabledImage" title="AppV-Dependencies" border="0" alt="AppV-Dependencies" src="{{site.baseurl}}.com/media/2010/07/AppVDependencies_thumb.png]({{site.baseurl}}/media/2010/07/AppVDependencies.png)
+[<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" class="wlDisabledImage" title="AppV-Dependencies" border="0" alt="AppV-Dependencies" src="{{site.baseurl}}/media/2010/07/AppVDependencies_thumb.png]({{site.baseurl}}/media/2010/07/AppVDependencies.png)
 
 ### Resources
 

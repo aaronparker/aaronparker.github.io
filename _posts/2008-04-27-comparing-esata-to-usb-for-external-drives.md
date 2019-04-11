@@ -36,15 +36,15 @@ To power this drive I have to connect the included USB power lead. I'm not sure 
 
 To test the performance of my disk setup, I've used [HD Tune](http://www.hdtune.com/) because they offer a free version and it's easy to use. I tested the performance of my original hard disk ([Seagate Momentus 5400.3 80GB ATA/100 5400RPM 16MB 2.5"](http://www.seagate.com/ww/v/index.jsp?locale=en-US&name=Momentus_5400.3_80_GB&vgnextoid=c83f99f4fa74c010VgnVCM100000dd04090aRCRD&vgnextchannel=b450d3a0140fc010VgnVCM100000dd04090aRCRD&reqPage=Model)) connected to this laptop via USB. The result stays consistent right up until the end of the test:
 
-![Orignal disk performance over USB]({{site.baseurl}}.com/media/2008/04/originaldiskperf.png)
+![Orignal disk performance over USB]({{site.baseurl}}/media/2008/04/originaldiskperf.png)
 
 When I performed the same test on a desktop machine the throughput was about 5MBps higher and was consistent to 100%. This is the performance of the new hard disk over a USB connection:
 
-![New disk performance over USB]({{site.baseurl}}.com/media/2008/04/perfusb.png)
+![New disk performance over USB]({{site.baseurl}}/media/2008/04/perfusb.png)
 
 And the performance of the same hard disk over an eSATA connection using the Belkin ExpressCard:
 
-![New disk performance over eSATA]({{site.baseurl}}.com/media/2008/04/perfesata.png)
+![New disk performance over eSATA]({{site.baseurl}}/media/2008/04/perfesata.png)
 
 Overall I'm pretty happy with the performance of the new disk. It more than doubles the performance of my older disk yet still in a portable package and my VMs feel much much snappier.
 

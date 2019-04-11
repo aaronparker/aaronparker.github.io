@@ -4,7 +4,7 @@ title: 'OS Automation Survey Results - What Hypervisor Do You Use?'
 date: 2015-10-06T03:00:07+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4146
+guid: {{site.baseurl}}/?p=4146
 permalink: /automation-survey-results-hypervisor/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

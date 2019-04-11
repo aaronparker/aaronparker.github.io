@@ -4,7 +4,7 @@ title: In 2019, What is a Microsoft Office Application?
 date: 2019-02-24T23:41:43+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=6252
+guid: {{site.baseurl}}/?p=6252
 permalink: /?p=6252
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -32,7 +32,7 @@ Deploying Office applications on Windows
 
 
 
-[<img src="{{site.baseurl}}.com/media/2019/02/Office365-Apps-StartMenu-v2-1024x576.png" alt="Microsoft Office applications on Windows" class="wp-image-6255" srcset="{{site.baseurl}}.com/media/2019/02/Office365-Apps-StartMenu-v2-1024x576.png 1024w, {{site.baseurl}}.com/media/2019/02/Office365-Apps-StartMenu-v2-150x84.png 150w, {{site.baseurl}}.com/media/2019/02/Office365-Apps-StartMenu-v2-300x169.png 300w, {{site.baseurl}}.com/media/2019/02/Office365-Apps-StartMenu-v2-768x432.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](blob:{{site.baseurl}}.com/c9564118-065d-45b9-b640-6558f88fb6c7)*Microsoft Office applications on Windows*
+[<img src="{{site.baseurl}}/media/2019/02/Office365-Apps-StartMenu-v2-1024x576.png" alt="Microsoft Office applications on Windows" class="wp-image-6255" srcset="{{site.baseurl}}/media/2019/02/Office365-Apps-StartMenu-v2-1024x576.png 1024w, {{site.baseurl}}/media/2019/02/Office365-Apps-StartMenu-v2-150x84.png 150w, {{site.baseurl}}/media/2019/02/Office365-Apps-StartMenu-v2-300x169.png 300w, {{site.baseurl}}/media/2019/02/Office365-Apps-StartMenu-v2-768x432.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />](blob:{{site.baseurl}}/c9564118-065d-45b9-b640-6558f88fb6c7)*Microsoft Office applications on Windows*
 
 dd
 
@@ -40,6 +40,6 @@ dd
 
 dd
 
-<img src="{{site.baseurl}}.com/media/2019/02/MicrosoftOffice-macOS-1024x640.png" alt="" class="wp-image-6256" srcset="{{site.baseurl}}.com/media/2019/02/MicrosoftOffice-macOS-1024x640.png 1024w, {{site.baseurl}}.com/media/2019/02/MicrosoftOffice-macOS-150x94.png 150w, {{site.baseurl}}.com/media/2019/02/MicrosoftOffice-macOS-300x188.png 300w, {{site.baseurl}}.com/media/2019/02/MicrosoftOffice-macOS-768x480.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> 
+<img src="{{site.baseurl}}/media/2019/02/MicrosoftOffice-macOS-1024x640.png" alt="" class="wp-image-6256" srcset="{{site.baseurl}}/media/2019/02/MicrosoftOffice-macOS-1024x640.png 1024w, {{site.baseurl}}/media/2019/02/MicrosoftOffice-macOS-150x94.png 150w, {{site.baseurl}}/media/2019/02/MicrosoftOffice-macOS-300x188.png 300w, {{site.baseurl}}/media/2019/02/MicrosoftOffice-macOS-768x480.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> 
 
 dd

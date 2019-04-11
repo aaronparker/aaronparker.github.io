@@ -4,7 +4,7 @@ title: Sequential Starting of a List of VMs
 date: 2014-02-27T12:16:51+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3578
+guid: {{site.baseurl}}/?p=3578
 permalink: /sequential-start-vms/
 dsq_thread_id:
   - "2329759710"
@@ -54,7 +54,7 @@ This version currently supports Hyper-V only. The script does not currently retu
             
 
 <blockquote class="wp-embedded-content" data-secret="WXxzFe2uBt">
-  <a href="{{site.baseurl}}.com/sequential-start-vms/">Sequential Starting of a List of VMs</a>
+  <a href="{{site.baseurl}}/sequential-start-vms/">Sequential Starting of a List of VMs</a>
 </blockquote>
  
     #&gt;

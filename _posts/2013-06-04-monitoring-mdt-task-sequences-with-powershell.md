@@ -4,7 +4,7 @@ title: Monitoring MDT Task Sequences with PowerShell
 date: 2013-06-04T14:30:23+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3356
+guid: {{site.baseurl}}/?p=3356
 permalink: /monitoring-mdt-task-sequences-with-powershell/
 dsq_thread_id:
   - "1359898902"
@@ -43,11 +43,11 @@ Once the target machine has booted into the Lite Touch WinPE environment, monito
 
 The screenshot below shows the monitoring data returned pre-task sequence. Typically, any machine name that starts with MININT will be the WinPE environment:
 
-[<img class="alignnone size-full wp-image-3365" alt="Pre-TaskSequence" src="{{site.baseurl}}.com/media/2013/06/Pre-TaskSequence.png]({{site.baseurl}}/media/2013/06/Pre-TaskSequence.png)
+[<img class="alignnone size-full wp-image-3365" alt="Pre-TaskSequence" src="{{site.baseurl}}/media/2013/06/Pre-TaskSequence.png]({{site.baseurl}}/media/2013/06/Pre-TaskSequence.png)
 
 So, although we can start gathering data, we really need to wait or loop until the task sequence starts. When the task sequence has started, we can then get monitoring data for the target machine. The example below shows an in-progress task sequence:
 
-[<img class="alignnone size-full wp-image-3366" alt="TaskSequence-Progress" src="{{site.baseurl}}.com/media/2013/06/TaskSequence-Progress.png]({{site.baseurl}}/media/2013/06/TaskSequence-Progress.png)
+[<img class="alignnone size-full wp-image-3366" alt="TaskSequence-Progress" src="{{site.baseurl}}/media/2013/06/TaskSequence-Progress.png]({{site.baseurl}}/media/2013/06/TaskSequence-Progress.png)
 
 To gather data, use the **Get-MDTMonitorData** cmdlet and save the output to a variable:
 
@@ -80,7 +80,7 @@ ComputerIdentities : {}[/plain]
 
 Using these properties and the **Write-Progress** cmdlet we can display the progress of the task sequence and some status info during execution of the script:
 
-[<img class="alignnone size-full wp-image-3370" alt="TaskSequenceWriteProgress" src="{{site.baseurl}}.com/media/2013/06/TaskSequenceWriteProgress.png]({{site.baseurl}}/media/2013/06/TaskSequenceWriteProgress.png)
+[<img class="alignnone size-full wp-image-3370" alt="TaskSequenceWriteProgress" src="{{site.baseurl}}/media/2013/06/TaskSequenceWriteProgress.png]({{site.baseurl}}/media/2013/06/TaskSequenceWriteProgress.png)
 
 <span style="line-height: 1.714285714; font-size: 1rem;">Putting this together, we need a script that will perform the following high level tasks:</span>
 

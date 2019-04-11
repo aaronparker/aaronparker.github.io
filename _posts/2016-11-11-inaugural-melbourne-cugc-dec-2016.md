@@ -4,7 +4,7 @@ title: Inaugural Meeting of the Melbourne Citrix User Group
 date: 2016-11-11T14:51:00+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5260
+guid: {{site.baseurl}}/?p=5260
 permalink: /inaugural-melbourne-cugc-dec-2016/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -45,7 +45,7 @@ Be sure to [sign up for the first meeting via the registration page](https://www
 
 ## Sponsor
 
-[<img class="alignnone wp-image-5263 size-full" src="{{site.baseurl}}.com/media/2016/11/nmsgljwk.jpg" alt="Nutanix](http://www.nutanix.com/)
+[<img class="alignnone wp-image-5263 size-full" src="{{site.baseurl}}/media/2016/11/nmsgljwk.jpg" alt="Nutanix](http://www.nutanix.com/)
 
 We have a great win with [Nutanix](http://www.nutanix.com/) taking a chance on us for the first event. Come to the event to hear how Nutanix helps support Citrix technologies. This is great for us and the community, so I'm really excited to have Nutanix on board.
 

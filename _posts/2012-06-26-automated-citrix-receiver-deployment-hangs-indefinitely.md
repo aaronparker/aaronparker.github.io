@@ -17,7 +17,7 @@ categories:
 tags:
   - Citrix Receiver
 ---
-<img class="alignright size-full wp-image-2736" title="Citrix Receiver Logo" src="{{site.baseurl}}.com/media/2012/06/CitrixReceiver.png" alt="Citrix Receiver Logo" width="128" height="128" />Deploying Citrix Receiver (full or Enterprise) via an unattended command-line, may result in the installer running indefinitely and not completing until you interact with the target machine.
+<img class="alignright size-full wp-image-2736" title="Citrix Receiver Logo" src="{{site.baseurl}}/media/2012/06/CitrixReceiver.png" alt="Citrix Receiver Logo" width="128" height="128" />Deploying Citrix Receiver (full or Enterprise) via an unattended command-line, may result in the installer running indefinitely and not completing until you interact with the target machine.
 
 This behaviour will be seen on virtual machines (physical desktops shouldn't be affected) regardless of hypervisor type. I have seen the issue on vSphere and Hyper-V and various type-2 hypervisors, but haven't confirmed whether the issue exists on XenServer. By giving the virtual machine console focus and doing something as simple as moving the mouse cursor around, the Receiver installer will continue successfully.
 

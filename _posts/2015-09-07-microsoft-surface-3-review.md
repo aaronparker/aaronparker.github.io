@@ -4,7 +4,7 @@ title: 3 Months with the Microsoft Surface 3
 date: 2015-09-07T19:03:17+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4087
+guid: {{site.baseurl}}/?p=4087
 permalink: /microsoft-surface-3-review/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

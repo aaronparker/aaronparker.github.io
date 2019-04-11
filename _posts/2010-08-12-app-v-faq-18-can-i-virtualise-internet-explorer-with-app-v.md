@@ -32,7 +32,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="left" />
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="left" />
 
 No, unfortunately you cannot use App-V to virtualise Internet Explorer today. Other application virtualisation solutions such as [VMware ThinApp](http://blogs.vmware.com/thinapp/2010/06/internet-explorer-6on-windows-7.html), [Symantec Workspace Virtualization](http://www.symantec.com/connect/articles/running-ie6-ie7-and-ie8-side-side-using-symantec-workspace-virtualization), and [InstallFree Bridge](http://www.installfree.com/solutions/virtual-internet-explorer/) can virtualise Internet Explorer, so why can’t App-V?
 

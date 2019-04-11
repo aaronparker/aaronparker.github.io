@@ -9,7 +9,7 @@ permalink: /diary-of-an-exchange-2007-upgrade-part-6/
 categories:
   - Microsoft
 ---
-<img align="left" width="82" src="{{site.baseurl}}.com/media/2007/06/exchange1.png" height="82" style="width: 82px; height: 82px" />Dear Diary,
+<img align="left" width="82" src="{{site.baseurl}}/media/2007/06/exchange1.png" height="82" style="width: 82px; height: 82px" />Dear Diary,
 
 Progress on the migration has been a little slow over the past week given a few other things I've had to pay attention to, but I'm now in a position to move a small group of mailboxes to finalise testing before a mass migration of mailboxes.
 

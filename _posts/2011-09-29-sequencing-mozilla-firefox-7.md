@@ -18,7 +18,7 @@ tags:
   - App-V
   - Firefox
 ---
-<img src="{{site.baseurl}}.com/media/2011/06/062611_1120_SequencingM1.png" alt="" align="right" />It's easy to virtualize [Firefox with App-V]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-5/); however getting it right takes a little more effort. Here's how to successfully sequence [Mozilla Firefox 7.x](http://www.mozilla.com/en-US/firefox/).
+<img src="{{site.baseurl}}/media/2011/06/062611_1120_SequencingM1.png" alt="" align="right" />It's easy to virtualize [Firefox with App-V]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-5/); however getting it right takes a little more effort. Here's how to successfully sequence [Mozilla Firefox 7.x](http://www.mozilla.com/en-US/firefox/).
 
 ### What you lose by virtualizing Firefox
 

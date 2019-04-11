@@ -4,7 +4,7 @@ title: Concurrent Sessions with FSLogix Profile Container
 date: 2019-02-27T23:07:15+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=6258
+guid: {{site.baseurl}}/?p=6258
 permalink: /?p=6258
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -60,11 +60,11 @@ Let's delve into what this looks like. Note that in my simple lab environment, I
 
 This is simple, I've deployed Profile Container with configuration via Group Policy and have ensured that concurrent user sessions are disabled and the Profile Type is set to 'Normal direct-access profile' (i.e. the value is 0).
 
-<img src="{{site.baseurl}}.com/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png" alt="GPO with Concurrent Sessions in Profile Container disabled" class="wp-image-6262" srcset="{{site.baseurl}}.com/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png 1024w, {{site.baseurl}}.com/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-150x70.png 150w, {{site.baseurl}}.com/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-300x140.png 300w, {{site.baseurl}}.com/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-768x358.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> *Concurrent Sessions in Profile Container are disabled by default* 
+<img src="{{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png" alt="GPO with Concurrent Sessions in Profile Container disabled" class="wp-image-6262" srcset="{{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png 1024w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-150x70.png 150w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-300x140.png 300w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-768x358.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> *Concurrent Sessions in Profile Container are disabled by default* 
 
 When logging onto the first session, my Profile Container is created if it doesn't exist and mounted onto the target machine and my thus profile is available.
 
-<img src="{{site.baseurl}}.com/media/2019/02/ProfileContainer-NoConcurrent-1.png" alt="Folder showing the Profile and Office 365 user containers with a default configuration" class="wp-image-6264" srcset="{{site.baseurl}}.com/media/2019/02/ProfileContainer-NoConcurrent-1.png 848w, {{site.baseurl}}.com/media/2019/02/ProfileContainer-NoConcurrent-1-150x69.png 150w, {{site.baseurl}}.com/media/2019/02/ProfileContainer-NoConcurrent-1-300x137.png 300w, {{site.baseurl}}.com/media/2019/02/ProfileContainer-NoConcurrent-1-768x351.png 768w" sizes="(max-width: 848px) 100vw, 848px" /> *Profile Container in the default configuration* 
+<img src="{{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1.png" alt="Folder showing the Profile and Office 365 user containers with a default configuration" class="wp-image-6264" srcset="{{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1.png 848w, {{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1-150x69.png 150w, {{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1-300x137.png 300w, {{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1-768x351.png 768w" sizes="(max-width: 848px) 100vw, 848px" /> *Profile Container in the default configuration* 
 
 Logging onto a second session could be:
 
@@ -102,7 +102,7 @@ This behaviour can be prevented with the [PreventLoginWithFailure](https://docs.
 
 A read / write profile is no different in user experience than the default configuration. A read / write profile is configured by setting Profile Type to 'Read-write profile' (i.e. value is 1). Behind the scenes, a RW.VHDX file along-side the Profile Container is created as can be seen below. This is essentially [a differencing disk](https://www.altaro.com/hyper-v/hyper-v-differencing-disks-explained/) where writes are redirected during the session.
 
-<img src="{{site.baseurl}}.com/media/2019/02/ProfileContainer-ConcurrentRW.png" alt="Folder with user Profile Container and the read / write RW.VHDX" class="wp-image-6270" srcset="{{site.baseurl}}.com/media/2019/02/ProfileContainer-ConcurrentRW.png 848w, {{site.baseurl}}.com/media/2019/02/ProfileContainer-ConcurrentRW-150x69.png 150w, {{site.baseurl}}.com/media/2019/02/ProfileContainer-ConcurrentRW-300x137.png 300w, {{site.baseurl}}.com/media/2019/02/ProfileContainer-ConcurrentRW-768x351.png 768w" sizes="(max-width: 848px) 100vw, 848px" /> *Folder with user Profile Container and the read / write RW.VHDX* 
+<img src="{{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW.png" alt="Folder with user Profile Container and the read / write RW.VHDX" class="wp-image-6270" srcset="{{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW.png 848w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW-150x69.png 150w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW-300x137.png 300w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW-768x351.png 768w" sizes="(max-width: 848px) 100vw, 848px" /> *Folder with user Profile Container and the read / write RW.VHDX* 
 
 At logon, if a RW.VHDX exists, the FSLogix agent will merge the disk into the parent Profile Container and create a new RW.VHDX and repeat the same process at logoff.
 

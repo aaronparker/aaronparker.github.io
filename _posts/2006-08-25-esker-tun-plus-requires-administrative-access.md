@@ -21,4 +21,4 @@ Today's entrant into the Hall of Shame is Esker Tun PLUS which can be used to pr
 
 TRUST.EXE will provide Tun PLUS full access to my system. What else could potentially have full access to my system? Output from FILEMON and REGMON is a little cryptic when TRUST.EXE is run. I can't quite work out what it is doing. Geez, at least my terminal emulator works. Shame, Esker, shame.
 
-<img width="602" src="{{site.baseurl}}.com/media/2006/08/1000.14.59.eskertunplus.png" height="449" style="width: 602px; height: 449px" />
+<img width="602" src="{{site.baseurl}}/media/2006/08/1000.14.59.eskertunplus.png" height="449" style="width: 602px; height: 449px" />

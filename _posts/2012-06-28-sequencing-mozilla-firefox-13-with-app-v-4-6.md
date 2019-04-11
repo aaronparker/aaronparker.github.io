@@ -18,7 +18,7 @@ tags:
   - App-V
   - Firefox
 ---
-<img alt="" src="{{site.baseurl}}.com/media/2011/06/062611_1120_SequencingM1.png" align="right" />It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I've previously shown you how to sequence [Firefox 8]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-8/), [Firefox 7]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-7/) and [Firefox 5]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-5/). Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features..
+<img alt="" src="{{site.baseurl}}/media/2011/06/062611_1120_SequencingM1.png" align="right" />It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I've previously shown you how to sequence [Firefox 8]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-8/), [Firefox 7]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-7/) and [Firefox 5]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-5/). Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features..
 
 # User Experience
 
@@ -96,7 +96,7 @@ Automating this process as much as possible will create a cleaner package and ma
 
 <span style="line-height: 1.714285714; font-size: 1rem;">Before sequencing, copy all of the required files into the sequencing VM, which should like something like this:</span>
 
-<img class="alignnone size-full wp-image-3064" alt="AppVFirefoxSetupFolder_thumb.png" src="{{site.baseurl}}.com/media/2013/03/AppVFirefoxSetupFolder_thumb.png" width="660" height="253" srcset="{{site.baseurl}}.com/media/2013/03/AppVFirefoxSetupFolder_thumb.png 660w, {{site.baseurl}}.com/media/2013/03/AppVFirefoxSetupFolder_thumb-150x57.png 150w, {{site.baseurl}}.com/media/2013/03/AppVFirefoxSetupFolder_thumb-300x115.png 300w, {{site.baseurl}}.com/media/2013/03/AppVFirefoxSetupFolder_thumb-624x239.png 624w" sizes="(max-width: 660px) 100vw, 660px" /> 
+<img class="alignnone size-full wp-image-3064" alt="AppVFirefoxSetupFolder_thumb.png" src="{{site.baseurl}}/media/2013/03/AppVFirefoxSetupFolder_thumb.png" width="660" height="253" srcset="{{site.baseurl}}/media/2013/03/AppVFirefoxSetupFolder_thumb.png 660w, {{site.baseurl}}/media/2013/03/AppVFirefoxSetupFolder_thumb-150x57.png 150w, {{site.baseurl}}/media/2013/03/AppVFirefoxSetupFolder_thumb-300x115.png 300w, {{site.baseurl}}/media/2013/03/AppVFirefoxSetupFolder_thumb-624x239.png 624w" sizes="(max-width: 660px) 100vw, 660px" /> 
 
 # Shortcuts
 

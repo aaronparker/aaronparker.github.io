@@ -20,7 +20,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img class="alignright" style="margin: 0px 0px 5px 10px; display: inline; float: right;" title="AppVFAQ" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" width="121" height="116" align="right" />There are currently several versions of App-V 4.x available for deployment, although it is highly recommended that you deploy or migrate to 4.6 SP2. For the full list of available versions and hotfixes for all App-V components see the spread sheet at the end of this post.
+<img class="alignright" style="margin: 0px 0px 5px 10px; display: inline; float: right;" title="AppVFAQ" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" width="121" height="116" align="right" />There are currently several versions of App-V 4.x available for deployment, although it is highly recommended that you deploy or migrate to 4.6 SP2. For the full list of available versions and hotfixes for all App-V components see the spread sheet at the end of this post.
 
 # App-V Client
 

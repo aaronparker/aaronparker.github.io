@@ -4,7 +4,7 @@ title: Folder Redirection to OneDrive on Windows 10 with Intune
 date: 2017-12-27T22:07:40+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5893
+guid: {{site.baseurl}}/?p=5893
 permalink: /onedrive-intune-folder-redirection/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

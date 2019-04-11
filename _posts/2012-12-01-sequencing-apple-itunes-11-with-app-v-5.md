@@ -18,7 +18,7 @@ tags:
   - App-V
   - iTunes
 ---
-<img class="alignright size-full wp-image-2976" style="margin-left: 5px; margin-right: 5px;" title="iTunes 11 128x128" alt="" src="{{site.baseurl}}.com/media/2012/12/iTunes-128.png" width="128" height="128" />Two recent releases presents an opportunity to revisit the state of virtualizing Apple iTunes. iTunes 11 looks great, but is it just lipstick on a pig? Under the hood, it doesn't appear to differ that much from previous versions, but lets see whether a combination of Apple's latest and greatest along with App-V 5 offers a better virtualisation experience.
+<img class="alignright size-full wp-image-2976" style="margin-left: 5px; margin-right: 5px;" title="iTunes 11 128x128" alt="" src="{{site.baseurl}}/media/2012/12/iTunes-128.png" width="128" height="128" />Two recent releases presents an opportunity to revisit the state of virtualizing Apple iTunes. iTunes 11 looks great, but is it just lipstick on a pig? Under the hood, it doesn't appear to differ that much from previous versions, but lets see whether a combination of Apple's latest and greatest along with App-V 5 offers a better virtualisation experience.
 
 # iTunes 10 with App-V 4.6
 
@@ -52,7 +52,7 @@ It is possible to include Apple Application Support in the iTunes package. This 
 
 iTunes has the potential to store a massive amount of data in the user's profile:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="09AppData" alt="09AppData" src="{{site.baseurl}}.com/media/2011/06/09AppData_thumb.png]({{site.baseurl}}/media/2011/06/09AppData.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="09AppData" alt="09AppData" src="{{site.baseurl}}/media/2011/06/09AppData_thumb.png]({{site.baseurl}}/media/2011/06/09AppData.png)
 
 It is highly recommended to exclude %APPDATA% in the iTunes package to avoid this data being virtualized at runtime.
 
@@ -138,7 +138,7 @@ iTunes includes some DCOM components - the report shows:
 
 With the Apple Mobile Device Support, syncing with a virtualized iTunes should still work. The iTunesAdmin component appears to be related restricting access to Parental controls in Preferences. Clicking the lock will result the following error:
 
-<img class="alignnone size-full wp-image-2983" title="iTunes Parental error" alt="" src="{{site.baseurl}}.com/media/2012/12/Parental.png" width="381" height="109" srcset="{{site.baseurl}}.com/media/2012/12/Parental.png 381w, {{site.baseurl}}.com/media/2012/12/Parental-150x42.png 150w, {{site.baseurl}}.com/media/2012/12/Parental-300x85.png 300w" sizes="(max-width: 381px) 100vw, 381px" /> 
+<img class="alignnone size-full wp-image-2983" title="iTunes Parental error" alt="" src="{{site.baseurl}}/media/2012/12/Parental.png" width="381" height="109" srcset="{{site.baseurl}}/media/2012/12/Parental.png 381w, {{site.baseurl}}/media/2012/12/Parental-150x42.png 150w, {{site.baseurl}}/media/2012/12/Parental-300x85.png 300w" sizes="(max-width: 381px) 100vw, 381px" /> 
 
 ## Driver
 
@@ -156,7 +156,7 @@ Deploying the iTunes package will require the deployment of Apple Application Su
 
 Without Apple Application Support the following will be the result of launching iTunes:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="NoAppleAppSupport" alt="NoAppleAppSupport" src="{{site.baseurl}}.com/media/2011/06/NoAppleAppSupport_thumb.png]({{site.baseurl}}/media/2011/06/NoAppleAppSupport.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="NoAppleAppSupport" alt="NoAppleAppSupport" src="{{site.baseurl}}/media/2011/06/NoAppleAppSupport_thumb.png]({{site.baseurl}}/media/2011/06/NoAppleAppSupport.png)
 
 Last, but not least, for media sharing to work, firewall exceptions will be required for the following processes:
 
@@ -169,7 +169,7 @@ The path to each process will be dependent on your package.
 
 Running iTunes on the client for the first time will result in a prompt to the user to set iTunes as the default audio player. With App-V 5 this is now supported and should work just like an installed application.
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="iTunesFirstRun" alt="iTunesFirstRun" src="{{site.baseurl}}.com/media/2012/12/iTunesFirstRun_thumb.png]({{site.baseurl}}/media/2012/12/iTunesFirstRun.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="iTunesFirstRun" alt="iTunesFirstRun" src="{{site.baseurl}}/media/2012/12/iTunesFirstRun_thumb.png]({{site.baseurl}}/media/2012/12/iTunesFirstRun.png)
 
 View the gallery below for a screenshot walkthrough of sequencing iTunes 11:
 

@@ -4,7 +4,7 @@ title: Windows Store User Experience in the Enterprise in Windows 10
 date: 2016-07-20T23:32:07+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4955
+guid: {{site.baseurl}}/?p=4955
 permalink: /windows-store-experience-enterprise-windows-10/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

@@ -4,7 +4,7 @@ title: Automatic Download and Import of Updates into MDT
 date: 2017-06-29T19:03:33+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5466
+guid: {{site.baseurl}}/?p=5466
 permalink: /powershell-download-import-updates-mdt/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

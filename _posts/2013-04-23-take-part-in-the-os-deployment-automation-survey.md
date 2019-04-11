@@ -4,7 +4,7 @@ title: Take part in the OS Deployment Automation Survey
 date: 2013-04-23T23:38:24+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3098
+guid: {{site.baseurl}}/?p=3098
 permalink: /take-part-in-the-os-deployment-automation-survey/
 dsq_thread_id:
   - "1231866751"
@@ -15,7 +15,7 @@ tags:
   - MDT
   - PowerShell
 ---
-[<img class="alignnone size-full wp-image-3102" alt="RustyGears" src="{{site.baseurl}}.com/media/2013/04/RustyGears.jpg](http://www.flickr.com/photos/abbeychristine/738902805/)
+[<img class="alignnone size-full wp-image-3102" alt="RustyGears" src="{{site.baseurl}}/media/2013/04/RustyGears.jpg](http://www.flickr.com/photos/abbeychristine/738902805/)
 
 At [Citrix Synergy in Anaheim](http://www.citrixsynergy.com/losangeles/index.html) next month, I'll have the opportunity to present a [Geek Speak Live](http://www.citrixsynergy.com/losangeles/sessions-labs/breakout-sessions.html?track=Geek+Speak+Live!) session - [Hands Off My Gold Image!](https://citrix.g2planet.com/synergylosangeles2013/public_session_view.php?agenda_session_id=274&conference=synergy) If you aren't automating the creation of your gold images, there's lots to learn in this session. Even if you are automating your gold images, perhaps there's something new that I can still share with you. In this session, which will be demo heavy, I'll show you some ways that you can deliver build automation with toolsets provided by Microsoft and Citrix.
 

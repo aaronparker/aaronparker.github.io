@@ -13,6 +13,6 @@ categories:
 ---
 I thought 25 character product keys where a pain in the proverbial, but this one takes the cake. I won’t tell you which application this authorisation code is for, but it’s a whopping 93 characters long..
 
-[code]AF3KALKNHEU777AGRBZ672EKB6I53P6VRND7PLPHCVFWGNSDNB4WYK55HE7YX2TWTLU78M8KLYZ4QERNT3K56OH6TSAXC[/code]
+`AF3KALKNHEU777AGRBZ672EKB6I53P6VRND7PLPHCVFWGNSDNB4WYK55HE7YX2TWTLU78M8KLYZ4QERNT3K56OH6TSAXC`
 
 (I’ve changed the code slightly to protect the guilty).

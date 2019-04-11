@@ -4,7 +4,7 @@ title: Visualising ConfigMgr, Intune and Windows 10 Releases
 date: 2018-09-27T01:06:31+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=6179
+guid: {{site.baseurl}}/?p=6179
 permalink: /configmgr-intune-windows10-releases/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

@@ -4,7 +4,7 @@ title: An Intel NUC6i5SYB for My Home Lab
 date: 2016-04-10T14:04:12+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4299
+guid: {{site.baseurl}}/?p=4299
 permalink: /intel-nuc6i5syb-home-lab/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -58,7 +58,7 @@ I've purchased G.Skill RAM previously and found them to be reliable and perform 
 
 Installing the RAM and drives into a NUC is simple enough - pop the top off, install the RAM into the two slots, install the M.2 drive with a screw to keep it into place and the SATA SSD just pushes into the slot in the top of the NUC. Here's a view of the installed hardware:
 
-![Intel NUC open with RAM and SSDs installed." width="1024" height="768" srcset="{{site.baseurl}}.com/media/2016/04/Open-NUC-1024x768.jpg 1024w, {{site.baseurl}}.com/media/2016/04/Open-NUC-150x113.jpg 150w, {{site.baseurl}}.com/media/2016/04/Open-NUC-300x225.jpg 300w, {{site.baseurl}}.com/media/2016/04/Open-NUC-768x576.jpg 768w, {{site.baseurl}}.com/media/2016/04/Open-NUC.jpg 1224w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>*Intel NUC open with RAM and SSDs installed.*
+![Intel NUC open with RAM and SSDs installed." width="1024" height="768" srcset="{{site.baseurl}}/media/2016/04/Open-NUC-1024x768.jpg 1024w, {{site.baseurl}}/media/2016/04/Open-NUC-150x113.jpg 150w, {{site.baseurl}}/media/2016/04/Open-NUC-300x225.jpg 300w, {{site.baseurl}}/media/2016/04/Open-NUC-768x576.jpg 768w, {{site.baseurl}}/media/2016/04/Open-NUC.jpg 1224w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>*Intel NUC open with RAM and SSDs installed.*
 
 Screw the lid back on and power up the PC. The 1.5 amp power supply comes with removable adapters to suit multiple regions.
 
@@ -66,7 +66,7 @@ Screw the lid back on and power up the PC. The 1.5 amp power supply comes with 
 
 The Intel NUC comes with the Intel Visual BIOS, which is a nice change from text-based UIs we're used to. Here's a short walk-through of the BIOS configuration - as a hypervisor I've disabled hardware such as audio, Bluetooth and Wi-Fi etc.
 
-<img class="ngg_displayed_gallery mceItem" src="{{site.baseurl}}.com/nextgen-attach_to_post/preview/id--4351" alt="" data-mce-placeholder="1" /> 
+<img class="ngg_displayed_gallery mceItem" src="{{site.baseurl}}/nextgen-attach_to_post/preview/id--4351" alt="" data-mce-placeholder="1" /> 
 
 # Installing Windows
 
@@ -78,11 +78,11 @@ At this time, I have Windows Server 2016 installed but I would prefer to be runn
 
 With Windows Server or Windows Server Core and with devices disabled in the BIOS, Device Manager looks like this:
 
-![Device Manager after installing Windows Server and required drivers." width="1024" height="715" srcset="{{site.baseurl}}.com/media/2016/04/Intel-NUC-Device-Manager-1024x715.png 1024w, {{site.baseurl}}.com/media/2016/04/Intel-NUC-Device-Manager-150x105.png 150w, {{site.baseurl}}.com/media/2016/04/Intel-NUC-Device-Manager-300x210.png 300w, {{site.baseurl}}.com/media/2016/04/Intel-NUC-Device-Manager-768x537.png 768w, {{site.baseurl}}.com/media/2016/04/Intel-NUC-Device-Manager.png 1188w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>*Device Manager after installing Windows Server and required drivers.*
+![Device Manager after installing Windows Server and required drivers." width="1024" height="715" srcset="{{site.baseurl}}/media/2016/04/Intel-NUC-Device-Manager-1024x715.png 1024w, {{site.baseurl}}/media/2016/04/Intel-NUC-Device-Manager-150x105.png 150w, {{site.baseurl}}/media/2016/04/Intel-NUC-Device-Manager-300x210.png 300w, {{site.baseurl}}/media/2016/04/Intel-NUC-Device-Manager-768x537.png 768w, {{site.baseurl}}/media/2016/04/Intel-NUC-Device-Manager.png 1188w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>*Device Manager after installing Windows Server and required drivers.*
 
 With a custom automated deployment via MDT, the disk partitions resulted as follows:
 
-![Disk partitions after installing Windows Server via MDT" width="903" height="498" srcset="{{site.baseurl}}.com/media/2016/04/Intel-NUC-Disk-Manager.png 903w, {{site.baseurl}}.com/media/2016/04/Intel-NUC-Disk-Manager-150x83.png 150w, {{site.baseurl}}.com/media/2016/04/Intel-NUC-Disk-Manager-300x165.png 300w, {{site.baseurl}}.com/media/2016/04/Intel-NUC-Disk-Manager-768x424.png 768w" sizes="(max-width: 903px) 100vw, 903px" /></a>*Disk partitions after installing Windows Server via MDT*
+![Disk partitions after installing Windows Server via MDT" width="903" height="498" srcset="{{site.baseurl}}/media/2016/04/Intel-NUC-Disk-Manager.png 903w, {{site.baseurl}}/media/2016/04/Intel-NUC-Disk-Manager-150x83.png 150w, {{site.baseurl}}/media/2016/04/Intel-NUC-Disk-Manager-300x165.png 300w, {{site.baseurl}}/media/2016/04/Intel-NUC-Disk-Manager-768x424.png 768w" sizes="(max-width: 903px) 100vw, 903px" /></a>*Disk partitions after installing Windows Server via MDT*
 
 # Performance
 
@@ -94,7 +94,7 @@ To test both SSDs, I've used Iometer with a 4K block size, 80% write, 80% random
 
 Here's the result for the Samsung 850 EVO 120GB M.2 drive:
 
-![Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random" width="764" height="472" srcset="{{site.baseurl}}.com/media/2016/04/Iometer-CDrive.png 764w, {{site.baseurl}}.com/media/2016/04/Iometer-CDrive-150x93.png 150w, {{site.baseurl}}.com/media/2016/04/Iometer-CDrive-300x185.png 300w" sizes="(max-width: 764px) 100vw, 764px" /></a>*Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random*
+![Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random" width="764" height="472" srcset="{{site.baseurl}}/media/2016/04/Iometer-CDrive.png 764w, {{site.baseurl}}/media/2016/04/Iometer-CDrive-150x93.png 150w, {{site.baseurl}}/media/2016/04/Iometer-CDrive-300x185.png 300w" sizes="(max-width: 764px) 100vw, 764px" /></a>*Samsung 850 EVO M.2 drive: Iometer performance - 4K blocks, 80% write, 80% random*
 
 And results for the Samsung EVO 850 256GB SATA drive:
 

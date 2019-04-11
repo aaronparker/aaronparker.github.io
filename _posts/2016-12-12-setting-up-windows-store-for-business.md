@@ -4,7 +4,7 @@ title: Setting up the Windows Store for Business
 date: 2016-12-12T08:00:31+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5354
+guid: {{site.baseurl}}/?p=5354
 permalink: /setting-up-windows-store-for-business/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

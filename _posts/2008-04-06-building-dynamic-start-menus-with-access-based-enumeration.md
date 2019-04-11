@@ -35,7 +35,7 @@ If you are hosting the share on Windows Server 2003 R2 or Windows Server 2008, I
 
 You should also add this share to a [DFS Namespace](http://technet2.microsoft.com/windowsserver2008/en/library/1f0d326d-35af-4193-bda3-0d1688f90ea71033.mspx?mfr=true) so that if you need to move the Start Menus to another server, you won't need to modify Group Policy. In my example environment my new network path is _\dev.localPublicStartMenus_. DFS can also provide high-availability for your Start Menus through [DFS Replication](http://technet2.microsoft.com/WindowsServer/en/Library/8c4cf2e7-0b92-4643-acbd-abfa9f189d031033.mspx?mfr=true).
 
-![]({{site.baseurl}}.com/media/2008/04/dfsnamespace.png)
+![]({{site.baseurl}}/media/2008/04/dfsnamespace.png)
 
 ## Create The Start Menu(s)
 
@@ -43,7 +43,7 @@ Create a folder below your new share for each Start Menu you require. This metho
 
 Copy shortcuts from the local machine to the network share. You'll need to copy from the user Start Menu as well as the common Start Menu to construct a menu with all of the required application shortcuts plus the usual suspects. After (or before) copying, clean up the shortcuts so that only the shortcuts you require are located there.
 
-![]({{site.baseurl}}.com/media/2008/04/startmenufolder.png)
+![]({{site.baseurl}}/media/2008/04/startmenufolder.png)
 
 Create groups in your domain that you can use when setting permissions on your Start Menu. Most organisations will use a group to represent each application, but if you can go with role-based groups they will be mean less administrative overhead.
 
@@ -53,7 +53,7 @@ Set permissions on each shortcut folder or individual shortcuts as required. Onc
 
 In my example I'm configuring a Start Menu for a Terminal Server environment, so I'm going to redirect the Start Menu via a loopback policy applied to my Terminal Servers OU. I also deny the Apply Group Policy right to Domain and Enterprise Admins (or other applicable administrator groups on this GPO so folder redirection does not apply to those users.
 
-![]({{site.baseurl}}.com/media/2008/04/loopbackpolicy.png)
+![]({{site.baseurl}}/media/2008/04/loopbackpolicy.png)
 
 Create a GPO on the Terminal Servers OU and enable the loopback policy:
 
@@ -65,7 +65,7 @@ _User Configuration / Administrative Templates / Start Menu and Taskbar / Remove
 
 Now enable folder redirection to your network share and be sure to set the option 'Redirect the folder back to the local userprofile location when policy is removed'. Here's a copy of [the GPO report]({{site.baseurl}}/media/2008/04/TerminalServerLoopbackPolicy.htm) to see exactly how I've configured it.
 
-![]({{site.baseurl}}.com/media/2008/04/startmenuredirection.png)
+![]({{site.baseurl}}/media/2008/04/startmenuredirection.png)
 
 Start Menu folder redirection in this manner allows you to stop customising the local Start Menu. This is something I see TS administrators do in numerous organisations. I find this practice to be un-necessary and increases the administrative overhead. Redirect the user Start Menu so that administrators have access to all of the locally installed shortcuts.
 
@@ -75,11 +75,11 @@ Now that the configuration in complete your users should have a Start Menu custo
 
 What users should see on their Start Menus should be fairly predictable. My first user sees the following configuration:
 
-![]({{site.baseurl}}.com/media/2008/04/aaronstartmenu.png)
+![]({{site.baseurl}}/media/2008/04/aaronstartmenu.png)
 
 And the second user sees a different Start Menu:
 
-![]({{site.baseurl}}.com/media/2008/04/zappstartmenu.png)
+![]({{site.baseurl}}/media/2008/04/zappstartmenu.png)
 
 ## Summary
 

@@ -48,6 +48,6 @@ The last setting will ensure that the Start Menu will be cached by the workstati
 
 Make sure you configure your Start Menus with access-based enumeration and the right permissions before users access them. If you don't and users' workstations cache the shortcuts, you might end up unavailable shortcuts looking like this:
 
-![StartMenuMissedIcon]({{site.baseurl}}.com/media/2008/04/startmenumissedicon.png)
+![StartMenuMissedIcon]({{site.baseurl}}/media/2008/04/startmenumissedicon.png)
 
 Although I've only done some limited testing I think this solution would work quite well. One important thing to remember is that you will need to add your internal DNS domain to the Intranet zone (when using a domain-based DFS Namespace) otherwise users will be prompted with a trust dialog each time they run a shortcut from the Start Menu.

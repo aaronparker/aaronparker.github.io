@@ -12,7 +12,7 @@ tags:
   - App-V
   - TechEd EMEA 2008
 ---
-<img style="margin: 0px 0px 10px 15px; display: inline" src="{{site.baseurl}}.com/media/2008/11/teched2008logo.jpg" alt="" align="right" />
+<img style="margin: 0px 0px 10px 15px; display: inline" src="{{site.baseurl}}/media/2008/11/teched2008logo.jpg" alt="" align="right" />
 
 This was an open discussion session where customers were able to talk directly with some of the App-V team. There were some interesting details brought up in this session including:
 

@@ -4,7 +4,7 @@ title: 'Thunderbolt 3 - One Cable to Rule Them All'
 date: 2018-08-04T23:51:34+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=6067
+guid: {{site.baseurl}}/?p=6067
 permalink: /thunderbolt-3/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

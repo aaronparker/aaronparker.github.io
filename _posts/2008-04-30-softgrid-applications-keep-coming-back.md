@@ -19,7 +19,7 @@ When a user logs onto the computer, the SoftGrid client contacts the Virtual App
 
 The list of application shortcuts are cached in a file called SHORTCUTS_EX.DAT saved in the SoftGrid Client folder. This is an XML file that contains the information required for the creation of shortcuts:
 
-![]({{site.baseurl}}.com/media/2008/04/shortcuts-exdatfilecontents.png)
+![]({{site.baseurl}}/media/2008/04/shortcuts-exdatfilecontents.png)
 
 During the user session, the SoftGrid client works on a temporary copy of SHORTCUTS_EX.DAT . This file is not written to disk until the SoftGrid client, specifically SFTDCC.EXE, exits.
 

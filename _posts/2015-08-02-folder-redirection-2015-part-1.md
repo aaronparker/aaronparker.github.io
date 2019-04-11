@@ -4,7 +4,7 @@ title: "I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 T
 date: 2015-08-02T00:44:06+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4014
+guid: {{site.baseurl}}/?p=4014
 permalink: /folder-redirection-2015-part-1/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

@@ -4,7 +4,7 @@ title: Get latest Citrix Receiver version with PowerShell
 date: 2018-01-09T12:57:10+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5918
+guid: {{site.baseurl}}/?p=5918
 permalink: /latest-receiver-version-powershell/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

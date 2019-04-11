@@ -4,7 +4,7 @@ title: Does Horizon View RDS stack up against XenApp?
 date: 2014-09-30T23:04:33+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3700
+guid: {{site.baseurl}}/?p=3700
 permalink: /xenapp-vs-horizon-view-rds/
 dsq_thread_id:
   - "3068739110"

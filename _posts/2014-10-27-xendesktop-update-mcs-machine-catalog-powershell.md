@@ -4,7 +4,7 @@ title: Updating an MCS-based XenDesktop Machine Catalog with PowerShell
 date: 2014-10-27T23:34:50+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3727
+guid: {{site.baseurl}}/?p=3727
 permalink: /xendesktop-update-mcs-machine-catalog-powershell/
 dsq_thread_id:
   - "3161316057"

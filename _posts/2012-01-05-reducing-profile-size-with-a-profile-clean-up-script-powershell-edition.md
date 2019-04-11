@@ -20,7 +20,7 @@ tags:
   - PowerShell
   - Profiles
 ---
-[<img class="size-full wp-image-2624 alignnone" title="Delete by Cari McGee" src="{{site.baseurl}}.com/media/2012/01/AppleKeyboardDeletePowerShell.png" alt="Delete by Cari McGee](http://www.flickr.com/photos/pleeker/5379549514/)
+[<img class="size-full wp-image-2624 alignnone" title="Delete by Cari McGee" src="{{site.baseurl}}/media/2012/01/AppleKeyboardDeletePowerShell.png" alt="Delete by Cari McGee](http://www.flickr.com/photos/pleeker/5379549514/)
 
 I recently posted a script for removing unnecessary files and pruning files based on their age, which can be used at logoff to keep profile sizes manageable - [Reducing Profile Size with a Profile Clean Up Script]({{site.baseurl}}/user-virtualization/profile-clean-up-script/).
 
@@ -73,10 +73,10 @@ For example, you could use the script to delete all .log or temporary files belo
         This command searches the $cookies directory, for files older than 10 days and end with txt or log extensions, then deletes them without a report.
 
         .NOTES
-        {{site.baseurl}}.com/user-virtualization/profile-clean-up-script-powershell-edition/ for support information.
+        {{site.baseurl}}/user-virtualization/profile-clean-up-script-powershell-edition/ for support information.
 
         .LINK
-        {{site.baseurl}}.com/user-virtualization/profile-clean-up-script-powershell-edition/
+        {{site.baseurl}}/user-virtualization/profile-clean-up-script-powershell-edition/
     #&gt;
 
     [cmdletbinding(SupportsShouldProcess = $True)]

@@ -17,7 +17,7 @@ tags:
   - Java
   - SoftGrid
 ---
-[<img class="alignleft size-medium wp-image-775" style="border: 0px;" title="softgridcube-java" src="{{site.baseurl}}.com/media/2008/10/softgridcube-java.png" border="0" alt="]({{site.baseurl}}/terminal-server/presentation-server-and-the-sun-java-vm) before, but it’s not because I like Java... So before I get into a tirade about it, here’s yet another post on the subject..
+[<img class="alignleft size-medium wp-image-775" style="border: 0px;" title="softgridcube-java" src="{{site.baseurl}}/media/2008/10/softgridcube-java.png" border="0" alt="]({{site.baseurl}}/terminal-server/presentation-server-and-the-sun-java-vm) before, but it’s not because I like Java... So before I get into a tirade about it, here’s yet another post on the subject..
 
 ### Introduction
 
@@ -36,11 +36,11 @@ By implementing steps 2 and 3 you essentially create the anti-JRE which enables 
 
 Here’s an example of this process in play: the first image below shows some of the HKCUSoftwareClassesCLSID keys, added by 1.6.0_07, seen in the real (non-virtualised) registry:
 
-<img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="CLSID-Real" src="{{site.baseurl}}.com/media/2008/10/clsidreal.png" border="0" alt="CLSID-Real" width="336" height="244" /> 
+<img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="CLSID-Real" src="{{site.baseurl}}/media/2008/10/clsidreal.png" border="0" alt="CLSID-Real" width="336" height="244" /> 
 
 By adding those keys to the sequencer machine and deleting during sequencing, we end up with only the keys added by the 1.3.1_10 installer. Here is the same HKCUSoftwareClassesCLSID key seen inside the bubble:
 
-<img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="CLSID-Virtual" src="{{site.baseurl}}.com/media/2008/10/clsidvirtual.png" border="0" alt="CLSID-Virtual" width="335" height="117" /> 
+<img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="CLSID-Virtual" src="{{site.baseurl}}/media/2008/10/clsidvirtual.png" border="0" alt="CLSID-Virtual" width="335" height="117" /> 
 
 ### Building the Pre-sequencing Environment
 
@@ -48,12 +48,12 @@ All sequencing was performed on a clean installation of Windows where no version
 
 To capture the keys that are installed by 1.6.0\_03 and 1.6.0\_07, I sequenced those versions and opened the resulting package in the [most excellent](http://en.wikipedia.org/wiki/Bill_%26_Ted's_Excellent_Adventure) [SFT Explorer](http://www.virtualapp.net/sft-explorer.html). From there you can export the registry keys created by the installer.
 
-<img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="16007Export" src="{{site.baseurl}}.com/media/2008/10/16007export.png" border="0" alt="16007Export" width="354" height="428" /> 
+<img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="16007Export" src="{{site.baseurl}}/media/2008/10/16007export.png" border="0" alt="16007Export" width="354" height="428" /> 
 
 From that exported registry file I’ve created a script that will add those keys to the sequencing machine (keys only, values are not required):
 
 <p class="download">
-  <a href="{{site.baseurl}}.com/media/2008/10/PRE-SEQUENCE.txt">Download the pre-sequence script here</a>
+  <a href="{{site.baseurl}}/media/2008/10/PRE-SEQUENCE.txt">Download the pre-sequence script here</a>
 </p>
 
 This script is then run before sequencing takes place so that the same keys can be deleted before installing the older version of the JRE, and those deletions are then picked up by the sequencer.
@@ -71,7 +71,7 @@ I’ve scripted the install process to make things simple, so here’s the proce
 Here’s a copy of the install script:
 
 <p class="download">
-  <a href="{{site.baseurl}}.com/media/2008/10/INSTALL.txt">Download the install script here</a>
+  <a href="{{site.baseurl}}/media/2008/10/INSTALL.txt">Download the install script here</a>
 </p>
 
 After installation and capture is complete, a few steps must be completed in the Sequencer before saving:
@@ -85,8 +85,8 @@ After installation and capture is complete, a few steps must be completed in the
 
 Once you have completed the sequence and are running the package on your client, you should see the virtualised JRE as the default Java machine in Internet Explorer inside the bubble:
 
-<img style="display: inline" title="Java13IEOptions" src="{{site.baseurl}}.com/media/2008/10/java13ieoptions.png" border="0" alt="Java13IEOptions" width="413" height="386" /> 
+<img style="display: inline" title="Java13IEOptions" src="{{site.baseurl}}/media/2008/10/java13ieoptions.png" border="0" alt="Java13IEOptions" width="413" height="386" /> 
 
 Whilst running Internet Explorer normally, the installed version of the JRE will be the default:
 
-<img style="display: inline" title="Java16IEOptions" src="{{site.baseurl}}.com/media/2008/10/java16ieoptions.png" border="0" alt="Java16IEOptions" width="413" height="386" />
+<img style="display: inline" title="Java16IEOptions" src="{{site.baseurl}}/media/2008/10/java16ieoptions.png" border="0" alt="Java16IEOptions" width="413" height="386" />
