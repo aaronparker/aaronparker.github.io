@@ -4,7 +4,7 @@ title: Monitoring AV and Windows 10 Updates with Intune MDM
 date: 2016-12-02T09:46:06+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5273
+guid: https://stealthpuppy/?p=5273
 permalink: /monitoring-windows-10-intune-mdm/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

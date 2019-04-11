@@ -4,7 +4,7 @@ title: View Memory Stats on a Hyper-V Server
 date: 2014-08-29T15:14:42+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3686
+guid: https://stealthpuppy.com/?p=3686
 permalink: /view-memory-stats-on-hyper-v/
 dsq_thread_id:
   - "2968770936"

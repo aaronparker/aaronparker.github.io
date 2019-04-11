@@ -4,7 +4,7 @@ title: An Intel NUC6i5SYB for My Home Lab
 date: 2016-04-10T14:04:12+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=4299
+guid: https://stealthpuppy/?p=4299
 permalink: /intel-nuc6i5syb-home-lab/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

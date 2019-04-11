@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,7 +31,7 @@
     <h1 class="post-title p-name" itemprop="name headline">Virtualising OpenOffice.org 3.x</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2010-04-02T00:56:41+11:00" itemprop="datePublished">Apr 2, 2010
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
@@ -84,7 +73,7 @@
 
 <p>The screenshot below shows the available components for OpenOffice 3.2, with the options listed above (and the defaults) disabled:</p>
 
-<p><a href="/media/2010/04/OpenOfficeComponents.png"><img style="display: inline; border-width: 0px;" title="OpenOfficeComponents" src="https://stealthpuppy.com/media/2010/04/OpenOfficeComponents_thumb.png" border="0" alt="OpenOfficeComponents" width="264" height="382" /></a></p>
+<p><a href="/media/2010/04/OpenOfficeComponents.png">&lt;img style=”display: inline; border-width: 0px;” title=”OpenOfficeComponents” src=”.com/media/2010/04/OpenOfficeComponents_thumb.png” border=”0” alt=”OpenOfficeComponents</a></p>
 
 <p>The <a href="http://wiki.services.openoffice.org/wiki/Documentation/How_Tos/Automatic_Installation_on_Windows">unattended reference for OpenOffice</a> appears to be based on OpenOffice 2, so you may have to refer to the MSI itself when customising the install. See the Feature table for the names for each of the components. I prefer to do everything on  the command-line, instead of creating a transform where I can, so my OpenOffice install looks like this:</p>
 
@@ -104,15 +93,15 @@
 
 <p>You can leave the user details blank if you like:</p>
 
-<p><a href="/media/2010/04/OpenOfficeFirstRunWizard1.png"><img style="display: inline; border: 0px;" title="OpenOfficeFirstRunWizard1" src="https://stealthpuppy.com/media/2010/04/OpenOfficeFirstRunWizard1_thumb.png" border="0" alt="OpenOfficeFirstRunWizard1" width="641" height="462" /></a></p>
+<p><a href="/media/2010/04/OpenOfficeFirstRunWizard1.png">&lt;img style=”display: inline; border: 0px;” title=”OpenOfficeFirstRunWizard1” src=”.com/media/2010/04/OpenOfficeFirstRunWizard1_thumb.png” border=”0” alt=”OpenOfficeFirstRunWizard1</a></p>
 
 <p>Of course you want to register.. 😉</p>
 
-<p><a href="/media/2010/04/OpenOfficeFirstRunWizard2.png"><img style="display: inline; border: 0px;" title="OpenOfficeFirstRunWizard2" src="https://stealthpuppy.com/media/2010/04/OpenOfficeFirstRunWizard2_thumb.png" border="0" alt="OpenOfficeFirstRunWizard2" width="641" height="462" /></a></p>
+<p><a href="/media/2010/04/OpenOfficeFirstRunWizard2.png">&lt;img style=”display: inline; border: 0px;” title=”OpenOfficeFirstRunWizard2” src=”.com/media/2010/04/OpenOfficeFirstRunWizard2_thumb.png” border=”0” alt=”OpenOfficeFirstRunWizard2</a></p>
 
 <p>After first run, a profile folder at <em>%APPDATA%\OpenOffice.org\3\user</em> will be created, which should come to somewhere around 1.8 MB. It also might be a good idea to check that OpenOffice can detect the JRE (open <em>Tools / Options</em>):</p>
 
-<p><a href="/media/2010/04/OpenOfficeJavaOptions.png"><img style="display: inline; border: 0px;" title="OpenOfficeJavaOptions" src="https://stealthpuppy.com/media/2010/04/OpenOfficeJavaOptions_thumb.png" border="0" alt="OpenOfficeJavaOptions" width="660" height="386" /></a></p>
+<p><a href="/media/2010/04/OpenOfficeJavaOptions.png">&lt;img style=”display: inline; border: 0px;” title=”OpenOfficeJavaOptions” src=”.com/media/2010/04/OpenOfficeJavaOptions_thumb.png” border=”0” alt=”OpenOfficeJavaOptions</a></p>
 
 <p>If you already have the JRE installed on your workstations, OpenOffice should detect it at runtime. Alternatively, you can use DSC to add the JRE support to OpenOffice.</p>
 
@@ -130,14 +119,12 @@
 
 <p>So there’s how to virtualise OpenOffice without too much effort and you should be left with a pretty  clean package weighing at approximately 500Mb that looks a little like this:</p>
 
-<p><a href="/media/2010/04/OpenOfficeAppVPackage.png"><img style="display: inline; border: 0px;" title="OpenOfficeAppVPackage" src="https://stealthpuppy.com/media/2010/04/OpenOfficeAppVPackage_thumb.png" border="0" alt="OpenOfficeAppVPackage" width="574" height="392" /></a></p>
+<p><a href="/media/2010/04/OpenOfficeAppVPackage.png">&lt;img style=”display: inline; border: 0px;” title=”OpenOfficeAppVPackage” src=”.com/media/2010/04/OpenOfficeAppVPackage_thumb.png” border=”0” alt=”OpenOfficeAppVPackage</a></p>
 
   </div><a class="u-url" href="/virtualising-openoffice-org-3-x/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

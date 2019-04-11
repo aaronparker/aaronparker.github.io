@@ -4,7 +4,7 @@ title: Storage Capacity Required for Machine Creation Services
 date: 2016-10-07T16:20:22+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5027
+guid: https://stealthpuppy.com/?p=5027
 permalink: /machine-creation-services-storage-capacity/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

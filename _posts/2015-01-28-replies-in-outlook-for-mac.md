@@ -4,7 +4,7 @@ title: Replies in Outlook for Mac
 date: 2015-01-28T21:01:37+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3812
+guid: https://stealthpuppy.com/?p=3812
 permalink: /replies-in-outlook-for-mac/
 dsq_thread_id:
   - "3462530604"

@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,12 +31,12 @@
     <h1 class="post-title p-name" itemprop="name headline">Context based automation in Mac OS X</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2013-01-12T14:12:18+11:00" itemprop="datePublished">Jan 12, 2013
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img class="alignright size-full wp-image-3021" alt="ControlPlane Icon" src="https://stealthpuppy.com/media/2013/01/controlplane.png" width="128" height="128" />I currently use a MacBook Pro for my personal and work use every day - it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).</p>
+    <p><img class="alignright size-full wp-image-3021" alt="ControlPlane Icon" src=".com/media/2013/01/controlplane.png" width="128" height="128" />I currently use a MacBook Pro for my personal and work use every day - it’s my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).</p>
 
 <p>Each location therefore, has different contexts - at home I might connect to my <a href="http://www.synology.com/">Synology</a> NAS and I don’t need to lock the laptop when I walk away from it. Work is a very different context - I don’t have access to the NAS and I’m in a public location where I should be locking the desktop when it’s not in use.</p>
 
@@ -63,11 +52,11 @@
 
 <p>Launch ControlPlane and enable ‘Start ControlPlane at login’ (if it’s not running, actions won’t fire). Here I’ve also set a default context (Secure). This is important because I want the secure actions firing by default with other actions only firing if I connect to a specific context (such as Home).</p>
 
-<p><img class="alignnone size-full wp-image-3022" alt="ControlPlane General" src="https://stealthpuppy.com/media/2013/01/ControlPlane-General.png" width="527" height="491" srcset="https://stealthpuppy.com/media/2013/01/ControlPlane-General.png 527w, https://stealthpuppy.com/media/2013/01/ControlPlane-General-150x139.png 150w, https://stealthpuppy.com/media/2013/01/ControlPlane-General-300x279.png 300w" sizes="(max-width: 527px) 100vw, 527px" /></p>
+<p><img class="alignnone size-full wp-image-3022" alt="ControlPlane General" src=".com/media/2013/01/ControlPlane-General.png" width="527" height="491" srcset=".com/media/2013/01/ControlPlane-General.png 527w, .com/media/2013/01/ControlPlane-General-150x139.png 150w, .com/media/2013/01/ControlPlane-General-300x279.png 300w" sizes="(max-width: 527px) 100vw, 527px" /></p>
 
 <p>I’ve enabled the display of the context name in the menu bar so that I can easily see which context the laptop is in:</p>
 
-<p><img class="alignnone size-full wp-image-3027" alt="ControlPlane Menubar" src="https://stealthpuppy.com/media/2013/01/ControlPlane-Menubar.png" width="539" height="63" srcset="https://stealthpuppy.com/media/2013/01/ControlPlane-Menubar.png 539w, https://stealthpuppy.com/media/2013/01/ControlPlane-Menubar-150x17.png 150w, https://stealthpuppy.com/media/2013/01/ControlPlane-Menubar-300x35.png 300w" sizes="(max-width: 539px) 100vw, 539px" /></p>
+<p><img class="alignnone size-full wp-image-3027" alt="ControlPlane Menubar" src=".com/media/2013/01/ControlPlane-Menubar.png" width="539" height="63" srcset=".com/media/2013/01/ControlPlane-Menubar.png 539w, .com/media/2013/01/ControlPlane-Menubar-150x17.png 150w, .com/media/2013/01/ControlPlane-Menubar-300x35.png 300w" sizes="(max-width: 539px) 100vw, 539px" /></p>
 
 <h1 id="configuring-contexts">Configuring Contexts</h1>
 
@@ -75,11 +64,11 @@
 
 <p>I’ve created three Contexts - Home, Mobile (for use with a MiFi-style device) and Secure. Rules are applied to Home and Mobile, whilst Secure has no rules applied and thus applies to any location that isn’t Home or Mobile.</p>
 
-<p><img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="https://stealthpuppy.com/media/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="https://stealthpuppy.com/media/2013/01/ControlPlane-Contexts.png 507w, https://stealthpuppy.com/media/2013/01/ControlPlane-Contexts-150x150.png 150w, https://stealthpuppy.com/media/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></p>
+<p><img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src=".com/media/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset=".com/media/2013/01/ControlPlane-Contexts.png 507w, .com/media/2013/01/ControlPlane-Contexts-150x150.png 150w, .com/media/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></p>
 
 <p>To define the Home context, I’ve used the ‘WiFi BSSID’ rule to define that if the MacBook has a connection to my home router, then I must be at home. 100% confidence is enabled on this rule because I know it’s highly unlikely that I’ll be connected to the same SSID and MAC address at any other location.</p>
 
-<p><img class="alignnone size-full wp-image-3024" alt="ControlPlane Rules" src="https://stealthpuppy.com/media/2013/01/ControlPlane-Rules.png" width="591" height="476" srcset="https://stealthpuppy.com/media/2013/01/ControlPlane-Rules.png 591w, https://stealthpuppy.com/media/2013/01/ControlPlane-Rules-150x120.png 150w, https://stealthpuppy.com/media/2013/01/ControlPlane-Rules-300x241.png 300w" sizes="(max-width: 591px) 100vw, 591px" /></p>
+<p><img class="alignnone size-full wp-image-3024" alt="ControlPlane Rules" src=".com/media/2013/01/ControlPlane-Rules.png" width="591" height="476" srcset=".com/media/2013/01/ControlPlane-Rules.png 591w, .com/media/2013/01/ControlPlane-Rules-150x120.png 150w, .com/media/2013/01/ControlPlane-Rules-300x241.png 300w" sizes="(max-width: 591px) 100vw, 591px" /></p>
 
 <p>I could use various other evidence sources; however I’ve found that a WiFi connection is the simplest approach for my needs.</p>
 
@@ -106,7 +95,7 @@
 
 <p>Mounting or dismounting a remote share requires the full path to that share. That full path can be found via Get Info from the right-click context menu on the share.</p>
 
-<p><img class="alignnone size-full wp-image-3028" alt="ControlPlane Mount" src="https://stealthpuppy.com/media/2013/01/ControlPlane-Mount.png" width="612" height="605" srcset="https://stealthpuppy.com/media/2013/01/ControlPlane-Mount.png 612w, https://stealthpuppy.com/media/2013/01/ControlPlane-Mount-150x148.png 150w, https://stealthpuppy.com/media/2013/01/ControlPlane-Mount-300x296.png 300w" sizes="(max-width: 612px) 100vw, 612px" /></p>
+<p><img class="alignnone size-full wp-image-3028" alt="ControlPlane Mount" src=".com/media/2013/01/ControlPlane-Mount.png" width="612" height="605" srcset=".com/media/2013/01/ControlPlane-Mount.png 612w, .com/media/2013/01/ControlPlane-Mount-150x148.png 150w, .com/media/2013/01/ControlPlane-Mount-300x296.png 300w" sizes="(max-width: 612px) 100vw, 612px" /></p>
 
 <p>I could also unmount the same share when I leave the Home context.</p>
 
@@ -126,7 +115,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 3600[/code]</p>
 
 <p>Then add System actions in ControlPlane to execute the shell scripts at in the right context:</p>
 
-<p><img alt="ControlPlane Actions" src="https://stealthpuppy.com/media/2013/01/ControlPlane-Actions.png" width="612" height="605" /></p>
+<p><img alt="ControlPlane Actions" src=".com/media/2013/01/ControlPlane-Actions.png" width="612" height="605" /></p>
 
 <h1 id="life-is-good">Life is Good</h1>
 
@@ -137,9 +126,7 @@ defaults write com.apple.screensaver askForPasswordDelay -int 3600[/code]</p>
   </div><a class="u-url" href="/context-automation-mac-os-x/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

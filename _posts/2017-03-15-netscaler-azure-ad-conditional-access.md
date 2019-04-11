@@ -4,7 +4,7 @@ title: Integrating Citrix NetScaler with Azure AD and Conditional Access
 date: 2017-03-15T09:00:59+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5427
+guid: https://stealthpuppy/?p=5427
 permalink: /netscaler-azure-ad-conditional-access/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

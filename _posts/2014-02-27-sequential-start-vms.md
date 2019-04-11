@@ -4,7 +4,7 @@ title: Sequential Starting of a List of VMs
 date: 2014-02-27T12:16:51+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3578
+guid: https://stealthpuppy/?p=3578
 permalink: /sequential-start-vms/
 dsq_thread_id:
   - "2329759710"

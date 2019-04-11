@@ -4,7 +4,7 @@ title: "Melbourne CUGC IV - It's LTSR in the Spotlight!"
 date: 2017-10-04T22:20:14+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5809
+guid: https://stealthpuppy/?p=5809
 permalink: /melbourne-cugc-october-2017-meetup/
 image: /media/2016/11/MelbourneCUCG-white.png
 categories:

@@ -4,7 +4,7 @@ title: Storage Sense on Windows 10 configured with Intune
 date: 2018-09-02T20:46:04+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=6161
+guid: https://stealthpuppy/?p=6161
 permalink: /windows-10-storage-sense-intune/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

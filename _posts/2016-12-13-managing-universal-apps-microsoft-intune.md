@@ -4,7 +4,7 @@ title: Managing Universal Apps with Microsoft Intune
 date: 2016-12-13T09:00:48+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5321
+guid: https://stealthpuppy.com/?p=5321
 permalink: /managing-universal-apps-microsoft-intune/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

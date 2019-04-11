@@ -4,7 +4,7 @@ title: Does Horizon View RDS stack up against XenApp?
 date: 2014-09-30T23:04:33+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3700
+guid: https://stealthpuppy/?p=3700
 permalink: /xenapp-vs-horizon-view-rds/
 dsq_thread_id:
   - "3068739110"
@@ -107,4 +107,3 @@ Comments and feedback, as always, are welcome.
 
   * Oct 1. 2014 - removed HTML5 clientless support check mark from Horizon View RDS
   * Oct 27. 2014 - added NSX to load balancing option for Horizon View
-  

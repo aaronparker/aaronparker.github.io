@@ -4,7 +4,7 @@ title: Inaugural Meeting of the Melbourne Citrix User Group
 date: 2016-11-11T14:51:00+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5260
+guid: https://stealthpuppy/?p=5260
 permalink: /inaugural-melbourne-cugc-dec-2016/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

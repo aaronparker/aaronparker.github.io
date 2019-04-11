@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,7 +31,7 @@
     <h1 class="post-title p-name" itemprop="name headline">Didn&#39;t we just have an ad?</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2005-08-25T23:17:00+10:00" itemprop="datePublished">Aug 25, 2005
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
@@ -57,16 +46,14 @@
 
 <p>Adblock makes using the Internet usable again by blocking unwanted elements in web pages and it does this very well. Unfortunately there is no version for Internet Explorer, and I’m painfully reminded of that everytime I go back to IE. You can utilise the HOSTS file but this is a little cumbersome. However I found <a href="http://hostsman.abelhadigital.com/">HostsMan</a> via <a href="http://www.mvps.org/winhelp2002/hosts.htm">MVPS.org</a> yesterday. This is a very well designed tool that works extremely well and allows for automatically downloading HOSTS lists from MVPS.org and <a href="http://www.hosts-file.net/">hpHosts</a>, integrating this into your local HOSTS file and for quickly editing the hosts file. It even includes a HTTP server for serving a page for the blocked host (It listens on 127.0.0.x only).</p>
 
-<p><img src="http://pwp.netcabo.pt/0413933601/abelhadigital/pics/hostsman201.jpg" alt="" /></p>
+<p><img src="http://pwp.netcabo.pt/0413933601/abelhadigital/pics/hostsman201.jpg" alt="hostsman" /></p>
 
 <p>This then got me thinking about blocking hosts in an ISA Server rule. At the moment I import the list via a custom VBScript into a domain set and create a rule to redirect access to those hosts to an internal web server that returns a simple white page. However, managment of the domain list is cumbersome when that list is very large. By using HostsMan, I could import the list into the local HOSTS file, create a rule that redirects all requests for some IP address, e.g. 172.16.100.200, configure the HOSTs file appropriately and voila! A nice easy method for blocking access to and maintaining a list of ad sites and even spyware/nasty sites. Would this be faster? ISA Server doesn’t have to check the domain set. Hmm.. need to test.</p>
 
   </div><a class="u-url" href="/didnt-we-just-have-an-ad/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

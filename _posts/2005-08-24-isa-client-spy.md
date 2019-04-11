@@ -11,12 +11,8 @@ categories:
 ---
 Found this via [Stanislas Quastana's](http://blogs.msdn.com/squasta/archive/2005/08/22/454608.aspx) blog: [ISA Client Spy](http://www.isaservertools.com/ISAClientSpy). Free tools for ISA Server are great and this one, should be an excellent troubleshooting tool.
 
-<blockquote dir="ltr">
-  <p>
-    <font size="2">"ISA Client Spy is a FREE utility designed specifically for use with Microsoft ISA Server 2004. With ISA Spy, you can keep an eye on your user's browsing activity in real time. ISA Client Spy is a standalone application which does not require any Web Filters or Application Extensions to be installed on your ISA Server. It will work with any logging method enabled on your ISA Server or even when logging is disabled all together. ISA Client Spy can be installed on any Windows XP/2000/2003 computer which also has the ISA Server 2004 Management Console installed."</font>
-  </p>
-</blockquote>
+>"ISA Client Spy is a FREE utility designed specifically for use with Microsoft ISA Server 2004. With ISA Spy, you can keep an eye on your user's browsing activity in real time. ISA Client Spy is a standalone application which does not require any Web Filters or Application Extensions to be installed on your ISA Server. It will work with any logging method enabled on your ISA Server or even when logging is disabled all together. ISA Client Spy can be installed on any Windows XP/2000/2003 computer which also has the ISA Server 2004 Management Console installed."
 
-![](http://www.isaservertools.com/ISAClientSpy/images/screenshot_full.JPG)
+![screenshot](http://www.isaservertools.com/ISAClientSpy/images/screenshot_full.JPG)
 
 PS: I don't condone spying on users. 😛

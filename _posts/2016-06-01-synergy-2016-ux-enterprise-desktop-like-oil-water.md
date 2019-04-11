@@ -4,7 +4,7 @@ title: 'Citrix Synergy 2016: UX and the Enterprise Desktop like Oil and Water'
 date: 2016-06-01T12:13:00+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4529
+guid: https://stealthpuppy.com/?p=4529
 permalink: /synergy-2016-ux-enterprise-desktop-like-oil-water/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

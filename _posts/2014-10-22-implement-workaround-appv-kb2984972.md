@@ -4,7 +4,7 @@ title: Implementing a Workaround for issue affecting the App-V Client in KB29849
 date: 2014-10-22T18:07:30+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3715
+guid: https://stealthpuppy.com/?p=3715
 permalink: /implement-workaround-appv-kb2984972/
 dsq_thread_id:
   - "3143075597"

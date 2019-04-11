@@ -4,7 +4,7 @@ title: A Better Way to Customize the Windows Default Profile
 date: 2013-12-28T09:00:30+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3522
+guid: https://stealthpuppy/?p=3522
 permalink: /customize-the-windows-default-profile/
 dsq_thread_id:
   - "2077733197"

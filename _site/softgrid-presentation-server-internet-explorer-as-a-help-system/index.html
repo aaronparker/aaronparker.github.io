@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,12 +31,12 @@
     <h1 class="post-title p-name" itemprop="name headline">SoftGrid, Presentation Server And Internet Explorer As A Help System</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2008-01-14T20:00:12+11:00" itemprop="datePublished">Jan 14, 2008
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img border="0" alt="internetexplorer-softgridbox" align="left" src="https://stealthpuppy.com/media/2008/05/internetexplorer-softgridbox.png" width="142" height="128" /> If you’re deploying applications on Citrix Presentation Server via Application Virtualisation/SoftGrid, you may run into issues with applications that utilise a local HTML based help system. These applications will generally launch Internet Explorer as the viewer and in our case, we’ve found that IE is launched outside of the protected environment and thus never sees the help content located inside the environment.</p>
+    <p><img border="0" alt="internetexplorer-softgridbox" align="left" src="/media/2008/05/internetexplorer-softgridbox.png" width="142" height="128" /> If you’re deploying applications on Citrix Presentation Server via Application Virtualisation/SoftGrid, you may run into issues with applications that utilise a local HTML based help system. These applications will generally launch Internet Explorer as the viewer and in our case, we’ve found that IE is launched outside of the protected environment and thus never sees the help content located inside the environment.</p>
 
 <p>This behaviour only happens inside an ICA session and does not occur in an RDP session or on the console. Exactly why Internet Explorer is executed outside the environment but it has something to do with WFSHELL.EXE being the calling process.</p>
 
@@ -76,7 +65,7 @@ Citrix have a knowledgebase article that details a related error: <a href="http:
 
                             <p>Fortunately through a little bit of digging around and testing, I’ve found that by adding the following registry entry to your OSD files will execute Internet Explorer directly and keep the process within the protected environment, allowing the user to view Help:</p>
 
-                            <p><a href="/media/2008/05/softgridiereg1.png"><img border="0" alt="SoftGridIEReg" src="https://stealthpuppy.com/media/2008/05/softgridiereg-thumb.png" width="733" height="77" /></a></p>
+                            <p><a href="/media/2008/05/softgridiereg1.png">&lt;img border=”0” alt=”SoftGridIEReg” src=”/media/2008/05/softgridiereg-thumb.png</a></p>
 
                             <p>(I’ve had to use an image here because WordPress keeps formatting the code)</p>
                           </li>
@@ -97,9 +86,7 @@ Citrix have a knowledgebase article that details a related error: <a href="http:
   </div><a class="u-url" href="/softgrid-presentation-server-internet-explorer-as-a-help-system/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

@@ -4,7 +4,7 @@ title: Simple Country of Origin Control for NetScaler with Azure AD
 date: 2017-09-28T16:29:39+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5792
+guid: https://stealthpuppy/?p=5792
 permalink: /country-of-origin-control-netscaler-azuread/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -20,7 +20,7 @@ tags:
 ---
 Great news! [Microsoft has enabled a number of available conditions and custom controls in Azure AD](https://blogs.technet.microsoft.com/enterprisemobility/2017/09/27/whats-new-with-azure-active-directory-ignite-2017/) for use in Conditional Access making these policies even more useful. This includes a simple method to control access to Citrix NetScaler by country of origin.
 
-Back in March of this year, I was working on a project to design a solution for hosting applications in an Azure data centre, with access provided by Citrix XenApp and NetScaler. This particular customer needed to control access to both Office 365 applications and XenApp from specific locations only. 
+Back in March of this year, I was working on a project to design a solution for hosting applications in an Azure data centre, with access provided by Citrix XenApp and NetScaler. This particular customer needed to control access to both Office 365 applications and XenApp from specific locations only.
 
 By configuring [Citrix FAS](http://docs.citrix.com/en-us/xenapp-and-xendesktop/7-15-ltsr/secure/federated-authentication-service.html) and [NetScaler with SAML authentication to Azure AD]({{site.baseurl}}/netscaler-azure-ad-conditional-access/), we were able to use [Named Locations in Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-named-locations) Conditional Access policies to achieve the desired goal. For instance we could allow Office 365 only from compliant or domain-joined PCs and ensure access to XenApp only from specific locations. Thus for a certain group of users, they could only access Office 365 applications from XenApp and then only from a specific physical location.
 

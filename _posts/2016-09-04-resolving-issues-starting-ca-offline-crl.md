@@ -4,7 +4,7 @@ title: Resolving Issues Starting a CA due to an Offline CRL
 date: 2016-09-04T22:18:39+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5127
+guid: https://stealthpuppy/?p=5127
 permalink: /resolving-issues-starting-ca-offline-crl/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

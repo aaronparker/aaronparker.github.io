@@ -4,7 +4,7 @@ title: '"There isn’t enough memory available to create a ramdisk device" booti
 date: 2014-01-30T12:38:22+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3553
+guid: https://stealthpuppy/?p=3553
 permalink: /there-isnt-enough-memory-available-to-create-a-ramdisk-device-booting-vms-on-hyper-v/
 dsq_thread_id:
   - "2195003334"

@@ -4,7 +4,7 @@ title: In 2019, What is a Microsoft Office Application?
 date: 2019-02-24T23:41:43+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=6252
+guid: https://stealthpuppy/?p=6252
 permalink: /?p=6252
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

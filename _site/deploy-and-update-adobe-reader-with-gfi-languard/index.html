@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,7 +31,7 @@
     <h1 class="post-title p-name" itemprop="name headline">Deploy and update Adobe Reader with GFI LANguard</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2010-03-21T23:57:33+11:00" itemprop="datePublished">Mar 21, 2010
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
@@ -69,7 +58,7 @@
 
 <p>The deployment feature of LANguard is geared around installing a single file with parameters; however it’s simple enough to deploy applications like Office or Reader by using a batch file:</p>
 
-<p><img class="alignnone size-full wp-image-1141" title="addcustomsoftware" src="https://stealthpuppy.com/media/2009/05/addcustomsoftware.png" alt="addcustomsoftware" width="327" height="303" srcset="https://stealthpuppy.com/media/2009/05/addcustomsoftware.png 327w, https://stealthpuppy.com/media/2009/05/addcustomsoftware-150x138.png 150w, https://stealthpuppy.com/media/2009/05/addcustomsoftware-300x277.png 300w" sizes="(max-width: 327px) 100vw, 327px" /></p>
+<p><img class="alignnone size-full wp-image-1141" title="addcustomsoftware" src=".com/media/2009/05/addcustomsoftware.png" alt="addcustomsoftware" width="327" height="303" srcset=".com/media/2009/05/addcustomsoftware.png 327w, .com/media/2009/05/addcustomsoftware-150x138.png 150w, .com/media/2009/05/addcustomsoftware-300x277.png 300w" sizes="(max-width: 327px) 100vw, 327px" /></p>
 
 <p>Before I start deployment, I’ve configured a source location (\dc\common\Adobe\Reader91) for Adobe Reader 9.1:</p>
 
@@ -87,7 +76,7 @@ MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALL
 
 <p>The script will install Adobe Reader directly from the network, so the only file being copied to the remote machine is the script. Here’s what the install source for Adobe Reader looks like:</p>
 
-<p><img class="alignnone size-full wp-image-1135" title="reader91" src="https://stealthpuppy.com/media/2009/05/reader91.png" alt="reader91" width="590" height="341" srcset="https://stealthpuppy.com/media/2009/05/reader91.png 590w, https://stealthpuppy.com/media/2009/05/reader91-150x86.png 150w, https://stealthpuppy.com/media/2009/05/reader91-300x173.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></p>
+<p><img class="alignnone size-full wp-image-1135" title="reader91" src=".com/media/2009/05/reader91.png" alt="reader91" width="590" height="341" srcset=".com/media/2009/05/reader91.png 590w, .com/media/2009/05/reader91-150x86.png 150w, .com/media/2009/05/reader91-300x173.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></p>
 
 <p>Deploying software is a three step process:</p>
 
@@ -97,11 +86,11 @@ MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALL
   <li>then deploy immediately or choose to install using a schedule:</li>
 </ol>
 
-<p><img class="alignnone size-full wp-image-1140" style="border: black 1px solid;" title="deploycustomsoftware-1b" src="https://stealthpuppy.com/media/2009/05/deploycustomsoftware-1b.png" alt="deploycustomsoftware-1b" width="590" height="496" srcset="https://stealthpuppy.com/media/2009/05/deploycustomsoftware-1b.png 590w, https://stealthpuppy.com/media/2009/05/deploycustomsoftware-1b-150x126.png 150w, https://stealthpuppy.com/media/2009/05/deploycustomsoftware-1b-300x252.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></p>
+<p><img class="alignnone size-full wp-image-1140" style="border: black 1px solid;" title="deploycustomsoftware-1b" src=".com/media/2009/05/deploycustomsoftware-1b.png" alt="deploycustomsoftware-1b" width="590" height="496" srcset=".com/media/2009/05/deploycustomsoftware-1b.png 590w, .com/media/2009/05/deploycustomsoftware-1b-150x126.png 150w, .com/media/2009/05/deploycustomsoftware-1b-300x252.png 300w" sizes="(max-width: 590px) 100vw, 590px" /></p>
 
 <p>So how is this actually working? The deployment feature on LANguard is not dissimilar to the Sysinternals tool PSEXEC, where a temporary service is installed on the remote machine to deliver the install commands. Essentially to deploy Adobe Reader 9, I am using LANguard to remotely execute INSTALL.CMD. I need admin rights on the target computers and LANguard does the rest. I even get to see the progress of the deployment:</p>
 
-<p><img class="alignnone size-full wp-image-1145" style="border: black 1px solid;" title="deploymenprogess" src="https://stealthpuppy.com/media/2009/05/deploymenprogess.png" alt="deploymenprogess" width="434" height="270" srcset="https://stealthpuppy.com/media/2009/05/deploymenprogess.png 434w, https://stealthpuppy.com/media/2009/05/deploymenprogess-150x93.png 150w, https://stealthpuppy.com/media/2009/05/deploymenprogess-300x186.png 300w" sizes="(max-width: 434px) 100vw, 434px" /></p>
+<p><img class="alignnone size-full wp-image-1145" style="border: black 1px solid;" title="deploymenprogess" src=".com/media/2009/05/deploymenprogess.png" alt="deploymenprogess" width="434" height="270" srcset=".com/media/2009/05/deploymenprogess.png 434w, .com/media/2009/05/deploymenprogess-150x93.png 150w, .com/media/2009/05/deploymenprogess-300x186.png 300w" sizes="(max-width: 434px) 100vw, 434px" /></p>
 
 <p>I can also use the same process to update Reader 9.1 with the 9.11. update patch.</p>
 
@@ -118,9 +107,7 @@ MSIEXEC /P %SOURCE%\AdbeRdrUpd911_all_incr.msp ALLUSERS=TRUE REBOOT=SUPRESS /QB<
   </div><a class="u-url" href="/deploy-and-update-adobe-reader-with-gfi-languard/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

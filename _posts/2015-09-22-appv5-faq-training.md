@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: Where Can I Find App-V Training?'
 date: 2015-09-22T13:00:51+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4123
+guid: https://stealthpuppy.com/?p=4123
 permalink: /appv5-faq-training/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

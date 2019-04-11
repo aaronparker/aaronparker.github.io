@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,12 +31,12 @@
     <h1 class="post-title p-name" itemprop="name headline">Sequencing Google Chrome 15</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2011-11-07T16:00:00+11:00" itemprop="datePublished">Nov 7, 2011
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img style="background-image: none; margin: 0px 0px 0px 5px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border-width: 0px;" title="GoogleChrome" src="https://stealthpuppy.com/media/2011/11/GoogleChrome.png" alt="GoogleChrome" width="128" height="128" align="right" border="0" />Here’s how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions.</p>
+    <p><img style="background-image: none; margin: 0px 0px 0px 5px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border-width: 0px;" title="GoogleChrome" src="/media/2011/11/GoogleChrome.png" alt="GoogleChrome" width="128" height="128" align="right" border="0" />Here’s how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions.</p>
 
 <h3 id="what-you-lose-by-virtualizing-chrome">What you lose by virtualizing Chrome</h3>
 
@@ -179,7 +168,7 @@
   Disable browser auto updates
 </li>
 <li value="6">
-  Prevent the Sequencer from deleting the Chrome application folder once the monitoring phase is finished. To see why the Sequencer may process a reboot task that deletes the Chrome install folder read this article: <a href="https://stealthpuppy.com/virtualisation/the-case-of-the-disappearing-application-during-sequencing/">The Case of the Disappearing Application during Sequencing</a>.
+  Prevent the Sequencer from deleting the Chrome application folder once the monitoring phase is finished. To see why the Sequencer may process a reboot task that deletes the Chrome install folder read this article: <a href="/virtualisation/the-case-of-the-disappearing-application-during-sequencing/">The Case of the Disappearing Application during Sequencing</a>.
 </li>
 
 <p>Automating this process as much as possible will create a cleaner package and make it faster to re-create a new Chrome package if required. Here’s an example script that will perform the tasks above:</p>
@@ -206,13 +195,13 @@ REG ADD “HKLM\System\CurrentControlSet\Control\Session Manager” /v PendingFi
 
 <p>With the sandbox running, you will see an error similar to this when attempting to add an extension:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ChromeExtension" src="https://stealthpuppy.com/media/2011/11/ChromeExtension.png" alt="ChromeExtension" width="511" height="215" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ChromeExtension" src="/media/2011/11/ChromeExtension.png" alt="ChromeExtension" width="511" height="215" border="0" /></p>
 
 <p><strong>Note</strong>: Note that disabling the sandbox will reduce the browser security. I recommend testing the browser functionality and see if you can get away without disabling the sandbox.</p>
 
 <p>The browser will notify you when the sandbox is disabled:</p>
 
-<p><a href="/media/2011/11/GoogleChromeNoSandbox.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GoogleChromeNoSandbox" src="https://stealthpuppy.com/media/2011/11/GoogleChromeNoSandbox_thumb.png" alt="GoogleChromeNoSandbox" width="660" height="114" border="0" /></a></p>
+<p><a href="/media/2011/11/GoogleChromeNoSandbox.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;” title=”GoogleChromeNoSandbox” src=”/media/2011/11/GoogleChromeNoSandbox_thumb.png” alt=”GoogleChromeNoSandbox</a></p>
 
 <h3 id="first-run-tasks-and-primary-feature-block">First Run Tasks and Primary Feature Block</h3>
 
@@ -225,9 +214,7 @@ REG ADD “HKLM\System\CurrentControlSet\Control\Session Manager” /v PendingFi
   </div><a class="u-url" href="/sequencing-google-chrome-15/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

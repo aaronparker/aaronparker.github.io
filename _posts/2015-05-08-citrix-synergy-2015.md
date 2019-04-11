@@ -4,7 +4,7 @@ title: Looking forward to Citrix Synergy 2015
 date: 2015-05-08T14:48:31+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3938
+guid: https://stealthpuppy/?p=3938
 permalink: /citrix-synergy-2015/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

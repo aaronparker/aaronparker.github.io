@@ -4,7 +4,7 @@ title: Machine Creation Services Capacity Sizing on vSphere
 date: 2016-10-27T22:58:56+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5250
+guid: https://stealthpuppy/?p=5250
 permalink: /?p=5250
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

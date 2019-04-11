@@ -8,31 +8,20 @@
 <meta property="og:title" content="Windows Server 2008 R2 SP1: What’s in it for Remote Desktop Session Host?" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Wasn’t is simpler when it was called Terminal Server? Previous posts like this have shorter titles: Windows Server 2008 SP2: What’s in it for Terminal Servers? and Windows Server 2003 SP2: What’s in it for Terminal Servers?" />
-<meta property="og:description" content="Wasn’t is simpler when it was called Terminal Server? Previous posts like this have shorter titles: Windows Server 2008 SP2: What’s in it for Terminal Servers? and Windows Server 2003 SP2: What’s in it for Terminal Servers?" />
+<meta name="description" content="The document Hotfixes and Security Updates included in Windows 7 and Windows Server 2008 R2 Service Pack 1 Beta has the complete list of what’s fixed in SP1. RemoteFX might steal the show, however I’m specifically interested in what fixes there are for Terminal Server or Remote Desktop Session Host as it’s now called." />
+<meta property="og:description" content="The document Hotfixes and Security Updates included in Windows 7 and Windows Server 2008 R2 Service Pack 1 Beta has the complete list of what’s fixed in SP1. RemoteFX might steal the show, however I’m specifically interested in what fixes there are for Terminal Server or Remote Desktop Session Host as it’s now called." />
 <link rel="canonical" href="/windows-server-2008-r2-sp1-whats-in-it-for-remote-desktop-session-host/" />
 <meta property="og:url" content="/windows-server-2008-r2-sp1-whats-in-it-for-remote-desktop-session-host/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2010-07-14T15:00:00+10:00" />
 <script type="application/ld+json">
-{"description":"Wasn’t is simpler when it was called Terminal Server? Previous posts like this have shorter titles: Windows Server 2008 SP2: What’s in it for Terminal Servers? and Windows Server 2003 SP2: What’s in it for Terminal Servers?","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/windows-server-2008-r2-sp1-whats-in-it-for-remote-desktop-session-host/","headline":"Windows Server 2008 R2 SP1: What’s in it for Remote Desktop Session Host?","dateModified":"2010-07-14T15:00:00+10:00","datePublished":"2010-07-14T15:00:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/windows-server-2008-r2-sp1-whats-in-it-for-remote-desktop-session-host/"},"@context":"https://schema.org"}</script>
+{"description":"The document Hotfixes and Security Updates included in Windows 7 and Windows Server 2008 R2 Service Pack 1 Beta has the complete list of what’s fixed in SP1. RemoteFX might steal the show, however I’m specifically interested in what fixes there are for Terminal Server or Remote Desktop Session Host as it’s now called.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/windows-server-2008-r2-sp1-whats-in-it-for-remote-desktop-session-host/","headline":"Windows Server 2008 R2 SP1: What’s in it for Remote Desktop Session Host?","dateModified":"2010-07-14T15:00:00+10:00","datePublished":"2010-07-14T15:00:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/windows-server-2008-r2-sp1-whats-in-it-for-remote-desktop-session-host/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,18 +31,81 @@
     <h1 class="post-title p-name" itemprop="name headline">Windows Server 2008 R2 SP1: What’s in it for Remote Desktop Session Host?</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2010-07-14T15:00:00+10:00" itemprop="datePublished">Jul 14, 2010
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><a href="/media/2010/07/RemoteDesktopIcon.png"><img class="wlDisabledImage" style="margin: 0px 10px 5px 0px; display: inline; border: 0px;" title="RemoteDesktopIcon" src="https://stealthpuppy.com/media/2010/07/RemoteDesktopIcon_thumb.png" border="0" alt="RemoteDesktopIcon" width="128" height="128" align="left" /></a>Wasn’t is simpler when it was called Terminal Server? Previous posts like this have shorter titles: <a href="/windows/windows-server-2008-sp2-whats-in-it-for-terminal-servers">Windows Server 2008 SP2: What’s in it for Terminal Servers?</a> and <a href="/windows/windows-server-2003-sp2-what%E2%80%99s-in-it-for-terminal-servers">Windows Server 2003 SP2: What’s in it for Terminal Servers?</a></p>
-
-<p>The document <a href="http://go.microsoft.com/fwlink/?LinkId=194725">Hotfixes and Security Updates included in Windows 7 and Windows Server 2008 R2 Service Pack 1 Beta</a> has the complete list of what’s fixed in SP1. <a href="http://www.brianmadden.com/blogs/brianmadden/archive/2010/07/13/microsoft-remotefx-is-now-available-via-public-beta.aspx">RemoteFX</a> might steal the show, however I’m specifically interested in what fixes there are for Terminal Server or Remote Desktop Session Host as it’s now called.</p>
+    <p>The document <a href="http://go.microsoft.com/fwlink/?LinkId=194725">Hotfixes and Security Updates included in Windows 7 and Windows Server 2008 R2 Service Pack 1 Beta</a> has the complete list of what’s fixed in SP1. <a href="http://www.brianmadden.com/blogs/brianmadden/archive/2010/07/13/microsoft-remotefx-is-now-available-via-public-beta.aspx">RemoteFX</a> might steal the show, however I’m specifically interested in what fixes there are for Terminal Server or Remote Desktop Session Host as it’s now called.</p>
 
 <p>The table below is filtered for just those fixes, each of which is available now if you can’t wait for SP1 due in H1 2011:</p>
 
-<p>[table id=23 /]</p>
+<table>
+  <thead>
+    <tr>
+      <th>KB</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>http://support.microsoft.com/kb/969851</td>
+      <td>Instead of the specified startup program, the whole desktop is started on a remote desktop connection when you change the Terminal Services Profile setting for the user account</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/973062</td>
+      <td>The audio redirection feature does not work when you use Remote Desktop Connection Client for Mac 2.0 to make a terminal server session to a computer that is running Windows Server 2008 x64 Edition or Windows Vista x64 Edition</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/976484</td>
+      <td>You have problems when you try to connect to the Remote Desktop Gateway (RD Gateway) that is hosted on a computer that is running Windows Server 2008 R2</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/977627</td>
+      <td>You cannot open a remote application or a remote desktop by using Forefront UAG</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/979425</td>
+      <td>A combo box item in a RemoteApp application is updated incorrectly when you connect by using Remote Desktop Connection (RDC) 7.0</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/979443</td>
+      <td>You do not receive a warning message when a remote desktop connection fails from a Windows 7 or Windows Server 2008 R2-based computer</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/979470</td>
+      <td>Remote Desktop Services does not prevent a console session from being disconnected in Windows Server 2008 R2</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/979530</td>
+      <td>A Windows Server 2008 R2-based Remote Desktop server denies some connection requests randomly under heavy logon or logoff conditions</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/979548</td>
+      <td>You cannot enter an agreement number of a volume license that contains more than seven digits in Remote Desktop Licensing Manager or in TS Licensing Manager</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/979734</td>
+      <td>Description of an update for Remote Desktop Services BPA</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/980909</td>
+      <td>The home folder could not be created remote desktop error in Windows Server 2008 R2</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/981156</td>
+      <td>RemoteApp applications are displayed as black windows when you restart the applications in a Remote desktop connection in Windows Server 2008 R2</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/980393</td>
+      <td>Two users accounts that are logged on to the same computer cannot use Windows Photo Viewer at the same time in Windows 7 and in Windows Server 2008 R2</td>
+    </tr>
+    <tr>
+      <td>http://support.microsoft.com/kb/981208</td>
+      <td>Poor performance when you transfer many small files on a computer that is running Windows 7 or Windows Server 2008 R2</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>If you can’t wait for SP1, a list of recommended updates for RDS is available here: <a href="http://support.microsoft.com/kb/2312539">Recommended Updates for the Remote Desktop Services (Terminal Services) in Windows Server 2008 and Windows Server 2008 R2</a></p>
 
@@ -62,9 +114,7 @@
   </div><a class="u-url" href="/windows-server-2008-r2-sp1-whats-in-it-for-remote-desktop-session-host/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

@@ -4,7 +4,7 @@ title: 'OS Automation Survey Results - What Virtual Desktop Platforms are Deploy
 date: 2015-10-09T22:28:52+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4161
+guid: https://stealthpuppy.com/?p=4161
 permalink: /automation-survey-results-vdi-platforms/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

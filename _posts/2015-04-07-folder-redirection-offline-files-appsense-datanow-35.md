@@ -4,7 +4,7 @@ title: 'File Sync Solutions as Alternatives to Folder Redirection - AppSense Dat
 date: 2015-04-07T04:00:17+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3831
+guid: https://stealthpuppy.com/?p=3831
 permalink: /folder-redirection-offline-files-appsense-datanow-35/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

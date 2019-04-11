@@ -4,7 +4,7 @@ title: Replicating Our 2015 Folder Redirection Performance Tests In Your Own Lab
 date: 2015-05-15T01:52:35+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3946
+guid: https://stealthpuppy.com/?p=3946
 permalink: /replicate-2015-folder-redirection-test/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

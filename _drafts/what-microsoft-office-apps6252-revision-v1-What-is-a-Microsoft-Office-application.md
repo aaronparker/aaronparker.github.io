@@ -4,7 +4,7 @@ title: What is a Microsoft Office application?
 date: 2019-02-23T18:11:15+10:00
 author: Aaron Parker
 layout: revision
-guid: {{site.baseurl}}/6252-revision-v1/
+guid: https://stealthpuppy/6252-revision-v1/
 permalink: /6252-revision-v1/
 ---
 It used to be simple to understand what applications made up the Microsoft Office suite - Word, Excel, PowerPoint, and they only ran on Windows. There were a few apps that we added, others that came and went Office even popped up on macOS just over 20 years ago.

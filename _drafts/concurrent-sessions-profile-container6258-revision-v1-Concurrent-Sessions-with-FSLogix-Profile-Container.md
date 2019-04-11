@@ -4,7 +4,7 @@ title: Concurrent Sessions with FSLogix Profile Container
 date: 2019-02-27T23:07:10+10:00
 author: Aaron Parker
 layout: revision
-guid: {{site.baseurl}}/6258-revision-v1/
+guid: https://stealthpuppy/6258-revision-v1/
 permalink: /6258-revision-v1/
 ---
 I was recently assisting a customer with an FSLogix Profile Container and Office 365 Container evaluation and the subject of concurrent sessions came up. In this article, I'll go into a bit of detail on how FSLogix Profile Containers handle concurrent sessions and follow up with an article on Office 365 Container.

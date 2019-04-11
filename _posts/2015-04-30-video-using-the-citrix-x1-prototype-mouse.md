@@ -4,7 +4,7 @@ title: Using the Citrix X1 Prototype Mouse
 date: 2015-04-30T22:42:27+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3934
+guid: https://stealthpuppy.com/?p=3934
 permalink: /video-using-the-citrix-x1-prototype-mouse/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

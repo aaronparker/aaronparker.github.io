@@ -8,31 +8,20 @@
 <meta property="og:title" content="App-V FAQ: How do I configure the App-V Client in stand-alone mode?" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="on end user computing and enterprise mobility" />
-<meta property="og:description" content="on end user computing and enterprise mobility" />
+<meta name="description" content="Stand-alone mode in App-V is useful where you are deploying App-V applications via Group Policy or a 3rd party ESD (using the MSI file), or you have the App-V packages available on a file share and import them with the SFTMIME command." />
+<meta property="og:description" content="Stand-alone mode in App-V is useful where you are deploying App-V applications via Group Policy or a 3rd party ESD (using the MSI file), or you have the App-V packages available on a file share and import them with the SFTMIME command." />
 <link rel="canonical" href="/app-v-faq-13-how-do-i-configure-the-app-v-client-in-stand-alone-mode/" />
 <meta property="og:url" content="/app-v-faq-13-how-do-i-configure-the-app-v-client-in-stand-alone-mode/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2010-08-03T11:00:00+10:00" />
 <script type="application/ld+json">
-{"description":"on end user computing and enterprise mobility","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/app-v-faq-13-how-do-i-configure-the-app-v-client-in-stand-alone-mode/","headline":"App-V FAQ: How do I configure the App-V Client in stand-alone mode?","dateModified":"2010-08-03T11:00:00+10:00","datePublished":"2010-08-03T11:00:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/app-v-faq-13-how-do-i-configure-the-app-v-client-in-stand-alone-mode/"},"@context":"https://schema.org"}</script>
+{"description":"Stand-alone mode in App-V is useful where you are deploying App-V applications via Group Policy or a 3rd party ESD (using the MSI file), or you have the App-V packages available on a file share and import them with the SFTMIME command.","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/app-v-faq-13-how-do-i-configure-the-app-v-client-in-stand-alone-mode/","headline":"App-V FAQ: How do I configure the App-V Client in stand-alone mode?","dateModified":"2010-08-03T11:00:00+10:00","datePublished":"2010-08-03T11:00:00+10:00","mainEntityOfPage":{"@type":"WebPage","@id":"/app-v-faq-13-how-do-i-configure-the-app-v-client-in-stand-alone-mode/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,30 +31,48 @@
     <h1 class="post-title p-name" itemprop="name headline">App-V FAQ: How do I configure the App-V Client in stand-alone mode?</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2010-08-03T11:00:00+10:00" itemprop="datePublished">Aug 3, 2010
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img style="margin: 0px 0px 5px 10px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" /></p>
-
-<p><a href="http://technet.microsoft.com/en-gb/library/cc817112.aspx">Stand-alone mode</a> in App-V is useful where you are deploying App-V applications via Group Policy or a 3rd party ESD (using the MSI file), or you have the App-V packages available on a file share and import them with the SFTMIME command.</p>
+    <p><a href="http://technet.microsoft.com/en-gb/library/cc817112.aspx">Stand-alone mode</a> in App-V is useful where you are deploying App-V applications via Group Policy or a 3rd party ESD (using the MSI file), or you have the App-V packages available on a file share and import them with the SFTMIME command.</p>
 
 <p>There are a couple of <a href="http://technet.microsoft.com/en-us/library/cc843737.aspx">properties</a> that you’ll need to set to allow the App-V Client to run in stand-alone mode, which you can set <a href="/deployment/app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client">at install time</a>, or configure in the registry post-install:</p>
 
-<p>[table id=22 /]</p>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Values</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ALLOWINDEPENDENTFILESTREAMING</td>
+      <td>TRUE / FALSE</td>
+      <td>Indicates whether streaming from file will be enabled regardless of how the client has been configured with the APPLICATIONSOURCEROOT parameter. If set to FALSE, the transport will not enable streaming from files even if the OSD HREF or the APPLICATIONSOURCEROOT parameter contains a file path.</td>
+    </tr>
+    <tr>
+      <td>REQUIREAUTHORIZATIONIFCACHED</td>
+      <td>TRUE / FALSE</td>
+      <td>Indicates whether authorization is always required, whether or not an application is already in cache.</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="importing-a-package-in-stand-alone-mode">Importing a Package in Stand-Alone mode</h3>
+<h2 id="importing-a-package-in-stand-alone-mode">Importing a Package in Stand-Alone mode</h2>
 
 <p>A common scenario for stand-alone mode is to test packages. To import a package in this mode, you can use the <a href="http://technet.microsoft.com/en-us/library/cc817181.aspx">SFTMIME ADD PACKAGE</a> command.</p>
 
 <p>The simplest way to use this command is to copy your package to the local computer and using an elevated Command Prompt, change to the folder were the package is located. For example, I have a Mozilla Firefox package stored locally - I can use the following commands to import the package:</p>
 
-<p>[code]CD C:\Common\Packages\MozillaFirefox4_US</p>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">CD </span>C:\Common\Packages\MozillaFirefox4_US
+SFTMIME /ADD PACKAGE:<span class="s2">"Mozilla Firefox 4"</span> /MANIFEST MozillaFirefox4\_US\_manifest.xml /OVERRIDEURL MozillaFirefox4_US.sft /CONSOLE
+</code></pre></div></div>
 
-<p>SFTMIME /ADD PACKAGE:”Mozilla Firefox 4” /MANIFEST MozillaFirefox4_US_manifest.xml /OVERRIDEURL MozillaFirefox4_US.sft /CONSOLE[/code]</p>
-
-<h3 id="resources">Resources</h3>
+<h2 id="resources">Resources</h2>
 
 <p>There are plenty of resources on the Internet that discuss the configuration of the App-V Client in stand-alone mode:</p>
 
@@ -77,17 +84,10 @@
   <li>Finally, you can see the stand-alone mode App-V Client in action in this video by Ruben Spruijt:</li>
 </ul>
 
-<div id="scid:5737277B-5D6D-4f48-ABFC-DD9C333F4C5D:feb1c5df-0e38-4608-b406-88bdee5c62e3" class="wlWriterEditableSmartContent" style="margin: 0px; display: inline; float: none; padding: 0px;">
-  <div>
-  </div>
-</div>
-
   </div><a class="u-url" href="/app-v-faq-13-how-do-i-configure-the-app-v-client-in-stand-alone-mode/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

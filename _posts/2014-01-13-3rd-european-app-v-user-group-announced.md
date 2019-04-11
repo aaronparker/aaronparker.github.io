@@ -4,7 +4,7 @@ title: 3rd European App-V User Group announced
 date: 2014-01-13T11:28:23+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3538
+guid: https://stealthpuppy/?p=3538
 permalink: /3rd-european-app-v-user-group-announced/
 dsq_thread_id:
   - "2116400064"

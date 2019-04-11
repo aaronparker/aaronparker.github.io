@@ -4,7 +4,7 @@ title: "Customizing the Windows 8.1 Start Screen? Don't follow Microsoft's guida
 date: 2013-10-23T21:08:22+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3505
+guid: https://stealthpuppy/?p=3505
 permalink: /customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance/
 dsq_thread_id:
   - "1892254021"

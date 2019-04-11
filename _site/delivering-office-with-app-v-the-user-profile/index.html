@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,7 +31,7 @@
     <h1 class="post-title p-name" itemprop="name headline">Delivering Office with App-V - The User Profile</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2011-10-24T17:30:00+11:00" itemprop="datePublished">Oct 24, 2011
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
@@ -57,7 +46,7 @@
 
 <p>you will end up with a package that will include the following folders in the virtualized user profile (those folders captured during sequencing that will end up in the PKG file):</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="CSIDL_APPDATA" src="https://stealthpuppy.com/media/2011/10/CSIDL_APPDATA.png" alt="CSIDL_APPDATA Folders" width="660" height="416" border="0" /></p>
+<p><img src=".com/media/2011/10/CSIDL_APPDATA.png" alt="CSIDL_APPDATA" /></p>
 
 <p>The folders captured under %CSIDL_APPDATA%\Microsoft are those folders that have been created during the first-run tasks – folders created when you launch an Office application and perform some standard tasks.</p>
 
@@ -65,11 +54,11 @@
 
 <p>To see what this looks like at runtime, here’s a view of a profile before running Office applications that have been delivered by App-V:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="BeforeOffice" src="https://stealthpuppy.com/media/2011/10/BeforeOffice.png" alt="BeforeOffice" width="660" height="331" border="0" /></p>
+<p><img src=".com/media/2011/10/BeforeOffice.png" alt="BeforeOffice" /></p>
 
 <p>After executing each of the Office applications in the package (I’ve used a package with Office 2010 Professional Plus with Visio and Project) and using just about every feature in those applications:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AfterOffice" src="https://stealthpuppy.com/media/2011/10/AfterOffice.png" alt="AfterOffice" width="660" height="410" border="0" /></p>
+<p><img src=".com/media/2011/10/AfterOffice.png" alt="AfterOffice" /></p>
 
 <p>There’s an additional 10 folders that have been created with 8 of those related to Office. This has left me with the majority of the Office user profile being virtualized and stored in the PKG file, whilst the rest is now stored on the real file system. This probably doesn’t have too much impact to the user if I’m using Roaming Profiles so that Office settings follow the user, but what happens for support?</p>
 
@@ -77,14 +66,134 @@
 
 <p>Do that, you will need to add an additional step during sequencing – create those folders that during the monitoring phase. I do this via a script (that also installs and configures Office) that will create the folders listed in the table below. If you do that, the entire Office profile will now be virtualized.</p>
 
-<p>[table id=29 /]</p>
+<table>
+  <thead>
+    <tr>
+      <th>Folder</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>%APPDATA%\Microsoft\AddIns</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Bibliography</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Clip Organizer</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\CLView</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Document Building Blocks</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Excel</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Forms</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\InterConnect</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\MS Project</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Office</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\OneNote</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Outlook</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\PowerPoint</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Proof</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Publisher</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Publisher Building Blocks</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Queries</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\QuickStyles</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\SharePoint Designer</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Signatures</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Stationery</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Templates</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\UProof</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Word</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Media Catalog</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Graph</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\InfoPath</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Themes</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\OIS</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\VSTAHost</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\VSCommon</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\VSTA</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\Web Server Extensions</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\IMJP10</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\IME12</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\IMJP8_1</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\IMJP9_0</td>
+    </tr>
+    <tr>
+      <td>%APPDATA%\Microsoft\IMJP12</td>
+    </tr>
+  </tbody>
+</table>
 
   </div><a class="u-url" href="/delivering-office-with-app-v-the-user-profile/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

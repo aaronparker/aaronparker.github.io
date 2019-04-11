@@ -4,7 +4,7 @@ title: Install-VisualCRedistributables.ps1 – Now with ConfigMgr Support!
 date: 2017-05-08T23:25:28+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5441
+guid: https://stealthpuppy.com/?p=5441
 permalink: /visual-c-redistributable-installer-configmgr/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

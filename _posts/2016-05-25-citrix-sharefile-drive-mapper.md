@@ -4,7 +4,7 @@ title: Hands On with the Citrix ShareFile Drive Mapper
 date: 2016-05-25T02:43:59+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=4413
+guid: https://stealthpuppy/?p=4413
 permalink: /citrix-sharefile-drive-mapper/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

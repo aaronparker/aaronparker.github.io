@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: How Do I License Microsoft Application Virtualization 5?'
 date: 2015-06-15T22:53:05+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3987
+guid: https://stealthpuppy.com/?p=3987
 permalink: /appv5-faq-license-appv5/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

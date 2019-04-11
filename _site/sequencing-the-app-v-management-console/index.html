@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,12 +31,12 @@
     <h1 class="post-title p-name" itemprop="name headline">Sequencing the App-V Management Console</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2011-01-21T18:30:40+11:00" itemprop="datePublished">Jan 21, 2011
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><a rel="attachment wp-att-2110" href="https://stealthpuppy.com/virtualisation/sequencing-the-app-v-management-console/attachment/appvconsolebox/"><img class="alignright size-full wp-image-2110" title="AppVConsoleBox" src="https://stealthpuppy.com/media/2011/01/AppVConsoleBox.png" alt="" width="131" height="128" /></a>Sequencing the the App-V Management Console is reasonably straight-forward; however it wasn’t quite as simple as you would expect.</p>
+    <p><a rel="attachment wp-att-2110" href=".com/virtualisation/sequencing-the-app-v-management-console/attachment/appvconsolebox/"><img class="alignright size-full wp-image-2110" title="AppVConsoleBox" src=".com/media/2011/01/AppVConsoleBox.png" alt="" width="131" height="128" /></a>Sequencing the the App-V Management Console is reasonably straight-forward; however it wasn’t quite as simple as you would expect.</p>
 
 <h3 id="prerequisites">Prerequisites</h3>
 
@@ -59,7 +48,7 @@
 
 <p><strong>Important</strong>: Stick with the x86 version of Windows because when sequencing on 64-bit Windows the snap-in does not appear to register during sequencing and this error is received when starting SftMMC.msc:</p>
 
-<p><a rel="attachment wp-att-2083" href="https://stealthpuppy.com/virtualisation/sequencing-the-app-v-management-console/attachment/unabletocreatenewdocument2/"><img class="size-full wp-image-2083" title="UnableToCreateNewDocument2" src="https://stealthpuppy.com/media/2011/01/UnableToCreateNewDocument2.png" alt="Unable to create new document." width="291" height="171" srcset="https://stealthpuppy.com/media/2011/01/UnableToCreateNewDocument2.png 291w, https://stealthpuppy.com/media/2011/01/UnableToCreateNewDocument2-150x88.png 150w" sizes="(max-width: 291px) 100vw, 291px" /></a></p>
+<p><a rel="attachment wp-att-2083" href=".com/virtualisation/sequencing-the-app-v-management-console/attachment/unabletocreatenewdocument2/"><img class="size-full wp-image-2083" title="UnableToCreateNewDocument2" src=".com/media/2011/01/UnableToCreateNewDocument2.png" alt="Unable to create new document." width="291" height="171" srcset=".com/media/2011/01/UnableToCreateNewDocument2.png 291w, .com/media/2011/01/UnableToCreateNewDocument2-150x88.png 150w" sizes="(max-width: 291px) 100vw, 291px" /></a></p>
 
 <p>I have successfully sequenced on 32-bit Windows 7 and run the package on 64-bit Windows.</p>
 
@@ -71,7 +60,7 @@
 
 <p>I am using the setup source for the Management Server (not the Streaming Server) and I have chosen to install only the Management Console (we don’t want to capture the Management Server or web service). I am installing into a folder on the Q: drive; however this isn’t a requirement – you can install to the default Program Files location if you like.</p>
 
-<p><a rel="attachment wp-att-2084" href="https://stealthpuppy.com/virtualisation/sequencing-the-app-v-management-console/attachment/appvmanagementconsoleinstaller/"><img class="size-full wp-image-2084" title="AppVManagementConsoleInstaller" src="https://stealthpuppy.com/media/2011/01/AppVManagementConsoleInstaller.png" alt="App-V Management Console install" width="504" height="382" srcset="https://stealthpuppy.com/media/2011/01/AppVManagementConsoleInstaller.png 504w, https://stealthpuppy.com/media/2011/01/AppVManagementConsoleInstaller-150x113.png 150w, https://stealthpuppy.com/media/2011/01/AppVManagementConsoleInstaller-300x227.png 300w" sizes="(max-width: 504px) 100vw, 504px" /></a></p>
+<p><a rel="attachment wp-att-2084" href=".com/virtualisation/sequencing-the-app-v-management-console/attachment/appvmanagementconsoleinstaller/"><img class="size-full wp-image-2084" title="AppVManagementConsoleInstaller" src=".com/media/2011/01/AppVManagementConsoleInstaller.png" alt="App-V Management Console install" width="504" height="382" srcset=".com/media/2011/01/AppVManagementConsoleInstaller.png 504w, .com/media/2011/01/AppVManagementConsoleInstaller-150x113.png 150w, .com/media/2011/01/AppVManagementConsoleInstaller-300x227.png 300w" sizes="(max-width: 504px) 100vw, 504px" /></a></p>
 
 <p>Setup requests a reboot when finished, but the Sequencer will handle the reboot automatically.</p>
 
@@ -112,7 +101,7 @@
 
 <p>When you start the virtualised Management Console the following error will be produced:</p>
 
-<p><a rel="attachment wp-att-2085" href="https://stealthpuppy.com/virtualisation/sequencing-the-app-v-management-console/attachment/apprequireselevation/"><img class="size-full wp-image-2085" title="AppRequiresElevation" src="https://stealthpuppy.com/media/2011/01/AppRequiresElevation.png" alt="The requested operation requires elevation. Error code: 4604EE8-1B401F2C-000002E4" width="501" height="276" srcset="https://stealthpuppy.com/media/2011/01/AppRequiresElevation.png 501w, https://stealthpuppy.com/media/2011/01/AppRequiresElevation-150x82.png 150w, https://stealthpuppy.com/media/2011/01/AppRequiresElevation-300x165.png 300w" sizes="(max-width: 501px) 100vw, 501px" /></a></p>
+<p><a rel="attachment wp-att-2085" href=".com/virtualisation/sequencing-the-app-v-management-console/attachment/apprequireselevation/"><img class="size-full wp-image-2085" title="AppRequiresElevation" src=".com/media/2011/01/AppRequiresElevation.png" alt="The requested operation requires elevation. Error code: 4604EE8-1B401F2C-000002E4" width="501" height="276" srcset=".com/media/2011/01/AppRequiresElevation.png 501w, .com/media/2011/01/AppRequiresElevation-150x82.png 150w, .com/media/2011/01/AppRequiresElevation-300x165.png 300w" sizes="(max-width: 501px) 100vw, 501px" /></a></p>
 
 <p>You can get around this issue three ways:</p>
 
@@ -132,11 +121,11 @@
 
 <p>However this works great for 32-bit Windows only, using this method on a 64-bit platform results in these errors:</p>
 
-<p><a rel="attachment wp-att-2086" href="https://stealthpuppy.com/virtualisation/sequencing-the-app-v-management-console/attachment/64bit32bitmmc2/"><img class="size-full wp-image-2086" title="64Bit32BitMMC2" src="https://stealthpuppy.com/media/2011/01/64Bit32BitMMC2.png" alt="An error occurred while starting the 64-bit MMC process. The 32-bit MMC process will run instead." width="480" height="171" srcset="https://stealthpuppy.com/media/2011/01/64Bit32BitMMC2.png 480w, https://stealthpuppy.com/media/2011/01/64Bit32BitMMC2-150x53.png 150w, https://stealthpuppy.com/media/2011/01/64Bit32BitMMC2-300x106.png 300w" sizes="(max-width: 480px) 100vw, 480px" /></a></p>
+<p><a rel="attachment wp-att-2086" href=".com/virtualisation/sequencing-the-app-v-management-console/attachment/64bit32bitmmc2/"><img class="size-full wp-image-2086" title="64Bit32BitMMC2" src=".com/media/2011/01/64Bit32BitMMC2.png" alt="An error occurred while starting the 64-bit MMC process. The 32-bit MMC process will run instead." width="480" height="171" srcset=".com/media/2011/01/64Bit32BitMMC2.png 480w, .com/media/2011/01/64Bit32BitMMC2-150x53.png 150w, .com/media/2011/01/64Bit32BitMMC2-300x106.png 300w" sizes="(max-width: 480px) 100vw, 480px" /></a></p>
 
 <p>Then:</p>
 
-<p><a rel="attachment wp-att-2083" href="https://stealthpuppy.com/virtualisation/sequencing-the-app-v-management-console/attachment/unabletocreatenewdocument2/"><img class="size-full wp-image-2083" title="UnableToCreateNewDocument2" src="https://stealthpuppy.com/media/2011/01/UnableToCreateNewDocument2.png" alt="Unable to create new document." width="291" height="171" srcset="https://stealthpuppy.com/media/2011/01/UnableToCreateNewDocument2.png 291w, https://stealthpuppy.com/media/2011/01/UnableToCreateNewDocument2-150x88.png 150w" sizes="(max-width: 291px) 100vw, 291px" /></a></p>
+<p><a rel="attachment wp-att-2083" href=".com/virtualisation/sequencing-the-app-v-management-console/attachment/unabletocreatenewdocument2/"><img class="size-full wp-image-2083" title="UnableToCreateNewDocument2" src=".com/media/2011/01/UnableToCreateNewDocument2.png" alt="Unable to create new document." width="291" height="171" srcset=".com/media/2011/01/UnableToCreateNewDocument2.png 291w, .com/media/2011/01/UnableToCreateNewDocument2-150x88.png 150w" sizes="(max-width: 291px) 100vw, 291px" /></a></p>
 
 <p>I haven’t found a root cause, but the issue looks to be related to the App-V client. When using the <a href="http://blogs.msdn.com/b/cjacks/archive/2009/09/13/how-to-run-applications-manifested-as-highestavailable-with-a-logon-script-without-elevation-for-members-of-the-administrators-group.aspx">RunAsInvoker</a> trick outside of the client, MMC works as expected.</p>
 
@@ -151,9 +140,7 @@
   </div><a class="u-url" href="/sequencing-the-app-v-management-console/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

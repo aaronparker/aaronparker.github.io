@@ -4,7 +4,7 @@ title: Automating the XenDesktop 7 Virtual Desktop Agent Installation
 date: 2013-06-28T17:26:58+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3385
+guid: https://stealthpuppy.com/?p=3385
 permalink: /automating-the-xendesktop-7-virtual-desktop-agent-installation/
 dsq_thread_id:
   - "1445599060"

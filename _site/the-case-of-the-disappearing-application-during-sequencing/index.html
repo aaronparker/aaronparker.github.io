@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,7 +31,7 @@
     <h1 class="post-title p-name" itemprop="name headline">The Case of the Disappearing Application during Sequencing</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2011-11-04T11:52:42+11:00" itemprop="datePublished">Nov 4, 2011
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
@@ -53,11 +42,11 @@
 
 <p>I tested this on a virtual machine running Windows 7 SP1 x86 and could see from browsing to the Google installation folder (C:\Program Files\Google\Chrome) that the Application sub-folder was being removed after the monitoring phase was complete. To work out which process was deleting the folder, I’ve used <a href="http://technet.microsoft.com/en-us/sysinternals/bb896645">Process Monitor</a>. To see what was going on, I’ve reset my VM back to a clean snapshot, started the App-V Sequencer and Process Monitor and set a filter in Process Monitor for <strong>Path</strong> beginning with <strong>C:\Program Files\Google\Chrome\Application</strong> and then re-started the sequencing process.</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorFilter" src="https://stealthpuppy.com/media/2011/11/ProcessMonitorFilter1.png" alt="ProcessMonitorFilter" width="639" height="370" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorFilter" src="/media/2011/11/ProcessMonitorFilter1.png" alt="ProcessMonitorFilter" width="639" height="370" border="0" /></p>
 
 <p>With this filter, I was able to see that the process that was deleting the folder is the Sequencer itself (SFTSequencer.exe). Click the screenshot for a larger view.</p>
 
-<p><a href="/media/2011/11/ProcessMonitorDeletes.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorDeletes" src="https://stealthpuppy.com/media/2011/11/ProcessMonitorDeletes_thumb.png" alt="ProcessMonitorDeletes" width="660" height="270" border="0" /></a></p>
+<p><a href="/media/2011/11/ProcessMonitorDeletes.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”ProcessMonitorDeletes” src=”/media/2011/11/ProcessMonitorDeletes_thumb.png” alt=”ProcessMonitorDeletes</a></p>
 
 <p>The next most obvious place to look then is the Sequencer log file, hopefully it will hold some information about why the folder is being deleted. To view the Sequencer log, browse to <strong>C:\Program Files\Microsoft Application Virtualization Sequencer\Logs</strong> and open <strong>sft-seq-log.txt</strong>.</p>
 
@@ -85,7 +74,7 @@
 
 <p>Going through the sequencing process again and running WhyReboot before ending monitoring, gives me an idea of why the reboot has been requested:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="WhyReboot" src="https://stealthpuppy.com/media/2011/11/WhyReboot1.png" alt="WhyReboot" width="609" height="381" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="WhyReboot" src="/media/2011/11/WhyReboot1.png" alt="WhyReboot" width="609" height="381" border="0" /></p>
 
 <p><strong>Note</strong>: I could also use <a href="http://technet.microsoft.com/en-us/sysinternals/bb897556">PendMoves</a> another Sysinternals tool to query this information as well.</p>
 
@@ -93,7 +82,7 @@
 
 <p>So what’s writing this entry to PendingFileRenameOperations and why does this only happen during sequencing? To find out, I’ve reached for Process Monitor again, but unfortunately I haven’t been able find which process is writing to the PendingFileRenameOperations value, as Process Monitor didn’t find any RegSetValue operations.</p>
 
-<p><a href="/media/2011/11/ProcessMonitorPendingFileRenameOperations.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorPendingFileRenameOperations" src="https://stealthpuppy.com/media/2011/11/ProcessMonitorPendingFileRenameOperations_thumb.png" alt="ProcessMonitorPendingFileRenameOperations" width="660" height="167" border="0" /></a></p>
+<p><a href="/media/2011/11/ProcessMonitorPendingFileRenameOperations.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”ProcessMonitorPendingFileRenameOperations” src=”/media/2011/11/ProcessMonitorPendingFileRenameOperations_thumb.png” alt=”ProcessMonitorPendingFileRenameOperations</a></p>
 
 <p>Circumstantial evidence points to SETUP.EXE, but without Process Monitor giving me more information I can’t say for sure. I do however, have a workaround that allow me to sequence Chrome – before finishing the monitoring phase, I clear the PendingFileRenameOperations data with this command:</p>
 
@@ -102,9 +91,7 @@
   </div><a class="u-url" href="/the-case-of-the-disappearing-application-during-sequencing/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

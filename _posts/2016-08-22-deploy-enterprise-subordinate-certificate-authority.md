@@ -4,7 +4,7 @@ title: Deploying an Enterprise Subordinate Certificate Authority
 date: 2016-08-22T00:49:16+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5075
+guid: https://stealthpuppy.com/?p=5075
 permalink: /deploy-enterprise-subordinate-certificate-authority/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

@@ -4,7 +4,7 @@ title: 'Hands off my gold image! – Video: Windows 8 zero-touch deployment'
 date: 2013-05-23T18:43:44+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3299
+guid: https://stealthpuppy/?p=3299
 permalink: /hands-off-my-gold-image-video-windows-8-zero-touch-deployment/
 dsq_thread_id:
   - "1310932232"

@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: What versions of Windows is App-V 5 supported on?'
 date: 2015-09-05T21:14:43+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4080
+guid: https://stealthpuppy.com/?p=4080
 permalink: /appv5-faq-what-versions-windows/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

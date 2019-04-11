@@ -4,7 +4,7 @@ title: Intune Company Portal for macOS Experience
 date: 2017-09-02T16:06:01+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5775
+guid: https://stealthpuppy/?p=5775
 permalink: /intune-company-portal-macos/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

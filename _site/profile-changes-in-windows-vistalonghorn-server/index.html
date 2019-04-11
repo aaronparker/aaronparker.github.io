@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,7 +31,7 @@
     <h1 class="post-title p-name" itemprop="name headline">Profile Changes in Windows Vista and Windows Server 2008 and beyond</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2006-08-25T06:08:00+10:00" itemprop="datePublished">Aug 25, 2006
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
@@ -51,35 +40,210 @@
 
 <p>The following table lists the old profile path and the corresponding new path under Windows Vista/Windows Server 2008:</p>
 
-<p>[table id=8 /]</p>
+<table>
+  <thead>
+    <tr>
+      <th>Old Path</th>
+      <th>New Path</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Documents and Settings</td>
+      <td>Users</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\Default User</td>
+      <td>Users\Default</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\All Users\Application Data</td>
+      <td>ProgramData</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\All Users\Start Menu</td>
+      <td>ProgramData\Microsoft\Windows\Start Menu</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\All Users\Templates</td>
+      <td>ProgramData\Microsoft\Windows\Templates</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\Local Settings\Application Data</td>
+      <td>Users{username}\AppData\Local</td>
+    </tr>
+    <tr>
+      <td>N/A</td>
+      <td>Users{username}\AppData\LocalLow</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\Application Data</td>
+      <td>Users{username}\AppData\Roaming</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\Cookies</td>
+      <td>Users{username}\AppData\Roaming\Microsoft\Windows\Cookies</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\NetHood</td>
+      <td>Users{username}\AppData\Roaming\Microsoft\Windows\Network Shortcuts</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\PrintHood</td>
+      <td>Users{username}\AppData\Roaming\Microsoft\Windows\Printer Shortcuts</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\Recent</td>
+      <td>Users{username}\AppData\Roaming\Microsoft\Windows\Recent</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\SendTo</td>
+      <td>Users{username}\AppData\Roaming\Microsoft\Windows\SendTo</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\Start Menu</td>
+      <td>Users{username}\AppData\Roaming\Microsoft\Windows\Start Menu</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\Templates</td>
+      <td>Users{username}\AppData\Roaming\Microsoft\Windows\Templates</td>
+    </tr>
+    <tr>
+      <td>N/A</td>
+      <td>Users{username}\Contacts</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\Desktop</td>
+      <td>Users{username}\Desktop</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\My Documents</td>
+      <td>Users{username}\Documents</td>
+    </tr>
+    <tr>
+      <td>N/A</td>
+      <td>Users{username}\Downloads</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\Favorites</td>
+      <td>Users{username}\Favorites</td>
+    </tr>
+    <tr>
+      <td>N/A</td>
+      <td>Users{username}\Links</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\My Documents\My Music</td>
+      <td>Users{username}\Music</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\My Documents\My Pictures</td>
+      <td>Users{username}\Pictures</td>
+    </tr>
+    <tr>
+      <td>N/A</td>
+      <td>Users{username}\Saved Games</td>
+    </tr>
+    <tr>
+      <td>N/A</td>
+      <td>Users{username}\Searches</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings{username}\My Documents\My Videos</td>
+      <td>Users{username}\Videos</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\All Users</td>
+      <td>Users\Public</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\All Users\Desktop</td>
+      <td>Users\Public\Desktop</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\All Users\Documents</td>
+      <td>Users\Public\Documents</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\All Users\Favorites</td>
+      <td>Users\Public\Favorites</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\All Users\Documents\My Music</td>
+      <td>Users\Public\Music</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\All Users\Documents\My Pictures</td>
+      <td>Users\Public\Pictures</td>
+    </tr>
+    <tr>
+      <td>Documents and Settings\All Users\Documents\My Videos</td>
+      <td>Users\Public\Videos</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Folders to take note of here are the folders in the All Users path. Many older applications that use out of date methods to resolve system folders, will resolve paths under \ProgramData when looking for common locations. For example the common desktop may be resolved as \ProgramData\Desktop, however this is actually a junction point for \Users\Public\Desktop. A DIR /A:H listing in \ProgramData folder reveals the following junction points:</p>
+<p>Folders to take note of here are the folders in the All Users path. Many older applications that use out of date methods to resolve system folders, will resolve paths under \ProgramData when looking for common locations. For example the common desktop may be resolved as <code class="highlighter-rouge">\ProgramData\Desktop</code>, however this is actually a junction point for <code class="highlighter-rouge">\Users\Public\Desktop</code>. A DIR /A:H listing in <code class="highlighter-rouge">\ProgramData</code> folder reveals the following junction points:</p>
 
-<p>[table id=9 /]</p>
+<table>
+  <thead>
+    <tr>
+      <th>Path</th>
+      <th>Points To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ProgramData\Application Data</td>
+      <td>ProgramData</td>
+    </tr>
+    <tr>
+      <td>ProgramData\Desktop</td>
+      <td>Users\Public\Desktop</td>
+    </tr>
+    <tr>
+      <td>ProgramData\Documents</td>
+      <td>Users\Public\Documents</td>
+    </tr>
+    <tr>
+      <td>ProgramData\Favorites</td>
+      <td>Users\Public\Favorites</td>
+    </tr>
+    <tr>
+      <td>ProgramData\Start Menu</td>
+      <td>ProgramData\Microsoft\Windows\Start Menu</td>
+    </tr>
+    <tr>
+      <td>ProgramData\Templates</td>
+      <td>ProgramData\Microsoft\Windows\Templates</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>These junction points should offer backward compatibility for older applications, however I have found that some of my installation scripts are not cleaning up shortcuts from the public desktop as expected.</p>
 
 <p>There are also differences in environment variables between the new version of Windows and the older versions. Windows Server 2003 and below define the following variables relating to profiles:</p>
 
-<p><code class="highlighter-rouge">ALLUSERSPROFILE=C:\Documents and Settings\All Users&lt;br /&gt;
-APPDATA=C:\Documents and Settings\aaron\Application Data&lt;br /&gt;
-HOMEPATH=\Documents and Settings\aaron&lt;br /&gt;
-TEMP=C:\DOCUME~1\aaron\LOCALS~1\Temp&lt;br /&gt;
-TMP=C:\DOCUME~1\aaron\LOCALS~1\Temp&lt;br /&gt;
-USERPROFILE=C:\Documents and Settings\aaron&lt;br /&gt;
-</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ALLUSERSPROFILE=C:\Documents and Settings\All Users
+APPDATA=C:\Documents and Settings\aaron\Application Data
+HOMEPATH=\Documents and Settings\aaron
+TEMP=C:\DOCUME~1\aaron\LOCALS~1\Temp
+TMP=C:\DOCUME~1\aaron\LOCALS~1\Temp
+USERPROFILE=C:\Documents and Settings\aaron
+</code></pre></div></div>
 
 <p>Windows Vista and Windows Server 2008 define the same variables while adding a couple more.</p>
 
-<p><code class="highlighter-rouge">ALLUSERSPROFILE=C:\ProgramData&lt;br /&gt;
-APPDATA=C:\Users\aaronp\AppData\Roaming&lt;br /&gt;
-HOMEPATH=\Users\aaronp&lt;br /&gt;
-LOCALAPPDATA=C:\Users\aaronp\AppData\Local&lt;br /&gt;
-ProgramData=C:\ProgramData&lt;br /&gt;
-PUBLIC=C:\Users\Public&lt;br /&gt;
-TEMP=C:\Users\aaronp\AppData\Local\Temp&lt;br /&gt;
-TMP=C:\Users\aaronp\AppData\Local\Temp&lt;br /&gt;
-USERPROFILE=C:\Users\aaronp</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ALLUSERSPROFILE=C:\ProgramData
+APPDATA=C:\Users\aaronp\AppData\Roaming
+HOMEPATH=\Users\aaronp
+LOCALAPPDATA=C:\Users\aaronp\AppData\Local
+ProgramData=C:\ProgramData
+PUBLIC=C:\Users\Public
+TEMP=C:\Users\aaronp\AppData\Local\Temp
+TMP=C:\Users\aaronp\AppData\Local\Temp
+USERPROFILE=C:\Users\aaronp
+</code></pre></div></div>
 
 <p>In practice, I’ve found that scripts that reference locations such as %ALLUSERSPROFILE%\Desktop, are not performing actions as intended and will have to be updated to use %PUBLIC% instead. Certainly something that requires more investigation.</p>
 
@@ -90,9 +254,7 @@ USERPROFILE=C:\Users\aaronp</code></p>
   </div><a class="u-url" href="/profile-changes-in-windows-vistalonghorn-server/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

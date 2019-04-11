@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,12 +31,12 @@
     <h1 class="post-title p-name" itemprop="name headline">Customise the Windows Vista Default User Profile</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2008-07-31T22:05:24+10:00" itemprop="datePublished">Jul 31, 2008
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><a href="/media/2008/07/userprofile.png"><img class="size-medium wp-image-619 alignleft" style="border: 0pt none;" title="userprofile" src="https://stealthpuppy.com/media/2008/07/userprofile.png" alt="" width="140" height="128" /></a>There are numerous ways to customise the default user profile in earlier versions of Windows, including:</p>
+    <p>There are numerous ways to customise the default user profile in earlier versions of Windows, including:</p>
 
 <ul>
   <li>Create a user account, configure the profile, then copy over the top of the local default profile or save a copy to your NETLOGON share;</li>
@@ -69,74 +58,75 @@
 
 <p>Be sure to set the CopyProfile value to False in the UNATTEND.XML, otherwise these changes will be overwritten. Here’s a script that performs those steps for me:</p>
 
-<p>[code]@ECHO OFF<br />
-REM —————————————————————————-<br />
-REM  Script configures the Default User Profile in a Windows Vista/2008 image<br />
-REM —————————————————————————-</p>
+<pre><code class="language-cmd">@ECHO OFF  
+REM ----------------------
+REM  Script configures the Default User Profile in a Windows Vista/2008 image  
+REM ----------------------
 
-<p>REM Mount the Windows image<br />
-IMAGEX /MOUNTRW “D:\install.wim” 1 D:\mount</p>
+REM Mount the Windows image  
+IMAGEX /MOUNTRW "D:\install.wim" 1 D:\mount
 
-<p>REM Load the default profile hive<br />
-REG LOAD HKU\Default D:\mount\Users\Default\NTUSER.DAT</p>
+REM Load the default profile hive  
+REG LOAD HKU\Default D:\mount\Users\Default\NTUSER.DAT
 
-<p>REM Configure the default user profile<br />
-REG ADD “HKU\Default\Control Panel\Sound” /v Beep /t REG_SZ /d NO /f<br />
-REG ADD “HKU\Default\Control Panel\Sound” /v ExtendedSounds /t REG_SZ /d NO /f<br />
-REG ADD “HKU\Default\Control Panel\Desktop” /v HungAppTimeout /t REG_SZ /d 5000 /f<br />
-REG ADD “HKU\Default\Control Panel\Desktop” /v AutoEndTasks /t REG_SZ /d 1 /f<br />
-REG ADD “HKU\Default\Control Panel\Desktop” /v WaitToKillAppTimeout /t REG_SZ /d 4000 /f<br />
-REG ADD “HKU\Default\Control Panel\Desktop” /v FontSmoothing /t REG_SZ /d 2 /f<br />
-REG ADD “HKU\Default\Control Panel\Desktop” /v FontSmoothingType /t REG_DWORD /d 2 /f<br />
-REG ADD “HKU\Default\Control Panel\Desktop” /v WallPaper /t REG_SZ /d “” /f<br />
-REG ADD “HKU\Default\Control Panel\Colors” /v Background /t REG_SZ /d “10 59 118” /f<br />
-REG ADD “HKU\Default\Console” /v QuickEdit /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Command Processor” /v CompletionChar /t REG_DWORD /d 9 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Command Processor” /v PathCompletionChar /t REG_DWORD /d 9 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\CTF\LangBar” /v ShowStatus /t REG_DWORD /d 3 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\CTF\LangBar” /v Label /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\CTF\LangBar” /v ExtraIconsOnMinimized /t REG_DWORD /d 0 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v SeparateProcess /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_ShowControlPanel /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_EnableDragDrop /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v StartMenuFavorites /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v StartMenuLogoff /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v StartMenuScrollPrograms /t REG_SZ /d “YES” /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v IntelliMenus /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_ShowHelp /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_ShowMyComputer /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_ShowMyDocs /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_ShowMyMusic /t REG_DWORD /d 0 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_ShowMyPics /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_ShowNetPlaces /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_ShowPrinters /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_ShowSetProgramAccessAndDefaults /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_ShowRecentDocs /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_AutoCascade /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_NotifyNewApps /t REG_DWORD /d 0 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_AdminToolsRoot /t REG_DWORD /d 0 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v StartMenuAdminTools /t REG_SZ /d “NO” /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced” /v Start_SortByName /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoComplete” /v “Append Completion” /t REG_SZ /d YES /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Internet Explorer\TabbedBrowsing” /v PopupsUseNewWindow /t REG_DWORD /d 0 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Internet Explorer\PhishingFilter” /v Enabled /t REG_DWORD /d 1 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Internet Explorer\Main” /v “Enable AutoImageResize” /t REG_SZ /d YES /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel” /v “{59031a47-3f72-44a7-89c5-5595fe6b30ee}” /t REG_DWORD /d 0 /f<br />
-REG ADD “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel” /v “{20D04FE0-3AEA-1069-A2D8-08002B30309D}” /t REG_DWORD /d 0 /f<br />
-REG ADD “HKU\Default\AppEvents\Schemes\Apps\Explorer\Navigating.Current” /ve /t REG_EXPAND_SZ /d “” /f<br />
-REG ADD “HKU\Default\Software\Microsoft\MediaPlayer\Setup\UserOptions” /v DesktopShortcut /d No /t REG_SZ /f<br />
-REG ADD “HKU\Default\Software\Microsoft\MediaPlayer\Setup\UserOptions” /v QuickLaunchShortcut /d /t REG_DWORD /f<br />
-REG ADD “HKU\Default\Software\Microsoft\MediaPlayer\Preferences” /v AcceptedPrivacyStatement /d 1 /t REG_DWORD /f<br />
-REG ADD “HKU\Default\Software\Microsoft\MediaPlayer\Preferences” /v FirstRun /d 0 /t REG_DWORD /f<br />
-REG ADD “HKU\Default\Software\Microsoft\MediaPlayer\Preferences” /v DisableMRU /d 1 /t REG_DWORD /f<br />
-REG ADD “HKU\Default\Software\Microsoft\MediaPlayer\Preferences” /v AutoCopyCD /d 0 /t REG_DWORD /f<br />
-REG DELETE “HKU\Default\Software\Microsoft\Windows\CurrentVersion\Run” /v Sidebar /f</p>
+REM Configure the default user profile  
+REG ADD "HKU\Default\Control Panel\Sound" /v Beep /t REG_SZ /d NO /f  
+REG ADD "HKU\Default\Control Panel\Sound" /v ExtendedSounds /t REG_SZ /d NO /f  
+REG ADD "HKU\Default\Control Panel\Desktop" /v HungAppTimeout /t REG_SZ /d 5000 /f  
+REG ADD "HKU\Default\Control Panel\Desktop" /v AutoEndTasks /t REG_SZ /d 1 /f  
+REG ADD "HKU\Default\Control Panel\Desktop" /v WaitToKillAppTimeout /t REG_SZ /d 4000 /f  
+REG ADD "HKU\Default\Control Panel\Desktop" /v FontSmoothing /t REG_SZ /d 2 /f  
+REG ADD "HKU\Default\Control Panel\Desktop" /v FontSmoothingType /t REG_DWORD /d 2 /f  
+REG ADD "HKU\Default\Control Panel\Desktop" /v WallPaper /t REG_SZ /d "" /f  
+REG ADD "HKU\Default\Control Panel\Colors" /v Background /t REG_SZ /d "10 59 118" /f  
+REG ADD "HKU\Default\Console" /v QuickEdit /t REG_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Command Processor" /v CompletionChar /t REG_DWORD /d 9 /f  
+REG ADD "HKU\Default\Software\Microsoft\Command Processor" /v PathCompletionChar /t REG_DWORD /d 9 /f  
+REG ADD "HKU\Default\Software\Microsoft\CTF\LangBar" /v ShowStatus /t REG_DWORD /d 3 /f  
+REG ADD "HKU\Default\Software\Microsoft\CTF\LangBar" /v Label /t REG_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\CTF\LangBar" /v ExtraIconsOnMinimized /t REG_DWORD /d 0 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v SeparateProcess /t REG_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_ShowControlPanel /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_EnableDragDrop /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v StartMenuFavorites /t REG_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v StartMenuLogoff /t REG_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v StartMenuScrollPrograms /t REG_SZ /d "YES" /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v IntelliMenus /t REG_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_ShowHelp /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_ShowMyComputer /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_ShowMyDocs /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_ShowMyMusic /t REG\_DWORD /d 0 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_ShowMyPics /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_ShowNetPlaces /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_ShowPrinters /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_ShowSetProgramAccessAndDefaults /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_ShowRecentDocs /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_AutoCascade /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_NotifyNewApps /t REG\_DWORD /d 0 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_AdminToolsRoot /t REG\_DWORD /d 0 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v StartMenuAdminTools /t REG_SZ /d "NO" /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start\_SortByName /t REG\_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoComplete" /v "Append Completion" /t REG_SZ /d YES /f  
+REG ADD "HKU\Default\Software\Microsoft\Internet Explorer\TabbedBrowsing" /v PopupsUseNewWindow /t REG_DWORD /d 0 /f  
+REG ADD "HKU\Default\Software\Microsoft\Internet Explorer\PhishingFilter" /v Enabled /t REG_DWORD /d 1 /f  
+REG ADD "HKU\Default\Software\Microsoft\Internet Explorer\Main" /v "Enable AutoImageResize" /t REG_SZ /d YES /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /v "{59031a47-3f72-44a7-89c5-5595fe6b30ee}" /t REG_DWORD /d 0 /f  
+REG ADD "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /v "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" /t REG_DWORD /d 0 /f  
+REG ADD "HKU\Default\AppEvents\Schemes\Apps\Explorer\Navigating\.Current" /ve /t REG\_EXPAND\_SZ /d "" /f  
+REG ADD "HKU\Default\Software\Microsoft\MediaPlayer\Setup\UserOptions" /v DesktopShortcut /d No /t REG_SZ /f  
+REG ADD "HKU\Default\Software\Microsoft\MediaPlayer\Setup\UserOptions" /v QuickLaunchShortcut /d /t REG_DWORD /f  
+REG ADD "HKU\Default\Software\Microsoft\MediaPlayer\Preferences" /v AcceptedPrivacyStatement /d 1 /t REG_DWORD /f  
+REG ADD "HKU\Default\Software\Microsoft\MediaPlayer\Preferences" /v FirstRun /d 0 /t REG_DWORD /f  
+REG ADD "HKU\Default\Software\Microsoft\MediaPlayer\Preferences" /v DisableMRU /d 1 /t REG_DWORD /f  
+REG ADD "HKU\Default\Software\Microsoft\MediaPlayer\Preferences" /v AutoCopyCD /d 0 /t REG_DWORD /f  
+REG DELETE "HKU\Default\Software\Microsoft\Windows\CurrentVersion\Run" /v Sidebar /f
 
-<p>REM Unload the default profile hive<br />
-REG UNLOAD HKU\Default</p>
+REM Unload the default profile hive  
+REG UNLOAD HKU\Default
 
-<p>REM Unmount the Windows image and commit changes<br />
-IMAGEX /UNMOUNT /COMMIT D:\mount[/code]</p>
+REM Unmount the Windows image and commit changes  
+IMAGEX /UNMOUNT /COMMIT D:\mount
+</code></pre>
 
 <p>As you can see I’m adding registry entries that will configure the user environment which does mean that there’s a bit of work required to find them in the first place, but it does allow me to document every change to the profile, so I think the effort is worth it.</p>
 
@@ -164,12 +154,11 @@ IMAGEX /UNMOUNT /COMMIT D:\mount[/code]</p>
   <li><a href="http://www.microsoft.com/technet/windowsvista/library/fb3681b2-da39-4944-93ad-dd3b6e8ca4dc.mspx">Managing Roaming User Data Deployment Guide</a></li>
 </ul>
 
+
   </div><a class="u-url" href="/customise-the-windows-vista-default-user-profile/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

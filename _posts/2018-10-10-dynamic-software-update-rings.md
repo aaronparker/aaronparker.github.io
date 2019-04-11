@@ -4,7 +4,7 @@ title: Dynamic Software Update Rings in Microsoft Intune
 date: 2018-10-10T13:27:43+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=6189
+guid: https://stealthpuppy.com/?p=6189
 permalink: /dynamic-software-update-rings/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

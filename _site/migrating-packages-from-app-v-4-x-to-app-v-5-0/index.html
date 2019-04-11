@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,18 +31,18 @@
     <h1 class="post-title p-name" itemprop="name headline">Migrating packages from App-V 4.x to App-V 5.0</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2012-04-06T18:50:26+10:00" itemprop="datePublished">Apr 6, 2012
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img class="alignleft size-full wp-image-2178" title="AppV46SequencerNew.png" src="https://stealthpuppy.com/media/2011/03/AppV46SequencerNew.png" alt="" width="128" height="123" />The App-V 5.0 Sequencer includes a couple of PowerShell modules and for converting packages is the only interface to use. Here’s how to automate the migration of packages from the old 4.x format to the new App-V 5.0 format.</p>
+    <p><img class="alignleft size-full wp-image-2178" title="AppV46SequencerNew.png" src="/media/2011/03/AppV46SequencerNew.png" alt="" width="128" height="123" />The App-V 5.0 Sequencer includes a couple of PowerShell modules and for converting packages is the only interface to use. Here’s how to automate the migration of packages from the old 4.x format to the new App-V 5.0 format.</p>
 
 <p>To perform a migration of packages, I’ve setup a Windows 7 virtual machine for hosting the App-V 5.0 Sequencer. This virtual machine is configured in exactly the same way that I’ve been configuring Windows for sequencing with App-V 4.x with the exception of a Q drive as this is no longer needed. For more information on how I recommend configuring a virtual machine, see this article: <a href="/virtualisation/delivering-office-with-app-v-sequencer-recommendations/">Delivering Office with App-V – Sequencer Recommendations &amp; Best Practices</a>.</p>
 
 <p>Installing the App-V 5.0 Sequencer is very straight-forward process. Start the Sequencer setup from <em>appv_sequencer_setup.exe</em>:</p>
 
-<p><img class="alignnone size-full wp-image-2887" title="SequencerSetup" src="https://stealthpuppy.com/media/2012/04/SequencerSetup.png" alt="" width="660" height="461" srcset="https://stealthpuppy.com/media/2012/04/SequencerSetup.png 660w, https://stealthpuppy.com/media/2012/04/SequencerSetup-150x104.png 150w, https://stealthpuppy.com/media/2012/04/SequencerSetup-300x209.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
+<p><img class="alignnone size-full wp-image-2887" title="SequencerSetup" src="/media/2012/04/SequencerSetup.png" alt="" width="660" height="461" srcset="/media/2012/04/SequencerSetup.png 660w, /media/2012/04/SequencerSetup-150x104.png 150w, /media/2012/04/SequencerSetup-300x209.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
 
 <p>You’ll need to accept the license agreement and join the Customer Experience Improvement Program if you wish to to so. Once the Sequencer is installed, two PowerShell modules are available – AppVPkgConverter and AppVSequencer. AppVPkgConverter is used for converting legacy packages to the new format.</p>
 
@@ -65,13 +54,13 @@ Get-Command -Module AppVPkgConverter[/code]</p>
 
 <p>Which looks like this:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Import AppVPkgConverter" src="https://stealthpuppy.com/media/2012/04/Screen-Shot-2012-04-06-at-13.40.15.png" alt="Import AppVPkgConverter" width="660" height="323" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Import AppVPkgConverter" src="/media/2012/04/Screen-Shot-2012-04-06-at-13.40.15.png" alt="Import AppVPkgConverter" width="660" height="323" border="0" /></p>
 
 <p>The AppVPkgConverter module has two commands – <em>ConvertFrom-AppvLegacyPackage</em> and <em>Test-AppvLegacyPackage</em>.</p>
 
 <p>In my test environment, I have a number of legacy packages that I’m going to convert. I have 22 packages, totalling 4.5Gb:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Packages" src="https://stealthpuppy.com/media/2012/04/Packages.png" alt="Packages" width="660" height="551" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Packages" src="/media/2012/04/Packages.png" alt="Packages" width="660" height="551" border="0" /></p>
 
 <p>To test these packages before conversion, I can run the following command against a legacy package:</p>
 
@@ -79,7 +68,7 @@ Get-Command -Module AppVPkgConverter[/code]</p>
 
 <p>One of my packages results in a warning when running Test-AppvLegacyPackage against it, in this case an issue that won’t prevent conversion:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Screen Shot 2012-04-06 at 13.16.27" src="https://stealthpuppy.com/media/2012/04/Screen-Shot-2012-04-06-at-13.16.271.png" alt="Screen Shot 2012-04-06 at 13.16.27" width="660" height="273" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Screen Shot 2012-04-06 at 13.16.27" src="/media/2012/04/Screen-Shot-2012-04-06-at-13.16.271.png" alt="Screen Shot 2012-04-06 at 13.16.27" width="660" height="273" border="0" /></p>
 
 <p>To test all of my packages and convert those without errors (but include those with warnings), I can use the following example code:</p>
 
@@ -89,7 +78,7 @@ Get-ChildItem -Path $Source | Test-AppvLegacyPackage | Where-Object {$_.Errors.C
 
 <p>This will result in the packages being converted into the new format in the destination folder. In this example, the conversion process took a little over an hour.</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Screen Shot 2012-04-06 at 18.05.25" src="https://stealthpuppy.com/media/2012/04/Screen-Shot-2012-04-06-at-18.05.25.png" alt="Screen Shot 2012-04-06 at 18.05.25" width="660" height="408" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Screen Shot 2012-04-06 at 18.05.25" src="/media/2012/04/Screen-Shot-2012-04-06-at-18.05.25.png" alt="Screen Shot 2012-04-06 at 18.05.25" width="660" height="408" border="0" /></p>
 
 <p>To make this a little cleaner I’ve also added some code to move the converted packages into their own folder, so that each folder contains the APPV, MSI and XML files for a single package. Here’s the full code listing:</p>
 
@@ -115,9 +104,7 @@ For ($n=0; $n -le $PackageItems.Count -1; $n++) { Move-Item $PackageItems[$n].Fu
   </div><a class="u-url" href="/migrating-packages-from-app-v-4-x-to-app-v-5-0/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

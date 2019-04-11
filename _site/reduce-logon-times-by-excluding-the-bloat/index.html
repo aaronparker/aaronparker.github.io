@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,20 +31,20 @@
     <h1 class="post-title p-name" itemprop="name headline">Reduce logon times by excluding the bloat</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2010-04-08T20:00:01+10:00" itemprop="datePublished">Apr 8, 2010
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
     <p>Profile bloat – we’ve all seen it. Many applications, and even Windows itself, can store files in the most inappropriate places within the user profile. For example, here’s just part of what the Vodafone Mobile Connect application stores within the roaming portion of my profile:</p>
 
-<p><a href="/media/2010/04/VodafoneMobileConnectAppData.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="VodafoneMobileConnectAppData" border="0" alt="VodafoneMobileConnectAppData" src="https://stealthpuppy.com/media/2010/04/VodafoneMobileConnectAppData_thumb.png" width="660" height="408" /></a></p>
+<p><img src="/media/2010/04/VodafoneMobileConnectAppData.png" alt="VodafoneMobileConnectAppData" /></p>
 
 <p>Yes that’s <strong>37.3</strong>Mb of logs. Handy.</p>
 
 <p>Here’s iTunes storing <strong>161</strong>Mb in <strong>3295</strong> files in AppData\Roaming – imagine waiting for that to copy at logon.</p>
 
-<p><a href="/media/2010/04/iTunesBackupAppData.png"><img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="iTunesBackupAppData" border="0" alt="iTunesBackupAppData" src="https://stealthpuppy.com/media/2010/04/iTunesBackupAppData_thumb.png" width="660" height="381" /></a></p>
+<p><img src="/media/2010/04/iTunesBackupAppData.png" alt="iTunesBackupAppData" /></p>
 
 <p>I’ve been spending some time with some of the user profile virtualisation (or <em>user virtualisation</em> / <em>user environment management</em> / <em>user workspace virtualisation</em> ) products lately and have started to compile a list of profile folders that I’ve needed to exclude from being managed.</p>
 
@@ -63,28 +52,196 @@
 
 <p>Most of these products are very easy to install and configure and for the most part are ‘fire and forget’; however adding some exclusions is a simple way to improve logon and logoff times by reducing the amount of managed data.</p>
 
-<h3 id="folder-exclusions">Folder Exclusions</h3>
+<h2 id="folder-exclusions">Folder Exclusions</h2>
 
-<p>The following tables list a selection of folders from within the user profile (all relative to %USERPROFILE%) that should be considered for exclusion.</p>
+<p>The following tables list a selection of folders from within the user profile (all relative to <code class="highlighter-rouge">%USERPROFILE%</code>) that should be considered for exclusion.</p>
 
 <p>First up, here’s a list of the default user folders for Windows Vista and above, that in most cases would be redirected from the user profile to a network location:</p>
 
-<p>[table id=16 /]</p>
+<table>
+  <thead>
+    <tr>
+      <th>Folder</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Contacts</td>
+      <td>Contacts folder (depreciated in Windows 7?)</td>
+    </tr>
+    <tr>
+      <td>Desktop</td>
+      <td>Desktop folder; usually redirected</td>
+    </tr>
+    <tr>
+      <td>Documents</td>
+      <td>Documents folder; usually redirected</td>
+    </tr>
+    <tr>
+      <td>Downloads</td>
+      <td>Downloads folder</td>
+    </tr>
+    <tr>
+      <td>Favorites</td>
+      <td>Internet Explorer favourites; usually redirected</td>
+    </tr>
+    <tr>
+      <td>Links</td>
+      <td>Windows Explorer favourites; usually redirected</td>
+    </tr>
+    <tr>
+      <td>Music</td>
+      <td>Music folder; usually redirected</td>
+    </tr>
+    <tr>
+      <td>Pictures</td>
+      <td>Pictures folder; usually redirected</td>
+    </tr>
+    <tr>
+      <td>Saved Games</td>
+      <td>Games saves</td>
+    </tr>
+    <tr>
+      <td>Searches</td>
+      <td>Windows Explorer custom searches; usually redirected</td>
+    </tr>
+    <tr>
+      <td>Videos</td>
+      <td>Videos folder; usually redirected</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>If you are using folder redirection, you may not need to add these to your exclusion list; however if folder redirection did not apply then excluding these from the user profile will prevent them from becoming managed (potentially managing very large amounts of data).</p>
 
 <p>Next is a list of folders from various applications that either store large files or many small files that will impact on logon and logoff times:</p>
 
-<p>[table id=17 /]</p>
+<table>
+  <thead>
+    <tr>
+      <th>Folder</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>.VirtualBox</td>
+      <td>Sun VirtualBox; Default configuration and storage folder</td>
+    </tr>
+    <tr>
+      <td>Tracing</td>
+      <td>Windows Live Messenger, Office Communicator; tracing logs. Info how to change that location <a href="http://stealthpuppy.com/windows/keeping-the-windows-vista-user-folder-clean">here</a></td>
+    </tr>
+    <tr>
+      <td>Podcasts</td>
+      <td>Zune; Podcasts folder</td>
+    </tr>
+    <tr>
+      <td>Virtual Machines</td>
+      <td>Windows Virtual PC; default configuration and storage folder</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Apple Computer\MobileSync</td>
+      <td>Apple iTunes; Folder used to store device backups</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Apple Computer\Logs</td>
+      <td>Apple iTunes; Stores device logs</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Apple Computer\iTunes\iPhone Software Updates</td>
+      <td>Apple iTunes; Stores full images of the iPhone OS</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Microsoft Office\Live Meeting 8</td>
+      <td>Microsoft Live Meeting; default installation folder</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Microsoft Shared\LiveMeeting Shared</td>
+      <td>Microsoft Live Meeting; shared folder</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Microsoft\XDE</td>
+      <td>Microsoft Visual Studio; Windows Mobile 7 emulator images</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Macromedia\Flash Player\macromedia.com\support\flashplayer\sys</td>
+      <td>Adobe Flash; Cookies and settings</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Macromedia\Flash Player#SharedObjects</td>
+      <td>Adobe Flash; Cookies</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Adobe\Flash Player\AssetCache</td>
+      <td>Adobe Flash; cache folder</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Vodafone\Vodafone Mobile Connect\Log</td>
+      <td>Vodafone Mobile Connect</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Microsoft\Windows\Recent</td>
+      <td>Windows; recent files and folders; lots of small files can increase logon/logoff times</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Microsoft\Windows\Start Menu</td>
+      <td>Windows; personal Start Menu; if applications are managed this folder could be excluded</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\SoftGrid Client\Icon Cache</td>
+      <td>App-V; Icon cache for shortcuts. If using App-V server this will be re-populated</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Juniper Networks\Juniper Citrix Services Client</td>
+      <td>Juniper Networks; Citrix ICA client binaries</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Juniper Networks\Setup Client</td>
+      <td>Juniper Networks; Setup client binaries</td>
+    </tr>
+    <tr>
+      <td>AppData\Local</td>
+      <td>Various; Local application data (i.e. non-roaming); should be excluded by default</td>
+    </tr>
+    <tr>
+      <td>AppData\LocalLow</td>
+      <td>Various; Local application data for low integrity applications; should be excluded by default</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\MetroTwit\User_Images</td>
+      <td>MetroTwit user images cache</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Dropbox</td>
+      <td>DropBox install folder</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Microsoft\Office\Recent</td>
+      <td>Shortcuts to recent files edited in Microsoft Office</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Mozilla\Firefox\Crash Reports</td>
+      <td>Firefox Crash Reports</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\McAfee\Common Framework</td>
+      <td>Various McAfee apps including VirusScan. Logs files and others</td>
+    </tr>
+    <tr>
+      <td>AppData\Roaming\Spotify\Gracenote</td>
+      <td>Gracenote SDK DLLs used by Spotify</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>If you have any additional folders to exclude, let me know and I’ll add them to the list.</p>
 
   </div><a class="u-url" href="/reduce-logon-times-by-excluding-the-bloat/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

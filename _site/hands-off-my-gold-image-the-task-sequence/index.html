@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,7 +31,7 @@
     <h1 class="post-title p-name" itemprop="name headline">Hands off my gold image - The Task Sequence</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2012-11-15T17:30:45+11:00" itemprop="datePublished">Nov 15, 2012
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
@@ -67,15 +56,15 @@
 
 <p>Re-open the task sequence properties and you should see something like this:</p>
 
-<p><a href="/media/2012/11/XenApp-PVS-TaskSequence-Final.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="XenApp-PVS-TaskSequence-Final" src="https://stealthpuppy.com/media/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png" alt="XenApp-PVS-TaskSequence-Final" width="660" height="337" border="0" /></a></p>
+<p><a href="/media/2012/11/XenApp-PVS-TaskSequence-Final.png">&lt;img style=”background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;” title=”XenApp-PVS-TaskSequence-Final” src=”/media/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png” alt=”XenApp-PVS-TaskSequence-Final</a></p>
 
 <p>Importing the supplied pre-configured task sequence into your own Deployment Share, will result in some errors because the task sequence will reference applications and operating systems that either don’t exist in your Deployment Share or have different names.</p>
 
-<p><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-Errors" src="https://stealthpuppy.com/media/2012/11/MDT-TS-Errors.png" alt="MDT-TS-Errors" width="416" height="152" border="0" /></p>
+<p><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-Errors" src="/media/2012/11/MDT-TS-Errors.png" alt="MDT-TS-Errors" width="416" height="152" border="0" /></p>
 
 <p>For example, after I’ve imported this task sequence, I need to fix the reference to the Windows Server 2008 R2 SP1 source files:</p>
 
-<p><a href="/media/2012/11/MDT-TS-FixOS.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-FixOS" src="https://stealthpuppy.com/media/2012/11/MDT-TS-FixOS_thumb.png" alt="MDT-TS-FixOS" width="660" height="325" border="0" /></a></p>
+<p><a href="/media/2012/11/MDT-TS-FixOS.png">&lt;img style=”background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;” title=”MDT-TS-FixOS” src=”/media/2012/11/MDT-TS-FixOS_thumb.png” alt=”MDT-TS-FixOS</a></p>
 
 <p>The download also includes the scripts/applications referenced by the task sequence, so you’ll need to ensure they exist in your Deployment Share before fixing the task sequence.</p>
 
@@ -116,7 +105,7 @@
   <li><a href="http://technet.microsoft.com/en-us/library/cc748990(v=ws.10).aspx">oobeSystem</a></li>
 </ul>
 
-<p><a href="/media/2012/11/unattend-xml.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="unattend-xml" src="https://stealthpuppy.com/media/2012/11/unattend-xml_thumb.png" alt="unattend-xml" width="660" height="365" border="0" /></a></p>
+<p><a href="/media/2012/11/unattend-xml.png">&lt;img style=”background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;” title=”unattend-xml” src=”/media/2012/11/unattend-xml_thumb.png” alt=”unattend-xml</a></p>
 
 <p>Together the task sequence and unattend.xml create what should be a fairly clean (and importantly, repeatable) deployment of a XenApp server.</p>
 
@@ -127,9 +116,7 @@
   </div><a class="u-url" href="/hands-off-my-gold-image-the-task-sequence/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

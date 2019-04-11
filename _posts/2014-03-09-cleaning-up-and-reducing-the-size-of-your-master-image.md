@@ -4,7 +4,7 @@ title: Cleaning up and Reducing the Size of your Master Image
 date: 2014-03-09T12:20:53+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3583
+guid: https://stealthpuppy.com/?p=3583
 permalink: /cleaning-up-and-reducing-the-size-of-your-master-image/
 dsq_thread_id:
   - "2395221684"

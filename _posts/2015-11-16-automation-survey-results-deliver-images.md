@@ -4,7 +4,7 @@ title: 'OS Automation Survey Results - What Solution is Used to Deliver Images?'
 date: 2015-11-16T18:21:20+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=4203
+guid: https://stealthpuppy/?p=4203
 permalink: /automation-survey-results-deliver-images/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

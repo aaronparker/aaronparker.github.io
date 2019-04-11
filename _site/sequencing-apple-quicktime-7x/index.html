@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,12 +31,12 @@
     <h1 class="post-title p-name" itemprop="name headline">Virtualising Apple QuickTime 7.x</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2008-02-04T00:00:44+11:00" itemprop="datePublished">Feb 4, 2008
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><em><img style="margin: 0px 10px 10px 0px; display: inline; border: 0px;" title="QuickTime App-V box" src="https://stealthpuppy.com/media/2010/05/QuickTime011.png" border="0" alt="QuickTime App-V box" width="149" height="145" align="left" /> Updated 04/05/2010</em></p>
+    <p><em><img style="margin: 0px 10px 10px 0px; display: inline; border: 0px;" title="QuickTime App-V box" src=".com/media/2010/05/QuickTime011.png" border="0" alt="QuickTime App-V box" width="149" height="145" align="left" /> Updated 04/05/2010</em></p>
 
 <p>Here’s how to create a custom Apple QuickTime 7.x installation for virtualisation. This post specifically deals with virtualising QuickTime with Microsoft App-V, but the general process should be similar for any application virtualisation product.</p>
 
@@ -78,7 +67,7 @@
 
 <p>Download the QuickTime installer (without iTunes), available from the <a href="http://www.apple.com/quicktime/download/">Apple web site</a> (7.6.6 at the time of writing). Extract this file to obtain the included Windows Installer files.</p>
 
-<p><img style="display: inline; border: 0px;" title="Extracted QuickTime installer" src="https://stealthpuppy.com/media/2010/05/QuickTime02.png" border="0" alt="Extracted QuickTime installer" width="660" height="230" /></p>
+<p><img style="display: inline; border: 0px;" title="Extracted QuickTime installer" src=".com/media/2010/05/QuickTime02.png" border="0" alt="Extracted QuickTime installer" width="660" height="230" /></p>
 
 <p>Automating the installation of QuickTime is very simple once you know how. An excellent source for finding that information is at <a href="http://www.appdeploy.com/packages/detail.asp?id=520">AppDeploy.com</a>. The installation script I have created does not use custom transforms and will perform the following basic steps:</p>
 
@@ -103,23 +92,23 @@
 
 <p>File type associations – don’t forget to prevent QuickTime from attempting to re-associate file types at launch. Selecting Yes here, will capture the default file types.</p>
 
-<p><img style="display: inline; border: 0px;" title="QuickTime file type associate" src="https://stealthpuppy.com/media/2010/05/QuickTime03.png" border="0" alt="QuickTime file type associate" width="429" height="160" /></p>
+<p><img style="display: inline; border: 0px;" title="QuickTime file type associate" src=".com/media/2010/05/QuickTime03.png" border="0" alt="QuickTime file type associate" width="429" height="160" /></p>
 
 <p>When the player starts, open <em>Edit / Preferences / Player Preferences</em> and prevent the Content Guide from displaying at application start.</p>
 
-<p><img style="display: inline; border: 0px;" title="QuickTime Player Preferences" src="https://stealthpuppy.com/media/2010/05/QuickTime04.png" border="0" alt="QuickTime Player Preferences" width="390" height="486" /></p>
+<p><img style="display: inline; border: 0px;" title="QuickTime Player Preferences" src=".com/media/2010/05/QuickTime04.png" border="0" alt="QuickTime Player Preferences" width="390" height="486" /></p>
 
 <p>Open <em>Edit / Preferences / QuickTime Preferences</em> to star the QuickTime Control Panel. You may want to prevent movies from playing automatically. Useful for the HD videos that may take some time to download.</p>
 
-<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Browser" src="https://stealthpuppy.com/media/2010/05/QuickTime05.png" border="0" alt="QuickTime Preferences Browser" width="426" height="564" /></p>
+<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Browser" src=".com/media/2010/05/QuickTime05.png" border="0" alt="QuickTime Preferences Browser" width="426" height="564" /></p>
 
 <p>Prevent QuickTime from checking for updates on launch. When virtualising it would also be useful to prevent access to this control with a 3rd party tool such as AppSense Environment Manager (or hack the DLL with <a href="http://www.wilsonc.demon.co.uk/d10resourceeditor.htm">Resource Explorer</a> yourself).</p>
 
-<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Update" src="https://stealthpuppy.com/media/2010/05/QuickTime06.png" border="0" alt="QuickTime Preferences Update" width="426" height="564" /></p>
+<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Update" src=".com/media/2010/05/QuickTime06.png" border="0" alt="QuickTime Preferences Update" width="426" height="564" /></p>
 
 <p>The QuickTime notification area icon should be disabled by default, but check that here:</p>
 
-<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Advanced" src="https://stealthpuppy.com/media/2010/05/QuickTime07.png" border="0" alt="QuickTime Preferences Advanced" width="426" height="564" /></p>
+<p><img style="display: inline; border: 0px;" title="QuickTime Preferences Advanced" src=".com/media/2010/05/QuickTime07.png" border="0" alt="QuickTime Preferences Advanced" width="426" height="564" /></p>
 
 <p>If you configure QuickTime via a standard installation, you can automate this process by copying the preferences files to the correct locations during installation.</p>
 
@@ -187,9 +176,7 @@
   </div><a class="u-url" href="/sequencing-apple-quicktime-7x/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

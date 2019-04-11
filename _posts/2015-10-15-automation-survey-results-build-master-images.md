@@ -4,7 +4,7 @@ title: 'OS Automation Survey Results - How Do You Build Master Images?'
 date: 2015-10-15T22:31:25+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=4171
+guid: https://stealthpuppy/?p=4171
 permalink: /automation-survey-results-build-master-images/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

@@ -4,7 +4,7 @@ title: Hands off my gold image! A recap from Citrix Synergy 2013
 date: 2013-05-31T14:30:56+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3321
+guid: https://stealthpuppy.com/?p=3321
 permalink: /hands-off-my-gold-image-a-recap-from-citrix-synergy-2013/
 dsq_thread_id:
   - "1343814052"

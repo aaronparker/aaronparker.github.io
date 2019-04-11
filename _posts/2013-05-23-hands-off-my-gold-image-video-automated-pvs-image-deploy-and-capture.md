@@ -4,7 +4,7 @@ title: 'Hands off my gold image! - Video: automated PVS image deploy and capture
 date: 2013-05-23T18:26:02+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3293
+guid: https://stealthpuppy.com/?p=3293
 permalink: /hands-off-my-gold-image-video-automated-pvs-image-deploy-and-capture/
 dsq_thread_id:
   - "1310877893"

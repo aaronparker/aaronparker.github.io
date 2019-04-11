@@ -4,7 +4,7 @@ title: "Retrieving a VM's UUID from Hyper-V"
 date: 2014-08-18T12:15:13+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3642
+guid: https://stealthpuppy.com/?p=3642
 permalink: /retrieving-a-vms-uuid-from-hyper-v/
 dsq_thread_id:
   - "2937041857"

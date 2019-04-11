@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,12 +31,12 @@
     <h1 class="post-title p-name" itemprop="name headline">App-V FAQ: How do I get an application into the App-V bubble for troubleshooting?</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2010-09-09T11:00:00+10:00" itemprop="datePublished">Sep 9, 2010
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img style="margin: 0px 0px 5px 10px; display: inline;" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />There are instances in which you will need to troubleshoot applications running in the App-V bubble (or the virtualised environment). Although applications delivered by App-V are running locally, they are separated from other applications and the operating system by the App-V client (the feature known as the <a href="http://blogs.technet.com/b/appv/archive/2007/08/02/inside-the-grid-part-1.aspx">SystemGuard</a>, although usually referred to as the bubble).</p>
+    <p><img style="margin: 0px 0px 5px 10px; display: inline;" src=".com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />There are instances in which you will need to troubleshoot applications running in the App-V bubble (or the virtualised environment). Although applications delivered by App-V are running locally, they are separated from other applications and the operating system by the App-V client (the feature known as the <a href="http://blogs.technet.com/b/appv/archive/2007/08/02/inside-the-grid-part-1.aspx">SystemGuard</a>, although usually referred to as the bubble).</p>
 
 <p>This poses some challenges – how do you use troubleshooting tools such as <a href="http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx">Process Monitor</a> if it can’t see the application? To do this you will need to launch a Command Prompt into the bubble.</p>
 
@@ -71,7 +60,7 @@
 
 <p>This will return the list of applications for the current user context (or all of the applications if you run the command as an administrator). Don’t forget the /SHORT switch otherwise you’ll get a lot more information that you need. Use SFTTRAY /? to see the complete list of switches.</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="CommandPrompt-LaunchAppV" src="https://stealthpuppy.com/media/2010/09/CommandPromptLaunchAppV_thumb.png" border="0" alt="SFTMIME and SFTTRAY commands to launch an alternate process" width="660" height="263" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="CommandPrompt-LaunchAppV" src=".com/media/2010/09/CommandPromptLaunchAppV_thumb.png" border="0" alt="SFTMIME and SFTTRAY commands to launch an alternate process" width="660" height="263" /></p>
 
 <p>To launch an alternate executable, copy the application name as listed and use the SFTTRAY command like this:</p>
 
@@ -85,11 +74,11 @@
 
 <p>ACDC is my preferred troubleshooting tool, which gives you a plethora of options for managing applications with the ability to launch a tool in the bubble of a specific application:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ACDC-RunCommandPrompt" src="https://stealthpuppy.com/media/2010/09/ACDCRunCommandPrompt_thumb.png" border="0" alt="ACDC-RunCommandPrompt" width="660" height="393" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ACDC-RunCommandPrompt" src=".com/media/2010/09/ACDCRunCommandPrompt_thumb.png" border="0" alt="ACDC-RunCommandPrompt" width="660" height="393" /></p>
 
 <p>And here’s SoftBar in action, which can do the same type of thing:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="va_menu" src="https://stealthpuppy.com/media/2010/09/va_menu.jpg" border="0" alt="va_menu" width="631" height="263" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="va_menu" src=".com/media/2010/09/va_menu.jpg" border="0" alt="va_menu" width="631" height="263" /></p>
 
 <p>Both tools allow you to extend the launch menu with additional executables.</p>
 
@@ -104,9 +93,7 @@
   </div><a class="u-url" href="/app-v-faq-27-how-do-i-get-an-application-into-the-app-v-bubble-for-troubleshooting/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

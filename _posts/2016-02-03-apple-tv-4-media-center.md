@@ -4,7 +4,7 @@ title: Can the Apple TV 4 Make It As Our Primary Media Center?
 date: 2016-02-03T17:09:15+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4225
+guid: https://stealthpuppy.com/?p=4225
 permalink: /apple-tv-4-media-center/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

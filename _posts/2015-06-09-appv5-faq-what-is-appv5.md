@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: What is Microsoft Application Virtualization 5?'
 date: 2015-06-09T13:51:07+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3977
+guid: https://stealthpuppy/?p=3977
 permalink: /appv5-faq-what-is-appv5/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

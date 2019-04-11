@@ -4,7 +4,7 @@ title: Creating a XenDesktop Delivery Group with PowerShell
 date: 2014-08-26T08:00:16+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3667
+guid: https://stealthpuppy.com/?p=3667
 permalink: /xendesktop-delivery-group-powershell/
 dsq_thread_id:
   - "2954732469"

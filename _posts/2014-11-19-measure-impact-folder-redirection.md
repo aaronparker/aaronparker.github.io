@@ -4,7 +4,7 @@ title: 'Measuring the Impact of Folder Redirection - User Logon'
 date: 2014-11-19T09:29:42+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3756
+guid: https://stealthpuppy.com/?p=3756
 permalink: /measure-impact-folder-redirection/
 dsq_thread_id:
   - "3239330200"

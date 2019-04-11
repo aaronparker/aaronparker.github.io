@@ -4,7 +4,7 @@ title: ABOUT
 date: 2017-02-24T21:05:08+10:00
 author: Aaron Parker
 layout: page
-guid: {{site.baseurl}}.com/?page_id=5378
+guid: https://stealthpuppy.com/?page_id=5378
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 ---

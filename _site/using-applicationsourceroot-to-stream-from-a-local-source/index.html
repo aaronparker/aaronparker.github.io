@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,7 +31,7 @@
     <h1 class="post-title p-name" itemprop="name headline">App-V FAQ: How do I configure my App-V clients to stream from a local source?</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2010-09-22T11:00:00+10:00" itemprop="datePublished">Sep 22, 2010
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
@@ -76,7 +65,7 @@
 
 <p>Create a new Group Policy Object and add the template to the GPO.</p>
 
-<p><a href="http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRoot.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="The ApplicationSourceRoot policy in a Group Policy Object" src="http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRoot_thumb.png" border="0" alt="The ApplicationSourceRoot policy in a Group Policy Object" width="660" height="297" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRoot.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;” title=”The ApplicationSourceRoot policy in a Group Policy Object” src=”http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRoot_thumb.png” border=”0” alt=”The ApplicationSourceRoot policy in a Group Policy Object</a></p>
 
 <p>The policy item can be found here:</p>
 
@@ -84,11 +73,11 @@
 
 <p>Set the value of ApplicationSourceRoot, which should include the streaming protocol, the source server hostname, optionally the port and finally the path to the packages. Examples can be found in the <a href="http://technet.microsoft.com/en-us/library/cc843817.aspx">ApplicationSourceRoot documentation on TechNet</a>.</p>
 
-<p><a href="http://stealthpuppy.com/media/2010/09/GPOApplicationSourceRoot.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GPO-ApplicationSourceRootThe ApplicationSourceRoot policy in the Administrative template" src="http://stealthpuppy.com/media/2010/09/GPOApplicationSourceRoot_thumb.png" border="0" alt="The ApplicationSourceRoot policy in the Administrative template" width="660" height="407" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/GPOApplicationSourceRoot.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;” title=”GPO-ApplicationSourceRootThe ApplicationSourceRoot policy in the Administrative template” src=”http://stealthpuppy.com/media/2010/09/GPOApplicationSourceRoot_thumb.png” border=”0” alt=”The ApplicationSourceRoot policy in the Administrative template</a></p>
 
 <p>Link the GPO to the AD Site that hosts the client computers that you are looking to target.</p>
 
-<p><a href="http://stealthpuppy.com/media/2010/09/GPOAssingedADSite.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Assigning a GPO to an Active Directory Site" src="http://stealthpuppy.com/media/2010/09/GPOAssingedADSite_thumb.png" border="0" alt="Assigning a GPO to an Active Directory Site" width="660" height="221" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/GPOAssingedADSite.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;” title=”Assigning a GPO to an Active Directory Site” src=”http://stealthpuppy.com/media/2010/09/GPOAssingedADSite_thumb.png” border=”0” alt=”Assigning a GPO to an Active Directory Site</a></p>
 
 <p>To ensure that the GPO only applies to a specific set of computers instead of all computers in that AD site</p>
 
@@ -102,13 +91,13 @@
 
 <p>Once complete, you should have something that looks like this:</p>
 
-<p><a href="http://stealthpuppy.com/media/2010/09/GPOPermissions.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Changing permissions on a GPO" src="http://stealthpuppy.com/media/2010/09/GPOPermissions_thumb.png" border="0" alt="Changing permissions on a GPO" width="446" height="493" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/GPOPermissions.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;” title=”Changing permissions on a GPO” src=”http://stealthpuppy.com/media/2010/09/GPOPermissions_thumb.png” border=”0” alt=”Changing permissions on a GPO</a></p>
 
 <p><strong>Using Group Policy Preferences</strong></p>
 
 <p>To use Group Policy Preferences, create a new GPO that is linked to an OU that contains the computer accounts and create a new Registry item in – <em>Computer Configuration / Preferences / Windows Settings / Registry:</em></p>
 
-<p><a href="http://stealthpuppy.com/media/2010/09/GPPPreferences.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Editing ApplicationSourceRoot in Group Policy Preferences" src="http://stealthpuppy.com/media/2010/09/GPPPreferences_thumb.png" border="0" alt="Editing ApplicationSourceRoot in Group Policy Preferences" width="660" height="284" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/GPPPreferences.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;” title=”Editing ApplicationSourceRoot in Group Policy Preferences” src=”http://stealthpuppy.com/media/2010/09/GPPPreferences_thumb.png” border=”0” alt=”Editing ApplicationSourceRoot in Group Policy Preferences</a></p>
 
 <p>ApplicationSourceRoot is a string value (REG_SZ) that is located in:</p>
 
@@ -119,7 +108,7 @@
 
 <p>Select the HKEY_LOCAL_MACHINE hive, add the key path for the correct machine type, enter ApplicationSourceRoot as the value name and enter the path to your streaming source in the value data.</p>
 
-<p><a href="http://stealthpuppy.com/media/2010/09/GPPApplicationSourceRoot.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Properties of the ApplicationSourceRoot value in GPP" src="http://stealthpuppy.com/media/2010/09/GPPApplicationSourceRoot_thumb.png" border="0" alt="Properties of the ApplicationSourceRoot value in GPP" width="446" height="493" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/GPPApplicationSourceRoot.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Properties of the ApplicationSourceRoot value in GPP” src=”http://stealthpuppy.com/media/2010/09/GPPApplicationSourceRoot_thumb.png” border=”0” alt=”Properties of the ApplicationSourceRoot value in GPP</a></p>
 
 <p>Next, enable item-level targeting so that the path specified in this preference can be applied only to a subset of machines. Click on the <em>Common</em> tab, select <em>Item-level targeting</em> and click the <em>Targeting…</em> button.</p>
 
@@ -131,7 +120,7 @@
   <li>An Active Directory Site check, in this example the AD site name is London</li>
 </ol>
 
-<p><a href="http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRootTargettingEditor.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Setting filters in Group Policy Preferences" src="http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRootTargettingEditor_thumb.png" border="0" alt="Setting filters in Group Policy Preferences" width="645" height="454" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRootTargettingEditor.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Setting filters in Group Policy Preferences” src=”http://stealthpuppy.com/media/2010/09/ADMTemplateApplicationSourceRootTargettingEditor_thumb.png” border=”0” alt=”Setting filters in Group Policy Preferences</a></p>
 
 <p>I can repeat the same preference (copy and paste will work) and change streaming source location and the selected site in the AD site check, to cover other streaming sources and clients. Group Policy Preferences also provides IP address ranges that could be used instead of Active Directory sites – this would be useful if an AD site is too broad and I need to be a little more granular when checking for the client location.</p>
 
@@ -153,7 +142,7 @@
 
 <p>The image below shows an example configuration that shows how setting ApplicationSourceRoot could be achieved:</p>
 
-<p><a href="http://stealthpuppy.com/media/2010/09/EMApplicationSourceRootNetworkConnected.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Editing ApplicationSourceRoot with AppSense Environment Manager" src="http://stealthpuppy.com/media/2010/09/EMApplicationSourceRootNetworkConnected_thumb.png" border="0" alt="Editing ApplicationSourceRoot with AppSense Environment Manager" width="660" height="332" /></a></p>
+<p><a href="http://stealthpuppy.com/media/2010/09/EMApplicationSourceRootNetworkConnected.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Editing ApplicationSourceRoot with AppSense Environment Manager” src=”http://stealthpuppy.com/media/2010/09/EMApplicationSourceRootNetworkConnected_thumb.png” border=”0” alt=”Editing ApplicationSourceRoot with AppSense Environment Manager</a></p>
 
 <h3 id="resources">Resources</h3>
 
@@ -166,9 +155,7 @@
   </div><a class="u-url" href="/using-applicationsourceroot-to-stream-from-a-local-source/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

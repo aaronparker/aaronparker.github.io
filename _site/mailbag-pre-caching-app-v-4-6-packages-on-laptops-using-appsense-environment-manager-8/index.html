@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,17 +31,17 @@
     <h1 class="post-title p-name" itemprop="name headline">Mailbag - Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2012-07-26T22:46:47+10:00" itemprop="datePublished">Jul 26, 2012
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img class="size-full wp-image-2631 alignnone" title="Mail Bag" src="https://stealthpuppy.com/media/2012/02/Mail-Bag.png" alt="Mail Bag" width="128" height="128" /></p>
+    <p><img class="size-full wp-image-2631 alignnone" title="Mail Bag" src=".com/media/2012/02/Mail-Bag.png" alt="Mail Bag" width="128" height="128" /></p>
 
 <p><a href="https://twitter.com/Rorymon">Rory</a> <a href="https://twitter.com/Rorymon/status/228536440403931136">asks via Twitter</a> - can we pre-cache App-V packages on laptop clients so that all applications are available offline, using <a href="http://www.appsense.com/policy-and-governance">AppSense Environment Manager</a>?:</p>
 
 <p style="text-align: center;">
-  <img class="size-full wp-image-2796 aligncenter" title="Rory Asks" src="https://stealthpuppy.com/media/2012/07/RoryAsks.png" alt="Rory Asks" width="519" height="138" srcset="https://stealthpuppy.com/media/2012/07/RoryAsks.png 519w, https://stealthpuppy.com/media/2012/07/RoryAsks-150x39.png 150w, https://stealthpuppy.com/media/2012/07/RoryAsks-300x79.png 300w" sizes="(max-width: 519px) 100vw, 519px" />
+  <img class="size-full wp-image-2796 aligncenter" title="Rory Asks" src=".com/media/2012/07/RoryAsks.png" alt="Rory Asks" width="519" height="138" srcset=".com/media/2012/07/RoryAsks.png 519w, .com/media/2012/07/RoryAsks-150x39.png 150w, .com/media/2012/07/RoryAsks-300x79.png 300w" sizes="(max-width: 519px) 100vw, 519px" />
 </p>
 
 <p style="text-align: left;">
@@ -123,7 +112,7 @@ exit 1<br />
 <p>This will load all packages and ensure that the progress bar is not shown.</p>
 
 <p align="center">
-  <a href="https://stealthpuppy.com/media/2012/07/Run-SFTTRAY.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Run-SFTTRAY" src="https://stealthpuppy.com/media/2012/07/Run-SFTTRAY_thumb.png" alt="Run-SFTTRAY" width="660" height="500" border="0" /></a>
+  <a href=".com/media/2012/07/Run-SFTTRAY.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Run-SFTTRAY" src=".com/media/2012/07/Run-SFTTRAY_thumb.png" alt="Run-SFTTRAY" width="660" height="500" border="0" /></a>
 </p>
 
 <p>If you are publishing packages to users, configure this action to run in the current user’s context. If you are delivering packages globally and using a streaming source, configure this action to run in the System context.</p>
@@ -140,7 +129,7 @@ exit 1<br />
 
 <p>I’ve included a sample configuration below that uses each of these approaches by applying the logic in a Reusable Node linked to each of the triggers listed above.</p>
 
-<p><a href="/media/2012/07/Pre-cacheConfig.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Pre-cacheConfig" src="https://stealthpuppy.com/media/2012/07/Pre-cacheConfig_thumb.png" alt="Pre-cacheConfig" width="660" height="412" border="0" /></a></p>
+<p><a href="/media/2012/07/Pre-cacheConfig.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Pre-cacheConfig” src=”.com/media/2012/07/Pre-cacheConfig_thumb.png” alt=”Pre-cacheConfig</a></p>
 
 <p>Download the configuration shown above from here:</p>
 
@@ -151,9 +140,7 @@ exit 1<br />
   </div><a class="u-url" href="/mailbag-pre-caching-app-v-4-6-packages-on-laptops-using-appsense-environment-manager-8/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

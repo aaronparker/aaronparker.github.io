@@ -4,7 +4,7 @@ title: 'OS Automation Survey Results - How Often Are Master Images Updated?'
 date: 2015-11-29T18:28:13+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4209
+guid: https://stealthpuppy.com/?p=4209
 permalink: /automation-survey-results-update-images/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

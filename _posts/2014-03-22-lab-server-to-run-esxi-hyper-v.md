@@ -4,7 +4,7 @@ title: Building a Lab Server to Run ESXi and Hyper-V
 date: 2014-03-22T14:49:40+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3595
+guid: https://stealthpuppy/?p=3595
 permalink: /lab-server-to-run-esxi-hyper-v/
 dsq_thread_id:
   - "2484425006"

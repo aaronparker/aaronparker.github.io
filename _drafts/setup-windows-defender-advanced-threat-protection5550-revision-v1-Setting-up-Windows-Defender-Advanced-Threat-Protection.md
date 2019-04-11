@@ -4,7 +4,7 @@ title: Setting up Windows Defender Advanced Threat Protection
 date: 2017-07-25T18:22:55+10:00
 author: Aaron Parker
 layout: revision
-guid: {{site.baseurl}}/5550-revision-v1/
+guid: https://stealthpuppy/5550-revision-v1/
 permalink: /5550-revision-v1/
 ---
 Understanding what Windows Defender Advanced Threat Protection (ATP) actually is had eluded me for a while - it's not included in something like [EMS](https://www.microsoft.com/en-au/cloud-platform/enterprise-mobility-security), it's not available with a Visual Studio Enterprise subscription and you'll need to request an evaluation from Microsoft (and hope it's approved) to test it out. Windows Defender ATP _is_ licensed as a component of the [Windows 10 Enterprise E5](https://www.microsoft.com/en-us/WindowsForBusiness/buy) or the [Secure Productive Enterprise](https://www.microsoft.com/en-au/secure-productive-enterprise/default.aspx) (soon to be Microsoft 365) E5 subscriptions.

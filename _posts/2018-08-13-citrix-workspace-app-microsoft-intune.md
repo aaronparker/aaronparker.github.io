@@ -4,7 +4,7 @@ title: Citrix Workspace app deployed with Microsoft Intune
 date: 2018-08-13T14:55:54+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=6126
+guid: https://stealthpuppy/?p=6126
 permalink: /citrix-workspace-app-microsoft-intune/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

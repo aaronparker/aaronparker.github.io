@@ -4,7 +4,7 @@ title: High DPI end-user experience macOS vs. Windows
 date: 2018-08-09T21:16:52+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=6121
+guid: https://stealthpuppy/?p=6121
 permalink: /?p=6121
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

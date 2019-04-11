@@ -4,7 +4,7 @@ title: Download, Install, Import Visual C++ Redistributables with VcRedist
 date: 2018-03-16T21:10:54+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=5997
+guid: https://stealthpuppy.com/?p=5997
 permalink: /vcredist-powershell-module/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

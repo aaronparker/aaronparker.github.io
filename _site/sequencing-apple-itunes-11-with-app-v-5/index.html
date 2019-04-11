@@ -21,18 +21,7 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,12 +31,12 @@
     <h1 class="post-title p-name" itemprop="name headline">Sequencing Apple iTunes 11 with App-V 5</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2012-12-01T15:32:33+11:00" itemprop="datePublished">Dec 1, 2012
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img class="alignright size-full wp-image-2976" style="margin-left: 5px; margin-right: 5px;" title="iTunes 11 128x128" alt="" src="https://stealthpuppy.com/media/2012/12/iTunes-128.png" width="128" height="128" />Two recent releases presents an opportunity to revisit the state of virtualizing Apple iTunes. iTunes 11 looks great, but is it just lipstick on a pig? Under the hood, it doesn’t appear to differ that much from previous versions, but lets see whether a combination of Apple’s latest and greatest along with App-V 5 offers a better virtualisation experience.</p>
+    <p><img class="alignright size-full wp-image-2976" style="margin-left: 5px; margin-right: 5px;" title="iTunes 11 128x128" alt="" src="/media/2012/12/iTunes-128.png" width="128" height="128" />Two recent releases presents an opportunity to revisit the state of virtualizing Apple iTunes. iTunes 11 looks great, but is it just lipstick on a pig? Under the hood, it doesn’t appear to differ that much from previous versions, but lets see whether a combination of Apple’s latest and greatest along with App-V 5 offers a better virtualisation experience.</p>
 
 <h1 id="itunes-10-with-app-v-46">iTunes 10 with App-V 4.6</h1>
 
@@ -85,7 +74,7 @@
 
 <p>iTunes has the potential to store a massive amount of data in the user’s profile:</p>
 
-<p><a href="/media/2011/06/09AppData.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="09AppData" alt="09AppData" src="https://stealthpuppy.com/media/2011/06/09AppData_thumb.png" width="377" height="302" border="0" /></a></p>
+<p><a href="/media/2011/06/09AppData.png">&lt;img style=”background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;” title=”09AppData” alt=”09AppData” src=”/media/2011/06/09AppData_thumb.png</a></p>
 
 <p>It is highly recommended to exclude %APPDATA% in the iTunes package to avoid this data being virtualized at runtime.</p>
 
@@ -199,7 +188,7 @@ MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE_ASUW=0 REGSRCH_DES
 
 <p>With the Apple Mobile Device Support, syncing with a virtualized iTunes should still work. The iTunesAdmin component appears to be related restricting access to Parental controls in Preferences. Clicking the lock will result the following error:</p>
 
-<p><img class="alignnone size-full wp-image-2983" title="iTunes Parental error" alt="" src="https://stealthpuppy.com/media/2012/12/Parental.png" width="381" height="109" srcset="https://stealthpuppy.com/media/2012/12/Parental.png 381w, https://stealthpuppy.com/media/2012/12/Parental-150x42.png 150w, https://stealthpuppy.com/media/2012/12/Parental-300x85.png 300w" sizes="(max-width: 381px) 100vw, 381px" /></p>
+<p><img class="alignnone size-full wp-image-2983" title="iTunes Parental error" alt="" src="/media/2012/12/Parental.png" width="381" height="109" srcset="/media/2012/12/Parental.png 381w, /media/2012/12/Parental-150x42.png 150w, /media/2012/12/Parental-300x85.png 300w" sizes="(max-width: 381px) 100vw, 381px" /></p>
 
 <h2 id="driver">Driver</h2>
 
@@ -219,7 +208,7 @@ MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE_ASUW=0 REGSRCH_DES
 
 <p>Without Apple Application Support the following will be the result of launching iTunes:</p>
 
-<p><a href="/media/2011/06/NoAppleAppSupport.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="NoAppleAppSupport" alt="NoAppleAppSupport" src="https://stealthpuppy.com/media/2011/06/NoAppleAppSupport_thumb.png" width="510" height="260" border="0" /></a></p>
+<p><a href="/media/2011/06/NoAppleAppSupport.png">&lt;img style=”background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;” title=”NoAppleAppSupport” alt=”NoAppleAppSupport” src=”/media/2011/06/NoAppleAppSupport_thumb.png</a></p>
 
 <p>Last, but not least, for media sharing to work, firewall exceptions will be required for the following processes:</p>
 
@@ -234,7 +223,7 @@ MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE_ASUW=0 REGSRCH_DES
 
 <p>Running iTunes on the client for the first time will result in a prompt to the user to set iTunes as the default audio player. With App-V 5 this is now supported and should work just like an installed application.</p>
 
-<p><a href="/media/2012/12/iTunesFirstRun.png"><img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="iTunesFirstRun" alt="iTunesFirstRun" src="https://stealthpuppy.com/media/2012/12/iTunesFirstRun_thumb.png" width="660" height="410" border="0" /></a></p>
+<p><a href="/media/2012/12/iTunesFirstRun.png">&lt;img style=”background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;” title=”iTunesFirstRun” alt=”iTunesFirstRun” src=”/media/2012/12/iTunesFirstRun_thumb.png</a></p>
 
 <p>View the gallery below for a screenshot walkthrough of sequencing iTunes 11:</p>
 
@@ -243,9 +232,7 @@ MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE_ASUW=0 REGSRCH_DES
   </div><a class="u-url" href="/sequencing-apple-itunes-11-with-app-v-5/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

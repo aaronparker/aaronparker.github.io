@@ -4,7 +4,7 @@ title: Work around for getting File Transfer Manager to download from TechNet/MS
 date: 2014-01-30T09:49:44+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3545
+guid: https://stealthpuppy.com/?p=3545
 permalink: /work-around-for-getting-file-transfer-manager-to-download-from-technetmsdn/
 dsq_thread_id:
   - "2194419731"

@@ -4,7 +4,7 @@ title: Take part in the OS Deployment Automation Survey
 date: 2013-04-23T23:38:24+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3098
+guid: https://stealthpuppy/?p=3098
 permalink: /take-part-in-the-os-deployment-automation-survey/
 dsq_thread_id:
   - "1231866751"

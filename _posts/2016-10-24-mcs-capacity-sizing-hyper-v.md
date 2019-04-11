@@ -4,7 +4,7 @@ title: Machine Creation Services Capacity Sizing on Hyper-V
 date: 2016-10-24T11:57:54+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5185
+guid: https://stealthpuppy/?p=5185
 permalink: /mcs-capacity-sizing-hyper-v/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

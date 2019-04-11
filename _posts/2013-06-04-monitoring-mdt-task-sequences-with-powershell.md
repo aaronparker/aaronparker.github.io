@@ -4,7 +4,7 @@ title: Monitoring MDT Task Sequences with PowerShell
 date: 2013-06-04T14:30:23+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3356
+guid: https://stealthpuppy/?p=3356
 permalink: /monitoring-mdt-task-sequences-with-powershell/
 dsq_thread_id:
   - "1359898902"

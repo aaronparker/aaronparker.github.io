@@ -4,7 +4,7 @@ title: Testing Citrix Receiver on Android without an Android device
 date: 2013-08-23T19:32:40+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=3463
+guid: https://stealthpuppy/?p=3463
 permalink: /testing-citrix-receiver-on-android-without-an-android-device/
 dsq_thread_id:
   - "1634572133"

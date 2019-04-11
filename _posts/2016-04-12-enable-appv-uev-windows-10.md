@@ -4,7 +4,7 @@ title: 'Enabling App-V &#038; UE-V in Windows 10 Enterprise 14316'
 date: 2016-04-12T21:48:47+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=4366
+guid: https://stealthpuppy.com/?p=4366
 permalink: /enable-appv-uev-windows-10/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

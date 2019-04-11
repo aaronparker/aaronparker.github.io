@@ -4,7 +4,7 @@ title: Performing vSphere VM RAM Overhead Lookups in Excel
 date: 2014-07-18T22:34:12+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3627
+guid: https://stealthpuppy.com/?p=3627
 permalink: /performing-vsphere-vm-ram-overhead-lookups-in-excel/
 dsq_thread_id:
   - "2854807555"

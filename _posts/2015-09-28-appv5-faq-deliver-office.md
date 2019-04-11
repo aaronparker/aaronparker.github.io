@@ -4,7 +4,7 @@ title: 'App-V 5 FAQ: How Do I Deliver Microsoft Office with App-V?'
 date: 2015-09-28T20:48:53+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=4135
+guid: https://stealthpuppy/?p=4135
 permalink: /appv5-faq-deliver-office/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

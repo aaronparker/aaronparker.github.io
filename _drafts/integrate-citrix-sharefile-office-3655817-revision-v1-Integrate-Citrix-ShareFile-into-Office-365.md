@@ -4,7 +4,7 @@ title: Integrate Citrix ShareFile into Office 365
 date: 2017-11-07T00:29:15+10:00
 author: Aaron Parker
 layout: revision
-guid: {{site.baseurl}}/5817-revision-v1/
+guid: https://stealthpuppy/5817-revision-v1/
 permalink: /5817-revision-v1/
 ---
 While Office 365 overall is a great concept, the user experience of OneDrive for Business and SharePoint is less than ideal. Integrating an alternative enterprise file and sync solution can be difficult to justify from a cost perspective - if Office 365 has a storage solution, what benefits do you gain by adding an alternative?

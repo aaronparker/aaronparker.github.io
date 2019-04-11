@@ -4,7 +4,7 @@ title: Deploying an Enterprise Root Certificate Authority
 date: 2016-08-21T02:44:59+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5034
+guid: https://stealthpuppy/?p=5034
 permalink: /deploy-enterprise-root-certificate-authority/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

@@ -4,7 +4,7 @@ title: Default Start Menu Customisation via Intune
 date: 2018-12-18T22:28:30+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=6216
+guid: https://stealthpuppy.com/?p=6216
 permalink: /custom-default-start-menu-intune/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

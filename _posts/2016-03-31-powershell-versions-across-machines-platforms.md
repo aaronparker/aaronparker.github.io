@@ -4,7 +4,7 @@ title: 'Managing PowerShell Scripts Across Machines &#038; Platforms'
 date: 2016-03-31T22:17:46+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=4301
+guid: https://stealthpuppy/?p=4301
 permalink: /powershell-versions-across-machines-platforms/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

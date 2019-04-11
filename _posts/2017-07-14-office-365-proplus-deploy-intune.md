@@ -4,7 +4,7 @@ title: Office 365 ProPlus Deployed with Intune in under 5 Minutes
 date: 2017-07-14T22:05:48+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=5487
+guid: https://stealthpuppy/?p=5487
 permalink: /office-365-proplus-deploy-intune/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

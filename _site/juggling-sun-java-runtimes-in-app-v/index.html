@@ -8,31 +8,20 @@
 <meta property="og:title" content="Juggling Sun Java Runtimes in App-V" />
 <meta name="author" content="Aaron Parker" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I don’t know why I keep getting involved with Java. I know I’ve written about it more than a few times before, but it’s not because I like Java… So before I get into a tirade about it, here’s yet another post on the subject.." />
-<meta property="og:description" content="I don’t know why I keep getting involved with Java. I know I’ve written about it more than a few times before, but it’s not because I like Java… So before I get into a tirade about it, here’s yet another post on the subject.." />
+<meta name="description" content="&lt;img class=”alignleft size-medium wp-image-775” style=”border: 0px;” title=”softgridcube-java” src=”/media/2008/10/softgridcube-java.png” border=”0” alt=” before, but it’s not because I like Java… So before I get into a tirade about it, here’s yet another post on the subject.." />
+<meta property="og:description" content="&lt;img class=”alignleft size-medium wp-image-775” style=”border: 0px;” title=”softgridcube-java” src=”/media/2008/10/softgridcube-java.png” border=”0” alt=” before, but it’s not because I like Java… So before I get into a tirade about it, here’s yet another post on the subject.." />
 <link rel="canonical" href="/juggling-sun-java-runtimes-in-app-v/" />
 <meta property="og:url" content="/juggling-sun-java-runtimes-in-app-v/" />
 <meta property="og:site_name" content="stealthpuppy" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2008-10-22T12:39:00+11:00" />
 <script type="application/ld+json">
-{"description":"I don’t know why I keep getting involved with Java. I know I’ve written about it more than a few times before, but it’s not because I like Java… So before I get into a tirade about it, here’s yet another post on the subject..","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/juggling-sun-java-runtimes-in-app-v/","headline":"Juggling Sun Java Runtimes in App-V","dateModified":"2008-10-22T12:39:00+11:00","datePublished":"2008-10-22T12:39:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/juggling-sun-java-runtimes-in-app-v/"},"@context":"https://schema.org"}</script>
+{"description":"&lt;img class=”alignleft size-medium wp-image-775” style=”border: 0px;” title=”softgridcube-java” src=”/media/2008/10/softgridcube-java.png” border=”0” alt=” before, but it’s not because I like Java… So before I get into a tirade about it, here’s yet another post on the subject..","author":{"@type":"Person","name":"Aaron Parker"},"@type":"BlogPosting","url":"/juggling-sun-java-runtimes-in-app-v/","headline":"Juggling Sun Java Runtimes in App-V","dateModified":"2008-10-22T12:39:00+11:00","datePublished":"2008-10-22T12:39:00+11:00","mainEntityOfPage":{"@type":"WebPage","@id":"/juggling-sun-java-runtimes-in-app-v/"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
-      </nav></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -42,12 +31,12 @@
     <h1 class="post-title p-name" itemprop="name headline">Juggling Sun Java Runtimes in App-V</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2008-10-22T12:39:00+11:00" itemprop="datePublished">Oct 22, 2008
-      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+      </time><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
           itemprop="name">Aaron Parker</span></span></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><a href="/media/2008/10/softgridcube-java.png"><img class="alignleft size-medium wp-image-775" style="border: 0px;" title="softgridcube-java" src="https://stealthpuppy.com/media/2008/10/softgridcube-java.png" border="0" alt="" width="120" height="120" /></a>I don’t know why I keep getting involved with Java. I know I’ve <a href="/deployment/sun-jre-install-script-update">written</a> <a href="/deployment/new-java-runtime-coming-set-phasers-to-yawn">about</a> <a href="/deployment/running-the-latest-oracle-jinitiator">it</a> <a href="/deployment/sun-java-6-update-3-deployment-script">more</a> <a href="/terminal-server/juggling-java-vms">than</a> a <a href="/hall-of-shame/symantec-gateway-security-1600-and-sun-java">few</a> <a href="/terminal-server/presentation-server-and-the-sun-java-vm">times</a> before, but it’s not because I like Java… So before I get into a tirade about it, here’s yet another post on the subject..</p>
+    <p><a href="/terminal-server/presentation-server-and-the-sun-java-vm">&lt;img class=”alignleft size-medium wp-image-775” style=”border: 0px;” title=”softgridcube-java” src=”/media/2008/10/softgridcube-java.png” border=”0” alt=”</a> before, but it’s not because I like Java… So before I get into a tirade about it, here’s yet another post on the subject..</p>
 
 <h3 id="introduction">Introduction</h3>
 
@@ -68,11 +57,11 @@
 
 <p>Here’s an example of this process in play: the first image below shows some of the HKCUSoftwareClassesCLSID keys, added by 1.6.0_07, seen in the real (non-virtualised) registry:</p>
 
-<p><img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="CLSID-Real" src="https://stealthpuppy.com/media/2008/10/clsidreal.png" border="0" alt="CLSID-Real" width="336" height="244" /></p>
+<p><img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="CLSID-Real" src="/media/2008/10/clsidreal.png" border="0" alt="CLSID-Real" width="336" height="244" /></p>
 
 <p>By adding those keys to the sequencer machine and deleting during sequencing, we end up with only the keys added by the 1.3.1_10 installer. Here is the same HKCUSoftwareClassesCLSID key seen inside the bubble:</p>
 
-<p><img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="CLSID-Virtual" src="https://stealthpuppy.com/media/2008/10/clsidvirtual.png" border="0" alt="CLSID-Virtual" width="335" height="117" /></p>
+<p><img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="CLSID-Virtual" src="/media/2008/10/clsidvirtual.png" border="0" alt="CLSID-Virtual" width="335" height="117" /></p>
 
 <h3 id="building-the-pre-sequencing-environment">Building the Pre-sequencing Environment</h3>
 
@@ -80,12 +69,12 @@
 
 <p>To capture the keys that are installed by 1.6.0_03 and 1.6.0_07, I sequenced those versions and opened the resulting package in the <a href="http://en.wikipedia.org/wiki/Bill_%26_Ted's_Excellent_Adventure">most excellent</a> <a href="http://www.virtualapp.net/sft-explorer.html">SFT Explorer</a>. From there you can export the registry keys created by the installer.</p>
 
-<p><img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="16007Export" src="https://stealthpuppy.com/media/2008/10/16007export.png" border="0" alt="16007Export" width="354" height="428" /></p>
+<p><img style="border-top-width: 0px; display: inline; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="16007Export" src="/media/2008/10/16007export.png" border="0" alt="16007Export" width="354" height="428" /></p>
 
 <p>From that exported registry file I’ve created a script that will add those keys to the sequencing machine (keys only, values are not required):</p>
 
 <p class="download">
-  <a href="https://stealthpuppy.com/media/2008/10/PRE-SEQUENCE.txt">Download the pre-sequence script here</a>
+  <a href="/media/2008/10/PRE-SEQUENCE.txt">Download the pre-sequence script here</a>
 </p>
 
 <p>This script is then run before sequencing takes place so that the same keys can be deleted before installing the older version of the JRE, and those deletions are then picked up by the sequencer.</p>
@@ -105,7 +94,7 @@
 <p>Here’s a copy of the install script:</p>
 
 <p class="download">
-  <a href="https://stealthpuppy.com/media/2008/10/INSTALL.txt">Download the install script here</a>
+  <a href="/media/2008/10/INSTALL.txt">Download the install script here</a>
 </p>
 
 <p>After installation and capture is complete, a few steps must be completed in the Sequencer before saving:</p>
@@ -121,18 +110,16 @@
 
 <p>Once you have completed the sequence and are running the package on your client, you should see the virtualised JRE as the default Java machine in Internet Explorer inside the bubble:</p>
 
-<p><img style="display: inline" title="Java13IEOptions" src="https://stealthpuppy.com/media/2008/10/java13ieoptions.png" border="0" alt="Java13IEOptions" width="413" height="386" /></p>
+<p><img style="display: inline" title="Java13IEOptions" src="/media/2008/10/java13ieoptions.png" border="0" alt="Java13IEOptions" width="413" height="386" /></p>
 
 <p>Whilst running Internet Explorer normally, the installed version of the JRE will be the default:</p>
 
-<p><img style="display: inline" title="Java16IEOptions" src="https://stealthpuppy.com/media/2008/10/java16ieoptions.png" border="0" alt="Java16IEOptions" width="413" height="386" /></p>
+<p><img style="display: inline" title="Java16IEOptions" src="/media/2008/10/java16ieoptions.png" border="0" alt="Java16IEOptions" width="413" height="386" /></p>
 
   </div><a class="u-url" href="/juggling-sun-java-runtimes-in-app-v/" hidden></a>
 </article>
       </div>
-    </main>
-
-    <footer class="site-footer h-card">
+    </main><footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">

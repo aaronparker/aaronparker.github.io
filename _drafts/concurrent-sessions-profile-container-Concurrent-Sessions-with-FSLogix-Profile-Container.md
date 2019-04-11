@@ -4,7 +4,7 @@ title: Concurrent Sessions with FSLogix Profile Container
 date: 2019-02-27T23:07:15+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}/?p=6258
+guid: https://stealthpuppy/?p=6258
 permalink: /?p=6258
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

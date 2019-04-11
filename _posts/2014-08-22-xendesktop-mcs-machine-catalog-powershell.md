@@ -4,7 +4,7 @@ title: Creating an MCS-based XenDesktop Machine Catalog with PowerShell
 date: 2014-08-22T11:18:11+10:00
 author: Aaron Parker
 layout: post
-guid: {{site.baseurl}}.com/?p=3653
+guid: https://stealthpuppy.com/?p=3653
 permalink: /xendesktop-mcs-machine-catalog-powershell/
 dsq_thread_id:
   - "2949175355"
