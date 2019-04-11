@@ -22,7 +22,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />
+<img style="margin: 0px 0px 5px 10px; display: inline;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="right" />
 
 “Does App-V replace Citrix XenApp?” or “Is App-V a Citrix killer?” I’m surprised that this one keeps coming up although I’ve been hearing it for years. People make assumptions about the ability to stream applications to end-points with App-V and confuse this with remote presentation of applications. See [the comments on this post](http://gotcal.com/index.php/2010/07/testing-app-v-for-dynamics-nav-rtc-2009/) as an example. If you’ve come here seeking an answer to this question, then you should first read about [what App-V is]({{site.baseurl}}/virtualisation/app-v-faq-2-what-is-microsoft-application-virtualization).
 

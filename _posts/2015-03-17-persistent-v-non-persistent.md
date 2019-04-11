@@ -1,6 +1,6 @@
 ---
 id: 3818
-title: 'VDI 101: Persistent vs. Non-persistent'
+title: "VDI 101: Persistent vs. Non-persistent"
 date: 2015-03-17T18:12:39+10:00
 author: Aaron Parker
 layout: post

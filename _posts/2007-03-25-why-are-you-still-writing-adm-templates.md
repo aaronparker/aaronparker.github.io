@@ -28,11 +28,11 @@ Use of Registry Extension requires the deployment of agent software to each mach
 
 You can use Registry Extension to create, replace, update and delete registry settings from any location in the registry. Once you have installed the extension you will see additional registry options available to you in any GPO (including the local Group Policy). Within each of these items you can create registry keys and collections of registry keys as well is import a set of registry keys using a wizard:
 
-<img src="{{site.baseurl}}.com/media/2007/03/1000.14.1164.GroupPolicyExtended.png" border="0" alt="" align="top" /><img src="{{site.baseurl}}.com/media/2007/03/1000.14.1165.NewRegistryItem.png" border="0" alt="" /> 
+<img src="{{site.baseurl}}/media/2007/03/1000.14.1164.GroupPolicyExtended.png" border="0" alt="" align="top" /><img src="{{site.baseurl}}/media/2007/03/1000.14.1165.NewRegistryItem.png" border="0" alt="" /> 
 
 Adding a registry key is very simple €“ you can manually specify a registry key and value or you can import directly from the current machine unfortunately there is no way to import settings from a file. You can though, copy items directly between Group Policy Objects.
 
-<img src="{{site.baseurl}}.com/media/2007/03/1000.14.1166.RegistryKeyProperties1.png" border="0" alt="" /><img src="{{site.baseurl}}.com/media/2007/03/1000.14.1167.RegistryKeyProperties2.png" border="0" alt="" /> 
+<img src="{{site.baseurl}}/media/2007/03/1000.14.1166.RegistryKeyProperties1.png" border="0" alt="" /><img src="{{site.baseurl}}/media/2007/03/1000.14.1167.RegistryKeyProperties2.png" border="0" alt="" /> 
 
 What makes Registry Extension compelling are the extra features it packs because it includes a client side agent:
 
@@ -42,12 +42,12 @@ What makes Registry Extension compelling are the extra features it packs because
 
 Filters add a lot of flexibility to your application of registry settings and as you see from this screenshot there are 29 items to filter on. You can also build filter queries using the AND/OR operators.
 
-<img src="{{site.baseurl}}.com/media/2007/03/1000.14.1168.FilterProperties.png" border="0" alt="" /> 
+<img src="{{site.baseurl}}/media/2007/03/1000.14.1168.FilterProperties.png" border="0" alt="" /> 
 
 PolicyMaker Registry Extension is a great fit for any Windows network and while you might miss out on the portability of ADM templates, it is far more flexible and dynamic than ADM templates, thus giving you more choice and saving you time.
 
 Here's a link to the Registry Extension download (try [a search if this download is missing](http://www.google.co.uk/search?hl=en&q=POLREG.MSI&meta=))
 
 <p class="download">
-  <a href="{{site.baseurl}}.com/media/2007/03/PolicyMakerRegistryExtensionNoShortcut.mst">Transform to disable the Start Menu shortcut</a>
+  <a href="{{site.baseurl}}/media/2007/03/PolicyMakerRegistryExtensionNoShortcut.mst">Transform to disable the Start Menu shortcut</a>
 </p>

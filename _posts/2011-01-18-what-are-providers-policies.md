@@ -17,7 +17,7 @@ tags:
 ---
 _This is a guest post from Jurjen van Leeuwen, an App-V MVP (_[_new for 2011_](http://leodesk.com/blog/2011/1/leodesk-mvp-for-app-v-2011.aspx)_) and independent consultant based in Norway. You can read more from Jurjen at_ [_his web site_](http://leodesk.com/blog.aspx)_._
 
-<img style="margin: 0px 0px 5px 10px; display: inline; float: right;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" /> Provider Policies are ‘rules’ that apply when users launch virtual applications from a Microsoft App-V Management Server using RTSP(s). Other App-V infrastructure scenarios or the use of the HTTP(s) protocol don’t support the use of Provider Policies.
+<img style="margin: 0px 0px 5px 10px; display: inline; float: right;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="right" /> Provider Policies are ‘rules’ that apply when users launch virtual applications from a Microsoft App-V Management Server using RTSP(s). Other App-V infrastructure scenarios or the use of the HTTP(s) protocol don’t support the use of Provider Policies.
 
 The ‘rules’ allow App-V administrators to control the following settings:
 
@@ -39,15 +39,15 @@ When installing the App-V Management Server one Provider Policy is created by de
 
 To create a new Provider Policy right click the Provider Policies node in the App-V Management Console and choose: _New Provider Policy_. The Properties screen allows for naming the new Provider Policy and the configuration of the client refresh behaviour. The minimum interval for a scheduled refresh is 30 minutes.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ProviderPolicyGeneral" src="{{site.baseurl}}.com/media/2011/01/ProviderPolicyGeneral_thumb.png" border="0" alt="ProviderPolicyGeneral]({{site.baseurl}}/media/2011/01/ProviderPolicyGeneral.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ProviderPolicyGeneral" src="{{site.baseurl}}/media/2011/01/ProviderPolicyGeneral_thumb.png" border="0" alt="ProviderPolicyGeneral]({{site.baseurl}}/media/2011/01/ProviderPolicyGeneral.png)
 
 In the Group Assignment screen select the Active Directory groups that have access to the App-V server through this Provider Policy. A minimum of one group is required. The user has to be a member of this group when the Authentication checkbox is set on the Provider Pipeline screen.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProviderPolicyGroupAssignment" src="{{site.baseurl}}.com/media/2011/01/ProviderPolicyGroupAssignment_thumb.png" border="0" alt="ProviderPolicyGroupAssignment]({{site.baseurl}}/media/2011/01/ProviderPolicyGroupAssignment.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProviderPolicyGroupAssignment" src="{{site.baseurl}}/media/2011/01/ProviderPolicyGroupAssignment_thumb.png" border="0" alt="ProviderPolicyGroupAssignment]({{site.baseurl}}/media/2011/01/ProviderPolicyGroupAssignment.png)
 
 The Provider Pipeline screen allows the following options to be set:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProviderPolicyProviderPipeline" src="{{site.baseurl}}.com/media/2011/01/ProviderPolicyProviderPipeline_thumb.png" border="0" alt="ProviderPolicyProviderPipeline]({{site.baseurl}}/media/2011/01/ProviderPolicyProviderPipeline.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProviderPolicyProviderPipeline" src="{{site.baseurl}}/media/2011/01/ProviderPolicyProviderPipeline_thumb.png" border="0" alt="ProviderPolicyProviderPipeline]({{site.baseurl}}/media/2011/01/ProviderPolicyProviderPipeline.png)
 
 **Authentication**: This checkbox forces authentication in the session. If the App-V client can’t use the current user’s credentials, a login box is shown to the user to provide them. Disabling this checkbox allows any user to launch applications from the App-V server through this Provider Policy. The Authentication dropdown box only has one option: Windows Authentication.
 
@@ -63,7 +63,7 @@ There are two ways to control which Provider Policy applies in a session between
 
 1. The default Provider Policy configured for the Server Group: On the General tab of the Server Group properties specify the default Provider Policy to use:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ServerGroupProviderPolicy" src="{{site.baseurl}}.com/media/2011/01/ServerGroupProviderPolicy_thumb.png" border="0" alt="ServerGroupProviderPolicy]({{site.baseurl}}/media/2011/01/ServerGroupProviderPolicy.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ServerGroupProviderPolicy" src="{{site.baseurl}}/media/2011/01/ServerGroupProviderPolicy_thumb.png" border="0" alt="ServerGroupProviderPolicy]({{site.baseurl}}/media/2011/01/ServerGroupProviderPolicy.png)
 
 In this case the Provider Policy applies when users connect to a server from this Server Group.
 

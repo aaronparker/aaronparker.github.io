@@ -15,7 +15,7 @@ categories:
 tags:
   - App-V
 ---
-<img style="background-image: none; margin: 0px 0px 5px 10px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border-width: 0px;" title="AppV46SequencerNew" src="{{site.baseurl}}.com/media/2011/03/AppV46SequencerNew.png" border="0" alt="AppV46SequencerNew](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=3b48dbfe-612d-4806-b737-9254bd9b2445) Sequencer introduces some major changes in the user interface and the sequencing workflow. These changes have been designed to assist the sequencing engineer with virtualising applications in App-V while aligning with best practices.
+<img style="background-image: none; margin: 0px 0px 5px 10px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border-width: 0px;" title="AppV46SequencerNew" src="{{site.baseurl}}/media/2011/03/AppV46SequencerNew.png" border="0" alt="AppV46SequencerNew](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=3b48dbfe-612d-4806-b737-9254bd9b2445) Sequencer introduces some major changes in the user interface and the sequencing workflow. These changes have been designed to assist the sequencing engineer with virtualising applications in App-V while aligning with best practices.
 
 If you’re a seasoned sequencing engineer the Sequencer has some major UI changes, but let me show you why I think that once you’ve had an opportunity to use the new Sequencer, you’ll be smiling. (Minimise during sequencing is back too which will make plenty of people even happier)
 
@@ -23,19 +23,19 @@ If you’re a seasoned sequencing engineer the Sequencer has some major UI chang
 
 Built-in best practices are implemented right from installation - the first change you’ll see is during the installation of the Sequencer. Setup will ask for the virtual drive letter:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice12" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-BestPractice12.png" border="0" alt="AppV-Sequencer-BestPractice12" width="504" height="382" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice12" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice12.png" border="0" alt="AppV-Sequencer-BestPractice12" width="504" height="382" /> 
 
 If this drive letter does not already exist as an actual partition or volume within your sequencing computer, Setup will create a drive substitution for you. (The substitution is to _%ProgramData%\Microsoft\Application Virtualization Sequencer\Package Root\_).
 
 Another best practice is implemented during installation – the creation of a dummy ODBC connection. Both a system DSN and a user DSN for the current user are created:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ODBC" src="{{site.baseurl}}.com/media/2011/03/ODBC.png" border="0" alt="ODBC" width="471" height="390" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ODBC" src="{{site.baseurl}}/media/2011/03/ODBC.png" border="0" alt="ODBC" width="471" height="390" /> 
 
 ### Sequencer Templates
 
 App-V 4.6 SP1 introduces Sequencer Templates which can be used to standardise commonly applied settings when you create new virtual application packages. This will help streamline the process of creating virtual application packages, especially if your own best practices differ from the default settings.
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice13" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-BestPractice13.png" border="0" alt="AppV-Sequencer-BestPractice13" width="509" height="466" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice13" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice13.png" border="0" alt="AppV-Sequencer-BestPractice13" width="509" height="466" /> 
 
 Sequencer Templates (.sprt files) are single XML files than can be copied into your sequencing VM and applied to new packages. These will become an important part of any packaging team’s methods for standardising their packages.
 
@@ -60,7 +60,7 @@ When sequencing an application the Sequencer will now ensure that the sequencing
 
 The Sequencer is recommending a solution for each issue before proceeding:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice15" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-BestPractice15_thumb.png" border="0" alt="AppV-Sequencer-BestPractice15]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice15.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice15" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice15_thumb.png" border="0" alt="AppV-Sequencer-BestPractice15]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice15.png)
 
 Getting this type of information directly from the Sequencer is a fantastic feature because it will assist in creating successful and cleaner packages.
 
@@ -68,7 +68,7 @@ Getting this type of information directly from the Sequencer is a fantastic feat
 
 The SP1 Sequencer now directly assists in capturing the type of application you are sequencing. Making a decision at this point about the type of application changes the sequencing workflow so that the Sequencer can guide you through the capture process.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice16" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-BestPractice16_thumb.png" border="0" alt="AppV-Sequencer-BestPractice16]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice16.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice16" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice16_thumb.png" border="0" alt="AppV-Sequencer-BestPractice16]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice16.png)
 
 Getting this process correct is especially important for add-ons or middleware components that you might link to a primary application using [Dynamic Suite Composition](http://technet.microsoft.com/en-us/library/cc843662.aspx).
 
@@ -76,7 +76,7 @@ Getting this process correct is especially important for add-ons or middleware c
 
 The same approach has been taken when editing packages:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice11" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-BestPractice11_thumb.png" border="0" alt="AppV-Sequencer-BestPractice11]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice11.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Sequencer-BestPractice11" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice11_thumb.png" border="0" alt="AppV-Sequencer-BestPractice11]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice11.png)
 
 By choosing the package edit task within the Sequencer, you will be guided through an edit or update task, making it simpler to generate a new version of a package. The workflow will change depending on the task that you choose.
 
@@ -84,13 +84,13 @@ By choosing the package edit task within the Sequencer, you will be guided throu
 
 During the installation phase, the Sequencer will prompt for a package name. You’ll notice here that the Sequencer is auto-creating the Primary Virtual Application Directory and using a name that does not adhere to a previous [best practice of using an 8.3](http://blogs.technet.com/b/appv/archive/2007/10/04/getting-to-the-root-of-the-8-3-root.aspx) naming convention:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice19" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-BestPractice19_thumb.png" border="0" alt="AppV-Sequencer-BestPractice19]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice19.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice19" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice19_thumb.png" border="0" alt="AppV-Sequencer-BestPractice19]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice19.png)
 
 Behind the scenes the Sequencer is taking care of the 8.3 folder for you, making sequencing that one step simpler. You can however, continue using your existing naming conventions if you have them by using the _Edit (Advanced)_ check box.
 
 At this point, the Sequencer will also remind you to where to install the application you are sequencing:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice01" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-BestPractice01_thumb.png" border="0" alt="AppV-Sequencer-BestPractice01]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice01.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice01" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice01_thumb.png" border="0" alt="AppV-Sequencer-BestPractice01]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice01.png)
 
 A small UI change, but a simple one that will assist those new to the sequencing process.
 
@@ -98,7 +98,7 @@ A small UI change, but a simple one that will assist those new to the sequencing
 
 In previous versions of the Sequencer, it wasn’t very clear that you should perform first run tasks after installing an application. First run tasks are now placed front and centre in a separate step during the sequencing process:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice17" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-BestPractice17_thumb.png" border="0" alt="AppV-Sequencer-BestPractice17]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice17.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice17" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice17_thumb.png" border="0" alt="AppV-Sequencer-BestPractice17]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice17.png)
 
 ### Identifying potential virtualization issues
 
@@ -106,15 +106,15 @@ How do you record excluded files and registry keys or even features that won’t
 
 The screenshot below shows a couple of examples when [sequencing Adobe Reader]({{site.baseurl}}/virtualisation/virtualising-adobe-reader-x/) – shell extensions that won't be available once Reader has been virtualised and files that have been excluded from the package:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice05" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-BestPractice05_thumb.png" border="0" alt="AppV-Sequencer-BestPractice05]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice05.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice05" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice05_thumb.png" border="0" alt="AppV-Sequencer-BestPractice05]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice05.png)
 
 Opening these items will display detailed information:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice18" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-BestPractice18_thumb.png" border="0" alt="AppV-Sequencer-BestPractice18]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice18.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-BestPractice18" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice18_thumb.png" border="0" alt="AppV-Sequencer-BestPractice18]({{site.baseurl}}/media/2011/03/AppV-Sequencer-BestPractice18.png)
 
 This information is then saved for each package in a new file named _report.xml_:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-Report" src="{{site.baseurl}}.com/media/2011/03/AppV-Sequencer-Report_thumb.png" border="0" alt="AppV-Sequencer-Report]({{site.baseurl}}/media/2011/03/AppV-Sequencer-Report.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppV-Sequencer-Report" src="{{site.baseurl}}/media/2011/03/AppV-Sequencer-Report_thumb.png" border="0" alt="AppV-Sequencer-Report]({{site.baseurl}}/media/2011/03/AppV-Sequencer-Report.png)
 
 ### Summary
 

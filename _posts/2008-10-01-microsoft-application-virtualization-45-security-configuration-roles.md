@@ -33,6 +33,6 @@ POPD[/code]
 
 You’ll then see the App-V roles in SCW:
 
-<img style="display: inline;" title="AppV-SCW1" src="{{site.baseurl}}.com/media/2008/10/appvscw1.png" alt="AppV-SCW1" width="458" height="371" border="0" /> 
+<img style="display: inline;" title="AppV-SCW1" src="{{site.baseurl}}/media/2008/10/appvscw1.png" alt="AppV-SCW1" width="458" height="371" border="0" /> 
 
-<img style="display: inline;" title="AppV-SCW2" src="{{site.baseurl}}.com/media/2008/10/appvscw2.png" alt="AppV-SCW2" width="458" height="371" border="0" />
+<img style="display: inline;" title="AppV-SCW2" src="{{site.baseurl}}/media/2008/10/appvscw2.png" alt="AppV-SCW2" width="458" height="371" border="0" />

@@ -23,7 +23,7 @@ Here's what Sun has to say about the new update process:
 
 Sounds good to me, so far so good. But there's a new feature that's got me asking Why?, it's the Java Quick Starter service.
 
-![JavaQuickStarter]({{site.baseurl}}.com/media/2008/02/javaquickstarter.png)
+![JavaQuickStarter]({{site.baseurl}}/media/2008/02/javaquickstarter.png)
 
 This is installed on Windows XP and even though there are [indications that the service should not be installed](http://forums.java.net/jive/thread.jspa?threadID=31508&tstart=15) on Windows Vista, it was during my testing. However, this is still beta code. This is Sun's description of the Java Quick Starter service:
 
@@ -31,7 +31,7 @@ This is installed on Windows XP and even though there are [indications that the
 
 Great, now we're lumped with yet another application with a quick launch process. To me bundling a quick launch executable that continually runs in the background, is a sign that your application is bloated. If you believe the hype though, your applications run faster with Java. Faster than what? Certaintly not native applications.
 
-![fasterwithjava]("{{site.baseurl}}.com/media/2008/02/fasterwithjava.png)
+![fasterwithjava]("{{site.baseurl}}/media/2008/02/fasterwithjava.png)
 
 Amazingly this service runs as Local System. That's just asking for trouble, wouldn't [Local Service be a better option](http://www.microsoft.com/technet/security/guidance/serversecurity/serviceaccount/sspgch02.mspx#EBH)? If you want to continue running the Quick Starter service, keep an eye on any security bulletins for the JRE. Owning the service will give you full access to the users machine.
 

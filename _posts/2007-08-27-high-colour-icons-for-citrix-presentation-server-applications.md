@@ -18,19 +18,19 @@ Citrix have released (and even re-released) whole slew of updates in the past fe
 Well perhaps a little perspective is in order ;), but I do think this is an important feature for usability. Here's what you get - before:
 
 <p style="text-align: center">
-  <img src="{{site.baseurl}}.com/media/2007/08/webinterfacelowcolouricons.PNG" alt="webinterfacelowcolouricons.PNG" />
+  <img src="{{site.baseurl}}/media/2007/08/webinterfacelowcolouricons.PNG" alt="webinterfacelowcolouricons.PNG" />
 </p>
 
 and after:
 
 <p style="text-align: center">
-  <img src="{{site.baseurl}}.com/media/2007/08/webinterfacehighcolouricons.png" alt="webinterfacehighcolouricons.png" />
+  <img src="{{site.baseurl}}/media/2007/08/webinterfacehighcolouricons.png" alt="webinterfacehighcolouricons.png" />
 </p>
 
 As well as high colour icons with the Program Neighbourhood Agent client:
 
 <p style="text-align: center">
-  <img src="{{site.baseurl}}.com/media/2007/08/pnagenthighcolouricons.png" alt="pnagenthighcolouricons.png" />
+  <img src="{{site.baseurl}}/media/2007/08/pnagenthighcolouricons.png" alt="pnagenthighcolouricons.png" />
 </p>
 
 What do you need to get this going? You'll need to install the following updates, so unfortunately it's no small undertaking.

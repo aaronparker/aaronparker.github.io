@@ -17,7 +17,7 @@ categories:
 tags:
   - Windows 7
 ---
-<img class="alignnone size-full wp-image-1109" title="delllatitudext21" src="{{site.baseurl}}.com/media/2009/05/delllatitudext21.jpg" alt="delllatitudext21" width="585" height="252" srcset="{{site.baseurl}}.com/media/2009/05/delllatitudext21.jpg 585w, {{site.baseurl}}.com/media/2009/05/delllatitudext21-150x64.jpg 150w, {{site.baseurl}}.com/media/2009/05/delllatitudext21-300x129.jpg 300w" sizes="(max-width: 585px) 100vw, 585px" />
+<img class="alignnone size-full wp-image-1109" title="delllatitudext21" src="{{site.baseurl}}/media/2009/05/delllatitudext21.jpg" alt="delllatitudext21" width="585" height="252" srcset="{{site.baseurl}}/media/2009/05/delllatitudext21.jpg 585w, {{site.baseurl}}/media/2009/05/delllatitudext21-150x64.jpg 150w, {{site.baseurl}}/media/2009/05/delllatitudext21-300x129.jpg 300w" sizes="(max-width: 585px) 100vw, 585px" />
 
 I've been looking to get a tablet PC for some time now and I've just recently picked up a Dell Latitude XT2, which includes multi-touch support. It arrived the same day as the Windows 7 Release Candidate, so the default Windows Vista install, disappeared pretty quickly.
 
@@ -40,7 +40,7 @@ My main aims for this machine is to go with something in an ultra-portable form-
 
 Windows 7 (x86) installed from a USB memory stick in a little under 10 minutes and the laptop has a not too shabby performance rating - I'm pretty pleased that the hard disk gets a rating of 6.7:
 
-<img class="alignnone size-full wp-image-1114" title="xt2performanceinformation2" src="{{site.baseurl}}.com/media/2009/05/xt2performanceinformation2.png" alt="xt2performanceinformation2" width="567" height="194" srcset="{{site.baseurl}}.com/media/2009/05/xt2performanceinformation2.png 567w, {{site.baseurl}}.com/media/2009/05/xt2performanceinformation2-150x51.png 150w, {{site.baseurl}}.com/media/2009/05/xt2performanceinformation2-300x102.png 300w" sizes="(max-width: 567px) 100vw, 567px" /> 
+<img class="alignnone size-full wp-image-1114" title="xt2performanceinformation2" src="{{site.baseurl}}/media/2009/05/xt2performanceinformation2.png" alt="xt2performanceinformation2" width="567" height="194" srcset="{{site.baseurl}}/media/2009/05/xt2performanceinformation2.png 567w, {{site.baseurl}}/media/2009/05/xt2performanceinformation2-150x51.png 150w, {{site.baseurl}}/media/2009/05/xt2performanceinformation2-300x102.png 300w" sizes="(max-width: 567px) 100vw, 567px" /> 
 
 ### Drivers & Software
 
@@ -59,7 +59,7 @@ Windows 7 will enable touch input for the display by default; however the [N-tr
 
 Until you install the beta drivers, an unknown device will be shown in Device Manager. Once installed, multi-touch is enabled:
 
-<img class="alignnone size-full wp-image-1118" title="system1" src="{{site.baseurl}}.com/media/2009/05/system1.png" alt="system1" width="498" height="149" srcset="{{site.baseurl}}.com/media/2009/05/system1.png 498w, {{site.baseurl}}.com/media/2009/05/system1-150x44.png 150w, {{site.baseurl}}.com/media/2009/05/system1-300x89.png 300w" sizes="(max-width: 498px) 100vw, 498px" /> 
+<img class="alignnone size-full wp-image-1118" title="system1" src="{{site.baseurl}}/media/2009/05/system1.png" alt="system1" width="498" height="149" srcset="{{site.baseurl}}/media/2009/05/system1.png 498w, {{site.baseurl}}/media/2009/05/system1-150x44.png 150w, {{site.baseurl}}/media/2009/05/system1-300x89.png 300w" sizes="(max-width: 498px) 100vw, 498px" /> 
 
 After loading the driver for the screen, calibration is required to improve accuracy. Whilst pen input appears to be fairly accurate out of the box, touch input improves with calibration.
 

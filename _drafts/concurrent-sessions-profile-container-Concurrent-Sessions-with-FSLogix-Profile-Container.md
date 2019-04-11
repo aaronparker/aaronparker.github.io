@@ -43,8 +43,6 @@ Profile Container supports concurrent sessions in two ways:
     
   * Concurrent sessions across different instances or VMs
 
-
-
 Restrict Remote Desktop Services users to a single Remote Desktop Services session
 
 Profile Container uses the VHD / VHDX format and therefore supports differencing disks. Leveraging this feature, Profile Container supports [Concurrent User Profile Access](https://docs.fslogix.com/display/20170529/Concurrent+User+Profile+Access) in 3 modes:
@@ -60,11 +58,11 @@ Let's delve into what this looks like. Note that in my simple lab environment, I
 
 This is simple, I've deployed Profile Container with configuration via Group Policy and have ensured that concurrent user sessions are disabled and the Profile Type is set to 'Normal direct-access profile' (i.e. the value is 0).
 
-<img src="{{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png" alt="GPO with Concurrent Sessions in Profile Container disabled" class="wp-image-6262" srcset="{{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png 1024w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-150x70.png 150w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-300x140.png 300w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-768x358.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /> *Concurrent Sessions in Profile Container are disabled by default* 
+![]({{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentAccessDisabled-1024x477.png)
 
 When logging onto the first session, my Profile Container is created if it doesn't exist and mounted onto the target machine and my thus profile is available.
 
-<img src="{{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1.png" alt="Folder showing the Profile and Office 365 user containers with a default configuration" class="wp-image-6264" srcset="{{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1.png 848w, {{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1-150x69.png 150w, {{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1-300x137.png 300w, {{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1-768x351.png 768w" sizes="(max-width: 848px) 100vw, 848px" /> *Profile Container in the default configuration* 
+![]({{site.baseurl}}/media/2019/02/ProfileContainer-NoConcurrent-1.png)
 
 Logging onto a second session could be:
 
@@ -73,26 +71,28 @@ Logging onto a second session could be:
 
 When logging onto a second session on a different VM, the sign in screen waits for some time and eventually logs me on with a local profile. The FSLogix Profile log shows that the agent finds that the container is locked and then retries 12 times with 5 seconds between each attempt. 
 
-<pre class="wp-block-preformatted">[22:45:28.323][tid:000008d0.00001108][ERROR:00000020]   Open vhd(x) failed, file is locked.  Retrying 12 time(s) at 5 second intervals (The process cannot access the file because it is being used by another process.)<br />
-[22:45:33.342][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 1/12<br />
-[22:45:38.396][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 2/12<br />
-[22:45:43.449][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 3/12<br />
-[22:45:48.497][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 4/12<br />
-[22:45:53.540][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 5/12<br />
-[22:45:58.574][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 6/12<br />
-[22:46:03.623][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 7/12<br />
-[22:46:08.656][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 8/12<br />
-[22:46:13.697][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 9/12<br />
-[22:46:18.747][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 10/12<br />
-[22:46:23.800][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 11/12<br />
-[22:46:28.855][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 12/12<br />
-[22:46:28.886][tid:000008d0.00001108][INFO]             Status set to 11: Cannot open virtual disk<br />
-[22:46:28.886][tid:000008d0.00001108][INFO]             Error set to 32<br />
-[22:46:28.886][tid:000008d0.00001108][ERROR:00000020]   OpenVirtualDisk error (The process cannot access the file because it is being used by another process.)<br />
-[22:46:28.886][tid:000008d0.00001108][INFO]             Error. Cleaning up.<br />
-[22:46:28.886][tid:000008d0.00001108][INFO]             Configuration setting not found: SOFTWARE\FSLogix\Profiles\PreventLoginWithFailure.  Using default: 0<br />
-[22:46:28.886][tid:000008d0.00001108][ERROR:0000001f]   LoadProfile failed.  User: aaron. SID: S-1-5-21-2625184940-1311984064-3469394446-1110. (A device attached to the system is not functioning.)<br />
-[22:46:28.886][tid:000008d0.00001108][INFO]             loadProfile time: 60687 milliseconds</pre>
+```
+[22:45:28.323][tid:000008d0.00001108][ERROR:00000020]   Open vhd(x) failed, file is locked.  Retrying 12 time(s) at 5 second intervals (The process cannot access the file because it is being used by another process.)
+[22:45:33.342][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 1/12
+[22:45:38.396][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 2/12
+[22:45:43.449][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 3/12
+[22:45:48.497][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 4/12
+[22:45:53.540][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 5/12
+[22:45:58.574][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 6/12
+[22:46:03.623][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 7/12
+[22:46:08.656][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 8/12
+[22:46:13.697][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 9/12
+[22:46:18.747][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 10/12
+[22:46:23.800][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 11/12
+[22:46:28.855][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 12/12
+[22:46:28.886][tid:000008d0.00001108][INFO]             Status set to 11: Cannot open virtual disk
+[22:46:28.886][tid:000008d0.00001108][INFO]             Error set to 32
+[22:46:28.886][tid:000008d0.00001108][ERROR:00000020]   OpenVirtualDisk error (The process cannot access the file because it is being used by another process.)
+[22:46:28.886][tid:000008d0.00001108][INFO]             Error. Cleaning up.
+[22:46:28.886][tid:000008d0.00001108][INFO]             Configuration setting not found: SOFTWARE\FSLogix\Profiles\PreventLoginWithFailure.  Using default: 0
+[22:46:28.886][tid:000008d0.00001108][ERROR:0000001f]   LoadProfile failed.  User: aaron. SID: S-1-5-21-2625184940-1311984064-3469394446-1110. (A device attached to the system is not functioning.)
+[22:46:28.886][tid:000008d0.00001108][INFO]             loadProfile time: 60687 milliseconds
+```
 
 While opening the Profile Container fails, the session continues to sign in with a local profile. If the concurrent session is on the same VM, my session logs into the same profile 
 
@@ -102,16 +102,8 @@ This behaviour can be prevented with the [PreventLoginWithFailure](https://docs.
 
 A read / write profile is no different in user experience than the default configuration. A read / write profile is configured by setting Profile Type to 'Read-write profile' (i.e. value is 1). Behind the scenes, a RW.VHDX file along-side the Profile Container is created as can be seen below. This is essentially [a differencing disk](https://www.altaro.com/hyper-v/hyper-v-differencing-disks-explained/) where writes are redirected during the session.
 
-<img src="{{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW.png" alt="Folder with user Profile Container and the read / write RW.VHDX" class="wp-image-6270" srcset="{{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW.png 848w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW-150x69.png 150w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW-300x137.png 300w, {{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW-768x351.png 768w" sizes="(max-width: 848px) 100vw, 848px" /> *Folder with user Profile Container and the read / write RW.VHDX* 
+![]{{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW.png
 
 At logon, if a RW.VHDX exists, the FSLogix agent will merge the disk into the parent Profile Container and create a new RW.VHDX and repeat the same process at logoff.
 
 dd
-
-<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@joshstyle?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from JOSHUA COLEMAN"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32">
-
-<title>
-  unsplash-logo
-</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span>
-
-<span style="display:inline-block;padding:2px 3px">JOSHUA COLEMAN</span></a>

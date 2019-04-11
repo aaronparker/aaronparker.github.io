@@ -16,7 +16,7 @@ tags:
   - Automation
   - MDT
 ---
-[<img class="alignnone size-full wp-image-3584" src="{{site.baseurl}}.com/media/2014/03/4520986339_99857d1c35_o.jpg" alt="Compressed Car](http://www.flickr.com/photos/marcovdz/4520986339/)
+[<img class="alignnone size-full wp-image-3584" src="{{site.baseurl}}/media/2014/03/4520986339_99857d1c35_o.jpg" alt="Compressed Car](http://www.flickr.com/photos/marcovdz/4520986339/)
 
 There's typically not too much that you can do to reduce the size of your master image. You might use application virtualization or layering solutions to reduce the number of master images, but once you work out what needs to go into the core image, that's going to dictate the size of the image.
 
@@ -28,11 +28,11 @@ Microsoft released [an important update for Windows 7 last year](http://blogs.te
 
 Here's an example system where I've run the Disk Clean-up tool that has resulted in a 3.4 GB reduction in disk usage - on the left is the before image, on the right is after the cleanup. (I'm cheating a bit here, this is a system that has gone from Windows 7 to Windows 7 SP1, hence the reason for such a large change).
 
-[<img class="alignnone size-full wp-image-3587" src="{{site.baseurl}}.com/media/2014/03/BeforeAfterClean.png" alt="Compare Disk Cleanup Before and After]({{site.baseurl}}/media/2014/03/BeforeAfterClean.png)
+[<img class="alignnone size-full wp-image-3587" src="{{site.baseurl}}/media/2014/03/BeforeAfterClean.png" alt="Compare Disk Cleanup Before and After]({{site.baseurl}}/media/2014/03/BeforeAfterClean.png)
 
 Disk Clean-up can remove a number of interesting items, most of which will actually be applicable for PCs and persistent desktops post-deployment. Here's the items that Disk Clean-up can manage on Windows 8.1:
 
-<img class="alignnone size-full wp-image-3586" src="{{site.baseurl}}.com/media/2014/03/DIskCleanup.png" alt="Disk Cleanup options" width="389" height="819" srcset="{{site.baseurl}}.com/media/2014/03/DIskCleanup.png 389w, {{site.baseurl}}.com/media/2014/03/DIskCleanup-71x150.png 71w, {{site.baseurl}}.com/media/2014/03/DIskCleanup-142x300.png 142w" sizes="(max-width: 389px) 100vw, 389px" /> 
+<img class="alignnone size-full wp-image-3586" src="{{site.baseurl}}/media/2014/03/DIskCleanup.png" alt="Disk Cleanup options" width="389" height="819" srcset="{{site.baseurl}}/media/2014/03/DIskCleanup.png 389w, {{site.baseurl}}/media/2014/03/DIskCleanup-71x150.png 71w, {{site.baseurl}}/media/2014/03/DIskCleanup-142x300.png 142w" sizes="(max-width: 389px) 100vw, 389px" /> 
 
 To [automate Disk Clean-up](http://support.microsoft.com/kb/315246), use the following steps:
 

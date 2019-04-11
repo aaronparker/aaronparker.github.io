@@ -17,7 +17,7 @@ What’s the most annoying sound in Windows? For me it’s got to be the Start N
 
 Usually you can prevent Windows from playing this sound by setting the Start Navigation event to None; however in Windows 7 it comes back whenever you change themes.
 
-<img title="StartNavigation" style="border-right: 0px; border-top: 0px; display: inline; border-left: 0px; border-bottom: 0px" height="444" alt="StartNavigation" src="{{site.baseurl}}.com/media/2009/01/startnavigation.png" width="357" border="0" /> &#160;
+<img title="StartNavigation" style="border-right: 0px; border-top: 0px; display: inline; border-left: 0px; border-bottom: 0px" height="444" alt="StartNavigation" src="{{site.baseurl}}/media/2009/01/startnavigation.png" width="357" border="0" /> &#160;
 
 If you want to remove the sound completely, you’ll need to delete the wav file. To do that, run the following commands from an elevated command prompt:
 

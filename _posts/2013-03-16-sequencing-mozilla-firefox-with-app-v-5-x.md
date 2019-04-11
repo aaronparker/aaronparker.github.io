@@ -20,7 +20,7 @@ tags:
   - App-V
   - Firefox
 ---
-<img style="background-image: none; float: right; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" src="{{site.baseurl}}.com/media/2011/06/062611_1120_SequencingM1.png" alt="" align="right" border="0" />It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little preparation. Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features.
+<img style="background-image: none; float: right; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" src="{{site.baseurl}}/media/2011/06/062611_1120_SequencingM1.png" alt="" align="right" border="0" />It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little preparation. Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features.
 
 # User Experience
 
@@ -82,7 +82,7 @@ Automating this process as much as possible will create a cleaner package and ma
 
 Before sequencing, copy all of the required files into the sequencing VM, which should like something like this:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="AppVFirefoxSetupFolder" src="{{site.baseurl}}.com/media/2013/03/AppVFirefoxSetupFolder_thumb.png" alt="AppVFirefoxSetupFolder]({{site.baseurl}}/media/2013/03/AppVFirefoxSetupFolder.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="AppVFirefoxSetupFolder" src="{{site.baseurl}}/media/2013/03/AppVFirefoxSetupFolder_thumb.png" alt="AppVFirefoxSetupFolder]({{site.baseurl}}/media/2013/03/AppVFirefoxSetupFolder.png)
 
 For a walkthrough of the sequencing process, using the installation script outlined in [the Firefox deployment article]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/), see the following screenshots:
 

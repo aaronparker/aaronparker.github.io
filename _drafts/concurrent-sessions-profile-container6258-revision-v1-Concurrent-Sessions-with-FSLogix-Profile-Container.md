@@ -64,7 +64,8 @@ Logging onto a second session could be:
 
 When logging onto a second session on a different VM, the sign in screen waits for some time and eventually logs me on with a local profile. The FSLogix Profile log shows that the agent finds that the container is locked and then retries 12 times with 5 seconds between each attempt. 
 
-<pre class="wp-block-preformatted">[22:45:28.323][tid:000008d0.00001108][ERROR:00000020]   Open vhd(x) failed, file is locked.  Retrying 12 time(s) at 5 second intervals (The process cannot access the file because it is being used by another process.)<br />
+```
+[22:45:28.323][tid:000008d0.00001108][ERROR:00000020]   Open vhd(x) failed, file is locked.  Retrying 12 time(s) at 5 second intervals (The process cannot access the file because it is being used by another process.)<br />
 [22:45:33.342][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 1/12<br />
 [22:45:38.396][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 2/12<br />
 [22:45:43.449][tid:000008d0.00001108][INFO]             Retrying open vhd(x) 3/12<br />
@@ -83,7 +84,8 @@ When logging onto a second session on a different VM, the sign in screen waits f
 [22:46:28.886][tid:000008d0.00001108][INFO]             Error. Cleaning up.<br />
 [22:46:28.886][tid:000008d0.00001108][INFO]             Configuration setting not found: SOFTWARE\FSLogix\Profiles\PreventLoginWithFailure.  Using default: 0<br />
 [22:46:28.886][tid:000008d0.00001108][ERROR:0000001f]   LoadProfile failed.  User: aaron. SID: S-1-5-21-2625184940-1311984064-3469394446-1110. (A device attached to the system is not functioning.)<br />
-[22:46:28.886][tid:000008d0.00001108][INFO]             loadProfile time: 60687 milliseconds</pre>
+[22:46:28.886][tid:000008d0.00001108][INFO]             loadProfile time: 60687 milliseconds
+```
 
 While opening the Profile Container fails, the session continues to sign in with a local profile. If the concurrent session is on the same VM, my session logs into the same profile 
 

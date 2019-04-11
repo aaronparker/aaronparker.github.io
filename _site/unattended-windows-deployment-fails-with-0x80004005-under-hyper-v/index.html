@@ -21,7 +21,18 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
+      </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -40,13 +51,13 @@
 
 <p>Here’s one I’ve been troubleshooting on and off for a while - an unattended Windows deployment via MDT fails with error 0x80004005, which is about as helpful as a brick life vest.</p>
 
-<p><img class="size-full wp-image-2742 aligncenter" title="Failed MDT Deployment" src=".com/media/2012/06/FailedMDTDeployment.png" alt="Failed MDT Deployment" width="559" height="399" srcset=".com/media/2012/06/FailedMDTDeployment.png 559w, .com/media/2012/06/FailedMDTDeployment-150x107.png 150w, .com/media/2012/06/FailedMDTDeployment-300x214.png 300w" sizes="(max-width: 559px) 100vw, 559px" /></p>
+<p><img class="size-full wp-image-2742 aligncenter" title="Failed MDT Deployment" src="/media/2012/06/FailedMDTDeployment.png" alt="Failed MDT Deployment" width="559" height="399" srcset="/media/2012/06/FailedMDTDeployment.png 559w, /media/2012/06/FailedMDTDeployment-150x107.png 150w, /media/2012/06/FailedMDTDeployment-300x214.png 300w" sizes="(max-width: 559px) 100vw, 559px" /></p>
 
 <p>Similarly, the MDT log files are pretty useless in narrowing down a root cause. Whilst I couldn’t use the log files to help me discover the issue, I have been using MDT to deliver the same task sequence on multiple hypervisors in our lab environment.</p>
 
 <p>As it turns out the issue can be caused by a fairly specific configuration - delivering Windows Server 2008 R2 with the Remote Desktop Services Session Host (RDSH) role enabled via UNATTEND.XML to a virtual machine on Hyper-V with <a href="http://technet.microsoft.com/en-gb/library/ff817651(WS.10).aspx">Dynamic Memory</a> enabled and the Startup RAM set to 512MB.</p>
 
-<p><img class="size-full wp-image-2743 aligncenter" title="Hyper-V Dynamic Memory" src=".com/media/2012/06/DynamicMemory.png" alt="Hyper-V Dynamic Memory" width="660" height="368" srcset=".com/media/2012/06/DynamicMemory.png 660w, .com/media/2012/06/DynamicMemory-150x83.png 150w, .com/media/2012/06/DynamicMemory-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
+<p><img class="size-full wp-image-2743 aligncenter" title="Hyper-V Dynamic Memory" src="/media/2012/06/DynamicMemory.png" alt="Hyper-V Dynamic Memory" width="660" height="368" srcset="/media/2012/06/DynamicMemory.png 660w, /media/2012/06/DynamicMemory-150x83.png 150w, /media/2012/06/DynamicMemory-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></p>
 
 <p>Dynamic Memory is probably something you would not run for RDSH in production, so there’s a few workarounds:</p>
 

@@ -19,7 +19,7 @@ tags:
 ---
 In the last article, I documented the steps for [deploying an offline Root Certificate Authority on Windows Server 2012 R2]({{site.baseurl}}/deploy-enterprise-root-certificate-authority/). This article will continue the process and show how to install and configure a Subordinate Certificate Authority that will be used to issue certificates to users and devices.
 
-# Basics
+## Basics
 
 To setup a subordinate certificate authority, especially one that will deploy certificates in an Active Directory environment, we'll deploy to a machine running Windows Server 2012 R2 that is a member of the domain.
 
@@ -31,18 +31,18 @@ In this article we will:
 
 To deploy an Enterprise Certificate Authority you'll need to be installing certificate services as a member of the Enterprise Admins group, or have [permissions delegated to your account](https://technet.microsoft.com/en-us/library/dn722303(v=ws.11).aspx). Remember, this means that you won't be installing an Enterprise CA in an environment using [Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds/) because you won't have rights.
 
-# Further Reading
+## Further Reading
 
 As in my last article, my intention is to not go into detail, rather I'm looking to document a set of recommended steps to get an Enterprise Certificate Authority up and running successfully. For more in-depth reading, here is a list of recommended articles:
 
   * [Active Directory Certificate Services Overview](https://technet.microsoft.com/en-us/library/hh831740(v=ws.11).aspx)
   * [Certification Authority Guidance](https://technet.microsoft.com/en-us/library/hh831574.aspx)
 
-# Deploying an Enterprise Subordinate Certificate Authority
+## Deploying an Enterprise Subordinate Certificate Authority
 
 The following steps are taken on a virtual machine running Windows Server 2012 R2 with all current updates as an Active Directory domain member.
 
-## Installing Certificate Services
+### Installing Certificate Services
 
 Just as with [the offline Root CA]({{site.baseurl}}/deploy-enterprise-root-certificate-authority/), deploying Certificate Services on Windows Server 2012 R2 is simple – open Server Manager, open the **Add Roles and Features** wizard and choose **Active Directory Certificate Services** under Server Roles.
 
@@ -58,21 +58,23 @@ To simplify the installation of these roles, install via PowerShell instead. Ele
 
 ![Installing the subordinate CA roles with PowerShell]({{site.baseurl}}/media/2016/08/PowerShellInstallingCAServices.png)*Installing the subordinate CA roles with PowerShell*
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Add-WindowsFeature -IncludeManagementTools -Name ADCS-Cert-Authority, `
+```powershell
+Add-WindowsFeature -IncludeManagementTools -Name ADCS-Cert-Authority, `
 ADCS-Web-Enrollment, Web-Default-Doc, Web-Dir-Browsing, Web-Http-Errors, `
 Web-Static-Content, Web-Http-Redirect, Web-Http-Logging, Web-Log-Libraries, `
 Web-Request-Monitor, Web-Http-Tracing, Web-Stat-Compression, Web-Filtering, `
-Web-Windows-Auth, Web-ASP, Web-ISAPI-Ext</pre>
+Web-Windows-Auth, Web-ASP, Web-ISAPI-Ext
+```
 
 No reboot should be required after installing these roles.
 
-## Configure DNS
+### Configure DNS
 
-Before we go any further, remember that in setting up the Root CA, we [configured]({{site.baseurl}}/media/2016/08/14-Root-CA-Certificate-Services.png) the **Certificate Revocation List Distribution Point** using an alias to the issuing CA. In my case, I've configured a CNAME record - _crl.home.stealthpuppy.com_ to point to my issuing CA hostname - _issuingca.home.stealthpuppy.com_.
+Before we go any further, remember that in setting up the Root CA, we [configured]({{site.baseurl}}/media/2016/08/14-Root-CA-Certificate-Services.png) the **Certificate Revocation List Distribution Point** using an alias to the issuing CA. In my case, I've configured a CNAME record - `crl.home.stealthpuppy.com` to point to my issuing CA hostname - `issuingca.home.stealthpuppy.com`.
 
 Configure the alias in DNS now, so that it has time to propagate and be available for resolution when we configure the subordinate certificate request later. If this step is missed, you will receive 'CRL unavailable' errors.
 
-## Configuring Certificate Services
+### Configuring Certificate Services
 
 After the Certificate Services roles are installed, start the configuration wizard from Server Manager - click the flag and yellow icon and click the **Configure Active Directory Certificate Services**... link.
 
@@ -118,19 +120,19 @@ Click **Configure** and the wizard will configure the certificate services roles
 
 ![Certificate Services wizard - configuration results]({{site.baseurl}}/media/2016/08/11CAConfigure.png)*Certificate Services wizard - configuration results*
 
-## Configuring the CRL Distribution Point
+### Configuring the CRL Distribution Point
 
 Before configuring the Certification Authority itself, we'll first copy across the certificate and CRL from the root CA.
 
-Ensure the root CA virtual machine is running and copy the contents of **C:\Windows\System32\certsrv\CertEnroll** from the root CA to the same folder on the subordinate CA. This is the default location to which certificates and CRLs are published. Keeping the default locations will require the minimum amount of configuration for the CRL and AIA distribution points.
+Ensure the root CA virtual machine is running and copy the contents of `C:\Windows\System32\certsrv\CertEnroll` from the root CA to the same folder on the subordinate CA. This is the default location to which certificates and CRLs are published. Keeping the default locations will require the minimum amount of configuration for the CRL and AIA distribution points.
 
 The result on the subordinate certificate authority will look something like this - note that the CRL for the root CA is located here:
 
 ![The CertEnroll folder after copying certificates and CRLs from the root CA]({{site.baseurl}}/media/2016/08/CertEnrollFolder.png)*The CertEnroll folder after copying certificates and CRLs from the root CA*
 
-Now double check that the alias you've selected for your CRL host is resolvable. In my case, I've checked that I can ping _crl.home.stealthpuppy.com_.
+Now double check that the alias you've selected for your CRL host is resolvable. In my case, I've checked that I can ping `crl.home.stealthpuppy.com`.
 
-## Issuing the Subordinate CA Certificate
+### Issuing the Subordinate CA Certificate
 
 Next, we will request, approve the certificate request for the subordinate CA. At this point, the subordinate CA is unconfigured because it does not yet have a valid CA certificate.
 
@@ -152,7 +154,7 @@ Export the new certificate to a file in PKCS format. Copy the file back to the s
 
 We have successfully issued and exported the subordinate CA's certificate, so this CA should no longer be required. You can shut down and secure the root CA - either move the VM to a secure location or ensure it is stored in such a way that it can't readily be started.
 
-## Configuring the Subordinate CA
+### Configuring the Subordinate CA
 
 With the certificate file stored locally to the subordinate CA, open the Certificate Authority console - note that the certificate service is stopped. Right-click the CA, select **All Tasks** and choose **Install CA Certificate...**
 
@@ -174,13 +176,15 @@ Just like the root CA, we should now open the properties of this certificate aut
 
 Open the properties of the CA, choose the **Extensions** tab and ensure that the options for the existing HTTP entry are _deselected_. Now add a new CRL distribution point.
 
-You can select the existing HTTP distribution point and press Ctrl-C to copy the existing location. For this CA we can leave the default <ServerDNSName> variable; however, to be consistent with the root CA, I've chosen to add the same crl alias:
+You can select the existing HTTP distribution point and press Ctrl-C to copy the existing location. For this CA we can leave the default `<ServerDNSName>` variable; however, to be consistent with the root CA, I've chosen to add the same crl alias:
 
 ![Adding a new HTTP CRL distribution point to the CA]({{site.baseurl}}/media/2016/08/CRLAddHTTP.png)*Adding a new HTTP CRL distribution point to the CA*
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">http://crl.home.stealthpuppy.com/CertEnroll/&lt;CaName&gt;&lt;CRLNameSuffix&gt;&lt;DeltaCRLAllowed&gt;.crl</pre>
+```
+http://crl.home.stealthpuppy.com/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl
+```
 
-For this new DP, I've enabled '**Include in CRLs'** and '**Include in the CDP...'** options (and disabled these for the existing http:// DP). Also check that the ldap:// distribution is enabled, which it should be by default.
+For this new DP, I've enabled '**Include in CRLs'** and '**Include in the CDP...'** options (and disabled these for the existing `http://` DP). Also check that the ldap:// distribution is enabled, which it should be by default.
 
 ![HTTP CRL distribution point properties]({{site.baseurl}}/media/2016/08/CRLHTTPproperties.png)*HTTP CRL distribution point properties*
 
@@ -202,7 +206,7 @@ View the C:\Windows\System32\certsrv\CertEnroll folder to view the certificates 
 
 If the CRL of the root CA ever needs to be updated (e.g. if new subordinate CAs are provisioned), manually boot the root CA, publish the CRL and copy over to this location on the subordinate certificate authority.
 
-# Viewing the CA configuration in Active Directory
+## Viewing the CA configuration in Active Directory
 
 The certificate services configuration in Active Directory can be confirmed with the Enterprise PKI snap-in. Open a Microsoft Management Console instance (**mmc.exe**) and add the **Enterprise PKI** snap-in.
 
@@ -210,7 +214,7 @@ The certificate services configuration in Active Directory can be confirmed with
 
 In my example, you can see the configuration in Active Directory and the act of configuring certificate services on the subordinate CA and issuing the CA certificate has imported the certificate chain into AD and I can see CRL and AIA distribution points listed.
 
-# Conclusion
+## Conclusion
 
 Setting up Active Directory Certificate Services consists of quite a reasonable number of steps and doing so successfully requires paying attention to the details. If you ensure that you've configured an offline root CA, a subordinate certificate authority and correct locations for the certificate revocation list, installing and configuring certificate services should be easy.
 

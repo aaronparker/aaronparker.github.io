@@ -18,7 +18,7 @@ tags:
   - ControlPlane
   - OS X
 ---
-<img class="alignright size-full wp-image-3021" alt="ControlPlane Icon" src="{{site.baseurl}}.com/media/2013/01/controlplane.png" width="128" height="128" />I currently use a MacBook Pro for my personal and work use every day - it's my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).
+<img class="alignright size-full wp-image-3021" alt="ControlPlane Icon" src="{{site.baseurl}}/media/2013/01/controlplane.png" width="128" height="128" />I currently use a MacBook Pro for my personal and work use every day - it's my primary computing device. It goes with me almost everywhere, so invariably I am moving between secure (e.g. home) and non-secure or public locations (including the office).
 
 Each location therefore, has different contexts - at home I might connect to my [Synology](http://www.synology.com/) NAS and I don't need to lock the laptop when I walk away from it. Work is a very different context - I don't have access to the NAS and I'm in a public location where I should be locking the desktop when it's not in use.
 
@@ -34,11 +34,11 @@ Downloading and installing ControlPlane is very simple - download the disk image
 
 Launch ControlPlane and enable 'Start ControlPlane at login' (if it's not running, actions won't fire). Here I've also set a default context (Secure). This is important because I want the secure actions firing by default with other actions only firing if I connect to a specific context (such as Home).
 
-<img class="alignnone size-full wp-image-3022" alt="ControlPlane General" src="{{site.baseurl}}.com/media/2013/01/ControlPlane-General.png" width="527" height="491" srcset="{{site.baseurl}}.com/media/2013/01/ControlPlane-General.png 527w, {{site.baseurl}}.com/media/2013/01/ControlPlane-General-150x139.png 150w, {{site.baseurl}}.com/media/2013/01/ControlPlane-General-300x279.png 300w" sizes="(max-width: 527px) 100vw, 527px" /> 
+<img class="alignnone size-full wp-image-3022" alt="ControlPlane General" src="{{site.baseurl}}/media/2013/01/ControlPlane-General.png" width="527" height="491" srcset="{{site.baseurl}}/media/2013/01/ControlPlane-General.png 527w, {{site.baseurl}}/media/2013/01/ControlPlane-General-150x139.png 150w, {{site.baseurl}}/media/2013/01/ControlPlane-General-300x279.png 300w" sizes="(max-width: 527px) 100vw, 527px" /> 
 
 I've enabled the display of the context name in the menu bar so that I can easily see which context the laptop is in:
 
-<img class="alignnone size-full wp-image-3027" alt="ControlPlane Menubar" src="{{site.baseurl}}.com/media/2013/01/ControlPlane-Menubar.png" width="539" height="63" srcset="{{site.baseurl}}.com/media/2013/01/ControlPlane-Menubar.png 539w, {{site.baseurl}}.com/media/2013/01/ControlPlane-Menubar-150x17.png 150w, {{site.baseurl}}.com/media/2013/01/ControlPlane-Menubar-300x35.png 300w" sizes="(max-width: 539px) 100vw, 539px" /> 
+<img class="alignnone size-full wp-image-3027" alt="ControlPlane Menubar" src="{{site.baseurl}}/media/2013/01/ControlPlane-Menubar.png" width="539" height="63" srcset="{{site.baseurl}}/media/2013/01/ControlPlane-Menubar.png 539w, {{site.baseurl}}/media/2013/01/ControlPlane-Menubar-150x17.png 150w, {{site.baseurl}}/media/2013/01/ControlPlane-Menubar-300x35.png 300w" sizes="(max-width: 539px) 100vw, 539px" /> 
 
 # Configuring Contexts
 
@@ -46,11 +46,11 @@ Create a Context with a name, Evidence Sources (properties of a location, physic
 
 I've created three Contexts - Home, Mobile (for use with a MiFi-style device) and Secure. Rules are applied to Home and Mobile, whilst Secure has no rules applied and thus applies to any location that isn't Home or Mobile.
 
-<img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="{{site.baseurl}}.com/media/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="{{site.baseurl}}.com/media/2013/01/ControlPlane-Contexts.png 507w, {{site.baseurl}}.com/media/2013/01/ControlPlane-Contexts-150x150.png 150w, {{site.baseurl}}.com/media/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /> 
+<img class="alignnone size-full wp-image-3023" alt="ControlPlane Contexts" src="{{site.baseurl}}/media/2013/01/ControlPlane-Contexts.png" width="507" height="507" srcset="{{site.baseurl}}/media/2013/01/ControlPlane-Contexts.png 507w, {{site.baseurl}}/media/2013/01/ControlPlane-Contexts-150x150.png 150w, {{site.baseurl}}/media/2013/01/ControlPlane-Contexts-300x300.png 300w" sizes="(max-width: 507px) 100vw, 507px" /> 
 
 To define the Home context, I've used the 'WiFi BSSID' rule to define that if the MacBook has a connection to my home router, then I must be at home. 100% confidence is enabled on this rule because I know it's highly unlikely that I'll be connected to the same SSID and MAC address at any other location.
 
-<img class="alignnone size-full wp-image-3024" alt="ControlPlane Rules" src="{{site.baseurl}}.com/media/2013/01/ControlPlane-Rules.png" width="591" height="476" srcset="{{site.baseurl}}.com/media/2013/01/ControlPlane-Rules.png 591w, {{site.baseurl}}.com/media/2013/01/ControlPlane-Rules-150x120.png 150w, {{site.baseurl}}.com/media/2013/01/ControlPlane-Rules-300x241.png 300w" sizes="(max-width: 591px) 100vw, 591px" /> 
+<img class="alignnone size-full wp-image-3024" alt="ControlPlane Rules" src="{{site.baseurl}}/media/2013/01/ControlPlane-Rules.png" width="591" height="476" srcset="{{site.baseurl}}/media/2013/01/ControlPlane-Rules.png 591w, {{site.baseurl}}/media/2013/01/ControlPlane-Rules-150x120.png 150w, {{site.baseurl}}/media/2013/01/ControlPlane-Rules-300x241.png 300w" sizes="(max-width: 591px) 100vw, 591px" /> 
 
 I could use various other evidence sources; however I've found that a WiFi connection is the simplest approach for my needs.
 
@@ -73,7 +73,7 @@ ControlPlane provides a plethora of actions and enabling or disabling Time Machi
 
 Mounting or dismounting a remote share requires the full path to that share. That full path can be found via Get Info from the right-click context menu on the share.
 
-<img class="alignnone size-full wp-image-3028" alt="ControlPlane Mount" src="{{site.baseurl}}.com/media/2013/01/ControlPlane-Mount.png" width="612" height="605" srcset="{{site.baseurl}}.com/media/2013/01/ControlPlane-Mount.png 612w, {{site.baseurl}}.com/media/2013/01/ControlPlane-Mount-150x148.png 150w, {{site.baseurl}}.com/media/2013/01/ControlPlane-Mount-300x296.png 300w" sizes="(max-width: 612px) 100vw, 612px" /> 
+<img class="alignnone size-full wp-image-3028" alt="ControlPlane Mount" src="{{site.baseurl}}/media/2013/01/ControlPlane-Mount.png" width="612" height="605" srcset="{{site.baseurl}}/media/2013/01/ControlPlane-Mount.png 612w, {{site.baseurl}}/media/2013/01/ControlPlane-Mount-150x148.png 150w, {{site.baseurl}}/media/2013/01/ControlPlane-Mount-300x296.png 300w" sizes="(max-width: 612px) 100vw, 612px" /> 
 
 I could also unmount the same share when I leave the Home context.
 
@@ -93,7 +93,7 @@ Save these commands in text files on the file system (e.g. enable-passwordlock.s
 
 Then add System actions in ControlPlane to execute the shell scripts at in the right context:
 
-<img alt="ControlPlane Actions" src="{{site.baseurl}}.com/media/2013/01/ControlPlane-Actions.png" width="612" height="605" /> 
+<img alt="ControlPlane Actions" src="{{site.baseurl}}/media/2013/01/ControlPlane-Actions.png" width="612" height="605" /> 
 
 # Life is Good
 

@@ -18,7 +18,7 @@ tags:
   - Internet-Explorer
   - Proxy server
 ---
-<img class="alignleft size-full wp-image-1164" style="margin-left: 0px; margin-right: 15px;" title="ProxySettings" src="{{site.baseurl}}.com/media/2009/06/ProxySettings.png" alt="ProxySettings" width="341" height="302" srcset="{{site.baseurl}}.com/media/2009/06/ProxySettings.png 341w, {{site.baseurl}}.com/media/2009/06/ProxySettings-150x132.png 150w, {{site.baseurl}}.com/media/2009/06/ProxySettings-300x265.png 300w" sizes="(max-width: 341px) 100vw, 341px" />
+<img class="alignleft size-full wp-image-1164" style="margin-left: 0px; margin-right: 15px;" title="ProxySettings" src="{{site.baseurl}}/media/2009/06/ProxySettings.png" alt="ProxySettings" width="341" height="302" srcset="{{site.baseurl}}/media/2009/06/ProxySettings.png 341w, {{site.baseurl}}/media/2009/06/ProxySettings-150x132.png 150w, {{site.baseurl}}/media/2009/06/ProxySettings-300x265.png 300w" sizes="(max-width: 341px) 100vw, 341px" />
 
 Are you deploying browser proxy settings by setting a proxy server and attempting to manage a proxy bypass list? There is a better way..
 

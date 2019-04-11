@@ -16,7 +16,7 @@ categories:
 tags:
   - App-V
 ---
-_<img class="alignleft wp-image-4128" style="margin: 0px 15px 0px 0px;" src="{{site.baseurl}}.com/media/2015/09/KevinKaminski-150x150.jpg" alt="KevinKaminski](https://twitter.com/kkaminsk), a long time App-V MVP based in Calgary, Canada. He's a long time presenter at events such as BriForum and MMS. As well as consulting on application delivery, he provides training services for App-V and application packaging._
+[Kevin Kaminski](https://twitter.com/kkaminsk), a long time App-V MVP based in Calgary, Canada. He's a long time presenter at events such as BriForum and MMS. As well as consulting on application delivery, he provides training services for App-V and application packaging._
 
 App-V training has evolved from being fairly limited to a large selection of offerings both free and paid, with in-person training to online delivery. Because of the variety, we recommend you take a look at the various offerings available to determine what best suits your needs from both a delivery and content perspective.
 

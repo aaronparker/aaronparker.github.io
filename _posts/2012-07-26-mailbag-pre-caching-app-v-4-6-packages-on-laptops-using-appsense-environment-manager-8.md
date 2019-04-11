@@ -18,12 +18,12 @@ tags:
   - App-V
   - AppSense
 ---
-<img class="size-full wp-image-2631 alignnone" title="Mail Bag" src="{{site.baseurl}}.com/media/2012/02/Mail-Bag.png" alt="Mail Bag" width="128" height="128" />
+<img class="size-full wp-image-2631 alignnone" title="Mail Bag" src="{{site.baseurl}}/media/2012/02/Mail-Bag.png" alt="Mail Bag" width="128" height="128" />
 
 [Rory](https://twitter.com/Rorymon) [asks via Twitter](https://twitter.com/Rorymon/status/228536440403931136) - can we pre-cache App-V packages on laptop clients so that all applications are available offline, using [AppSense Environment Manager](http://www.appsense.com/policy-and-governance)?:
 
 <p style="text-align: center;">
-  <img class="size-full wp-image-2796 aligncenter" title="Rory Asks" src="{{site.baseurl}}.com/media/2012/07/RoryAsks.png" alt="Rory Asks" width="519" height="138" srcset="{{site.baseurl}}.com/media/2012/07/RoryAsks.png 519w, {{site.baseurl}}.com/media/2012/07/RoryAsks-150x39.png 150w, {{site.baseurl}}.com/media/2012/07/RoryAsks-300x79.png 300w" sizes="(max-width: 519px) 100vw, 519px" />
+  <img class="size-full wp-image-2796 aligncenter" title="Rory Asks" src="{{site.baseurl}}/media/2012/07/RoryAsks.png" alt="Rory Asks" width="519" height="138" srcset="{{site.baseurl}}/media/2012/07/RoryAsks.png 519w, {{site.baseurl}}/media/2012/07/RoryAsks-150x39.png 150w, {{site.baseurl}}/media/2012/07/RoryAsks-300x79.png 300w" sizes="(max-width: 519px) 100vw, 519px" />
 </p>
 
 <p style="text-align: left;">
@@ -92,7 +92,7 @@ Now that we know the client is a laptop and we know that it can contact the stre
 This will load all packages and ensure that the progress bar is not shown.
 
 <p align="center">
-  <a href="{{site.baseurl}}.com/media/2012/07/Run-SFTTRAY.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Run-SFTTRAY" src="{{site.baseurl}}.com/media/2012/07/Run-SFTTRAY_thumb.png" alt="Run-SFTTRAY" width="660" height="500" border="0" /></a>
+  <a href="{{site.baseurl}}/media/2012/07/Run-SFTTRAY.png"><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Run-SFTTRAY" src="{{site.baseurl}}/media/2012/07/Run-SFTTRAY_thumb.png" alt="Run-SFTTRAY" width="660" height="500" border="0" /></a>
 </p>
 
 If you are publishing packages to users, configure this action to run in the current user's context. If you are delivering packages globally and using a streaming source, configure this action to run in the System context.
@@ -107,7 +107,7 @@ To put this into action, we'll need to think about when to run the SFTTRAY comma
 
 I've included a sample configuration below that uses each of these approaches by applying the logic in a Reusable Node linked to each of the triggers listed above.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Pre-cacheConfig" src="{{site.baseurl}}.com/media/2012/07/Pre-cacheConfig_thumb.png" alt="Pre-cacheConfig]({{site.baseurl}}/media/2012/07/Pre-cacheConfig.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Pre-cacheConfig" src="{{site.baseurl}}/media/2012/07/Pre-cacheConfig_thumb.png" alt="Pre-cacheConfig]({{site.baseurl}}/media/2012/07/Pre-cacheConfig.png)
 
 Download the configuration shown above from here:
 

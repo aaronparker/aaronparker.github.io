@@ -51,7 +51,7 @@ Here's the code listing for the Get-HvMem function:
         .NOTES
  
         .LINK
-            {{site.baseurl}}.com/hyperv-memory-powershell
+            {{site.baseurl}}/hyperv-memory-powershell
  
     #&gt;
     param(

@@ -20,7 +20,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />Common scenarios for troubleshooting the Management Server (or the Streaming Server) are connectivity issues between the client and server, opening the Management Console from a remote machine and upgrading the Management Server.
+<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="right" />Common scenarios for troubleshooting the Management Server (or the Streaming Server) are connectivity issues between the client and server, opening the Management Console from a remote machine and upgrading the Management Server.
 
 ### Before you Deploy
 
@@ -47,20 +47,20 @@ There are three tools that you should reach for when troubleshooting the Managem
 
 When viewing the Application event log, filter the log (right-click / _Filter Current Log…_) and use these Event sources - Application Virtualization and Application Virtualization Server.
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-ApplicationEventLog" src="{{site.baseurl}}.com/media/2010/08/AppVApplicationEventLog.png" alt="AppV-ApplicationEventLog" width="660" height="416" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-ApplicationEventLog" src="{{site.baseurl}}/media/2010/08/AppVApplicationEventLog.png" alt="AppV-ApplicationEventLog" width="660" height="416" border="0" /> 
 
 The App-V Management Server event log is located in:
 
   * x86: C:\Program Files\Microsoft System Center App Virt Management Server\App Virt Management Server\logs
   * x64: C:\Program Files (x86)\Microsoft System Center App Virt Management Server\App Virt Management Server\logs
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Server-Logfile-location" src="{{site.baseurl}}.com/media/2010/08/AppVServerLogfilelocation.png" alt="AppV-Server-Logfile-location" width="660" height="177" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-Server-Logfile-location" src="{{site.baseurl}}/media/2010/08/AppVServerLogfilelocation.png" alt="AppV-Server-Logfile-location" width="660" height="177" border="0" /> 
 
 There are a couple of great posts on using the log files to troubleshoot issues with the log file: [Troubleshooting App-V with log files](http://blogs.technet.com/b/appv/archive/2009/01/26/troubleshooting-app-v-with-log-files.aspx)  and [Getting to Grip with the App-V Server Log File (sft-server.log)](http://blogs.technet.com/b/virtualworld/archive/2009/04/10/getting-to-grip-with-the-app-v-server-log-file-sft-server-log.aspx).
 
 Although you can use Telnet to check connectivity issues, you should first reach for the App-V Ping Tool by [Immidio](http://immidio.com/). This command-line application comes as a part of the [Immidio Resource Kit](http://immidio.com/resourcekit/), which is free. I can’t speak highly enough of the App-V Ping Tool, it’s the fastest and easiest way to determine whether the Management Server is contactable.
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-PingTool-Output" src="{{site.baseurl}}.com/media/2010/08/AppVPingToolOutput.png" alt="AppV-PingTool-Output" width="660" height="367" border="0" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="AppV-PingTool-Output" src="{{site.baseurl}}/media/2010/08/AppVPingToolOutput.png" alt="AppV-PingTool-Output" width="660" height="367" border="0" /> 
 
 ### Resources
 

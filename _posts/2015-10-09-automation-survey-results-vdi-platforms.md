@@ -24,7 +24,7 @@ tags:
 ---
 Digging further into the details of the data we've gathered from our [OS Automation survey](http://xenappblog.com/2015/take-part-in-the-os-deployment-automation-survey/), let's take a look at the virtual desktop platforms in use by those who responded. I'll largely present this as is and leave any further analysis for later articles.
 
-# Major Desktop Virtualization Platforms
+## Major Desktop Virtualization Platforms
 
 First, let's take a look at an overview of the major RDS / VDI platforms in use. Remember from [the first article in this series]({{site.baseurl}}/automation-survey-results-hypervisor/), that we have many respondents who have selected that they run multiple hypervisors or multiple in environments, so the virtual desktop platforms reflect this as well. What you see here is a total across all of the responses.
 
@@ -32,7 +32,7 @@ First, let's take a look at an overview of the major RDS / VDI platforms in use.
 
 It's not surprising that Citrix XenApp and XenDesktop come out on top; however I would have expected VMware Horizon deployments to be higher than this. The very high usage of Citrix solutions in these responses could be due to a number of factors - XenApp and XenDesktop usage is actually that high, especially for consultants managing or deploying several environments; and, as discussed previously the audience of xenappblog.com is quite Citrix focussed.
 
-# Individual Virtual Desktop Solution Breakdown
+## Individual Virtual Desktop Solution Breakdown
 
 So lets dig deeper and count the number of responses for all of the virtual desktop products. This graph shows the breakdown of all of the platforms that we received data on. The only one that I see missing there right now is Azure RemoteApp.
 
@@ -40,7 +40,7 @@ So lets dig deeper and count the number of responses for all of the virtual desk
 
 Again the VMware solutions come in considerably lower than Citrix products; however I expect, given that VMware has reduced the feature gap with Horizon 6.x, for this to change over the next few years. There's even a number of respondents running Citrix XenApp with VMware Horizon / View (I saw this myself as far back as 2010).
 
-# Running XenApp or XenDesktop Only
+## Running XenApp or XenDesktop Only
 
 With the number of Citrix deployments so high, I thought that it would be interesting to look at those respondents using Citrix virtual desktop solutions only and see what hypervisor they're running. We know what hypervisor VMware Horizon customers will be using and the other virtual desktop solutions just don't feature that highly to delve into.
 
@@ -60,6 +60,6 @@ What about the size of these environments? XenServer isn't limited to small envi
 
 While we did have 12 responses above 18,000 seats (20,000 to 100,000 seats) all running vSphere, these numbers I think are impressive for our sample size.
 
-# Next Up
+## Next Up
 
 In the next article, we'll take a look how people [are building their master images]({{site.baseurl}}/automation-survey-results-build-master-images) on which they base their virtual desktop deployments.

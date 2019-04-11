@@ -21,7 +21,18 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
+      </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -57,7 +68,7 @@ _</p>
 
 <p>With this overview in mind, I should be able to use DataNow to synchronise data to laptops and even desktops and standard folder redirection for hosted desktops in the data centre (i.e. those desktops right next to the file storage).</p>
 
-<p><a href="/media/2012/08/diagram.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”DataNow diagram” src=”.com/media/2012/08/diagram_thumb.png” alt=”DataNow diagram</a></p>
+<p><a href="/media/2012/08/diagram.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”DataNow diagram” src=”/media/2012/08/diagram_thumb.png” alt=”DataNow diagram</a></p>
 
 <p>The idea being that this approach should provide users with a consistent view of their data regardless of how they are accessing the desktop, with the bonus being that I can now extend the same access to mobile devices.</p>
 
@@ -90,17 +101,17 @@ _</p>
 
 <p>With Folder Redirection implemented and the DataNow client configured, the user folder looks like this:</p>
 
-<p><a href="/media/2012/08/folder1.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”DataNow client folder” src=”.com/media/2012/08/folder1_thumb.png” alt=”DataNow client folder</a></p>
+<p><a href="/media/2012/08/folder1.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”DataNow client folder” src=”/media/2012/08/folder1_thumb.png” alt=”DataNow client folder</a></p>
 
 <p>Whilst the DataNow folder contains each of the redirected user folders:</p>
 
-<p><a href="/media/2012/08/folder2.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”DataNow client folder contents” src=”.com/media/2012/08/folder2_thumb.png” alt=”DataNow client folder contents</a></p>
+<p><a href="/media/2012/08/folder2.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”DataNow client folder contents” src=”/media/2012/08/folder2_thumb.png” alt=”DataNow client folder contents</a></p>
 
 <p>Note that I’ve not redirected Downloads or Saved Games.</p>
 
 <p>After logging into the DataNow client for the first time, each of the redirected folders are synchronised to the home drive:</p>
 
-<p><a href="/media/2012/08/folder3.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Home folder” src=”.com/media/2012/08/folder3_thumb.png” alt=”Home folder</a></p>
+<p><a href="/media/2012/08/folder3.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Home folder” src=”/media/2012/08/folder3_thumb.png” alt=”Home folder</a></p>
 
 <p>Synchronisation works between the local DataNow folder and the home drive and I’m able to make changes on each machine and see the changes on the other. There are some oddities during synchronisation, but I’ve put this down to beta software as I’ve seen synchronisation improve between each beta release.</p>
 

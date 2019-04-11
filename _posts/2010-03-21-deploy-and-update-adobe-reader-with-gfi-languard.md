@@ -38,7 +38,7 @@ To deploy software to a remote machine, I need to be able to authenticate to tha
 
 The deployment feature of LANguard is geared around installing a single file with parameters; however it's simple enough to deploy applications like Office or Reader by using a batch file:
 
-<img class="alignnone size-full wp-image-1141" title="addcustomsoftware" src="{{site.baseurl}}.com/media/2009/05/addcustomsoftware.png" alt="addcustomsoftware" width="327" height="303" srcset="{{site.baseurl}}.com/media/2009/05/addcustomsoftware.png 327w, {{site.baseurl}}.com/media/2009/05/addcustomsoftware-150x138.png 150w, {{site.baseurl}}.com/media/2009/05/addcustomsoftware-300x277.png 300w" sizes="(max-width: 327px) 100vw, 327px" /> 
+<img class="alignnone size-full wp-image-1141" title="addcustomsoftware" src="{{site.baseurl}}/media/2009/05/addcustomsoftware.png" alt="addcustomsoftware" width="327" height="303" srcset="{{site.baseurl}}/media/2009/05/addcustomsoftware.png 327w, {{site.baseurl}}/media/2009/05/addcustomsoftware-150x138.png 150w, {{site.baseurl}}/media/2009/05/addcustomsoftware-300x277.png 300w" sizes="(max-width: 327px) 100vw, 327px" /> 
 
 Before I start deployment, I've configured a source location (\\dc\common\Adobe\Reader91) for Adobe Reader 9.1:
 
@@ -54,7 +54,7 @@ MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALL
 
 The script will install Adobe Reader directly from the network, so the only file being copied to the remote machine is the script. Here's what the install source for Adobe Reader looks like:
 
-<img class="alignnone size-full wp-image-1135" title="reader91" src="{{site.baseurl}}.com/media/2009/05/reader91.png" alt="reader91" width="590" height="341" srcset="{{site.baseurl}}.com/media/2009/05/reader91.png 590w, {{site.baseurl}}.com/media/2009/05/reader91-150x86.png 150w, {{site.baseurl}}.com/media/2009/05/reader91-300x173.png 300w" sizes="(max-width: 590px) 100vw, 590px" /> 
+<img class="alignnone size-full wp-image-1135" title="reader91" src="{{site.baseurl}}/media/2009/05/reader91.png" alt="reader91" width="590" height="341" srcset="{{site.baseurl}}/media/2009/05/reader91.png 590w, {{site.baseurl}}/media/2009/05/reader91-150x86.png 150w, {{site.baseurl}}/media/2009/05/reader91-300x173.png 300w" sizes="(max-width: 590px) 100vw, 590px" /> 
 
 Deploying software is a three step process:
 
@@ -62,11 +62,11 @@ Deploying software is a three step process:
   2. add the machines (by specifiying the hostname) to deploy the software to;
   3. then deploy immediately or choose to install using a schedule:
 
-<img class="alignnone size-full wp-image-1140" style="border: black 1px solid;" title="deploycustomsoftware-1b" src="{{site.baseurl}}.com/media/2009/05/deploycustomsoftware-1b.png" alt="deploycustomsoftware-1b" width="590" height="496" srcset="{{site.baseurl}}.com/media/2009/05/deploycustomsoftware-1b.png 590w, {{site.baseurl}}.com/media/2009/05/deploycustomsoftware-1b-150x126.png 150w, {{site.baseurl}}.com/media/2009/05/deploycustomsoftware-1b-300x252.png 300w" sizes="(max-width: 590px) 100vw, 590px" /> 
+<img class="alignnone size-full wp-image-1140" style="border: black 1px solid;" title="deploycustomsoftware-1b" src="{{site.baseurl}}/media/2009/05/deploycustomsoftware-1b.png" alt="deploycustomsoftware-1b" width="590" height="496" srcset="{{site.baseurl}}/media/2009/05/deploycustomsoftware-1b.png 590w, {{site.baseurl}}/media/2009/05/deploycustomsoftware-1b-150x126.png 150w, {{site.baseurl}}/media/2009/05/deploycustomsoftware-1b-300x252.png 300w" sizes="(max-width: 590px) 100vw, 590px" /> 
 
 So how is this actually working? The deployment feature on LANguard is not dissimilar to the Sysinternals tool PSEXEC, where a temporary service is installed on the remote machine to deliver the install commands. Essentially to deploy Adobe Reader 9, I am using LANguard to remotely execute INSTALL.CMD. I need admin rights on the target computers and LANguard does the rest. I even get to see the progress of the deployment:
 
-<img class="alignnone size-full wp-image-1145" style="border: black 1px solid;" title="deploymenprogess" src="{{site.baseurl}}.com/media/2009/05/deploymenprogess.png" alt="deploymenprogess" width="434" height="270" srcset="{{site.baseurl}}.com/media/2009/05/deploymenprogess.png 434w, {{site.baseurl}}.com/media/2009/05/deploymenprogess-150x93.png 150w, {{site.baseurl}}.com/media/2009/05/deploymenprogess-300x186.png 300w" sizes="(max-width: 434px) 100vw, 434px" /> 
+<img class="alignnone size-full wp-image-1145" style="border: black 1px solid;" title="deploymenprogess" src="{{site.baseurl}}/media/2009/05/deploymenprogess.png" alt="deploymenprogess" width="434" height="270" srcset="{{site.baseurl}}/media/2009/05/deploymenprogess.png 434w, {{site.baseurl}}/media/2009/05/deploymenprogess-150x93.png 150w, {{site.baseurl}}/media/2009/05/deploymenprogess-300x186.png 300w" sizes="(max-width: 434px) 100vw, 434px" /> 
 
 I can also use the same process to update Reader 9.1 with the 9.11. update patch.
 

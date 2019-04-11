@@ -13,11 +13,11 @@ Objective is an [Enterprise Content Management system from Objective](http://www
 
 However this application has one small issue out of the box €“ errors are logged to a file located in the Program Files folder (<span style="font-family: Courier New">C:Program FilesObjectiveClient 7error.log</span> by default). This, of course, is a bit of a problem where users don't have write access the folder in question. What's even better is that if authentication fails and the log file write fails, users will receive an error dialog which only has an OK button and essentially doesn't go away, no matter how many times you click it:
 
-<img border="0" src="{{site.baseurl}}.com/media/2007/02/1000.14.813.ObjectiveError.png" /> 
+<img border="0" src="{{site.baseurl}}/media/2007/02/1000.14.813.ObjectiveError.png" /> 
 
 You can see from the following [Process Monitor](http://www.microsoft.com/technet/sysinternals/ProcessesAndThreads/processmonitor.mspx) screenshot the write failure in question:
 
-<img border="0" src="{{site.baseurl}}.com/media/2007/02/1000.14.814.ObjectiveFileAccess.png" /> 
+<img border="0" src="{{site.baseurl}}/media/2007/02/1000.14.814.ObjectiveFileAccess.png" /> 
 
 <strike>Fortunately you can change the location of the log file with this registry string value: <span style="font-family: Courier New">HKCUSoftwareObjectiveClientPreferencesLogFile</span>.</strike> The regsitry that appears to define a location and name for the log file _is not actually read by the client at all_. The issue, though, does beg the question €“ how does an enterprise class application come configured to write a log file to the Program Files folder by default? Would the users profile not be a much better place to write logs or even perhaps the Windows Application log? Maybe a developer or two at Objective needs their administrative access taken away from them.
 

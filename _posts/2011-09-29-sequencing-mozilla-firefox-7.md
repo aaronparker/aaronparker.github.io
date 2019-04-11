@@ -18,16 +18,16 @@ tags:
   - App-V
   - Firefox
 ---
-<img src="{{site.baseurl}}/media/2011/06/062611_1120_SequencingM1.png" alt="" align="right" />It's easy to virtualize [Firefox with App-V]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-5/); however getting it right takes a little more effort. Here's how to successfully sequence [Mozilla Firefox 7.x](http://www.mozilla.com/en-US/firefox/).
+It's easy to virtualize [Firefox with App-V]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-5/); however getting it right takes a little more effort. Here's how to successfully sequence [Mozilla Firefox 7.x](http://www.mozilla.com/en-US/firefox/).
 
-### What you lose by virtualizing Firefox
+## What you lose by virtualizing Firefox
 
 Virtualizing Firefox with App-V will isolate the application from the OS, so the following features will not be available once Firefox has been sequenced:
 
   * Firefox Jump Lists in the Start Menu and Taskbar
   * The ability set the browser as default
 
-### Managing the Firefox profile – virtualize or not?
+## Managing the Firefox profile – virtualize or not?
 
 [Firefox stores preferences, extensions and other user data](http://kb.mozillazine.org/Profile_folder_-_Firefox) in:
 
@@ -46,7 +46,7 @@ There are several reasons why this approach is a good idea:
 
 By excluding %APPDATA% and not virtualizing the user profile you will gain some flexibility with your Firefox deployment.
 
-### Configuring Firefox Defaults
+## Configuring Firefox Defaults
 
 If a Firefox profile is not virtualized within the package any options set during the monitoring phase won't be captured. Fortunately Firefox can be configured with defaults for any new profile so that it will contain your required configuration options.
 
@@ -56,7 +56,7 @@ I will walk through adding a couple of files to this location for to ensure that
 
   * [Enterprise Build Of Firefox For Deployment](http://www.binaryturf.com/enterprise-build-firefox-deployment/)
 
-### Firefox features to disable
+## Firefox features to disable
 
 There are a couple of features that should be disabled when running Firefox under App-V:
 
@@ -65,25 +65,17 @@ There are a couple of features that should be disabled when running Firefox unde
 
 [_user.js_](http://kb.mozillazine.org/User.js_file) is used to configure Firefox options and enforce them and [_UserChrome.css_](http://www-archive.mozilla.org/unix/customizing.html) is used to remove those options from the user interface.
 
-Available below is a copy of _user.js_ that disables automatic updates of Firefox and checking whether it is the default browser:
-
-<p class="download">
-  [download id="44&#8243; format="1&#8243;]
-</p>
+Available below is a copy of `user.js` that disables automatic updates of Firefox and checking whether it is the default browser:
 
 Here is a copy of _userChrome.css_ that will remove updates and default browser options from user interface:
 
-<p class="download">
-  [download id="45&#8243; format="1&#8243;]
-</p>
-
-### Sequencing Platform
+## Sequencing Platform
 
 The Firefox version available from Mozilla is an x86 application (x64 build are available from other sources), so I recommend sequencing Firefox on Windows 7 x86 virtual machine even though you may be deploying to 64-bit Windows.
 
 I've used a VFS install, so I have configured a second virtual hard disk to host the Q: drive. If you would prefer a MNT install just change the install folder when installing Firefox.
 
-### Sequencer Configuration
+## Sequencer Configuration
 
 Before Sequencing, add the following exclusions:
 
@@ -99,11 +91,7 @@ If you are adding Adobe Flash Player to the package, add these exclusions as wel
 
 I have included these in a Package Template for Firefox that you can download from here:
 
-<p class="download">
-  [download id="46&#8243; format="1&#8243;]
-</p>
-
-### Installing Firefox
+## Installing Firefox
 
 Download the [Firefox installer in your target language from the Mozilla site](http://www.mozilla.com/firefox/all.html). Sequencing Firefox will require the following steps:
 
@@ -121,20 +109,16 @@ Automating this process as much as possible will create a cleaner package and ma
 
 For an example script that will automate the install and configuration of Firefox, see the script below:
 
-<p class="download">
-  [download id="50&#8243; format="1&#8243;]
-</p>
-
-### Shortcuts
+## Shortcuts
 
 If the monitoring phase was successful the Sequencer should create a single shortcut for Firefox. If you are including Flash 10.4 or above in the package, add an additional shortcut for the Flash Player Control Panel applet using "C:\Windows\System32\FlashPlayerCPLApp.cpl" as the target.
 
-### First Run Tasks and Primary Feature Block
+## First Run Tasks and Primary Feature Block
 
 If the steps above have been followed for exclusions, installation and configuration of Firefox, there will be no first run tasks to complete. Additionally the resultant package will be reasonably small so there is no need to create the Primary Feature Block.
 
 Because you don't need to complete first run tasks or create the Primary Feature Block, you could automate the entire end-to-end process of creating a Firefox package using [the App-V Sequencer command-line interface](http://softwaredeployment.wordpress.com/2011/04/15/app-v-4-6-sp1-command-line-interface/).
 
-### Finally
+## Finally
 
 Save your package and deploy. With compression enabled, the package should be around 22Mb.

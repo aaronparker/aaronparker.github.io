@@ -20,7 +20,7 @@ tags:
   - PVS
   - XenApp
 ---
-<img class="alignright size-full wp-image-2946" style="margin: 5px;" title="HandsOff" src="{{site.baseurl}}.com/media/2012/11/HandsOff.jpg" alt="](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy)
+<img class="alignright size-full wp-image-2946" style="margin: 5px;" title="HandsOff" src="{{site.baseurl}}/media/2012/11/HandsOff.jpg" alt="](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy)
 
 The first article gives an overview of the approach - [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation]({{site.baseurl}}/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/) and you can find more detail in [Hands off my gold image – Microsoft Deployment Toolkit details]({{site.baseurl}}/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/) and [Hands off my gold image – The Task Sequence]({{site.baseurl}}/deployment/hands-off-my-gold-image-the-task-sequence/). In this article I'll briefly cover the scripts referenced in the task sequence.
 

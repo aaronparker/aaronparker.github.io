@@ -19,7 +19,7 @@ tags:
 ---
 Here's is a list of articles and resources for delivering the currently supported versions of Microsoft Office with App-V 5.
 
-# General Resources
+## General Resources
 
 Note that with Office 2016 and Office 2013, the only supported method for delivering Office with App-V is to use the Office Deployment Tool - you cannot capture the Windows Installer version of Office 2016 or 2013 with the App-V Sequencer.
 
@@ -30,7 +30,7 @@ Here are articles that apply to all versions of Office or that have general reco
   * [Overview of Click-to-Run for Office 365 setup architecture](https://technet.microsoft.com/en-au/library/jj219420.aspx)
   * [Deploy Click-to-Run for Office 365 products by using the Office Deployment Tool](https://technet.microsoft.com/en-au/library/jj219423.aspx)
 
-# Microsoft Office 2016
+## Microsoft Office 2016
 
 This video provides a great overview on configuring an App-V, or Click-to-Run, package of Office 2016 to then deliver to your App-V clients.
 
@@ -45,7 +45,7 @@ Additional resources:
   * [Download Click to Run for Office 365 products by using the Office Deployment Tool](https://technet.microsoft.com/en-us/library/jj219424(v=office.15))
   * [Deploy Click-to-Run for Office 365 products by using the Office Deployment Tool](https://technet.microsoft.com/en-us/library/jj219423(v=office.15))
 
-# Microsoft Office 2013
+## Microsoft Office 2013
 
 Microsoft introduced the Click-to-Run tool with Office 2013. This was the first version of Office that leveraged what is a modified, self-contained version of App-V to deliver Office. While the Windows Installer version of Office is still available, the Click-to-Run version is preferred for retail and Office 365 customers.
 
@@ -57,7 +57,7 @@ Microsoft introduced the Click-to-Run tool with Office 2013. This was the first
   * [Office 365 ProPlus: Click-to-run deployment and management](https://technet.microsoft.com/en-au/video/tdbe13-office-365-proplus-click-to-run-deployment-and-management.aspx)
   * [Deploying and Updating Microsoft Office 365 ProPlus with Click-to-Run](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/OUC-B302#fbid=)
 
-# Microsoft Office 2010
+## Microsoft Office 2010
 
 An Office 2010 package will need to be created via the App-V Sequencer. Information on how to do so can be found here:
 

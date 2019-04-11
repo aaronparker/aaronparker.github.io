@@ -21,7 +21,18 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
+      </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -36,7 +47,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><a href=".com/virtualisation/sequencing-apple-itunes-10/attachment/itunes10/" rel="attachment wp-att-2279"><img class="alignright size-full wp-image-2279" style="margin-left: 5px; margin-right: 5px;" title="iTunes10" src=".com/media/2011/06/iTunes10.png" alt="iTunes 10 icon" width="128" height="128" /></a>Here’s a nut I’ve been trying to crack for some time – successfully virtualizing Apple iTunes with App-V. I think a combination of iTunes 10 and App-V 4.6 SP1 did the trick. Here’s how to do it.</p>
+    <p><a href="/virtualisation/sequencing-apple-itunes-10/attachment/itunes10/" rel="attachment wp-att-2279"><img class="alignright size-full wp-image-2279" style="margin-left: 5px; margin-right: 5px;" title="iTunes10" src="/media/2011/06/iTunes10.png" alt="iTunes 10 icon" width="128" height="128" /></a>Here’s a nut I’ve been trying to crack for some time – successfully virtualizing Apple iTunes with App-V. I think a combination of iTunes 10 and App-V 4.6 SP1 did the trick. Here’s how to do it.</p>
 
 <h1 id="what-you-lose-by-virtualizing-itunes">What you lose by virtualizing iTunes</h1>
 
@@ -86,7 +97,7 @@
 
 <p>iTunes is a excellent example of an application written by developers who appear to have absolutely no idea about how Windows profiles work. Take a look at the size of the <em>AppData\Roaming\Apple Computer</em> folder in my profile on an existing computer with iTunes installed:</p>
 
-<p><a href="/media/2011/06/09AppData.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;” title=”09AppData” src=”.com/media/2011/06/09AppData_thumb.png” alt=”09AppData</a></p>
+<p><a href="/media/2011/06/09AppData.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;” title=”09AppData” src=”/media/2011/06/09AppData_thumb.png” alt=”09AppData</a></p>
 
 <p>With logs, a back-up of two devices and two copies of iOS 4.3.3 (one for an iPhone and one for an iPad), this folder is a whopping 8.41 GB and contains over 17000 files. Just imagine enabling Roaming Profiles with that in your profile – that’s a lot of coffee waiting for logon to complete.</p>
 
@@ -255,11 +266,11 @@
 
 <p><strong>AppData</strong>: Check that Merge with Local has been applied to folders captured in AppData correctly. The image below shows the <em>Apple Computer</em> and <em>Apple Computer\iTunes</em> folders have been set to Merge with Local. If the pre-sequence steps that create the AppData folder structure are followed (or you are excluding AppData), then no manual action should be required.</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="06AppDataMerge" src=".com/media/2011/06/06AppDataMerge.png" alt="06AppDataMerge" width="660" height="392" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="06AppDataMerge" src="/media/2011/06/06AppDataMerge.png" alt="06AppDataMerge" width="660" height="392" border="0" /></p>
 
 <p>Add a script to the iTunes OSD file to create the AppData folder structure that should exist on the real file system:</p>
 
-<p><a href="/media/2011/06/iTunesScriptBody.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”iTunesScriptBody” src=”.com/media/2011/06/iTunesScriptBody_thumb.png” alt=”iTunesScriptBody</a></p>
+<p><a href="/media/2011/06/iTunesScriptBody.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”iTunesScriptBody” src=”/media/2011/06/iTunesScriptBody_thumb.png” alt=”iTunesScriptBody</a></p>
 
 <p>For an example of what to add to the OSD file, download the example here:</p>
 
@@ -269,15 +280,15 @@
 
 <p><strong>iPod Service</strong>: Set the <em>iPod Service</em> to Automatic. This will ensure that the service is ready as soon as iTunes starts.</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="07iPodService" src=".com/media/2011/06/07iPodService.png" alt="07iPodService" width="660" height="392" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="07iPodService" src="/media/2011/06/07iPodService.png" alt="07iPodService" width="660" height="392" border="0" /></p>
 
 <p><strong>Child Processes</strong>: when iTunes launches, several processes with also be started – AppleMobileDeviceHelper.exe, distnoted.exe (both installed instead of in the iTunes package), iPodService.exe and mDNSResponder.exe (The iPod and Bonjour services respectively).</p>
 
-<p><a href="/media/2011/06/10ProcExp.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;” title=”10ProcExp” src=”.com/media/2011/06/10ProcExp_thumb.png” alt=”10ProcExp</a></p>
+<p><a href="/media/2011/06/10ProcExp.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;” title=”10ProcExp” src=”/media/2011/06/10ProcExp_thumb.png” alt=”10ProcExp</a></p>
 
 <p>On occasion these processes may remain running after iTunes has exited, if this is the case (and you may have already seen this behaviour when building the Primary Feature block) set TERMINATECHILDREN to True in the iTunes OSD.</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="iTunesTerminateChildren" src=".com/media/2011/06/iTunesTerminateChildren.png" alt="iTunesTerminateChildren" width="660" height="231" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="iTunesTerminateChildren" src="/media/2011/06/iTunesTerminateChildren.png" alt="iTunesTerminateChildren" width="660" height="231" border="0" /></p>
 
 <p><strong>Compression</strong>: The package should weigh in at around 290Mb, so depending on your deployment method you could compress it to save bandwidth.</p>
 
@@ -285,11 +296,11 @@
 
 <p>Deploying the iTunes package will require the deployment of Apple Application Support and Apple Mobile Device Support to the client computers first. Without Apple Application Support the following will be the result of launching iTunes:</p>
 
-<p><a href="/media/2011/06/NoAppleAppSupport.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”NoAppleAppSupport” src=”.com/media/2011/06/NoAppleAppSupport_thumb.png” alt=”NoAppleAppSupport</a></p>
+<p><a href="/media/2011/06/NoAppleAppSupport.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”NoAppleAppSupport” src=”/media/2011/06/NoAppleAppSupport_thumb.png” alt=”NoAppleAppSupport</a></p>
 
 <p>While I’ve been able to test iTunes successfully running on an App-V Client, there appears (at this stage at least) to be only one issue – when plugging in a mobile device, the following error is displayed, twice:</p>
 
-<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppleMobileDeviceService" src=".com/media/2011/06/AppleMobileDeviceService.png" alt="This iPhone cannot be used because the Apple Mobile Device service is not started" width="421" height="162" border="0" /></p>
+<p><img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="AppleMobileDeviceService" src="/media/2011/06/AppleMobileDeviceService.png" alt="This iPhone cannot be used because the Apple Mobile Device service is not started" width="421" height="162" border="0" /></p>
 
 <p>Although iTunes reports this error and I can confirm that the service is started (it’s running natively, not within the package), once acknowledged device sync works anyway. I’ve tested with LOCALINTERACTIONALLOWED which hasn’t helped. I’ll update this post if I find a solution.</p>
 

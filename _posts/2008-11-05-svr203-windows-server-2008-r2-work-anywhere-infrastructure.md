@@ -15,7 +15,7 @@ tags:
 ---
 </p> 
 
-<img style="margin: 0px 15px 0px 0px; display: inline" align="left" src="{{site.baseurl}}.com/media/2008/11/teched2008logo.jpg" /> This session was about DirectAccess in Windows 7 and Windows Serve 2008 R2 as well as <strike>Terminal Services</strike> Remote Desktop Services changes in Windows Server 2008 R2. The DirectAccess feature looks pretty compelling but it will take some time to get to there. However, the Remote Desktop Services stuff was actually pretty cool.
+<img style="margin: 0px 15px 0px 0px; display: inline" align="left" src="{{site.baseurl}}/media/2008/11/teched2008logo.jpg" /> This session was about DirectAccess in Windows 7 and Windows Serve 2008 R2 as well as <strike>Terminal Services</strike> Remote Desktop Services changes in Windows Server 2008 R2. The DirectAccess feature looks pretty compelling but it will take some time to get to there. However, the Remote Desktop Services stuff was actually pretty cool.
 
 ## DirectAccess
 

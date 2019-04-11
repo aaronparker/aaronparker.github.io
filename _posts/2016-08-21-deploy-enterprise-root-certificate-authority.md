@@ -21,7 +21,7 @@ Setting up an Enterprise Root Certificate Authority isn't a task that you'll com
 
 So here's how to setup an Enterprise Root Certificate Authority (CA) on Windows Server 2012 R2. Now that I've documented this, I'm hoping I won't forget for next time.
 
-# Basics
+## Basics
 
 I'm not going to go into too much detail here on the specific choices or considerations you should be making when setting up a CA in your environment; however, I would recommend that you do the following at least, to ensure certificate services is deployed securely:
 
@@ -30,7 +30,7 @@ I'm not going to go into too much detail here on the specific choices or conside
 
 Using certificate templates requires Active Directory and also requires that you install and configure the subordinate CA as a member of the Enterprise Admins group. Potentially not an issue in most environments; however for large enterprise environments that may not be the case ([permissions can be delegated](https://technet.microsoft.com/en-us/library/dn722303(v=ws.11).aspx)). This also means that you won't be installing an Enterprise CA in an environment using [Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds/) because you won't have rights.
 
-# Further Reading
+## Further Reading
 
 There are a number of articles that I've drawn from and others worth reading for additional details or in-depth discussions on certificate services. I've listed a few here to provide some further detail:
 
@@ -42,11 +42,11 @@ There are a number of articles that I've drawn from and others worth reading for
   * [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](https://technet.microsoft.com/en-us/library/hh831348(v=ws.11).aspx)
   * [Active Directory Certificate Services (AD CS) Public Key Infrastructure (PKI) Frequently Asked Questions (FAQ)](http://social.technet.microsoft.com/wiki/contents/articles/1587.active-directory-certificate-services-ad-cs-public-key-infrastructure-pki-frequently-asked-questions-faq.aspx)
 
-# Deploying an Enterprise Root Certificate Authority
+## Deploying an Enterprise Root Certificate Authority
 
 The following steps are taken on a virtual machine running Windows Server 2012 R2 with all current updates as a stand-alone server. Installing the root CA on a stand-alone server ensures no issues with domain communication when the VM is booted at a later date.
 
-## Installing Certificate Services
+### Installing Certificate Services
 
 Deploying Certificate Services on Windows Server 2012 R2 is simple enough - open Server Manager, open the **Add Roles and Features** wizard and choose **Active Directory Certificate Services** under Server Roles. Ensure you choose only the **Certificate Authority** role for the Root CA.
 
@@ -54,13 +54,15 @@ Deploying Certificate Services on Windows Server 2012 R2 is simple enough - open
 
 To make installing Certificate Services simpler, do it via PowerShell instead via Add-WindowsFeature:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">Add-WindowsFeature -Name ADCS-Cert-Authority -IncludeManagementTools</pre>
+```powershell
+Add-WindowsFeature -Name ADCS-Cert-Authority -IncludeManagementTools
+```
 
 Which will look like this, no reboot required:
 
 ![Install Certificate Services via PowerShell]({{site.baseurl}}/media/2016/08/03-Install-Certificate-Services.png)*Install Certificate Services via PowerShell*
 
-## Configuring Certificate Services
+### Configuring Certificate Services
 
 After Certificate Services is installed, start the configuration wizard from Server Manager:
 
@@ -98,13 +100,13 @@ Select the validity period - perhaps the default is the best to choose; however,
 
 ![Certificate Services wizard – select the CA certificate validity period ]({{site.baseurl}}/media/2016/08/09-Root-CA-Certificate-Services.png)*Certificate Services wizard – select the CA certificate validity period*
 
-On the next page of the wizard, you can choose the location of the certificate services database and logs location (C:\Windows\System32\Certlog), which can be changed depending on your specific environment.
+On the next page of the wizard, you can choose the location of the certificate services database and logs location (`C:\Windows\System32\Certlog`), which can be changed depending on your specific environment.
 
 On the last page, you will see a summary of the configuration before committing it to the local certificate services.
 
 ![Certificate Services wizard – summary page]({{site.baseurl}}/media/2016/08/11-Root-CA-Certificate-Services.png)*Certificate Services wizard – summary page*
 
-## Configuring the Root CA
+### Configuring the Root CA
 
 Now that certificate services have been installed and the base configuration is complete, a set of specific configuration changes is required to ensure that an offline Root CA will work for us.
 
@@ -116,35 +118,41 @@ Check the details and ensure the certificate hash algorithm is SHA256:
 
 ![Certificate authority with SHA256 hashing algorithm]({{site.baseurl}}/media/2016/08/11a-Root-CA-Certificate-Services.png)*Certificate authority with SHA256 hashing algorithm*
 
-### Configure CA Extensions
+#### Configure CA Extensions
 
 Before we take any further steps, including deploying a subordinate CA for issuing certificates, we need to configure the Certificate Revocation List (CRL) Distribution Point. Because this CA will be offline and not a member of Active Directory, the default locations won't work.
 
-In the properties of the CA, select the **Extensions** tab to view the CRL Distribution Points. By default, the **ldap://** and **file://** locations will be the default distribution points. These, of course, won't work for the reasons I've just stated, and because these locations are embedded in the properties of certificates issued by this CA, we should change them.
+In the properties of the CA, select the **Extensions** tab to view the CRL Distribution Points. By default, the `ldap://` and `file://` locations will be the default distribution points. These, of course, won't work for the reasons I've just stated, and because these locations are embedded in the properties of certificates issued by this CA, we should change them.
 
 ![Configuring the Certificate Revocation List settings]({{site.baseurl}}/media/2016/08/13-Root-CA-Certificate-Services.png)*Configuring the Certificate Revocation List settings*
 
 The default CRL distribution points are as below. These can be copied by selecting each from within the dialog box and pressing Ctrl-C.
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">C:\windows\system32\CertSrv\CertEnroll\&lt;CaName&gt;&lt;CRLNameSuffix&gt;&lt;DeltaCRLAllowed&gt;.crl
-ldap:///CN=&lt;CATruncatedName&gt;&lt;CRLNameSuffix&gt;,CN=&lt;ServerShortName&gt;,CN=CDP,CN=Public Key Services,CN=Services,&lt;ConfigurationContainer&gt;&lt;CDPObjectClass&gt;
-http://&lt;ServerDNSName&gt;/CertEnroll/&lt;CaName&gt;&lt;CRLNameSuffix&gt;&lt;DeltaCRLAllowed&gt;.crl
-file://&lt;ServerDNSName&gt;/CertEnroll/&lt;CaName&gt;&lt;CRLNameSuffix&gt;&lt;DeltaCRLAllowed&gt;.crl</pre>
+```powershell
+C:\windows\system32\CertSrv\CertEnroll\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl
+ldap:///CN=<CATruncatedName><CRLNameSuffix>,CN=<ServerShortName>,CN=CDP,CN=Public Key Services,CN=Services,<ConfigurationContainer><CDPObjectClass>
+http://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl
+file://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl
+```
 
 To set up a CRL distribution point that will work with a location that's online (so that clients can contact the CRL), we'll add a new distribution point rather than modify an existing DP and use HTTP.
 
 Before that we'll want to do two things:
 
-  1. Ensure that 'Publish CRLs to this location' and 'Publish Delta CRLs to this location' are selected on the default **C:\Windows\System32\CertSrv\CertEnroll** location. This should be the default setting.
+  1. Ensure that 'Publish CRLs to this location' and 'Publish Delta CRLs to this location' are selected on the default `C:\Windows\System32\CertSrv\CertEnroll` location. This should be the default setting.
   2. For each existing DP, remove any check marks enabled for 'Include in CRLs'.
 
-Now add a new CRL location, using the same HTTP location value included by default; however, change **<ServerDNSName>** for the FQDN for the host that will serve the CRL. In my example, I've changed:
+Now add a new CRL location, using the same HTTP location value included by default; however, change `<ServerDNSName>` for the FQDN for the host that will serve the CRL. In my example, I've changed:
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">http://&lt;ServerDNSName&gt;/CertEnroll/&lt;CaName&gt;&lt;CRLNameSuffix&gt;&lt;DeltaCRLAllowed&gt;.crl</pre>
+```
+http://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl
+```
 
 to
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">http://crl.home.stealthpuppy.com/CertEnroll/&lt;CaName&gt;&lt;CRLNameSuffix&gt;&lt;DeltaCRLAllowed&gt;.crl</pre>
+```
+http://crl.home.stealthpuppy.com/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl
+```
 
 This FQDN is an alias for the subordinate certificate authority that I'll be deploying to actually issue certificates to clients. This CA will be online with IIS installed, so will be available to serve the CRLs.
 
@@ -162,7 +170,7 @@ Apply the changes, and you will be prompted to restart Active Directory Certific
 
 ![Applying the changes will require restarting the CA service]({{site.baseurl}}/media/2016/08/19-Root-CA-Certificate-Services.png)*Applying the changes will require restarting the CA service*
 
-### Configure CRL Publishing
+#### Configure CRL Publishing
 
 Before publishing the CRL set the Publication Interval to something other than the default 1 week. Whatever you set the interval to, this will be the maximum amount of time that you'll need to boot the CA, publish the CRL and copy it to you CRL publishing point.
 
@@ -178,7 +186,7 @@ Browse to C:\Windows\System32\CertSrv\CertEnroll to view the CRL and the root CA
 
 ![Certificates and CRL published to C:\Windows\System32\CertSrv\CertEnroll]({{site.baseurl}}/media/2016/08/22-Root-CA-Certificate-Services.png)*Certificates and CRL published to C:\Windows\System32\CertSrv\CertEnroll*
 
-### Setting the Issued Certificate Validity Period
+#### Setting the Issued Certificate Validity Period
 
 The default validity period for certificates issued by this CA will be 1 year. Because this is a stand-alone certification authority, we don't have templates available to use that we can use to define the validity period for issued certificates. So we need to set this in the registry.
 
@@ -186,11 +194,15 @@ As we'll only be issuing subordinate CA certificates from this root CA, 1 year i
 
 To change the validity period, open Registry Editor and navigate to the following key:
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\&lt;certification authority name&gt;</pre>
+```
+HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\<certification authority name>
+```
 
 In my lab, this path is:
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\stealthpuppy Offline Root CA</pre>
+```
+HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\stealthpuppy Offline Root CA
+```
 
 Here I can see two values that define how long issued certificates are valid for - ValidityPeriod (defaults to 1) and ValidityPeriodUnits (defaults to "Years").
 
@@ -202,11 +214,13 @@ Open ValidityPeriodUnits and change this to the desired value. My recommendation
 
 An alternative to editing the registry directly is to set this value to certutil.exe. To change the validity period to 5 years run:
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">certutil -setreg ca\ValidityPeriodUnits "5"</pre>
+```
+certutil -setreg ca\ValidityPeriodUnits "5"
+```
 
 There are a couple of old articles on setting this value, but they still apply to current versions of Windows Server - [How to change the expiration date of certificates that are issued by a Windows Server 2003 or a Windows 2000 Server CA](https://support.microsoft.com/en-au/kb/254632) and [How to Set an Enterprise Subordinate CA to Have a Different Certificate Validity Period than the Parent CA](https://support.microsoft.com/en-us/kb/281557).
 
-# Conclusion
+## Conclusion
 
 In this article, I've provided the basic steps to creating a root certificate authority on Windows Server 2012 R2. The next step is to create a subordinate CA that will issue certificates to devices and users, allowing us to take the root CA offline and protecting it from attack.
 

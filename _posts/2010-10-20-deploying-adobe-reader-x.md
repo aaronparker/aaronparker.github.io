@@ -21,9 +21,9 @@ categories:
 tags:
   - Adobe Reader
 ---
-[<img style="background-image: none; margin: 0px 10px 5px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border-width: 0px;" title="ReaderXicon128" src="{{site.baseurl}}.com/media/2010/10/ReaderXicon128_thumb.png" alt="ReaderXicon128]({{site.baseurl}}/media/2010/10/ReaderXicon128.png)
+[<img style="background-image: none; margin: 0px 10px 5px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border-width: 0px;" title="ReaderXicon128" src="{{site.baseurl}}/media/2010/10/ReaderXicon128_thumb.png" alt="ReaderXicon128]({{site.baseurl}}/media/2010/10/ReaderXicon128.png)
 
-<span style="color: #000000;"><em>For a Reader XI version of this document see: <a href="{{site.baseurl}}.com/deployment/adobe-reader-xi-deployment/">Adobe Reader XI Deployment</a></em>.</span>
+<span style="color: #000000;"><em>For a Reader XI version of this document see: <a href="{{site.baseurl}}/deployment/adobe-reader-xi-deployment/">Adobe Reader XI Deployment</a></em>.</span>
 
 Adobe Reader X [is here](http://blogs.adobe.com/adobereader/2010/11/adobe-reader-x-now-available.html) and with the [new protected mode feature](http://blogs.adobe.com/asset/2010/07/introducing-adobe-reader-protected-mode.html) to improve security you should be considering your deployment plans now.
 
@@ -76,7 +76,7 @@ Once extracted, you should have the following files required for Reader deployme
   * setup.exe
   * Setup.ini
 
-<a href="{{site.baseurl}}.com/deployment/deploying-adobe-reader-x/attachment/adobereaderxextractedfiles/" rel="attachment wp-att-2048"><img class="alignnone size-full wp-image-2048" title="AdobeReaderXExtractedFiles" src="{{site.baseurl}}.com/media/2010/10/AdobeReaderXExtractedFiles.png" alt="" width="660" height="242" srcset="{{site.baseurl}}.com/media/2010/10/AdobeReaderXExtractedFiles.png 660w, {{site.baseurl}}.com/media/2010/10/AdobeReaderXExtractedFiles-150x55.png 150w, {{site.baseurl}}.com/media/2010/10/AdobeReaderXExtractedFiles-300x110.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
+<a href="{{site.baseurl}}/deployment/deploying-adobe-reader-x/attachment/adobereaderxextractedfiles/" rel="attachment wp-att-2048"><img class="alignnone size-full wp-image-2048" title="AdobeReaderXExtractedFiles" src="{{site.baseurl}}/media/2010/10/AdobeReaderXExtractedFiles.png" alt="" width="660" height="242" srcset="{{site.baseurl}}/media/2010/10/AdobeReaderXExtractedFiles.png 660w, {{site.baseurl}}/media/2010/10/AdobeReaderXExtractedFiles-150x55.png 150w, {{site.baseurl}}/media/2010/10/AdobeReaderXExtractedFiles-300x110.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
 # Creating a custom Transform for Reader X
 
@@ -84,7 +84,7 @@ Here I'll step through creating a custom installation for Reader, providing some
 
 **Step 1 Personalisation Options**: Open the Customization Wizard, click File / Open Package… and browse to AcroRead.MSI located in the folder that contains the extract Reader setup files. You can change the installation path if required:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - installation path" src="{{site.baseurl}}.com/media/2010/10/customisation02_thumb.png" alt="Adobe Customization Wizard - installation path]({{site.baseurl}}/media/2010/10/customisation02.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - installation path" src="{{site.baseurl}}/media/2010/10/customisation02_thumb.png" alt="Adobe Customization Wizard - installation path]({{site.baseurl}}/media/2010/10/customisation02.png)
 
 **Step 2 Installation Options**: there a few options to consider here:
 
@@ -94,11 +94,11 @@ Here I'll step through creating a custom installation for Reader, providing some
   * _Run installation_ – run the installer Unattended by default unless your specific deployment requires the installer to run completely silently (you can control this on the command line as well).
   * _If reboot required at the end of installation_ – choose Suppress reboot and control reboots with an external process (such as a script or your deployment solution).
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - installation options" src="{{site.baseurl}}.com/media/2010/10/customisation03_thumb.png" alt="Adobe Customization Wizard - installation options]({{site.baseurl}}/media/2010/10/customisation03.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - installation options" src="{{site.baseurl}}/media/2010/10/customisation03_thumb.png" alt="Adobe Customization Wizard - installation options]({{site.baseurl}}/media/2010/10/customisation03.png)
 
 **Step 3 Files and Folders**: additional files (such as a JavaScript file to restrict menu items) can be added here:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - files and folders" src="{{site.baseurl}}.com/media/2010/10/customisation04_thumb.png" alt="Adobe Customization Wizard - files and folders]({{site.baseurl}}/media/2010/10/customisation04.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - files and folders" src="{{site.baseurl}}/media/2010/10/customisation04_thumb.png" alt="Adobe Customization Wizard - files and folders]({{site.baseurl}}/media/2010/10/customisation04.png)
 
 **Step 4 Registry**: add additional Registry values here to control the Reader installation. You can browse the local computer's Registry to make adding entries simpler.
 
@@ -109,15 +109,15 @@ There are two edits I recommend making – browse to Destination Computer / _HKE
 
 Right-click each of these entries and choose _Modify_. Set _Action_ to _Remove value_. This will prevent the installer from adding these entries and starting unnecessary processes at user logon. This step is very important for Terminal Server / Remote Desktop Session Host environments to reduce the processes that will run in each user's session.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="customization01" src="{{site.baseurl}}.com/media/2010/10/customization01_thumb.png" alt="customization01]({{site.baseurl}}/media/2010/10/customization01.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="customization01" src="{{site.baseurl}}/media/2010/10/customization01_thumb.png" alt="customization01]({{site.baseurl}}/media/2010/10/customization01.png)
 
 **Step 5 Shortcuts**: for whatever reason, Adobe deems in necessary to add a superfluous shortcut for Reader to the desktop. Don't forget to remove that here – if you don't remove the shortcut in the transform, it will be created when you patch Reader.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - shortcuts" src="{{site.baseurl}}.com/media/2010/10/customisation06_thumb.png" alt="Adobe Customization Wizard - shortcuts]({{site.baseurl}}/media/2010/10/customisation06.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - shortcuts" src="{{site.baseurl}}/media/2010/10/customisation06_thumb.png" alt="Adobe Customization Wizard - shortcuts]({{site.baseurl}}/media/2010/10/customisation06.png)
 
 **Step 6 Server Locations**: the Server Locations settings allow you to configure additional server location paths to ensure source resiliency for the Windows Installer package.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - server locations" src="{{site.baseurl}}.com/media/2010/10/customisation07_thumb.png" alt="Adobe Customization Wizard - server locations]({{site.baseurl}}/media/2010/10/customisation07.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - server locations" src="{{site.baseurl}}/media/2010/10/customisation07_thumb.png" alt="Adobe Customization Wizard - server locations]({{site.baseurl}}/media/2010/10/customisation07.png)
 
 **Step 7 Security**: further information on Adobe Reader and Acrobat security can be found here: [Acrobat 9 Security Administration Guide](http://learn.adobe.com/wiki/download/attachments/52658564/acrobat_reader_security_9x.pdf?version=1). Options to consider include:
 
@@ -125,15 +125,15 @@ Right-click each of these entries and choose _Modify_. Set _Action_ to _Remove v
   * Prevent end-user to add trusted Files and Folders
   * Prevent end-user to add trusted Hosts
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - security" src="{{site.baseurl}}.com/media/2010/10/customisation08_thumb.png" alt="Adobe Customization Wizard - security]({{site.baseurl}}/media/2010/10/customisation08.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - security" src="{{site.baseurl}}/media/2010/10/customisation08_thumb.png" alt="Adobe Customization Wizard - security]({{site.baseurl}}/media/2010/10/customisation08.png)
 
 **Step 8 Digital Signature**: the Digital Signature settings allow you to specify the security options (verification, creation, reasons) for digital signatures. Read more about Digital Signatures in the security guide and this document: [Digital Signature Validation Cheat Sheet](http://learn.adobe.com/wiki/download/attachments/52658564/acrobat_sig_validation_cheat_sheet9.1.pdf?version=1)
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - digital signatures" src="{{site.baseurl}}.com/media/2010/10/customisation09_thumb.png" alt="Adobe Customization Wizard - digital signatures]({{site.baseurl}}/media/2010/10/customisation09.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - digital signatures" src="{{site.baseurl}}/media/2010/10/customisation09_thumb.png" alt="Adobe Customization Wizard - digital signatures]({{site.baseurl}}/media/2010/10/customisation09.png)
 
 **Step 9 EULA**: here you can suppress the display of the End User License Agreement when the user first launches Reader. [Windows Installer property: EULA_ACCEPT]
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - EULA" src="{{site.baseurl}}.com/media/2010/10/customisation10_thumb.png" alt="Adobe Customization Wizard - EULA]({{site.baseurl}}/media/2010/10/customisation10.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - EULA" src="{{site.baseurl}}/media/2010/10/customisation10_thumb.png" alt="Adobe Customization Wizard - EULA]({{site.baseurl}}/media/2010/10/customisation10.png)
 
 **Step 10 Online and Acrobat.com Features**: access to several features can be controlled here:
 
@@ -146,38 +146,38 @@ Right-click each of these entries and choose _Modify_. Set _Action_ to _Remove v
   * The Product Improvement Program can be disabled
   * The Acrobat.com integration in Reader can be disabled
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - online features" src="{{site.baseurl}}.com/media/2010/10/customisation11_thumb.png" alt="Adobe Customization Wizard - online features]({{site.baseurl}}/media/2010/10/customisation11.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - online features" src="{{site.baseurl}}/media/2010/10/customisation11_thumb.png" alt="Adobe Customization Wizard - online features]({{site.baseurl}}/media/2010/10/customisation11.png)
 
 **Step 11 Comments and Forms**: control and set options for comments in PDFs and forms.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - comments" src="{{site.baseurl}}.com/media/2010/10/customisation12_thumb.png" alt="Adobe Customization Wizard - comments]({{site.baseurl}}/media/2010/10/customisation12.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - comments" src="{{site.baseurl}}/media/2010/10/customisation12_thumb.png" alt="Adobe Customization Wizard - comments]({{site.baseurl}}/media/2010/10/customisation12.png)
 
 **Step 12 File Attachments**: control the launching of file types from PDF documents. You may want to set this option:
 
   * Default Action for Unspecified File Types: Never launch files of Unspecified Types
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - file attachments" src="{{site.baseurl}}.com/media/2010/10/customisation13_thumb.png" alt="Adobe Customization Wizard - file attachments]({{site.baseurl}}/media/2010/10/customisation13.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - file attachments" src="{{site.baseurl}}/media/2010/10/customisation13_thumb.png" alt="Adobe Customization Wizard - file attachments]({{site.baseurl}}/media/2010/10/customisation13.png)
 
 **Step 13 Launch Other Applications**: the Launch Other Applications settings allow you to specify additional applications to be installed with Reader.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - launch other applications" src="{{site.baseurl}}.com/media/2010/10/customisation14_thumb.png" alt="Adobe Customization Wizard - launch other applications]({{site.baseurl}}/media/2010/10/customisation14.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - launch other applications" src="{{site.baseurl}}/media/2010/10/customisation14_thumb.png" alt="Adobe Customization Wizard - launch other applications]({{site.baseurl}}/media/2010/10/customisation14.png)
 
 **Step 14 Direct Editor**: if you want to make further edits to the transform file you can do so here; however I often prefer to save the transform and open it with a 3rd party MSI editor.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - direct editor" src="{{site.baseurl}}.com/media/2010/10/customisation15_thumb.png" alt="Adobe Customization Wizard - direct editor]({{site.baseurl}}/media/2010/10/customisation15.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="Adobe Customization Wizard - direct editor" src="{{site.baseurl}}/media/2010/10/customisation15_thumb.png" alt="Adobe Customization Wizard - direct editor]({{site.baseurl}}/media/2010/10/customisation15.png)
 
 To disable the Adobe Acrobat Update Service introduced with Reader 10.1, navigate to the _ServiceInstall_ table and take one of two actions
 
   * Drop the row _ServiceInstall1_ to prevent the install of the service
   * Change the value of StartType to 3 (manual) or 4 (disabled)
 
-<a href="{{site.baseurl}}.com/deployment/deploying-adobe-reader-x/attachment/msi-service/" rel="attachment wp-att-2291"><img class="alignnone size-full wp-image-2291" title="MSI-Service" src="{{site.baseurl}}.com/media/2010/10/MSI-Service.png" alt="" width="660" height="369" srcset="{{site.baseurl}}.com/media/2010/10/MSI-Service.png 660w, {{site.baseurl}}.com/media/2010/10/MSI-Service-150x83.png 150w, {{site.baseurl}}.com/media/2010/10/MSI-Service-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
+<a href="{{site.baseurl}}/deployment/deploying-adobe-reader-x/attachment/msi-service/" rel="attachment wp-att-2291"><img class="alignnone size-full wp-image-2291" title="MSI-Service" src="{{site.baseurl}}/media/2010/10/MSI-Service.png" alt="" width="660" height="369" srcset="{{site.baseurl}}/media/2010/10/MSI-Service.png 660w, {{site.baseurl}}/media/2010/10/MSI-Service-150x83.png 150w, {{site.baseurl}}/media/2010/10/MSI-Service-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
 # Disabling Additional Menu Items
 
 After creating a custom installation there are a few menu items (less than previous versions) that you may want to remove for end-users:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Adobe Reader X - additional menu items" src="{{site.baseurl}}.com/media/2010/10/ReaderXmenus_thumb.png" alt="Adobe Reader X - additional menu items]({{site.baseurl}}/media/2010/10/ReaderXmenus.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Adobe Reader X - additional menu items" src="{{site.baseurl}}/media/2010/10/ReaderXmenus_thumb.png" alt="Adobe Reader X - additional menu items]({{site.baseurl}}/media/2010/10/ReaderXmenus.png)
 
 These menu items are:
 
@@ -208,7 +208,7 @@ console.println(menuItems + "\n")[/code]
 
 When you start Reader a list of the user interface elements will be displayed:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="JavaScriptDebugger" src="{{site.baseurl}}.com/media/2010/10/JavaScriptDebugger_thumb.png" alt="JavaScriptDebugger]({{site.baseurl}}/media/2010/10/JavaScriptDebugger.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="JavaScriptDebugger" src="{{site.baseurl}}/media/2010/10/JavaScriptDebugger_thumb.png" alt="JavaScriptDebugger]({{site.baseurl}}/media/2010/10/JavaScriptDebugger.png)
 
 The list is quite long, but you can use it to control the display of both menu items and buttons.
 
@@ -239,13 +239,13 @@ app.hideMenuItem("SystemInformation");[/code]
 
 To deliver the script with the Reader package, use the Files and Folders section in the Customization Wizard. Add the files to _Destination Computer / ProgramFilesFolder / Adobe / Reader 10.0 / Reader / JavaScripts_ (see Step 3 above).
 
-<a href="{{site.baseurl}}.com/deployment/deploying-adobe-reader-x/attachment/hideitems/" rel="attachment wp-att-2292"><img class="alignnone size-full wp-image-2292" title="HideItems" src="{{site.baseurl}}.com/media/2010/10/HideItems.png" alt="" width="660" height="369" srcset="{{site.baseurl}}.com/media/2010/10/HideItems.png 660w, {{site.baseurl}}.com/media/2010/10/HideItems-150x83.png 150w, {{site.baseurl}}.com/media/2010/10/HideItems-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
+<a href="{{site.baseurl}}/deployment/deploying-adobe-reader-x/attachment/hideitems/" rel="attachment wp-att-2292"><img class="alignnone size-full wp-image-2292" title="HideItems" src="{{site.baseurl}}/media/2010/10/HideItems.png" alt="" width="660" height="369" srcset="{{site.baseurl}}/media/2010/10/HideItems.png 660w, {{site.baseurl}}/media/2010/10/HideItems-150x83.png 150w, {{site.baseurl}}/media/2010/10/HideItems-300x167.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
 # Enforcing Protected Mode
 
 [Adobe Reader X Protected Mode](http://blogs.adobe.com/asset/2010/07/introducing-adobe-reader-protected-mode.html) will assist in reducing the potential security threats when opening or viewing PDF files, so it's a feature you'll want to ensure remains enabled on client computers. However, by default, users can turn this feature off - this option is available in the Preferences dialog box under General:
 
-[<img class="alignnone size-full wp-image-2024" title="EnableProtectedModeAtStartup" src="{{site.baseurl}}.com/media/2010/10/EnableProtectedModeAtStartup.png" alt="]({{site.baseurl}}/?attachment_id=2024)
+[<img class="alignnone size-full wp-image-2024" title="EnableProtectedModeAtStartup" src="{{site.baseurl}}/media/2010/10/EnableProtectedModeAtStartup.png" alt="]({{site.baseurl}}/?attachment_id=2024)
 
 In the user's context, Protected Mode is controlled with the following Registry value:
 
@@ -283,7 +283,7 @@ To find the complete list of preferences for Reader and Acrobat you should refer
 
 > The Administrator's Information Manager (AIM) is an auto-updating and customizable AIR application containing the Preference Reference. AIM also includes and a growing list of other resources of interest to administrators in enterprise settings.
 
-<a href="{{site.baseurl}}.com/deployment/deploying-adobe-reader-x/attachment/admininformaitonmanager/" rel="attachment wp-att-2051"><img class="alignnone size-full wp-image-2051" title="AdminInformaitonManager" src="{{site.baseurl}}.com/media/2010/10/AdminInformaitonManager.png" alt="" width="660" height="353" srcset="{{site.baseurl}}.com/media/2010/10/AdminInformaitonManager.png 660w, {{site.baseurl}}.com/media/2010/10/AdminInformaitonManager-150x80.png 150w, {{site.baseurl}}.com/media/2010/10/AdminInformaitonManager-300x160.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
+<a href="{{site.baseurl}}/deployment/deploying-adobe-reader-x/attachment/admininformaitonmanager/" rel="attachment wp-att-2051"><img class="alignnone size-full wp-image-2051" title="AdminInformaitonManager" src="{{site.baseurl}}/media/2010/10/AdminInformaitonManager.png" alt="" width="660" height="353" srcset="{{site.baseurl}}/media/2010/10/AdminInformaitonManager.png 660w, {{site.baseurl}}/media/2010/10/AdminInformaitonManager-150x80.png 150w, {{site.baseurl}}/media/2010/10/AdminInformaitonManager-300x160.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
 
 # Additional Reading
 

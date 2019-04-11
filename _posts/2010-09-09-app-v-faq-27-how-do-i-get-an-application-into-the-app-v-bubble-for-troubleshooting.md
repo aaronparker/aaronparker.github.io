@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline;" src="{{site.baseurl}}.com/media/2010/06/AppVFAQLogo.png" alt="" align="right" />There are instances in which you will need to troubleshoot applications running in the App-V bubble (or the virtualised environment). Although applications delivered by App-V are running locally, they are separated from other applications and the operating system by the App-V client (the feature known as the [SystemGuard](http://blogs.technet.com/b/appv/archive/2007/08/02/inside-the-grid-part-1.aspx), although usually referred to as the bubble).
+<img style="margin: 0px 0px 5px 10px; display: inline;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="right" />There are instances in which you will need to troubleshoot applications running in the App-V bubble (or the virtualised environment). Although applications delivered by App-V are running locally, they are separated from other applications and the operating system by the App-V client (the feature known as the [SystemGuard](http://blogs.technet.com/b/appv/archive/2007/08/02/inside-the-grid-part-1.aspx), although usually referred to as the bubble).
 
 This poses some challenges – how do you use troubleshooting tools such as [Process Monitor](http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx) if it can’t see the application? To do this you will need to launch a Command Prompt into the bubble.
 
@@ -40,7 +40,7 @@ App-V 4.5 introduced the /LAUNCH switch to the SFTTRAY.EXE command. This allows 
 
 This will return the list of applications for the current user context (or all of the applications if you run the command as an administrator). Don't forget the /SHORT switch otherwise you'll get a lot more information that you need. Use SFTTRAY /? to see the complete list of switches.
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="CommandPrompt-LaunchAppV" src="{{site.baseurl}}.com/media/2010/09/CommandPromptLaunchAppV_thumb.png" border="0" alt="SFTMIME and SFTTRAY commands to launch an alternate process" width="660" height="263" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="CommandPrompt-LaunchAppV" src="{{site.baseurl}}/media/2010/09/CommandPromptLaunchAppV_thumb.png" border="0" alt="SFTMIME and SFTTRAY commands to launch an alternate process" width="660" height="263" /> 
 
 To launch an alternate executable, copy the application name as listed and use the SFTTRAY command like this:
 
@@ -54,11 +54,11 @@ A couple of the [3rd party tools]({{site.baseurl}}/virtualisation/app-v-faq-26-w
 
 ACDC is my preferred troubleshooting tool, which gives you a plethora of options for managing applications with the ability to launch a tool in the bubble of a specific application:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ACDC-RunCommandPrompt" src="{{site.baseurl}}.com/media/2010/09/ACDCRunCommandPrompt_thumb.png" border="0" alt="ACDC-RunCommandPrompt" width="660" height="393" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ACDC-RunCommandPrompt" src="{{site.baseurl}}/media/2010/09/ACDCRunCommandPrompt_thumb.png" border="0" alt="ACDC-RunCommandPrompt" width="660" height="393" /> 
 
 And here's SoftBar in action, which can do the same type of thing:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="va_menu" src="{{site.baseurl}}.com/media/2010/09/va_menu.jpg" border="0" alt="va_menu" width="631" height="263" /> 
+<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="va_menu" src="{{site.baseurl}}/media/2010/09/va_menu.jpg" border="0" alt="va_menu" width="631" height="263" /> 
 
 Both tools allow you to extend the launch menu with additional executables.
 

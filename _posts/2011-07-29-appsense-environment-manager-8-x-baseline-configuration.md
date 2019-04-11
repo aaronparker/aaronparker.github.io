@@ -22,15 +22,15 @@ Here's something that I've been looking to share with the community for some tim
 
 Comments and feedback welcome.
 
-### Introduction
+## Introduction
 
 Standardising on an Environment Manager configuration across various organisations or implementations is a difficult challenge; however there are many components of a Windows desktop that are common across all deployments.
 
-### An Environment Manager Baseline Configuration
+## An Environment Manager Baseline Configuration
 
 The Environment Manager Baseline configuration is an example configuration that can be used as a starting point for implementing Environment Manager to replace roaming profiles. In addition it includes some examples of what you can achieve with Environment Manager policy actions.
 
-### The Configuration in Detail
+## The Configuration in Detail
 
 The configuration intended as a starting point for your own environment, whether you are using Personalization Server or not. The idea being that you can configure roaming with nothing more than the EM agent, the config and a file share.
 
@@ -38,17 +38,12 @@ Once you start moving management of personalization from EM policy to Personaliz
 
 The configuration includes examples for roaming user personalization by explicitly choosing specific portions of the user profile to roam. It also includes examples of managing applications by using the Process Started and Network Connected triggers.
 
-### Downloads
+## Downloads
 
 Each download is a ZIP file containing the configuration and documentation to help explain the config in more detail.
 
 **Current version**
 
-<span style="color: #ff0000;">New!</span> December 2011, updated configuration version 3.1.
-
-<p class="download">
-  [download id="53&#8243; format="1&#8243;]
-</p>
 
 Change log:
 
@@ -65,12 +60,6 @@ Change log:
 
 **Previous versions**
 
-<p class="download">
-  [download id="49&#8243; format="1&#8243;]
-</p>
 
 **Note**: Version 3.0 or 3.1 are not compatible with EM 8.0, use version 2.1 below:
 
-<p class="download">
-  [download id="48&#8243; format="1&#8243;]
-</p>

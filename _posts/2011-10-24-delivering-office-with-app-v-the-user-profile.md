@@ -22,7 +22,7 @@ If you follow any of the following guidance from Microsoft for sequencing Office
 
 you will end up with a package that will include the following folders in the virtualized user profile (those folders captured during sequencing that will end up in the PKG file):
 
-![CSIDL_APPDATA]({{site.baseurl}}.com/media/2011/10/CSIDL_APPDATA.png)
+![CSIDL_APPDATA]({{site.baseurl}}/media/2011/10/CSIDL_APPDATA.png)
 
 The folders captured under %CSIDL_APPDATA%\Microsoft are those folders that have been created during the first-run tasks – folders created when you launch an Office application and perform some standard tasks.
 
@@ -30,11 +30,11 @@ If you're familiar with delivering applications with App-V (or any type of appli
 
 To see what this looks like at runtime, here's a view of a profile before running Office applications that have been delivered by App-V:
 
-![BeforeOffice]({{site.baseurl}}.com/media/2011/10/BeforeOffice.png)
+![BeforeOffice]({{site.baseurl}}/media/2011/10/BeforeOffice.png)
 
 After executing each of the Office applications in the package (I've used a package with Office 2010 Professional Plus with Visio and Project) and using just about every feature in those applications:
 
-![AfterOffice]({{site.baseurl}}.com/media/2011/10/AfterOffice.png)
+![AfterOffice]({{site.baseurl}}/media/2011/10/AfterOffice.png)
 
 There's an additional 10 folders that have been created with 8 of those related to Office. This has left me with the majority of the Office user profile being virtualized and stored in the PKG file, whilst the rest is now stored on the real file system. This probably doesn't have too much impact to the user if I'm using Roaming Profiles so that Office settings follow the user, but what happens for support?
 

@@ -16,7 +16,7 @@ tags:
   - Exchange
   - PowerShell
 ---
-<img class="alignleft" style="margin-left: 0px; margin-right: 10px;" src="{{site.baseurl}}.com/media/2007/05/exchange.png" alt="" width="82" height="82" align="left" />During a migration from Exchange Server 2003 to Exchange Server 2007 you need to add the Exchange 2007 server to replicas for each of the Public Folders (as you would need with any Exchange server migration) and this includes the System folders as well.
+<img class="alignleft" style="margin-left: 0px; margin-right: 10px;" src="{{site.baseurl}}/media/2007/05/exchange.png" alt="" width="82" height="82" align="left" />During a migration from Exchange Server 2003 to Exchange Server 2007 you need to add the Exchange 2007 server to replicas for each of the Public Folders (as you would need with any Exchange server migration) and this includes the System folders as well.
 
 In our case I missed the SCHEDULE+ FREE BUSY folder. This resulted in Outlook 2003 clients unable to see Free/Busy information when creating a meeting request. The user would see this error in Outlook when attempting to see another users schedule:
 

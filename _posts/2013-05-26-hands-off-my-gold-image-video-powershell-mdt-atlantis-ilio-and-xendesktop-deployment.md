@@ -25,6 +25,6 @@ Using PowerShell to drive vSphere, MDT, [Atlantis ILIO](http://atlantiscomputing
 
 Here's a flow chart that gives an overview of what the script does:
 
-[<img class="alignnone  wp-image-3306" alt="PowerShell-vSphere-MDT-ILIO-XenDesktop" src="{{site.baseurl}}.com/media/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop.png]({{site.baseurl}}/media/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop.png)
+[<img class="alignnone  wp-image-3306" alt="PowerShell-vSphere-MDT-ILIO-XenDesktop" src="{{site.baseurl}}/media/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop.png]({{site.baseurl}}/media/2013/05/PowerShell-vSphere-MDT-ILIO-XenDesktop.png)
 
 The video is available in HD resolution (720) so you can see the full details.

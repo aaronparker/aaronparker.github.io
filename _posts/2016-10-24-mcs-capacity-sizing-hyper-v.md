@@ -21,8 +21,6 @@ tags:
   - XenApp
   - XenDesktop
 ---
-[toc]
-
 To [understand sizing Machine Creation Services]({{site.baseurl}}/machine-creation-services-storage-capacity/) on Hyper-V, we should first look at how XenDesktop creates virtual machines across the various deployment choices. XenDesktop 7.9 and 7.11 have introduced new features to MCS that will require additional consideration for storage requirements over previous versions.
 
 In this article, I'll cover the deployment options at a high level, including:
@@ -33,7 +31,7 @@ In this article, I'll cover the deployment options at a high level, including:
 
 To keep this size exercise simple, I have used a single data store that contains both my master image and the Machine Catalogs. The environment is based on Windows Server 2016 and System Center Virtual Machine Manager 2016. Note that Hyper-V allows for modifying the paths for virtual machines (config files), virtual hard disks and Smart Paging files, so the folder structure shown in my environment in the screenshots below may differ to yours.
 
-# Master Image
+## Master Image
 
 The master image is Windows Server 2012 R2 or 2016 with a set of applications including Office. Initially, the image has two snapshots (or checkpoints) created in the process of provisioning and updating the image. Thus the image consists of:
 
@@ -53,7 +51,7 @@ Additional versions of these files are created per snapshot so that changes to t
 
 ![Snapshots folder for the MCS Master Image on Hyper-V]({{site.baseurl}}/media/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-Snapshots.png)*Snapshots folder for the MCS Master Image on Hyper-V*
 
-## How Large is the Master Image?
+### How Large is the Master Image?
 
 Not all master images will be the same size due to environmental differences; however, count on a minimum of 14GB for Windows + Office for all current Windows versions. I recommend [cleaning up your master image]({{site.baseurl}}/cleaning-up-and-reducing-the-size-of-your-master-image/) to reduce the size as much as is possible.
 
@@ -63,7 +61,7 @@ With each update to the master image, you'll see snapshots growing. Looking at m
 
 What started at 14GB has now grown to a total of 31GB with installing VDA updates, the FSLogix agent, Java runtimes and Windows Updates.
 
-# MCS Machine Catalogs
+## MCS Machine Catalogs
 
 The configuration choices made during the creation of a Machine Catalog can impact the way in which virtual machines are configured and the capacity consumed. The following choices will result in slightly different inputs for our sizing:
 
@@ -73,7 +71,7 @@ The configuration choices made during the creation of a Machine Catalog can impa
   4. AppDisks (not compatible with the storage optimisation feature)
   5. Personal vDisk (not compatible with XenApp deployments)
 
-## Temporary Cache Sizes with Default Configurations
+### Temporary Cache Sizes with Default Configurations
 
 The default configuration for XenApp VMs, pooled random and pooled static desktops, since 7.9, is to enable the cache in RAM with a corresponding temporary disk cache as shown in the screenshot below. For both Server and Desktop OS machines, the default RAM cache size is 256Mb; however, the disk cache size default is different:
 
@@ -94,15 +92,15 @@ Reducing the disk cache size for Desktop OS VMs from the default 10GB, results i
 
 ![Disk cache size warning for Desktop OS VMs]({{site.baseurl}}/media/2016/10/Virtual-Machine-Options-VDI.png)*Disk cache size warning for Desktop OS VMs*
 
-## AppDisks
+### AppDisks
 
 [AppDisks](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-11/install-configure/appdisks.html) are applicable to specific Machine Catalog configurations and the sizes will vary based on the applications and number of applications in each image. However, AppDisks can potentially assist with reducing the [storage capacity](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-11/install-configure/appdisks.html#par_anchortitle_405a) consumed, especially if they are shared across multiple catalogues. AppDisks do need to be stored on the same data store as the target MCS virtual machines.
 
-## Personal vDisks
+### Personal vDisks
 
 Citrix provides some good information on [sizing for Personal vDisks](https://docs.citrix.com/en-us/xenapp-and-xendesktop/7-11/install-configure/personal-vdisk/personal-vdisk-configure-manage.html) and these will have a pre-defined size. Additionally, Personal vDisks can be stored in a data store separate to the virtual machines (e.g on highly available shared storage). If that is the case, we can remove those from our sizing.
 
-## Base Disk
+### Base Disk
 
 MCS requires a copy of the master image on each target data store. During the creation of the Machine Catalog, the selected master image is copied to the data store and a temporary "preparation VM" is created to [prepare the catalogue for deploying VMs based on the master image](https://www.citrix.com/blogs/2016/04/04/machine-creation-service-image-preparation-overview-and-fault-finding/).
 
@@ -122,7 +120,7 @@ However, this state is transient. Eventually, the number of copies of the master
 
 We should still be accounting for the 3 image copies in our sizing to ensure updates to catalogues are possible after the initial deployment.
 
-## Virtual Machines
+### Virtual Machines
 
 What does a deployed virtual machine look like? In this case, I have a XenApp virtual machine on Windows Server 2012 R2 deployed with cache in RAM enabled. Immediately after deployment and before first boot, the VM looks like this:
 
@@ -157,7 +155,7 @@ The MCS virtual machines each have the 3 virtual disks assigned:
 
 This specific configuration is unique this deployment type, so if we look at different MCS configurations, we will see different outcomes for virtual disk configurations and sizes.
 
-## Clones with Differencing Disks
+### Clones with Differencing Disks
 
 XenDesktop and XenApp 7.8 and below, used differencing (or delta) disks that contained the changes to the virtual machine from the original base disk. When deploying a virtual machine on these versions or without storage optimisation, a VM then consists of an identity disk and a differencing disk (which as shown previously, starts at 4MB).
 
@@ -169,7 +167,7 @@ After booting the virtual machine, all changes are written to the differencing d
 
 When the virtual machine restarts, the differencing disk is deleted and a new disk, again starting at 4MB, is created. So cycling VM regularly is a good way to keep storage consumed to a minimum.
 
-## Full Clones
+### Full Clones
 
 Deployment of [full clones via MCS is now possible in XenDesktop 7.11](https://www.citrix.com/blogs/2016/10/12/xenapp-and-xendesktop-7-11-mcs-full-clone-support/). Full clones consist of an identity disk and a copy of the base image for each virtual machine.
 
@@ -177,11 +175,11 @@ Deployment of [full clones via MCS is now possible in XenDesktop 7.11](https://w
 
 Once a full clone is deployed, it is persistent while managed and updated through mechanisms outside of XenDesktop. The potential capacity that a full clone can consume will be the full size of the virtual disk as assigned to the master image.
 
-# Virtual Machine Sizing on Hyper-V
+## Virtual Machine Sizing on Hyper-V
 
 To correctly size for Machine Creation Services on Hyper-V, let's summarise the storage impact that MCS has with Hyper-V deployments:
 
-## Common Files
+### Common Files
 
 Virtual machine components that are common to all deployment types:
 
@@ -192,7 +190,7 @@ Virtual machine components that are common to all deployment types:
   * **Base images** - master image snapshots are merged, so the base image shows the real size of the master image. Up to **3 copies of the** **base image** can exist in a single datastore and the sizes will vary based on the actual changes to the master image. That 3rd copy is transient and should be removed after all machines have applied the latest update
   * **Identity disks** - on Hyper-V, these start at **36MB** and remain at this size
 
-## Delta Clones and Full Clones
+### Delta Clones and Full Clones
 
 Files used by delta clones and full clones include:
 
@@ -200,14 +198,14 @@ Files used by delta clones and full clones include:
   * **Differencing (or Delta) disk** - if the storage optimisation feature _is not used_, the differencing disk is used instead. This can grow to the maximum size of the virtual disk of the master image. These disks start at **4MB** and jump to **36MB** at boot (regardless of whether storage optimisation is used or not) and can grow considerably. These are deleted at reboot (not shutdown) of the VM
   * **Base image** - if using full clones, each VM consists of an identity disk and a copy of the base image
 
-## Other Files
+### Other Files
 
 Other files used in virtual machine deployment include:
 
   * **Personal vDisks** - the default size is **10GB** and is shared between the user profile and user installed apps, but can be placed on separate storage
   * **AppDisks** - the size will vary based on specific applications sizes installed in the disk. AppDisks need to be on the same datastore as the virtual machines.
 
-# Recommendations
+## Recommendations
 
 Sizing storage capacity for Machine Creation Services isn't something that you'll do in isolation or perhaps even do once - design, testing, piloting and monitoring in production will be key to a successful deployment. Here are a few recommendations for sizing storage capacity:
 
@@ -216,7 +214,7 @@ Sizing storage capacity for Machine Creation Services isn't something that you'l
   * Boot virtual machines and watch the sizes of temporary cache disks and differencing disks to understand disk growth
   * AppDisks or 3rd party layering solutions can enable you to reduce MCS storage capacity by sharing application images across VM instances
 
-# Calculating Capacity
+## Calculating Capacity
 
 Based on the information in this article, to size capacity with Machine Creation Services on Hyper-V, the calculation will require answering a number of questions or inputs. At a high level this involves:
 
@@ -236,7 +234,7 @@ Based on the information in this article, to size capacity with Machine Creation
 
 Calculating storage capacity with this approach should provide you with a reasonably accurate picture of the total capacity to be consumed by MCS on that data store, before storage optimisation solutions such as deduplication and compression.
 
-# Conclusion
+## Conclusion
 
 While MCS itself is simple to design for and implement, recent flexibility and performance improvements introduced with XenDesktop 7.9 and 7.11, requires some additional considerations for storage capacity.
 

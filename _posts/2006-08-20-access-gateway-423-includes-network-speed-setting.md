@@ -13,4 +13,4 @@ tags:
 ---
 The [Access Gateway 4.2.3](http://support.citrix.com/article/CTX108902) hotfix includes the ability to set the speed of the network connection, a feature that is not mentioned in the readme. For the last AG installation I did the customer wanted to hard set speed and duplex settings, well now they can.
 
-<img border="1" width="447" src="{{site.baseurl}}.com/media/2006/08/1000.14.26.AccessGateway.png" height="269" style="width: 447px; height: 269px" />
+<img border="1" width="447" src="{{site.baseurl}}/media/2006/08/1000.14.26.AccessGateway.png" height="269" style="width: 447px; height: 269px" />

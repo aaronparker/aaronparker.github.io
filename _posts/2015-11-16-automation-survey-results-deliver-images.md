@@ -24,7 +24,7 @@ In the previous article, we covered [which automation solutions are in use to cr
 
 This is an important distinction - often the solution for delivering the master image is relied upon for "image management"; however these solutions aren't typically capable of creating a framework for repeatable, consistent image creation. Solutions available for VDI (and RDS) for image delivery might differ depending on the product and some of those include image versioning, but they do not enable complete recreation of an image from scratch without some form of automation.
 
-# Image Delivery Solutions
+## Image Delivery Solutions
 
 Based on 524 responses to this question, we are able to see the following usage:
 
@@ -44,8 +44,6 @@ Looking at those using PVS, each respondent has selected a custom scripted solut
 
 What about physical hardware? 6% of respondents use no virtualization at all in their SBC/VDI environments.
 
-# Next Up
+## Next Up
 
 In the next article, we'll take a look at how often people are [patching their master images]({{site.baseurl}}/automation-survey-results-update-images/).
-
- 

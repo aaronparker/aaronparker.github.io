@@ -28,7 +28,7 @@ App-V is licensed as a component of the [Microsoft Desktop Optimisation Pack](ht
 
 > If the underlying Windows Software Assurance or Windows VDA is licensed per device, then MDOP covers the licensed device. If the underlying Windows Software Assurance or Windows VDA is licensed per user, then MDOP extends across all of the licensed user's devices.
 
-[<img class="alignnone size-full wp-image-4071" src="{{site.baseurl}}.com/media/2015/06/SoftwareAssurance.png" alt="SoftwareAssurance]({{site.baseurl}}/media/2015/06/SoftwareAssurance.png)
+[<img class="alignnone size-full wp-image-4071" src="{{site.baseurl}}/media/2015/06/SoftwareAssurance.png" alt="SoftwareAssurance]({{site.baseurl}}/media/2015/06/SoftwareAssurance.png)
 
 # Remote Desktop Services
 

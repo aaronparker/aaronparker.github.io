@@ -1,6 +1,6 @@
 ---
 id: 4366
-title: 'Enabling App-V &#038; UE-V in Windows 10 Enterprise 14316'
+title: Enabling App-V and UE-V in Windows 10 Enterprise 14316
 date: 2016-04-12T21:48:47+10:00
 author: Aaron Parker
 layout: post
@@ -23,43 +23,39 @@ If you're following Microsoft App-V and [User Experience Virtualization (UE-V)](
 
 I previously tweeted a view of the App-V and UE-V client files available in the latest build:
 
-<blockquote class="twitter-tweet" data-lang="en">
-  <p dir="ltr" lang="en">
-    <a href="https://twitter.com/hashtag/AppV?src=hash">#AppV</a> and <a href="https://twitter.com/hashtag/UEV?src=hash">#UEV</a> in the latest Windows 10 builds <a href="https://t.co/rv3EG0zIFX">pic.twitter.com/rv3EG0zIFX</a>
-  </p>
-  
-  <p>
-    — Aaron Parker (@stealthpuppy) <a href="https://twitter.com/stealthpuppy/status/718456726748422145">April 8, 2016</a>
-  </p>
-</blockquote>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/AppV?src=hash&amp;ref_src=twsrc%5Etfw">#AppV</a> and <a href="https://twitter.com/hashtag/UEV?src=hash&amp;ref_src=twsrc%5Etfw">#UEV</a> in the latest Windows 10 builds <a href="https://t.co/rv3EG0zIFX">pic.twitter.com/rv3EG0zIFX</a></p>&mdash; Aaron Parker (@stealthpuppy) <a href="https://twitter.com/stealthpuppy/status/718456726748422145?ref_src=twsrc%5Etfw">April 8, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
-
-# Filter Drivers
+## Filter Drivers
 
 Before we enable the clients, let's take a quick look at the filter drivers in Windows 10 build 14136 (note, I'm looking at a VM with the Office 365 apps installed, so I may have picked up a filter driver or two already). The _fltmc_ command from an elevated Command Prompt or PowerShell instance displays the currently running filters:
 
-![Viewing filter drivers before enabling App-V and UE-V clients." width="950" height="528" srcset="{{site.baseurl}}.com/media/2016/04/fltmc-before-enable.png 950w, {{site.baseurl}}.com/media/2016/04/fltmc-before-enable-150x83.png 150w, {{site.baseurl}}.com/media/2016/04/fltmc-before-enable-300x167.png 300w, {{site.baseurl}}.com/media/2016/04/fltmc-before-enable-768x427.png 768w" sizes="(max-width: 950px) 100vw, 950px" /></a>*Viewing filter drivers before enabling App-V and UE-V clients.*
+![Viewing filter drivers before enabling App-V and UE-V clients.]({{site.baseurl}}/media/2016/04/fltmc-before-enable.png)
 
-# Enabling the App-V Client
+## Enabling the App-V Client
 
 If we take a look at services on the client, we can see that the App-V Client service exists but is not enabled. To view the status of the service run:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Viewing the App-V client service">Get-Service | Where-Object { $_.Name -like "appv*" } | Select Name, DisplayName, Status, StartType | Format-List</pre>
+```powershell
+Get-Service | Where-Object { $_.Name -like "appv*" } | Select Name, DisplayName, Status, StartType | Format-List
+```
 
-![The App-V client service is there but not enabled." width="950" height="528" srcset="{{site.baseurl}}.com/media/2016/04/Get-Service-AppvClient-BeforeEnable.png 950w, {{site.baseurl}}.com/media/2016/04/Get-Service-AppvClient-BeforeEnable-150x83.png 150w, {{site.baseurl}}.com/media/2016/04/Get-Service-AppvClient-BeforeEnable-300x167.png 300w, {{site.baseurl}}.com/media/2016/04/Get-Service-AppvClient-BeforeEnable-768x427.png 768w" sizes="(max-width: 950px) 100vw, 950px" /></a>*The App-V client service is there but not enabled.*
+![The App-V client service is there but not enabled]({{site.baseurl}}/media/2016/04/Get-Service-AppvClient-BeforeEnable.png)
 
 The App-V PowerShell module included in Windows 10 includes an _Enable-AppV_ command. To use the command to enable the App-V client, first run an elevated PowerShell prompt. Import the AppvClient module and run the command:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Enabling the App-V client">Import-Module AppvClient
-Enable-AppV</pre>
+```powershell
+Import-Module AppvClient
+Enable-AppV
+```
 
 Unfortunately, at this time, the cmdlet does not return anything - neither True or False or anything else depending on the result. This will be important for validating automation, so hopefully, Microsoft will fix that before release. Once the cmdlet is successful the App-V Client service will be enabled an running, so it is possible to check whether the service has been enabled to see whether _Enable-AppV_ was successful.
 
 Unlike fellow MVP [Ryan Bijkerk](https://twitter.com/logitblog), I did not [run into issues running this command](http://www.logitblog.com/microsoft-app-v-built-in-windows-10/), but if the cmdlet fails to enable the App-V client, you can enable the service with the following commands:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Enabling and starting the App-V client service">Set-Service -Name AppVClient -StartupType Automatic
-Start-Service AppVClient</pre>
+```powershell
+Set-Service -Name AppVClient -StartupType Automatic
+Start-Service AppVClient
+```
 
 If we again take a look at the filter drivers running, a number of App-V related drivers have been added. Here we can see that the following filter drivers have been enabled:
 
@@ -67,55 +63,65 @@ If we again take a look at the filter drivers running, a number of App-V related
   * AppvStrm (App-V streaming driver)
   * AppvVemgr (App-V virtual environment manager)
 
-![Filter drivers after the App-V client has been enabled." width="950" height="528" srcset="{{site.baseurl}}.com/media/2016/04/fltmc-after-AppVClient-enabled.png 950w, {{site.baseurl}}.com/media/2016/04/fltmc-after-AppVClient-enabled-150x83.png 150w, {{site.baseurl}}.com/media/2016/04/fltmc-after-AppVClient-enabled-300x167.png 300w, {{site.baseurl}}.com/media/2016/04/fltmc-after-AppVClient-enabled-768x427.png 768w" sizes="(max-width: 950px) 100vw, 950px" /></a>*Filter drivers after the App-V client has been enabled.*
+![Filter drivers after the App-V client has been enabled]({{site.baseurl}}/media/2016/04/fltmc-after-AppVClient-enabled.png)
 
-# Enabling the UE-V Client
+## Enabling the UE-V Client
 
 Just like the App-V client, we can see that the UE-V client service exists but is disabled. Use the _Get-Service_ command to see the status of the service:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Viewing the UE-V client service">Get-Service | Where-Object { $_.Name -like "uev*" } | Select Name, DisplayName, Status, StartType | Format-List</pre>
+```powershell
+Get-Service | Where-Object { $_.Name -like "uev*" } | Select Name, DisplayName, Status, StartType | Format-List
+```
 
-<a href="{{site.baseurl}}.com/media/2016/04/Get-Service-UevClient-BeforeEnable.png" rel="attachment wp-att-4373"><img class="wp-image-4373 size-full" title="Viewing the UE-V client service." src="{{site.baseurl}}.com/media/2016/04/Get-Service-UevClient-BeforeEnable.png" alt="Viewing the UE-V client service." width="950" height="528" srcset="{{site.baseurl}}.com/media/2016/04/Get-Service-UevClient-BeforeEnable.png 950w, {{site.baseurl}}.com/media/2016/04/Get-Service-UevClient-BeforeEnable-150x83.png 150w, {{site.baseurl}}.com/media/2016/04/Get-Service-UevClient-BeforeEnable-300x167.png 300w, {{site.baseurl}}.com/media/2016/04/Get-Service-UevClient-BeforeEnable-768x427.png 768w" sizes="(max-width: 950px) 100vw, 950px" /></a>
+![]({{site.baseurl}}/media/2016/04/Get-Service-UevClient-BeforeEnable.png)
 
 Viewing the UE-V client service.Use the _Enable-Uev_ cmdlet to enable the UE-V client:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Enabling the UE-V client service">Import-Module UEV
-Enable-Uev</pre>
+```powershell
+Import-Module UEV
+Enable-Uev
+```
 
 Again, like _Enable-AppV_, _Enable-Uev_ returns nothing, you can view the status of the UE-V Client service to see whether it was successfully enabled. If the command fails for whatever reason, enable the UE-V client service directly:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Enabling and starting the UE-V client service via PowerShell.">Set-Service -Name AppVClient -StartupType Automatic; Start-Service AppVClient</pre>
+```powershell
+Set-Service -Name AppVClient -StartupType Automatic; Start-Service AppVClient
+```
 
 Now lets again look at the filter drivers that have been added - just a single driver for UE-V:
 
   * UevAgentDriver
 
-![Filter drivers after enabling both the App-V and UE-V clients." width="950" height="528" srcset="{{site.baseurl}}.com/media/2016/04/Filter-Drivers-After-Enabling-Appv-UEV.png 950w, {{site.baseurl}}.com/media/2016/04/Filter-Drivers-After-Enabling-Appv-UEV-150x83.png 150w, {{site.baseurl}}.com/media/2016/04/Filter-Drivers-After-Enabling-Appv-UEV-300x167.png 300w, {{site.baseurl}}.com/media/2016/04/Filter-Drivers-After-Enabling-Appv-UEV-768x427.png 768w" sizes="(max-width: 950px) 100vw, 950px" /></a>*Filter drivers after enabling both the App-V and UE-V clients.*
+![Filter drivers after enabling both the App-V and UE-V clients]({{site.baseurl}}/media/2016/04/Filter-Drivers-After-Enabling-Appv-UEV.png)
 
-# Disabling the App-V and UE-V Clients
+## Disabling the App-V and UE-V Clients
 
 As you would expect with _Enable-AppV_ and _Enable-UEV_, there are cmdlets for disabling both clients. Again from an elevated PowerShell instance, run:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Disabling the App-V and UE-V clients via PowerShell">Import-Module AppVClient
+```powershell
+Import-Module AppVClient
 Import-Module UEV
 Disable-Appv
-Disable-Uev</pre>
+Disable-Uev
+```
 
 Once run the services for both clients will be stopped:
 
-![Both services stopped after disabling the clients." width="950" height="527" srcset="{{site.baseurl}}.com/media/2016/04/PowerShell-AppVUev-serivces-stopped.png 950w, {{site.baseurl}}.com/media/2016/04/PowerShell-AppVUev-serivces-stopped-150x83.png 150w, {{site.baseurl}}.com/media/2016/04/PowerShell-AppVUev-serivces-stopped-300x166.png 300w, {{site.baseurl}}.com/media/2016/04/PowerShell-AppVUev-serivces-stopped-768x426.png 768w" sizes="(max-width: 950px) 100vw, 950px" /></a>*Both services stopped after disabling the clients.*
+![Both services stopped after disabling the clients]({{site.baseurl}}/media/2016/04/PowerShell-AppVUev-serivces-stopped.png)
 
 Once disabled, we would expect the filter drivers to be unloaded - the UE-V filter driver is unloaded immediately; however, the filter drivers for App-V are not unloaded until Windows restarts.
 
 From what I understand, even though the client services are stopped, requests will still be passed through the filter drivers (I reserve the right to be wrong though...). To unload the filter drivers immediately, use the _fltmc unload_ command:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="Unloading the App-V filter drivers.">fltmc unload AppvVfs
+```powershell
+fltmc unload AppvVfs
 fltmc unload AppvStrm
-fltmc unload AppvVemgr</pre>
+fltmc unload AppvVemgr
+```
 
  This approach might break applications, so use for testing purposes only. A reboot after disabling these clients is recommended.
 
-# Finally
+## Finally
 
 This is the first build of Windows 10, available to testers, where the App-V and UE-V clients are built in. While Group Policy will also be an option for enabling these services en masse, doing via PowerShell is still useful for some scenarios.
 

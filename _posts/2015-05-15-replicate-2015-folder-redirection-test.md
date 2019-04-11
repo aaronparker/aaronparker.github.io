@@ -18,7 +18,7 @@ tags:
 ---
 [Helge](https://twitter.com/helgeklein), [Shawn](https://twitter.com/shawnbass) and myself had a great session this week at Citrix Synergy with our session [SYN502: I’ve got 99 problems, and folder redirection is every one of them](https://citrix.g2planet.com/synergyorlando2015/public_session_view.php?agenda_session_id=185).
 
-![IMG_2073]({{site.baseurl}}.com/media/2015/05/IMG_2073.jpg)
+![IMG_2073]({{site.baseurl}}/media/2015/05/IMG_2073.jpg)
 
 We covered quite a number of test scenarios, so in this article, I want to share the approaches that we used for our tests, so that you can replicate them in your own environments.
 
@@ -82,7 +82,7 @@ In my lab environment, I've used two physical hosts with the file server targets
 
 Other than specific tests where we wanted to know the effect of anti-virus on the file server, no AV application was installed on any server or client (physical or virtual).
 
-![File Server Capacity Tool]({{site.baseurl}}.com/media/2015/05/FSCT.png)*File Server Capacity Tool architecture*
+![File Server Capacity Tool]({{site.baseurl}}/media/2015/05/FSCT.png)*File Server Capacity Tool architecture*
 
 FSCT comes with a single work load - Home Folders. Which is fortunately great for our use, should be as similar as possible to real work use of users interacting with their Documents or Desktop folders that are redirected to their home drive.
 

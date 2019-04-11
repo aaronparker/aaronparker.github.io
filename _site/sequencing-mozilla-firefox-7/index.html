@@ -21,7 +21,18 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
+      </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -36,9 +47,9 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img src="/media/2011/06/062611_1120_SequencingM1.png" alt="" align="right" />It’s easy to virtualize <a href="/virtualisation/sequencing-mozilla-firefox-5/">Firefox with App-V</a>; however getting it right takes a little more effort. Here’s how to successfully sequence <a href="http://www.mozilla.com/en-US/firefox/">Mozilla Firefox 7.x</a>.</p>
+    <p>It’s easy to virtualize <a href="/virtualisation/sequencing-mozilla-firefox-5/">Firefox with App-V</a>; however getting it right takes a little more effort. Here’s how to successfully sequence <a href="http://www.mozilla.com/en-US/firefox/">Mozilla Firefox 7.x</a>.</p>
 
-<h3 id="what-you-lose-by-virtualizing-firefox">What you lose by virtualizing Firefox</h3>
+<h2 id="what-you-lose-by-virtualizing-firefox">What you lose by virtualizing Firefox</h2>
 
 <p>Virtualizing Firefox with App-V will isolate the application from the OS, so the following features will not be available once Firefox has been sequenced:</p>
 
@@ -47,7 +58,7 @@
   <li>The ability set the browser as default</li>
 </ul>
 
-<h3 id="managing-the-firefox-profile--virtualize-or-not">Managing the Firefox profile – virtualize or not?</h3>
+<h2 id="managing-the-firefox-profile--virtualize-or-not">Managing the Firefox profile – virtualize or not?</h2>
 
 <p><a href="http://kb.mozillazine.org/Profile_folder_-_Firefox">Firefox stores preferences, extensions and other user data</a> in:</p>
 
@@ -70,7 +81,7 @@
 
 <p>By excluding %APPDATA% and not virtualizing the user profile you will gain some flexibility with your Firefox deployment.</p>
 
-<h3 id="configuring-firefox-defaults">Configuring Firefox Defaults</h3>
+<h2 id="configuring-firefox-defaults">Configuring Firefox Defaults</h2>
 
 <p>If a Firefox profile is not virtualized within the package any options set during the monitoring phase won’t be captured. Fortunately Firefox can be configured with defaults for any new profile so that it will contain your required configuration options.</p>
 
@@ -82,7 +93,7 @@
   <li><a href="http://www.binaryturf.com/enterprise-build-firefox-deployment/">Enterprise Build Of Firefox For Deployment</a></li>
 </ul>
 
-<h3 id="firefox-features-to-disable">Firefox features to disable</h3>
+<h2 id="firefox-features-to-disable">Firefox features to disable</h2>
 
 <p>There are a couple of features that should be disabled when running Firefox under App-V:</p>
 
@@ -93,25 +104,17 @@
 
 <p><a href="http://kb.mozillazine.org/User.js_file"><em>user.js</em></a> is used to configure Firefox options and enforce them and <a href="http://www-archive.mozilla.org/unix/customizing.html"><em>UserChrome.css</em></a> is used to remove those options from the user interface.</p>
 
-<p>Available below is a copy of <em>user.js</em> that disables automatic updates of Firefox and checking whether it is the default browser:</p>
-
-<p class="download">
-  [download id="44&#8243; format="1&#8243;]
-</p>
+<p>Available below is a copy of <code class="highlighter-rouge">user.js</code> that disables automatic updates of Firefox and checking whether it is the default browser:</p>
 
 <p>Here is a copy of <em>userChrome.css</em> that will remove updates and default browser options from user interface:</p>
 
-<p class="download">
-  [download id="45&#8243; format="1&#8243;]
-</p>
-
-<h3 id="sequencing-platform">Sequencing Platform</h3>
+<h2 id="sequencing-platform">Sequencing Platform</h2>
 
 <p>The Firefox version available from Mozilla is an x86 application (x64 build are available from other sources), so I recommend sequencing Firefox on Windows 7 x86 virtual machine even though you may be deploying to 64-bit Windows.</p>
 
 <p>I’ve used a VFS install, so I have configured a second virtual hard disk to host the Q: drive. If you would prefer a MNT install just change the install folder when installing Firefox.</p>
 
-<h3 id="sequencer-configuration">Sequencer Configuration</h3>
+<h2 id="sequencer-configuration">Sequencer Configuration</h2>
 
 <p>Before Sequencing, add the following exclusions:</p>
 
@@ -131,11 +134,7 @@
 
 <p>I have included these in a Package Template for Firefox that you can download from here:</p>
 
-<p class="download">
-  [download id="46&#8243; format="1&#8243;]
-</p>
-
-<h3 id="installing-firefox">Installing Firefox</h3>
+<h2 id="installing-firefox">Installing Firefox</h2>
 
 <p>Download the <a href="http://www.mozilla.com/firefox/all.html">Firefox installer in your target language from the Mozilla site</a>. Sequencing Firefox will require the following steps:</p>
 
@@ -157,21 +156,17 @@
 
 <p>For an example script that will automate the install and configuration of Firefox, see the script below:</p>
 
-<p class="download">
-  [download id="50&#8243; format="1&#8243;]
-</p>
-
-<h3 id="shortcuts">Shortcuts</h3>
+<h2 id="shortcuts">Shortcuts</h2>
 
 <p>If the monitoring phase was successful the Sequencer should create a single shortcut for Firefox. If you are including Flash 10.4 or above in the package, add an additional shortcut for the Flash Player Control Panel applet using “C:\Windows\System32\FlashPlayerCPLApp.cpl” as the target.</p>
 
-<h3 id="first-run-tasks-and-primary-feature-block">First Run Tasks and Primary Feature Block</h3>
+<h2 id="first-run-tasks-and-primary-feature-block">First Run Tasks and Primary Feature Block</h2>
 
 <p>If the steps above have been followed for exclusions, installation and configuration of Firefox, there will be no first run tasks to complete. Additionally the resultant package will be reasonably small so there is no need to create the Primary Feature Block.</p>
 
 <p>Because you don’t need to complete first run tasks or create the Primary Feature Block, you could automate the entire end-to-end process of creating a Firefox package using <a href="http://softwaredeployment.wordpress.com/2011/04/15/app-v-4-6-sp1-command-line-interface/">the App-V Sequencer command-line interface</a>.</p>
 
-<h3 id="finally">Finally</h3>
+<h2 id="finally">Finally</h2>
 
 <p>Save your package and deploy. With compression enabled, the package should be around 22Mb.</p>
 

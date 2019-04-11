@@ -6,16 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/?p=893
 permalink: /flex-profiles-6-is-available/
-aktt_notify_twitter:
-  - 'no'
-thesis_post_image:
-  - {{site.baseurl}}/media/2009/02/flex_download.png
-thesis_post_image_alt:
-  - FlexProfiles
-thesis_post_image_vertical:
-  - before-post
-thesis_post_image_horizontal:
-  - right
 categories:
   - Applications
 ---

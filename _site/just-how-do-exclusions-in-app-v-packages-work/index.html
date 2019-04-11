@@ -21,7 +21,18 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
+      </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -87,33 +98,33 @@ ECHO txt &gt; “%APPDATA%\MyApplication2\InsideSub-folder\InsideTheBubble.txt�
 
 <p>In my example package I’ve added the path <em>%APPDATA%\MyApplication2\InsideSub-folder</em> as an exclusion. In the screenshot below, you can see that the parent folder <em>%APPDATA%\MyApplication2</em> was captured but <em>InsideSub-folder</em> was not:</p>
 
-<p><a href="/media/2011/02/VFSMerge3.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Virtual File System Root” src=”.com/media/2011/02/VFSMerge3_thumb.png” border=”0” alt=”Virtual File System Root</a></p>
+<p><a href="/media/2011/02/VFSMerge3.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Virtual File System Root” src=”/media/2011/02/VFSMerge3_thumb.png” border=”0” alt=”Virtual File System Root</a></p>
 
 <p>To perform some specific testing at execution time, I’ve then set this folder to <em>Merge with Local Directory</em>. Let’s see what happens on the client:</p>
 
 <p>On the real file system I’ve created the folder <em>%APPDATA%\MyApplication2.</em> The screenshot below shows a directory listing outside of the bubble:</p>
 
-<p><a href="/media/2011/02/vfs1.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VFS Outside the package” src=”.com/media/2011/02/vfs1_thumb.png” border=”0” alt=”VFS Outside the package</a></p>
+<p><a href="/media/2011/02/vfs1.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VFS Outside the package” src=”/media/2011/02/vfs1_thumb.png” border=”0” alt=”VFS Outside the package</a></p>
 
 <p>If I see the same %APPDATA% location within the package I should see the merged view of <em>%APPDATA%\MyApplication2:</em></p>
 
-<p><a href="/media/2011/02/vfs2.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VFS Inside the package” src=”.com/media/2011/02/vfs2_thumb.png” border=”0” alt=”VFS Inside the package</a></p>
+<p><a href="/media/2011/02/vfs2.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VFS Inside the package” src=”/media/2011/02/vfs2_thumb.png” border=”0” alt=”VFS Inside the package</a></p>
 
 <p>If I create a sub-folder of the MyApplication2 folder:</p>
 
-<p><a href="/media/2011/02/vfs3.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VFS inside creating a sub-folder” src=”.com/media/2011/02/vfs3_thumb.png” border=”0” alt=”VFS inside creating a sub-folder</a></p>
+<p><a href="/media/2011/02/vfs3.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VFS inside creating a sub-folder” src=”/media/2011/02/vfs3_thumb.png” border=”0” alt=”VFS inside creating a sub-folder</a></p>
 
 <p>I can see that the sub-folder has fallen through the virtual environment to the real file system:</p>
 
-<p><a href="/media/2011/02/vfs4.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VSF viewing outside the buble” src=”.com/media/2011/02/vfs4_thumb.png” border=”0” alt=”VSF viewing outside the buble</a></p>
+<p><a href="/media/2011/02/vfs4.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VSF viewing outside the buble” src=”/media/2011/02/vfs4_thumb.png” border=”0” alt=”VSF viewing outside the buble</a></p>
 
 <p>I can also create a file or folder outside of those paths that were captured during sequencing and any path marked <em>Override Local Directory</em> and they will be created in the real file system. In this package %APPDATA% was not captured during sequencing, so I can create a sub-folder (or file):</p>
 
-<p><a href="/media/2011/02/vfs5.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VSF inside the bubble, create a folder” src=”.com/media/2011/02/vfs5_thumb.png” border=”0” alt=”VSF inside the bubble, create a folder</a></p>
+<p><a href="/media/2011/02/vfs5.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VSF inside the bubble, create a folder” src=”/media/2011/02/vfs5_thumb.png” border=”0” alt=”VSF inside the bubble, create a folder</a></p>
 
 <p>That is written to the real file system:</p>
 
-<p><a href="/media/2011/02/vfs6.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VFS outside the bubble” src=”.com/media/2011/02/vfs6_thumb.png” border=”0” alt=”VFS outside the bubble</a></p>
+<p><a href="/media/2011/02/vfs6.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VFS outside the bubble” src=”/media/2011/02/vfs6_thumb.png” border=”0” alt=”VFS outside the bubble</a></p>
 
 <p><strong>Bottom line</strong>: Exclusions ensure specified file data isn’t captured at sequencing time and Merge with Local means that anything that doesn’t already exist in the package will be written to the real file system. So file system virtualization is straight-forward and for the most part works the way we would expect.</p>
 
@@ -123,19 +134,19 @@ ECHO txt &gt; “%APPDATA%\MyApplication2\InsideSub-folder\InsideTheBubble.txt�
 
 <p>On the client in the real Registry I’ve created <em>HKCU\Software\MergeTest2</em> with a value (OutsideTheBubble) inside it:</p>
 
-<p><a href="/media/2011/02/vrg1.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Read registry” src=”.com/media/2011/02/vrg1_thumb.png” border=”0” alt=”Read registry</a></p>
+<p><a href="/media/2011/02/vrg1.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Read registry” src=”/media/2011/02/vrg1_thumb.png” border=”0” alt=”Read registry</a></p>
 
 <p>Within the virtual Registry I can create other keys at the same levels MergeTest1 and MergeTest2 (MergeTest3) and I can make an edit to a value that exists outside of the virtual Registry.</p>
 
-<p><a href="/media/2011/02/vrg2.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Virtual registry” src=”.com/media/2011/02/vrg2_thumb.png” border=”0” alt=”Virtual registry</a></p>
+<p><a href="/media/2011/02/vrg2.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Virtual registry” src=”/media/2011/02/vrg2_thumb.png” border=”0” alt=”Virtual registry</a></p>
 
 <p>All of these changes have been captured inside the virtual Registry. This means that while I get a merged view of the virtual and real Registry’s, any changes made by the virtual application will only persist inside the virtual registry. Here’s a look again at the real Registry after I’ve closed the virtual application:</p>
 
-<p><a href="/media/2011/02/vrg3.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Real registry” src=”.com/media/2011/02/vrg3_thumb.png” border=”0” alt=”Real registry</a></p>
+<p><a href="/media/2011/02/vrg3.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Real registry” src=”/media/2011/02/vrg3_thumb.png” border=”0” alt=”Real registry</a></p>
 
 <p>When you take a closer look at a package, you’ll start to see why this is the case. In this screenshot you can see that the Registry root (REGISTRY) is set to <em>Merge with Local Key</em>.</p>
 
-<p><a href="/media/2011/02/VRGMerge3.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Virtual Registry root” src=”.com/media/2011/02/VRGMerge3_thumb.png” border=”0” alt=”Virtual Registry root</a></p>
+<p><a href="/media/2011/02/VRGMerge3.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”Virtual Registry root” src=”/media/2011/02/VRGMerge3_thumb.png” border=”0” alt=”Virtual Registry root</a></p>
 
 <p><strong>Bottom line</strong>: Exclusions ensure specified Registry data isn’t captured at sequencing time and Merge with Local, means just that: merge with any existing local keys; however <em>any</em> new writes to the Registry will be captured in the virtual Registry (a copy on write action).</p>
 
@@ -184,7 +195,7 @@ ECHO txt &gt; “%APPDATA%\MyApplication2\InsideSub-folder\InsideTheBubble.txt�
 
 <p>Add the key or keys that you want to exclude from the bubble. No restart is required for this to take effect.</p>
 
-<p><a href="/media/2011/02/VirtualRegistryPassthroughEx.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VirtualRegistryPassthroughEx” src=”.com/media/2011/02/VirtualRegistryPassthroughEx_thumb.png” border=”0” alt=”VirtualRegistryPassthroughEx</a></p>
+<p><a href="/media/2011/02/VirtualRegistryPassthroughEx.png">&lt;img style=”background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;” title=”VirtualRegistryPassthroughEx” src=”/media/2011/02/VirtualRegistryPassthroughEx_thumb.png” border=”0” alt=”VirtualRegistryPassthroughEx</a></p>
 
 <p>In my example I’ve added HKEY_CURRENT_USER\Software\MergeTest3. I can now create values and sub-keys and be certain that they will end up in the real Registry.</p>
 

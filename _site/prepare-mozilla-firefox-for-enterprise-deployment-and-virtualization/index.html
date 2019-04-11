@@ -21,7 +21,18 @@
 <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="stealthpuppy" /></head>
 <body><header class="site-header">
 
-  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a></div>
+  <div class="wrapper"><a class="site-title" rel="author" href="/">stealthpuppy</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about.html">ABOUT</a></div>
+      </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -36,7 +47,7 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p><img style="float: right; margin-left: 0px; display: inline; margin-right: 0px;" alt="" src=".com/media/2011/06/062611_1120_SequencingM1.png" align="right" />I’ve previously written articles on <a href="/virtualisation/sequencing-mozilla-firefox-13-with-app-v-4-6/">virtualizing Mozilla Firefox</a>, but with Firefox releases more regular these days and the release of App-V 5, it makes sense to split details on configuring Firefox for an enterprise deployment and virtualizing Firefox into separate articles.</p>
+    <p><img style="float: right; margin-left: 0px; display: inline; margin-right: 0px;" alt="" src="/media/2011/06/062611_1120_SequencingM1.png" align="right" />I’ve previously written articles on <a href="/virtualisation/sequencing-mozilla-firefox-13-with-app-v-4-6/">virtualizing Mozilla Firefox</a>, but with Firefox releases more regular these days and the release of App-V 5, it makes sense to split details on configuring Firefox for an enterprise deployment and virtualizing Firefox into separate articles.</p>
 
 <p>Whilst this article will cover some recommendations for configuring a Firefox deployment in an enterprise that can be used when virtualizing Firefox with various solutions, including App-V.</p>
 
@@ -44,7 +55,7 @@
 
 <p>There are a number of features that might be considered for disabling or configuring in an enterprise environment where users generally won’t have administrative rights and IT may want to control the default user experience.</p>
 
-<p><a href="/media/2013/03/FirefoxDefaultLaunch.png">&lt;img style=”background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;” title=”FirefoxDefaultLaunch” alt=”FirefoxDefaultLaunch” src=”.com/media/2013/03/FirefoxDefaultLaunch_thumb.png</a></p>
+<p><a href="/media/2013/03/FirefoxDefaultLaunch.png">&lt;img style=”background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;” title=”FirefoxDefaultLaunch” alt=”FirefoxDefaultLaunch” src=”/media/2013/03/FirefoxDefaultLaunch_thumb.png</a></p>
 
 <p>These might include:</p>
 
@@ -169,7 +180,7 @@ sc config MozillaMaintenance start= disabled[/code]</p>
 
 <p>If the installation has been configured correctly, Firefox should start and not display the Import Wizard or any of the other prompts and start-up tabs. Additionally, if you navigate to about:config, a number of preferences should be listed as locked:</p>
 
-<p><a href="/media/2013/03/FirefoxSettings.png">&lt;img style=”background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;” title=”FirefoxSettings” alt=”FirefoxSettings” src=”.com/media/2013/03/FirefoxSettings_thumb.png</a></p>
+<p><a href="/media/2013/03/FirefoxSettings.png">&lt;img style=”background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;” title=”FirefoxSettings” alt=”FirefoxSettings” src=”/media/2013/03/FirefoxSettings_thumb.png</a></p>
 
 <p>To make it easier, I’ve included the configuration files and the installation script listed above in a single ZIP file that you can download here:</p>
 

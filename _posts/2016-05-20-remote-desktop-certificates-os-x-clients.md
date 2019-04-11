@@ -21,21 +21,21 @@ Windows has supported TLS for server authentication with [RDP](https://technet.m
 
 While I may only be configuring certificates in my lab environment, there's not much effort required to remove these certificate warnings.
 
-# Client Warnings for Untrusted Certificates
+## Client Warnings for Untrusted Certificates
 
 Here are the client certificate warnings on various Microsoft Remote Desktop clients, including OS X. First up the original Remote Desktop Connection (mstsc) on Windows:
 
-![Certificate Warning on the Remote Desktop Connection client]({{site.baseurl}}/media/2016/05/remote-desktop-cert-error-mstsc.png)*Certificate Warning on the Remote Desktop Connection client*
+![Certificate Warning on the Remote Desktop Connection client]({{site.baseurl}}/media/2016/05/remote-desktop-cert-error-mstsc.png)
 
 The new Remote Desktop Universal app on Windows 10:
 
-![Certificate warning in the Remote Desktop Universal app]({{site.baseurl}}/media/2016/05/remote-desktop-cert-error-uwa.png)*Certificate warning in the Remote Desktop Universal app*
+![Certificate warning in the Remote Desktop Universal app]({{site.baseurl}}/media/2016/05/remote-desktop-cert-error-uwa.png)
 
 And the Remote Desktop client on OS X 10.11:
 
-![Certificate warning in the Remote Desktop client for OS X]({{site.baseurl}}/media/2016/05/RDP-Invalid-Certificate.png)*Certificate warning in the Remote Desktop client for OS X*
+![Certificate warning in the Remote Desktop client for OS X]({{site.baseurl}}/media/2016/05/RDP-Invalid-Certificate.png)
 
-# Configuring the Certificate Template
+## Configuring the Certificate Template
 
 I won't cover installing and configuring an enterprise certificate authority here; however, here are a number of articles worth reading on this topic:
 
@@ -48,25 +48,25 @@ To configure a certificate for use with Remote Desktop Services (or RDP into any
 
 This article has a great walk-through of the entire process and more: [RDP TLS Certificate Deployment Using GPO](http://www.darkoperator.com/blog/2015/3/26/rdp-tls-certificate-deployment-using-gpo). In my lab, I've created a 'Remote Desktop Computer' certificate template and enabled it to be autoenrolled via Group Policy.
 
-## Certificate Template Options
+### Certificate Template Options
 
 To create the new template, open the Certificate Templates console and duplicate the Computer template. Use this template because it already has the Server Authentication policy enabled.
 
 Navigate to the Extensions tab, edit the 'Application Policies' extension and remove 'Client Authentication' from the list.
 
-![Remote Desktop template certificate extensions]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions.png)*Remote Desktop template certificate extensions*
+![Remote Desktop template certificate extensions]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions.png)
 
 After you added the 'Remote Desktop Authentication' policy, you should see the policies and see in the following dialog box. See below for the actual 'Remote Desktop Authentication' policy.
 
-![Remote Desktop certificate Application Policies extension]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions-Application-Policies.png)*Remote Desktop certificate Application Policies extension*
+![Remote Desktop certificate Application Policies extension]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions-Application-Policies.png)
 
-Adding the 'Remote Desktop Authentication' policy requires adding a new extension named 'Remote Desktop Authentication' (or similar) with an object value of "1.3.6.1.4.1.311.54.1.2" (excluding quotes). **Edit** the **Application Policies**, click **Add**, then click **New** and enter the values as above.
+Adding the 'Remote Desktop Authentication' policy requires adding a new extension named 'Remote Desktop Authentication' (or similar) with an object value of "1.3.6.1.4.1.311.54.1.2" (excluding quotes).  and enter the values as above.
 
-![The Remote Desktop Authentication policy extension]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions-Remote-Desktop-Authentication.png)*The Remote Desktop Authentication policy extension*
+![The Remote Desktop Authentication policy extension]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions-Remote-Desktop-Authentication.png)
 
 Save the template and configure your CA to issue the new template. In my lab my certificate template display name 'Remote Desktop Computer'. Since my first template failed, it's actually called 'Remote Desktop Computer v2'. However, the important name to note for the next step is the actual template name, which can be found on the General tab of the template. In my case this is 'RemoteDesktopComputerv2' (the display name, minus the spaces).
 
-# Configure Autorenrollment
+## Configure Autorenrollment
 
 To configure autoenrollment, I've created a new GPO dedicated to the autoenrollment setting and linked it to the organisational units containing server and workstation computer account objects. Edit the policy and enable the following setting:
 
@@ -74,11 +74,11 @@ Computer Configuration / Administrative Templates / Windows Components / Remote 
 
 Add the name of the certificate template and shown in the screenshot below:
 
-![Server authentication certificate template]({{site.baseurl}}/media/2016/05/Server-Authentication-Certificate-Template.png)*Enabling the 'Server authentication certificate template' in Group Policy*
+![Server authentication certificate template]({{site.baseurl}}/media/2016/05/Server-Authentication-Certificate-Template.png)
 
 Once a Group Poliy refresh occurs or on the next boot, the target Windows machines will autoenroll for the certificate and configure their RDP listener.
 
-# OS X Configuration
+## OS X Configuration
 
 Now that my Remote Desktop certificates are configured for autoentrollment and Windows machines are picking up the certificates, I can import the root CA certificate into my MacBook running OS X.
 
@@ -86,7 +86,7 @@ Navigate to the URL of your certificate server (e.g. http://cert1/certsrv) and d
 
 Once installed the certificate is not automatically trused as you can see below:
 
-![OSX root CA certificate]({{site.baseurl}}/media/2016/05/OSX-root-CA-certificate.png)*My root CA certificate in Keychain on OS X*
+![OSX root CA certificate]({{site.baseurl}}/media/2016/05/OSX-root-CA-certificate.png)
 
 Set the certificate to be trusted by selecting 'Alway Trust' from the 'When using this certificate' option. Close the certificate properties window and you should be prompted for your password to save the changes. Now when connecting to PCs via the Remote Desktop client, you should no longer receive certificate warnings.
 

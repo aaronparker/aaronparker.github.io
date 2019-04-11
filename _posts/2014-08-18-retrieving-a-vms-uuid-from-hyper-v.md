@@ -70,10 +70,10 @@ Function Get-HypervVMUUID {
             This command retrieves the UUIDs from the all of the virtual machines on the local host.
  
         .NOTES
-            {{site.baseurl}}.com/retrieving-a-vms-uuid-from-hyperv/ for support information.
+            {{site.baseurl}}/retrieving-a-vms-uuid-from-hyperv/ for support information.
  
         .LINK
-            {{site.baseurl}}.com/retrieving-a-vms-uuid-from-hyperv/
+            {{site.baseurl}}/retrieving-a-vms-uuid-from-hyperv/
     #>
     [cmdletbinding(SupportsShouldProcess=$True)]
     param(

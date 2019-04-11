@@ -18,7 +18,7 @@ tags:
   - App-V
   - Office
 ---
-<img class="alignnone  wp-image-2717" title="The Definitive Guide to Virtualizing Office header" src="{{site.baseurl}}.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png" alt="The Definitive Guide to Virtualizing Office header" width="660" height="208" srcset="{{site.baseurl}}.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png 778w, {{site.baseurl}}.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51-150x47.png 150w, {{site.baseurl}}.com/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51-300x94.png 300w" sizes="(max-width: 660px) 100vw, 660px" />
+<img class="alignnone  wp-image-2717" title="The Definitive Guide to Virtualizing Office header" src="{{site.baseurl}}/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png" alt="The Definitive Guide to Virtualizing Office header" width="660" height="208" srcset="{{site.baseurl}}/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51.png 778w, {{site.baseurl}}/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51-150x47.png 150w, {{site.baseurl}}/media/2012/05/Screen-Shot-2012-05-18-at-13.52.51-300x94.png 300w" sizes="(max-width: 660px) 100vw, 660px" />
 
 Using application virtualization to simplify your gold image by delivering what's most likely the most common component of any image - Microsoft Office, continues to be a popular topic. But is it the right approach?
 
