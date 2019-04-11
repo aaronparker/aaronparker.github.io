@@ -29,21 +29,21 @@ The use of cloud services is gaining traction rapidly - I'd be hard pressed to m
 
 So, here's your traditional remote access front-end (with some nice branding, if you ask me).
 
-<figure id="attachment_5388" aria-describedby="caption-attachment-5388" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5388" src="https://stealthpuppy.com/media/2017/03/StoreFrontLogin-1024x587.png" alt="Citrix StoreFront login page" width="1024" height="587" srcset="https://stealthpuppy.com/media/2017/03/StoreFrontLogin-1024x587.png 1024w, https://stealthpuppy.com/media/2017/03/StoreFrontLogin-150x86.png 150w, https://stealthpuppy.com/media/2017/03/StoreFrontLogin-300x172.png 300w, https://stealthpuppy.com/media/2017/03/StoreFrontLogin-768x441.png 768w, https://stealthpuppy.com/media/2017/03/StoreFrontLogin.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/StoreFrontLogin.png)<figcaption id="caption-attachment-5388" class="wp-caption-text">Citrix StoreFront login page*</figure>
+![Citrix StoreFront login page]({{site.baseurl}}/media/2017/03/StoreFrontLogin.png)*Citrix StoreFront login page*</figure>
 
 However, instead of authenticating directly to on-premises Active Directory and a 3rd party MFA solution ([remember these?](https://www.google.com.au/search?q=rsa+token&espv=2&source=lnms&tbm=isch&sa=X&ved=0ahUKEwigqZn8msnSAhXlI8AKHbhYDCoQ_AUIBigB&biw=1920&bih=1006&dpr=1)) you can provide users with a consistent authentication experience, apply a single set of access policies against your hosted and SaaS apps and gain insights into user identity protection.
 
 Identity is the new control plane, where you can offload the entire authentication process away from NetScaler to Azure AD.
 
-<figure id="attachment_5387" aria-describedby="caption-attachment-5387" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5387" src="https://stealthpuppy.com/media/2017/03/AzureADLogin-1024x587.png" alt="Azure AD Sign in page" width="1024" height="587" srcset="https://stealthpuppy.com/media/2017/03/AzureADLogin-1024x587.png 1024w, https://stealthpuppy.com/media/2017/03/AzureADLogin-150x86.png 150w, https://stealthpuppy.com/media/2017/03/AzureADLogin-300x172.png 300w, https://stealthpuppy.com/media/2017/03/AzureADLogin-768x441.png 768w, https://stealthpuppy.com/media/2017/03/AzureADLogin.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/AzureADLogin.png)<figcaption id="caption-attachment-5387" class="wp-caption-text">Azure AD Sign in page*</figure>
+![Azure AD Sign in page]({{site.baseurl}}/media/2017/03/AzureADLogin.png)*Azure AD Sign in page*</figure>
 
 If you had the opportunity to start with a completely new IT infrastructure, how would you design it? Perhaps push as much as you can into a protected data centre (on-prem or in a public cloud), use XenApp to deliver legacy applications and provide end-users with device choice that you can manage without deploying any infrastructure. That's something I've done a few times now over the past 12-months.
 
-<figure id="attachment_5392" aria-describedby="caption-attachment-5392" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5392" src="https://stealthpuppy.com/media/2017/03/AzureADMFAPrompt-1024x587.png" alt="Azure AD MFA prompt" width="1024" height="587" srcset="https://stealthpuppy.com/media/2017/03/AzureADMFAPrompt-1024x587.png 1024w, https://stealthpuppy.com/media/2017/03/AzureADMFAPrompt-150x86.png 150w, https://stealthpuppy.com/media/2017/03/AzureADMFAPrompt-300x172.png 300w, https://stealthpuppy.com/media/2017/03/AzureADMFAPrompt-768x441.png 768w, https://stealthpuppy.com/media/2017/03/AzureADMFAPrompt.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/AzureADMFAPrompt.png)<figcaption id="caption-attachment-5392" class="wp-caption-text">Azure AD MFA prompt*</figure>
+![Azure AD MFA prompt]({{site.baseurl}}/media/2017/03/AzureADMFAPrompt.png)*Azure AD MFA prompt*</figure>
 
 When configured, your XenApp or XenDesktop resources are available from the Microsoft Azure AD Access Panel along side a user's other applications, plus self-service access with an approval workflow is possible.
 
-<figure id="attachment_5394" aria-describedby="caption-attachment-5394" style="width: 1024px" class="wp-caption alignnone">[<img class="wp-image-5394 size-large" src="https://stealthpuppy.com/media/2017/03/MyAppsAccessPanel-1024x587.png" alt="MyApps Access Panel with 'My Hosted Apps' - access to XenApp via NetScaler" width="1024" height="587" srcset="https://stealthpuppy.com/media/2017/03/MyAppsAccessPanel-1024x587.png 1024w, https://stealthpuppy.com/media/2017/03/MyAppsAccessPanel-150x86.png 150w, https://stealthpuppy.com/media/2017/03/MyAppsAccessPanel-300x172.png 300w, https://stealthpuppy.com/media/2017/03/MyAppsAccessPanel-768x441.png 768w, https://stealthpuppy.com/media/2017/03/MyAppsAccessPanel.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/MyAppsAccessPanel.png)<figcaption id="caption-attachment-5394" class="wp-caption-text">MyApps Access Panel with 'My Hosted Apps' - access to XenApp via NetScaler*</figure>
+![MyApps Access Panel with 'My Hosted Apps' - access to XenApp via NetScaler]({{site.baseurl}}/media/2017/03/MyAppsAccessPanel.png)*MyApps Access Panel with 'My Hosted Apps' - access to XenApp via NetScaler*</figure>
 
 Your users now have a consistent method of accessing and authenticating to both on-premises and SaaS applications and you have one place to manage access to applications whether they're legacy on-premises apps or new SaaS apps hosted anywhere.
 
@@ -62,7 +62,7 @@ In addition to the above, you'll of course require an Azure tenant to use Azure 
 
 The Citrix Federated Authentication Service architecture is shown in the diagram below. The Citrix documentation is aimed at configuring FAS with AD FS; however, it works just about the same way with Azure AD, so I've made some modifications to the diagram:
 
-<figure id="attachment_5402" aria-describedby="caption-attachment-5402" style="width: 707px" class="wp-caption alignnone">[<img class="size-full wp-image-5402" src="https://stealthpuppy.com/media/2017/03/fas-architecture.png" alt="Citrix Federated Authentication Service architecture" width="707" height="371" srcset="https://stealthpuppy.com/media/2017/03/fas-architecture.png 707w, https://stealthpuppy.com/media/2017/03/fas-architecture-150x79.png 150w, https://stealthpuppy.com/media/2017/03/fas-architecture-300x157.png 300w" sizes="(max-width: 707px) 100vw, 707px" />]({{site.baseurl}}/media/2017/03/fas-architecture.png)<figcaption id="caption-attachment-5402" class="wp-caption-text">Citrix Federated Authentication Service architecture*</figure>
+![Citrix Federated Authentication Service architecture]({{site.baseurl}}/media/2017/03/fas-architecture.png)*Citrix Federated Authentication Service architecture*</figure>
 
 FAS is very simple to set up - if your certificate infrastructure is working correctly, the FAS configuration tool does the heavy lifting for you. If the official documentation hasn't helped you, check out [Carl Stalhood's article on FAS as well](http://www.carlstalhood.com/citrix-federated-authentication-service-saml/).
 
@@ -80,7 +80,7 @@ During testing I did run into an issue with SAML assertion - after authenticatin
 
 When configuring your NetScaler Gateway application in Azure AD, your Single sign-on configuration should look something like this:
 
-<figure id="attachment_5396" aria-describedby="caption-attachment-5396" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5396" src="https://stealthpuppy.com/media/2017/03/MyHostedApps-EnterpriseAppConfig-1024x587.png" alt="Enterprise Single Sign-on for 'My Hosted Apps'" width="1024" height="587" srcset="https://stealthpuppy.com/media/2017/03/MyHostedApps-EnterpriseAppConfig-1024x587.png 1024w, https://stealthpuppy.com/media/2017/03/MyHostedApps-EnterpriseAppConfig-150x86.png 150w, https://stealthpuppy.com/media/2017/03/MyHostedApps-EnterpriseAppConfig-300x172.png 300w, https://stealthpuppy.com/media/2017/03/MyHostedApps-EnterpriseAppConfig-768x441.png 768w, https://stealthpuppy.com/media/2017/03/MyHostedApps-EnterpriseAppConfig.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/MyHostedApps-EnterpriseAppConfig.png)<figcaption id="caption-attachment-5396" class="wp-caption-text">Enterprise Single Sign-on for 'My Hosted Apps'*</figure>
+![Enterprise Single Sign-on for 'My Hosted Apps']({{site.baseurl}}/media/2017/03/MyHostedApps-EnterpriseAppConfig.png)*Enterprise Single Sign-on for 'My Hosted Apps'*</figure>
 
 Open the Configure blade to find the URLs you'll need when configuring SAML authentication on your NetScaler Gateway. Here's you'll find:
 
@@ -88,7 +88,7 @@ Open the Configure blade to find the URLs you'll need when configuring SAML auth
   * SAML Entity ID
   * Sign-Out URL
 
-<figure id="attachment_5397" aria-describedby="caption-attachment-5397" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5397" src="https://stealthpuppy.com/media/2017/03/MyHostedApps-SingleSignOnConfig-1024x587.png" alt="Single Sign-on URLs for 'My Hosted Apps'" width="1024" height="587" srcset="https://stealthpuppy.com/media/2017/03/MyHostedApps-SingleSignOnConfig-1024x587.png 1024w, https://stealthpuppy.com/media/2017/03/MyHostedApps-SingleSignOnConfig-150x86.png 150w, https://stealthpuppy.com/media/2017/03/MyHostedApps-SingleSignOnConfig-300x172.png 300w, https://stealthpuppy.com/media/2017/03/MyHostedApps-SingleSignOnConfig-768x441.png 768w, https://stealthpuppy.com/media/2017/03/MyHostedApps-SingleSignOnConfig.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/MyHostedApps-SingleSignOnConfig.png)<figcaption id="caption-attachment-5397" class="wp-caption-text">Single Sign-on URLs for 'My Hosted Apps'*</figure>
+![Single Sign-on URLs for 'My Hosted Apps']({{site.baseurl}}/media/2017/03/MyHostedApps-SingleSignOnConfig.png)*Single Sign-on URLs for 'My Hosted Apps'*</figure>
 
 Now that your application is configured, you can move into configuring a SAML policy on your NetScaler.
 
@@ -105,11 +105,11 @@ When creating the SAML policy and creating a SAML server configuration use the f
 
 Your configuration should then look similar to the following screenshot:
 
-<figure id="attachment_5398" aria-describedby="caption-attachment-5398" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5398" src="https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSAMLServer-1024x587.png" alt="Configuring the SAML server on NetScaler" width="1024" height="587" srcset="https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSAMLServer-1024x587.png 1024w, https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSAMLServer-150x86.png 150w, https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSAMLServer-300x172.png 300w, https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSAMLServer-768x441.png 768w, https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSAMLServer.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/NetScaler-ConfigureSAMLServer.png)<figcaption id="caption-attachment-5398" class="wp-caption-text">Configuring the SAML server on NetScaler*</figure>
+![Configuring the SAML server on NetScaler]({{site.baseurl}}/media/2017/03/NetScaler-ConfigureSAMLServer.png)*Configuring the SAML server on NetScaler*</figure>
 
 After successfully authenticating during my initial testing, StoreFront would display 'Cannot complete your request'. To fix that, remove the Single Sign-on Domain from the [Session Policies](http://www.carlstalhood.com/session-policies-for-storefront-netscaler-11/) bound to the virtual server.
 
-<figure id="attachment_5399" aria-describedby="caption-attachment-5399" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5399" src="https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSessionPolicy-1024x587.png" alt="Remove the Single Sign-on domain from the NetScaler Session Policy" width="1024" height="587" srcset="https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSessionPolicy-1024x587.png 1024w, https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSessionPolicy-150x86.png 150w, https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSessionPolicy-300x172.png 300w, https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSessionPolicy-768x441.png 768w, https://stealthpuppy.com/media/2017/03/NetScaler-ConfigureSessionPolicy.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/NetScaler-ConfigureSessionPolicy.png)<figcaption id="caption-attachment-5399" class="wp-caption-text">Remove the Single Sign-on domain from the NetScaler Session Policy*</figure>
+![Remove the Single Sign-on domain from the NetScaler Session Policy]({{site.baseurl}}/media/2017/03/NetScaler-ConfigureSessionPolicy.png)*Remove the Single Sign-on domain from the NetScaler Session Policy*</figure>
 
 If you've configured each of the components correctly, logging into NetScaler Gateway via Azure AD should get you to your XenApp or XenDesktop resources.
 
@@ -145,7 +145,7 @@ Currently this approach doesn't work with Access Control on NetScaler Gateway co
 
 Conditional Access does have a Session Control feature to enforce application restrictions based on the conditions set in the access policy. Given the [statement of support from Citrix for Microsoft EMS](https://www.citrix.com/blogs/2017/01/09/better-together-netscaler-unified-gateway-microsoft-ems-2/), I hope to this this feature supported in the near future.
 
-<figure id="attachment_5412" aria-describedby="caption-attachment-5412" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5412" src="https://stealthpuppy.com/media/2017/03/ConditionalAccess-SessionControls-1024x587.png" alt="Session Controls in Conditional Access" width="1024" height="587" srcset="https://stealthpuppy.com/media/2017/03/ConditionalAccess-SessionControls-1024x587.png 1024w, https://stealthpuppy.com/media/2017/03/ConditionalAccess-SessionControls-150x86.png 150w, https://stealthpuppy.com/media/2017/03/ConditionalAccess-SessionControls-300x172.png 300w, https://stealthpuppy.com/media/2017/03/ConditionalAccess-SessionControls-768x441.png 768w, https://stealthpuppy.com/media/2017/03/ConditionalAccess-SessionControls.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/ConditionalAccess-SessionControls.png)<figcaption id="caption-attachment-5412" class="wp-caption-text">Session Controls in Conditional Access*</figure>
+![Session Controls in Conditional Access]({{site.baseurl}}/media/2017/03/ConditionalAccess-SessionControls.png)*Session Controls in Conditional Access*</figure>
 
 ## Single Sign-On
 
@@ -157,7 +157,7 @@ Conditional Access does have a Session Control feature to enforce application re
 
 Now you can choose to enforce [Conditional Access](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access) against NetScaler. Conditional Access policies allow control over several access and configuration scenarios. Conditional Access allows you to specify the conditions and requirements under which a user can connect to your XenApp or XenDesktop resources.
 
-<figure id="attachment_5407" aria-describedby="caption-attachment-5407" style="width: 624px" class="wp-caption alignnone">[<img class="size-full wp-image-5407" src="https://stealthpuppy.com/media/2017/03/conditionalaccess-overview.png" alt="Azure AD Conditional Access overview" width="624" height="349" srcset="https://stealthpuppy.com/media/2017/03/conditionalaccess-overview.png 624w, https://stealthpuppy.com/media/2017/03/conditionalaccess-overview-150x84.png 150w, https://stealthpuppy.com/media/2017/03/conditionalaccess-overview-300x168.png 300w" sizes="(max-width: 624px) 100vw, 624px" />]({{site.baseurl}}/media/2017/03/conditionalaccess-overview.png)<figcaption id="caption-attachment-5407" class="wp-caption-text">Azure AD Conditional Access overview*</figure>
+![Azure AD Conditional Access overview]({{site.baseurl}}/media/2017/03/conditionalaccess-overview.png)*Azure AD Conditional Access overview*</figure>
 
 For example, you could choose :
 
@@ -167,17 +167,17 @@ For example, you could choose :
   * Require a domain joined devices - you may want to restrict access to Windows PCs joined to a traditional Active Directory domain. This requires configuring [registration of those devices into Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup) so that you can apply Conditional Access against them
   * Enforce access from specific locations or device types
 
-<figure id="attachment_5405" aria-describedby="caption-attachment-5405" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5405" src="https://stealthpuppy.com/media/2017/03/ConditionalAccess-Controls-1024x587.png" alt="Applying Conditional Access controls to NetScaler" width="1024" height="587" srcset="https://stealthpuppy.com/media/2017/03/ConditionalAccess-Controls-1024x587.png 1024w, https://stealthpuppy.com/media/2017/03/ConditionalAccess-Controls-150x86.png 150w, https://stealthpuppy.com/media/2017/03/ConditionalAccess-Controls-300x172.png 300w, https://stealthpuppy.com/media/2017/03/ConditionalAccess-Controls-768x441.png 768w, https://stealthpuppy.com/media/2017/03/ConditionalAccess-Controls.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/ConditionalAccess-Controls.png)<figcaption id="caption-attachment-5405" class="wp-caption-text">Applying Conditional Access controls to NetScaler*</figure>
+![Applying Conditional Access controls to NetScaler]({{site.baseurl}}/media/2017/03/ConditionalAccess-Controls.png)*Applying Conditional Access controls to NetScaler*</figure>
 
 Device based Conditional Access is a great way of further securing access to your on-premises resources; however, it's worth noting that today Microsoft does not yet include support for macOS. Support for macOS is "coming soon".
 
-<figure id="attachment_5414" aria-describedby="caption-attachment-5414" style="width: 624px" class="wp-caption alignnone">[<img class="size-full wp-image-5414" src="https://stealthpuppy.com/media/2017/03/ConditionalAccess-Devices.png" alt="Device support for Conditional Access" width="624" height="293" srcset="https://stealthpuppy.com/media/2017/03/ConditionalAccess-Devices.png 624w, https://stealthpuppy.com/media/2017/03/ConditionalAccess-Devices-150x70.png 150w, https://stealthpuppy.com/media/2017/03/ConditionalAccess-Devices-300x141.png 300w" sizes="(max-width: 624px) 100vw, 624px" />]({{site.baseurl}}/media/2017/03/ConditionalAccess-Devices.png)<figcaption id="caption-attachment-5414" class="wp-caption-text">Device support for Conditional Access*</figure>
+![Device support for Conditional Access]({{site.baseurl}}/media/2017/03/ConditionalAccess-Devices.png)*Device support for Conditional Access*</figure>
 
 ## Non-compliant Devices
 
 The screenshot below shows the experience from a non-compliant device. Here I'm logging onto NetScaler from a machine that is not managed by my Intune instance, therefore it's non-compliant with my organisational policies. If this was a personal device, [I could enrol it](https://docs.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune) to be compliant with those policies.
 
-<figure id="attachment_5417" aria-describedby="caption-attachment-5417" style="width: 1024px" class="wp-caption alignnone">[<img class="size-large wp-image-5417" src="https://stealthpuppy.com/media/2017/03/LoginFromUntrustedDevice-1024x640.png" alt="Access to NetScaler from a non-compliant device" width="1024" height="640" srcset="https://stealthpuppy.com/media/2017/03/LoginFromUntrustedDevice-1024x640.png 1024w, https://stealthpuppy.com/media/2017/03/LoginFromUntrustedDevice-150x94.png 150w, https://stealthpuppy.com/media/2017/03/LoginFromUntrustedDevice-300x188.png 300w, https://stealthpuppy.com/media/2017/03/LoginFromUntrustedDevice-768x480.png 768w, https://stealthpuppy.com/media/2017/03/LoginFromUntrustedDevice.png 1440w" sizes="(max-width: 1024px) 100vw, 1024px" />]({{site.baseurl}}/media/2017/03/LoginFromUntrustedDevice.png)<figcaption id="caption-attachment-5417" class="wp-caption-text">Access to NetScaler from a non-compliant device*</figure>
+![Access to NetScaler from a non-compliant device]({{site.baseurl}}/media/2017/03/LoginFromUntrustedDevice.png)*Access to NetScaler from a non-compliant device*</figure>
 
 # Conclusion
 

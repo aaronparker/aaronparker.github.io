@@ -15,7 +15,7 @@ categories:
 tags:
   - Adobe Reader
 ---
-[<img style="background-image: none; margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 10px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ReaderXVirtualise" src="https://stealthpuppy.com/media/2010/10/ReaderXVirtualise_thumb.png" alt="ReaderXVirtualise" width="128" height="124" align="right" border="0" />]({{site.baseurl}}/media/2010/10/ReaderXVirtualise.png)This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.
+[<img style="background-image: none; margin-top: 0px; margin-right: 0px; margin-bottom: 5px; margin-left: 10px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ReaderXVirtualise" src="https://stealthpuppy.com/media/2010/10/ReaderXVirtualise_thumb.png" alt="ReaderXVirtualise]({{site.baseurl}}/media/2010/10/ReaderXVirtualise.png)This post details virtualizing Adobe Reader X with Microsoft Application Virtualization 4.6; however the same basic steps should apply to virtualizing Reader with any other application virtualisation product.
 
 ### Don't Virtualize Reader
 

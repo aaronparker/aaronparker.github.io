@@ -25,6 +25,6 @@ These components form the most basic requirements for an Access Gateway implemen
 
 In this particular diagram the network consists of a single, tri-homed firewall with the Perimeter/DMZ network using private IP addresses that are routed to the internal network. This configuration will keep firewall rules as simple as possible.
 
-[<img style="display: inline; border: 0px;" title="AccessGatewayTrafficFlow" src="https://stealthpuppy.com/media/2010/02/AccessGatewayTrafficFlow_thumb.png" alt="AccessGatewayTrafficFlow" width="660" height="370" border="0" />]({{site.baseurl}}/media/2010/02/AccessGatewayTrafficFlow.png)
+[<img style="display: inline; border: 0px;" title="AccessGatewayTrafficFlow" src="https://stealthpuppy.com/media/2010/02/AccessGatewayTrafficFlow_thumb.png" alt="AccessGatewayTrafficFlow]({{site.baseurl}}/media/2010/02/AccessGatewayTrafficFlow.png)
 
 (click for full size)

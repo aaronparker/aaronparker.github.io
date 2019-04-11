@@ -28,7 +28,7 @@ Whilst SETUP.EXE might be the easiest method, it won’t give most organisations
 
 When working with the App-V Client MSI installer, administrators most commonly come up against missing dependencies. This is usually due to the Application Error Reporting component which requires use of [a specific GUID that must match the App-V Client](http://technet.microsoft.com/en-us/library/ee956914.aspx). To test that the required dependencies are installed as the App-V Client setup expects, use SETUP.EXE to check the dependencies for you – just run SETUP.EXE manually and it will stop at the following dialog box that will list missing dependencies:
 
-[<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" class="wlDisabledImage" title="AppV-Dependencies" border="0" alt="AppV-Dependencies" src="https://stealthpuppy.com/media/2010/07/AppVDependencies_thumb.png" width="514" height="392" />]({{site.baseurl}}/media/2010/07/AppVDependencies.png)
+[<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" class="wlDisabledImage" title="AppV-Dependencies" border="0" alt="AppV-Dependencies" src="https://stealthpuppy.com/media/2010/07/AppVDependencies_thumb.png]({{site.baseurl}}/media/2010/07/AppVDependencies.png)
 
 ### Resources
 

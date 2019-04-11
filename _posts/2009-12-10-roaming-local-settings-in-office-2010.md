@@ -27,7 +27,7 @@ Good news! Office 2010 fixes the Office 2007 issue, where-by you need to [resort
 
 _Features – Modify user settings – Microsoft Office 2010 System – Global Options – Customize – Allow roaming of all user customisations_
 
-[<img style="display: inline; border: 0pt none;" title="the Office 2010 Customization Tool" src="https://stealthpuppy.com/media/2009/12/AllowRoamingOfAllUserCustomisations_thumb.png" alt="the Office 2010 Customization Tool" width="640" height="376" border="0" />]({{site.baseurl}}/media/2009/12/AllowRoamingOfAllUserCustomisations.png)
+[<img style="display: inline; border: 0pt none;" title="the Office 2010 Customization Tool" src="https://stealthpuppy.com/media/2009/12/AllowRoamingOfAllUserCustomisations_thumb.png" alt="the Office 2010 Customization Tool]({{site.baseurl}}/media/2009/12/AllowRoamingOfAllUserCustomisations.png)
 
 Nice and simple with no need for additional work in your user environment management tool of choice to roam those settings – happy users.
 

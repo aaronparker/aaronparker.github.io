@@ -65,7 +65,7 @@ These same steps will need to be followed on the App-V client computer that will
 
 iTunes is a excellent example of an application written by developers who appear to have absolutely no idea about how Windows profiles work. Take a look at the size of the _AppData\Roaming\Apple Computer_ folder in my profile on an existing computer with iTunes installed:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="09AppData" src="https://stealthpuppy.com/media/2011/06/09AppData_thumb.png" alt="09AppData" width="377" height="302" border="0" />]({{site.baseurl}}/media/2011/06/09AppData.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="09AppData" src="https://stealthpuppy.com/media/2011/06/09AppData_thumb.png" alt="09AppData]({{site.baseurl}}/media/2011/06/09AppData.png)
 
 With logs, a back-up of two devices and two copies of iOS 4.3.3 (one for an iPhone and one for an iPad), this folder is a whopping 8.41 GB and contains over 17000 files. Just imagine enabling Roaming Profiles with that in your profile – that’s a lot of coffee waiting for logon to complete.
 
@@ -205,7 +205,7 @@ There are a few post-sequencing tasks to perform:
 
 Add a script to the iTunes OSD file to create the AppData folder structure that should exist on the real file system:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="iTunesScriptBody" src="https://stealthpuppy.com/media/2011/06/iTunesScriptBody_thumb.png" alt="iTunesScriptBody" width="660" height="242" border="0" />]({{site.baseurl}}/media/2011/06/iTunesScriptBody.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="iTunesScriptBody" src="https://stealthpuppy.com/media/2011/06/iTunesScriptBody_thumb.png" alt="iTunesScriptBody]({{site.baseurl}}/media/2011/06/iTunesScriptBody.png)
 
 For an example of what to add to the OSD file, download the example here:
 
@@ -219,7 +219,7 @@ For an example of what to add to the OSD file, download the example here:
 
 **Child Processes**: when iTunes launches, several processes with also be started – AppleMobileDeviceHelper.exe, distnoted.exe (both installed instead of in the iTunes package), iPodService.exe and mDNSResponder.exe (The iPod and Bonjour services respectively).
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="10ProcExp" src="https://stealthpuppy.com/media/2011/06/10ProcExp_thumb.png" alt="10ProcExp" width="660" height="211" border="0" />]({{site.baseurl}}/media/2011/06/10ProcExp.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="10ProcExp" src="https://stealthpuppy.com/media/2011/06/10ProcExp_thumb.png" alt="10ProcExp]({{site.baseurl}}/media/2011/06/10ProcExp.png)
 
 On occasion these processes may remain running after iTunes has exited, if this is the case (and you may have already seen this behaviour when building the Primary Feature block) set TERMINATECHILDREN to True in the iTunes OSD.
 
@@ -231,7 +231,7 @@ On occasion these processes may remain running after iTunes has exited, if this 
 
 Deploying the iTunes package will require the deployment of Apple Application Support and Apple Mobile Device Support to the client computers first. Without Apple Application Support the following will be the result of launching iTunes:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="NoAppleAppSupport" src="https://stealthpuppy.com/media/2011/06/NoAppleAppSupport_thumb.png" alt="NoAppleAppSupport" width="510" height="260" border="0" />]({{site.baseurl}}/media/2011/06/NoAppleAppSupport.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="NoAppleAppSupport" src="https://stealthpuppy.com/media/2011/06/NoAppleAppSupport_thumb.png" alt="NoAppleAppSupport]({{site.baseurl}}/media/2011/06/NoAppleAppSupport.png)
 
 While I've been able to test iTunes successfully running on an App-V Client, there appears (at this stage at least) to be only one issue – when plugging in a mobile device, the following error is displayed, twice:
 

@@ -13,7 +13,7 @@ categories:
 tags:
   - Windows-Server-2008
 ---
-<img src="https://stealthpuppy.com/media/2008/03/windowshelp.png" border="0" alt="WindowsHelp" width="140" height="128" align="left" />Michael over at [4sysops has taken a shot](http://4sysops.com/archives/windows-server-2008-step-by-step-guides-don%E2%80%99t-waste-your-time/) at the [Windows Server 2008 Step-by-Step Guides](http://www.microsoft.com/downloads/details.aspx?FamilyID=518d870c-fa3e-4f6a-97f5-acaf31de6dce&DisplayLang=en) and I'm left scratching my head. His beef with the guides is that they haven't yet been updated for RTM and still include some older terminology:
+<img src="https://stealthpuppy.com/media/2008/03/windowshelp.png" border="0" alt="WindowsHelp](http://www.microsoft.com/downloads/details.aspx?FamilyID=518d870c-fa3e-4f6a-97f5-acaf31de6dce&DisplayLang=en) and I'm left scratching my head. His beef with the guides is that they haven't yet been updated for RTM and still include some older terminology:
 
 > In this manual, they still talk about €œWindows Server virtualization (wsv)€ even though wsv was already renamed to Hyper-V in November. It seems as if even Microsoft€™s own employees can€™t keep up with the pace by which their marketing renames their products. Even worse is that this paper doesn€™t mention that Hyper-V is still in beta. I wonder if the author of this paper was aware of this fact. Of course, the reader is also kept in the dark that there meanwhile is an update of Hyper-V which has to be downloaded separately.
 

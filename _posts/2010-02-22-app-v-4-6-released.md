@@ -35,7 +35,7 @@ Microsoft Application Virtualisation 4.6 (RTM) has been made available, which yo
 
 [Microsoft Application Virtualization SFT View](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=26d8bfe3-02dd-4073-95f8-594bbb12933a) – SFT View loads a driver that automatically mounts SFT files as read-only folders (you will see a corresponding .dir folder for each SFT). This is an easy way to see into the SFT file and might be useful for performing virus scanning if the tool was installed on the servers hosting your Content share.
 
-[<img style="display: inline; border-width: 0px;" title="SFTDir" src="https://stealthpuppy.com/media/2010/02/SFTDir_thumb.png" border="0" alt="SFTDir" width="660" height="282" />]({{site.baseurl}}/media/2010/02/SFTDir.png)
+[<img style="display: inline; border-width: 0px;" title="SFTDir" src="https://stealthpuppy.com/media/2010/02/SFTDir_thumb.png" border="0" alt="SFTDir]({{site.baseurl}}/media/2010/02/SFTDir.png)
 
 [Application Virtualization Client Log Parser Utility](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=72876c60-3a87-4705-b722-f73eb56219bf) – This tools has been previously available and is an excellent troubleshooting resource. You can find some information on using this tool here [Getting to Grips with the App-V Client Log Parser Utility (Launch Times)](http://blogs.technet.com/virtualworld/archive/2009/04/20/getting-to-grips-with-the-app-v-client-log-parser-utility-launch-times.aspx) and here [Getting to Grips with the App-V Client Log Parser Utility (Error Codes)](http://blogs.technet.com/virtualworld/archive/2009/04/20/getting-to-grips-with-the-app-v-client-log-parser-utility-error-codes.aspx)
 

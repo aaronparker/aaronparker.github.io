@@ -14,7 +14,7 @@ tags:
   - Default Profile
   - Windows-Vista
 ---
-[<img class="size-medium wp-image-619 alignleft" style="border: 0pt none;" title="userprofile" src="https://stealthpuppy.com/media/2008/07/userprofile.png" alt="" width="140" height="128" />]({{site.baseurl}}/media/2008/07/userprofile.png)There are numerous ways to customise the default user profile in earlier versions of Windows, including:
+[<img class="size-medium wp-image-619 alignleft" style="border: 0pt none;" title="userprofile" src="https://stealthpuppy.com/media/2008/07/userprofile.png" alt="]({{site.baseurl}}/media/2008/07/userprofile.png)There are numerous ways to customise the default user profile in earlier versions of Windows, including:
 
   * Create a user account, configure the profile, then copy over the top of the local default profile or save a copy to your NETLOGON share;
   * Use the [[GuiRunOnce] section in an unattended answer file](http://www.microsoft.com/technet/prodtechnol/windows2000serv/reskit/deploy/dgcb_ins_vhev.mspx?mfr=true) for Windows XP/2003.

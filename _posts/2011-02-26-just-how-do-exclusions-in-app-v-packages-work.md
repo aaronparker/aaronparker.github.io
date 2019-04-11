@@ -62,33 +62,33 @@ Excluded folder paths in an App-V package works just the way you would expect �
 
 In my example package I’ve added the path _%APPDATA%\MyApplication2\InsideSub-folder_ as an exclusion. In the screenshot below, you can see that the parent folder _%APPDATA%\MyApplication2_ was captured but _InsideSub-folder_ was not:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual File System Root" src="https://stealthpuppy.com/media/2011/02/VFSMerge3_thumb.png" border="0" alt="Virtual File System Root" width="660" height="337" />]({{site.baseurl}}/media/2011/02/VFSMerge3.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual File System Root" src="https://stealthpuppy.com/media/2011/02/VFSMerge3_thumb.png" border="0" alt="Virtual File System Root]({{site.baseurl}}/media/2011/02/VFSMerge3.png)
 
 To perform some specific testing at execution time, I’ve then set this folder to _Merge with Local Directory_. Let’s see what happens on the client:
 
 On the real file system I’ve created the folder _%APPDATA%\MyApplication2._ The screenshot below shows a directory listing outside of the bubble:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS Outside the package" src="https://stealthpuppy.com/media/2011/02/vfs1_thumb.png" border="0" alt="VFS Outside the package" width="660" height="277" />]({{site.baseurl}}/media/2011/02/vfs1.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS Outside the package" src="https://stealthpuppy.com/media/2011/02/vfs1_thumb.png" border="0" alt="VFS Outside the package]({{site.baseurl}}/media/2011/02/vfs1.png)
 
 If I see the same %APPDATA% location within the package I should see the merged view of _%APPDATA%\MyApplication2:_
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS Inside the package" src="https://stealthpuppy.com/media/2011/02/vfs2_thumb.png" border="0" alt="VFS Inside the package" width="660" height="277" />]({{site.baseurl}}/media/2011/02/vfs2.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS Inside the package" src="https://stealthpuppy.com/media/2011/02/vfs2_thumb.png" border="0" alt="VFS Inside the package]({{site.baseurl}}/media/2011/02/vfs2.png)
 
 If I create a sub-folder of the MyApplication2 folder:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS inside creating a sub-folder" src="https://stealthpuppy.com/media/2011/02/vfs3_thumb.png" border="0" alt="VFS inside creating a sub-folder" width="660" height="277" />]({{site.baseurl}}/media/2011/02/vfs3.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS inside creating a sub-folder" src="https://stealthpuppy.com/media/2011/02/vfs3_thumb.png" border="0" alt="VFS inside creating a sub-folder]({{site.baseurl}}/media/2011/02/vfs3.png)
 
 I can see that the sub-folder has fallen through the virtual environment to the real file system:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VSF viewing outside the buble" src="https://stealthpuppy.com/media/2011/02/vfs4_thumb.png" border="0" alt="VSF viewing outside the buble" width="660" height="277" />]({{site.baseurl}}/media/2011/02/vfs4.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VSF viewing outside the buble" src="https://stealthpuppy.com/media/2011/02/vfs4_thumb.png" border="0" alt="VSF viewing outside the buble]({{site.baseurl}}/media/2011/02/vfs4.png)
 
 I can also create a file or folder outside of those paths that were captured during sequencing and any path marked _Override Local Directory_ and they will be created in the real file system. In this package %APPDATA% was not captured during sequencing, so I can create a sub-folder (or file):
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VSF inside the bubble, create a folder" src="https://stealthpuppy.com/media/2011/02/vfs5_thumb.png" border="0" alt="VSF inside the bubble, create a folder" width="660" height="277" />]({{site.baseurl}}/media/2011/02/vfs5.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VSF inside the bubble, create a folder" src="https://stealthpuppy.com/media/2011/02/vfs5_thumb.png" border="0" alt="VSF inside the bubble, create a folder]({{site.baseurl}}/media/2011/02/vfs5.png)
 
 That is written to the real file system:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS outside the bubble" src="https://stealthpuppy.com/media/2011/02/vfs6_thumb.png" border="0" alt="VFS outside the bubble" width="660" height="277" />]({{site.baseurl}}/media/2011/02/vfs6.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS outside the bubble" src="https://stealthpuppy.com/media/2011/02/vfs6_thumb.png" border="0" alt="VFS outside the bubble]({{site.baseurl}}/media/2011/02/vfs6.png)
 
 **Bottom line**: Exclusions ensure specified file data isn’t captured at sequencing time and Merge with Local means that anything that doesn’t already exist in the package will be written to the real file system. So file system virtualization is straight-forward and for the most part works the way we would expect.
 
@@ -98,19 +98,19 @@ The virtual Registry is quite different to the virtual file system – writes to
 
 On the client in the real Registry I’ve created _HKCU\Software\MergeTest2_ with a value (OutsideTheBubble) inside it:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Read registry" src="https://stealthpuppy.com/media/2011/02/vrg1_thumb.png" border="0" alt="Read registry" width="660" height="261" />]({{site.baseurl}}/media/2011/02/vrg1.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Read registry" src="https://stealthpuppy.com/media/2011/02/vrg1_thumb.png" border="0" alt="Read registry]({{site.baseurl}}/media/2011/02/vrg1.png)
 
 Within the virtual Registry I can create other keys at the same levels MergeTest1 and MergeTest2 (MergeTest3) and I can make an edit to a value that exists outside of the virtual Registry.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual registry" src="https://stealthpuppy.com/media/2011/02/vrg2_thumb.png" border="0" alt="Virtual registry" width="660" height="261" />]({{site.baseurl}}/media/2011/02/vrg2.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual registry" src="https://stealthpuppy.com/media/2011/02/vrg2_thumb.png" border="0" alt="Virtual registry]({{site.baseurl}}/media/2011/02/vrg2.png)
 
 All of these changes have been captured inside the virtual Registry. This means that while I get a merged view of the virtual and real Registry’s, any changes made by the virtual application will only persist inside the virtual registry. Here’s a look again at the real Registry after I’ve closed the virtual application:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Real registry" src="https://stealthpuppy.com/media/2011/02/vrg3_thumb.png" border="0" alt="Real registry" width="660" height="261" />]({{site.baseurl}}/media/2011/02/vrg3.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Real registry" src="https://stealthpuppy.com/media/2011/02/vrg3_thumb.png" border="0" alt="Real registry]({{site.baseurl}}/media/2011/02/vrg3.png)
 
 When you take a closer look at a package, you’ll start to see why this is the case. In this screenshot you can see that the Registry root (REGISTRY) is set to _Merge with Local Key_.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual Registry root" src="https://stealthpuppy.com/media/2011/02/VRGMerge3_thumb.png" border="0" alt="Virtual Registry root" width="660" height="337" />]({{site.baseurl}}/media/2011/02/VRGMerge3.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual Registry root" src="https://stealthpuppy.com/media/2011/02/VRGMerge3_thumb.png" border="0" alt="Virtual Registry root]({{site.baseurl}}/media/2011/02/VRGMerge3.png)
 
 **Bottom line**: Exclusions ensure specified Registry data isn’t captured at sequencing time and Merge with Local, means just that: merge with any existing local keys; however _any_ new writes to the Registry will be captured in the virtual Registry (a copy on write action).
 
@@ -152,7 +152,7 @@ VirtualRegistryPassthroughEx is a multi-string value (REG\_MULTI\_SZ) to which y
 
 Add the key or keys that you want to exclude from the bubble. No restart is required for this to take effect.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VirtualRegistryPassthroughEx" src="https://stealthpuppy.com/media/2011/02/VirtualRegistryPassthroughEx_thumb.png" border="0" alt="VirtualRegistryPassthroughEx" width="394" height="358" />]({{site.baseurl}}/media/2011/02/VirtualRegistryPassthroughEx.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VirtualRegistryPassthroughEx" src="https://stealthpuppy.com/media/2011/02/VirtualRegistryPassthroughEx_thumb.png" border="0" alt="VirtualRegistryPassthroughEx]({{site.baseurl}}/media/2011/02/VirtualRegistryPassthroughEx.png)
 
 In my example I’ve added HKEY\_CURRENT\_USER\Software\MergeTest3. I can now create values and sub-keys and be certain that they will end up in the real Registry.
 

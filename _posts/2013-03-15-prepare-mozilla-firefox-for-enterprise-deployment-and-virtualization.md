@@ -25,7 +25,7 @@ Whilst this article will cover some recommendations for configuring a Firefox de
 
 There are a number of features that might be considered for disabling or configuring in an enterprise environment where users generally won’t have administrative rights and IT may want to control the default user experience.
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FirefoxDefaultLaunch" alt="FirefoxDefaultLaunch" src="https://stealthpuppy.com/media/2013/03/FirefoxDefaultLaunch_thumb.png" width="660" height="363" border="0" />]({{site.baseurl}}/media/2013/03/FirefoxDefaultLaunch.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FirefoxDefaultLaunch" alt="FirefoxDefaultLaunch" src="https://stealthpuppy.com/media/2013/03/FirefoxDefaultLaunch_thumb.png]({{site.baseurl}}/media/2013/03/FirefoxDefaultLaunch.png)
 
 These might include:
 
@@ -142,7 +142,7 @@ sc config MozillaMaintenance start= disabled[/code]
 
 If the installation has been configured correctly, Firefox should start and not display the Import Wizard or any of the other prompts and start-up tabs. Additionally, if you navigate to about:config, a number of preferences should be listed as locked:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FirefoxSettings" alt="FirefoxSettings" src="https://stealthpuppy.com/media/2013/03/FirefoxSettings_thumb.png" width="660" height="319" border="0" />]({{site.baseurl}}/media/2013/03/FirefoxSettings.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FirefoxSettings" alt="FirefoxSettings" src="https://stealthpuppy.com/media/2013/03/FirefoxSettings_thumb.png]({{site.baseurl}}/media/2013/03/FirefoxSettings.png)
 
 To make it easier, I've included the configuration files and the installation script listed above in a single ZIP file that you can download here:
 

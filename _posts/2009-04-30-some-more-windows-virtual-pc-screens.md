@@ -26,7 +26,7 @@ Windows Virtual PC gets a spanking new icon:
 
 Once installed, Virtual PC actually creates a new top level user folder, a nice touch too I think:
 
-[<img class=" alignnone" title="User Folders" src="http://prmkgw.blu.livefilestore.com/y1pDiJxKjFTDTcNwngf2gG4e99I0ymKhX3ni3tMyeGV09kWxgWd8rG43rfpXTTo_Sjfz0Lzi2JLOxGdASg_sGUehnqWRkB2zAwM/UserFolderSmall.png" alt="Click to embiggen" width="560" height="397" />](http://prmkgw.blu.livefilestore.com/y1pg_HOBlTt-St6_E8Cxo779mizG7NOfUUcL6SMO_IWEeoTmcaP-2pkYksztIrFsJvEGHpwgtyss6TIZpdCQZjjdg/UserFolder.png)
+[<img class=" alignnone" title="User Folders" src="http://prmkgw.blu.livefilestore.com/y1pDiJxKjFTDTcNwngf2gG4e99I0ymKhX3ni3tMyeGV09kWxgWd8rG43rfpXTTo_Sjfz0Lzi2JLOxGdASg_sGUehnqWRkB2zAwM/UserFolderSmall.png" alt="Click to embiggen](http://prmkgw.blu.livefilestore.com/y1pg_HOBlTt-St6_E8Cxo779mizG7NOfUUcL6SMO_IWEeoTmcaP-2pkYksztIrFsJvEGHpwgtyss6TIZpdCQZjjdg/UserFolder.png)
 
 You can move this folder just like you can with other user folders:
 
@@ -34,11 +34,11 @@ You can move this folder just like you can with other user folders:
 
 Virtual machines are managed directly within Windows Explorer - the old management/admin application window from older versions of Virtual PC is no more:
 
-[<img class="alignnone" title="Virtual Machines in Explorer" src="http://prmkgw.blu.livefilestore.com/y1p6YH1ZXPuGAurpBwiXMGnvvCgUnh_-18bHx998dD1oVLxRJwfDbnPauzjfZ6rihbuHl_6wvW_wHhXinPQaGJzGQ/VirtualMachinesSmall.png" alt="" width="584" height="392" />](http://prmkgw.blu.livefilestore.com/y1pJjXdQYnujFTvRy42FUqpdKPsuaEDifW2Ds9tUnksDOxpA7z7ch7SWCksvJ6yWpOAdu3tPgECRVBE97e0Tl_XEw/VirtualMachines.png)
+[<img class="alignnone" title="Virtual Machines in Explorer" src="http://prmkgw.blu.livefilestore.com/y1p6YH1ZXPuGAurpBwiXMGnvvCgUnh_-18bHx998dD1oVLxRJwfDbnPauzjfZ6rihbuHl_6wvW_wHhXinPQaGJzGQ/VirtualMachinesSmall.png" alt="](http://prmkgw.blu.livefilestore.com/y1pJjXdQYnujFTvRy42FUqpdKPsuaEDifW2Ds9tUnksDOxpA7z7ch7SWCksvJ6yWpOAdu3tPgECRVBE97e0Tl_XEw/VirtualMachines.png)
 
 You can open the virtual machine settings from within Explorer too:
 
-[<img class="alignnone" title="Virtual machine settings" src="http://prmkgw.blu.livefilestore.com/y1pH5VT1tVYr-yRSM9bDYDILO4WTl5iDuoZahUpHIAZwziNXaGIFBtuFG09oTx3m0qSelEfrhfPbmQ4VHd6w7dVur-HJ6q8OlqP/WindowsVirtualPCSettingsSmall.png" alt="" width="585" height="401" />](http://prmkgw.blu.livefilestore.com/y1prbrlFbMfQ-mIAPWPsmQVBWAxbr2IQrCx4D192AGiDcOyK4DhHBre4TQ5EUMJ9yaQzzKWJX7cUiwwikUbEnRETQ/WindowsVirtualPCSettings.png)
+[<img class="alignnone" title="Virtual machine settings" src="http://prmkgw.blu.livefilestore.com/y1pH5VT1tVYr-yRSM9bDYDILO4WTl5iDuoZahUpHIAZwziNXaGIFBtuFG09oTx3m0qSelEfrhfPbmQ4VHd6w7dVur-HJ6q8OlqP/WindowsVirtualPCSettingsSmall.png" alt="](http://prmkgw.blu.livefilestore.com/y1prbrlFbMfQ-mIAPWPsmQVBWAxbr2IQrCx4D192AGiDcOyK4DhHBre4TQ5EUMJ9yaQzzKWJX7cUiwwikUbEnRETQ/WindowsVirtualPCSettings.png)
 
 Creating a new virtual machine is just as you would expect, except very simplified. Give the machine a name and location (by default virtual machines are stored in C:\Users\<username>\AppData\Local\Microsoft\Windows Virtual PC\Virtual Machines):
 

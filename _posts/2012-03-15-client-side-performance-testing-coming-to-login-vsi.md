@@ -18,7 +18,7 @@ tags:
   - Login VSI
   - Performance
 ---
-<img class="alignleft size-full wp-image-2665" title="Login VSI" src="https://stealthpuppy.com/media/2012/03/loginvsiheader.png" alt="Login VSI" width="186" height="35" srcset="https://stealthpuppy.com/media/2012/03/loginvsiheader.png 186w, https://stealthpuppy.com/media/2012/03/loginvsiheader-150x28.png 150w" sizes="(max-width: 186px) 100vw, 186px" />I was invited to sit in on a preview of the new Client Side Performance Testing module for [the Login VSI testing suite](http://www.loginvsi.com/en/product-overview). The session was led by [Mark Plettenberg](https://twitter.com/#!/markplettenberg), the lead developer of Login VSI. This new module looks very interesting because it will allow us to objectively measure and analyse the performance of remoting protocols such as Teradici PCoIP, Microsoft RDP, Citrix ICA/HDX and Quest EOP.
+<img class="alignleft size-full wp-image-2665" title="Login VSI" src="https://stealthpuppy.com/media/2012/03/loginvsiheader.png" alt="Login VSI](https://twitter.com/#!/markplettenberg), the lead developer of Login VSI. This new module looks very interesting because it will allow us to objectively measure and analyse the performance of remoting protocols such as Teradici PCoIP, Microsoft RDP, Citrix ICA/HDX and Quest EOP.
 
 # What is Login VSI?
 

@@ -131,7 +131,7 @@ If the client is Windows XP or above and the host is Windows Vista or above, you
 
 So finally with all of the pieces in place, here’s what you’ll see with applications running via RemoteApp. In this screenshot I have Calculator running remotely from Windows XP and Windows Vista next to the local version.
 
-[<img style="display: inline; border: 0px;" title="DesktopWithCalculator" src="https://stealthpuppy.com/media/2010/02/DesktopWithCalculator_thumb.png" alt="DesktopWithCalculator" width="660" height="432" border="0" />]({{site.baseurl}}/media/2010/02/DesktopWithCalculator.png)
+[<img style="display: inline; border: 0px;" title="DesktopWithCalculator" src="https://stealthpuppy.com/media/2010/02/DesktopWithCalculator_thumb.png" alt="DesktopWithCalculator]({{site.baseurl}}/media/2010/02/DesktopWithCalculator.png)
 
 One thing to note is that the remote applications are all group together on the taskbar; in this screenshot, the two remote Calculators are grouped with Remote Desktop Connection – users' won’t see separate remote buttons as you get in competing products.
 

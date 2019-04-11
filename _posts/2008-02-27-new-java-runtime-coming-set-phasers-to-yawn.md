@@ -13,7 +13,7 @@ categories:
 tags:
   - Java
 ---
-<img src="https://stealthpuppy.com/media/2008/02/sunjavalogo.png" border="0" alt="SunJavaLogo" width="96" height="126" align="left" /> Sun are preparing a [new Java Runtime Environment](https://jdk6.dev.java.net/6uNea.html) for release later this year and there's a couple of changes to this version that have some bearing on deployment. I can't imagine there is an enterprise out there that doesn't have to deal with Java applications.
+<img src="https://stealthpuppy.com/media/2008/02/sunjavalogo.png" border="0" alt="SunJavaLogo](https://jdk6.dev.java.net/6uNea.html) for release later this year and there's a couple of changes to this version that have some bearing on deployment. I can't imagine there is an enterprise out there that doesn't have to deal with Java applications.
 
 The biggest change is that from this new version onwards, the point releases (read: updates, like 1.6.0\_3, 1.6.0\_2 etc) will be a thing of the past. New updates will be installed on top of existing installed versions, so you will only see a single version installed to: `C:\Program Files\Java\jre6`. New releases would then be installed to `C:\Program Files\Java\jre7` etc. This is good news as we should no longer have applications that expect a specific point release of the JRE.
 

@@ -82,7 +82,7 @@ Automating this process as much as possible will create a cleaner package and ma
 
 Before sequencing, copy all of the required files into the sequencing VM, which should like something like this:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="AppVFirefoxSetupFolder" src="https://stealthpuppy.com/media/2013/03/AppVFirefoxSetupFolder_thumb.png" alt="AppVFirefoxSetupFolder" width="660" height="253" border="0" />]({{site.baseurl}}/media/2013/03/AppVFirefoxSetupFolder.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="AppVFirefoxSetupFolder" src="https://stealthpuppy.com/media/2013/03/AppVFirefoxSetupFolder_thumb.png" alt="AppVFirefoxSetupFolder]({{site.baseurl}}/media/2013/03/AppVFirefoxSetupFolder.png)
 
 For a walkthrough of the sequencing process, using the installation script outlined in [the Firefox deployment article]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/), see the following screenshots:
 

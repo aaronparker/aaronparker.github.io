@@ -10,7 +10,7 @@ layers:
 ---
 # About Aaron Parker
 
-<img class="alignleft wp-image-3930 size-full" style="padding-right: 20px; padding-bottom: 20px;" src="https://stealthpuppy.com/media/2009/02/HeadShotCircle.png" alt="Aaron Parker" width="195" height="195" srcset="https://stealthpuppy.com/media/2009/02/HeadShotCircle.png 195w, https://stealthpuppy.com/media/2009/02/HeadShotCircle-150x150.png 150w" sizes="(max-width: 195px) 100vw, 195px" /> My name is Aaron Parker and I'm a Solutions Architect in the Office of the CTO at [Insentra](http://www.insentra.com.au) responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
+<img class="alignleft wp-image-3930 size-full" style="padding-right: 20px; padding-bottom: 20px;" src="https://stealthpuppy.com/media/2009/02/HeadShotCircle.png" alt="Aaron Parker](http://www.insentra.com.au) responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
 
 I've been in the IT industry for over 20 years and bring a wide range of experience in enterprise level End-user computing solutions, including Server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
 

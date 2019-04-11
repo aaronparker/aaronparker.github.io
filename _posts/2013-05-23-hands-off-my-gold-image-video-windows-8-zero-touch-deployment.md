@@ -21,6 +21,6 @@ In a 45 minute session on MDT and automating gold image deployments there's not 
 
 Here’s a flow chart that gives an overview of what the script does:
 
-[<img class="alignnone  wp-image-3312" alt="Zero-touch-Windows8-deployment" src="https://stealthpuppy.com/media/2013/05/Zero-touch-Windows8-deployment.png" width="720" height="405" srcset="https://stealthpuppy.com/media/2013/05/Zero-touch-Windows8-deployment.png 720w, https://stealthpuppy.com/media/2013/05/Zero-touch-Windows8-deployment-150x84.png 150w, https://stealthpuppy.com/media/2013/05/Zero-touch-Windows8-deployment-300x168.png 300w, https://stealthpuppy.com/media/2013/05/Zero-touch-Windows8-deployment-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />]({{site.baseurl}}/media/2013/05/Zero-touch-Windows8-deployment.png)
+[<img class="alignnone  wp-image-3312" alt="Zero-touch-Windows8-deployment" src="https://stealthpuppy.com/media/2013/05/Zero-touch-Windows8-deployment.png]({{site.baseurl}}/media/2013/05/Zero-touch-Windows8-deployment.png)
 
 The video is available in HD resolution (720) so you can see the full details.

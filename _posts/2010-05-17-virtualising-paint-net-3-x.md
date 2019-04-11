@@ -16,7 +16,7 @@ tags:
   - App-V
   - Paint.NET
 ---
-<img style="margin: 0px 0px 10px 10px; display: inline; border-width: 0px;" title="AppVPaintDotNet" src="https://stealthpuppy.com/media/2010/05/AppVPaintDotNet.png" border="0" alt="AppVPaintDotNet" width="128" height="124" align="right" /> This post details virtualising [Paint.NET 3.x](http://getpaint.net) with Microsoft Application Virtualization; however the same basic steps should apply to any application virtualisation product.
+<img style="margin: 0px 0px 10px 10px; display: inline; border-width: 0px;" title="AppVPaintDotNet" src="https://stealthpuppy.com/media/2010/05/AppVPaintDotNet.png" border="0" alt="AppVPaintDotNet](http://getpaint.net) with Microsoft Application Virtualization; however the same basic steps should apply to any application virtualisation product.
 
 Virtualising Paint.NET is a simple two step process:
 

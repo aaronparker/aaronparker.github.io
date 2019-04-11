@@ -24,7 +24,7 @@ tags:
 
 The Microsoft infrastructure deployment solutions are outlined in this diagram:
 
-[<img src="http://stealthpuppy.com/media/2010/06/MicrosoftApplicationVirtualisationComponents.png" alt="" width="660" height="528" />](http://stealthpuppy.com/media/2010/06/MicrosoftApplicationVirtualisationComponents.png "App-V infrastructure solutions")
+[<img src="http://stealthpuppy.com/media/2010/06/MicrosoftApplicationVirtualisationComponents.png" alt="](http://stealthpuppy.com/media/2010/06/MicrosoftApplicationVirtualisationComponents.png "App-V infrastructure solutions")
 
   * **Stand-alone using the SFTMIME command** (or the roll-your-own deployment tool) - The final method is not widely used; however I have designed an App-V deployment for a client who use an in-house developed software deployment solution. The product has been extended to use SFTMIME commands to add packages to client machines and control user access to virtual applications. Tim Mangan makes this type of solution freely available from his site with [App-V_DeployNPublishApp](http://www.tmurgent.com/AppV_DeployNPublishApp/).
 

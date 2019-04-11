@@ -54,7 +54,7 @@ There are four tables in the MSI where I need to make changes:
 
 Go to the Component table and create a new entry. This will require a unique name (I’ve used _AppVShellValues_) and GUID - your MSI editor should be able to generate the GUID for you.
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Component-Table" border="0" alt="Component-Table" src="https://stealthpuppy.com/media/2011/04/Component-Table_thumb.png" width="660" height="382" />]({{site.baseurl}}/media/2011/04/Component-Table.png)
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Component-Table" border="0" alt="Component-Table" src="https://stealthpuppy.com/media/2011/04/Component-Table_thumb.png]({{site.baseurl}}/media/2011/04/Component-Table.png)
 
 ### Registry Table
 
@@ -77,13 +77,13 @@ The command stored in the Value column must launch the application via the App-V
   * I need to use the application name as listed in the App-V shortcut. In my example I can use [ProductName] because the App-V package name and the application name are the same; however this may not be the case for all packages. The application name may need to be hard coded into the MSI here. You could create a new entry in the Property table for the application name and reference it here
   * The rest of the command is what is passed to the application by SFTTRAY.EXE
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Registry-Table" border="0" alt="Registry-Table" src="https://stealthpuppy.com/media/2011/04/Registry-Table_thumb.png" width="660" height="382" />]({{site.baseurl}}/media/2011/04/Registry-Table.png)
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="Registry-Table" border="0" alt="Registry-Table" src="https://stealthpuppy.com/media/2011/04/Registry-Table_thumb.png]({{site.baseurl}}/media/2011/04/Registry-Table.png)
 
 ### FeatureComponents Table
 
 Add a new entry to the FeatureComponents table - use _VirtualApp_ in the Feature_ column and select the same component used in the previous tables in the Component_ column
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="FeatureComponents-Table" border="0" alt="FeatureComponents-Table" src="https://stealthpuppy.com/media/2011/04/FeatureComponents-Table_thumb.png" width="660" height="382" />]({{site.baseurl}}/media/2011/04/FeatureComponents-Table.png)
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="FeatureComponents-Table" border="0" alt="FeatureComponents-Table" src="https://stealthpuppy.com/media/2011/04/FeatureComponents-Table_thumb.png]({{site.baseurl}}/media/2011/04/FeatureComponents-Table.png)
 
 ### InstallExecuteSequence Table
 
@@ -91,7 +91,7 @@ The last step is to ensure that the Registry entries added to the MSI are instal
 
 To change the sequence find the _WriteRegistryValues_ entry which will have a Sequence value of _5000_. Change this value to _6580_ which will ensure that our custom Registry entries are added after the package is added and loaded but before the installer completes its finalize tasks.
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="InstallExecuteSequence-Table" border="0" alt="InstallExecuteSequence-Table" src="https://stealthpuppy.com/media/2011/04/InstallExecuteSequence-Table_thumb.png" width="660" height="382" />]({{site.baseurl}}/media/2011/04/InstallExecuteSequence-Table.png)
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="InstallExecuteSequence-Table" border="0" alt="InstallExecuteSequence-Table" src="https://stealthpuppy.com/media/2011/04/InstallExecuteSequence-Table_thumb.png]({{site.baseurl}}/media/2011/04/InstallExecuteSequence-Table.png)
 
 ### Install the Package
 

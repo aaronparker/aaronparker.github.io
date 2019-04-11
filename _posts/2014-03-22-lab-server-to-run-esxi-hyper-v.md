@@ -37,7 +37,7 @@ Starting with the [Core i5](http://www.intel.com.au/content/www/au/en/processors
 
 To build a 32 GB system, you could go with the [Core i7-4770K](http://ark.intel.com/products/75123/intel-core-i7-4770k-processor-8m-cache-up-to-3_90-ghz) that uses a socket LGA1150. One problem with the 4th generation Core i7 (i.e. [Haswell](https://en.wikipedia.org/wiki/Haswell_(microarchitecture))) is that they don't yet support 64GB of RAM (as far as I can tell).
 
-<img class="alignleft size-full wp-image-3601" alt="Core-i7-CPU" src="https://stealthpuppy.com/media/2014/03/Core-i7-CPU.jpg" width="200" height="172" srcset="https://stealthpuppy.com/media/2014/03/Core-i7-CPU.jpg 200w, https://stealthpuppy.com/media/2014/03/Core-i7-CPU-150x129.jpg 150w" sizes="(max-width: 200px) 100vw, 200px" /> For a 64 GB system I picked the [Core i7-4820K](http://ark.intel.com/products/77781) - this CPU is the older [Ivy Bridge-E](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)) architecture. While I priced up a system based on the 4770K, I ended up going with the 4820K, so that I could build a machine with 64 GB of RAM.
+<img class="alignleft size-full wp-image-3601" alt="Core-i7-CPU" src="https://stealthpuppy.com/media/2014/03/Core-i7-CPU.jpg](https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)) architecture. While I priced up a system based on the 4770K, I ended up going with the 4820K, so that I could build a machine with 64 GB of RAM.
 
 As I'm doing testing and modelling with [a solution that utilise a lot of RAM](http://atlantiscomputing.com/), I really needed to go with as much RAM as I could afford. There ended up being about $500-$600 AU difference between a 32 GB system and a 64 GB system, so budget be damned, 64 GB PC is what I got.
 
@@ -47,7 +47,7 @@ I had originally wanted to build a system around a min-ITX or mini/microATX boar
 
 As I'm not interested in over-clocking, my requirements for a motherboard were simple - I went for the lowest price board that could fit 64 GB of RAM (8 DIMM slots) and supports a minimum of 4 x SATA3 (6Gbps) ports. Unless you're looking at server boards, you'll find most desktop motherboards come with a lot of extra features that are just not required for a lab server (sound, SPDIF, heaps of USB ports, FireWire etc.).
 
-<img class="alignright size-full wp-image-3603" alt="ASRock-Extreme6" src="https://stealthpuppy.com/media/2014/03/ASRock-Extreme6.jpg" width="200" height="108" srcset="https://stealthpuppy.com/media/2014/03/ASRock-Extreme6.jpg 200w, https://stealthpuppy.com/media/2014/03/ASRock-Extreme6-150x81.jpg 150w" sizes="(max-width: 200px) 100vw, 200px" /> Ultimately I went for the [ASRock X79 Extreme 6](http://www.asrock.com/mb/Intel/X79%20Extreme6/) with 5 x SATA 3 ports. One thing I've found out in building this PC, is that the Intel chipsets typically provide 2 x SATA3 ports only. The remaining SATA ports are provided by a second chipset (or sometimes even a third chipset). Not a problem for Windows, but not the best choice for ESXi (more on that later).
+<img class="alignright size-full wp-image-3603" alt="ASRock-Extreme6" src="https://stealthpuppy.com/media/2014/03/ASRock-Extreme6.jpg](http://www.asrock.com/mb/Intel/X79%20Extreme6/) with 5 x SATA 3 ports. One thing I've found out in building this PC, is that the Intel chipsets typically provide 2 x SATA3 ports only. The remaining SATA ports are provided by a second chipset (or sometimes even a third chipset). Not a problem for Windows, but not the best choice for ESXi (more on that later).
 
 # Filling it With RAM
 
@@ -88,7 +88,7 @@ I've also got an 8GB USB3 flash drive that ESXi is running from. It will be inte
 
 Calculating how much power was quite simple, once you find a tool that does it for you. [Bryan Chriscoli](https://twitter.com/techbry) put me onto [eXtreme Power Supply Calculator Lite](http://extreme.outervision.com/PSUEngine) which does a fantastic job of calculating the minimum PSU wattage required.
 
-<img class="alignleft size-full wp-image-3611" alt="Corsair-RM450" src="https://stealthpuppy.com/media/2014/03/Corsair-RM450.png" width="200" height="147" srcset="https://stealthpuppy.com/media/2014/03/Corsair-RM450.png 200w, https://stealthpuppy.com/media/2014/03/Corsair-RM450-150x110.png 150w" sizes="(max-width: 200px) 100vw, 200px" /> To power the PC I chose the [Corsair RM450](http://www.corsair.com/en-au/air-series-af140-quiet-edition-high-airflow-140mm-fan) power supply. This is a 450W 80 PLUS Gold Certified (i.e. highly efficient) modular power supply, which is probably more than I need but I found 400W power supplies, that didn't look like cheap crap, hard to come by.
+<img class="alignleft size-full wp-image-3611" alt="Corsair-RM450" src="https://stealthpuppy.com/media/2014/03/Corsair-RM450.png](http://www.corsair.com/en-au/air-series-af140-quiet-edition-high-airflow-140mm-fan) power supply. This is a 450W 80 PLUS Gold Certified (i.e. highly efficient) modular power supply, which is probably more than I need but I found 400W power supplies, that didn't look like cheap crap, hard to come by.
 
 The RM450 has a fan that will only power on after the PSU reaches a temperature that requires a fan shifting heat, keep noise down during normal operation. It's a great quality PSU that looks good and feels nice in the hand.
 
@@ -118,11 +118,11 @@ Here's a few thoughts and tips if you're looking to build your own lab PC:
 
 Getting this up and running under Windows Server 2012 R2 was very simple, practically all drivers were picked up by Windows natively or found on Windows Update. Taking a look at Task Manager is a thing of beauty:
 
-[<img class="alignnone size-full wp-image-3617" alt="hv2-TaskManager-RAM-VanillaInstall" src="https://stealthpuppy.com/media/2014/03/hv2-TaskManager-RAM-VanillaInstall.png" width="762" height="718" srcset="https://stealthpuppy.com/media/2014/03/hv2-TaskManager-RAM-VanillaInstall.png 762w, https://stealthpuppy.com/media/2014/03/hv2-TaskManager-RAM-VanillaInstall-150x141.png 150w, https://stealthpuppy.com/media/2014/03/hv2-TaskManager-RAM-VanillaInstall-300x282.png 300w, https://stealthpuppy.com/media/2014/03/hv2-TaskManager-RAM-VanillaInstall-624x587.png 624w" sizes="(max-width: 762px) 100vw, 762px" />]({{site.baseurl}}/media/2014/03/hv2-TaskManager-RAM-VanillaInstall.png)
+[<img class="alignnone size-full wp-image-3617" alt="hv2-TaskManager-RAM-VanillaInstall" src="https://stealthpuppy.com/media/2014/03/hv2-TaskManager-RAM-VanillaInstall.png]({{site.baseurl}}/media/2014/03/hv2-TaskManager-RAM-VanillaInstall.png)
 
 I'm yet to do full performance tests and one thing to attempt is running [Login VSI](http://www.loginvsi.com/) to see what I can get out of it. A simple test of [IOmeter](http://www.iometer.org/) [simulating a VDI workload](http://blog.atlantiscomputing.com/2013/08/how-to-use-iometer-to-simulate-a-desktop-workload/) on [ILIO for Persistent VDI](http://www.atlantiscomputing.com/products/persistent-vdi) drove an impressive 42K IOPs (with ILIO for Stateless VDI doing about the same number).
 
-[<img class="alignnone size-full wp-image-3618" alt="Lab-ILIO-Test1" src="https://stealthpuppy.com/media/2014/03/Lab-ILIO-Test1.png" width="778" height="499" srcset="https://stealthpuppy.com/media/2014/03/Lab-ILIO-Test1.png 778w, https://stealthpuppy.com/media/2014/03/Lab-ILIO-Test1-150x96.png 150w, https://stealthpuppy.com/media/2014/03/Lab-ILIO-Test1-300x192.png 300w, https://stealthpuppy.com/media/2014/03/Lab-ILIO-Test1-624x400.png 624w" sizes="(max-width: 778px) 100vw, 778px" />]({{site.baseurl}}/media/2014/03/Lab-ILIO-Test1.png)
+[<img class="alignnone size-full wp-image-3618" alt="Lab-ILIO-Test1" src="https://stealthpuppy.com/media/2014/03/Lab-ILIO-Test1.png]({{site.baseurl}}/media/2014/03/Lab-ILIO-Test1.png)
 
 As for power consumption, at idle with ESXi 5.5 booted, it draws up to around 105 watts. I have seen it drop to a low of between 65 and 71 watts as well. As a very basic CPU stress test, I ran [HeavyLoad 3.3](http://www.jam-software.com/heavyload/) on a Windows 8.1 x86 virtual machine with 1 vCPU and 8 cores. Power consumption jumped up to a consistent 128 watts.
 
@@ -134,8 +134,8 @@ So not as low power as I originally set out to accomplish, but with this configu
 
 Here's the final list of components that went into the build and the price in Australian dollars. I've colour coded the totals to make it simple to see where the costs went into. It's not surprising that the most expensive component of this build was the RAM.
 
-[<img class="alignleft size-full wp-image-3613" alt="PCbuild" src="https://stealthpuppy.com/media/2014/03/PCbuild.png" width="614" height="277" srcset="https://stealthpuppy.com/media/2014/03/PCbuild.png 614w, https://stealthpuppy.com/media/2014/03/PCbuild-150x67.png 150w, https://stealthpuppy.com/media/2014/03/PCbuild-300x135.png 300w" sizes="(max-width: 614px) 100vw, 614px" />]({{site.baseurl}}/media/2014/03/PCbuild.png)
+[<img class="alignleft size-full wp-image-3613" alt="PCbuild" src="https://stealthpuppy.com/media/2014/03/PCbuild.png]({{site.baseurl}}/media/2014/03/PCbuild.png)
 
 Finally, here's a look inside the finished build:
 
-[<img class="alignnone size-large wp-image-3615" alt="InsideCustomBuild" src="https://stealthpuppy.com/media/2014/03/InsideCustomBuild-1024x768.jpg" width="625" height="468" srcset="https://stealthpuppy.com/media/2014/03/InsideCustomBuild-1024x768.jpg 1024w, https://stealthpuppy.com/media/2014/03/InsideCustomBuild-150x112.jpg 150w, https://stealthpuppy.com/media/2014/03/InsideCustomBuild-300x225.jpg 300w, https://stealthpuppy.com/media/2014/03/InsideCustomBuild-624x468.jpg 624w, https://stealthpuppy.com/media/2014/03/InsideCustomBuild.jpg 1281w" sizes="(max-width: 625px) 100vw, 625px" />]({{site.baseurl}}/media/2014/03/InsideCustomBuild.jpg)
+[<img class="alignnone size-large wp-image-3615" alt="InsideCustomBuild" src="https://stealthpuppy.com/media/2014/03/InsideCustomBuild-1024x768.jpg]({{site.baseurl}}/media/2014/03/InsideCustomBuild.jpg)

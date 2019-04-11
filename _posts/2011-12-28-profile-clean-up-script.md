@@ -19,7 +19,7 @@ categories:
 tags:
   - Profiles
 ---
-[<img class="size-full wp-image-2604 aligncenter" title="Delete by Cari McGee" src="https://stealthpuppy.com/media/2011/12/AppleKeyboardDelete.jpg" alt="Delete by Cari McGee" width="640" height="317" srcset="https://stealthpuppy.com/media/2011/12/AppleKeyboardDelete.jpg 640w, https://stealthpuppy.com/media/2011/12/AppleKeyboardDelete-150x74.jpg 150w, https://stealthpuppy.com/media/2011/12/AppleKeyboardDelete-300x148.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" />](http://www.flickr.com/photos/pleeker/5379549514/)
+[<img class="size-full wp-image-2604 aligncenter" title="Delete by Cari McGee" src="https://stealthpuppy.com/media/2011/12/AppleKeyboardDelete.jpg" alt="Delete by Cari McGee](http://www.flickr.com/photos/pleeker/5379549514/)
 
 Windows profiles become larger over time - it's an inescapable fact. This means that if you are using roaming profiles, logons (and logoff) will be longer and longer. It's not just individual file sizes, but also the number of files stored in a profile that will make the synchronisation process slower.
 

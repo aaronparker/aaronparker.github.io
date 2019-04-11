@@ -165,7 +165,7 @@ With the sandbox running, you will see an error similar to this when attempting 
 
 The browser will notify you when the sandbox is disabled:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GoogleChromeNoSandbox" src="https://stealthpuppy.com/media/2011/11/GoogleChromeNoSandbox_thumb.png" alt="GoogleChromeNoSandbox" width="660" height="114" border="0" />]({{site.baseurl}}/media/2011/11/GoogleChromeNoSandbox.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GoogleChromeNoSandbox" src="https://stealthpuppy.com/media/2011/11/GoogleChromeNoSandbox_thumb.png" alt="GoogleChromeNoSandbox]({{site.baseurl}}/media/2011/11/GoogleChromeNoSandbox.png)
 
 ### First Run Tasks and Primary Feature Block
 

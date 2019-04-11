@@ -18,7 +18,7 @@ tags:
   - Office
   - Office 2013
 ---
-[<img style="background-image: none; float: right; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Office2013Logo" alt="Office2013Logo" src="https://stealthpuppy.com/media/2012/11/Office2013Logo_thumb.png" width="128" height="128" align="right" border="0" />]({{site.baseurl}}/media/2012/11/Office2013Logo.png)Investing time into [customising the deployment of Office 2013](http://technet.microsoft.com/en-us/library/cc179121.aspx) is essential for providing a well managed deployment and the best out-of-box user experience. If you’re deploying a Windows Installer-based installation of Office 2013, you’ll need to customise the installation using the [Office Customization Tool](http://www.microsoft.com/en-us/download/details.aspx?id=35554).
+[<img style="background-image: none; float: right; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Office2013Logo" alt="Office2013Logo" src="https://stealthpuppy.com/media/2012/11/Office2013Logo_thumb.png](http://www.microsoft.com/en-us/download/details.aspx?id=35554).
 
 User settings that might impact the default Office experience or may require special consideration in your environment, are worth investing in planning time because you’ll often have only one chance to get deployment right.
 
@@ -47,19 +47,19 @@ To create an Office Setup Customization, download the  [Office 2013 Administrat
 
 The Office Customization Tool will launch:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="CreateCustomizationFile" alt="CreateCustomizationFile" src="https://stealthpuppy.com/media/2012/11/CreateCustomizationFile_thumb.png" width="660" height="380" border="0" />]({{site.baseurl}}/media/2012/11/CreateCustomizationFile.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="CreateCustomizationFile" alt="CreateCustomizationFile" src="https://stealthpuppy.com/media/2012/11/CreateCustomizationFile_thumb.png]({{site.baseurl}}/media/2012/11/CreateCustomizationFile.png)
 
 Choose the default file types:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FileTypes" alt="FileTypes" src="https://stealthpuppy.com/media/2012/11/FileTypes_thumb.png" width="660" height="380" border="0" />]({{site.baseurl}}/media/2012/11/FileTypes.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="FileTypes" alt="FileTypes" src="https://stealthpuppy.com/media/2012/11/FileTypes_thumb.png]({{site.baseurl}}/media/2012/11/FileTypes.png)
 
 Set licensing options and the display level of the setup UI. These options will vary dependant on whether you're using KMS or MAK licensing and how you’re deploying Office:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Licensing" alt="Licensing" src="https://stealthpuppy.com/media/2012/11/Licensing_thumb.png" width="660" height="380" border="0" />]({{site.baseurl}}/media/2012/11/Licensing.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="Licensing" alt="Licensing" src="https://stealthpuppy.com/media/2012/11/Licensing_thumb.png]({{site.baseurl}}/media/2012/11/Licensing.png)
 
 Navigate to the ‘Modify user settings’ page and set the options applicable to your environment. This is the section where the administrator can make changes to the default user experience:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="UserSettings" alt="UserSettings" src="https://stealthpuppy.com/media/2012/11/UserSettings_thumb.png" width="660" height="380" border="0" />]({{site.baseurl}}/media/2012/11/UserSettings.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="UserSettings" alt="UserSettings" src="https://stealthpuppy.com/media/2012/11/UserSettings_thumb.png]({{site.baseurl}}/media/2012/11/UserSettings.png)
 
 When saving your customization file, you can choose to save it to the Updates folder where it will run automatically, or [use SETUP.EXE to run a specific customization file](http://technet.microsoft.com/en-us/library/cc178956.aspx).
 

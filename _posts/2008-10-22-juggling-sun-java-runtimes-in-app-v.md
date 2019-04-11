@@ -17,7 +17,7 @@ tags:
   - Java
   - SoftGrid
 ---
-[<img class="alignleft size-medium wp-image-775" style="border: 0px;" title="softgridcube-java" src="https://stealthpuppy.com/media/2008/10/softgridcube-java.png" border="0" alt="" width="120" height="120" />]({{site.baseurl}}/media/2008/10/softgridcube-java.png)I don’t know why I keep getting involved with Java. I know I’ve [written]({{site.baseurl}}/deployment/sun-jre-install-script-update) [about]({{site.baseurl}}/deployment/new-java-runtime-coming-set-phasers-to-yawn) [it]({{site.baseurl}}/deployment/running-the-latest-oracle-jinitiator) [more]({{site.baseurl}}/deployment/sun-java-6-update-3-deployment-script) [than]({{site.baseurl}}/terminal-server/juggling-java-vms) a [few]({{site.baseurl}}/hall-of-shame/symantec-gateway-security-1600-and-sun-java) [times]({{site.baseurl}}/terminal-server/presentation-server-and-the-sun-java-vm) before, but it’s not because I like Java... So before I get into a tirade about it, here’s yet another post on the subject..
+[<img class="alignleft size-medium wp-image-775" style="border: 0px;" title="softgridcube-java" src="https://stealthpuppy.com/media/2008/10/softgridcube-java.png" border="0" alt="]({{site.baseurl}}/terminal-server/presentation-server-and-the-sun-java-vm) before, but it’s not because I like Java... So before I get into a tirade about it, here’s yet another post on the subject..
 
 ### Introduction
 

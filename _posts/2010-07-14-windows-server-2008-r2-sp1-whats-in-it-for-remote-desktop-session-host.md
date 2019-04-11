@@ -15,7 +15,7 @@ categories:
 tags:
   - Remote Desktop
 ---
-[<img class="wlDisabledImage" style="margin: 0px 10px 5px 0px; display: inline; border: 0px;" title="RemoteDesktopIcon" src="https://stealthpuppy.com/media/2010/07/RemoteDesktopIcon_thumb.png" border="0" alt="RemoteDesktopIcon" width="128" height="128" align="left" />]({{site.baseurl}}/media/2010/07/RemoteDesktopIcon.png)Wasn’t is simpler when it was called Terminal Server? Previous posts like this have shorter titles: [Windows Server 2008 SP2: What’s in it for Terminal Servers?]({{site.baseurl}}/windows/windows-server-2008-sp2-whats-in-it-for-terminal-servers) and [Windows Server 2003 SP2: What’s in it for Terminal Servers?]({{site.baseurl}}/windows/windows-server-2003-sp2-what%E2%80%99s-in-it-for-terminal-servers)
+[<img class="wlDisabledImage" style="margin: 0px 10px 5px 0px; display: inline; border: 0px;" title="RemoteDesktopIcon" src="https://stealthpuppy.com/media/2010/07/RemoteDesktopIcon_thumb.png" border="0" alt="RemoteDesktopIcon]({{site.baseurl}}/windows/windows-server-2003-sp2-what%E2%80%99s-in-it-for-terminal-servers)
 
 The document [Hotfixes and Security Updates included in Windows 7 and Windows Server 2008 R2 Service Pack 1 Beta](http://go.microsoft.com/fwlink/?LinkId=194725) has the complete list of what’s fixed in SP1. [RemoteFX](http://www.brianmadden.com/blogs/brianmadden/archive/2010/07/13/microsoft-remotefx-is-now-available-via-public-beta.aspx) might steal the show, however I’m specifically interested in what fixes there are for Terminal Server or Remote Desktop Session Host as it’s now called.
 

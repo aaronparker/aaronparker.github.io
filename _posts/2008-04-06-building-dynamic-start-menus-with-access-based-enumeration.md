@@ -15,7 +15,7 @@ tags:
   - DFS
   - Start Menu
 ---
-<img src="https://stealthpuppy.com/media/2008/04/startmenu2.png" border="0" alt="StartMenu2" width="120" height="113" align="left" />In [my last article]({{site.baseurl}}/windows/access-based-enumeration-in-windows-server) I hinted at creating dynamic Start Menus using Access-Based Enumeration (ABE) in Windows Server 2003 SP1 and above. I have read an article on this subject previously on the Internets, but the tubes must be clogged up as I can't find it anymore. If anyone has a link please let me know, because I would like to link to it.
+<img src="https://stealthpuppy.com/media/2008/04/startmenu2.png" border="0" alt="StartMenu2]({{site.baseurl}}/windows/access-based-enumeration-in-windows-server) I hinted at creating dynamic Start Menus using Access-Based Enumeration (ABE) in Windows Server 2003 SP1 and above. I have read an article on this subject previously on the Internets, but the tubes must be clogged up as I can't find it anymore. If anyone has a link please let me know, because I would like to link to it.
 
 So because I can't find that article and [Dylan asked how this is done]({{site.baseurl}}/windows/access-based-enumeration-in-windows-server#comment-13330), here's my own version:
 

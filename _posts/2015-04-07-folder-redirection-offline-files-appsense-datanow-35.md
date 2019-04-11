@@ -35,13 +35,13 @@ Let's take another look at the integration between AppSense DataNow and the tra
 
 # What is AppSense DataNow?
 
-[DataNow](http://www.appsense.com/products/data/datanow)[<img class="alignleft wp-image-3879 size-full" src="https://stealthpuppy.com/media/2015/04/logo_lg_dn.png" alt="logo_lg_dn" width="260" height="100" srcset="https://stealthpuppy.com/media/2015/04/logo_lg_dn.png 260w, https://stealthpuppy.com/media/2015/04/logo_lg_dn-150x58.png 150w" sizes="(max-width: 260px) 100vw, 260px" />](http://www.appsense.com/products/data/datanow) is a data management or file sync solution from AppSense. DataNow is available as a stand alone product or [as a component of DesktopNow Plus](http://www.appsense.com/products/desktop/desktopnow-plus) and it provides an easy way to access to corporate data (stored on user home drives) from mobile devices, Windows PCs and Macs. Since I last looked at this product, AppSense has released version 3.5 and also provided the ability to provide users with access to any SMB location on your internal network.
+[DataNow](http://www.appsense.com/products/data/datanow)[<img class="alignleft wp-image-3879 size-full" src="https://stealthpuppy.com/media/2015/04/logo_lg_dn.png" alt="logo_lg_dn](http://www.appsense.com/products/desktop/desktopnow-plus) and it provides an easy way to access to corporate data (stored on user home drives) from mobile devices, Windows PCs and Macs. Since I last looked at this product, AppSense has released version 3.5 and also provided the ability to provide users with access to any SMB location on your internal network.
 
 DataNow is a completely on-premises solution - there's no public cloud-based component, instead you host the control plane and connect it to your existing data. Access is proxied through a virtual appliance, which you would locate in a DMZ or on the internal network depending on your environment, while the file data remains in its existing location (i.e. file servers inside the trusted network). The DataNow client (for Windows, Mac, iOS and Android) then accesses that data over HTTPS. This allows you to provide access to user data from any location.
 
 With this overview in mind, I should be able to use DataNow to synchronise data to physical PCs, instead of using Offline Files. I could then continue to use standard folder redirection for hosted desktops in the data centre (i.e. those desktops right next to the file storage).
 
-<figure style="width: 660px" class="wp-caption alignnone">[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="DataNow diagram" src="https://stealthpuppy.com/media/2012/08/diagram_thumb.png" alt="DataNow diagram" width="660" height="286" border="0" />]({{site.baseurl}}/media/2012/08/diagram.png)<figcaption class="wp-caption-text">A simplified view of the AppSense DataNow architecture*</figure>
+![DataNow diagram]({{site.baseurl}}/media/2012/08/diagram.png)*A simplified view of the AppSense DataNow architecture*</figure>
 
 The idea being that this approach should provide users with a consistent view of their data regardless of how they are accessing a corporate desktop, without having to redirect user folders to the network and then dealing with the challenges that comes with it. I can also allow users to access their home drives from any device that makes sense for their uses, including mobile devices.
 
@@ -65,25 +65,25 @@ In the previous version of this article, I didn't cover setting up DataNow, so h
 
 The [DataNow appliance](https://www.myappsense.com/datanow/v3.5/admin/Admin/The_DataNow_Appliance.htm) is available for vSphere, XenServer and Hyper-V - it's a hardened Linux-based VM that can be [clustered and load-balanced for high availability](https://www.myappsense.com/datanow/v3.5/admin/Admin/Clustering.htm). For my lab environment, I've used the Hyper-V version, but the download and configuration is the same for all platforms.
 
-<figure id="attachment_3880" aria-describedby="caption-attachment-3880" style="width: 667px" class="wp-caption alignnone"><img class="wp-image-3880 size-full" src="https://stealthpuppy.com/media/2015/04/DataNowApplianceDownload.png" alt="DataNowApplianceDownload" width="667" height="282" srcset="https://stealthpuppy.com/media/2015/04/DataNowApplianceDownload.png 667w, https://stealthpuppy.com/media/2015/04/DataNowApplianceDownload-150x63.png 150w, https://stealthpuppy.com/media/2015/04/DataNowApplianceDownload-300x127.png 300w" sizes="(max-width: 667px) 100vw, 667px" /><figcaption id="caption-attachment-3880" class="wp-caption-text">The DataNow appliance is available for the most popular virtualization platforms*</figure>
+![DataNowApplianceDownload" width="667" height="282" srcset="https://stealthpuppy.com/media/2015/04/DataNowApplianceDownload.png 667w, https://stealthpuppy.com/media/2015/04/DataNowApplianceDownload-150x63.png 150w, https://stealthpuppy.com/media/2015/04/DataNowApplianceDownload-300x127.png 300w" sizes="(max-width: 667px) 100vw, 667px" />*The DataNow appliance is available for the most popular virtualization platforms*</figure>
 
 After importing the VM and [assigning an IP address via the console](https://www.myappsense.com/datanow/v3.5/admin/Admin/Installing_the_DataNow_Appliance.htm), the first step is to [configure DNS and domain settings](https://www.myappsense.com/datanow/v3.5/admin/Admin/Configure_DNS_for_file_server_location.htm). Here I've configured the appliance to use my AD DNS server and internal domain name for name resolution.
 
-<figure id="attachment_3874" aria-describedby="caption-attachment-3874" style="width: 1000px" class="wp-caption alignnone">[<img class="wp-image-3874 size-full" src="https://stealthpuppy.com/media/2015/04/ConfigurationDNS.png" alt="AppSense DataNow 3.5 appliance DNS configuration" width="1000" height="591" srcset="https://stealthpuppy.com/media/2015/04/ConfigurationDNS.png 1000w, https://stealthpuppy.com/media/2015/04/ConfigurationDNS-150x89.png 150w, https://stealthpuppy.com/media/2015/04/ConfigurationDNS-300x177.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" />]({{site.baseurl}}/media/2015/04/ConfigurationDNS.png)<figcaption id="caption-attachment-3874" class="wp-caption-text">AppSense DataNow 3.5 appliance DNS configuration*</figure>
+![AppSense DataNow 3.5 appliance DNS configuration]({{site.baseurl}}/media/2015/04/ConfigurationDNS.png)*AppSense DataNow 3.5 appliance DNS configuration*</figure>
 
 [Connection to Active Directory](https://www.myappsense.com/datanow/v3.5/admin/Admin/Configure_the_Active_Directory_connection.htm) in straight-forward, specify one or more AD controllers, an LDAP port and an account to connect to AD with. Don't use the Administrator account like I have done here - this is only lab. Preferably create a dedicated service account for DataNow.
 
-<figure id="attachment_3871" aria-describedby="caption-attachment-3871" style="width: 1000px" class="wp-caption alignnone">[<img class="size-full wp-image-3871" src="https://stealthpuppy.com/media/2015/04/ConfigurationAD.png" alt="AppSense DataNow 3.5 appliance AD configuration" width="1000" height="532" srcset="https://stealthpuppy.com/media/2015/04/ConfigurationAD.png 1000w, https://stealthpuppy.com/media/2015/04/ConfigurationAD-150x80.png 150w, https://stealthpuppy.com/media/2015/04/ConfigurationAD-300x160.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" />]({{site.baseurl}}/media/2015/04/ConfigurationAD.png)<figcaption id="caption-attachment-3871" class="wp-caption-text">AppSense DataNow 3.5 appliance AD configuration*</figure>
+![AppSense DataNow 3.5 appliance AD configuration]({{site.baseurl}}/media/2015/04/ConfigurationAD.png)*AppSense DataNow 3.5 appliance AD configuration*</figure>
 
 To provide users with access to data, DataNow provides configuration for what are called [Map Points](https://www.myappsense.com/datanow/v3.5/admin/Admin/Map_Point_Access.htm) - essentially SMB or WebDav locations in the corporate network. The location of Home drives can be set via the user properties in Active Directory - so rather than explicitly setting the location, the DataNow appliance will read the homeDirectory attribute from the authenticated user account to find the user's home directory.
 
-<figure id="attachment_3888" aria-describedby="caption-attachment-3888" style="width: 1000px" class="wp-caption alignnone">[<img class="size-full wp-image-3888" src="https://stealthpuppy.com/media/2015/04/Config-MapPoints.png" alt="AppSense DataNow 3.5 appliance Map Point configuration" width="1000" height="634" srcset="https://stealthpuppy.com/media/2015/04/Config-MapPoints.png 1000w, https://stealthpuppy.com/media/2015/04/Config-MapPoints-150x95.png 150w, https://stealthpuppy.com/media/2015/04/Config-MapPoints-300x190.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" />]({{site.baseurl}}/media/2015/04/Config-MapPoints.png)<figcaption id="caption-attachment-3888" class="wp-caption-text">AppSense DataNow 3.5 appliance Map Point configuration*</figure>
+![AppSense DataNow 3.5 appliance Map Point configuration]({{site.baseurl}}/media/2015/04/Config-MapPoints.png)*AppSense DataNow 3.5 appliance Map Point configuration*</figure>
 
 To provide access to user's home drives, there's not much else to configure. For my lab testing, I did allow access over HTTP so that I didn't need to install a certificate. Additionally I've created a second Map Point to provide access to a specific share ( \\HV1\ISOs in the screenshot above.)
 
 DataNow provides options for controlling [authorization polices for Map Points](https://www.myappsense.com/datanow/v3.5/admin/Admin/Map_Point_Policy.htm) using organisational units, user groups and user accounts. It's also possible to control the types of devices that are allowed access including verified devices so that users don't have unfettered access.
 
-<figure id="attachment_3872" aria-describedby="caption-attachment-3872" style="width: 1000px" class="wp-caption alignnone">[<img class="size-full wp-image-3872" src="https://stealthpuppy.com/media/2015/04/Policy-MapPointAccess.png" alt="AppSense DataNow 3.5 appliance Device policies" width="1000" height="864" srcset="https://stealthpuppy.com/media/2015/04/Policy-MapPointAccess.png 1000w, https://stealthpuppy.com/media/2015/04/Policy-MapPointAccess-150x130.png 150w, https://stealthpuppy.com/media/2015/04/Policy-MapPointAccess-300x259.png 300w" sizes="(max-width: 1000px) 100vw, 1000px" />]({{site.baseurl}}/media/2015/04/Policy-MapPointAccess.png)<figcaption id="caption-attachment-3872" class="wp-caption-text">AppSense DataNow 3.5 appliance Device policies*</figure>
+![AppSense DataNow 3.5 appliance Device policies]({{site.baseurl}}/media/2015/04/Policy-MapPointAccess.png)*AppSense DataNow 3.5 appliance Device policies*</figure>
 
 # Implementation
 
@@ -108,13 +108,13 @@ The EM configuration, does a few things:
 
 After logging onto the desktop and ensuring the the DataNow client has logged in and user folders are redirected successfully, I can access and sync my data across both devices while also accessing the same data on my iPhone or iPad. Here's what this looks like on the desktop:
 
-<figure id="attachment_3906" aria-describedby="caption-attachment-3906" style="width: 800px" class="wp-caption alignnone"><img class="wp-image-3906 size-full" src="https://stealthpuppy.com/media/2015/04/AppSenseDataNow35UXWindows8.gif" alt="AppSenseDataNow35UXWindows8" width="800" height="700" /><figcaption id="caption-attachment-3906" class="wp-caption-text">User experience on Windows 8 with user folders redirected to the DataNow folder*</figure>
+![AppSenseDataNow35UXWindows8" width="800" height="700" />*User experience on Windows 8 with user folders redirected to the DataNow folder*</figure>
 
  
 
 With an on-access policy set for the home directory Map Point, files are downloaded by the client when they're accessed. Files that aren't yet synchronised locally are denoted with an overlay:
 
-<figure id="attachment_3876" aria-describedby="caption-attachment-3876" style="width: 1076px" class="wp-caption alignnone">[<img class="size-full wp-image-3876" src="https://stealthpuppy.com/media/2015/04/Documents-folder.png" alt="AppSense DataNow Documents folder with files not yet synchronized." width="1076" height="424" srcset="https://stealthpuppy.com/media/2015/04/Documents-folder.png 1076w, https://stealthpuppy.com/media/2015/04/Documents-folder-150x59.png 150w, https://stealthpuppy.com/media/2015/04/Documents-folder-300x118.png 300w, https://stealthpuppy.com/media/2015/04/Documents-folder-1024x404.png 1024w" sizes="(max-width: 1076px) 100vw, 1076px" />]({{site.baseurl}}/media/2015/04/Documents-folder.png)<figcaption id="caption-attachment-3876" class="wp-caption-text">AppSense DataNow Documents folder with files not yet synchronized.*</figure>
+![AppSense DataNow Documents folder with files not yet synchronized.]({{site.baseurl}}/media/2015/04/Documents-folder.png)*AppSense DataNow Documents folder with files not yet synchronized.*</figure>
 
 Synchronisation works between the local DataNow folder and the home drive and I'm able to make changes on each machine and see the changes on the other.
 
@@ -124,23 +124,23 @@ Generally speaking though, this approach gives me what I'm after- synchronisatio
 
 To provide an idea of access to my home directory on an alternative platform, I've installed the DataNow client on my MacBook. I can synchronise and access my Active Directory home drive on a personal device as well.
 
-<figure id="attachment_3907" aria-describedby="caption-attachment-3907" style="width: 668px" class="wp-caption alignnone"><img class="wp-image-3907 size-full" src="https://stealthpuppy.com/media/2015/04/DataNow-MacClient-Setup.gif" alt="DataNow-MacClient-Setup" width="668" height="598" /><figcaption id="caption-attachment-3907" class="wp-caption-text">Setting up the DataNow client for OS X*</figure>
+![DataNow-MacClient-Setup" width="668" height="598" />*Setting up the DataNow client for OS X*</figure>
 
  
 
 Once authenticated, my files are synchronised locally to a DataNow folder. Note in the screenshot below, the a cloud icon indicates that the files have not yet been copied locally, similar to the grey arrow overlay on Windows.
 
-<figure id="attachment_3886" aria-describedby="caption-attachment-3886" style="width: 834px" class="wp-caption alignnone">[<img class="wp-image-3886 size-full" src="https://stealthpuppy.com/media/2015/04/Mac-DataNow-Folder1.png" alt="Accessing files locally on the Mac" width="834" height="437" srcset="https://stealthpuppy.com/media/2015/04/Mac-DataNow-Folder1.png 834w, https://stealthpuppy.com/media/2015/04/Mac-DataNow-Folder1-150x79.png 150w, https://stealthpuppy.com/media/2015/04/Mac-DataNow-Folder1-300x157.png 300w" sizes="(max-width: 834px) 100vw, 834px" />]({{site.baseurl}}/media/2015/04/Mac-DataNow-Folder1.png)<figcaption id="caption-attachment-3886" class="wp-caption-text">Accessing files locally on the Mac*</figure>
+![Accessing files locally on the Mac]({{site.baseurl}}/media/2015/04/Mac-DataNow-Folder1.png)*Accessing files locally on the Mac*</figure>
 
 Once I access the file, the DataNow client will download it. The status of the DataNow client and settings are available from the OS X menu bar:
 
-<figure id="attachment_3885" aria-describedby="caption-attachment-3885" style="width: 484px" class="wp-caption alignnone"><img class="size-full wp-image-3885" src="https://stealthpuppy.com/media/2015/04/Mac-DataNow-status.png" alt="Viewing the DataNow client status on the Mac" width="484" height="540" srcset="https://stealthpuppy.com/media/2015/04/Mac-DataNow-status.png 484w, https://stealthpuppy.com/media/2015/04/Mac-DataNow-status-134x150.png 134w, https://stealthpuppy.com/media/2015/04/Mac-DataNow-status-269x300.png 269w" sizes="(max-width: 484px) 100vw, 484px" /><figcaption id="caption-attachment-3885" class="wp-caption-text">Viewing the DataNow client status on the Mac*</figure>
+![Viewing the DataNow client status on the Mac" width="484" height="540" srcset="https://stealthpuppy.com/media/2015/04/Mac-DataNow-status.png 484w, https://stealthpuppy.com/media/2015/04/Mac-DataNow-status-134x150.png 134w, https://stealthpuppy.com/media/2015/04/Mac-DataNow-status-269x300.png 269w" sizes="(max-width: 484px) 100vw, 484px" />*Viewing the DataNow client status on the Mac*</figure>
 
 # Web Client Experience
 
 A file sync solution is not complete without access to data from a web browser. Here's a view of access my home directory in a browser:
 
-<figure id="attachment_3908" aria-describedby="caption-attachment-3908" style="width: 959px" class="wp-caption alignnone"><img class="wp-image-3908 size-full" src="https://stealthpuppy.com/media/2015/04/DataNowWebAccess.gif" alt="DataNowWebAccess" width="959" height="676" /><figcaption id="caption-attachment-3908" class="wp-caption-text">DataNow web client*</figure>
+![DataNowWebAccess" width="959" height="676" />*DataNow web client*</figure>
 
 # Conclusion
 

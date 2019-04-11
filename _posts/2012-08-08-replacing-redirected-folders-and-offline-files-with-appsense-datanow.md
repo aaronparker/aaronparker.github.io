@@ -39,7 +39,7 @@ Access is proxied through a virtual appliance, located in the DMZ or on the Inte
 
 With this overview in mind, I should be able to use DataNow to synchronise data to laptops and even desktops and standard folder redirection for hosted desktops in the data centre (i.e. those desktops right next to the file storage).
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="DataNow diagram" src="https://stealthpuppy.com/media/2012/08/diagram_thumb.png" alt="DataNow diagram" width="660" height="286" border="0" />]({{site.baseurl}}/media/2012/08/diagram.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="DataNow diagram" src="https://stealthpuppy.com/media/2012/08/diagram_thumb.png" alt="DataNow diagram]({{site.baseurl}}/media/2012/08/diagram.png)
 
 The idea being that this approach should provide users with a consistent view of their data regardless of how they are accessing the desktop, with the bonus being that I can now extend the same access to mobile devices.
 
@@ -68,17 +68,17 @@ You may wonder why I haven't used Group Policy to perform folder redirection –
 
 With Folder Redirection implemented and the DataNow client configured, the user folder looks like this:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="DataNow client folder" src="https://stealthpuppy.com/media/2012/08/folder1_thumb.png" alt="DataNow client folder" width="660" height="278" border="0" />]({{site.baseurl}}/media/2012/08/folder1.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="DataNow client folder" src="https://stealthpuppy.com/media/2012/08/folder1_thumb.png" alt="DataNow client folder]({{site.baseurl}}/media/2012/08/folder1.png)
 
 Whilst the DataNow folder contains each of the redirected user folders:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="DataNow client folder contents" src="https://stealthpuppy.com/media/2012/08/folder2_thumb.png" alt="DataNow client folder contents" width="660" height="301" border="0" />]({{site.baseurl}}/media/2012/08/folder2.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="DataNow client folder contents" src="https://stealthpuppy.com/media/2012/08/folder2_thumb.png" alt="DataNow client folder contents]({{site.baseurl}}/media/2012/08/folder2.png)
 
 Note that I've not redirected Downloads or Saved Games.
 
 After logging into the DataNow client for the first time, each of the redirected folders are synchronised to the home drive:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Home folder" src="https://stealthpuppy.com/media/2012/08/folder3_thumb.png" alt="Home folder" width="660" height="301" border="0" />]({{site.baseurl}}/media/2012/08/folder3.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Home folder" src="https://stealthpuppy.com/media/2012/08/folder3_thumb.png" alt="Home folder]({{site.baseurl}}/media/2012/08/folder3.png)
 
 Synchronisation works between the local DataNow folder and the home drive and I'm able to make changes on each machine and see the changes on the other. There are some oddities during synchronisation, but I've put this down to beta software as I've seen synchronisation improve between each beta release.
 

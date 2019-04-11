@@ -105,11 +105,11 @@ The Redistributables will installed in the order specified in the XML file.
 
 Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list.<figure> 
 
-<figure style="width: 1442px" class="wp-caption alignnone"><img title="Visual C++ Redistributables 2005-2015" src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/2005-2015.PNG" alt="Visual C++ Redistributables 2005-2015" width="1442" height="900" /><figcaption class="wp-caption-text">Visual C++ Redistributables 2005-2015*</figure>
+![Visual C++ Redistributables 2005-2015" width="1442" height="900" />*Visual C++ Redistributables 2005-2015*</figure>
 
 Visual C++ Redistributables 2005 to 2017 (including 2015) installed:<figure> 
 
-<figure style="width: 1442px" class="wp-caption alignnone"><img title="Visual C++ Redistributables 2005-2017" src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/2005-2017.PNG" alt="Visual C++ Redistributables 2005-2017" width="1442" height="900" /><figcaption class="wp-caption-text">Visual C++ Redistributables 2005-2017*</figure>
+![Visual C++ Redistributables 2005-2017" width="1442" height="900" />*Visual C++ Redistributables 2005-2017*</figure>
 
 ### ConfigMgr
 
@@ -129,7 +129,7 @@ Example: Download Visual C++ Redistributables listed in VisualCRedistributables.
 
 This will look similar to the following in the Configuration Manager console:<figure> 
 
-<figure style="width: 1368px" class="wp-caption alignnone"><img src="https://raw.githubusercontent.com/aaronparker/Install-VisualCRedistributables/master/images/VCredist_ConfigMgr.PNG" alt="Visual C++ Redistributables in Configuration Manager" width="1368" height="727" /><figcaption class="wp-caption-text">Visual C++ Redistributables in Configuration Manager*</figure>
+![Visual C++ Redistributables in Configuration Manager" width="1368" height="727" />*Visual C++ Redistributables in Configuration Manager*</figure>
 
 # Finally
 

@@ -13,7 +13,7 @@ categories:
 tags:
   - SoftGrid
 ---
-<img border="0" alt="SoftGrid Box" align="left" src="https://stealthpuppy.com/media/2008/04/softgridbox.png" width="112" height="120" />This error seems to popup [every](http://www.softgridguru.com/viewtopic.php?t=2493&highlight=shortcutsex+dat) [now](http://www.softgridguru.com/viewtopic.php?t=2184&highlight=icons) and [then](http://www.softgridguru.com/viewtopic.php?t=2323) and I'm currently seeing this in my own lab environment - SoftGrid application shortcuts are created even though the application has been disabled, deleted or the user account has been removed from the application group.
+<img border="0" alt="SoftGrid Box" align="left" src="https://stealthpuppy.com/media/2008/04/softgridbox.png](http://www.softgridguru.com/viewtopic.php?t=2323) and I'm currently seeing this in my own lab environment - SoftGrid application shortcuts are created even though the application has been disabled, deleted or the user account has been removed from the application group.
 
 When a user logs onto the computer, the SoftGrid client contacts the Virtual Application Server to retrieve a list of applications for that user. The list is cached on the local machine and the required files for each application (OSD files, application and file type icons) are copied locally.
 

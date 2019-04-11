@@ -17,7 +17,7 @@ categories:
 tags:
   - Adobe Reader
 ---
-[<img class="alignright size-full wp-image-2848" style="margin-left: 5px; margin-right: 5px;" title="ReaderXI-Installer" src="https://stealthpuppy.com/media/2012/10/ReaderXI-Installer.png" alt="" width="128" height="128" />Adobe Reader XI](http://get.adobe.com/reader/) is now available and along with this release comes some interesting tools for deployment:
+[<img class="alignright size-full wp-image-2848" style="margin-left: 5px; margin-right: 5px;" title="ReaderXI-Installer" src="https://stealthpuppy.com/media/2012/10/ReaderXI-Installer.png" alt="](http://get.adobe.com/reader/) is now available and along with this release comes some interesting tools for deployment:
 
   * Citrix XenApp enhancements for better performance (it's not clear whether this specifically XenApp or RDS enhancements. Hopefully this means reduced memory requirements)
   * New App-V support, including a Package Accelerator (presumably this is App-V 4.6, not 5.0)

@@ -38,7 +38,7 @@ The download that I have supplied ([download id="58&#8243; format="3&#8243;]) in
 
 Re-open the task sequence properties and you should see something like this:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="XenApp-PVS-TaskSequence-Final" src="https://stealthpuppy.com/media/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png" alt="XenApp-PVS-TaskSequence-Final" width="660" height="337" border="0" />]({{site.baseurl}}/media/2012/11/XenApp-PVS-TaskSequence-Final.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="XenApp-PVS-TaskSequence-Final" src="https://stealthpuppy.com/media/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png" alt="XenApp-PVS-TaskSequence-Final]({{site.baseurl}}/media/2012/11/XenApp-PVS-TaskSequence-Final.png)
 
 Importing the supplied pre-configured task sequence into your own Deployment Share, will result in some errors because the task sequence will reference applications and operating systems that either don't exist in your Deployment Share or have different names.
 
@@ -46,7 +46,7 @@ Importing the supplied pre-configured task sequence into your own Deployment Sha
 
 For example, after I've imported this task sequence, I need to fix the reference to the Windows Server 2008 R2 SP1 source files:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-FixOS" src="https://stealthpuppy.com/media/2012/11/MDT-TS-FixOS_thumb.png" alt="MDT-TS-FixOS" width="660" height="325" border="0" />]({{site.baseurl}}/media/2012/11/MDT-TS-FixOS.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-FixOS" src="https://stealthpuppy.com/media/2012/11/MDT-TS-FixOS_thumb.png" alt="MDT-TS-FixOS]({{site.baseurl}}/media/2012/11/MDT-TS-FixOS.png)
 
 The download also includes the scripts/applications referenced by the task sequence, so you'll need to ensure they exist in your Deployment Share before fixing the task sequence.
 
@@ -81,7 +81,7 @@ The included unattend.xml has configuration items applied to two [configuration 
   * [specialize](http://technet.microsoft.com/en-us/library/cc722130(v=ws.10).aspx); and
   * [oobeSystem](http://technet.microsoft.com/en-us/library/cc748990(v=ws.10).aspx)
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="unattend-xml" src="https://stealthpuppy.com/media/2012/11/unattend-xml_thumb.png" alt="unattend-xml" width="660" height="365" border="0" />]({{site.baseurl}}/media/2012/11/unattend-xml.png)
+[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="unattend-xml" src="https://stealthpuppy.com/media/2012/11/unattend-xml_thumb.png" alt="unattend-xml]({{site.baseurl}}/media/2012/11/unattend-xml.png)
 
 Together the task sequence and unattend.xml create what should be a fairly clean (and importantly, repeatable) deployment of a XenApp server.
 

@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img class="wlDisabledImage" style="margin: 0px 0px 5px 10px; display: inline; border-width: 0px;" title="AppV-FAQ-Logo" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="AppV-FAQ-Logo" width="121" height="116" align="right" border="0" />Wikipedia describes [Application Virtualization](http://en.wikipedia.org/wiki/Application_virtualization) as:
+<img class="wlDisabledImage" style="margin: 0px 0px 5px 10px; display: inline; border-width: 0px;" title="AppV-FAQ-Logo" src="https://stealthpuppy.com/media/2010/06/AppVFAQLogo.png" alt="AppV-FAQ-Logo](http://en.wikipedia.org/wiki/Application_virtualization) as:
 
 > Application virtualization is an umbrella term that describes software technologies that improve portability, manageability and compatibility of applications by encapsulating them from the underlying operating system on which they are executed. A fully virtualized application is not installed in the traditional sense[1], although it is still executed as if it is. The application is fooled at runtime into believing that it is directly interfacing with the original operating system and all the resources managed by it, when in reality it is not. In this context, the term "virtualization" refers to the artefact being encapsulated (application), which is quite different to its meaning in hardware virtualization, where it refers to the artefact being abstracted (physical hardware).
 
