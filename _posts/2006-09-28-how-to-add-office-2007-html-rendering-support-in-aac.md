@@ -22,14 +22,18 @@ With the release of Office 2007 not that far away, the new [Open XML](http://sea
 
 Because that document covers the process in detail, I'll only list the registry changes required to add support for the new files types:
 
-  * Create the following registry key: <span style="font-size: 9pt; font-family: Courier New">HKEY_LOCAL_MACHINE\SOFTWARE\citrix\msam\activationservice\enginemanager\previewengine\caps</span>
+  * Create the following registry key: `HKEY_LOCAL_MACHINE\SOFTWARE\citrix\msam\activationservice\enginemanager\previewengine\caps`
   * Under this new registry key create a new String Value named: `MSWordHandler`
   * Add the following data to this value: `":.doc:.ans:.mcw:.rtf:.docx:`
   * Restart the Citrix Activation Host and the Citrix Deployment Server services on the AAC server and you're done.
 
 Here is the full list of values to add to this new key:
 
-[table id=13 /]
+|String Value                                                     |Data                                                                |
+|-----------------------------------------------------------------|--------------------------------------------------------------------|
+|MSWordHandler                                                    |":.doc:.ans:.mcw:.rtf:.docx:.docm:"                                 |
+|MSExcelHandler                                                   |":.xls:.csv:.dbf:.dif:.slk:.wql:.xlt:.xlsx:.xlsm:"                  |
+|MSPowerPntHandler                                                |":.ppt:.pot:.pps:.pptx:.pptm"                                       |
 
 The .docm, .xlsm and .pptm are the new document types that include macros. If you feel that it could be a security risk for your organisation to allow macro support through the HTML rendering in AAC, do not add these file types.
 
