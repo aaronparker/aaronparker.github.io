@@ -20,7 +20,7 @@ tags:
 ---
 Ivanti Application Control (previously [AppSense Application Manager](https://www.ivanti.com.au/products/application-control)) is an application whitelisting and privilege management solution; however, I think you're likely aware of that since you're reading this article. Application Control has a number of customisable message boxes that are displayed to the end-user for Windows application whitelisting or privilege elevation scenarios. In this article, I'll discuss improving the end-user experience with some visual flair and text.
 
-# Default Message Boxes
+## Default Message Boxes
 
 Let's take a look at a typical message box. Below is the default Access Denied message displayed to users on Windows 10 when attempting to start an application that hasn't been white-listed.
 
@@ -44,7 +44,7 @@ There are several scenarios where Application Control may display a message to t
 
 So, potentially a reasonable level of interaction with the end-user and thus Application Control can have some impact on the perception of a user's everyday experience. Fortunately, each of these message boxes is almost fully customisable - Ivanti provides the administrator with the ability to control both the appearance and text in the message to something that may suit a specific requirement or the environment into which it is deployed.
 
-# Creating Better Message Boxes
+## Creating Better Message Boxes
 
 Dialog boxes suck (or at least a good chunk of them do). To understand why here's an excellent article I recommend reading - [The Magic of Flow and Why Dialogs Frustrate People](https://uxplanet.org/the-magic-of-flow-and-why-dialogs-frustrate-people-9408e08b7f3d). The dialogs interrupt user workflow and it's safe to assume a user is typically seeing multiple messages in a single session (not just our Application Control messages).
 
@@ -60,7 +60,7 @@ I believe these to be reasonable principles to consider, but of course, some env
 
 Microsoft has published user interface guidelines for Windows for many years, with what I would call "mixed results" from the developer community. While good design isn't easy, Microsoft has guidelines on [Fonts](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742483(v=vs.85).aspx), [Style and Tone](https://msdn.microsoft.com/en-us/library/windows/desktop/dn742477(v=vs.85).aspx), and [User Interface Principles](https://msdn.microsoft.com/en-us/library/windows/desktop/ff728831(v=vs.85).aspx) that are applicable to the Application Control administrator.
 
-## Looking for Inspiration
+### Looking for Inspiration
 
 Microsoft has specific message boxes in User Account Control that I've used as the basis for improving the messages boxes from Application Control; both visually and in the language/text. Here's a typical UAC message box on Windows 10 - it provides some immediate visual feedback with colour and simple language for the user to act upon:
 
@@ -90,7 +90,7 @@ Sticking with an established visual style, we can use these colours in our Appli
 
 In addition to the visual style, we can use these as examples of the language to use in our customised Application Control message boxes. 
 
-# Updating Ivanti Application Control Message Boxes
+## Updating Ivanti Application Control Message Boxes
 
 These message boxes are customisable via HTML and CSS, so we have the ability to exert a certain level of control on the look and feel. To enable the full level of customisation, you'll need to be running Application Control 10.1 FR3, as the limit on the number of characters in some of the messages has been removed.
 
@@ -112,7 +112,7 @@ There are a few things that the CSS does and provides customisation for:
 
 At the moment, this CSS isn't perfect and requires updates to fix the cutting off text on the right-hand side of the dialog box, but I think it's a huge improvement over what's provided by default.
 
-## Access Denied
+### Access Denied
 
 Let's look again at the default Access Denied message box. This doesn't fit into the Windows UI, doesn't necessarily tell the user what's occurred or tell them whether any further action is required.
 
@@ -141,7 +141,7 @@ Because we have a fixed height and width for the box, I've set the height to 690
 
 In this example, we are now providing the user with some immediate visual feedback, some reason as to why the application was blocked, some details on what was blocked and finally a link to more information (i.e. the action that the user can take). An external page can provide the user with a framework for understanding what's going on and whether they should pick up the phone for the service desk (or not), with better detail and interaction than a message box could provide.
 
-## Self-Elevation
+### Self-Elevation
 
 Now let's do the same with the Self-Elevation action. Here's the HTML:
 
@@ -160,7 +160,7 @@ I've set the height to 770 pixels and the width to 460. Here's the result:
 
 In this example, we aren't bombarding the end-user with text nor assuming what they're doing is a hostile action. If you're an IT Pro or a developer, there's a good chance you'll need to elevate an application several times during a single session, so this could be something you see multiple times a day.
 
-## System Controls
+### System Controls
 
 For a simple example, let's update the System Controls message.
 
@@ -175,7 +175,7 @@ Which then looks like this:
 
 Here we've used blue to differentiate this from the previous two messages.
 
-# Be aware of High DPI Displays
+## Be aware of High DPI Displays
 
 Note that today Application Control doesn't support high DPI displays or scaling above 100% very well. Because those dialog boxes are a fixed size and the contents don't scale, you get something like this:
 
@@ -187,7 +187,7 @@ Ivanti is, of course, aware of the issue and I assume there'll be a fix in a fut
 
 Once set, the message box will be set to its correct size and scaled up on high DPI displays, thus the box may look fuzzy depending on resolution and scaling. To avoid setting this on each executable individually on each end-point, [use Group Policy or the Application Compatibility Toolkit](https://blogs.windows.com/buildingapps/2017/05/19/improving-high-dpi-experience-gdi-based-desktop-apps/) to set these properties.
 
-# Conclusion
+## Conclusion
 
 In this article, I've discussed how to improve the Ivanti Application Control message boxes for both visuals and text. With some effort, we've updated the style to better fit in with Windows 10, but these look right at home on Windows 7 as well. Additionally, the text has been improved to provide users with (hopefully) just the right amount of explanation, enabling them to take effective action if needed.
 

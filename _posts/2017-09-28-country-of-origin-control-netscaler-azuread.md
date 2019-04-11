@@ -28,7 +28,7 @@ All was well, until Microsoft pulled the ability to use Named Locations in Condi
 
 At Ignite 2017 this week, Microsoft announced a number of new conditions that includes the ability again to use Named Locations in conditions. What's new here is the ability to pick from a list of countries when defining those locations. With the number of new conditions available, including Terms of Use, VPN connectivity and Custom controls, I am hoping that Microsoft will not pull these features in the future and instead get them out of preview as quickly as possible.
 
-# SAML All The Things!
+## SAML All The Things!
 
 In my previous article on [integrating Citrix NetScaler with Azure AD and Conditional Access]({{site.baseurl}}/netscaler-azure-ad-conditional-access/), I've described the steps to enable SAML authentication to Azure AD from NetScaler to enable a single authentication experience across remote published apps (or desktops) and Office 365. You could extend this of course to additional applications, provide users with single sign-on across all sorts of applications.
 
@@ -36,7 +36,7 @@ Doing so allows IT to control access to any application, whether that be legacy 
 
 ![Azure AD Conditional Access policies]({{site.baseurl}}/media/2017/09/AzureAD-CA-Policies.png)
 
-# Conditions in Conditional Access Policies
+## Conditions in Conditional Access Policies
 
 The new conditions and controls should be available now, in preview, for just about everyone. These include:
 
@@ -46,7 +46,7 @@ The new conditions and controls should be available now, in preview, for just ab
 
 ![New conditions and controls in preview]({{site.baseurl}}/media/2017/09/AzureAD-CA-Policies-Zoom.png)
 
-# Enabling Country of Origin
+## Enabling Country of Origin
 
 Previously Named Locations allow you to only provide locations via specific subnets to define egress locations, e.g. your corporate office. New in Named Locations is the ability to add specific countries that you could use in allow or block scenarios, effectively enabling a whitelist or blacklist of regions.
 

@@ -29,7 +29,7 @@ So I went looking for a more cost effective way of securing remote access to clo
 
 Fellow [CTP]({{site.baseurl}}/1about/) and all round knowledgeable guy, [Jarian Gibson](https://twitter.com/jariangibson) recommended checking out Duo. Duo are an [identity provider](https://duo.com/) including MFA who have a [a free version that gives you two-factor authentication for up to 10 users](https://duo.com/pricing/duo-free).
 
-# Adding MFA to a Jump Box
+## Adding MFA to a Jump Box
 
 Signing up for Duo and adding MFA to a Windows Server VM running in Azure is a simple process:
 
@@ -41,7 +41,7 @@ Signing up for Duo and adding MFA to a Windows Server VM running in Azure is a s
 
 Here's what the process looks like:
 
-## Setup
+### Setup
 
 Adding Microsoft RDP (and local logon) support is as simple as clicking the 'Protect this Application' link. When you added, you'll find an Integration Key, Secret Key and API hostname that will be used by the Duo agent on the target VM to authenticate against Duo for MFA prompts.
 
@@ -71,7 +71,7 @@ And the account now added to the phone. Here's I have my Duo admin account, plus
 
 So setup of Microsoft RDP and a user account in the Duo console is quick and easy, so onto installing the Duo agent on my target VM.
 
-## Installing the Duo Agent
+### Installing the Duo Agent
 
 Logon to your target VM, download the [Duo Authentication for Windows Logon agent](https://dl.duosecurity.com/duo-win-login-latest.exe) and run the installer. During install you're asked for the account details setup previously in the admin console. 
 
@@ -81,7 +81,7 @@ Logon to your target VM, download the [Duo Authentication for Windows Logon agen
 
 One the agent is install, no reboot is required. Yes - no reboot!
 
-# Logon Experience
+## Logon Experience
 
 When connecting to the jump box via RDP, you authenticate with username and password from the local device as normal; however, once the connection is made, Duo displays a security prompt, where you'll need to respond to a push notification, phone call or provide a passcode.
 
@@ -97,7 +97,7 @@ If you have an Apple Watch, you can approve the login request from your wrist wi
 
 <figure id="attachment_5529" aria-describedby="caption-attachment-5529" style="width: 312px" class="wp-caption alignnone">[<img class="size-full wp-image-5529" src="https://stealthpuppy.com/media/2017/07/IMG_4109.png" alt="Duo login request on the Apple Watch" width="312" height="390" srcset="https://stealthpuppy.com/media/2017/07/IMG_4109.png 312w, https://stealthpuppy.com/media/2017/07/IMG_4109-120x150.png 120w, https://stealthpuppy.com/media/2017/07/IMG_4109-240x300.png 240w" sizes="(max-width: 312px) 100vw, 312px" />]({{site.baseurl}}/media/2017/07/IMG_4109.png)<figcaption id="caption-attachment-5529" class="wp-caption-text">Duo login request on the Apple Watch*</figure>
 
-## Denied Logons
+### Denied Logons
 
 There may be many reasons why logins are denied, so here's what the experience looks like for a couple of scenarios. The first screenshot shows what happens if I tap Deny on the authentication prompt on my phone or watch:
 
@@ -115,6 +115,6 @@ What happens for other users on the system that aren't enrolled in Duo? If login
 
 This looks pretty good. I'm not sure if there's ways around the Duo authentication, but I presume standard credential provider hooking into GINA is used, so it should be as rock solid as Microsoft makes in and Duo adheres to the standard.
 
-# Summary
+## Summary
 
 In this article, I've shown you how to integrate Duo into a RDP login to provide MFA for a jump box hosted in Azure. This provides the additional security needed to protect logins into these environments that could augment source IP rules for remote access or allow you to open RDP access for administrators needing to get into the cloud environment from anywhere. Best of all, we've added this extra security with minimal infrastructure additions and no extra licensing.

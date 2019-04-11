@@ -24,7 +24,7 @@ Microsoft released a beta version of the Intune Company Portal for macOS just la
 
 Installing the Company Portal is required to [enable Conditional Access support on macOS](https://docs.microsoft.com/en-au/intune/compliance-policy-create-mac-os), so I imagine a new version will be made available soon. If you're testing with Macs or looking for full support with Intune, this is an important part of the puzzle.
 
-# Intune Web Enrollment
+## Intune Web Enrollment
 
 Previous to the Company Portal on macOS, enrollment in Intune is a largely manual process that requires logging into the Intune web portal with a browser, downloading a management profile and installing that manually. Not the best user experience.
 
@@ -36,7 +36,7 @@ Here's what that looks like:
 
 ![Installing the MDM management profile]({{site.baseurl}}/media/2017/09/Intune-WebEnroll-Profile.png)
 
-# Intune Company Portal for macOS Experience
+## Intune Company Portal for macOS Experience
 
 With the Company Portal, the user experience is streamlined, with the management profile installed automatically and you can see device compliance status from within the app. Here's a quick look at the end-user experience with the Intune Company Portal for macOS on macOS Sierra.
 

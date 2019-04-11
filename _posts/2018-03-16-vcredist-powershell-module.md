@@ -21,11 +21,11 @@ Last year I wrote [a PowerShell script that can download, install or import]({{s
 
 Refactoring the script into a module has been a great little project for creating my first PowerShell function and publishing it to [the PowerShell Gallery](https://www.powershellgallery.com/packages/VcRedist/).
 
-# Why VcRedist?
+## Why VcRedist?
 
 At this point, I'm sure you're saying to yourself - "Aaron, haven't you just created [Chocolatey](https://chocolatey.org/)?". In a way yes, this module does exactly what you can do with Chocolatey - install the [Visual C++ Redistributables](https://chocolatey.org/packages/vcredist140) directly to the local machine. Although you can download and install all of the supported (and unsupported) Redistributables, the primary aim of the module is to provide a fast way to download and import the Redistributables into the Microsoft Deployment Toolkit or System Center Configuration Manager for operating system deployments.
 
-# Module
+## Module
 
 The VcRedist module is [published to the PowerShell Gallery](https://www.powershellgallery.com/packages/VcRedist/), which means that it's simple to install the module and starting importing with a few lines of PowerShell. For example, here's how you could install the module, download all of [the supported Redistributables](https://support.microsoft.com/en-gb/help/2977003/the-latest-supported-visual-c-downloads) and import them into an MDT deployment share:
 
@@ -68,41 +68,41 @@ By default, this installs all of the supported Redistributables:
 
 Note that the 2015 and 2017 Redistributables are the same version, so the end result will include only the 2017 versions.
 
-# Functions
+## Functions
 
 This module includes the following functions:
 
-## Get-VcList
+### Get-VcList
 
 This function reads the Visual C++ Redistributables listed in an internal manifest or an external XML file into an array that can be passed to other VcRedist functions. Running `Get-VcList` will return the supported list of Visual C++ Redistributables. The function can read an external XML file that defines a custom list of Visual C++ Redistributables.
 
-## Export-VcXml
+### Export-VcXml
 
 Run `Export-VcXml` to export the internal Visual C++ Redistributables manifest to an external XML file. Use `-Path` to define the path to the external XML file that the manifest will be saved to. By default `Export-VcXml` will export only the supported Visual C++ Redistributables.
 
-## Get-VcRedist
+### Get-VcRedist
 
 To download the Visual C++ Redistributables to a local folder, use `Get-VcRedist`. This will read the array of Visual C++ Redistributables returned from `Get-VcList` and download each one to a local folder specified in `-Path`. Visual C++ Redistributables can be filtered for release and processor architecture.
 
-## Install-VcRedist
+### Install-VcRedist
 
 To install the Visual C++ Redistributables on the local machine, use `Install-VcRedist`. This function again accepts the array of Visual C++ Redistributables passed from `Get-VcList` and installs the Visual C++ Redistributables downloaded to a local path with `Get-VcRedist`. Visual C++ Redistributables can be filtered for release and processor architecture.
 
-## Import-VcMdtApp
+### Import-VcMdtApp
 
 To install the Visual C++ Redistributables as a part of a reference image or for use with a deployment solution based on the Microsoft Deployment Toolkit, `Import-VcMdtApp` will import each of the Visual C++ Redistributables as a separate application that includes silent command lines, platform support and the UninstallKey for detecting whether the Visual C++ Redistributable is already installed. Visual C++ Redistributables can be filtered for release and processor architecture.
 
 Each Redistributables will be imported into the deployment share with application properties for a successful deployment.
 
-## Import-VcCMApp
+### Import-VcCMApp
 
 To install the Visual C++ Redistributables with System Center Configuration Manager, `Import-VcCmApp` will import each of the Visual C++ Redistributables as a separate application that includes the application and a single deployment type. Visual C++ Redistributables can be filtered for release and processor architecture.
 
-# Tested On
+## Tested On
 
 Tested on Windows 10 and Windows Server 2016 with PowerShell 5.1. Install-VcRedist and Import-VcMdtApp require Windows and the MDT Workbench. Get-VcList, Export-VcXml and Get-VcRedist do work on PowerShell Core; however, most testing is completed on Windows PowerShell.
 
-# To Do
+## To Do
 
 Right now, I have a few tasks for updating the module, including:
 

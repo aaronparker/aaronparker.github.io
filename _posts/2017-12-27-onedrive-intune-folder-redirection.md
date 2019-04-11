@@ -28,7 +28,7 @@ Implementing folder redirection for Windows 10 via Intune currently isn't possib
 
 **[Update - December 29, 2017]** [A GitHub repository has been established for the scripts in this article](https://github.com/aaronparker/intune/tree/master/Folder-Redirection). Going forward any additional development will occur there. Testing, feedback and improvements can be logged on the repository.
 
-# How Folder Redirection Works
+## How Folder Redirection Works
 
 Here's an old, but an excellent article that covers [how the Folder Redirection Extension works](https://technet.microsoft.com/en-us/library/cc787939). The document targets Windows XP and Windows Server 2003, but the concepts are still the same in 2017. The article includes the following overview of folder redirection:
 
@@ -44,7 +44,7 @@ In this case, because we're looking to redirect folders with the source and dest
 
 Given that we don't have Group Policy available to us, we need to implement steps 1 and 5 in such a way that we can be sure the redirection and move of data will be successful.
 
-# Implementing folder redirection in PowerShell
+## Implementing folder redirection in PowerShell
 
 A script that performs folder redirection using [SHSetKnownFolderPath](https://msdn.microsoft.com/en-us/library/windows/desktop/bb762249) is available from here: [SetupFoldersForOneDrive.ps1](https://gist.github.com/semenko/49a28675e4aae5c8be49b83960877ac5). This script defines a function called Set-KnownFolderPath that can be used to redirect a folder of your choosing to a target path and it works quite well. In its current iteration though, all it does is redirect the folder.
 
@@ -62,7 +62,7 @@ My version updates the **Set-KnownFolderPath** function to ensure all known fold
 
 My script could do with some additional error checking and robustness; however, it provides the functionality required to redirect specific folders into the OneDrive folder and can be re-run as necessary to enforce redirection for each folder.
 
-# Deploying with Microsoft Intune
+## Deploying with Microsoft Intune
 
 Intune allows you to implement PowerShell scripts that run in the user context or Local System contexts.
 
@@ -98,13 +98,13 @@ When the folder redirection script runs Robocopy to move documents, it will log 
 
 When implemented in this way, the script will run at user login and successfully enable folder redirection into the OneDrive for Business sync folder. The user will see a PowerShell script window - pointing the scheduled task trigger to a VBscript wrapper could fix this.
 
-## Configuring OneDrive
+### Configuring OneDrive
 
 [Enable single sign-on](https://osddeployment.dk/2017/12/18/how-to-silently-configure-onedrive-for-business-with-intune/) in the OneDrive client for the best user experience. Not necessarily a requirement; however, it will make it quicker for users to be up and running and therefore faster for the script to redirect the target folders.
 
 Given the approach outlined in this article, it's unlikely that folder redirection will kick in on the first login. Adding a delay to the scheduled task may allow redirection to work on the first run; however, Intune won't necessarily run all PowerShell scripts in the required order.
 
-# Summary
+## Summary
 
 In this article, I've outlined an approach to implementing folder redirection with PowerShell, via Intune, into the OneDrive for Business sync folder. This method uses a script deployed from Intune to Windows 10 Azure AD joined machines to download the folder redirection script and create a scheduled task that runs at user login to perform the redirection and data move.
 
@@ -114,6 +114,6 @@ Redirecting the Desktop, Documents and Pictures to OneDrive should protect key u
 
 These scripts are provided as-is, and I highly recommend testing carefully before implementing in production.
 
-## Bonus
+### Bonus
 
 The folder redirection script will work for any enterprise file and sync tool, not just OneDrive for Business. For example, if you wanted to redirect folders into [Citrix ShareFile](https://www.citrix.com/products/sharefile/), just read the `PersonalFolderRootLocation` value from `HKCU\Software\Citrix\ShareFile\Sync` to find the sync folder.

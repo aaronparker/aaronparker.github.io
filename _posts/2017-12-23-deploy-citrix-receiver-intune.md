@@ -23,7 +23,7 @@ If you've deployed Windows 10 Modern Management you'll know that some applicatio
 
 Microsoft Intune now [supports deploying PowerShell scripts](https://docs.microsoft.com/en-us/intune/intune-management-extension) to Windows 10 machines, which can provide a more flexible framework for deploying complex applications. For Citrix Reciever, we can use this approach to target Windows 10 PCs for downloading the latest version of Receiver directly from Citrix and [install it with any required command line options](https://docs.citrix.com/en-us/receiver/windows/current-release/install/cfg-command-line.html). This ensures that devices always install the latest version and the Intune administrator only ever has to create a single deployment option via a PowerShell script.
 
-# Citrix Receiver for Windows vs. Citrix Receiver for Windows (Store)
+## Citrix Receiver for Windows vs. Citrix Receiver for Windows (Store)
 
 In December 2017, Citrix made available an updated Receiver via the Windows Store that is not a true Universal Windows Platform app, instead, it's the Win32 Receiver converted to a Store app via the [Desktop Bridge](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root). Deploying this version via Microsoft Intune only requires that you subscribe to the app via the [Microsoft Store for Business](https://businessstore.microsoft.com/), sync with Intune and then target that version for deployment via Intune.
 
@@ -50,7 +50,7 @@ The Citrix Receiver for Windows Store version does have [a number of limitations
 
 If you can work without the features above, then use the Store version instead of deploying Receiver via a script, as it allows you to make the application available for end-user initiated installs and simpler application management. If you do need these features, then continue onto deploying Receiver via PowerShell.
 
-# Installing Citrix Receiver
+## Installing Citrix Receiver
 
 Here's a simple script to detect whether Receiver is installed and if not, download and install Receiver using a specific set of command line options.
 
@@ -60,7 +60,7 @@ The script could be extended with some additional error checking and logging to 
 
 **[Update Jan 3, 2018]** An improved version of this script can be found in a GitHub repository here: [https://github.com/aaronparker/intune/blob/master/Apps/Install-CitrixReceiver.ps1](https://github.com/aaronparker/intune/blob/master/Apps/Install-CitrixReceiver.ps1)
 
-# Deploying via Intune
+## Deploying via Intune
 
 Deploying the script via Intune is done just like any other PowerShell script. Save the script locally and then in the Azure Portal, Intune blade, under Device Configuration / PowerShell scripts, add a new script and upload the saved script.
 
@@ -76,6 +76,6 @@ Once deployed, we can track successful installations in the Overview blade. Note
 
 Post-deployment, we can rely on [the updater functionality built into the latest Receiver releases](https://docs.citrix.com/en-us/receiver/windows/current-release/configure/receiver-update.html) to keep end-points up to date.
 
-# Summary
+## Summary
 
 We used a simple approach to the deployment of a non-MSI application to Windows 10 via Intune with a PowerShell script. A simple example that enables deployment of Citrix Receiver with no special packaging and we can be sure that because the end-point downloads Reciever directly from Citrix, the latest version will be deployed each time.
