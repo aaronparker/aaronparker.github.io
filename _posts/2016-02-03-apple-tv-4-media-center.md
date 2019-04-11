@@ -18,7 +18,7 @@ tags:
 ---
 With an App Store now on the Apple TV, is the latest Apple TV 4 the ultimate media centre? I think it comes pretty darn close and here's why.
 
-# My Media History So Far
+## My Media History So Far
 
 I've wanted a simple to use device as a media centre for a while and so far the Apple TV 4 is ticking the boxes. With this device I have a solution that is flexible enough to play video from all sources that I use, has low power consumption and (so far) has good Wife Acceptance Factor.
 
@@ -32,21 +32,21 @@ Both of these devices will stream TV and other streaming media solution, as wel
 
 Finally, we don't have our TV connected to the terrestrial aerial - it's on the other side of the room and I couldn't be bothered with attempting to get a coax cable through the wall. So, free-to-air TV is streamed via the TV or Blu-ray player
 
-## Apple TV 3
+### Apple TV 3
 
 The Apple TV 4 has replaced our previous Apple TV 3. This previous model provided access to Netflix, iTunes, YouTube etc. but without an App Store, streaming TV was limited to one or two stations. Playing media from a NAS is possible; however to do that requires relying on [AirPlay](https://support.apple.com/en-au/HT204289) from an iPad / iPhone. Not an ideal solution.
 
 Sticking with the Apple TV is then a simple choice for me given my history, we have several other Apple devices and a (minor) investment in iTunes media at this time.
 
-## Apple TV 4
+### Apple TV 4
 
 It's likely you've heard that Apple has released a new version of the Apple TV, which now boasts an App Store as well as real local storage options (32GB and 64GB). Although the new Apple TV loses the optical audio connection, the potential that a real app platform provides for flexibility in streaming practically any media made the new device appealing.
 
-![Apple TV 4 Unboxed" width="1024" height="616" srcset="https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed-1024x616.jpg 1024w, https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed-150x90.jpg 150w, https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed-300x181.jpg 300w, https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed-768x462.jpg 768w, https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed.jpg 1196w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>*Apple TV 4 Unboxed*</figure>
+![Apple TV 4 Unboxed](https://stealthpuppy.com/media/2016/02/Apple-TV-4-Unboxed.jpg)>*Apple TV 4 Unboxed*
 
 From a hardware perspective, it's not much different from the previous model. The new remote that comes with touch, a microphone and an accelerometer is very different though, and I'll need to avoid losing or damaging it as [a replacement is $129AU](http://www.apple.com/au/shop/product/MLLC2/siri-remote)!
 
-# Hardware Connection and Initial Setup
+## Hardware Connection and Initial Setup
 
 I had the older Apple TV connected via HDMI and optical audio to the Blu-ray / surround sound system, which allowed me to use AirPlay for audio without having to turn the TV on. I've since replaced the audio function with a Sonos system.
 
@@ -58,9 +58,7 @@ I use an ethernet cable for connection to the network as our router and NAS are 
 
 The setup process was quite simple and I was up and running within a few minutes. Here's a look at the first setup (I didn't have a USB-C cable at the time, so resorted to taking photos of the process):
 
-<img class="ngg_displayed_gallery mceItem" src="https://stealthpuppy.com/nextgen-attach_to_post/preview/id--4281" alt="" data-mce-placeholder="1" /> 
-
-# Video Sources
+## Video Sources
 
 Today, we have a number of sources for video content that we typically watch on a large screen:
 
@@ -71,13 +69,13 @@ Today, we have a number of sources for video content that we typically watch on 
 
 Most of the sources above are possible on the previous Apple TV; however local video sources wasn't possible unless you used AirPlay. Now that the native platform has improved, apps such as [Infuse](http://firecore.com/infuse) or Plex make this possible natively.
 
-## 4K Content
+### 4K Content
 
 Apple haven't made the new TV capable of 4K content and I would assume that this version of the device won't ever be capable of it. Personally, I don't see 4K content as being ready, at least in Australia. Until our new [national broadband network](http://www.nbnco.com.au/) is installed and more 4K content is made available, I'm not rushing out to get a 4K TV.
 
 Things might be different in 18 months to 2 years and 4K TV will have then also reduced in price. In the meantime, I'll wait for 4K to be more mainstream.
 
-# Power Consumption
+## Power Consumption
 
 The Apple TV 4 is an _extremely_ low power device - one key decision for sticking with the Apple TV is the low power consumption both on stand-by and under load . I measured power consumption under various uses which shows impressive power draw:
 
@@ -90,33 +88,33 @@ The Apple TV 4 is an _extremely_ low power device - one key decision for stickin
 
 [Ars Technica has a comparison table in their review of the Apple TV 4](http://arstechnica.com/apple/2015/11/new-apple-tv-wants-to-be-more-than-just-a-streaming-box-but-it-isnt-yet/2/) from November 2015.
 
-![Device power consumption" width="711" height="157" srcset="https://stealthpuppy.com/media/2016/02/Device-power-consumption.png 711w, https://stealthpuppy.com/media/2016/02/Device-power-consumption-150x33.png 150w, https://stealthpuppy.com/media/2016/02/Device-power-consumption-300x66.png 300w" sizes="(max-width: 711px) 100vw, 711px" /></a>*Device power consumption*</figure>
+![Device power consumption](https://stealthpuppy.com/media/2016/02/Device-power-consumption.png)*Device power consumption*
 
 Based on these numbers, I can't imagine using an Xbox or PlayStation as a streaming device based on the cost to run it. Although I'm not suggesting you rush out to buy an Apple TV if you already have an Xbox or PlayStation.
 
-# User Experience
+## User Experience
 
 Here's a few short videos that show the user experience across a number of scenarios (apologies for the audio buzzing, probably best to mute the videos). The home screen is still a standard grid style layout.
 
-
+[Apple TV 4 Main Screen](https://www.youtube.com/watch?v=-JvQxXK8rBg)
 
 Using Siri makes avoiding text input easy. Here's a couple of examples on searching for content.
 
-
+[Siri on the Apple TV 4](https://www.youtube.com/watch?v=na6GmcY2WJk)
 
 The basic iTunes experience hasn't changed much on the new device.
 
-
+[iTunes Movies on the Apple TV 4](https://www.youtube.com/watch?v=K75z2WxPii8)
 
 Here's a look at Infuse connecting to my NAS to browse movies I have stored there. Infuse is automatically recongising each video and applying cover photos and synopsis.
 
-
+[Infuse on the Apple TV 4](https://www.youtube.com/watch?v=r3i7wy0mLjc)
 
 If you take a close look, you'll notice that many icons will have a parallax effect on them as you move your finger around the touch pad on the remote.
 
+[Apple TV 4 Parallex Effects](https://www.youtube.com/watch?v=4oPtf2Wkuss)
 
-
-# Conclusions
+## Conclusions
 
 Even though the App Store is still light, I'm unlikely to use the Apple TV as a gaming platform and the lack of 4K support, I'm very happy that it can play every video source that we use and it draw so little power doing so. So far it's doing well as the primary device for all of our video content.
 
@@ -124,7 +122,7 @@ When it comes time to look at a new TV (probably with 4K support) any smart TV 
 
 Although there are cheaper (and potentially more capable devices such as the [Roku 4](https://www.roku.com/products/roku-4)), the new Apple TV was a known quantity for me, so as an existing Apple user it's an obvious choice. The only down side that I can see at this stage is the cost - this is not a cheap device, especially considering that the previous model was under $100US/£100. It does more, includes local storage and has an App Store, so depending on your requirements, the cost may not be an issue.
 
-## Other Uses
+### Other Uses
 
 With AirPlay, the previous Apple TV models have been useful as remote displays in conference rooms (as long as you have an iPhone/iPad or MacBook).
 

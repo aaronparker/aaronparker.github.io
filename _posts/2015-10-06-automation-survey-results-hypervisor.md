@@ -25,7 +25,7 @@ tags:
 ---
 We had an amazing response to our [OS automation deployment survey](http://xenappblog.com/2015/take-part-in-the-os-deployment-automation-survey/) with well over 700 respondents. In this series of articles to be posted here and on [xenappblog.com](http://xenappblog.com), we'll cover and analyse the results.
 
-# Responses
+## Responses
 
 A total of 772 people responded to the survey but ensuring that anyone responding had a VDI deployment in their organisation reduced this to 724 responses which was still fantastic. We want to thank everyone who responded and shared valuable information with us about their environments.
 
@@ -35,7 +35,7 @@ Of the 724 responses, 705 chose to share the size of the environment with us. We
 
 The average number of users across all of the responses is 2248, so I think it's reasonable to say we have a good set of data from which to draw some conclusions.
 
-# What Platforms are Used to Host Your Virtual Desktop Environment?
+## What Platforms are Used to Host Your Virtual Desktop Environment?
 
 With the first question we asked what platform - hypervisor or bare metal, is used in your environments. Here's a look at the results for this question:
 
@@ -58,7 +58,7 @@ Some analysis here:
 
 What do you think of these results? Do they reflect what you see in the field?
 
-# Adjusted Results
+## Adjusted Results
 
 Let's look at the same results, adjusted for only those respondents that said they run one type of platform and not multiple platforms. In this case, there were 398 respondents who only run one platform in their environment.
 
@@ -77,6 +77,6 @@ Still focussing on the adjusted count, here's the average user count where only
 
 I've not yet broken these into which VDI/SBC platform is used in each - that's for the next article, but this first set of data helps to provide an interesting picture of the type of environments that we've been able to gather information from.
 
-# Next Up
+## Next Up
 
 In the next article, we'll dig into [the VDI and SBC solutions used]({{site.baseurl}}/automation-survey-results-vdi-platforms/).

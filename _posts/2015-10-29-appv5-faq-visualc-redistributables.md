@@ -20,7 +20,7 @@ tags:
 
 Since the release of App-V 5.0 SP2 almost two years ago, the question regarding whether we should allow runtimes such as Visual C++ redistributables to be automatically packaged as part of App-V sequences or whether they should be individually managed on the base OS is on-going. Well there is no right or wrong approach to this, I know people who are massive fans of this feature and others who staunchly believe such SxS components should be managed locally.
 
-![App-V 5 Sequencer options" width="517" height="406" srcset="https://stealthpuppy.com/media/2015/10/SequencerOptions.png 517w, https://stealthpuppy.com/media/2015/10/SequencerOptions-150x118.png 150w, https://stealthpuppy.com/media/2015/10/SequencerOptions-300x236.png 300w" sizes="(max-width: 517px) 100vw, 517px" />*App-V 5 Sequencer options*</figure>
+![App-V 5 Sequencer options" width="517" height="406" srcset="https://stealthpuppy.com/media/2015/10/SequencerOptions.png 517w, https://stealthpuppy.com/media/2015/10/SequencerOptions-150x118.png 150w, https://stealthpuppy.com/media/2015/10/SequencerOptions-300x236.png 300w" sizes="(max-width: 517px) 100vw, 517px" />*App-V 5 Sequencer options*
 
 Either way here are your three main options:
 

@@ -22,7 +22,7 @@ tags:
 
 User settings that might impact the default Office experience or may require special consideration in your environment, are worth investing in planning time because you’ll often have only one chance to get deployment right.
 
-# Use Preference over Policy
+## Use Preference over Policy
 
 Most of the Office user settings can be set as either a default/preference, by customising the Office deployment, or as a policy via Group Policy. The main difference being that a preference is set only during the initial launch of an Office application, whilst a policy may be set on every logon (whether the user launches an Office application or not). This is an important distinction – a preference only needs to be set once and only requires processing at first run, whereas a policy has the potential to be processed at every logon.
 
@@ -32,7 +32,7 @@ I recommend carefully considering each user setting and setting it as a preferen
 
 Note that if you are [deploying Office 2013 with Click-to-Run (App-V)](http://technet.microsoft.com/en-us/library/jj219428.aspx), then this level of setting user defaults will not be possible.
 
-# Office Customization
+## Office Customization
 
 [Office 2013 customisation and deployment](http://technet.microsoft.com/en-us/library/cc178982.aspx) is already well covered in the documentation available on TechNet, so in this article I’ll only cover some highlights and recommendations.
 
@@ -65,7 +65,7 @@ When saving your customization file, you can choose to save it to the Updates fo
 
 If you save the customization file to the Updates folder, use a descriptive name for the file, but also add "1_" (without quotes) to the file name. This will ensure that the customization MSP will be applied before any other updates.
 
-# User Settings Recommendations
+## User Settings Recommendations
 
 The following table lists a number of user settings across each of the Office 2013 applications that I recommend you take a look at. This is just a small subset of the total number of settings, but includes some of the most important ones.
 

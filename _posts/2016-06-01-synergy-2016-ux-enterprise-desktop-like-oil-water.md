@@ -24,7 +24,7 @@ I had the pleasure recently to present a session at [Citrix Synergy](http://www.
 
 This session covers our testing in turning a vanilla Windows installation, which performs well, into a typical enterprise desktop, where performance usually suffers. We covered a number of scenarios, that resulted in a significant reduction in performance:
 
-![31x performance reduction from vanilla to an enterprise desktop" width="1024" height="576" srcset="https://stealthpuppy.com/media/2016/06/31xPerformance-1024x576.png 1024w, https://stealthpuppy.com/media/2016/06/31xPerformance-150x84.png 150w, https://stealthpuppy.com/media/2016/06/31xPerformance-300x169.png 300w, https://stealthpuppy.com/media/2016/06/31xPerformance-768x432.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />*31x performance reduction from vanilla Windows to an enterprise desktop*</figure>
+![31x performance reduction from vanilla to an enterprise desktop" width="1024" height="576" srcset="https://stealthpuppy.com/media/2016/06/31xPerformance-1024x576.png 1024w, https://stealthpuppy.com/media/2016/06/31xPerformance-150x84.png 150w, https://stealthpuppy.com/media/2016/06/31xPerformance-300x169.png 300w, https://stealthpuppy.com/media/2016/06/31xPerformance-768x432.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" />*31x performance reduction from vanilla Windows to an enterprise desktop*
 
 The full video of the 45-minute session is available on [YouTube](https://www.youtube.com/watch?v=8TpXl80fkKQ) and embedded below.
 

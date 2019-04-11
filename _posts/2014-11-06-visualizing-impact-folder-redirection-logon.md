@@ -90,7 +90,7 @@ This test demonstrates the streaming approach to profiles that Citrix Profile Ma
 
 Logon times receive top billing as time wasters for users, so we focus on getting logon times as low as possible.
 
-![wrap]({{site.baseurl}}/media/2014/11/wrap.gif)*Don't keep users waiting...*</figure>
+![wrap]({{site.baseurl}}/media/2014/11/wrap.gif)*Don't keep users waiting...*
 
 There's nothing wrong with reducing logon times, it's a noble pursuit, but the simplest and easiest method of doing so is to implement folder redirection. It gets data out of the profile, is built into Windows and is therefore a quick win. Everyone does it, so it must be good, right?
 

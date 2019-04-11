@@ -56,7 +56,7 @@ Microsoft has [a short video available that shows the Azure sign up](https://azu
 
 Setting up an Azure tenant is quite simple, just be sure to pay attention to the region you're setting as default (i.e. your sign up region) and the account used to sign up to the service. Once sign up is complete, you'll have a certain amount of credit to use within Azure for testing.
 
-![The Azure subscription is ready to use]({{site.baseurl}}/media/2016/12/Azure-StartUsing.png)*The Azure subscription is ready to use*</figure>
+![The Azure subscription is ready to use]({{site.baseurl}}/media/2016/12/Azure-StartUsing.png)*The Azure subscription is ready to use*
 
 Before configuring anything else in the new Azure tenant, configure a custom domain. You'll notice that the default domain will be <domain>.onemicrosoft.com.
 
@@ -75,7 +75,7 @@ The process for adding a custom domain is [slightly different when using ADFS](h
 
 At this point, you can make the new domain the primary domain for Azure AD.
 
-![Add and verify a custom domain in Azure]({{site.baseurl}}/media/2016/12/01_VerifyDomainName.png)*Add and verify a custom domain in Azure*</figure>
+![Add and verify a custom domain in Azure]({{site.baseurl}}/media/2016/12/01_VerifyDomainName.png)*Add and verify a custom domain in Azure*
 
 ## Configure Azure AD Connect/ADFS
 
@@ -87,7 +87,7 @@ Again, I highly recommend reading this article on [integrating your on-premises 
 
 Signing up for or into the Windows Store for Business requires a work or school account, i.e. an account from Azure AD.
 
-![Creating an Azure AD user and assigning a Directory role]({{site.baseurl}}/media/2016/12/02_CreateAzureADUser.png)*Creating an Azure AD user and assigning a Directory role*</figure>
+![Creating an Azure AD user and assigning a Directory role]({{site.baseurl}}/media/2016/12/02_CreateAzureADUser.png)*Creating an Azure AD user and assigning a Directory role*
 
 ## Setup the Windows Store for Business
 
@@ -104,17 +104,17 @@ Logging onto the WSfB site for the first time will bind the Store configuration 
 
 Navigate to <https://www.microsoft.com/business-store> and sign in, accept the usage agreement and you will see a basic Store configuration.
 
-![Sign up for the Windows Store for Business]({{site.baseurl}}/media/2016/12/03_SignUpWIndowsStoreBusiness.png)*Sign up for the Windows Store for Business*</figure>
+![Sign up for the Windows Store for Business]({{site.baseurl}}/media/2016/12/03_SignUpWIndowsStoreBusiness.png)*Sign up for the Windows Store for Business*
 
 Configure the Private store display name - this will appear in the Windows Store app on Windows 10 devices. Click **Settings** / **Private store**. Keep this short, but something that will be clear to users.
 
-![Setting the Private store display name in the Windows Store for Business]({{site.baseurl}}/media/2016/12/05_WindowsStoreBusiness-NamePrivateStore.png)*Setting the Private store display name in the Windows Store for Business*</figure>
+![Setting the Private store display name in the Windows Store for Business]({{site.baseurl}}/media/2016/12/05_WindowsStoreBusiness-NamePrivateStore.png)*Setting the Private store display name in the Windows Store for Business*
 
 ### Configure the App Inventory
 
 Next, click **Manage** / **Inventory** to view the initial app inventory. A number of the Office mobile applications will be listed and in the process of being added to the Private store. _Adding apps to the Private store will take 12-24 hours to appear in the Windows Store app on user's devices_ - not a short process.
 
-![Viewing the Inventory in the Windows Store for Business]({{site.baseurl}}/media/2016/12/06_WindowsStoreBusiness-InitialInventory.png)*Viewing the Inventory in the Windows Store for Business*</figure>
+![Viewing the Inventory in the Windows Store for Business]({{site.baseurl}}/media/2016/12/06_WindowsStoreBusiness-InitialInventory.png)*Viewing the Inventory in the Windows Store for Business*
 
 _Until the 'Add in progress' action is complete, you cannot remove these initial apps from the Private store_. Keep an eye on these once the process is complete and remove from the Private store as required.
 
@@ -140,21 +140,21 @@ Here are a few recommendations for adding apps to the Inventory, in no particula
 
 Once you have a reasonable number of apps, management can become a little cumbersome, use the search feature or the **Refine** dropdown to filter apps. Here I've filtered by only those apps added to the private store. 
 
-![Filtering on apps in the Private store in the Windows Store for Business]({{site.baseurl}}/media/2016/12/07_WindowsStoreBusiness-PrivateStore.png)*Filtering on apps in the Private store in the Windows Store for Business*</figure>
+![Filtering on apps in the Private store in the Windows Store for Business]({{site.baseurl}}/media/2016/12/07_WindowsStoreBusiness-PrivateStore.png)*Filtering on apps in the Private store in the Windows Store for Business*
 
 As mentioned above, **add those apps to the Inventory that you want to target for removal from end-user devices**. This includes the inbox apps and those that appear by default on the Start menu. This will provide the opportunity to target apps for removal using device management tools.
 
-![Add even unwanted apps to the Windows Store for Business]({{site.baseurl}}/media/2016/12/TargettingUnwantedApps.png)*Add even unwanted apps to the Windows Store for Business*</figure>
+![Add even unwanted apps to the Windows Store for Business]({{site.baseurl}}/media/2016/12/TargettingUnwantedApps.png)*Add even unwanted apps to the Windows Store for Business*
 
 #### Assigning Apps
 
 [Applications can be assigned to people](https://technet.microsoft.com/en-au/itpro/windows/manage/assign-apps-to-employees) (and licenses managed) from the Window Store for Business. However, this is largely not scaleable as only individual users can be selected.
 
-![Assigning an app in the Windows Store for Business]({{site.baseurl}}/media/2016/12/AssignToPeople.png)*Assigning an app in the Windows Store for Business*</figure>
+![Assigning an app in the Windows Store for Business]({{site.baseurl}}/media/2016/12/AssignToPeople.png)*Assigning an app in the Windows Store for Business*
 
 From a user experience perspective, apps are also not automatically assigned, instead the user will receive an email with a link to the apps which opens in the Store, or assigned apps can be viewed and installed from the My Library section in the Store app.
 
-![My Library in the Windows 10 Store app]({{site.baseurl}}/media/2016/12/Windows10StoreAppMyLibrary.png)*My Library in the Windows 10 Store app*</figure>
+![My Library in the Windows 10 Store app]({{site.baseurl}}/media/2016/12/Windows10StoreAppMyLibrary.png)*My Library in the Windows 10 Store app*
 
 A better approach will be to use a management tool that enables automatic deployment (or removal) of apps to users or devices, which I'll cover in upcoming articles.
 

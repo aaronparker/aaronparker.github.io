@@ -46,7 +46,7 @@ Microsoft has recently stated [the Enterprise Mobility Suite is the fastest grow
 
 In any of the 3 scenarios above and the Business Store enabled, users can install apps on their devices from the list of apps that IT has subscribed to:
 
-![Windows Store for Business in Windows 10 1511]({{site.baseurl}}/media/2016/07/Store-1511.png)*Windows Store for Business in Windows 10 1511*</figure>
+![Windows Store for Business in Windows 10 1511]({{site.baseurl}}/media/2016/07/Store-1511.png)*Windows Store for Business in Windows 10 1511*
 
 # Showing Only the Business Store
 
@@ -60,7 +60,7 @@ New-ItemProperty -Path $RegPath -Name "value" -Value 1 -Force</pre>
 
 This results in a curated view only of the Store, which could look something like this:
 
-![Windows Store showing the Private Store only, in Windows 10 Pro 1511]({{site.baseurl}}/media/2016/07/Parallels-Windows-10-1511-Private-Store-only.png)*Windows Store showing the Private Store only, in Windows 10 Pro 1511*</figure>
+![Windows Store showing the Private Store only, in Windows 10 Pro 1511]({{site.baseurl}}/media/2016/07/Parallels-Windows-10-1511-Private-Store-only.png)*Windows Store showing the Private Store only, in Windows 10 Pro 1511*
 
 So without resorting hacking our Windows 10 image or AppLocker or Windows Firewall controls on the Store, IT now has some control over what users see and which applications can be added to their PCs.
 
@@ -70,7 +70,7 @@ It's not all roses though - users can still directly access applications from th
 
 To see bypassing the Business Store, search the web for an example app, e.g. <a href="https://www.microsoft.com/en-au/store/apps/facebook/9wzdncrfj2wl" target="_blank">the Windows 10 Facebook app</a>. A user can click on the 'Get the app' button on that page which will launch the Store:
 
-![Facebook for Windows 10]({{site.baseurl}}/media/2016/07/FacebookInStore.png)*Facebook for Windows 10*</figure>
+![Facebook for Windows 10]({{site.baseurl}}/media/2016/07/FacebookInStore.png)*Facebook for Windows 10*
 
 A user can click on 'Free' button. If the user can add a Microsoft account to Windows, they can install the app. To prevent that, you'll want to [block Microsoft accounts](https://technet.microsoft.com/en-us/itpro/windows/keep-secure/accounts-block-microsoft-accounts).
 
@@ -80,7 +80,7 @@ Along with the changes to the [Group Policy that hides the Store](https://suppor
 
 Shown here is the Windows Store on the same PC, running Windows 10 Pro upgraded from 1511 to 1607. With the policy still in place, the public links are shown again:
 
-![Windows Store with the Private Store enabled in Windows 10 Pro 1607]({{site.baseurl}}/media/2016/07/Parallels-Windows-10-1607-Store.png)*Windows Store with the Private Store enabled in Windows 10 Pro 1607*</figure>
+![Windows Store with the Private Store enabled in Windows 10 Pro 1607]({{site.baseurl}}/media/2016/07/Parallels-Windows-10-1607-Store.png)*Windows Store with the Private Store enabled in Windows 10 Pro 1607*
 
 With Windows 10 Enterprise or Education editions, I can maintain full control over the consumer user experiences in Windows. Organisations running Windows 10 Pro will not be able to implement these controls.
 

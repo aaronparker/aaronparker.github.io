@@ -48,23 +48,23 @@ Note that this article has been written from what I can gather by installing an
 
 When starting the Drive Mapper the user is prompted for their ShareFile credentials. If the ShareFile administrator has not enabled the Drive Mapper, the user might see a message telling them they're not authorised to run the client.
 
-![ShareFile Drive Mapper login]({{site.baseurl}}/media/2016/05/ShareFileLogin2Failed.png)*ShareFile Drive Mapper login*</figure>
+![ShareFile Drive Mapper login]({{site.baseurl}}/media/2016/05/ShareFileLogin2Failed.png)*ShareFile Drive Mapper login*
 
 Once logged in, a drive mapped to the user's ShareFile data with an icon overlay, can be accessed from Explorer. An administrator also has the option to map into a local folder rather than a drive letter.
 
-![ShareFile Drive in Explorer]({{site.baseurl}}/media/2016/05/ShareFileDriveMyComputer.png)*ShareFile Drive in Explorer*</figure>
+![ShareFile Drive in Explorer]({{site.baseurl}}/media/2016/05/ShareFileDriveMyComputer.png)*ShareFile Drive in Explorer*
 
 The client supports ShareFile links via the right-click menu:
 
-![ShareFile Drive Mapper right click options]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperRightClickShare.png)*ShareFile Drive Mapper right click options*</figure>
+![ShareFile Drive Mapper right click options]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperRightClickShare.png)*ShareFile Drive Mapper right click options*
 
 From a user perspective, accessing data is consistent and familiar.
 
-![ShareFile Drive top folder]({{site.baseurl}}/media/2016/05/ShareFileDriveTopFolder.png)*ShareFile Drive top folder*</figure>
+![ShareFile Drive top folder]({{site.baseurl}}/media/2016/05/ShareFileDriveTopFolder.png)*ShareFile Drive top folder*
 
 If I access a folder to a Connector location, I am prompted for authentication, which is then cached. With federation and SSO, you could remove the need for the user to authenticate multiple times - once for the initial logon and then this authentication prompt.
 
-![Authenticating to a Connector location]({{site.baseurl}}/media/2016/05/DriveMapper-Connector.png)*Authenticating to a Connector location*</figure>
+![Authenticating to a Connector location]({{site.baseurl}}/media/2016/05/DriveMapper-Connector.png)*Authenticating to a Connector location*
 
 Simple enough, so far and the user experience is much as I would expect. Let's look a bit deeper.
 
@@ -72,7 +72,7 @@ Simple enough, so far and the user experience is much as I would expect. Let's l
 
 This client won't be enabled by default within ShareFile. Before installing on a client PC, enable in the Admin section in the ShareFile website under _Admin / Power Tools_:
 
-![Enabling the ShareFile Driver Mapper]({{site.baseurl}}/media/2016/05/ShareFileAdminEnableDriveMapper.png)*Enabling the ShareFile Driver Mapper*</figure>
+![Enabling the ShareFile Driver Mapper]({{site.baseurl}}/media/2016/05/ShareFileAdminEnableDriveMapper.png)*Enabling the ShareFile Driver Mapper*
 
 # Installation
 
@@ -80,11 +80,11 @@ The Drive Mapper tool is [available from the Citrix Download site](https://www.c
 
 Some [documentation is available](https://www.citrix.com/content/dam/citrix/en_us/documents/downloads/sharefile/Drive-Mapper-3.2-release-notes.pdf), but the installation and configuration is very straightforward. If using the EXE installer, you can perform a silent install with command line options (the MSI should of course support that natively).
 
-![Share File Drive Mapper Installer switches]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperInstaller.png)*Share File Drive Mapper Installer switches*</figure>
+![Share File Drive Mapper Installer switches]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperInstaller.png)*Share File Drive Mapper Installer switches*
 
 The Drive Mapper does install a driver, which unfortunately is not yet signed for the WHQL.
 
-![Citrix ShareFile Driver]({{site.baseurl}}/media/2016/05/ShareFileDriver.png)*Citrix ShareFile Driver*</figure>
+![Citrix ShareFile Driver]({{site.baseurl}}/media/2016/05/ShareFileDriver.png)*Citrix ShareFile Driver*
 
 Hopefully, this changes because this presents a road bump for automated installations.
 
@@ -92,11 +92,11 @@ Hopefully, this changes because this presents a road bump for automated installa
 
 The ShareFile Drive Mapper client is made up of two main components of interest - the ShareFileDriveMapper.exe executable and a filter driver.
 
-![Citrix ShareFile Drive Mapper Binaries]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperBinaries.png)*Citrix ShareFile Drive Mapper Binaries*</figure>
+![Citrix ShareFile Drive Mapper Binaries]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperBinaries.png)*Citrix ShareFile Drive Mapper Binaries*
 
 [The filter driver](https://msdn.microsoft.com/en-us/library/windows/hardware/ff541610%28v=vs.85%29.aspx) is a [legacy filter driver, rather than a minifilter driver](https://blogs.msdn.microsoft.com/ntdebugging/2013/03/25/understanding-file-system-minifilter-and-legacy-filter-load-order/). I assume the reason for this is that you need to [request an altitude for minifilters from Microsoft](https://msdn.microsoft.com/en-us/library/windows/hardware/dn508284(v=vs.85).aspx), so perhaps in this initial version, Citrix has decided to make this tool available without having delays due to Microsoft processes (similar to the lack of WHQL certification).
 
-![Showing loaded filter drivers and the ShareFile filter driver]({{site.baseurl}}/media/2016/05/ShareFileFilterDriver.png)*Showing loaded filter drivers and the ShareFile filter driver*</figure>
+![Showing loaded filter drivers and the ShareFile filter driver]({{site.baseurl}}/media/2016/05/ShareFileFilterDriver.png)*Showing loaded filter drivers and the ShareFile filter driver*
 
 The ShareFileDriveMapper executable then provides the user interface. If this executable is not running, the drive does disappear from Explorer, so something to watch out for.
 
@@ -104,7 +104,7 @@ The ShareFileDriveMapper executable then provides the user interface. If this e
 
 The client provides a number of settings to the user including setting the drive letter used, the cache size, clearing the local cache and file link expiration policy.
 
-![ShareFile Driver Mapper settings]({{site.baseurl}}/media/2016/05/ShareFileSettings.png)*ShareFile Driver Mapper settings*</figure>
+![ShareFile Driver Mapper settings]({{site.baseurl}}/media/2016/05/ShareFileSettings.png)*ShareFile Driver Mapper settings*
 
 These settings can be managed with Group Policy as we'll see later.
 
@@ -118,21 +118,21 @@ The client uses a number of locations on a machine:
 
 These locations include settings for the client and the local cache.
 
-![AppData Roaming folder]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperAppDataRoaming.png)*AppData Roaming folder*</figure>
+![AppData Roaming folder]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperAppDataRoaming.png)*AppData Roaming folder*
 
 The local cache will be interesting to look at as we use the client and copy files up or down or access files stored in ShareFile.
 
-![The Drive Mapper local cache]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperLocalAppData.png)*The Drive Mapper local cache*</figure>
+![The Drive Mapper local cache]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperLocalAppData.png)*The Drive Mapper local cache*
 
 # Group Policy Management
 
 Citrix provides both User and Computer configuration Group Policy settings giving you detailed control over the client. User policy settings include control over the ShareFile instance (Account) and file types allowed.
 
-![Group Policy - User Configuration]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperUserPolicies.png)*Group Policy - User Configuration*</figure>
+![Group Policy - User Configuration]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperUserPolicies.png)*Group Policy - User Configuration*
 
 Computer settings provide control over the cache size and update settings etc. Note that under XenApp, auto-updates will be disabled by default, so GP can be used to enforce this default setting.
 
-![Group Policy - Computer configuration]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperComputerPolicies.png)*Group Policy - Computer configuration*</figure>
+![Group Policy - Computer configuration]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperComputerPolicies.png)*Group Policy - Computer configuration*
 
 # Performance
 
@@ -148,7 +148,7 @@ Here's a look at the client performance as I browse my ShareFile drive. In this 
 
 If we look at the cache folder again after files have been accessed, you'll see the files appearing the cache folder in real time.
 
-![The Drive Mapper local cache]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperLocalAppData.png)*The Drive Mapper local cache*</figure>
+![The Drive Mapper local cache]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperLocalAppData.png)*The Drive Mapper local cache*
 
 Each of these cache files is a copy of the actual file data - I can copy out a file from here, rename it with the correct file extension and open the file. The filter driver is what makes it possible to access the file data on the ShareFile drive and for that data to be seamlessly cached locally.
 

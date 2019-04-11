@@ -40,7 +40,7 @@ Kees also presented a session at Citrix Synergy 2016 on MCS and PVS that goes in
 
 I've updated that image for XenDesktop 7.11. Now the available deployment options for MCS are:
 
-![Deployment options available in XenDesktop Machine Creation Services]({{site.baseurl}}/media/2016/10/MCS-deployment-options.png)*Deployment options available in XenDesktop Machine Creation Services (credit: Kees Baggerman & Martijn Bosschaart)*</figure>
+![Deployment options available in XenDesktop Machine Creation Services]({{site.baseurl}}/media/2016/10/MCS-deployment-options.png)*Deployment options available in XenDesktop Machine Creation Services (credit: Kees Baggerman & Martijn Bosschaart)*
 
 As you can see, there are quite a number of deployment options in MCS now, so this can't make sizing straight-forward.
 

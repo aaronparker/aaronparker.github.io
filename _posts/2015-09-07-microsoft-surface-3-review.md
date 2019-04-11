@@ -18,7 +18,7 @@ tags:
 ---
 Here's a review of my experiences with the [Microsoft Surface 3](http://www.microsoft.com/surface/en-us/products/surface-3) and some thoughts on the hardware and running Windows 10 on the device.
 
-# Background
+## Background
 
 During the Windows 10 beta, I found myself not having any hardware that I could run the new version of Windows on natively and certainly nothing with touch capabilities. Of course, that's a great excuse to go out a purchase a new laptop or tablet/convertible capable of running Windows 10.
 
@@ -36,7 +36,7 @@ When looking for a device to run Windows 10, I started looking at 8 to 10 inch d
 
 I travel quite a bit, especially long haul flights to the US or South-east Asia / Japan / Korea etc. so a flexible device that can work for me on these flights, especially in economy seats, is useful. I think I settled on the Surface 3, mainly because it's a premium Microsoft device and it was a known quantity for me since I've had previous models and used the most recent versions. First world problems, right?
 
-# Hardware
+## Hardware
 
 Ultimately I purchased the Surface 2 with 2GB RAM, 64GB SSD with a blue Type Cover. Not the inexpensive option when compared to the Dell and Lenovo devices. The keyboard is an optional extra and I didn't get the pen either. I considered purchasing the pen; however given that I would use it so irregularly, I decided against it. The pen would be very useful for drawing architectures over GoToMeeting, but other than that, I haven't seen a use for it for myself.
 
@@ -70,7 +70,7 @@ The screen itself is awesome - it has a 1920&#215;1280 resolution in a 10.1&#824
 
 In short, the hardware is beautiful, a extra USB port would be nice and the keyboard is great but let down by the trackpad. When travelling, this is an excellent device for cramped spaces and switch uses - from writing to watching videos. The kick stand and removable keyboard is a better solution that adding a hardware keyboard to an iPad.
 
-# Software
+## Software
 
 There's nothing installed on the Surface that differentiates it from other Windows 8.1/10 tablets, so from a software perspective you get all of the same operating system features and application software as any other Windows device. There is a Universal Surface app which provides you an overview of the device's features and from there you can calibrate touch and the pen and a couple of other settings. One the best features of the Surface from a software perspective is that you get just Windows and none of the extra unnecessary crap that typically comes with 3rd party hardware.
 
@@ -96,7 +96,7 @@ Continuum is a pretty cool feature that with the changes in the Start menu and t
 
 Cortana has only recently (last week) been made available to additional countries, Australia being one of those. So I've not had long to test it, but it seems to work quite well. It does have some issues with hearing my voice, but I've put that down to poor microphone hardware.
 
-# Performance
+## Performance
 
 The configuration I purchased is the [Intel Atom x7-Z8700](http://ark.intel.com/products/85475/Intel-Atom-x7-Z8700-Processor-2M-Cache-up-to-2_40-GHz), 2GB RAM and 64GB SSD. That's not a great deal of RAM or local storage space, but I've gone with that configuration based on what I my intended use case is. Given that the Surface is already an expensive device, the 4GB/128GB SSD version would have pushed the cost over $1000AU.
 
@@ -104,7 +104,7 @@ I've not done any synthetic testing and if I did, I wouldn't expect stellar resu
 
 So what's performance like after 3 months? In short, very good. In day-to-day usage, I haven't noticed any slow performance and general performance is what I expect from the Atom processor. I don't think this device would be suitable for more demanding users, but that's what the Surface Pro is for. As a device for general users, perhaps with some legacy applications delivered remotely, this would be an excellent choice.
 
-# Conclusion
+## Conclusion
 
 The Surface 3 has replaced my iPad 4 as my tablet device, especially for travel - it's a similar form factor, but does more. While Windows 8 ran extremely well on the device, since running Windows 10 I miss some of the ways that you can interact with Windows 8 from a tablet perspective. Windows 10 however has made some interaction simpler, especially with Continuum. Windows Store / Universal apps have proven quite useable so far and I hope to see this continue as applications are updated for the new platform.
 

@@ -8,7 +8,7 @@ guid: https://stealthpuppy.com/?page_id=5378
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 ---
-# About Aaron Parker
+## About Aaron Parker
 
 <img class="alignleft wp-image-3930 size-full" style="padding-right: 20px; padding-bottom: 20px;" src="https://stealthpuppy.com/media/2009/02/HeadShotCircle.png" alt="Aaron Parker](http://www.insentra.com.au) responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
 
@@ -18,11 +18,11 @@ I have experience with primarily Microsoft, Citrix and VMware-based solutions an
 
 I have spent the majority of my career in the channel working for system integrators in Australia and the UK and have extensive experience in the finance and transport sectors. Prior to working at Insentra, I was the pre-sales lead for the APAC region for Atlantis Computing.
 
-# About stealthpuppy.com
+## About stealthpuppy.com
 
 This site (generally) focuses on end-user computing based topics and is a way for me to not only write about interesting topics, but a way to give back the IT community. If I've been able to help you in your work in any way, that provides me with much satisfaction.
 
-# Awards
+## Awards
 
 I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conferences in the US and Europe since 2011, writing here since 2006 and contributing to the community in a number of other areas and am very happy and fortunate to have been awarded the following community recognitions:  
 **Current Awards**
@@ -83,7 +83,7 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
   </tr>
 </table>
 
-# Speaking
+## Speaking
 
 Below is a selection of upcoming and recent speaking engagements and recordings, where available:
 
@@ -118,7 +118,7 @@ Below is a selection of upcoming and recent speaking engagements and recordings,
   * BriForum Boston, July 2014 - Hands Off My Gold Image!
   * Citrix Synergy, Los Angeles - Hands Off My Gold Image!
 
-# Publications
+## Publications
 
 Below is a list of publications that I've written, co-authored or contributed to:
 
@@ -126,6 +126,6 @@ Below is a list of publications that I've written, co-authored or contributed to
   * October 2013: [User Environment Management Smackdown](http://www.brianmadden.com/opinion/Fight-Appsense-Citrix-Immidio-Microsoft-Liquidware-Labs-PolicyPak-RES-Scense-and-others)
   * May 2016: [Ultimate Desktop Virtualization Best Practices Guide](http://community.atlantiscomputing.com/blog/Atlantis/May-2016/Ultimate-Virtualization-Best-Practices-Guide)
 
-# <span style="color: #ff0000;">Disclaimer</span>
+## <span style="color: #ff0000;">Disclaimer</span>
 
 The views expressed on this blog are mine alone and not (necessarily) those of any current, future or former client or employer. As I reserve the right to review my position based on future evidence, they may not even reflect my own views by the time you read them. If in doubt, ask.

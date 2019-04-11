@@ -28,33 +28,33 @@ Here's how to create an Office 365 ProPlus package in the [new Intune console](h
 
 Creating an Office package is very simple - navigate to the [Mobile apps section in the Intune console](https://portal.azure.com/#blade/Microsoft_Intune_Apps/MainMenu/1):
 
-![Adding an app in the Intune console]({{site.baseurl}}/media/2017/07/01_IntuneAddApp1.png)*Adding an app in the Intune console*</figure>
+![Adding an app in the Intune console]({{site.baseurl}}/media/2017/07/01_IntuneAddApp1.png)*Adding an app in the Intune console*
 
 Add a new app and select the 'Office 365 ProPlus Suite (Windows 10)' option:
 
-![Select the Office 365 ProPlus App type]({{site.baseurl}}/media/2017/07/02_AddOffice365ProPlus1.png)*Select the Office 365 ProPlus App type*</figure>
+![Select the Office 365 ProPlus App type]({{site.baseurl}}/media/2017/07/02_AddOffice365ProPlus1.png)*Select the Office 365 ProPlus App type*
 
 This allows you to select the applications to include in this package - only selected applications will be included in the package. Note that if you have some users who require Project or Visio, create seperate packages that include these applications along with Office, rather than attempting to deploy them separately.
 
-![Select the app to be included in this package]({{site.baseurl}}/media/2017/07/03_SelectApps.png)*Select the app to be included in this package*</figure>
+![Select the app to be included in this package]({{site.baseurl}}/media/2017/07/03_SelectApps.png)*Select the app to be included in this package*
 
 Enter information for the application package - you'll need to specify the Suite Name, Description and optionally add the URL information shown in the screenshot below.
 
-![Configure options for the package]({{site.baseurl}}/media/2017/07/04_ConfigurePackage01.png)*Configure options for the package*</figure>
+![Configure options for the package]({{site.baseurl}}/media/2017/07/04_ConfigurePackage01.png)*Configure options for the package*
 
 Choose whether to deploy the 32-bit or 64-bit version of Office and the [Update channel](https://support.office.com/en-us/article/Overview-of-update-channels-for-Office-365-ProPlus-9ccf0f13-28ff-4975-9bd2-7e4ea2fefef4). The 32-bit version on the Deferred update channel will suit most users.
 
-![Configure suite settings]({{site.baseurl}}/media/2017/07/06_SuiteSettings.png)*Configure suite settings*</figure>
+![Configure suite settings]({{site.baseurl}}/media/2017/07/06_SuiteSettings.png)*Configure suite settings*
 
 Add language support if required. English US will be the default if not languages are explicitly selected.
 
-![Select languages to include in this package]({{site.baseurl}}/media/2017/07/07_SelectLanguages.png)*Select languages to include in this package*</figure>
+![Select languages to include in this package]({{site.baseurl}}/media/2017/07/07_SelectLanguages.png)*Select languages to include in this package*
 
 # Assign the App
 
 In most cases, this application package will be assigned to users so that Office is available on any Windows 10 PC they sign into. Something to note in the assignment types is that only Required and Uninstall are available. The Available type, that allows users to install Office from the Company Portal, is not available, which means that the Office suite will be deployed as soon as you add an assignment.
 
-![Adding assignments to deploy the Office suite]({{site.baseurl}}/media/2017/07/08_AssignApp.png)*Adding assignments to deploy the Office suite*</figure>
+![Adding assignments to deploy the Office suite]({{site.baseurl}}/media/2017/07/08_AssignApp.png)*Adding assignments to deploy the Office suite*
 
 If you would prefer to make the Office suite available for users to install themselves, you'll need to create a custom deployment using the [Office Toolkit](http://officedev.github.io/Office-IT-Pro-Deployment-Scripts/XmlEditor.html) to create a single MSI installer that you can upload to Intune as a Windows Line of Business application. This will allow you to chose Available as an assignment type.
 

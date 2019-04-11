@@ -24,37 +24,37 @@ To help explain the code, I'll first run through the Create Delivery Group wiza
 
 _[Add-BrokerMachinesToDesktopGroup](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/add-brokermachinestodesktopgroup-xd75.html)_ assigns virtual machines from a specified Machine Catalog to the new Delivery Group.
 
-![Selecting the Machine Catalog and the number of desktops - Add-BrokerMachinesToDesktopGroup -Catalog &quot;Windows 8 x86&quot; -Count 5]({{site.baseurl}}/media/2014/08/Machines.png)*Selecting the Machine Catalog and the number of desktops - Add-BrokerMachinesToDesktopGroup -Catalog "Windows 8 x86" -Count 5*</figure>
+![Selecting the Machine Catalog and the number of desktops - Add-BrokerMachinesToDesktopGroup -Catalog &quot;Windows 8 x86&quot; -Count 5]({{site.baseurl}}/media/2014/08/Machines.png)*Selecting the Machine Catalog and the number of desktops - Add-BrokerMachinesToDesktopGroup -Catalog "Windows 8 x86" -Count 5*
 
 Specify the delivery type for this Delivery Group when using _[New-BrokerDesktopGroup](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerdesktopgroup-xd75.html)_.
 
-![Selecting the delivery type - New-BrokerDesktopGroup  -DeliveryType 'DesktopsOnly']({{site.baseurl}}/media/2014/08/DeliveryType.png)*Selecting the delivery type - New-BrokerDesktopGroup -DeliveryType 'DesktopsOnly'*</figure>
+![Selecting the delivery type - New-BrokerDesktopGroup  -DeliveryType 'DesktopsOnly']({{site.baseurl}}/media/2014/08/DeliveryType.png)*Selecting the delivery type - New-BrokerDesktopGroup -DeliveryType 'DesktopsOnly'*
 
 [_New-BrokerEntitlementPolicyRule_](#http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerentitlementpolicyrule-xd75.html) is used to assign user or group accounts to the Delivery Group.
 
-![Assigning users to the Desktop Group - New-BrokerEntitlementPolicyRule -Name &quot;Windows 8 x86_1&quot; -IncludedUsers $brokerUsers -DesktopGroupUid 11]({{site.baseurl}}/media/2014/08/Users.png)*Assigning users to the Desktop Group - New-BrokerEntitlementPolicyRule -Name "Windows 8 x86_1" -IncludedUsers "HOME\Domain Users" -DesktopGroupUid 11*</figure>
+![Assigning users to the Desktop Group - New-BrokerEntitlementPolicyRule -Name &quot;Windows 8 x86_1&quot; -IncludedUsers $brokerUsers -DesktopGroupUid 11]({{site.baseurl}}/media/2014/08/Users.png)*Assigning users to the Desktop Group - New-BrokerEntitlementPolicyRule -Name "Windows 8 x86_1" -IncludedUsers "HOME\Domain Users" -DesktopGroupUid 11*
 
 [_Add-BrokerMachineConfiguration_](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/add-brokermachineconfiguration-xd75.html) adds StoreFront and UPM configurations to a Delivery Group. The function just adds a machine configuration - the configuration is setup separately. To avoid selecting a StoreFront server for the Delivery Group, don't use this function.
 
-![Selecting a StoreFront server - Add-BrokerMachineConfiguration -DesktopGroup &quot;Windows 8 x86&quot; -InputObject @(1005)]({{site.baseurl}}/media/2014/08/StoreFrontAutomatic.png)*Selecting a StoreFront server - Add-BrokerMachineConfiguration -DesktopGroup "Windows 8 x86" -InputObject @(1005)*</figure>
+![Selecting a StoreFront server - Add-BrokerMachineConfiguration -DesktopGroup &quot;Windows 8 x86&quot; -InputObject @(1005)]({{site.baseurl}}/media/2014/08/StoreFrontAutomatic.png)*Selecting a StoreFront server - Add-BrokerMachineConfiguration -DesktopGroup "Windows 8 x86" -InputObject @(1005)*
 
 When calling [_New-BrokerDesktopGroup_](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerdesktopgroup-xd75.html), the Delivery Group name, display or published name and description is specified.
 
-![Group name, Display name and description - New-BrokerDesktopGroup -Name &quot;Windows 8 x86&quot; -PublishedName &quot;Windows 8 x86&quot; -Description &quot;Windows 8 x86 with Office 2013, Pooled desktops&quot;]({{site.baseurl}}/media/2014/08/Summary.png)*Group name, Display name and description - New-BrokerDesktopGroup -Name "Windows 8 x86" -PublishedName "Windows 8 x86" -Description "Windows 8 x86 with Office 2013, Pooled desktops"*</figure>
+![Group name, Display name and description - New-BrokerDesktopGroup -Name &quot;Windows 8 x86&quot; -PublishedName &quot;Windows 8 x86&quot; -Description &quot;Windows 8 x86 with Office 2013, Pooled desktops&quot;]({{site.baseurl}}/media/2014/08/Summary.png)*Group name, Display name and description - New-BrokerDesktopGroup -Name "Windows 8 x86" -PublishedName "Windows 8 x86" -Description "Windows 8 x86 with Office 2013, Pooled desktops"*
 
 The wizard does not expose all settings for the Delivery Group, so additional settings require opening the properties of the new group. These can be set during creation of the group when using PowerShell.
 
 The same call to _[New-BrokerDesktopGroup](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerdesktopgroup-xd75.html)_ is used to specify user settings including colour depth and time zone preferences.
 
-![Controlling various user settings - New-BrokerDesktopGroup -ColorDepth TwentyFourBit -TimeZone &quot;AUS Eastern Standard Time&quot; -SecureIcaRequired $False]({{site.baseurl}}/media/2014/08/UserSettings.png)*Controlling various user settings - New-BrokerDesktopGroup -ColorDepth TwentyFourBit -TimeZone "AUS Eastern Standard Time" -SecureIcaRequired $False*</figure>
+![Controlling various user settings - New-BrokerDesktopGroup -ColorDepth TwentyFourBit -TimeZone &quot;AUS Eastern Standard Time&quot; -SecureIcaRequired $False]({{site.baseurl}}/media/2014/08/UserSettings.png)*Controlling various user settings - New-BrokerDesktopGroup -ColorDepth TwentyFourBit -TimeZone "AUS Eastern Standard Time" -SecureIcaRequired $False*
 
 _[New-BrokerDesktopGroup](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerdesktopgroup-xd75.html)_ and [_New-BrokerPowerTimeScheme_](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokerpowertimescheme-xd75.html) are both used to manage virtual machine power management settings. Setting or modifying the peak and off peak hours isn't friendly either.
 
-![Virtual machine power management settings - New-BrokerPowerTimeScheme -DisplayName 'Weekdays' -DaysOfWeek 'Weekdays' -DesktopGroupUid 11; New-BrokerDesktopGroup -OffPeakDisconnectAction Suspend -OffPeakDisconnectTimeout 15]({{site.baseurl}}/media/2014/08/PowerManagement.png)*Virtual machine power management settings - New-BrokerPowerTimeScheme -DisplayName 'Weekdays' -DaysOfWeek 'Weekdays' -DesktopGroupUid 11; New-BrokerDesktopGroup -OffPeakDisconnectAction Suspend -OffPeakDisconnectTimeout 15*</figure>
+![Virtual machine power management settings - New-BrokerPowerTimeScheme -DisplayName 'Weekdays' -DaysOfWeek 'Weekdays' -DesktopGroupUid 11; New-BrokerDesktopGroup -OffPeakDisconnectAction Suspend -OffPeakDisconnectTimeout 15]({{site.baseurl}}/media/2014/08/PowerManagement.png)*Virtual machine power management settings - New-BrokerPowerTimeScheme -DisplayName 'Weekdays' -DaysOfWeek 'Weekdays' -DesktopGroupUid 11; New-BrokerDesktopGroup -OffPeakDisconnectAction Suspend -OffPeakDisconnectTimeout 15*
 
 [_New-BrokerAccessPolicyRule_](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokeraccesspolicyrule-xd75.html) modifies the access policies. This is called twice - once for connections through NetScaler Gateway and once for direct connections.
 
-![Modifying access policies - New-BrokerAccessPolicyRule -Name &quot;Windows 8 x86_AG&quot; -AllowedConnections 'ViaAG' -AllowedProtocols @('HDX','RDP') -DesktopGroupUid 11 -Enabled $True -IncludedSmartAccessFilterEnabled $True -IncludedSmartAccessTags @() -IncludedUserFilterEnabled $True]({{site.baseurl}}/media/2014/08/AccessPolicy.png)*Modifying access policies - New-BrokerAccessPolicyRule -Name "Windows 8 x86_AG" -AllowedConnections 'ViaAG' -AllowedProtocols @('HDX','RDP') -DesktopGroupUid 11 -Enabled $True -IncludedSmartAccessFilterEnabled $True -IncludedSmartAccessTags @() -IncludedUserFilterEnabled $True*</figure>
+![Modifying access policies - New-BrokerAccessPolicyRule -Name &quot;Windows 8 x86_AG&quot; -AllowedConnections 'ViaAG' -AllowedProtocols @('HDX','RDP') -DesktopGroupUid 11 -Enabled $True -IncludedSmartAccessFilterEnabled $True -IncludedSmartAccessTags @() -IncludedUserFilterEnabled $True]({{site.baseurl}}/media/2014/08/AccessPolicy.png)*Modifying access policies - New-BrokerAccessPolicyRule -Name "Windows 8 x86_AG" -AllowedConnections 'ViaAG' -AllowedProtocols @('HDX','RDP') -DesktopGroupUid 11 -Enabled $True -IncludedSmartAccessFilterEnabled $True -IncludedSmartAccessTags @() -IncludedUserFilterEnabled $True*
 
 Creating the Delivery Group is relatively straight-forward; however there are some additional steps, such as creating a StoreFront server and working out how to manage peak and off peak times, that require a bit more investigation.
 

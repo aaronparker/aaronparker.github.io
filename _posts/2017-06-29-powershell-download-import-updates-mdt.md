@@ -27,7 +27,7 @@ The scripts can be downloaded from GitHub in my MDT repository: [https://github.
 
 ![Downloading and importing updates into MDT via PowerShell]({{site.baseurl}}/media/2017/06/Import.png)*Downloading and importing updates into MDT via PowerShell*
 
-# Get-LatestUpdate
+## Get-LatestUpdate
 
 Much like [Keith's original](https://keithga.wordpress.com/2017/05/21/new-tool-get-the-latest-windows-10-cumulative-updates/), this version of the script will pull the latest update from the JSON feed, query and parse the Microsoft Update Catalog and return the latest cumulative update. With this, you can optionally download the update to the current folder or one specified with the Path parameter.
 
@@ -56,7 +56,7 @@ File       : windows10.0-kb4022716-x64_72cab17aeb72f4e36df375505ba7325c90044119.
 UpdatePath : C:\Updates
 ```
 
-# Import-Update
+## Import-Update
 
 Import-Update.ps1 is used to import update packages from a target folder into the Packages node in an MDT deployment share. This will accept the output from Get-LatestUpdate.ps1 or can be used to import updates that already exist in a target folder, specified by the UpdatePath parameter.
 
@@ -69,7 +69,7 @@ Import-Update.ps1 supports a number of parameters:
   * PackagePath - you can optionally specify a path under the Packages node in the deployment share to import the update packages into
   * Clean - this is a switch parameter that will tell the script to remove any existing update packages in the path specified by PackagePath before importing the new updates.
 
-# Using Both Scripts to Download and Import Updates into MDT
+## Using Both Scripts to Download and Import Updates into MDT
 
 Get-LatestUpdates.ps1 outputs an object that can be passed to Import-Update.ps1 on the pipeline, so a single command line can be used to get the latest update for a specific operating system, download the update locally and import it into an MDT deployment share. For example, I can use the following command line to download the Windows 10 x64 Current Branch (build 15063) and import it into my deployment share used to build Reference images:
 
@@ -87,7 +87,7 @@ In the MDT Workbench, we have the latest Windows 10 Cumulative update in the Pac
 
 Now I have something that I could run as a scheduled task to keep my deployment share always up to date without interaction. Note that both script support verbose output so that you can track what's going on in detail while the script is running.
 
-# Future
+## Future
 
 There are likely some changes and additions I could make to this script, so feedback is welcome. Future changes might include:
 

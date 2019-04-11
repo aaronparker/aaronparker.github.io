@@ -29,7 +29,7 @@ There's a full list of new features in this blog post: [Announcing Adobe Reader
   * [Reader XI Administrative Template](ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/misc/ReaderADMTemplate.zip)
   * [Acrobat XI Administrative Template](ftp://ftp.adobe.com/pub/adobe/acrobat/win/11.x/11.0.00/misc/AcrobatADMTemplate.zip)
 
-# Customisation
+## Customisation
 
 Customisation of Reader XI with the Adobe Customization Wizard XI is the same approach as previous versions and I have a comprehensive post on [deploying Adobe Reader X]({{site.baseurl}}/deployment/deploying-adobe-reader-x/) which will largely apply to XI, but Adobe does have customisation and deployment documentation available:
 
@@ -91,7 +91,7 @@ To create a custom transform file, open the extracted AcroRead.msi, set your req
 
 [table id=30 /]
 
-# Deployment
+## Deployment
 
 Deployment of Reader XI will be largely the same as Reader X and 9 before it, so if you've deployed Reader previously there's little new.
 
@@ -103,6 +103,6 @@ Whilst the Group Policy management support is great and way overdue, there's cur
 
 <img title="ReaderXI-GroupPolicy" src="https://stealthpuppy.com/media/2012/10/ReaderXI-GroupPolicy.png" alt="" width="440" height="165" /> 
 
-# Finally..
+## Finally..
 
 Go forth and deploy.

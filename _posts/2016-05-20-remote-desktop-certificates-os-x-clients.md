@@ -25,15 +25,15 @@ While I may only be configuring certificates in my lab environment, there's not 
 
 Here are the client certificate warnings on various Microsoft Remote Desktop clients, including OS X. First up the original Remote Desktop Connection (mstsc) on Windows:
 
-![Certificate Warning on the Remote Desktop Connection client]({{site.baseurl}}/media/2016/05/remote-desktop-cert-error-mstsc.png)*Certificate Warning on the Remote Desktop Connection client*</figure>
+![Certificate Warning on the Remote Desktop Connection client]({{site.baseurl}}/media/2016/05/remote-desktop-cert-error-mstsc.png)*Certificate Warning on the Remote Desktop Connection client*
 
 The new Remote Desktop Universal app on Windows 10:
 
-![Certificate warning in the Remote Desktop Universal app]({{site.baseurl}}/media/2016/05/remote-desktop-cert-error-uwa.png)*Certificate warning in the Remote Desktop Universal app*</figure>
+![Certificate warning in the Remote Desktop Universal app]({{site.baseurl}}/media/2016/05/remote-desktop-cert-error-uwa.png)*Certificate warning in the Remote Desktop Universal app*
 
 And the Remote Desktop client on OS X 10.11:
 
-![Certificate warning in the Remote Desktop client for OS X]({{site.baseurl}}/media/2016/05/RDP-Invalid-Certificate.png)*Certificate warning in the Remote Desktop client for OS X*</figure>
+![Certificate warning in the Remote Desktop client for OS X]({{site.baseurl}}/media/2016/05/RDP-Invalid-Certificate.png)*Certificate warning in the Remote Desktop client for OS X*
 
 # Configuring the Certificate Template
 
@@ -54,15 +54,15 @@ To create the new template, open the Certificate Templates console and duplicate
 
 Navigate to the Extensions tab, edit the 'Application Policies' extension and remove 'Client Authentication' from the list.
 
-![Remote Desktop template certificate extensions]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions.png)*Remote Desktop template certificate extensions*</figure>
+![Remote Desktop template certificate extensions]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions.png)*Remote Desktop template certificate extensions*
 
 After you added the 'Remote Desktop Authentication' policy, you should see the policies and see in the following dialog box. See below for the actual 'Remote Desktop Authentication' policy.
 
-![Remote Desktop certificate Application Policies extension]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions-Application-Policies.png)*Remote Desktop certificate Application Policies extension*</figure>
+![Remote Desktop certificate Application Policies extension]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions-Application-Policies.png)*Remote Desktop certificate Application Policies extension*
 
 Adding the 'Remote Desktop Authentication' policy requires adding a new extension named 'Remote Desktop Authentication' (or similar) with an object value of "1.3.6.1.4.1.311.54.1.2" (excluding quotes). **Edit** the **Application Policies**, click **Add**, then click **New** and enter the values as above.
 
-![The Remote Desktop Authentication policy extension]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions-Remote-Desktop-Authentication.png)*The Remote Desktop Authentication policy extension*</figure>
+![The Remote Desktop Authentication policy extension]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions-Remote-Desktop-Authentication.png)*The Remote Desktop Authentication policy extension*
 
 Save the template and configure your CA to issue the new template. In my lab my certificate template display name 'Remote Desktop Computer'. Since my first template failed, it's actually called 'Remote Desktop Computer v2'. However, the important name to note for the next step is the actual template name, which can be found on the General tab of the template. In my case this is 'RemoteDesktopComputerv2' (the display name, minus the spaces).
 
@@ -74,7 +74,7 @@ Computer Configuration / Administrative Templates / Windows Components / Remote 
 
 Add the name of the certificate template and shown in the screenshot below:
 
-![Server authentication certificate template]({{site.baseurl}}/media/2016/05/Server-Authentication-Certificate-Template.png)*Enabling the 'Server authentication certificate template' in Group Policy*</figure>
+![Server authentication certificate template]({{site.baseurl}}/media/2016/05/Server-Authentication-Certificate-Template.png)*Enabling the 'Server authentication certificate template' in Group Policy*
 
 Once a Group Poliy refresh occurs or on the next boot, the target Windows machines will autoenroll for the certificate and configure their RDP listener.
 
@@ -86,7 +86,7 @@ Navigate to the URL of your certificate server (e.g. http://cert1/certsrv) and d
 
 Once installed the certificate is not automatically trused as you can see below:
 
-![OSX root CA certificate]({{site.baseurl}}/media/2016/05/OSX-root-CA-certificate.png)*My root CA certificate in Keychain on OS X*</figure>
+![OSX root CA certificate]({{site.baseurl}}/media/2016/05/OSX-root-CA-certificate.png)*My root CA certificate in Keychain on OS X*
 
 Set the certificate to be trusted by selecting 'Alway Trust' from the 'When using this certificate' option. Close the certificate properties window and you should be prompted for your password to save the changes. Now when connecting to PCs via the Remote Desktop client, you should no longer receive certificate warnings.
 

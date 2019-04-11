@@ -26,15 +26,13 @@ Now that we've covered the main questions in the survey - [which hypervisors are
 
 Here are the results for how often master images are updated based on 501 responses to this question:
 
-![How often master images are updated]({{site.baseurl}}/media/2015/11/HowOftenAreImagesUpdated.png)*How often master images are updated*</figure>
+![How often master images are updated]({{site.baseurl}}/media/2015/11/HowOftenAreImagesUpdated.png)*How often master images are updated*
 
 Monthly patching is ideal and the majority of organisations appear to be standardising on monthly updates. Adding those respondents who patch every 2 months, 62.7% of organisations patch quite regularly.
 
 Patch schedules that are every quarter or longer are of concern - perhaps understandable in environments sensitive to changes, but still concerning to see that many desktops are running un-patched for considerable periods of time. We only need to look at [last year's most vulnerable operating systems and applications](http://www.gfi.com/blog/most-vulnerable-operating-systems-and-applications-in-2014/) to get a sense of what risk our desktops are at. 2015 is looking to provide [a record number of updates from Microsoft](http://news.softpedia.com/news/Record-Number-of-Microsoft-Patches-in-2015-Less-Secure-Windows-or-More-Active-Hackers-481007.shtml).
 
 ## Patching by Average Organisation Size
-
-## 
 
 Based on our data, here is the average user base for organisations based on patch schedules:
 
@@ -48,8 +46,6 @@ It would be nice to be able to analyse a much larger sample set, as we see a cl
 Do larger organisation fare best? This table lists the patch schedules for organisations 10,000 users and over.
 
 [table id=39 /]
-
-## 
 
 ## What About Other?
 

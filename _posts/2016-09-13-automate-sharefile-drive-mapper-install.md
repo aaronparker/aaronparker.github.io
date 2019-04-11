@@ -19,7 +19,7 @@ tags:
 ---
 Automating the installation of the Citrix ShareFile Drive Mapper requires deploying a code signing certificate to target machines before setup will complete. If you've installed the Drive Mapper client, you will have seen the following dialog box during setup:
 
-![Citrix ShareFile Driver]({{site.baseurl}}/media/2016/05/ShareFileDriver.png)*Citrix ShareFile Driver prompt during install*</figure>
+![Citrix ShareFile Driver]({{site.baseurl}}/media/2016/05/ShareFileDriver.png)*Citrix ShareFile Driver prompt during install*
 
 [Mike Nelson](https://twitter.com/nelmedia) had some challenges deploying the client, so I've documented the process here.
 
@@ -27,11 +27,11 @@ Automating the installation of the Citrix ShareFile Drive Mapper requires deploy
 
 Manually install the Driver Mapper on a target machine and view the local certificates of the local computer with the Certificates snap-in (via mmc.exe). Open the **Trusted Publishers** folder to view the Citrix code signing certificate:
 
-![The code signing certificate in Certificate Manager]({{site.baseurl}}/media/2016/09/Capture.png)*Citrix ShareFile Drive Mapper DigiCert code signing certificate*</figure>
+![The code signing certificate in Certificate Manager]({{site.baseurl}}/media/2016/09/Capture.png)*Citrix ShareFile Drive Mapper DigiCert code signing certificate*
 
 View the properties of the certificate and you can see that it's been issued by DigiCert:
 
-![Citrix ShareFile Drive Mapper Digicert code signing certificate]({{site.baseurl}}/media/2016/09/CitrixCodeCertificateProperties.png)*Citrix ShareFile Drive Mapper Digicert code signing certificate*</figure>
+![Citrix ShareFile Drive Mapper Digicert code signing certificate]({{site.baseurl}}/media/2016/09/CitrixCodeCertificateProperties.png)*Citrix ShareFile Drive Mapper Digicert code signing certificate*
 
 Export the certificate to a local file (from the **Details** tab with **Copy to File...**) using the default DER encoded binary X.509 format.
 
@@ -43,7 +43,7 @@ Here is a couple of ways of deploying the code signing certificate to clients:
 
 Certificates can be deployed to the **Trusted Publishers** store via a Group Policy Object. Import the certificate into the **Public Key Policies** node under **Security Settings** in a GPO applied to an OU containing the target computer accounts.
 
-![Deploying the code signing certificate via Group Policy]({{site.baseurl}}/media/2016/09/DeployCertViaGroupPolicy.png)*Deploying the code signing certificate via Group Policy*</figure>
+![Deploying the code signing certificate via Group Policy]({{site.baseurl}}/media/2016/09/DeployCertViaGroupPolicy.png)*Deploying the code signing certificate via Group Policy*
 
 Target computer will, of course, need to be Active Directory domain members for the certificate to be deployed in this manner. As well as this, the policy will have to be processed before the client is installed.
 

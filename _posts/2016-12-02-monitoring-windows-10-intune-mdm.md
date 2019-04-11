@@ -22,7 +22,7 @@ In a previous article, I wrote about [the differences between managing Windows 1
 
 The reason for this is that the MDM channel in Windows 10 does not report status for these components, while the Intune Client installs the Microsoft Mangement Agent and reports this status via the Microsoft Operations Management Suite (OMS). We can see the difference in the Intune management console for environments managed with the Intune client vs. MDM.
 
-# Intune Client vs. MDM
+## Intune Client vs. MDM
 
 If we look at an environment that uses the Intune Client for management, Windows update and Endpoint Protection status are reported. See the _Updates_ and _Endpoint Protection_ tiles in the screenshot below.
 
@@ -34,7 +34,7 @@ In an environment with machines managed via the MDM channel only, these tiles ar
 
 This information being reported from clients is really important to have better visibility into the current status of those machines across your estate. With the [current differences in the way that Intune manages Windows 10 PCs]({{site.baseurl}}/windows-10-management-intune/), you're forced to make a choice between manageability and visibility.
 
-# Monitoring for MDM Clients
+## Monitoring for MDM Clients
 
 For PCs managed with the Intune client, Intune leverages the [Microsoft Operations Management Suite](https://www.microsoft.com/en-us/cloud-platform/operations-management-suite) (OMS), or at least Log Analytics, to gather this data and present it from within the Intune console. This is seamless to the administrator which means no additional steps taken other than setting up the Intune subscription. 
 
@@ -84,7 +84,7 @@ Because there is no direct integration with Intune, I have no remediation action
 
 For Windows 10 PCs managed with MDM, we have a reasonable amount of control of the Windows Defender configuration, but for Windows Update, basic settings such as deferred updates and upgrades and reboot windows can be controlled, but individual updates cannot be managed as is the case for PCs managed with the Intune client.
 
-# Deploying the OMS Agent via MDM
+## Deploying the OMS Agent via MDM
 
 To enable PCs to report data to the OMS workspace, we need to deploy the Microsoft Monitoring Agent to managed devices. To do that we need the OMS agent (used to send data to OMS), the OMS Workspace ID (used to uniquely identify the OMS Workspace) and the Workspace Key (used to authenticate to the Workspace).
 
@@ -150,7 +150,7 @@ In my example, I have added these arguments with my specific Workspace ID and Ke
 
 Once the agent is deployed out to managed machines, the Operations Management Suite console will display data related to the components that you're monitoring. For Update Management and Antimalware Assessment, this will provide details that you didn't have previously.
 
-# Conclusion
+## Conclusion
 
 Windows 10 releases are moving pretty fast with about 2 major release every 12-months so far. MDM management will continue to mature and improve so we may eventually have this reporting available without requiring this additional agent or approach.
 

@@ -14,7 +14,7 @@ tags:
   - App-V
   - PowerShell
 ---
-![App-V Server 5.0 Setup with missing prerequisites]({{site.baseurl}}/media/2014/09/AppV-Prereqs.png)*App-V Server 5.0 Setup with missing prerequisites*</figure>
+![App-V Server 5.0 Setup with missing prerequisites]({{site.baseurl}}/media/2014/09/AppV-Prereqs.png)*App-V Server 5.0 Setup with missing prerequisites*
 
 While I'd much rather recommend that you configure a Windows Server that will host the App-V 5.0 server components via [a solution such as MDT]({{site.baseurl}}/briforum-2014-hands-off-my-gold-image-the-slides/) with the required IIS components enabled in an automated build, here's how to add the components with PowerShell.
 

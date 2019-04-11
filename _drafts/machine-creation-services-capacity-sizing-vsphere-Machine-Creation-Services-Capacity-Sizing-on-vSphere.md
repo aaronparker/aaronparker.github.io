@@ -33,7 +33,7 @@ In this article, I'll cover the deployment options at a high level, including:
 
 To keep this sizing exercise simple, I have used a single data store that contains both my master image and the Machine Catalogs. The environment is based on vSphere 6. I'm using a lab environment with local storage only; however, the approach should be the same for just about any environment with XenDesktop on vSphere.
 
-# Master Image
+## Master Image
 
 The master image is Windows Server 2016 with a set of applications including Office. Initially, the image has two snapshots created in the process of provisioning and updating the image. Thus the image consists of:
 
@@ -63,7 +63,7 @@ With each update to the master image, you'll see snapshots growing. Looking at m
 
 What started at 14GB has now grown to a total of 31GB with installing VDA updates, the FSLogix agent, Java runtimes and Windows Updates.
 
-# MCS Machine Catalogs
+## MCS Machine Catalogs
 
 The configuration choices made during the creation of a Machine Catalog can impact the way in which virtual machines are configured and the capacity consumed. The following choices will result in slightly different inputs for our sizing:
 
@@ -177,7 +177,7 @@ Deployment of [full clones via MCS is now possible in XenDesktop 7.11](https://w
 
 Once a full clone is deployed, it is persistent while managed and updated through mechanisms outside of XenDesktop. The potential capacity that a full clone can consume will be the full size of the virtual disk as assigned to the master image.
 
-# Virtual Machine Sizing on vSphere
+## Virtual Machine Sizing on vSphere
 
 To correctly size for Machine Creation Services on Hyper-V, let's summarise the storage impact that MCS has with vSphere deployments:
 
@@ -207,7 +207,7 @@ Other files used in virtual machine deployment include:
   * **Personal vDisks** - the default size is **10GB** and is shared between the user profile and user installed apps, but can be placed on separate storage
   * **AppDisks** - the size will vary based on specific applications sizes installed in the disk. AppDisks need to be on the same datastore as the virtual machines.
 
-# Recommendations
+## Recommendations
 
 Sizing storage capacity for Machine Creation Services isn't something that you'll do in isolation or perhaps even do once - design, testing, piloting and monitoring in production will be key to a successful deployment. Here are a few recommendations for sizing storage capacity:
 
@@ -216,7 +216,7 @@ Sizing storage capacity for Machine Creation Services isn't something that you'l
   * Boot virtual machines and watch the sizes of temporary cache disks and differencing disks to understand disk growth
   * AppDisks or 3rd party layering solutions can enable you to reduce MCS storage capacity by sharing application images across VM instances
 
-# Calculating Capacity
+## Calculating Capacity
 
 Based on the information in this article, to size capacity with Machine Creation Services on vSphere, the calculation will require answering a number of questions or inputs. At a high level this involves:
 
@@ -236,7 +236,7 @@ Based on the information in this article, to size capacity with Machine Creation
 
 Calculating storage capacity with this approach should provide you with a reasonably accurate picture of the total capacity to be consumed by MCS on that data store, before storage optimisation solutions such as deduplication and compression.
 
-# Conclusion
+## Conclusion
 
 While MCS itself is simple to design for and implement, recent flexibility and performance improvements introduced with XenDesktop 7.9 and 7.11, requires some additional considerations for storage capacity.
 

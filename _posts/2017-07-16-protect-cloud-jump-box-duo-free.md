@@ -45,29 +45,29 @@ Here's what the process looks like:
 
 Adding Microsoft RDP (and local logon) support is as simple as clicking the 'Protect this Application' link. When you added, you'll find an Integration Key, Secret Key and API hostname that will be used by the Duo agent on the target VM to authenticate against Duo for MFA prompts.
 
-![Authentication details for Microsoft RDP]({{site.baseurl}}/media/2017/07/02_Setup-1.png)*Authentication details for Microsoft RDP*</figure>
+![Authentication details for Microsoft RDP]({{site.baseurl}}/media/2017/07/02_Setup-1.png)*Authentication details for Microsoft RDP*
 
 As you can see in the screenshot there's a number of options for customising authentication; however, in this case I've accepted all of the defaults.
 
 Next, add a user to Duo that matches the username in the target environment. This can be a user in Active Directory or a local user account. In my test environment, my jump box is not a member of AD, but I could make the VM a member of a domain. The ability to target domain or local users is great because it provides flexibility.
 
-![Adding a user in the Duo Console]({{site.baseurl}}/media/2017/07/AddUser.png)*Adding a user in the Duo Console*</figure>
+![Adding a user in the Duo Console]({{site.baseurl}}/media/2017/07/AddUser.png)*Adding a user in the Duo Console*
 
 For this user account, I've added a phone number which then allows me to send a link for adding the account to the Duo Mobile app on the user's phone.
 
-![Activating an account on the Duo Mobile app]({{site.baseurl}}/media/2017/07/08_Setup.png)*Activating an account on the Duo Mobile app*</figure>
+![Activating an account on the Duo Mobile app]({{site.baseurl}}/media/2017/07/08_Setup.png)*Activating an account on the Duo Mobile app*
 
 Send a link to the user which can be customised:
 
-![Send an activation link to the user]({{site.baseurl}}/media/2017/07/09_Setup.png)*Send an activation link to the user*</figure>
+![Send an activation link to the user]({{site.baseurl}}/media/2017/07/09_Setup.png)*Send an activation link to the user*
 
 Here's what appears on the user's phone - tap the link and it will open in the Duo app.
 
-![Duo activation link sent to the phone]({{site.baseurl}}/media/2017/07/IMG_4106.png)*Duo activation link sent to the phone*</figure>
+![Duo activation link sent to the phone]({{site.baseurl}}/media/2017/07/IMG_4106.png)*Duo activation link sent to the phone*
 
 And the account now added to the phone. Here's I have my Duo admin account, plus the account on the jump box. I'm not sure whether the display name can be changed, but it does show my customised logo configured in the Duo admin console.
 
-![Accounts in the Duo Mobile app]({{site.baseurl}}/media/2017/07/IMG_4111.png)*Accounts in the Duo Mobile ap, but t*</figure>
+![Accounts in the Duo Mobile app]({{site.baseurl}}/media/2017/07/IMG_4111.png)*Accounts in the Duo Mobile ap, but t*
 
 So setup of Microsoft RDP and a user account in the Duo console is quick and easy, so onto installing the Duo agent on my target VM.
 
@@ -75,7 +75,7 @@ So setup of Microsoft RDP and a user account in the Duo console is quick and eas
 
 Logon to your target VM, download the [Duo Authentication for Windows Logon agent](https://dl.duosecurity.com/duo-win-login-latest.exe) and run the installer. During install you're asked for the account details setup previously in the admin console. 
 
-![Adding the Duo account details to the agent]({{site.baseurl}}/media/2017/07/02_Install.png)*Adding the Duo account details to the agent*</figure>
+![Adding the Duo account details to the agent]({{site.baseurl}}/media/2017/07/02_Install.png)*Adding the Duo account details to the agent*
 
 [The installer supports a silent install](https://help.duo.com/s/article/ka070000000k9uCAAQ/1090), so you could for example, add the agent with authentication details with PowerShell DSC during deployment of the VM.
 
@@ -85,33 +85,33 @@ One the agent is install, no reboot is required. Yes - no reboot!
 
 When connecting to the jump box via RDP, you authenticate with username and password from the local device as normal; however, once the connection is made, Duo displays a security prompt, where you'll need to respond to a push notification, phone call or provide a passcode.
 
-!["Duo security prompt on the jump box]({{site.baseurl}}/media/2017/07/05_Install.png)*Duo security prompt on the jump box*</figure>
+!["Duo security prompt on the jump box]({{site.baseurl}}/media/2017/07/05_Install.png)*Duo security prompt on the jump box*
 
 The screenshot shows the Duo logo, even though I've set my own logon in the Duo console. While my custom logo displays on the phone, I would have liked for it to display on the Windows logon screen to provide users with the extra visual feedback when logging in.
 
 Responding to a login request in the Duo Mobile app on the iPhone is as simple as acknowledging the request with an Approve (or Deny, if need be).
 
-![Duo login request on an iPhone]({{site.baseurl}}/media/2017/07/IMG_4110.png)*Duo login request on an iPhone*</figure>
+![Duo login request on an iPhone]({{site.baseurl}}/media/2017/07/IMG_4110.png)*Duo login request on an iPhone*
 
 If you have an Apple Watch, you can approve the login request from your wrist without finding your phone, so responding to the notification is even quicker.
 
-![Duo login request on the Apple Watch]({{site.baseurl}}/media/2017/07/IMG_4109.png)*Duo login request on the Apple Watch*</figure>
+![Duo login request on the Apple Watch]({{site.baseurl}}/media/2017/07/IMG_4109.png)*Duo login request on the Apple Watch*
 
 ### Denied Logons
 
 There may be many reasons why logins are denied, so here's what the experience looks like for a couple of scenarios. The first screenshot shows what happens if I tap Deny on the authentication prompt on my phone or watch:
 
-![Logon request denied]({{site.baseurl}}/media/2017/07/06_Install.png)*Logon request denied*</figure>
+![Logon request denied]({{site.baseurl}}/media/2017/07/06_Install.png)*Logon request denied*
 
 If I click Dismiss and close the Duo dialog box, Windows displays a login request button.
 
-![Login request denied]({{site.baseurl}}/media/2017/07/07_Install.png)*Login request denied*</figure>
+![Login request denied]({{site.baseurl}}/media/2017/07/07_Install.png)*Login request denied*
 
 I can re-enter my password at the point and the Duo Security dialog will come up again and send me an authentication notification.
 
 What happens for other users on the system that aren't enrolled in Duo? If login is successful, they'll see a prompt that says "The username you have entered is not enrolled with Duo Security. Please contact your system administrator." Shown here:
 
-![When a user is not enrolled in Duo]({{site.baseurl}}/media/2017/07/NotEnrolled.png)*When a user is not enrolled in Duo*</figure>
+![When a user is not enrolled in Duo]({{site.baseurl}}/media/2017/07/NotEnrolled.png)*When a user is not enrolled in Duo*
 
 This looks pretty good. I'm not sure if there's ways around the Duo authentication, but I presume standard credential provider hooking into GINA is used, so it should be as rock solid as Microsoft makes in and Duo adheres to the standard.
 

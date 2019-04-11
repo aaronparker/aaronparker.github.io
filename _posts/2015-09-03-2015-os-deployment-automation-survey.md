@@ -20,6 +20,6 @@ We're into the closing days of [the OS Deployment Automation Survey over at xena
 
 Here's a quick peek into the results of one of the questions - what platforms are used to host your virtual desktop environment. It probably doesn't come as a surprise that vSphere is ahead; however it's very interesting to see the number of respondents running their environments on bare metal.
 
-![WhatPlatformsAreUsedToHost]({{site.baseurl}}/media/2015/09/WhatPlatformsAreUsedToHost.png)*Breakdown of platforms used to host virtual desktop environments*</figure>
+![WhatPlatformsAreUsedToHost]({{site.baseurl}}/media/2015/09/WhatPlatformsAreUsedToHost.png)*Breakdown of platforms used to host virtual desktop environments*
 
 The survey will take less than 5 minutes of your time, so if you've not had a chance to take the survey, [head over now](https://www.surveymonkey.com/r/WG3CGZK) or help spread the word. After the survey closes, we'll share the results and our thoughts.

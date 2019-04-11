@@ -24,7 +24,7 @@ In short, Windows Defender ATP is a cloud-based threat management/protection sol
 
 Microsoft positions ATP for enterprise customers, but given the integration with their other products and that it's a completely cloud-hosted platform, this should be for everyone (budget concerns aside). Many small to medium organisations (and partners) that I talk to are actively looking at ways to reduce their on-premises infrastructure.
 
-# Setting up Windows Defender Advanced Threat Protection
+## Setting up Windows Defender Advanced Threat Protection
 
 To give you an idea of what does the setup process for ATP looks like, I've documented the experience during setup in my own tenant. The gallery below shows a screenshot of each step including onboarding a device and performing a detection test.
 
@@ -90,7 +90,7 @@ To give you an idea of what does the setup process for ATP looks like, I've docu
 
 Provisioning ATP is as easy process - the hardest part for me was working out where to access to the console - if you're looking for it, here it is: <https://securitycenter.windows.com/>
 
-# Onboard a Windows 10 device with Intune
+## Onboard a Windows 10 device with Intune
 
 With ATP deployed, you can now use Intune (or another MDM solution) to onboard a device into ATP. You could also [use Group Policy, ConfigMgr, or a script](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-atp/configure-endpoints-windows-defender-advanced-threat-protection). 
 

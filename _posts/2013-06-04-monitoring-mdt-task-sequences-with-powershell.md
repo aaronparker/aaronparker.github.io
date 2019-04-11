@@ -21,7 +21,7 @@ Here's a couple of sample videos that demonstrate the use of PowerShell to autom
   * [PowerShell, MDT, Atlantis ILIO and XenDesktop deployment]({{site.baseurl}}/community/hands-off-my-gold-image-video-powershell-mdt-atlantis-ilio-and-xendesktop-deployment/)
   * [Windows 8 zero-touch deployment]({{site.baseurl}}/community/hands-off-my-gold-image-video-windows-8-zero-touch-deployment/)
 
-# Using PowerShell with MDT
+## Using PowerShell with MDT
 
 To use PowerShell with MDT requires installing the MDT console which will provide the PowerShell snapin support. For this article, I've used [MDT 2012 Update 1](http://www.microsoft.com/en-us/download/details.aspx?id=25175). Either 32-bit or 64-bit should work.
 
@@ -89,24 +89,24 @@ Using these properties and the **Write-Progress** cmdlet we can display the prog
   3. Waits for the task sequence to begin by interrogating the MDT monitoring data until the right machine data is returned
   4. Monitors and displays the progress of the task sequence so that we can continue processing once the deployment is complete
 
-# The Complete Script
+## The Complete Script
 
 The script listing below put these pieces together and provides two loops - one that waits for the task sequence to begin and once it has, waits for the task sequence to complete.
 
 <pre>$target = "VM1"
 $deploymentShare = "E:\Deployment"
 
-# Connect to the MDT share
+## Connect to the MDT share
 Write-Host "Connecting to MDT share." -ForegroundColor Green
 Add-PSSnapin "Microsoft.BDD.PSSNAPIN"
 If (!(Test-Path MDT:)) { New-PSDrive -Name MDT -Root $deploymentShare -PSProvider MDTPROVIDER }
 
-# Clean up the MDT monitor data for the target VM if it exists
+## Clean up the MDT monitor data for the target VM if it exists
 Write-Host "Clearing MDT monitor data." -ForegroundColor Green
 Get-MDTMonitorData -Path MDT: | Where-Object { $_.Name -eq $target } | Remove-MDTMonitorData -Path MDT:
 
-# Wait for the OS deployment to start before monitoring
-# This may require user intervention to boot the VM from the MDT ISO if an OS exists on the vDisk
+## Wait for the OS deployment to start before monitoring
+## This may require user intervention to boot the VM from the MDT ISO if an OS exists on the vDisk
 If ((Test-Path variable:InProgress) -eq $True) { Remove-Variable -Name InProgress }
 Do {
     $InProgress = Get-MDTMonitorData -Path MDT: | Where-Object { $_.Name -eq $target }
@@ -128,7 +128,7 @@ Do {
     Start-Sleep -Seconds $Seconds
 } Until ($tsStarted -eq $True)
 
-# Monitor the MDT OS deployment once started
+## Monitor the MDT OS deployment once started
 Write-Host "Waiting for task sequence to complete." -ForegroundColor Green
 If ((Test-Path variable:InProgress) -eq $True) { Remove-Variable -Name InProgress }
 Do {

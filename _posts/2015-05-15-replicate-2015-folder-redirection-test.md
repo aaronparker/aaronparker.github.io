@@ -71,17 +71,17 @@ In my lab environment, I've used two physical hosts with the file server targets
 
 Other than specific tests where we wanted to know the effect of anti-virus on the file server, no AV application was installed on any server or client (physical or virtual).
 
-![File Server Capacity Tool" width="565" height="399" srcset="https://stealthpuppy.com/media/2015/05/FSCT.png 565w, https://stealthpuppy.com/media/2015/05/FSCT-150x106.png 150w, https://stealthpuppy.com/media/2015/05/FSCT-300x212.png 300w, https://stealthpuppy.com/media/2015/05/FSCT-480x340.png 480w" sizes="(max-width: 565px) 100vw, 565px" />*File Server Capacity Tool architecture*</figure>
+![File Server Capacity Tool" width="565" height="399" srcset="https://stealthpuppy.com/media/2015/05/FSCT.png 565w, https://stealthpuppy.com/media/2015/05/FSCT-150x106.png 150w, https://stealthpuppy.com/media/2015/05/FSCT-300x212.png 300w, https://stealthpuppy.com/media/2015/05/FSCT-480x340.png 480w" sizes="(max-width: 565px) 100vw, 565px" />*File Server Capacity Tool architecture*
 
 FSCT comes with a single work load - Home Folders. Which is fortunately great for our use, should be as similar as possible to real work use of users interacting with their Documents or Desktop folders that are redirected to their home drive.
 
-![File Server Capacity Tool - Home Folders Workload]({{site.baseurl}}/media/2015/05/fsct-workload.png)*File Server Capacity Tool - Home Folders Workload*</figure>
+![File Server Capacity Tool - Home Folders Workload]({{site.baseurl}}/media/2015/05/fsct-workload.png)*File Server Capacity Tool - Home Folders Workload*
 
 A single run of an FSCT workload simulation can take a very long time, so expect each simulation to run from 3 hours or more depending on the total number of user sessions that you want to get to. In each workload simulation, I ran from 50 to 800 user sessions, stepping by 50 user sessions for each test.
 
 Here's what a workload simulation looks like:
 
-![How File Server Capacity Tool workload simulations are run]({{site.baseurl}}/media/2015/05/fsct.png)*How File Server Capacity Tool workload simulations are run*</figure>
+![How File Server Capacity Tool workload simulations are run]({{site.baseurl}}/media/2015/05/fsct.png)*How File Server Capacity Tool workload simulations are run*
 
 To demonstrate an example, here's an overview of the environment and the FSCT commands that I used to run the workloads for each test.
 
@@ -120,6 +120,6 @@ To make it simple to measure logon times, there's only one tool worth using to v
 
 I recommend creating a large enough profile, or one that is indicative of profiles that you may have in production. For real stress testing, the number of files in the profile is more important than the total profile size.
 
-![uberAgent logon duration dashboard]({{site.baseurl}}/media/2015/05/uberAgent-logon-duration-dashboard.png)*Viewing logon times in uberAgent.*</figure>
+![uberAgent logon duration dashboard]({{site.baseurl}}/media/2015/05/uberAgent-logon-duration-dashboard.png)*Viewing logon times in uberAgent.*
 
 If you want to use uberAgent in your lab, I recommend contacting <info@helgeklein.com> for info on whether you qualify for a consultants license.

@@ -38,7 +38,7 @@ There's a few ways that you could implement the fix - Group Policy Preferences, 
 
 Here's the ObjExclusions key on an App-V 5.0 client:
 
-![AppV Client ObjExclusions registry key]({{site.baseurl}}/media/2014/10/AppV-Client-ObjExclusions.png)*AppV Client ObjExclusions registry key*</figure>
+![AppV Client ObjExclusions registry key]({{site.baseurl}}/media/2014/10/AppV-Client-ObjExclusions.png)*AppV Client ObjExclusions registry key*
 
 Most environments will have the default entries (92 for App-V 5.0, 94 for App-V 4.6). For customised environments you would need to ensure that a unique value is used (perhaps above 93).
 

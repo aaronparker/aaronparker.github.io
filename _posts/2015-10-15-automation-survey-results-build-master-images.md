@@ -24,7 +24,7 @@ tags:
 ---
 Previously we've looked at [which hypervisors are in use]({{site.baseurl}}/automation-survey-results-hypervisor/) and the [virtual desktop solutions deployed on those hypervisors]({{site.baseurl}}/automation-survey-results-vdi-platforms/), so now we'll take a look at how organisations are building their master images.
 
-# Building A Master Image
+## Building A Master Image
 
 Whether you're building physical or virtual desktops, the quality of the desktops environment and ultimately the user experience can be dictated in a large part by the consistency in how Windows, applications and configurations are delivered to the desktops. If you want to ensure a predictable user experience across desktops and reduce troubleshooting times, then the only way to do that is to automate the deployment of Windows and applications.
 
@@ -32,7 +32,7 @@ With the right tools and community resources, automation is simple; however that
 
 Having said that, we believe that any investment made into automation will pay dividends in the future and the barriers into automation of Windows have reduced over the past 7 or 8 years with the introduction of tools such as the [Microsoft Deployment Toolkit](https://technet.microsoft.com/en-us/windows/dn475741.aspx) and PowerShell.
 
-# Who's Automating Their Deployments?
+## Who's Automating Their Deployments?
 
 In this survey we've concentrated on how organisations are building their master images, whether they're deploying Remote Desktop Services, persistent desktops or non-persistent desktops, a master image is typically the basis of Windows deployment in VDI.
 
@@ -64,6 +64,6 @@ On average, the larger the environment the more that automation is leveraged. Th
 
 I will say this: VDI should not be treated as a panacea for desktop deployments - VDI doesn't improve desktop management in and of itself, it just gets your poor quality images out faster.
 
-# Next Up
+## Next Up
 
 In the next article, we'll take a look at [the solutions used for automating image builds](http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/).
