@@ -20,37 +20,40 @@ In a MAV environment this service can be successfully virtualised, however you m
 
 > The licensing subsystem has failed catastrophically. You must reinstall or call customer support.
 
-<img border="0" width="483" src="https://stealthpuppy.com/media/2008/01/licensing-error2.png" alt="Licensing Error" height="100" style="border-width: 0px" /> 
+![Licensing Error](https://stealthpuppy.com/media/2008/01/licensing-error2.png)
 
 > You cannot use this product at this time. You must repair the problem by uninstalling and then reinstalling this product or contacting your IT administrator or Adobe customer support for help.
 
-[<img border="0]({{site.baseurl}}/media/2008/01/licensing-error3.png)
+![Licensing Error]({{site.baseurl}}/media/2008/01/licensing-error3.png)
 
 Fortunately the FLEXnet Licensing service only needs to run when the application starts - you can subsequently stop the service and the application will continue to run. With a script we can stop this service to get more than one CS3 application running.
 
 Originally I had attempted using WMI to detect the state of the service, wait for it to start and then stop it. However, the virtual services are not detectable via WMI so I've had to resort to something a little more crude. This script reads the output from a NET START command until the FLEXnet service starts and then stops the service. It's not a robust script by any means but it gets the job done.
 
-[code lang="vb"]Dim WshShell, oExec  
+```Vb
+Dim WshShell, oExec  
 Set WshShell = CreateObject("WScript.Shell")  
 Do While True  
 Set oExec = WshShell.Exec("NET START")  
 Do While oExec.Status <> 1  
-WScript.Sleep 100  
+  WScript.Sleep 100  
 Loop  
 If InStr(oExec.StdOut.ReadAll, "FLEXnet Licensing Service") <> 0 Then Exit Do  
-WScript.Sleep 5000  
+  WScript.Sleep 5000  
 Loop  
-WScript.Sleep 3000  
+  WScript.Sleep 3000  
 Set oExec = WshShell.Exec("NET STOP /YES " & Chr(34) & "FLEXnet Licensing Service" & Chr(34))  
 Do While oExec.Status <> 1  
-WScript.Sleep 100  
+  WScript.Sleep 100  
 Loop  
-[/code]
+```
 
 Run the script by adding a POST LAUNCH script event in the OSD file:
 
-[code lang="xml"]<SCRIPT EVENT="LAUNCH" TIMING="POST" PROTECT="TRUE" WAIT="FALSE" TIMEOUT="0">  
+```xml
+<SCRIPT EVENT="LAUNCH" TIMING="POST" PROTECT="TRUE" WAIT="FALSE" TIMEOUT="0">  
 <HREF>CMDOW.EXE /RUN /HID CSCRIPT //NOLOGO \\SERVER\Scripts\StopFLEXnet.VBS</HREF>  
-</SCRIPT>[/code]
+</SCRIPT>
+```
 
 I'm using [CMDOW](http://www.commandline.co.uk/cmdow/) here to hide the command window that users will see every few seconds. Unfortunately this method is a little clunky, but if you have a better suggest please let me know.

@@ -14,7 +14,7 @@ tags:
   - Default Profile
   - Windows-Vista
 ---
-[<img class="size-medium wp-image-619 alignleft" style="border: 0pt none;" title="userprofile" src="https://stealthpuppy.com/media/2008/07/userprofile.png" alt="]({{site.baseurl}}/media/2008/07/userprofile.png)There are numerous ways to customise the default user profile in earlier versions of Windows, including:
+There are numerous ways to customise the default user profile in earlier versions of Windows, including:
 
   * Create a user account, configure the profile, then copy over the top of the local default profile or save a copy to your NETLOGON share;
   * Use the [[GuiRunOnce] section in an unattended answer file](http://www.microsoft.com/technet/prodtechnol/windows2000serv/reskit/deploy/dgcb_ins_vhev.mspx?mfr=true) for Windows XP/2003.
@@ -32,10 +32,11 @@ You can edit the default profile by directly modifying the Windows Vista or Wind
 
 Be sure to set the CopyProfile value to False in the UNATTEND.XML, otherwise these changes will be overwritten. Here's a script that performs those steps for me:
 
-[code]@ECHO OFF  
-REM &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-  
+```cmd
+@ECHO OFF  
+REM ----------------------
 REM  Script configures the Default User Profile in a Windows Vista/2008 image  
-REM &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+REM ----------------------
 
 REM Mount the Windows image  
 IMAGEX /MOUNTRW "D:\install.wim" 1 D:\mount
@@ -99,7 +100,8 @@ REM Unload the default profile hive
 REG UNLOAD HKU\Default
 
 REM Unmount the Windows image and commit changes  
-IMAGEX /UNMOUNT /COMMIT D:\mount[/code]
+IMAGEX /UNMOUNT /COMMIT D:\mount
+```
 
 As you can see I'm adding registry entries that will configure the user environment which does mean that there's a bit of work required to find them in the first place, but it does allow me to document every change to the profile, so I think the effort is worth it.
 
@@ -120,3 +122,4 @@ Here's a few more articles worth reading:
   * [Configuring default settings for Windows image deployment](http://blogs.technet.com/deploymentguys/archive/2008/02/18/configuring-default-user-and-computer-settings-for-windows-image-deployment.aspx)
   * [Support guidelines for migrating roaming user profiles data to Windows Vista or to Windows Server 2008](http://support.microsoft.com/default.aspx/kb/947025)
   * [Managing Roaming User Data Deployment Guide](http://www.microsoft.com/technet/windowsvista/library/fb3681b2-da39-4944-93ad-dd3b6e8ca4dc.mspx)
+  

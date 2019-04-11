@@ -21,81 +21,89 @@ In updating my [MDT]({{site.baseurl}}/tag/mdt/) deployment shares recently, I go
 
 This script reads [an external XML file](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml) that contains the installer information for each of the Visual C++ Redistributables so that changes to URLs, install options and new redistributables can be made without making changes to the script. The XML file lists the download URL and install instructions for each installer and looks like this:
 
-<pre class="prettyprint lang-xml" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;Redistributables&gt;
-    &lt;Platform Architecture="x64" Release="2005" Install="/Q"&gt;
-        &lt;Redistributable&gt;
-            &lt;Name&gt;Microsoft Visual C++ 2005 Service Pack 1 Redistributable Package MFC Security Update&lt;/Name&gt;
-            &lt;URL&gt;https://www.microsoft.com/en-us/download/details.aspx?id=26347&lt;/URL&gt;
-            &lt;Download&gt;https://download.microsoft.com/download/8/B/4/8B42259F-5D70-43F4-AC2E-4B208FD8D66A/vcredist_x64.EXE&lt;/Download&gt;
-        &lt;/Redistributable&gt;
-        &lt;Redistributable&gt;
-    &lt;/Platform&gt;
-    &lt;Platform Architecture="x86" Release="2005" Install="/Q"&gt;
-        &lt;Redistributable&gt;
-            &lt;Name&gt;Microsoft Visual C++ 2005 Service Pack 1 Redistributable Package MFC Security Update&lt;/Name&gt;
-            &lt;URL&gt;https://www.microsoft.com/en-us/download/details.aspx?id=26347&lt;/URL&gt;
-            &lt;Download&gt;https://download.microsoft.com/download/8/B/4/8B42259F-5D70-43F4-AC2E-4B208FD8D66A/vcredist_x86.EXE&lt;/Download&gt;
-        &lt;/Redistributable&gt;
-    &lt;/Platform&gt;
-    &lt;Platform Architecture="x64" Release="2017" Install="/install /passive /norestart"&gt;
-        &lt;Redistributable&gt;
-            &lt;Name&gt;Microsoft Visual C++ Redistributable for Visual Studio 2017&lt;/Name&gt;
-            &lt;URL&gt;https://www.visualstudio.com/downloads/&lt;/URL&gt;
-            &lt;Download&gt;https://download.microsoft.com/download/3/b/f/3bf6e759-c555-4595-8973-86b7b4312927/vc_redist.x64.exe&lt;/Download&gt;
-        &lt;/Redistributable&gt;
-    &lt;/Platform&gt;
-    &lt;Platform Architecture="x86" Release="2017" Install="/install /passive /norestart"&gt;
-        &lt;Redistributable&gt;
-            &lt;Name&gt;Microsoft Visual C++ Redistributable for Visual Studio 2017&lt;/Name&gt;
-            &lt;URL&gt;https://www.visualstudio.com/downloads/&lt;/URL&gt;
-            &lt;Download&gt;https://download.microsoft.com/download/1/f/e/1febbdb2-aded-4e14-9063-39fb17e88444/vc_redist.x86.exe&lt;/Download&gt;
-        &lt;/Redistributable&gt;
-    &lt;/Platform&gt;
-&lt;/Redistributables&gt;</pre>
+```xml
+<xml version="1.0" encoding="UTF-8"?>
+<Redistributables>
+    <Platform Architecture="x64" Release="2005" Install="/Q">
+        <Redistributable>
+            <Name>Microsoft Visual C++ 2005 Service Pack 1 Redistributable Package MFC Security Update</Name>
+            <URL>https://www.microsoft.com/en-us/download/details.aspx?id=26347</URL>
+            <Download>https://download.microsoft.com/download/8/B/4/8B42259F-5D70-43F4-AC2E-4B208FD8D66A/vcredist_x64.EXE</Download>
+        </Redistributable>
+        <Redistributable>
+    </Platform>
+    <Platform Architecture="x86" Release="2005" Install="/Q">
+        <Redistributable>
+            <Name>Microsoft Visual C++ 2005 Service Pack 1 Redistributable Package MFC Security Update</Name>
+            <URL>https://www.microsoft.com/en-us/download/details.aspx?id=26347</URL>
+            <Download>https://download.microsoft.com/download/8/B/4/8B42259F-5D70-43F4-AC2E-4B208FD8D66A/vcredist_x86.EXE</Download>
+        </Redistributable>
+    </Platform>
+    <Platform Architecture="x64" Release="2017" Install="/install /passive /norestart">
+        <Redistributable>
+            <Name>Microsoft Visual C++ Redistributable for Visual Studio 2017</Name>
+            <URL>https://www.visualstudio.com/downloads/</URL>
+            <Download>https://download.microsoft.com/download/3/b/f/3bf6e759-c555-4595-8973-86b7b4312927/vc_redist.x64.exe</Download>
+        </Redistributable>
+    </Platform>
+    <Platform Architecture="x86" Release="2017" Install="/install /passive /norestart">
+        <Redistributable>
+            <Name>Microsoft Visual C++ Redistributable for Visual Studio 2017</Name>
+            <URL>https://www.visualstudio.com/downloads/</URL>
+            <Download>https://download.microsoft.com/download/1/f/e/1febbdb2-aded-4e14-9063-39fb17e88444/vc_redist.x86.exe</Download>
+        </Redistributable>
+    </Platform>
+</Redistributables>
+```
 
 The script will install the redistributables in the order listed in the XML file thus ensuring they are installed in the correct order.
 
-# Using Install-VisualCRedistributables.ps1
+## Using Install-VisualCRedistributables.ps1
 
-Download [Install-VisualCRedistributables.ps1](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/Install-VisualCRedistributables.ps1 "Install-VisualCRedistributables.ps1"){#6688ca8243a1ff4cb920b2f5b0eb5d4f-fc78b16fb52218a5ca1961809bece9155c302c06.js-navigation-open} and [VisualCRedistributablesSupported.xml](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml "VisualCRedistributables.xml"){#ae2b8c9175203ac3b93b3a45bf39ac3f-2392f8cdffa2c6a99fa7b73e04bccc284321c434.js-navigation-open} from the repository and edit the XML as required. As this includes all supported redistributables from 2008 to 2017, all will be downloaded and installed by default. If you don't need all of them in your environment, remove those that aren't required.
+Download [Install-VisualCRedistributables.ps1](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/Install-VisualCRedistributables.ps1) and [VisualCRedistributablesSupported.xml](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml) from the repository and edit the XML as required. As this includes all supported redistributables from 2008 to 2017, all will be downloaded and installed by default. If you don't need all of them in your environment, remove those that aren't required.
 
 The script can be run in two phases - one to download the installers and again to install the redistributables - this is useful for downloading the installers to add to your reference image via MDT, for example. The script can also be used to download and install in one action.
 
-## Parameters
+### Parameters
 
 The parameters for the script are:
 
-### Xml
+#### Xml
 
 This points to the XML file that contains the details about the Visual C++ Redistributables. This must be in the expected format, otherwise, the script will fail.
 
 Example - Downloads the Visual C++ Redistributables listed in VisualCRedistributables.xml.
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml"</pre>
+```powershell
+.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml"
+```
 
-### Path
+#### Path
 
 Specify a target folder to download the Redistributables to, otherwise, use the current folder.
 
 Example - Downloads the Visual C++ Redistributables listed in VisualCRedistributables.xml to C:\Redist.
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml" -Path C:\Redist</pre>
+```powershell.
+\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml" -Path C:\Redist
+```
 
-### Install
+#### Install
 
 By default, the script will only download the Redistributables. This allows you to download the Redistributables for separate deployment (e.g. in a reference image). Add -Install to install each of the Redistributables as well.
 
 Example - Downloads and installs the Visual C++ Redistributables listed in VisualCRedistributables.xml.
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml" -Install:$True</pre>
+```powershell.
+\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributablesSupported.xml" -Install:$True
+```
 
-# Results
+## Results
 
 Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list. 2005 are not installed by default, as these are no longer supported.
 
 ![Microsoft Visual C++ Redistributable 2005-2015 installed]({{site.baseurl}}/media/2017/05/2005-2017.png)*Microsoft Visual C++ Redistributables*
 
-# Finally
+## Finally
 
 This is the first version of the script and to the best of my knowledge, the XML file is correct. Feedback and corrections are welcome and I have some plans to update the script with some additional error checking.

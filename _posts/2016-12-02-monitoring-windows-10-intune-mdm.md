@@ -131,8 +131,9 @@ The current release of Intune now requires you to go back into the Intune Softwa
 
 Microsoft has an article on [Connecting Windows computers to Log Analytics](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-windows-agents) that covers a number of ways that you can install and configure the OMS agent.
 
-<pre class="lang:ps decode:true " title="Command line arguments to set agent properties">ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=&lt;your workspace id&gt; OPINSIGHTS_WORKSPACE_KEY=&lt;your workspace key&gt; AcceptEndUserLicenseAgreement=1
-</pre>
+```
+ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=&lt;your workspace id&gt; OPINSIGHTS_WORKSPACE_KEY=&lt;your workspace key&gt; AcceptEndUserLicenseAgreement=1
+```
 
 In my example, I have added these arguments with my specific Workspace ID and Key. Notice in the screenshot that my Workspace Key has a couple of equal signs at the end of the key, so I've enclosed the key in quotes.
 

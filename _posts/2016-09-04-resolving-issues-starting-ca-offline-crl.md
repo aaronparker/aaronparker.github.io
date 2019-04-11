@@ -21,7 +21,7 @@ tags:
 ---
 I recently wrote a couple of articles on setting up and [Root Certification Authority]({{site.baseurl}}/deploy-enterprise-root-certificate-authority/) and a [Subordinate Certification Authority]({{site.baseurl}}/deploy-enterprise-subordinate-certificate-authority/) as a basic cheat sheet for setting up and Enterprise PKI. One configuration item that is less well understood and often the cause of major headaches with certificate authorities, is the Certificate Revocation List (CRL). An Offline CRL can bring down your PKI and other services that rely on it.
 
-# The Issue
+## The Issue
 
 You might find your certificate authority, in this case, a subordinate certificate authority that is not started, perhaps after a server reboot. Attempting to start the CA, results in this message:
 
@@ -29,7 +29,7 @@ You might find your certificate authority, in this case, a subordinate certifica
 
 Which looks like this:
 
-![Unable to start a CA due to an Offline CRL CRYPT_E_REVOCATION_OFFLINE]({{site.baseurl}}/media/2016/09/CRYPT_E_REVOCATION_OFFLINE.png)*Unable to start a CA due to an Offline CRL, reporting CRYPT\_E\_REVOCATION_OFFLINE.*</figure>
+![Unable to start a CA due to an Offline CRL CRYPT_E_REVOCATION_OFFLINE]({{site.baseurl}}/media/2016/09/CRYPT_E_REVOCATION_OFFLINE.png)*Unable to start a CA due to an Offline CRL, reporting CRYPT\_E\_REVOCATION_OFFLINE.*
 
 In the Application log on the subordinate CA, I can see event id 100 from source CertificationAuthority:
 
@@ -43,28 +43,32 @@ Certificate 0 is the subordinate CA's certificate, issued by the offline Root CA
 
 In addition (by starting the CA with a workaround) I can see a number of failed certificate requests with the same Offline CRL issue:
 
-![Failed Requests for certifiicates due to CRYPT_E_REVOCATION_OFFLINE]({{site.baseurl}}/media/2016/09/IssuingCAFailedRequests.png)*Failed Requests for certificates due to CRYPT\_E\_REVOCATION_OFFLINE*</figure>
+![Failed Requests for certifiicates due to CRYPT_E_REVOCATION_OFFLINE]({{site.baseurl}}/media/2016/09/IssuingCAFailedRequests.png)*Failed Requests for certificates due to CRYPT\_E\_REVOCATION_OFFLINE*
 
 In this case, I knew that my CRL was online - it's the same server as the subordinate CA and I had configured both the offline Root CA and the Subordinate CA for the same CRL distribution point.
 
-![CRL distribution point on the Subordinate CA]({{site.baseurl}}/media/2016/09/http-crl-issuingca.png)*CRL distribution point on the Subordinate CA*</figure>
+![CRL distribution point on the Subordinate CA]({{site.baseurl}}/media/2016/09/http-crl-issuingca.png)*CRL distribution point on the Subordinate CA*
 
-# The Workaround
+## The Workaround
 
 Of course, you probably want to get the CA up and running as quickly as possible. The easy way to do that is to disable CRL checking with the following command on the CA server:
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">certutil –setreg ca\CRLFlags +CRLF_REVCHECK_IGNORE_OFFLINE</pre>
+```
+certutil –setreg ca\CRLFlags +CRLF_REVCHECK_IGNORE_OFFLINE
+```
 
 Run this from an elevated command prompt and you should now be able to start the CA and get on with the business of troubleshooting.
 
-![Setting CRLF_REVCHECK_IGNORE_OFFLINE with certutil.exe]({{site.baseurl}}/media/2016/09/CRLF_REVCHECK_IGNORE_OFFLINE.png)*Setting CRLF\_REVCHECK\_IGNORE_OFFLINE with certutil.exe*</figure>
+![Setting CRLF_REVCHECK_IGNORE_OFFLINE with certutil.exe]({{site.baseurl}}/media/2016/09/CRLF_REVCHECK_IGNORE_OFFLINE.png)*Setting CRLF\_REVCHECK\_IGNORE_OFFLINE with certutil.exe*
 
-# The Cause of an Offline CRL
+## The Cause of an Offline CRL
 
 My CRL was online as it is available in Active Directory (for domain joined machines) and via HTTP at crl.home.stealthpuppy.com, an alias of the subordinate CA. I've tested that I can retrieve the CRL by putting the HTTP path into a browser and I'm prompted to download a file.
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Issuing CA.crl
-http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Offline Root CA.crl</pre>
+```
+http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Issuing CA.crl
+http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Offline Root CA.crl
+```
 
 Through having spent some time recently with setting up an Enterprise PKI in my lab and for a project, I've come to know the command line tool [certutil.exe](https://technet.microsoft.com/en-us/library/cc732443(v=ws.11).aspx). This tool is available in all versions of Windows and should be the first tool to use to troubleshoot and manage certificates and certificate authorities on Windows.
 
@@ -72,25 +76,27 @@ Certutil can be used to perform many functions, one of which is to verify a CRL.
 
 To verify the CRL, use the -URL switch with the HTTP (or LDAP) path to the CRL:
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">certutil -URL "http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Issuing CA.crl"</pre>
+```
+certutil -URL "http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Issuing CA.crl"
+```
 
 This will display the **URL Retrieval Tool** that shows that the CRLs are able to be contacted and show a status of OK.
 
-![Using certutil.exe to test the Offline CRL]({{site.baseurl}}/media/2016/09/certutilURLCRL.png)*Using certutil.exe to test the Offline CRL*</figure>
+![Using certutil.exe to test the Offline CRL]({{site.baseurl}}/media/2016/09/certutilURLCRL.png)*Using certutil.exe to test the Offline CRL*
 
 However, if we load a target certificate, in this case, the subordinate CA's cert, we can start to see why we have an issue with the CRL.
 
 Select the certificate for the subordinate CA that has been previously exported to the file system (in C:\Windows\System32\certsrv\CertEnroll) - click **Select**, open the certificate and click **Retrieve** again. This time, we can see a new line that shows that the base CRL for the subordinate CA's certificate is _Expired_.
 
-![An expired base CRL on the Subordinate CA]({{site.baseurl}}/media/2016/09/IssuingCAExpiredBaseCRL.png)*An expired base CRL on the Subordinate CA*</figure>
+![An expired base CRL on the Subordinate CA]({{site.baseurl}}/media/2016/09/IssuingCAExpiredBaseCRL.png)*An expired base CRL on the Subordinate CA*
 
 The CRL for the subordinate CA's certificate will come from the root CA, so we'll need to check that CRL. Open the CRL file (_C:\windows\system32\certsrv\CertEnroll\stealthpuppy Offline Root CA.crl_) - double-click or right-click and **Open**. Here we can see the CRL information, including the next publishing time (Next CRL Publish).
 
-![Viewing the properties of the Root CA's CRL]({{site.baseurl}}/media/2016/09/OfflineRootCA-CRL.png)*Viewing the properties of the Root CA's CRL*</figure>
+![Viewing the properties of the Root CA's CRL]({{site.baseurl}}/media/2016/09/OfflineRootCA-CRL.png)*Viewing the properties of the Root CA's CRL*
 
 At the time of troubleshooting, this date was in the past and because the Root CA is offline and the CRL is hosted on a different server (the subordinate CA), this particular CRL will never receive an update. So, when the subordinate CA has rebooted, it has checked the Root CA's CRL and found it expired. Hence the certification authority service won't start.
 
-# How To Fix It
+## How To Fix It
 
 Now we know why the certification authority service won't start and an understanding of why the CRL is offline, even if the wording doesn't match the symptoms. If the error message had told me the CRL had expired instead of being offline, I might have saved some troubleshooting time. We now know that we need to re-publish the CRL from the Root CA.
 
@@ -98,25 +104,27 @@ Start the offline Root CA, log into it and open the **Certification Authority** 
 
 Instead, set this value to something suitable for the environment you have installed the CA into. Remember that you’ll need to boot the Root CA and publish a new CRL before the end of this interval, otherwise, you'll have exactly the same issue.
 
-![Setting the CRL Publication Interval on the Root CA]({{site.baseurl}}/media/2016/08/rootCASettingCRLPublishingInterval.png)*Setting the CRL Publication Interval on the Root CA*</figure>
+![Setting the CRL Publication Interval on the Root CA]({{site.baseurl}}/media/2016/08/rootCASettingCRLPublishingInterval.png)*Setting the CRL Publication Interval on the Root CA*
 
 Now publish a new CRL - right-click the **Revoked Certificates** node and click **All Tasks** / **Publish**.
 
-![Publishing a new CRL from the Root CA]({{site.baseurl}}/media/2016/09/RootCAPublishingNewCRL.png)*Publishing a new CRL from the Root CA*</figure>
+![Publishing a new CRL from the Root CA]({{site.baseurl}}/media/2016/09/RootCAPublishingNewCRL.png)*Publishing a new CRL from the Root CA*
 
 Copy the updated CRL (from _C:\Windows\System32\certsrv\CertEnroll_ by default) from the Root CA to the CRL distribution point and overwrite the existing CRL file (_C:\Windows\System32\certsrv\CertEnroll_ again on my subordinate CA).
 
 Now if we again use certutil.exe to verify the CRL, it comes up roses:
 
-![Viewing the verified CRL with certutil.exe]({{site.baseurl}}/media/2016/09/verifiedCRL.png)*Viewing the verified CRL with certutil.exe*</figure>
+![Viewing the verified CRL with certutil.exe]({{site.baseurl}}/media/2016/09/verifiedCRL.png)*Viewing the verified CRL with certutil.exe*
 
 To ensure that the subordinate CA's certification authority service will start, re-enable CRL checking:
 
-<pre class="prettyprint lang-plain_text" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">certutil –setreg ca\CRLFlags -CRLF_REVCHECK_IGNORE_OFFLINE</pre>
+```
+certutil –setreg ca\CRLFlags -CRLF_REVCHECK_IGNORE_OFFLINE
+```
 
 If you have re-published the CRL from the Root CA correctly, the service should start and you can then shut down the Root CA. Then open Outlook and put a reminder in the calendar for a week before the CRL expires again.
 
-# Conclusion
+## Conclusion
 
 I've had this issue with an Offline CRL a few times now and not really understood what the issue is until I took the time to troubleshoot the issue properly. I don't spend that much time with an enterprise PKI and it's easy to underestimate the complexity of setting up AD Certificate Services correctly.
 

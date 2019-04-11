@@ -11,7 +11,7 @@ categories:
 tags:
   - App-V
 ---
-<img style="margin: 0px 0px 10px 10px; display: inline" title="SoftGrid Closed Box" src="https://stealthpuppy.com/media/2008/12/softgridclosedbox.png" border="0" alt="SoftGrid Closed Box](http://desktopcontrol.blogspot.com/) e-mailed me the other day about the KEEPCURRENTSETTINGS property of the App-V 4.5 client setup and how when used on the command line, other properties are ignored. I hadn’t seen this behaviour – or so I thought until I found that my client install script was not setting the right virtual driver letter or enabling streaming from file.
+A reader e-mailed me the other day about the KEEPCURRENTSETTINGS property of the App-V 4.5 client setup and how when used on the command line, other properties are ignored. I hadn’t seen this behaviour – or so I thought until I found that my client install script was not setting the right virtual driver letter or enabling streaming from file.
 
 It turns out, I was using the KEEPCURRENTSETTINGS property, but I did have it set to 0 – just the existence of KEEPCURRENTSETTINGS was enabling Setup to ignore the other command line parameters.
 

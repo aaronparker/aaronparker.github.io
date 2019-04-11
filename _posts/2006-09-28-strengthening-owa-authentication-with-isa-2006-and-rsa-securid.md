@@ -23,15 +23,15 @@ To allow the ISA Server to authenticate against the RSA ACE server, an agent hos
   1. Log onto the RSA ACE server and start the Database Administration tool in Host Mode
   2. Add a new agent host and use 'Net OS Agent' as the agent type
   3. Enable the tick-box labelled 'Open to All Locally Known Users' if you want all users to be able to authenticate
-  4. Click OK to save the changes and copy SDCONF.REC (located in <span style="font-size: 9pt; font-family: Courier New">WINDOWSSYSTEM32</span>) to ISA Server.
+  4. Click OK to save the changes and copy SDCONF.REC (located in `C:\Windows\SYSTEM32`) to ISA Server.
 
 [<img style="width: 318px; height: 311px;" src="https://stealthpuppy.com/media/2006/09/1000.14.127.AgentHost.gif" border="0" alt="]({{site.baseurl}}/media/2006/09/1000.14.127.AgentHost.gif)
 
 Configuring SecurID support in ISA Server as a simple process:
 
-  1. Copy SDCONF.REC to <span style="font-size: 9pt; font-family: Courier New">WINDOWSSYSTEM32.</span> The ISA Server help file says to put this file into the ISA Server program folder, but this worked fine for me in the SYSTEM32 folder.
-  2. Ensure that the local account NETWORK SERVICE has Full Control to the following registry key: <span style="font-size: 9pt; font-family: Courier New">HKEY_LOCAL_MACHINESOFTWARESDTI</span>. This is so that ISA Server can write the secret to the registry.
-  3. You may also need to add the **PrimaryInterfaceIP** string value to the registry under <span style="font-size: 9pt; font-family: Courier New">HKEY_LOCAL_MACHINESOFTWARESDTIACECLIENT</span> depending on your ISA Server configuration. The value must match that set in the agent host record.
+  1. Copy SDCONF.REC to `C:\Windows\SYSTEM32.` The ISA Server help file says to put this file into the ISA Server program folder, but this worked fine for me in the SYSTEM32 folder.
+  2. Ensure that the local account NETWORK SERVICE has Full Control to the following registry key: `HKEY_LOCAL_MACHINE\SOFTWARE\SDTI`. This is so that ISA Server can write the secret to the registry.
+  3. You may also need to add the **PrimaryInterfaceIP** string value to the registry under `HKEY_LOCAL_MACHINE\SOFTWARES\DTI\ACECLIENT` depending on your ISA Server configuration. The value must match that set in the agent host record.
 
 You can test RSA SecurID authentication with the RSA Test Authentication utility available from the Microsoft web site. Download this utility and copy the extracted utility to the ISA Server program folder and execute from there (if you don't you will receive an error).
 
@@ -46,11 +46,11 @@ Once the rule and a corresponding web listener has been created, you will need t
   3. Then select the radio button labelled 'RSA SecurID'
   4. Click OK and apply your configuration changes.
 
-<img style="width: 404px; height: 466px;" src="https://stealthpuppy.com/media/2006/09/1000.14.128.WebListener.png" alt="" width="404" height="466" /> 
+![WenListener](https://stealthpuppy.com/media/2006/09/1000.14.128.WebListener.png)
 
 Now you should have three fields listed on the Outlook Web Access authentication page: username, token code and password. ISA Server also provides for a scenario where the RSA username and the Windows username are different, adding a forth field for a Windows username.
 
-<img style="width: 468px; height: 389px;" src="https://stealthpuppy.com/media/2006/09/1000.14.129.OWA.png" alt="" width="468" height="389" /> 
+![OWA]https://stealthpuppy.com/media/2006/09/1000.14.129.OWA.png)
 
 This is an excellent method of taking authentication that one step further to ensure only trusted users have access to your corporate resources. The same authentication options offered in ISA Server also allow for other two-factor authentication solutions via RADIUS OTP (One Time Password). With this option you could authenticate against Secure Computing's [SafeWord PremierAccess](http://www.securecomputing.com/index.cfm?skey=643) or [Verisign's Unified Authentication](http://www.verisign.com/products-services/security-services/unified-authentication/index.html) to provide two-factor authentication.
 

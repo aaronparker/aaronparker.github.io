@@ -14,7 +14,7 @@ tags:
   - Folder Redirection
   - Start Menu
 ---
-<img src="https://stealthpuppy.com/media/2008/04/offlinestartmenu.png" border="0" alt="OfflineStartMenu]({{site.baseurl}}/terminal-server/building-dynamic-start-menus-with-access-based-enumeration). Sounds like a great blog post (and it gives my an excuse to avoid my eight other draft posts), so here's my answer:
+Sounds like a great blog post (and it gives my an excuse to avoid my eight other draft posts), so here's my answer:
 
 First up, I would not rely on Offline Files as a method of fault tolerance. It will work as a solution for laptops operating disconnected from the network, but won't provide effective fault tolerance. Offline Files are also not available on Terminal Server.
 
@@ -28,7 +28,9 @@ This is very similar to redirected [Start Menus for Terminal Servers]({{site.bas
 
 Create a GPO linked to the OU that contains your target workstations and enable Group Policy loopback mode. You would generally target similarly configured workstations just like you would do for Terminal Servers. In my test environment I'm configuring this for Windows Vista, I've enabled a WMI filter on this GPO so that it only applies to Vista and above:
 
-[code]SELECT Version FROM Win32_OperatingSystem WHERE Version >= '6'[/code]
+```sql
+SELECT Version FROM Win32_OperatingSystem WHERE Version >= '6'
+```
 
 Edit the GPO and enable these settings (here's the [full GPO report]({{site.baseurl}}/media/2008/04/WindowsVistaStartMenu.htm)):
 
@@ -38,14 +40,14 @@ Edit the GPO and enable these settings (here's the [full GPO report]({{site.base
   * Move the contents of Start Menu to the new location
   * Redirect the folder back to the local userprofile location when policy is removed
   * User Configuration / Administrative Templates / Start Menu and Taskbar / Remove common program groups from Start Menu
-  * User Configuration / Administrative Templates / Network / Offline Files / Administratively assigned offline files: _\dev.localPublicStartMenusWindowsVista_
+  * User Configuration / Administrative Templates / Network / Offline Files / Administratively assigned offline files: `\\dev.local\Public\StartMenus\WindowsVista`
 
 The last setting will ensure that the Start Menu will be cached by the workstation and available to the user offline. Here's my configured folder which has been cached locally:
 
-[<img src="https://stealthpuppy.com/media/2008/04/windowsvistastartmenu-thumb.png" border="0" alt="WindowsVistaStartMenu]({{site.baseurl}}/media/2008/04/windowsvistastartmenu.png)
+![WindowsVistaStartMenu]({{site.baseurl}}/media/2008/04/windowsvistastartmenu.png)
 
 Make sure you configure your Start Menus with access-based enumeration and the right permissions before users access them. If you don't and users' workstations cache the shortcuts, you might end up unavailable shortcuts looking like this:
 
-<img src="https://stealthpuppy.com/media/2008/04/startmenumissedicon.png" border="0" alt="StartMenuMissedIcon" width="211" height="156" /> 
+![StartMenuMissedIcon](https://stealthpuppy.com/media/2008/04/startmenumissedicon.png)
 
 Although I've only done some limited testing I think this solution would work quite well. One important thing to remember is that you will need to add your internal DNS domain to the Intranet zone (when using a domain-based DFS Namespace) otherwise users will be prompted with a trust dialog each time they run a shortcut from the Start Menu.

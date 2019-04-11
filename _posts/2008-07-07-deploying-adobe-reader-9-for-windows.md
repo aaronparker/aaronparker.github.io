@@ -24,15 +24,14 @@ tags:
   - Transform
   - Unattend
 ---
-<img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" title="AdobeReaderIcon" src="https://stealthpuppy.com/media/2008/07/adobereadericon.png" border="0" alt="AdobeReaderIcon](http://www.adobe.com/products/reader/) too.
 
-### First Impressions
+## First Impressions
 
 As usual consumers will have the Google toolbar pushed on them if they don’t de-select that option when downloading Reader, and now you’ll also get Adobe [AIR](http://www.adobe.com/products/air/) along with Reader too. Awesome, more stuff we don’t really need. A default install leaves two icons on the desktop now – Adobe Reader 9 plus one for [Acrobat.com](https://www.acrobat.com/).
 
 The good news though, is Reader 9.x is fast. I hadn’t ever found Reader 8 to be slow, but version 9 certainty runs noticeably faster than previous versions.
 
-### Downloading Adobe Reader
+## Downloading Adobe Reader
 
 Adobe Reader 9.1 is available for download for many languages, including:
 
@@ -46,32 +45,34 @@ Adobe Reader 9.1 is available for download for many languages, including:
 
 Adobe AIR is only bundled with the English and German versions of Reader 9 so far.
 
-### What To Do About Adobe Updater
+## What To Do About Adobe Updater
 
 Reader 9 continues to include the Adobe Updater application which has been updated to version 6. While I haven’t seen it misbehave for some time and it no longer drops an Updater folder in your Documents folder, you might still want to disable it.
 
 There are a few ways to do this. You can disable Updater by running it (click Help / Check for Updates) then click the Preferences link. You will then see the Preferences dialog like this, where you can choose to disable Updater:
 
-[<img title="UpdaterPrefs" src="https://stealthpuppy.com/media/2008/07/updaterprefs-thumb.png" border="0" alt="UpdaterPrefs]({{site.baseurl}}/media/2008/07/updaterprefs.png)
+![UpdaterPrefs]({{site.baseurl}}/media/2008/07/updaterprefs.png)
 
 To problem with this approach is that you need Internet access just to get to the preferences dialog. A bit of a problem if you’ve got Internet access issues. To disable Updater from running automatically you can run the following command line as an administrator (or an elevated command prompt in Windows Vista):
 
-[code]REG ADD "HKLMSOFTWAREPoliciesAdobeAcrobat Reader9.0FeatureLockdown" /v bUpdater /d 0 /t REG_DWORD /f[/code]
+```cmd
+REG ADD "HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\9.0\FeatureLockdown" /v bUpdater /d 0 /t REG_DWORD /f
+```
 
 Alternatively, to completely remove Adobe Updater, after installation, delete this folder:
 
-  * `C:Program FilesCommon FilesAdobeUpdater6` (32-bit Windows)
-  * `C:Program Files (x86)Common FilesAdobeUpdater6` (64-bit Windows)
+  * `C:\Program Files\Common Files\AdobeUpdater\6` (32-bit Windows)
+  * `C:\Program Files (x86)\Common Files\AdobeUpdater\6` (64-bit Windows)
 
 If Adobe Reader is running as a standard (or limited) user account, Adobe Updater won’t run at all, so it shouldn’t be an issue if you don’t give users administrative access to their workstations.
 
 If you are virtualising Adobe Reader, then disabling or removing Updater is a must.
 
-### Extracting Reader Setup Files
+## Extracting Reader Setup Files
 
 Before deploying Reader 9, you will want to extract the files from the file you’ve downloaded, so that you can create a custom tranform file. To extract the file, run the following command line:
 
-[code]AdbeRdr910\_en\_US\_Std.exe -nos\_ne[/code]
+```AdbeRdr910\_en\_US\_Std.exe -nos\_ne```
 
 You will then find the extracted file in these locations:
 
@@ -80,7 +81,7 @@ You will then find the extracted file in these locations:
 
 Once extracted, you will have the setup files for both Reader and AIR. The setup files for Reader are in a sub-folder called ‘Reader9’.
 
-### Creating a Custom Transform File
+## Creating a Custom Transform File
 
 When deploying Reader there are some customisations that I recommend making to the installation, including:
 
@@ -128,7 +129,7 @@ You can download a transform with all of the modifications listed above here (ex
   <a href="https://stealthpuppy.com/media/2008/07/AdobeReader91Custom.mst">Adobe Reader 9.1 Custom Transform</a>
 </p>
 
-### Creating a Custom Transform with Adobe Customisation Wizard 9
+## Creating a Custom Transform with Adobe Customisation Wizard 9
 
 Adobe have recently released the [Adobe Customisation Wizard 9](http://www.adobe.com/support/downloads/detail.jsp?ftpID=3993) which is the best place to start when creating a custom transform for Acrobat or Reader 9. Here are the settings I would recommend you configure when creating a transform:
 
@@ -196,13 +197,14 @@ Under _Online and Acrobat.com Features_ set
 
 After you created the transform for Reader 9 with the wizard, you may want to open it in your favourite MSI editor to perform further customisations such as disabling SpeedLauncher.
 
-### Disabling Menus and Buttons
+## Disabling Menus and Buttons
 
 In a corporate environment, you may want to disable some of the menu items and buttons. Just as in Adobe Reader 8, most of these items are disabled with a JavaScript file. Yes a JavaScript file. Whilst using the registry would make sense to control UI items, Adobe uses JavaScript files. I’d love to know the reason why. It’s not a solution that scales particularly well.
 
 To disable UI elements, you will first need to list all of the elements by name. To do this, save the following script as `ListItems.js` in `%ProgramFiles%AdobeReader 9.0ReaderJavaScript`:
 
-[code]//ListItems.js  
+```javascript
+//ListItems.js  
 //Open Javascript Console  
 console.show();
 
@@ -214,15 +216,17 @@ console.println(toolbarItems + "n")
 //List Menu Items in the Console  
 var menuItems = app.listMenuItems()  
 for( var i in menuItems)  
-console.println(menuItems + "n")[/code]
+console.println(menuItems + "n")
+```
 
 This will open a dialog box when Reader is started, listing the names of each menu item and toolbar button. You can then create a JavaScript file to remove these items from the UI. Reader 9 includes a number of menu items you might want to remove:
 
-[<img title="MenusHighlighted" src="https://stealthpuppy.com/media/2008/07/menushighlighted-thumb.png" border="0" alt="MenusHighlighted]({{site.baseurl}}/media/2008/07/menushighlighted.png)
+![]({{site.baseurl}}/media/2008/07/menushighlighted.png)
 
 Here’s the code you’ll need to hide those items. Copy and paste into `HideItems.js`, then copy into `%ProgramFiles%AdobeReader 9.0ReaderJavaScripts`.
 
-[code]//HideMenu.js
+```javascript
+//HideMenu.js
 
 // [File - Create Adobe PDF Using Acrobat.com], plus toolbar button  
 app.hideMenuItem("WebServices:CreatePDF");  
@@ -252,27 +256,32 @@ app.hideMenuItem("DetectAndRepair");
 app.hideMenuItem("Updates");
 
 // [Help - Purchase Adobe Acrobat]  
-app.hideMenuItem("Weblink:BuyAcrobat");[/code]
+app.hideMenuItem("Weblink:BuyAcrobat");
+```
 
-### Deploying Reader
+## Deploying Reader
 
 Deploying Reader should be straight-forward, however you are required to [complete a distribution agreement](http://www.adobe.com/products/acrobat/acrrdistribute.html) to deploy Reader in your environment.
 
 Using [Group Policy Software Installation](http://support.microsoft.com/kb/816102), or your favourite software deployment tool, create a transform file with your required settings and deploy. If you need to use a script, this command will install Reader:
 
-[code]START /WAIT MSIEXEC /I AcroRead.msi ALLUSERS=TRUE TRANSFORMS=AdobeReader9.mst /QB[/code]
+```
+START /WAIT MSIEXEC /I AcroRead.msi ALLUSERS=TRUE TRANSFORMS=AdobeReader9.mst /QB
+```
 
-### Updating Reader
+## Updating Reader
 
 Updating Adobe Reader can be a bit of a challenge, especially for smaller environments using only Group Policy Software Installation. For Reader 8, Adobe released updates as a complete download of the installer rather than patches. I recommend updating using the full installer as updates for version 9 are released.
 
 If you would really prefer to use the Updater to keep Reader current, you could use the following command in a task using Windows Task Scheduler:
 
-[code]"%CommonProgramFiles%AdobeUpdater6Adobe\_Updater.exe" -AU\_LAUNCH\_MODE=1 -AU\_DISPLAY\_LANG=en\_US -AU\_LAUNCH\_APPID=reader9rdr-en_US[/code]
+```
+"%CommonProgramFiles%\AdobeUpdater\6\Adobe\_Updater.exe" -AU\_LAUNCH\_MODE=1 -AU\_DISPLAY\_LANG=en\_US -AU\_LAUNCH\_APPID=reader9rdr-en_US
+```
 
 I can’t vouch for the effectiveness of this approach or even if it will work, so you’re on your own there. Of course you’ll also need to keep Updater in the Reader install package.
 
-### Managing Reader
+## Managing Reader
 
 Managing Reader via Group Policy is pretty simple – Reader 8 and 9 are even policy aware. That is they use the SoftwarePolicies key in the registry. Unfortunately Adobe don’t supply an ADM/ADMX template file for use with Group Policy. C’mon Adobe it wouldn’t take you much effort and we would be very grateful.
 
@@ -284,7 +293,7 @@ I've also created my own custom Administrative template, which you can download 
   <a href="https://stealthpuppy.com/media/2008/07/AdobeAcrobatAndReader9.zip">Adobe Acrobat and Reader 9 Administrative Template v0.1</a>
 </p>
 
-### What Now?
+## What Now?
 
 I would recommend updating to Reader 9 if you can. There’s doesn’t look to be any fantastic new features to get excited over, but the performance improvements should make it worthwhile.
 
@@ -292,3 +301,4 @@ I would recommend updating to Reader 9 if you can. There’s doesn’t look to b
   * [29/07/2008] Adobe have posted a [Deploying Adobe Reader 9](http://www.adobe.com/devnet/acrobat/pdfs/deploying_reader9.pdf) document that has some excellent details.
   * [07/08/2008] Updated for the release of Adobe Customisation Wizard 9.
   * [08/08/2008] Added version 0.1 of custom ADM/ADMX for managing policy settings.
+  

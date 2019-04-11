@@ -13,7 +13,7 @@ categories:
 tags:
   - Windows-Server-2008
 ---
-<img src="https://stealthpuppy.com/media/2008/03/windowshelp.png" border="0" alt="WindowsHelp](http://www.microsoft.com/downloads/details.aspx?FamilyID=518d870c-fa3e-4f6a-97f5-acaf31de6dce&DisplayLang=en) and I'm left scratching my head. His beef with the guides is that they haven't yet been updated for RTM and still include some older terminology:
+ and I'm left scratching my head. His beef with the guides is that they haven't yet been updated for RTM and still include some older terminology:
 
 > In this manual, they still talk about €œWindows Server virtualization (wsv)€ even though wsv was already renamed to Hyper-V in November. It seems as if even Microsoft€™s own employees can€™t keep up with the pace by which their marketing renames their products. Even worse is that this paper doesn€™t mention that Hyper-V is still in beta. I wonder if the author of this paper was aware of this fact. Of course, the reader is also kept in the dark that there meanwhile is an update of Hyper-V which has to be downloaded separately.
 
@@ -55,3 +55,4 @@ If you can't get enough of Step-by-Step guides, there's even more:
   * [Step-by-Step Guide: Demonstrate NAP IPsec Enforcement in a Test Lab](http://www.microsoft.com/downloads/details.aspx?FamilyID=298ff956-1e6c-4d97-a3ed-7e7ffc4bed32&DisplayLang=en)
   * [Step-by-Step Guide: Demonstrate NAP DHCP Enforcement in a Test Lab](http://www.microsoft.com/downloads/details.aspx?FamilyID=ac38e5bb-18ce-40cb-8e59-188f7a198897&DisplayLang=en)
   * [Windows Vista Step-by-Step Guides for IT Professionals](http://www.microsoft.com/downloads/details.aspx?FamilyID=311f4be8-9983-4ab0-9685-f1bfec1e7d62&DisplayLang=en)
+  

@@ -28,7 +28,7 @@ Our aim is to create an event that remains independent from Citrix, that meets q
 
 You can follow the [Melbourne Citrix User Group Community on Twitter](https://twitter.com/mcugc) for updates and we hope to have GoToMeeting available so that the community in other locations can take part.
 
-# Agenda
+## Agenda
 
 We have a packed agenda for the event with the aim of you, the attendee, participating. We'd like to hear what you'd like to get out of the Citrix User Group, as well a round table for a chance to hear from you on your wins and challenges with Citrix solution in your (or customer) environments.
 
@@ -43,13 +43,13 @@ We have a packed agenda for the event with the aim of you, the attendee, partici
 
 Be sure to [sign up for the first meeting via the registration page](https://www.mycugc.org/page/melbourne-dec6-2016?source=5).
 
-# Sponsor
+## Sponsor
 
 [<img class="alignnone wp-image-5263 size-full" src="https://stealthpuppy.com/media/2016/11/nmsgljwk.jpg" alt="Nutanix](http://www.nutanix.com/)
 
 We have a great win with [Nutanix](http://www.nutanix.com/) taking a chance on us for the first event. Come to the event to hear how Nutanix helps support Citrix technologies. This is great for us and the community, so I'm really excited to have Nutanix on board.
 
-# **Location**
+## **Location**
 
 The evening's event will be held at the [Golden Gate Hotel](http://goldengatehotel.com.au/), [238 Clarendon St, South Melbourne](https://goo.gl/maps/koiVRsKnjfC2). The closest station is Southern Cross with trams heading down Clarendon St. Parking should also be available at the [South Melbourne Markets](https://goo.gl/maps/LJhq3kGcHi52) on the corner of Coventry and Cecil Streets.
 

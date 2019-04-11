@@ -15,7 +15,7 @@ categories:
 tags:
   - Autorun
 ---
-<img class="alignleft size-full wp-image-939" style="margin-left: 0px; margin-right: 10px;" title="Autorun icon (kinda)" src="https://stealthpuppy.com/media/2009/02/autorun.png" alt="Autorun icon (kinda)](http://www.microsoft.com/technet/prodtechnol/windows2000serv/reskit/regentry/93502.mspx?mfr=true) registry key from functioning as expected.
+ registry key from functioning as expected.
 
 IT World [has covered the update](http://www.itworld.com/windows/63219/after-cert-warning-microsoft-delivers-autorun-fix) and US-CERT actually issued a security alert about the issue last month - [Microsoft Windows Does Not Disable AutoRun Properly](http://www.us-cert.gov/cas/techalerts/TA09-020A.html). The US-CERT article has guidance on disabling `AUTORUN.INF` completely via the IniFileMapping feature - something that [Nick Brown covered back in 2007](http://nick.brown.free.fr/blog/2007/10/memory-stick-worms.html).
 

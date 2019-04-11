@@ -22,7 +22,7 @@ tags:
 ---
 How much storage capacity do you need for Citrix Machine Creation Services? If you're designing a XenApp or XenDesktop environment, one question you're going to ask is "how much storage do we need?". Let's dig into the fundamentals of Machine Creation Services and have a look at how much capacity you'll need to provision.
 
-# What is Machine Creation Services?
+## What is Machine Creation Services?
 
 Citrix Machine Creation Services (MCS) takes the pain out of deploying virtual machine workloads for XenApp and XenDesktop. MCS leverages hypervisor management APIs to deploy virtual machines from a master image. While the approach for deploying VMs is the same at a high level across hypervisors, there are, of course, differences due to different virtual machine formats.
 
@@ -44,7 +44,7 @@ I've updated that image for XenDesktop 7.11. Now the available deployment option
 
 As you can see, there are quite a number of deployment options in MCS now, so this can't make sizing straight-forward.
 
-# Machine Creation Services VM Components
+## Machine Creation Services VM Components
 
 To determine the storage capacity we require for MCS, we should start with knowing what makes up a virtual machine deployed via Machine Creation Services. This will differ for each hypervisor and machine catalog configuration:
 
@@ -57,7 +57,7 @@ To determine the storage capacity we require for MCS, we should start with knowi
 
 Because each hypervisor has its own idiosyncracies our calculations for storage capacity will differ depending on the platform choice.
 
-# What about Dedupe and Compression?
+## What about Dedupe and Compression?
 
 For the purposes of this exercise, I'm going to ignore deduplication and compression. Each storage vendor has different approaches - some do inline dedupe, some do post-process dedupe, while others do both and not all vendors support compression. Additionally, storage vendors are using different approaches for block sizes so may have different results for reclaiming capacity.
 
@@ -65,13 +65,13 @@ Think about deploying XenDesktop on Azure - deduplication or compression are not
 
 If we start with calculating the maximum capacity we'll require based on our deployment options, then testing on specific storage configurations that include dedupe and/or compression means that we can only reduce our storage capacity requirements.
 
-# Conclusion
+## Conclusion
 
 MCS helps to take the pain out of virtual desktop deployments but you'll still need to carefully consider the storage capacity requirements. Because the approach for each hypervisor is slightly different, I'll cover each platform individually in upcoming articles. I'm going to start with what I think is the easiest and simplest platform - Hyper-V in Windows Server 2012 R2 and Windows Server 2016.
 
 Note that for this series, I'm only interested in Windows deployments, so I won't cover Linux at this time.
 
-## Articles
+### Articles
 
 The articles for specific platforms can be found here:
 

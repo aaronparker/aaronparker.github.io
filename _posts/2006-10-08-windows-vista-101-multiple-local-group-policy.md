@@ -14,7 +14,7 @@ tags:
 ---
 Here's an interesting new feature of Windows Vista that will be a help to shared computing environments such as public libraries or those still inflicted with Windows NT 4.0 domains €“ Multiple Local Group Policy.
 
-<img border="0" width="566" src="https://stealthpuppy.com/media/2006/10/1000.14.140.MultipleLocalGroupPolicy.PNG" height="252" style="width: 566px; height: 252px" /> 
+![Multiple Local Group Policy](https://stealthpuppy.com/media/2006/10/1000.14.140.MultipleLocalGroupPolicy.PNG)
 
 In environments where Windows is installed and not connected to a domain, locking down the user interface with Group Policy has been a challenge because local Group Policy applies to all users including Administrators. Windows Vista and Longhorn Server now allow the administrator to create multiple local Group Policy objects that can be applied to specific users or groups. It's a simple process:
 
@@ -25,9 +25,9 @@ In environments where Windows is installed and not connected to a domain, lockin
   5. To add a second local GPO to apply to non-Administrators, click Group Policy Object Editor under the Available standalone snap-ins list and then click Add.
   6. In the Select Group Policy Object dialog box, click Browse. Click the Users tab. Click the Non-Administrators group. Click OK. Click Finish.
 
-<a target="_blank" href="http://www.trustedaccess.info/photos/images/images/141/original.aspx"></a>
+[http://www.trustedaccess.info/photos/images/images/141/original.aspx](http://www.trustedaccess.info/photos/images/images/141/original.aspx)
 
-[<img border="0]({{site.baseurl}}/media/2006/10/1000.14.141.AddingSnapIn.PNG)
+![Add snapin]({{site.baseurl}}/media/2006/10/1000.14.141.AddingSnapIn.PNG)
 
 It's a simple as that. Now you can apply policies to non-Administrators without affecting administrator accounts on the machine. For a full step by step guide and discussion on this feature check out the following document from Microsoft:
 

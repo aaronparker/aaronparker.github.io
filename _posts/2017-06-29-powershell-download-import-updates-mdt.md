@@ -48,11 +48,13 @@ Get-LatestUpdate.ps1 supports a number of parameters, all of which are optional:
 
 Get-LatestUpdate.ps1 will output an object that includes details about the update that has been gathered, including the KB article, the description of the update, the URL to the download. If the Download parameter is used this will also return the update file name and the path where the update has been saved. This object can then be passed to Import-Update.ps1 that will use the UpdatePath property to import updates stored in that folder (note that it will import all updates from that folder).
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">KB         : KB4022716
+```cmd
+KB         : KB4022716
 Note       : 2017-06 Cumulative Update for Windows 10 Version 1703 for x64-based Systems (KB4022716)
 URL        : http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/06/windows10.0-kb4022716-x64_72cab17aeb72f4e36df375505ba7325c90044119.msu
 File       : windows10.0-kb4022716-x64_72cab17aeb72f4e36df375505ba7325c90044119.msu
-UpdatePath : C:\Updates</pre>
+UpdatePath : C:\Updates
+```
 
 # Import-Update
 
@@ -71,7 +73,9 @@ Import-Update.ps1 supports a number of parameters:
 
 Get-LatestUpdates.ps1 outputs an object that can be passed to Import-Update.ps1 on the pipeline, so a single command line can be used to get the latest update for a specific operating system, download the update locally and import it into an MDT deployment share. For example, I can use the following command line to download the Windows 10 x64 Current Branch (build 15063) and import it into my deployment share used to build Reference images:
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Get-LatestUpdate.ps1 -Download -Path C:\Updates | .\Import-Update.ps1 -SharePath "\\mcfly\Deployment\Reference" -PackagePath "Windows 10\x64" -Clean</pre>
+```powershell
+.\Get-LatestUpdate.ps1 -Download -Path C:\Updates | .\Import-Update.ps1 -SharePath "\\mcfly\Deployment\Reference" -PackagePath "Windows 10\x64" -Clean
+````
 
 Which looks like this:
 
@@ -89,5 +93,3 @@ There are likely some changes and additions I could make to this script, so feed
 
   * Add support for Windows 7, Windows Server 2012 R2 etc. into Get-LatestUpdate.ps1. The way that Keith has written the script lends itself to support other Windows versions
   * Compare the existing update in MDT before importing an update - if the existing update matches the latest update, there's no need to re-import the update
-
- 

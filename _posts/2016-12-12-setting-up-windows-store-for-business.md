@@ -39,7 +39,7 @@ I'm not going to cover these in detail but I will cover the key steps and provid
 
 If you don't have any on-premises identities, then you can create an Azure tenant for Azure AD functionality and skip the steps on configuring AD Connect/ADFS.
 
-# Create an Azure tenant
+## Create an Azure tenant
 
 If you're already using a Microsoft cloud service, such as Office 365, an Azure AD tenant will already exist. Ensure you do not have an existing tenant before proceeding.
 
@@ -60,7 +60,7 @@ Setting up an Azure tenant is quite simple, just be sure to pay attention to the
 
 Before configuring anything else in the new Azure tenant, configure a custom domain. You'll notice that the default domain will be <domain>.onemicrosoft.com.
 
-## Configure a Domain
+### Configure a Domain
 
 A custom domain is required to use account within a namespace that better aligns with your corporate identity and you will need to own the custom domain. In my Azure tenant I'm using a subdomain of stealthpuppy.com; however, you may want to use your primary domain to ensure user account names align with corporate email addresses.
 
@@ -77,19 +77,19 @@ At this point, you can make the new domain the primary domain for Azure AD.
 
 ![Add and verify a custom domain in Azure]({{site.baseurl}}/media/2016/12/01_VerifyDomainName.png)*Add and verify a custom domain in Azure*</figure>
 
-# Configure Azure AD Connect/ADFS
+## Configure Azure AD Connect/ADFS
 
 Microsoft provides detailed [instructions on setting up AD Connect](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-aadconnect-prerequisites) on the Azure documentation site. Exactly how to do that in your environment is out of the scope of this article, but AD Connect to synchronise accounts into [Azure AD with the Express setup](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect-get-started-express) is the simplest and fastest way to get up and running.
 
 Again, I highly recommend reading this article on [integrating your on-premises identities with Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-aadconnect).
 
-# Create an Azure Global Administrator
+## Create an Azure Global Administrator
 
 Signing up for or into the Windows Store for Business requires a work or school account, i.e. an account from Azure AD.
 
 ![Creating an Azure AD user and assigning a Directory role]({{site.baseurl}}/media/2016/12/02_CreateAzureADUser.png)*Creating an Azure AD user and assigning a Directory role*</figure>
 
-# Setup the Windows Store for Business
+## Setup the Windows Store for Business
 
 Configuring the Windows Store for Business is very simple
 
@@ -98,7 +98,7 @@ Configuring the Windows Store for Business is very simple
   3. Configure the private store name
   4. Add apps to your Inventory
 
-## Sign Up and Initial Configuration
+### Sign Up and Initial Configuration
 
 Logging onto the WSfB site for the first time will bind the Store configuration to your Azure tenant. You can [sign up to the WSfB without an Azure AD tenant](https://technet.microsoft.com/en-au/itpro/windows/manage/sign-up-windows-store-for-business) and you will then be directed to create an Azure tenant; however, creating that first is a better approach.
 
@@ -110,7 +110,7 @@ Configure the Private store display name - this will appear in the Windows Store
 
 ![Setting the Private store display name in the Windows Store for Business]({{site.baseurl}}/media/2016/12/05_WindowsStoreBusiness-NamePrivateStore.png)*Setting the Private store display name in the Windows Store for Business*</figure>
 
-## Configure the App Inventory
+### Configure the App Inventory
 
 Next, click **Manage** / **Inventory** to view the initial app inventory. A number of the Office mobile applications will be listed and in the process of being added to the Private store. _Adding apps to the Private store will take 12-24 hours to appear in the Windows Store app on user's devices_ - not a short process.
 
@@ -125,7 +125,7 @@ At this point you have a number of decisions to make:
   3. If you're deploying Windows 10 Enterprise edition - **will the Windows Store app be available to users?** Only with Enterprise edition will you have full control over the Store app
   4. **Which apps will be made available in the Windows Store app?** If you elect to keep the Store app available, the WSfB allows IT to curate a list of apps. This would typically be a subset of the total apps in your Inventory
 
-### Add Apps to Your Inventory
+#### Add Apps to Your Inventory
 
 Here are a few recommendations for adding apps to the Inventory, in no particular order:
 
@@ -136,7 +136,7 @@ Here are a few recommendations for adding apps to the Inventory, in no particula
   5. **Not all apps are available for the desktop** - apps that work on Windows 10 Mobile are listed in the WSfB as well. This seems counterintuitive to a "Universal app platform", but that's the reality. If you're managing Windows 10 mobile devices, then you'll manage apps for all platforms from the WSfB
   6. **The Windows Store app on Windows 10 is a little easier for finding apps including finding apps from a specific developer**. You can then search for those apps in the WSfB.
 
-### Managing Apps
+#### Managing Apps
 
 Once you have a reasonable number of apps, management can become a little cumbersome, use the search feature or the **Refine** dropdown to filter apps. Here I've filtered by only those apps added to the private store. 
 
@@ -146,7 +146,7 @@ As mentioned above, **add those apps to the Inventory that you want to target fo
 
 ![Add even unwanted apps to the Windows Store for Business]({{site.baseurl}}/media/2016/12/TargettingUnwantedApps.png)*Add even unwanted apps to the Windows Store for Business*</figure>
 
-### Assigning Apps
+#### Assigning Apps
 
 [Applications can be assigned to people](https://technet.microsoft.com/en-au/itpro/windows/manage/assign-apps-to-employees) (and licenses managed) from the Window Store for Business. However, this is largely not scaleable as only individual users can be selected.
 
@@ -158,7 +158,7 @@ From a user experience perspective, apps are also not automatically assigned, in
 
 A better approach will be to use a management tool that enables automatic deployment (or removal) of apps to users or devices, which I'll cover in upcoming articles.
 
-# Conclusion
+## Conclusion
 
 For existing enterprises moving to Windows 10, extending your on-premises identity into Azure AD and configuring the WSfB are important steps for managing the user experience on Windows 10. The Universal app platform shows promise from an application lifecycle management perspective and getting ready to deploy these apps on Windows 10 is considerably simpler than other mobile app platforms. 
 

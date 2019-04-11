@@ -12,7 +12,7 @@ tags:
   - Microsoft Press
   - NAP
 ---
-[]({{site.baseurl}}/media/2008/01/0063980v.jpg)<img border="0" vspace="5" align="left](http://www.microsoft.com/MSPress/books/11160.aspx) has turned up from Amazon today. This is a hefty book - at 816 pages it weighs a ton but there's plenty of detail.
+![MSPress]({{site.baseurl}}/media/2008/01/0063980v.jpg) has turned up from Amazon today. This is a hefty book - at 816 pages it weighs a ton but there's plenty of detail.
 
 It's a bit early for me to give you an idea of what the book is like, but from the brief look I've had it's worth a place in your library if you'll be dealing with Windows 2008's networking features. The section dedicated to NAP takes up just under 1/2 of the book with some clear explanations of it's components.
 

@@ -26,32 +26,34 @@ Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you c
   * Install-VisualCRedistributables.ps1 updated with ConfigMgr support - create applications for the redistributables in ConfigMgr
   * Updated with additional parameter validation, parameter sets, inline comments
 
-# Overview
+## Overview
 
 This script will download the Visual C++ Redistributables listed in an external XML file into a folder structure that represents major release, processor architecture and update release (e.g. SP1, MFC, ATL etc.). The script defines the available redistributables and can be updated with each release with no changes made to the script.
 
 The basic structure of the XML file should be as follows (an XSD schema is included in the repository):
 
-<pre class="prettyprint lang-xml" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">&lt;Redistributables&gt;
-    &lt;Platform Architecture="x64" Release="" Install=""&gt;
-        &lt;Redistributable&gt;
-            &lt;Name&gt;&lt;/Name&gt;
-            &lt;ShortName&gt;&lt;/ShortName&gt;
-            &lt;URL&gt;&lt;/URL&gt;
-            &lt;ProductCode&gt;&lt;/ProductCode&gt;
-            &lt;Download&gt;&lt;/Download&gt;
-        &lt;/Redistributable&gt;
-    &lt;/Platform&gt;
-    &lt;Platform Architecture="x86" Release="" Install=""&gt;
-        &lt;Redistributable&gt;
-            &lt;Name&gt;&lt;/Name&gt;
-            &lt;ShortName&gt;&lt;/ShortName&gt;
-            &lt;URL&gt;&lt;/URL&gt;
-            &lt;ProductCode&gt;&lt;/ProductCode&gt;
-            &lt;Download&gt;&lt;/Download&gt;
-        &lt;/Redistributable&gt;
-    &lt;/Platform&gt;
-&lt;/Redistributables&gt;</pre>
+```xml
+<Redistributables>
+    <Platform Architecture="x64" Release="" Install="">
+        <Redistributable>
+            <Name></Name>
+            <ShortName></ShortName>
+            <URL></URL>
+            <ProductCode></ProductCode>
+            <Download></Download>
+        </Redistributable>
+    </Platform>
+    <Platform Architecture="x86" Release="" Install="">
+        <Redistributable>
+            <Name></Name>
+            <ShortName></ShortName>
+            <URL></URL>
+            <ProductCode></ProductCode>
+            <Download></Download>
+        </Redistributable>
+    </Platform>
+</Redistributables>
+```
 
 Each major version of the redistributables is grouped by that defines the major release, processor architecture and install arguments passed to the installer.
 
@@ -63,7 +65,7 @@ The properties of each redistributable are defined in each node:
   * ProductCode - this is the MSI Product Code for the specified VC++ App that will be used to import the package into Configuration Manager
   * Download - this is the URL to the installer so that the script can download each redistributable
 
-## Parameters
+### Parameters
 
 The script supports the -WhatIf and -Verbose parameters for testing and verbose output when using the parameter actions below.
 
@@ -73,65 +75,70 @@ There are 3 parameter sets that control the following actions:
   2. Download and Install the redistributable to the current machine
   3. Download and create ConfigMgr applications for the redistributables
 
-### Download
+#### Download
 
-#### Xml
+##### Xml
 
 The XML file that contains the details about the Visual C++ Redistributables. This must be in the expected format. If the redistributable exists in the target location, it will be skipped and not re-downloaded.
 
 Example: download the Visual C++ Redistributables listed in VisualCRedistributables.xml to the current folder.
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path .\</pre>
+```powershell
+.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path .\
+```
 
 Specify a target folder to download the Redistributables to, otherwise use the current folder will be used.
 
 Example: download the Visual C++ Redistributables listed in VisualCRedistributables.xml to C:\Redist.
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path C:\Redist -Install</pre>
+```powershell
+.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path C:\Redist -Install
+```
 
 To install the redistributables add the -Install parameter.
 
-#### Install
+##### Install
 
 By default, the script will only download the Redistributables. This allows you to download the Redistributables for separate deployment (e.g. in a reference image). Add -Install to install each of the Redistributables as well.
 
 Example: download (to the current folder) and install the Visual C++ Redistributables listed in VisualCRedistributables.xml.
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Install</pre>
+```powershell
+.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Install
+```
 
 The Redistributables will installed in the order specified in the XML file.
 
-#### Results
+##### Results
 
-Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list.<figure> 
+Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list.
 
-![Visual C++ Redistributables 2005-2015" width="1442" height="900" />*Visual C++ Redistributables 2005-2015*</figure>
 
-Visual C++ Redistributables 2005 to 2017 (including 2015) installed:<figure> 
+Visual C++ Redistributables 2005 to 2017 (including 2015) installed:
 
-![Visual C++ Redistributables 2005-2017" width="1442" height="900" />*Visual C++ Redistributables 2005-2017*</figure>
 
-### ConfigMgr
+#### ConfigMgr
 
 Support for downloading the Redistributables and creating applications in System Center Configuration Manager has recently been added.
 
-#### CreateCMApp
+##### CreateCMApp
 
 If specified, enables automatic creation of Application Containers in Configuration Manager with a single Deployment Type containing the downloaded EXE file. The script must be run from a machine with the Configuration Manager console and the ConfigMgr PowerShell module installed.
 
-#### SMSSiteCode
+##### SMSSiteCode
 
 Specify SMS Site Code for the ConfigMgr app creation.
 
 Example: Download Visual C++ Redistributables listed in VisualCRedistributables.xml and create ConfigMgr Applications for the selected Site.
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path \\server1.contoso.com\Sources\Apps\VSRedist -CreateCMApp -SMSSiteCode S01</pre>
+```powershell
+.\Install-VisualCRedistributables.ps1 -Xml ".\VisualCRedistributables.xml" -Path \\server1.contoso.com\Sources\Apps\VSRedist -CreateCMApp -SMSSiteCode S01
+```
 
-This will look similar to the following in the Configuration Manager console:<figure> 
+This will look similar to the following in the Configuration Manager console:
 
-![Visual C++ Redistributables in Configuration Manager" width="1368" height="727" />*Visual C++ Redistributables in Configuration Manager*</figure>
 
-# Finally
+## Finally
 
 Work is proceeding on additional updates including the following:
 

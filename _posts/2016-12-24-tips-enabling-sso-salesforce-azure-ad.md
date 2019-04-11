@@ -20,7 +20,7 @@ tags:
 ---
 I was recently testing out the setup of single sign-on (SSO) and user provisioning with [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis) and Salesforce via the Azure Resource Manager portal and came across a couple of minor hiccups that I wanted to share. With Salesforce being as popular as it is, it's a great target for enabling SSO in any organisation and improving the user experience.
 
-# Azure Active Directory
+## Azure Active Directory
 
 If you happen to be new to Azure Active Directory (Azure AD), whether you're an IT Pro looking to learn more about it or an organisation that is managing cloud-based or SaaS applications, Azure AD is a Microsoft technology that most certainly in your future. 
 
@@ -28,13 +28,13 @@ You can [create an Azure tenant and set up Azure AD](https://docs.microsoft.com/
 
 I won't cover the setup of Azure AD here, but the links above are plenty to get you started if you're not already using Azure. Note that in this article I'm covering a couple of tips for single sign-on and user account provisioning with Salesforce. While SSO comes with the free tier of Azure AD, user account provisioning requires an [Azure AD Premium](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-editions) subscription.
 
-# Salesforce
+## Salesforce
 
 There's probably a good chance you're already Salesforce organisation if you're reading this, but for those of us not using it or wanting to test single sign-on and user account provisioning with a real enterprise SaaS application, Salesforce provides a free developer version.
 
 To test out SSO and account provisioning functionality in a lab environment or before you implement in production, [sign up for the developer edition](https://developer.salesforce.com/signup). This took me all of 5 minutes and I have an enterprise application that I can test with web, mobile and desktop apps.
 
-# Single Sign-On
+## Single Sign-On
 
 Setting up SSO for Salesforce is straight-forward; however due to a certificate issue, it took a bit longer that it should have. Starting with access to an Azure AD tenant and a Salesforce subscription, configuring SSO should take an hour or less.
 
@@ -50,7 +50,7 @@ To configure SSO for Salesforce, log into the Azure Portal and open [the Azure A
 
 During the Salesforce SAML configuration, I came across an issue with [the SAML signing certificate issued by Azure](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-certs).
 
-## Request Signing Certificate Issue
+### Request Signing Certificate Issue
 
 When configuring SAML from within Salesforce using the certificate from Azure, the following error is shown when attempting to save the configuration.
 
@@ -68,7 +68,7 @@ The certificate properties don't reveal anything out of the ordinary.
 
 I thought it worth exporting the certificate to DER format to test. Open the certificate, click **Details** / **Copy to File...** (as shown above) and export it to **DER encoded binary X.509 format**. Use that version of the certificate when configuring SAML in Salesforce and it will save successfully.
 
-## Recommendations
+### Recommendations
 
 When configuring SAML single sign-on in Salesforce here's a quick list of my recommendations:
 
@@ -79,7 +79,7 @@ When configuring SAML single sign-on in Salesforce here's a quick list of my rec
 
 This then leads me to enabling account provisioning.
 
-# Account Provisioning
+## Account Provisioning
 
 Salesforce is one of the handful of SaaS apps that are supported for [Automated User Provisioning with Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-saas-app-provisioning). Just follow the steps provided by Microsoft for enabling user provisioning; however, once enabled the following message is displayed when attempting single sign-on:
 
@@ -99,7 +99,7 @@ Add a new mapping with these values:
 
   * Mapping Type: Direct
   * Source Attribute: userPrincipalName
-  * Default Value: <blank>
+  * Default Value: `<blank>`
   * Source Attribute: FederationIdentifier
   * Match objects using this attribute: No
   * Apply this mapping: Always
@@ -110,6 +110,6 @@ This should look similar to the screenshot below:
 
 Save the configuration and start the provisioning synchronisation and single sign-ins should now work.
 
-# Conclusion
+## Conclusion
 
 Being able to setup an enterprise SaaS application for single sign-on and user account provisioning from Azure AD in a lab environment is ideal. While in this instance I should have been done with the configuration within an hour, a couple of hurdles were in the way. Hopefully, this article will ensure anyone configuring SSO for this application in the future won't have the same challenges.
