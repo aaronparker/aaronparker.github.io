@@ -16,8 +16,6 @@ tags:
   - Automation
   - MDT
 ---
-[<img class="alignnone size-full wp-image-3584" src="{{site.baseurl}}/media/2014/03/4520986339_99857d1c35_o.jpg" alt="Compressed Car](http://www.flickr.com/photos/marcovdz/4520986339/)
-
 There's typically not too much that you can do to reduce the size of your master image. You might use application virtualization or layering solutions to reduce the number of master images, but once you work out what needs to go into the core image, that's going to dictate the size of the image.
 
 Reducing the size of your master image can help reduce the capacity required to store master images and virtual machines (dedupe helps, of course) and spend less cycles transmitting an image across the network for physical PCs.
@@ -28,24 +26,25 @@ Microsoft released [an important update for Windows 7 last year](http://blogs.te
 
 Here's an example system where I've run the Disk Clean-up tool that has resulted in a 3.4 GB reduction in disk usage - on the left is the before image, on the right is after the cleanup. (I'm cheating a bit here, this is a system that has gone from Windows 7 to Windows 7 SP1, hence the reason for such a large change).
 
-[<img class="alignnone size-full wp-image-3587" src="{{site.baseurl}}/media/2014/03/BeforeAfterClean.png" alt="Compare Disk Cleanup Before and After]({{site.baseurl}}/media/2014/03/BeforeAfterClean.png)
+![Compare Disk Cleanup Before and After]({{site.baseurl}}/media/2014/03/BeforeAfterClean.png)
 
 Disk Clean-up can remove a number of interesting items, most of which will actually be applicable for PCs and persistent desktops post-deployment. Here's the items that Disk Clean-up can manage on Windows 8.1:
 
-<img class="alignnone size-full wp-image-3586" src="{{site.baseurl}}/media/2014/03/DIskCleanup.png" alt="Disk Cleanup options" width="389" height="819" srcset="{{site.baseurl}}/media/2014/03/DIskCleanup.png 389w, {{site.baseurl}}/media/2014/03/DIskCleanup-71x150.png 71w, {{site.baseurl}}/media/2014/03/DIskCleanup-142x300.png 142w" sizes="(max-width: 389px) 100vw, 389px" /> 
+![Disk Cleanup options]({{site.baseurl}}/media/2014/03/DIskCleanup.png)
 
 To [automate Disk Clean-up](http://support.microsoft.com/kb/315246), use the following steps:
 
   1. Elevate a command prompt
-  2. Run _CLEANMGR /SAGESET:<number>_ (where <number is any number between 1 and 65535)
+  2. Run `CLEANMGR /SAGESET:<number>` (where `number` is any number between 1 and 65535)
   3. Select each of the items to clean up
   4. Click OK
 
-To run Disk Clean-up from a script run _CLEANMGR /SAGERUN:<number>_ (where <number> is the same number use with SAGESET.
+To run Disk Clean-up from a script run `CLEANMGR /SAGERUN:<number>` (where `number` is the same number use with SAGESET.
 
 To automate the process of running Disk Cleanup, the following script can be used to enable all of the tool's options in the registry and then execute the cleanup process. This script should work for both Windows 7 and Windows 8 and would be useful to run at the end of a deployment. This example uses 100 as the configuration setting, so you would run CLEANMGR /SAGERUN:100 to run Disk Cleanup with these settings.
 
-<pre class="lang:batch decode:true" title="Configure Disk Clean to Perform a Full System Cleanup">@ECHO OFF
+```batch
+@ECHO OFF
 REM Enable components to cleanup
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Active Setup Temp Folders" /v StateFlags0100 /d 2 /t REG_DWORD /f
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\BranchCache" /v StateFlags0100 /d 2 /t REG_DWORD /f
@@ -79,13 +78,16 @@ REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Wi
 REG ADD "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Windows Upgrade Log Files" /v StateFlags0100 /d 2 /t REG_DWORD /f
 
 REM Run cleanup
-IF EXIST %SystemRoot%\SYSTEM32\cleanmgr.exe START /WAIT cleanmgr /sagerun:100</pre>
+IF EXIST %SystemRoot%\SYSTEM32\cleanmgr.exe START /WAIT cleanmgr /sagerun:100
+```
 
 It's important to note that while Disk Clean-up exists on Windows 7 and Windows 8, it does not exist on Windows Server unless the [Desktop Experience](http://technet.microsoft.com/en-us/library/cc772567.aspx) feature is installed (i.e. a Remote Desktop Session Host).
 
 If your image is Windows 8.1 or Windows Server 2012 R2, then the following command is available to perform an even more [in depth cleanup of the WinSXS folder](http://technet.microsoft.com/en-us/library/dn251565.aspx), making some additional space available:
 
-<pre class="lang:batch decode:true">Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase</pre>
+```powershell
+Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase
+```
 
 Running Disk Clean-up and the above DISM command in a script to clean up your master image should result in a smaller image. Don't forget that this approach is also useful for persistent desktops - unless you're using some type of dedupe solution, then there's potentially gigabytes per desktop that can be removed.
 

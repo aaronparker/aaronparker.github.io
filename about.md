@@ -10,7 +10,7 @@ layers:
 ---
 ## About Aaron Parker
 
-<img class="alignleft wp-image-3930 size-full" style="padding-right: 20px; padding-bottom: 20px;" src="{{site.baseurl}}/media/2009/02/HeadShotCircle.png" alt="Aaron Parker](http://www.insentra.com.au) responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
+![Aaron Parker, responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions]({{site.baseurl}}/media/2009/02/HeadShotCircle.png)
 
 I've been in the IT industry for over 20 years and bring a wide range of experience in enterprise level End-user computing solutions, including Server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
 
@@ -34,7 +34,7 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
     </td>
     
     <td valign="top" width="472">
-      <a href="https://www.citrix.com/community/ctp/awardees.html">Citrix Technology Professional</a> (CTP) - 2012, 2013, 2014, 2015, 2016, 2017, 2018
+      <a href="https://www.citrix.com/community/ctp/awardees.html">Citrix Technology Professional</a> (CTP) - 2012-2019
     </td>
   </tr>
 </table>
@@ -126,6 +126,6 @@ Below is a list of publications that I've written, co-authored or contributed to
   * October 2013: [User Environment Management Smackdown](http://www.brianmadden.com/opinion/Fight-Appsense-Citrix-Immidio-Microsoft-Liquidware-Labs-PolicyPak-RES-Scense-and-others)
   * May 2016: [Ultimate Desktop Virtualization Best Practices Guide](http://community.atlantiscomputing.com/blog/Atlantis/May-2016/Ultimate-Virtualization-Best-Practices-Guide)
 
-## <span style="color: #ff0000;">Disclaimer</span>
+## Disclaimer
 
 The views expressed on this blog are mine alone and not (necessarily) those of any current, future or former client or employer. As I reserve the right to review my position based on future evidence, they may not even reflect my own views by the time you read them. If in doubt, ask.

@@ -16,14 +16,14 @@ tags:
   - MSDN
   - TechNet
 ---
-<span style="color: #993300;">[<strong>Update</strong>] August 8, 2015 - Microsoft have discontinued the Microsoft Download Manager as of March 2015, so the below workload will no longer work. If fact there are no workaround now, you'll need to rely on your browser's download manager. See this article for more info: <a style="color: #993300;" href="https://msdn.microsoft.com/en-us/subscriptions/aa948864.aspx">Using Subscriber Downloads</a></span>
+_Update:_ August 8, 2015 - Microsoft have discontinued the Microsoft Download Manager as of March 2015, so the below workload will no longer work. If fact there are no workaround now, you'll need to rely on your browser's download manager. See this article for more info: [Using Subscriber Downloads](https://msdn.microsoft.com/en-us/subscriptions/aa948864.aspx)
 
-> <span style="color: #993300;">Downloading from MSDN</span>
+> Downloading from MSDN
 > 
-> <span style="color: #993300;">MSDN Subscriber Downloads uses your browser’s built-in download functionality, including pause and resume.</span>
+> MSDN Subscriber Downloads uses your browser’s built-in download functionality, including pause and resume.
 > 
->   * <span style="color: #993300;">As of March 2015, MSDN has discontinued the use of the Microsoft File Transfer Manager.</span>
->   * <span style="color: #993300;">Third-party download managers have not been tested and are not supported by Microsoft. If you have issues completing a download using a third-party download manager, please try again using your browser’s built-in download functionality.</span>
+>   * As of March 2015, MSDN has discontinued the use of the Microsoft File Transfer Manager.
+>   * hird-party download managers have not been tested and are not supported by Microsoft. If you have issues completing a download using a third-party download manager, please try again using your browser’s built-in download functionality.
 
 The subtitle to this post should be - "How to get faster downloads from TechNet and MSDN".
 
@@ -33,7 +33,7 @@ Microsoft has used [File Transfer Manager](http://transfers.one.microsoft.com/ft
 
 Recently (perhaps the last 12 months), I've noticed that FTM hasn't been launching to download a target file and instead the download has been via the browser directly. This hasn't been an issue for me until I've moved from 60Mbps cable in the UK to ~7.5Mbps ADSL in Australia. Things take a little longer to download here, as you might guess. Here's the download speeds I've typically been seeing from TechNet:
 
-[<img class="alignnone  wp-image-3548" src="{{site.baseurl}}/media/2014/01/IESlowDownload.png" alt="Slow download speed in IE]({{site.baseurl}}/media/2014/01/IESlowDownload.png)
+![Slow download speed in IE]({{site.baseurl}}/media/2014/01/IESlowDownload.png)
 
 I know FTM does a far better job than this, so why won't it launch when downloading files? Turns out that because FTM is ActiveX based and uses scripting and for whatever reason, it won't actually launch from IE10 or IE11. The exact details on why are a bit of mystery but it seems that Microsoft haven't gotten around to supporting their latest browsers.
 
@@ -44,10 +44,10 @@ Fortunately a work around is straight-forward - enable emulation mode to view th
   3. Select '9' under Document Mode
   4. Choose 'Internet Explorer 9' under User Agent String
 
-[<img class="alignnone size-full wp-image-3549" src="{{site.baseurl}}/media/2014/01/DeveloperTools.png" alt="Emulation with Developer Tools]({{site.baseurl}}/media/2014/01/DeveloperTools.png)
+![Emulation with Developer Tools]({{site.baseurl}}/media/2014/01/DeveloperTools.png)
 
 Now clicking on a download should result in FTM launching. Download speeds are now far more reasonable:
 
-[<img class="alignnone size-full wp-image-3550" src="{{site.baseurl}}/media/2014/01/FTMFasterDownload.png" alt="FTM faster download]({{site.baseurl}}/media/2014/01/FTMFasterDownload.png)
+![FTM faster download]({{site.baseurl}}/media/2014/01/FTMFasterDownload.png)
 
 You can now close the Developer Tools window and even the browser, while your download continues.

@@ -23,11 +23,11 @@ We had approximately 240 attendees, which as fantastic interest in this topic an
 
 We had time to answer a couple of questions at the end of the presentation; however there were some additional questions, and I'll attempt to answer a selection of them here:
 
-_**Q**: I stream AppData\Roaming, and redirect Documents and Favourites, but exclude the other two AppFata folders: LocalLow and Local. These folder contents are destroyed on each user log off. Is this bad practice?_
+_**Q**: I stream `AppData\Roaming`, and redirect Documents and Favourites, but exclude the other two AppFata folders: LocalLow and Local. These folder contents are destroyed on each user log off. Is this bad practice?_
 
 **A**: No, this is exactly what happens with Windows Roaming Profiles (with profiles deleted at logoff). If there are applications that write user preferences to the AppData\Local folder, then explicitly add these to the UPM (or other profile management solution) for roaming. Be careful though, as the Local folder often includes a large amount of data.
 
-_**Q**: We are currently excluding AppData\Local and AppData\LocalLow in Citrix PM policy. We logged a call with Citrix about an issue and they questioned why they were excluded. I have seen articles that say to exclude them which I followed. Are those folders meant to be excluded or not?_
+_**Q**: We are currently excluding `AppData\Local` and `AppData\LocalLow` in Citrix PM policy. We logged a call with Citrix about an issue and they questioned why they were excluded. I have seen articles that say to exclude them which I followed. Are those folders meant to be excluded or not?_
 
 **A**: I think we answered this on the webinar, but it's worth pointing out that, again, this is what happens with Windows Roaming Profiles and I don't agree with any reasoning to roam the entire folders. If there are specific folders with applications preferences, explicitly list those folders only for roaming.
 

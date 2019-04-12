@@ -8,8 +8,6 @@ guid: https://stealthpuppy.com/?p=3653
 permalink: /xendesktop-mcs-machine-catalog-powershell/
 dsq_thread_id:
   - "2949175355"
-pd_rating:
-  - 'a:8:{s:4:"type";s:1:"0";s:5:"votes";s:1:"1";s:6:"total1";s:1:"0";s:6:"total2";s:1:"0";s:6:"total3";s:1:"0";s:6:"total4";s:1:"0";s:6:"total5";s:1:"1";s:7:"average";s:6:"5.0000";}'
 categories:
   - Automation
 tags:
@@ -22,7 +20,7 @@ As part of an ongoing series of articles themed around automating virtual deskt
 
 Don't expect to copy and paste the PowerShell output in Citrix Studio and have a complete script. The code is missing a number of lines that link tasks together. I found this article on the Citrix Blogs quite useful - [Using PowerShell to Create a Catalog of Machine Creations Services Machines](http://blogs.citrix.com/2012/03/06/using-powershell-to-create-a-catalog-of-machine-creations-services-machines/); however I've taken my script a few steps further.
 
-# Linking the Code to the UI
+## Linking the Code to the UI
 
 While the Create Machine Catalog wizard doesn't expose everything that goes on behind the scenes when a machine catalog is created, I think it's still worth showing how specific functions relate to choices that the administrator makes in the wizard.
 
@@ -58,7 +56,7 @@ Again we can see where _[New-BrokerCataog](http://support.citrix.com/proddocs/t
 
 There's plenty that the wizard does to hide the complexity of setting up a catalog from the administrator. If you attempt the same via PowerShell, what goes on under the hood is laid bare.
 
-# The Code
+## The Code
 
 Below is the full code listing with comments inline that should provide some detail on the process the code follows. At this point the code provides some error checking for the most important steps. There are still some additional steps and error checking that could be integrated:
 
@@ -66,7 +64,8 @@ Below is the full code listing with comments inline that should provide some det
   * Checking whether provisioning schemes are already available or exist before attempting to create a new provisioning scheme
   * Additional checking that some tasks have completed successfully before continuing
 
-<pre class="lang:ps decode:true " title="PowerShell code to create an MCS-based Machine Catalog in XenDesktop 7.x">#---------------------------------------------------------------------------
+```powershell
+#---------------------------------------------------------------------------
 # Author: Aaron Parker
 # Desc:   Using PowerShell to create a XenDesktop 7.x machine catalog 
 # Date:   Aug 19, 2014
@@ -205,6 +204,6 @@ If (Test-ProvSchemeNameAvailable -AdminAddress $adminAddress -ProvisioningScheme
     Write-Error "Provisioning task failed with error: [$provTask.TaskState] $provTask.TerminatingError"
    }
 }
-</pre>
+```
 
 Comments or feedback on bugs, better ways to do things or additional steps is welcome.

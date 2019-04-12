@@ -32,8 +32,9 @@ So to do that, I've written a function that will take the App-V Management and P
 
 This function is fairly basic and while it does do some error checking, it could probably go a little further to ensure the configuration is applied successfully.
 
-<pre class="lang:ps decode:true" title="Add App-V Publishing information to a XenDesktop site">Function Set-CtxAppvConfig {
-    &lt;#
+```powershell
+Function Set-CtxAppvConfig {
+    <#
         .SYNOPSIS
             Sets new App-V publishing information in a XenDesktop site.
  
@@ -58,24 +59,18 @@ This function is fairly basic and while it does do some error checking, it could
         .NOTES
  
         .LINK
-            
-
-<blockquote class="wp-embedded-content" data-secret="G83Mrh3a9x">
-  <a href="{{site.baseurl}}/appv-publishing-xendesktop-powershell/">Adding App-V Publishing Information to a XenDesktop Site with PowerShell</a>
-</blockquote>
- 
-    #&gt;
+    #>
     param(
-        [Parameter(Mandatory=$false, Position=0,HelpMessage="XenDesktop Controller address.")]
+        [Parameter(Mandatory = $false, Position = 0, HelpMessage = "XenDesktop Controller address.")]
         [string]$AdminAddress = 'localhost',
 
-        [Parameter(Mandatory=$true, Position=1,HelpMessage="Microsoft App-V Management Server address.")]
+        [Parameter(Mandatory = $true, Position = 1, HelpMessage = "Microsoft App-V Management Server address.")]
         [string]$AppvMgmtSvr = $(throw = "Please specify an App-V Management Server address."),
 
-        [Parameter(Mandatory=$true, Position=2,HelpMessage="Microsoft App-V Publishing Server address.")]
+        [Parameter(Mandatory = $true, Position = 2, HelpMessage = "Microsoft App-V Publishing Server address.")]
         [string]$AppvPubSvr = $(throw = "Please specify an App-V Publishing Server address."),
 
-        [Parameter(Mandatory=$true, Position=2,HelpMessage="App-V publishing configuration description.")]
+        [Parameter(Mandatory = $true, Position = 2, HelpMessage = "App-V publishing configuration description.")]
         [string]$Description = $(throw = "Specify a description to apply to the App-V publishing information. Specify 'Created by Studio' to set the App-V publishing inforamtion viewed in Citrix Studio.")
     )
 
@@ -103,7 +98,6 @@ This function is fairly basic and while it does do some error checking, it could
         Write-Verbose "Testing Publishing Server."
         If (Test-CtxAppVServer -AppVPublishingServer $AppvPubSvr -ErrorAction SilentlyContinue -ErrorVariable $pubError) {
             Write-Verbose "Publishing Server tested OK."
-        
             # Get any existing AppV configuration from the broker
             #http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd71/get-brokermachineconfiguration-xd71.html
             If ($Config) { Remove-Variable Config }
@@ -111,7 +105,6 @@ This function is fairly basic and while it does do some error checking, it could
 
             $cfgMatch = $False
             If ($Config) {
-
                 ForEach ($cfg in $Config) {
 
                     # Grab the AppV configuration details
@@ -120,35 +113,33 @@ This function is fairly basic and while it does do some error checking, it could
 
                     # If the existing Management Server matches the specified Management Server
                     If (($appvConfig.ManagementServer -eq $AppvMgmtSvr) -and ($appvConfig.PublishingServer -eq $AppvPubSvr)) {
-                    
                         Write-Verbose "Specified config matches existing config."
                         $cfgMatch = $True
                     }
                 }
 
                 If (!($cfgMatch)) {
-
                     # Add config
                     Add-AppvConfig
-                } Else {
-
+                }
+                Else {
                     Write-Verbose "App-V configuration already exists."
                 }
-            } Else {
-
-               # Add config
-               Add-AppvConfig 
             }
-        } Else {
-
+            Else {
+                # Add config
+                Add-AppvConfig
+            }
+        }
+        Else {
             Write-Error "[Aborting] App-V Publishing Server test failed with: $pubError"
         }
-    } Else {
-
+    }
+    Else {
         Write-Error "[Aborting] App-V Management Server test failed with: $manError"
     }
-
-}</pre>
+}
+```
 
 Please ensure that you test thoroughly before using in a production environment. Comments or feedback on bugs, better ways to do things or additional steps is welcome.
 

@@ -23,19 +23,22 @@ I've got a very simple setup in [my home lab]({{site.baseurl}}/lab-server-to-run
 
 The function returns an array that includes each stat. Here's an example of what the function returns. All values are in gigabytes and multiple hosts can be specified to gather details from.
 
-<pre class="striped:false nums:false nums-toggle:false wrap-toggle:false plain:false plain-toggle:false show-plain-default:true lang:ps highlight:0 decode:true ">PS C:\&gt; Get-HvMem -ComputerName hv1
+```powershell
+PS C:\> Get-HvMem -ComputerName hv1
 
 
 Name         : hv1
 HostRAMGB    : 11.904224395752
 VMInUseGB    : 7.12890625
 SystemUsedGB : 1.46017837524414
-AvailableGB  : 3.31513977050781</pre>
+AvailableGB  : 3.31513977050781
+```
 
 Here's the code listing for the Get-HvMem function:
 
-<pre class="lang:ps decode:true " title="Get-HvMem - get memory stats from Hyper-V">Function Get-HvMem {
-    &lt;#
+```powershell
+Function Get-HvMem {
+    <#
         .SYNOPSIS
             Return Hyper-V host RAM details.
  
@@ -53,7 +56,7 @@ Here's the code listing for the Get-HvMem function:
         .LINK
             {{site.baseurl}}/hyperv-memory-powershell
  
-    #&gt;
+    #>
     param(
         [Parameter(Mandatory=$true, Position=0,HelpMessage="Hyper-V host.")]
         [string[]]$ComputerName = $(throw = "Please specify a remote Hyper-V host to gather memory details from.")
@@ -101,13 +104,14 @@ Here's the code listing for the Get-HvMem function:
 
             # Available RAM in GB
             $item | Add-Member -type NoteProperty -Name 'AvailableGB' -Value $availGB
-            $a += $item    
+            $a += $item
         }
 
         # Add the current machine details to the array to return
         $allStats += $a
     }
     Return $allStats
-}</pre>
+}
+```
 
 Comments or feedback on bugs, better ways to do things or additional steps is welcome.

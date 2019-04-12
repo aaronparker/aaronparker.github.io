@@ -25,8 +25,9 @@ This version currently supports Hyper-V only. The script does not currently retu
   * ShowProgress - Specify whether to show progress while starting the VMs. This is cosmetic only, but does give some indication as to how far through the boot process the script is.
   * Other standard parameters such as Verbose are supported.
 
-<pre class="lang:ps decode:true " title="Start-SequentialVMs">Function Start-SequentialVMs {
-    &lt;#
+```powershell
+Function Start-SequentialVMs {
+    <#
         .SYNOPSIS
             Starts a list of VMs.
  
@@ -50,14 +51,8 @@ This version currently supports Hyper-V only. The script does not currently retu
 
         .NOTES
  
-        .LINK
-            
-
-<blockquote class="wp-embedded-content" data-secret="WXxzFe2uBt">
-  <a href="{{site.baseurl}}/sequential-start-vms/">Sequential Starting of a List of VMs</a>
-</blockquote>
- 
-    #&gt;
+        .LINK 
+    #>
     param(
         [Parameter(Mandatory=$true, Position=0,HelpMessage="Hyper-V host.")]
         [string]$ComputerName = $(throw = "Please specify a remote Hyper-V host to start VMs on."),
@@ -109,22 +104,19 @@ This version currently supports Hyper-V only. The script does not currently retu
                     Write-Verbose "Waiting for $Wait seconds before starting next VM."
                     Start-Sleep -Seconds $Wait
                 }
-
             } Else {
                 Write-Verbose "VM $vm already running."
             }
-
         } Else {
             Write-Error -Message "Unable to find VM $vm on host $ComputerName." -Category ObjectNotFound
         }
-
      }
-
      Write-Verbose "Started VMs."
 
      # Show progress if specified on the command line
      If ($ShowProgress -eq $True) { Write-Progress -Activity "Starting VMs." -Status "Started all VMs." -PercentComplete 100 }
      Start-Sleep -Seconds 1
-}</pre>
+}
+```
 
 Save the script as _Start-SequentialVMs.ps1_ and run it or add the function to your [PowerShell profile](http://technet.microsoft.com/en-us/library/ee692764.aspx) so that the function is available when starting PowerShell. Use Get-Help to see the full syntax and examples from within a PowerShell window.
