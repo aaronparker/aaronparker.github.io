@@ -37,6 +37,9 @@ plugins:
 show_excerpts: true
 paginate: 10
 
+disqus:
+  shortname: stealthpuppy
+
 # Minima date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
@@ -69,5 +72,6 @@ minima:
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-#header_pages:
-# - about.md
+header_pages:
+  - about.md
+  - smb-not-cifs.md
