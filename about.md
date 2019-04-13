@@ -8,9 +8,9 @@ guid: https://stealthpuppy.com/?page_id=5378
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 ---
-## About Aaron Parker
+![Aaron Parker]({{site.baseurl}}/media/about/AaronParkerHeadShot125.jpg)
 
-![Aaron Parker, responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions]({{site.baseurl}}/media/2009/02/HeadShotCircle.png)
+Aaron Parker, responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
 
 I've been in the IT industry for over 20 years and bring a wide range of experience in enterprise level End-user computing solutions, including Server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
 
@@ -20,111 +20,71 @@ I have spent the majority of my career in the channel working for system integra
 
 ## About stealthpuppy.com
 
-This site (generally) focuses on end-user computing based topics and is a way for me to not only write about interesting topics, but a way to give back the IT community. If I've been able to help you in your work in any way, that provides me with much satisfaction.
+This site (generally) focuses on end-user computing and enterprise mobility and is a way for me to not only write about interesting topics, but a way to give back the IT community. If I've been able to help you in your work in any way, that provides me with much satisfaction.
 
 ## Awards
 
 I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conferences in the US and Europe since 2011, writing here since 2006 and contributing to the community in a number of other areas and am very happy and fortunate to have been awarded the following community recognitions:  
-**Current Awards**
 
-<table border="0" width="660" cellspacing="5" cellpadding="0">
-  <tr>
-    <td valign="top" width="171">
-      <img src="{{site.baseurl}}/media/2012/03/CTP_banner.jpg" alt="Citrix Technology Professional" />
-    </td>
-    
-    <td valign="top" width="472">
-      <a href="https://www.citrix.com/community/ctp/awardees.html">Citrix Technology Professional</a> (CTP) - 2012-2019
-    </td>
-  </tr>
-</table>
-
-**Previous Awards**
-
-<table border="0" width="660" cellspacing="5" cellpadding="0">
-  <tr>
-    <td valign="top" width="171">
-      <img src="{{site.baseurl}}/media/2012/07/MVP_Horizontal_BlueOnly.png" alt="MVP Award Logo" />
-    </td>
-    
-    <td valign="top" width="472">
-      <a href="https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523">Microsoft Most Valued Professional</a> (MVP) for Windows and Devices for IT ( previously App-V) – 2011 - 2018
-    </td>
-  </tr>
-  
-  <tr>
-    <td valign="top" width="171">
-      <img class="alignnone size-full wp-image-4537" src="{{site.baseurl}}/media/2009/02/vexpert_logo.jpg" alt="VMware vExpert logo" width="165" height="92" srcset="{{site.baseurl}}/media/2009/02/vexpert_logo.jpg 165w, {{site.baseurl}}/media/2009/02/vexpert_logo-150x84.jpg 150w" sizes="(max-width: 165px) 100vw, 165px" />
-    </td>
-    
-    <td valign="top" width="472">
-      <a href="http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html">VMware vExpert</a> - 2016
-    </td>
-  </tr>
-  
-  <tr>
-    <td valign="top" width="171">
-      <img class="alignnone size-full wp-image-4949" src="{{site.baseurl}}/media/2016/06/EUC-Champion-certification-logo.png" alt="VMware EUC Champions logo" width="165" height="91" srcset="{{site.baseurl}}/media/2016/06/EUC-Champion-certification-logo.png 165w, {{site.baseurl}}/media/2016/06/EUC-Champion-certification-logo-150x83.png 150w" sizes="(max-width: 165px) 100vw, 165px" />
-    </td>
-    
-    <td valign="top" width="472">
-      VMware EUC Champion - 2016
-    </td>
-  </tr>
-  
-  <tr>
-    <td valign="top" width="171">
-      <img src="{{site.baseurl}}/media/2012/07/ACA_logo.png" alt="AppSense Community Advisor" />
-    </td>
-    
-    <td valign="top" width="472">
-      <a href="http://blog.appsense.com/2012/11/appsense-community-advisor-program/">AppSense Community Advisor</a> 2012 - 2016
-    </td>
-  </tr>
-</table>
+| Logo | Award | Years |
+|:--|:--|:--|
+| ![]({{site.baseurl}}/media/about/CitrixTechnologyProfessional.jpg) | [Citrix Technology Professional](https://www.citrix.com/community/ctp/awardees.html) | 2012 - |
+| ![]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523) (MVP) for Windows and Devices for IT ( previously App-V) | 2011 - 2018 |
+| ![]({{site.baseurl}}/media/about/VMwareEUCChampion.png) | VMware EUC Champion | 2016 |
+| ![]({{site.baseurl}}/media/about/VMwarevExpert.jpg) | [VMware vExpert](http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html) | 2016 |
+| ![]({{site.baseurl}}/media/about/AppSenseCommunityAdvisor.png) | [AppSense Community Advisor](http://blog.appsense.com/2012/11/appsense-community-advisor-program/) | 2012 - 2016 |
+| ![]({{site.baseurl}}/media/about/MicrosoftCommunityContributor.png) | Microsoft Community Contributor | 2011 |
 
 ## Speaking
 
 Below is a selection of upcoming and recent speaking engagements and recordings, where available:
 
-**2017**
+### 2019
 
-  * [E2EVC Sydney](http://www.e2evc.com/home/HomeEU.aspx#SYDNEY), March 2017, Citrix XenDesktop Machine Creation Services Deep Dive
-  * [Experts Live Melbourne](https://www.expertslive.org.au/), April 2017, Modern Management for Windows 10
-  * Citrix Synergy Orlando, May 207
+TBA
 
-**2016**
+### 2018
 
-  * Virtual Expo, April 2016: Managing the Modern User Experience in a Hybrid World
-  * Citrix Synergy Las Vegas, May 2016: [UX and the Enterprise Desktop: Like Oil and Water?](https://youtu.be/8TpXl80fkKQ)
-  * E2EVC Las Vegas, May 2016: Managing the Modern User Experience in a Hybrid World
-  * BriForum Boston, July 2016: [UX and the Enterprise Desktop: Like Oil and Water?](http://briforum.com/2016/US/)
-  * BriForum Boston, July 2016: [Managing the Modern User Experience in a Hybrid World](http://briforum.com/2016/US/)
-  * Melbourne VMUG, August 2016: [Managing the Modern User Experience in a Hybrid World](http://vmug.com/melbourne)
-  * Virtual Expo, September 2016: [UX and the Enterprise Desktop: Like Oil and Water?](https://xenapptraining.leadpages.co/xbve092016/)
-  * VMUG Virtual Event, December 2016, [VMware EUC Champion round table](https://www.vmug.com/Attend/VMUG-Virtual-Event)
+TBC
 
-**2015**
+### 2017
 
-  * VMware vForum Sydney, October 2015: [How to Right-Size File Servers](https://www.youtube.com/watch?v=v-bpqq2Xxq4)
-  * BriForum Denver, July 2015: [I've got 99 Problems and Folder Redirection is Every One of Them](http://www.brianmadden.com/video/BriForum-2015-Ive-Got-99-Problems-and-Folder-Redirection-is-Every-One-of-Them)
-  * Citrix Synergy Orlando, May 2015: [I've got 99 Problems and Folder Redirection is Every One of Them](https://www.mycugc.org/p/do/sd/sid=25)
-  * Citrix TechXperts, May 2015: I've got 99 Problems and Folder Redirection is Every One of Them
-  * xenappblog.com Webcast, January 2015: How Folder Redirection Impacts User Experience and Breaks Applications
+* [E2EVC Sydney](http://www.e2evc.com/home/HomeEU.aspx#SYDNEY), March 2017, Citrix XenDesktop Machine Creation Services Deep Dive
+* [Experts Live Melbourne](https://www.expertslive.org.au/), April 2017, Modern Management for Windows 10
+* Citrix Synergy Orlando, May 2017
 
-**2014**
+### 2016
 
-  * BriForum Boston, July 2014 - [How Folder Redirection Impacts User Experience and Breaks Applications](http://www.brianmadden.com/video/BriForum-2014-Boston-How-Folder-Redirection-Impacts-User-Experience-and-Breaks-Applications)
-  * BriForum Boston, July 2014 - Hands Off My Gold Image!
-  * Citrix Synergy, Los Angeles - Hands Off My Gold Image!
+* Virtual Expo, April 2016: Managing the Modern User Experience in a Hybrid World
+* Citrix Synergy Las Vegas, May 2016: [UX and the Enterprise Desktop: Like Oil and Water?](https://youtu.be/8TpXl80fkKQ)
+* E2EVC Las Vegas, May 2016: Managing the Modern User Experience in a Hybrid World
+* BriForum Boston, July 2016: [UX and the Enterprise Desktop: Like Oil and Water?](http://briforum.com/2016/US/)
+* BriForum Boston, July 2016: [Managing the Modern User Experience in a Hybrid World](http://briforum.com/2016/US/)
+* Melbourne VMUG, August 2016: [Managing the Modern User Experience in a Hybrid World](http://vmug.com/melbourne)
+* Virtual Expo, September 2016: [UX and the Enterprise Desktop: Like Oil and Water?](https://xenapptraining.leadpages.co/xbve092016/)
+* VMUG Virtual Event, December 2016, [VMware EUC Champion round table](https://www.vmug.com/Attend/VMUG-Virtual-Event)
+
+### 2015
+
+* VMware vForum Sydney, October 2015: [How to Right-Size File Servers](https://www.youtube.com/watch?v=v-bpqq2Xxq4)
+* BriForum Denver, July 2015: [I've got 99 Problems and Folder Redirection is Every One of Them](http://www.brianmadden.com/video/BriForum-2015-Ive-Got-99-Problems-and-Folder-Redirection-is-Every-One-of-Them)
+* Citrix Synergy Orlando, May 2015: [I've got 99 Problems and Folder Redirection is Every One of Them](https://www.mycugc.org/p/do/sd/sid=25)
+* Citrix TechXperts, May 2015: I've got 99 Problems and Folder Redirection is Every One of Them
+* xenappblog.com Webcast, January 2015: How Folder Redirection Impacts User Experience and Breaks Applications
+
+### 2014
+
+* BriForum Boston, July 2014 - [How Folder Redirection Impacts User Experience and Breaks Applications](http://www.brianmadden.com/video/BriForum-2014-Boston-How-Folder-Redirection-Impacts-User-Experience-and-Breaks-Applications)
+* BriForum Boston, July 2014 - Hands Off My Gold Image!
+* Citrix Synergy, Los Angeles - Hands Off My Gold Image!
 
 ## Publications
 
 Below is a list of publications that I've written, co-authored or contributed to:
 
-  * July 2012: [The Definitive Guide to Delivering Microsoft Office with App-V](http://blog.stealthpuppy.com/community/white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/)
-  * October 2013: [User Environment Management Smackdown](http://www.brianmadden.com/opinion/Fight-Appsense-Citrix-Immidio-Microsoft-Liquidware-Labs-PolicyPak-RES-Scense-and-others)
-  * May 2016: [Ultimate Desktop Virtualization Best Practices Guide](http://community.atlantiscomputing.com/blog/Atlantis/May-2016/Ultimate-Virtualization-Best-Practices-Guide)
+* July 2012: [The Definitive Guide to Delivering Microsoft Office with App-V](http://blog.stealthpuppy.com/community/white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/)
+* October 2013: [User Environment Management Smackdown](http://www.brianmadden.com/opinion/Fight-Appsense-Citrix-Immidio-Microsoft-Liquidware-Labs-PolicyPak-RES-Scense-and-others)
+* May 2016: [Ultimate Desktop Virtualization Best Practices Guide](http://community.atlantiscomputing.com/blog/Atlantis/May-2016/Ultimate-Virtualization-Best-Practices-Guide)
 
 ## Disclaimer
 
