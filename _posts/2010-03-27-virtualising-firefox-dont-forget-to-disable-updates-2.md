@@ -22,7 +22,7 @@ If you are virtualising Mozilla Firefox, you should probably consider disabling 
 
 Fortunately doing so is fairly straight-forward:
 
-### Disable Automatic Updates
+## Disable Automatic Updates
 
 Updates are disabled in the _Options / Advanced / Updates_ dialog box (under Windows), which you can do when running Firefox during the sequencing/capture process - untick the _Firefox_ check box and change _When updates to Firefox are found_ to _Ask me what to do_.
 
@@ -30,7 +30,7 @@ Alternatively set _app.update.auto_ and _app.update.enabled_ to false in about:c
 
 Leave _Add-ons_ and _Search Engines_ enabled as these are stored within the user profile and can be updated when running under application virtualisation.
 
-### Disable the Updates UI
+## Disable the Updates UI
 
 Disabling the user interface elements to these update preferences and launch points is also important. To hide UI elements in Firefox, create [UserChrome.css](http://www.mozilla.org/unix/customizing.html) in `%APPDATA%\Mozilla\Firefox\Profiles\<profile>.default\chrome`. This file does not exist by default, although you will find an example file in the chrome folder. Create the file and add the following lines to hide the updates menu item and the Firefox check-box in the Updates dialog box.
 

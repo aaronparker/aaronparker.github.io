@@ -17,13 +17,13 @@ tags:
   - TechNet
   - VAMT
 ---
-[<img style="margin: 0px 10px 10px 0px; display: inline; border-width: 0px;" title="ComputerTick" src="{{site.baseurl}}/media/2010/05/ComputerTick_thumb.png" border="0" alt="ComputerTick]({{site.baseurl}}/media/2010/05/ComputerTick.png) I’ve been avoiding activating Windows installations in my home test environment with the product keys from my TechNet subscription because I’ve been afraid of running out of keys. Fortunately that fear has been mostly unfounded. I won’t go into what I really think about product activation but if you’re interested in how to manage your TechNet or MSDN keys, I have discussed how I’m doing that here.
+![ComputerTick]({{site.baseurl}}/media/2010/05/ComputerTick.png) I’ve been avoiding activating Windows installations in my home test environment with the product keys from my TechNet subscription because I’ve been afraid of running out of keys. Fortunately that fear has been mostly unfounded. I won’t go into what I really think about product activation but if you’re interested in how to manage your TechNet or MSDN keys, I have discussed how I’m doing that here.
 
 Microsoft delivered a webcast recently, entitled [Product Activation in Development Environments](https://msevents.microsoft.com/CUI/WebCastEventDetails.aspx?culture=en-US&EventID=1032448730), which discusses Windows Product Activation for development and test environments. Although aimed at developers using an MSDN subscription (IT Pros don’t have to worry about licensing and product activation?) the concepts discussed apply to TechNet subscriptions as well.
 
 A companion white paper, Windows Activation in Development and Test Environments, can be [viewed on TechNet](http://technet.microsoft.com/en-us/library/dd981009.aspx) or downloaded as [a Word document](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=4dea973e-8235-4bad-8f6d-e08d14d08075). The webcast and white paper go into plenty of detail about production activation, different product key types and how to manage product activation, but they are focused on corporate development and test environments. If you have a personal TechNet subscription for your own testing, your options are limited in comparison.
 
-### What do you get with a TechNet subscription?
+## What do you get with a TechNet subscription?
 
 Quite a lot actually. If you don’t already have a TechNet Plus subscription you should read about it [here](http://technet.microsoft.com/en-us/subscriptions/default.aspx) (read about MSDN subscriptions [here](http://msdn.microsoft.com/en-us/subscriptions/default.aspx) - MSDN gives you much more than TechNet, but with a price to match).
 
@@ -33,16 +33,16 @@ Windows Vista, Windows Server 2008, Windows 7, Windows Server 2008 R2 and Office
 
 In the case of Windows Server 2008 R2 (Standard and Enterprise) and Windows 7 Enterprise, the number of activations is 500 for each. Windows Server 2008 MAK keys also provide for 500 activations, but Windows Vista Enterprise gets only 10. At this stage, I only have access to Retail keys for Office Professional Plus 2010, but I do get 10 activations for each version (totalling 30) of Visio and Project 2010 (Standard, Professional and Premium). Perhaps more keys for Office 2010 are forthcoming.
 
-### Strategies for managing production activations
+## Strategies for managing production activations
 
 TechNet and MSDN subscriptions are not entitled to KMS keys, so you will have to use at least some of those MAK activations. In my own test environment, I have activated my Hyper-V host, a domain controller and a server used for hosting databases and a couple of other services. I am now going to activate almost all of my virtual machines that I intend on keeping for any extended period of time.
 
-<span style="text-decoration: line-through;">To enable reuse of activations in the event of redeploying Windows to a virtual machine, there are a couple of steps you should follow:</span>
+To enable reuse of activations in the event of redeploying Windows to a virtual machine, there are a couple of steps you should follow:
 
-  1. <span style="text-decoration: line-through;">Assign virtual machines by operating system, i.e. virtual machines should run Windows Server or Windows client operating systems </span>
-  2. <span style="text-decoration: line-through;">Don’t delete your virtual machines (VHDs or VMDKs are OK to delete), instead reuse them </span>
+  1. Assign virtual machines by operating system, i.e. virtual machines should run Windows Server or Windows client operating systems 
+  2. Don’t delete your virtual machines (VHDs or VMDKs are OK to delete), instead reuse them 
 
-<span style="text-decoration: line-through;">Reinstalling the same version and edition of Windows using the same product key on a machine should not count against your total activation account.</span>
+Reinstalling the same version and edition of Windows using the same product key on a machine should not count against your total activation account.
 
 **_Update_**: OK, my information in regards to MAK keys wasn't exactly correct. The TechNet site doesn't make it exactly clear as to what happens specifically with keys provided to subscribers; however it's worth reading this page: [Frequently Asked Questions About Volume License Keys](http://www.microsoft.com/licensing/existing-customers/product-activation-faq.aspx) for lot's of good information about activation. I was able to speak with TechNet technical support to get some answers on product activation, so I'll summarise here:
 
@@ -60,19 +60,19 @@ If you would prefer not to activate Windows, you can do the following:
 
 Knowing that I have 500 activations for most of the products that are important to me, then perhaps activation isn’t that much of an issue. I am also fairly certain that when my current subscription expires on Wednesday and my new subscription kicks in, I will get a new set of keys – far more machines than I could get running on a single hypervisor with 12 GB of RAM.
 
-### Using the VAMT to track activations and product keys
+## Using the VAMT to track activations and product keys
 
 The [Volume Activation Management Tool (VAMT) 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=ec7156d2-2864-49ee-bfcb-777b898ad582) is provided to manage keys and you can use this with TechNet, MSDN or Volume License keys to keep track of machine and key status.
 
 The tool itself is very simple. In the example screenshot below, I have imported a list of machines from Active Directory and this shows the status of machines that I have scanned:
 
-[<img style="display: inline; border-width: 0px;" title="VAMTAllProducts" src="{{site.baseurl}}/media/2010/05/VAMTAllProducts_thumb.png" border="0" alt="VAMTAllProducts]({{site.baseurl}}/media/2010/05/VAMTAllProducts.png)
+![VAMTAllProducts]({{site.baseurl}}/media/2010/05/VAMTAllProducts.png)
 
 Once machines are imported, I can select a machine or a group of machines and update their status to view the installed products (Windows and Office 2010 will be reported). Remote machines must be powered up to gather their status, unfortunately this information isn’t stored in AD and I can’t scan powered down virtual machines. Product keys can be installed and activated on remote machines directly from the VAMT console.
 
 By importing product keys into the VAMT, you can track the number of activations for MAK and KMS keys (it doesn’t report on Retail keys). This will help you discover the total number of activations you have for each product and keep track of the number of actual activations.
 
-[<img style="display: inline; border-width: 0px;" title="VAMTProductKeys" src="{{site.baseurl}}/media/2010/05/VAMTProductKeys_thumb.png" border="0" alt="VAMTProductKeys]({{site.baseurl}}/media/2010/05/VAMTProductKeys.png)
+![VAMTProductKeys]({{site.baseurl}}/media/2010/05/VAMTProductKeys.png)
 
 For more information on VAMT and how to use it to management production activation in your environment, see the following links:
 

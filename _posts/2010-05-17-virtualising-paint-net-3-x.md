@@ -16,32 +16,30 @@ tags:
   - App-V
   - Paint.NET
 ---
-<img style="margin: 0px 0px 10px 10px; display: inline; border-width: 0px;" title="AppVPaintDotNet" src="{{site.baseurl}}/media/2010/05/AppVPaintDotNet.png" border="0" alt="AppVPaintDotNet](http://getpaint.net) with Microsoft Application Virtualization; however the same basic steps should apply to any application virtualisation product.
-
 Virtualising Paint.NET is a simple two step process:
 
   1. Configure an unattended installation that installs Paint.NET to configure specific options, including disabling automatic update checks
   2. Capture the Paint.NET package and customise it for execution
 
-### Prerequisites
+## Prerequisites
 
 Paint.NET [requires Windows XP SP2 and above and the .NET Framework 3.5 or 4.0](http://www.getpaint.net/doc/latest/en/SystemRequirements.html). The .NET Framework should be installed on your sequencing machine and be deployed to client computers before delivering Paint.NET.
 
-### Creating an unattended installation for Paint.NET
+## Creating an unattended installation for Paint.NET
 
 The Paint.NET documentation explains [how to create an unattended installation](http://www.getpaint.net/doc/latest/en/UnattendedInstallation.html). There are a number of options that are important when virtualising Paint.NET:
 
-  * TARGETDIR - specify an installation folder on the virtual drive. This is not required and you can successfully sequence a VFS install of this application
-  * CHECKFORUPDATES - it is important to set this value to 0 to disable prevent Paint.NET from automatically prompting users to update the package. Users will still be able to access the _Utilities / Check for Updates_ menu item - Resource Hacker or other tools such as AppSense Environment Manager can be used to disable this menu item
-  * CHECKFORBETAS - if CHECKFORUPDATES is set to 0 then this option should automatically be set to 0 as well; however I have set this option in my install script
+  * `TARGETDIR` - specify an installation folder on the virtual drive. This is not required and you can successfully sequence a VFS install of this application
+  * `CHECKFORUPDATES` - it is important to set this value to 0 to disable prevent Paint.NET from automatically prompting users to update the package. Users will still be able to access the _Utilities / Check for Updates_ menu item - Resource Hacker or other tools such as AppSense Environment Manager can be used to disable this menu item
+  * `CHECKFORBETAS` - if `CHECKFORUPDATES` is set to 0 then this option should automatically be set to 0 as well; however I have set this option in my install script
 
 Unfortunately the updater component is in process so it is difficult to remove from the installation. Additionally deleting files associated with the updater results in Paint.NET attempting to repair itself on start-up:
 
-<img style="display: inline; border-width: 0px;" title="PaintDotNetRepairFiles" src="{{site.baseurl}}/media/2010/05/PaintDotNetRepairFiles.png" border="0" alt="PaintDotNetRepairFiles" width="448" height="190" /> 
+![PaintDotNetRepairFiles]({{site.baseurl}}/media/2010/05/PaintDotNetRepairFiles.png)
 
-  * JPGPNGBMPEDITOR - if you want Paint.NET to be the default editor for JPG, PNG and BMP files, set this to 1
-  * TGAEDITOR - if you want Paint.NET to be the default editor for TGA files, set this to 1
-  * DESKTOPSHORTCUT - setting this to 0 will prevent setup from creating a desktop shortcut
+  * `JPGPNGBMPEDITOR` - if you want Paint.NET to be the default editor for JPG, PNG and BMP files, set this to 1
+  * `TGAEDITOR` - if you want Paint.NET to be the default editor for TGA files, set this to 1
+  * `DESKTOPSHORTCUT` - setting this to 0 will prevent setup from creating a desktop shortcut
 
 I have included a sample script below, that shows the unattended options that I have used during sequencing:
 
@@ -49,7 +47,7 @@ I have included a sample script below, that shows the unattended options that I 
   [download id=37 format=1]
 </p>
 
-### Virtualising (or Sequencing) Paint.NET
+## Virtualising (or Sequencing) Paint.NET
 
 Before sequencing, ensure your sequencing image has been configured with the Microsoft .NET Framework 3.5 or 4.0 - if you are sequencing on Windows 7, version 3.5 is already included. Here's what you should configure before sequencing:
 
@@ -72,9 +70,9 @@ The sequencing process that should be followed will look like this:
 
 The Choose Defaults options are available from the Tool drop down button on the toolbar:
 
-<img style="display: inline; border-width: 0px;" title="PaintDotNetDefaults" src="{{site.baseurl}}/media/2010/05/PaintDotNetDefaults.png" border="0" alt="PaintDotNetDefaults" width="588" height="585" /> 
+![PaintDotNetDefaults]({{site.baseurl}}/media/2010/05/PaintDotNetDefaults.png)
 
-### Conclusion
+## Conclusion
 
 Virtualising Paint.NET should be very quick and can be sequenced on 32-bit and 64-bit Windows. Even if sequenced on 32-bit Windows, Paint.NET will execute as a 64-bit application under Windows x64 - no re-sequencing required.
 

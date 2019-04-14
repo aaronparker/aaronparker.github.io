@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="left" />Consider the following scenario - I have created a Microsoft Office package with App-V that includes the base Office applications (Word, Excel, PowerPoint and Outlook). In addition to these I have also included Project and Visio. So I have a single App-V package that includes all of the Office applications – the base set of applications plus a couple of additional applications that I want to provide to a subset of users.
+![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png")Consider the following scenario - I have created a Microsoft Office package with App-V that includes the base Office applications (Word, Excel, PowerPoint and Outlook). In addition to these I have also included Project and Visio. So I have a single App-V package that includes all of the Office applications – the base set of applications plus a couple of additional applications that I want to provide to a subset of users.
 
 I have imported the package into my Management Server and given all users access to the Word, Excel, PowerPoint and Outlook shortcuts. I have created separate domain groups - one each for Project and Visio and configured access to those shortcuts accordingly. I now have users only accessing their assigned applications. Right?
 

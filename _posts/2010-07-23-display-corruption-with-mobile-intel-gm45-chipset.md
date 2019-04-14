@@ -15,14 +15,14 @@ pd_rating:
 categories:
   - Hardware
 ---
-I have a [Dell Latitude XT2]({{site.baseurl}}/hardware/windows-7-on-a-dell-latitiude-xt2), which includes the [Mobile Intel GM45 Chipset](http://www.intel.com/products/notebook/chipsets/gm45/gm45-overview.htm) (and the Mobile Intel Graphics Media Accelerator 4500MHD). On occasion I’ve experienced display corruptions issues that&#160; working with the laptop somewhat difficult.
+I have a [Dell Latitude XT2]({{site.baseurl}}/hardware/windows-7-on-a-dell-latitiude-xt2), which includes the [Mobile Intel GM45 Chipset](http://www.intel.com/products/notebook/chipsets/gm45/gm45-overview.htm) (and the Mobile Intel Graphics Media Accelerator 4500MHD). On occasion I’ve experienced display corruptions issues that make working with the laptop somewhat difficult.
 
 Here’s an example with Calculator, but picture this across the whole screen:
 
-<img style="border-bottom: 0px; border-left: 0px; display: inline; border-top: 0px; border-right: 0px" class="wlDisabledImage" title="Calculator showing graphics corruption" border="0" alt="Calculator showing graphics corruption" src="{{site.baseurl}}/media/2010/07/Calc.png" width="260" height="354" /> 
+![Calculator showing graphics corruption]({{site.baseurl}}/media/2010/07/Calc.png)
 
 This has persisted between BIOS and firmware upgrades and display driver versions (even when using the latest display driver- Mobile Intel 4 Series Express Chipset Family driver version 8.15.10.2119) so there currently appears to be no fix.
 
 The workaround at the moment, is to disable [Enable VT for Direct IO](http://software.intel.com/en-us/articles/intel-virtualization-technology-for-directed-io-vt-d-enhancing-intel-platforms-for-efficient-virtualization-of-io-devices/) (or VT-d. To do this on the XT2 (and I presume other Dell models), go into the BIOS setup and remove the tick from the following checkbox:
 
-  * _Virtualization Support_&#160; / _VT for Direct IO_ / _Enable VT for Direct IO_
+  * _Virtualization Support_ / _VT for Direct IO_ / _Enable VT for Direct IO_

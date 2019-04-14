@@ -24,7 +24,7 @@ Virtualising OpenOffice is a basic three-step process:
   * Create an unattended installation of OpenOffice
   * Capture the OpenOffice package and customise it for execution
 
-### Sun Java Runtime Environment
+## Sun Java Runtime Environment
 
 [OpenOffice relies on Java for some functions](http://download.openoffice.org/common/java.html), but will install without it - if you don’t need those features, you can avoid installing Java. Take note when downloading OpenOffice – you can get two installers, one with Java and one without; however when I attempted to download the installer with Java, I kept getting the one without. It’s probably best to download OpenOffice and the JRE separately so that you have a bit more control over what gets installed.
 
@@ -36,7 +36,7 @@ To install the JRE, download the latest offline installer - [Sun JRE 1.6 Update 
 
 The script will install the JRE to the virtual drive letter, install just the core Java components, disable the updater and ensure the quick starter service is removed.
 
-### Creating an unattended installation for OpenOffice
+## Creating an unattended installation for OpenOffice
 
 Setup for OpenOffice is Windows Installer based which makes creating an unattended install easy. There are several components that should be removed because they can’t be virtualised, aren’t suitable when OpenOffice is virtualised or just not suitable for your environment:
 
@@ -49,7 +49,7 @@ Setup for OpenOffice is Windows Installer based which makes creating an unattend
 
 The screenshot below shows the available components for OpenOffice 3.2, with the options listed above (and the defaults) disabled:
 
-[<img style="display: inline; border-width: 0px;" title="OpenOfficeComponents" src="{{site.baseurl}}/media/2010/04/OpenOfficeComponents_thumb.png" border="0" alt="OpenOfficeComponents]({{site.baseurl}}/media/2010/04/OpenOfficeComponents.png)
+![OpenOfficeComponents]({{site.baseurl}}/media/2010/04/OpenOfficeComponents.png)
 
 The [unattended reference for OpenOffice](http://wiki.services.openoffice.org/wiki/Documentation/How_Tos/Automatic_Installation_on_Windows) appears to be based on OpenOffice 2, so you may have to refer to the MSI itself when customising the install. See the Feature table for the names for each of the components. I prefer to do everything on  the command-line, instead of creating a transform where I can, so my OpenOffice install looks like this:
 
@@ -57,7 +57,7 @@ The [unattended reference for OpenOffice](http://wiki.services.openoffice.org/wi
   [download id="34&#8243; format="1&#8243;]
 </p>
 
-### Virtualising (or Sequencing) OpenOffice
+## Virtualising (or Sequencing) OpenOffice
 
 OpenOffice.org 3.x has a dependency on the Microsoft Visual C++ 2008 Redistributable, so that will need to be installed on your sequencer before you start (if you are using App-V 4.6 and above it too requires Visual C++ 2008, so you will need to include it in your base build).
 
@@ -69,15 +69,15 @@ Install both the Sun JRE and OpenOffice and launch at least one of the OpenOffic
 
 You can leave the user details blank if you like:
 
-[<img style="display: inline; border: 0px;" title="OpenOfficeFirstRunWizard1" src="{{site.baseurl}}/media/2010/04/OpenOfficeFirstRunWizard1_thumb.png" border="0" alt="OpenOfficeFirstRunWizard1]({{site.baseurl}}/media/2010/04/OpenOfficeFirstRunWizard1.png)
+![OpenOfficeFirstRunWizard1]({{site.baseurl}}/media/2010/04/OpenOfficeFirstRunWizard1.png)
 
 Of course you want to register.. 😉
 
-[<img style="display: inline; border: 0px;" title="OpenOfficeFirstRunWizard2" src="{{site.baseurl}}/media/2010/04/OpenOfficeFirstRunWizard2_thumb.png" border="0" alt="OpenOfficeFirstRunWizard2]({{site.baseurl}}/media/2010/04/OpenOfficeFirstRunWizard2.png)
+![OpenOfficeFirstRunWizard2]({{site.baseurl}}/media/2010/04/OpenOfficeFirstRunWizard2.png)
 
 After first run, a profile folder at _%APPDATA%\OpenOffice.org\3\user_ will be created, which should come to somewhere around 1.8 MB. It also might be a good idea to check that OpenOffice can detect the JRE (open _Tools / Options_):
 
-[<img style="display: inline; border: 0px;" title="OpenOfficeJavaOptions" src="{{site.baseurl}}/media/2010/04/OpenOfficeJavaOptions_thumb.png" border="0" alt="OpenOfficeJavaOptions]({{site.baseurl}}/media/2010/04/OpenOfficeJavaOptions.png)
+![OpenOfficeJavaOptions]({{site.baseurl}}/media/2010/04/OpenOfficeJavaOptions.png)
 
 If you already have the JRE installed on your workstations, OpenOffice should detect it at runtime. Alternatively, you can use DSC to add the JRE support to OpenOffice.
 
@@ -91,8 +91,8 @@ If the JRE install has worked correctly, you should not see the _Java Quick Star
 
 The only post-wizard change you should need to make to the package is to delete _%APPDATA%\OpenOffice.org\3\user\registry\data\org\openoffice\UserProfile.xcu_ the if you would like users to see the first-run wizard when they start OpenOffice for the first time.
 
-### Conclusion
+## Conclusion
 
 So there’s how to virtualise OpenOffice without too much effort and you should be left with a pretty  clean package weighing at approximately 500Mb that looks a little like this:
 
-[<img style="display: inline; border: 0px;" title="OpenOfficeAppVPackage" src="{{site.baseurl}}/media/2010/04/OpenOfficeAppVPackage_thumb.png" border="0" alt="OpenOfficeAppVPackage]({{site.baseurl}}/media/2010/04/OpenOfficeAppVPackage.png)
+![OpenOfficeAppVPackage]({{site.baseurl}}/media/2010/04/OpenOfficeAppVPackage.png)

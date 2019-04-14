@@ -15,7 +15,7 @@ categories:
 tags:
   - App-V
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="left" />Starting tomorrow, I have a new blog post series - [Microsoft App-V FAQs]({{site.baseurl}}/tag/appvfaq). There has been a [SoftGrid FAQ](http://blogs.technet.com/b/dhitchen/) blog on Microsoft TechNet in the past, but it’s now very  out of date. You can find official FAQs such as the [App-V 4.6 on TechNet](http://technet.microsoft.com/en-gb/appvirtualization/cc664494.aspx) and an [App-V 4.5 SP2 FAQ document](http://download.microsoft.com/download/4/1/D/41D55415-4879-4F7D-B845-EA24D9356D10/App-V%204.5%20SP2%20FAQ.docx), but these are a bit limited in scope.
+![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png")Starting tomorrow, I have a new blog post series - [Microsoft App-V FAQs]({{site.baseurl}}/tag/appvfaq). There has been a [SoftGrid FAQ](http://blogs.technet.com/b/dhitchen/) blog on Microsoft TechNet in the past, but it’s now very  out of date. You can find official FAQs such as the [App-V 4.6 on TechNet](http://technet.microsoft.com/en-gb/appvirtualization/cc664494.aspx) and an [App-V 4.5 SP2 FAQ document](http://download.microsoft.com/download/4/1/D/41D55415-4879-4F7D-B845-EA24D9356D10/App-V%204.5%20SP2%20FAQ.docx), but these are a bit limited in scope.
 
 If you spend any time on the [TechNet App-V forums](http://social.technet.microsoft.com/Forums/en-GB/category/appvirtualization) or on [AppVirtGuru.com](http://www.appvirtguru.com/) you’ll notice that many questions have often been asked previously or are answered by existing documentation. I hope to make this series is an attempt at answering many of those common questions.
 

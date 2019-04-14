@@ -6,14 +6,8 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/deployment/customising-office-2010-before-deployment
 permalink: /customising-office-2010-before-deployment/
-has_been_twittered:
-  - 'yes'
 dsq_thread_id:
   - "195382420"
-Hide SexyBookmarks:
-  - "0"
-Hide OgTags:
-  - "0"
 categories:
   - Applications
 tags:
@@ -39,7 +33,7 @@ Volume license editions of Office should include this folder; however to obtain 
 
 Extract the files by running AdminTemplates\_32.exe or AdminTemplates\_64.exe (or use the `/extract:<folder path> /quiet` switches), then copy the _Admin_ folder to the Office 2010 installation source.
 
-[Office 2010 ADM, ADMX and Admin folders]({{site.baseurl}}/media/2010/05/Office2010Admin.png" alt="Office 2010 ADM, ADMX and Admin folders" width="660" height="246" border="0" /> 
+[Office 2010 ADM, ADMX and Admin folders]({{site.baseurl}}/media/2010/05/Office2010Admin.png)
 
 The Admin folder containing the OCT files is suitable for all of the Office 2010 products, for example you can copy the same folder to a Visio 2010 source folder to start creating a customisation file for that product.
 
@@ -49,11 +43,11 @@ Before attempting to create an Office customisation for unattended deployment, i
 
 On first run, Office will prompt users some choices that, in a corporate environment, should probably be made for them. These are Windows Update settings:
 
-[Office 2010 updates choices]({{site.baseurl}}/media/2010/05/Office2010Welcome.png" alt="Office 2010 updates choices" width="660" height="365" border="0" /> 
+[Office 2010 updates choices]({{site.baseurl}}/media/2010/05/Office2010Welcome.png)
 
 And the default file type choice – will you continue to use the Microsoft file types or go with the [OpenDocument formats](http://en.wikipedia.org/wiki/OpenDocument) instead?
 
-[Office 2010 default file types]({{site.baseurl}}/media/2010/05/OfficeFirstRun.png" alt="Office 2010 default file types" width="542" height="411" border="0" /> 
+[Office 2010 default file types]({{site.baseurl}}/media/2010/05/OfficeFirstRun.png)
 
 Both of these dialog boxes can be disabled by setting options in a customisation file.
 
@@ -63,7 +57,7 @@ In this section, I’ve outlined the key steps for creating a customisation file
 
 The process for [creating a customisation file for Office 2010](http://technet.microsoft.com/en-gb/library/ee460874(office.14).aspx) is almost the same as for Office 2007 – start the Office Customisation Tool (`SETUP /ADMIN`) and create a new file or [open an existing file for modifying](http://technet.microsoft.com/en-gb/library/ee681791(office.14).aspx).
 
-[[Create a new customisation file or open an existing file]({{site.baseurl}}/media/2010/05/Office01_thumb.png" alt="Create a new customisation file or open an existing file]({{site.baseurl}}/media/2010/05/Office01.png)
+![Create a new customisation file or open an existing file]({{site.baseurl}}/media/2010/05/Office01.png)
 
 **Tip**: to avoid the UAC prompt when running Setup, set the _\_COMPAT\_LAYER environment variable to run Setup in the current context. Run `SET __COMPAT_LAYER=RunAsInvoker` before running Setup (both commands should be run from the same Command Prompt).
 
@@ -87,32 +81,32 @@ One of the most important (and time consuming) aspects of the the customisation 
 
 By modifying these settings in the customisation file, users can get up and running with Office 2010 sooner; however treat these as default preferences. Group Policy should be used to enforce settings, not set defaults – the less settings you have in Group Policy the better (less time spent processing policies at logon).
 
-[Modify Office 2010 default user settings]({{site.baseurl}}/media/2010/05/Office08.png" alt="Modify Office 2010 default user settings" width="660" height="388" border="0" /> 
+[Modify Office 2010 default user settings]({{site.baseurl}}/media/2010/05/Office08.png)
 
 The table below lists they most common settings to modify based on my experience deploying Office:
 
 |Product|Path                                      |Setting                                                   |Value                                    |
 |-------|------------------------------------------|----------------------------------------------------------|-----------------------------------------|
 |Microsoft Excel 2010|Excel Options - Save                      |Default file format                                       |Enabled, Excel Workbook (*.xlsx)         |
-|Microsoft Outlook 2010|Outlook Social Connector                  |Turn off Outlook Social Connector                         |Disabled &#124; Enabled                       |
+|Microsoft Outlook 2010|Outlook Social Connector                  |Turn off Outlook Social Connector                         |Disabled / Enabled                       |
 |Microsoft Outlook 2010|Outlook Options - Other - AutoArchive     |AutoArchive Settings                                      |Disabled                                 |
 |Microsoft PowerPoint 2010|PowerPoint Options - Save                 |Default file format                                       |Enabled, PowerPoint Presentation (*.pptx)|
 |Microsoft Word 2010|Word Options - Save                       |Default file format                                       |Enabled, Word Document (*.docx)          |
 |Microsoft Office 2010|Global Options - Customize                |Allow roaming of all user customisations                  |Enabled                                  |
 |Microsoft Office 2010|Privacy - Trust Center                    |Disable Opt-in Wizard on first run                        |Enabled                                  |
-|Microsoft Office 2010|Privacy - Trust Center                    |Enable Customer Experirnce Improvement Program            |Disabled &#124; Enabled                       |
-|Microsoft Office 2010|Privacy - Trust Center                    |Automatically receive small updates to improve reliability|Disabled &#124; Enabled                       |
+|Microsoft Office 2010|Privacy - Trust Center                    |Enable Customer Experirnce Improvement Program            |Disabled / Enabled                       |
+|Microsoft Office 2010|Privacy - Trust Center                    |Automatically receive small updates to improve reliability|Disabled / Enabled                       |
 |Microsoft Office 2010|Office Live Workspace                     |Turn Off Office Live Workspace Integration                |Enabled                                  |
 |Microsoft Office 2010|Services - Fax                            |Disable Internet Fax feature                              |Enabled                                  |
 |Microsoft Office 2010|Microsoft Office Picture Manager          |Disable File Types association dialog box on first launch |Enabled                                  |
 |Microsoft Office 2010|Miscellaneous                             |Do not allow Save to Web integration                      |Enabled                                  |
 |Microsoft Office 2010|Miscellaneous                             |Suppress recommended settings dialog                      |Enabled                                  |
-|Microsoft OneNote 2010|OneNote Options - Other                   |Add OneNote icon to the notification area                 |Disabled &#124; Enabled                       |
+|Microsoft OneNote 2010|OneNote Options - Other                   |Add OneNote icon to the notification area                 |Disabled / Enabled                       |
 |Microsoft Visio 2010|Visio Options - Advanced - General Options|Put all settings in Windows registry                      |Enabled                                  |
 
 Like user settings, feature installation states will impact on the default Office experience, so you will need to know in advance which features you are deploying. _Install on First Use_ for features is no longer available, so features will either be available or not once deployed, although you can [change feature states after deployment](http://technet.microsoft.com/en-gb/library/cc179141(office.14).aspx).
 
-[Office 2010 feature installation states]({{site.baseurl}}/media/2010/05/Office09.png" alt="Office 2010 feature installation states" width="660" height="388" border="0" /> 
+[Office 2010 feature installation states]({{site.baseurl}}/media/2010/05/Office09.png)
 
 Some features that may not be suitable for some corporate environments include:
 

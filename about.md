@@ -5,10 +5,8 @@ date: 2017-02-24T21:05:08+10:00
 author: Aaron Parker
 layout: page
 guid: https://stealthpuppy.com/?page_id=5378
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
 ---
-![Aaron Parker]({{site.baseurl}}/media/about/AaronParkerHeadShot125.jpg)
+![Aaron Parker]({{site.baseurl}}/media/about/AaronParkerHeadShot125.jpg "Aaron Parker")
 
 Aaron Parker, responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
 
@@ -28,12 +26,12 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
 
 | Logo | Award | Years |
 |:--|:--|:--|
-| ![]({{site.baseurl}}/media/about/CitrixTechnologyProfessional.jpg) | [Citrix Technology Professional](https://www.citrix.com/community/ctp/awardees.html) | 2012 - |
-| ![]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523) (MVP) for Windows and Devices for IT ( previously App-V) | 2011 - 2018 |
-| ![]({{site.baseurl}}/media/about/VMwareEUCChampion.png) | VMware EUC Champion | 2016 |
-| ![]({{site.baseurl}}/media/about/VMwarevExpert.jpg) | [VMware vExpert](http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html) | 2016 |
-| ![]({{site.baseurl}}/media/about/AppSenseCommunityAdvisor.png) | [AppSense Community Advisor](http://blog.appsense.com/2012/11/appsense-community-advisor-program/) | 2012 - 2016 |
-| ![]({{site.baseurl}}/media/about/MicrosoftCommunityContributor.png) | Microsoft Community Contributor | 2011 |
+| ![Citrix Technology Professional]({{site.baseurl}}/media/about/CitrixTechnologyProfessional.jpg) | [Citrix Technology Professional](https://www.citrix.com/community/ctp/awardees.html) | 2012 - |
+| ![Microsoft MVP]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523) (MVP) for Windows and Devices for IT ( previously App-V) | 2011 - 2018 |
+| ![VMware EUC Champion]({{site.baseurl}}/media/about/VMwareEUCChampion.png) | VMware EUC Champion | 2016 |
+| ![VMware vExpert]({{site.baseurl}}/media/about/VMwarevExpert.jpg) | [VMware vExpert](http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html) | 2016 |
+| ![AppSense Community Advisor]({{site.baseurl}}/media/about/AppSenseCommunityAdvisor.png) | [AppSense Community Advisor](http://blog.appsense.com/2012/11/appsense-community-advisor-program/) | 2012 - 2016 |
+| ![Microsoft Community Contributor]({{site.baseurl}}/media/about/MicrosoftCommunityContributor.png) | Microsoft Community Contributor | 2011 |
 
 ## Speaking
 

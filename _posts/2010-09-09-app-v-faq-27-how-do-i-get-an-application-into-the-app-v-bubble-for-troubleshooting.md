@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 0px 5px 10px; display: inline;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="right" />There are instances in which you will need to troubleshoot applications running in the App-V bubble (or the virtualised environment). Although applications delivered by App-V are running locally, they are separated from other applications and the operating system by the App-V client (the feature known as the [SystemGuard](http://blogs.technet.com/b/appv/archive/2007/08/02/inside-the-grid-part-1.aspx), although usually referred to as the bubble).
+![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png")There are instances in which you will need to troubleshoot applications running in the App-V bubble (or the virtualised environment). Although applications delivered by App-V are running locally, they are separated from other applications and the operating system by the App-V client (the feature known as the [SystemGuard](http://blogs.technet.com/b/appv/archive/2007/08/02/inside-the-grid-part-1.aspx), although usually referred to as the bubble).
 
 This poses some challenges – how do you use troubleshooting tools such as [Process Monitor](http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx) if it can’t see the application? To do this you will need to launch a Command Prompt into the bubble.
 

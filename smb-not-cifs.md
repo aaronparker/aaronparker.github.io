@@ -5,14 +5,10 @@ date: 2016-09-19T00:30:15+10:00
 author: Aaron Parker
 layout: page
 guid: http://stealthpuppy.com/?page_id=5164
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
-dsq_thread_id:
-  - "5157482281"
 ---
 Information Technology should be approached with a scientific methodology and therefore our language should be exact when we're discussing IT topics. It's way past time to drop the term CIFS and use the correct acronym when we're referring to SMB.
 
-![Even Inigo Montoya knows not to use 'CIFS'](http://stealthpuppy.com/wp-content/uploads/2016/09/CIFS-Word.png)
+![Even Inigo Montoya knows not to use 'CIFS']({{site.baseurl}}/media/2016/09/CIFS-Word.png "Even Inigo Montoya knows not to use 'CIFS'")
 
 Even Inigo Montoya knows not to use 'CIFS'
 
