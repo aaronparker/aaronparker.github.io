@@ -15,23 +15,7 @@ tags:
 ---
 Before I go into what I actually want to talk about, here's a high level overview of the differences (and similarities) between the Access Gateway and Secure Gateway:
 
-<table border="0" style="border-collapse: collapse">
-  <tr style="background: #4f81bd 0% 50%; height: 18px; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial">
-    <td style="padding-right: 7px; padding-left: 7px; border: #7ba0cd 1pt solid">
-      <span style="color: white"><strong>Feature</strong></span>
-    </td>
-    
-    <td style="border-right: #7ba0cd 1pt solid; padding-right: 7px; border-top: #7ba0cd 1pt solid; padding-left: 7px; border-left: medium none; border-bottom: #7ba0cd 1pt solid">
-      <span style="color: white"><strong>Secure Gateway</strong></span>
-    </td>
-    
-    <td style="border-right: #7ba0cd 1pt solid; padding-right: 7px; border-top: #7ba0cd 1pt solid; padding-left: 7px; border-left: medium none; border-bottom: #7ba0cd 1pt solid">
-      <span style="color: white"><strong>Access Gateway</strong></span>
-    </td>
-  </tr>
-</table>
-
-Now that we've got that out of the way - there's a discussion I tend to have with sales or customers on a semi-regular basis that revolves around the idea that the Access Gateway is somehow more secure than the Secure Gateway €“ "if we implement the Access Gateway our remote access will be secure". I don't really understand how this thinking came about, but it is probably rooted in the fact that the [Access Gateway is an appliance](http://www.brianmadden.com/content/content.asp?ID=558) and Secure Gateway runs on a Windows Server. It also helps that the Access Gateway sells more licensing and sales loves anything that sells more licenses.
+Now that we've got that out of the way - there's a discussion I tend to have with sales or customers on a semi-regular basis that revolves around the idea that the Access Gateway is somehow more secure than the Secure Gateway - "if we implement the Access Gateway our remote access will be secure". I don't really understand how this thinking came about, but it is probably rooted in the fact that the [Access Gateway is an appliance](http://www.brianmadden.com/content/content.asp?ID=558) and Secure Gateway runs on a Windows Server. It also helps that the Access Gateway sells more licensing and sales loves anything that sells more licenses.
 
 In some respects this thinking around security could be true, because the Access Gateway runs a cut-down Linux kernel and is pre-hardened for its' role as a remote access device and therefore should have a smaller attack surface than a Windows Server running Secure Gateway. Although any attack on the operating system would only occur via a vulnerability in the [Access Gateway](http://secunia.com/product/6168/) or Secure Gateway/Web Interface code. However that's not what an attacker is interested in. They're interested in the soft and squishy inside of the corporate network and there are easier ways of getting in than compromising a box in the DMZ.
 
@@ -48,4 +32,4 @@ Out of the box, the Access Gateway and Secure Gateway/Web Interface support OTP 
 
 Citrix provides some great solutions for remote access, however if we don't implement a way to identify users using strong authentication, we're also providing the bad guy a great solution for remote access too.
 
-<span style="font-size: 10pt"><sup>1</sup><font size="1">Web Interface is actually handling the authentication request in a Secure Gateway scenario.</font></span>
+<sup>1</sup> Web Interface is actually handling the authentication request in a Secure Gateway scenario.

@@ -15,27 +15,37 @@ I'm working on a Presentation Server deployment project at the moment, and am de
 
 First I mounted the WIM image with ImageX. I have a copy of the original WINPE.WIM under D:\Images and I've created a folder D:\Mount, in which to mount the image:
 
-[code]imagex.exe /mountrw d:\images\winpe.wim 1 d:\mount[/code]
+```powershell
+imagex.exe /mountrw d:\images\winpe.wim 1 d:\mount
+```
 
 Next I injected the VMware drivers into the mounted image. I installed both drivers, but in my case VMware Workstation only required the vmware-nic.inf driver:
 
-[code]peimg.exe /inf=D:\vmdrv\vmxnet.inf d:\mount\Windows  
-peimg.exe /inf=D:\vmdrv\vmware-nic.inf d:\mount\Windows[/code]
+```
+peimg.exe /inf=D:\vmdrv\vmxnet.inf d:\mount\Windows  
+peimg.exe /inf=D:\vmdrv\vmware-nic.inf d:\mount\Windows
+```
 
 The next step was to install the scripting packages into the image to allow advanced tools such as HTA applications:
 
-[code]peimg.exe /install=\*HTA\* /image=d:\mount\Windows  
+```powershell
+peimg.exe /install=\*HTA\* /image=d:\mount\Windows  
 peimg.exe /install=\*Scripting\* /image=d:\mount\Windows  
 peimg.exe /install=\*WMI\* /image=d:\mount\Windows  
-peimg.exe /install=\*XML\* /image=d:\mount\Windows[/code]
+peimg.exe /install=\*XML\* /image=d:\mount\Windows
+```
 
 Then I needed to prepare the image, which optimises the image by removing non-required packages and language packs. This is a one way process, so if you need to add more packages at a later date, you'll have to recreate your image:
 
-[code]peimg.exe /prep /image=d:\mount\Windows[/code]
+```powershell
+peimg.exe /prep /image=d:\mount\Windows
+```
 
 Then unmount the image and commit the changes:
 
-[code]imagex.exe /unmount d:\mount /commit[/code]
+```powershell
+imagex.exe /unmount d:\mount /commit
+```
 
 Lastly I added the boot image into WDS and booted my VM to the network and I finally had an IP address and network client to connect to the deployment server. One thing I did notice but didn't get a chance to troubleshoot is that I occasionally had to restart WDS to get Windows PE to boot after making changes to the image.
 

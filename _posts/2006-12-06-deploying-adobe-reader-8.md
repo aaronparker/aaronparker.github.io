@@ -64,7 +64,7 @@ or
 
 There are a lot of things left to find and I'll update this post as I find them.
 
-**UPDATES**:
+## UPDATES
 
   * AppDeploy.com has been updated with an Adobe Reader 8 specific entry: <http://www.appdeploy.com/packages/detail.asp?id=915>
   * Set this DWORD value to 1 `HKEY_LOCAL_MACHINESoftwareAdobeAcrobat Reader8.0DowntownbDontShowAtLaunch`> and this DWORD value to 0 `HKEY_LOCAL_MACHINESoftwareAdobeAcrobat Reader8.0DowntownbGoOnline`>, to supress the Beyond Adobe Reader window and feature;

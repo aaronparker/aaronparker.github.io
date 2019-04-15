@@ -21,7 +21,7 @@ I found however, after installing the hotfix, I have had to reinstall all of the
 
 In the Access Suite console, the Endpoint Analysis scans groups and packages looked like this:
 
-<img border="1" src="{{site.baseurl}}/media/2006/11/1000.14.193.EndpointAnalysis.png" /> 
+![]({{site.baseurl}}/media/2006/11/1000.14.193.EndpointAnalysis.png)
 
 To fix this issue, you will have to remove the scan packages and scans from the tree, re-import the packages and recreate your scans €“ not a small job. Removing and re-importing the scan packages is a straight-forward process however it could take you some time depending on your configuration:
 

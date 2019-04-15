@@ -11,7 +11,7 @@ categories:
 ---
 Microsoft has made available a general beta for the Forefront Client Security product. Here's a quote from the download to give you an idea of what Client Security is about:
 
-> Microsoft® Forefront„¢ Client Security provides unified malware protection for business desktops, laptops and server operating systems that is easy to manage and control.
+> Microsoft Forefront Client Security provides unified malware protection for business desktops, laptops and server operating systems that is easy to manage and control.
 
 You can download the beta bits for yourself here:
 

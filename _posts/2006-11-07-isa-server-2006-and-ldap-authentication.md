@@ -20,6 +20,6 @@ ISAServer.org has an excellent four part tutorial on using LDAP to pre-authentic
 
 This is an excellent feature of ISA Server 2006 because it allows scenarios whereby ISA Server cannot be the edge firewall for whatever reason and is placed in the DMZ instead. LDAP allows for ISA Server to authentcate against Active Directory without the server being a member of the domain. However, once you configure LDAP authentication you cannot then use [additional authentication methods](http://www.trustedaccess.info/blogs/microsoft/archive/2006/09/29/Strengthening-OWA-Authentication-with-ISA-2006-and-RSA-SecurID-.aspx) such as RADIUS OTP and RSA SecurID. You can see this on the web listener Authentication tab, once you select the option to 'Collect additional delegation credentials in the form', LDAP is no longer selectable.
 
-<a target="_blank" href="http://www.trustedaccess.info/photos/images/images/176/original.aspx"><img border="0" src="{{site.baseurl}}/media/2006/11/1000.14.176.WebListener.png" /></a>
+![WebListener]({{site.baseurl}}/media/2006/11/1000.14.176.WebListener.png)
 
 I think that this is a bit of an oversight by the ISA Server team so it would be great to get this feature into an ISA Server 2006 Service Pack or the next version of ISA Server (2008, codename Nitrogen). If this is a feature that you might find compelling you can get feature requests into Micrsoft through their partners (if your aren't one yourself) or look out for the next ISA Server beta when it pops up on [Microsoft Connect](http://connect.microsoft.com/).

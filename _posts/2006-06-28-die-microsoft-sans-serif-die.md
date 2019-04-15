@@ -24,10 +24,10 @@ This "bug" has been reported on the Vista/Longhorn newsgroups, some hopefully we
 UPDATE: I found some more information on the Microsoft Sans Serif/MS Sans Serif font in use in Windows. Microsoft Sans Serif is an OpenType font that replaces the older MS Sans Serif font. Many applications just don't use the new font though and this is noticeable when you enable ClearType font smoothing - MS Sans Serif is not 'smoothed' . The same registry key can be used to replace the font in older applications:
 
   1. Open your Fonts folder via Control Panel and drag MS Sans Serif somewhere safe in case you ever want it back
-  2. Open your registry and navigate to <span>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes</span>
-  3. Right-click on the <span>FontSubstitutes </span>folder and choose <span>New > String Value</span>
-  4. Overtype <span>New Value #1</span> as <span>MS Sans Serif</span>
-  5. Double-click on the new value and enter <span>Tahoma or Segoe UI</span>
+  2. Open your registry and navigate to `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes`
+  3. Right-click on the `FontSubstitutes` folder and choose `New > String Value`
+  4. Overtype `New Value #1` as `MS Sans Serif`
+  5. Double-click on the new value and enter `Tahoma` or `Segoe UI`
   6. Reboot (it really is necessary)
 
 [Source](http://damieng.blogspot.com/2006/04/cleartype-smoothed-fonts-and-bane-of.html)

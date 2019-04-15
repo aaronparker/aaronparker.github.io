@@ -9,7 +9,7 @@ permalink: /deploying-winzip-110/
 categories:
   - Automation
 ---
-<img src="{{site.baseurl}}/media/2008/02/winzip.png" align="left" alt="winzip.png" />Did you know that WinZip have an MSI installer available for WinZip 10.0 and 11.0? Neither did I until I was reading through their [FAQ](http://www.winzip.com/faq.htm) pages today. What I don't get though is it's not the default download you get for the product, you have to go looking for it on this FAQ page: [Download WinZip with 64-bit Shell Extension Support](http://www.winzip.com/xmsicust.htm). I'd like to welcome WinZip to the 21<sup>st</sup> century - Windows Installer's only been around since 1999..
+Did you know that WinZip have an MSI installer available for WinZip 10.0 and 11.0? Neither did I until I was reading through their [FAQ](http://www.winzip.com/faq.htm) pages today. What I don't get though is it's not the default download you get for the product, you have to go looking for it on this FAQ page: [Download WinZip with 64-bit Shell Extension Support](http://www.winzip.com/xmsicust.htm). I'd like to welcome WinZip to the 21<sup>st</sup> century - Windows Installer's only been around since 1999..
 
 Now that we've got access to a Windows Installer version of WinZip setup, this means no more repackaging WinZip for deployment via Group Policy (and there was much rejoicing..) WinZip have an FAQ that details the Windows Installer properties that you can set to perform a custom deployment of WinZip:
 
