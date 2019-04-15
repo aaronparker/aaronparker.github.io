@@ -36,7 +36,8 @@ The ZIP file available for download includes a sample CustomSettings.ini which i
 
 You could potentially use a [Configuration Database](http://deployment.xtremeconsulting.com/2009/11/24/understanding-the-mdt-configuration-database-part-1/) instead; however I've opted to use CustomSettings.ini so that I can use an approach that is as portable as possible.
 
-\[code\]\[Settings\]  
+```text
+[Settings]
 Priority=ByVM, UUID, Default  
 Properties=XenAppRole, PVSTemplate, WindowsUpdate
 
@@ -65,15 +66,16 @@ DoNotCreateExtraPartition=YES
 OSDComputerName=<VM name>  
 TaskSequenceID=<task sequence short code>  
 XenAppRole=WORKER  
-PVSTemplate=TRUE[/code]
+PVSTemplate=TRUE
+```
 
-Under the [Settings] heading, I've created three custom properties _XenAppRole_, _PVSTemplate_ and _WindowsUpdate_. These properties enable a few things:
+Under the `[Settings]` heading, I've created three custom properties `XenAppRole`, `PVSTemplate` and `WindowsUpdate`. These properties enable a few things:
 
-  * XenAppRole - valid values for this property are CONTROLLER and WORKER. This controls the installation of XenApp and whether XenApp is then configured as a Controller (hosts the XML broker and enumerates applications and zones etc) or a Worker (hosting user sessions and applications). If this property is not set against a computer record, then XenApp will not be installed
-  * PVSTemplate - this controls whether a computer is the master template for Provisioning Services. The only valid value is TRUE. If this is set, then during the MDT task sequence, the computer image will be converted to a PVS image
-  * WindowsUpdate - this property controls whether Windows Update is run during the task sequence. Valid values are TRUE or FALSE. Set this to FALSE during testing to reduce the amount of time to deploy and capture an image.
+* `XenAppRole` - valid values for this property are `CONTROLLER` and `WORKER`. This controls the installation of XenApp and whether XenApp is then configured as a Controller (hosts the XML broker and enumerates applications and zones etc) or a Worker (hosting user sessions and applications). If this property is not set against a computer record, then XenApp will not be installed
+* `PVSTemplate` - this controls whether a computer is the master template for Provisioning Services. The only valid value is `TRUE`. If this is set, then during the MDT task sequence, the computer image will be converted to a PVS image
+* `WindowsUpdate` - this property controls whether Windows Update is run during the task sequence. Valid values are `TRUE` or `FALSE`. Set this to `FALSE` during testing to reduce the amount of time to deploy and capture an image.
 
-To control the creation (or not) of the BitLocker boot partition, a combination of the property _DoNotCreateExtraPartition_ and detection of a virtual machine (the _ByVM_ and _VM-True_ sections) is used. This allows us to ensure that the partition is not created on virtual machines where it isn't required.
+To control the creation (or not) of the BitLocker boot partition, a combination of the property `DoNotCreateExtraPartition` and detection of a virtual machine (the `ByVM` and `VM-True` sections) is used. This allows us to ensure that the partition is not created on virtual machines where it isn't required.
 
 The end of CustomSettings.ini (under machine specific configurations, is a sample heading for a target computer. Target computers are best identified by their UUID. This allows the MDT task sequence to match the machine it's running on against the properties set in CustomSettings.ini.
 

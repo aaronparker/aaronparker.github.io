@@ -6,10 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/?p=2920
 permalink: /hands-off-my-gold-image-the-task-sequence/
-Hide SexyBookmarks:
-  - "0"
-Hide OgTags:
-  - "0"
 dsq_thread_id:
   - "929564305"
 categories:
@@ -24,7 +20,7 @@ If you've been following along so far you'll have read my follow up coverage ofÂ
 
 Task sequences in the Microsoft Deployment Toolkit (MDT) are core of what makes MDT tick. Think of a task sequence as the steps that will deploy and configure Windows. Note that there is no post-deployment management with MDT, as there is no agent (that's what ConfigMgr is for).
 
-# Importing the Task Sequence
+## Importing the Task Sequence
 
 To create a new task sequence, use the MDT Deployment Workbench, navigate to Task Sequences, right-click on that node and select 'Create Task Sequence':
 
@@ -38,19 +34,19 @@ The download that I have supplied ([download id="58&#8243; format="3&#8243;]) in
 
 Re-open the task sequence properties and you should see something like this:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-width: 0px;" title="XenApp-PVS-TaskSequence-Final" src="{{site.baseurl}}/media/2012/11/XenApp-PVS-TaskSequence-Final_thumb.png" alt="XenApp-PVS-TaskSequence-Final]({{site.baseurl}}/media/2012/11/XenApp-PVS-TaskSequence-Final.png)
+![XenApp-PVS-TaskSequence-Final]({{site.baseurl}}/media/2012/11/XenApp-PVS-TaskSequence-Final.png)
 
 Importing the supplied pre-configured task sequence into your own Deployment Share, will result in some errors because the task sequence will reference applications and operating systems that either don't exist in your Deployment Share or have different names.
 
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-Errors" src="{{site.baseurl}}/media/2012/11/MDT-TS-Errors.png" alt="MDT-TS-Errors" width="416" height="152" border="0" /> 
+![MDT-TS-Errors]{{site.baseurl}}/media/2012/11/MDT-TS-Errors.png)
 
 For example, after I've imported this task sequence, I need to fix the reference to the Windows Server 2008 R2 SP1 source files:
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="MDT-TS-FixOS" src="{{site.baseurl}}/media/2012/11/MDT-TS-FixOS_thumb.png" alt="MDT-TS-FixOS]({{site.baseurl}}/media/2012/11/MDT-TS-FixOS.png)
+![MDT-TS-FixOS]({{site.baseurl}}/media/2012/11/MDT-TS-FixOS.png)
 
 The download also includes the scripts/applications referenced by the task sequence, so you'll need to ensure they exist in your Deployment Share before fixing the task sequence.
 
-# About the Task Sequence
+## About the Task Sequence
 
 Put 10 people in a room and you'll probably find 11 different approaches to MDT and task sequences, so keep in mind that this is only one way to deploy Windows and XenApp and capture that image into PVS. If you have any updates or improvements to this process, I would love to hear your feedback.
 
@@ -68,7 +64,7 @@ Here's a rough breakdown of what the task sequence is doing:
  10. Run a Windows Update task again once the dependencies and applications have been deployed
  11. Prepare and capture the image into PVS using [custom properties]({{site.baseurl}}/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/). This might install and configure the EdgeSight Agent, but will install XenConvert, prep the image and then perform a capture
 
-# About Unattend.xml
+## About Unattend.xml
 
 Whilst MDT provides a far friendlier interface than [Windows System Image Manager](http://technet.microsoft.com/en-us/library/cc766347(v=WS.10).aspx), there are still a number of configuration items that I've included in unattend.xml. These include configuring the following:
 
@@ -81,7 +77,7 @@ The included unattend.xml has configuration items applied to two [configuration 
   * [specialize](http://technet.microsoft.com/en-us/library/cc722130(v=ws.10).aspx); and
   * [oobeSystem](http://technet.microsoft.com/en-us/library/cc748990(v=ws.10).aspx)
 
-[<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="unattend-xml" src="{{site.baseurl}}/media/2012/11/unattend-xml_thumb.png" alt="unattend-xml]({{site.baseurl}}/media/2012/11/unattend-xml.png)
+![unattend-xml]({{site.baseurl}}/media/2012/11/unattend-xml.png)
 
 Together the task sequence and unattend.xml create what should be a fairly clean (and importantly, repeatable) deployment of a XenApp server.
 

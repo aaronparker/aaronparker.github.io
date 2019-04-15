@@ -18,7 +18,7 @@ tags:
   - Internet-Explorer
   - Proxy server
 ---
-<img class="alignleft size-full wp-image-1164" style="margin-left: 0px; margin-right: 15px;" title="ProxySettings" src="{{site.baseurl}}/media/2009/06/ProxySettings.png" alt="ProxySettings" width="341" height="302" srcset="{{site.baseurl}}/media/2009/06/ProxySettings.png 341w, {{site.baseurl}}/media/2009/06/ProxySettings-150x132.png 150w, {{site.baseurl}}/media/2009/06/ProxySettings-300x265.png 300w" sizes="(max-width: 341px) 100vw, 341px" />
+![ProxySettings]({{site.baseurl}}/media/2009/06/ProxySettings.png)
 
 Are you deploying browser proxy settings by setting a proxy server and attempting to manage a proxy bypass list? There is a better way..
 
@@ -30,12 +30,12 @@ In complex environments you may not be able to rely on your proxy server to hand
 
 So why a PAC file? Here's a couple of scenarios that demonstrate the awesomeness of a PAC file:
 
-  * Laptop users don't need to disable their proxy settings when they're outside the corporate network (OK, the ISA Server firewall client can do this too); and
-  * If you have internal web applications hosted across WAN links (e.g. your users are in London but SAP is hosted in Ireland), you can use a PAC file to direct specific URLs to proxy servers that handle that SAP traffic only, whilst every thing else goes via your Internet proxy.
+* Laptop users don't need to disable their proxy settings when they're outside the corporate network (OK, the ISA Server firewall client can do this too); and
+* If you have internal web applications hosted across WAN links (e.g. your users are in London but SAP is hosted in Ireland), you can use a PAC file to direct specific URLs to proxy servers that handle that SAP traffic only, whilst every thing else goes via your Internet proxy.
 
 So go and check it out, Jason has done some excellent work - [The Proxy PAC File Guide](http://www.returnproxy.com/proxypac/).
 
-### Other Resources
+## Other Resources
 
   * [How to disable automatic proxy caching in Internet Explorer](http://support.microsoft.com/kb/271361/)
   * [Automatic configuration does not support certain file types in Internet Explorer 8.0](http://support.microsoft.com/kb/971740/)
