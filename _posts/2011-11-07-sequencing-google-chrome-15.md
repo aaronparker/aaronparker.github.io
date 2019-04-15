@@ -18,9 +18,9 @@ tags:
   - App-V
   - Google Chrome
 ---
-<img style="background-image: none; margin: 0px 0px 0px 5px; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border-width: 0px;" title="GoogleChrome" src="{{site.baseurl}}/media/2011/11/GoogleChrome.png" alt="GoogleChrome" width="128" height="128" align="right" border="0" />Here's how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions.
+Here's how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions.
 
-### What you lose by virtualizing Chrome
+## What you lose by virtualizing Chrome
 
 Virtualizing Chrome with App-V will isolate the application from the OS, so the following features will not be available once Chrome has been sequenced:
 
@@ -30,7 +30,7 @@ Virtualizing Chrome with App-V will isolate the application from the OS, so the 
 
 **Note**: Note that disabling the sandbox will reduce the browser security. This is not recommended and as such, I actually do not recommend virtualizing Chrome, if it is to be your regular browser.
 
-### Managing the Chrome profile – virtualize or not?
+## Managing the Chrome profile – virtualize or not?
 
 [Chrome stores preferences, extensions and other user data](http://www.chromium.org/user-experience/user-data-directory)in:
 
@@ -54,7 +54,9 @@ However, if you absolutely must place the Chrome profile in the virtual environm
 
 For the first approach, add the parameters to the command line, placing [the User Data folder](http://www.chromium.org/user-experience/user-data-directory) in the roaming portion of the profile and the browser cache in the local portion:
 
-[code]chrome -user-data-dir=%AppData%\Google\Chrome\User Data -disk-cache-dir=%LocalAppData%\Google\Chrome\User Data[/code]
+```cmd
+chrome -user-data-dir=%AppData%\Google\Chrome\User Data -disk-cache-dir=%LocalAppData%\Google\Chrome\User Data
+```
 
 The second approach doesn't require any command line parameters, but it will require modifying the default Sequencer exclusions and some scripting:
 
@@ -64,7 +66,7 @@ The second approach doesn't require any command line parameters, but it will req
 
 The first approach would be the easiest way to go.
 
-### Chrome features to disable
+## Chrome features to disable
 
 There are a couple of features that should be disabled when running Chrome under App-V:
 
@@ -75,11 +77,13 @@ There are a couple of features that should be disabled when running Chrome under
 
 To set the policy during sequencing, run the following command:
 
-[code]REG ADD HKLM\SOFTWARE\Policies\Google\Update /v AutoUpdateCheckPeriodMinutes /d 0 /t REG_SZ /f[/code]
+```cmd
+REG ADD HKLM\SOFTWARE\Policies\Google\Update /v AutoUpdateCheckPeriodMinutes /d 0 /t REG_SZ /f
+```
 
 Google Update should also be excluded from the package, which I discuss below. The default browser check can be disabled with a couple of approaches including the master preferences file.
 
-### Configuring Chrome Defaults
+## Configuring Chrome Defaults
 
 If a Chrome profile is not virtualized within the package any options set during the monitoring phase won't be captured. Fortunately Chrome can be configured with defaults for any new profile so that it will contain your required configuration options. Google has made it simple to deploy custom default settings and preferences – by adding a preference file to the same folder where Chrome is installed, Chrome will use these master preferences for any new user who runs Chrome.
 
@@ -91,11 +95,11 @@ For information on what these master preferences are, see the [Chromium administ
 
 Remove the .txt file extension to use
 
-### Sequencing Platform
+## Sequencing Platform
 
 I have sequenced Google Chrome 15.0.874.106 on a clean Windows 7 SP1 x86 VM with all current updates and no other applications other than the App-V Sequencer. I've configured a Q: drive using a second vDisk. I've used a VFS install because installing Chrome to the Q: drive isn't an option, unless you want to move the application manually.
 
-### Sequencer Configuration
+## Sequencer Configuration
 
 Before Sequencing, add the following exclusions:
 
@@ -114,7 +118,7 @@ I have included these options in a Package Template for Chrome that you can down
   [download id="52&#8243; format="1&#8243;]
 </p>
 
-### Sequencing Chrome
+## Sequencing Chrome
 
 Download the [Google Chrome Enterprise (or MSI) installer](http://www.google.com/chrome/eula.html?msi=true). Sequencing Chrome will require the following steps:
 
@@ -124,29 +128,27 @@ Download the [Google Chrome Enterprise (or MSI) installer](http://www.google.com
 
 With the default folder structure, Chrome will execute during sequencing, but won't execute once delivered to a client. The debug.log file will contain entries similar to this:
 
-\[code\]\[1106/180706:ERROR:client_util.cc(231)\] Could not get Chrome DLL version.  
-[1106/180706:ERROR:client_util.cc(268)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded[/code]
+```
+[1106/180706:ERROR:client_util.cc(231)\] Could not get Chrome DLL version.  
+[1106/180706:ERROR:client_util.cc(268)] Could not find exported function RelaunchChromeBrowserWithNewCommandLineIfNeeded
+```
 
-<li value="4">
-  Copy the <strong>master_preferences</strong> file to the same location as <strong>chrome.exe</strong> to configure user profile defaults
-</li>
-<li value="5">
-  Disable browser auto updates
-</li>
-<li value="6">
-  Prevent the Sequencer from deleting the Chrome application folder once the monitoring phase is finished. To see why the Sequencer may process a reboot task that deletes the Chrome install folder read this article: <a href="{{site.baseurl}}/virtualisation/the-case-of-the-disappearing-application-during-sequencing/">The Case of the Disappearing Application during Sequencing</a>.
-</li>
+* Copy the <strong>master_preferences</strong> file to the same location as <strong>chrome.exe</strong> to configure user profile defaults
+* Disable browser auto updates
+* Prevent the Sequencer from deleting the Chrome application folder once the monitoring phase is finished. To see why the Sequencer may process a reboot task that deletes the Chrome install folder read this article: [The Case of the Disappearing Application during Sequencing]({{site.baseurl}}/virtualisation/the-case-of-the-disappearing-application-during-sequencing/).
 
 Automating this process as much as possible will create a cleaner package and make it faster to re-create a new Chrome package if required. Here's an example script that will perform the tasks above:
 
-[code]START /WAIT GoogleChromeStandaloneEnterprise.MSI ALLUSERS=TRUE /QB-  
+```cmd
+START /WAIT GoogleChromeStandaloneEnterprise.MSI ALLUSERS=TRUE /QB-  
 RD /Q /S "%ProgramFiles%\Google\Chrome\Application\15.0.874.106\Installer"  
 ROBOCOPY "%ProgramFiles%\Google\Chrome\Application\15.0.874.106" "%ProgramFiles%\Google\Chrome\Application" /mov /e  
 COPY master\_preferences "%ProgramFiles%\Google\Chrome\Application\master\_preferences  
 REG ADD HKLM\SOFTWARE\Policies\Google\Update /v AutoUpdateCheckPeriodMinutes /d 0 /t REG_SZ /f  
-REG ADD "HKLM\System\CurrentControlSet\Control\Session Manager" /v PendingFileRenameOperations /d "" /t REG\_MULTI\_SZ /f[/code]
+REG ADD "HKLM\System\CurrentControlSet\Control\Session Manager" /v PendingFileRenameOperations /d "" /t REG\_MULTI\_SZ /f
+```
 
-### Shortcuts
+## Shortcuts
 
 For Chrome to run successfully under App-V there are a few additional command line parameters that will need to be added to the Chrome shortcut at the configure applications stage:
 
@@ -159,18 +161,18 @@ For the full list of command-line parameters for Chrome and Chromium see this pa
 
 With the sandbox running, you will see an error similar to this when attempting to add an extension:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="ChromeExtension" src="{{site.baseurl}}/media/2011/11/ChromeExtension.png" alt="ChromeExtension" width="511" height="215" border="0" /> 
+![]({{site.baseurl}}/media/2011/11/ChromeExtension.png)
 
 **Note**: Note that disabling the sandbox will reduce the browser security. I recommend testing the browser functionality and see if you can get away without disabling the sandbox.
 
 The browser will notify you when the sandbox is disabled:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="GoogleChromeNoSandbox" src="{{site.baseurl}}/media/2011/11/GoogleChromeNoSandbox_thumb.png" alt="GoogleChromeNoSandbox]({{site.baseurl}}/media/2011/11/GoogleChromeNoSandbox.png)
+![GoogleChromeNoSandbox]({{site.baseurl}}/media/2011/11/GoogleChromeNoSandbox.png)
 
-### First Run Tasks and Primary Feature Block
+## First Run Tasks and Primary Feature Block
 
 If the steps above have been followed for exclusions, installation and configuration of Chrome, there will be no first run tasks to complete. Additionally the resultant package will be reasonably small so there is no need to create the Primary Feature Block. Because you don't need to complete first run tasks or create the Primary Feature Block, you could automate the entire end-to-end process of creating a Chrome package using [the App-V Sequencer command-line interface](http://softwaredeployment.wordpress.com/2011/04/15/app-v-4-6-sp1-command-line-interface/).
 
-### Finally
+## Finally
 
 Save your package and deploy. With compression enabled, the package should be around 36Mb.

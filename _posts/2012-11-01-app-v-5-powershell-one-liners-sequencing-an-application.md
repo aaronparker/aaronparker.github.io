@@ -26,17 +26,23 @@ I'm using [Paint.NET](http://getpaint.net) as my example application and before 
 
 I've placed all binaries and files, including a Sequencer Template into a folder at C:\Packages. My script (INSTALL.CMD) looks like this:
 
-[code]@ECHO OFF  
-START /WAIT C:\Packages\Paint.NET.3.5.10.Install.exe /skipConfig /auto PDNUPDATING=0 CHECKFORUPDATES=0 DESKTOPSHORTCUT=0[/code]
+```cmd
+@ECHO OFF  
+START /WAIT C:\Packages\Paint.NET.3.5.10.Install.exe /skipConfig /auto PDNUPDATING=0 CHECKFORUPDATES=0 DESKTOPSHORTCUT=0
+```
 
-<img class="alignnone size-full wp-image-2895" title="PackagesFolder" src="{{site.baseurl}}/media/2012/11/PackagesFolder.png" alt="" width="660" height="190" srcset="{{site.baseurl}}/media/2012/11/PackagesFolder.png 660w, {{site.baseurl}}/media/2012/11/PackagesFolder-150x43.png 150w, {{site.baseurl}}/media/2012/11/PackagesFolder-300x86.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
+![Packages Folder]({{site.baseurl}}/media/2012/11/PackagesFolder.png)
 
 Before running the **New-AppvSequencerPackage** command, I have changed directory to C:\Packages. To capture Paint.NET as a new App-V 5.0 package, I have used the following command:
 
-[code language="ps"]New-AppvSequencerPackage -FullLoad -Installer "Install.CMD" -Name "PaintNet3x" -Path "C:\Packages" -PrimaryVirtualApplicationDirectory "C:\Program Files\Paint.Net" -TemplateFilePath "AppV5SequencerTemplate.appvt" -Verbose[/code]
+```powershell
+New-AppvSequencerPackage -FullLoad -Installer "Install.CMD" -Name "PaintNet3x" -Path "C:\Packages" -PrimaryVirtualApplicationDirectory "C:\Program Files\Paint.Net" -TemplateFilePath "AppV5SequencerTemplate.appvt" -Verbose
+```
 
 This generates a completed package in C:\Packages\PaintNet3x, ready for deployment to a client PC.
 
 For more information on the New-AppvSequencerPackage command, run:
 
-[code]Get-Help New-AppvSequencerPackage -detailed[/code]
+```powershell
+Get-Help New-AppvSequencerPackage -detailed
+```

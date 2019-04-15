@@ -13,41 +13,27 @@ tags:
 ---
 Installing the Windows Deployment Services MMC on Windows Vista is a simple process:
 
-**1.** Copy these files from a Windows Server 2003 (or Windows Longhorn Server) running WDS to the <font face="courier new,courier">WindowsSYSTEM32</font> folder on your Windows Vista machine:
+**1.** Copy these files from a Windows Server 2003 (or Windows Longhorn Server) running WDS to the `\Windows\SYSTEM32` folder on your Windows Vista machine:
 
-<ul style="margin-left: 54pt">
-  <li>
-    <font face="courier new,courier">wdsmmc.dll </font>
-  </li>
-  <li>
-    <font face="courier new,courier">wdsmgmt.dll </font>
-  </li>
-  <li>
-    <font face="courier new,courier">wdsimage.dll </font>
-  </li>
-  <li>
-    <font face="courier new,courier">wdscsl.dll </font>
-  </li>
-  <li>
-    <font face="courier new,courier">WdsMgmt.msc</font>
-  </li>
-</ul>
+* `wdsmmc.dll`
+* `wdsmgmt.dll`
+* `wdsimage.dll`
+* `wdscsl.dll`
+* `WdsMgmt.msc`
 
-**2.** Copy this file from a Windows Server 2003 (or Windows Longhorn Server) running WDS to the <font face="courier new,courier">WindowsSYSTEM32en-US</font> folder on your Windows Vista machine:
+**2.** Copy this file from a Windows Server 2003 (or Windows Longhorn Server) running WDS to the `\Windows\SYSTEM32\en-US` folder on your Windows Vista machine:
 
-<ul style="margin-left: 54pt">
-  <li>
-    <font face="courier new,courier">wdsmmc.dll.mui</font>
-  </li>
-</ul>
+* `wdsmmc.dll.mui`
 
 **3.** Register each DLL file on the Vista machine with REGSVR32:
 
-[code]REGSVR32 C:WindowsSystem32wdsmmc.dll  
+```cmd
+REGSVR32 C:WindowsSystem32wdsmmc.dll  
 REGSVR32 C:WindowsSystem32wdsmgmt.dll  
 REGSVR32 C:WindowsSystem32wdsimage.dll  
-REGSVR32 C:WindowsSystem32wdscsl.dll[/code]
+REGSVR32 C:WindowsSystem32wdscsl.dll
+```
 
 Add the Windows Deployment Services snap-in to a custom MMC console or run WdsMgmt.msc if you copied that file from the source machine.
 
-<img border="0" src="{{site.baseurl}}/media/2007/02/1000.14.1051.WDSConsole.png" />
+![WDSConsole]{{site.baseurl}}/media/2007/02/1000.14.1051.WDSConsole.png)

@@ -39,9 +39,7 @@ To manage an Office 2013 deployment, copy the Office source files to a folder an
   * [Service Pack 1 for Microsoft Office 2013 (KB2817430) 32-Bit Edition](http://www.microsoft.com/en-us/download/details.aspx?id=42017)
   * [Service Pack 1 for Microsoft Office 2013 (KB2817430) 64-Bit Edition](http://www.microsoft.com/en-us/download/details.aspx?id=42006)
 
-To create an Office Setup Customization, download the  [Office 2013 Administrative Template files (ADMX/ADML) and Office Customization Tool](http://www.microsoft.com/en-us/download/details.aspx?id=35554). After extracting the Office Customization Tool download, [copy the Admin folder to your copy of Office 2013 setup](http://technet.microsoft.com/en-us/library/cc179121.aspx) and create a new Setup Customization File for Office 2013, by running:
-
-[code]SETUP /ADMIN[/code]
+To create an Office Setup Customization, download the  [Office 2013 Administrative Template files (ADMX/ADML) and Office Customization Tool](http://www.microsoft.com/en-us/download/details.aspx?id=35554). After extracting the Office Customization Tool download, [copy the Admin folder to your copy of Office 2013 setup](http://technet.microsoft.com/en-us/library/cc179121.aspx) and create a new Setup Customization File for Office 2013, by running: `SETUP /ADMIN`
 
 The Office Customization Tool will launch:
 

@@ -18,7 +18,7 @@ tags:
 ---
 If you are managing a large number of applications with App-V you may experience a crash in the Microsoft Management Console when drilling down into the Application node.
 
-<img style="display: inline" title="ManagementConsoleCrash" src="{{site.baseurl}}/media/2008/12/managementconsolecrash.png" border="0" alt="ManagementConsoleCrash" width="484" height="176" /> 
+![ManagementConsoleCrash]({{site.baseurl}}/media/2008/12/managementconsolecrash.png)
 
 Microsoft have addressed issues with the console previously with this knowledgebase article: [When you use the SoftGrid Management Console, it may crash](http://support.microsoft.com/kb/942687/). That article discusses an issue the console has with asymmetrical icons; however in 4.5 there is a handy registry key that prevents the console from attempting to load application icons.
 
@@ -32,8 +32,12 @@ Because the console never loads any application icons, it won’t have issues wi
 
 To add this key on x86 Windows use this command:
 
-[code]REG ADD "HKLM\Software\Microsoft\SoftGrid\4.5\Management Console" /v LoadConsoleIcons /d 0 /t REG_DWORD /f[/code]
+```powershell
+REG ADD "HKLM\Software\Microsoft\SoftGrid\4.5\Management Console" /v LoadConsoleIcons /d 0 /t REG_DWORD /f
+```
 
 On x64 Windows use this command instead:
 
-[code]REG ADD "HKLM\Software\Wow6432Node\Microsoft\SoftGrid\4.5\Management Console" /v LoadConsoleIcons /d 0 /t REG_DWORD /f[/code]
+```powershell
+REG ADD "HKLM\Software\Wow6432Node\Microsoft\SoftGrid\4.5\Management Console" /v LoadConsoleIcons /d 0 /t REG_DWORD /f
+```

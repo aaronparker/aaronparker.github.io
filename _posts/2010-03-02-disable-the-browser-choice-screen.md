@@ -27,6 +27,8 @@ For administrators who are controlling update delivery with WSUS, you should be 
 
 To deploy during a Windows build, use the following command (or instead deploy with your favourite tool, e.g. Group Policy Preferences):
 
-[code]REG ADD HKLM\Software\BrowserChoice /v Enable /t REG_DWORD /d 0 /f[/code]
+```powershell
+REG ADD HKLM\Software\BrowserChoice /v Enable /t REG_DWORD /d 0 /f
+```
 
 More information in this knowledgebase article: [Information about the Browser Choice update for system administrators who are in managed environments that are under a Volume Licensing program](http://support.microsoft.com/kb/2019411).

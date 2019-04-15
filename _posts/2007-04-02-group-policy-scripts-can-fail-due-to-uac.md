@@ -38,43 +38,49 @@ I think the easiest way is to use a [WMI Filter](http://technet2.microsoft.com/W
 
 Windows Server 2003 and below:
 
-[code]Select * from Win32_OperatingSystem where BuildNumber < "6000"[/code]
+```sql
+Select * from Win32_OperatingSystem where BuildNumber < "6000"
+```
 
 Windows Vista and above:
 
-[code]Select * from Win32_OperatingSystem where BuildNumber >= "6000"[/code]
+```sql
+Select * from Win32_OperatingSystem where BuildNumber >= "6000"
+```
 
 Another method would be to detect the operating system version as a part of a script and then launch specific logon scripts depending on what operating system is detected. Here's a VBscript that will do this for you:
 
-[code]Dim wshShell  
+```vbs
+Dim wshShell  
 Set wshShell = CreateObject("WScript.Shell")  
 If IsVista Then  
-runVistaStyle  
+    runVistaStyle  
 Else  
-runNormalStyle  
+    runNormalStyle  
 End If
 
 Sub runVistaStyle()  
-wshShell.Run("cscript \[path\_to\_launchapp.wsf\] \[path\_to\_userlogin_script\]")  
+    wshShell.Run("cscript \[path\_to\_launchapp.wsf\] \[path\_to\_userlogin_script\]")  
 End Sub
 
 Sub runNormalStyle()  
-wshShell.Run("[path\_to\_userlogin_script]")  
+    wshShell.Run("[path\_to\_userlogin_script]")  
 End Sub
 
 Function IsVista()  
-strComputer = "."  
-Set objWMIService = GetObject("winmgmts:" & "{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")  
-Set colOSes = objWMIService.ExecQuery("Select * from Win32_OperatingSystem")  
-For Each objOS in colOSes  
-BuildNumber = objOS.BuildNumber  
-Next  
-If BuildNumber >= 6000 Then  
-IsVista = True  
-Else  
-IsVista = False  
-End If  
-End Function[/code]
+    strComputer = "."  
+    Set objWMIService = GetObject("winmgmts:" & "{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")  
+    Set colOSes = objWMIService.ExecQuery("Select * from Win32_OperatingSystem")  
+    For Each objOS in colOSes  
+        BuildNumber = objOS.BuildNumber  
+    Next  
+    If BuildNumber >= 6000 Then  
+        IsVista = True  
+    Else  
+        IsVista = False  
+    End If  
+End Function
+```
 
 Lastly you have the option to [disable User Account Control](http://www.google.com/search?q=disable+User+Account+Control+&rls=com.microsoft:en-AU&ie=UTF-8&oe=UTF-8&startIndex=&startPage=1) completely; however **I do not recommend this at all** and as it's a topic all of it's own, I'm not going into the how or why of this option here.
 

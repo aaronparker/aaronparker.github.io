@@ -19,7 +19,7 @@ Exactly how do folder and Registry exclusions work in App-V? I had presumed that
 
 I’ve spent some time working out how folder and Registry exclusions and Merge/Override settings impact the package at runtime and this post is based on my findings. Although I believe that the details in this post are correct, I recommend testing out these behaviours for yourself.
 
-### Why Exclude?
+## Why Exclude?
 
 When virtualising an application, we may need to avoid capturing specific paths for several reasons:
 
@@ -27,7 +27,7 @@ When virtualising an application, we may need to avoid capturing specific paths 
   * Prevent conflicts with data already on the client (preventing a virtualised view of specific paths so that a virtualised application does not see different data to application running outside of App-V)
   * When running an operating system component such as Internet Explorer inside the bubble, we may want to ensure that the application sees the same data inside and outside the bubble
 
-### Exclusions Apply at Sequencing Time Only
+## Exclusions Apply at Sequencing Time Only
 
 Exclusions are only used to prevent certain paths from being captured during sequencing; it does not necessarily mean that those paths will then _not_ be virtualised at runtime.
 
@@ -42,11 +42,12 @@ These paths might include, but are not limited to:
 
 I’ll discuss some of these in more detail later.
 
-### Creating a Package for Testing
+## Creating a Package for Testing
 
 To perform some tests and to illustrate what happens during sequencing and execution, I’ve created a very simple package that contains some Registry keys and folders. I turned the following script into an App-V package:
 
-[code]REG ADD "HKEY\_CURRENT\_USER\Software\MergeTest1" /v InsideTheBubble /t REG_SZ /d "True"  
+```cmd
+REG ADD "HKEY\_CURRENT\_USER\Software\MergeTest1" /v InsideTheBubble /t REG_SZ /d "True"  
 REG ADD "HKEY\_CURRENT\_USER\Software\MergeTest1\Key" /v InsideTheBubble /t REG_SZ /d "True"  
 REG ADD "HKEY\_CURRENT\_USER\Software\MergeTest2" /v InsideTheBubble /t REG_SZ /d "True"  
 REG ADD "HKEY\_CURRENT\_USER\Software\MergeTest3" /v InsideTheBubble /t REG_SZ /d "True"  
@@ -54,69 +55,70 @@ MD "%APPDATA%\MyApplication1"
 MD "%APPDATA%\MyApplication2\InsideSub-folder"  
 ECHO txt > "%APPDATA%\MyApplication1\InsideTheBubble.txt"  
 ECHO txt > "%APPDATA%\MyApplication2\InsideTheBubble.txt"  
-ECHO txt > "%APPDATA%\MyApplication2\InsideSub-folder\InsideTheBubble.txt"[/code]
+ECHO txt > "%APPDATA%\MyApplication2\InsideSub-folder\InsideTheBubble.txt"
+```
 
-### How the Virtual File System interacts with the Real File System
+## How the Virtual File System interacts with the Real File System
 
 Excluded folder paths in an App-V package works just the way you would expect – the folder is not captured in the package. I then may choose to control how the folder is handled at execution time by setting the path to Override the Local Directory (preventing the package from see the real file system) or Merge with the Local Directory (the application sees a merged view of the virtual and real file systems).
 
 In my example package I’ve added the path _%APPDATA%\MyApplication2\InsideSub-folder_ as an exclusion. In the screenshot below, you can see that the parent folder _%APPDATA%\MyApplication2_ was captured but _InsideSub-folder_ was not:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual File System Root" src="{{site.baseurl}}/media/2011/02/VFSMerge3_thumb.png" border="0" alt="Virtual File System Root]({{site.baseurl}}/media/2011/02/VFSMerge3.png)
+![AppV]({{site.baseurl}}/media/2011/02/VFSMerge3.png)
 
 To perform some specific testing at execution time, I’ve then set this folder to _Merge with Local Directory_. Let’s see what happens on the client:
 
 On the real file system I’ve created the folder _%APPDATA%\MyApplication2._ The screenshot below shows a directory listing outside of the bubble:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS Outside the package" src="{{site.baseurl}}/media/2011/02/vfs1_thumb.png" border="0" alt="VFS Outside the package]({{site.baseurl}}/media/2011/02/vfs1.png)
+![AppV]({{site.baseurl}}/media/2011/02/vfs1.png)
 
 If I see the same %APPDATA% location within the package I should see the merged view of _%APPDATA%\MyApplication2:_
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS Inside the package" src="{{site.baseurl}}/media/2011/02/vfs2_thumb.png" border="0" alt="VFS Inside the package]({{site.baseurl}}/media/2011/02/vfs2.png)
+![AppV]({{site.baseurl}}/media/2011/02/vfs2.png)
 
 If I create a sub-folder of the MyApplication2 folder:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS inside creating a sub-folder" src="{{site.baseurl}}/media/2011/02/vfs3_thumb.png" border="0" alt="VFS inside creating a sub-folder]({{site.baseurl}}/media/2011/02/vfs3.png)
+![AppV]({{site.baseurl}}/media/2011/02/vfs3.png)
 
 I can see that the sub-folder has fallen through the virtual environment to the real file system:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VSF viewing outside the buble" src="{{site.baseurl}}/media/2011/02/vfs4_thumb.png" border="0" alt="VSF viewing outside the buble]({{site.baseurl}}/media/2011/02/vfs4.png)
+![AppV]({{site.baseurl}}/media/2011/02/vfs4.png)
 
 I can also create a file or folder outside of those paths that were captured during sequencing and any path marked _Override Local Directory_ and they will be created in the real file system. In this package %APPDATA% was not captured during sequencing, so I can create a sub-folder (or file):
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VSF inside the bubble, create a folder" src="{{site.baseurl}}/media/2011/02/vfs5_thumb.png" border="0" alt="VSF inside the bubble, create a folder]({{site.baseurl}}/media/2011/02/vfs5.png)
+![AppV]({{site.baseurl}}/media/2011/02/vfs5.png)
 
 That is written to the real file system:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VFS outside the bubble" src="{{site.baseurl}}/media/2011/02/vfs6_thumb.png" border="0" alt="VFS outside the bubble]({{site.baseurl}}/media/2011/02/vfs6.png)
+![AppV]({{site.baseurl}}/media/2011/02/vfs6.png)
 
 **Bottom line**: Exclusions ensure specified file data isn’t captured at sequencing time and Merge with Local means that anything that doesn’t already exist in the package will be written to the real file system. So file system virtualization is straight-forward and for the most part works the way we would expect.
 
-### How the Virtual Registry interacts with the Real Registry
+## How the Virtual Registry interacts with the Real Registry
 
 The virtual Registry is quite different to the virtual file system – writes to the Registry at execution time will always end up in the virtual Registry. In my example package I have several Registry keys: _HKCU\Software\MergeTest1_ and _HKCU\Software\MergeTest2_, while _HKCU\Software\MergeTest3_ was excluded. The key _HKCU\Software\MergeTest2_ has been configured for Merge with the Local Key.
 
 On the client in the real Registry I’ve created _HKCU\Software\MergeTest2_ with a value (OutsideTheBubble) inside it:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Read registry" src="{{site.baseurl}}/media/2011/02/vrg1_thumb.png" border="0" alt="Read registry]({{site.baseurl}}/media/2011/02/vrg1.png)
+![AppV]({{site.baseurl}}/media/2011/02/vrg1.png)
 
 Within the virtual Registry I can create other keys at the same levels MergeTest1 and MergeTest2 (MergeTest3) and I can make an edit to a value that exists outside of the virtual Registry.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual registry" src="{{site.baseurl}}/media/2011/02/vrg2_thumb.png" border="0" alt="Virtual registry]({{site.baseurl}}/media/2011/02/vrg2.png)
+![AppV]({{site.baseurl}}/media/2011/02/vrg2.png)
 
 All of these changes have been captured inside the virtual Registry. This means that while I get a merged view of the virtual and real Registry’s, any changes made by the virtual application will only persist inside the virtual registry. Here’s a look again at the real Registry after I’ve closed the virtual application:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Real registry" src="{{site.baseurl}}/media/2011/02/vrg3_thumb.png" border="0" alt="Real registry]({{site.baseurl}}/media/2011/02/vrg3.png)
+![AppV]({{site.baseurl}}/media/2011/02/vrg3.png)
 
 When you take a closer look at a package, you’ll start to see why this is the case. In this screenshot you can see that the Registry root (REGISTRY) is set to _Merge with Local Key_.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="Virtual Registry root" src="{{site.baseurl}}/media/2011/02/VRGMerge3_thumb.png" border="0" alt="Virtual Registry root]({{site.baseurl}}/media/2011/02/VRGMerge3.png)
+![AppV]({{site.baseurl}}/media/2011/02/VRGMerge3.png)
 
 **Bottom line**: Exclusions ensure specified Registry data isn’t captured at sequencing time and Merge with Local, means just that: merge with any existing local keys; however _any_ new writes to the Registry will be captured in the virtual Registry (a copy on write action).
 
 In the majority of scenarios the behaviour of the virtual Registry is exactly the way we need it to be; however what happens if you absolutely, positively need a Registry write to make it into the real Registry? (i.e. how do you force an exclude at runtime?)
 
-### Why write to the Real Registry?
+## Why write to the Real Registry?
 
 I’ll draw on my earlier examples to explain why I would want a Registry write to make into the real Registry.
 
@@ -128,7 +130,7 @@ I’ll draw on my earlier examples to explain why I would want a Registry write 
 
 These are just a few examples and I’m sure there are plenty more.
 
-### How to write to the Real Registry
+## How to write to the Real Registry
 
 The App-V client includes a Registry key at HKLM\SOFTWARE\Wow6432Node\Microsoft\SoftGrid\4.5\SystemGuard\Overrides with a couple of interesting values – _VirtualRegistryPassthrough_ and _VirtualRegistryPassthroughEx_.
 
@@ -152,11 +154,11 @@ VirtualRegistryPassthroughEx is a multi-string value (REG\_MULTI\_SZ) to which y
 
 Add the key or keys that you want to exclude from the bubble. No restart is required for this to take effect.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="VirtualRegistryPassthroughEx" src="{{site.baseurl}}/media/2011/02/VirtualRegistryPassthroughEx_thumb.png" border="0" alt="VirtualRegistryPassthroughEx]({{site.baseurl}}/media/2011/02/VirtualRegistryPassthroughEx.png)
+![AppV]({{site.baseurl}}/media/2011/02/VirtualRegistryPassthroughEx.png)
 
 In my example I’ve added HKEY\_CURRENT\_USER\Software\MergeTest3. I can now create values and sub-keys and be certain that they will end up in the real Registry.
 
-### Where to from here?
+## Where to from here?
 
 The lack of available documentation on this setting deter you from using it; however based on my findings I’m reasonably confident in the way this works. I do recommend performing your own in-depth testing before using this to address challenges you may have with the virtual Registry.
 

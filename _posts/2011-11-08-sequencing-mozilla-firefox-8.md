@@ -18,16 +18,16 @@ tags:
   - App-V
   - Firefox
 ---
-<img src="{{site.baseurl}}/media/2011/06/062611_1120_SequencingM1.png" alt="" align="right" />Mozilla has just released Firefox 8, so it's time to look at virtualizing the new version. It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. Here's how to successfully sequence [Mozilla Firefox 8.x](http://www.mozilla.com/en-US/firefox/).
+Mozilla has just released Firefox 8, so it's time to look at virtualizing the new version. It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. Here's how to successfully sequence [Mozilla Firefox 8.x](http://www.mozilla.com/en-US/firefox/).
 
-### What you lose by virtualizing Firefox
+## What you lose by virtualizing Firefox
 
 Virtualizing Firefox with App-V will isolate the application from the OS, so the following features will not be available once Firefox has been sequenced:
 
   * Firefox Jump Lists in the Start Menu and Taskbar
   * The ability set the browser as default
 
-### Firefox features to disable
+## Firefox features to disable
 
 There are a couple of features that should be disabled when running Firefox under App-V:
 
@@ -36,12 +36,12 @@ There are a couple of features that should be disabled when running Firefox unde
 
 I will cover using a couple of customisation to ensure these features are disabled for any new Firefox profile.
 
-### Managing the Firefox profile – virtualize or not?
+## Managing the Firefox profile – virtualize or not?
 
 [Firefox stores preferences, extensions and other user data](http://kb.mozillazine.org/Profile_folder_-_Firefox) in:
 
-  * %APPDATA%\Mozilla (preferences, bookmarks etc.); and
-  * %LOCALAPPDATA%\Mozilla (browser cache)
+  * `%APPDATA%\Mozilla` (preferences, bookmarks etc.); and
+  * `%LOCALAPPDATA%\Mozilla` (browser cache)
 
 The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this is a good thing and I don't recommend removing this exclusion. %APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla_to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time. There are several reasons why this approach is a good idea:
 
@@ -51,7 +51,7 @@ The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this
 
 By excluding %APPDATA% and not virtualizing the user profile you will gain some flexibility with your Firefox deployment.
 
-### Configuring Firefox Defaults
+## Configuring Firefox Defaults
 
 If a Firefox profile is not virtualized within the package any options set during the monitoring phase won't be captured. Fortunately Firefox can be configured with defaults for any new profile so that it will contain your required configuration options.
 
@@ -76,13 +76,13 @@ Available here is a copy of _userChrome.css_ that will remove from the user inte
   [download id="45&#8243; format="1&#8243;]
 </p>
 
-### Sequencing Platform
+## Sequencing Platform
 
 I have sequenced Firefox 8 on a clean Windows 7 SP1 x86 VM with all current updates and no other applications other than the App-V Sequencer. I’ve configured a Q: drive using a second vDisk, rather than let the Sequencer create a Q: drive for me. I've used a VFS install and tested successfully; however if you would prefer a MNT install just change the install folder when installing Firefox
 
 The Firefox version available from Mozilla is an x86 application (x64 build are available from other sources), so I generally recommend sequencing Firefox on Windows 7 x86 virtual machine even though you may be deploying to 64-bit Windows. However confirm this in your own environment and re-sequence for 64-bit platforms if required.
 
-### Sequencer Configuration
+## Sequencer Configuration
 
 Before Sequencing, add the following exclusions:
 
@@ -102,7 +102,7 @@ I have included these in a Package Template for Firefox that you can download fr
   [download id="46&#8243; format="1&#8243;]
 </p>
 
-### Installing Firefox
+## Installing Firefox
 
 Download the [Firefox installer in your target language from the Mozilla site](http://www.mozilla.com/firefox/all.html). Sequencing Firefox will require the following steps:
 
@@ -120,7 +120,8 @@ Automating this process as much as possible will create a cleaner package and ma
 
 For an example script that will automate the install and configuration of Firefox, see the script below:
 
-[code]@ECHO OFF  
+```cmd
+@ECHO OFF  
 SET SOURCE=%~dp0  
 SET SOURCE=%SOURCE:~0,-2%
 
@@ -137,16 +138,17 @@ START /WAIT FirefoxSetup8.exe /INI=%SOURCE%\Firefox8.ini
 REM Configure Firefox profile defaults  
 MD "%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome"  
 COPY %SOURCE%\user.js "%ProgramFiles%\Mozilla Firefox\defaults\profile\user.js"  
-COPY %SOURCE%\userChrome.css "%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome\userChrome.css"[/code]
+COPY %SOURCE%\userChrome.css "%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome\userChrome.css"
+```
 
-### Shortcuts
+## Shortcuts
 
 If the monitoring phase was successful the Sequencer should create a single shortcut for Firefox. If you are including Flash Player, add an additional shortcut for the Flash Player Control Panel applet using "C:\Windows\System32\FlashPlayerCPLApp.cpl" as the target.
 
-### First Run Tasks and Primary Feature Block
+## First Run Tasks and Primary Feature Block
 
 If the steps above have been followed for exclusions, installation and configuration of Firefox, there will be no first run tasks to complete. Additionally the resultant package will be reasonably small so there is no need to create the Primary Feature Block. Because you don't need to complete first run tasks or create the Primary Feature Block, you could automate the entire end-to-end process of creating a Firefox package using [the App-V Sequencer command-line interface](http://softwaredeployment.wordpress.com/2011/04/15/app-v-4-6-sp1-command-line-interface/).
 
-### Finally
+## Finally
 
 Save your package and deploy. With compression enabled, the package should be around 22Mb.

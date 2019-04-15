@@ -23,17 +23,18 @@ I thought that that behaviour was a little strange, so decided to test this out 
 
 I tested this on a virtual machine running Windows 7 SP1 x86 and could see from browsing to the Google installation folder (C:\Program Files\Google\Chrome) that the Application sub-folder was being removed after the monitoring phase was complete. To work out which process was deleting the folder, I've used [Process Monitor](http://technet.microsoft.com/en-us/sysinternals/bb896645). To see what was going on, I've reset my VM back to a clean snapshot, started the App-V Sequencer and Process Monitor and set a filter in Process Monitor for **Path** beginning with **C:\Program Files\Google\Chrome\Application** and then re-started the sequencing process.
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorFilter" src="{{site.baseurl}}/media/2011/11/ProcessMonitorFilter1.png" alt="ProcessMonitorFilter" width="639" height="370" border="0" /> 
+![]{{site.baseurl}}/media/2011/11/ProcessMonitorFilter1.png)
 
 With this filter, I was able to see that the process that was deleting the folder is the Sequencer itself (SFTSequencer.exe). Click the screenshot for a larger view.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorDeletes" src="{{site.baseurl}}/media/2011/11/ProcessMonitorDeletes_thumb.png" alt="ProcessMonitorDeletes]({{site.baseurl}}/media/2011/11/ProcessMonitorDeletes.png)
+![ProcessMonitorDeletes]({{site.baseurl}}/media/2011/11/ProcessMonitorDeletes.png)
 
 The next most obvious place to look then is the Sequencer log file, hopefully it will hold some information about why the folder is being deleted. To view the Sequencer log, browse to **C:\Program Files\Microsoft Application Virtualization Sequencer\Logs** and open **sft-seq-log.txt**.
 
 In this file I can see a number of lines where the Sequencer is attempting to copy files that no longer exist:
 
-\[code\]\[11/03/2011 21:45:34 VRB VFSX\] ...failed getting long path name for the file (C:\Program Files\Google\Chrome). Error: 2  
+```
+[11/03/2011 21:45:34 VRB VFSX\] ...failed getting long path name for the file (C:\Program Files\Google\Chrome). Error: 2  
 [11/03/2011 21:45:34 VRB CORE] GetShortPathName failure using: C:\Program Files\Google\Chrome. Error is: 2  
 [11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
 [11/03/2011 21:45:34 VRB VFSX] ...failed getting long path name for the file (C:\Program Files\Google\Chrome\Application). Error: 3  
@@ -43,11 +44,14 @@ In this file I can see a number of lines where the Sequencer is attempting to co
 [11/03/2011 21:45:34 VRB VFSX] ...failed getting long path name for the file (C:\Program Files\Google\Chrome\Application\15.0.874.106). Error: 3  
 [11/03/2011 21:45:34 VRB CORE] GetShortPathName failure using: C:\Program Files\Google\Chrome. Error is: 2  
 [11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
-[11/03/2011 21:45:34 VRB CORE] CopyResourceToVFS failed.[/code]
+[11/03/2011 21:45:34 VRB CORE] CopyResourceToVFS failed.
+```
 
 A few lines previous to these is this line:
 
-\[code\]\[11/03/2011 21:45:26 VRB RTSK\] Reboot processing detected need to delete \??\C:\Program Files\Google\Chrome.[/code]
+```
+[11/03/2011 21:45:26 VRB RTSK\] Reboot processing detected need to delete \??\C:\Program Files\Google\Chrome.
+```
 
 The Sequencer is doing exactly what's it being told to do – process a reboot task at the end of the monitoring phase and delete the application. Interestingly though, only the Application sub-folder is being deleted, not the entire Chrome parent folder.
 
@@ -55,7 +59,7 @@ To get an idea of why, I've used [WhyReboot](http://exodusdev.com/products/whyre
 
 Going through the sequencing process again and running WhyReboot before ending monitoring, gives me an idea of why the reboot has been requested:
 
-<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="WhyReboot" src="{{site.baseurl}}/media/2011/11/WhyReboot1.png" alt="WhyReboot" width="609" height="381" border="0" /> 
+![WhyReboot]({{site.baseurl}}/media/2011/11/WhyReboot1.png)
 
 **Note**: I could also use [PendMoves](http://technet.microsoft.com/en-us/sysinternals/bb897556) another Sysinternals tool to query this information as well.
 
@@ -63,8 +67,10 @@ Going through the sequencing process again and running WhyReboot before ending m
 
 So what's writing this entry to PendingFileRenameOperations and why does this only happen during sequencing? To find out, I've reached for Process Monitor again, but unfortunately I haven't been able find which process is writing to the PendingFileRenameOperations value, as Process Monitor didn't find any RegSetValue operations.
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="ProcessMonitorPendingFileRenameOperations" src="{{site.baseurl}}/media/2011/11/ProcessMonitorPendingFileRenameOperations_thumb.png" alt="ProcessMonitorPendingFileRenameOperations]({{site.baseurl}}/media/2011/11/ProcessMonitorPendingFileRenameOperations.png)
+![ProcessMonitorPendingFileRenameOperations]({{site.baseurl}}/media/2011/11/ProcessMonitorPendingFileRenameOperations.png)
 
 Circumstantial evidence points to SETUP.EXE, but without Process Monitor giving me more information I can't say for sure. I do however, have a workaround that allow me to sequence Chrome – before finishing the monitoring phase, I clear the PendingFileRenameOperations data with this command:
 
-[code]REG ADD "HKLM\System\CurrentControlSet\Control\Session Manager" /v PendingFileRenameOperations /d "" /t REG\_MULTI\_SZ /f[/code]
+```cmd
+REG ADD "HKLM\System\CurrentControlSet\Control\Session Manager" /v PendingFileRenameOperations /d "" /t REG\_MULTI\_SZ /f
+```

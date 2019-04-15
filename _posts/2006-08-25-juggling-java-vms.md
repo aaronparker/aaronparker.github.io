@@ -25,13 +25,17 @@ I've just spent yesterday and today working on a site where the client had a nee
 
 **3**. Add the following registry entry to the Isolation Environment (change the version number to the version of the Sun Java VM you have installed and used by Internet Explorer)
 
-[code]Windows Registry Editor Version 5.00  
+```registry
+Windows Registry Editor Version 5.00  
 [HKEY\_LOCAL\_MACHINE\SOFTWARE\JavaSoft\Java Plug-in\1.5.0_04]  
-"UseJava2IExplorer"=dword:00000000[/code]
+"UseJava2IExplorer"=dword:00000000
+```
 
 Install the registry entry by placing this into a .REG file and import via
 
-[code]AIESETUP /W /N "Microsoft Java VM" REGEDIT /S SunJava-Off.REG[/code]
+```powershell
+AIESETUP /W /N "Microsoft Java VM" REGEDIT /S SunJava-Off.REG
+```
 
 Where "Microsoft Java VM" is the name of the Isolation Environment and SunJava-Off.REG is the name of the registry file.
 
