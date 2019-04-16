@@ -18,4 +18,4 @@ Allowing Updater to run from within the bubble will cause user profile issues. I
 
 You can customise the Windows Installer source files to prevent Updater from installing; however disabling Updater is as simple as deleting the Updater5 program folder:
 
-[code]RD /Q /S "%CommonProgramFiles%\Adobe\Updater5"[/code]
+`RD /Q /S "%CommonProgramFiles%\Adobe\Updater5"`

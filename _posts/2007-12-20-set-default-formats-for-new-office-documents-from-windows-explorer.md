@@ -22,43 +22,41 @@ If you're deploying Office 2007 and haven't yet standardised on the new file for
 
 There's another avenue to creating new Office documents that I hadn't thought about until I was asked to change the defaults today - creating new documents directly from within Windows Explorer:
 
-![newbeforecropped.png]({{site.baseurl}}/media/2007/12/newbeforecropped.png) 
+![newbeforecropped.png]({{site.baseurl}}/media/2007/12/newbeforecropped.png)
 
 If a user creates a new Office document in this manner, it will be created in the new Office 2007 formats. I have no idea how many users actually use this feature but here's how to change those defaults for Word, Excel and PowerPoint.
 
-<p class="important">
-  This is a machine level change and I recommend documenting your changes so that you can reverse them at some time in the future.
-</p>
+This is a machine level change and I recommend documenting your changes so that you can reverse them at some time in the future.
 
-### Microsoft Word Document
+## Microsoft Word Document
 
 Word only requires a simple registry change. Delete the following string value
 
-[code]HKEY\_CLASSES\_ROOT\.docx\Word.Document.12\ShellNew\NullFile[/code]
+`HKEY\_CLASSES\_ROOT\.docx\Word.Document.12\ShellNew\NullFile`
 
 Then create a new string (REG_SZ) value leaving the data blank.
 
-[code]HKEY\_CLASSES\_ROOT\.doc\Word.Document.8\ShellNew\NullFile[/code]
+`HKEY\_CLASSES\_ROOT\.doc\Word.Document.8\ShellNew\NullFile`
 
-### Microsoft Excel Worksheet
+## Microsoft Excel Worksheet
 
 Excel is a little different in that it requires a template file to exist on the system from which the new document can be created. Windows stores these templates files in `%SYSTEMROOT%\SHELLNEW` (or `C:\Windows\ShellNew`). So you will need to create a blank Excel worksheet and save it as an Excel 97-2003 Workbook in C:\Windows\ShellNew. Then delete the following registry string value:
 
-[code]HKEY\_CLASSES\_ROOT\.xlsx\Excel.Sheet.12\ShellNew\FileName[/code]
+`HKEY\_CLASSES\_ROOT\.xlsx\Excel.Sheet.12\ShellNew\FileName`
 
 And create a new string (REG_SZ) with data pointing to the new template filename; in this case I've used EXCEL.XLS.
 
-[code]HKEY\_CLASSES\_ROOT\.xls\Excel.Sheet.8\ShellNew\FileName[/code]
+`HKEY\_CLASSES\_ROOT\.xls\Excel.Sheet.8\ShellNew\FileName`
 
-### Microsoft PowerPoint Presentation
+## Microsoft PowerPoint Presentation
 
 PowerPoint is the same as Excel, you'll need to create a blank PowerPoint 97-2003 Presentation and save it to `C:\Windows\ShellNew`. Then delete the following string value:
 
-[code]HKEY\_CLASSES\_ROOT\.pptx\PowerPoint.Show.12\ShellNew\FileName[/code]
+`HKEY\_CLASSES\_ROOT\.pptx\PowerPoint.Show.12\ShellNew\FileName`
 
 And create a new string (REG_SZ) value with data pointing to the new filename; in this case I've used POWERPNT.PPT
 
-[code]HKEY\_CLASSES\_ROOT\.ppt\PowerPoint.Show.8\ShellNew\FileName[/code]
+`HKEY\_CLASSES\_ROOT\.ppt\PowerPoint.Show.8\ShellNew\FileName`
 
 If you made the changes correctly, you should see this reflected in the New menu from within Explorer:
 

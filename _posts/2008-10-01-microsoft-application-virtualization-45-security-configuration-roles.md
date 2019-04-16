@@ -24,15 +24,17 @@ Security configuration roles for Application Virtualisation 4.5, which makes the
 
 You’ll first need to register these roles with the SCW to use them. This script will register the files on Windows Server 2003 (after you've first installed the roles on the Management or Streaming server):
 
-[code]@ECHO OFF  
+```cmd
+@ECHO OFF  
 PUSHD "%USERPROFILE%"  
 scwcmd register /kbname:AppVirt45 /kbfile:"%ProgramFiles%\Microsoft System Center Application Virtualization 4.5 Security Configuration Wizard Roles\Windows Server 2003\AppV\_Management\_Server.XML"  
 scwcmd register /kbname:AppVirt45 /kbfile:"%ProgramFiles%\Microsoft System Center Application Virtualization 4.5 Security Configuration Wizard Roles\Windows Server 2003\AppV\_Management\_Server.XML"  
 scwcmd register /kbname:AppVirt45 /kbfile:"%ProgramFiles%\Microsoft System Center Application Virtualization 4.5 Security Configuration Wizard Roles\Windows Server 2003\AppV\_Management\_Server.XML"  
-POPD[/code]
+POPD
+```
 
 You’ll then see the App-V roles in SCW:
 
-<img style="display: inline;" title="AppV-SCW1" src="{{site.baseurl}}/media/2008/10/appvscw1.png" alt="AppV-SCW1" width="458" height="371" border="0" /> 
+![]({{site.baseurl}}/media/2008/10/appvscw1.png)
 
-<img style="display: inline;" title="AppV-SCW2" src="{{site.baseurl}}/media/2008/10/appvscw2.png" alt="AppV-SCW2" width="458" height="371" border="0" />
+![]({{site.baseurl}}/media/2008/10/appvscw2.png)

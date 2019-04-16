@@ -20,7 +20,8 @@ You can download the latest version of the JInitiator from the [JInitiator Downl
 
 Getting this to work requires adding the CLSID (or CLASSID) of the older version of JInitiator and modifying it to point to the installed version. You can find the CLSID of each JInitiator version on the download page. Here's an example of a REG file with the required registry entries, pointing 1.3.1.17 to 1.3.1.28:
 
-[code]Windows Registry Editor Version 5.00  
+```c
+Windows Registry Editor Version 5.00  
 [HKEY\_LOCAL\_MACHINE\Software\Classes\CLSID\{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}]  
 @="JInitiator 1.3.1.17"
 
@@ -45,16 +46,17 @@ Getting this to work requires adding the CLSID (or CLASSID) of the older version
 @="1.1"
 
 [HKEY\_LOCAL\_MACHINE\Software\Classes\CLSID\{CAFECAFE-0013-0001-0017-ABCDEFABCDEF}\VersionIndependentProgID]  
-@="Oracle.JavaBeansBridge"[/code]
+@="Oracle.JavaBeansBridge"
+```
 
 This shows the CLSID (the GUID between the {} brackets) for JInitiator 1.3.1.17 and as you can see, the default value for the InprocServer32 is where the "magic" happens.
 
 Secondly you may also want to add another registry value that fools the JRE into seeing version 1.3.1.17 as well. This command will add the correct registry entry for you.
 
-[code]REG ADD HKLM\SOFTWARE\Oracle\JInitiator\1.3.1.17 /v JavaHome /d "C:\Program Files\Oracle\JInitiator 1.3.1.28" /t REG_SZ[/code]
+`REG ADD HKLM\SOFTWARE\Oracle\JInitiator\1.3.1.17 /v JavaHome /d "C:\Program Files\Oracle\JInitiator 1.3.1.28" /t REG_SZ`
 
 You will then see each version listed in the JInitiator Control Panel applet:
 
-![jinitiator.PNG]({{site.baseurl}}/media/2007/12/jinitiator.PNG) 
+![jinitiator.PNG]({{site.baseurl}}/media/2007/12/jinitiator.PNG)
 
 This is pretty much the same approach you can use with t[he Sun JRE]({{site.baseurl}}/unattended/unattended-install-sun-java-runtime-environment-16-update-3) to fool applications into seeing older versions, allowing to install only the latest (and greatest?).

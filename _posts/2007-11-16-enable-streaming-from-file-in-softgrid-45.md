@@ -25,6 +25,6 @@ The default behaviour of the SoftGrid Application Virtualisation 4.5 client is t
 
 The fix for this is pretty simple - change the following registry DWORD value from 0 to 1
 
-[code]HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\Client\Configuration\AllowIndependentFileStreaming[/code]
+`HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\Client\Configuration\AllowIndependentFileStreaming`
 
 **DISCLAIMER**: SoftGrid Application Virtualisation 4.5 is beta software and this configuration may change by the final release.

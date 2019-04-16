@@ -15,7 +15,8 @@ Citrix provide a nice installer for the [Access Management Console](https://www.
 
 So here's a script that you can use to uninstall the current version of the AMC and its components in one step:
 
-[code]@ECHO OFF  
+```cmd
+@ECHO OFF  
 REM Citrix Access Management Console - Hotfix Management  
 START /WAIT MSIEXEC /QB /UNINSTALL {40E9841C-CF57-4B88-8A06-F944D322E92E}  
 REM Citrix Access Management Console - Knowledge Base  
@@ -34,4 +35,4 @@ REM Citrix Access Management Console - Report Center
 START /WAIT MSIEXEC /QB /UNINSTALL {23207B10-4855-496B-A099-7B80C4AFD355}  
 REM Citrix Access Management Console - Framework  
 START /WAIT MSIEXEC /QB /UNINSTALL {5436F894-39CC-41D7-AEFC-AF5E2C7F0852}  
-[/code]
+```
