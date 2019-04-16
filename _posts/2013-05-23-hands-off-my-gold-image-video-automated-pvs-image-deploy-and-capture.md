@@ -20,6 +20,6 @@ In the mean time, here's one of the demos that I ran during the session that sho
 
 Here’s a flow chart that gives an overview of what the script does:
 
-[<img class="alignnone  wp-image-3310" alt="Automated-PVS-image-deployment" src="{{site.baseurl}}/media/2013/05/Automated-PVS-image-deployment.png]({{site.baseurl}}/media/2013/05/Automated-PVS-image-deployment.png)
+![Automated-PVS-image-deployment.png]({{site.baseurl}}/media/2013/05/Automated-PVS-image-deployment.png)
 
 The video is available in HD resolution (720) so you can see the full details.

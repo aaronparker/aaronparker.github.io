@@ -6,10 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/?p=1087
 permalink: /msi-live-update-disables-user-account-control/
-aktt_notify_twitter:
-  - 'yes'
-aktt_tweeted:
-  - "1"
 dsq_thread_id:
   - "195381793"
 categories:
@@ -25,17 +21,15 @@ MSI supplies a [Live Update application](http://www.msi.com/index.php?func=html
 
 For some reason that I can't quite fathom, it appears that MSI has decided that User Account Control needs to be disabled for their application to run. After installing MSI Live Update and running the main application, you are presented with this dialog box:
 
-<img class="alignnone size-full wp-image-1088" title="msiuacwarning" src="{{site.baseurl}}/media/2009/05/msiuacwarning.png" alt="msiuacwarning" width="423" height="157" srcset="{{site.baseurl}}/media/2009/05/msiuacwarning.png 423w, {{site.baseurl}}/media/2009/05/msiuacwarning-150x55.png 150w, {{site.baseurl}}/media/2009/05/msiuacwarning-300x111.png 300w" sizes="(max-width: 423px) 100vw, 423px" /> 
+![msiuacwarning]({{site.baseurl}}/media/2009/05/msiuacwarning.png)
 
 Clicking the only option available to you - the OK button, results in a UAC prompt:
 
-<img class="alignnone size-full wp-image-1089" title="msidisableuacprompt" src="{{site.baseurl}}/media/2009/05/msidisableuacprompt.png" alt="msidisableuacprompt" width="460" height="417" srcset="{{site.baseurl}}/media/2009/05/msidisableuacprompt.png 460w, {{site.baseurl}}/media/2009/05/msidisableuacprompt-150x135.png 150w, {{site.baseurl}}/media/2009/05/msidisableuacprompt-300x271.png 300w" sizes="(max-width: 460px) 100vw, 460px" /> 
+![msidisableuacprompt]({{site.baseurl}}/media/2009/05/msidisableuacprompt.png)
 
 Hmm.. DUAC.EXE, I wonder what that does. Let's cancel that prompt and try the another tool included with Live Updater - Live Monitor. This one not only requires elevation to initially execute, but you just will not get anything useful out of it with UAC enabled.
 
 Here's [a video of the application in action](http://www.youtube.com/watch?v=C297dtKFrK8) (on Windows Vista) - running LMONITOR.EXE will in turn run DUAC.EXE to disable UAC and then reboot the machine - with little warning:
-
-[youtube=http://www.youtube.com/watch?v=C297dtKFrK8]
 
 Not only is this a sad indictment of MSI's support tool, but this could potentially put many of their users at risk. It's a real shame to see developers taking the easy way out instead of doing a little research and [doing things the right way](http://msdn.microsoft.com/en-us/magazine/cc163486.aspx).
 

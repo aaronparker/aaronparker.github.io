@@ -45,7 +45,7 @@ Be sure to [sign up for the first meeting via the registration page](https://www
 
 ## Sponsor
 
-[<img class="alignnone wp-image-5263 size-full" src="{{site.baseurl}}/media/2016/11/nmsgljwk.jpg" alt="Nutanix](http://www.nutanix.com/)
+![Nutanix]{{site.baseurl}}/media/2016/11/nmsgljwk.jpg)
 
 We have a great win with [Nutanix](http://www.nutanix.com/) taking a chance on us for the first event. Come to the event to hear how Nutanix helps support Citrix technologies. This is great for us and the community, so I'm really excited to have Nutanix on board.
 

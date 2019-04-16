@@ -6,8 +6,6 @@ author: Aaron Parker
 layout: post
 guid: https://stealthpuppy.com/?p=6273
 permalink: /signing-git-commits-for-sweet-verified-badges/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
 image: media/2019/03/helloquence-51716-unsplash.jpg
 categories:
   - General

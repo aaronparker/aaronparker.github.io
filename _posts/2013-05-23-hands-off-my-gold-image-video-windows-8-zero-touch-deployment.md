@@ -21,6 +21,6 @@ In a 45 minute session on MDT and automating gold image deployments there's not 
 
 Here’s a flow chart that gives an overview of what the script does:
 
-[<img class="alignnone  wp-image-3312" alt="Zero-touch-Windows8-deployment" src="{{site.baseurl}}/media/2013/05/Zero-touch-Windows8-deployment.png]({{site.baseurl}}/media/2013/05/Zero-touch-Windows8-deployment.png)
+![Zero-touch-Windows8-deployment.png]({{site.baseurl}}/media/2013/05/Zero-touch-Windows8-deployment.png)
 
 The video is available in HD resolution (720) so you can see the full details.

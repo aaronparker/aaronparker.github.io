@@ -20,11 +20,9 @@ tags:
   - PowerShell
   - Profiles
 ---
-[<img class="size-full wp-image-2624 alignnone" title="Delete by Cari McGee" src="{{site.baseurl}}/media/2012/01/AppleKeyboardDeletePowerShell.png" alt="Delete by Cari McGee](http://www.flickr.com/photos/pleeker/5379549514/)
-
 I recently posted a script for removing unnecessary files and pruning files based on their age, which can be used at logoff to keep profile sizes manageable - [Reducing Profile Size with a Profile Clean Up Script]({{site.baseurl}}/user-virtualization/profile-clean-up-script/).
 
-[Andrew Morgan](http://andrewmorgan.ie/about-2/) ([@andyjmorgan](http://twitter.com/andyjmorgan)) has kindly translated my very basic VBscript to PowerShell. This can be used as a standalone script or the function (_remove-itembyage_) could be integrated into your own scripts and has the added benefit of in-built help and the ability to run silently.
+[Andrew Morgan](http://andrewmorgan.ie/about-2/) ([@andyjmorgan](http://twitter.com/andyjmorgan)) has kindly translated my very basic VBscript to PowerShell. This can be used as a standalone script or the function (`remove-itembyage`) could be integrated into your own scripts and has the added benefit of in-built help and the ability to run silently.
 
 Just like the original script, this could be executed at logoff, before the profile is saved back to the network, to perform two actions:
 
@@ -35,8 +33,9 @@ For example, you could use the script to delete all .log or temporary files belo
 
 **Note**: the script listing below has the -whatif parameter applied when calling the function, so no deletes will occur unless the parameter is removed.
 
-<pre class="prettyprint lang-powershell" data-start-line="1" data-visibility="visible" data-highlight="" data-caption="">function remove-itembyage {
-    &lt;#
+```powershell
+function remove-itembyage {
+    <#
         .SYNOPSIS
         remove items from folders recursively.
 
@@ -77,7 +76,7 @@ For example, you could use the script to delete all .log or temporary files belo
 
         .LINK
         {{site.baseurl}}/user-virtualization/profile-clean-up-script-powershell-edition/
-    #&gt;
+    #>
 
     [cmdletbinding(SupportsShouldProcess = $True)]
     param(
@@ -122,6 +121,5 @@ remove-itembyage -days 0 -path $appdata -typefilter "txt,log" -silent -whatif
 remove-itembyage -days 90 -path $cookies -silent -whatif
 remove-itembyage -days 14 -path $recent -silent -whatif
 remove-itembyage -days 21 -path $history -silent -whatif
-remove-itembyage -days 14 -path "$appdata\Microsoft\office\Recent" -silent -whatif</pre>
-
- 
+remove-itembyage -days 14 -path "$appdata\Microsoft\office\Recent" -silent -whatif
+```

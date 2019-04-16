@@ -23,13 +23,14 @@ I've taken the opportunity write something in PowerShell that can perform the co
 
 An odd occurrence when deploying Windows Server to these boxes is that the adapter names often change between each deployment. So what might be _HP NC373i Multifunction Gigabit Server Adapter #13_ today becomes _HP NC373i Multifunction Gigabit Server Adapter #14_ when I next re-deploy Windows to that box.
 
-<img class="alignnone size-full wp-image-2676" title="Hyper-V Virtual Networks" src="{{site.baseurl}}/media/2012/03/HyperVVirtualNetworks.png" alt="Hyper-V Virtual Networks" width="660" height="324" srcset="{{site.baseurl}}/media/2012/03/HyperVVirtualNetworks.png 660w, {{site.baseurl}}/media/2012/03/HyperVVirtualNetworks-150x73.png 150w, {{site.baseurl}}/media/2012/03/HyperVVirtualNetworks-300x147.png 300w" sizes="(max-width: 660px) 100vw, 660px" /> 
+![]({{site.baseurl}}/media/2012/03/HyperVVirtualNetworks.png)
 
 Because the _New-VMExternalSwitch_ and _Remove-VMSwitchNic_ commandlets to used configure the virtual networks require the adapter description, I've had to come up with a way to grab the description based on some that remains static - the MAC address. List below is a script that contains a list of MAC addresses (you could improve on this by keeping the list in a file) for each target MAC address in each server.
 
 It's just a simple list, so if I add another server, I just add the new server's MAC address to the list. The script returns the description of the adapter with that MAC address and then uses that to configure the new virtual network. Enjoy.
 
-[code language="ps"]## Configures a Hyper-V external virtual network based on a supplied MAC address
+```powershell
+## Configures a Hyper-V external virtual network based on a supplied MAC address
 
 \## Variables ##  
 \# Path to the PowerShell Management Library for Hyper-V  
@@ -72,4 +73,4 @@ Write-Warning "Unable to match a local adapter from the list of supplied MAC add
 Else {  
 Write-Warning "'$HyperVLibrary' doesn't exist. Unable to continue without the PowerShell Management Library for Hyper-V."  
 }  
-[/code]
+```

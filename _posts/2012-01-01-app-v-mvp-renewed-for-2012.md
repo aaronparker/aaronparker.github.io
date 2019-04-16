@@ -17,8 +17,6 @@ categories:
 tags:
   - App-V
 ---
-<img class="alignnone" title="MVP header image" src="http://adminframework.mvpaward.com/images/MVPLogo.jpg" alt="MVP header image" width="590" height="111" />
-
 I was quite relieved and grateful to receive the Microsoft MVP award again for 2012:
 
 > Congratulations! We are pleased to present you with the 2012 Microsoft® MVP Award! This award is given to exceptional technical community leaders who actively share their high quality, real world expertise with others. We appreciate your outstanding contributions in App-V technical communities during the past year.

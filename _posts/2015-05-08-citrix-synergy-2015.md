@@ -20,9 +20,9 @@ tags:
 
 Here's a just few things that I'm looking forward to getting involved in and seeing at Synergy this year.
 
-# I've Got 99 Problems and Folder Redirection is Every One of Them
+## I've Got 99 Problems and Folder Redirection is Every One of Them
 
-<img class="alignnone size-full wp-image-3941" src="{{site.baseurl}}/media/2015/05/GeakSpeakLive.jpg" alt="GeakSpeakLive" width="640" height="83" srcset="{{site.baseurl}}/media/2015/05/GeakSpeakLive.jpg 640w, {{site.baseurl}}/media/2015/05/GeakSpeakLive-150x19.jpg 150w, {{site.baseurl}}/media/2015/05/GeakSpeakLive-300x39.jpg 300w" sizes="(max-width: 640px) 100vw, 640px" /> 
+![]({{site.baseurl}}/media/2015/05/GeakSpeakLive.jpg)
 
 Along with [Helge Klein](http://twitter.com/helgeklein) and [Shawn Bass](http://twitter.com/shawnbass), I'll be presenting a Geek Speak Live session on folder redirection. We presented on the same topic at BriForum Boston and London last year, and this time at Synergy we're taking another deep technical look at folder redirection.
 
@@ -32,9 +32,9 @@ We'll talk about the challenges of folder redirection, present the results of te
 
 We'll be presenting next Tuesday the 14th (the first day of Synergy) at 2:30pm. [SYN502: I’ve got 99 problems, and folder redirection is every one of them](https://citrix.g2planet.com/synergyorlando2015/public_session_view.php?agenda_session_id=185). Please join us, we'd love to see you there.
 
-# Geek Speak Tonight
+## Geek Speak Tonight
 
-<img class=" wp-image-3940 size-full alignnone" src="{{site.baseurl}}/media/2015/05/GeakSpeak.jpg" alt="GeakSpeak" width="445" height="83" srcset="{{site.baseurl}}/media/2015/05/GeakSpeak.jpg 445w, {{site.baseurl}}/media/2015/05/GeakSpeak-150x28.jpg 150w, {{site.baseurl}}/media/2015/05/GeakSpeak-300x56.jpg 300w" sizes="(max-width: 445px) 100vw, 445px" /> 
+![]({{site.baseurl}}/media/2015/05/GeakSpeak.jpg)
 
 I'm really looking forward to Geek Speak Tonight this year - a core team of some of the CTPs have been working on what I am sure will be [the best Synergy Geek Speak Tonight](https://citrix.g2planet.com/synergyorlando2015/public_session_view.php?agenda_session_id=157) yet.
 
@@ -42,10 +42,10 @@ I'm really looking forward to Geek Speak Tonight this year - a core team of some
 
 This year the theme is IoT including lively discussions and demos. There'll be beer and food, most surely some swearing and definitely some laughs. Be sure to be there as this type of session is really about the audience as much as it is the presenters.
 
-# GeekOvation
+## GeekOvation
 
 There's a very special part of Geek Speak Tonight this year - [GeekOvation](http://blogs.citrix.com/2015/04/16/geekovation-award-at-synergy-geek-speak-tonight/). This is your opportunity to show off your geek credentials. I'm looking forward to seeing these presentations and seeing special, real world examples of what people in the Citrix community are sinking their teeth into.
 
-# User Group Initiatives
+## User Group Initiatives
 
 Some new initiatives around Citrix user groups looks to be one of those "worst keep secrets", but I won't share details, however this is something worth looking forward to and getting involved in. Full details will be announced by Citrix on Tuesday.

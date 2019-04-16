@@ -19,7 +19,7 @@ tags:
 ---
 I'm a little slow off the mark here (I've got my head buried in something unrelated), but I've just found out today that the [App-V 4.5 Cumulative Update 1](http://support.microsoft.com/kb/963693), although only available on [Connect](http://connect.microsoft.com), is not actually a beta, it is the final code that you can start deploying.
 
-<img class="alignnone size-full wp-image-1065" title="app-vonconnect" src="{{site.baseurl}}/media/2009/03/app-vonconnect.png" alt="app-vonconnect" width="515" height="288" srcset="{{site.baseurl}}/media/2009/03/app-vonconnect.png 515w, {{site.baseurl}}/media/2009/03/app-vonconnect-300x167.png 300w" sizes="(max-width: 515px) 100vw, 515px" /> 
+![app-vonconnect]({{site.baseurl}}/media/2009/03/app-vonconnect.png)
 
 The MDOP blog [covered this release last month](http://blogs.technet.com/mdop/archive/2009/02/26/get-your-applications-virtualized-on-windows-7-beta-with-microsoft-app-v.aspx), but I think I heard "Windows 7 support" and didn't hear much after that. My bad, I need to pay more attention.
 

@@ -20,9 +20,7 @@ tags:
 ---
 [Rory](https://twitter.com/Rorymon) [asks via Twitter](https://twitter.com/Rorymon/status/228536440403931136) - can we pre-cache App-V packages on laptop clients so that all applications are available offline, using [AppSense Environment Manager](http://www.appsense.com/policy-and-governance)?:
 
-<p style="text-align: center;">
-  <img class="size-full wp-image-2796 aligncenter" title="Rory Asks" src="{{site.baseurl}}/media/2012/07/RoryAsks.png" alt="Rory Asks" width="519" height="138" srcset="{{site.baseurl}}/media/2012/07/RoryAsks.png 519w, {{site.baseurl}}/media/2012/07/RoryAsks-150x39.png 150w, {{site.baseurl}}/media/2012/07/RoryAsks-300x79.png 300w" sizes="(max-width: 519px) 100vw, 519px" />
-</p>
+![]({{site.baseurl}}/media/2012/07/RoryAsks.png)
 
 As with many solutions in Environment Manager, there's probably a number of ways to achieve this - here's just one.
 

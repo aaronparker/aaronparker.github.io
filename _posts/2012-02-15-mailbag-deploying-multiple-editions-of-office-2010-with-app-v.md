@@ -18,15 +18,15 @@ tags:
   - App-V
   - Office
 ---
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; float: right; padding-top: 0px; border: 0px;" title="Mail Bag" src="{{site.baseurl}}/media/2012/02/Mail-Bag_thumb.png" alt="Mail Bag]({{site.baseurl}}/media/2012/02/Mail-Bag.png)I'm not sure why I didn't think of this earlier – I get emails from readers fairly regularly and many of them make great topics for blog posts. So here's the first in a series of posts where I'll cover interesting questions I get via email and where I think other readers will benefit from a public response.
+I'm not sure why I didn't think of this earlier – I get emails from readers fairly regularly and many of them make great topics for blog posts. So here's the first in a series of posts where I'll cover interesting questions I get via email and where I think other readers will benefit from a public response.
 
 I've removed personally identifiable information from the original email.
 
-### Question
+## Question
 
 > We have set up Citrix / App-V environment and sequenced Office 2010 Pro Plus and we have installed the MSOffvirt kit [the Office 2010 Deployment Kit for App-V] using the Office Pro Plus Key on the Citrix PVS servers as part of the PVS image. Now our client has decided they also want to be able to deliver Office 2010 Std via app-v as well. Do we now need to change the license key that it is installed with the MSOffvirt kit or is there another way round it? We could of course silo it and have Office Pro Plus on some PVS servers and Office Standard on others.
 
-### Answer
+## Answer
 
 My first recommendation would actually be against virtualizing the primary version Office, but I'll assume that your Office requirements are simple and virtualizing Office with App-V is working OK for you.
 
