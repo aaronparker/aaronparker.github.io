@@ -80,7 +80,7 @@ Create a new virtual machine with the following virtual hardware:
   * Add NICs, a sound card, USB hubs, COM & LPT ports as required
   * 2 x vDisks – use fixed size disks if you have the space. Fixed size disks will offer better IO performance. Additionally the App-V 4.6 SP1 Sequencer can automatically create a Q: drive if none already exists; however a second vDisk is a better approach.
 
-![Delivering]{{site.baseurl}}/media/2012/02/021412_1854_DeliveringO1.png) If no secondary partition exists, the Sequencer setup will create a substituted drive letter for the virtual drive. A known issue exists where this configuration can cause an issue with new and upgraded packages because the Sequencer resolves the full path instead of the substituted drive letter.
+![Delivering]({{site.baseurl}}/media/2012/02/021412_1854_DeliveringO1.png) If no secondary partition exists, the Sequencer setup will create a substituted drive letter for the virtual drive. A known issue exists where this configuration can cause an issue with new and upgraded packages because the Sequencer resolves the full path instead of the substituted drive letter.
 
 This issue looks to be fixed with [Hotfix 3 for the 4.6 SP1 Sequencer](http://support.microsoft.com/kb/2571168); however it is still recommended that you create a second vDisk, rather than let setup create the drive for you.
 
@@ -140,7 +140,7 @@ Windows XP Professional or Windows 7 Enterprise editions are recommended for cli
 
 Additional pre-requisites should only be installed when required by an application. For example, if Office is a pre-requisite of another application (such as SAP products or a plug-in) only install Office when sequencing that application.
 
-![Delivering]{{site.baseurl}}/media/2012/02/021412_1854_DeliveringO2.png) At this point you will have a VM that can be used as a sequencing environment as well as an App-V client. It is highly recommended that you create two VMs based on this environment so that you have a second VM to perform testing of packages to confirm that the sequenced applications work at runtime.
+![Delivering]({{site.baseurl}}/media/2012/02/021412_1854_DeliveringO2.png) At this point you will have a VM that can be used as a sequencing environment as well as an App-V client. It is highly recommended that you create two VMs based on this environment so that you have a second VM to perform testing of packages to confirm that the sequenced applications work at runtime.
 
 ## Sequencer
 

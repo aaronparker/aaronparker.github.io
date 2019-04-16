@@ -102,7 +102,7 @@ This behaviour can be prevented with the [PreventLoginWithFailure](https://docs.
 
 A read / write profile is no different in user experience than the default configuration. A read / write profile is configured by setting Profile Type to 'Read-write profile' (i.e. value is 1). Behind the scenes, a RW.VHDX file along-side the Profile Container is created as can be seen below. This is essentially [a differencing disk](https://www.altaro.com/hyper-v/hyper-v-differencing-disks-explained/) where writes are redirected during the session.
 
-![]{{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW.png
+![]({{site.baseurl}}/media/2019/02/ProfileContainer-ConcurrentRW.png
 
 At logon, if a RW.VHDX exists, the FSLogix agent will merge the disk into the parent Profile Container and create a new RW.VHDX and repeat the same process at logoff.
 

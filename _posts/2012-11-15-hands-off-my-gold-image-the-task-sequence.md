@@ -38,7 +38,7 @@ Re-open the task sequence properties and you should see something like this:
 
 Importing the supplied pre-configured task sequence into your own Deployment Share, will result in some errors because the task sequence will reference applications and operating systems that either don't exist in your Deployment Share or have different names.
 
-![MDT-TS-Errors]{{site.baseurl}}/media/2012/11/MDT-TS-Errors.png)
+![MDT-TS-Errors]({{site.baseurl}}/media/2012/11/MDT-TS-Errors.png)
 
 For example, after I've imported this task sequence, I need to fix the reference to the Windows Server 2008 R2 SP1 source files:
 

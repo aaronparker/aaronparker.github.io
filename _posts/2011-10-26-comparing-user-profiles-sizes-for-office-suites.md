@@ -21,7 +21,7 @@ I've been doing some work recently virtualizing various versions of Office in Ap
 
 Here's a look at my user profile where I've been running Office 2010, Office 2007 and Office 2003 and capturing the user preferences for those applications with a third-party management tool:
 
-![]{{site.baseurl}}/media/2011/10/Screen-Shot-2011-10-25-at-13.38.28.png)
+![]({{site.baseurl}}/media/2011/10/Screen-Shot-2011-10-25-at-13.38.28.png)
 
 In this screenshot, the profile sizes for each versions of Office breaks down like this:
 

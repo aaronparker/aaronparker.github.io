@@ -50,7 +50,7 @@ MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALL
 
 The script will install Adobe Reader directly from the network, so the only file being copied to the remote machine is the script. Here's what the install source for Adobe Reader looks like:
 
-![]{{site.baseurl}}/media/2009/05/reader91.png)
+![]({{site.baseurl}}/media/2009/05/reader91.png)
 
 Deploying software is a three step process:
 

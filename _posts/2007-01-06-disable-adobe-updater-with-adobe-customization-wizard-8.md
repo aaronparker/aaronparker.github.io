@@ -45,7 +45,7 @@ If you are invovled in deploying Adobe Reader or want an automated method of dis
   7. Right click these rows and choose Drop Rows
   8. Click **Transform** and then **Generate Transform...** to create a transform file
 
-I have added ![AdobeReader]{{site.baseurl}}/deployment/deploying-adobe-reader-81) new transform files for Adobe Reader 8.1 and Reader 8.1.1. The transform files listed here support Reader 8.0 only.
+I have added ![AdobeReader]({{site.baseurl}}/deployment/deploying-adobe-reader-81) new transform files for Adobe Reader 8.1 and Reader 8.1.1. The transform files listed here support Reader 8.0 only.
 
 So you don't have to, I've created a few transform files for use in [deploying Adobe Reader 8](http://www.stealthpuppy.com/blogs/travelling/archive/2006/12/07/deploying-adobe-reader-8.aspx). The first file will remove all of those new online features that come with Reader 8, the second file will do the same as well as _completely_ prevent the installation of Adobe Updater 5 and the third file will prevent the installation of Adobe Updater 5 only (leaving the online features intact):
 

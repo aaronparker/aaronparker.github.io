@@ -90,7 +90,7 @@ Now that we know the client is a laptop and we know that it can contact the stre
 
 This will load all packages and ensure that the progress bar is not shown.
 
-![Run-SFTTRAY]{{site.baseurl}}/media/2012/07/Run-SFTTRAY.png)
+![Run-SFTTRAY]({{site.baseurl}}/media/2012/07/Run-SFTTRAY.png)
 
 If you are publishing packages to users, configure this action to run in the current user's context. If you are delivering packages globally and using a streaming source, configure this action to run in the System context.
 
