@@ -11,7 +11,7 @@ dsq_thread_id:
 categories:
   - Hardware
 ---
-<img align="left" src="{{site.baseurl}}/media/2007/11/yp-p2.png" alt="yp-p2.png" />Any review of a touch screen digital audio player or phone is going to inevitably compare to the iPhone/iPod touch, but touch interfaces are the way forward because they just make sense. So here's my quick and dirty review of the [Samsung P2](http://uk.samsungplay.com/product/mp3_player_detail.jsp) which turned up this morning.
+Any review of a touch screen digital audio player or phone is going to inevitably compare to the iPhone/iPod touch, but touch interfaces are the way forward because they just make sense. So here's my quick and dirty review of the [Samsung P2](http://uk.samsungplay.com/product/mp3_player_detail.jsp) which turned up this morning.
 
 First up - why go with the P2? I must confess it's got a lot to do with the touch screen. I've previously used the Rio Karma and the [Creative Zen V Plus](http://uk.europe.creative.com/products/product.asp?category=213&subcategory=214&product=15306) which have both been good players. The Rio Karma was an awesome DAP with excellent sound and features but it was butt ugly and the interface left something to be desired. The Creative Zen V Plus has served me well too, but it's starting to fall apart with the navigation button on the front having split and is currently somewhere inside the player. While I'm really impressed with the iPhone and iPod touch, I don't feel like transcoding 40GB worth of Windows Media files into AAC to play on the iPod and I'm just not a fan of iTunes. If I was to move to a Mac, the iPod would be a no brainer, but right now, Windows is my platform of choice.
 

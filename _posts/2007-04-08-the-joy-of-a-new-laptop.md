@@ -9,7 +9,7 @@ permalink: /the-joy-of-a-new-laptop/
 categories:
   - Hardware
 ---
-<img border="0" align="right" src="/images/cs/1000.14.1226.sv_xps_m1210_screen.png" />A couple of months back my old Toshiba TE2100 laptop that my wife has been using packed it in and it was time to look at a new one. I settled on a Dell and took delivery of a [Dell XPS M1210](http://www1.ap.dell.com/content/products/productdetails.aspx/xps_m1210?c=au&cs=audhs1&l=en&s=dhs) laptop last week. So far I'm pretty impressed. Here's a breakdown of the features that I picked up for AU $2840:
+A couple of months back my old Toshiba TE2100 laptop that my wife has been using packed it in and it was time to look at a new one. I settled on a Dell and took delivery of a [Dell XPS M1210](http://www1.ap.dell.com/content/products/productdetails.aspx/xps_m1210?c=au&cs=audhs1&l=en&s=dhs) laptop last week. So far I'm pretty impressed. Here's a breakdown of the features that I picked up for AU $2840:
 
   * 12.1&#8243; Screen. 1280 x 800 resolution
   * Core 2 Duo T7200 2Ghz with 4MB cache

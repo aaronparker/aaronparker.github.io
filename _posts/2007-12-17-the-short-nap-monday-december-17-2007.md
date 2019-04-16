@@ -11,7 +11,7 @@ categories:
 tags:
   - NAP
 ---
-The Short NAP is a (semi-regular) quick list of Microsoft Network Access Protection and Server/Domain Isolation related links from around the web. Here are the links for Monday the 17<sup>th</sup> of December 2007:
+The Short NAP is a (semi-regular) quick list of Microsoft Network Access Protection and Server/Domain Isolation related links from around the web. Here are the links for Monday the 17th of December 2007:
 
   * The [Cable Guy gives a great overview](http://www.microsoft.com/technet/technetmag/issues/2007/12/CableGuy/default.aspx), yet in-depth look at Network Access Protection in Windows Server 2008. Via [Jeff](http://blogs.technet.com/nap/archive/2007/12/03/the-cable-guy-loves-nap.aspx).
   * Avenda releases [their NAP agent for Linux](http://www.avendasys.com/products/nap.shtml) in beta with support for RedHat based distributions Via [Jeff](http://blogs.technet.com/nap/archive/2007/12/03/hot-news-want-to-try-out-the-linux-nap-client.aspx).

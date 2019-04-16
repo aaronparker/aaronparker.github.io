@@ -60,14 +60,15 @@ The first issue I ran into was a problem with the Access Gateway COM server afte
 > COM+ Services Internals Information:  
 > File: d:ntcomcomplussrccomsvcssrgtapicsrgtserv.cpp, Line: 371  
 > Comsvcs.dll file version: ENU 2001.12.4720.3959 shp  
-> For more information, see Help and Support Center at http://go.microsoft.com/fwlink/events.asp.</p>
-So this appeared to be an issue with the permissions on database access for the service account to SQL Server Express. No amount of adding or changing permissions helped so I rebuilt the box from scratch. Luckily I had [a scripted installation](http://www.stealthpuppy.com/blogs/travelling/archive/2007/03/23/unattended-citrix-advanced-access-control-part-1.aspx), so this didn't take long.
+> For more information, see Help and Support Center at http://go.microsoft.com/fwlink/events.asp.
+
+So this appeared to be an issue with the permissions on database access for the service account to SQL Server Express. No amount of adding or changing permissions helped so I rebuilt the box from scratch. Luckily I had [a scripted installation]({{site.baseurl}}/unattended-citrix-advanced-access-control-part-1/), so this didn't take long.
 
 The second time around these errors were gone, however I found that when selecting SQL Server 2005 Express in the Server Configuration tool I was still having some database issues. I had installed SQL Server manually before the installation of AAC so I can only assume that was the cause. So instead of that I connected to the database instance just like it was full blown SQL Server and the Server Configuration tool completed successfully.
 
 Now that I had AAC up and running, I configured a logon point, some resources and access policy and customised the awful, awful graphics Citrix have added to 4.5. Here's what I whipped up:
 
-<img border="0" src="{{site.baseurl}}/media/2007/03/1000.14.1177.AccessGateway.gif" /> 
+![AccessGateway]({{site.baseurl}}/media/2007/03/1000.14.1177.AccessGateway.gif)
 
 Far more appealing don't you think? A little 'Microsofty' I know, but much better. On graphics too, don't forget that the Access Gateway only handles GIF files; don't use PNGs like I did.
 

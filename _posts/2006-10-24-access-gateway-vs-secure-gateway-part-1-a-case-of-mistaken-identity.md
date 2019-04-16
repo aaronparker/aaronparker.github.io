@@ -21,7 +21,7 @@ In some respects this thinking around security could be true, because the Access
 
 The decision on which Gateway product to implement should be solely based on feature set, but there is a far more important question that should be asked before your budget is committed to either: _How do we prove the users' identity?_
 
-By default the only method of authentication that the Access Gateway and Secure Gateway, [^1] offer is a combination of username and password. These alone cannot guarantee the identity of the user attempting to gain access. If username and password were compromised, how would the user know that they had been compromised and how could the administrator prove that the user accessing the system is the actual authorised person? As the administrator, we could attempt a couple of things:
+By default the only method of authentication that the Access Gateway and Secure Gateway [^1], offer is a combination of username and password. These alone cannot guarantee the identity of the user attempting to gain access. If username and password were compromised, how would the user know that they had been compromised and how could the administrator prove that the user accessing the system is the actual authorised person? As the administrator, we could attempt a couple of things:
 
   1. Implement a strong password policy in the organisation;
   2. Restrict which machines users access the system from.
