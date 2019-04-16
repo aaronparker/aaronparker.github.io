@@ -14,7 +14,7 @@ tags:
   - Deployment
   - Profile
 ---
-# Multiple Methods
+## Multiple Methods
 
 The Deployment Guys have a great article from 2009 that I recommend reading for a overview of customisation methods: [Configuring Default User Settings – Full Update for Windows 7 and Windows Server 2008 R2](http://blogs.technet.com/b/deploymentguys/archive/2009/10/29/configuring-default-user-settings-full-update-for-windows-7-and-windows-server-2008-r2.aspx). This article is still applicable today and the process hasn't changed that much between Windows versions. Here are most of the ways that you could edit the default user profile:
 
@@ -28,7 +28,7 @@ The Deployment Guys have a great article from 2009 that I recommend reading for 
 
 So there are multiple methods (of driving yourself to madness), I'd recommend experimenting with each approach and you'll most likely implement a combination of approaches to best suit your environment.
 
-# Group Policy As A Last Resort
+## Group Policy As A Last Resort
 
 Group Policy is great, until it isn't. Group Policy is pervasive and every Windows admin is familiar with it, but there a two things to consider when using it to manage the default user experience:
 
@@ -37,28 +37,28 @@ Group Policy is great, until it isn't. Group Policy is pervasive and every Windo
 
 I have seen many organisations over-relying on Group Policy and missing the most important component user environment management - change control and ownership. Group Policy becomes a black hole, complete with settings that no one can remember why they were implemented and settings that are no longer relevant. Group Policy Preferences are great for replacing logon scripts, but use Group Policy and GPP sparingly so as not to adversely affect the user experience.
 
-# A Better Way - Edit the Default Profile Directly
+## A Better Way - Edit the Default Profile Directly
 
 My preferred method for modifying the default user experience is to edit the default user profile directly using a script that is run during Windows deployment. This type of script can also be run on existing machines or used in combination with CopyProfile. A benefit of this approach is that you can modify the default profile with or without a reference image.
 
-## Editing the Default Profile
+### Editing the Default Profile
 
 To edit the default profile, we'll use the command line tool REG to mount and make changes to the default user registry hive. Additionally we can make folder and file changes to the default profile and a couple of other command line tools to perform tasks such as pin and unpin shortcuts or change the Windows 7 Libraries. As far as this article is concerned, the default profile is in its default location, usually C:\Users\Default. In a script, you could refer to this location as %SystemDrive%\Users\Default.
 
-### Finding Settings
+#### Finding Settings
 
 To find the profile locations to modify there's a couple of methods that I rely on:
 
-  * Google (or your favourite search engine)
-  * Process Monitor and Process Explorer
+* Google (or your favourite search engine)
+* Process Monitor and Process Explorer
 
 In most cases, someone (or even Microsoft) will have documented a registry value or profile location that is used to store a setting. More obscure or new settings will require detecting the location with Process Monitor. For example, to determine where a setting is stored in the Registry, create a filter in Process Monitor using the process name or process ID, additionally filtering on the operation such as RegSetValue, as shown below:
 
-[<img class="size-full wp-image-3525 alignnone" alt="Configuring Process Monitor filter " src="{{site.baseurl}}/media/2013/12/ProcessMonitor-Explorer-Filter.png]({{site.baseurl}}/media/2013/12/ProcessMonitor-Explorer-Filter.png)
+![ProcessMonitor-Explorer-Filter.png]({{site.baseurl}}/media/2013/12/ProcessMonitor-Explorer-Filter.png)
 
 A trace with Process Monitor when making a preference change should result in something like this:
 
-[<img class="alignnone size-full wp-image-3532" alt="Process Monitor results" src="{{site.baseurl}}/media/2013/12/ProcessMonitor-Explorer.png]({{site.baseurl}}/media/2013/12/ProcessMonitor-Explorer.png)
+![ProcessMonitor-Explorer.png]({{site.baseurl}}/media/2013/12/ProcessMonitor-Explorer.png)
 
 [Regshot](http://sourceforge.net/projects/regshot/) is also useful for comparing a before and after change to the profile for determining registry value locations.
 
@@ -68,13 +68,15 @@ Additionally Process Explorer can be useful for tracking down a process that mig
 
 To make direct registry edits to the default user profile, the REG command line utility is used to load the default profile registry hive, change a registry value and then unload the hive, saving it back to the default profile. The following lines show a rough example of how this is done:
 
-<pre class="lang:batch decode:true">REG LOAD HKU\DefaultUser %SystemDrive%\Users\Default\NTUSER.DAT
+```cmd
+REG LOAD HKU\DefaultUser %SystemDrive%\Users\Default\NTUSER.DAT
 REG ADD HKU\DefaultUser\Software\KeyName /v ValueName /d Data /t REG_SZ /f
-REG UNLOAD HKU\DefaultUser</pre>
+REG UNLOAD HKU\DefaultUser
+```
 
 Note that this will need to be run with administrative privileges and in an elevated context, so that you have write access to the default profile.
 
-## Pinning and Unpinning Shortcuts
+### Pinning and Unpinning Shortcuts
 
 A common requirement is to modify the the pinned shortcuts on the Taskbar or Start menu. This can be automated using a script, which needs to run a first logon (either as the user, or in the profile copied over the default profile via Sysprep/CopyProfile). Unfortunately I can't find the original source for this script; however it works quite well and allows you to pin shortcuts to and unpin shortcuts from the Taskbar and Start menu via a command line. The script is available here:
 
@@ -82,29 +84,30 @@ A common requirement is to modify the the pinned shortcuts on the Taskbar or Sta
   [download id="62&#8243; format="1&#8243;]
 </p>
 
-Note that Windows 8 and above, do not expose a programatic method to pin and unpin shortcuts to the Start screen. If you're looking to customise the Start screen, refer to this existing article: <{{site.baseurl}}/customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance/>.
+Note that Windows 8 and above, do not expose a programatic method to pin and unpin shortcuts to the Start screen. If you're looking to customise the Start screen, refer to this existing article: [Customizing the Windows 8.1 Start Screen? Don't follow Microsoft's guidance]({{site.baseurl}}/customizing-the-windows-8-1-start-screen-dont-follow-microsofts-guidance).
 
-## Modifying the Windows Libraries
+### Modifying the Windows Libraries
 
 By default, the Libraries introduced in Windows 7, include the public folder locations. Removing these or adding locations requires editing the Libraries; however they're stored in XML files and are created at first logon. To modify the libraries, you can use a command line tool ShLib.exe. Like pinning and unpinning shortcuts, this tool also needs to be run at first logon (and won't work via CopyProfile). This article, [Administratively Create and Modify Windows 7 Libraries](http://www.grimadmin.com/article.php/creating-modifying-windows-7-libraries), covers the use of ShLib.exe quite well.
 
-## Implementing a Script to Modify the Default Profile
+### Implementing a Script to Modify the Default Profile
 
 Once you've created your script to make changes to the default registry, modify the default profile folder locations, pin and unpin shortcuts and make changes to the Libraries, you'll need to implement the changes on the target PCs via script. Using an automation solution such as the Microsoft Deployment Toolkit (or an ESD like System Center Configuration Manager) the script can be run during a deployment task sequence. In the case of MDT, the script will be run after Windows unattended setup has completed in the local Administrator context. This way the script will have full elevation and write access to the default profile. An ESD solution will typically run the script via the local SYSTEM account. If you need to make changes to existing PCs, you'll need a method to do so, such as an advertisement in Configuration Manager. If you take this approach, you can combine a script that makes direct changes to the default profile with the CopyProfile approach. That allows you to modify the profile for deployments from an unmodified OS as well as a custom image, keeping consistency across deployment types.
 
-# Example Scripts
+## Example Scripts
 
 Included here, along with some notation, are some example scripts for modifying the Windows 7 and Windows 8.1 default profiles. These example scripts include creation of a script at runtime that will run during first logon of any new profile. This is implemented as a batch file to keep things as simple as possible. Users will see a Command Prompt window as the script runs (but only once). The command lines includes in the script could be implemented with a UEM solution such as AppSense Environment Manager or even Group Policy to improve the user experience.
 
-## Windows 7
+### Windows 7
 
 Here's a sample script that will modify the default profile on a Windows 7 PC (x86 and x64). At a high level, the script will perform the following steps:
 
-  * Load and modifies the registry of the default profile
-  * Copies ExecuteVerbAction.VBS and ShLib.exe to folder under %ProgramFiles%
-  * Creates a batch script that will run on first logon to edit the Libraries and pin/unpin shortcuts. Once the script runs for the user, it will delete itself.
+* Load and modifies the registry of the default profile
+* Copies ExecuteVerbAction.VBS and ShLib.exe to folder under %ProgramFiles%
+* Creates a batch script that will run on first logon to edit the Libraries and pin/unpin shortcuts. Once the script runs for the user, it will delete itself.
 
-<pre class="lang:batch decode:true">@ECHO OFF
+```batch
+@ECHO OFF
 REM Load the default profile hive
 SET HKEY=HKU\Default
 REG LOAD %HKEY% %SystemDrive%\Users\Default\NTUSER.DAT
@@ -200,20 +203,22 @@ ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Librar
 ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Libraries\Music.library-ms" %PUBLIC%\Music &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
 ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Libraries\Pictures.library-ms" %PUBLIC%\Pictures &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
 ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Libraries\Videos.library-ms" %PUBLIC%\Videos &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
-ECHO DEL /Q "%%APPDATA%%\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd" &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"</pre>
+ECHO DEL /Q "%%APPDATA%%\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd" &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
+```
 
 If you use this in a production environment, please test and confirm each setting to ensure you understand what the script will implement.
 
-## Windows 8.1
+### Windows 8.1
 
 Here's a sample script that will modify the default profile on a Windows 8.1 PC (x86 and x64). At a high level, the script will perform the following steps:
 
-  * Load and modifies the registry of the default profile
-  * Import a pre-configured Start screen
-  * Copies ExecuteVerbAction.VBS and ShLib.exe to folder under %ProgramFiles%
-  * Creates a batch script that will run on first logon to edit the Libraries and pin/unpin shortcuts. Once the script runs for the user, it will delete itself
+* Load and modifies the registry of the default profile
+* Import a pre-configured Start screen
+* Copies ExecuteVerbAction.VBS and ShLib.exe to folder under %ProgramFiles%
+* Creates a batch script that will run on first logon to edit the Libraries and pin/unpin shortcuts. Once the script runs for the user, it will delete itself
 
-<pre class="lang:batch decode:true">@ECHO OFF
+```batch
+@ECHO OFF
 REM Load the default profile hive
 SET HKEY=HKU\Default
 REG LOAD %HKEY% %SystemDrive%\Users\Default\NTUSER.DAT
@@ -299,11 +304,12 @@ ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Librar
 ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Libraries\Music.library-ms" %PUBLIC%\Music &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
 ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Libraries\Pictures.library-ms" %PUBLIC%\Pictures &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
 ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Libraries\Videos.library-ms" %PUBLIC%\Videos &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
-ECHO DEL /Q "%%APPDATA%%\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd" &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"</pre>
+ECHO DEL /Q "%%APPDATA%%\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd" &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
+```
 
 If you use this in a production environment, please test and confirm each setting to ensure you understand what the script will implement.
 
-# Summing Up
+## Summing Up
 
 There are numerous ways to edit the default profile, some more complicated and involved than others. It's my view that the best way to modify the default profile is targeting the required settings, which does mean more work. However, this approach results in a better understanding of the user environment and with any luck a better user experience.
 

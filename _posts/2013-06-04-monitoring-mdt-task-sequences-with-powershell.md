@@ -18,8 +18,8 @@ The [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-gb/solutionac
 
 Here's a couple of sample videos that demonstrate the use of PowerShell to automate OS deployments using MDT task sequences. Both of these examples are utilising [the monitoring feature in MDT 2012](http://blogs.technet.com/b/mniehaus/archive/2012/03/09/mdt-2012-new-feature-monitoring.aspx) to watch the progress of each task sequence to enable managing the complete deployment, both before and after the task sequence.
 
-  * [PowerShell, MDT, Atlantis ILIO and XenDesktop deployment]({{site.baseurl}}/community/hands-off-my-gold-image-video-powershell-mdt-atlantis-ilio-and-xendesktop-deployment/)
-  * [Windows 8 zero-touch deployment]({{site.baseurl}}/community/hands-off-my-gold-image-video-windows-8-zero-touch-deployment/)
+* [PowerShell, MDT, Atlantis ILIO and XenDesktop deployment]({{site.baseurl}}/community/hands-off-my-gold-image-video-powershell-mdt-atlantis-ilio-and-xendesktop-deployment/)
+* [Windows 8 zero-touch deployment]({{site.baseurl}}/community/hands-off-my-gold-image-video-windows-8-zero-touch-deployment/)
 
 ## Using PowerShell with MDT
 
@@ -27,35 +27,44 @@ To use PowerShell with MDT requires installing the MDT console which will provid
 
 I'm first going to set a couple of variables. In this instance, I've set the computer name of the target machine that I want to monitor and the path to the MDT deployment share. For this example, I'm using a local path because I'm running the PowerShell script on the server hosting the MDT deployment share. A UNC path will also work.
 
-<pre>$target = "VM1"
-$deploymentShare = "E:\Deployment"</pre>
+```powershell
+$target = "VM1"
+$deploymentShare = "E:\Deployment"
+```
 
 To manage MDT we need to load the MDT snapin and create a PowerShell drive that will be used to access the MDT deployment share.
 
-<pre>Add-PSSnapin "Microsoft.BDD.PSSNAPIN"
-If (!(Test-Path MDT:)) { New-PSDrive -Name MDT -Root $deploymentShare -PSProvider MDTPROVIDER }</pre>
+```powershell
+Add-PSSnapin "Microsoft.BDD.PSSNAPIN"
+If (!(Test-Path MDT:)) { New-PSDrive -Name MDT -Root $deploymentShare -PSProvider MDTPROVIDER }
+```
 
 Before starting the task sequence, I want to remove any existing monitoring data that might exist for the target machine. Duplicates are possible, so I want to remove all entries to ensure monitoring will be successful. The following line will remove any existing monitoring data for the machine specified by $target:
 
-<pre>Get-MDTMonitorData -Path MDT: | Where-Object { $_.Name -eq $target } | Remove-MDTMonitorData -Path MDT:</pre>
+```powershell
+Get-MDTMonitorData -Path MDT: | Where-Object { $_.Name -eq $target } | Remove-MDTMonitorData -Path MDT:
+```
 
 Once the target machine has booted into the Lite Touch WinPE environment, monitoring data should be sent to the MDT server; however we aren't interested in that data yet because it will be pre-task sequence, which isn't much use to us.
 
 The screenshot below shows the monitoring data returned pre-task sequence. Typically, any machine name that starts with MININT will be the WinPE environment:
 
-[<img class="alignnone size-full wp-image-3365" alt="Pre-TaskSequence" src="{{site.baseurl}}/media/2013/06/Pre-TaskSequence.png]({{site.baseurl}}/media/2013/06/Pre-TaskSequence.png)
+![Pre-TaskSequence.png]({{site.baseurl}}/media/2013/06/Pre-TaskSequence.png)
 
 So, although we can start gathering data, we really need to wait or loop until the task sequence starts. When the task sequence has started, we can then get monitoring data for the target machine. The example below shows an in-progress task sequence:
 
-[<img class="alignnone size-full wp-image-3366" alt="TaskSequence-Progress" src="{{site.baseurl}}/media/2013/06/TaskSequence-Progress.png]({{site.baseurl}}/media/2013/06/TaskSequence-Progress.png)
+![TaskSequence-Progress.png]({{site.baseurl}}/media/2013/06/TaskSequence-Progress.png)
 
 To gather data, use the **Get-MDTMonitorData** cmdlet and save the output to a variable:
 
-<pre>$InProgress = Get-MDTMonitorData -Path MDT: | Where-Object { $_.Name -eq $target }</pre>
+```powershell
+$InProgress = Get-MDTMonitorData -Path MDT: | Where-Object { $_.Name -eq $target }
+```
 
 The information returned proves interesting as it includes the percentage of the task sequence complete, the current step and the step name:
 
-[plain]PS C:\> $InProgress
+```powershell
+PS C:\> $InProgress
 
 Name : VM1  
 PercentComplete : 30  
@@ -76,13 +85,14 @@ DartPort :
 DartTicket :  
 VMHost :  
 VMName :  
-ComputerIdentities : {}[/plain]
+ComputerIdentities : {}
+```
 
 Using these properties and the **Write-Progress** cmdlet we can display the progress of the task sequence and some status info during execution of the script:
 
-[<img class="alignnone size-full wp-image-3370" alt="TaskSequenceWriteProgress" src="{{site.baseurl}}/media/2013/06/TaskSequenceWriteProgress.png]({{site.baseurl}}/media/2013/06/TaskSequenceWriteProgress.png)
+![TaskSequenceWriteProgress.png]({{site.baseurl}}/media/2013/06/TaskSequenceWriteProgress.png)
 
-<span style="line-height: 1.714285714; font-size: 1rem;">Putting this together, we need a script that will perform the following high level tasks:</span>
+Putting this together, we need a script that will perform the following high level tasks:
 
   1. Connects to the MDT share
   2. Removes any existing monitoring data for the target machine
@@ -93,7 +103,8 @@ Using these properties and the **Write-Progress** cmdlet we can display the prog
 
 The script listing below put these pieces together and provides two loops - one that waits for the task sequence to begin and once it has, waits for the task sequence to complete.
 
-<pre>$target = "VM1"
+```powershell
+$target = "VM1"
 $deploymentShare = "E:\Deployment"
 
 ## Connect to the MDT share
@@ -147,4 +158,5 @@ Do {
         Write-Progress -Activity "Task sequence complete" -Status $StatusText -PercentComplete 100
     }
 } Until ($InProgress.CurrentStep -eq $InProgress.TotalSteps)
-Write-Host "Task sequence complete." -ForegroundColor Green</pre>
+Write-Host "Task sequence complete." -ForegroundColor Green
+```
