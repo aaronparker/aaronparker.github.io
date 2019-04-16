@@ -24,9 +24,9 @@ I'm going to skip over most of the details of installing LANguard - it's a simpl
 
 In my test environment I have configured three machines:
 
-  * a domain controller (DC), which will also host my install files (at `\\dc\common`)
-  * a machine running Windows Vista on which I have installed LANguard (`LANGUARD`)
-  * and a machine running Windows 7 (`WIN7A`) to which I will deploy Adobe Reader
+* a domain controller (DC), which will also host my install files (at `\\dc\common`)
+* a machine running Windows Vista on which I have installed LANguard (`LANGUARD`)
+* and a machine running Windows 7 (`WIN7A`) to which I will deploy Adobe Reader
 
 To deploy software to a remote machine, I need to be able to authenticate to that machine. Because I am using a domain, authentication is made simple; however I could actually deploy software to workgroup machines if I know an admin username and password for that those machines.
 
@@ -36,9 +36,9 @@ The deployment feature of LANguard is geared around installing a single file wit
 
 Before I start deployment, I've configured a source location (`\\dc\common\Adobe\Reader91`) for Adobe Reader 9.1:
 
-  * I have extracted the Reader 9.1 install files from the setup file downloaded from Adobe;
-  * I have created a transform that will configure Reader as it is installed; and
-  * I have created a batch file (`INSTALL.CMD`) that contains the install commands for Adobe Reader
+* I have extracted the Reader 9.1 install files from the setup file downloaded from Adobe;
+* I have created a transform that will configure Reader as it is installed; and
+* I have created a batch file (`INSTALL.CMD`) that contains the install commands for Adobe Reader
 
 INSTALL.CMD looks like this:
 
@@ -50,7 +50,7 @@ MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALL
 
 The script will install Adobe Reader directly from the network, so the only file being copied to the remote machine is the script. Here's what the install source for Adobe Reader looks like:
 
-![]({{site.baseurl}}/media/2009/05/reader91.png)
+![reader91]({{site.baseurl}}/media/2009/05/reader91.png)
 
 Deploying software is a three step process:
 

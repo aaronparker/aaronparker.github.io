@@ -26,39 +26,39 @@ Creation of successful App-V packages requires building on a solid base – that
 
 Microsoft has made available a number of documents as introductions to App-V and the sequencing of applications.
 
-  * Review the product documentation that was included together with App-V. This includes the following documents: 
-      * [Microsoft Application Virtualization Version 4.6 SP1 Trial Guide](http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-V/App-V%204.6%20SP1%20Trial%20Guide.docx)
-      * [How to Install the Application Virtualization Sequencer](http://technet.microsoft.com/library/cc843820.aspx)
-      * [App-V 4.6 Service Pack 1 Sequencing Guide](http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-V/App-V%204.6%20Service%20Pack%201%20Sequencing%20Guide.docx "App-V 4.6 Service Pack 1 Sequencing Guide")
-  * Review the "Best practices to use for sequencing in Microsoft App-V " article. For more information, click the following article number to view the article in the Microsoft Knowledge Base: [932137](http://support.microsoft.com/kb/932137) (http://support.microsoft.com/kb/932137/)
-  * Install the Office suites and applications to become familiar with the functionality of the program. Additionally understand the deployment requirements for Office
+* Review the product documentation that was included together with App-V. This includes the following documents:
+  * [Microsoft Application Virtualization Version 4.6 SP1 Trial Guide](http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-V/App-V%204.6%20SP1%20Trial%20Guide.docx)
+  * [How to Install the Application Virtualization Sequencer](http://technet.microsoft.com/library/cc843820.aspx)
+  * [App-V 4.6 Service Pack 1 Sequencing Guide](http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-V/App-V%204.6%20Service%20Pack%201%20Sequencing%20Guide.docx "App-V 4.6 Service Pack 1 Sequencing Guide")
+* Review the "Best practices to use for sequencing in Microsoft App-V " article. For more information, click the following article number to view the article in the Microsoft Knowledge Base: [932137](http://support.microsoft.com/kb/932137/)
+* Install the Office suites and applications to become familiar with the functionality of the program. Additionally understand the deployment requirements for Office
 
 ## Do's and Don'ts
 
 Don't make the sequencing machine an exact copy of your Standard Operating Environment (SOE) or add the machine to your domain. That is, do not create a sequencing machine directly from your SOE; instead create a new environment that closely matches your SOE. There are several reasons for this:
 
-  * Your SOE most likely has many pre-requisites or applications installed that may interfere with sequencing, such as security agents and anti-virus
-  * Changes to your SOE may break virtual applications – if your SOE has a DLL required by a virtual application, that DLL wouldn't be captured in the virtual application package. In the event of the SOE changing and the DLL being removed or the version changing, any virtual application package that doesn't include that DLL may now not work
-  * Domain computers may have services, process or scheduled tasks that will interfere with sequencing or may cause files or registry settings to be inadvertently captured – changes made by a process that starts during sequencing will be captured in the package
-  * Domain computers may have policies applied that may be inadvertently captured in the package, causing issues with virtual applications or subsequent changes to those policies to be ignored
+* Your SOE most likely has many pre-requisites or applications installed that may interfere with sequencing, such as security agents and anti-virus
+* Changes to your SOE may break virtual applications – if your SOE has a DLL required by a virtual application, that DLL wouldn't be captured in the virtual application package. In the event of the SOE changing and the DLL being removed or the version changing, any virtual application package that doesn't include that DLL may now not work
+* Domain computers may have services, process or scheduled tasks that will interfere with sequencing or may cause files or registry settings to be inadvertently captured – changes made by a process that starts during sequencing will be captured in the package
+* Domain computers may have policies applied that may be inadvertently captured in the package, causing issues with virtual applications or subsequent changes to those policies to be ignored
 
 Based on my own experiences and those of others that I've spoken to, the most successful App-V packages are created on vanilla installations of Windows.
 
 ### Don'ts
 
-  * Don't add the sequencing VM to the domain, unless sequencing an application that requires it
-  * Don't use an exact copy of your SOE
-  * Don't install anti-virus applications or other security agents
-  * If possible, don't access the Internet directly from the sequencing VM
+* Don't add the sequencing VM to the domain, unless sequencing an application that requires it
+* Don't use an exact copy of your SOE
+* Don't install anti-virus applications or other security agents
+* If possible, don't access the Internet directly from the sequencing VM
 
 ### Do's
 
-  * Do leave Windows in workgroup mode the majority of applications
-  * Do use the same versions of components used in your SOE
-  * Do choose carefully which of those components should be installed in the sequencing VM
-  * Do scan the VM with the Microsoft Windows Malicious Software Removal Tool; optionally mount the VM's virtual disk on your host machine and scan it with the anti-virus application on the host
-  * Do create a snapshot of the sequencing VM in a clean state
-  * Do patch the sequencing VM each month
+* Do leave Windows in workgroup mode the majority of applications
+* Do use the same versions of components used in your SOE
+* Do choose carefully which of those components should be installed in the sequencing VM
+* Do scan the VM with the Microsoft Windows Malicious Software Removal Tool; optionally mount the VM's virtual disk on your host machine and scan it with the anti-virus application on the host
+* Do create a snapshot of the sequencing VM in a clean state
+* Do patch the sequencing VM each month
 
 ## Hardware
 
@@ -66,57 +66,57 @@ Always use a virtual machine to host the sequencing machine – a virtual machin
 
 If you are using a local PC for sequencing, a second hard drive to host the VMs is recommended so that the sequencing process does not affect the host machine.Virtual machine software or hypervisors available for free include:
 
-  * Microsoft [Windows Virtual PC](http://www.microsoft.com/download/en/details.aspx?id=3702) (Virtual PC does not support 64-bit guests)
-  * Microsoft [Hyper-V](http://www.microsoft.com/download/en/details.aspx?id=20196), available as either a stand-alone product or as a component of Windows Server 2008 R2 SP1
-  * VMware [Player](http://www.vmware.com/products/player/) (note that Player does not support snapshots)
-  * VMware [vSphere Hypervisor](http://www.vmware.com/products/vsphere-hypervisor/)
-  * Oracle [VirtualBox](https://www.virtualbox.org/)
-  * Citrix [XenServer](http://www.citrix.com/xenserver)
+* Microsoft [Windows Virtual PC](http://www.microsoft.com/download/en/details.aspx?id=3702) (Virtual PC does not support 64-bit guests)
+* Microsoft [Hyper-V](http://www.microsoft.com/download/en/details.aspx?id=20196), available as either a stand-alone product or as a component of Windows Server 2008 R2 SP1
+* VMware [Player](http://www.vmware.com/products/player/) (note that Player does not support snapshots)
+* VMware [vSphere Hypervisor](http://www.vmware.com/products/vsphere-hypervisor/)
+* Oracle [VirtualBox](https://www.virtualbox.org/)
+* Citrix [XenServer](http://www.citrix.com/xenserver)
 
 Create a new virtual machine with the following virtual hardware:
 
-  * 1 x vCPU – the Sequencer is still only single threaded and additional CPUs will make little difference
-  * A minimum of 1 GB RAM – Windows XP may require less
-  * Add NICs, a sound card, USB hubs, COM & LPT ports as required
-  * 2 x vDisks – use fixed size disks if you have the space. Fixed size disks will offer better IO performance. Additionally the App-V 4.6 SP1 Sequencer can automatically create a Q: drive if none already exists; however a second vDisk is a better approach.
+* 1 x vCPU – the Sequencer is still only single threaded and additional CPUs will make little difference
+* A minimum of 1 GB RAM – Windows XP may require less
+* Add NICs, a sound card, USB hubs, COM & LPT ports as required
+* 2 x vDisks – use fixed size disks if you have the space. Fixed size disks will offer better IO performance. Additionally the App-V 4.6 SP1 Sequencer can automatically create a Q: drive if none already exists; however a second vDisk is a better approach.
 
 ![Delivering]({{site.baseurl}}/media/2012/02/021412_1854_DeliveringO1.png) If no secondary partition exists, the Sequencer setup will create a substituted drive letter for the virtual drive. A known issue exists where this configuration can cause an issue with new and upgraded packages because the Sequencer resolves the full path instead of the substituted drive letter.
 
 This issue looks to be fixed with [Hotfix 3 for the 4.6 SP1 Sequencer](http://support.microsoft.com/kb/2571168); however it is still recommended that you create a second vDisk, rather than let setup create the drive for you.
 
-## Windows 
+## Windows
 
 Windows XP Professional or Windows 7 Enterprise editions are recommended for client OS deployments. If you are sequencing for both Windows XP/7 and Windows Server, sequence on the lowest common denominator (Windows XP in this example). If issues arise with testing a package on a different operating system, create a new version of the package for that OS.To create a clean Windows VM for sequencing, follow these steps:
 
-  * Install Windows via the ISO, or better still, create an unattended deployment using the [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-us/solutionaccelerators/dd407791) or your software deployment tool of choice, but keep the Windows deployment as vanilla as possible. Use the same Windows version and service pack level as your App-V client machines. This may mean creating multiple sequencing VMs. If you are deploying to both x86 and x64 clients, sequence on an x86 Windows machine, re-sequence the application on 64-bit Windows if required 
-      * Service Pack deployment is recommended via a slipstreamed Windows ISO (that is the ISO with the latest service pack integrated into it)
-  * Install the hypervisor tools or additions to install drivers and services required by the hypervisor to support the VM correctly
-  * Enable Windows Firewall including the File and Printer Sharing rule to prevent remote PCs from connecting to the virtual machine
-  * Active Windows inside the VM. A KMS will be make this simple; however if you are using a MAK key provided by your TechNet or MSDN subscription, this article is recommended reading: [Managing product activation with a TechNet subscription]({{site.baseurl}}/general/managing-product-activation-with-a-technet-subscription-and-msdn-too/)
-  * Disable System Restore on Windows XP or System Protection on Windows 7
-  * Disable Windows Defender on Windows 7 (or disable the service)
-  * If deploying Windows 7, leave the following Optional Components enabled: 
-      * Windows Search
-      * XPS Services
-      * XPS Viewer
-  * If deploying Windows XP, remove the following Windows Components: 
-      * MSN Explorer
-      * Internet Gateway Device Discovery and Control Client
-      * Windows Messenger
-      * Additionally it's recommended to remove the Adobe Flash Player that comes with Windows XP: <http://kb2.adobe.com/cps/141/tn_14157.html>
-  * If deploying Windows XP or Windows Server 2003, install the following updates from the Microsoft Download Centre: <http://microsoft.com/downloads> 
-      * XML Paper Specification Essentials Pack
-      * Windows Search 4.0 (available via Windows Update)
-      * Windows Media Player 11 (available via Windows Update)
-      * Update for Root Certificates (available via Windows Update)
-  * Install the latest version of Internet Explorer for the target operating system – if you would prefer to match the IE version of your SOE, then stick with that version. Set the home page to _about:tabs_, this will ensure that if Internet Explorer is started during sequencing it won't attempt to connect to the Internet
-  * Install or enable the Microsoft .NET Framework – install the most recent version of the .NET Framework deployed in your environment. Note that .NET Framework 4.0 comes with all previous versions and .NET Framework 3.5 SP1 come with all its previous versions (and so on)
-  * Install the Visual C++ Redistributables – 2005, 2008 and 2010 redistributables are recommended. Multiple versions of each redistributable may be required depending on application requirements. It is recommended to install these in order of release
-  * Enable Microsoft Update
-  * Update Windows with the latest updates – High Priority, Critical and Important updates should be installed at a minimum 
-      * Do not install Microsoft Silverlight – this important for Microsoft Lync or if you intend to sequence Silverlight
-      * Windows Update may need to be run multiple times to ensure all updates have been detected and installed
-  * Configure the following services (some services are not available on Windows XP):
+* Install Windows via the ISO, or better still, create an unattended deployment using the [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-us/solutionaccelerators/dd407791) or your software deployment tool of choice, but keep the Windows deployment as vanilla as possible. Use the same Windows version and service pack level as your App-V client machines. This may mean creating multiple sequencing VMs. If you are deploying to both x86 and x64 clients, sequence on an x86 Windows machine, re-sequence the application on 64-bit Windows if required
+  * Service Pack deployment is recommended via a slipstreamed Windows ISO (that is the ISO with the latest service pack integrated into it)
+* Install the hypervisor tools or additions to install drivers and services required by the hypervisor to support the VM correctly
+* Enable Windows Firewall including the File and Printer Sharing rule to prevent remote PCs from connecting to the virtual machine
+* Active Windows inside the VM. A KMS will be make this simple; however if you are using a MAK key provided by your TechNet or MSDN subscription, this article is recommended reading: [Managing product activation with a TechNet subscription]({{site.baseurl}}/general/managing-product-activation-with-a-technet-subscription-and-msdn-too/)
+* Disable System Restore on Windows XP or System Protection on Windows 7
+* Disable Windows Defender on Windows 7 (or disable the service)
+* If deploying Windows 7, leave the following Optional Components enabled:
+  * Windows Search
+  * XPS Services
+  * XPS Viewer
+* If deploying Windows XP, remove the following Windows Components:
+  * MSN Explorer
+  * Internet Gateway Device Discovery and Control Client
+  * Windows Messenger
+  * Additionally it's recommended to remove the Adobe Flash Player that comes with Windows XP: <http://kb2.adobe.com/cps/141/tn_14157.html>
+* If deploying Windows XP or Windows Server 2003, install the following updates from the Microsoft Download Centre: <http://microsoft.com/downloads>
+  * XML Paper Specification Essentials Pack
+  * Windows Search 4.0 (available via Windows Update)
+  * Windows Media Player 11 (available via Windows Update)
+  * Update for Root Certificates (available via Windows Update)
+* Install the latest version of Internet Explorer for the target operating system – if you would prefer to match the IE version of your SOE, then stick with that version. Set the home page to _about:tabs_, this will ensure that if Internet Explorer is started during sequencing it won't attempt to connect to the Internet
+* Install or enable the Microsoft .NET Framework – install the most recent version of the .NET Framework deployed in your environment. Note that .NET Framework 4.0 comes with all previous versions and .NET Framework 3.5 SP1 come with all its previous versions (and so on)
+* Install the Visual C++ Redistributables – 2005, 2008 and 2010 redistributables are recommended. Multiple versions of each redistributable may be required depending on application requirements. It is recommended to install these in order of release
+* Enable Microsoft Update
+* Update Windows with the latest updates – High Priority, Critical and Important updates should be installed at a minimum
+  * Do not install Microsoft Silverlight – this important for Microsoft Lync or if you intend to sequence Silverlight
+  * Windows Update may need to be run multiple times to ensure all updates have been detected and installed
+* Configure the following services (some services are not available on Windows XP):
 
 |Service|State|
 |:--|:--|
@@ -127,16 +127,15 @@ Windows XP Professional or Windows 7 Enterprise editions are recommended for cli
 |Windows Search|Manual|
 |Windows Update|Manual|
 
-
-  * At a minimum, run the following built in applications so that they make changes to the local profile and remove first-run dialogs: 
-      * Control Panel
-      * Internet Explorer including the Internet Options Control Panel applet 
-          * Start Internet Explorer a couple of times
-          * Set the home page to _about:tabs_ so that if IE is launched during sequencing, it will not connect to the Internet
-      * Windows Media Player
-      * Notepad
-      * WordPad
-  * Restart the VM several times and log back on to ensure all first-run dialogs have been acknowledged or do not appear
+* At a minimum, run the following built in applications so that they make changes to the local profile and remove first-run dialogs:
+  * Control Panel
+  * Internet Explorer including the Internet Options Control Panel applet
+    * Start Internet Explorer a couple of times
+    * Set the home page to _about:tabs_ so that if IE is launched during sequencing, it will not connect to the Internet
+  * Windows Media Player
+  * Notepad
+  * WordPad
+* Restart the VM several times and log back on to ensure all first-run dialogs have been acknowledged or do not appear
 
 Additional pre-requisites should only be installed when required by an application. For example, if Office is a pre-requisite of another application (such as SAP products or a plug-in) only install Office when sequencing that application.
 
@@ -148,8 +147,8 @@ Office 2010 is only supported with the 4.5 SP2 and 4.6 SP1 version of the Sequen
 
 Install the Sequencer into the VM along with the most recent hotfix rollup. At the time of publishing of this document the most recent versions of the Sequencer are:
 
-  * App-V 4.6 Service Pack 1 with Hotfix Rollup 3: <http://support.microsoft.com/kb/2571168>
-  * App-V 4.5 Service Pack 2: <http://support.microsoft.com/kb/980847>
+* App-V 4.6 Service Pack 1 with Hotfix Rollup 3: <http://support.microsoft.com/kb/2571168>
+* App-V 4.5 Service Pack 2: <http://support.microsoft.com/kb/980847>
 
 ## Application Install Source
 
@@ -167,13 +166,13 @@ Periodically rollback the VM to this snapshot to install the latest updates from
 
 The App-V 4.6 SP1 Sequencer supports templates which will allow you to configure project options including exclusions, enabling Windows Update during sequencing and enabling compression when saving the package. Package templates can be used by multiple sequencing engineers or across multiple Office packages to ensure consistency.
 
-## Package Options 
+## Package Options
 
 A number of options can be set in a sequencer template that may be required for an Office package:
 
-  * Allow Microsoft Update to run during monitoring – enable updating of an Office package via Windows Update
-  * Allow all named objects and COM objects to interact with the local system – this enabled LOCAL\_INTERACTION\_ALLOWED in the OSD file. This will save you from having to set this option manually after sequencing. If you are creating an Office package that will co-exist with other Office packages or locally installed Office, do not enable this option
-  * Compress Package – Reduce the size of your Office package with compression. Recommended for all Office packages.
+* Allow Microsoft Update to run during monitoring – enable updating of an Office package via Windows Update
+* Allow all named objects and COM objects to interact with the local system – this enabled LOCAL\_INTERACTION\_ALLOWED in the OSD file. This will save you from having to set this option manually after sequencing. If you are creating an Office package that will co-exist with other Office packages or locally installed Office, do not enable this option
+* Compress Package – Reduce the size of your Office package with compression. Recommended for all Office packages.
 
 ## Exclusions
 

@@ -19,7 +19,7 @@ It's a bit early for me to give you an idea of what the book is like, but from t
 Here's a list of the contents so you can see for yourself what's in this book:
 
 > _Part I Addressing and Packet Flow Infrastructure_
-> 
+>
 >   * IPv4
 >   * IPv6
 >   * Dynamic Host Configuration Protocol

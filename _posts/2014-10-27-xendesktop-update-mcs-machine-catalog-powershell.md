@@ -8,8 +8,6 @@ guid: https://stealthpuppy/?p=3727
 permalink: /xendesktop-update-mcs-machine-catalog-powershell/
 dsq_thread_id:
   - "3161316057"
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
 image: /media/2014/10/powershell_ise.png
 categories:
   - Automation
@@ -41,7 +39,7 @@ I can choose from a couple of rollout strategies for the image update - I can ch
 
 ![Rollout the image update on next reboot - Start-BrokerRebootCycle or Start-BrokerNaturalRebootCycle (still need to work this out)]({{site.baseurl}}/media/2014/10/02-Rollout-01.png)
 
-_[Start-BrokerRebootCycle](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/start-brokerrebootcycle-xd75.html)_ is used to control the the reboot cycle, but this is called at the end of the script to ensure the update process is completed first.
+[Start-BrokerRebootCycle](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/start-brokerrebootcycle-xd75.html) is used to control the the reboot cycle, but this is called at the end of the script to ensure the update process is completed first.
 
 ```powershell
 Start-BrokerRebootCycle -InputObject @(<Machine Catalog Name>) -RebootDuration 120 -WarningDuration 15 -WarningMessage <message> -WarningTitle <message>
@@ -59,10 +57,10 @@ There’s plenty that the wizard does to hide the complexity of setting up a cat
 
 Below is the full code listing with comments inline that should provide some detail on the process the code follows. At this point the code provides some error checking for the most important steps. There are still some additional steps and error checking that could be integrated:
 
-  * The code will get a specified snapshot from the target VM. I've done this to ensure I'm using the correct version of the image
-  * Publish the image update to the catalog
-  * Monitor the update process until completion
-  * Start the desktop reboot cycle
+* The code will get a specified snapshot from the target VM. I've done this to ensure I'm using the correct version of the image
+* Publish the image update to the catalog
+* Monitor the update process until completion
+* Start the desktop reboot cycle
 
 At this stage, I haven't added too much error checking, but an important step to add will be to check that the image update process was successful and rollback if it wasn't.
 
