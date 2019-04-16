@@ -19,7 +19,7 @@ Like most IT Pros deploying and managing Windows Server, I've avoided the wizard
 
 Server Manager is an MMC-based front-end for anything you will need to manage on your servers running Windows 2008. As well as combining many of the individual management tools, it gives you a simple overview of what's happening on your server and integrates the old Add/Remove Programs interface too.
 
-[]({{site.baseurl}}/media/2008/02/servermanager.png)
+![servermanager]({{site.baseurl}}/media/2008/02/servermanager.png)
 
 If you've not taken a look at Windows Server 2008 and are interested in reading more about Server Manager, there is a plethora of resources available to you:
 

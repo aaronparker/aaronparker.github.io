@@ -13,7 +13,7 @@ tags:
 ---
 I've been speedlinking some interesting Network Access Protection links in the past (which you can find [here](http://www.stealthpuppy.com/blogs/travelling/archive/2007/03/02/Speedlinking-Network-Access-Protection-Mar-2007.aspx), [here](http://www.stealthpuppy.com/blogs/travelling/archive/2007/02/03/speedlinking-nap-updates.aspx), [here](http://www.stealthpuppy.com/blogs/travelling/archive/2007/01/23/speedlinking-network-access-protection.aspx) and [here](http://www.stealthpuppy.com/blogs/travelling/archive/2007/01/05/speedlinking-nap-documents.aspx)) and as speedlinking is so very 2006, I thought that I would rebrand these types of posts to 'The Short NAP'. So here's The Short NAP for Tuesday 20 March 2007.
 
-  * [MVP Summit €“ NAP Deep Dive Results](http://blogs.technet.com/nap/archive/2007/03/19/mvp-summit-nap-deep-dive-results.aspx)  
+  * [MVP Summit - NAP Deep Dive Results](http://blogs.technet.com/nap/archive/2007/03/19/mvp-summit-nap-deep-dive-results.aspx)  
     Jeff Sigman prays to the demo gods at the MVP summit but they weren't listening, so he fixes it himself, also setting up a NAP server in Longhorn beta 3 takes about 15 minutes after improvements in the server console.
   * Upcoming chat - [Network Policy Server in Longhorn, April 10](http://www.microsoft.com/technet/community/chats/default.mspx)  
     Add the chat to your calendar [here](http://www.microsoft.com/communities/chats/vcs/07_0410_TN_Longhorn.ics).

@@ -23,7 +23,7 @@ I thought that that behaviour was a little strange, so decided to test this out 
 
 I tested this on a virtual machine running Windows 7 SP1 x86 and could see from browsing to the Google installation folder (C:\Program Files\Google\Chrome) that the Application sub-folder was being removed after the monitoring phase was complete. To work out which process was deleting the folder, I've used [Process Monitor](http://technet.microsoft.com/en-us/sysinternals/bb896645). To see what was going on, I've reset my VM back to a clean snapshot, started the App-V Sequencer and Process Monitor and set a filter in Process Monitor for **Path** beginning with **C:\Program Files\Google\Chrome\Application** and then re-started the sequencing process.
 
-![]({{site.baseurl}}/media/2011/11/ProcessMonitorFilter1.png)
+![ProcessMonitorFilter1]({{site.baseurl}}/media/2011/11/ProcessMonitorFilter1.png)
 
 With this filter, I was able to see that the process that was deleting the folder is the Sequencer itself (SFTSequencer.exe). Click the screenshot for a larger view.
 
@@ -33,7 +33,7 @@ The next most obvious place to look then is the Sequencer log file, hopefully it
 
 In this file I can see a number of lines where the Sequencer is attempting to copy files that no longer exist:
 
-```
+```log
 [11/03/2011 21:45:34 VRB VFSX\] ...failed getting long path name for the file (C:\Program Files\Google\Chrome). Error: 2  
 [11/03/2011 21:45:34 VRB CORE] GetShortPathName failure using: C:\Program Files\Google\Chrome. Error is: 2  
 [11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
@@ -49,7 +49,7 @@ In this file I can see a number of lines where the Sequencer is attempting to co
 
 A few lines previous to these is this line:
 
-```
+```log
 [11/03/2011 21:45:26 VRB RTSK\] Reboot processing detected need to delete \??\C:\Program Files\Google\Chrome.
 ```
 

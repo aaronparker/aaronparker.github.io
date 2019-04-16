@@ -13,7 +13,7 @@ categories:
 tags:
   - Exchange
 ---
-<img align="left" src="{{site.baseurl}}/media/2007/04/exchange.png" />I've upgraded our internal Exchange organisation over the last week and I've got to say Exchange 2007 is a completely different ball game. Now for seasoned Exchange architects and administrators a lot of the Exchange 2007 upgrade process is probably not new, but for those of us who don't look after Exchange full time it's a steep learning curve. The biggest challenges for me have been around the new Exchange Management Shell. I think the implementation of PowerShell as the basis for all Exchange management is a good thing €“ there's nothing like being able to paste the exact command line into your change log. However there's been a couple of issue that I've got with Exchange 2007:
+<img align="left" src="{{site.baseurl}}/media/2007/04/exchange.png" />I've upgraded our internal Exchange organisation over the last week and I've got to say Exchange 2007 is a completely different ball game. Now for seasoned Exchange architects and administrators a lot of the Exchange 2007 upgrade process is probably not new, but for those of us who don't look after Exchange full time it's a steep learning curve. The biggest challenges for me have been around the new Exchange Management Shell. I think the implementation of PowerShell as the basis for all Exchange management is a good thing - there's nothing like being able to paste the exact command line into your change log. However there's been a couple of issue that I've got with Exchange 2007:
 
   1. The lack of detailed command line examples; and
   2. The stuff that's been removed from the GUI since Exchange 2003.
@@ -21,7 +21,7 @@ tags:
 Here's an example. After upgrading to Exchange Server 2007, you need to upgrade the e-mail address policies. Now [upgrading the Default Policy](http://msexchangeteam.com/archive/2007/01/11/432158.aspx), this is straight-forward, this is done with the following command:
 
 <p class="console">
-  Set-EmailAddressPolicy "Default Policy" €“IncludedRecipients AllRecipients
+  Set-EmailAddressPolicy "Default Policy" -IncludedRecipients AllRecipients
 </p>
 
 Note that command doesn't actually upgrade the policy, it recreates it. Why there isn't and upgrade option I don't know. So what happens when you want to "upgrade" a custom e-mail policy? Well you can use the wizard to create a new policy, but what do you do when you need to create a policy that uses a custom attribute (i.e. and LDAP query). In Exchange 2003 there was a nice GUI that you could use to construct the LDAP query:

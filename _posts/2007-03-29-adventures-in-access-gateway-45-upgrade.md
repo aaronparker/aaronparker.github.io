@@ -71,7 +71,7 @@ Now that I had AAC up and running, I configured a logon point, some resources an
 
 Far more appealing don't you think? A little 'Microsofty' I know, but much better. On graphics too, don't forget that the Access Gateway only handles GIF files; don't use PNGs like I did.
 
-The upgrade of the Access Gateway appliance itself was very straightforward. I made a backup of the configuration and then uploaded the 4.5 upgrade. After a reboot, I uploaded the 4.5.1 hotfix and it looked good €“ just as expected. I then connected the Access Gateway to my new AAC farm and then thought that all was well until I ran into the dreaded '[Protocol Driver Error](http://www.google.com/search?hl=en&rls=com.microsoft%3Aen-AU&q=%22protocol+driver+error%22+site%3Asupport.citrix.com)'.
+The upgrade of the Access Gateway appliance itself was very straightforward. I made a backup of the configuration and then uploaded the 4.5 upgrade. After a reboot, I uploaded the 4.5.1 hotfix and it looked good - just as expected. I then connected the Access Gateway to my new AAC farm and then thought that all was well until I ran into the dreaded '[Protocol Driver Error](http://www.google.com/search?hl=en&rls=com.microsoft%3Aen-AU&q=%22protocol+driver+error%22+site%3Asupport.citrix.com)'.
 
 What I'd missed was adding the Secure Ticket Authorities to the Access Gateway properties (through Gateway Appliances properties / Secure Ticket Authority option). Something so simple that cost me about ½ hour of my time chasing my tail. What have I learnt from this? 1. Blog about it so I won't forget for next time and 2. Use a checklist when installing the Access Gateway.
 

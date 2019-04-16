@@ -68,14 +68,14 @@ Here's a rough breakdown of what the task sequence is doing:
 
 Whilst MDT provides a far friendlier interface than [Windows System Image Manager](http://technet.microsoft.com/en-us/library/cc766347(v=WS.10).aspx), there are still a number of configuration items that I've included in unattend.xml. These include configuring the following:
 
-  * Disable Internet Explorer Enhanced Security Configuration
-  * Disable the OOBE console and Server Manager from starting at first logon
-  * Enabling Remote Desktop Services Session Host as a role during the install instead of post-install
+* Disable Internet Explorer Enhanced Security Configuration
+* Disable the OOBE console and Server Manager from starting at first logon
+* Enabling Remote Desktop Services Session Host as a role during the install instead of post-install
 
 The included unattend.xml has configuration items applied to two [configuration passes](http://technet.microsoft.com/en-us/library/cc766245(v=ws.10).aspx), plus features/roles enabled in the Packages section:
 
-  * [specialize](http://technet.microsoft.com/en-us/library/cc722130(v=ws.10).aspx); and
-  * [oobeSystem](http://technet.microsoft.com/en-us/library/cc748990(v=ws.10).aspx)
+* [specialize](http://technet.microsoft.com/en-us/library/cc722130(v=ws.10).aspx); and
+* [oobeSystem](http://technet.microsoft.com/en-us/library/cc748990(v=ws.10).aspx)
 
 ![unattend-xml]({{site.baseurl}}/media/2012/11/unattend-xml.png)
 

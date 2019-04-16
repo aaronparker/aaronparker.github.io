@@ -14,7 +14,7 @@ tags:
 The Short NAP is a quick list of NAP and Server/Domain Isolation links from around the web. Here are links for Wednesday the 4th of April 2007:
 
   * Whitepaper: [Using Server Isolation to Protect the Key Management Service (KMS)](http://www.microsoft.com/downloads/details.aspx?FamilyID=c13c9d27-a3c9-4626-938b-fed6404d8c5e&DisplayLang=en).  
-    Protect access to Volume Activation 2.0 Key Management Service hosts on your network €“ stop unauthorised machines from activating against your KMS hosts.
+    Protect access to Volume Activation 2.0 Key Management Service hosts on your network - stop unauthorised machines from activating against your KMS hosts.
   * Chat transcript: [Deploying NAP End to End in your Enterprise](http://www.microsoft.com/technet/community/chats/trans/network/07_0313_tn_nap.mspx).  
     Good questions there about NAP deployment.
   * Chat transcript: [Network Access Protection System Health Agent/Validator](http://www.microsoft.com/technet/community/chats/trans/network/07_0212_tn_nap.mspx).  

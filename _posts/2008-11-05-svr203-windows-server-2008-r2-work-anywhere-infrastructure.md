@@ -15,7 +15,7 @@ tags:
 ---
 </p> 
 
-<img style="margin: 0px 15px 0px 0px; display: inline" align="left" src="{{site.baseurl}}/media/2008/11/teched2008logo.jpg" /> This session was about DirectAccess in Windows 7 and Windows Serve 2008 R2 as well as <strike>Terminal Services</strike> Remote Desktop Services changes in Windows Server 2008 R2. The DirectAccess feature looks pretty compelling but it will take some time to get to there. However, the Remote Desktop Services stuff was actually pretty cool.
+This session was about DirectAccess in Windows 7 and Windows Serve 2008 R2 as well as ~~Terminal Services~~ Remote Desktop Services changes in Windows Server 2008 R2. The DirectAccess feature looks pretty compelling but it will take some time to get to there. However, the Remote Desktop Services stuff was actually pretty cool.
 
 ## DirectAccess
 
@@ -70,3 +70,4 @@ Finally there were a few other random points:
   * Still no user based filtering in the Web Access at this time and it sounds like there are no plans to add this for RTM
   * Microsoft are not doing anything to RDP to cope with high latency in this release
   * There will be no changes to licensing requirement; however it sounded like there might be some technical changes, but don’t quote me on that one..
+  

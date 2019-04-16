@@ -26,4 +26,4 @@ This is because Advanced Access Control is not handling the RADIUS Message-Authe
 
 Now the next thing for me to do is test this fix out with integrating [Vasco DIGIPASS](http://www.vasco.com/products/range.html) authentication with Advanced Access Control, which I've seen having the same issues.
 
-<font color="#ff0033">UPDATE</font>: <strike>Unfortunately this fix hasn't make it in time for the 4.5 release of Advanced Access Control. Once you upgrade to 4.5 you may have to request an updated fix.</strike> Apparently this fix or an equivalent has made it into Advanced Access Control 4.5. Graham from Swivel has tested with PINsafe sucessfully with AAC 4.5.
+UPDATE: ~~Unfortunately this fix hasn't make it in time for the 4.5 release of Advanced Access Control. Once you upgrade to 4.5 you may have to request an updated fix.~~ Apparently this fix or an equivalent has made it into Advanced Access Control 4.5. Graham from Swivel has tested with PINsafe sucessfully with AAC 4.5.

@@ -36,7 +36,7 @@ Here's a list of the contents so you can see for yourself what's in this book:
 > 
 >   * Authentication Infrastructure
 >   * IEEE 802.11 Wireless Networks
->   * IEEE 802.1X€“Authenticated Wired Networks
+>   * IEEE 802.1X-Authenticated Wired Networks
 >   * Remote Access VPN Connections
 >   * Site-to-Site VPN Connections
 > 

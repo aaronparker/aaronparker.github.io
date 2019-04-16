@@ -25,6 +25,6 @@ The Short NAP is a (semi-regular) quick list of Microsoft Network Access Protect
 > It is not clear what implementation configuration would be required for Windows XP clients since Service Pack 3 is not yet available; nor is it clear how a Windows XP MS-NAP client would be managed &#8212; if at all possible &#8212; from a Windows Server 2008 functionality level Active Directory domain.
 
   * Celestix announce their [Network Access Protection appliance](http://www.celestix.com/press/pressrelease.asp?SRC=pr11122007.htm) to be available not long after the release of Windows Server 2008. This should be an appealing solution, but I'm interested in how this integrates with existing Certificate Services implementations.
-  * Techworld reports on the [current state of Network Access Control](http://www.techworld.com/security/features/index.cfm?featureid=3835) solutions €“ are current solutions delivering on their promise? With broad support already, Microsoft's NAP could help to improve the situation.
+  * Techworld reports on the [current state of Network Access Control](http://www.techworld.com/security/features/index.cfm?featureid=3835) solutions - are current solutions delivering on their promise? With broad support already, Microsoft's NAP could help to improve the situation.
 
 Amongst all this news, as you're most likely aready aware, Windows XP Service Pack 3, Windows Vista Service Pack 1 and Windows Server 2008 Release Candidates are available which give the best indication yet of what Network Access Protection is capable of.

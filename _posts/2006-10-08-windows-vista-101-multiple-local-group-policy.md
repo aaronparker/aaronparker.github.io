@@ -12,7 +12,7 @@ tags:
   - Group Policy
   - Windows-Vista
 ---
-Here's an interesting new feature of Windows Vista that will be a help to shared computing environments such as public libraries or those still inflicted with Windows NT 4.0 domains €“ Multiple Local Group Policy.
+Here's an interesting new feature of Windows Vista that will be a help to shared computing environments such as public libraries or those still inflicted with Windows NT 4.0 domains - Multiple Local Group Policy.
 
 ![Multiple Local Group Policy]({{site.baseurl}}/media/2006/10/1000.14.140.MultipleLocalGroupPolicy.PNG)
 

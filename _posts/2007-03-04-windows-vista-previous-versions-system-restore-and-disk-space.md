@@ -13,7 +13,7 @@ categories:
 tags:
   - Windows-Vista
 ---
-While checking out where my disk space was being consumed on my Windows Vista machines, I found that System Restore was the main culprit. So to reclaim my lost space I disabled it. Here you can see the before and after impact on the system drive of my desktop €“ close to 3GB was freed:
+While checking out where my disk space was being consumed on my Windows Vista machines, I found that System Restore was the main culprit. So to reclaim my lost space I disabled it. Here you can see the before and after impact on the system drive of my desktop - close to 3GB was freed:
 
 <img border="0" src="{{site.baseurl}}/media/2007/03/1000.14.1076.DiskSpace.png" /> 
 

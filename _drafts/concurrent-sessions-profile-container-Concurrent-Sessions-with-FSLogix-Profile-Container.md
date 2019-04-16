@@ -40,7 +40,6 @@ All of these require the administrator to have insight into how applications in 
 Profile Container supports concurrent sessions in two ways:
 
   * Concurrent sessions in the same instance of Windows  
-    
   * Concurrent sessions across different instances or VMs
 
 Restrict Remote Desktop Services users to a single Remote Desktop Services session
