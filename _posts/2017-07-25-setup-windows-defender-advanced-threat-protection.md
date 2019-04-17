@@ -51,13 +51,13 @@ To give you an idea of what does the setup process for ATP looks like, I've docu
 
 ![Step 5: Select your industry from a limited selection]({{site.baseurl}}/media/2017/07/05-Industry.png)*Step 5: Select your industry from a limited selection*
 
-1[Step 6: Choose to enable preview features]({{site.baseurl}}/media/2017/07/06-PreviewExperience.png)*Step 6: Choose to enable preview features*
+![Step 6: Choose to enable preview features]({{site.baseurl}}/media/2017/07/06-PreviewExperience.png)*Step 6: Choose to enable preview features*
 
-1[Step 7: Confirm creation of your Windows Defender ATP cloud instance]({{site.baseurl}}/media/2017/07/07-CreateCloud.png)*Step 7: Confirm creation of your Windows Defender ATP cloud instance*
+![Step 7: Confirm creation of your Windows Defender ATP cloud instance]({{site.baseurl}}/media/2017/07/07-CreateCloud.png)*Step 7: Confirm creation of your Windows Defender ATP cloud instance*
 
-1[Progress seen when creating the cloud instance]({{site.baseurl}}/media/2017/07/08-CreateProgress.png)*Progress seen when creating the cloud instance*
+![Progress seen when creating the cloud instance]({{site.baseurl}}/media/2017/07/08-CreateProgress.png)*Progress seen when creating the cloud instance*
 
-1[Step 8: Onboard and end-point and test detection]({{site.baseurl}}/media/2017/07/09-OnboardTest.png)*Step 8: Onboard and end-point and test detection*
+![Step 8: Onboard and end-point and test detection]({{site.baseurl}}/media/2017/07/09-OnboardTest.png)*Step 8: Onboard and end-point and test detection*
 
 ![Onboarding deployment methods]({{site.baseurl}}/media/2017/07/09a-OnboardTest-DeploymentMethods.png)*Onboarding deployment methods*
 
@@ -65,7 +65,7 @@ To give you an idea of what does the setup process for ATP looks like, I've docu
 
 ![Step 10: Running the detection test]({{site.baseurl}}/media/2017/07/11-OnboardTest-Test-1.png)*Step 10: Running the detection test*
 
-1[The Windows Defender ATP Dashboard]({{site.baseurl}}/media/2017/07/12-Dashboard.png)*The Windows Defender ATP Dashboard*
+![The Windows Defender ATP Dashboard]({{site.baseurl}}/media/2017/07/12-Dashboard.png)*The Windows Defender ATP Dashboard*
 
 Provisioning ATP is as easy process - the hardest part for me was working out where to access to the console - if you're looking for it, here it is: <https://securitycenter.windows.com/>
 
