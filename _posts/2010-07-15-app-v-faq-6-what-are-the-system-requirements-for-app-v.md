@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png")
+![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png)
 
 Operating system support for App-V is ultimately determined by the [Microsoft Product Support Lifecycle](http://support.microsoft.com/?pr=lifecycle). Note that the App-V 4.6 Client and Sequencer is required for 64-bit operating systems.
 

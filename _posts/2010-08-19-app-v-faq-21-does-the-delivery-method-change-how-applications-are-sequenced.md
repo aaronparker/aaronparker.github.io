@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png")
+![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png)
 
 There are several [deployment methods available for App-V]({{site.baseurl}}/deployment/app-v-faq-20-what-are-the-deployment-methods-for-app-v) and a number of ways to stream packages to clients – RTSP, HTTP, SMB and local disk. When creating an App-V package, the Sequencer provides protocol options (RTSPS, RTSP, FILE, HTTP and HTTPS), server hostname, port number and a folder path which are added to the generated the OSD file:
 

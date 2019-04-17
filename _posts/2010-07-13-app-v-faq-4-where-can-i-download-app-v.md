@@ -22,7 +22,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png")Depending on how you license App-V, you may need to download the ISO from different sources:
+![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png)Depending on how you license App-V, you may need to download the ISO from different sources:
 
 ### App-V for Desktops
 

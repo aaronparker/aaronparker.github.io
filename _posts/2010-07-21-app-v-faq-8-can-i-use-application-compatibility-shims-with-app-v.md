@@ -16,7 +16,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png")
+![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png)
 
 Applications virtualised and delivered by App-V will work with [application compatibility shims](http://technet.microsoft.com/en-us/library/dd837644(WS.10).aspx). You should consider [application compatibility](http://technet.microsoft.com/windows/aa905066.aspx) testing and remediation as a part of any operating system upgrade, because [App-V is not a compatibility solution]({{site.baseurl}}/virtualisation/app-v-faq-7-is-app-v-an-application-compatibility-solution).
 

@@ -16,7 +16,7 @@ tags:
   - App-V
   - Safari
 ---
-![AppV-Safari]({{site.baseurl}}/media/2010/06/AppVSafari_thumb.png) Safari 5.x with Microsoft Application Virtualization; however the same basic steps should apply to any application virtualisation product.
+![AppV-Safari]({{site.baseurl}}/media/2010/06/AppVSafari.png) Safari 5.x with Microsoft Application Virtualization; however the same basic steps should apply to any application virtualisation product.
 
 Virtualising Apple Safari is a two step process:
 

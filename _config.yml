@@ -44,3 +44,9 @@ minima:
 header_pages:
   - about.md
   - smb-not-cifs.md
+
+# _config.yml
+algolia:
+   application_id: UBLG1JVFAS
+   index_name: stealthpuppy
+   search_only_api_key: 94e7fce0796e173301d44f2b69657fdc

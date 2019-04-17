@@ -12,7 +12,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png")
+![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png)
 
 No, just like [App-V does not allow you to run 16-bit applications on 64-bit Windows]({{site.baseurl}}/virtualisation/app-v-faq-9-can-app-v-be-used-to-run-16-bit-applications-on-windows-x64), it also does not provide you with the means to run Windows applications on non-Windows operating systems such as Linux or Mac OS X. There are two reasons for this:
 
