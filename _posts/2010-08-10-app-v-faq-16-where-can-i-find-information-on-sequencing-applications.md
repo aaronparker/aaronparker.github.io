@@ -16,8 +16,6 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="right" />
-
 Before you even attempt your first sequence with App-V, I strongly recommend reading the [Microsoft Application Virtualization 4.6 Sequencing Guide](http://download.microsoft.com/download/F/7/8/F784A197-73BE-48FF-83DA-4102C05A6D44/App-46_Sequencing_Guide_Final.docx). This document lays the ground work for creating a successful sequencing environment and describes the best practices you should follow when sequencing. An older knowledgebase article exists, but it is still worth referencing: [Best practices to use for sequencing in Microsoft SoftGrid](http://support.microsoft.com/kb/932137/).
 
 The Microsoft TechNet forums is the main source of information for community lead recipes and answers to sequencing questions:

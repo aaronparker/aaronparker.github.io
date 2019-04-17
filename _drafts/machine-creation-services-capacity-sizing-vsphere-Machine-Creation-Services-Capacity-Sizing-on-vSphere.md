@@ -27,9 +27,9 @@ To [understand sizing Machine Creation Services]({{site.baseurl}}/machine-creati
 
 In this article, I'll cover the deployment options at a high level, including:
 
-  * **Delta Clones** - this has been the traditional deployment approach for MCS, where virtual machines reference a base image and store changes in a delta disk. Delta clones work for XenApp, pooled and dedicated clone VMs
-  * **Delta Clones with Storage Optimisation** - this is the new default option for MCS deployments since XenDesktop 7.9. IO optimisation enables a cache in RAM with overflow to disk
-  * **Full Clones** - new in XenDesktop 7.11 is the ability to deploy full clones from a master image and rely on the storage platform to provide optimisation
+* **Delta Clones** - this has been the traditional deployment approach for MCS, where virtual machines reference a base image and store changes in a delta disk. Delta clones work for XenApp, pooled and dedicated clone VMs
+* **Delta Clones with Storage Optimisation** - this is the new default option for MCS deployments since XenDesktop 7.9. IO optimisation enables a cache in RAM with overflow to disk
+* **Full Clones** - new in XenDesktop 7.11 is the ability to deploy full clones from a master image and rely on the storage platform to provide optimisation
 
 To keep this sizing exercise simple, I have used a single data store that contains both my master image and the Machine Catalogs. The environment is based on vSphere 6. I'm using a lab environment with local storage only; however, the approach should be the same for just about any environment with XenDesktop on vSphere.
 
@@ -37,9 +37,9 @@ To keep this sizing exercise simple, I have used a single data store that contai
 
 The master image is Windows Server 2016 with a set of applications including Office. Initially, the image has two snapshots created in the process of provisioning and updating the image. Thus the image consists of:
 
-  * **Virtual disk of 13.63GB** - this is the image as I've built it including Windows, applications, and the XenDesktop 7.9 VDA. This is using a thin-provisioned (or dynamic) disk with the default size of 127GB
-  * **Snapshot 1 of 4MB** - the initial snapshot taken before creating the Machine Catalog. 4MB is the default size for new snapshots on Hyper-V
-  * **Snapshot 2 of 8.63GB** - an update that included installing the 7.11 VDA. This sizeable given the changes in this snapshot include only a months' worth of Windows updates (at around 90Mb) and an upgrade from the VDA 7.9 to 7.11.<figure id="attachment_5186" aria-describedby="caption-attachment-5186" style="width: 1024px" class="wp-caption alignnone">
+* **Virtual disk of 13.63GB** - this is the image as I've built it including Windows, applications, and the XenDesktop 7.9 VDA. This is using a thin-provisioned (or dynamic) disk with the default size of 127GB
+* **Snapshot 1 of 4MB** - the initial snapshot taken before creating the Machine Catalog. 4MB is the default size for new snapshots on Hyper-V
+* **Snapshot 2 of 8.63GB** - an update that included installing the 7.11 VDA. This sizeable given the changes in this snapshot include only a months' worth of Windows updates (at around 90Mb) and an upgrade from the VDA 7.9 to 7.11.<figure id="attachment_5186" aria-describedby="caption-attachment-5186" style="width: 1024px" class="wp-caption alignnone">
 
 [<img class="wp-image-5186 size-large" src="{{site.baseurl}}/media/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-Disks-1024x482.png" alt="MCS Master Image on Hyper-V with 2 snapshots]({{site.baseurl}}/media/2016/10/MCS-HyperV-TopLevel-Datastore-MasterImage-Disks.png)*MCS Master Image on Hyper-V with 2 snapshots* 
 

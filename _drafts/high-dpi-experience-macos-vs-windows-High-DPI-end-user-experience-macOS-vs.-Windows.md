@@ -6,8 +6,6 @@ author: Aaron Parker
 layout: post
 guid: https://stealthpuppy/?p=6121
 permalink: /?p=6121
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
 image: /media/2018/08/scott-webb-465839-unsplash.jpg
 categories:
   - General

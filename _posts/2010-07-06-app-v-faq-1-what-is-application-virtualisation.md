@@ -36,7 +36,7 @@ Application Virtualisation has a number of benefits over traditional method of a
   * Automates and simplifies the application management lifecycle by significantly reducing regression and application interoperability testing
   * Reduces the end-user impacts associated with application upgrades, patching, and terminations - No reboots required, no waiting for applications to install, and no need to uninstall when retiring applications
 
-### How Application Virtualisation Works
+## How Application Virtualisation Works
 
 (_Note_, this section is from the App-V product page, but the general concepts apply to all application virtualisation products) Virtualized application environments enable each application to bring its own set of configurations and run without any installation within a virtual run-time abstraction layer on the client, so dependencies or effects on the configuration of the operating system are minimized. However, since applications execute locally, they run with full performance, functionality, and access to local services—including cut and paste, OLE, printing, network drives, and attached devices.<sup>3</sup>
 
