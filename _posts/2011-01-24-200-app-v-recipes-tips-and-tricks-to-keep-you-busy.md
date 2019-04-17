@@ -15,7 +15,7 @@ categories:
 tags:
   - App-V
 ---
-<img class="alignleft size-full wp-image-2101" style="margin-top: 0px; margin-right: 10px; margin-bottom: 5px; margin-left: 0px; border: 0px;" title="200.png" src="{{site.baseurl}}/media/2011/01/200.png" alt="]({{site.baseurl}}/appvrecipes/) plus links to various places around the Internets where you'll find assistance in getting your applications virtualised in App-V.
+With (far) more than a little help from another App-V MVP, Nicke Källén, we've been compiling [a list of completed App-V recipes](https://stealthpuppy.com/appvrecipes/) plus links to various places around the Internets where you'll find assistance in getting your applications virtualised in App-V..
 
 With my post on virtualising the [App-V Management Console]({{site.baseurl}}/virtualisation/sequencing-the-app-v-management-console/) last week, this list has hit 200 links.
 

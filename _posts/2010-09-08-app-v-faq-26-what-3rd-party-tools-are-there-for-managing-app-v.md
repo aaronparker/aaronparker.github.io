@@ -16,9 +16,9 @@ tags:
   - App-V
   - AppVFAQ
 ---
-<img style="margin: 0px 10px 5px 0px; display: inline;" src="{{site.baseurl}}/media/2010/06/AppVFAQLogo.png" alt="" align="right" />Even in the absence of [an App-V SDK](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/App-V_Extensibility_Today_Before_the_SDK.docx), the 3rd party tools available for App-V are wide and varied. Here’s what I hope is a complete list. If I missed anything out, please let me know.
+Even in the absence of [an App-V SDK](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/App-V_Extensibility_Today_Before_the_SDK.docx), the 3rd party tools available for App-V are wide and varied. Here’s what I hope is a complete list. If I missed anything out, please let me know.
 
-### Paid Tools
+## Paid Tools
 
   * **GridMetric** [Application Virtualization Explorer](http://www.gridmetric.com/products/ave.html) – view and edit SFT and PKG files
   * **GridMetric** [Lib-V](http://www.gridmetric.com/products/libv.html) – integrate SFT management into your own applications
@@ -28,7 +28,7 @@ tags:
   * **Flexera** [AdminStudio](http://www.flexerasoftware.com/products/adminstudio.htm) – Convert MSIs into App-V packages
   * **TMUrgent** [PimpMy for SoftGrid and App-V](http://tmurgent.com/PimpMy/PimpMy4SG.aspx) – add-ons tools for monitoring your App-V environment and tools for help desk troubleshooting
 
-### Free Tools
+## Free Tools
 
   * **Login Consultants** [App-V Add-on ADM 2.0](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=70&Itemid=149) – extend Group Policy support beyond the Microsoft provided administrative template
   * **Login Consultants** [App-V Client Diagnostic and Configuration tool (ACDC) 1.1](http://www.loginconsultants.com/index.php?option=com_docman&task=doc_details&gid=69&Itemid=149) – launch applications and provides shortcuts to various App-V client actions for troubleshooting
@@ -52,14 +52,14 @@ tags:
   * [Add OS to OSD](http://local.micro.biol.ethz.ch/appv/Add_OS_to_OSD.zip) by **Fabian Meister** – a tool to add OS tags to your OSD files
   * [OSD File Change](http://www.klawun.com/appVTools.html) by **Thomas Klawun** – a tool to add OS tags to your OSD files
 
-### Scripts
+## Scripts
 
   * [PowerShell Script Lists App-V Package Dependencies](http://www.sepago.de/helge/2010/01/06/powershell-script-lists-app-v-package-dependencies-dynamic-suite-composition-dsc/) by [Helge Klein](http://www.sepago.de/helge/)
   * [SoftGridProfileJanitor](http://www.virtualapp.net/scripts.html#SoftGridProfileJanitor) by **Kalle Saunamäki** – cleanup/maintenance script to be run under user's context in order to clear out leftover files from App-V data directory
   * [SoftGridPreloadApps](http://www.virtualapp.net/scripts.html#SoftGridPreloadApps) by **Kalle Saunamäki** – package pre-loading script that can be run on client machines to cache all applications to 100%
   * [SoftGrid/App-V Preload Client script](http://www.koekies.org/pivot/entry.php?id=10) by **Erwin Koekoek** – another package pre-loading script to cache applications to 100%
 
-### Resources
+## Resources
 
   * [Application Virtualization Volume Format Specification](http://download.microsoft.com/download/7/7/D/77DC8335-89FF-4054-96FE-52D1667EECC0/Application%20Virtualization%20Volume%20Format%20Specification.exe)
   * [Application Virtualization File Format Specification](http://download.microsoft.com/download/E/B/9/EB967B04-2F6E-4DB2-B6A9-72782D3392E1/App-V_file_format_v1.doc)
