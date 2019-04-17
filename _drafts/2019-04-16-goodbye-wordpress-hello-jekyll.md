@@ -12,6 +12,6 @@ tags:
   - Markdown
   - Cloudflare
 ---
-This site has been running on WordPress since 2006 and with a hosting rewewal pending, I thought it past time to migrate to a new platform.
+This site has been running on WordPress since 2006 and with a hosting rewewal pending, I thought it past time to migrate to a new platform. I have previously tested Jekyll, but not invested the time into a migration path and 
 
 over the past week or so, I've migrated stealthpuppy.com from WordPress to [Jeykll](https://jekyllrb.com/).

@@ -39,33 +39,33 @@ Microsoft positions ATP for enterprise customers, but given the integration with
 
 To give you an idea of what does the setup process for ATP looks like, I've documented the experience during setup in my own tenant. The gallery below shows a screenshot of each step including onboarding a device and performing a detection test.
 
-[Windows Defender ATP setup welcome page]({{site.baseurl}}/media/2017/07/01-Welcome-1.png)*Windows Defender ATP setup welcome page*
+![Windows Defender ATP setup welcome page]({{site.baseurl}}/media/2017/07/01-Welcome-1.png)*Windows Defender ATP setup welcome page*
 
-[Step 1: Selecting the Windows Defender Advanced Threat Protection data storage location]({{site.baseurl}}/media/2017/07/02-Storage.png)*Step 1: Selecting the Windows Defender Advanced Threat Protection data storage location*
+![Step 1: Selecting the Windows Defender Advanced Threat Protection data storage location]({{site.baseurl}}/media/2017/07/02-Storage.png)*Step 1: Selecting the Windows Defender Advanced Threat Protection data storage location*
 
-[Step 2: Select a data retention policy]({{site.baseurl}}/media/2017/07/03-DataRetention.png)*Step 2: Select a data retention policy*
+![Step 2: Select a data retention policy]({{site.baseurl}}/media/2017/07/03-DataRetention.png)*Step 2: Select a data retention policy*
 
-[Step 3: Data retention up to 180 days is possible]({{site.baseurl}}/media/2017/07/03a-DataRetentionDays.png)*Step 3: Data retention up to 180 days is possible*
+![Step 3: Data retention up to 180 days is possible]({{site.baseurl}}/media/2017/07/03a-DataRetentionDays.png)*Step 3: Data retention up to 180 days is possible*
 
-[Step 4: Select your organisation size]({{site.baseurl}}/media/2017/07/04-OrgSize.png)*Step 4: Select your organisation size*
+![Step 4: Select your organisation size]({{site.baseurl}}/media/2017/07/04-OrgSize.png)*Step 4: Select your organisation size*
 
-[Step 5: Select your industry from a limited selection]({{site.baseurl}}/media/2017/07/05-Industry.png)*Step 5: Select your industry from a limited selection*
+![Step 5: Select your industry from a limited selection]({{site.baseurl}}/media/2017/07/05-Industry.png)*Step 5: Select your industry from a limited selection*
 
-[Step 6: Choose to enable preview features]({{site.baseurl}}/media/2017/07/06-PreviewExperience.png)*Step 6: Choose to enable preview features*
+1[Step 6: Choose to enable preview features]({{site.baseurl}}/media/2017/07/06-PreviewExperience.png)*Step 6: Choose to enable preview features*
 
-[Step 7: Confirm creation of your Windows Defender ATP cloud instance]({{site.baseurl}}/media/2017/07/07-CreateCloud.png)*Step 7: Confirm creation of your Windows Defender ATP cloud instance*
+1[Step 7: Confirm creation of your Windows Defender ATP cloud instance]({{site.baseurl}}/media/2017/07/07-CreateCloud.png)*Step 7: Confirm creation of your Windows Defender ATP cloud instance*
 
-[Progress seen when creating the cloud instance]({{site.baseurl}}/media/2017/07/08-CreateProgress.png)*Progress seen when creating the cloud instance*
+1[Progress seen when creating the cloud instance]({{site.baseurl}}/media/2017/07/08-CreateProgress.png)*Progress seen when creating the cloud instance*
 
-[Step 8: Onboard and end-point and test detection]({{site.baseurl}}/media/2017/07/09-OnboardTest.png)*Step 8: Onboard and end-point and test detection*
+1[Step 8: Onboard and end-point and test detection]({{site.baseurl}}/media/2017/07/09-OnboardTest.png)*Step 8: Onboard and end-point and test detection*
 
-[Onboarding deployment methods]({{site.baseurl}}/media/2017/07/09a-OnboardTest-DeploymentMethods.png)*Onboarding deployment methods*
+![Onboarding deployment methods]({{site.baseurl}}/media/2017/07/09a-OnboardTest-DeploymentMethods.png)*Onboarding deployment methods*
 
-[Step 9: Onboarding a Windows 10 device with a script]({{site.baseurl}}/media/2017/07/10-OnboardTest-Enable-1.png)*Step 9: Onboarding a Windows 10 device with a script*
+![Step 9: Onboarding a Windows 10 device with a script]({{site.baseurl}}/media/2017/07/10-OnboardTest-Enable-1.png)*Step 9: Onboarding a Windows 10 device with a script*
 
-[Step 10: Running the detection test]({{site.baseurl}}/media/2017/07/11-OnboardTest-Test-1.png)*Step 10: Running the detection test*
+![Step 10: Running the detection test]({{site.baseurl}}/media/2017/07/11-OnboardTest-Test-1.png)*Step 10: Running the detection test*
 
-[The Windows Defender ATP Dashboard]({{site.baseurl}}/media/2017/07/12-Dashboard.png)*The Windows Defender ATP Dashboard*
+1[The Windows Defender ATP Dashboard]({{site.baseurl}}/media/2017/07/12-Dashboard.png)*The Windows Defender ATP Dashboard*
 
 Provisioning ATP is as easy process - the hardest part for me was working out where to access to the console - if you're looking for it, here it is: <https://securitycenter.windows.com/>
 
