@@ -24,7 +24,7 @@ There are several [deployment methods available for App-V]({{site.baseurl}}/depl
 
 The options chosen in the Sequencer will produce a URL to the SFT file (the file in the App-V packages that contains the application binaries), which will look something like this:
 
-```
+```cmd
 rtsps://%SFT\_SOFTGRIDSERVER%:322/Adobe/Adobe\_Reader_9/AdobeReader9x.sft
 ```
 

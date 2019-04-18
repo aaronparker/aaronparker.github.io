@@ -6,14 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/deployment/app-v-faq-19-does-app-v-replace-citrix-xenapp-or-remote-desktop-services
 permalink: /app-v-faq-19-does-app-v-replace-citrix-xenapp-or-remote-desktop-services/
-has_been_twittered:
-  - 'yes'
-enclosure:
-  - |
-    http://www.vworkspace.com/aWinningPartnership/App-V.wmv
-    12652655
-    video/asf
-    
 dsq_thread_id:
   - "195383196"
 categories:

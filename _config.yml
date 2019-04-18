@@ -14,7 +14,7 @@ markdown: kramdown
 highlighter: rouge
 theme: minima
 plugins:
-  - jekyll-paginate
+#  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed

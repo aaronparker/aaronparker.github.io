@@ -6,8 +6,6 @@ author: Aaron Parker
 layout: post
 guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-11-what-are-the-dependencies-of-the-app-v-client
 permalink: /app-v-faq-11-what-are-the-dependencies-of-the-app-v-client/
-has_been_twittered:
-  - 'yes'
 dsq_thread_id:
   - "195382932"
 categories:
@@ -20,7 +18,7 @@ tags:
 
 The [current versions of App-V]({{site.baseurl}}/virtualisation/app-v-faq-5-what-are-the-current-versions-of-app-v) have similar dependencies; however there are some differences with the newer 4.6 client. Of course the main dependency of the App-V Client [is Windows itself]({{site.baseurl}}/virtualisation/app-v-faq-10-does-app-v-allow-me-to-run-applications-on-linux-or-mac-os).
 
-### App-V 4.5
+## App-V 4.5
 
 The App-V 4.5 client supports the following 32-bit operating systems:
 
@@ -38,7 +36,7 @@ The following dependencies are required
 
 If you are deploying any 64-bit operating systems which will include any Windows Server 2008 R2 Remote Desktop Services deployments, you will need to deploy the App-V Client 4.6.
 
-### App-V 4.6
+## App-V 4.6
 
 The App-V 4.6 client supports the following 32-bit and 64-bit operating systems:
 

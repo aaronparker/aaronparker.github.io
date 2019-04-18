@@ -40,7 +40,7 @@ As you can probably see, there's an issue with this – you need to edit the OSD
 
 App-V 4.5 introduced the /LAUNCH switch to the SFTTRAY.EXE command. This allows you to specify an alternate executable name as the primary application when launching an App-V package. To use this you first need to find the application name and version from your App-V package (although you may already know this from the application shortcut properties). To view the application names run:
 
-```
+```cmd
 SFTMIME QUERY OBJ:APP /SHORT
 ```
 
@@ -62,11 +62,11 @@ A couple of the [3rd party tools]({{site.baseurl}}/virtualisation/app-v-faq-26-w
 
 ACDC is my preferred troubleshooting tool, which gives you a plethora of options for managing applications with the ability to launch a tool in the bubble of a specific application:
 
-![]({{site.baseurl}}/media/2010/09/ACDCRunCommandPrompt.png)
+![ACDCRunCommandPrompt]({{site.baseurl}}/media/2010/09/ACDCRunCommandPrompt.png)
 
 And here's SoftBar in action, which can do the same type of thing:
 
-![]({{site.baseurl}}/media/2010/09/va_menu.jpg)
+![va_menu]({{site.baseurl}}/media/2010/09/va_menu.jpg)
 
 Both tools allow you to extend the launch menu with additional executables.
 

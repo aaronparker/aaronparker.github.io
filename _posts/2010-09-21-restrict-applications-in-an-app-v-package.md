@@ -26,7 +26,7 @@ One approach to restricting access would be to create separate packages and use 
 
 Delivering Office applications via separate packages would work, but it's not without it's drawbacks. Fortunately, there's a simpler solution.
 
-### AppLocker
+## AppLocker
 
 [AppLocker](http://technet.microsoft.com/en-us/library/dd548340(WS.10).aspx) is a feature of Windows 7 (Enterprise and Ultimate only) and Windows Server 2008 R2 (all editions) that allows you to whitelist or blacklist applications. By specifying PROJECT.EXE or VISIO.EXE as restricted to specified user groups (the same groups used when publishing the App-V shortcuts), I can control access to these applications even though users could attempt to launch them via means other than the delivered shortcuts. To implement AppLocker with App-V you need have deployed [App-V 4.5 SP1](http://support.microsoft.com/kb/976338/) or above.
 
@@ -34,11 +34,11 @@ Delivering Office applications via separate packages would work, but it's not wi
 
 [Software Restriction Policies](http://technet.microsoft.com/en-us/library/bb457006.aspx), the predecessor to AppLocker, is available for earlier versions of Windows and also works with App-V, but is not as flexible as AppLocker.
 
-### 3rd Party Alternatives
+## 3rd Party Alternatives
 
 If you aren't deploying Windows 7 or Windows Server 2008 R2 there are 3rd party application white-list solutions that work with App-V – many organisations may already have these products in their environments. The most common of these will be [AppSense Application Manager](http://www.appsense.com/products/applicationmanager.aspx) and [RES PowerFuse](http://www.ressoftware.com/pagina/72/res-powerfuse.aspx).
 
-### Resources
+## Resources
 
   * [App-V and AppLocker](http://www.brianmadden.com/blogs/timmangan/archive/2009/10/28/AppV-and-AppLocker.aspx)
   * [Windows 7 AppLocker Executive Overview](http://technet.microsoft.com/en-us/library/dd548340(WS.10).aspx)

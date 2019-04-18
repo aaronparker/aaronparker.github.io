@@ -2,12 +2,10 @@
 id: 1848
 title: 'App-V FAQ: Can I use Active Upgrade without RTSP(S)?'
 date: 2010-09-02T11:00:00+10:00
-author: Aaron Parker
+author: Justin Zarb
 layout: post
 guid: http://blog.stealthpuppy.com/deployment/app-v-faq-24-can-i-use-active-upgrade-without-rtsps
 permalink: /app-v-faq-24-can-i-use-active-upgrade-without-rtsps/
-has_been_twittered:
-  - 'yes'
 dsq_thread_id:
   - "195590996"
 categories:
@@ -16,7 +14,9 @@ tags:
   - App-V
   - AppVFAQ
 ---
-_![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png)Today’s FAQ has been written by Justin Zarb, all around good guy and a Premier Field Engineer with Microsoft in the UK. You can read more App-V articles written by Justin at his blog:_ [appvguy.com](http://appvguy.com/ "appvguy.com")
+![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png)
+
+Today’s FAQ has been written by Justin Zarb, all around good guy and a Premier Field Engineer with Microsoft in the UK. You can read more App-V articles written by Justin at his blog: [appvguy.com](http://appvguy.com/ "appvguy.com")
 
 This terminology is a little confusing. The "Active" was added in 4.x and referred to the fact that we could add and begin serving an updated version while the current version was still actively in use. The RTSP, HTTP, FILE (SMB) protocols all allow this functionality.
 
@@ -35,7 +35,7 @@ An admin would have added the updated SFT and OSDs to Content and on the next De
   * MSI with MODE=STREAMING via [ESD](http://technet.microsoft.com/en-us/library/cc843643.aspx)
   * SFTMIME commands via ESD
 
-### Resources
+## Resources
 
   * [App-V Application Publishing and Client Interaction](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/AppPubandClientInteraction.docx)
   * [Methods for Upgrading or Updating Virtualized Applications](http://blogs.technet.com/b/appv/archive/2007/09/25/methods-for-upgrading-or-updating-virtualized-applications.aspx)
