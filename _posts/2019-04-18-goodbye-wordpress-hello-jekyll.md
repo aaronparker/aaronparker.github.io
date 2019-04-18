@@ -98,7 +98,7 @@ I use [ImageOptim](https://imageoptim.com/mac) to optimise PNG and JPG media as 
 
 Apart from the aforementioned ImageOptim, here's what I'm using to write an maintain my site:
 
-* Git / [GutHub Desktop](https://desktop.github.com/) - the site is now maintained in a Git respository hosted on GitHub and served from GitHub Pages, thus I have a framework to version the site and track changes. My site is now code.
+* Git / [GitHub Desktop](https://desktop.github.com/) - the site is now maintained in a Git respository hosted on GitHub and served from GitHub Pages, thus I have a framework to version the site and track changes. My site is now code.
 * [iA Writer](https://ia.net/writer/) - while VSCode is great for Markdown, a dedicated Markdown writing app provides a few extra features including spell check and tools to add Markdown elements that I haven't memorised yet
 * [Visual Studio Code](https://code.visualstudio.com/) - I use this for all my code on macOS or Windows and a Jekyll site now fits within the same workflow. VSCode supports Markdown out of the box and of course supports Ruby and YAML used by Jeykll. A [markdownlint extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) helps with ensure that your Markdown is clean.
 
