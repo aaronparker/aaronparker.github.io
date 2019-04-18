@@ -40,7 +40,7 @@ I'd looked at Jekyll a couple of years ago and have seen enough other sites buil
 
 ### Markdown All the Things
 
-I'm loving writing content in Markdown. I've been using it for my [docs site](https://docs.stealthpuppy.com/docs/) for some time. Writing your blog content in plain text frees you to concentrate on content and let Jekyll worry about the formatting. Once your content is in Markdown (i.e plain text), deploying Jekyll to GitHub Pages is so simple. Additionally, I could choose to deploy to an Azure Storage Account or even migrate from Jekyll to something else (e.g [Hugo](https://gohugo.io/)) without having to reformat the content.
+I'm loving writing content in Markdown. I've been using it for my [docs site](https://docs.stealthpuppy.com/docs/) for some time. Writing articles in plain text frees you to concentrate on content and let Jekyll worry about the formatting. Once your content is in Markdown (i.e plain text), deploying Jekyll to GitHub Pages is so simple. Additionally, I could choose to deploy to an Azure Storage Account or even migrate from Jekyll to something else (e.g [Hugo](https://gohugo.io/)) without having to reformat the content.
 
 A couple of great benefits with basing content on Markdown with Jeykll, is that I no longer need plugins to format code or maintain tables, as these are natively handled by Markdown and formatted by Jeykll.
 
@@ -69,7 +69,7 @@ I won't go into detail here on the Jekyll setup process as there are several gre
 
 For me the basic process was as follows:
 
-1. Get my head around [Ruby](https://www.ruby-lang.org/en/). While there's no need to write in Ruby for Jekyll, it is built on Ruby and you'll need to understand how to get setup for Jekyll on [macOS](https://jekyllrb.com/docs/installation/macos/) or [Windows](https://jekyllrb.com/docs/installation/windows/) etc. I use a MacBook as my daily driver and I suspect that macOS is easier to deploy on than Windows. Ruby + Jekyll 
+1. Get my head around [Ruby](https://www.ruby-lang.org/en/). While there's no need to write in Ruby for Jekyll, it is built on Ruby and you'll need to understand how to get setup for Jekyll on [macOS](https://jekyllrb.com/docs/installation/macos/) or [Windows](https://jekyllrb.com/docs/installation/windows/) etc. I use a MacBook as my daily driver and I suspect that macOS is easier to deploy on than Windows. Ruby + Jekyll
 2. [Understand Jekyll](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll) - essentially we are turning plain text in Markdown down into a static HTML web site. Once you can see this in action, I think you'll understand how powerful a static site generator such as Jekyll is.
 3. Understand Markdown - this [Markdown Guide](https://www.markdownguide.org/) is the best resource on Markdown I've seen. Bookmark it.
 4. Update my article content - while the Jekyll Exporter did a great job of generating Markdown, I've spent considerable time fixing the HTML that it couldn't transform across 600+ articles. That includes fixing images, getting tables out of a Wordpress plugin, updating code samples in article (that were also being formatting with a plugin). I've done all of this in Visual Studio Code and leveraged it along with some RegEx and just plain search-and-replace to fix content.
@@ -112,7 +112,7 @@ I've fronted stealthpuppy.com with Cloudflare for a few years, but performance o
 
 ![Page performance result on WordPress]({{site.baseurl}}/media/2019/04/PerformanceBefore.png)
 
-That's probably OK on a broadband connection with a modern PC. Still and performance grade of D doesn't make me happy. Here's the same page after migrating to Jekyll:
+That's probably OK on a broadband connection with a modern PC. Still, a performance grade of D doesn't make me happy. Here's the same page after migrating to Jekyll:
 
 ![Page performance result on Jekyll]({{site.baseurl}}/media/2019/04/PerformanceAfter.png)
 
