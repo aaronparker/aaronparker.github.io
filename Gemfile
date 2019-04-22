@@ -23,16 +23,22 @@ group :jekyll_plugins do
 #  gem "jekyll-paginate", "~> 1.1.0"
   gem "jekyll-sitemap", "~> 1.3.1"
   gem "jekyll-gist", "~> 1.5.0"
-  gem "jekyll-avatar", "~> 0.6.0"
+#  gem "jekyll-avatar", "~> 0.6.0"
   gem "jekyll-seo-tag", "~> 2.6.0"
   gem 'jekyll-algolia'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Performance-booster for watching directories on Windows
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+# gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
 # Jeykll compose add-in
 gem 'jekyll-compose', group: [:jekyll_plugins]
+
+# Jeykll admin
+gem 'jekyll-admin', group: :jekyll_plugins
+
+# Jeykll archives
+gem 'jekyll-archives', group: :jekyll_plugins

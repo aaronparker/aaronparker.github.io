@@ -14,15 +14,16 @@ markdown: kramdown
 highlighter: rouge
 theme: minima
 plugins:
-#  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-avatar
+  - jekyll-archives
+#  - jekyll-avatar
+#  - jekyll-paginate
 
 show_excerpts: true
-paginate: 10
+# paginate: 10
 
 disqus:
   shortname: stealthpuppy
@@ -44,6 +45,23 @@ minima:
 header_pages:
   - about.md
   - smb-not-cifs.md
+
+# Jekyll Archives
+jekyll-archives:
+  enabled:
+  - categories
+  # - tags
+  - year
+  layouts:
+    year: archives-year
+    category: archives
+    tag: archives
+  permalinks:
+    year: '/:year/'
+    # month: '/:year/:month/'
+    # day: '/:year/:month/:day/'
+    # tag: '/tag/:name/'
+    category: '/category/:name/'
 
 # _config.yml
 algolia:

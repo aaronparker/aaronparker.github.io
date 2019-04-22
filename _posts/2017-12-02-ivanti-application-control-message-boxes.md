@@ -100,7 +100,7 @@ Here are the default Message Settings properties:
 
 Under that advanced button, is the CSS used to customise the visuals. So the first thing we're going to do is customise that CSS to align the visuals with Windows 10. I am maintaining [an updated CSS file to completely replace the default CSS on GitHub](https://gist.github.com/aaronparker/68e8fd1c066c6ecc8b66bb9067120e2c), which means that anyone can fork the file, improve it and contribute.
 
-<script src="https://gist.github.com/aaronparker/68e8fd1c066c6ecc8b66bb9067120e2c.js"></script>
+{% gist 68e8fd1c066c6ecc8b66bb9067120e2c %}
 
 There are a few things that the CSS does and provides customisation for:
 

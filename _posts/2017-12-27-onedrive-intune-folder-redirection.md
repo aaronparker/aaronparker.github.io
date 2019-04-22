@@ -50,7 +50,7 @@ A script that performs folder redirection using [SHSetKnownFolderPath](https://m
 
 Because we also need to move the folder contents, I've forked the script and added some additional functionality:
 
-<script src="https://gist.github.com/aaronparker/cf124f13bb58d95342707527900d307b.js"></script>
+{% gist cf124f13bb58d95342707527900d307b %}
 
 My version updates the **Set-KnownFolderPath** function to ensure all known folders for Documents, Pictures etc. are covered and adds:
 
@@ -76,7 +76,7 @@ The script below will download the redirection script to `C:\ProgramData\Scripts
 
 _Note that this downloads the redirection script from my public gist repository. If you implement this in production, I would highly recommend a more secure source for the redirection script._
 
-<script src="https://gist.github.com/aaronparker/eb8f03f7a2ab4027ffdff556a952502b.js"></script>
+{% gist eb8f03f7a2ab4027ffdff556a952502b %}
 
 Right now this script is quite simple - it will need to be updated to remove or update an existing script in the event you need to remove the script from Intune and re-add it.
 

@@ -6,13 +6,11 @@ author: Aaron Parker
 layout: post
 guid: https://stealthpuppy.com/?p=6216
 permalink: /custom-default-start-menu-intune/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
 image: media/2018/12/Windows10ProDefaultStartMenu1080.png
 categories:
   - Microsoft
 tags:
-  - enrolment status page
+  - Enrolment Status Page
   - Intune
   - Start Menu
 ---

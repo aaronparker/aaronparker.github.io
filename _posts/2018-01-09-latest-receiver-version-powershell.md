@@ -26,7 +26,7 @@ I've written a script that will parse the downloads page and return the current 
 
 Here's the script:
 
-<script src="https://gist.github.com/aaronparker/8204e49405a78245301dae1ebaf1df71.js"></script>
+{% gist 8204e49405a78245301dae1ebaf1df71 %}
 
 To use the script, save as Get-CitrixReceiverVersions.ps1 and run from the command line. With no parameters, it will return the releases and version numbers for all available platforms with the `Get-CitrixReceiverVersions` function.
 

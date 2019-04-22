@@ -54,7 +54,7 @@ If you can work without the features above, then use the Store version instead o
 
 Here's a simple script to detect whether Receiver is installed and if not, download and install Receiver using a specific set of command line options.
 
-<script src="https://gist.github.com/aaronparker/80c251f34c06d7d978ebd8cafa5efa42.js"></script>
+{% gist 80c251f34c06d7d978ebd8cafa5efa42 %}
 
 The script could be extended with some additional error checking and logging to provide some additional auditing of the installation, but I have tested this successfully.
 
