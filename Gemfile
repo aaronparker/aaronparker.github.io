@@ -41,4 +41,4 @@ gem 'jekyll-compose', group: [:jekyll_plugins]
 gem 'jekyll-admin', group: :jekyll_plugins
 
 # Jeykll archives
-gem 'jekyll-archives', group: :jekyll_plugins
+# gem 'jekyll-archives', group: :jekyll_plugins
