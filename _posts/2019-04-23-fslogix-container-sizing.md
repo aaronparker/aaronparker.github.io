@@ -42,7 +42,7 @@ It may be tempting to set a lower maximum size of the container; however, I reco
 
 Profile Container supports [concurrent access and sessions](https://docs.fslogix.com/display/20170529/Concurrent+User+Profile+Access) with the ability to merge changes back into the primary container. While you still have to deal with last-write-wins, you will need to take into account additional storage capacity while multiple concurrent sessions are running.
 
-![Profile Container with a Read/Write container]({{site.baseurl}}/media/2019/04/ProfileContainer-ConcurrentRW.png)
+![Profile Container with a Read/Write container]({{site.baseurl}}/media/2019/04/ProfileContainer-ConcurrentRW.PNG)
 
 Office 365 Container also supports [concurrent access and sessions](https://docs.fslogix.com/display/20170529/Concurrent+Office+365+Container+Access); however, once Outlook cached-mode is enabled, merging a read-write copy back into the primary container is not supported. You must then configure concurrent access per-session containers, where a container is created for each session. The concurrent access per-session containers are named `ODFC-%username%-SESSION-<sessionnumber>.VHD(X)` where sessionnumber is an integer from 0 - 9. `NumSessionVHDsToKeep` defines the number of session containers to keep (default is 2), which can result in, for example, keeping two Office 365 Containers while discarding the third at logoff.
 
@@ -80,7 +80,7 @@ A word of caution - **this script is unsupported**. If you would like to help im
 
 Avanite has an interesting approach for history, cookie and cache folders for the most common browsers that are running in enterprise virtual desktops - [Avanite WebData Control](https://www.avanite.com/pages/webdata-control). Avanite provides an analysis tool that will give you an idea of the amount of capacity to be saved by WebData Control:
 
-[![Avanite WebControl report window]({{site.baseurl}}/media/2019/04/AvanitWebControlReport.png)]({{site.baseurl}}/media/2019/04/AvanitWebControlReport.png)
+[![Avanite WebControl report window]({{site.baseurl}}/media/2019/04/AvanitWebControlReport.PNG)]({{site.baseurl}}/media/2019/04/AvanitWebControlReport.PNG)
 
 While their marketing pushes the benefits of solution to improve login times, this should be largely irrelevant with Profile Container, because profile data is not copied across the network at login. _I've not yet tested WebData Control with Profile Container_, so I can't speak to it's effectiveness or compatibility yet, but I don't see why it wouldn't work.
 
@@ -94,11 +94,11 @@ Cached Exchange Mode in Outlook provides the user with the best possible experie
 
 The Outlook cache is stored in `AppData\Local\Microsoft\Outlook` and includes the OST file we're familiar with as well as the NST file used to cache Outlook Groups.
 
-[![Microsoft Outlook cache folder showing the OST and NST files]({{site.baseurl}}/media/2019/04/MicrosoftOutlookCacheFolder.png)]({{site.baseurl}}/media/2019/04/MicrosoftOutlookCacheFolder.png)
+[![Microsoft Outlook cache folder showing the OST and NST files]({{site.baseurl}}/media/2019/04/MicrosoftOutlookCacheFolder.PNG)]({{site.baseurl}}/media/2019/04/MicrosoftOutlookCacheFolder.PNG)
 
 The primary configuration task here is to configure the amount of email to be downloaded. Assuming Outlook 2013 and above, the slider defines the age of the content in the mailbox that Outlook should be cached. This setting can be configured as a default using [the Office Customization /Deployment Tool](https://stealthpuppy.com/office-2013-customization/) or via Group Policy.
 
-![Microsoft Outlook cache slider]({{site.baseurl}}/media/2019/04/OutlookCacheSlider.png)
+![Microsoft Outlook cache slider]({{site.baseurl}}/media/2019/04/OutlookCacheSlider.PNG)
 
 Start with lowest amount possible and work up depending on user requirements. 3-months is common; however, some users live in Outlook and may need a larger cache. Use multiple GPOs to target different cache settings to different user groups.
 
@@ -142,7 +142,7 @@ Microsoft Teams is gradually replacing Skype for Business. Citrix even has [a te
 
 If you're not using it now, you'll have to support it soon and this is exactly what FSLogix Containers can do; however, [Microsoft Teams installs in the user profile](https://james-rankin.com/articles/microsoft-teams-on-citrix-xenapp/), so we need to account for the capacity requirement.
 
-[![Microsoft Teams in the user profile]({{site.baseurl}}/media/2019/04/MicrosoftTeamsUserProfileFolder.png)]({{site.baseurl}}/media/2019/04/MicrosoftTeamsUserProfileFolder.png)
+[![Microsoft Teams in the user profile]({{site.baseurl}}/media/2019/04/MicrosoftTeamsUserProfileFolder.PNG)]({{site.baseurl}}/media/2019/04/MicrosoftTeamsUserProfileFolder.PNG)
 
 The [Microsoft Teams deployment documentation](https://docs.microsoft.com/en-us/microsoftteams/msi-deployment) recommends _3 GB for Teams, per-user_. Hopefully, this should be an outlier - my Teams folder is currently 543 MB.
 
