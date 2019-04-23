@@ -8,7 +8,7 @@ tags:
 - FSLogix
 date: 2019-04-23 20:40 +1000
 ---
-A container approach to profiles in your virtual desktop environment means you're going to deal with additional storage requirements that you likely haven't had previously. Profile containers have gone mainstream with [the Microsoft acquisition of FSLogix](https://www.brianmadden.com/opinion/Microsoft-FSLogix-free-to-all-customers), making Profile Container and Office 365 Container available practically everyone.
+A container approach to profiles in your virtual desktop environment means you're going to deal with additional storage requirements that you likely haven't had previously. Profile containers have gone mainstream with [the Microsoft acquisition of FSLogix](https://www.brianmadden.com/opinion/Microsoft-FSLogix-free-to-all-customers), making Profile Container and Office 365 Container available to practically everyone.
 
 This article sets out approaches and considerations for keeping profile sizes in check to help avoid storage capacity headaches.
 
@@ -162,7 +162,7 @@ Container maintenance tasks will include resizing and shrinking the container vi
 
 The FSLogix team provide scripts for container management including resizing and shrinking the disks available here: [FSLogix Miscellaneous-Scripts](https://github.com/FSLogix/Miscellaneous-Scripts)
 
-Note, that to complete the maintenance tasks, the containers can't be in use. They must be detached from the VM and thus the user must be logged off.
+Note that to complete the maintenance tasks, the containers can't be in use. They must be detached from the VM and thus the user must be logged off.
 
 ### Storage
 
