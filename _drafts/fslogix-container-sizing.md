@@ -55,7 +55,7 @@ Here's a recent article (in German) that includes an aggressive list of paths in
 
 ### Prune the Profile
 
-Not all profile locations are candidates for `redirections.xml`. Consider history and cookie folders that would negatively impact user experience if they were not maintained in the profile at logoff. In this case, we should run regular maintenance on additional folder locations inside the profile to keep the profile size in check.
+Not all profile locations are candidates for `redirections.xml`. Consider history and cookie folders that would negatively impact user experience if they were not maintained in the profile at logoff. In this case, we can run regular maintenance on additional folder locations inside the profile to keep the profile size in check.
 
 I've written [a PowerShell script](https://github.com/aaronparker/FSLogix/tree/master/Profile-Cleanup) - `Remove-ProfileData.ps1`, that can prune or deleting a set of target files and folders. The script [reads an XML file](https://github.com/aaronparker/FSLogix/blob/master/Profile-Cleanup/targets.xml) that defines a list of files and folders to remove from the profile.
 
@@ -75,7 +75,7 @@ Avanite has an interesting approach for history, cookie and cache folders for th
 
 ![Avanite WebControl report window]({{site.baseurl}}/media/2019/04/AvanitWebControlReport.png)
 
-While their marketing pushes the benefits of managing space consumed by browsers in the profile to improve login times, this should be largely irrelevant with Profile Container, because profile data is not copied across the network at login. _I've not yet tested WebData Control with Profile Container_, so I can't speak to it's effectiveness or compatibility yet, but I can't see why it wouldn't work.
+While their marketing pushes the benefits of managing space consumed by browsers in the profile to improve login times, this should be largely irrelevant with Profile Container, because profile data is not copied across the network at login. _I've not yet tested WebData Control with Profile Container_, so I can't speak to it's effectiveness or compatibility yet, but I don't see why it wouldn't work.
 
 ## Office 365 Considerations
 
@@ -146,7 +146,7 @@ Why did Microsoft build Teams on Electron? The ability to iterate faster, especi
 
 ## 3rd Party Apps
 
-The number of applications built on Electron or other platforms that install into the user profile is increasing - here's [a list of 761 apps built using Electron](https://electronjs.org/apps) that users could potentially install into their Profile Container.
+The number of applications built on Electron or other platforms that install into the user profile is increasing. Just to give you a little scare - here's [a list of 761 apps built using Electron](https://electronjs.org/apps) that users could potentially install into their Profile Container. Application whitelisting can ensure that users can't install unauthorised apps, but whitelisting is not easy.
 
 ## Container Maintenance
 
@@ -168,6 +168,6 @@ Consider regularly monitoring storage capacity. If you are using the containers 
 
 In this article, I've covered a set of approachs and considerations to capacity planning and maintenance for FSLogix Profile Containers and Office 365 Containers.
 
-When testing or planning for a deployment, you'll need to consider sizing requirements that will be unique to your target environment; however, I've outlined a set of recommendations that apply to all environments.
+When testing or planning for a deployment, you'll need to consider sizing requirements that will be unique to your target environment; however, I've outlined a set of recommendations that will likely apply to all.
 
 Ensure that you test as many scenarios as you can and understand the applications that will be deployed into the virtual desktops. Container capacity management is primarily about managing the applications above the container, rather than the containers themselves.
