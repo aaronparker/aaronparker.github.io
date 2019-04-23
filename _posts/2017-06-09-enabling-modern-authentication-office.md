@@ -82,7 +82,7 @@ Now that the configuration is complete, we can see that from the user perspectiv
 
 When starting Outlook for the first time, the user sees the initial configuration wizard, but can click Next through the wizard without entering account details manually.
 
-![Outlook auto-configuration with modern authentication complete]({{site.baseurl}}/media/2017/06/OutlookConfigureComplete-1.png)*Outlook auto-configuration with modern authentication complete*
+![Outlook auto-configuration with modern authentication complete]({{site.baseurl}}/media/2017/06/OutlookConfigureComplete.png)*Outlook auto-configuration with modern authentication complete*
 
 Activating Office 365 ProPlus will still require the user to manually enter their email address.
 

@@ -62,7 +62,7 @@ The last option - 'Let Machine Creation Services do it automatically' doesn't ap
 
 The Features page lists a few options that look completely unrelated, but I assume they need to go somewhere.
 
-![4_Features1.png]({{site.baseurl}}/media/2013/06/4_Features1.png)
+![4_Features.png]({{site.baseurl}}/media/2013/06/4_Features.png)
 
 Each feature has its own command line option. In my case, I don't really need to add the option for Remote Assistance, because I've used an automated deployment that has already enabled that feature, but it doesn't hurt to enable the option anyway.
 

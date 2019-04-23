@@ -23,7 +23,7 @@ I thought that that behaviour was a little strange, so decided to test this out 
 
 I tested this on a virtual machine running Windows 7 SP1 x86 and could see from browsing to the Google installation folder (C:\Program Files\Google\Chrome) that the Application sub-folder was being removed after the monitoring phase was complete. To work out which process was deleting the folder, I've used [Process Monitor](http://technet.microsoft.com/en-us/sysinternals/bb896645). To see what was going on, I've reset my VM back to a clean snapshot, started the App-V Sequencer and Process Monitor and set a filter in Process Monitor for **Path** beginning with **C:\Program Files\Google\Chrome\Application** and then re-started the sequencing process.
 
-![ProcessMonitorFilter1]({{site.baseurl}}/media/2011/11/ProcessMonitorFilter1.png)
+![ProcessMonitorFilter]({{site.baseurl}}/media/2011/11/ProcessMonitorFilter.png)
 
 With this filter, I was able to see that the process that was deleting the folder is the Sequencer itself (SFTSequencer.exe). Click the screenshot for a larger view.
 
@@ -59,7 +59,7 @@ To get an idea of why, I've used [WhyReboot](http://exodusdev.com/products/whyre
 
 Going through the sequencing process again and running WhyReboot before ending monitoring, gives me an idea of why the reboot has been requested:
 
-![WhyReboot]({{site.baseurl}}/media/2011/11/WhyReboot1.png)
+![WhyReboot]({{site.baseurl}}/media/2011/11/WhyReboot.png)
 
 **Note**: I could also use [PendMoves](http://technet.microsoft.com/en-us/sysinternals/bb897556) another Sysinternals tool to query this information as well.
 

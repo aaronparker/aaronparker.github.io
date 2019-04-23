@@ -121,11 +121,11 @@ use redirection server name:i:0[/code]
 
 When launching the RemoteApp program, the UI isn't quite as seamless as you get with the XenApp client. You will first see a warning prompt if the .RDP file is not signed, and then a dialog box while the client connects:
 
-<a href="{{site.baseurl}}/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappconnect-2/" rel="attachment wp-att-1369"><img class="alignnone size-full wp-image-1369" title="RemoteAppConnect" src="{{site.baseurl}}/media/2010/02/RemoteAppConnect1.png" alt="" width="453" height="285" srcset="{{site.baseurl}}/media/2010/02/RemoteAppConnect1.png 453w, {{site.baseurl}}/media/2010/02/RemoteAppConnect1-150x94.png 150w, {{site.baseurl}}/media/2010/02/RemoteAppConnect1-300x188.png 300w" sizes="(max-width: 453px) 100vw, 453px" /></a>
+![RemoteAppConnect1]({{site.baseurl}}/media/2010/02/RemoteAppConnect.png)
 
 If the RemoteApp host is Windows XP, the user will be required to click the Details button to see the remote login dialog box and enter their credentials:
 
-<a href="{{site.baseurl}}/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces/attachment/remoteappauth-2/" rel="attachment wp-att-1368"><img class="alignnone size-full wp-image-1368" title="RemoteAppAuth" src="{{site.baseurl}}/media/2010/02/RemoteAppAuth1.png" alt="" width="660" height="609" srcset="{{site.baseurl}}/media/2010/02/RemoteAppAuth1.png 660w, {{site.baseurl}}/media/2010/02/RemoteAppAuth1-150x138.png 150w, {{site.baseurl}}/media/2010/02/RemoteAppAuth1-300x276.png 300w" sizes="(max-width: 660px) 100vw, 660px" /></a>
+![RemoteAppAuth]({{site.baseurl}}/media/2010/02/RemoteAppAuth.png)
 
 If the client is Windows XP or above and the host is Windows Vista or above, you can configure [credential pass-through (single sign-on)](http://blogs.msdn.com/rds/archive/2007/04/19/how-to-enable-single-sign-on-for-my-terminal-server-connections.aspx) to make connecting seamless. You must first [enable CredSSP](http://support.microsoft.com/kb/951608) on Windows XP SP3 clients. Pass-through won't work for Windows XP hosts - although you may be able to save the username and password in the .RDP file instead.
 

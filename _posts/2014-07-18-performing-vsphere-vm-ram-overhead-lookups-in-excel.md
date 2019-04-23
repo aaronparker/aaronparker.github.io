@@ -29,7 +29,7 @@ Creating a formula to perform the lookup, I've used the [INDEX](http://office.m
 
 Here's what it looks like in Excel:
 
-![Excel lookup]({{site.baseurl}}/media/2014/07/Excel-Lookup1.png)
+![Excel lookup]({{site.baseurl}}/media/2014/07/Excel-Lookup.png)
 
 The INDEX formula is used to return the amount of RAM overhead based on the vCPU and RAM values that we input into the spreadsheet. In this instance, I have two inputs - number of vCPUs (B3) and amount of RAM in GB (B4) assigned to my sample VM (for RDS/XenApp or VDI, I've assumed that all VMs on the host are configured identically.
 
