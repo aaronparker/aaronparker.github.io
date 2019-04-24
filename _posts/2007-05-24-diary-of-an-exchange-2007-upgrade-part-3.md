@@ -14,7 +14,7 @@ tags:
   - Cluster
   - Exchange
 ---
-<img align="left" src="{{site.baseurl}}/media/2007/05/exchange3.png" />Dear Diary,
+Dear Diary,
 
 Things will be quiet on the Exchange front for the next few days as I'm delivering ISA Server training to some of the other engineers, but I'll be back into Exchange on Monday.
 
