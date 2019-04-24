@@ -38,6 +38,8 @@ FSLogix Profile Containers and Office 365 Containers are dynamic VHDX files that
 
 It may be tempting to set a lower maximum size of the container; however, I recommend against this as this approach will only artificially restrict the size of the profile. If the container fills, applications will not handle the lack of available space gracefully. This will cause a support call and potentially data loss.
 
+![Application crash with a full profile]({{site.baseurl}}/media/2019/04/ProfileContainer-ApplicationCrash.png)
+
 ### Concurrent Access and Multiple Sessions
 
 Profile Container supports [concurrent access and sessions](https://docs.fslogix.com/display/20170529/Concurrent+User+Profile+Access) with the ability to merge changes back into the primary container. While you still have to deal with last-write-wins, you will need to take into account additional storage capacity while multiple concurrent sessions are running.
@@ -73,6 +75,8 @@ Actions on a target path can be:
 * **Trim** - where the target path contains sub-folders, this action will remove all sub-folders except for the most recent. This approach is implemented to clean up applications such as GoToMeeting that can store multiple versions in the profile
 
 The script supports `-WhatIf` and `-Verbose` output and returns a list of files removed from the profile. Add `-Verbose` will output the total size of files removed from the user profile and processing time at the end of the script. All targets (files / folders) that are deleted, will be logged to a file. Deleting files from the profile can result in data loss, so testing is advised and the use of `-Confirm:$false` is required for the script perform a delete. To prune the profile, run the script as a logoff action.
+
+[![Profile cleanup results]({{site.baseurl}}/media/2019/04/ProfileCleanup.png)]({{site.baseurl}}/media/2019/04/ProfileCleanup.png)
 
 A word of caution - **this script is unsupported**. If you would like to help improve the script, pull requests are welcome.
 
@@ -171,6 +175,20 @@ Consider regularly monitoring storage capacity. If you are using the containers 
 [Windows Admin Center](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview) includes System Insights that provides [storage consumption forecasting overview](https://docs.microsoft.com/en-us/windows-server/manage/system-insights/understanding-capabilities), ideal for estimating future consumption. Windows Admin Center is the future of Windows Server management tools and is highly recommended.
 
 [![Windows Admin Center Storage Consumption forecasting]({{site.baseurl}}/media/2019/04/WindowsAdminCenterStorageConsumptionForecasting.png)]({{site.baseurl}}/media/2019/04/WindowsAdminCenterStorageConsumptionForecasting.png)
+
+It's perhaps important to note that [data deduplication on ReFS is available on Windows Server 1709 and above](https://docs.microsoft.com/en-us/windows-server/storage/refs/refs-overview#feature-comparison). So if you are deploying Containers on a Windows File Server, ensure you are using Windows Server Semi-Annual Channel or Windows Server 2019.
+
+#### Reporting on Container sizes
+
+To report on FSLogix Containers usage, you can use `Get-FileStats.ps1` to retrieve the file size, last write time, last modifed time and file owner for Containers (.vhdx, .vhdx) files in a target file share. The script is available in my [FSLogix GitHub repository](https://github.com/aaronparker/FSLogix/tree/master/Stats). This will retrieve details for container files in a target share and output the results to a Gridview window - for example:
+
+```powershell
+.\Get-FileStats.ps1 -Path \\server\share\folder -Include *.vhd, *.vhdx | Out-GridView
+```
+
+Outputing a view similar to this:
+
+[![File stats for FSLogix Containers]({{site.baseurl}}/media/2019/04/FileStatsGridView.PNG)]({{site.baseurl}}/media/2019/04/FileStatsGridView.PNG)
 
 ## Summary
 
