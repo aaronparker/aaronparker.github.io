@@ -6,3 +6,4 @@ _site/
 # Others
 .DS_Store
 _algolia_api_key
+Thumbs.db
