@@ -6,6 +6,7 @@ categories:
 - Microsoft
 tags:
 - FSLogix
+- Profile Container
 date: 2019-04-23 20:40 +1000
 ---
 A container approach to profiles in your virtual desktop environment means you're going to deal with additional storage requirements that you likely haven't had previously. Profile containers have gone mainstream with [the Microsoft acquisition of FSLogix](https://www.brianmadden.com/opinion/Microsoft-FSLogix-free-to-all-customers), making Profile Container and Office 365 Container available to practically everyone.
