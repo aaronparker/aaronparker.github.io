@@ -121,7 +121,10 @@ Microsoft provides further detail and considerations, including configuration op
 Some additional points to note:
 
 1. Outlook cache files can be stored in either the Profile Container or the Office 365 Container. While the choice of container doesn't impact capacity sizing, placing the Outlook cache in the Office 365 Container reduces capacity needed for Profile Container backup
-2. FSLogix has a script that can delete orphaned OST files - `Remove-FslOldOstFile.ps1`, [hosted on GitHub](https://github.com/FSLogix/Remove-FslOldOstFile)
+2. The `RemoveOrphanedOSTFilesOnLogoff` configuration setting in Profile Container or Office 365 Container will remove duplicate orphaned OST files (introduced in version 2.9.6877.5470). By default this setting is off.
+
+    > A value of '0' or lack of this setting results in no action. A value of '1' will cause duplicate OST files to be removed. Please read below in full prior to setting. In rare cases duplicate OST files are created for a user. This circumstance occurs outside of the use of a non-persistent profile. When the profile is stored in the standard file system, administrators may remove Orphaned or Stale OST files by deleting them. Because an OST file in a VHD is not as visible, over long periods of time duplicate OST files may consume incremental disk space. Setting this option to 1 will cause Profile Container and/or Office 365 Container to automatically remove all OST files in a VHD(X) except the OST with the latest modify date. NOTE: an administrator should be very familiar with the use and function of OST files, as well as potential implications, prior to choosing to enable this setting.
+
 3. Archiving can reduce the size of the user's mailbox, but [archive mailboxes are accessed in online mode only](https://docs.microsoft.com/en-us/exchange/policy-and-compliance/in-place-archiving/in-place-archiving?view=exchserver-2019)
 4. [Retention policies](https://docs.microsoft.com/en-au/exchange/security-and-compliance/messaging-records-management/default-retention-policy) can also help keep mailbox sizes down
 5. *Outlook on the web* could be an option for some of your users. I've been testing out the new Outlook experience instead of running the desktop application for a couple of weeks and am finding it to be extremely capable. Outlook on the web is even [receiving updates before the desktop version](https://techcommunity.microsoft.com/t5/Outlook-Blog/Save-time-with-intelligence-that-works-for-you-in-Outlook-on-the/ba-p/386950)
@@ -156,6 +159,8 @@ Microsoft Teams is built on [Electron](https://electronjs.org/) and uses Squirre
 While Microsoft has previously delivered [a per-machine installer for Teams](https://docs.microsoft.com/en-us/microsoftteams/msi-deployment), it doesn't actually run the application from `Program Files`. Instead it delivers the per-user install when a user logs into the machine.
 
 Why did Microsoft build Teams on Electron? The ability to iterate faster, especially across platforms. Having said that, Microsoft has been successful in delivering fast, per-machine updates with Office 365 ProPlus, so there's no reason they can't do the same with Teams.
+
+*Update May 2019* - Microsoft has now provided a per-machine installer for Microsoft Teams: [https://docs.microsoft.com/en-us/microsoftteams/teams-for-vdi](https://docs.microsoft.com/en-us/microsoftteams/teams-for-vdi).
 
 ## 3rd Party Apps
 
