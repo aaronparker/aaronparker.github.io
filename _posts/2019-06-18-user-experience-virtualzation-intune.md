@@ -74,7 +74,7 @@ The UE-V configuration settings enabled by `Set-Uev.ps` have been sourced from [
 | Setting | Value | Notes |
 |:--|:--|:--|
 | Computer | True | Applies the settings to all users on the computer. |
-| DisableSyncProviderPing | True | Disables the synchronization provider from pinging the network. Not needed for OneDrive.  |         
+| DisableSyncProviderPing | True | Disables the synchronization provider from pinging the network. Not needed for OneDrive.  |
 | DisableSyncUnlistedWindows8Apps | True | Disables the synchronization of unlisted Windows Store apps. Assuming ESR is used |
 | EnableDontSyncWindows8AppSettings | True | UE-V does not synchronize Windows Store app settings. Assuming ESR is used |
 | EnableSettingsImportNotify | True | If the settings import takes longer than the amount of time that you specify for the SettingsImportNotifyDelayInSecond parameter, UE-V notifies the user |
@@ -86,7 +86,7 @@ The UE-V configuration settings enabled by `Set-Uev.ps` have been sourced from [
 
 With `%OneDrive%` or `%OneDriveCommercial%` as the target UE-V Settings Storage Path, the user's OneDrive sync folder will host a `SettingsPackages` folder that contains application settings.
 
-![UE-V Settings Packages folder in OneDrive]({{site.baseurl}}/media/2019/06/UevSettingsInOneDrive.png)
+![UE-V Settings Packages folder in OneDrive]({{site.baseurl}}/media/2019/06/UevSettingsInOneDrive.PNG)
 
 With OneDrive Files On Demand, settings packages will download as applications are launched. The folder can be set to [always offline with the `attrib` command](https://techcommunity.microsoft.com/t5/Microsoft-OneDrive-Blog/OneDrive-Files-On-Demand-For-The-Enterprise/ba-p/117234).
 
@@ -152,4 +152,4 @@ While Office 365 ProPlus and Windows 10 provides their own mechanisms for roamin
 
 The PowerShell scripts I've provided can be [used with Microsoft Intune](https://docs.microsoft.com/en-us/intune/intune-management-extension) or a 3rd party management tool. Additionally, 3rd party sync tools (e.g., ShareFile or Dropbox) should also work.
 
-In a future article how UE-V can be used to provide a consistent application experience across physical and virtual desktops.
+In a future article I'll discuss how UE-V can be used to provide a consistent application experience across physical and virtual desktops.
