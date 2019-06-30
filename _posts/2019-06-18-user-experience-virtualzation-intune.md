@@ -25,7 +25,7 @@ Application preferences *not* roaming to a newly provisioned PC is likely to be 
 
 Consider a common example such as Google Chrome. Chrome implements its own sync mechanism via Google accounts, but this often means that users will log into Chrome with their personal Google accounts. Further, Chrome and ChromeOS can be managed via [Chrome Enterprise](https://cloud.google.com/chrome-enterprise/browser-management/) where it is possible to use Azure AD as the IdP source. The browser can then be managed across your PC estate; however, this requires a licensing cost. If Google isn't a strategic play, then UE-V can capture Chrome settings and ensure a consistent experience across managed Windows 10 devices.
 
-## How 
+## How
 
 Azure AD-join and Autopilot enable a consistent provisioning experience for Windows 10 PCs regardless of location, but unlike a traditional domain-joined PC, you lose management features including Group Policy. UE-V would typically be [enabled with Group Policy](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-deploy-required-features#enable-the-ue-v-service) and [a file share](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-deploy-required-features#deploy-a-ue-v-settings-storage-location), but our target PCs are often not used within the corporate network, so synchronising application preferences between PCs requires another mechanism. Additionally we need to re-think enabling UE-V on the end-point and delivering UE-V templates to those devices.
 
