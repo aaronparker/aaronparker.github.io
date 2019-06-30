@@ -72,7 +72,7 @@ UE-V can roam application preferences in several modes that can be used across d
 
 Individual UE-V templates can be configured with the following settings when registered on a target device:
 
-* `Roaming` - this is the default mode in which application preferences are synchronized to all UE-V enabled devices with the corresponding template enabled 
+* `Roaming` - this is the default mode in which application preferences are synchronized to all UE-V enabled devices with the corresponding template enabled
 * `Backup` - UE-V backs up application settings to the configured storage location in a special Device name directory
 * `BackupOnly` - Templates designated BackupOnly include settings specific to that device that should not be synchronized unless explicitly restored
 
@@ -84,17 +84,19 @@ The default roaming mode should be a fire-and-forget configuration where UE-V wo
 
 Implementing the UE-V templates in Backup mode only will only export application preferences from the Profile Container, providing a method to restore settings as required. The restore could be used to migrate users to new versions of Windows or restore settings to a new Profile Container.
 
-### UE-V Settings Storage Location - File Server
+### UE-V Settings Storage Location
 
-UE-V must store application preferences in [a Settings Storage Location](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-deploy-required-features#deploy-a-ue-v-settings-storage-location). In a virtual desktop environment, the Settings Storage Location will typically be [a share on a Windows file server in the same location](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-prepare-for-deployment#performance-and-capacity-planning) as the desktops. This could approach could leverage the same file server/s as the Profile Container and should be straight-forward to implement
+#### A File Server for Simplicity
+
+UE-V must store application preferences in [a Settings Storage Location](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-deploy-required-features#deploy-a-ue-v-settings-storage-location). In a virtual desktop environment, the Settings Storage Location will typically be [a share on a Windows file server in the same location](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-prepare-for-deployment#performance-and-capacity-planning) as the desktops. This approach could leverage the same file server/s as the Profile Container and should be straight-forward to implement - just follow the documentation.
 
 Replication for business continuity can be handled by [Windows Server 2019 Storage Replica](https://docs.microsoft.com/en-us/windows-server/storage/storage-replica/server-to-server-storage-replication), DFS Replication, robocopy or a 3rd party replication solution.
 
-### UE-V Settings Storage Location - OneDrive
+#### OneDrive for Business for Cross Platform Consistency
 
-I have written previously on [using UE-V on a modern Windows 10 desktop](https://stealthpuppy.com/user-experience-virtualzation-intune/) with an approach that uses OneDrive for Business as the storage location. FSLogix Profile Container and Office 365 Container enables the native OneDrive sync client in a virtual desktop environment, so it stands to reason that we can use OneDrive for Business as a sync location.
+I have written previously on [using UE-V on a modern Windows 10 desktop](https://stealthpuppy.com/user-experience-virtualzation-intune/) with an approach that uses OneDrive for Business as the storage location. FSLogix Profile Container and Office 365 Container enables the native OneDrive sync client in a virtual desktop environment, so it stands to reason that we can use OneDrive for Business as a sync location for these desktops.
 
-What's great about using OneDrive as the settings storage location is that now application preferences are not locked in the data centre and end-users have a more consistent experience across Windows everywhere.
+What's great about using OneDrive as the settings storage location is that now application preferences are not locked in the data centre and end-users have a more consistent experience across Windows everywhere. OneDrive handles synchronising preferences between different desktops, making those preferences highly-available for business continuity and removes the storage challenge associated with a file server. Because the UE-V Settings Storage Location is hosted in the Profile Container, we solve any IOPS issues that syncing to a network share may introduce.
 
 ## Summary
 
@@ -104,4 +106,4 @@ However, there are some limitations with only roaming the user profile in a Cont
 
 By teaming Profile Container with User Experience Virtualization, we can extract application preferences from the Container to share them across Windows versions, migrate between Profile Containers and even provide a consistent user experience across virtual and physical desktops.
 
-While UE-V may not be as fully featured as competing solutions or perhaps as widely used, the entire stack now comes from Microsoft. That means no additional software licensing cost to improve the experience of user preferences all of your Windows desktops.
+While UE-V may not be as fully featured as competing solutions or perhaps as widely used, the entire stack now comes from Microsoft. That means no additional software licensing cost to improve the experience of user preferences across all of your Windows desktops.
