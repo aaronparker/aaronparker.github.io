@@ -18,7 +18,7 @@ Profile Container encapsulates the entirety of the user profile (i.e., everythin
 
 With this approach in mind, it's my view that the role of Profile Container is to do only the job of roaming the profile and do that well. Which of course it does.
 
-The result is a solution that's [simple to deploy](https://www.insentra.com.au/fslogix-profile-containers-and-office-365-containers-deployment-guide/) and manage and opens up application scenarios that were previously difficult to implement in a virtual desktop. However, just as with anything in tech, it comes with a trade-off.
+The result is a solution that's [simple to deploy](https://www.insentra.com.au/fslogix-profile-containers-and-office-365-containers-deployment-guide/) and manage and opens up application scenarios in a virual desktop that were previously difficult to implement. However, just as with anything in tech, Profile Container comes with a trade-off.
 
 ## Windows Profiles Version Considerations
 
@@ -56,19 +56,23 @@ User Experience Virtualization and FSLogix Profile Container can be used togethe
 
 To implement UE-V alongside Profile Container, there are soem considerations and configuration steps:
 
-### Determine UE-V Templates to Use
+### Determine What Needs to Roam
 
-Windows 10 includes several in-box templates and additional community provided templates are available from the [User Experience Virtualization Template Gallery](https://gallery.technet.microsoft.com/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=UE-V&f%5B0%5D.Text=UE-V). These are great starting points, while additional templates or customisations can be created for your environment using the UE-V Template Generator. Typically an IT Pro with experience with packaging or application management will be able to understand UE-V templates quite quickly.
+Windows 10 includes several in-box application templates with additional community templates available as well - [User Experience Virtualization Template Gallery](https://gallery.technet.microsoft.com/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=UE-V&f%5B0%5D.Text=UE-V). These are great starting points and additional templates can be created for your needs using the UE-V Template Generator. Typically an IT Pro with experience with packaging or application management will be able to understand UE-V templates quite quickly.
+
+I recommend identifying preferences that are actually a priority in a user profile - it doesn't make sense to roam the entire profile with UE-V, as at that point, you're replicating what Profile Container does. Important settings are likely to include Microsoft Office, browser preferences and bookmarks, and preferences for a handful of line of business applications.
+
+Registered UE-V templates can also differ across desktops. A Windows 10 virtual desktop could have a complete selection of UE-V templates, while a Windows Server silo publishing a set of applications with a read-only Profile Container, would only need templates for those published applications.
 
 ### Roaming Office and Office 365 ProPlus
 
-Where Office 365 ProPlus is deployed, you should enable either UE-V or Office 365 for roaming of user settings. Office 365 ProPlus [roams a selection of user settings](https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/jj733593(v=office.15)#what-are-roaming-settings), some of which roam across macOS, iOS and Android as well.
+The in-box templates for UE-V includes [templates for Office that define the Microsoft validated settings for Office applications](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-synchronizing-microsoft-office-with-uev) and will roam practially all Office preferences. These templates can be used with the Volume License edition of Office as well as Office 365 ProPlus.
 
-The in-box templates for UE-V includes [templates for Office that define the Microsoft validated settings for Office applications](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-synchronizing-microsoft-office-with-uev); however, consider that UE-V works on Windows only. If you support multiple operating systems, consider letting Office 365 roam Office settings.
+Where Office 365 ProPlus is deployed, enable either UE-V or Office 365 for roaming of user settings. Office 365 ProPlus [roams a selection of user settings](https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/jj733593(v=office.15)#what-are-roaming-settings), some of which roam across macOS, iOS and Android as well. UE-V is a Windows only feature - if you support multiple operating systems, consider letting Office 365 roam Office 365 ProPlus settings.
 
 ### UE-V Modes
 
-UE-V can roam application preferences in several modes that can be used across different desktop types to achieve our goals. This article covers these modes in detail: [Manage Administrative Backup and Restore in UE-V](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-manage-administrative-backup-and-restore)
+UE-V can roam application preferences in several modes that can be used across different desktop types to achieve our goals. This article covers these modes in detail: [Manage Administrative Backup and Restore in UE-V](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-manage-administrative-backup-and-restore).
 
 Individual UE-V templates can be configured with the following settings when registered on a target device:
 
@@ -84,7 +88,7 @@ The default roaming mode should be a fire-and-forget configuration where UE-V wo
 
 Implementing the UE-V templates in Backup mode only will only export application preferences from the Profile Container, providing a method to restore settings as required. The restore could be used to migrate users to new versions of Windows or restore settings to a new Profile Container.
 
-### UE-V Settings Storage Location
+### UE-V Settings Storage Locations
 
 #### A File Server for Simplicity
 
@@ -94,16 +98,16 @@ Replication for business continuity can be handled by [Windows Server 2019 Stora
 
 #### OneDrive for Business for Cross Platform Consistency
 
-I have written previously on [using UE-V on a modern Windows 10 desktop](https://stealthpuppy.com/user-experience-virtualzation-intune/) with an approach that uses OneDrive for Business as the storage location. FSLogix Profile Container and Office 365 Container enables the native OneDrive sync client in a virtual desktop environment, so it stands to reason that we can use OneDrive for Business as a sync location for these desktops.
+I have written previously on [using UE-V on a modern Windows 10 desktop](https://stealthpuppy.com/user-experience-virtualzation-intune/) with an approach that uses OneDrive for Business as the storage location. FSLogix Profile Container and Office 365 Container enables the native OneDrive sync client in virtual desktops including non-persistent desktops, so it stands to reason that we can use OneDrive for Business as a sync location.
 
-What's great about using OneDrive as the settings storage location is that now application preferences are not locked in the data centre and end-users have a more consistent experience across Windows everywhere. OneDrive handles synchronising preferences between different desktops, making those preferences highly-available for business continuity and removes the storage challenge associated with a file server. Because the UE-V Settings Storage Location is hosted in the Profile Container, we solve any IOPS issues that syncing to a network share may introduce.
+What's great about using OneDrive as the settings storage location, is that now application preferences are not locked in the data centre and end-users have a more consistent experience across Windows, everywhere. OneDrive handles synchronising preferences between different desktops, making those preferences highly-available for business continuity. Additionally because UE-V is saving settings into the Container, it removes any storage performance challenge associated with a file server.
 
 ## Summary
 
-With the Microsoft aquisition of FSLogix, I'm expecting to see Profile Container (and Office 365 Container) just about everywhere. There's little reason for a licensed customer to not be deploying it in their virtual desktop environments.
+With the Microsoft aquisition of FSLogix, I'm expecting to see even more customers deployinh Profile Container (and Office 365 Container). There's little reason for a licensed customer to not be deploying it in their virtual desktop environments.
 
 However, there are some limitations with only roaming the user profile in a Container, in that while the user gets the best possible experience, the profile itself it not necessarily portable across platforms.
 
 By teaming Profile Container with User Experience Virtualization, we can extract application preferences from the Container to share them across Windows versions, migrate between Profile Containers and even provide a consistent user experience across virtual and physical desktops.
 
-While UE-V may not be as fully featured as competing solutions or perhaps as widely used, the entire stack now comes from Microsoft. That means no additional software licensing cost to improve the experience of user preferences across all of your Windows desktops.
+While UE-V may not be as fully featured as competing solutions or perhaps as widely used, but the entire stack now comes from Microsoft. That means no additional software licensing cost to improve the experience of user preferences across *all* of your Windows desktops.
