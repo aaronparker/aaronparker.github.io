@@ -7,3 +7,7 @@ _site/
 .DS_Store
 _algolia_api_key
 Thumbs.db
+
+# Ruby
+.bundle/
+vendor/
