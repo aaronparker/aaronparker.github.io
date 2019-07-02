@@ -12,7 +12,7 @@ tags:
 - Profile Container
 - Virtual Desktop
 ---
-FSLogix [Profile Container](https://docs.fslogix.com/display/20170529/Profile+Containers) has plenty of advantages in a virtual desktop environment that show a measurable improvements to end-user experience. It's important to understand what a container approach to roaming a user profile is as you consider adoption of Profile Container, now that you own the license.
+FSLogix [Profile Container](https://docs.microsoft.com/en-us/fslogix/overview) has plenty of advantages in a virtual desktop environment that show a measurable improvements to end-user experience. It's important to understand what a container approach to roaming a user profile is as you consider adoption of Profile Container, now that you own the license.
 
 Profile Container encapsulates the entirety of the user profile (i.e., everything in `C:\Users\<username>`, [except what may be excluded](https://stealthpuppy.com/fslogix-profile-containers-redirections/)) in a virtual disk. The profile is then roamed by the agent attaching the user's virtual disk to a target Windows desktop.
 
@@ -83,7 +83,7 @@ Individual UE-V templates can be configured with the following settings when reg
 The default roaming mode should be a fire-and-forget configuration where UE-V works on top of Profile Container to always import and export settings in the profile. In a non-persistent desktop, the UE-V agent will be doing this in every session; however, this approach unlocks at least a few scenarios:
 
 * Roaming preferences for specific applications across desktop types - for example, a Windows Server 2012 desktop or published application silo and a Windows 10 virtual desktop
-* Synchronising application preferences into or out of [a read-only Profile Container](https://docs.fslogix.com/display/20170529/Concurrent+User+Profile+Access). Profile Container [supports concurrent sessions](https://docs.microsoft.com/en-us/fslogix/configure-concurrent-multiple-connections-ht), but the second session is typically going to be read-only. UE-V can be used to extract specific application preferences into the read-write Profile Container
+* Synchronising application preferences into or out of a read-only Profile Container. Profile Container [supports concurrent sessions](https://docs.microsoft.com/en-us/fslogix/configure-concurrent-multiple-connections-ht), but the second session is typically going to be read-only. UE-V can be used to extract specific application preferences into the read-write Profile Container
 * Roaming preferences between a hosted virtual desktop and a user's physical desktop - consistent application preferences across both desktop types!
 
 Implementing the UE-V templates in Backup mode only will only export application preferences from the Profile Container, providing a method to restore settings as required. The restore could be used to migrate users to new versions of Windows or restore settings to a new Profile Container.
