@@ -18,7 +18,7 @@ Profile Container encapsulates the entirety of the user profile (i.e., everythin
 
 With this approach in mind, it's my view that the role of Profile Container is to do only the job of roaming the profile and do that well. Which of course it does.
 
-The result is a solution that's [simple to deploy](https://www.insentra.com.au/fslogix-profile-containers-and-office-365-containers-deployment-guide/) and manage and opens up application scenarios in a virual desktop that were previously difficult to implement. However, just as with anything in tech, Profile Container comes with a trade-off.
+The result is a solution that's [simple to deploy](https://www.insentra.com.au/fslogix-profile-containers-and-office-365-containers-deployment-guide/) and manage and opens up application scenarios in a virtual desktop that were previously difficult to implement. However, just as with anything in tech, Profile Container comes with a trade-off.
 
 ## Windows Profiles Version Considerations
 
@@ -34,11 +34,11 @@ It is reasonable to posit that users desire and often expect consistency across 
 
 Because a local profile is stored in the Profile Container, upgrading Windows versions will subsequently upgrade the profile including changes that don't necessarily change the profile version, such as the Start menu architecture. On a Windows 10 VM this can also include Universal Windows Platform apps.
 
-Additionally, we don’t want to me mixing a Profile Container across Windows desktop and server for similar reasons.
+Additionally, we don’t want to be mixing a Profile Container across Windows desktop and server for similar reasons.
 
 ## Solving the Multi-Profile and Multi-Platform Challenge
 
-Environments supporting multiple platforms (physical, virtual, Windows desktop, Windows Server) and also needing to move between Windows versions, cross-platform preferences can be shared across these desktops and Windows versions.
+Environments supporting multiple platforms (physical, virtual, Windows desktop, Windows Server) and needing to move between Windows versions, cross-platform preferences can be shared across these desktops and Windows versions.
 
 Microsoft User Experience Virtualization can be configured to export and import targeted preferences for Windows and applications. Your best approach to solving the cross-platform challenge is to use UE-V to roam preferences that matter, and often that’s only a subset of the user profile.
 
@@ -54,13 +54,13 @@ User Experience Virtualization and FSLogix Profile Container can be used togethe
 
 ## Implementing UE-V with Profile Container
 
-To implement UE-V alongside Profile Container, there are soem considerations and configuration steps:
+To implement UE-V alongside Profile Container, there are some considerations and configuration steps:
 
 ### Determine What Needs to Roam
 
-Windows 10 includes several in-box application templates with additional community templates available as well - [User Experience Virtualization Template Gallery](https://gallery.technet.microsoft.com/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=UE-V&f%5B0%5D.Text=UE-V). These are great starting points and additional templates can be created for your needs using the UE-V Template Generator. Typically an IT Pro with experience with packaging or application management will be able to understand UE-V templates quite quickly.
+Windows 10 includes several in-box application templates with additional community templates available as well - [User Experience Virtualization Template Gallery](https://gallery.technet.microsoft.com/site/search?f%5B0%5D.Type=RootCategory&f%5B0%5D.Value=UE-V&f%5B0%5D.Text=UE-V). These are great starting points and additional templates can be created for your needs using the UE-V Template Generator. Typically, an IT Pro with experience with packaging or application management will be able to understand UE-V templates quite quickly.
 
-I recommend identifying preferences that are actually a priority in a user profile - it doesn't make sense to roam the entire profile with UE-V, as at that point, you're replicating what Profile Container does. Important settings are likely to include Microsoft Office, browser preferences and bookmarks, and preferences for a handful of line of business applications.
+I recommend identifying preferences that are a priority in a user profile - it doesn't make sense to roam the entire profile with UE-V, as at that point, you're replicating what Profile Container does. Important settings are likely to include Microsoft Office, browser preferences and bookmarks, and preferences for a handful of line of business applications.
 
 Registered UE-V templates can also differ across desktops. A Windows 10 virtual desktop could have a complete selection of UE-V templates, while a Windows Server silo publishing a set of applications with a read-only Profile Container, would only need templates for those published applications.
 
@@ -83,7 +83,7 @@ Individual UE-V templates can be configured with the following settings when reg
 The default roaming mode should be a fire-and-forget configuration where UE-V works on top of Profile Container to always import and export settings in the profile. In a non-persistent desktop, the UE-V agent will be doing this in every session; however, this approach unlocks at least a few scenarios:
 
 * Roaming preferences for specific applications across desktop types - for example, a Windows Server 2012 desktop or published application silo and a Windows 10 virtual desktop
-* Synchronising application preferences into or out of [a read-only Profile Container](https://docs.fslogix.com/display/20170529/Concurrent+User+Profile+Access)
+* Synchronising application preferences into or out of [a read-only Profile Container](https://docs.fslogix.com/display/20170529/Concurrent+User+Profile+Access). Profile Container [supports concurrent sessions](https://docs.microsoft.com/en-us/fslogix/configure-concurrent-multiple-connections-ht), but the second session is typically going to be read-only. UE-V can be used to extract specific application preferences into the read-write Profile Container
 * Roaming preferences between a hosted virtual desktop and a user's physical desktop - consistent application preferences across both desktop types!
 
 Implementing the UE-V templates in Backup mode only will only export application preferences from the Profile Container, providing a method to restore settings as required. The restore could be used to migrate users to new versions of Windows or restore settings to a new Profile Container.
@@ -100,11 +100,11 @@ Replication for business continuity can be handled by [Windows Server 2019 Stora
 
 I have written previously on [using UE-V on a modern Windows 10 desktop](https://stealthpuppy.com/user-experience-virtualzation-intune/) with an approach that uses OneDrive for Business as the storage location. FSLogix Profile Container and Office 365 Container enables the native OneDrive sync client in virtual desktops including non-persistent desktops, so it stands to reason that we can use OneDrive for Business as a sync location.
 
-What's great about using OneDrive as the settings storage location, is that now application preferences are not locked in the data centre and end-users have a more consistent experience across Windows, everywhere. OneDrive handles synchronising preferences between different desktops, making those preferences highly-available for business continuity. Additionally because UE-V is saving settings into the Container, it removes any storage performance challenge associated with a file server.
+What's great about using OneDrive as the settings storage location, is that now application preferences are not locked in the data centre and end-users have a more consistent experience across Windows, everywhere. OneDrive handles synchronising preferences between different desktops, making those preferences highly available for business continuity. Additionally, because UE-V is saving settings into the Container, it removes any storage performance challenge associated with a file server.
 
 ## Summary
 
-With the Microsoft aquisition of FSLogix, I'm expecting to see even more customers deployinh Profile Container (and Office 365 Container). There's little reason for a licensed customer to not be deploying it in their virtual desktop environments.
+With the Microsoft acquisition of FSLogix, I'm expecting to see even more customers deploying Profile Container (and Office 365 Container). There's little reason for a licensed customer to not be deploying it in their virtual desktop environments.
 
 However, there are some limitations with only roaming the user profile in a Container, in that while the user gets the best possible experience, the profile itself it not necessarily portable across platforms.
 
