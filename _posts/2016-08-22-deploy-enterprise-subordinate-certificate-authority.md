@@ -35,8 +35,8 @@ To deploy an Enterprise Certificate Authority you'll need to be installing certi
 
 As in my last article, my intention is to not go into detail, rather I'm looking to document a set of recommended steps to get an Enterprise Certificate Authority up and running successfully. For more in-depth reading, here is a list of recommended articles:
 
-  * [Active Directory Certificate Services Overview](https://technet.microsoft.com/en-us/library/hh831740(v=ws.11).aspx)
-  * [Certification Authority Guidance](https://technet.microsoft.com/en-us/library/hh831574.aspx)
+* [Active Directory Certificate Services Overview](https://technet.microsoft.com/en-us/library/hh831740(v=ws.11).aspx)
+* [Certification Authority Guidance](https://technet.microsoft.com/en-us/library/hh831574.aspx)
 
 ## Deploying an Enterprise Subordinate Certificate Authority
 
@@ -184,7 +184,7 @@ You can select the existing HTTP distribution point and press Ctrl-C to copy the
 http://crl.home.stealthpuppy.com/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl
 ```
 
-For this new DP, I've enabled '**Include in CRLs'** and '**Include in the CDP...'** options (and disabled these for the existing `http://` DP). Also check that the ldap:// distribution is enabled, which it should be by default.
+For this new DP, I've enabled '**Include in CRLs'** and '**Include in the CDP...'** options (and disabled these for the existing `http://` DP). Also check that the `ldap://` distribution is enabled, which it should be by default.
 
 ![HTTP CRL distribution point properties]({{site.baseurl}}/media/2016/08/CRLHTTPproperties.png)*HTTP CRL distribution point properties*
 

@@ -26,7 +26,7 @@ So here's how to setup an Enterprise Root Certificate Authority (CA) on Windows 
 I'm not going to go into too much detail here on the specific choices or considerations you should be making when setting up a CA in your environment; however, I would recommend that you do the following at least, to ensure certificate services is deployed securely:
 
   1. Configure a Root CA on a member server (not a member of the domain) and aim for this CA to be offline. This machine can be deployed just about anywhere and when turned off, you could protect it by removing the virtual machine from the environment and storing it in an encrypted format. This will help protect the root CA certificate. Just document where you left it, in case someone else has to take care of updates and changes.
-  2.  Deploy a subordinate CA that will be used to issue certificates. This will be a member of Active Directory to simplify management, issuance of certificates to domain members and enable certificate templates.
+  2. Deploy a subordinate CA that will be used to issue certificates. This will be a member of Active Directory to simplify management, issuance of certificates to domain members and enable certificate templates.
 
 Using certificate templates requires Active Directory and also requires that you install and configure the subordinate CA as a member of the Enterprise Admins group. Potentially not an issue in most environments; however for large enterprise environments that may not be the case ([permissions can be delegated](https://technet.microsoft.com/en-us/library/dn722303(v=ws.11).aspx)). This also means that you won't be installing an Enterprise CA in an environment using [Azure Active Directory Domain Services](https://azure.microsoft.com/en-us/services/active-directory-ds/) because you won't have rights.
 
@@ -34,13 +34,13 @@ Using certificate templates requires Active Directory and also requires that you
 
 There are a number of articles that I've drawn from and others worth reading for additional details or in-depth discussions on certificate services. I've listed a few here to provide some further detail:
 
-  * [The DOs and DON’Ts of PKI – Microsoft ADCS](http://kazmierczak.eu/itblog/2012/08/22/the-dos-and-donts-of-pki-microsoft-adcs/)
-  * [CA Guidance for Windows Server 2012 R2/2012](https://technet.microsoft.com/en-us/library/hh831574.aspx)
-  * [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services (Part 1 of 2)](https://blogs.technet.microsoft.com/yungchou/2013/10/21/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2/)
-  * [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services (Part 2 of 2)](https://blogs.technet.microsoft.com/yungchou/2013/10/22/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-2-of-2/)
-  * [AD CS on TechNet](https://technet.microsoft.com/en-us/windowsserver/dd448615.aspx)
-  * [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](https://technet.microsoft.com/en-us/library/hh831348(v=ws.11).aspx)
-  * [Active Directory Certificate Services (AD CS) Public Key Infrastructure (PKI) Frequently Asked Questions (FAQ)](http://social.technet.microsoft.com/wiki/contents/articles/1587.active-directory-certificate-services-ad-cs-public-key-infrastructure-pki-frequently-asked-questions-faq.aspx)
+* [The DOs and DON’Ts of PKI – Microsoft ADCS](http://kazmierczak.eu/itblog/2012/08/22/the-dos-and-donts-of-pki-microsoft-adcs/)
+* [CA Guidance for Windows Server 2012 R2/2012](https://technet.microsoft.com/en-us/library/hh831574.aspx)
+* [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services (Part 1 of 2)](https://blogs.technet.microsoft.com/yungchou/2013/10/21/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2/)
+* [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services (Part 2 of 2)](https://blogs.technet.microsoft.com/yungchou/2013/10/22/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-2-of-2/)
+* [AD CS on TechNet](https://technet.microsoft.com/en-us/windowsserver/dd448615.aspx)
+* [Test Lab Guide: Deploying an AD CS Two-Tier PKI Hierarchy](https://technet.microsoft.com/en-us/library/hh831348(v=ws.11).aspx)
+* [Active Directory Certificate Services (AD CS) Public Key Infrastructure (PKI) Frequently Asked Questions (FAQ)](http://social.technet.microsoft.com/wiki/contents/articles/1587.active-directory-certificate-services-ad-cs-public-key-infrastructure-pki-frequently-asked-questions-faq.aspx)
 
 ## Deploying an Enterprise Root Certificate Authority
 
@@ -161,8 +161,8 @@ This FQDN is an alias for the subordinate certificate authority that I'll be dep
 Repeat the same process for the [Authority Information Access](https://technet.microsoft.com/en-us/library/cc753754(v=ws.11).aspx) (AIA) locations:
 
   1. Disable 'Include in the AIA extensions of issued certificates' for all existing locations
-  2. Copy the existing http:// location
-  3. Add a new http:// location, changing **<ServerDNSName>** for the FQDN of the alias also used for the CRL distribution point
+  2. Copy the existing `http://` location
+  3. Add a new `http://` location, changing `<ServerDNSName>` for the FQDN of the alias also used for the CRL distribution point
 
 ![Adding an Authority Information Access location]({{site.baseurl}}/media/2016/08/18-Root-CA-Certificate-Services.png)*Adding an Authority Information Access location*
 
