@@ -11,7 +11,7 @@ tags:
 - OneDrive
 - PowerShell
 ---
-On the modern Windows 10 desktop with Office 365 and Azure AD Premium, application preferences are roamed by two components - the Office 2013+ desktop applications [roam settings when used with Office 365](https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/jj733593\(v=office.15\)#roaming-settings-for-office-2013) and when enabled, Enterprise State Roaming [synchronises specific settings](https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-faqs).
+On the modern Windows 10 desktop with Office 365 and Azure AD Premium, application preferences are roamed by two components - the Office 2013+ desktop applications [roam settings when used with Office 365](https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/jj733593\(v=office.15\)#roaming-settings-for-office-2013) and when enabled, Enterprise State Roaming [synchronises specific settings](https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-windows-settings-reference).
 
 Before you ask - yes, [User Experience Virtualization](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-for-windows) is still a thing. UE-V is a component of Windows 10 Enterprise that can roam a user's application preferences across desktops. UE-V works by defining user profile locations specific to an application and importing and exporting those settings into and out of the profile at login /logout or application launch / close.
 
