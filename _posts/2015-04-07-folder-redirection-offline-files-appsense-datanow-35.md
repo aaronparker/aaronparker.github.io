@@ -49,15 +49,15 @@ The idea being that this approach should provide users with a consistent view of
 
 When installing the DataNow client, the user's data is synchronised locally to a DataNow folder – similar in approach to Dropbox or OneDrive. Here's three ways that I could aggregate my local folders (Documents, Desktop etc.) with the DataNow folder:
 
-  * Leverage Windows 7 Libraries – include folders below the DataNow folder in the Documents, Music, Pictures and Videos Libraries. This will work, there's even methods of [scripting changes to the Libraries](http://windowslibrariespsh.codeplex.com/), but we miss out on important folders such as Favorites and the Desktop
-  * Create Junction Points – create junction points for each of the user folders to folders in the DataNow folder. This will cover all user folders, but junction points aren't a very elegant solution
-  * Use Folder Redirection delivered by AppSense Environment Manager (EM) – redirect each of the user folders into the DataNow folder
+* Leverage Windows 7 Libraries – include folders below the DataNow folder in the Documents, Music, Pictures and Videos Libraries. This will work, there's even methods of [scripting changes to the Libraries](http://windowslibrariespsh.codeplex.com/), but we miss out on important folders such as Favorites and the Desktop
+* Create Junction Points – create junction points for each of the user folders to folders in the DataNow folder. This will cover all user folders, but junction points aren't a very elegant solution
+* Use Folder Redirection delivered by AppSense Environment Manager (EM) – redirect each of the user folders into the DataNow folder
 
 The first two approaches are far from ideal whilst using Folder Redirection with EM holds the most promise, as Folder Redirection is arguably the easiest to implement and undo. At a high level, here's how this would work:
 
-  * The DataNow client creates a local folder for storing data - C:\Users\Aaron\DataNow
-  * User folders are redirected to this location, for example, C:\Users\Aaron\Documents is redirected to C:\Users\Aaron\DataNow\Home\Documents. While I'm still using folder redirection, this keeps the user folder local and avoids the latency in redirecting to the network
-  * The DataNow client keeps the local Documents folder (C:\Users\Aaron\DataNow\Home\Documents) in sync with my home drive (e.g. H:\Documents) and provide offline access with the ability to sync across the Internet
+* The DataNow client creates a local folder for storing data - `C:\Users\Aaron\DataNow`
+* User folders are redirected to this location, for example, `C:\Users\Aaron\Documents` is redirected to `C:\Users\Aaron\DataNow\Home\Documents`. While I'm still using folder redirection, this keeps the user folder local and avoids the latency in redirecting to the network
+* The DataNow client keeps the local Documents folder (`C:\Users\Aaron\DataNow\Home\Documents`) in sync with my home drive (e.g. `H:\Documents`) and provide offline access with the ability to sync across the Internet
 
 ## Appliance Configuration
 
@@ -89,12 +89,12 @@ DataNow provides options for controlling [authorization polices for Map Points](
 
 To test access to home directories via DataNow, I've configured the following in a lab environment:
 
-  * A home directory configured on the user account in Active Directory. I've started with a clean home directory
-  * The AppSense DataNow appliance configuration described above
-  * Two Windows 8.1 VMs – one with x86 Windows and the other with x64 Windows
-  * Both VMs are running the AppSense Environment Manager 8.6 RC and DataNow 3.5 agents
-  * The DataNow folder is stored at `%USERPROFILE%\DataNow`
-  * An Environment Manager configuration that will redirect the user folders below the DataNow folder
+* A home directory configured on the user account in Active Directory. I've started with a clean home directory
+* The AppSense DataNow appliance configuration described above
+* Two Windows 8.1 VMs – one with x86 Windows and the other with x64 Windows
+* Both VMs are running the AppSense Environment Manager 8.6 RC and DataNow 3.5 agents
+* The DataNow folder is stored at `%USERPROFILE%\DataNow`
+* An Environment Manager configuration that will redirect the user folders below the DataNow folder
 
 You may wonder why I haven't used Group Policy to perform folder redirection – this is because Group Policy won't allow you to redirect a user folder to a sub-folder of `%USERPROFILE%`. I guess Microsoft doesn't want us creating a quantum singularity by redirecting `%USERPROFILE%\Documents` to `%USERPROFILE%\Documents\Documents`.
 
@@ -102,9 +102,9 @@ If you're using AppSense DataNow, I can assume there's a good chance you're also
 
 The EM configuration, does a few things:
 
-  * Enables Single Sign On for the DataNow client at the computer level on Startup and enables Single Sign On for the user at logon. Both of these actions use the native DataNow action built into EM 8.6. Single Sign On improves the user experience on domain joined PCs, by ensuring the user does not need to authenticate separately to DataNow
-  * Sets the URL to the DataNow appliance
-  * Redirects user folders to the DataNow folder. For this test, I redirected Desktop, Documents, Pictures, Videos, Music and Favorites.
+* Enables Single Sign On for the DataNow client at the computer level on Startup and enables Single Sign On for the user at logon. Both of these actions use the native DataNow action built into EM 8.6. Single Sign On improves the user experience on domain joined PCs, by ensuring the user does not need to authenticate separately to DataNow
+* Sets the URL to the DataNow appliance
+* Redirects user folders to the DataNow folder. For this test, I redirected Desktop, Documents, Pictures, Videos, Music and Favorites.
 
 After logging onto the desktop and ensuring the the DataNow client has logged in and user folders are redirected successfully, I can access and sync my data across both devices while also accessing the same data on my iPhone or iPad. Here's what this looks like on the desktop:
 
@@ -122,7 +122,7 @@ Generally speaking though, this approach gives me what I'm after- synchronisatio
 
 To provide an idea of access to my home directory on an alternative platform, I've installed the DataNow client on my MacBook. I can synchronise and access my Active Directory home drive on a personal device as well.
 
-![DataNow-MacClient-Setup]({{site.baseurl}}/media/2015/04/DataNow-MacClient-Setup.png)
+![DataNow-MacClient-Setup]({{site.baseurl}}/media/2015/04/DataNow-MacClient-Setup.gif)
 
 Once authenticated, my files are synchronised locally to a DataNow folder. Note in the screenshot below, the a cloud icon indicates that the files have not yet been copied locally, similar to the grey arrow overlay on Windows.
 
@@ -136,7 +136,7 @@ Once I access the file, the DataNow client will download it. The status of the D
 
 A file sync solution is not complete without access to data from a web browser. Here's a view of access my home directory in a browser:
 
-![DataNowWebAccess]({{site.baseurl}}/media/2015/04/DataNowWebAccess.png)
+![DataNowWebAccess]({{site.baseurl}}/media/2015/04/DataNowWebAccess.gif)
 
 ## Conclusion
 
@@ -148,7 +148,7 @@ I really like the approach that AppSense has taken with DataNow. While they face
 
 There are a couple items that I would like to see AppSense improve or implement in future versions of DataNow that would assist with this approach:
 
-  * Provide conflict resolution policies - in the event of file versions conflicting, I would like to be able to specify which version of the file should take precedence, i.e. the local or server copy
-  * Control the Sync Mode on a device basis to allow me to configure how specific types of devices sync data (on access on desktops; automatic on laptops)
+* Provide conflict resolution policies - in the event of file versions conflicting, I would like to be able to specify which version of the file should take precedence, i.e. the local or server copy
+* Control the Sync Mode on a device basis to allow me to configure how specific types of devices sync data (on access on desktops; automatic on laptops)
 
 **Note**: please don't take this article as a recommendation from me for synchronising the `AppData\Roaming` folder.

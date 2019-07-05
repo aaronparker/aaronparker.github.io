@@ -20,9 +20,9 @@ tags:
 ---
 This is a multi-part article detailing our testing results and presentations for the 2015 series on Folder Redirection:
 
-  * I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1. (this article)
-  * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2]({{site.baseurl}}/folder-redirection-2015-part-2/).
-  * [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3]({{site.baseurl}}/folder-redirection-2015-part-3/).
+* I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 1. (this article)
+* [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 2]({{site.baseurl}}/folder-redirection-2015-part-2/).
+* [I've Got 99 Problems and Folder Redirection is Every One of Them. 2015 Testing Results. Part 3]({{site.baseurl}}/folder-redirection-2015-part-3/).
 
 Last year, [Helge Klein](http://twitter.com/helgeklein), [Shawn Bass](http://twitter.com/shawnbass) and myself presented the results of around of testing on Folder Redirection at events such as Citrix Synergy and BriForum and via [a series of blog posts](https://helgeklein.com/blog/2014/10/folder-redirection-impacts-ux-breaks-applications/). This year, we again delved into various testing scenarios, presented to well attended sessions and this blog post summarises our 2015 results.
 
@@ -36,8 +36,8 @@ Just as we continue to discuss printing in VDI and SBC environments because user
 
 Folder redirection remains a popular method of user data and profile management because it can improve the user experience by achieving two things:
 
-  1. Faster logons - redirecting AppData out of the profile reduces the amount of data required to be copied locally at user logon
-  2. Abstracting user data - moving user data out of the profile to a home folder ensures data is available on any desktop and allows IT to protect that data
+1. Faster logons - redirecting AppData out of the profile reduces the amount of data required to be copied locally at user logon
+2. Abstracting user data - moving user data out of the profile to a home folder ensures data is available on any desktop and allows IT to protect that data
 
 However, by implementing folder redirection, we've moved data that applications constantly interact with from the local machine to a shared resource. This means that good user experience now requires your storage back-end and network to be responsive and highly available.
 
@@ -47,10 +47,10 @@ Those shared resources (network, storage, hypervisor, CPU etc.) contend for reso
 
 This year, we focussed our testing on several areas:
 
-  1. Comparing SMB 2.1 with SMB 3.02 - last year we tested primarily with Windows 7 as the client. In this round we've used Windows 8.1 as the client to see whether SMB 3.02 provides any improvements over SMB 2.1
-  2. IO performance - does SMB 3.02 improve raw IO performance and throughput over SMB 2.1?
-  3. Workload simulations - we've used the File Server Capacity Toolkit to model how users work with home folders to demonstrate the performance profiles of various scenarios and show you how you can do performance modelling for your file servers
-  4. Folder redirection alternatives - newer file sync and share solutions that have been popular of the past several years may make interesting alternatives to folder redirection. I've [written about one of these previously]({{site.baseurl}}/folder-redirection-offline-files-appsense-datanow-35/) and we have covered several more alternatives. I'll cover some additional alternatives in seperate articles.
+1. Comparing SMB 2.1 with SMB 3.02 - last year we tested primarily with Windows 7 as the client. In this round we've used Windows 8.1 as the client to see whether SMB 3.02 provides any improvements over SMB 2.1
+2. IO performance - does SMB 3.02 improve raw IO performance and throughput over SMB 2.1?
+3. Workload simulations - we've used the File Server Capacity Toolkit to model how users work with home folders to demonstrate the performance profiles of various scenarios and show you how you can do performance modelling for your file servers
+4. Folder redirection alternatives - newer file sync and share solutions that have been popular of the past several years may make interesting alternatives to folder redirection. I've [written about one of these previously]({{site.baseurl}}/folder-redirection-offline-files-appsense-datanow-35/) and we have covered several more alternatives. I'll cover some additional alternatives in seperate articles.
 
 All of our testing this year was performed with Windows 8.1 or Windows Server 2012 R2 on the client end, with Windows Server 2008 R2 or Windows Server 2012 R2 on the server end.
 
@@ -60,10 +60,10 @@ I've already covered the tools that we've used in our testing in this blog post 
 
 In my own lab, all of the testing was done on the following hardware and software:
 
-  * Core i5, 1 x SSD, Hyper-V 2012 R2
-  * Core i7, 3 x SSD, Hyper-V 2012 R2
-  * 1 GbE physical network
-  * All compute and storage resources were uncontested (i.e. no other workloads were running)
+* Core i5, 1 x SSD, Hyper-V 2012 R2
+* Core i7, 3 x SSD, Hyper-V 2012 R2
+* 1 GbE physical network
+* All compute and storage resources were uncontested (i.e. no other workloads were running)
 
 ## SMB 2.1 vs. SMB 3.02 IO and Throughput Performance
 
@@ -93,13 +93,13 @@ Any difference between the two protocols wasn't shown in our user logon tests - 
 
 To test logon times, we configured what we consider to be an enormous user profile and test environment with the following details:
 
-  * User profile - the same profile was used across client and server tests: 
-      * 151 Mb
-      * 18,460 file
-      * 2,206 folders (while the profile file size is not huge, the number of files has a significant impact on logon times)
-  * No folder redirection
-  * Idle CPU on the file server/s
-  * No locally cached copy of the profile at each logon
+* User profile - the same profile was used across client and server tests:
+  * 151 Mb
+  * 18,460 file
+  * 2,206 folders (while the profile file size is not huge, the number of files has a significant impact on logon times)
+* No folder redirection
+* Idle CPU on the file server/s
+* No locally cached copy of the profile at each logon
 
 The logon process was repeated across both Windows Server 2008 R2 and Windows Server 2012 R2 as the client and server, to test with hosts only capable of SMB 2.1 and clients and servers capable of both SMB 2.1 and SMB 3.02.
 
