@@ -11,6 +11,8 @@ tags:
 ---
 I'm here in [Nashville for IGEL Disrupt](https://disrupteuc.com/nashville) over the next few days and I'm looking forward to a number of sessions. While the main event starts on the Tuesday (28th) the first day (Monday 27th) has a couple of sessions on.
 
+![Disrupt Nashville 2020]({{site.baseurl}}/media/2020/01/disrupt.jpg)
+
 As I write this article, I'm sitting in the Windows Virtual Desktop master class lead by Jim Moyle and Christiaan Brinkhoff. This is a 4-hour(!) deep-dive session on WVD that is well attended. This session has some great content that is filling in some gaps for me and the audience engagement is really high.
 
 IGEL has some great support from [sponsors](https://disrupteuc.com/nashville-sponsors/) that speaks to the significance of the event, including several that I certainly pay attention to, for example: Microsoft, Citrix, Control Up, AMD, NVIDIA and VMware.
