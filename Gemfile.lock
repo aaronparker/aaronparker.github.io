@@ -130,7 +130,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.0)
   jekyll-admin
-  jekyll-algolia
+  jekyll-algolia (~> 1.6)
   jekyll-compose
   jekyll-feed (~> 0.6)
   jekyll-gist (~> 1.5.0)
