@@ -1,4 +1,5 @@
-# .github/workflows/jekyll-algolia.yml
+name: Algolia search CI
+
 on: [push]
 
 jobs:
