@@ -40,8 +40,8 @@ The [Adobe Customization Wizard XI for Windows](http://www.adobe.com/support/do
 
 Extracting Reader XI from the installer is the same as previous versions - run the following command:
 
-```
-AdbeRdr11000\_en\_US -nos\_o"C:\Folder" -nos\_ne
+```powershell
+AdbeRdr11000_en_US -nos_o"C:\Folder" -nos_ne
 ```
 
 Restricting user interface elements in Acrobat/Reader XI is the same as previous versions. This cannot be performed by Group Policy but requires Javascript instead. Here's an example Javascript that you can use to hide the most common menu items:
@@ -125,6 +125,6 @@ Whilst the Group Policy management support is great and way overdue, there's cur
 
 ![ReaderXI-GroupPolicy]({{site.baseurl}}/media/2012/10/ReaderXI-GroupPolicy.png)
 
-## Finally..
+## Finally
 
 Go forth and deploy.
