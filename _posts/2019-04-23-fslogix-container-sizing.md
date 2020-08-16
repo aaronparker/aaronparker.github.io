@@ -177,10 +177,10 @@ Container maintenance tasks will include resizing and shrinking the container vi
 
 NOTE: during normal operation with writes and deletes made to the user profile, both the Profile Container and Office Container will grow and will end up with white space created when files are deleted or compacted within the Container. New writes into the Container will use available white space before expanding the Container size.
 
-Here are two community tools for compacting Containers and reducing consumed capacity
+Here are two community tools for compacting Containers and thus reducing the consumed capacity. These work by compacting each Container by the available whitespace within each container:
 
-* [Invoke-FslShrinkDisk](https://github.com/FSLogix/Invoke-FslShrinkDisk)
-* [ShrinkFSL](http://www.citrixirc.com/?p=1052)
+* [Invoke-FslShrinkDisk](https://github.com/FSLogix/Invoke-FslShrinkDisk) - PowerShell-based tool to compact Containers
+* [ShrinkFSL](http://www.citrixirc.com/?p=1052) - UI-based tool to compact Containers
 
 Note that to complete the maintenance tasks, the containers cannot be in use. They must be detached from the VM and thus the user must be logged off.
 
