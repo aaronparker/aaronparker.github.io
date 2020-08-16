@@ -61,7 +61,7 @@ You likely have a list of folders that can be added as additional exclusions. Ad
 
 I've written a script that is published on the PowerShell Gallery - [ConvertTo-RedirectionsXml](https://www.powershellgallery.com/packages/ConvertTo-RedirectionsXml/) - that will get you started with a `Redirections.xml`. Details on how to use the script are documented in this article - [Crowd Sourced Redirections.xml for FSLogix Profile Containers](https://stealthpuppy.com/fslogix-profile-containers-redirections/), as well as on [the repository](https://github.com/aaronparker/FSLogix/tree/main/Redirections) itself.
 
-NOTE: As always, understand your applications and TEST before implementing in production.
+NOTE: As always, understand your applications and TEST before implementing in production. Implementing redirections can [adversley affect basic Windows operations](https://james-rankin.com/videos/user-group-policies-not-applying-when-using-fslogix-profile-containers/).
 
 ### Prune the Profile
 
@@ -140,7 +140,8 @@ There are several things to consider for capacity planning with deploying OneDri
 3. OneDrive [Files On-Demand](https://support.office.com/en-us/article/save-disk-space-with-onedrive-files-on-demand-for-windows-10-0e6860d3-d9f3-4971-b321-7092438fb38e) will reduce the capacity used in the Container; however, this feature relies on an NTFS attribute introduced in Windows 10 1709. Windows Server 2016 is version 1607, therefore Files On-Demand is not available in Windows Server 2016. It does work under Windows Server 2019
 4. Files On-Demand [states can be set](https://docs.microsoft.com/en-us/onedrive/files-on-demand-mac) with the `attrib` command on Windows. A script can be used to set these states in bulk inside the user's sync folder
 5. Group Policy can be used to [set the maximum size of a user's OneDrive that can download automatically](https://docs.microsoft.com/en-us/onedrive/use-group-policy#set-the-maximum-size-of-a-users-onedrive-that-can-download-automatically). Where Files On-Demand is unavailable, configure this setting so that the user will be prompted to choose the folders they want to sync before the OneDrive sync client (OneDrive.exe) downloads the files. This setting won't assist with growth after the fact though
-6. By default, the OneDrive client is installed in the user profile: (`AppData\Local\Microsoft\OneDrive`). The OneDrive client now supports [a per-machine installation](https://docs.microsoft.com/en-us/onedrive/per-machine-installation) that can help to reduce the Container size by ~200MB.
+6. By default, the OneDrive client is installed in the user profile: (`AppData\Local\Microsoft\OneDrive`). The OneDrive client now supports [a per-machine installation](https://docs.microsoft.com/en-us/onedrive/per-machine-installation) that can help to reduce the Container size by ~200MB
+7. [Storage Sense supports deydrating cloud content](https://4sysops.com/archives/manage-onedrive-caches-with-windows-storage-sense/) (i.e. the OneDrive sync folder) by supporting Files On Demand and turning files that have not been accessed within a specified period back into online copies, reducing capacity used by these files.
 
 Additional deployment information is also available here: [OneDrive guide for enterprises](https://docs.microsoft.com/en-us/onedrive/plan-onedrive-enterprise)
 
@@ -160,7 +161,7 @@ The [Microsoft Teams deployment documentation](https://docs.microsoft.com/en-us/
 
 Microsoft provides some guidance on excluding certain Teams folders from the Profile Contianer. The following locations can be added to your `Redirections.xml`. These are included in the output from `ConvertTo-RedirectionsXml`.
 
-* [%AppData%]\Microsoft\Teams\media-stack](https://docs.microsoft.com/en-us/microsoftteams/teams-for-vdi#teams-cached-content-exclusion-list-for-non-persistent-setup)
+* [%AppData%\Microsoft\Teams\media-stack](https://docs.microsoft.com/en-us/microsoftteams/teams-for-vdi#teams-cached-content-exclusion-list-for-non-persistent-setup)
 * [%AppData%\Microsoft\Teams\Service Worker](https://techcommunity.microsoft.com/t5/fslogix-blog/teams-setup-rapidly-grows-my-profile-disk/ba-p/1539064)
 * [%AppData%\Microsoft\Teams\meeting-addin\Cache](https://docs.microsoft.com/en-us/microsoftteams/teams-for-vdi#non-persistent-setup)
 
