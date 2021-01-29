@@ -26,7 +26,7 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
 
 | Logo | Award | Years |
 |:--|:--|:--|
-| ![Citrix Technology Professional]({{site.baseurl}}/media/about/CitrixTechnologyProfessional.jpg) | [Citrix Technology Professional](https://www.citrix.com/community/ctp/awardees.html) | 2012 - |
+| ![Citrix Technology Professional]({{site.baseurl}}/media/about/ctp.png) | [Citrix Technology Professional](https://www.citrix.com/community/ctp/awardees.html) | 2012 - |
 | ![Microsoft MVP]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523) (MVP) for Windows and Devices for IT ( previously App-V) | 2011 - 2018 |
 | ![VMware EUC Champion]({{site.baseurl}}/media/about/VMwareEUCChampion.png) | VMware EUC Champion | 2016 |
 | ![VMware vExpert]({{site.baseurl}}/media/about/VMwarevExpert.jpg) | [VMware vExpert](http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html) | 2016 |
