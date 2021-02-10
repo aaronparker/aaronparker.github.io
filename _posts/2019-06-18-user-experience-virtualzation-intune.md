@@ -41,7 +41,7 @@ To manage UE-V on Windows 10 PCs via Microsoft Intune, we need to implement a fe
 2. A PowerShell script to enable the UE-V service and configure a scheduled task to download the UE-V templates
 3. A public HTTPS location to host UE-V templates. In my test configuration, I've used an Azure Storage Account so that I can use the [`List Containers`](https://docs.microsoft.com/en-us/rest/api/storageservices/list-containers2) API to query the storage for the templates to download
 
-To this end, I've written [a script to enable UE-V](https://github.com/aaronparker/Intune-Scripts/tree/master/Uev) on managed PCs and setup [a second script](https://github.com/aaronparker/uev/tree/master/scripts) that runs as a scheduled task to download the UE-V templates.
+To this end, I've written [a script to enable UE-V](https://github.com/aaronparker/intune/tree/master/Uev) on managed PCs and setup [a second script](https://github.com/aaronparker/uev/tree/master/scripts) that runs as a scheduled task to download the UE-V templates.
 
 ## Deploy the UE-V script via Intune
 
