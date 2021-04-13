@@ -133,4 +133,4 @@ I recommend creating a large enough profile, or one that is indicative of profil
 
 ![uberAgent logon duration dashboard]({{site.baseurl}}/media/2015/05/uberAgent-logon-duration-dashboard.png)*Viewing logon times in uberAgent.*
 
-If you want to use uberAgent in your lab, I recommend contacting <info@helgeklein.com> for info on whether you qualify for a consultants license.
+If you want to use uberAgent in your lab, I recommend contacting [https://uberagent.com/download/](https://uberagent.com/download/) for info on whether you qualify for a consultants license.
