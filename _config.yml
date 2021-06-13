@@ -161,8 +161,7 @@ cloudflare_analytics: "0c32f75715e341388bffae9f1e6b046d"
 # --- Comments --- #
 
 # To use Disqus comments, sign up to https://disqus.com and fill in your Disqus shortname (NOT the userid)
-disqus: stealthpuppy
-#  shortname: stealthpuppy
+# disqus: stealthpuppy
 
 # To use Utterances comments: (0) uncomment the following section, (1) fill in
 # "repository" (make sure the repository is public), (2) Enable Issues in your repository,
