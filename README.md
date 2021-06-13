@@ -1,6 +1,8 @@
 # Readme
 
-Jeykll repository for stealthpuppy.com
+[![Build and deploy Jekyll site to GitHub Pages](https://github.com/aaronparker/jekyll/actions/workflows/github-pages.yml/badge.svg)](https://github.com/aaronparker/jekyll/actions/workflows/github-pages.yml)
+
+Jeykll repository for stealthpuppy.com.
 
 ## License
 

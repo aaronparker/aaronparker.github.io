@@ -1,24 +1,26 @@
 ---
-id: 5378
-title: ABOUT
-date: 2017-02-24T21:05:08+10:00
 author: Aaron Parker
 layout: page
-guid: https://stealthpuppy.com/?page_id=5378
+title: Aaron Parker
+subtitle: Citrix Technology Professional & Principal Modern Workplace Architect @Insentra, on End User Computing and Enterprise Mobility
+cover-img: [/assets/img/home.jpeg: Sailing on Port Phillip]
 ---
-![Aaron Parker]({{site.baseurl}}/media/about/AaronParkerHeadShot125.jpg "Aaron Parker")
+## About
 
-Aaron Parker, responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
-
-I've been in the IT industry for over 20 years and bring a wide range of experience in enterprise level End-user computing solutions, including Server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
+I've been in the IT industry for over 25 years and bring a wide range of experience in enterprise level End-user computing solutions, including Server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
 
 I have experience with primarily Microsoft, Citrix and VMware-based solutions and implemented these technologies across government, private sector & not-for-profit organizations. My interests lie in continuous improvements to IT to better enable business, by and taking advantage of existing solutions and new technologies and process.
 
+At [Insentra](https://www.insentragroup.com) I'm responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
+
 I have spent the majority of my career in the channel working for system integrators in Australia and the UK and have extensive experience in the finance and transport sectors. Prior to working at Insentra, I was the pre-sales lead for the APAC region for Atlantis Computing.
 
-## About stealthpuppy.com
+## Projects
 
-This site (generally) focuses on end-user computing and enterprise mobility and is a way for me to not only write about interesting topics, but a way to give back the IT community. If I've been able to help you in your work in any way, that provides me with much satisfaction.
+I maintain a couple of popular open source projects:
+
+* [Evergreen](https://stealthpuppy.com/evergreen/) - Evergreen is a PowerShell module that returns the latest version and download URLs for a set of common Windows applications
+* [VcRedist](https://stealthpuppy.com/vcredist/) - VcRedist is a PowerShell module for lifecycle management of the Microsoft Visual C++ Redistributables
 
 ## Awards
 
@@ -33,17 +35,36 @@ I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conference
 | ![AppSense Community Advisor]({{site.baseurl}}/media/about/AppSenseCommunityAdvisor.png) | [AppSense Community Advisor](http://blog.appsense.com/2012/11/appsense-community-advisor-program/) | 2012 - 2016 |
 | ![Microsoft Community Contributor]({{site.baseurl}}/media/about/MicrosoftCommunityContributor.png) | Microsoft Community Contributor | 2011 |
 
-## Speaking
+## Speaking & Presentations
 
-Below is a selection of upcoming and recent speaking engagements and recordings, where available:
+Below is a selection of recent speaking engagements and recordings, where available:
+
+### 2021
+
+* Microsoft meets Community: Windows Virtual Desktop - [Secure and Manage Windows Virtual Desktop with Microsoft Endpoint Manager](https://christiaanbrinkhoff.com/2021/04/12/4-microsoft-meets-community-windows-virtual-desktop-fourth-one-year-anniversary-edition-recap-and-content-sharing/)
+* UK Citrix User Group - [Keep Your Gold Images Current With Evergreen](https://www.mycugc.org/events/event-description?CalendarEventKey=8924f17e-0c9c-47f6-a8f8-3a678405995a&CommunityKey=02c43d72-1ef5-40e7-9049-b2bba8fc884d&Home=%2fevents%2flocal-events)
+
+### 2020
+
+* ANZ WVD user group, September 2020 - FSLogix Containers for WVD deep dive
+* Citrix User Group, Melbourne, July 2020 - Image Automation for Public Cloud (automating Windows 10, Windows 10 multi-session, Windows Server images for Azure / Citrix Cloud / WVD)
+* Citrix User Group, Melbourne, July 2020 - Migrate PVS image to MCS, Geek Speak Round table
+* Citrix User Group, Melbourne, May 2020 - Windows Virtual Desktop update and architecture approach and overview
+* Citrix User Group, Melbourne, March 2020 - Citrix Cloud and Windows Virtual Desktop updates
+* IGEL Disrupt, Nashville, January 2020 - CTP panel discussion at the Nashville CUGC Meeting host at Disrupt
 
 ### 2019
 
-TBA
+* Citrix C-Tomorrow, Sydney, July 2020 - The identity centric universe
 
 ### 2018
 
-TBC
+* Citrix User Group, Melbourne, December 2018 - Windows Server 2019 is here, what's in it? when are you going to adopt it?
+* Citrix User Group, Melbourne, December 2018 - Citrix Cloud Unfiltered. Insights into real-world Citrix Cloud deployments
+* MyCUGC webinar, October 2018 - The 2018-2020 Desktop–Three Experts Duke it out for the Best Way to Deploy Windows
+* xenappblog.com VirtualExpo webinar, September 2018 - The Modern Management Methodology Imaginarium
+* IGEL Disrupt, Melbourne, March 2018 - Geek Speak with guests: Richard Parnell, Aaron Parker, Michael Lang
+* IGEL Disrupt, Melbourne, March 2018 - Industry Panel – Future of EUC, Moderated by Doug Keeley
 
 ### 2017
 
@@ -80,9 +101,13 @@ TBC
 
 Below is a list of publications that I've written, co-authored or contributed to:
 
-* July 2012: [The Definitive Guide to Delivering Microsoft Office with App-V](http://blog.stealthpuppy.com/community/white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/)
-* October 2013: [User Environment Management Smackdown](http://www.brianmadden.com/opinion/Fight-Appsense-Citrix-Immidio-Microsoft-Liquidware-Labs-PolicyPak-RES-Scense-and-others)
 * May 2016: [Ultimate Desktop Virtualization Best Practices Guide](http://community.atlantiscomputing.com/blog/Atlantis/May-2016/Ultimate-Virtualization-Best-Practices-Guide)
+* October 2013: [User Environment Management Smackdown](http://www.brianmadden.com/opinion/Fight-Appsense-Citrix-Immidio-Microsoft-Liquidware-Labs-PolicyPak-RES-Scense-and-others)
+* July 2012: [The Definitive Guide to Delivering Microsoft Office with App-V](http://blog.stealthpuppy.com/community/white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/)
+
+## About stealthpuppy.com
+
+This site (generally) focuses on end-user computing and enterprise mobility and is a way for me to not only write about interesting topics, but a way to give back the IT community. If I've been able to help you in your work in any way, that provides me with much satisfaction.
 
 ## Disclaimer
 

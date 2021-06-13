@@ -1,0 +1,26 @@
+name: Build and deploy site
+
+on:
+  push:
+    branches:
+      - main # or master before October 2020
+  workflow_dispatch:
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Use GitHub Actions' cache to shorten build times and decrease load on servers
+      - uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/vendor
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      # Build the site
+      - uses: helaili/jekyll-action@v2
+        with:
+          token: ${{ secrets.ACTIONS_TOKEN }}
