@@ -81,7 +81,7 @@ rss-description: "stealthpuppy's blog articles"
 share-links-active:
   twitter: true
   linkedin: true
-  vk: true
+  #vk: true
   #facebook: true
 
 # How to display the link to your website in the footer
@@ -99,9 +99,6 @@ feed_show_tags: true
 
 # Add a search button to the navbar
 post_search: true
-
-# Show read time
-readtime: true
 
 # The keywords to associate with your website, for SEO purposes
 #keywords: "my,list,of,keywords"
@@ -148,7 +145,7 @@ footer-link-col: "#007CBE" # Star Command BLue
 #google_analytics: ""
 
 # Fill in your Cloudflare Analytics beacon token to track your website using Cloudflare Analytics
-#cloudflare_analytics: ""
+cloudflare_analytics: "0c32f75715e341388bffae9f1e6b046d"
 
 # Google Tag Manager ID
 #gtm: ""
@@ -164,11 +161,8 @@ footer-link-col: "#007CBE" # Star Command BLue
 # --- Comments --- #
 
 # To use Disqus comments, sign up to https://disqus.com and fill in your Disqus shortname (NOT the userid)
-disqus:
-  shortname: stealthpuppy
-
-# To use Facebook Comments, create a Facebook app and fill in the Facebook App ID
-#fb_comment_id: ""
+disqus: stealthpuppy
+#  shortname: stealthpuppy
 
 # To use Utterances comments: (0) uncomment the following section, (1) fill in
 # "repository" (make sure the repository is public), (2) Enable Issues in your repository,
@@ -224,6 +218,7 @@ defaults:
       layout: "post"
       comments: true  # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
+      readtime: true
   -
     scope:
       path: "" # any file that's not a post will be a "page" layout by default
