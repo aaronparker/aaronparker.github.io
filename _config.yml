@@ -19,6 +19,7 @@ author: Aaron Parker
 # --- List of links in the navigation bar --- #
 
 navbar-links:
+  Home: "https://stealthpuppy.com/"
   Blog:
     - Posts: "/posts/"
     - Tags: "/tags/"
