@@ -14,7 +14,7 @@ language: en-AU
 author: Aaron Parker
 
 # Change the baseurl for testing
-baseurl: /jekyll
+#baseurl: /jekyll
 
 # --- List of links in the navigation bar --- #
 
