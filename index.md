@@ -2,18 +2,16 @@
 author: Aaron Parker
 layout: page
 title: Aaron Parker
-subtitle: Citrix Technology Professional & Principal Modern Workplace Architect @Insentra, on End User Computing and Enterprise Mobility
+subtitle: Citrix Technology Professional & Principal Modern Workplace Architect @Insentra
 cover-img: [/assets/img/home.jpeg: Sailing on Port Phillip]
 ---
 ## About
 
-I've been in the IT industry for over 25 years and bring a wide range of experience in enterprise level End-user computing solutions, including Server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
+I've have about 25 years experience in IT and bring a wide range of experience in enterprise level end-user computing solutions, including server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
 
-I have experience with primarily Microsoft, Citrix and VMware-based solutions and implemented these technologies across government, private sector & not-for-profit organizations. My interests lie in continuous improvements to IT to better enable business, by and taking advantage of existing solutions and new technologies and process.
+At [Insentra](https://www.insentragroup.com) I'm the Principal Modern Workplace Architect responsible globally for methodology, pre-sales and technical designs of leading, enterprise modern workplace solutions.
 
-At [Insentra](https://www.insentragroup.com) I'm responsible for methodology, pre-sales and technical designs of leading class, enterprise solutions.
-
-I have spent the majority of my career in the channel working for system integrators in Australia and the UK and have extensive experience in the finance and transport sectors. Prior to working at Insentra, I was the pre-sales lead for the APAC region for Atlantis Computing.
+I have experience with primarily Microsoft, Citrix and VMware-based solutions and implemented these technologies across government, corporate & not-for-profit organizations. My interests lie in continuous improvements to IT by and taking advantage of existing solutions and new technologies and process, particularly automation.
 
 ## Projects
 
@@ -24,7 +22,7 @@ I maintain a couple of popular open source projects:
 
 ## Awards
 
-I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conferences in the US and Europe since 2011, writing here since 2006 and contributing to the community in a number of other areas and am very happy and fortunate to have been awarded the following community recognitions:  
+I've been speaking events such as at Citrix Synergy, BriForum & E2EVC conferences in the US and Europe since 2011, writing here since 2004 and contributing to the community in a number of other areas. I am very fortunate to have been awarded the following community recognitions:
 
 | Logo | Award | Years |
 |:--|:--|:--|
