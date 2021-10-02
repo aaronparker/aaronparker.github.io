@@ -17,7 +17,7 @@ Having information on how much data needs to be migrated into OneDrive will bett
 
 Using [Log Analytics in Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview) is a simple, ubiquitous tool that provides a framework for reporting on this data. You just need a method to get the data from managed Windows PCs into Azure Monitor. With the data in Log Analytics, you can then create some useful workbooks:
 
-![OneDrive Known Folder Move workbook in Azure Monitor]({{site.baseurl}}/media/2021/10/OneDriveWorkbook1.jpeg)
+[![OneDrive Known Folder Move workbook in Azure Monitor]({{site.baseurl}}/media/2021/10/OneDriveWorkbook1.jpeg)]({{site.baseurl}}/media/2021/10/OneDriveWorkbook1.jpeg)
 
 ## Collecting the Data
 
@@ -105,7 +105,7 @@ To use Azure Monitor and create a [Log Analytics workspace](https://docs.microso
 
 It's also worth sending your [Microsoft Endpoint Manager diagnostics logs](https://docs.microsoft.com/en-us/mem/intune/fundamentals/review-logs-using-azure-monitor) to Log Analytics.
 
-![Configuring Microsoft Intune diagnostic settings]({{site.baseurl}}/media/2021/10/IntuneDiagnostics.png)
+[![Configuring Microsoft Intune diagnostic settings]({{site.baseurl}}/media/2021/10/IntuneDiagnostics.png)]({{site.baseurl}}/media/2021/10/IntuneDiagnostics.png)
 
 Building custom solutions on top of Log Analytics, such as this approach to monitoring user data, and importing the into the same Log Analytics workspace will allow you to cross reference device information in your reports.
 
@@ -217,7 +217,7 @@ A full listing of the script can be found here:
 
 Running the script on managed endpoints is straight-forward - use [Endpoint Analytics Proactive Remediations](https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations) if you are using a modern management approach with Microsoft Intune. Ensure you run the script with `Run this script using the logged-on credentials` enabled.
 
-![Running the script with Proactive Remediation]({{site.baseurl}}/media/2021/10/ProactiveRemediationScript.jpeg)
+[![Running the script with Proactive Remediation]({{site.baseurl}}/media/2021/10/ProactiveRemediationScript.jpeg)]({{site.baseurl}}/media/2021/10/ProactiveRemediationScript.jpeg)
 
 Schedule the script to run once every 24 hours, which should be enough to capture metrics. If you really want to run the script more often, first consider the potential impact on storage performance.
 
@@ -225,7 +225,7 @@ Schedule the script to run once every 24 hours, which should be enough to captur
 
 With the data collected and sent to the Log Analytics workspace, we can now build an [Azure Monitor workbook](https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview) to display the data in a useable format.
 
-![Known Folder Move status report]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus.jpeg)
+[![Known Folder Move status report]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus.jpeg)]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus.jpeg)
 
 If you're new to Azure Monitor workbooks, then be prepared to learn [Kusto Query Language](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/) (KQL). KQL queries provide the workbook data to visualise, turning it into useful information.
 
@@ -264,7 +264,7 @@ UserFolders_CL
 
 Here's another example of the table (or grid) view. In this view, I've formatted the `KfmEnabled` column with [Thresholds](https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-grid-visualizations#grid-styling) so that a green tick is displayed if Known Folder Move is enabled for all folders, or a warning if not. Additionally, the `DesktopSize`, `DocumentsSize`, and `PicturesSize` columns display as a heatmap making it easier to identify the largest folders in your environment.
 
-![Known Folder Move status report]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus.jpeg)
+[![Known Folder Move status report]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus2.jpeg)]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus2.jpeg)
 
 Here's the code for the entire workbook that you can copy directly into a new workbook in your target Log Analytics workspace. If you make some improvements to the workbook be sure to let me know what you've updated.
 
@@ -274,4 +274,4 @@ Here's the code for the entire workbook that you can copy directly into a new wo
 
 So that's the solution for building some insights into how much data you have in your environment before enabling Known Folder Move. The data that this workbook presents helps you understand a few things - the total amount of data you need to migrate to OneDrive; those users how are particularly outliers, enabling you to ask users to clean up their data before migration or help you to plan turning on Known Folder Move; and finally it shows you the status of Known Folder Move for the Document, Desktop and Pictures folders on endpoints, enabling you to report on those endpoints that have successfully implement Known Folder Move.
 
-Finally how much will this cost you in Log Analytics? Each device will send about 500 bytes each time it posts to the Data Collector API. If you're getting the script to run once per 24-hours, the costs to run this solution even in large environments is going to extremely low.
+How much will this solution cost you in your Azure Log Analytics workspace? Each device will send about 500 bytes each time it posts to the Data Collector API. If you're getting the script to run once per 24-hours, the costs to run even in large environments is going to extremely low.
