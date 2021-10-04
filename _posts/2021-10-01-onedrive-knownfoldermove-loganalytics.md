@@ -105,15 +105,15 @@ If Known Folder Move is enabled, `KfmFoldersProtectedNow` will have a value of `
 
 ## Creating the Report
 
+Let's get data into a Log Analytics workspace and create a useful report to view the data.
+
 ### Log Analytics
 
 To use Azure Monitor and create a [Log Analytics workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/quick-create-workspace), you'll need an Azure subscription. If you've adopted or are in the process of adopting Microsoft Intune, you should be implementing [Update Compliance](https://docs.microsoft.com/en-us/windows/deployment/update/update-compliance-monitor) to monitor your endpoints. Update Compliance is built on Log Analytics, so you'll end up with at least one Log Analytics workspace.
 
-It's also worth sending your [Microsoft Endpoint Manager diagnostics logs](https://docs.microsoft.com/en-us/mem/intune/fundamentals/review-logs-using-azure-monitor) to Log Analytics.
+It's also worth sending your [Microsoft Endpoint Manager diagnostics logs](https://docs.microsoft.com/en-us/mem/intune/fundamentals/review-logs-using-azure-monitor) to Log Analytics. Building custom solutions on top of Log Analytics, such as this approach to monitoring user data, and importing the into the same Log Analytics workspace will allow you to cross reference device information in your reports.
 
 [![Configuring Microsoft Intune diagnostic settings]({{site.baseurl}}/media/2021/10/IntuneDiagnostics.png)]({{site.baseurl}}/media/2021/10/IntuneDiagnostics.png)
-
-Building custom solutions on top of Log Analytics, such as this approach to monitoring user data, and importing the into the same Log Analytics workspace will allow you to cross reference device information in your reports.
 
 ### Importing data into Azure Monitor
 
