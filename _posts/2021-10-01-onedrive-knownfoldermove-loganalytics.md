@@ -21,6 +21,8 @@ Using [Log Analytics in Azure Monitor](https://docs.microsoft.com/en-us/azure/az
 
 ## Collecting the Data
 
+There some important details from managed endpoints that we want to collect to create a useful report.
+
 ### Determine the location of User Folders
 
 To plan an implementation of Known Folder Move, we want to see how much data users are storing locally before turning this feature on. To do that we need a script that collects the total sizes of the Documents, Desktop and Pictures folders.
@@ -90,12 +92,16 @@ There are three values with interesting data:
 
 If Known Folder Move is enabled, `KfmFoldersProtectedNow` will have a value of `3584` - any other value should be flagged so that we can report on whether all three folders are protected. `KfmFoldersProtectedNow` has the following possible values:
 
-|           | Redirected | Redirected | Redirected | Redirected | Redirected | Redirected | Redirected |
-| --------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| Desktop   | No         | Yes        | No         | No         | Yes        | No         | Yes        |
-| Documents | No         | No         | Yes        | No         | Yes        | Yes        | Yes        |
-| Pictures  | No         | No         | No         | Yes        | No         | Yes        | Yes        |
-| Value     | **0**      | **512**    | **1024**   | **2048**   | **2526**   | **3072**   | **3584**   |
+| Desktop | Documents | Pictures | Value |
+| ------- | --------- | -------- | ----- |
+| No      | No        | No       | 0     |
+| Yes     | No        | No       | 512   |
+| No      | Yes       | No       | 1024  |
+| No      | No        | Yes      | 2048  |
+| Yes     | Yes       | No       | 1536  |
+| Yes     | No        | Yes      | 2560  |
+| No      | Yes       | Yes      | 3072  |
+| Yes     | Yes       | Yes      | 3584  |
 
 ## Creating the Report
 
