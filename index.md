@@ -18,7 +18,7 @@ I have experience with primarily Microsoft, Citrix and VMware-based solutions an
 I maintain a couple of popular open source projects:
 
 * [Evergreen](https://stealthpuppy.com/evergreen/) - Evergreen is a PowerShell module that returns the latest version and download URLs for a set of common Windows applications
-* [VcRedist](https://stealthpuppy.com/vcredist/) - VcRedist is a PowerShell module for lifecycle management of the Microsoft Visual C++ Redistributables
+* [VcRedist](https://vcredist.com/) - VcRedist is a PowerShell module for lifecycle management of the Microsoft Visual C++ Redistributables
 
 ## Awards
 

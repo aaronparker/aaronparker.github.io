@@ -24,7 +24,7 @@ navbar-links:
     - Posts: "/posts/"
     - Tags: "/tags/"
   Evergreen: "https://stealthpuppy.com/evergreen/"
-  VcRedist: "https://stealthpuppy.com/vcredist"
+  VcRedist: "https://vcredist.com"
   More Docs...:
     - FSLogix: "https://stealthpuppy.com/fslogix"
     - Packer: "https://stealthpuppy.com/packer/"
