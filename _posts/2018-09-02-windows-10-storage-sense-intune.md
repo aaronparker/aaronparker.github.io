@@ -124,6 +124,6 @@ Storage Sense shows you how much disk capacity has been cleaned in the previous 
 
 You'll find the registry value (20180901) in this key:
 
-```
+```powershell
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\StoragePolicy\SpaceHistory
 ```

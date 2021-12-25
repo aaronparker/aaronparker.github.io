@@ -66,7 +66,7 @@ Registered UE-V templates can also differ across desktops. A Windows 10 virtual 
 
 ### Roaming Office and Office 365 ProPlus
 
-The in-box templates for UE-V includes [templates for Office that define the Microsoft validated settings for Office applications](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-synchronizing-microsoft-office-with-uev) and will roam practially all Office preferences. These templates can be used with the Volume License edition of Office as well as Office 365 ProPlus.
+The in-box templates for UE-V includes [templates for Office that define the Microsoft validated settings for Office applications](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-synchronizing-microsoft-office-with-uev) and will roam practically all Office preferences. These templates can be used with the Volume License edition of Office as well as Office 365 ProPlus.
 
 Where Office 365 ProPlus is deployed, enable either UE-V or Office 365 for roaming of user settings. Office 365 ProPlus [roams a selection of user settings](https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/jj733593(v=office.15)#what-are-roaming-settings), some of which roam across macOS, iOS and Android as well. UE-V is a Windows only feature - if you support multiple operating systems, consider letting Office 365 roam Office 365 ProPlus settings.
 

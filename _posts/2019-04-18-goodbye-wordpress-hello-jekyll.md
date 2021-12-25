@@ -14,7 +14,7 @@ tags:
 ---
 With a hosting renewal pending I thought it past time to migrate to a new platform for stealthpuppy.com. While I've found WordPress to be OK with plenty of support for extensibility through plug-ins, I'm not keen on paying for a blogging platform that I don't actively make an income from, nor do I want to deal with the hassle of a multi-tier platform using MySQL, PHP and WordPress itself.
 
-Over the past week or so, I've migrated stealthpuppy.com from WordPress to [Jeykll](https://jekyllrb.com/) and to say that I'm impressed with the results is a massive understatement. The affect on the performance of my site has been phenomenal.
+Over the past week or so, I've migrated stealthpuppy.com from WordPress to [Jekyll](https://jekyllrb.com/) and to say that I'm impressed with the results is a massive understatement. The affect on the performance of my site has been phenomenal.
 
 In this article, I'll give you an idea of how I migrated from WordPress to Jekyll, the challenges I experienced and an overview how I've built the new stealthpuppy.com.
 
@@ -36,13 +36,13 @@ So a failing site and the prospect of having be locked in for another 12-36 mont
 
 ## Why Jekyll
 
-I'd looked at Jekyll a couple of years ago and have seen enough other sites built on Jeykll to pique my interest. Additionally having been on [GitHub for some time]({{site.baseurl}}/signing-git-commits-for-sweet-verified-badges/), leveraging GitHub Pages to host my site for free, was hard to pass up. Manging my entire site in a Git repository and [being able to serve it up locally for testing](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll#step-4-build-your-local-jekyll-site) are immensely powerful.
+I'd looked at Jekyll a couple of years ago and have seen enough other sites built on Jekyll to pique my interest. Additionally having been on [GitHub for some time]({{site.baseurl}}/signing-git-commits-for-sweet-verified-badges/), leveraging GitHub Pages to host my site for free, was hard to pass up. Managing my entire site in a Git repository and [being able to serve it up locally for testing](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll#step-4-build-your-local-jekyll-site) are immensely powerful.
 
 ### Markdown All the Things
 
-I'm loving writing content in Markdown. I've been using it for my [docs site](https://docs.stealthpuppy.com/docs/) for some time. Writing articles in plain text frees you to concentrate on content and let Jekyll worry about the formatting. Once your content is in Markdown (i.e plain text), deploying Jekyll to GitHub Pages is so simple. Additionally, I could choose to deploy to an Azure Storage Account or even migrate from Jekyll to something else (e.g [Hugo](https://gohugo.io/)) without having to reformat the content.
+I'm loving writing content in Markdown. I've been using it for documenting various projects for some time. Writing articles in plain text frees you to concentrate on content and let Jekyll worry about the formatting. Once your content is in Markdown (i.e plain text), deploying Jekyll to GitHub Pages is so simple. Additionally, I could choose to deploy to an Azure Storage Account or even migrate from Jekyll to something else (e.g [Hugo](https://gohugo.io/)) without having to reformat the content.
 
-A couple of great benefits with basing content on Markdown with Jeykll, is that I no longer need plugins to format code or maintain tables, as these are natively handled by Markdown and formatted by Jeykll.
+A couple of great benefits with basing content on Markdown with Jekyll, is that I no longer need plugins to format code or maintain tables, as these are natively handled by Markdown and formatted by Jekyll.
 
 ## Getting out of WordPress
 
@@ -56,7 +56,7 @@ I did grab a few additional items from the old site via CPanel including some re
 
 Once I could run the export from WordPress, I was then left with a Jekyll export folder:
 
-![Jeykll export folder]({{site.baseurl}}/media/2019/04/Jekyll-Export-Folder.png)
+![Jekyll export folder]({{site.baseurl}}/media/2019/04/Jekyll-Export-Folder.png)
 
 ## Working with Jekyll
 
@@ -83,7 +83,7 @@ As far as I could tell, the switch was pretty much seamless. Other than having t
 
 ### Optimising Images
 
-WordPress generates several image sizes when uploading them (e.g. screenshots). Now in Jeykll, I rely on a single image only and have done away with thumbnails etc. Additionally, I've run PNGOUT across most images to ensure they are optimised for size. Here's the basic PowerShell commands I used to removed unneeded thumbnails and optimise images:
+WordPress generates several image sizes when uploading them (e.g. screenshots). Now in Jekyll, I rely on a single image only and have done away with thumbnails etc. Additionally, I've run PNGOUT across most images to ensure they are optimised for size. Here's the basic PowerShell commands I used to removed unneeded thumbnails and optimise images:
 
 ```powershell
 Get-ChildItem -Path .\ -Recurse -Include *thumb.jpg | Select FullName | % { Remove-Item -Path $_.FullName -Verbose }
@@ -98,11 +98,11 @@ I use [ImageOptim](https://imageoptim.com/mac) to optimise PNG and JPG media as 
 
 Apart from the aforementioned ImageOptim, here's what I'm using to write an maintain my site:
 
-* Git / [GitHub Desktop](https://desktop.github.com/) - the site is now maintained in a Git respository hosted on GitHub and served from GitHub Pages, thus I have a framework to version the site and track changes. My site is now code.
+* Git / [GitHub Desktop](https://desktop.github.com/) - the site is now maintained in a Git repository hosted on GitHub and served from GitHub Pages, thus I have a framework to version the site and track changes. My site is now code.
 * [iA Writer](https://ia.net/writer/) - while VSCode is great for Markdown, a dedicated Markdown writing app provides a few extra features including spell check and tools to add Markdown elements that I haven't memorised yet
-* [Visual Studio Code](https://code.visualstudio.com/) - I use this for all my code on macOS or Windows and a Jekyll site now fits within the same workflow. VSCode supports Markdown out of the box and of course supports Ruby and YAML used by Jeykll. A [markdownlint extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) helps with ensure that your Markdown is clean.
+* [Visual Studio Code](https://code.visualstudio.com/) - I use this for all my code on macOS or Windows and a Jekyll site now fits within the same workflow. VSCode supports Markdown out of the box and of course supports Ruby and YAML used by Jekyll. A [markdownlint extension](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) helps with ensure that your Markdown is clean.
 
-When it comes to [find and replace with Visual Studio Code](https://medium.com/@mykeels/find-and-replace-in-visual-studio-code-864d9d7efbd8), you'll need to leverage RegEx to get the most out of it. You can searach within a file and also search across multiple files at the same time.
+When it comes to [find and replace with Visual Studio Code](https://medium.com/@mykeels/find-and-replace-in-visual-studio-code-864d9d7efbd8), you'll need to leverage RegEx to get the most out of it. You can search within a file and also search across multiple files at the same time.
 
 [![Find and replace in Visual Studio Code]({{site.baseurl}}/media/2019/04/VisualStudioCode-RegEx.png)]({{site.baseurl}}/media/2019/04/VisualStudioCode-RegEx.png)
 
@@ -116,7 +116,7 @@ That's probably OK on a broadband connection with a modern PC. Still, a performa
 
 ![Page performance result on Jekyll]({{site.baseurl}}/media/2019/04/PerformanceAfter.png)
 
-The new site receives a performance grade upgrade with an impressive reduction in page size, load time and the number of HTTP requests to load the page. Giving this some thought, I believe this is due to a number of improvments including a removal of header images I was using on WordPress, less JavaScript from WordPress add-ins and the removal of a couple of other items including advertisments.
+The new site receives a performance grade upgrade with an impressive reduction in page size, load time and the number of HTTP requests to load the page. Giving this some thought, I believe this is due to a number of improvements including a removal of header images I was using on WordPress, less JavaScript from WordPress add-ins and the removal of a couple of other items including advertisements.
 
 Both of these results have tested the site behind Cloudflare. Testing directly against GitHub Pages actually show a performance improvement, but there's good reasons to keep the site on Cloudflare that I'll cover later in this article.
 
@@ -179,8 +179,8 @@ If you also want to free yourself from WordPress and build a blog site based on 
 
 * Time - migration will be time consuming process, especially if you have many years worth of content
 * Performance - the results speak for themselves, so investing the time is likely worth it
-* Maintenance - on the whole, I believe that I now have a site that's easier to maintain, but my approach to the site has had to change. Arguably I need to know more about Jeykll that I know about the workings of WordPress. I can treat the site as code though, just like I have been doing with a number of PowerShell projects
+* Maintenance - on the whole, I believe that I now have a site that's easier to maintain, but my approach to the site has had to change. Arguably I need to know more about Jekyll that I know about the workings of WordPress. I can treat the site as code though, just like I have been doing with a number of PowerShell projects
 * Backup - I no longer need to maintain a backup plugin. Instead stealthpuppy.com exists in a Git repository on GitHub with a copy locally that is backed up by Time Machine
-* Portability - my content now exists in its most portable form which means that I'm less tied to the platform and can choose something other than Jeykll. Right now though, unless I pay for GitHub, my site is also portable for anyone - the entire site is downloadable from the repository in a single zip file
+* Portability - my content now exists in its most portable form which means that I'm less tied to the platform and can choose something other than Jekyll. Right now though, unless I pay for GitHub, my site is also portable for anyone - the entire site is downloadable from the repository in a single zip file
   * I may look into [hosting the site on an Azure Storage account](https://www.forevolve.com/en/articles/2018/07/10/how-to-deploy-and-host-a-jekyll-website-in-azure-blob-storage-using-a-vsts-continuous-deployment-pipeline-part-1/), which could provide some additional flexibility
 * Cost - this one is easy - what's better than $0?

@@ -66,7 +66,7 @@ Once deployed, devices must then [rely on auto-updates](https://docs.citrix.com/
 
 With the right tools and a bit of effort, Citrix Workspace app can be [re-packaged into a single Windows Installer file](https://configmgrblog.com/2017/08/29/how-to-deploy-the-citrix-receiver-for-windows-10-via-microsoft-intune/). Once you've packaged the app with this method you'll need to maintain the package and update it regularly. As with the PowerShell method though, [auto-updates](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows/configure/receiver-update.html) will keep Workspace app up-to-date once deployed.
 
-Is this approach right for you? This requires maintaining and deploying a custom package and is dependent on how the environment is managed and available skillsets. Only you can answer that for your projects or environments. A custom package isn't ideal and I recommend using the Microsoft Store version as the default approach instead.
+Is this approach right for you? This requires maintaining and deploying a custom package and is dependent on how the environment is managed and available skill sets. Only you can answer that for your projects or environments. A custom package isn't ideal and I recommend using the Microsoft Store version as the default approach instead.
 
 ![Citrix Workspace app extracted Windows Installer files]({{site.baseurl}}/media/2018/08/CitrixWorkspace-Extracted.png)*Citrix Workspace app extracted Windows Installer files*
 

@@ -5,12 +5,16 @@
         "APAC",
         "helaili",
         "HKEY",
+        "HSTS",
         "Insentra",
         "knownfoldermove",
         "kusto",
         "linkedin",
         "loganalytics",
         "onedrive",
-        "Remediations"
+        "PNGOUT",
+        "Reciever",
+        "Remediations",
+        "seperate"
     ]
 }

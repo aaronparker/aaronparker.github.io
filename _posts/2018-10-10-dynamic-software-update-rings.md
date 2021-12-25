@@ -19,7 +19,7 @@ tags:
 ---
 Microsoft Intune provides management of [Window 10 Update Rings](https://docs.microsoft.com/en-us/intune/windows-update-for-business-configure) to enable [Windows as a Service](https://docs.microsoft.com/en-us/windows/deployment/update/waas-overview#servicing-channels), via the Software Updates feature. This enrols a Windows PC into Windows Update for Business to manage feature and quality updates the device receives and how quickly it updates to a new release. As you scale the number of devices managed by Microsoft Intune, the need to manage the software update or [deployment rings](https://blog.juriba.com/windows-10-deployment-rings) is key to adopting Windows 10 successfully. Being able to do so dynamically and empowering end-users by involving them in the process sounds like an idea that's just crazy enough to work. This article details an approach to achieve dynamic software update rings.
 
-## Dynamic Groups 
+## Dynamic Groups
 
 Azure AD Premium includes [Dynamic Device and User groups](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-create-rule) whose membership can change, well dynamically. This feature enables us to apply software update rings to dynamic groups where the membership can be based on just about any user or device property that suits our needs.
 
@@ -29,9 +29,9 @@ In most cases, applying Windows 10 Update Rings to devices, rather than users, i
 
 For the purposes of illustration, I've created a basic approach to update rings with the 3 rings show here:
 
-  * Semi-Annual Channel - we need a catch-all ring applied to All Devices. If our dynamic groups that are based on a device property don't catch a device, it won't get the correct update ring applied. This approach ensures that by default, a device is treated as generally production ready be being enrolled in the Semi-Annual Channel to receive well tested updates. This ring is assigned to All Devices, while _excluding_ Azure AD dynamic groups assigned to all other rings
-  * Semi-Annual Channel (Targeted) - here devices are enrolled for a pilot ring so that the latest Windows 10 release can be tested before rolling out the majority of PCs. This ring applies to a specific Azure AD dynamic group
-  * Windows Insider - to preview upcoming Windows 10 releases it's important to be enrolled in the Windows Insider program. This ring applies to a specific Azure AD dynamic group
+    * Semi-Annual Channel - we need a catch-all ring applied to All Devices. If our dynamic groups that are based on a device property don't catch a device, it won't get the correct update ring applied. This approach ensures that by default, a device is treated as generally production ready be being enrolled in the Semi-Annual Channel to receive well tested updates. This ring is assigned to All Devices, while _excluding_ Azure AD dynamic groups assigned to all other rings
+    * Semi-Annual Channel (Targeted) - here devices are enrolled for a pilot ring so that the latest Windows 10 release can be tested before rolling out the majority of PCs. This ring applies to a specific Azure AD dynamic group
+    * Windows Insider - to preview upcoming Windows 10 releases it's important to be enrolled in the Windows Insider program. This ring applies to a specific Azure AD dynamic group
 
 My update rings in this example are quite simple, but the approach can be customised for specific environments and needs.
 
@@ -65,21 +65,21 @@ Now that we have Update rings in place and an approach assigning them via Dynami
 
 For these devices groups, the membership rules are:
 
-  * Devices-Production: `(device.deviceCategory -eq "Production") -or (device.deviceCategory -eq "Unknown")`
-  * Devices-Pilot: `(device.deviceCategory -eq "Pilot")`
-  * Devices-Preview: `(device.deviceCategory -eq "Preview")`
+    * Devices-Production: `(device.deviceCategory -eq "Production") -or (device.deviceCategory -eq "Unknown")`
+    * Devices-Pilot: `(device.deviceCategory -eq "Pilot")`
+    * Devices-Preview: `(device.deviceCategory -eq "Preview")`
 
 We can take this a step further and account for corporate vs. personal devices. Where users can enrol personal devices and you would prefer not to deploy Software update policies to them, membership can be filtered further. Using an advanced membership rule, update the group membership with:
 
-  * Devices-Production: `((device.deviceCategory -eq "Production") -or (device.deviceCategory -eq "Unknown")) -and (device.deviceOwnership -eq "Company")`
-  * Devices-Pilot: `(device.deviceCategory -eq "Pilot") -and (device.deviceOwnership -eq "Company")`
-  * Devices-Preview: `(device.deviceCategory -eq "Preview") -and (device.deviceOwnership -eq "Company")`
+    * Devices-Production: `((device.deviceCategory -eq "Production") -or (device.deviceCategory -eq "Unknown")) -and (device.deviceOwnership -eq "Company")`
+    * Devices-Pilot: `(device.deviceCategory -eq "Pilot") -and (device.deviceOwnership -eq "Company")`
+    * Devices-Preview: `(device.deviceCategory -eq "Preview") -and (device.deviceOwnership -eq "Company")`
 
 With these groups created, assignments for my Software update rings are:
 
-  * Semi-Annual Channel - assign to All Devices and exclude Devices-Pilot and Devices-Preview. 
-  * Semi-Annual Channel (Targeted) - assign to Devices-Pilot
-  * Windows Insider - assign to Devices-Preview
+    * Semi-Annual Channel - assign to All Devices and exclude Devices-Pilot and Devices-Preview. 
+    * Semi-Annual Channel (Targeted) - assign to Devices-Pilot
+    * Windows Insider - assign to Devices-Preview
 
 When a category is assigned to a device, the dynamic group will [update at some point and the policy](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/groups-troubleshooting) will apply on a subsequent [device policy refresh](https://docs.microsoft.com/en-au/intune/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies).
 
@@ -91,9 +91,9 @@ The same approach can be used for deploying applications that provide preview ch
 
 The update rings I've implemented in my test environment include:
 
-  * Office 365 ProPlus Semi-Annual Channel or Semi-Annual Channel (Targeted) that is assigned to All Devices and excludes Devices-Pilot and Devices-Preview, we have a catch all Office deployment package that will go out to the majority of devices
-  * Office 365 ProPlus Semi-Annual Channel (Targeted) or Monthly Channel assigned to the Devices-Pilot group to receive the latest updates
-  * Office 365 ProPlus Monthly Channel (Targeted) assigned to the Devices-Preview group to test Office Insider updates for testing upcoming features
+    * Office 365 ProPlus Semi-Annual Channel or Semi-Annual Channel (Targeted) that is assigned to All Devices and excludes Devices-Pilot and Devices-Preview, we have a catch all Office deployment package that will go out to the majority of devices
+    * Office 365 ProPlus Semi-Annual Channel (Targeted) or Monthly Channel assigned to the Devices-Pilot group to receive the latest updates
+    * Office 365 ProPlus Monthly Channel (Targeted) assigned to the Devices-Preview group to test Office Insider updates for testing upcoming features
 
 Office 365 ProPlus then updates itself on the end-device based on the assigned channel. This actually works quite well for this application as you can pretty seamlessly move between channels as required.
 

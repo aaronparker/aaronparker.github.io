@@ -20,7 +20,7 @@ The default Start menu, especially on Windows 10 Pro, is far from enterprise rea
 
 ![Windows 10 Pro 1809 default Start menu]({{site.baseurl}}/media/2018/12/StartMenu.png)*Windows 10 Pro 1809 default Start menu*
 
-Over-the-air provisioning of PCs via Windows AutoPilot & Azure AD, Microsoft Intune (or insert your MDM solution here), limits the possibilities of customising the target PC before the user logs on. The administrator can [define a Start menu](https://docs.microsoft.com/en-us/windows/configuration/customize-windows-10-start-screens-by-using-mobile-device-management), but that's a policy, not a preference. One size does not fit all, and users should be able to customise the Start menu to suit their style. 
+Over-the-air provisioning of PCs via Windows AutoPilot & Azure AD, Microsoft Intune (or insert your MDM solution here), limits the possibilities of customising the target PC before the user logs on. The administrator can [define a Start menu](https://docs.microsoft.com/en-us/windows/configuration/customize-windows-10-start-screens-by-using-mobile-device-management), but that's a policy, not a preference. One size does not fit all, and users should be able to customise the Start menu to suit their style.
 
 UWP / Microsoft Store apps can be targeted for removal, but those apps won't be removed until well after login. Compounding the issue of default apps pinned to the Start menu is that some of them aren't actually installed, so removal won't occur until the Store downloads and installs updates. That can be hours after the user has provisioned the PC.
 

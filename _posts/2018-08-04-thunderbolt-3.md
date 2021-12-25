@@ -18,7 +18,7 @@ tags:
 ---
 Thunderbolt 3 and USB-C have arrived to make our life easier and more confusing all at the same time. The promise of a single cable that does everything is appealing but for the average consumer, knowing what to purchase is challenging. This article is a view into my research into Thunderbolt, USB-C and 4K monitors and what I've ultimately purchased.
 
-In an effort to reduce the clutter on my desk and improve my viewing experience for work, I've invested in a Thunderbolt 3 dock and a 4K monitor. This article isn't necessarily a review of this hardware - instead consider this a walkthrough of how I made these specific choices and my experiences with a Thunderbolt 3 dock. In a follow up article, I'll discuss Thunderbolt and high HPI experiences on macOS and Windows.
+In an effort to reduce the clutter on my desk and improve my viewing experience for work, I've invested in a Thunderbolt 3 dock and a 4K monitor. This article isn't necessarily a review of this hardware - instead consider this a walk-through of how I made these specific choices and my experiences with a Thunderbolt 3 dock. In a follow up article, I'll discuss Thunderbolt and high HPI experiences on macOS and Windows.
 
 ## The Quest for Less Clutter
 

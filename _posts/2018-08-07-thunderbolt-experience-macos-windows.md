@@ -34,7 +34,7 @@ Note that while the MacBook Pro with Touch Bar has 4 Thunderbolt 3 ports, these 
 
 ## Thunderbolt 3 on Windows
 
-Thunderbolt 3 [on Windows 10](https://www.microsoft.com/en-us/store/collections/thunderbolt-3)? That is unfortunately not so straight-forward. 
+Thunderbolt 3 [on Windows 10](https://www.microsoft.com/en-us/store/collections/thunderbolt-3)? That is unfortunately not so straight-forward.
 
 I've been testing connection to my dock on an [HP Elitebook x360 G2](http://h20386.www2.hp.com/AustraliaStore/Merch/Offer.aspx?p=elitebook-x360) that comes equipped with 2 x TB3 ports. The default Windows 10 image for this machine is an absolute mess that has a whole lot of software that isn't required. Resetting the machine back to defaults strips it right back to the bare essentials, excluding the Thunderbolt driver and software. After plugging in a TB device, it isn't recognised and no driver or software is downloaded from Windows Update. Interestingly, no driver or software was offered by the HP Support Assistant app designed to help end-users keep their HP PCs up to date.
 
@@ -44,7 +44,7 @@ With the software installed and a device plugged in, the user sees a message box
 
 ![Approving connection to TB devices on Windows 10]({{site.baseurl}}/media/2018/08/Thunderbolt-ApprovePopup.png)*Approving connection to TB devices on Windows 10*
 
-Once approved, the device can then be viewed and managed. 
+Once approved, the device can then be viewed and managed.
 
 ![Viewing attached TB devices on Windows 10]({{site.baseurl}}/media/2018/08/Thunderbolt-AttachedDevices.png)*Viewing attached TB devices on Windows 10*
 
