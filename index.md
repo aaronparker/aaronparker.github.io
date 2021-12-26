@@ -7,7 +7,7 @@ cover-img: [/assets/img/home.jpeg: Sailing on Port Phillip]
 ---
 ## About
 
-I've have about 25 years experience in IT and bring a wide range of experience in enterprise level end-user computing solutions, including server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
+I have 25+ years experience in IT and bring a wide range of experience in enterprise level end-user computing solutions, including server-based computing, Virtual Desktop Infrastructure, Mobility and PC deployments.
 
 At [Insentra](https://www.insentragroup.com) I'm the Principal Modern Workplace Architect responsible globally for methodology, pre-sales and technical designs of leading, enterprise modern workplace solutions.
 
