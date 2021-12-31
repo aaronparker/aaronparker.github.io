@@ -1,10 +1,10 @@
 ---
-id: 800
+
 title: 'SVR203: Windows Server 2008 R2: Work Anywhere Infrastructure'
 date: 2008-11-05T13:49:54+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/terminal-server/svr203-windows-server-2008-r2-work-anywhere-infrastructure
+
 permalink: /svr203-windows-server-2008-r2-work-anywhere-infrastructure/
 dsq_thread_id:
   - "195381249"

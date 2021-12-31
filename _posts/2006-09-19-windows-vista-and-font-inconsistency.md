@@ -1,10 +1,10 @@
 ---
-id: 181
+
 title: Windows Vista and Font Inconsistency
 date: 2006-09-19T06:53:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/windows-vista-and-font-inconsistency
+
 permalink: /windows-vista-and-font-inconsistency/
 categories:
   - Microsoft

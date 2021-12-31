@@ -1,10 +1,10 @@
 ---
-id: 105
+
 title: 'Link: Microsoft Cluster Configuration Validation Wizard'
 date: 2007-02-07T04:51:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/link-microsoft-cluster-configuration-validation-wizard
+
 permalink: /link-microsoft-cluster-configuration-validation-wizard/
 categories:
   - Microsoft

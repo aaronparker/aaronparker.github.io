@@ -1,10 +1,10 @@
 ---
-id: 103
+
 title: "Software Quality? What's that?"
 date: 2007-02-13T20:49:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/software-quality-whats-that
+
 permalink: /software-quality-whats-that/
 categories:
   - Applications

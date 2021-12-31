@@ -1,10 +1,10 @@
 ---
-id: 200
+
 title: Profile Changes in Windows Vista and Windows Server 2008 and beyond
 date: 2006-08-25T06:08:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/profile-changes-in-windows-vistalonghorn-server
+
 permalink: /profile-changes-in-windows-vistalonghorn-server/
 categories:
   - Microsoft

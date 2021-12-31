@@ -1,10 +1,10 @@
 ---
-id: 372
+
 title: Enable Streaming from File in SoftGrid 4.5
 date: 2007-11-16T11:26:42+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/enable-streaming-from-file-in-softgrid-45
+
 permalink: /enable-streaming-from-file-in-softgrid-45/
 dsq_thread_id:
   - "195379739"

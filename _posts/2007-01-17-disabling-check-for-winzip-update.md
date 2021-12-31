@@ -1,10 +1,10 @@
 ---
-id: 121
+
 title: 'Disabling "Check for WinZip Update"'
 date: 2007-01-17T20:39:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/disabling-check-for-winzip-update
+
 permalink: /disabling-check-for-winzip-update/
 categories:
   - Automation

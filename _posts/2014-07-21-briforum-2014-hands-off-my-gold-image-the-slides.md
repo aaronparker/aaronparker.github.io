@@ -1,10 +1,10 @@
 ---
-id: 3638
+
 title: BriForum 2014 - Hands Off My Gold Image! The Slides
 date: 2014-07-21T20:31:34+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=3638
+
 permalink: /briforum-2014-hands-off-my-gold-image-the-slides/
 dsq_thread_id:
   - "2862051917"

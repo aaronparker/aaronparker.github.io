@@ -1,10 +1,10 @@
 ---
-id: 150
+
 title: Hotfix 5 for Advanced Access Control 4.2
 date: 2006-11-22T17:30:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/hotfix-5-for-advanced-access-control-42
+
 permalink: /hotfix-5-for-advanced-access-control-42/
 categories:
   - Citrix

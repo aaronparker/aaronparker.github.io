@@ -1,16 +1,21 @@
 ---
 layout: post
 title: Planning for OneDrive Known Folder Move with Azure Log Analytics
+description: Use PowerShell, Azure Log Analytics, and Microsoft Intune Endpoint Analytics Proactive Remediations to collect data from endpoints to assist in migrating folders to OneDrive.
 date: 2021-10-02 12:00 +1000
 permalink: "/onedrive-knownfoldermove-loganalytics/"
+image:
+  path:    /assets/img/folder/image.jpg
+  srcset:
+    1920w: /assets/img/folder/image.jpg
+    960w:  /assets/img/folder/image@0,5x.jpg
+    480w:  /assets/img/folder/image@0,25x.jpg
 categories:
 - Microsoft
-tags:
-- OneDrive
-- Intune
-- Azure
-- Log Analytics
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Knowing how much data you've got in the wild to move into OneDrive for Business is easy if it's all stored on a file server. What happens if your user's Desktop, Documents and Pictures folders are stored locally on their physical PCs?
 
 Having information on how much data needs to be migrated into OneDrive will better assist planning the adoption of [Known Folder Move](https://docs.microsoft.com/en-us/onedrive/redirect-known-folders).
@@ -18,6 +23,9 @@ Having information on how much data needs to be migrated into OneDrive will bett
 Using [Log Analytics in Azure Monitor](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-overview) is a simple, ubiquitous tool that provides a framework for reporting on this data. You just need a method to get the data from managed Windows PCs into Azure Monitor. With the data in Log Analytics, you can then create some useful workbooks:
 
 [![OneDrive Known Folder Move workbook in Azure Monitor]({{site.baseurl}}/media/2021/10/OneDriveWorkbook1.jpeg)]({{site.baseurl}}/media/2021/10/OneDriveWorkbook1.jpeg)
+
+The OneDrive Known Folder Move workbook
+{:.figcaption}
 
 ## Collecting the Data
 
@@ -36,6 +44,9 @@ There are multiple methods of determining where these folders are located. The m
 [System.Environment]::GetFolderPath("Desktop")
 [System.Environment]::GetFolderPath("MyPictures")
 ```
+
+Known folder paths with PowerShell
+{:.figcaption}
 
 However, if these folders are already redirected into the OneDrive sync folder, then that's the path that is returned. Good for validating whether Known Folder Move is already enabled, but not great for working out directory sizes before migration. Additionally, if using this method, you may want to ensure that standard folder redirection to a network share has not been enabled before progressing further.
 
@@ -78,6 +89,9 @@ Function Get-DirectorySize ($Path) {
 }
 ```
 
+Determine a target path size with PowerShell
+{:.figcaption}
+
 ### Collect OneDrive Known Folder Move status
 
 To round out the report, it's worth collecting additional information about the status of the OneDrive client and Known Folder Move from target endpoints. This is done by collecting a few registry values.
@@ -93,7 +107,7 @@ There are three values with interesting data:
 If Known Folder Move is enabled, `KfmFoldersProtectedNow` will have a value of `3584` - any other value should be flagged so that we can report on whether all three folders are protected. `KfmFoldersProtectedNow` has the following possible values:
 
 | Desktop | Documents | Pictures | Value |
-| ------- | --------- | -------- | ----- |
+|:-------:|:---------:|:--------:|:-----:|
 | No      | No        | No       | 0     |
 | Yes     | No        | No       | 512   |
 | No      | Yes       | No       | 1024  |
@@ -102,6 +116,10 @@ If Known Folder Move is enabled, `KfmFoldersProtectedNow` will have a value of `
 | Yes     | No        | Yes      | 2560  |
 | No      | Yes       | Yes      | 3072  |
 | Yes     | Yes       | Yes      | 3584  |
+{:.stretch-table}
+
+Possible values for `KfmFoldersProtectedNow`
+{:.figcaption}
 
 ## Creating the Report
 
@@ -114,6 +132,9 @@ To use Azure Monitor and create a [Log Analytics workspace](https://docs.microso
 It's also worth sending your [Microsoft Endpoint Manager diagnostics logs](https://docs.microsoft.com/en-us/mem/intune/fundamentals/review-logs-using-azure-monitor) to Log Analytics. Building custom solutions on top of Log Analytics, such as this approach to monitoring user data, and importing the into the same Log Analytics workspace will allow you to cross reference device information in your reports.
 
 [![Configuring Microsoft Intune diagnostic settings]({{site.baseurl}}/media/2021/10/IntuneDiagnostics.png)]({{site.baseurl}}/media/2021/10/IntuneDiagnostics.png)
+
+Configuring diagnostic settings in Microsoft Endpoint Manager to send diagnostics to an Azure Log Analytics workspace.
+{:.figcaption}
 
 ### Importing data into Azure Monitor
 
@@ -196,6 +217,9 @@ Function Send-LogAnalyticsData ($CustomerId, $SharedKey, $Body, $LogType) {
 }
 ```
 
+Functions to post data to Azure Log Analytics
+{:.figcaption}
+
 ### Endpoint Analytics Proactive Remediations
 
 I've put together a script that will determine user folder sizes, gather OneDrive information, and post this data to a Log Analytics workspace: [Invoke-UserFolderStats.ps1](https://gist.github.com/aaronparker/74fae5b7887b4e46040a6adc194ab383). You'll need to update the script parameters with the workspace Id and the workspace shared key (using the workspace primary or secondary key), so that the script can authenticate to the Data Collector API:
@@ -223,7 +247,10 @@ A full listing of the script can be found here:
 
 Running the script on managed endpoints is straight-forward - use [Endpoint Analytics Proactive Remediations](https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations) if you are using a modern management approach with Microsoft Intune. Ensure you run the script with `Run this script using the logged-on credentials` enabled.
 
-[![Running the script with Proactive Remediation]({{site.baseurl}}/media/2021/10/ProactiveRemediationScript.jpeg)]({{site.baseurl}}/media/2021/10/ProactiveRemediationScript.jpeg)
+[![Running the script with Proactive Remediations]({{site.baseurl}}/media/2021/10/ProactiveRemediationScript.jpeg)]({{site.baseurl}}/media/2021/10/ProactiveRemediationScript.jpeg)
+
+Running the script with Proactive Remediations
+{:.figcaption}
 
 Schedule the script to run once every 24 hours, which should be enough to capture metrics. If you really want to run the script more often, first consider the potential impact on storage performance.
 
@@ -232,6 +259,9 @@ Schedule the script to run once every 24 hours, which should be enough to captur
 With the data collected and sent to the Log Analytics workspace, we can now build an [Azure Monitor workbook](https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview) to display the data in a useable format.
 
 [![Known Folder Move status report]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus.jpeg)]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus.jpeg)
+
+Known Folder Move status report
+{:.figcaption}
 
 If you're new to Azure Monitor workbooks, then be prepared to learn [Kusto Query Language](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/) (KQL). KQL queries provide the workbook data to visualise, turning it into useful information.
 
@@ -246,6 +276,9 @@ UserFolders_CL
 | summarize sum(DocumentsSize)
 ```
 
+Kusto query to report on total size of all user's Documents folders
+{:.figcaption}
+
 Here's a query that lists the top 5 Documents folder by size. This should let you know which users you may need to treat carefully when enabling Known Folder Move.
 
 ```kusto
@@ -258,6 +291,9 @@ UserFolders_CL
 | limit 5
 ```
 
+Kusto query to the top 5 Documents folders by size
+{:.figcaption}
+
 To see complete details about user folders from your managed endpoints, the following query will display a table with user folder and Known Folder Move status from managed endpoints:
 
 ```kusto
@@ -268,9 +304,15 @@ UserFolders_CL
 | project TimeGenerated, Computer=ComputerName_s, User=UserEmail_s, KfmEnabled=KfmEnabled_b, DesktopSize=DesktopSizeMb_d, DocumentsSize=DocumentsSizeMb_d, PicturesSize=PicturesSizeMb_d, ScriptElapsed=GatherElapsedSec_d
 ```
 
+Kusto query to list details gathered across all managed endpoints
+{:.figcaption}
+
 Here's another example of the table (or grid) view. In this view, I've formatted the `KfmEnabled` column with [Thresholds](https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-grid-visualizations#grid-styling) so that a green tick is displayed if Known Folder Move is enabled for all folders, or a warning if not. Additionally, the `DesktopSize`, `DocumentsSize`, and `PicturesSize` columns display as a heatmap making it easier to identify the largest folders in your environment.
 
 [![Known Folder Move status report]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus2.jpeg)]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus2.jpeg)
+
+Known Folder Move status report
+{:.figcaption}
 
 Here's the code for the entire workbook that you can copy directly into a new workbook in your target Log Analytics workspace. If you make some improvements to the workbook be sure to let me know what you've updated.
 

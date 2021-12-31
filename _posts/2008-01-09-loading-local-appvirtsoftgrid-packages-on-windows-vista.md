@@ -1,10 +1,10 @@
 ---
-id: 413
+
 title: Loading Local AppVirt/SoftGrid Packages on Windows Vista
 date: 2008-01-09T18:38:36+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/loading-local-appvirtsoftgrid-packages-on-windows-vista
+
 permalink: /loading-local-appvirtsoftgrid-packages-on-windows-vista/
 categories:
   - Microsoft
@@ -23,7 +23,7 @@ An alternative method is to elevate an Explorer window and then load the applica
 
   1. Enable launching Explorer windows in a separate process: Organize > Folder and Search Options > View > Launch folder windows in a separate process.
   2. Run an elevated EXPLORE.EXE process: Hit Start, enter 'Windows Explorer', hold Ctrl-Alt and hit Enter, acknowledge the UAC dialogue box.
-  3. From the elevated Windows Explorer window, right click the OSD file and click Load. VoilÃ !
+  3. From the elevated Windows Explorer window, right click the OSD file and click Load. VoilÃ !
 
 You might think this long-winded but it works pretty well. I have noticed however that attempting to launch the application from the same elevated Explorer window results in the application hanging at launch. Quite odd.
 

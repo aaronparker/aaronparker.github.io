@@ -1,10 +1,10 @@
 ---
-id: 377
+
 title: 'SoftGrid: Sequencing Adobe Acrobat 8 - The Story So Far'
 date: 2007-11-27T17:45:38+10:00
 author: Aaron Parker
 layout: post
-guid: 'http://blog.stealthpuppy.com/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far'
+
 permalink: /softgrid-sequencing-adobe-acrobat-8-the-story-so-far/
 dsq_thread_id:
   - "195379780"

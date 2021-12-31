@@ -1,10 +1,10 @@
 ---
-id: 204
+
 title: The Windows Network Status Icon is Evil
 date: 2006-08-25T06:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/the-windows-network-status-icon-is-evil
+
 permalink: /the-windows-network-status-icon-is-evil/
 categories:
   - Microsoft

@@ -1,10 +1,10 @@
 ---
-id: 1163
+
 title: Use a PAC file to make proxy settings dynamic
 date: 2009-06-23T22:02:47+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1163
+
 permalink: /use-a-pac-file-to-make-proxy-settings-dynamic/
 aktt_notify_twitter:
   - 'yes'

@@ -1,10 +1,10 @@
 ---
-id: 61
+
 title: Error with OUTLK12.ADM
 date: 2007-04-17T20:28:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/error-with-outlk12adm
+
 permalink: /error-with-outlk12adm/
 views:
   - "1"

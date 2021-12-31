@@ -1,10 +1,10 @@
 ---
-id: 85
+
 title: Customising the Presentation Server Client Installation Part 1
 date: 2007-03-11T01:08:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/customising-the-presentation-server-client-installation-part-1
+
 permalink: /customising-the-presentation-server-client-installation-part-1/
 categories:
   - Automation

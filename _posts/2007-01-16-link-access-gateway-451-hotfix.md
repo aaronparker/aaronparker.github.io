@@ -1,10 +1,10 @@
 ---
-id: 122
+
 title: 'Link: Access Gateway 4.5.1 Hotfix'
 date: 2007-01-16T17:42:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/link-access-gateway-451-hotfix
+
 permalink: /link-access-gateway-451-hotfix/
 categories:
   - Citrix

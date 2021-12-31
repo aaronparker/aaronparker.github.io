@@ -1,10 +1,10 @@
 ---
-id: 98
+
 title: Intel Graphics and the Dynamically Generated DLL
 date: 2007-02-22T23:49:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/intel-graphics-and-the-dynamically-generated-dll
+
 permalink: /intel-graphics-and-the-dynamically-generated-dll/
 dsq_thread_id:
   - "195378696"

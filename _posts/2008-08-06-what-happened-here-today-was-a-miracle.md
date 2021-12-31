@@ -1,10 +1,10 @@
 ---
-id: 637
+
 title: What happened here today was a miracle
 date: 2008-08-06T09:22:24+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/applications/what-happened-here-today-was-a-miracle
+
 permalink: /what-happened-here-today-was-a-miracle/
 dsq_thread_id:
   - "195380913"

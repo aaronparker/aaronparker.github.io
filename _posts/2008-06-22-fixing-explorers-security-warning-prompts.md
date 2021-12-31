@@ -1,10 +1,10 @@
 ---
-id: 588
+
 title: Fixing Windows Explorer security warning prompts
 date: 2008-06-22T22:11:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=588
+
 permalink: /fixing-explorers-security-warning-prompts/
 dsq_thread_id:
   - "195380731"

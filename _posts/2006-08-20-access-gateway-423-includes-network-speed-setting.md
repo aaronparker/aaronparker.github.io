@@ -1,10 +1,10 @@
 ---
-id: 212
+
 title: Access Gateway 4.2.3 Includes Network Speed Setting
 date: 2006-08-20T23:56:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/access-gateway-423-includes-network-speed-setting
+
 permalink: /access-gateway-423-includes-network-speed-setting/
 categories:
   - Citrix

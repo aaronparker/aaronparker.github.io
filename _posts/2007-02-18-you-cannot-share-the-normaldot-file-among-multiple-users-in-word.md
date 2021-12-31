@@ -1,10 +1,10 @@
 ---
-id: 101
+
 title: You cannot share the Normal.dot file among multiple users in Word
 date: 2007-02-18T18:20:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/you-cannot-share-the-normaldot-file-among-multiple-users-in-word
+
 permalink: /you-cannot-share-the-normaldot-file-among-multiple-users-in-word/
 dsq_thread_id:
   - "195378719"

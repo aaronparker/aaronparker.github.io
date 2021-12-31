@@ -1,10 +1,10 @@
 ---
-id: 1870
+
 title: 'App-V FAQ: How do I get an application into the App-V bubble for troubleshooting?'
 date: 2010-09-09T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1870
+
 permalink: /app-v-faq-27-how-do-i-get-an-application-into-the-app-v-bubble-for-troubleshooting/
 has_been_twittered:
   - 'yes'
@@ -24,7 +24,7 @@ This poses some challenges – how do you use troubleshooting tools such as [Pro
 
 ### The Old Way – editing OSD files
 
-The old method of launching an external application into the bubble was to edit an OSD file and add  [SCRIPT](http://support.microsoft.com/kb/939085) entry. In this example, CMD.EXE will be launched before the application (TIMING="PRE") and inside the bubble (PROTECT="TRUE").
+The old method of launching an external application into the bubble was to edit an OSD file and add  [SCRIPT](http://support.microsoft.com/kb/939085) entry. In this example, CMD.EXE will be launched before the application (TIMING="PRE") and inside the bubble (PROTECT="TRUE").
 
 ```xml
 <SCRIPT EVENT="LAUNCH" TIMING="PRE" PROTECT="TRUE" WAIT="TRUE" TIMEOUT="">  

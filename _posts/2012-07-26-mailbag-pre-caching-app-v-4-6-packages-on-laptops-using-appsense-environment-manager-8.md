@@ -1,10 +1,10 @@
 ---
-id: 2795
+
 title: 'Mailbag - Pre-caching App-V 4.6 packages on Laptops using AppSense Environment Manager 8'
 date: 2012-07-26T22:46:47+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2795
+
 permalink: /mailbag-pre-caching-app-v-4-6-packages-on-laptops-using-appsense-environment-manager-8/
 Hide SexyBookmarks:
   - "0"
@@ -22,7 +22,7 @@ tags:
 
 ![]({{site.baseurl}}/media/2012/07/RoryAsks.png)
 
-As with many solutions in Environment Manager, there's probably a number of ways to achieve this - here's just one.
+As with many solutions in Environment Manager, there's probably a number of ways to achieve this - here's just one.
 
 ## The Logic
 
@@ -65,7 +65,7 @@ End Function
 
 Add this to a **Reusable Condition** (or even an inline condition if you'd like) that includes this code as a Custom Condition. Make sure to set the Custom Condition **Type** to VBscript and enable 'Evaluate Once Per Session' and 'Run As System User'.
 
-Next up, you may want determine whether the client can contact the streaming source (what ever that is - App-V Management Server, App-V Streaming Server, HTTP or even a UNC path).  You could use native **Computer IP Address** condition and make the assumption that the remote host is available because the client is located in a known network, or [ping the remote host using PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2012/02/24/use-powershell-to-test-connectivity-on-remote-servers.aspx) in a **Custom Condition**. Alternatively an Active Directory Site Membership might suffice, however this may require listing all of your AD sites which isn't ideal.
+Next up, you may want determine whether the client can contact the streaming source (what ever that is - App-V Management Server, App-V Streaming Server, HTTP or even a UNC path).  You could use native **Computer IP Address** condition and make the assumption that the remote host is available because the client is located in a known network, or [ping the remote host using PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2012/02/24/use-powershell-to-test-connectivity-on-remote-servers.aspx) in a **Custom Condition**. Alternatively an Active Directory Site Membership might suffice, however this may require listing all of your AD sites which isn't ideal.
 
 For a Computer IP Address condition, choose Condition / Computer / Computer IP Address and configure the required IP range. Ensure that 'Evaluate Once Per Session' is **disabled** - because the client IP address may change during a single session. Repeat this for multiple IP ranges.
 

@@ -1,10 +1,10 @@
 ---
-id: 2379
+
 title: Reducing the size of App-V packages
 date: 2011-09-25T22:30:07+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/reducing-the-size-of-app-v-packages/
+
 permalink: /reducing-the-size-of-app-v-packages/
 Hide SexyBookmarks:
   - "0"

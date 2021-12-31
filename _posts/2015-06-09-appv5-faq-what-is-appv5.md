@@ -1,10 +1,10 @@
 ---
-id: 3977
+
 title: 'App-V 5 FAQ: What is Microsoft Application Virtualization 5?'
 date: 2015-06-09T13:51:07+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=3977
+
 permalink: /appv5-faq-what-is-appv5/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -31,8 +31,8 @@ Application Virtualization provides a number of benefits:
 App-V has 3 main components:
 
   * The App-V Sequencer - the Sequencer enables an IT professional to capture the installation of an application and turn that into an App-V package
-  * The App-V Client - the Client enables App-V packages to be delivered to Windows desktops where the applications contained in those packages are executed, just like they would be if they were installed
-  * The App-V Server - the Server is enables the delivery of App-V packages to Windows desktops where the App-V client is installed. The App-V Server consists of a number of components that allow for the publishing and authorizing of users or desktops to stream App-V packages. There are a number of ways to deploy App-V packages, so the App-V Server is an optional component of App-V
+  * The App-V Client - the Client enables App-V packages to be delivered to Windows desktops where the applications contained in those packages are executed, just like they would be if they were installed
+  * The App-V Server - the Server is enables the delivery of App-V packages to Windows desktops where the App-V client is installed. The App-V Server consists of a number of components that allow for the publishing and authorizing of users or desktops to stream App-V packages. There are a number of ways to deploy App-V packages, so the App-V Server is an optional component of App-V
 
 Designing and implementing App-V requires understanding your application portfolio, your method of delivering Windows desktops to users and understanding how the different delivery mechanisms for App-V will fit within your environment.
 
@@ -44,4 +44,4 @@ Designing and implementing App-V requires understanding your application portfol
 
 ## Previously
 
-  * [App-V 4.x FAQ: What is Microsoft Application Virtualization?]({{site.baseurl}}/virtualisation/app-v-faq-2-what-is-microsoft-application-virtualization)
+  * [App-V 4.x FAQ: What is Microsoft Application Virtualization?]({{site.baseurl}}/virtualisation/app-v-faq-2-what-is-microsoft-application-virtualization)

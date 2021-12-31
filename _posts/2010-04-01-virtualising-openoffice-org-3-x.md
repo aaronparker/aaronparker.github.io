@@ -1,10 +1,10 @@
 ---
-id: 1451
+
 title: Virtualising OpenOffice.org 3.x
 date: 2010-04-01T23:56:41+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/virtualising-openoffice-org-3-x
+
 permalink: /virtualising-openoffice-org-3-x/
 dsq_thread_id:
   - "195382284"
@@ -49,7 +49,7 @@ The screenshot below shows the available components for OpenOffice 3.2, with the
 
 ![OpenOfficeComponents]({{site.baseurl}}/media/2010/04/OpenOfficeComponents.png)
 
-The [unattended reference for OpenOffice](http://wiki.services.openoffice.org/wiki/Documentation/How`Tos/Automatic`Installation`on`Windows) appears to be based on OpenOffice 2, so you may have to refer to the MSI itself when customising the install. See the Feature table for the names for each of the components. I prefer to do everything on  the command-line, instead of creating a transform where I can, so my OpenOffice install looks like this:
+The [unattended reference for OpenOffice](http://wiki.services.openoffice.org/wiki/Documentation/How`Tos/Automatic`Installation`on`Windows) appears to be based on OpenOffice 2, so you may have to refer to the MSI itself when customising the install. See the Feature table for the names for each of the components. I prefer to do everything on  the command-line, instead of creating a transform where I can, so my OpenOffice install looks like this:
 
 <p class="download">
   [download id="34&#8243; format="1&#8243;]
@@ -91,6 +91,6 @@ The only post-wizard change you should need to make to the package is to delete 
 
 ## Conclusion
 
-So there’s how to virtualise OpenOffice without too much effort and you should be left with a pretty  clean package weighing at approximately 500Mb that looks a little like this:
+So there’s how to virtualise OpenOffice without too much effort and you should be left with a pretty  clean package weighing at approximately 500Mb that looks a little like this:
 
 ![OpenOfficeAppVPackage]({{site.baseurl}}/media/2010/04/OpenOfficeAppVPackage.png)

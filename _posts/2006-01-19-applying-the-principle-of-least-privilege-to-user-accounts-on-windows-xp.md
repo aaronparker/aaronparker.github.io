@@ -1,10 +1,10 @@
 ---
-id: 280
+
 title: Applying the Principle of Least Privilege to User Accounts on Windows XP
 date: 2006-01-19T13:07:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/applying-the-principle-of-least-privilege-to-user-accounts-on-windows-xp
+
 permalink: /applying-the-principle-of-least-privilege-to-user-accounts-on-windows-xp/
 categories:
   - Microsoft

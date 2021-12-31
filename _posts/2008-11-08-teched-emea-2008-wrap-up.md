@@ -1,10 +1,10 @@
 ---
-id: 804
+
 title: TechEd EMEA 2008 Wrap-up
 date: 2008-11-08T22:26:19+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/community/teched-emea-2008-wrap-up
+
 permalink: /teched-emea-2008-wrap-up/
 dsq_thread_id:
   - "195381263"
@@ -15,7 +15,7 @@ tags:
 ---
 <img style="margin: 0px 0px 10px 15px; display: inline" src="{{site.baseurl}}/media/2008/11/teched2008logo.jpg" alt="" align="right" /> Well TechEd EMEA 2008 is done and I still have some notes to post from a few more noteworthy sessions, so until then here’s a few more observations about the conference:
 
-  * TechEd was well put together and the content was mostly very good. This was my first since TechEd 2003 in Australia and I was impressed. Quick tip – if you do go to TechEd, get as much sleep as you can over the week as the amount of beer you consume is inversely proportionate to the amount of information you can take in the next day.
+  * TechEd was well put together and the content was mostly very good. This was my first since TechEd 2003 in Australia and I was impressed. Quick tip – if you do go to TechEd, get as much sleep as you can over the week as the amount of beer you consume is inversely proportionate to the amount of information you can take in the next day.
   * If you get a Netbook to take notes (like the MSi Wind that I have) be sure to get a 6 cell or a second 3 cell battery so that it can last the day. Madlly searching for power points isn’t much fun.
   * HTC Touch Diamonds and Touch Pros where everywhere, I’m sure they where out-numbering iPhones.
   * VMware had a booth and were even a Gold sponsor, plus they were giving away an iPhone (not Windows Mobile-based phones like everyone else).

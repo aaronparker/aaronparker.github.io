@@ -1,10 +1,10 @@
 ---
-id: 465
+
 title: Citrix Hotfix Turns Oracle JInitiator Pink
 date: 2008-02-11T21:30:06+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/terminal-server/citrix-hotfix-turns-oracle-jinitiator-pink
+
 permalink: /citrix-hotfix-turns-oracle-jinitiator-pink/
 dsq_thread_id:
   - "195380103"

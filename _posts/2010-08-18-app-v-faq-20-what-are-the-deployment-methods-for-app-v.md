@@ -1,10 +1,10 @@
 ---
-id: 1785
+
 title: 'App-V FAQ: What are the deployment methods for App-V?'
 date: 2010-08-18T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/deployment/app-v-faq-20-what-are-the-deployment-methods-for-app-v
+
 permalink: /app-v-faq-20-what-are-the-deployment-methods-for-app-v/
 has_been_twittered:
   - 'yes'

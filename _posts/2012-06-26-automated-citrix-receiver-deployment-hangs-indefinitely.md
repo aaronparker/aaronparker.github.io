@@ -1,10 +1,10 @@
 ---
-id: 2735
+
 title: Automated Citrix Receiver deployment hangs indefinitely
 date: 2012-06-26T18:07:47+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2735
+
 permalink: /automated-citrix-receiver-deployment-hangs-indefinitely/
 Hide SexyBookmarks:
   - "0"

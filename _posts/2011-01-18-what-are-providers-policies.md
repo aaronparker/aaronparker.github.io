@@ -1,10 +1,10 @@
 ---
-id: 2072
+
 title: 'App-V FAQ: What are Providers Policies?'
 date: 2011-01-18T15:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-32-what-are-providers-policies/
+
 permalink: /what-are-providers-policies/
 has_been_twittered:
   - 'yes'

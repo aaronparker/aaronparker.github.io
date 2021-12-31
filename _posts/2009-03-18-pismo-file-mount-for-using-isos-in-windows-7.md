@@ -1,10 +1,10 @@
 ---
-id: 1054
+
 title: Pismo File Mount for using ISOs in Windows 7
 date: 2009-03-18T19:48:34+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1054
+
 permalink: /pismo-file-mount-for-using-isos-in-windows-7/
 aktt_notify_twitter:
   - 'yes'

@@ -1,10 +1,10 @@
 ---
-id: 847
+
 title: Eliminate the Windows Start Navigation sound
 date: 2009-01-16T15:34:55+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=847
+
 permalink: /eliminate-the-windows-start-navigation-sound/
 dsq_thread_id:
   - "195381466"

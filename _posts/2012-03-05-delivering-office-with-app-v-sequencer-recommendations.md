@@ -1,10 +1,10 @@
 ---
-id: 2629
+
 title: 'Delivering Office with App-V – Sequencer Recommendations &#038; Best Practices'
 date: 2012-03-05T15:00:14+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2629
+
 permalink: /delivering-office-with-app-v-sequencer-recommendations/
 Hide SexyBookmarks:
   - "0"
@@ -88,7 +88,7 @@ This issue looks to be fixed with [Hotfix 3 for the 4.6 SP1 Sequencer](http://su
 
 Windows XP Professional or Windows 7 Enterprise editions are recommended for client OS deployments. If you are sequencing for both Windows XP/7 and Windows Server, sequence on the lowest common denominator (Windows XP in this example). If issues arise with testing a package on a different operating system, create a new version of the package for that OS.To create a clean Windows VM for sequencing, follow these steps:
 
-* Install Windows via the ISO, or better still, create an unattended deployment using the [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-us/solutionaccelerators/dd407791) or your software deployment tool of choice, but keep the Windows deployment as vanilla as possible. Use the same Windows version and service pack level as your App-V client machines. This may mean creating multiple sequencing VMs. If you are deploying to both x86 and x64 clients, sequence on an x86 Windows machine, re-sequence the application on 64-bit Windows if required
+* Install Windows via the ISO, or better still, create an unattended deployment using the [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-us/solutionaccelerators/dd407791) or your software deployment tool of choice, but keep the Windows deployment as vanilla as possible. Use the same Windows version and service pack level as your App-V client machines. This may mean creating multiple sequencing VMs. If you are deploying to both x86 and x64 clients, sequence on an x86 Windows machine, re-sequence the application on 64-bit Windows if required
   * Service Pack deployment is recommended via a slipstreamed Windows ISO (that is the ISO with the latest service pack integrated into it)
 * Install the hypervisor tools or additions to install drivers and services required by the hypervisor to support the VM correctly
 * Enable Windows Firewall including the File and Printer Sharing rule to prevent remote PCs from connecting to the virtual machine
@@ -143,7 +143,7 @@ Additional pre-requisites should only be installed when required by an applicati
 
 ## Sequencer
 
-Office 2010 is only supported with the 4.5 SP2 and 4.6 SP1 version of the Sequencer. Office 2007 and Office 2003 can be sequenced with earlier versions. Where possible it is recommended to use the latest Sequencer – this often requires the matching version of the client to be deployed as well (although the App-V 4.6 SP1 Sequencer is backwardly compatible with the App-V 4.6 client).
+Office 2010 is only supported with the 4.5 SP2 and 4.6 SP1 version of the Sequencer. Office 2007 and Office 2003 can be sequenced with earlier versions. Where possible it is recommended to use the latest Sequencer – this often requires the matching version of the client to be deployed as well (although the App-V 4.6 SP1 Sequencer is backwardly compatible with the App-V 4.6 client).
 
 Install the Sequencer into the VM along with the most recent hotfix rollup. At the time of publishing of this document the most recent versions of the Sequencer are:
 
@@ -158,7 +158,7 @@ To ensure successful sequencing, it is not recommended to run setup applications
 
 ## Snapshots
 
-Once Windows has been configured, shutdown the VM – never take a snapshot of the virtual machine with the App-V Sequencer running. Each App-V package must have a unique GUID and snapshots with the Sequencer running are often a source of duplicate GUIDs. Additionally a VM in a shutdown state will take less room on disk for a snapshot because the VM's RAM won't be included in the snapshot.
+Once Windows has been configured, shutdown the VM – never take a snapshot of the virtual machine with the App-V Sequencer running. Each App-V package must have a unique GUID and snapshots with the Sequencer running are often a source of duplicate GUIDs. Additionally a VM in a shutdown state will take less room on disk for a snapshot because the VM's RAM won't be included in the snapshot.
 
 Periodically rollback the VM to this snapshot to install the latest updates from Windows Update, then re-create the snapshot.
 

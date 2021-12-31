@@ -1,10 +1,10 @@
 ---
-id: 2237
+
 title: Sequencing Microsoft Comic Chat
 date: 2011-04-01T23:24:55+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2237
+
 permalink: /sequencing-microsoft-comic-chat/
 dsq_thread_id:
   - "268816451"

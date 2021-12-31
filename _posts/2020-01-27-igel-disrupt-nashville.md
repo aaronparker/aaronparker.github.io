@@ -3,15 +3,12 @@ layout: post
 title: IGEL Disrupt Nashville
 date: 2020-01-28 12:00 +1000
 permalink: "/igel-disrupt-nashville/"
+image:
+    path: /media/2020/01/disrupt.jpeg
 categories:
 - IGEL
-tags:
-- IGEL
-- Windows Virtual Desktop
 ---
 I'm here in [Nashville for IGEL Disrupt](https://disrupteuc.com/nashville) over the next few days and I'm looking forward to a number of sessions. While the main event starts on the Tuesday (28th) the first day (Monday 27th) has a couple of sessions on.
-
-![Disrupt Nashville 2020]({{site.baseurl}}/media/2020/01/disrupt.jpeg)
 
 As I write this article, I'm sitting in the Windows Virtual Desktop master class lead by Jim Moyle and Christiaan Brinkhoff. This is a 4-hour(!) deep-dive session on WVD that is well attended. This session has some great content that is filling in some gaps for me and the audience engagement is really high.
 

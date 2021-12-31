@@ -1,10 +1,10 @@
 ---
-id: 42
+
 title: 'Repost: Microsoft Australia TechNet Updates, June'
 date: 2007-05-16T07:11:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/repost-microsoft-australia-technet-updates-june
+
 permalink: /repost-microsoft-australia-technet-updates-june/
 categories:
   - Community

@@ -1,10 +1,10 @@
 ---
-id: 344
+
 title: ISA Server 2006 Supportability Update
 date: 2007-09-11T23:27:04+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/isa-server/isa-server-2006-supportability-update
+
 permalink: /isa-server-2006-supportability-update/
 categories:
   - Microsoft

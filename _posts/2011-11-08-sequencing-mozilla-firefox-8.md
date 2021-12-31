@@ -1,10 +1,10 @@
 ---
-id: 2476
+
 title: Sequencing Mozilla Firefox 8
 date: 2011-11-08T12:00:42+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2476
+
 permalink: /sequencing-mozilla-firefox-8/
 Hide SexyBookmarks:
   - "0"
@@ -38,7 +38,7 @@ I will cover using a couple of customisation to ensure these features are disabl
 
 ## Managing the Firefox profile – virtualize or not?
 
-[Firefox stores preferences, extensions and other user data](http://kb.mozillazine.org/Profile_folder_-_Firefox) in:
+[Firefox stores preferences, extensions and other user data](http://kb.mozillazine.org/Profile_folder_-_Firefox) in:
 
   * `%APPDATA%\Mozilla` (preferences, bookmarks etc.); and
   * `%LOCALAPPDATA%\Mozilla` (browser cache)

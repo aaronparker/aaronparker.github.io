@@ -1,10 +1,10 @@
 ---
-id: 64
+
 title: An Exchange 2007 Upgrade Is Like a Poke in the Eye
 date: 2007-04-16T08:26:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/an-exchange-2007-upgrade-is-like-a-poke-in-the-eye
+
 permalink: /an-exchange-2007-upgrade-is-like-a-poke-in-the-eye/
 dsq_thread_id:
   - "195378517"

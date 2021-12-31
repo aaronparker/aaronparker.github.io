@@ -1,10 +1,10 @@
 ---
-id: 187
+
 title: Turning Off AutoComplete on a Logon Point
 date: 2006-09-06T16:26:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/turning-off-autocomplete-on-a-logon-point
+
 permalink: /turning-off-autocomplete-on-a-logon-point/
 categories:
   - Citrix

@@ -1,10 +1,10 @@
 ---
-id: 1434
+
 title: "Virtualising Firefox? Don't forget to disable Updates"
 date: 2010-03-27T16:44:03+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1434
+
 permalink: /virtualising-firefox-dont-forget-to-disable-updates-2/
 dsq_thread_id:
   - "195382234"
@@ -28,11 +28,11 @@ Updates are disabled in the _Options / Advanced / Updates_ dialog box (under Win
 
 Alternatively set _app.update.auto_ and _app.update.enabled_ to false in about:config or directly in `%APPDATA%\Mozilla\Firefox\Profiles\<profile>.default\prefs.js`.
 
-Leave _Add-ons_ and _Search Engines_ enabled as these are stored within the user profile and can be updated when running under application virtualisation.
+Leave _Add-ons_ and _Search Engines_ enabled as these are stored within the user profile and can be updated when running under application virtualisation.
 
 ## Disable the Updates UI
 
-Disabling the user interface elements to these update preferences and launch points is also important. To hide UI elements in Firefox, create [UserChrome.css](http://www.mozilla.org/unix/customizing.html) in `%APPDATA%\Mozilla\Firefox\Profiles\<profile>.default\chrome`. This file does not exist by default, although you will find an example file in the chrome folder. Create the file and add the following lines to hide the updates menu item and the Firefox check-box in the Updates dialog box.
+Disabling the user interface elements to these update preferences and launch points is also important. To hide UI elements in Firefox, create [UserChrome.css](http://www.mozilla.org/unix/customizing.html) in `%APPDATA%\Mozilla\Firefox\Profiles\<profile>.default\chrome`. This file does not exist by default, although you will find an example file in the chrome folder. Create the file and add the following lines to hide the updates menu item and the Firefox check-box in the Updates dialog box.
 
 ```powershell
 /\* remove the Check for Updates menu item \*/  
@@ -45,4 +45,4 @@ If it is working correctly, you should see something like this (before and after
 
 ![Firefox options]({{site.baseurl}}/media/2010/03/FirefoxOptions.png)
 
-This method is not completely fool-proof (the modified files all exist in the user profile and are thus writeable) but it should stop users from unwittingly attempting to update Firefox and allow you to control when updates are deployed.
+This method is not completely fool-proof (the modified files all exist in the user profile and are thus writeable) but it should stop users from unwittingly attempting to update Firefox and allow you to control when updates are deployed.

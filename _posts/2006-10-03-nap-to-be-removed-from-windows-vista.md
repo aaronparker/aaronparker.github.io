@@ -1,10 +1,10 @@
 ---
-id: 174
+
 title: NAP to be removed from Windows Vista?
 date: 2006-10-03T23:15:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/nap-to-be-removed-from-windows-vista
+
 permalink: /nap-to-be-removed-from-windows-vista/
 categories:
   - Microsoft

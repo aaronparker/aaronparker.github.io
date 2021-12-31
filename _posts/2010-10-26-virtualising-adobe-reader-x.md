@@ -1,10 +1,10 @@
 ---
-id: 2031
+
 title: Virtualizing Adobe Reader X
 date: 2010-10-26T14:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/virtualising-adobe-reader-x/
+
 permalink: /virtualising-adobe-reader-x/
 has_been_twittered:
   - 'yes'
@@ -23,7 +23,7 @@ This post details virtualizing Adobe Reader X with Microsoft Application Virtual
 
 Before I get to the details I would like you to first consider the implications of virtualising Reader. Adobe Reader is often a common component of any desktop deployment and like Microsoft Office and Internet Explorer, it usually becomes a core application on which other applications depend.
 
-If you are using a virtualisation solution that isolates an application from other applications and the operating system, integration can be a challenge. Let me illustrate with a couple of examples:
+If you are using a virtualisation solution that isolates an application from other applications and the operating system, integration can be a challenge. Let me illustrate with a couple of examples:
 
 _Internet Explorer_: if Reader is isolated from Windows, Internet Explorer will be able to download PDFs which can then be opened with the virtualised Reader; however IE will have no knowledge of any application that is handling the PDF file type or MIME type. Launching Reader inside IE or viewing a PDF [embedded in a web page](http://blogs.adobe.com/pdfdevjunkie/2007/08/using_the_html_embed_tag_to_di.html) will not be possible.
 
@@ -31,7 +31,7 @@ _Internet Explorer_: if Reader is isolated from Windows, Internet Explorer will 
 
 You could solve this my launching Internet Explorer inside the Reader package, but this will require covering all of the ways a user can launch Internet Explorer. If you do that, what happens when you want IE to launch inside the environment of another package? App-V doesn't handle integration with these entry points elegantly today.
 
-_Virtualised applications_: Additionally, if you need to provide other virtualised applications with Reader support, you will need to maintain [Dynamic Suite Composition](http://www.microsoft.com/systemcenter/appv/dynamic.mspx) links to the Reader package for each primary package that requires it. Because Reader is used so often, managing DSC links is something that could get out of hand very quickly.
+_Virtualised applications_: Additionally, if you need to provide other virtualised applications with Reader support, you will need to maintain [Dynamic Suite Composition](http://www.microsoft.com/systemcenter/appv/dynamic.mspx) links to the Reader package for each primary package that requires it. Because Reader is used so often, managing DSC links is something that could get out of hand very quickly.
 
 In most cases I do not recommend virtualizing Reader – your mileage may vary, but because of the additional administrative overhead and the change in the user experience, you should invest your time in other areas.
 
@@ -94,11 +94,11 @@ Choosing the option 'Always open with Protected Mode disabled' will save the set
 
 The script listed above includes a REG command to disable Protected Mode, however this can be done in the transform file instead.
 
-If Protected Mode is not disabled when Reader is virtualized or when it is running inside an App-V bubble via another package, it will crash with the following error: _Error in Microsoft Visual C++ Runtime Library_. Disable Protected Mode to avoid this issue.
+If Protected Mode is not disabled when Reader is virtualized or when it is running inside an App-V bubble via another package, it will crash with the following error: _Error in Microsoft Visual C++ Runtime Library_. Disable Protected Mode to avoid this issue.
 
 ## Conclusion
 
-Virtualizing Reader is straightforward and it performs well under App-V, although I would consider the implications of isolating Reader from the OS, even before you start the Sequencer. A virtualized Reader will require managing DSC links and you'll need ensure that users understand the difference in behaviour with IE integration.
+Virtualizing Reader is straightforward and it performs well under App-V, although I would consider the implications of isolating Reader from the OS, even before you start the Sequencer. A virtualized Reader will require managing DSC links and you'll need ensure that users understand the difference in behaviour with IE integration.
 
 Hopefully an update of either Reader or App-V in the future will enable Protected Mode support to improve security.
 

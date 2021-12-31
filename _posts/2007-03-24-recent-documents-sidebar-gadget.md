@@ -1,10 +1,10 @@
 ---
-id: 77
+
 title: Recent Documents Sidebar Gadget
 date: 2007-03-24T05:14:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/recent-documents-sidebar-gadget
+
 permalink: /recent-documents-sidebar-gadget/
 pd_rating:
   - 'a:8:{s:4:"type";s:1:"0";s:5:"votes";s:1:"1";s:6:"total1";s:1:"0";s:6:"total2";s:1:"0";s:6:"total3";s:1:"0";s:6:"total4";s:1:"0";s:6:"total5";s:1:"1";s:7:"average";s:6:"5.0000";}'

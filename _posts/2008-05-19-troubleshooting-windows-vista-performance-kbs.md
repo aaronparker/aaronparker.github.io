@@ -1,10 +1,10 @@
 ---
-id: 560
+
 title: Troubleshooting Windows Vista Performance KBs
 date: 2008-05-19T09:15:12+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=560
+
 permalink: /troubleshooting-windows-vista-performance-kbs/
 categories:
   - Microsoft

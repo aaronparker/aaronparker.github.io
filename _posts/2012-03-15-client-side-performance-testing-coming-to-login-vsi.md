@@ -1,10 +1,10 @@
 ---
-id: 2664
+
 title: Client Side Performance Testing coming to Login VSI
 date: 2012-03-15T10:48:50+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2664
+
 permalink: /client-side-performance-testing-coming-to-login-vsi/
 Hide SexyBookmarks:
   - "0"
@@ -18,7 +18,7 @@ tags:
   - Login VSI
   - Performance
 ---
-Mark Plettenberg, the lead developer of Login VSI. This new module looks very interesting because it will allow us to objectively measure and analyse the performance of remoting protocols such as Teradici PCoIP, Microsoft RDP, Citrix ICA/HDX and Quest EOP.
+Mark Plettenberg, the lead developer of Login VSI. This new module looks very interesting because it will allow us to objectively measure and analyse the performance of remoting protocols such as Teradici PCoIP, Microsoft RDP, Citrix ICA/HDX and Quest EOP.
 
 ## What is Login VSI?
 

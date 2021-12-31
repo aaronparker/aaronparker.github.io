@@ -1,10 +1,10 @@
 ---
-id: 335
+
 title: 'Creating Custom MetaFrame Admins with VBscript: Part 2'
 date: 2007-08-21T09:10:39+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/scripting/creating-custom-metaframe-admins-with-vbscript-part-2
+
 permalink: /creating-custom-metaframe-admins-with-vbscript-part-2/
 aktt_notify_twitter:
   - 'yes'

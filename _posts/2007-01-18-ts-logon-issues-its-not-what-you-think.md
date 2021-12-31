@@ -1,10 +1,10 @@
 ---
-id: 120
+
 title: "TS Logon Issues? It's Not What You Think"
 date: 2007-01-18T02:32:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/ts-logon-issues-its-not-what-you-think
+
 permalink: /ts-logon-issues-its-not-what-you-think/
 categories:
   - Microsoft

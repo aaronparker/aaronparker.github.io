@@ -1,10 +1,10 @@
 ---
-id: 844
+
 title: Hiding the vmware_user account in Windows 7
 date: 2009-01-14T19:05:11+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/windows/hiding-the-vmware_user-account-in-windows-7
+
 permalink: /hiding-the-vmware_user-account-in-windows-7/
 dsq_thread_id:
   - "195381428"

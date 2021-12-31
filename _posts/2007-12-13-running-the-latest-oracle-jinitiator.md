@@ -1,10 +1,10 @@
 ---
-id: 385
+
 title: Running the latest Oracle JInitiator
 date: 2007-12-13T16:35:14+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/deployment/running-the-latest-oracle-jinitiator
+
 permalink: /running-the-latest-oracle-jinitiator/
 dsq_thread_id:
   - "195379894"

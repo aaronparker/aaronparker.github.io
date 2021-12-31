@@ -1,10 +1,10 @@
 ---
-id: 354
+
 title: Hey Look! A Developer Who Gets It!
 date: 2007-11-03T21:34:04+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/deployment/hey-look-a-developer-who-gets-it
+
 permalink: /hey-look-a-developer-who-gets-it/
 categories:
   - Applications

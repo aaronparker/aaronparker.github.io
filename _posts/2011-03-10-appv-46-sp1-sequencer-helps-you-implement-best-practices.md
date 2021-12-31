@@ -1,10 +1,10 @@
 ---
-id: 2175
+
 title: How the App-V 4.6 Service Pack 1 Sequencer helps you implement best practices
 date: 2011-03-10T17:43:17+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2175
+
 permalink: /appv-46-sp1-sequencer-helps-you-implement-best-practices/
 has_been_twittered:
   - 'yes'

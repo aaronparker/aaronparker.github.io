@@ -1,10 +1,10 @@
 ---
-id: 111
+
 title: PowerShell 1.0 released for Windows Vista
 date: 2007-01-30T16:04:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/powershell-10-released-for-windows-vista
+
 permalink: /powershell-10-released-for-windows-vista/
 categories:
   - Microsoft

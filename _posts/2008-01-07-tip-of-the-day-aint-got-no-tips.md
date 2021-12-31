@@ -1,10 +1,10 @@
 ---
-id: 410
+
 title: "Tip Of The Day - Ain't Got No Tips"
 date: 2008-01-07T16:31:14+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/hall-of-shame/tip-of-the-day-aint-got-no-tips
+
 permalink: /tip-of-the-day-aint-got-no-tips/
 categories:
   - Applications

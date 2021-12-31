@@ -1,10 +1,10 @@
 ---
-id: 4397
+
 title: Configuring Remote Desktop Certificates for OS X Clients
 date: 2016-05-20T00:34:23+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=4397
+
 permalink: /remote-desktop-certificates-os-x-clients/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -46,7 +46,7 @@ I won't cover installing and configuring an enterprise certificate authority her
 
 To configure a certificate for use with Remote Desktop Services (or RDP into any Windows PC), you'll need to create a new certificate template and enable both the Server Authentication and the Remote Desktop Authentication application policies. This was key for OS X clients - both of these policies must exist. Some articles will walk through this configuration and recommend removing the Server Authentication policy; however, the certificates will then not work on non-Windows clients.
 
-This article has a great walk-through of the entire process and more: [RDP TLS Certificate Deployment Using GPO](http://www.darkoperator.com/blog/2015/3/26/rdp-tls-certificate-deployment-using-gpo). In my lab, I've created a 'Remote Desktop Computer' certificate template and enabled it to be autoenrolled via Group Policy.
+This article has a great walk-through of the entire process and more: [RDP TLS Certificate Deployment Using GPO](http://www.darkoperator.com/blog/2015/3/26/rdp-tls-certificate-deployment-using-gpo). In my lab, I've created a 'Remote Desktop Computer' certificate template and enabled it to be autoenrolled via Group Policy.
 
 ### Certificate Template Options
 
@@ -56,11 +56,11 @@ Navigate to the Extensions tab, edit the 'Application Policies' extension and re
 
 ![Remote Desktop template certificate extensions]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions.png)
 
-After you added the 'Remote Desktop Authentication' policy, you should see the policies and see in the following dialog box. See below for the actual 'Remote Desktop Authentication' policy.
+After you added the 'Remote Desktop Authentication' policy, you should see the policies and see in the following dialog box. See below for the actual 'Remote Desktop Authentication' policy.
 
 ![Remote Desktop certificate Application Policies extension]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions-Application-Policies.png)
 
-Adding the 'Remote Desktop Authentication' policy requires adding a new extension named 'Remote Desktop Authentication' (or similar) with an object value of "1.3.6.1.4.1.311.54.1.2" (excluding quotes).  and enter the values as above.
+Adding the 'Remote Desktop Authentication' policy requires adding a new extension named 'Remote Desktop Authentication' (or similar) with an object value of "1.3.6.1.4.1.311.54.1.2" (excluding quotes).  and enter the values as above.
 
 ![The Remote Desktop Authentication policy extension]({{site.baseurl}}/media/2016/05/Remote-Desktop-Cert-Extensions-Remote-Desktop-Authentication.png)
 

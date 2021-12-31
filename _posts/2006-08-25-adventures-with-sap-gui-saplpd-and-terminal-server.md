@@ -1,10 +1,10 @@
 ---
-id: 202
+
 title: Adventures with SAP GUI, SAPLPD and Terminal Server
 date: 2006-08-25T06:05:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/adventures-with-sap-gui-saplpd-and-terminal-server
+
 permalink: /adventures-with-sap-gui-saplpd-and-terminal-server/
 dsq_thread_id:
   - "195378904"

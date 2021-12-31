@@ -1,10 +1,10 @@
 ---
-id: 997
+
 title: Remote Desktop Connection in Windows 7 7048
 date: 2009-03-10T22:33:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/windows/remote-desktop-connection-in-windows-7-7048
+
 permalink: /remote-desktop-connection-in-windows-7-7048/
 aktt_notify_twitter:
   - 'yes'
@@ -18,7 +18,7 @@ tags:
   - Remote Desktop Connection
   - Windows 7
 ---
-The Remote Desktop Connection client gets a facelift in build 7048 as well as Jump List integration, which is has been making life much simpler indeed:
+The Remote Desktop Connection client gets a facelift in build 7048 as well as Jump List integration, which is has been making life much simpler indeed:
 
 ![rdcjumplist]({{site.baseurl}}/media/2009/03/rdcjumplist.png)
 
@@ -26,6 +26,6 @@ The Remote Desktop Connection client gets a facelift in build 7048 as well as J
 
 ![rdp2]({{site.baseurl}}/media/2009/03/rdp2.png)
 
-Based on a comment by a 'softie, I believe that the new icon is about branding the Remote Desktop Services in Windows Server 2008 R2:
+Based on a comment by a 'softie, I believe that the new icon is about branding the Remote Desktop Services in Windows Server 2008 R2:
 
 ![remotedesktop]({{site.baseurl}}/media/2009/03/remotedesktop.png)

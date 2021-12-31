@@ -1,10 +1,10 @@
 ---
-id: 55
+
 title: 'The Short NAP: Wednesday 25th April 2007'
 date: 2007-04-24T20:28:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/the-short-nap-wednesday-25th-april-2007
+
 permalink: /the-short-nap-wednesday-25th-april-2007/
 categories:
   - Microsoft

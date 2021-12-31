@@ -1,10 +1,10 @@
 ---
-id: 295
+
 title: Troubleshooting Woes
 date: 2005-09-23T14:07:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/troubleshooting-woes
+
 permalink: /troubleshooting-woes/
 categories:
   - Applications
@@ -21,7 +21,7 @@ Now this leaves me with a number of thoughts:
 
   1. How do I change the site identifier in IIS to 1? Hack METABASE.XML? (That's scares me a little) Reload IIS? (No thanks, but it might be my only solution)
   2. Why does the installer not give me the choice of which web site to install to? This is especially annoying since you don't actually configure a Web Interface site until after installation. Short answer: lazy developers.
-  3. Why is there no knowledgebase article or documentation on this error message?  Short answer: lazy developers.
+  3. Why is there no knowledgebase article or documentation on this error message?  Short answer: lazy developers.
 
 Point 3 is what really gets my goat. If a product logs and error in an event log, throws a dialog box at you, surely there should be some documentation on the error. Microsoft are also guilty of this. I've lost count of the number of times that I've been troubleshooting a problem, found an event in the event logs and found no knowledgebase article on the event.
 

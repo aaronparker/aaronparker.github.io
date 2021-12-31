@@ -1,10 +1,10 @@
 ---
-id: 1846
+
 title: 'App-V FAQ: Do I need to backup the App-V Management Server?'
 date: 2010-08-31T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-22-do-i-need-to-backup-the-app-v-management-server
+
 permalink: /app-v-faq-22-do-i-need-to-backup-the-app-v-management-server/
 has_been_twittered:
   - 'yes'

@@ -1,10 +1,10 @@
 ---
-id: 343
+
 title: "Script: Update Published Application Icons"
 date: 2007-09-06T14:33:05+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/scripting/script-update-published-application-icons
+
 permalink: /script-update-published-application-icons/
 dsq_thread_id:
   - "195379417"

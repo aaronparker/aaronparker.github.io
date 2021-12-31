@@ -1,10 +1,10 @@
 ---
-id: 211
+
 title: 'Download: Introduction to Network Access Protection'
 date: 2006-08-21T00:16:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/download-introduction-to-network-access-protection
+
 permalink: /download-introduction-to-network-access-protection/
 categories:
   - Microsoft

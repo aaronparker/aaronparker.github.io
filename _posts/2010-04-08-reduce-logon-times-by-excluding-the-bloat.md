@@ -1,10 +1,10 @@
 ---
-id: 1456
+
 title: Reduce logon times by excluding the bloat
 date: 2010-04-08T20:00:01+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1456
+
 permalink: /reduce-logon-times-by-excluding-the-bloat/
 has_been_twittered:
   - 'yes'
@@ -70,7 +70,7 @@ Next is a list of folders from various applications that either store large file
 |AppData\Roaming\Microsoft Shared\LiveMeeting Shared|Microsoft Live Meeting; shared folder|
 |AppData\Roaming\Microsoft\XDE|Microsoft Visual Studio; Windows Mobile 7 emulator images|
 |AppData\Roaming\Macromedia\Flash Player\macromedia.com\support\flashplayer\sys|Adobe Flash; Cookies and settings|
-|AppData\Roaming\Macromedia\Flash Player\#SharedObjects|Adobe Flash; Cookies|
+|AppData\Roaming\Macromedia\Flash Player#SharedObjects|Adobe Flash; Cookies|
 |AppData\Roaming\Adobe\Flash Player\AssetCache|Adobe Flash; cache folder|
 |AppData\Roaming\Vodafone\Vodafone Mobile Connect\Log|Vodafone Mobile Connect|
 |AppData\Roaming\Microsoft\Windows\Recent|Windows; recent files and folders; lots of small files can increase logon/logoff times|

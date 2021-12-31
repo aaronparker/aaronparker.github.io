@@ -1,10 +1,10 @@
 ---
-id: 133
+
 title: Deploying WinZip 11.0
 date: 2006-12-12T01:12:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/deploying-winzip-110
+
 permalink: /deploying-winzip-110/
 categories:
   - Automation

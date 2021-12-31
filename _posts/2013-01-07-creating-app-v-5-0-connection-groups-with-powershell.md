@@ -1,10 +1,10 @@
 ---
-id: 3009
+
 title: Creating App-V 5.0 Connection Groups with PowerShell
 date: 2013-01-07T00:30:54+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=3009
+
 permalink: /creating-app-v-5-0-connection-groups-with-powershell/
 Hide SexyBookmarks:
   - "0"
@@ -23,37 +23,31 @@ tags:
 
 Adding a Connection Group to the client, first requires creating a definition file in XML. Without the App-V Management Server or ConfigMgr (where [the resulting file ends up on the client](http://technet.microsoft.com/en-us/library/jj870811.aspx)), you'll need to do that manually. Crafting XML files from scratch using Notepad isn't my idea of fun.
 
-# What's in a Definition File?
+## What's in a Definition File?
 
 A [Connection Group definition file](http://blogs.technet.com/b/appv/archive/2012/11/06/deploying-connection-groups-app-v-5-0.aspx) contains the details about the Connection Group and the member packages. Each Connection Group has it's own group and version ID (GUIDs).
 
 A typical definition file will look something like this:
 
-[code language="xml"]<?xml version="1.0" encoding="UTF-8"?>  
+```xml
+<?xml version="1.0" encoding="UTF-8"?>  
 <appv:AppConnectionGroup xmlns="http://schemas.microsoft.com/appv/2010/virtualapplicationconnectiongroup" xmlns:appv="http://schemas.microsoft.com/appv/2010/virtualapplicationconnectiongroup" AppConnectionGroupId="715f39d8-1b48-4b9a-95e6-d33370564b33" VersionId="9cdf46f3-6716-43d3-b533-5c697878f51f" Priority="2" DisplayName="Adobe Apps">  
 <appv:Packages>  
 <appv:Package DisplayName="Adobe Reader X" PackageId="abf1cd38-03cf-42af-8b27-564c4b9fcd1e" VersionId="818bc4eb-50f2-4fd4-90e4-9c8ed097e1e9" />  
 <appv:Package DisplayName="Adobe Flash Player 11" PackageId="6a22f839-2d22-46dc-9c63-2649e370fce2" VersionId="792c8000-509c-4b1a-b4d7-58be65436d1a" />  
 </appv:Packages>  
-</appv:AppConnectionGroup>[/code]
+</appv:AppConnectionGroup>
+```
 
 To create the file, we need to generate GUIDs for the group and version IDs, supply a Connection Group display name and priority, and then add the package and version IDs for each member package.
 
-# Enter PowerShell
+## Enter PowerShell
 
 To simplify the process of creating the definition file for a Connection Group, I've written a PowerShell function that will handle the heavy lifting for you. _New-AppvConnectionGroupFile_ will create the definition file from a list of App-V packages passed to it.
 
 The function will output the definition file to a specified path and then return that file as an object that you can do further processing with.
 
-[code language="ps"]#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;  
-\# Author: Aaron Parker  
-\# Desc: Function that uses the App-V 5.0 client to create Connection  
-\# Group description (XML) files for use with stand alone clients or  
-\# test scenarios  
-\# Date: Jan 06, 2013  
-\# Site: http://stealthpuppy.com  
-#&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;
-
+```powershell
 Function New-AppvConnectionGroupFile {  
 <#  
 .SYNOPSIS  
@@ -107,7 +101,7 @@ Param(
 
 BEGIN {
 
-\# Template XML for an App-V Connection Group description file. Easier than building from an XML object  
+# Template XML for an App-V Connection Group description file. Easier than building from an XML object  
 $templateXML = @'  
 <?xml version="1.0" encoding="UTF-8" ?>  
 <appv:AppConnectionGroup  
@@ -123,25 +117,25 @@ DisplayName="Display Name">
 </appv:AppConnectionGroup>  
 '@
 
-\# Write out the template XML to a file in the current directory  
+# Write out the template XML to a file in the current directory  
 $templateXMLFile = $pwd.Path + "\ConnectionGroupTemplate.XML"  
 $templateXML | Out-File -FilePath $templateXMLFile -Encoding utf8 -Force
 
-\# Create a new XML object and read the template XML file into this object  
+# Create a new XML object and read the template XML file into this object  
 $xml = New-Object XML  
 If ((Test-Path $templateXMLFile) -eq $True ) { $xml.Load($templateXMLFile) } Else { Write-Warning -Message "Unable to read template XML file." }
 
-\# Apply the display name and GUIDs to the XML object  
+# Apply the display name and GUIDs to the XML object  
 $xml.AppConnectionGroup.DisplayName = $DisplayName  
 $xml.AppConnectionGroup.AppConnectionGroupId = ([guid]::NewGuid()).ToString()  
 $xml.AppConnectionGroup.VersionId = ([guid]::NewGuid()).ToString()  
 $xml.AppConnectionGroup.Priority = $Priority.ToString()
 
-\# Clone the existing package entry to use for new entries  
+# Clone the existing package entry to use for new entries  
 $newPackage = (@($xml.AppConnectionGroup.Packages.Package)[0]).Clone()  
 }
 
-\# Process each supplied App-V package into the XML object  
+# Process each supplied App-V package into the XML object  
 PROCESS {  
 ForEach ( $Package in $Packages ) {  
 Write-Progress "Adding packages"
@@ -151,30 +145,31 @@ $newPackage.DisplayName = $Package.Name
 $newPackage.PackageId = ($Package.PackageId).ToString()  
 $newPackage.VersionId = ($Package.VersionId).ToString()
 
-\# Output appending the child XML entry to null to prevent displaying on screen  
+# Output appending the child XML entry to null to prevent displaying on screen  
 $xml.AppConnectionGroup.Packages.AppendChild($newPackage) > $null  
 }  
 }
 
 END {
 
-\# Remove the template package entry from the XML  
+# Remove the template package entry from the XML  
 $xml.AppConnectionGroup.Packages.ChildNodes | Where-Object { $\_.DisplayName -eq "Package1" } | ForEach-Object { [void]$xml.AppConnectionGroup.Packages.RemoveChild($\_) }
 
-\# Save the completed XML to disk  
+# Save the completed XML to disk  
 $xml.Save($Path)
 
-\# Delete the template XML file from disk  
+# Delete the template XML file from disk  
 If (Test-Path $templateXMLFile) { Remove-Item $templateXMLFile -Force -ErrorAction SilentlyContinue }
 
-\# Return the new Connection Group description XML file so that it might be processed by other functions  
+# Return the new Connection Group description XML file so that it might be processed by other functions  
 If (Test-Path $Path ) { Return Get-Item $Path } Else { Write-Warning "Failed to save Connection Group definition file." }  
 }  
-}[/code]
+}
+```
 
 Copy and paste the code above into a PowerShell window (or the ISE) to enable the function. You could also save code to [a PowerShell module](http://msdn.microsoft.com/en-gb/library/windows/desktop/dd878324(v=vs.85).aspx) to make it more accessible.
 
-# Examples
+## Examples
 
 The function includes help and examples, so that you can view them from within PowerShell (the PowerShell ISE makes that simple). Use the Get-Help cmdlet to view details.
 
@@ -182,13 +177,17 @@ Using the function requires supplying a Display Name and Priority for the Connec
 
 In this example, I've added the list of packages to the variable $Packages and then supplied that to the New-AppvConnectionGroupFile function. This results in the definition file AdobeApps.xml with any Adobe package included in it.
 
-[code language="ps"]$Packages = Get-AppvClientPackage -Name Adobe*  
-New-AppvConnectionGroupFile -Path C:\Packages\AdobeApps.xml -DisplayName "Adobe Apps" -Priority 2 -Packages $Packages[/code]
+```powershell
+$Packages = Get-AppvClientPackage -Name Adobe*  
+New-AppvConnectionGroupFile -Path C:\Packages\AdobeApps.xml -DisplayName "Adobe Apps" -Priority 2 -Packages $Packages
+```
 
-Taking this a step further, I can use a single line of PowerShell to query for a filtered list of packages on the local client, passing that to my function that will create the definition file. The Connection Group is then immediately added to the client and enabled.
+Taking this a step further, I can use a single line of PowerShell to query for a filtered list of packages on the local client, passing that to my function that will create the definition file. The Connection Group is then immediately added to the client and enabled.
 
-[code language="ps"]Get-AppvClientPackage -Name Adobe* | New-AppvConnectionGroupFile -Path C:\Packages\AdobeApps.xml -DisplayName "Adobe Apps" -Priority 2 | Add-AppvClientConnectionGroup | Enable-AppvClientConnectionGroup -Global[/code]
+```powershell
+Get-AppvClientPackage -Name Adobe* | New-AppvConnectionGroupFile -Path C:\Packages\AdobeApps.xml -DisplayName "Adobe Apps" -Priority 2 | Add-AppvClientConnectionGroup | Enable-AppvClientConnectionGroup -Global
+```
 
-# Finally
+## Finally
 
 This is version 1 of this function, so corrections and feedback are welcome. As always use at your own risk.

@@ -1,10 +1,10 @@
 ---
-id: 916
+
 title: 'You need this - App-V Client Client Diag and Config tool'
 date: 2009-02-23T14:15:01+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=916
+
 permalink: /you-need-this-app-v-client-client-diag-and-config-tool/
 aktt_notify_twitter:
   - 'no'

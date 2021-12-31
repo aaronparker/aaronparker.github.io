@@ -1,10 +1,10 @@
 ---
-id: 326
+
 title: Quering Domino via LDAP with VBscript
 date: 2007-08-08T08:33:16+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/quering-domino-via-ldap-with-vbscript
+
 permalink: /quering-domino-via-ldap-with-vbscript/
 categories:
   - Automation
@@ -43,7 +43,8 @@ You can also find information and example for querying 3rd party LDAP servers wi
 
 Here's a function that uses a different query method that will return an array of user distinguished names based on the search string passed to it. For example, if you pass the following string "OU=Sales,O=DominoOrg" it will only return users in the Sales OU below the DominoOrg organisation:
 
-[code lang="vb"]'Return the distinguished name of all of the user objects below the specified organisation  
+```vbscript
+'Return the distinguished name of all of the user objects below the specified organisation  
 Function fReturnDominoDNs(sDominoServer, sDominoScope)  
 Dim aArray()  
 Dim i: i = 0
@@ -79,4 +80,5 @@ fDominoUserDNs = aArray
 Set oConnection = Nothing  
 Set oCommand = Nothing  
 Set oRecordset = Nothing  
-End Function[/code]
+End Function
+```

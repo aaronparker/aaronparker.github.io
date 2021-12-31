@@ -1,10 +1,10 @@
 ---
-id: 6067
+
 title: 'Thunderbolt 3 - One Cable to Rule Them All'
 date: 2018-08-04T23:51:34+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=6067
+
 permalink: /thunderbolt-3/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -16,6 +16,9 @@ tags:
   - Caldigit
   - Thunderbolt
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Thunderbolt 3 and USB-C have arrived to make our life easier and more confusing all at the same time. The promise of a single cable that does everything is appealing but for the average consumer, knowing what to purchase is challenging. This article is a view into my research into Thunderbolt, USB-C and 4K monitors and what I've ultimately purchased.
 
 In an effort to reduce the clutter on my desk and improve my viewing experience for work, I've invested in a Thunderbolt 3 dock and a 4K monitor. This article isn't necessarily a review of this hardware - instead consider this a walk-through of how I made these specific choices and my experiences with a Thunderbolt 3 dock. In a follow up article, I'll discuss Thunderbolt and high HPI experiences on macOS and Windows.
@@ -46,8 +49,8 @@ High resolution displays are moving beyond 1080p with 4K monitors being a common
 
 Here's two articles I recommend reading on the topic of displays and pixel density - while written primarily for a Mac audience, they're still applicable to Windows PCs:
 
-  * [Retina Monitors](https://www.caseyliss.com/2017/5/17/retina-monitors)
-  * [Displays for designers and developers](https://bjango.com/articles/macexternaldisplays/)
+* [Retina Monitors](https://www.caseyliss.com/2017/5/17/retina-monitors)
+* [Displays for designers and developers](https://bjango.com/articles/macexternaldisplays/)
 
 The short version is this - the aim of a 'Retina' display is that you don't see individual pixels, so as the screen size increases, you need to increase resolution.  Sounds simple enough, but I think it's easy to believe that a 4K 27&#8243; display will give you retina quality, which is just not the case.
 
@@ -57,8 +60,8 @@ So with the desire to improve my external display options, I needed to find the 
 
 LG provides two purpose built monitors for the Mac both of which come with trade offs and caveats if you want to support cross platform:
 
-  * The [LG Ultrafine 4K monitor](https://www.apple.com/au/shop/product/HKMY2X/A/lg-ultrafine-4k-display). This 21.5&#8243; monitor has an amazing display with full macOS support (given that it was built for the Mac), but the additional 3 USB-C ports are USB 2 speeds only. With the peripherals I need to drive as well, this would just require too many additional dongles. On top of the $1010 AUD, I'd need to account for the price of additional dongles
-  * The LG Ultrafine 5K monitor, this model does come with USB-C 3.1 ports, but to drive this display, you'll need the 15&#8243; MacBook Pro. It has the same number of USB-C outputs and the same issue with dongles if you have more than 3 peripherals to plug into it. This is the model I've seen in person and the display is outstanding
+* The [LG Ultrafine 4K monitor](https://www.apple.com/au/shop/product/HKMY2X/A/lg-ultrafine-4k-display). This 21.5&#8243; monitor has an amazing display with full macOS support (given that it was built for the Mac), but the additional 3 USB-C ports are USB 2 speeds only. With the peripherals I need to drive as well, this would just require too many additional dongles. On top of the $1010 AUD, I'd need to account for the price of additional dongles
+* The LG Ultrafine 5K monitor, this model does come with USB-C 3.1 ports, but to drive this display, you'll need the 15&#8243; MacBook Pro. It has the same number of USB-C outputs and the same issue with dongles if you have more than 3 peripherals to plug into it. This is the model I've seen in person and the display is outstanding
 
 Both of these monitors should in theory work with Windows devices, but given that all control is provided in software (built into macOS), they aren't really going to be a monitor to consider if you're on PC. There's [plenty of reviews on these monitors](https://www.youtube.com/results?search_query=lg+ultrafine) if you're interested.
 
@@ -82,8 +85,8 @@ At this point, I should probably explain my choice of Thunderbolt over USB-C - i
 
 Here's a couple of great articles that test and compare various docks and I used these to inform my choice of dock.
 
-  * Guidemaster: Picking the right Thunderbolt 3 or USB-C dock for your desk at [ArsTechnica](https://arstechnica.com/features/2018/07/guidemaster-how-to-navigate-the-tricky-world-of-thunderbolt-3-and-usb-c-docks/)
-  * The Best Thunderbolt 3 Docks at [WireCutter](https://thewirecutter.com/reviews/best-thunderbolt-dock/)
+* Guidemaster: Picking the right Thunderbolt 3 or USB-C dock for your desk at [ArsTechnica](https://arstechnica.com/features/2018/07/guidemaster-how-to-navigate-the-tricky-world-of-thunderbolt-3-and-usb-c-docks/)
+* The Best Thunderbolt 3 Docks at [WireCutter](https://thewirecutter.com/reviews/best-thunderbolt-dock/)
 
 #### Thunderbolt Cable Considerations
 
@@ -97,13 +100,19 @@ So what is the experience or usability like? Here's a quick overview of my chose
 
 Picking a Thunderbolt 3 docks was fairly simple - ensure I have enough ports, including DisplayPort, and see what the reviews recommend. With that info in hand, I settled on the [Caldigit TS3 Plus](http://www.caldigit.com/thunderbolt-3-dock/thunderbolt-station-3-plus/index-asia.asp). This dock has plenty of ports for all of the peripherals I need to plug into it, including DisplayPort and Ethernet.
 
-![Ports on the Caldigit TS3Pro Thunderbolt 3 dock]({{site.baseurl}}/media/2018/08/Caldigit-TS3Plus-Ports.png)*Ports on the Caldigit TS3Pro Thunderbolt 3 dock*
+![Ports on the Caldigit TS3Pro Thunderbolt 3 dock]({{site.baseurl}}/media/2018/08/Caldigit-TS3Plus-Ports.png)
+
+Ports on the Caldigit TS3Pro Thunderbolt 3 dock
+{:.figcaption}
 
 I have added [a USB-C to HDMI adapter](https://www.startech.com/au/AV/usb-c-video-adapters/usb-c-hdmi-adapter~CDP2HD) to connect my existing 1080p monitor. I've found StarTech adapters and cables to be good quality at reasonable prices. Interestingly, I've had to plug this into the second Thunderbolt port on the dock to get video out, so even though the dock as 2 USB 3.1 Type-C ports, only the second Thunderbolt port must support DP Alt Mode.
 
 The dock came with a 50cm Thunderbolt 3 port and 85W output, thus the single cable powers my laptop and connects to all external peripherals. It's a solid unit in brushed aluminium with a power supply larger than the device itself, which should hopefully assist with heat dissipation.
 
-![Comparing the size of the Caldigit TS3 Plus]({{site.baseurl}}/media/2018/08/CaldiditTS3Plus-Size.jpg)*The Caldigit TS3 Plus next to a 60W Apple power supply and its own external power supply*
+![Comparing the size of the Caldigit TS3 Plus]({{site.baseurl}}/media/2018/08/CaldiditTS3Plus-Size.jpg)
+
+The Caldigit TS3 Plus next to a 60W Apple power supply and its own external power supply
+{:.figcaption}
 
 Thunderbolt on macOS is plug-and-play and  I was able to unbox the dock and plug-in within a few minutes. I have the dock on top of my desk rather than mounting underneath for access to the SD card slot and front facing USB slot. The only change I would have liked to see would be to have the audio ports on the back of the unit to make routing cables easier.
 
@@ -113,8 +122,8 @@ Thunderbolt on macOS is plug-and-play and  I was able to unbox the dock and plug
 
 In 24&#8243; 4K monitors I had basically two choices:
 
-  * The [LG 24UD58-B](https://www.lg.com/au/it-monitors/lg-24UD58-B); and 
-  * The [Dell P2415Q](https://www.dell.com/en-au/work/shop/dell-24-ultra-hd-4k-monitor-p2415q/apd/210-anfp/monitors-monitor-accessories)
+* The [LG 24UD58-B](https://www.lg.com/au/it-monitors/lg-24UD58-B); and
+* The [Dell P2415Q](https://www.dell.com/en-au/work/shop/dell-24-ultra-hd-4k-monitor-p2415q/apd/210-anfp/monitors-monitor-accessories)
 
 Based on reviews, an in-built USB hub and an optional speaker that attaches to the bottom of the monitor, I went with the Dell. It has bezels that are thicker than I'd like, but overall it provides a pretty good display. It's not near the LG Ultrafine in quality, but it's reasonable for the price. The difference in display quality due to the sheer number of pixels between this screen and the 1080p next to it, is huge.
 
@@ -122,11 +131,17 @@ The monitor comes with a cable with DisplayPort to Mini DisplayPort connectors, 
 
 Scaling in macOS and Windows 10 works a treat and I'll discuss that in more detail in another article; however, what concerned me before the purchase is exactly how macOS would scale on screen windows. Fortunately, the default scaling is spot on.
 
-![Dell P2415Q scaling options on macOS]({{site.baseurl}}/media/2018/08/Dell-P2415Q-DisplayOptions.png)*Dell P2415Q scaling options on macOS*
+![Dell P2415Q scaling options on macOS]({{site.baseurl}}/media/2018/08/Dell-P2415Q-DisplayOptions.png)
+
+Dell P2415Q scaling options on macOS
+{:.figcaption}
 
 My audio inputs and outputs are now a little over the top:
 
-![macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort]({{site.baseurl}}/media/2018/08/macOS-Audio-InputOutput.png)macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort*
+![macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort]({{site.baseurl}}/media/2018/08/macOS-Audio-InputOutput.png)
+
+macOS audio outputs / inputs with Thunderbolt 3 and DisplayPort
+{:.figcaption}
 
 **Purchase**? Maybe - this depends on your space requirements and budget. Whatever you purchase, keep in mind the capabilities of your GPU and how sharp you want windows and text to appear on screen. The larger the screen the more chance you'll see pixels.
 

@@ -1,10 +1,10 @@
 ---
-id: 72
+
 title: Group Policy Scripts can fail due to UAC
 date: 2007-04-02T22:57:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/group-policy-scripts-can-fail-due-to-uac
+
 permalink: /group-policy-scripts-can-fail-due-to-uac/
 dsq_thread_id:
   - "195378551"

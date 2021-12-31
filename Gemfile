@@ -1,15 +1,27 @@
-# frozen_string_literal: true
 source "https://rubygems.org"
 
-gemspec
+# Hello! This is where you manage which Jekyll version is used to run.
+# When you want to use a different version, change it below, save the
+# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+#
+#     bundle exec jekyll serve
+#
+# This will help ensure the proper Jekyll version is running.
+# Happy Jekylling!
+gem "jekyll", "~> 3.8"
 
-# Plug-ins
+# A JavaScript runtime for ruby that helps with running the katex gem above.
+gem "duktape"
+
+# Fixes `jekyll serve` in ruby 3
+gem "webrick"
+
 group :jekyll_plugins do
-    gem "jekyll-feed", "~> 0.6"
-    gem "jekyll-sitemap", "~> 1.4"
-    gem "jekyll-gist", "~> 1.5.0"
-    gem "jekyll-seo-tag", "~> 2.6.0"
-    gem 'jekyll-algolia', '~> 1.6'
-    gem "jekyll-paginate", "~> 1.1.0"
-    gem "jekyll-avatar", "~> 0.6.0"
+  gem "github-pages"
+  gem "jekyll-include-cache"
+  gem "jekyll-compose"
 end
+
+gem 'wdm' if Gem.win_platform?
+gem "tzinfo-data" if Gem.win_platform?
+

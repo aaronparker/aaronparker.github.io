@@ -1,10 +1,10 @@
 ---
-id: 404
+
 title: MSI Utility for Microsoft Application Virtualization Available
 date: 2007-12-20T11:18:58+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/msi-utility-for-microsoft-application-virtualization-available
+
 permalink: /msi-utility-for-microsoft-application-virtualization-available/
 categories:
   - Microsoft

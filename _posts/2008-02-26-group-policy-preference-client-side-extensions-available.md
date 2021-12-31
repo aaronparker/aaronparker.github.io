@@ -1,10 +1,10 @@
 ---
-id: 482
+
 title: Group Policy Preference Client Side Extensions Available
 date: 2008-02-26T20:23:57+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/off-site-news/group-policy-preference-client-side-extensions-available
+
 permalink: /group-policy-preference-client-side-extensions-available/
 dsq_thread_id:
   - "195380207"

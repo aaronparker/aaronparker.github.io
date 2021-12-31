@@ -1,10 +1,10 @@
 ---
-id: 798
+
 title: 'TechEd EMEA 2008 - First Impressions'
 date: 2008-11-05T12:41:58+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=798
+
 permalink: /teched-emea-2008-first-impressions/
 dsq_thread_id:
   - "195381233"
@@ -15,7 +15,7 @@ tags:
 ---
 <img style="border-right-width: 0px; margin: 0px 15px 0px 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="teched-2008-logo" src="{{site.baseurl}}/media/2008/11/teched2008logo.jpg" border="0" alt="teched-2008-logo" width="156" height="80" align="left" />After experiencing some initial troubles with Internet access from my hotel room, I might be able to start posting some pieces from Tech∙Ed here in Barcelona. Some of these might be out of chronological order, but first up here's a general odds and ends from my first few days here:
 
- 
+ 
 
   * Barcelona is a fascinating city, but my Spanish needs some work (lots of work in fact)
   * Monday night was the exhibitors drinks and mingle time - there was lots of beer, finger food and Xbox (I had to have a crack at The Force Unleashed on the Xbox - it's exactly the same as on the PS3, but I much prefer the Xbox controllers;

@@ -1,10 +1,10 @@
 ---
-id: 179
+
 title: Windows Vista Tips
 date: 2006-09-26T00:17:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/windows-vista-tips
+
 permalink: /windows-vista-tips/
 categories:
   - Microsoft

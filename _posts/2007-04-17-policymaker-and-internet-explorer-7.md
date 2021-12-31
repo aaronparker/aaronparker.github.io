@@ -1,10 +1,10 @@
 ---
-id: 60
+
 title: PolicyMaker and Internet Explorer 7
 date: 2007-04-17T20:55:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/policymaker-and-internet-explorer-7
+
 permalink: /policymaker-and-internet-explorer-7/
 dsq_thread_id:
   - "195378426"

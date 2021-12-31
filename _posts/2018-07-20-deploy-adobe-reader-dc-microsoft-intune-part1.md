@@ -1,10 +1,10 @@
 ---
-id: 6032
+
 title: Adobe Reader DC deployment with Microsoft Intune Part 1
 date: 2018-07-20T20:44:19+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=6032
+
 permalink: /deploy-adobe-reader-dc-microsoft-intune-part1/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -17,6 +17,9 @@ tags:
   - Adobe Reader DC
   - Intune
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Adobe Reader is of course one of the most common applications on Windows desktops and if you're moving to a Modern Management approach you're likely looking at how to deploy Adobe Reader DC to Windows 10 via Microsoft Intune.
 
 This is a challenge today because Adobe Reader DC comes as an executable, that while it can be extracted for the MSI, it includes support files that cannot be deployed via Intune. Microsoft only enables Windows desktop applications to be [deployed from Intune where the installer is contained in a single file Windows Installer](https://docs.microsoft.com/en-us/intune/lob-apps-windows).
@@ -27,7 +30,10 @@ The Adobe Reader installer hasn't changed much since as long [as I've been writi
 
 The [current installer](https://get.adobe.com/reader/enterprise/) for Adobe Reader DC is a single executable that can run as is, or can be extracted for [customisation typical of enterprise environments](https://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/index.html). When extracted it looks like this:
 
-![Adobe Reader DC extracted files]({{site.baseurl}}/media/2018/07/ReaderDC-ExtractedFiles.png)*Adobe Reader DC extracted files*
+![Adobe Reader DC extracted files]({{site.baseurl}}/media/2018/07/ReaderDC-ExtractedFiles.png)
+
+Adobe Reader DC extracted files
+{:.figcaption}
 
 This just won't work for deployment via Intune or the Windows 10 MDM channel. We need that single Windows Installer file. Better yet, we need Adobe to make Reader DC available via the Windows Store, but that's a topic for another article.
 
@@ -35,7 +41,10 @@ This just won't work for deployment via Intune or the Windows 10 MDM channel. We
 
 [Adobe does make a single file Windows Installer available](ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/) for Adobe Reader DC, in various languages; however, the file was released in 2015 and unfortunately they've not updated it since. There has been several major releases and updates since March 2005.
 
-![Adobe Reader DC single file Windows Installer on the public FTP site]({{site.baseurl}}/media/2018/07/AdobeReader-FTPdownloads.png)*Adobe Reader DC single file Windows Installer on the public FTP site*
+![Adobe Reader DC single file Windows Installer on the public FTP site]({{site.baseurl}}/media/2018/07/AdobeReader-FTPdownloads.png)
+
+Adobe Reader DC single file Windows Installer on the public FTP site
+{:.figcaption}
 
 So, now we have a way to deploy the file, let's see how to customise it and deploy via Intune.
 
@@ -45,11 +54,17 @@ Customisation of the Adobe Reader installer for [enterprise deployment is well d
 
 Just like previous versions, you use the [Adobe Customization Wizard](https://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/WizardDC/index.html) to customise the installer for your needs and deploy a custom package.
 
-![Adobe Customization Wizard DC]({{site.baseurl}}/media/2018/07/ReaderDC-CustomizationWizard.png)*Adobe Customization Wizard DC*
+![Adobe Customization Wizard DC]({{site.baseurl}}/media/2018/07/ReaderDC-CustomizationWizard.png)
+
+Adobe Customization Wizard DC
+{:.figcaption}
 
 However, we can't customise the single file Windows Installer directly because when saving the customisations, we get this:
 
-![Adobe Customization Wizard DC - setup.ini was not found]({{site.baseurl}}/media/2018/07/ReaderDC-SetupIniNotFound.png)*Adobe Customization Wizard DC - setup.ini was not found*
+![Adobe Customization Wizard DC - setup.ini was not found]({{site.baseurl}}/media/2018/07/ReaderDC-SetupIniNotFound.png)
+
+Adobe Customization Wizard DC - setup.ini was not found
+{:.figcaption}
 
 To customise the installer, we need to use a 3 step process:
 
@@ -72,7 +87,10 @@ As I've listed in the table, it's important to keep the Adobe Updater enabled, s
 
 Now that you have a customised single file Windows Installer for Adobe Reader DC, you can [import that into Microsoft Intune](https://docs.microsoft.com/en-us/intune/lob-apps-windows), and make it available for deployment.
 
-![Adobe Reader DC installed via Intune]({{site.baseurl}}/media/2018/07/AdobeReaderDC-Installed.png)*Adobe Reader DC installed via Intune*
+![Adobe Reader DC installed via Intune]({{site.baseurl}}/media/2018/07/AdobeReaderDC-Installed.png)
+
+Adobe Reader DC installed via Intune
+{:.figcaption}
 
 ## Summary
 

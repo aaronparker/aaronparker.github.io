@@ -1,10 +1,10 @@
 ---
-id: 1792
+
 title: 'App-V FAQ: Does the delivery method change how applications are sequenced?'
 date: 2010-08-19T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1792
+
 permalink: /app-v-faq-21-does-the-delivery-method-change-how-applications-are-sequenced/
 has_been_twittered:
   - 'yes'
@@ -52,7 +52,7 @@ This registry value (along with OSDSourceRoot and IconSourceRoot) is used by SCC
 So if what you choose to place in the OSD URL does not impact your deployment solution, does that mean you can choose to put anything in the URL? Like anything there are a set of guidelines that you should stick to, so that you get some consistency in your packages:
 
   * Choose the protocol and port that will be used most commonly.
-  * Leave the hostname as `%SFT_SOFTGRIDSERVER%`. Add this environment variable on the client if you won’t be using the ApplicationSourceRoot value. This will make packages more flexible if your server hostname changes
+  * Leave the hostname as `%SFT_SOFTGRIDSERVER%`. Add this environment variable on the client if you won’t be using the ApplicationSourceRoot value. This will make packages more flexible if your server hostname changes
   * Specify a path for each package that matches the folder name to which the package has been saved.
 
 ## Conclusion

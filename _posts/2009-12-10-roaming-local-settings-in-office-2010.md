@@ -1,10 +1,10 @@
 ---
-id: 1238
+
 title: Roaming User Customisations in Office 2010
 date: 2009-12-10T22:35:12+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/applications/roaming-local-settings-in-office-2010
+
 permalink: /roaming-local-settings-in-office-2010/
 aktt_notify_twitter:
   - 'yes'

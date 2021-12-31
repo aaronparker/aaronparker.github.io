@@ -1,10 +1,10 @@
 ---
-id: 188
+
 title: Laptop Battery Life Reaches 76 hours and 56 minutes
 date: 2006-09-03T16:14:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/laptop-battery-life-reaches-76-hours-and-56-minutes
+
 permalink: /laptop-battery-life-reaches-76-hours-and-56-minutes/
 categories:
   - Microsoft

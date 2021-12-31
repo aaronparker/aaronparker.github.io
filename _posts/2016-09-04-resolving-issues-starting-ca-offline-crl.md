@@ -1,24 +1,22 @@
 ---
-id: 5127
 title: Resolving Issues Starting a CA due to an Offline CRL
+description: Resolving issues when attempting to start a certificate authority due to an offline CRL.
 date: 2016-09-04T22:18:39+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=5127
 permalink: /resolving-issues-starting-ca-offline-crl/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "5118425385"
 image: /media/2016/09/13740073235_b8a4ec0ffc_k.jpg
 categories:
   - Microsoft
-tags:
-  - Certificate Authority
-  - Certificate Revocation List
-  - Certificate Services
-  - CRL
+related_posts:
+  - _posts/2016-08-22-deploy-enterprise-subordinate-certificate-authority.md
+  - _posts/2016-08-21-deploy-enterprise-root-certificate-authority.md
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 I recently wrote a couple of articles on setting up and [Root Certification Authority]({{site.baseurl}}/deploy-enterprise-root-certificate-authority/) and a [Subordinate Certification Authority]({{site.baseurl}}/deploy-enterprise-subordinate-certificate-authority/) as a basic cheat sheet for setting up and Enterprise PKI. One configuration item that is less well understood and often the cause of major headaches with certificate authorities, is the Certificate Revocation List (CRL). An Offline CRL can bring down your PKI and other services that rely on it.
 
 ## The Issue
@@ -47,13 +45,16 @@ In addition (by starting the CA with a workaround) I can see a number of failed 
 
 In this case, I knew that my CRL was online - it's the same server as the subordinate CA and I had configured both the offline Root CA and the Subordinate CA for the same CRL distribution point.
 
-![CRL distribution point on the Subordinate CA]({{site.baseurl}}/media/2016/09/http-crl-issuingca.png)*CRL distribution point on the Subordinate CA*
+![CRL distribution point on the Subordinate CA]({{site.baseurl}}/media/2016/09/http-crl-issuingca.png)
+
+CRL distribution point on the Subordinate CA
+{:.figcaption}
 
 ## The Workaround
 
 Of course, you probably want to get the CA up and running as quickly as possible. The easy way to do that is to disable CRL checking with the following command on the CA server:
 
-```
+```powershell
 certutil –setreg ca\CRLFlags +CRLF_REVCHECK_IGNORE_OFFLINE
 ```
 
@@ -65,7 +66,7 @@ Run this from an elevated command prompt and you should now be able to start the
 
 My CRL was online as it is available in Active Directory (for domain joined machines) and via HTTP at crl.home.stealthpuppy.com, an alias of the subordinate CA. I've tested that I can retrieve the CRL by putting the HTTP path into a browser and I'm prompted to download a file.
 
-```
+```powershell
 http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Issuing CA.crl
 http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Offline Root CA.crl
 ```
@@ -76,7 +77,7 @@ Certutil can be used to perform many functions, one of which is to verify a CRL.
 
 To verify the CRL, use the -URL switch with the HTTP (or LDAP) path to the CRL:
 
-```
+```powershell
 certutil -URL "http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Issuing CA.crl"
 ```
 
@@ -114,11 +115,14 @@ Copy the updated CRL (from `C:\Windows\System32\certsrv\CertEnroll` by default) 
 
 Now if we again use certutil.exe to verify the CRL, it comes up roses:
 
-![Viewing the verified CRL with certutil.exe]({{site.baseurl}}/media/2016/09/verifiedCRL.png)*Viewing the verified CRL with certutil.exe*
+![Viewing the verified CRL with certutil.exe]({{site.baseurl}}/media/2016/09/verifiedCRL.png)
+
+Viewing the verified CRL with certutil.exe
+{:.figcaption}
 
 To ensure that the subordinate CA's certification authority service will start, re-enable CRL checking:
 
-```
+```powershell
 certutil –setreg ca\CRLFlags -CRLF_REVCHECK_IGNORE_OFFLINE
 ```
 

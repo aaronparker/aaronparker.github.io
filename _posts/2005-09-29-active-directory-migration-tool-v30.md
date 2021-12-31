@@ -1,10 +1,10 @@
 ---
-id: 292
+
 title: Active Directory Migration Tool v3.0
 date: 2005-09-29T18:41:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/active-directory-migration-tool-v30
+
 permalink: /active-directory-migration-tool-v30/
 categories:
   - Microsoft

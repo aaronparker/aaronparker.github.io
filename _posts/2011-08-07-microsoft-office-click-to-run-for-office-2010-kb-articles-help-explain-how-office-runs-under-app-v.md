@@ -1,10 +1,10 @@
 ---
-id: 2361
+
 title: Microsoft Office Click-to-Run for Office 2010 KB articles help explain how Office runs under App-V
 date: 2011-08-07T22:13:05+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/microsoft-office-click-to-run-for-office-2010-kb-articles-help-explain-how-office-runs-under-app-v/
+
 permalink: /microsoft-office-click-to-run-for-office-2010-kb-articles-help-explain-how-office-runs-under-app-v/
 dsq_thread_id:
   - "379679824"

@@ -1,10 +1,10 @@
 ---
-id: 2278
+
 title: Sequencing Apple iTunes 10
 date: 2011-06-15T22:33:23+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2278
+
 permalink: /sequencing-apple-itunes-10/
 dsq_thread_id:
   - "333375996"
@@ -93,7 +93,7 @@ By creating these folder before sequencing will make it simpler to set Merge wit
 
 ## Installing iTunes
 
-**[Update July 2012]**: QuickTime is not longer included with the iTunes installer.  If you using a recent version of iTunes, disregard the QuickTime components of this article.
+**[Update July 2012]**: QuickTime is not longer included with the iTunes installer.  If you using a recent version of iTunes, disregard the QuickTime components of this article.
 
 Sequencing is as simple as capturing the installation of the following files and configuring iTunes the way we want:
 

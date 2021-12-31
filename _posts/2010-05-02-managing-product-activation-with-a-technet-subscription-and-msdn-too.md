@@ -1,10 +1,10 @@
 ---
-id: 1530
+
 title: Managing product activation with a TechNet subscription (and MSDN too)
 date: 2010-05-02T19:39:54+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/general/managing-product-activation-with-a-technet-subscription-and-msdn-too
+
 permalink: /managing-product-activation-with-a-technet-subscription-and-msdn-too/
 has_been_twittered:
   - 'yes'

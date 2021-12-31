@@ -1,10 +1,10 @@
 ---
-id: 283
+
 title: Event Search
 date: 2005-11-04T09:20:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/event-search
+
 permalink: /event-search/
 categories:
   - Microsoft

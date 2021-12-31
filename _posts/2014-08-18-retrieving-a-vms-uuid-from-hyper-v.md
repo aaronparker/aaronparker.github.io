@@ -1,13 +1,9 @@
 ---
-id: 3642
 title: "Retrieving a VM's UUID from Hyper-V"
 date: 2014-08-18T12:15:13+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3642
 permalink: /retrieving-a-vms-uuid-from-hyper-v/
-dsq_thread_id:
-  - "2937041857"
 categories:
   - Automation
 tags:
@@ -18,7 +14,7 @@ I've previously posted about retrieving the [UUID](http://en.wikipedia.org/wiki/
 
 Just like with vSphere, the UUID isn't a property of the virtual machine that can be queried directly. We need to go via WMI to query the target virtual machine. Note that in this function, I'm using [version 2 of the Root\Virtualization WMI namespace](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/05/30/the-v2-wmi-namespace-in-hyper-v-on-windows-8.aspx) (root\virtualization\v2. This means the function as written, will [only work on Windows 8 and Windows Server 2012](http://msdn.microsoft.com/en-us/library/hh850319(v=vs.85)) (and above). If you want to use this function on earlier versions of Hyper-V, remove the "\v2" from the namespace.
 
-As an example, here's how to retrieve the UUIDs from a set of VMs on a target Hyper-V host named _hv1_:
+As an example, here's how to retrieve the UUIDs from a set of VMs on a target Hyper-V host named `hv1`:
 
 ```powershell
 C:\> Get-HypervVMUUID -ComputerName hv1 -VM win71, file3, pvs1

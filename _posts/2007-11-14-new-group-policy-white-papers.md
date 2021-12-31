@@ -1,10 +1,10 @@
 ---
-id: 369
+
 title: New Group Policy White Papers Up For Grabs
 date: 2007-11-14T00:03:12+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/off-site-news/new-group-policy-white-papers
+
 permalink: /new-group-policy-white-papers/
 enclosure:
   - |

@@ -1,10 +1,10 @@
 ---
-id: 182
+
 title: IIS6, .ICA and 404 Not Found
 date: 2006-09-14T18:03:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/iis6-ica-and-404-not-found
+
 permalink: /iis6-ica-and-404-not-found/
 categories:
   - Microsoft

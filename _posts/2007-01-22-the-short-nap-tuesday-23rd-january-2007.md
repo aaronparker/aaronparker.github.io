@@ -1,10 +1,10 @@
 ---
-id: 118
+
 title: 'The Short NAP: Tuesday 23rd January 2007'
 date: 2007-01-22T19:28:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/the-short-nap-tuesday-23rd-january-2007
+
 permalink: /the-short-nap-tuesday-23rd-january-2007/
 categories:
   - Microsoft

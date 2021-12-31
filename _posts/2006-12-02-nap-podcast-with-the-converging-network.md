@@ -1,10 +1,10 @@
 ---
-id: 143
+
 title: NAP podcast with The Converging Network
 date: 2006-12-02T20:22:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/nap-podcast-with-the-converging-network
+
 permalink: /nap-podcast-with-the-converging-network/
 categories:
   - Microsoft

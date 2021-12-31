@@ -1,22 +1,19 @@
 ---
-id: 3946
 title: Replicating Our 2015 Folder Redirection Performance Tests In Your Own Lab
 date: 2015-05-15T01:52:35+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3946
 permalink: /replicate-2015-folder-redirection-test/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
-dsq_thread_id:
-  - "3763702636"
 image: /media/2015/05/test_boxes.jpg
 categories:
   - Microsoft
 tags:
   - Folder Redirection
 ---
-[Helge](https://twitter.com/helgeklein), [Shawn](https://twitter.com/shawnbass) and myself had a great session this week at Citrix Synergy with our session [SYN502: I’ve got 99 problems, and folder redirection is every one of them](https://citrix.g2planet.com/synergyorlando2015/public_session_view.php?agenda_session_id=185).
+* this unordered seed list will be replaced by the toc
+{:toc}
+
+[Helge](https://twitter.com/helgeklein), [Shawn](https://twitter.com/shawnbass) and myself had a great session this week at Citrix Synergy with our session [SYN502: I’ve got 99 problems, and folder redirection is every one of them](https://citrix.g2planet.com/synergyorlando2015/public_session_view.php?agenda_session_id=185).
 
 ![IMG_2073]({{site.baseurl}}/media/2015/05/IMG_2073.jpg)
 
@@ -30,7 +27,7 @@ The virtual machine configuration used for the file server VMs, were configured 
 
 Client virtual machines were also configured with 2 vCPUs but with Dynamic Memory.
 
-This year, we have concentrated on testing SMB 3.02 as the primary version of SMB. We have used Windows 8.1 on the client side and Windows Server 2012 R2 and Windows Server 2008 R2 on the server side - so because Windows 8.1 and Windows Server 2012 R2 are SMB 3.02 aware, they will negotiate that version. When Windows 8.1 opens a connection to Windows Server 2008 R2, an SMB 2.1 connection is made.
+This year, we have concentrated on testing SMB 3.02 as the primary version of SMB. We have used Windows 8.1 on the client side and Windows Server 2012 R2 and Windows Server 2008 R2 on the server side - so because Windows 8.1 and Windows Server 2012 R2 are SMB 3.02 aware, they will negotiate that version. When Windows 8.1 opens a connection to Windows Server 2008 R2, an SMB 2.1 connection is made.
 
 All virtual machines were deployed with the latest updates as at May 2015.
 
@@ -38,11 +35,11 @@ All virtual machines were deployed with the latest updates as at May 2015.
 
 To test the throughput capabilities of SMB 3.02 and SMB 2.1, I've used the [DiskSpd 2.0.15 utility available from Microsoft](http://aka.ms/DiskSpd).
 
-> DiskSpd is a storage load generator / performance test tool from the Windows/Windows Server and Cloud Server Infrastructure Engineering teams.
+> DiskSpd is a storage load generator / performance test tool from the Windows/Windows Server and Cloud Server Infrastructure Engineering teams.
 
-You can liken DiskSpd to [Iometer](http://www.iometer.org); like Iometer, I can use DiskSpad to test various IO workload simulations by selecting block sizes and read/write  however with DiskSpd I can specify a file path as the test target, including UNC paths.
+You can liken DiskSpd to [Iometer](http://www.iometer.org); like Iometer, I can use DiskSpad to test various IO workload simulations by selecting block sizes and read/write  however with DiskSpd I can specify a file path as the test target, including UNC paths.
 
-Rather than cover complete details in this post on how DiskSpd works, I instead recommend reading this post by Jose Barreto: [DiskSpd, PowerShell and storage performance: measuring IOPs, throughput and latency for both local disks and SMB file shares](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx).
+Rather than cover complete details in this post on how DiskSpd works, I instead recommend reading this post by Jose Barreto: [DiskSpd, PowerShell and storage performance: measuring IOPs, throughput and latency for both local disks and SMB file shares](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx).
 
 One very useful part from that article that I will replicate here is the parameters table for DiskSpd. With this table, I was able to create the specific tests that were useful for me to determine the throughput performance for both SMB 2.1 and SMB 3.02.
 
@@ -71,34 +68,43 @@ Each of these tests uses 2 threads (1 per vCPU) and then from the output I've us
 
 To appropriate some type of folder redirection tests, I used the File Server Capacity Tool - this was about the best tool that I could find that could simulate home folder access (if you know of another, please let me know).
 
-I won't go into detail on how to use FSCT, instead I recommend reading this article by Mark Morowczynski - [How to use the File Server Capacity Tool (FSCT) on Server 2012 R2](http://blogs.technet.com/b/askpfeplat/archive/2014/04/28/how-to-use-the-file-server-capacity-tool-fsct-on-server-2012-r2.aspx).
+I won't go into detail on how to use FSCT, instead I recommend reading this article by Mark Morowczynski - [How to use the File Server Capacity Tool (FSCT) on Server 2012 R2](http://blogs.technet.com/b/askpfeplat/archive/2014/04/28/how-to-use-the-file-server-capacity-tool-fsct-on-server-2012-r2.aspx).
 
 The File Server Capacity Tool binaries are available from the following links:
 
-  * [File Server Capacity Tool v1.2- (64 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=27284)
-  * [File Server Capacity Tool v1.2 - (32 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=27283)
+* [File Server Capacity Tool v1.2- (64 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=27284)
+* [File Server Capacity Tool v1.2 - (32 bit)](https://www.microsoft.com/en-us/download/details.aspx?id=27283)
 
 In my lab environment, I've used two physical hosts with the file server targets on one host (to ensure no resource contention) and the controller and clients on a separate host. The two hosts are connected via a 1GB switch.
 
 Other than specific tests where we wanted to know the effect of anti-virus on the file server, no AV application was installed on any server or client (physical or virtual).
 
-![File Server Capacity Tool]({{site.baseurl}}/media/2015/05/FSCT.png)*File Server Capacity Tool architecture*
+![File Server Capacity Tool]({{site.baseurl}}/media/2015/05/FSCT.png)
+
+File Server Capacity Tool architecture
+{:.figcaption}
 
 FSCT comes with a single work load - Home Folders. Which is fortunately great for our use, should be as similar as possible to real work use of users interacting with their Documents or Desktop folders that are redirected to their home drive.
 
-![File Server Capacity Tool - Home Folders Workload]({{site.baseurl}}/media/2015/05/fsct-workload.png)*File Server Capacity Tool - Home Folders Workload*
+![File Server Capacity Tool - Home Folders Workload]({{site.baseurl}}/media/2015/05/fsct-workload.png)
 
-A single run of an FSCT workload simulation can take a very long time, so expect each simulation to run from 3 hours or more depending on the total number of user sessions that you want to get to. In each workload simulation, I ran from 50 to 800 user sessions, stepping by 50 user sessions for each test.
+File Server Capacity Tool - Home Folders Workload
+{:.figcaption}
+
+A single run of an FSCT workload simulation can take a very long time, so expect each simulation to run from 3 hours or more depending on the total number of user sessions that you want to get to. In each workload simulation, I ran from 50 to 800 user sessions, stepping by 50 user sessions for each test.
 
 Here's what a workload simulation looks like:
 
-![How File Server Capacity Tool workload simulations are run]({{site.baseurl}}/media/2015/05/fsct.png)*How File Server Capacity Tool workload simulations are run*
+![How File Server Capacity Tool workload simulations are run]({{site.baseurl}}/media/2015/05/fsct.png)
+
+How File Server Capacity Tool workload simulations are run
+{:.figcaption}
 
 To demonstrate an example, here's an overview of the environment and the FSCT commands that I used to run the workloads for each test.
 
-  * **File Server**: FILE3 (192.168.0.79, Windows Server 2012 R2)
-  * **Controller**: CNTRLR (Windows 8.1)
-  * **Clients**: CLIENT1, CLIENT2, CLIENT3, CLIENT4 (Windows 8.1; each client ran up to 200 concurrent sessions)
+* **File Server**: FILE3 (192.168.0.79, Windows Server 2012 R2)
+* **Controller**: CNTRLR (Windows 8.1)
+* **Clients**: CLIENT1, CLIENT2, CLIENT3, CLIENT4 (Windows 8.1; each client ran up to 200 concurrent sessions)
 
 The basic steps for running FSCT were as follows:
 
@@ -131,6 +137,9 @@ To make it simple to measure logon times, there's only one tool worth using to v
 
 I recommend creating a large enough profile, or one that is indicative of profiles that you may have in production. For real stress testing, the number of files in the profile is more important than the total profile size.
 
-![uberAgent logon duration dashboard]({{site.baseurl}}/media/2015/05/uberAgent-logon-duration-dashboard.png)*Viewing logon times in uberAgent.*
+![uberAgent logon duration dashboard]({{site.baseurl}}/media/2015/05/uberAgent-logon-duration-dashboard.png)
 
-If you want to use uberAgent in your lab, I recommend contacting [https://uberagent.com/download/](https://uberagent.com/download/) for info on whether you qualify for a consultants license.
+Viewing logon times in uberAgent
+{:.figcaption}
+
+If you want to use uberAgent in your lab, I recommend contacting [https://uberagent.com/download/](https://uberagent.com/download/) for info on whether you qualify for a consultants license.

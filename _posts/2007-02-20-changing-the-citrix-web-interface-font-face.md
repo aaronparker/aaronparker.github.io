@@ -1,10 +1,10 @@
 ---
-id: 100
+
 title: Changing the Citrix Web Interface Font Face
 date: 2007-02-20T18:39:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/changing-the-citrix-web-interface-font-face
+
 permalink: /changing-the-citrix-web-interface-font-face/
 aktt_notify_twitter:
   - 'yes'

@@ -1,10 +1,10 @@
 ---
-id: 825
+
 title: Workaround for crashing App-V Management Console
 date: 2008-12-03T16:40:30+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/workaround-for-crashing-app-v-management-console
+
 permalink: /workaround-for-crashing-app-v-management-console/
 aktt_notify_twitter:
   - 'yes'

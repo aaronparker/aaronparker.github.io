@@ -1,10 +1,10 @@
 ---
-id: 608
+
 title: WAIK Documentation Updates
 date: 2008-07-22T17:11:56+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/windows/waik-documentation-updates
+
 permalink: /waik-documentation-updates/
 categories:
   - Microsoft

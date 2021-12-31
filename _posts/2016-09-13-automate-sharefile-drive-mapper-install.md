@@ -1,10 +1,10 @@
 ---
-id: 5155
+
 title: Automating the Citrix ShareFile Drive Mapper Install
 date: 2016-09-13T00:00:01+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5155
+
 permalink: /automate-sharefile-drive-mapper-install/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -19,7 +19,10 @@ tags:
 ---
 Automating the installation of the Citrix ShareFile Drive Mapper requires deploying a code signing certificate to target machines before setup will complete. If you've installed the Drive Mapper client, you will have seen the following dialog box during setup:
 
-![Citrix ShareFile Driver]({{site.baseurl}}/media/2016/05/ShareFileDriver.png)*Citrix ShareFile Driver prompt during install*
+![Citrix ShareFile Driver]({{site.baseurl}}/media/2016/05/ShareFileDriver.png)
+
+Citrix ShareFile Driver prompt during install
+{:.figcaption}
 
 [Mike Nelson](https://twitter.com/nelmedia) had some challenges deploying the client, so I've documented the process here.
 
@@ -27,11 +30,17 @@ Automating the installation of the Citrix ShareFile Drive Mapper requires deploy
 
 Manually install the Driver Mapper on a target machine and view the local certificates of the local computer with the Certificates snap-in (via mmc.exe). Open the **Trusted Publishers** folder to view the Citrix code signing certificate:
 
-![The code signing certificate in Certificate Manager]({{site.baseurl}}/media/2016/09/Capture.png)*Citrix ShareFile Drive Mapper DigiCert code signing certificate*
+![The code signing certificate in Certificate Manager]({{site.baseurl}}/media/2016/09/Capture.png)
+
+Citrix ShareFile Drive Mapper DigiCert code signing certificate
+{:.figcaption}
 
 View the properties of the certificate and you can see that it's been issued by DigiCert:
 
-![Citrix ShareFile Drive Mapper Digicert code signing certificate]({{site.baseurl}}/media/2016/09/CitrixCodeCertificateProperties.png)*Citrix ShareFile Drive Mapper Digicert code signing certificate*
+![Citrix ShareFile Drive Mapper Digicert code signing certificate]({{site.baseurl}}/media/2016/09/CitrixCodeCertificateProperties.png)
+
+Citrix ShareFile Drive Mapper Digicert code signing certificate
+{:.figcaption}
 
 Export the certificate to a local file (from the **Details** tab with **Copy to File...**) using the default DER encoded binary X.509 format.
 
@@ -43,7 +52,10 @@ Here is a couple of ways of deploying the code signing certificate to clients:
 
 Certificates can be deployed to the **Trusted Publishers** store via a Group Policy Object. Import the certificate into the **Public Key Policies** node under **Security Settings** in a GPO applied to an OU containing the target computer accounts.
 
-![Deploying the code signing certificate via Group Policy]({{site.baseurl}}/media/2016/09/DeployCertViaGroupPolicy.png)*Deploying the code signing certificate via Group Policy*
+![Deploying the code signing certificate via Group Policy]({{site.baseurl}}/media/2016/09/DeployCertViaGroupPolicy.png)
+
+Deploying the code signing certificate via Group Policy
+{:.figcaption}
 
 Target computer will, of course, need to be Active Directory domain members for the certificate to be deployed in this manner. As well as this, the policy will have to be processed before the client is installed.
 
@@ -51,7 +63,7 @@ Target computer will, of course, need to be Active Directory domain members for 
 
 To install the certificate via other means, including via a script or embedded into a setup process. The [certutil.exe](https://technet.microsoft.com/en-us/library/cc732443(v=ws.11).aspx) command line tool can be used to import the certificate via the following command:
 
-```
+```powershell
 certutil -addstore -Enterprise -f "TrustedPublisher" ".\CitrixCodeSigningCert.cer"
 ```
 

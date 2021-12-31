@@ -1,10 +1,10 @@
 ---
-id: 1522
+
 title: Application Virtualisation Sequencing SuperFlow available
 date: 2010-04-28T09:37:46+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/off-site-news/application-virtualisation-sequencing-superflow-available
+
 permalink: /application-virtualisation-sequencing-superflow-available/
 has_been_twittered:
   - 'yes'

@@ -1,10 +1,10 @@
 ---
-id: 559
+
 title: No Redirected Folders? Just Wait Longer
 date: 2008-05-06T22:01:30+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/windows/no-redirected-folders-just-wait-longer
+
 permalink: /no-redirected-folders-just-wait-longer/
 categories:
   - Microsoft

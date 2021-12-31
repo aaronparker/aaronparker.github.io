@@ -1,10 +1,10 @@
 ---
-id: 194
+
 title: Access Gateway CITRIX_ADMIN_MONITOR.EXE and Proxy Servers
 date: 2006-08-28T16:57:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/access-gateway-citrix_admin_monitorexe-and-proxy-servers
+
 permalink: /access-gateway-citrix_admin_monitorexe-and-proxy-servers/
 categories:
   - Citrix

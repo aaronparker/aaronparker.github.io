@@ -1,10 +1,10 @@
 ---
-id: 573
+
 title: Sun JRE Install Script Update
 date: 2008-06-11T16:30:58+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/deployment/sun-jre-install-script-update
+
 permalink: /sun-jre-install-script-update/
 dsq_thread_id:
   - "195380679"

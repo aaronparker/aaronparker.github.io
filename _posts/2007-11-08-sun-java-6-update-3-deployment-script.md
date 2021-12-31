@@ -1,10 +1,10 @@
 ---
-id: 362
+
 title: Sun Java 6 Update 3 Deployment Script
 date: 2007-11-08T23:29:38+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/deployment/sun-java-6-update-3-deployment-script
+
 permalink: /sun-java-6-update-3-deployment-script/
 dsq_thread_id:
   - "195379572"

@@ -1,10 +1,10 @@
 ---
-id: 2776
+
 title: 'White Paper - The Definitive Guide to Delivering Microsoft Office with App-V'
 date: 2012-07-19T16:52:15+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2776
+
 permalink: /white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/
 Hide SexyBookmarks:
   - "0"
@@ -32,11 +32,11 @@ I'm extremely happy to make this white paper available, which is the result of a
 
 The paper is divided into two parts:
 
-  * _Part 1: To virtualize or not to virtualize_ - a discussion on the pros and cons of  virtualizing Office and what you should be considering if you are going to virtualize Office rather than deliver it as a component of your core gold image
+  * _Part 1: To virtualize or not to virtualize_ - a discussion on the pros and cons of  virtualizing Office and what you should be considering if you are going to virtualize Office rather than deliver it as a component of your core gold image
   * _Part 2: Virtualizing Office with App-V_ - a detailed walkthrough that goes beyond the Microsoft documentation for sequencing and delivering Office 2010, 2007 and 2003 with App-V 4.6
 
 The aim of this document is to be the best resource for virtualizing Office 2010, 2007 and 2003 with App-V 4.6 SP1 & SP2 available. Feedback, corrections and criticisms are welcome.
 
 This document is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/).
 
-**Note**: this is a independent effort; however it has been made available for free thanks to my employer [Kelway](http://www.kelway.co.uk/)
+**Note**: this is a independent effort; however it has been made available for free thanks to my employer [Kelway](http://www.kelway.co.uk/)

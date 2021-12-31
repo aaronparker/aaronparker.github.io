@@ -1,10 +1,10 @@
 ---
-id: 1905
+
 title: 'App-V FAQ: How do I restrict access to specific applications in an App-V package?'
 date: 2010-09-21T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-28-how-do-i-restrict-access-to-specific-applications-in-an-app-v-package/
+
 permalink: /restrict-applications-in-an-app-v-package/
 has_been_twittered:
   - 'yes'

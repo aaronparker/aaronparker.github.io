@@ -1,10 +1,10 @@
 ---
-id: 463
+
 title: 'The Short NAP: Thursday February 7 2008'
 date: 2008-02-07T18:57:42+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/access-control/the-short-nap-thursday-february-7-2008
+
 permalink: /the-short-nap-thursday-february-7-2008/
 categories:
   - Microsoft

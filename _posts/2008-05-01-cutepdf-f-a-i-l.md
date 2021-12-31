@@ -1,10 +1,10 @@
 ---
-id: 554
+
 title: 'CutePDF: F A I L'
 date: 2008-05-01T14:49:24+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/hall-of-shame/cutepdf-f-a-i-l
+
 permalink: /cutepdf-f-a-i-l/
 dsq_thread_id:
   - "195380592"

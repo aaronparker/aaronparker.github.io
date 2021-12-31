@@ -1,10 +1,10 @@
 ---
-id: 503
+
 title: Placing The SoftGrid User Data Directory
 date: 2008-03-16T22:59:17+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/placing-the-softgrid-user-data-directory
+
 permalink: /placing-the-softgrid-user-data-directory/
 dsq_thread_id:
   - "195380257"
