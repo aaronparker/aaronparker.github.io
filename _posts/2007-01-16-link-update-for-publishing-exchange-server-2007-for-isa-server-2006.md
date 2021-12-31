@@ -1,10 +1,10 @@
 ---
-
+id: 123
 title: 'Link: Update for Publishing Exchange Server 2007 for ISA Server 2006'
 date: 2007-01-16T17:28:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/link-update-for-publishing-exchange-server-2007-for-isa-server-2006
 permalink: /link-update-for-publishing-exchange-server-2007-for-isa-server-2006/
 categories:
   - Microsoft

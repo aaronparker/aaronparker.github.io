@@ -1,10 +1,10 @@
 ---
-
+id: 1686
 title: 'App-V FAQ: What are the system requirements for App-V?'
 date: 2010-07-15T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-6-what-are-the-system-requirements-for-app-v
 permalink: /app-v-faq-6-what-are-the-system-requirements-for-app-v/
 has_been_twittered:
   - 'yes'
@@ -22,7 +22,7 @@ Operating system support for App-V is ultimately determined by the [Microsoft Pr
 
 ### App-V Desktop Client
 
-Full details for the client system requirements can be found on TechNet here:  [Application Virtualization Client Hardware and Software Requirements](http://technet.microsoft.com/library/cc843822.aspx). The App-V 4.5 and App-V 4.6 clients can be installed to the following operating systems <sup>1</sup>:
+Full details for the client system requirements can be found on TechNet here:  [Application Virtualization Client Hardware and Software Requirements](http://technet.microsoft.com/library/cc843822.aspx). The App-V 4.5 and App-V 4.6 clients can be installed to the following operating systems <sup>1</sup>:
 
   * Windows XP Professional Service Pack 2 and Service Pack 3
   * Windows Vista RTM/SP1/SP2 Business, Enterprise and Ultimate
@@ -32,13 +32,13 @@ Note, these are the operating system versions that Microsoft currently support, 
 
 ### App-V Remote Desktop Services Client
 
-Full details for the client system requirements (including RDS) can be found on TechNet here:  [Application Virtualization Client Hardware and Software Requirements](http://technet.microsoft.com/library/cc843822.aspx). The App-V 4.5 and App-V 4.6 clients can be installed to the following operating systems <sup>1</sup>:
+Full details for the client system requirements (including RDS) can be found on TechNet here:  [Application Virtualization Client Hardware and Software Requirements](http://technet.microsoft.com/library/cc843822.aspx). The App-V 4.5 and App-V 4.6 clients can be installed to the following operating systems <sup>1</sup>:
 
   * Windows Server 2003 (Standard, Enterprise, Datacenter; SP1, SP2, R2, SP2+R2)
   * Windows Server 2008 (Standard, Enterprise, Datacenter; SP1, SP2)
   * Windows Server 2008 R2 (Standard, Enterprise, Datacenter)
 
-### App-V Management Server and Streaming  Server
+### App-V Management Server and Streaming  Server
 
 The App-V Management Server and Streaming Server are 32-bit only but will install on 64-bit Windows. Full details for the server system requirements can be found on TechNet here: [Application Virtualization System Requirements](http://technet.microsoft.com/library/cc843853.aspx). The App-V 4.5 SP1 and SP2 server components can be installed on the following operating systems <sup>1</sup>:
 

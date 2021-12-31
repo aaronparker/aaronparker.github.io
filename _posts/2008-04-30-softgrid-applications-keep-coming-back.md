@@ -1,10 +1,10 @@
 ---
-
+id: 546
 title: SoftGrid Applications Keep Coming Back
 date: 2008-04-30T23:02:39+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/softgrid-applications-keep-coming-back
 permalink: /softgrid-applications-keep-coming-back/
 dsq_thread_id:
   - "195380562"

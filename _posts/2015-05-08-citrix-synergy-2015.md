@@ -1,10 +1,10 @@
 ---
-
+id: 3938
 title: Looking forward to Citrix Synergy 2015
 date: 2015-05-08T14:48:31+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy/?p=3938
 permalink: /citrix-synergy-2015/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -16,7 +16,7 @@ categories:
 tags:
   - Citrix Synergy
 ---
-[Citrix Synergy 2015](http://www.citrixsynergy.com) is just next week, so for me that means several things - attending CTP meetings (from about 8:00 am to 9:00 pm each day) on the Sunday and Monday, presenting a Geek Speak Live session on Tuesday, helping to man the [Atlantis](http://www.atlantiscomputing.com) booth on the solutions expo floor, taking part in Geek Speak on Wednesday evening, meet old and new friends and generally have some fun.
+[Citrix Synergy 2015](http://www.citrixsynergy.com) is just next week, so for me that means several things - attending CTP meetings (from about 8:00 am to 9:00 pm each day) on the Sunday and Monday, presenting a Geek Speak Live session on Tuesday, helping to man the [Atlantis](http://www.atlantiscomputing.com) booth on the solutions expo floor, taking part in Geek Speak on Wednesday evening, meet old and new friends and generally have some fun.
 
 Here's a just few things that I'm looking forward to getting involved in and seeing at Synergy this year.
 
@@ -30,7 +30,7 @@ Folder redirection is a feature in Windows that practically all enterprises work
 
 We'll talk about the challenges of folder redirection, present the results of testing that we've been working on, provide some recommendations on working with folder redirection and a discussion on alternatives.
 
-We'll be presenting next Tuesday the 14th (the first day of Synergy) at 2:30pm. [SYN502: I’ve got 99 problems, and folder redirection is every one of them](https://citrix.g2planet.com/synergyorlando2015/public_session_view.php?agenda_session_id=185). Please join us, we'd love to see you there.
+We'll be presenting next Tuesday the 14th (the first day of Synergy) at 2:30pm. [SYN502: I’ve got 99 problems, and folder redirection is every one of them](https://citrix.g2planet.com/synergyorlando2015/public_session_view.php?agenda_session_id=185). Please join us, we'd love to see you there.
 
 ## Geek Speak Tonight
 
@@ -48,4 +48,4 @@ There's a very special part of Geek Speak Tonight this year - [GeekOvation](http
 
 ## User Group Initiatives
 
-Some new initiatives around Citrix user groups looks to be one of those "worst keep secrets", but I won't share details, however this is something worth looking forward to and getting involved in. Full details will be announced by Citrix on Tuesday.
+Some new initiatives around Citrix user groups looks to be one of those "worst keep secrets", but I won't share details, however this is something worth looking forward to and getting involved in. Full details will be announced by Citrix on Tuesday.

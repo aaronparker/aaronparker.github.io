@@ -1,10 +1,10 @@
 ---
-
+id: 83
 title: Uninstalling Adobe Reader
 date: 2007-03-11T20:27:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/uninstalling-adobe-reader
 permalink: /uninstalling-adobe-reader/
 dsq_thread_id:
   - "195378578"

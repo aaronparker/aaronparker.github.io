@@ -1,10 +1,10 @@
 ---
-
+id: 139
 title: Citrix Presentation Server Client Package 9.230 Released
 date: 2006-12-06T19:10:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/citrix-presentation-server-client-package-9230-released
 permalink: /citrix-presentation-server-client-package-9230-released/
 categories:
   - Citrix

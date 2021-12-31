@@ -1,10 +1,10 @@
 ---
-
+id: 273
 title: Microsoft Systems Manager SoftGrid 4
 date: 2006-05-23T09:34:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/microsoft-systems-manager-softgrid-4
 permalink: /microsoft-systems-manager-softgrid-4/
 aktt_notify_twitter:
   - 'yes'

@@ -1,10 +1,10 @@
 ---
-
+id: 2909
 title: Converting CTX114501 to a readable format
 date: 2012-11-12T21:42:10+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2909
 permalink: /converting-ctx114501-to-a-readable-format/
 Hide SexyBookmarks:
   - "0"
@@ -18,9 +18,9 @@ tags:
   - XenApp
   - XenDesktop
 ---
-You'll then have tackled with the product matrix that comes as a PDF instead of something more reasonable like, say, a spread sheet. There's probably a good reason for this document to be a PDF, but it's not the best format for reading this type of information.
+You'll then have tackled with the product matrix that comes as a PDF instead of something more reasonable like, say, a spread sheet. There's probably a good reason for this document to be a PDF, but it's not the best format for reading this type of information.
 
-In one of those "why didn't I think of that" moments, CTP [Timco Hazelaar](https://twitter.com/thazelaar) (and all round good guy) responded to my question to a mailing list about this document in Excel format, by putting the document through a PDF to Excel converter.
+In one of those "why didn't I think of that" moments, CTP [Timco Hazelaar](https://twitter.com/thazelaar) (and all round good guy) responded to my question to a mailing list about this document in Excel format, by putting the document through a PDF to Excel converter.
 
 I had some mixed results with various online converters, but this one was fairly reasonable: [PDF to Excel](http://www.pdftoexcelonline.com/) by [Nitro PDF](http://www.nitropdf.com/). You can upload a PDF and the site will then convert the file and email you the result. I haven't tested the desktop version, but I assume it to be a similar experience.
 

@@ -1,10 +1,10 @@
 ---
-
+id: 3020
 title: Context based automation in Mac OS X
 date: 2013-01-12T13:12:18+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=3020
 permalink: /context-automation-mac-os-x/
 Hide SexyBookmarks:
   - "0"
@@ -79,7 +79,7 @@ Mounting or dismounting a remote share requires the full path to that share. Tha
 
 I could also unmount the same share when I leave the Home context.
 
-A shell script is needed to configure the requirement for a password when unlocking OS X. This uses the [defaults](http://en.wikipedia.org/wiki/Defaults_(software)) command to directly modify the system preferences. Here's the commands to lock:
+A shell script is needed to configure the requirement for a password when unlocking OS X. This uses the [defaults](http://en.wikipedia.org/wiki/Defaults_(software)) command to directly modify the system preferences. Here's the commands to lock:
 
 ```bash
 defaults write com.apple.screensaver askForPassword -int 1  

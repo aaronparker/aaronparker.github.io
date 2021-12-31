@@ -1,10 +1,10 @@
 ---
-
+id: 506
 title: 'Blog Plug: Vista Vitals'
 date: 2008-03-20T18:10:30+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/general/blog-plug-vista-vitals
 permalink: /blog-plug-vista-vitals/
 categories:
   - Community

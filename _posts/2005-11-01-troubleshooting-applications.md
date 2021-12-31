@@ -1,10 +1,10 @@
 ---
-
+id: 285
 title: Troubleshooting Applications
 date: 2005-11-01T13:07:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/troubleshooting-applications
 permalink: /troubleshooting-applications/
 categories:
   - Applications

@@ -1,10 +1,10 @@
 ---
-
+id: 172
 title: NAP MVP Webcast Available To All
 date: 2006-10-07T22:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/nap-mvp-webcast-available-to-all
 permalink: /nap-mvp-webcast-available-to-all/
 categories:
   - Microsoft

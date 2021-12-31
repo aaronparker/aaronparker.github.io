@@ -1,10 +1,10 @@
 ---
-
+id: 90
 title: SafeWord RemoteAccess Keeps You Waiting
 date: 2007-03-01T23:49:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/safeword-remoteaccess-keeps-you-waiting
 permalink: /safeword-remoteaccess-keeps-you-waiting/
 categories:
   - Microsoft

@@ -1,10 +1,10 @@
 ---
-
+id: 110
 title: Installing Microsoft Update Standalone Packages Silently
 date: 2007-01-30T17:22:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/installing-microsoft-update-standalone-packages-silently
 permalink: /installing-microsoft-update-standalone-packages-silently/
 dsq_thread_id:
   - "195378759"

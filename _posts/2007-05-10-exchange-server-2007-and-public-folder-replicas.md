@@ -1,10 +1,10 @@
 ---
-
+id: 44
 title: Exchange Server 2007 and Public Folder Replicas
 date: 2007-05-10T23:39:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/exchange-server-2007-and-public-folder-replicas
 permalink: /exchange-server-2007-and-public-folder-replicas/
 views:
   - "1"

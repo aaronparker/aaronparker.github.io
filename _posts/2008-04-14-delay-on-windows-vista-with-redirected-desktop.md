@@ -1,10 +1,10 @@
 ---
-
+id: 532
 title: Delay On Windows Vista With Redirected Desktop
 date: 2008-04-14T21:28:35+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=532
 permalink: /delay-on-windows-vista-with-redirected-desktop/
 categories:
   - Microsoft

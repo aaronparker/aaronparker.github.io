@@ -1,10 +1,10 @@
 ---
-
+id: 195
 title: "Download: System Center Configuration Manager (SMS) Network Access Protection Process Flow"
 date: 2006-08-28T06:16:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/download-system-center-configuration-manager-sms-network-access-protection-process-flow
 permalink: /download-system-center-configuration-manager-sms-network-access-protection-process-flow/
 categories:
   - Microsoft

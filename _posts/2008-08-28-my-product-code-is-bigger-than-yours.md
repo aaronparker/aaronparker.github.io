@@ -1,10 +1,10 @@
 ---
-
+id: 678
 title: My Product Code Is Bigger Than Yours..
 date: 2008-08-28T15:22:33+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/applications/my-product-code-is-bigger-than-yours
 permalink: /my-product-code-is-bigger-than-yours/
 dsq_thread_id:
   - "195380975"

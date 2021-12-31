@@ -1,10 +1,10 @@
 ---
-
+id: 3722
 title: Adding App-V Publishing Information to a XenDesktop Site with PowerShell
 date: 2014-10-23T22:49:04+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy/?p=3722
 permalink: /appv-publishing-xendesktop-powershell/
 dsq_thread_id:
   - "3147403871"
@@ -24,7 +24,7 @@ Adding [Microsoft App-V publishing information to a XenDesktop or XenApp 7.x sit
 
 What may not be widely known is that you can add additional App-V publishing configuration to a XenDesktop site beyond what you see in the UI. This allows you to set publishing information per delivery group. Useful for complex XenDesktop sites such as multi-tenant environments.
 
-Creating the App-V publishing information with PowerShell is a multi step process. You'll need to create the publishing information with [New-CtxAppVServer](http://support.citrix.com/proddocs/topic/citrix-appv-admin-v1-xd75/new-ctxappvserver-xd75.html) and then apply the configuration with [New-BrokerMachineConfiguration](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokermachineconfiguration-xd75.html).
+Creating the App-V publishing information with PowerShell is a multi step process. You'll need to create the publishing information with [New-CtxAppVServer](http://support.citrix.com/proddocs/topic/citrix-appv-admin-v1-xd75/new-ctxappvserver-xd75.html) and then apply the configuration with [New-BrokerMachineConfiguration](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokermachineconfiguration-xd75.html).
 
 Applying this in practice however may ultimately require testing the App-V management and publishing servers and ensuring that the configuration does not already exist before adding it.
 

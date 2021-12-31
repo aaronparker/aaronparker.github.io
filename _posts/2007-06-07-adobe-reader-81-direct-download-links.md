@@ -1,10 +1,10 @@
 ---
-
+id: 310
 title: Adobe Reader 8.1 Direct Download Links
 date: 2007-06-07T11:16:06+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/adobe-reader-81-direct-download-links
 permalink: /adobe-reader-81-direct-download-links/
 dsq_thread_id:
   - "195379282"

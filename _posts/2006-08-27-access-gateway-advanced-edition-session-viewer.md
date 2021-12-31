@@ -1,10 +1,10 @@
 ---
-
+id: 196
 title: Access Gateway Advanced Edition Session Viewer
 date: 2006-08-27T18:31:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/access-gateway-advanced-edition-session-viewer
 permalink: /access-gateway-advanced-edition-session-viewer/
 categories:
   - Citrix

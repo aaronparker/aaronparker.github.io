@@ -1,10 +1,10 @@
 ---
-
+id: 1097
 title: My Windows box has insomnia
 date: 2009-05-12T23:19:26+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=1097
 permalink: /my-windows-box-has-insomnia/
 aktt_notify_twitter:
   - 'yes'

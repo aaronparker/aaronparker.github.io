@@ -1,10 +1,10 @@
 ---
-
+id: 551
 title: Citrix Drops The Icon Ball
 date: 2008-05-01T14:10:32+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/hall-of-shame/citrix-drops-the-icon-ball
 permalink: /citrix-drops-the-icon-ball/
 categories:
   - Applications

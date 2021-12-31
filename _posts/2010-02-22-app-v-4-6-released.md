@@ -1,10 +1,10 @@
 ---
-
+id: 1407
 title: App-V 4.6 Released
 date: 2010-02-22T20:33:45+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-4-6-released
 permalink: /app-v-4-6-released/
 has_been_twittered:
   - 'yes'

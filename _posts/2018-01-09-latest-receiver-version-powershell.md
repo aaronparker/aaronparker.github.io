@@ -1,10 +1,10 @@
 ---
-
+id: 5918
 title: Get latest Citrix Receiver version with PowerShell
 date: 2018-01-09T12:57:10+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy/?p=5918
 permalink: /latest-receiver-version-powershell/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -26,7 +26,7 @@ I've written a script that will parse the downloads page and return the current 
 
 Here's the script:
 
-<script src="https://gist.github.com/aaronparker/8204e49405a78245301dae1ebaf1df71.js"></script>
+{% gist 8204e49405a78245301dae1ebaf1df71 %}
 
 To use the script, save as Get-CitrixReceiverVersions.ps1 and run from the command line. With no parameters, it will return the releases and version numbers for all available platforms with the `Get-CitrixReceiverVersions` function.
 
@@ -49,16 +49,10 @@ Get-CitrixReceiverVersions -Platform Windows | Select-Object -First 1
 
 Here's the script in action:
 
-![Get-CitrixReceiverVersions in action]({{site.baseurl}}/media/2018/01/Get-CitrixReceiverVersions.gif)
-
-Get-CitrixReceiverVersions in action on Windows
-{:.figcaption}
+![Get-CitrixReceiverVersions in action]({{site.baseurl}}/media/2018/01/Get-CitrixReceiverVersions.gif)*Get-CitrixReceiverVersions in action on Windows*
 
 An added bonus, the script also works on PowerShell Core:
 
-![Get-CitrixReceiverVersions in action on macOS]({{site.baseurl}}/media/2018/01/Get-CitrixReceiverVersions-Pwsh.gif)
-
-Get-CitrixReceiverVersions in action on macOS
-{:.figcaption}
+![Get-CitrixReceiverVersions in action on macOS]({{site.baseurl}}/media/2018/01/Get-CitrixReceiverVersions-Pwsh.gif)*Get-CitrixReceiverVersions in action on macOS*
 
 I've written this primarily for my purposes, but perhaps there are other purposes that I've not yet considered. Feedback, issues and improvements to the script are welcome.

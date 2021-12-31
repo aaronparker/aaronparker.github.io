@@ -1,10 +1,10 @@
 ---
-
+id: 203
 title: UI consistency and Microsoft Sans Serif
 date: 2006-08-25T06:04:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/ui-consistency-and-microsoft-sans-serif
 permalink: /ui-consistency-and-microsoft-sans-serif/
 categories:
   - Microsoft

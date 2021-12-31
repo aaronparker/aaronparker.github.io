@@ -1,10 +1,10 @@
 ---
-
+id: 590
 title: Remote Desktop Connection 6.1 for Windows XP SP2
 date: 2008-06-24T14:41:47+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/terminal-server/remote-desktop-connection-client-for-windows-xp-sp2
 permalink: /remote-desktop-connection-client-for-windows-xp-sp2/
 categories:
   - Microsoft

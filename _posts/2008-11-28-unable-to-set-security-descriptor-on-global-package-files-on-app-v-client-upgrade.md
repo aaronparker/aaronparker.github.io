@@ -1,10 +1,10 @@
 ---
-
+id: 822
 title: Unable to set security descriptor on global package files on App-V client upgrade
 date: 2008-11-28T17:13:41+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/unable-to-set-security-descriptor-on-global-package-files-on-app-v-client-upgrade
 permalink: /unable-to-set-security-descriptor-on-global-package-files-on-app-v-client-upgrade/
 dsq_thread_id:
   - "195381295"

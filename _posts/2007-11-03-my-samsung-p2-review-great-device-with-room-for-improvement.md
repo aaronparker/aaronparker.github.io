@@ -1,10 +1,10 @@
 ---
-
+id: 357
 title: 'My Samsung P2 Review: great device with room for improvement'
 date: 2007-11-03T22:35:35+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/general/my-samsung-p2-review-great-device-with-room-for-improvement
 permalink: /my-samsung-p2-review-great-device-with-room-for-improvement/
 dsq_thread_id:
   - "195379526"

@@ -1,10 +1,10 @@
 ---
-
+id: 417
 title: SoftGrid, Presentation Server And Internet Explorer As A Help System
 date: 2008-01-14T19:00:12+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/softgrid-presentation-server-internet-explorer-as-a-help-system
 permalink: /softgrid-presentation-server-internet-explorer-as-a-help-system/
 dsq_thread_id:
   - "195379937"

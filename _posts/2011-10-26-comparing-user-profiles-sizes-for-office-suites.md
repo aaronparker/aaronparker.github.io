@@ -1,10 +1,10 @@
 ---
-
+id: 2417
 title: Comparing User Profiles Sizes for Microsoft Office Suites
 date: 2011-10-26T12:00:45+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2417
 permalink: /comparing-user-profiles-sizes-for-office-suites/
 Hide SexyBookmarks:
   - "0"

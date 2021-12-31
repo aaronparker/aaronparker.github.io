@@ -1,10 +1,10 @@
 ---
-
+id: 148
 title: No Preview For You!
 date: 2006-11-27T23:50:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/no-preview-for-you
 permalink: /no-preview-for-you/
 categories:
   - Applications

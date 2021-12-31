@@ -1,10 +1,10 @@
 ---
-
+id: 296
 title: Lessons from the field - Virtual PC
 date: 2005-09-20T23:42:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/lessons-from-the-field-3
 permalink: /lessons-from-the-field-virtual-pc/
 categories:
   - Microsoft

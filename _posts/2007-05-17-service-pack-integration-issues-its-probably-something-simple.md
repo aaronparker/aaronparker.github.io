@@ -1,10 +1,10 @@
 ---
-
+id: 41
 title: "Service Pack integration issues? It's probably something simple"
 date: 2007-05-17T16:32:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/service-pack-integration-issues-its-probably-something-simple
 permalink: /service-pack-integration-issues-its-probably-something-simple/
 categories:
   - Microsoft
@@ -29,4 +29,4 @@ OK
 ---------
 ```
 
-This stumped me for a bit, even after recopying the installation files from the CDs again and getting the same error. I then tried starting from scratch again and deleted the source files using the RD command. This command failed on a couple of files and to delete them I had to remove the Read Only attribute. So after recopying the source files and then removing the Read Only attribute for all the files, the Service Pack integration worked. It's funny sometimes how the simple things can trip you up.
+This stumped me for a bit, even after recopying the installation files from the CDs again and getting the same error. I then tried starting from stratch again and deleted the source files using the RD command. This command failed on a couple of files and to delete them I had to remove the Read Only attribute. So after recopying the source files and then removing the Read Only attribute for all the files, the Service Pack integration worked. It's funny sometimes how the simple things can trip you up.

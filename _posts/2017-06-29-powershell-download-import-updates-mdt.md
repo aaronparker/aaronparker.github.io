@@ -1,9 +1,15 @@
 ---
+id: 5466
 title: Automatic Download and Import of Updates into MDT
 date: 2017-06-29T19:03:33+10:00
 author: Aaron Parker
 layout: post
+guid: https://stealthpuppy/?p=5466
 permalink: /powershell-download-import-updates-mdt/
+layers:
+  - 'a:1:{s:9:"video-url";s:0:"";}'
+dsq_thread_id:
+  - "5950597830"
 image: /media/2017/06/MDT-Deployment.png
 categories:
   - Microsoft
@@ -19,32 +25,24 @@ I've taken Keith's original version of the script [Get-LatestUpdate.ps1](https:/
 
 The scripts can be downloaded from GitHub in my MDT repository: [https://github.com/aaronparker/MDT](https://github.com/aaronparker/MDT/)
 
-![Downloading and importing updates into MDT via PowerShell]({{site.baseurl}}/media/2017/06/Import.png)
-
-Downloading and importing updates into MDT via PowerShell
-{:.figcaption}
+![Downloading and importing updates into MDT via PowerShell]({{site.baseurl}}/media/2017/06/Import.png)*Downloading and importing updates into MDT via PowerShell*
 
 ## Get-LatestUpdate
 
 Much like [Keith's original](https://keithga.wordpress.com/2017/05/21/new-tool-get-the-latest-windows-10-cumulative-updates/), this version of the script will pull the latest update from the JSON feed, query and parse the Microsoft Update Catalog and return the latest cumulative update. With this, you can optionally download the update to the current folder or one specified with the Path parameter.
 
-![Get-LatestUpdates.ps1 - downloading updates]({{site.baseurl}}/media/2017/06/Get-LatestUpdates-Downloading.png)
-
-Get-LatestUpdates.ps1 - downloading updates
-{:.figcaption}
+![Get-LatestUpdates.ps1 - downloading updates]({{site.baseurl}}/media/2017/06/Get-LatestUpdates-Downloading.png)*Get-LatestUpdates.ps1 - downloading updates*
 
 The script outputs an object that lists details about the update that you could use for various purposes. Adding the Download parameter will download the update and the output will include the file name and the download location.
 
-![Get-LatestUpdates.ps1 - latest update downloaded]({{site.baseurl}}/media/2017/06/Get-LatestUpdates-Downloaded.png)
-
-Get-LatestUpdate.ps1 - latest update downloaded
-{:.figcaption}
+![Get-LatestUpdates.ps1 - latest update downloaded]({{site.baseurl}}/media/2017/06/Get-LatestUpdates-Downloaded.png)*Get-LatestUpdate.ps1 - latest update downloaded*
 
 Get-LatestUpdate.ps1 supports a number of parameters, all of which are optional:
 
-* Build - the Current Branch build (15063) will always be the default. Other build numbers (e.g. 14393) can be specified* SearchString - the default cumulative updates returned will be the cumulative update for Windows 10 x64. The search string can be modified to
-* Download - add this switch parameter to download the update returned. If the update already exists in the folder specified by Path, it won't be downloaded again
-* Path - specify a path to download the update to. If not used, the update will be downloaded to the current directory
+  * Build - the Current Branch build (15063) will always be the default. Other build numbers (e.g. 14393) can be specified
+  * SearchString - the default cumulative updates returned will be the cumulative update for Windows 10 x64. The search string can be modified to
+  * Download - add this switch parameter to download the update returned. If the update already exists in the folder specified by Path, it won't be downloaded again
+  * Path - specify a path to download the update to. If not used, the update will be downloaded to the current directory
 
 ## Output
 
@@ -62,17 +60,14 @@ UpdatePath : C:\Updates
 
 Import-Update.ps1 is used to import update packages from a target folder into the Packages node in an MDT deployment share. This will accept the output from Get-LatestUpdate.ps1 or can be used to import updates that already exist in a target folder, specified by the UpdatePath parameter.
 
-![Import-Updates.ps1 - importing an update into MDT]({{site.baseurl}}/media/2017/06/Import-Updates.png)
-
-Import-Updates.ps1 - importing an update into MDT
-{:.figcaption}
+![Import-Updates.ps1 - importing an update into MDT]({{site.baseurl}}/media/2017/06/Import-Updates.png)*Import-Updates.ps1 - importing an update into MDT*
 
 Import-Update.ps1 supports a number of parameters:
 
-* UpdatePath - a folder that contains the target update or updates to import into the deployment share. This path can be piped to this script. This parameter is mandatory
-* SharePath - the path to the top-level folder for the MDT deployment share. This parameter is mandatory
-* PackagePath - you can optionally specify a path under the Packages node in the deployment share to import the update packages into
-* Clean - this is a switch parameter that will tell the script to remove any existing update packages in the path specified by PackagePath before importing the new updates.
+  * UpdatePath - a folder that contains the target update or updates to import into the deployment share. This path can be piped to this script. This parameter is mandatory
+  * SharePath - the path to the top-level folder for the MDT deployment share. This parameter is mandatory
+  * PackagePath - you can optionally specify a path under the Packages node in the deployment share to import the update packages into
+  * Clean - this is a switch parameter that will tell the script to remove any existing update packages in the path specified by PackagePath before importing the new updates.
 
 ## Using Both Scripts to Download and Import Updates into MDT
 
@@ -84,17 +79,11 @@ Get-LatestUpdates.ps1 outputs an object that can be passed to Import-Update.ps1 
 
 Which looks like this:
 
-![Using Get-LatestUpdates.ps1 and the pipeline to pass updates to Import-Update.ps1]({{site.baseurl}}/media/2017/06/GetAndImport-Updates.png)
-
-Using Get-LatestUpdates.ps1 and the pipeline to pass updates to Import-Update.ps1
-powershell-download-import-updates-mdt
+![Using Get-LatestUpdates.ps1 and the pipeline to pass updates to Import-Update.ps1]({{site.baseurl}}/media/2017/06/GetAndImport-Updates.png)*Using Get-LatestUpdates.ps1 and the pipeline to pass updates to Import-Update.ps1*
 
 In the MDT Workbench, we have the latest Windows 10 Cumulative update in the Packages node which will be applied offline during the operating system deployment:
 
-![Latest Windows 10 Cumulative update in the Packages node]({{site.baseurl}}/media/2017/06/MDTWorkbench-Packages.png)
-
-Latest Windows 10 Cumulative update in the Packages node
-powershell-download-import-updates-mdt
+![Latest Windows 10 Cumulative update in the Packages node]({{site.baseurl}}/media/2017/06/MDTWorkbench-Packages.png)*Latest Windows 10 Cumulative update in the Packages node*
 
 Now I have something that I could run as a scheduled task to keep my deployment share always up to date without interaction. Note that both script support verbose output so that you can track what's going on in detail while the script is running.
 
@@ -102,5 +91,5 @@ Now I have something that I could run as a scheduled task to keep my deployment 
 
 There are likely some changes and additions I could make to this script, so feedback is welcome. Future changes might include:
 
-* Add support for Windows 7, Windows Server 2012 R2 etc. into Get-LatestUpdate.ps1. The way that Keith has written the script lends itself to support other Windows versions
-* Compare the existing update in MDT before importing an update - if the existing update matches the latest update, there's no need to re-import the update
+  * Add support for Windows 7, Windows Server 2012 R2 etc. into Get-LatestUpdate.ps1. The way that Keith has written the script lends itself to support other Windows versions
+  * Compare the existing update in MDT before importing an update - if the existing update matches the latest update, there's no need to re-import the update

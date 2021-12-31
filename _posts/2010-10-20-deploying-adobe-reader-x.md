@@ -1,10 +1,10 @@
 ---
-
+id: 2012
 title: Deploying Adobe Reader X
 date: 2010-10-20T00:19:04+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2012
 permalink: /deploying-adobe-reader-x/
 has_been_twittered:
   - 'yes'
@@ -53,7 +53,7 @@ The Customization Wizard should be installed to an administrative workstation an
 
 ## Downloading the Reader X MSI
 
-When creating a custom installer for Reader, always start with the latest version which you may need to obtain from the [Adobe Reader download page](http://get.adobe.com/reader/). For an installer that you can extract and doesn't include Google Chrome or Toolbar download the EXE installer from Adobe's FTP site: [ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0](ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/)
+When creating a custom installer for Reader, always start with the latest version which you may need to obtain from the [Adobe Reader download page](http://get.adobe.com/reader/). For an installer that you can extract and doesn't include Google Chrome or Toolbar download the EXE installer from Adobe's FTP site: [ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0](ftp://ftp.adobe.com/pub/adobe/reader/win/10.x/10.1.0/)
 
 **Note**: if you need to download the latest installer, always grab a copy from the Adobe site to guarantee you have a source you can trust
 
@@ -65,7 +65,7 @@ AdbeRdr1010\_en\_US.exe.exe -nos\_o"C:\Folder" -nos\_ne
 
 Replace _C:\Folder_ with the path to a local folder. If you don't specific the -nos_o switch, the files will be extracted here:
 
-* %ProgramData%\Adobe\Setup (Windows Vista and above)
+* %ProgramData%\Adobe\Setup (Windows Vista and above)
 * %ALLUSERSPROFILE%\Application Data\Adobe\Setup (Windows XP / Windows Server 2003)
 
 Once extracted, you should have the following files required for Reader deployment:

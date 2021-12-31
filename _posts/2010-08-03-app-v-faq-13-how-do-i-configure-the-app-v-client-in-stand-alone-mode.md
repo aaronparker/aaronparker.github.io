@@ -1,10 +1,10 @@
 ---
-
+id: 1714
 title: 'App-V FAQ: How do I configure the App-V Client in stand-alone mode?'
 date: 2010-08-03T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/app-v-faq-13-how-do-i-configure-the-app-v-client-in-stand-alone-mode
 permalink: /app-v-faq-13-how-do-i-configure-the-app-v-client-in-stand-alone-mode/
 has_been_twittered:
   - 'yes'

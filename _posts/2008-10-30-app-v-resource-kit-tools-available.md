@@ -1,10 +1,10 @@
 ---
-
+id: 782
 title: App-V Resource Kit Tools Available
 date: 2008-10-30T08:58:33+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-resource-kit-tools-available
 permalink: /app-v-resource-kit-tools-available/
 dsq_thread_id:
   - "195381218"

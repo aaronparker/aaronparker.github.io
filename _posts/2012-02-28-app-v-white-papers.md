@@ -1,10 +1,10 @@
 ---
-
+id: 2638
 title: App-V White Papers
 date: 2012-02-28T12:43:51+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2638
 permalink: /app-v-white-papers/
 Hide SexyBookmarks:
   - "0"
@@ -17,7 +17,7 @@ categories:
 tags:
   - App-V
 ---
-_Update (28/03/2012)_: This list of white papers are now available on the Microsoft Download Centre: [Microsoft Application Virtualization (App-V) Documentation Resources Download Page](http://www.microsoft.com/download/en/details.aspx?id=27760)
+_Update (28/03/2012)_: This list of white papers are now available on the Microsoft Download Centre: [Microsoft Application Virtualization (App-V) Documentation Resources Download Page](http://www.microsoft.com/download/en/details.aspx?id=27760)
 
 Microsoft TechNet recently went through a redesign that seems to have removed some content and in particular a list of App-V white papers that was on the previous [Application Virtualization TechCenter](http://technet.microsoft.com/en-us/hh710199) no longer exists.
 

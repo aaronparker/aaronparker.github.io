@@ -1,10 +1,10 @@
 ---
-
+id: 2809
 title: Delivering Citrix XenApp Controllers and Workers with the Microsoft Deployment Toolkit
 date: 2012-08-02T18:11:10+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2809
 permalink: /delivering-citrix-xenapp-controllers-and-workers-with-the-microsoft-deployment-toolkit/
 dsq_thread_id:
   - "789962703"

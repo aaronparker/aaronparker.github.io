@@ -1,10 +1,10 @@
 ---
-
+id: 1716
 title: 'App-V FAQ: Can I configure the App-V Client via Group Policy?'
 date: 2010-08-04T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/app-v-faq-14-can-i-configure-the-app-v-client-via-group-policy
 permalink: /app-v-faq-14-can-i-configure-the-app-v-client-via-group-policy/
 has_been_twittered:
   - 'yes'

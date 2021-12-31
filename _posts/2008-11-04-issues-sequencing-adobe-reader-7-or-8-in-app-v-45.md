@@ -1,10 +1,10 @@
 ---
-
+id: 793
 title: Issues Sequencing Adobe Reader 7 or 8 in App-V 4.5
 date: 2008-11-04T19:00:53+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=793
 permalink: /issues-sequencing-adobe-reader-7-or-8-in-app-v-45/
 categories:
   - Applications
@@ -18,7 +18,7 @@ Based on the issue described in the article, it appears that people are encounte
 
 So why are scripted installations important? Here's my three top reasons:
 
-  1. Your documentation might be rock solid, but we’re only human and we make mistakes. Scripted installs provide a predictable and repeatable installation process that is far less susceptible to error. 
+  1. Your documentation might be rock solid, but we’re only human and we make mistakes. Scripted installs provide a predictable and repeatable installation process that is far less susceptible to error. 
   2. Scripted installs, in turn, make documentation easier. Rather than building a process illustrated by screen shots, a script will fill out that document in far more detail.
   3. Finally, a scripted installation will also make sequencing faster. No having to type commands or click through Explorer windows.
 

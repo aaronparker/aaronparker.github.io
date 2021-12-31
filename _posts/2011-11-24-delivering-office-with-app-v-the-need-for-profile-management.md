@@ -1,10 +1,10 @@
 ---
-
+id: 2542
 title: 'Delivering Office with App-V - The Need for Profile Management'
 date: 2011-11-24T09:16:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2542
 permalink: /delivering-office-with-app-v-the-need-for-profile-management/
 dsq_thread_id:
   - "482261212"
@@ -48,6 +48,6 @@ By implementing a 3<sup>rd</sup> party profile management solution, you gain the
 
 The user profile management or user state virtualization tools built into Windows aren’t able to see into the App-V virtual environment and therefore aren’t able to manage an application user preferences independent of the App-V package. If you would like to manage user preferences more granularly, a 3<sup>rd</sup> party solution will be required.
 
-A profile management solution that is capable of managing user preferences _inside and across_ App-V packages will provide you with the flexibility and consistency of user experience required to support a core application like Microsoft Office. Without providing users with a consistent user experience or one that matches their existing Office deployments, user acceptance will be low.
+A profile management solution that is capable of managing user preferences _inside and across_ App-V packages will provide you with the flexibility and consistency of user experience required to support a core application like Microsoft Office. Without providing users with a consistent user experience or one that matches their existing Office deployments, user acceptance will be low.
 
 For an objective comparison of the 3<sup>rd</sup> party solutions available, see the following white paper: [UEM Smackdown: Head-to-head analysis of Appsense, Citrix, Immidio, Liquidware Labs, Microsoft, Quest, RES, Scense, Tricerat and others](http://www.brianmadden.com/blogs/rubenspruijt/archive/2011/11/01/user-environment-management-smackdown-head-to-head-analysis-of-appsense-citrix-immidio-liquidware-labs-microsoft-quest-res-scense-tricerat-unidesk-and-vuem.aspx)

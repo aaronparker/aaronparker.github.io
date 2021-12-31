@@ -1,10 +1,10 @@
 ---
-
+id: 2720
 title: App-V Books from Packt Publishing available with discounts in May
 date: 2012-05-18T14:30:49+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2720
 permalink: /app-v-books-from-packt-publishing-available-with-discounts-in-may/
 Hide SexyBookmarks:
   - "0"
@@ -17,13 +17,13 @@ categories:
 tags:
   - App-V
 ---
-I've been fortunate enough to have performed technical editor duties on a couple of App-V books by [Augusto Alvarez](http://blog.augustoalvarez.com.ar/) - [Getting Started with Microsoft Application Virtualization 4.6](http://www.packtpub.com/getting-started-microsoft-application-virtualization-46/book) and [Microsoft Application Virtualization Advanced Guide](http://www.packtpub.com/microsoft-application-virtualization-advanced-guide/book).
+I've been fortunate enough to have performed technical editor duties on a couple of App-V books by [Augusto Alvarez](http://blog.augustoalvarez.com.ar/) - [Getting Started with Microsoft Application Virtualization 4.6](http://www.packtpub.com/getting-started-microsoft-application-virtualization-46/book) and [Microsoft Application Virtualization Advanced Guide](http://www.packtpub.com/microsoft-application-virtualization-advanced-guide/book).
 
-[Packt Microsoft Carnival](http://www.packtpub.com/news/packt-microsoft-carnival) is a special offer by Packt Publishing during **May** where you can acquire several Microsoft’s titles with discounts.
+[Packt Microsoft Carnival](http://www.packtpub.com/news/packt-microsoft-carnival) is a special offer by Packt Publishing during **May** where you can acquire several Microsoft’s titles with discounts.
 
 ![]({{site.baseurl}}/media/2012/05/appv_discount.png)
 
-Packt’s Microsoft Carnival includes a variety of titles on App-V, BizTalk, SharePoint, SQL Server, Silverlight, .NET Framework stack, XNA, Forefront, System Center and more. Packt has reduce the prices on its selected Microsoft titles by **up to 30%.** Some of the books include:
+Packt’s Microsoft Carnival includes a variety of titles on App-V, BizTalk, SharePoint, SQL Server, Silverlight, .NET Framework stack, XNA, Forefront, System Center and more. Packt has reduce the prices on its selected Microsoft titles by **up to 30%.** Some of the books include:
 
   * [Getting Started with Microsoft Application Virtualization 4.6](http://www.packtpub.com/getting-started-microsoft-application-virtualization-46/book)
   * [Microsoft Application Virtualization Advanced Guide](http://www.packtpub.com/microsoft-application-virtualization-advanced-guide/book)
@@ -33,6 +33,6 @@ Packt’s Microsoft Carnival includes a variety of titles on App-V, BizTalk, Sha
   * [Microsoft System Center 2012 Endpoint Protection Cookbook](http://www.packtpub.com/microsoft-system-center-2012-endpoint-protection-cookbook/book)
   * [Microsoft Data Protection Manager 2010](http://www.packtpub.com/microsoft-data-protection-manager-2010/book)
 
-Augusto's two App-V books are also available in other stores, but the [Packt Microsoft Carnival](http://www.packtpub.com/news/packt-microsoft-carnival) discount only applies in Packt Publishing site.
+Augusto's two App-V books are also available in other stores, but the [Packt Microsoft Carnival](http://www.packtpub.com/news/packt-microsoft-carnival) discount only applies in Packt Publishing site.
 
-Augusto's original post is here: [App-V Books with Packt Publishing Discounts on May](http://blog.augustoalvarez.com.ar/2012/05/13/app-v-books-with-packt-publishing-discounts-on-may/)
+Augusto's original post is here: [App-V Books with Packt Publishing Discounts on May](http://blog.augustoalvarez.com.ar/2012/05/13/app-v-books-with-packt-publishing-discounts-on-may/)

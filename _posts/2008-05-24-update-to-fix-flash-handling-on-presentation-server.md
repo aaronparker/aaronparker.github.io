@@ -1,10 +1,10 @@
 ---
-
+id: 562
 title: Update To Fix Flash Handling on Presentation Server
 date: 2008-05-24T02:12:21+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=562
 permalink: /update-to-fix-flash-handling-on-presentation-server/
 categories:
   - Citrix

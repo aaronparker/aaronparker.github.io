@@ -1,10 +1,10 @@
 ---
-
+id: 167
 title: 'Webcast: Enabling Trusted Communications and Health Policy Enforcement with NAP'
 date: 2006-10-12T07:01:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/webcast-enabling-trusted-communications-and-health-policy-enforcement-with-nap
 permalink: /webcast-enabling-trusted-communications-and-health-policy-enforcement-with-nap/
 categories:
   - Microsoft

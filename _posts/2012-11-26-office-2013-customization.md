@@ -1,10 +1,10 @@
 ---
-
+id: 2962
 title: Prepare your Office 2013 Customizations for Better Deployments and User Experience
 date: 2012-11-26T09:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2962
 permalink: /office-2013-customization/
 Hide SexyBookmarks:
   - "0"
@@ -39,7 +39,7 @@ To manage an Office 2013 deployment, copy the Office source files to a folder an
   * [Service Pack 1 for Microsoft Office 2013 (KB2817430) 32-Bit Edition](http://www.microsoft.com/en-us/download/details.aspx?id=42017)
   * [Service Pack 1 for Microsoft Office 2013 (KB2817430) 64-Bit Edition](http://www.microsoft.com/en-us/download/details.aspx?id=42006)
 
-To create an Office Setup Customization, download the  [Office 2013 Administrative Template files (ADMX/ADML) and Office Customization Tool](http://www.microsoft.com/en-us/download/details.aspx?id=35554). After extracting the Office Customization Tool download, [copy the Admin folder to your copy of Office 2013 setup](http://technet.microsoft.com/en-us/library/cc179121.aspx) and create a new Setup Customization File for Office 2013, by running: `SETUP /ADMIN`
+To create an Office Setup Customization, download the  [Office 2013 Administrative Template files (ADMX/ADML) and Office Customization Tool](http://www.microsoft.com/en-us/download/details.aspx?id=35554). After extracting the Office Customization Tool download, [copy the Admin folder to your copy of Office 2013 setup](http://technet.microsoft.com/en-us/library/cc179121.aspx) and create a new Setup Customization File for Office 2013, by running: `SETUP /ADMIN`
 
 The Office Customization Tool will launch:
 
@@ -65,7 +65,7 @@ If you save the customization file to the Updates folder, use a descriptive name
 
 The following table lists a number of user settings across each of the Office 2013 applications that I recommend you take a look at. This is just a small subset of the total number of settings, but includes some of the most important ones.
 
-The status of each setting will vary dependant on the environment. Use at your own risk.
+The status of each setting will vary dependant on the environment. Use at your own risk.
 
 |Product|Path                                                                                                |Setting                                                              |Recommended Values                       |
 |-------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|-----------------------------------------|

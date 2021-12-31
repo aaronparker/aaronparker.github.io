@@ -1,10 +1,10 @@
 ---
-
+id: 56
 title: Unattended VMware Tools
 date: 2007-04-23T19:21:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/unattended-vmware-tools
 permalink: /unattended-vmware-tools/
 categories:
   - Automation

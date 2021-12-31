@@ -1,10 +1,10 @@
 ---
-
+id: 129
 title: "Link: An Introduction to Network Access Protection"
 date: 2006-12-20T17:43:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/link-an-introduction-to-network-access-protection
 permalink: /link-an-introduction-to-network-access-protection/
 categories:
   - Microsoft

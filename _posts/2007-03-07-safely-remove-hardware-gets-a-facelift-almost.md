@@ -1,10 +1,10 @@
 ---
-
+id: 87
 title: Safely Remove Hardware, gets a facelift, almost
 date: 2007-03-07T19:24:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/safely-remove-hardware-gets-a-facelift-almost
 permalink: /safely-remove-hardware-gets-a-facelift-almost/
 dsq_thread_id:
   - "195378609"

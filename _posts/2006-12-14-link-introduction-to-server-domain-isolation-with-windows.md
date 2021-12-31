@@ -1,10 +1,10 @@
 ---
-
+id: 132
 title: 'Link: Introduction to Server &#038; Domain Isolation with Windows'
 date: 2006-12-14T04:42:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/link-introduction-to-server-domain-isolation-with-windows
 permalink: /link-introduction-to-server-domain-isolation-with-windows/
 categories:
   - Microsoft

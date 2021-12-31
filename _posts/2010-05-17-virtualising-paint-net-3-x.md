@@ -1,10 +1,10 @@
 ---
-
+id: 1624
 title: Virtualising Paint.NET 3.x
 date: 2010-05-17T19:09:42+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/virtualising-paint-net-3-x
 permalink: /virtualising-paint-net-3-x/
 has_been_twittered:
   - 'yes'

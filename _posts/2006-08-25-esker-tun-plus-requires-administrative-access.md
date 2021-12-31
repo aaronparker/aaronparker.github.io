@@ -1,10 +1,10 @@
 ---
-
+id: 198
 title: Esker Tun PLUS Requires Administrative Access
 date: 2006-08-25T06:10:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/esker-tun-plus-requires-administrative-access
 permalink: /esker-tun-plus-requires-administrative-access/
 dsq_thread_id:
   - "195378882"

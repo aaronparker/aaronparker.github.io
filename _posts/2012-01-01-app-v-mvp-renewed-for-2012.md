@@ -1,10 +1,10 @@
 ---
-
+id: 2619
 title: App-V MVP renewed for 2012
 date: 2012-01-01T15:36:33+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2619
 permalink: /app-v-mvp-renewed-for-2012/
 Hide SexyBookmarks:
   - "0"

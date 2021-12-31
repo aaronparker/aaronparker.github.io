@@ -1,10 +1,10 @@
 ---
-
+id: 1684
 title: 'App-V FAQ: What are the current versions of App-V 4.x?'
 date: 2010-07-14T08:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-5-what-are-the-current-versions-of-app-v
 permalink: /app-v-faq-5-what-are-the-current-versions-of-app-v/
 has_been_twittered:
   - 'yes'

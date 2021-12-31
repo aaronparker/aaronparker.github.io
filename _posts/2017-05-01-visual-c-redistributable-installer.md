@@ -1,10 +1,10 @@
 ---
-
+id: 5434
 title: 'Install-VisualCRedistributables.ps1 - A Visual C++ Redistributable Installer'
 date: 2017-05-01T19:26:58+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy/?p=5434
 permalink: /visual-c-redistributable-installer/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -17,9 +17,6 @@ tags:
   - PowerShell
   - Visual C++ Redistributable
 ---
-* this unordered seed list will be replaced by the toc
-{:toc}
-
 In updating my [MDT]({{site.baseurl}}/tag/mdt/) deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I've written a script that will download the installers and optionally install them - [Install-VisualCRedistributables.ps1](https://github.com/aaronparker/Install-VisualCRedistributables).
 
 This script reads [an external XML file](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml) that contains the installer information for each of the Visual C++ Redistributables so that changes to URLs, install options and new redistributables can be made without making changes to the script. The XML file lists the download URL and install instructions for each installer and looks like this:
@@ -105,10 +102,7 @@ Example - Downloads and installs the Visual C++ Redistributables listed in Visua
 
 Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list. 2005 are not installed by default, as these are no longer supported.
 
-![Microsoft Visual C++ Redistributable 2005-2015 installed]({{site.baseurl}}/media/2017/05/2005-2017.png)
-
-Microsoft Visual C++ Redistributables
-{:.figcaption}
+![Microsoft Visual C++ Redistributable 2005-2015 installed]({{site.baseurl}}/media/2017/05/2005-2017.png)*Microsoft Visual C++ Redistributables*
 
 ## Finally
 

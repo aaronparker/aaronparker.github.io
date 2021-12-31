@@ -1,10 +1,10 @@
 ---
-
+id: 1409
 title: 'KB Article: Sequencing Office 2010 beta in App-V 4.6'
 date: 2010-02-24T15:28:22+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=1409
 permalink: /sequencing-office-2010-beta-in-app-v-4-6/
 has_been_twittered:
   - 'yes'

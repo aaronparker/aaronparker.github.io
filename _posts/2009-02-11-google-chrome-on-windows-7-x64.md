@@ -1,10 +1,10 @@
 ---
-
+id: 874
 title: Google Chrome on Windows 7 x64
 date: 2009-02-11T18:34:24+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/windows/google-chrome-on-windows-7-x64
 permalink: /google-chrome-on-windows-7-x64/
 aktt_notify_twitter:
   - 'no'

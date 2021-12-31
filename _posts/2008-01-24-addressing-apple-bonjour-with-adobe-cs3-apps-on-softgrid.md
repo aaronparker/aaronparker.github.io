@@ -1,10 +1,10 @@
 ---
-
+id: 431
 title: Addressing Apple Bonjour With Adobe CS3 Apps On SoftGrid
 date: 2008-01-24T16:29:44+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/addressing-apple-bonjour-with-adobe-cs3-apps-on-softgrid
 permalink: /addressing-apple-bonjour-with-adobe-cs3-apps-on-softgrid/
 dsq_thread_id:
   - "195380044"

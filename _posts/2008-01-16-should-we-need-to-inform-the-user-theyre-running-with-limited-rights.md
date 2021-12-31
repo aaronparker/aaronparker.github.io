@@ -1,10 +1,10 @@
 ---
-
+id: 421
 title: "Should We Need To Inform The User They're Running With Limited Rights?"
 date: 2008-01-16T18:46:01+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/hall-of-shame/should-we-need-to-inform-the-user-theyre-running-with-limited-rights
 permalink: /should-we-need-to-inform-the-user-theyre-running-with-limited-rights/
 categories:
   - Applications

@@ -1,10 +1,10 @@
 ---
-
+id: 568
 title: Setting Visio Viewer As Default
 date: 2008-06-03T12:00:05+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/workspace-management/setting-visio-viewer-as-default
 permalink: /setting-visio-viewer-as-default/
 categories:
   - Applications

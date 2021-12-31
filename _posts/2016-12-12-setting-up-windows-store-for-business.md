@@ -1,9 +1,15 @@
 ---
+id: 5354
 title: Setting up the Windows Store for Business
 date: 2016-12-12T08:00:31+10:00
 author: Aaron Parker
 layout: post
+guid: https://stealthpuppy/?p=5354
 permalink: /setting-up-windows-store-for-business/
+layers:
+  - 'a:1:{s:9:"video-url";s:0:"";}'
+dsq_thread_id:
+  - "5375930108"
 image: /media/2016/12/14992123054_8295b89b82_k.jpg
 categories:
   - Microsoft
@@ -12,9 +18,6 @@ tags:
   - Windows Store
   - Windows Store for Business
 ---
-* this unordered seed list will be replaced by the toc
-{:toc}
-
 While the Universal app platform on Windows 10 isn't going to replace legacy Win32 apps for some time, the potential of this platform to improve the way IT approaches application lifecycle management is high. Apps can be deployed, updated and removed without packaging or having to worry about application conflicts. It's encouraging to see a number of useful enterprise applications available - the future is mobile apps, even on the desktop, so every enterprise should be looking at the Windows Store for Business.
 
 _Even if you're not intending to deliver Universal apps at this time, or even hiding the Store app on Windows 10 desktops, you should configure the Windows Store for Business._ This ensures full control over the user experience.
@@ -53,10 +56,7 @@ Microsoft has [a short video available that shows the Azure sign up](https://azu
 
 Setting up an Azure tenant is quite simple, just be sure to pay attention to the region you're setting as default (i.e. your sign up region) and the account used to sign up to the service. Once sign up is complete, you'll have a certain amount of credit to use within Azure for testing.
 
-![The Azure subscription is ready to use]({{site.baseurl}}/media/2016/12/Azure-StartUsing.png)
-
-The Azure subscription is ready to use
-{:.figcaption}
+![The Azure subscription is ready to use]({{site.baseurl}}/media/2016/12/Azure-StartUsing.png)*The Azure subscription is ready to use*
 
 Before configuring anything else in the new Azure tenant, configure a custom domain. You'll notice that the default domain will be <domain>.onemicrosoft.com.
 
@@ -75,10 +75,7 @@ The process for adding a custom domain is [slightly different when using ADFS](h
 
 At this point, you can make the new domain the primary domain for Azure AD.
 
-![Add and verify a custom domain in Azure]({{site.baseurl}}/media/2016/12/01_VerifyDomainName.png)
-
-Add and verify a custom domain in Azure
-{:.figcaption}
+![Add and verify a custom domain in Azure]({{site.baseurl}}/media/2016/12/01_VerifyDomainName.png)*Add and verify a custom domain in Azure*
 
 ## Configure Azure AD Connect/ADFS
 
@@ -90,10 +87,7 @@ Again, I highly recommend reading this article on [integrating your on-premises 
 
 Signing up for or into the Windows Store for Business requires a work or school account, i.e. an account from Azure AD.
 
-![Creating an Azure AD user and assigning a Directory role]({{site.baseurl}}/media/2016/12/02_CreateAzureADUser.png)
-
-Creating an Azure AD user and assigning a Directory role
-{:.figcaption}
+![Creating an Azure AD user and assigning a Directory role]({{site.baseurl}}/media/2016/12/02_CreateAzureADUser.png)*Creating an Azure AD user and assigning a Directory role*
 
 ## Setup the Windows Store for Business
 
@@ -110,26 +104,17 @@ Logging onto the WSfB site for the first time will bind the Store configuration 
 
 Navigate to <https://www.microsoft.com/business-store> and sign in, accept the usage agreement and you will see a basic Store configuration.
 
-![Sign up for the Windows Store for Business]({{site.baseurl}}/media/2016/12/03_SignUpWIndowsStoreBusiness.png)
-
-Sign up for the Windows Store for Business
-{:.figcaption}
+![Sign up for the Windows Store for Business]({{site.baseurl}}/media/2016/12/03_SignUpWIndowsStoreBusiness.png)*Sign up for the Windows Store for Business*
 
 Configure the Private store display name - this will appear in the Windows Store app on Windows 10 devices. Click **Settings** / **Private store**. Keep this short, but something that will be clear to users.
 
-![Setting the Private store display name in the Windows Store for Business]({{site.baseurl}}/media/2016/12/05_WindowsStoreBusiness-NamePrivateStore.png)
-
-Setting the Private store display name in the Windows Store for Business
-{:.figcaption}
+![Setting the Private store display name in the Windows Store for Business]({{site.baseurl}}/media/2016/12/05_WindowsStoreBusiness-NamePrivateStore.png)*Setting the Private store display name in the Windows Store for Business*
 
 ### Configure the App Inventory
 
 Next, click **Manage** / **Inventory** to view the initial app inventory. A number of the Office mobile applications will be listed and in the process of being added to the Private store. _Adding apps to the Private store will take 12-24 hours to appear in the Windows Store app on user's devices_ - not a short process.
 
-![Viewing the Inventory in the Windows Store for Business]({{site.baseurl}}/media/2016/12/06_WindowsStoreBusiness-InitialInventory.png)
-
-Viewing the Inventory in the Windows Store for Business
-{:.figcaption}
+![Viewing the Inventory in the Windows Store for Business]({{site.baseurl}}/media/2016/12/06_WindowsStoreBusiness-InitialInventory.png)*Viewing the Inventory in the Windows Store for Business*
 
 _Until the 'Add in progress' action is complete, you cannot remove these initial apps from the Private store_. Keep an eye on these once the process is complete and remove from the Private store as required.
 
@@ -144,7 +129,7 @@ At this point you have a number of decisions to make:
 
 Here are a few recommendations for adding apps to the Inventory, in no particular order:
 
-  1. **Add all of the inbox Windows 10 apps**. Unfortunately, not all inbox apps are available in the WSfB. For example, the Microsoft Solitaire Collection isn't listed
+  1. **Add all of the inbox Windows 10 apps**. Unfortunately, not all inbox apps are available in the WSfB. For example, the Microsoft Solitare Collection isn't listed
   2. Windows 10 and Windows 8/8.1 apps are available in the WSfB - **target Windows 10 apps where possible** as these will provide a more consistent user experience as they are designed for Windows 10
   3. While perhaps subjective, **find apps that can be useful in your environment**. This could be an opportunity to show what's possible with the Universal app platform
   4. **Don't forget about browser extensions for Edge**. These could be added to the Private store to allow users to install themselves
@@ -153,41 +138,29 @@ Here are a few recommendations for adding apps to the Inventory, in no particula
 
 #### Managing Apps
 
-Once you have a reasonable number of apps, management can become a little cumbersome, use the search feature or the **Refine** dropdown to filter apps. Here I've filtered by only those apps added to the private store.
+Once you have a reasonable number of apps, management can become a little cumbersome, use the search feature or the **Refine** dropdown to filter apps. Here I've filtered by only those apps added to the private store. 
 
-![Filtering on apps in the Private store in the Windows Store for Business]({{site.baseurl}}/media/2016/12/07_WindowsStoreBusiness-PrivateStore.png)
-
-Filtering on apps in the Private store in the Windows Store for Business
-{:.figcaption}
+![Filtering on apps in the Private store in the Windows Store for Business]({{site.baseurl}}/media/2016/12/07_WindowsStoreBusiness-PrivateStore.png)*Filtering on apps in the Private store in the Windows Store for Business*
 
 As mentioned above, **add those apps to the Inventory that you want to target for removal from end-user devices**. This includes the inbox apps and those that appear by default on the Start menu. This will provide the opportunity to target apps for removal using device management tools.
 
-![Add even unwanted apps to the Windows Store for Business]({{site.baseurl}}/media/2016/12/TargettingUnwantedApps.png)
-
-Add even unwanted apps to the Windows Store for Business
-{:.figcaption}
+![Add even unwanted apps to the Windows Store for Business]({{site.baseurl}}/media/2016/12/TargettingUnwantedApps.png)*Add even unwanted apps to the Windows Store for Business*
 
 #### Assigning Apps
 
 [Applications can be assigned to people](https://technet.microsoft.com/en-au/itpro/windows/manage/assign-apps-to-employees) (and licenses managed) from the Window Store for Business. However, this is largely not scaleable as only individual users can be selected.
 
-![Assigning an app in the Windows Store for Business]({{site.baseurl}}/media/2016/12/AssignToPeople.png)
-
-Assigning an app in the Windows Store for Business
-{:.figcaption}
+![Assigning an app in the Windows Store for Business]({{site.baseurl}}/media/2016/12/AssignToPeople.png)*Assigning an app in the Windows Store for Business*
 
 From a user experience perspective, apps are also not automatically assigned, instead the user will receive an email with a link to the apps which opens in the Store, or assigned apps can be viewed and installed from the My Library section in the Store app.
 
-![My Library in the Windows 10 Store app]({{site.baseurl}}/media/2016/12/Windows10StoreAppMyLibrary.png)
-
-My Library in the Windows 10 Store app
-{:.figcaption}
+![My Library in the Windows 10 Store app]({{site.baseurl}}/media/2016/12/Windows10StoreAppMyLibrary.png)*My Library in the Windows 10 Store app*
 
 A better approach will be to use a management tool that enables automatic deployment (or removal) of apps to users or devices, which I'll cover in upcoming articles.
 
 ## Conclusion
 
-For existing enterprises moving to Windows 10, extending your on-premises identity into Azure AD and configuring the WSfB are important steps for managing the user experience on Windows 10. The Universal app platform shows promise from an application lifecycle management perspective and getting ready to deploy these apps on Windows 10 is considerably simpler than other mobile app platforms.
+For existing enterprises moving to Windows 10, extending your on-premises identity into Azure AD and configuring the WSfB are important steps for managing the user experience on Windows 10. The Universal app platform shows promise from an application lifecycle management perspective and getting ready to deploy these apps on Windows 10 is considerably simpler than other mobile app platforms. 
 
 I've not covered online or offline Universal app deployment or VDI/SBC use-cases in this article, but I will cover integration of the Windows Store for Business with device management solutions in future articles.
 

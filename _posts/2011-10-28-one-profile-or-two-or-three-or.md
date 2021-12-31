@@ -1,10 +1,10 @@
 ---
-
+id: 2421
 title: 'One profile, or Two, or Three, or...'
 date: 2011-10-28T17:27:40+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2421
 permalink: /one-profile-or-two-or-three-or/
 Hide SexyBookmarks:
   - "0"
@@ -21,7 +21,7 @@ To achieve that goal, we need to ensure that the user's environment is available
 
 Once we achieve device independence, users should rightly expect that their data and preferences will be available where ever they logon. At least, that's what I would expect - I don't care too much how I access an application, I'd like some consistency when I do access them. I'd like my favourites to follow me ([Google got this right with Chrome](http://www.google.co.uk/support/chrome/bin/answer.py?answer=185277)), I'd like my application settings to follow me, and of course my data as well.
 
-How do we do this in a corporate environment today, with multiple operating systems and often multiple versions of an application? I can bet you aren't achieving that with standard Roaming Profiles.
+How do we do this in a corporate environment today, with multiple operating systems and often multiple versions of an application? I can bet you aren't achieving that with standard Roaming Profiles.
 
 I've recently finished working on a project consisting of migrating to Windows 7 which also includes delivering desktops and applications using Citrix XenDesktop and XenApp. A key component of the migration was to provide users with some consistency across those desktops.
 
@@ -37,4 +37,4 @@ However what if you don't want that? Perhaps it's a valid approach for a user to
 
 [polldaddy poll="5295720&#8243;]
 
-So how do you get to a single profile? For an independent review of the 3rd party solutions available for achieving a consistent user environment regardless of device, download the [User Environment Smack Down white paper from brianmadden.com](http://www.brianmadden.com/blogs/rubenspruijt/archive/2011/06/29/user-environment-management-smackdown-head-to-head-analysis-of-appsense-citrix-immidio-liquidware-labs-microsoft-quest-res-scense-tricerat-unidesk-and-vuem.aspx). We've been hard at work on version 1.1 which is due very soon.
+So how do you get to a single profile? For an independent review of the 3rd party solutions available for achieving a consistent user environment regardless of device, download the [User Environment Smack Down white paper from brianmadden.com](http://www.brianmadden.com/blogs/rubenspruijt/archive/2011/06/29/user-environment-management-smackdown-head-to-head-analysis-of-appsense-citrix-immidio-liquidware-labs-microsoft-quest-res-scense-tricerat-unidesk-and-vuem.aspx). We've been hard at work on version 1.1 which is due very soon.

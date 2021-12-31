@@ -1,10 +1,10 @@
 ---
-
+id: 690
 title: App-V Talk Slide Deck
 date: 2008-09-11T23:20:46+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-talk-slide-deck
 permalink: /app-v-talk-slide-deck/
 dsq_thread_id:
   - "195381016"

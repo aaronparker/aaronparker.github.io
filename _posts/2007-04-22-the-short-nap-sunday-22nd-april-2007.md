@@ -1,10 +1,10 @@
 ---
-
+id: 58
 title: 'The Short NAP: Sunday 22nd April 2007'
 date: 2007-04-22T00:53:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/the-short-nap-sunday-22nd-april-2007
 permalink: /the-short-nap-sunday-22nd-april-2007/
 enclosure:
   - |

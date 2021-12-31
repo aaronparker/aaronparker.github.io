@@ -1,10 +1,10 @@
 ---
-
+id: 3003
 title: App-V 5.0 delivers Internet Explorer Plugin Nirvana
 date: 2012-12-29T14:00:31+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=3003
 permalink: /app-v-5-0-delivers-internet-explorer-plugin-nirvana/
 Hide SexyBookmarks:
   - "0"

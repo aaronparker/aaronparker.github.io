@@ -1,10 +1,10 @@
 ---
-
+id: 348
 title: 'The Short NAP: Friday September 28 2007'
 date: 2007-09-28T14:26:28+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/general/the-short-nap-friday-september-28-2007
 permalink: /the-short-nap-friday-september-28-2007/
 categories:
   - Microsoft

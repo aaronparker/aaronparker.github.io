@@ -1,10 +1,10 @@
 ---
-
+id: 1671
 title: 'App-V FAQ: What is Microsoft Application Virtualization'
 date: 2010-07-07T08:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-2-what-is-microsoft-application-virtualization
 permalink: /app-v-faq-2-what-is-microsoft-application-virtualization/
 has_been_twittered:
   - 'yes'

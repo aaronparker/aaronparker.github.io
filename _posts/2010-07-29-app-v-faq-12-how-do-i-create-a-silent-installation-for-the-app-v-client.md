@@ -1,10 +1,10 @@
 ---
-
+id: 1705
 title: 'App-V FAQ: How do I create a silent installation for the App-V Client?'
 date: 2010-07-29T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client
 permalink: /app-v-faq-12-how-do-i-create-a-silent-installation-for-the-app-v-client/
 has_been_twittered:
   - 'yes'

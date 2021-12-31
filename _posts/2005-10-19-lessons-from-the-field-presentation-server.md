@@ -1,10 +1,10 @@
 ---
-
+id: 287
 title: 'Lessons from the field: Presentation Server'
 date: 2005-10-19T14:09:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/lessons-from-the-field-2
 permalink: /lessons-from-the-field-presentation-server/
 categories:
   - Citrix

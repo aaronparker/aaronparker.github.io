@@ -1,10 +1,10 @@
 ---
-
+id: 699
 title: Keeping The Windows Vista User Folder Clean
 date: 2008-09-18T17:50:20+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=699
 permalink: /keeping-the-windows-vista-user-folder-clean/
 dsq_thread_id:
   - "195381044"

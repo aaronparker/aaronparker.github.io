@@ -1,10 +1,10 @@
 ---
-
+id: 74
 title: Adventures in Access Gateway 4.5 Upgrade
 date: 2007-03-29T04:25:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/adventures-in-access-gateway-45-upgrade
 permalink: /adventures-in-access-gateway-45-upgrade/
 categories:
   - Citrix

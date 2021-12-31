@@ -1,10 +1,10 @@
 ---
-
+id: 2494
 title: 'An Archive and Analysis of #AppV Tweets'
 date: 2011-11-10T12:32:34+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/community/an-archive-and-analysis-of-appv-tweets/
 permalink: /an-archive-and-analysis-of-appv-tweets/
 dsq_thread_id:
   - "467295269"

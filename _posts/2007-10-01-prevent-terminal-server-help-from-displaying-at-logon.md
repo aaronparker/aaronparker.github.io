@@ -1,10 +1,10 @@
 ---
-
+id: 350
 title: Prevent Terminal Server Help From Displaying At Logon
 date: 2007-10-01T14:20:13+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/terminal-server/prevent-terminal-server-help-from-displaying-at-logon
 permalink: /prevent-terminal-server-help-from-displaying-at-logon/
 dsq_thread_id:
   - "195379461"

@@ -1,10 +1,10 @@
 ---
-
+id: 84
 title: Presentation Server Client 10 still uses Windows Help
 date: 2007-03-11T18:42:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/presentation-server-client-10-still-uses-windows-help
 permalink: /presentation-server-client-10-still-uses-windows-help/
 categories:
   - Applications

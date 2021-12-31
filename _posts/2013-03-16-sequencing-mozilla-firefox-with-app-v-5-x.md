@@ -1,10 +1,10 @@
 ---
-
+id: 3065
 title: Sequencing Mozilla Firefox with App-V 5.x
 date: 2013-03-16T20:46:47+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=3065
 permalink: /sequencing-mozilla-firefox-with-app-v-5-x/
 Hide SexyBookmarks:
   - "0"

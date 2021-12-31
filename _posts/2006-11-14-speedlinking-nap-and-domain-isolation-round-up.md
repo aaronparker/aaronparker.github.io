@@ -1,10 +1,10 @@
 ---
-
+id: 158
 title: 'The Short NAP: November 14th 2006'
 date: 2006-11-14T00:29:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/speedlinking-nap-and-domain-isolation-round-up
 permalink: /speedlinking-nap-and-domain-isolation-round-up/
 categories:
   - Microsoft

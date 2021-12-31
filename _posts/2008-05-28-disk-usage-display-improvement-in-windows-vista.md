@@ -1,10 +1,10 @@
 ---
-
+id: 566
 title: Disk Usage Display Improvement In Windows Vista
 date: 2008-05-28T18:34:30+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/windows/disk-usage-display-improvement-in-windows-vista
 permalink: /disk-usage-display-improvement-in-windows-vista/
 dsq_thread_id:
   - "195380635"

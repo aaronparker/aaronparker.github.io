@@ -1,10 +1,10 @@
 ---
-
+id: 207
 title: Protecting Outlook Web Access with RSA authentication
 date: 2006-08-25T05:51:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/protecting-outlook-web-access-with-rsa-authentication
 permalink: /protecting-outlook-web-access-with-rsa-authentication/
 categories:
   - Microsoft

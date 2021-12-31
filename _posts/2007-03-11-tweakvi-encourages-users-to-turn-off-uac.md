@@ -1,10 +1,10 @@
 ---
-
+id: 86
 title: TweakVI encourages users to turn off UAC
 date: 2007-03-11T00:27:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/tweakvi-encourages-users-to-turn-off-uac
 permalink: /tweakvi-encourages-users-to-turn-off-uac/
 categories:
   - Applications

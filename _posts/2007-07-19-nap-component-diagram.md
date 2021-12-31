@@ -1,10 +1,10 @@
 ---
-
+id: 323
 title: NAP Component Diagram
 date: 2007-07-19T08:08:29+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/access-control/nap-component-diagram
 permalink: /nap-component-diagram/
 categories:
   - Microsoft

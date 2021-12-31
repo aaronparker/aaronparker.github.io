@@ -1,10 +1,10 @@
 ---
-
+id: 871
 title: User Based and Machine Based App-V deployment in SCCM 2007 R2
 date: 2009-02-08T17:00:31+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/user-based-and-machine-based-app-v-deployment-in-sccm-2007-r2
 permalink: /user-based-and-machine-based-app-v-deployment-in-sccm-2007-r2/
 aktt_notify_twitter:
   - 'no'

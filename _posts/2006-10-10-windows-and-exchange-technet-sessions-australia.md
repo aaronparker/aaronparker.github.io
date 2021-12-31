@@ -1,10 +1,10 @@
 ---
-
+id: 168
 title: Windows and Exchange TechNet Sessions Australia
 date: 2006-10-10T17:19:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/windows-and-exchange-technet-sessions-australia
 permalink: /windows-and-exchange-technet-sessions-australia/
 categories:
   - Microsoft

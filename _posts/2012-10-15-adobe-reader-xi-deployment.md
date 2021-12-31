@@ -1,10 +1,10 @@
 ---
-
+id: 2847
 title: Adobe Reader XI Deployment
 date: 2012-10-15T12:18:43+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2847
 permalink: /adobe-reader-xi-deployment/
 Hide SexyBookmarks:
   - "0"
@@ -23,7 +23,7 @@ tags:
   * New App-V support, including a Package Accelerator (presumably this is App-V 4.6, not 5.0)
   * GPO Template for the most common enterprise settings (this includes a hand full of settings; however removing menu and toolbar items still requires resorting to Javascript)
 
-There's a full list of new features in this blog post: [Announcing Adobe Reader XI](http://blogs.adobe.com/adobereader/2012/10/announcing-adobe-reader-xi.html). All of the bits that are currently available can be downloaded here:
+There's a full list of new features in this blog post: [Announcing Adobe Reader XI](http://blogs.adobe.com/adobereader/2012/10/announcing-adobe-reader-xi.html). All of the bits that are currently available can be downloaded here:
 
   * [Adobe Reader XI installers in available languages](ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/)
   * [Reader XI Administrative Template](ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/misc/ReaderADMTemplate.zip)
@@ -31,12 +31,12 @@ There's a full list of new features in this blog post: [Announcing Adobe Reader 
 
 ## Customisation
 
-Customisation of Reader XI with the Adobe Customization Wizard XI is the same approach as previous versions and I have a comprehensive post on [deploying Adobe Reader X]({{site.baseurl}}/deployment/deploying-adobe-reader-x/) which will largely apply to XI, but Adobe does have customisation and deployment documentation available:
+Customisation of Reader XI with the Adobe Customization Wizard XI is the same approach as previous versions and I have a comprehensive post on [deploying Adobe Reader X]({{site.baseurl}}/deployment/deploying-adobe-reader-x/) which will largely apply to XI, but Adobe does have customisation and deployment documentation available:
 
   * [Enterprise Toolkit for Acrobat Products](http://www.adobe.com/devnet-docs/acrobatetk/#)
   * [Adobe Customization Wizard XI documentation](http://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/Customization%20Wizard%2011%20for%20Windows.pdf)
 
-The [Adobe Customization Wizard XI for Windows](http://www.adobe.com/support/downloads/thankyou.jsp?ftpID=5515&fileID=5526) is now available and the administration experience does not change massively (or at all) from [previous versions]({{site.baseurl}}/deployment/deploying-adobe-reader-x/).
+The [Adobe Customization Wizard XI for Windows](http://www.adobe.com/support/downloads/thankyou.jsp?ftpID=5515&fileID=5526) is now available and the administration experience does not change massively (or at all) from [previous versions]({{site.baseurl}}/deployment/deploying-adobe-reader-x/).
 
 Extracting Reader XI from the installer is the same as previous versions - run the following command:
 
@@ -117,7 +117,7 @@ To create a custom transform file, open the extracted AcroRead.msi, set your req
 
 Deployment of Reader XI will be largely the same as Reader X and 9 before it, so if you've deployed Reader previously there's little new.
 
-Although Adobe Reader is free you’ll need to agree to and obtain a license to distribute it in your own environment. Obtaining a license is simple, you’ll just need to answer a few questions such as the number of copies, how you will distribute Reader, which platforms and some information on your company including contact information. To apply for the license go to the [Adobe Runtimes / Reader Distribution License Agreement](http://www.adobe.com/go/rdr_apply_dist).
+Although Adobe Reader is free you’ll need to agree to and obtain a license to distribute it in your own environment. Obtaining a license is simple, you’ll just need to answer a few questions such as the number of copies, how you will distribute Reader, which platforms and some information on your company including contact information. To apply for the license go to the [Adobe Runtimes / Reader Distribution License Agreement](http://www.adobe.com/go/rdr_apply_dist).
 
 To deploy Reader in your environment, you would continue to use the same approaches you are using today. Now might be the time to look at delivering Reader with App-V as this is now officially supported. The only hurdle will continue to be in browser (embedded) viewing of PDFs under Internet Explorer.
 

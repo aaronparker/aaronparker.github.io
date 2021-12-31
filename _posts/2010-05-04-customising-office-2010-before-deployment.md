@@ -1,10 +1,10 @@
 ---
-
+id: 1549
 title: Customising Office 2010 before deployment
 date: 2010-05-04T08:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/customising-office-2010-before-deployment
 permalink: /customising-office-2010-before-deployment/
 dsq_thread_id:
   - "195382420"
@@ -61,7 +61,7 @@ The process for [creating a customisation file for Office 2010](http://technet.m
 
 **Tip**: to avoid the UAC prompt when running Setup, set the _\_COMPAT\_LAYER environment variable to run Setup in the current context. Run `SET __COMPAT_LAYER=RunAsInvoker` before running Setup (both commands should be run from the same Command Prompt).
 
-Just as you would be prompted once Office 2010 is installed, you will need to choose the default file types. Most organisations will probably choose to stick with the Microsoft Open XML formats. Making a choice here will modify the user settings that you will see in a later  step.
+Just as you would be prompted once Office 2010 is installed, you will need to choose the default file types. Most organisations will probably choose to stick with the Microsoft Open XML formats. Making a choice here will modify the user settings that you will see in a later  step.
 
 ![Office02]({{site.baseurl}}/media/2010/05/Office02_thumb.png)
 
@@ -110,7 +110,7 @@ Like user settings, feature installation states will impact on the default Offic
 
 Some features that may not be suitable for some corporate environments include:
 
-  * Office Shared Features - [Business Connectivity Services](http://blogs.msdn.com/bcs/)
+  * Office Shared Features - [Business Connectivity Services](http://blogs.msdn.com/bcs/)
   * Office Shared Features - Web Themes
   * Office Tools - Hosted Webs
 

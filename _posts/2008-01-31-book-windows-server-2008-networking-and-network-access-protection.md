@@ -1,10 +1,10 @@
 ---
-
+id: 436
 title: 'Book: Windows Server 2008 Networking and Network Access Protection'
 date: 2008-01-31T19:03:44+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/access-control/book-windows-server-2008-networking-and-network-access-protection
 permalink: /book-windows-server-2008-networking-and-network-access-protection/
 categories:
   - Microsoft

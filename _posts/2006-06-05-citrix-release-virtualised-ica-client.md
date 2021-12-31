@@ -1,10 +1,10 @@
 ---
-
+id: 271
 title: Citrix release virtualised ICA client
 date: 2006-06-05T23:44:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/citrix-release-virtualised-ica-client
 permalink: /citrix-release-virtualised-ica-client/
 aktt_notify_twitter:
   - 'yes'

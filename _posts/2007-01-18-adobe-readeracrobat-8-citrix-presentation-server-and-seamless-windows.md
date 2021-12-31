@@ -1,10 +1,10 @@
 ---
-
+id: 119
 title: Adobe Reader/Acrobat 8, Citrix Presentation Server and Seamless Windows
 date: 2007-01-18T16:58:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/adobe-readeracrobat-8-citrix-presentation-server-and-seamless-windows
 permalink: /adobe-readeracrobat-8-citrix-presentation-server-and-seamless-windows/
 categories:
   - Citrix

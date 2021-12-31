@@ -1,10 +1,10 @@
 ---
-
+id: 1077
 title: Some More Windows Virtual PC Screens
 date: 2009-04-30T17:48:17+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=1077
 permalink: /some-more-windows-virtual-pc-screens/
 dsq_thread_id:
   - "195381778"
@@ -36,7 +36,7 @@ You can open the virtual machine settings from within Explorer too:
 
 ![WindowsVirtualPCSettings]({{site.baseurl}}/media/2009/04//WindowsVirtualPCSettings.png)
 
-Creating a new virtual machine is just as you would expect, except very simplified. Give the machine a name and location (by default virtual machines are stored in `C:\Users\<username>\AppData\Local\Microsoft\Windows Virtual PC\Virtual Machines`):
+Creating a new virtual machine is just as you would expect, except very simplified. Give the machine a name and location (by default virtual machines are stored in `C:\Users\<username>\AppData\Local\Microsoft\Windows Virtual PC\Virtual Machines`):
 
 ![Createavirtualmachine]({{site.baseurl}}/media/2009/04/Createavirtualmachine.png)
 

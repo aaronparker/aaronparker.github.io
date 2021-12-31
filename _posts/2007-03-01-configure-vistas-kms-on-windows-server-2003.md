@@ -1,10 +1,10 @@
 ---
-
+id: 92
 title: Configure Vista KMS on Windows Server 2003
 date: 2007-03-01T00:02:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/configure-vistas-kms-on-windows-server-2003
 permalink: /configure-vistas-kms-on-windows-server-2003/
 categories:
   - Applications

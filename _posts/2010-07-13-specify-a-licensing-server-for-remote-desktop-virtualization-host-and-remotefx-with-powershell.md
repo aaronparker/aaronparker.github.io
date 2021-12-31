@@ -1,10 +1,10 @@
 ---
-
+id: 1741
 title: Specify a licensing server for Remote Desktop Virtualization Host and RemoteFX with PowerShell
 date: 2010-07-13T14:26:07+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=1741
 permalink: /specify-a-licensing-server-for-remote-desktop-virtualization-host-and-remotefx-with-powershell/
 has_been_twittered:
   - 'yes'

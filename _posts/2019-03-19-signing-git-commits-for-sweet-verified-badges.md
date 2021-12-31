@@ -1,30 +1,30 @@
 ---
+id: 6273
 title: Signing Git Commits for Sweet Verified Badges
-description: Signing your git commits is an important step in ensuring that your projects and code can be trusted.
 date: 2019-03-19T00:02:21+10:00
 author: Aaron Parker
 layout: post
+guid: https://stealthpuppy.com/?p=6273
 permalink: /signing-git-commits-for-sweet-verified-badges/
 image: media/2019/03/helloquence-51716-unsplash.jpg
 categories:
   - General
+tags:
+  - Git
+  - GitHub
+  - GPG
+  - Visual Studio Code
 ---
-* this unordered seed list will be replaced by the toc
-{:toc}
-
 Confession time - I've had a [GitHub account](https://github.com/aaronparker?tab=repositories) since 2014 and haven't signed a single commit. I've read various tweets and articles about signing your commits, but never committed (git it? ... see what I did there...) to setting up a signature until recently.
 
 I'm not a developer, [I just write a bunch of scripts]({{site.baseurl}}/tag/powershell/), but I like the idea of signing my commits so that others can see that all changes to my code are verified. There's plenty of articles on why signing your commits is a good idea. Here's a couple:
 
-* [A Git Horror Story: Repository Integrity With Signed Commits](https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits)
-* [GPG signature verification](https://github.blog/2016-04-05-gpg-signature-verification/)
+  * [A Git Horror Story: Repository Integrity With Signed Commits](https://mikegerwitz.com/2012/05/a-git-horror-story-repository-integrity-with-signed-commits)
+  * [GPG signature verification](https://github.blog/2016-04-05-gpg-signature-verification/)
 
 If you've ever edited a file directly on github.com and committed the changes, you would surely have noticed those Verified badges:
 
-![Signing Git Commits]({{site.baseurl}}/media/2019/03/GitHubCommit.png)
-
-Verified signature through a GitHib.com commit
-{:.figcaption}
+![Signing Git Commits]({{site.baseurl}}/media/2019/03/GitHubCommit.png)*Verified signature through a GitHib.com commit*
 
 To be honest, the GitHub documentation on [managing commit signature verification](https://help.github.com/en/articles/managing-commit-signature-verification) is pretty good, but here's how I stumbled my way through setting up a signature to [enable signed commits](https://help.github.com/en/articles/managing-commit-signature-verification).
 
@@ -37,23 +37,17 @@ I write PowerShell scripts and modules primarily on macOS, so I've installed [GP
   3. I've also exported my public and private key to store in my 1Password vault as backup and a way to copy the key into a Windows VM
   4. Finally I've uploaded my public key to the key server with the 'Send Public Key to the Key Server' option. Some [GPG nerd would know what exactly that does](https://sks-keyservers.net/overview-of-pools.php), but I don't believe it actually required for signing commits and pushing to GitHub, because we need to update the public key to GtiHub anyway.
 
-![GPG key view in the GPG Keychain and Signing Git Commits]({{site.baseurl}}/media/2019/03/GPG-Key.png)
-
-GPG key view in the GPG Keychain
-{:.figcaption}
+![GPG key view in the GPG Keychain and Signing Git Commits]({{site.baseurl}}/media/2019/03/GPG-Key.png)*GPG key view in the GPG Keychain* 
 
 ## Add Your Public Key to GitHub
 
-[Adding your public key to your GitHub account](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account) is easy:
+[Adding your public key to your GitHub account](https://help.github.com/en/articles/adding-a-new-gpg-key-to-your-github-account) is easy: 
 
-1. Right-click your key and choose Copy
-2. Open your GitHub settings, choose **SSH and GPG keys** and click **[New GPG Key](https://github.com/settings/gpg/new)**
-3. Paste in the key and click **Add GPG Key**
+  1. Right-click your key and choose Copy
+  2. Open your GitHub settings, choose **SSH and GPG keys** and click **[New GPG Key](https://github.com/settings/gpg/new)**
+  3. Paste in the key and click **Add GPG Key**
 
-![Adding your public GPG key to GitHub and Signing Git Commits]({{site.baseurl}}/media/2019/03/AddGPGKey.png)
-
-Adding your public GPG key to GitHub
-{:.figcaption}
+![Adding your public GPG key to GitHub and Signing Git Commits]({{site.baseurl}}/media/2019/03/AddGPGKey.png)*Adding your public GPG key to GitHub*
 
 ## Add Your Signing Key to Git
 
@@ -69,10 +63,7 @@ With defaults, the key ID will be on the line that starts with 'sec'. Copy the k
 git config -global user.signingkey C55D39F88CE9A2C5
 ```
 
-![Finding your key ID and adding the key to git]({{site.baseurl}}/media/2019/03/gitconfig.png)
-
-Finding your key ID and adding the key to git
-{:.figcaption}
+![Finding your key ID and adding the key to git]({{site.baseurl}}/media/2019/03/gitconfig.png)*Finding your key ID and adding the key to git*
 
 On Windows the process for signing git commits is much the same. First install [Git for Windows](https://gitforwindows.org/) and use git bash instead of Terminal.
 
@@ -82,16 +73,10 @@ Finally, we can configure [Visual Studio Code](https://code.visualstudio.com/) t
 
 In Preferences, search for 'git signing' and select 'Git: Enable Commit Signing':
 
-![Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits]({{site.baseurl}}/media/2019/03/VSCode-GitSigning.png)
-
-Enable Commit Signing in Visual Studio Code preferences
-{:.figcaption}
+![Enable Commit Signing in Visual Studio Code preferences and Signing Git Commits]({{site.baseurl}}/media/2019/03/VSCode-GitSigning.png)*Enable Commit Signing in Visual Studio Code preferences*
 
 [VSCode supports version control using git](https://code.visualstudio.com/docs/introvideos/versioncontrol) from directly within the VSCode window. On your first commit, you'll be prompted to enter the password for your GPG key before the commit will complete.
 
 That's about all the steps required for signing git commits. We have signed commits in a GitHub repository and a sweet, sweet Verified badge - now I can brag to all my friends and they'll know that code came from me. My mum still won't understand what I do for a living, but you can't get a win every day.
 
-![Now I have a nice shiny verified badge on my commits]({{site.baseurl}}/media/2019/03/Verified.gif)
-
-Now I have a nice shiny verified badge on my commits
-{:.figcaption}
+![Now I have a nice shiny verified badge on my commits]({{site.baseurl}}/media/2019/03/Verified.gif)*Now I have a nice shiny verified badge on my commits*

@@ -1,10 +1,10 @@
 ---
-
+id: 2354
 title: Disable Hibernation before enabling Hyper-V on a laptop
 date: 2011-07-14T23:49:31+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/disable-hibernation-before-enabling-hyper-v-on-a-laptop/
 permalink: /disable-hibernation-before-enabling-hyper-v-on-a-laptop/
 dsq_thread_id:
   - "358741685"

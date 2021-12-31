@@ -1,10 +1,10 @@
 ---
-
+id: 412
 title: Remote Access Makes Users Happy
 date: 2008-01-08T18:34:07+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/off-site-news/remote-access-makes-users-happy
 permalink: /remote-access-makes-users-happy/
 categories:
   - Citrix

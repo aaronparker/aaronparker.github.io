@@ -1,10 +1,10 @@
 ---
-
+id: 53
 title: ISA Server 2004 Service Pack 3
 date: 2007-05-01T15:22:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/isa-server-2004-service-pack-3
 permalink: /isa-server-2004-service-pack-3/
 categories:
   - Microsoft

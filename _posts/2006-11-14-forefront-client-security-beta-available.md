@@ -1,10 +1,10 @@
 ---
-
+id: 157
 title: Forefront Client Security Beta Available
 date: 2006-11-14T20:16:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/forefront-client-security-beta-available
 permalink: /forefront-client-security-beta-available/
 categories:
   - Microsoft

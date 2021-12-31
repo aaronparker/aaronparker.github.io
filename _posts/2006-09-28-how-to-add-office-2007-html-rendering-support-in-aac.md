@@ -1,10 +1,10 @@
 ---
-
+id: 176
 title: 'How To: Add Office 2007 HTML Rendering Support in AAC'
 date: 2006-09-28T18:20:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/how-to-add-office-2007-html-rendering-support-in-aac
 permalink: /how-to-add-office-2007-html-rendering-support-in-aac/
 categories:
   - Citrix

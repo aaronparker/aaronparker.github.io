@@ -1,10 +1,10 @@
 ---
-
+id: 1952
 title: 'App-V presentations from TechEd 2010 Australia &#038; NZ'
 date: 2010-09-28T12:00:03+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=1952
 permalink: /app-v-presentations-teched-australia-nz-2010/
 has_been_twittered:
   - 'yes'

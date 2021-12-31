@@ -1,21 +1,17 @@
 ---
 layout: post
 title: Cross-platform Profiles with Profile Container and User Experience Virtualization
-description: Improve the user experience as users move between virtual and physical desktops with FSLogix Profile Container and User Experience Virtualization.
 date: 2019-06-30 23:00 +1000
 permalink: "/user-experience-virtualzation-profile-container/"
-image:
-  path:    /assets/img/platform/image.jpg
-  srcset:
-    1920w: /assets/img/platform/image.jpg
-    960w:  /assets/img/platform/image@0,5x.jpg
-    480w:  /assets/img/platform/image@0,25x.jpg
 categories:
 - Microsoft
+tags:
+- User Experience Virtualization
+- OneDrive
+- FSLogix
+- Profile Container
+- Virtual Desktop
 ---
-* this unordered seed list will be replaced by the toc
-{:toc}
-
 FSLogix [Profile Container](https://docs.microsoft.com/en-us/fslogix/overview) has plenty of advantages in a virtual desktop environment that show a measurable improvements to end-user experience. It's important to understand what a container approach to roaming a user profile is as you consider adoption of Profile Container, now that you own the license.
 
 Profile Container encapsulates the entirety of the user profile (i.e., everything in `C:\Users\<username>`, [except what may be excluded](https://stealthpuppy.com/fslogix-profile-containers-redirections/)) in a virtual disk. The profile is then roamed by the agent attaching the user's virtual disk to a target Windows desktop.

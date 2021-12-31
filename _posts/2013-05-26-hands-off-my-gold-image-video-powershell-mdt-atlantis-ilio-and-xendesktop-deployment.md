@@ -1,10 +1,10 @@
 ---
-
+id: 3305
 title: 'Hands off my gold image! – Video: PowerShell, MDT, Atlantis ILIO and XenDesktop deployment'
 date: 2013-05-26T21:36:26+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy.com/?p=3305
 permalink: /hands-off-my-gold-image-video-powershell-mdt-atlantis-ilio-and-xendesktop-deployment/
 dsq_thread_id:
   - "1323007668"

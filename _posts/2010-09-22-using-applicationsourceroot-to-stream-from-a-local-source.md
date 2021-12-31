@@ -1,10 +1,10 @@
 ---
-
+id: 1906
 title: 'App-V FAQ: How do I configure my App-V clients to stream from a local source?'
 date: 2010-09-22T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=1906
 permalink: /using-applicationsourceroot-to-stream-from-a-local-source/
 has_been_twittered:
   - 'yes'
@@ -104,7 +104,7 @@ I'm sure that the number of environments that don't have access to Group Policy 
 * [RES Wisdom](http://www.ressoftware.com/pm-products.aspx?PageID=72)
 * [ScriptLogic Desktop Authority](http://www.scriptlogic.com/products/desktopauthority/)
 
-Here's an example configuration using AppSense Environment Manager.  EM provides checks for Active Directory Sites or IP Address Ranges. Checks for processor architecture or determining if a registry location exists can be performed with custom conditions (currently handled by VBscript).
+Here's an example configuration using AppSense Environment Manager.  EM provides checks for Active Directory Sites or IP Address Ranges. Checks for processor architecture or determining if a registry location exists can be performed with custom conditions (currently handled by VBscript).
 
 Setting or changing the ApplicationSourceRoot value can be performed on a number of triggers such as Computer Start-up and User Logon, but most useful (e.g. laptops) will be using the Network Connected trigger. This trigger can be used to detect the network location whenever a physical network connection is made and it will then action the applicable registry change.
 

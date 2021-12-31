@@ -1,10 +1,10 @@
 ---
-
+id: 1762
 title: 'App-V FAQ: Can I virtualise Internet Explorer with App-V?'
 date: 2010-08-12T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=1762
 permalink: /app-v-faq-18-can-i-virtualise-internet-explorer-with-app-v/
 has_been_twittered:
   - 'yes'
@@ -56,7 +56,7 @@ A overview video of all of the Microsoft solutions is [available here](http://ed
 
 
 
-Microsoft does provide developers with tools for running the Internet Explorer 6 and 7 render engines on Windows 7 with [Expression Web](http://www.microsoft.com/expression/products/Web_Overview.aspx).  Although the full Expression Web is a paid product, a free version is available: [Microsoft Expression Web SuperPreview for Windows Internet Explorer](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=8e6ac106-525d-45d0-84db-dccff3fae677). If you are looking to provide developers a method of viewing sites in the older render engines, Expression Web is the recommend solution.
+Microsoft does provide developers with tools for running the Internet Explorer 6 and 7 render engines on Windows 7 with [Expression Web](http://www.microsoft.com/expression/products/Web_Overview.aspx).  Although the full Expression Web is a paid product, a free version is available: [Microsoft Expression Web SuperPreview for Windows Internet Explorer](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=8e6ac106-525d-45d0-84db-dccff3fae677). If you are looking to provide developers a method of viewing sites in the older render engines, Expression Web is the recommend solution.
 
 ### Other methods of delivering Internet Explorer
 

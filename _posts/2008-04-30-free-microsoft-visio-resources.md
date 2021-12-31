@@ -1,10 +1,10 @@
 ---
-
+id: 548
 title: Free Microsoft Visio Resources
 date: 2008-04-30T23:23:04+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/off-site-news/free-microsoft-visio-resources
 permalink: /free-microsoft-visio-resources/
 categories:
   - Microsoft

@@ -1,10 +1,10 @@
 ---
-
+id: 1064
 title: Did you know that App-V 4.5 CU1 is not beta?
 date: 2009-03-24T18:05:06+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=1064
 permalink: /did-you-know-that-app-v-45-cu1-is-not-beta/
 aktt_notify_twitter:
   - 'yes'

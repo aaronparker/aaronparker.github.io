@@ -1,10 +1,10 @@
 ---
-
+id: 496
 title: IIS 7.0 Manager Released, RSAT Soon Too?
 date: 2008-03-04T19:11:04+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/off-site-news/iis-70-manager-released-rsat-soon-too
 permalink: /iis-70-manager-released-rsat-soon-too/
 dsq_thread_id:
   - "195380239"

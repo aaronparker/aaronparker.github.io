@@ -1,10 +1,10 @@
 ---
-
+id: 505
 title: Application Compatibility And The Benefits Of Virtualisation
 date: 2008-03-20T17:42:42+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/application-compatibility-and-softgrid
 permalink: /application-compatibility-and-softgrid/
 categories:
   - Applications

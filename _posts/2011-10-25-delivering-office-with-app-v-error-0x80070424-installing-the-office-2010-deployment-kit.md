@@ -1,10 +1,10 @@
 ---
-
+id: 2409
 title: 'Delivering Office with App-V - Error 0x80070424 installing the Office 2010 Deployment Kit'
 date: 2011-10-25T11:30:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/delivering-office-with-app-v-error-0x80070424-installing-the-office-2010-deployment-kit/
 permalink: /delivering-office-with-app-v-error-0x80070424-installing-the-office-2010-deployment-kit/
 Hide SexyBookmarks:
   - "0"

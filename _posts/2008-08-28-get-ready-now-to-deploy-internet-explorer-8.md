@@ -1,10 +1,10 @@
 ---
-
+id: 681
 title: Get Ready Now To Deploy Internet Explorer 8
 date: 2008-08-28T18:28:57+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/windows/get-ready-now-to-deploy-internet-explorer-8
 permalink: /get-ready-now-to-deploy-internet-explorer-8/
 categories:
   - Microsoft

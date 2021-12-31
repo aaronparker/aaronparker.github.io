@@ -1,10 +1,10 @@
 ---
-
+id: 136
 title: SafeWord RemoteAccess vs. Security Configuration Wizard
 date: 2006-12-07T18:28:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/safeword-remoteaccess-vs-security-configuration-wizard
 permalink: /safeword-remoteaccess-vs-security-configuration-wizard/
 categories:
   - Microsoft

@@ -1,10 +1,10 @@
 ---
-
+id: 802
 title: 'CLI02-PD: New features in App-V 4.5'
 date: 2008-11-06T16:18:01+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/cli02-pd-new-features-in-app-v-45
 permalink: /cli02-pd-new-features-in-app-v-45/
 categories:
   - Microsoft

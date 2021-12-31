@@ -1,10 +1,10 @@
 ---
-
+id: 567
 title: Update On Running Adobe CS3 Applications In SoftGrid
 date: 2008-06-09T16:37:59+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=567
 permalink: /update-on-running-adobe-cs3-applications-in-softgrid/
 dsq_thread_id:
   - "195380660"

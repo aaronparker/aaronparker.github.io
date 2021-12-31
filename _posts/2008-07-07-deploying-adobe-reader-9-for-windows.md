@@ -1,10 +1,10 @@
 ---
-
+id: 596
 title: Deploying Adobe Reader 9 for Windows
 date: 2008-07-07T17:40:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=596
 permalink: /deploying-adobe-reader-9-for-windows/
 aktt_notify_twitter:
   - 'no'

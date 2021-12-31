@@ -1,10 +1,10 @@
 ---
-
+id: 106
 title: "Sophos Anti-Virus: Hide the Tray Icon"
 date: 2007-02-05T21:51:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/sophos-anti-virus-hide-the-tray-icon
 permalink: /sophos-anti-virus-hide-the-tray-icon/
 dsq_thread_id:
   - "195378743"

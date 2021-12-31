@@ -1,10 +1,10 @@
 ---
-
+id: 114
 title: Bomberman Evolved
 date: 2007-01-26T23:40:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/bomberman-evolved
 permalink: /bomberman-evolved/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

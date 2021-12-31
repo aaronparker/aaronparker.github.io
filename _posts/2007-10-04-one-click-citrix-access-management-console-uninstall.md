@@ -1,10 +1,10 @@
 ---
-
+id: 352
 title: One Click Citrix Access Management Console Uninstall
 date: 2007-10-04T14:47:46+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/one-click-citrix-access-management-console-uninstall
 permalink: /one-click-citrix-access-management-console-uninstall/
 categories:
   - Automation

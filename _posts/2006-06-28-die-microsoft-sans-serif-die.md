@@ -1,10 +1,10 @@
 ---
-
+id: 268
 title: Die Microsoft Sans Serif, Die
 date: 2006-06-28T23:14:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/die-microsoft-sans-serif-die
 permalink: /die-microsoft-sans-serif-die/
 aktt_notify_twitter:
   - 'yes'

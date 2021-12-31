@@ -1,10 +1,10 @@
 ---
-
+id: 213
 title: Citrix Access Gateway 4.5 Beta
 date: 2006-08-20T23:55:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/citrix-access-gateway-45-beta
 permalink: /citrix-access-gateway-45-beta/
 categories:
   - Citrix

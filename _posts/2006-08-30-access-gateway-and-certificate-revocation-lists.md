@@ -1,10 +1,10 @@
 ---
-
+id: 191
 title: Access Gateway and Certificate Revocation Lists
 date: 2006-08-30T22:27:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/access-gateway-and-certificate-revocation-lists
 permalink: /access-gateway-and-certificate-revocation-lists/
 views:
   - "1"

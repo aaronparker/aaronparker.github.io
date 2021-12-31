@@ -1,10 +1,10 @@
 ---
-
+id: 1244
 title: RemoteApp for Hyper-V. Hyper what?
 date: 2009-12-17T14:00:15+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/remoteapp-for-hyper-v-hyper-what
 permalink: /remoteapp-for-hyper-v-hyper-what/
 dsq_thread_id:
   - "195382132"

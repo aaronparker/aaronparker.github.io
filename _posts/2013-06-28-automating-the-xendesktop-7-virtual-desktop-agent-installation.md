@@ -1,10 +1,10 @@
 ---
-
+id: 3385
 title: Automating the XenDesktop 7 Virtual Desktop Agent Installation
 date: 2013-06-28T17:26:58+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy.com/?p=3385
 permalink: /automating-the-xendesktop-7-virtual-desktop-agent-installation/
 dsq_thread_id:
   - "1445599060"
@@ -54,7 +54,7 @@ I'm going to specify a static list of Controllers using the aptly named CONTROLL
 SET OPTIONS=%OPTIONS% /CONTROLLERS "ctx-xd7-ddc1.lab.com,ctx-xd7-ddc2.lab.com"
 ```
 
-There are additional options at this point and the recommended approach is to specify the XD site GUID using SITE\_GUID (this is the same as 'Choose locations from Active Directory' shown below). Don't use CONTROLLERS and SITE\_GUID at the same time.
+There are additional options at this point and the recommended approach is to specify the XD site GUID using SITE\_GUID (this is the same as 'Choose locations from Active Directory' shown below). Don't use CONTROLLERS and SITE\_GUID at the same time.
 
 The last option - 'Let Machine Creation Services do it automatically' doesn't appear to be available as a command line option. From the command line perspective, I assume this is the same as not specifying CONTROLLERS or SITE_GUID at all.
 
@@ -82,7 +82,7 @@ Fortunately, Windows Firewall configuration is simple using the ENABLE\_HDX\_POR
 SET OPTIONS=%OPTIONS% /ENABLE_HDX_PORTS
 ```
 
-Finally then, a summary of what the wizard is about to install and configure. It's worth pointing out that for Windows Server workloads, you will need to install the Remote Desktop Session Host **before** installing the VDA. If the RDSH role is not installed, setup will install it and reboot the server.  This will potentially break your automated deployment; however, if you've used the right approach and [automated the deployment of Windows]({{site.baseurl}}/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/), then this role will already be enabled.
+Finally then, a summary of what the wizard is about to install and configure. It's worth pointing out that for Windows Server workloads, you will need to install the Remote Desktop Session Host **before** installing the VDA. If the RDSH role is not installed, setup will install it and reboot the server.  This will potentially break your automated deployment; however, if you've used the right approach and [automated the deployment of Windows]({{site.baseurl}}/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/), then this role will already be enabled.
 
 ![6_Summary.png]({{site.baseurl}}/media/2013/06/6_Summary.png)
 

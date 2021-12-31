@@ -1,10 +1,10 @@
 ---
-
+id: 719
 title: Microsoft Application Virtualization Best Practices Analyzer
 date: 2008-10-01T07:35:54+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/microsoft-application-virtualization-best-practices-analyzer
 permalink: /microsoft-application-virtualization-best-practices-analyzer/
 dsq_thread_id:
   - "195381094"

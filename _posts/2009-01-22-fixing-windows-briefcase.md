@@ -1,10 +1,10 @@
 ---
-
+id: 858
 title: '"Fixing" Windows Briefcase'
 date: 2009-01-22T12:36:11+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=858
 permalink: /fixing-windows-briefcase/
 aktt_notify_twitter:
   - 'yes'

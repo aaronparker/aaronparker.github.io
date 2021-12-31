@@ -1,10 +1,10 @@
 ---
-
+id: 627
 title: 'Free MSI Editor: InstEd'
 date: 2008-07-31T22:45:22+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/applications/free-msi-editor-insted
 permalink: /free-msi-editor-insted/
 categories:
   - Applications

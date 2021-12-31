@@ -1,21 +1,16 @@
 ---
 layout: post
 title: Manage User Experience Virtualization on the Modern Desktop
-description: Use Microsoft User Experience Virtualization on Azure AD-joined Windows desktops to roam user's Windows and applications preferences between devices.
 date: 2019-06-19 23:00 +1000
 permalink: "/user-experience-virtualzation-intune/"
-image:
-  path:    /assets/img/user/image.jpg
-  srcset:
-    1920w: /assets/img/user/image.jpg
-    960w:  /assets/img/user/image@0,5x.jpg
-    480w:  /assets/img/user/image@0,25x.jpg
 categories:
 - Microsoft
+tags:
+- Intune
+- User Experience Virtualization
+- OneDrive
+- PowerShell
 ---
-* this unordered seed list will be replaced by the toc
-{:toc}
-
 On the modern Windows 10 desktop with Office 365 and Azure AD Premium, application preferences are roamed by two components - the Office 2013+ desktop applications [roam settings when used with Office 365](https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/jj733593\(v=office.15\)#roaming-settings-for-office-2013) and when enabled, Enterprise State Roaming [synchronises specific settings](https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-windows-settings-reference).
 
 Before you ask - yes, [User Experience Virtualization](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-for-windows) is still a thing. UE-V is a component of Windows 10 Enterprise that can roam a user's application preferences across desktops. UE-V works by defining user profile locations specific to an application and importing and exporting those settings into and out of the profile at login /logout or application launch / close.

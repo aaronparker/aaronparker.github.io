@@ -1,10 +1,10 @@
 ---
-
+id: 365
 title: 'SoftGrid: Launch Windows Explorer inside the bubble'
 date: 2007-11-12T13:04:12+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/softgrid-launch-windows-explorer-inside-the-bubble
 permalink: /softgrid-launch-windows-explorer-inside-the-bubble/
 dsq_thread_id:
   - "195379617"

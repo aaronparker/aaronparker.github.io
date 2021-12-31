@@ -1,10 +1,10 @@
 ---
-
+id: 351
 title: '"Page Cannot Be Displayed" in McAfee ePO?'
 date: 2007-10-02T10:10:17+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/general/page-cannot-be-displayed-in-mcafee-epo
 permalink: /page-cannot-be-displayed-in-mcafee-epo/
 dsq_thread_id:
   - "195379488"

@@ -1,10 +1,10 @@
 ---
-
+id: 733
 title: Information about Windows Server 2008 SP2 and Windows Vista SP2
 date: 2008-10-07T09:34:22+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=733
 permalink: /information-about-windows-server-2008-sp2-and-windows-vista-sp2/
 dsq_thread_id:
   - "195381144"

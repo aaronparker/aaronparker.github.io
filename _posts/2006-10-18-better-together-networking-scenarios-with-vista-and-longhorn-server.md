@@ -1,10 +1,10 @@
 ---
-
+id: 162
 title: "Better Together: Networking Scenarios with Vista and Longhorn Server"
 date: 2006-10-18T03:51:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/better-together-networking-scenarios-with-vista-and-longhorn-server
 permalink: /better-together-networking-scenarios-with-vista-and-longhorn-server/
 categories:
   - Microsoft

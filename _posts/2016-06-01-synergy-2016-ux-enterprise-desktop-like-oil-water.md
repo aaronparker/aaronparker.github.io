@@ -1,9 +1,15 @@
 ---
+id: 4529
 title: 'Citrix Synergy 2016: UX and the Enterprise Desktop like Oil and Water'
 date: 2016-06-01T12:13:00+10:00
 author: Aaron Parker
 layout: post
+guid: https://stealthpuppy.com/?p=4529
 permalink: /synergy-2016-ux-enterprise-desktop-like-oil-water/
+layers:
+  - 'a:1:{s:9:"video-url";s:0:"";}'
+dsq_thread_id:
+  - "4873720197"
 image: /media/2016/06/SYN239-UX-and-the-Enterprise-Desktop-Like-Oil-and-Water-v1.0.png
 categories:
   - Community
@@ -12,26 +18,23 @@ tags:
   - Citrix Synergy
   - Performance
 ---
-I had the pleasure recently to present a session at [Citrix Synergy](http://www.citrixsynergy.com) 2016 in Las Vegas with [Helge Klein](https://helgeklein.com/) (of [uberAgent](https://uberagent.com/) and UPM fame) on enterprise desktop performance in a session titled: [SYN239](https://citrix.g2planet.com/citrixsynergy2016/public_session_view.php?agenda_session_id=259): UX and the enterprise desktop: like oil and water?. We've previously presented on [performance related topics with folder redirection]({{site.baseurl}}/synergy-2015-replay/), and this year we wanted to take a wider look at performance on an enterprise desktop and how user experience is affected.
+I had the pleasure recently to present a session at [Citrix Synergy](http://www.citrixsynergy.com) 2016 in Las Vegas with [Helge Klein](https://helgeklein.com/) (of [uberAgent](https://uberagent.com/) and UPM fame) on enterprise desktop performance in a session titled: [SYN239](https://citrix.g2planet.com/citrixsynergy2016/public_session_view.php?agenda_session_id=259): UX and the enterprise desktop: like oil and water?. We've previously presented on [performance related topics with folder redirection]({{site.baseurl}}/synergy-2015-replay/), and this year we wanted to take a wider look at performance on an enterprise desktop and how user experience is affected.
 
 ## Session Overview
 
 This session covers our testing in turning a vanilla Windows installation, which performs well, into a typical enterprise desktop, where performance usually suffers. We covered a number of scenarios, that resulted in a significant reduction in performance:
 
-![31x performance reduction from vanilla to an enterprise desktop]({{site.baseurl}}/media/2016/06/31xPerformance.png)
-
-31x performance reduction from vanilla Windows to an enterprise desktop
-{:.figcaption}
+![31x performance reduction from vanilla to an enterprise desktop]({{site.baseurl}}/media/2016/06/31xPerformance.png)*31x performance reduction from vanilla Windows to an enterprise desktop*
 
 The full video of the 45-minute session is available on [YouTube](https://www.youtube.com/watch?v=8TpXl80fkKQ) and embedded below.
 
-    Out of the box, Windows is lightning fast and responsive. Enterprise desktops, on the other hand, tend to be slow and bloated. Why is that? Enterprises typically add a plethora of third-party management, security and virtualization components and implement "best practices". Combined, these customizations often bog Windows down and impact user experience. But what is the impact of each change? This session will showcase a clean install of Windows, measuring and explaining the impact of each configuration change on the user experience.
+_Out of the box, Windows is lightning fast and responsive. Enterprise desktops, on the other hand, tend to be slow and bloated. Why is that? Enterprises typically add a plethora of third-party management, security and virtualization components and implement "best practices". Combined, these customizations often bog Windows down and impact user experience. But what is the impact of each change? This session will showcase a clean install of Windows, measuring and explaining the impact of each configuration change on the user experience._
 
-    In this session, you will learn:
+_In this session, you will learn:_
 
-    * Which configuration changes have the greatest impact on logon duration
-    * How to build systems that are easy to manage and great to use
-    * Common mistakes and how to avoid them
+  * _Which configuration changes have the greatest impact on_ logon _duration_
+  * _How to build systems that are easy to manage and great to use_
+  * _Common mistakes and how to avoid them_
 
 ## Session Video: UX and the Enterprise Desktop - like Oil and Water?
 

@@ -1,10 +1,10 @@
 ---
-
+id: 1276
 title: App-V Errors 00000006 and 000D3002 When Adding Packages
 date: 2010-02-09T17:34:06+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=1276
 permalink: /app-v-errors-00000006-and-000d3002-when-adding-packages/
 aktt_notify_twitter:
   - 'yes'

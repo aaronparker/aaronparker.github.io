@@ -1,10 +1,10 @@
 ---
-
+id: 82
 title: "Windows Server 2003 SP2: What's in it for Terminal Servers?"
 date: 2007-03-13T18:01:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: 'http://blog.stealthpuppy.com/uncategorized/windows-server-2003-sp2-what%e2%80%99s-in-it-for-terminal-servers'
 permalink: '/windows-server-2003-sp2-what%e2%80%99s-in-it-for-terminal-servers/'
 categories:
   - Microsoft

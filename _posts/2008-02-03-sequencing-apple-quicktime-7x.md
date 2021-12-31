@@ -1,10 +1,10 @@
 ---
-
+id: 442
 title: Virtualising Apple QuickTime 7.x
 date: 2008-02-03T23:00:44+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/sequencing-apple-quicktime-7x
 permalink: /sequencing-apple-quicktime-7x/
 dsq_thread_id:
   - "195380059"

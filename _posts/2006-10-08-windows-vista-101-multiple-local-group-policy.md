@@ -1,10 +1,10 @@
 ---
-
+id: 170
 title: 'Windows Vista 101: Multiple Local Group Policy'
 date: 2006-10-08T03:36:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/windows-vista-101-multiple-local-group-policy
 permalink: /windows-vista-101-multiple-local-group-policy/
 categories:
   - Microsoft

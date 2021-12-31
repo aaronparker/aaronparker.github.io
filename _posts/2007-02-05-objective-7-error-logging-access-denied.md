@@ -1,10 +1,10 @@
 ---
-
+id: 108
 title: 'Objective 7 Error Logging: Access Denied'
 date: 2007-02-05T07:01:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/objective-7-error-logging-access-denied
 permalink: /objective-7-error-logging-access-denied/
 categories:
   - Applications

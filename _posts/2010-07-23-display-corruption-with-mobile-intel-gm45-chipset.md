@@ -1,10 +1,10 @@
 ---
-
+id: 1772
 title: Display corruption with Mobile Intel GM45 Chipset
 date: 2010-07-23T13:05:18+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/hardware/display-corruption-with-mobile-intel-gm45-chipset
 permalink: /display-corruption-with-mobile-intel-gm45-chipset/
 has_been_twittered:
   - 'yes'

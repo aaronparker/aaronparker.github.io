@@ -1,10 +1,10 @@
 ---
-
+id: 692
 title: 'App-V and SCCM 2007 R2: Are Virtualised Applications Delivered The Same Way?'
 date: 2008-09-11T23:59:48+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-and-sccm-2007-r2-are-virtualised-applications-delivered-the-same-way
 permalink: /app-v-and-sccm-2007-r2-are-virtualised-applications-delivered-the-same-way/
 categories:
   - Microsoft
@@ -12,7 +12,7 @@ tags:
   - SCCM
   - SoftGrid
 ---
-This was a great question, at [this evenings talk]({{site.baseurl}}/virtualisation/app-v-talk-slide-deck),  about deploying virtualised applications via ConfigMgr 2007 R2 - are virtualised applications delivered to clients in the same manner as installed applications?
+This was a great question, at [this evenings talk]({{site.baseurl}}/virtualisation/app-v-talk-slide-deck),  about deploying virtualised applications via ConfigMgr 2007 R2 - are virtualised applications delivered to clients in the same manner as installed applications?
 
 There are several parts to this answer. First up [virtual applications are imported](http://technet.microsoft.com/en-gb/library/cc161915.aspx), added to distribution points and [advertised](http://technet.microsoft.com/en-gb/library/cc161935.aspx), just like installed applications. There are two differences to installed applications here:
 

@@ -1,10 +1,10 @@
 ---
-
+id: 67
 title: Windows 2003 R2 and Integrated Service Pack 2
 date: 2007-04-09T23:02:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/windows-2003-r2-and-integrated-service-pack-2
 permalink: /windows-2003-r2-and-integrated-service-pack-2/
 dsq_thread_id:
   - "195378534"

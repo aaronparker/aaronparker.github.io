@@ -1,10 +1,10 @@
 ---
-
+id: 1693
 title: 'App-V FAQ: Can App-V be used to run 16-bit applications on Windows x64?'
 date: 2010-07-22T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-9-can-app-v-be-used-to-run-16-bit-applications-on-windows-x64
 permalink: /app-v-faq-9-can-app-v-be-used-to-run-16-bit-applications-on-windows-x64/
 has_been_twittered:
   - 'yes'
@@ -18,7 +18,7 @@ tags:
 ---
 ![AppV logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo.png)
 
-No, [App-V is not a compatibility solution]({{site.baseurl}}/virtualisation/app-v-faq-7-is-app-v-an-application-compatibility-solution). App-V does not provide any additional layers that applications can use when executing on different versions of Windows. Although 16-bit applications can be deployed on 32-bit Windows via App-V, it cannot be used to run 16-bit applications on 64-bit Windows.
+No, [App-V is not a compatibility solution]({{site.baseurl}}/virtualisation/app-v-faq-7-is-app-v-an-application-compatibility-solution). App-V does not provide any additional layers that applications can use when executing on different versions of Windows. Although 16-bit applications can be deployed on 32-bit Windows via App-V, it cannot be used to run 16-bit applications on 64-bit Windows.
 
 If 64-bit Windows does not support 16-bit applications, then neither will App-V. The lack of 16-bit application support in x64 Windows is documented in this Microsoft Knowledgebase Article: [64-bit versions of Windows do not support 16-bit components, 16-bit processes, or 16-bit applications](http://support.microsoft.com/kb/896458):
 

@@ -1,10 +1,10 @@
 ---
-
+id: 54
 title: "Firefox on Vista doesn't have to be so ugly"
 date: 2007-04-25T16:40:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/firefox-on-vista-doesnt-have-to-be-so-ugly
 permalink: /firefox-on-vista-doesnt-have-to-be-so-ugly/
 categories:
   - Applications

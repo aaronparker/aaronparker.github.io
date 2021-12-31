@@ -1,16 +1,25 @@
 ---
+id: 6126
 title: Citrix Workspace app deployed with Microsoft Intune
 date: 2018-08-13T14:55:54+10:00
 author: Aaron Parker
 layout: post
+guid: https://stealthpuppy/?p=6126
 permalink: /citrix-workspace-app-microsoft-intune/
+layers:
+  - 'a:1:{s:9:"video-url";s:0:"";}'
 image: /media/2018/08/rawpixel-550994-unsplash.jpg
 categories:
   - Citrix
+tags:
+  - Android
+  - Citrix Receiver
+  - Citrix Workspace
+  - Intune
+  - iOS
+  - macOS
+  - Windows
 ---
-* this unordered seed list will be replaced by the toc
-{:toc}
-
 Citrix Workspace app is [here to replace Citrix Receiver](https://www.citrix.com/blogs/2018/08/06/the-citrix-workspace-app-our-new-bundle-of-joy-is-born-today/) with a new UI and capabilities (primarily for Citrix Cloud customers). Here's how to deploy it across various supported platforms in a modern management capacity with Microsoft Intune.
 
 ## Windows 10
@@ -24,17 +33,11 @@ There are multiple deployment options for Workspace app on Windows via Microsoft
 
 [Adding the Workspace app from the Microsoft Store](https://docs.microsoft.com/en-us/intune/store-apps-windows) is well documented and should take only 5 minutes to get the app from the Store, synchronise to Intune and [assign the app to your users](https://docs.microsoft.com/en-us/intune/apps-deploy). How's that for done and dusted? - I'm sure you've got better things to do than package and maintain applications.
 
-![Citrix Workspace in the Microsoft Store]({{site.baseurl}}/media/2018/08/CitrixWorkspace-MicrosoftStore.png)
-
-Citrix Workspace in the Microsoft Store
-{:.figcaption}
+![Citrix Workspace in the Microsoft Store]({{site.baseurl}}/media/2018/08/CitrixWorkspace-MicrosoftStore.png)*Citrix Workspace in the Microsoft Store*
 
 The Workspace app can be assigned as available for end-users to install via the Intune Company Portal or required for automatic deployment. Once deployed, the Store will take care of updates, thus there is no further action required by the administrator.
 
-![Citrix Workspace app in the Microsoft Intune Company Portal]({{site.baseurl}}/media/2018/08/CitrixWorkspace-CompanyPortal.png)
-
-Citrix Workspace app in the Microsoft Intune Company Portal
-{:.figcaption}
+![Citrix Workspace app in the Microsoft Intune Company Portal]({{site.baseurl}}/media/2018/08/CitrixWorkspace-CompanyPortal.png)*Citrix Workspace app in the Microsoft Intune Company Portal*
 
 If you have already deployed Citrix Receiver from the Microsoft Store via Intune, it should be automatically updated to Citrix Workspace. One they key [feature limitations](https://docs.citrix.com/en-us/citrix-workspace-app-for-windows-store/downloads/Features_RfWinStore.pdf) of the Microsoft Store version is pass-through authentication, so you might need to consider alternative deployment options
 
@@ -65,10 +68,7 @@ With the right tools and a bit of effort, Citrix Workspace app can be [re-packag
 
 Is this approach right for you? This requires maintaining and deploying a custom package and is dependent on how the environment is managed and available skill sets. Only you can answer that for your projects or environments. A custom package isn't ideal and I recommend using the Microsoft Store version as the default approach instead.
 
-![Citrix Workspace app extracted Windows Installer files]({{site.baseurl}}/media/2018/08/CitrixWorkspace-Extracted.png)
-
-Citrix Workspace app extracted Windows Installer files
-{:.figcaption}
+![Citrix Workspace app extracted Windows Installer files]({{site.baseurl}}/media/2018/08/CitrixWorkspace-Extracted.png)*Citrix Workspace app extracted Windows Installer files*
 
 ### HDX RealTime Media Engine
 
@@ -106,14 +106,11 @@ Add the script to the Intune portal and assign to a user group to deploy. Ensure
 
 The Citrix Workspace app can be [deployed as a line-of-business application](https://docs.microsoft.com/en-us/intune/lob-apps-macos) with Microsoft Intune. The [Workspace app download](https://www.citrix.com.au/downloads/workspace-app/mac/workspace-app-for-mac-latest.html) comes as [an Installer package](https://en.wikipedia.org/wiki/Installer_(macOS)) (inside an [Apple Disk Image](https://en.wikipedia.org/wiki/Apple_Disk_Image)) that can be converted into suitable file format with the [Microsoft Intune App Wrapping Tool](https://github.com/msintuneappsdk/intune-app-wrapping-tool-mac), ready to deploy with Intune.
 
-![The Citrix Workspace app disk image]({{site.baseurl}}/media/2018/08/CitrixWorkspace-DiskImage.png)
-
-The Citrix Workspace app disk image
-{:.figcaption}
+![The Citrix Workspace app disk image]({{site.baseurl}}/media/2018/08/CitrixWorkspace-DiskImage.png)*The Citrix Workspace app disk image*
 
 ### Convert the Installer
 
-Instructions for converting a .pkg file to a `.intunemac` file are outlined in the documentation, and the basic process I have followed to convert the Citrix Workspace app installer file is:
+Instructions for converting a .pkg file to a .intunemac file are outlined in the documentation, and the basic process I have followed to convert the Citrix Workspace app installer file is:
 
 1. Download the Intune App Wrapping Tool for Mac executable - `IntuneAppUtil`  - to a local folder. I've downloaded it to `~/bin`.
 2. Mark the file as executable. In my example, I've done this with:
@@ -138,17 +135,11 @@ MDM Invalid download asset URL https://fef.msua02.manage.microsoft.com/DownloadS
 
 If successful the command line will look similar to the following screenshot:
 
-![Converting the Citrix Workspace app with IntuneAppUtil]({{site.baseurl}}/media/2018/08/CitrixWorkspace-IntuneAppUtil.png)
-
-Converting the Citrix Workspace app with IntuneAppUtil
-{:.figcaption}
+![Converting the Citrix Workspace app with IntuneAppUtil]({{site.baseurl}}/media/2018/08/CitrixWorkspace-IntuneAppUtil.png)*Converting the Citrix Workspace app with IntuneAppUtil*
 
 The Workspace app installer will have been converted into a .intunemac format ready to import into the Intune portal for distributing to users.
 
-![The converted Citrix Workspace app]({{site.baseurl}}/media/2018/08/CitrixWorkspace-AppFiles.png)
-
-The converted Citrix Workspace app
-{:.figcaption}
+![The converted Citrix Workspace app]({{site.baseurl}}/media/2018/08/CitrixWorkspace-AppFiles.png)*The converted Citrix Workspace app*
 
 ### Distribute with Intune
 
@@ -165,17 +156,11 @@ With the prepared package, [create a new line-of-business app in the Intune port
 
 Once the details have been added, click OK to create the application. I initially had issues with uploading the application on Chrome on macOS. I was successful on Internet Explorer.
 
-![Adding the Citrix Workspace app as a line-of-business app in Microsoft Intune]({{site.baseurl}}/media/2018/08/CitrixWorkspace-IntunePortal.png)
-
-Adding the Citrix Workspace app as a line-of-business app in Microsoft Intune
-{:.figcaption}
+![Adding the Citrix Workspace app as a line-of-business app in Microsoft Intune]({{site.baseurl}}/media/2018/08/CitrixWorkspace-IntunePortal.png)*Adding the Citrix Workspace app as a line-of-business app in Microsoft Intune*
 
 Once the application has been created and assigned to users, it will be available for install in the Intune Company Portal. The application can also be set to required for automatic deployment.
 
-![Citrix Workspace available in the Intune Company Portal on macOS]({{site.baseurl}}/media/2018/08/CitrixWorkspace-macOSCompanyPortal.png)
-
-Citrix Workspace available in the Intune Company Portal on macOS
-{:.figcaption}
+![Citrix Workspace available in the Intune Company Portal on macOS]({{site.baseurl}}/media/2018/08/CitrixWorkspace-macOSCompanyPortal.png)Citrix Workspace available in the Intune Company Portal on macOS*
 
 Just as on Windows, updates to the Citrix Workspace app can be managed with the inbuilt updater, post-deployment.
 
@@ -195,10 +180,7 @@ As at the time of writing, Citrix Receiver is still available on the iOS App Sto
 
 The application will be available in the Intune Company Portal:
 
-![Citrix Workspace for iOS available in the Intune Company Portal]({{site.baseurl}}/media/2018/08/CitrixWorkspace-iOS.png)
-
-Citrix Workspace for iOS available in the Intune Company Portal
-{:.figcaption}
+![Citrix Workspace for iOS available in the Intune Company Portal]({{site.baseurl}}/media/2018/08/CitrixWorkspace-iOS.png)*Citrix Workspace for iOS available in the Intune Company Portal*
 
 For existing deployments of Citrix Receiver, they should be updated to Citrix Workspace app automatically.
 
@@ -228,10 +210,7 @@ In the future, it's more likely that organisations will leverage the Android ent
 
 Here's [Citrix Receiver in the Google Play store](https://play.google.com/work/apps/details?id=com.citrix.Receiver).
 
-![Approving Citrix Receiver in the Google Play store]({{site.baseurl}}/media/2018/08/CitrixWorkspace-PlayStore.png)
-
-Approving Citrix Receiver in the Google Play store
-{:.figcaption}
+![Approving Citrix Receiver in the Google Play store]({{site.baseurl}}/media/2018/08/CitrixWorkspace-PlayStore.png)Approving Citrix Receiver in the Google Play store*
 
 Once approved, you must choose how new permissions will be approved:
 
@@ -242,4 +221,4 @@ You can approve and deploy Citrix Receiver today, which should be automatically 
 
 ## Wrap-up
 
-In this article, I've covered the high-level steps required for deployment of the Citrix Workspace app across the various major platforms supported by Microsoft Intune. Mobile platforms, including the Microsoft Store on Windows 10, will require the least amount of administrative effort to configure, deploy and update. For most organisations supporting Windows as their primary platform, even with Microsoft Intune, the choice of deployment solution will depend on Workspace app feature requirements.
+In this article, I've covered the high-level steps required for deployment of the Citrix Workspace app across the various major platforms supported by Microsoft Intune. Mobile platforms, including the Microsoft Store on Windows 10, will require the least amount of administrative effort to configure, deploy and update. For most organisations supporting Windows as their primary platform, even with Microsoft Intune, the choice of deployment solution will depend on Workpace app feature requirements.

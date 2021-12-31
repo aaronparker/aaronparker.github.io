@@ -1,10 +1,10 @@
 ---
-
+id: 327
 title: Windows Script 5.7 Available for Download
 date: 2007-08-10T08:48:49+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/windows-script-57-available-for-download
 permalink: /windows-script-57-available-for-download/
 categories:
   - Microsoft

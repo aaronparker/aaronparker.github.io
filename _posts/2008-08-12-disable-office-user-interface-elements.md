@@ -1,10 +1,10 @@
 ---
-
+id: 663
 title: Disable Office User Interface Elements
 date: 2008-08-12T22:05:18+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=663
 permalink: /disable-office-user-interface-elements/
 thesis_description:
   - How to use Group Policy to restrict access to specific menus and buttons in Office 2007

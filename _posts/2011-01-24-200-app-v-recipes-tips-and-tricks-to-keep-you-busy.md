@@ -1,10 +1,10 @@
 ---
-
+id: 2103
 title: 200 App-V Recipes, Tips and Tricks to keep you busy
 date: 2011-01-24T14:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/200-app-v-recipes-tips-and-tricks-to-keep-you-busy/
 permalink: /200-app-v-recipes-tips-and-tricks-to-keep-you-busy/
 has_been_twittered:
   - 'yes'

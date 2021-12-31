@@ -1,10 +1,10 @@
 ---
-
+id: 169
 title: AAC 4.2 and Swivel PINsafe
 date: 2006-10-10T05:47:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/aac-42-and-swivel-pinsafe
 permalink: /aac-42-and-swivel-pinsafe/
 categories:
   - Citrix

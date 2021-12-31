@@ -1,10 +1,10 @@
 ---
-
+id: 3595
 title: Building a Lab Server to Run ESXi and Hyper-V
 date: 2014-03-22T14:49:40+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy/?p=3595
 permalink: /lab-server-to-run-esxi-hyper-v/
 dsq_thread_id:
   - "2484425006"
@@ -15,7 +15,7 @@ tags:
   - Hyper-V
   - Lab
 ---
-One of the great things I enjoyed about working at [Kelway](http://www.kelway.com/) was the access to a pretty solid lab environment. While I do have access to a lab environment at [Atlantis](http://www.atlantiscomputing.com) (3 in fact), now that I work primarily from home, I really prefer a lab environment that can provide me more flexibility. Only a local environment can do that.
+One of the great things I enjoyed about working at [Kelway](http://www.kelway.com/) was the access to a pretty solid lab environment. While I do have access to a lab environment at [Atlantis](http://www.atlantiscomputing.com) (3 in fact), now that I work primarily from home, I really prefer a lab environment that can provide me more flexibility. Only a local environment can do that.
 
 I originally started out with the aim of building a system that achieved 3 goals - low power consumption, enough grunt to deliver the workloads I'd like to run, plus be (relatively) quiet. As you can probably guess, I've achieved only two of those objectives (plus blowing my budget in the process).
 
@@ -33,7 +33,7 @@ Intel CPUs have been my personal preference, so I ruled out AMD immediately. If 
 
 Starting with the [Core i5](http://www.intel.com.au/content/www/au/en/processors/core/core-i5-processor.html) made some sense, both from a power consumption and cost perspective, but the i5 has two things going against it - no Hyper-Threading and a maximum of 32 GB of RAM. I didn't want to limit my workloads, so I've gone with a [Core i7](http://www.intel.com.au/content/www/au/en/processors/core/core-i7-processor.html).
 
-To build a 32 GB system, you could go with the [Core i7-4770K](http://ark.intel.com/products/75123/intel-core-i7-4770k-processor-8m-cache-up-to-3_90-ghz) that uses a socket LGA1150. One problem with the 4th generation Core i7 (i.e. [Haswell](https://en.wikipedia.org/wiki/Haswell_(microarchitecture))) is that they don't yet support 64GB of RAM (as far as I can tell).
+To build a 32 GB system, you could go with the [Core i7-4770K](http://ark.intel.com/products/75123/intel-core-i7-4770k-processor-8m-cache-up-to-3_90-ghz) that uses a socket LGA1150. One problem with the 4th generation Core i7 (i.e. [Haswell](https://en.wikipedia.org/wiki/Haswell_(microarchitecture))) is that they don't yet support 64GB of RAM (as far as I can tell).
 
 ![CPU]({{site.baseurl}}/media/2014/03/Core-i7-CPU.jpg)
 
@@ -45,7 +45,7 @@ As I'm doing testing and modelling with [a solution that utilise a lot of RAM](h
 
 I had originally wanted to build a system around a min-ITX or mini/microATX board to build a smaller PC but the choice of CPU using the socket LGA2011 and 64 GB of RAM has forced me on to a full ATX board.
 
-As I'm not interested in over-clocking, my requirements for a motherboard were simple - I went for the lowest price board that could fit 64 GB of RAM (8 DIMM slots) and supports a minimum of 4 x SATA3 (6Gbps) ports. Unless you're looking at server boards, you'll find most desktop motherboards come with a lot of extra features that are just not required for a lab server (sound, SPDIF, heaps of USB ports, FireWire etc.).
+As I'm not interested in over-clocking, my requirements for a motherboard were simple - I went for the lowest price board that could fit 64 GB of RAM (8 DIMM slots) and supports a minimum of 4 x SATA3 (6Gbps) ports. Unless you're looking at server boards, you'll find most desktop motherboards come with a lot of extra features that are just not required for a lab server (sound, SPDIF, heaps of USB ports, FireWire etc.).
 
 ![ASRock-Extreme6]({{site.baseurl}}/media/2014/03/ASRock-Extreme6.jpg)
 
@@ -53,11 +53,11 @@ ASRock Extreme6 with 5 x SATA 3 ports. One thing I've found out in building this
 
 ## Filling it With RAM
 
-![G.Skill-RipjawsX]({{site.baseurl}}/media/2014/03/G.Skill-RipjawsX.jpg)
+![]({{site.baseurl}}/media/2014/03/G.Skill-RipjawsX.jpg 200w, {{site.baseurl}}/media/2014/03/G.Skill-RipjawsX-150x87.jpg 150w" sizes="(max-width: 200px) 100vw, 200px" /> 
 
-With 8 DIMM slots to fill and 64 GB of RAM to get to, I needed to find 8 x 8 GB DIMMs. The ASRock X79 Extreme 6 supports 2400 / 2133 / 1866 / 1600 / 1333 / 1066 MHz clock speeds.
+With 8 DIMM slots to fill and 64 GB of RAM to get to, I needed to find 8 x 8 GB DIMMs. The ASRock X79 Extreme 6 supports 2400 / 2133 / 1866 / 1600 / 1333 / 1066 MHz clock speeds.
 
-I originally looked at Corsair Vengeance RAM but settled on [G.Skill RipjawsX DDR3-1600 F3-1600C9Q-32GXM](http://www.gskill.com/en/product/f3-1600c9q-32gxm), at $100 AU less than the Corsair. With a [CAS latency](https://en.wikipedia.org/wiki/CAS_latency) of 9-9-9-24, I think this ended up being good value for money.
+I originally looked at Corsair Vengeance RAM but settled on [G.Skill RipjawsX DDR3-1600 F3-1600C9Q-32GXM](http://www.gskill.com/en/product/f3-1600c9q-32gxm), at $100 AU less than the Corsair. With a [CAS latency](https://en.wikipedia.org/wiki/CAS_latency) of 9-9-9-24, I think this ended up being good value for money.
 
 ## Housing the Rig in a Case
 
@@ -73,7 +73,7 @@ When picking a case, I looked at cooling options as well - by picking a CPU cool
 
 While a water cooler probably pulls more power than a heat sink/fan combination, I went with water cooling to ensure I could move heat away from the CPU as efficiently as possible.
 
-I chose the [Corsair Hydro Series H55 Quiet CPU Cooler](http://www.corsair.com/en-au/hydro-series-h55-quiet-cpu-cooler). This is a single fan, 120mm radiator but should be enough to sufficiently move any heat generated by the CPU.
+I chose the [Corsair Hydro Series H55 Quiet CPU Cooler](http://www.corsair.com/en-au/hydro-series-h55-quiet-cpu-cooler). This is a single fan, 120mm radiator but should be enough to sufficiently move any heat generated by the CPU.
 
 The 330R includes 1 x 120mm (rear) and 1 x 140mm fans (front), but I've replaced those with [Corsair's Quiet Edition 120mm](http://www.corsair.com/en-au/air-series-af120-quiet-edition-high-airflow-120mm-fan) and [140mm](http://www.corsair.com/en-au/air-series-af140-quiet-edition-high-airflow-140mm-fan) fans with a second 140mm in the front to pull in more air. The case does include room for two 120mm or 140mm fans with a radiator in the top, which requires popping the top plate off to allow for exhaust but would increase the noise coming out of the system.
 
@@ -83,16 +83,16 @@ The 330R includes 1 x 120mm (rear) and 1 x 140mm fans (front), but I've replaced
 
 In the PC I have installed:
 
-* 1 x Corsair 64 GB SSD SATA2 (although this drive works under Windows, I can't mount it under ESXi)
-* 1 x OCZ Vertex 3 120 GB SSD
-* 1 x Samsung 840 EVO Pro 120 GB SSD
-* 2 x Samsung 840 EVO 250 GB SSDs (these are new)
+  * 1 x Corsair 64 GB SSD SATA2 (although this drive works under Windows, I can't mount it under ESXi)
+  * 1 x OCZ Vertex 3 120 GB SSD
+  * 1 x Samsung 840 EVO Pro 120 GB SSD
+  * 2 x Samsung 840 EVO 250 GB SSDs (these are new)
 
 I've also got an 8GB USB3 flash drive that ESXi is running from. It will be interesting to see when this drive fails, which is inevitable if I've got an OS running from it.
 
 ## Powering the Beast
 
-Calculating how much power was quite simple, once you find a tool that does it for you. [Bryan Chriscoli](https://twitter.com/techbry) put me onto [eXtreme Power Supply Calculator Lite](http://extreme.outervision.com/PSUEngine) which does a fantastic job of calculating the minimum PSU wattage required.
+Calculating how much power was quite simple, once you find a tool that does it for you. [Bryan Chriscoli](https://twitter.com/techbry) put me onto [eXtreme Power Supply Calculator Lite](http://extreme.outervision.com/PSUEngine) which does a fantastic job of calculating the minimum PSU wattage required.
 
 ![Corsair-RM450]({{site.baseurl}}/media/2014/03/Corsair-RM450.png)
 
@@ -104,7 +104,7 @@ I had originally looked at the Seasonic 400W fanless power supply, but was a lit
 
 ## Miscellaneous additions
 
-The ASRock mother board has a single Broadcom BCM57781 Gigabit adapter on-board, so I've added an [Intel Gigabit CT Desktop](https://www-ssl.intel.com/content/www/us/en/network-adapters/gigabit-network-adapters/gigabit-ct-desktop-adapter.html) PCIe adapter. This way I can use the Broadcom adapter for management traffic and the Intel adapter for virtual machine networks.
+The ASRock mother board has a single Broadcom BCM57781 Gigabit adapter on-board, so I've added an [Intel Gigabit CT Desktop](https://www-ssl.intel.com/content/www/us/en/network-adapters/gigabit-network-adapters/gigabit-ct-desktop-adapter.html) PCIe adapter. This way I can use the Broadcom adapter for management traffic and the Intel adapter for virtual machine networks.
 
 Something I didn't realise until I'd put the whole thing together, is that the ASRock Extreme 6 motherboard doesn't include a GPU. I'd originally focussed on motherboards with on-board Intel graphics and completely forgot to check the ASRock board when ordering it. So I've added an [EVGA NVIDIA GeForce 201 fanless graphics adapter](http://www.evga.com/Products/Product.aspx?pn=512-P3-1311-KR) to the build as well. While this is silent, will have increased the power consumption of the system a bit.
 
@@ -114,13 +114,13 @@ Building this PC took a really long time - it's been quite a while since I last 
 
 Here's a few thoughts and tips if you're looking to build your own lab PC:
 
-* Picking the right hardware and finding out which parts will be suitable is painful. The best site I found that helped me build the right parts as [PCPartPicker](http://pcpartpicker.com/). It would be nice if PC parts retailers provided this functionality in their web sites, but most of them (at least in Australia) have terrible web sites.
-* The Corsair Carbide 330R is a nice case and performs well for airflow and noise. It would have been nice to have more than 4 x 3.5&#8243; drive bays and there's not a lot of space between the back of the motherboard and the side panel. This makes putting the side panel back on a challenge, because the routed cables don't sit completely flat. While I think the 330R is a nice case, I think you could choose a better case.
-* This is the first time I've built a water cooled PC - fitting the fan and radiator was fiddly, but fitting the CPU cooler was very simple. Although Corsair recommends fitting the radiator fan so that it sucks air into the case, I've fitted it to blow air out of the case - which is a good thing, since...
-* I should have picked low profile DIMMs. The radiator fan is practically sitting right on top of the RAM heat sinks. I don't think this is an issue, but at least it's not the radiator touch the heat sinks.
-* Unfortunately the i7 4820K CPU can run at up to 130W, so not ideal for low power.
-* To get the additional SSDs connected to SATA ports on the ASMedia chipset working, I needed to follow this article: [How to make your unsupported SATA AHCI Controller work with ESXi 5.5](http://www.v-front.de/2013/11/how-to-make-your-unsupported-sata-ahci.html). Without this change to ESXi, the drives connected to the additional SATA ports were just not seen. This wasn't a problem under Windows Server.
-* The noise level at idle is pretty good, but could be better. I'm now investigating a fan controller and I'm sure that I can run the fans at lower speeds to reduce noise, without affecting cooling performance too much.
+  * Picking the right hardware and finding out which parts will be suitable is painful. The best site I found that helped me build the right parts as [PCPartPicker](http://pcpartpicker.com/). It would be nice if PC parts retailers provided this functionality in their web sites, but most of them (at least in Australia) have terrible web sites.
+  * The Corsair Carbide 330R is a nice case and performs well for airflow and noise. It would have been nice to have more than 4 x 3.5&#8243; drive bays and there's not a lot of space between the back of the motherboard and the side panel. This makes putting the side panel back on a challenge, because the routed cables don't sit completely flat. While I think the 330R is a nice case, I think you could choose a better case.
+  * This is the first time I've built a water cooled PC - fitting the fan and radiator was fiddly, but fitting the CPU cooler was very simple. Although Corsair recommends fitting the radiator fan so that it sucks air into the case, I've fitted it to blow air out of the case - which is a good thing, since...
+  * I should have picked low profile DIMMs. The radiator fan is practically sitting right on top of the RAM heat sinks. I don't think this is an issue, but at least it's not the radiator touch the heat sinks.
+  * Unfortunately the i7 4820K CPU can run at up to 130W, so not ideal for low power.
+  * To get the additional SSDs connected to SATA ports on the ASMedia chipset working, I needed to follow this article: [How to make your unsupported SATA AHCI Controller work with ESXi 5.5](http://www.v-front.de/2013/11/how-to-make-your-unsupported-sata-ahci.html). Without this change to ESXi, the drives connected to the additional SATA ports were just not seen. This wasn't a problem under Windows Server.
+  * The noise level at idle is pretty good, but could be better. I'm now investigating a fan controller and I'm sure that I can run the fans at lower speeds to reduce noise, without affecting cooling performance too much.
 
 ## Performance
 
@@ -132,7 +132,7 @@ I'm yet to do full performance tests and one thing to attempt is running [Login 
 
 ![Lab-ILIO-Test1]({{site.baseurl}}/media/2014/03/Lab-ILIO-Test1.png)
 
-As for power consumption, at idle with ESXi 5.5 booted, it draws up to around 105 watts. I have seen it drop to a low of between 65 and 71 watts as well. As a very basic CPU stress test, I ran [HeavyLoad 3.3](http://www.jam-software.com/heavyload/) on a Windows 8.1 x86 virtual machine with 1 vCPU and 8 cores. Power consumption jumped up to a consistent 128 watts.
+As for power consumption, at idle with ESXi 5.5 booted, it draws up to around 105 watts. I have seen it drop to a low of between 65 and 71 watts as well. As a very basic CPU stress test, I ran [HeavyLoad 3.3](http://www.jam-software.com/heavyload/) on a Windows 8.1 x86 virtual machine with 1 vCPU and 8 cores. Power consumption jumped up to a consistent 128 watts.
 
 ![128watts]({{site.baseurl}}/media/2014/03/128watts.jpg)
 

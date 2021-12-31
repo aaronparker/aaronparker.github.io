@@ -1,10 +1,10 @@
 ---
-
+id: 324
 title: High Colour icons for Citrix Presentation Server applications
 date: 2007-08-27T21:58:35+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/terminal-server/high-colour-icons-for-citrix-presentation-server-applications
 permalink: /high-colour-icons-for-citrix-presentation-server-applications/
 dsq_thread_id:
   - "195379371"

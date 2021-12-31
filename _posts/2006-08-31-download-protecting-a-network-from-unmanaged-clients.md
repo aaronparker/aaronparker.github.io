@@ -1,10 +1,10 @@
 ---
-
+id: 189
 title: 'Download: Protecting a Network from Unmanaged Clients'
 date: 2006-08-31T22:46:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/download-protecting-a-network-from-unmanaged-clients
 permalink: /download-protecting-a-network-from-unmanaged-clients/
 categories:
   - Microsoft

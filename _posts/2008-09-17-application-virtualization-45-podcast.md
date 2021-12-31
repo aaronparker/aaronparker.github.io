@@ -1,17 +1,17 @@
 ---
-
+id: 695
 title: Application Virtualization 4.5 Podcast
 date: 2008-09-17T11:09:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=695
 permalink: /application-virtualization-45-podcast/
 categories:
   - Microsoft
 tags:
   - SoftGrid
 ---
-A podcast that gives you can overview of Microsoft Application Virtualisation 4.5 has been posted that is worth checking out if you're new to App-V or want to find out what version 4.5 is all about: [Windows Springboard Series: AppV™ Application Virtualization](http://www.microsoft.com/downloads/details.aspx?FamilyID=23a85688-7c04-4379-930e-e4422f8246a6&DisplayLang=en)
+A podcast that gives you can overview of Microsoft Application Virtualisation 4.5 has been posted that is worth checking out if you're new to App-V or want to find out what version 4.5 is all about: [Windows Springboard Series: AppV™ Application Virtualization](http://www.microsoft.com/downloads/details.aspx?FamilyID=23a85688-7c04-4379-930e-e4422f8246a6&DisplayLang=en)
 
 > Karri Alexion-Tiernan, Director in the Windows Client division, unveils the latest version of this technology for virtualizing applications to reduce application-to-application conflicts and improve manageability.
 

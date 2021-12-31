@@ -1,10 +1,10 @@
 ---
-
+id: 3081
 title: "Retrieving a Virtual Machine's UUID from vSphere"
 date: 2013-03-24T22:19:03+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=3081
 permalink: /retrieving-a-vms-uuid-from-vsphere/
 dsq_thread_id:
   - "1162222565"
@@ -14,7 +14,7 @@ tags:
   - PowerShell
   - vSphere
 ---
-While working on a PowerShell script to drive OS deployment through MDT, I've needed to obtain the UUID from a target virtual machine. Unfortunately this isn't just a property of the VM that you get through [Get-VM](http://www.vmware.com/support/developer/PowerCLI/PowerCLI41U1/html/Get-VM.html). Instead you'll need jump through a few hoops to retrieve the right UUID.
+While working on a PowerShell script to drive OS deployment through MDT, I've needed to obtain the UUID from a target virtual machine. Unfortunately this isn't just a property of the VM that you get through [Get-VM](http://www.vmware.com/support/developer/PowerCLI/PowerCLI41U1/html/Get-VM.html). Instead you'll need jump through a few hoops to retrieve the right UUID.
 
 I've haven't had to re-invent the wheel on this one, as I've taken some tips from this [VMware Community thread](http://communities.vmware.com/thread/239735) and [a blog post by Ken Smith](http://www.keithsmithonline.com/2013/02/powershell-show-vmware-vm-UUID.html). I have simplified things a little by writing a function that you can use to return the UUID as a string from a virtual machine object (gathered from Get-VM) to the function.
 

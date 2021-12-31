@@ -1,10 +1,10 @@
 ---
-
+id: 684
 title: App-V Talk At WMUG This Thursday
 date: 2008-09-07T22:37:03+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/community/app-v-talk-at-wmug
 permalink: /app-v-talk-at-wmug/
 dsq_thread_id:
   - "195380991"

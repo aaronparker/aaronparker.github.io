@@ -1,10 +1,10 @@
 ---
-
+id: 52
 title: Group Policy Application Deployment Done Right
 date: 2007-05-02T00:02:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/group-policy-application-deployment-done-right
 permalink: /group-policy-application-deployment-done-right/
 categories:
   - Applications

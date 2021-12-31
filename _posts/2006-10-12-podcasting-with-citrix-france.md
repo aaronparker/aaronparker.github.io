@@ -1,10 +1,10 @@
 ---
-
+id: 166
 title: Podcasting with Citrix France
 date: 2006-10-12T16:55:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/podcasting-with-citrix-france
 permalink: /podcasting-with-citrix-france/
 categories:
   - Citrix

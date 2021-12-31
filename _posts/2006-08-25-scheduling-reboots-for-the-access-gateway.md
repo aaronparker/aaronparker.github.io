@@ -1,10 +1,10 @@
 ---
-
+id: 197
 title: Scheduling Reboots for the Access Gateway
 date: 2006-08-25T07:01:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/scheduling-reboots-for-the-access-gateway
 permalink: /scheduling-reboots-for-the-access-gateway/
 categories:
   - Citrix

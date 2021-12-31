@@ -1,10 +1,10 @@
 ---
-
+id: 841
 title: Santa Claus is watching you
 date: 2008-12-22T08:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/off-topic/santa-claus-is-watching-you
 permalink: /santa-claus-is-watching-you/
 categories:
   - General

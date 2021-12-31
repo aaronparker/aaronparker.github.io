@@ -1,10 +1,10 @@
 ---
-
+id: 76
 title: Citrix Access Gateway and Scans for Domain Membership
 date: 2007-03-25T00:23:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/citrix-access-gateway-and-scans-for-domain-membership
 permalink: /citrix-access-gateway-and-scans-for-domain-membership/
 categories:
   - Citrix

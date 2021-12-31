@@ -1,10 +1,10 @@
 ---
-
+id: 500
 title: Windows Command Line Reference Documentation
 date: 2008-03-14T11:47:59+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/off-site-news/windows-command-line-reference-documentation
 permalink: /windows-command-line-reference-documentation/
 categories:
   - Microsoft

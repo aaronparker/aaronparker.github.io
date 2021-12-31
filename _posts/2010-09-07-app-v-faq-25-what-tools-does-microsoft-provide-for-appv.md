@@ -1,10 +1,10 @@
 ---
-
+id: 1810
 title: 'App-V FAQ: What tools does Microsoft provide for App-V?'
 date: 2010-09-07T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=1810
 permalink: /app-v-faq-25-what-tools-does-microsoft-provide-for-appv/
 has_been_twittered:
   - 'yes'
@@ -115,4 +115,4 @@ The MSI Utility enables the distribution of virtual applications without streami
 
 ## Resources
 
-* [Application Virtualization downloads](http://www.microsoft.com/downloads/en/results.aspx?freetext=%22application+virtualization%22&displaylang=en&stype=s_basic) on the Microsoft Downloads Centre.
+* [Application Virtualization downloads](http://www.microsoft.com/downloads/en/results.aspx?freetext=%22application+virtualization%22&displaylang=en&stype=s_basic) on the Microsoft Downloads Centre

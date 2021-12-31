@@ -1,10 +1,10 @@
 ---
-
+id: 50
 title: Deploying Office 2007 with Group Policy Startup Scripts
 date: 2007-05-05T08:02:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/deploying-office-2007-with-group-policy-startup-scripts
 permalink: /deploying-office-2007-with-group-policy-startup-scripts/
 thesis_description:
   - More specifics on deploying Microsoft Office 2007 with Group Policy Startup Scripts

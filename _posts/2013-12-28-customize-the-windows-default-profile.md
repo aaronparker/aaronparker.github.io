@@ -1,29 +1,30 @@
 ---
+id: 3522
 title: A Better Way to Customize the Windows Default Profile
 date: 2013-12-28T09:00:30+10:00
 author: Aaron Parker
 layout: post
+guid: https://stealthpuppy/?p=3522
 permalink: /customize-the-windows-default-profile/
+dsq_thread_id:
+  - "2077733197"
 categories:
   - Automation
 tags:
   - Deployment
   - Profile
 ---
-* this unordered seed list will be replaced by the toc
-{:toc}
-
 ## Multiple Methods
 
 The Deployment Guys have a great article from 2009 that I recommend reading for a overview of customisation methods: [Configuring Default User Settings – Full Update for Windows 7 and Windows Server 2008 R2](http://blogs.technet.com/b/deploymentguys/archive/2009/10/29/configuring-default-user-settings-full-update-for-windows-7-and-windows-server-2008-r2.aspx). This article is still applicable today and the process hasn't changed that much between Windows versions. Here are most of the ways that you could edit the default user profile:
 
-* Copy a configured profile over the default profile - this is the most common way of changing the default user experience but this approach is unsupported by Microsoft and therefore I recommend against using it.
-* Using Sysprep and the CopyProfile value - this approach requires creating a reference image and using Sysprep to generalise the image. Many enterprise desktop deployments will use reference images so this isn't too hard; however Microsoft has not documented every setting that is copied to the default user profile, so it's a bit of pot luck.
-* Place a default profile in NETLOGON - a default profile copied to the NETLOGON share of a domain controller (and replicated) will be copied down to the local machine at first logon. The downside of this approach is that there can be only one default profile and it will be copied to all machines, regardless as to whether the profile should apply to that machine or not.
-* Commands or scripts run from the RunOnce Registry key to edit the user profile.
-* Logon scripts to edit the user profile.
-* Group Policy Preferences - GPP has become more prevalent in the past few years, so should now be available across the board.
-* Editing the default profile directly, typically during an automated deployment, but you could run the same script on any existing PC.
+  * Copy a configured profile over the default profile - this is the most common way of changing the default user experience but this approach is unsupported by Microsoft and therefore I recommend against using it.
+  * Using Sysprep and the CopyProfile value - this approach requires creating a reference image and using Sysprep to generalise the image. Many enterprise desktop deployments will use reference images so this isn't too hard; however Microsoft has not documented every setting that is copied to the default user profile, so it's a bit of pot luck.
+  * Place a default profile in NETLOGON - a default profile copied to the NETLOGON share of a domain controller (and replicated) will be copied down to the local machine at first logon. The downside of this approach is that there can be only one default profile and it will be copied to all machines, regardless as to whether the profile should apply to that machine or not.
+  * Commands or scripts run from the RunOnce Registry key to edit the user profile.
+  * Logon scripts to edit the user profile.
+  * Group Policy Preferences - GPP has become more prevalent in the past few years, so should now be available across the board.
+  * Editing the default profile directly, typically during an automated deployment, but you could run the same script on any existing PC.
 
 So there are multiple methods (of driving yourself to madness), I'd recommend experimenting with each approach and you'll most likely implement a combination of approaches to best suit your environment.
 
@@ -102,7 +103,7 @@ Included here, along with some notation, are some example scripts for modifying 
 Here's a sample script that will modify the default profile on a Windows 7 PC (x86 and x64). At a high level, the script will perform the following steps:
 
 * Load and modifies the registry of the default profile
-* Copies ExecuteVerbAction.VBS and ShLib.exe to folder under %ProgramFiles%
+* Copies ExecuteVerbAction.VBS and ShLib.exe to folder under %ProgramFiles%
 * Creates a batch script that will run on first logon to edit the Libraries and pin/unpin shortcuts. Once the script runs for the user, it will delete itself.
 
 ```batch
@@ -209,11 +210,11 @@ If you use this in a production environment, please test and confirm each settin
 
 ### Windows 8.1
 
-Here's a sample script that will modify the default profile on a Windows 8.1 PC (x86 and x64). At a high level, the script will perform the following steps:
+Here's a sample script that will modify the default profile on a Windows 8.1 PC (x86 and x64). At a high level, the script will perform the following steps:
 
 * Load and modifies the registry of the default profile
 * Import a pre-configured Start screen
-* Copies ExecuteVerbAction.VBS and ShLib.exe to folder under %ProgramFiles%
+* Copies ExecuteVerbAction.VBS and ShLib.exe to folder under %ProgramFiles%
 * Creates a batch script that will run on first logon to edit the Libraries and pin/unpin shortcuts. Once the script runs for the user, it will delete itself
 
 ```batch

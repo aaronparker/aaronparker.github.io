@@ -1,10 +1,10 @@
 ---
-
+id: 78
 title: Unattended Citrix Advanced Access Control Part 1
 date: 2007-03-22T17:30:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/unattended-citrix-advanced-access-control-part-1
 permalink: /unattended-citrix-advanced-access-control-part-1/
 categories:
   - Automation

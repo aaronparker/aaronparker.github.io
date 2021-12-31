@@ -1,10 +1,10 @@
 ---
-
+id: 990
 title: Command Prompt in Windows 7 7048
 date: 2009-03-10T22:16:23+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/windows/command-prompt-in-windows-7-7048
 permalink: /command-prompt-in-windows-7-7048/
 aktt_notify_twitter:
   - 'yes'

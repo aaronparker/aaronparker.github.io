@@ -1,10 +1,10 @@
 ---
-
+id: 2974
 title: Sequencing Apple iTunes 11 with App-V 5
 date: 2012-12-01T14:32:33+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2974
 permalink: /sequencing-apple-itunes-11-with-app-v-5/
 Hide SexyBookmarks:
   - "0"
@@ -32,7 +32,7 @@ To virtualize iTunes, you'll need to extract the installer - simply run the inst
 * AppleSoftwareUpdate.msi – Software Update is used to download and Apple software and updates
 * AppleApplicationSupport.msi – all Apple applications on Windows require this as a dependency
 * AppleMobileDeviceSupport.msi – required for Apple mobile device support (iPhone, iPad etc.). This installer includes the drivers for Apple’s devices
-* Bonjour.msi - [iTunes uses Bonjour](http://support.apple.com/kb/HT2250) to find shared music libraries, to find AirPort Express devices for streaming music to, and to find Apple TVs
+* Bonjour.msi - [iTunes uses Bonjour](http://support.apple.com/kb/HT2250) to find shared music libraries, to find AirPort Express devices for streaming music to, and to find Apple TVs
 * iTunes.msi – the iTunes installer itself
 
 It is important that _Apple Software Update_ is not included in the App-V package – allowing the applications in the package to update will at best fail and at worst, most likely bloat the package if it were allowed to run after deployment. Before copying the iTunes setup files into your sequencing VM, delete `AppleSoftwareUpdate.msi` and `SetupAdmin.exe`. This will prevent the iTunes installer from automatically installing Software Update during sequencing.
@@ -70,7 +70,7 @@ Sequencing is as simple as capturing the installation of the following files and
 
 * Bonjour.msi
 * iTunes.msi
-* Optionally - AppleApplicationSupport.msi
+* Optionally - AppleApplicationSupport.msi
 
 The installation and configuration of the above can be scripted, which would be a good approach for repeatability.
 
@@ -92,7 +92,7 @@ To sequence iTunes, follow the basic outline here:
 
 ```powershell
 MSIEXEC /I Bonjour.msi INSTALLDIR=C:\iTunes11\Bonjour /QB-  
-MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE\_ASUW=0 REGSRCH\_DESKTOP_SHORTCUTS=0
+MSIEXEC /I iTunes.msi INSTALLDIR=C:\iTunes11\iTunes SCHEDULE\_ASUW=0 REGSRCH\_DESKTOP_SHORTCUTS=0
 ```
 
 When installing iTunes, be sure to install to C:\iTunes11\iTunes and remove the following options during install:

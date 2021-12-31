@@ -1,10 +1,10 @@
 ---
-
+id: 731
 title: 'Tomorrow: Developing and Running As Non-Admin'
 date: 2008-10-14T17:50:46+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=731
 permalink: /tomorrow-developing-and-running-as-non-admin/
 dsq_thread_id:
   - "195381118"

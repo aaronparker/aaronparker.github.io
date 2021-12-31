@@ -1,10 +1,10 @@
 ---
-
+id: 418
 title: Windows Server 2003 SP2 Administration Tools Pack Available
 date: 2008-01-16T13:17:31+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/off-site-news/windows-server-2003-sp2-administration-tools-pack-available
 permalink: /windows-server-2003-sp2-administration-tools-pack-available/
 dsq_thread_id:
   - "195379967"

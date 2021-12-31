@@ -1,21 +1,14 @@
 ---
 layout: post
 title: A Practical Guide to FSLogix Containers Capacity Planning and Maintenance
-description: How to effectively manage FSLogix Profile and Office Containers and optimise storage capacity.
 permalink: "/fslogix-containers-capacity/"
-image:
-  path:    /assets/img/containers/image.jpg
-  srcset:
-    1920w: /assets/img/containers/image.jpg
-    960w:  /assets/img/containers/image@0,5x.jpg
-    480w:  /assets/img/containers/image@0,25x.jpg
 categories:
 - Microsoft
+tags:
+- FSLogix
+- Profile Container
 date: 2019-04-23 20:40 +1000
 ---
-* this unordered seed list will be replaced by the toc
-{:toc}
-
 A container approach to profiles in your virtual desktop environment means you're going to deal with additional storage requirements that you likely haven't had previously. Profile containers have gone mainstream with [the Microsoft acquisition of FSLogix](https://www.brianmadden.com/opinion/Microsoft-FSLogix-free-to-all-customers), making Profile Container and Office Container available to practically everyone.
 
 This article sets out approaches and considerations for keeping profile sizes in check to help avoid storage capacity headaches.

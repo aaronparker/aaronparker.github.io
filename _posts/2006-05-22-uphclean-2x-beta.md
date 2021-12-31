@@ -1,10 +1,10 @@
 ---
-
+id: 276
 title: UPHClean 2.x Beta
 date: 2006-05-22T10:32:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/uphclean-2x-beta
 permalink: /uphclean-2x-beta/
 categories:
   - Microsoft

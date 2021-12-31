@@ -1,10 +1,10 @@
 ---
-
+id: 2079
 title: Sequencing the App-V Management Console
 date: 2011-01-21T17:30:40+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2079
 permalink: /sequencing-the-app-v-management-console/
 has_been_twittered:
   - 'yes'

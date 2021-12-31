@@ -1,10 +1,10 @@
 ---
-
+id: 1761
 title: 'App-V FAQ: Can I run an application on Windows 7 that was sequenced on Windows XP?'
 date: 2010-08-11T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-17-can-i-run-an-application-on-windows-7-that-was-sequenced-on-windows-xp
 permalink: /app-v-faq-17-can-i-run-an-application-on-windows-7-that-was-sequenced-on-windows-xp/
 has_been_twittered:
   - 'yes'

@@ -1,10 +1,10 @@
 ---
-
+id: 3653
 title: Creating an MCS-based XenDesktop Machine Catalog with PowerShell
 date: 2014-08-22T11:18:11+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy.com/?p=3653
 permalink: /xendesktop-mcs-machine-catalog-powershell/
 dsq_thread_id:
   - "2949175355"
@@ -16,74 +16,53 @@ tags:
 ---
 Driving XenDesktop with PowerShell is a challenge to say the least. While [documentation for the XenDesktop PowerShell modules](http://support.citrix.com/proddocs/topic/xenapp-xendesktop-75/cds-sdk-cmdlet-help.html) is OK and Citrix Studio outputs PowerShell code after you've completed a task in the console, there's still plenty of work to get that code into something usable.
 
-As part of an ongoing series of articles themed around automating virtual desktop deployment, I've written some PowerShell code to automate the creation of an non-persistent, MCS-based Machine Catalog based on [a specific Windows image, that we've already automated]({{site.baseurl}}/briforum-2014-hands-off-my-gold-image-the-slides/) with a solution such as MDT.
+As part of an ongoing series of articles themed around automating virtual desktop deployment, I've written some PowerShell code to automate the creation of an non-persistent, MCS-based Machine Catalog based on [a specific Windows image, that we've already automated]({{site.baseurl}}/briforum-2014-hands-off-my-gold-image-the-slides/) with a solution such as MDT.
 
-Don't expect to copy and paste the PowerShell output in Citrix Studio and have a complete script. The code is missing a number of lines that link tasks together. I found this article on the Citrix Blogs quite useful - [Using PowerShell to Create a Catalog of Machine Creations Services Machines](http://blogs.citrix.com/2012/03/06/using-powershell-to-create-a-catalog-of-machine-creations-services-machines/); however I've taken my script a few steps further.
+Don't expect to copy and paste the PowerShell output in Citrix Studio and have a complete script. The code is missing a number of lines that link tasks together. I found this article on the Citrix Blogs quite useful - [Using PowerShell to Create a Catalog of Machine Creations Services Machines](http://blogs.citrix.com/2012/03/06/using-powershell-to-create-a-catalog-of-machine-creations-services-machines/); however I've taken my script a few steps further.
 
 ## Linking the Code to the UI
 
-While the Create Machine Catalog wizard doesn't expose everything that goes on behind the scenes when a machine catalog is created, I think it's still worth showing how specific functions relate to choices that the administrator makes in the wizard.
+While the Create Machine Catalog wizard doesn't expose everything that goes on behind the scenes when a machine catalog is created, I think it's still worth showing how specific functions relate to choices that the administrator makes in the wizard.
 
-The screenshots below show just a snippet of the functions required to automate the catalog creation using PowerShell. These walkthrough the same environment that the full code listing at the end of this article is creating. See the image captions for example code that applies to each step.
+The screenshots below show just a snippet of the functions required to automate the catalog creation using PowerShell. These walkthrough the same environment that the full code listing at the end of this article is creating. See the image captions for example code that applies to each step.
 
-[_New-BrokerCataog_](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html) is used to create the machine catalog and set a number of properties. You'll see [_New-BrokerCatalog_](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html) across a number of these screen shots. First up is setting the broker type - in this instance, I'm deploying a Windows 8 image, so need to choose 'Windows Desktop OS':
+[_New-BrokerCataog_](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html) is used to create the machine catalog and set a number of properties. You'll see [_New-BrokerCatalog_](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html) across a number of these screen shots. First up is setting the broker type - in this instance, I'm deploying a Windows 8 image, so need to choose 'Windows Desktop OS':
 
-![Selecting the Machine Catalog type - New-BrokerCatalog SessionSupport SingleSession]({{site.baseurl}}/media/2014/08/MachineCatalogType.png)
-
-Selecting the Machine Catalog type - New-BrokerCatalog -SessionSupport SingleSession
-{:.figcaption}
+![Selecting the Machine Catalog type - New-BrokerCatalog SessionSupport SingleSession]({{site.baseurl}}/media/2014/08/MachineCatalogType.png)*Selecting the Machine Catalog type - New-BrokerCatalog -SessionSupport SingleSession*
 
 Because were using MCS, I'm going to specify that I'm using virtual machines and choose the storage on which to deploy those VMs and use the _ProvisioningType_ parameter on [_New-BrokerCatalog_](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html) to specify MCS. This is done in PowerShell via a number of commands - see around line 45 where we specify the hypervisor management and storage resource to use.
 
-![Selecting the provisioning type - New-BrokerCatalog -ProvisioningType $provType]({{site.baseurl}}/media/2014/08/MachineManagement.png)
-
-Selecting the provisioning type - New-BrokerCatalog -ProvisioningType MCS
-{:.figcaption}
+![Selecting the provisioning type - New-BrokerCatalog -ProvisioningType $provType]({{site.baseurl}}/media/2014/08/MachineManagement.png)*Selecting the provisioning type - New-BrokerCatalog -ProvisioningType MCS*
 
 Also on the [_New-BrokerCatalog_](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html), we can specify that this is a set of randomly assigned desktops.
 
-![Selecting Random or Static desktops - New-BrokerCatalog -AllocationType Random]({{site.baseurl}}/media/2014/08/DesktopExperience.png)
+![Selecting Random or Static desktops - New-BrokerCatalog -AllocationType Random]({{site.baseurl}}/media/2014/08/DesktopExperience.png)*Selecting Random or Static desktops - New-BrokerCatalog -AllocationType Random*
 
-Selecting Random or Static desktops - New-BrokerCatalog -AllocationType Random
-{:.figcaption}
+To find the image to use, I've obtained the path to the master image and its snapshot via the _Get-ChildItem_ command (on the path XDHyp:\HostingUnits\<Storage Resource>) and passed that to [_New-ProvScheme_](http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/new-provscheme-xd75.html).
 
-To find the image to use, I've obtained the path to the master image and its snapshot via the _Get-ChildItem_ command (on the path XDHyp:\HostingUnits\<Storage Resource>) and passed that to [_New-ProvScheme_](http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/new-provscheme-xd75.html).
+![Selecting the master image and snapshot to use - New-ProvScheme -ProvisioningSchemeName &quot;Windows 8&quot; -HostingUnitName &quot;HV1-LocalStorage -MasterImageVM &quot;XDHyp:\HostingUnits\HV1-LocalStorage\WIN81.vm\MasterImage.snapshot&quot;]({{site.baseurl}}/media/2014/08/MasterImageAndSnapshot.png)*Selecting the master image and snapshot to use - New-ProvScheme -ProvisioningSchemeName "Windows 8" -HostingUnitName "HV1-LocalStorage" -MasterImageVM "XDHyp:\HostingUnits\HV1-LocalStorage\WIN81.vm\MasterImage.snapshot"*
 
-![Selecting the master image and snapshot to use - New-ProvScheme -ProvisioningSchemeName &quot;Windows 8&quot; -HostingUnitName &quot;HV1-LocalStorage -MasterImageVM &quot;XDHyp:\HostingUnits\HV1-LocalStorage\WIN81.vm\MasterImage.snapshot&quot;]({{site.baseurl}}/media/2014/08/MasterImageAndSnapshot.png)
+Also with _[New-ProvScheme](http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/new-provscheme-xd75.html)_ we can set the number of virtual CPUs and the amount of RAM to assign to each virtual desktop. To specify the number of desktops to create, we're actually first specifying the number of AD machine accounts to create via _[New-AcctADAccount](http://support.citrix.com/proddocs/topic/citrix-adidentity-admin-v2-xd75/new-acctadaccount-xd75.html)_ and then creating the same number of desktops to assign to those accounts.
 
-Selecting the master image and snapshot to use - New-ProvScheme -ProvisioningSchemeName "Windows 8" -HostingUnitName "HV1-LocalStorage" -MasterImageVM "XDHyp:\HostingUnits\HV1-LocalStorage\WIN81.vm\MasterImage.snapshot"
-{:.figcaption}
-
-Also with _[New-ProvScheme](http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/new-provscheme-xd75.html)_ we can set the number of virtual CPUs and the amount of RAM to assign to each virtual desktop. To specify the number of desktops to create, we're actually first specifying the number of AD machine accounts to create via _[New-AcctADAccount](http://support.citrix.com/proddocs/topic/citrix-adidentity-admin-v2-xd75/new-acctadaccount-xd75.html)_ and then creating the same number of desktops to assign to those accounts.
-
-![Selecting the virtual machine configurations - New-ProvScheme -VMCpuCount 2 -VMMemoryMB 2048]({{site.baseurl}}/media/2014/08/VirtualMachineConfiguration.png)
-
-Selecting the virtual machine configurations - New-ProvScheme -VMCpuCount 2 -VMMemoryMB 2048
-{:.figcaption}
+![Selecting the virtual machine configurations - New-ProvScheme -VMCpuCount 2 -VMMemoryMB 2048]({{site.baseurl}}/media/2014/08/VirtualMachineConfiguration.png)*Selecting the virtual machine configurations - New-ProvScheme -VMCpuCount 2 -VMMemoryMB 2048*
 
 [_New-AcctIdentityPool_](http://support.citrix.com/proddocs/topic/citrix-adidentity-admin-v2-xd75/new-acctidentitypool-xd75.html) is used to create an identity pool that stores the machine accounts by specifying the naming convention and where the accounts will be stored.
 
-![Setting machine account names and location - New-AcctIdentityPool -Domain 'home.stealthpuppy.com' -NamingScheme 'W8-MCS-###'-NamingSchemeType Numeric -OU 'OU=MCS Pooled,OU=Workstations,DC=home,DC=stealthpuppy,DC=com']({{site.baseurl}}/media/2014/08/ActiveDirectoryAndMachineAccountName.png)
+![Setting machine account names and location - New-AcctIdentityPool -Domain 'home.stealthpuppy.com' -NamingScheme 'W8-MCS-###'-NamingSchemeType Numeric -OU 'OU=MCS Pooled,OU=Workstations,DC=home,DC=stealthpuppy,DC=com']({{site.baseurl}}/media/2014/08/ActiveDirectoryAndMachineAccountName.png)*Setting machine account names and location - New-AcctIdentityPool -Domain 'home.stealthpuppy.com' -NamingScheme 'W8-MCS-###'-NamingSchemeType Numeric -OU 'OU=MCS Pooled,OU=Workstations,DC=home,DC=stealthpuppy,DC=com'*
 
-Setting machine account names and location - New-AcctIdentityPool -Domain 'home.stealthpuppy.com' -NamingScheme 'W8-MCS-###'-NamingSchemeType Numeric -OU 'OU=MCS Pooled,OU=Workstations,DC=home,DC=stealthpuppy,DC=com'
-{:.figcaption}
+Again we can see where _[New-BrokerCataog](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html)_ is used to specify the catalog name and description.
 
-Again we can see where _[New-BrokerCataog](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/new-brokercatalog-xd75.html)_ is used to specify the catalog name and description.
-
-![Setting the machine catalog name and description - New-BrokerCatalog  -Name &quot;Windows 8 x86&quot; -Description &quot;Windows 8.1 x86 SP1 with Office 2013&quot;]({{site.baseurl}}/media/2014/08/MachineCatalogNameAndDescription.png)
-
-Setting the machine catalog name and description - New-BrokerCatalog -Name "Windows 8 x86" -Description "Windows 8.1 x86 SP1 with Office 2013"
-{:.figcaption}
+![Setting the machine catalog name and description - New-BrokerCatalog  -Name &quot;Windows 8 x86&quot; -Description &quot;Windows 8.1 x86 SP1 with Office 2013&quot;]({{site.baseurl}}/media/2014/08/MachineCatalogNameAndDescription.png)*Setting the machine catalog name and description - New-BrokerCatalog -Name "Windows 8 x86" -Description "Windows 8.1 x86 SP1 with Office 2013"*
 
 There's plenty that the wizard does to hide the complexity of setting up a catalog from the administrator. If you attempt the same via PowerShell, what goes on under the hood is laid bare.
 
-## The Code
+## The Code
 
 Below is the full code listing with comments inline that should provide some detail on the process the code follows. At this point the code provides some error checking for the most important steps. There are still some additional steps and error checking that could be integrated:
 
-* This code should find the last snapshot of the target master image; it would be simple enough to specify a particular snapshot if required
-* Checking whether provisioning schemes are already available or exist before attempting to create a new provisioning scheme
-* Additional checking that some tasks have completed successfully before continuing
+  * This code should find the last snapshot of the target master image; it would be simple enough to specify a particular snapshot if required
+  * Checking whether provisioning schemes are already available or exist before attempting to create a new provisioning scheme
+  * Additional checking that some tasks have completed successfully before continuing
 
 ```powershell
 #---------------------------------------------------------------------------

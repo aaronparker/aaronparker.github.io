@@ -1,10 +1,10 @@
 ---
-
+id: 131
 title: Windows PE 2.0 and VMware Workstation
 date: 2006-12-14T05:32:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/windows-pe-20-and-vmware-workstation
 permalink: /windows-pe-20-and-vmware-workstation/
 categories:
   - VMware

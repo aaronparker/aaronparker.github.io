@@ -1,10 +1,10 @@
 ---
-
+id: 427
 title: Addressing Licensing Issues With Adobe CS3 Apps On SoftGrid
 date: 2008-01-24T00:30:38+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/addressing-licensing-issues-with-adobe-cs3-apps-on-softgrid
 permalink: /addressing-licensing-issues-with-adobe-cs3-apps-on-softgrid/
 dsq_thread_id:
   - "195380018"

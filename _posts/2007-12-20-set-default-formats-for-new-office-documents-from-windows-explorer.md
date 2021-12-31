@@ -1,10 +1,10 @@
 ---
-
+id: 406
 title: Set Default Formats for New Office Documents from Windows Explorer
 date: 2007-12-20T17:16:46+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/set-default-formats-for-new-office-documents-from-windows-explorer
 permalink: /set-default-formats-for-new-office-documents-from-windows-explorer/
 thesis_description:
   - Managing the Office 2007 new documents in the Windows Explorer right client/New menu

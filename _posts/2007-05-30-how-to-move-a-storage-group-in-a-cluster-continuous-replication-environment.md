@@ -1,10 +1,10 @@
 ---
-
+id: 249
 title: How to Move a Storage Group in a Cluster Continuous Replication Environment
 date: 2007-05-30T15:44:01+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/exchange/how-to-move-a-storage-group-in-a-cluster-continuous-replication-environment
 permalink: /how-to-move-a-storage-group-in-a-cluster-continuous-replication-environment/
 dsq_thread_id:
   - "195379013"

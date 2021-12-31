@@ -1,10 +1,10 @@
 ---
-
+id: 2404
 title: 'Delivering Office with App-V - The User Profile'
 date: 2011-10-24T16:30:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/delivering-office-with-app-v-the-user-profile/
 permalink: /delivering-office-with-app-v-the-user-profile/
 dsq_thread_id:
   - "452059123"

@@ -1,10 +1,10 @@
 ---
-
+id: 201
 title: WSUS Build Numbers
 date: 2006-08-25T06:07:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/wsus-build-numbers
 permalink: /wsus-build-numbers/
 categories:
   - Microsoft

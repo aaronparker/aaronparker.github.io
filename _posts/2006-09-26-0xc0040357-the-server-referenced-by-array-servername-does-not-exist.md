@@ -1,9 +1,10 @@
 ---
-
+id: 178
 title: "0xc0040357: The Server referenced by Array SERVERNAME does not exist"
 date: 2006-09-26T01:02:00+10:00
 author: Aaron Parker
 layout: post
+guid: http://blog.stealthpuppy.com/uncategorized/0xc0040357-the-server-referenced-by-array-servername-does-not-exist
 permalink: /0xc0040357-the-server-referenced-by-array-servername-does-not-exist/
 categories:
   - Microsoft

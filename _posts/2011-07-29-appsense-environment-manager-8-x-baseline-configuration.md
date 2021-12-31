@@ -1,10 +1,10 @@
 ---
-
+id: 2356
 title: AppSense Environment Manager 8 Baseline Configuration
 date: 2011-07-29T00:27:16+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2356
 permalink: /appsense-environment-manager-8-x-baseline-configuration/
 dsq_thread_id:
   - "371314404"
@@ -40,7 +40,7 @@ The configuration includes examples for roaming user personalization by explicit
 
 ## Downloads
 
-Each download is a ZIP file containing the configuration and documentation to help explain the config in more detail.
+Each download is a ZIP file containing the configuration and documentation to help explain the config in more detail.
 
 **Current version**
 

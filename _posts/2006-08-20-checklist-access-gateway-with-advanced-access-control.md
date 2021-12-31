@@ -1,10 +1,10 @@
 ---
-
+id: 214
 title: 'Checklist: Access Gateway with Advanced Access Control'
 date: 2006-08-20T23:54:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/checklist-access-gateway-with-advanced-access-control
 permalink: /checklist-access-gateway-with-advanced-access-control/
 categories:
   - Citrix

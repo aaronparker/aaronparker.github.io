@@ -1,10 +1,10 @@
 ---
-
+id: 171
 title: Network Access Protection TechNet Forum
 date: 2006-10-07T22:06:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/network-access-protection-technet-forum
 permalink: /network-access-protection-technet-forum/
 categories:
   - Microsoft

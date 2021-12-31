@@ -1,10 +1,10 @@
 ---
-
+id: 725
 title: Microsoft Application Virtualization 4.5 Security Configuration Roles
 date: 2008-10-01T10:55:20+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/microsoft-application-virtualization-45-security-configuration-roles
 permalink: /microsoft-application-virtualization-45-security-configuration-roles/
 categories:
   - Microsoft

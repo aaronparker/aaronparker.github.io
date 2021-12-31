@@ -1,10 +1,10 @@
 ---
-
+id: 2920
 title: 'Hands off my gold image - The Task Sequence'
 date: 2012-11-15T16:30:45+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2920
 permalink: /hands-off-my-gold-image-the-task-sequence/
 dsq_thread_id:
   - "929564305"
@@ -16,7 +16,7 @@ tags:
   - PVS
   - XenApp
 ---
-If you've been following along so far you'll have read my follow up coverage of  my (and co-host, [Jonathan Eyton-Williams](https://twitter.com/jonathanew)) [Geek Speak talk at Citrix Synergy in Barcelona](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy), with  [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation]({{site.baseurl}}/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/) and [Hands off my gold image – Microsoft Deployment Toolkit details]({{site.baseurl}}/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/). In this article I'll cover the task sequence that deploys Windows Server, installs XenApp and captures the image into PVS.
+If you've been following along so far you'll have read my follow up coverage of  my (and co-host, [Jonathan Eyton-Williams](https://twitter.com/jonathanew)) [Geek Speak talk at Citrix Synergy in Barcelona](https://citrix.g2planet.com/synergybarcelona2012/public_session_view.php?agenda_session_id=191&conference=synergy), with  [Hands off my gold image – Automating Citrix XenApp/PVS Image Creation]({{site.baseurl}}/deployment/hands-off-my-gold-image-automating-citrix-xenapppvs-image-creation/) and [Hands off my gold image – Microsoft Deployment Toolkit details]({{site.baseurl}}/deployment/hands-off-my-gold-image-microsoft-deployment-toolkit-details/). In this article I'll cover the task sequence that deploys Windows Server, installs XenApp and captures the image into PVS.
 
 Task sequences in the Microsoft Deployment Toolkit (MDT) are core of what makes MDT tick. Think of a task sequence as the steps that will deploy and configure Windows. Note that there is no post-deployment management with MDT, as there is no agent (that's what ConfigMgr is for).
 
@@ -83,4 +83,4 @@ Together the task sequence and unattend.xml create what should be a fairly clean
 
 In the last article of this series, I'll discuss some of the included scripts, but as always, if you'd like to ask some specific questions, email me - aaron (at) stealthpuppy.com.
 
-Next up: [Hands off my gold image – The Scripts]({{site.baseurl}}/deployment/hands-off-my-gold-image-the-scripts/)
+Next up: [Hands off my gold image – The Scripts]({{site.baseurl}}/deployment/hands-off-my-gold-image-the-scripts/)

@@ -1,10 +1,10 @@
 ---
-
+id: 1862
 title: 'App-V FAQ: What 3rd party tools are there for managing App-V?'
 date: 2010-09-08T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-26-what-3rd-party-tools-are-there-for-managing-app-v
 permalink: /app-v-faq-26-what-3rd-party-tools-are-there-for-managing-app-v/
 has_been_twittered:
   - 'yes'

@@ -1,10 +1,10 @@
 ---
-
+id: 142
 title: HP and VMware team to reinvent the wheel
 date: 2006-12-03T07:07:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/hp-and-vmware-team-to-reinvent-the-wheel
 permalink: /hp-and-vmware-team-to-reinvent-the-wheel/
 categories:
   - VMware

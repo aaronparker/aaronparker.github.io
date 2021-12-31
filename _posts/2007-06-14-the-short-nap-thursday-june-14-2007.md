@@ -1,10 +1,10 @@
 ---
-
+id: 314
 title: 'The Short NAP: Thursday June 14 2007'
 date: 2007-06-14T00:10:06+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/access-control/the-short-nap-thursday-june-14-2007
 permalink: /the-short-nap-thursday-june-14-2007/
 categories:
   - Microsoft

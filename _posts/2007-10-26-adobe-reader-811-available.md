@@ -1,10 +1,10 @@
 ---
-
+id: 353
 title: Adobe Reader 8.1.1 Available
 date: 2007-10-26T15:35:27+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/adobe-reader-811-available
 permalink: /adobe-reader-811-available/
 categories:
   - Applications

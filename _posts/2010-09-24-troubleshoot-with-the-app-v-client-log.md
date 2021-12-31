@@ -1,10 +1,10 @@
 ---
-
+id: 1940
 title: "App-V FAQ: My virtual application won't start. Where do I start troubleshooting?"
 date: 2010-09-24T12:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/troubleshoot-with-the-app-v-client-log/
 permalink: /troubleshoot-with-the-app-v-client-log/
 dsq_thread_id:
   - "195711959"

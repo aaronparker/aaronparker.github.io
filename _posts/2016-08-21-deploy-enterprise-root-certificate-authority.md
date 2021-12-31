@@ -1,23 +1,22 @@
 ---
+id: 5034
 title: Deploying an Enterprise Root Certificate Authority
-description: How to setup an Active Directory Certificate Services Enterprise Root Certificate Authority on Windows Server 2012 R2.
 date: 2016-08-21T02:44:59+10:00
 author: Aaron Parker
 layout: post
+guid: https://stealthpuppy/?p=5034
 permalink: /deploy-enterprise-root-certificate-authority/
+layers:
+  - 'a:1:{s:9:"video-url";s:0:"";}'
+dsq_thread_id:
+  - "5081192832"
 image: /media/2016/08/parchment-11299780361Z1G.jpg
 categories:
   - Microsoft
 tags:
   - Certificate Authority
   - Certificate Services
-related_posts:
-  - _posts/2016-08-22-deploy-enterprise-subordinate-certificate-authority.md
-  - _posts/2016-09-04-resolving-issues-starting-ca-offline-crl.md
 ---
-* this unordered seed list will be replaced by the toc
-{:toc}
-
 Setting up an Enterprise Root Certificate Authority isn't a task that you'll complete on a regular basis and something I think I've done twice, maybe 3 times, ever. Each time I forget what I did previously and you can guarantee I'm using a different version of Windows Server each time. Please note as you read these article and [the next]({{site.baseurl}}/deploy-enterprise-subordinate-certificate-authority/), that whilst I have an interest in PKI, I don't consider myself an expert. Deploying a PKI is not a simple task, so read up carefully if you've not done this before.
 
 So here's how to setup an Enterprise Root Certificate Authority (CA) on Windows Server 2012 R2. Now that I've documented this, I'm hoping I won't forget for next time.
@@ -51,10 +50,7 @@ The following steps are taken on a virtual machine running Windows Server 2012 R
 
 Deploying Certificate Services on Windows Server 2012 R2 is simple enough - open Server Manager, open the **Add Roles and Features** wizard and choose **Active Directory Certificate Services** under Server Roles. Ensure you choose only the **Certificate Authority** role for the Root CA.
 
-![Installing Active Directory Certificate Services]({{site.baseurl}}/media/2016/08/01-Install-Certificate-Services.png)
-
-Installing Active Directory Certificate Services
-{:.figcaption}
+![Installing Active Directory Certificate Services]({{site.baseurl}}/media/2016/08/01-Install-Certificate-Services.png)*Installing Active Directory Certificate Services*
 
 To make installing Certificate Services simpler, do it via PowerShell instead via Add-WindowsFeature:
 
@@ -64,84 +60,51 @@ Add-WindowsFeature -Name ADCS-Cert-Authority -IncludeManagementTools
 
 Which will look like this, no reboot required:
 
-![Install Certificate Services via PowerShell]({{site.baseurl}}/media/2016/08/03-Install-Certificate-Services.png)
-
-Install Certificate Services via PowerShell
-{:.figcaption}
+![Install Certificate Services via PowerShell]({{site.baseurl}}/media/2016/08/03-Install-Certificate-Services.png)*Install Certificate Services via PowerShell*
 
 ### Configuring Certificate Services
 
 After Certificate Services is installed, start the configuration wizard from Server Manager:
 
-![Start the Certificate Services configuration wizard]({{site.baseurl}}/media/2016/08/00-Root-CA-Certificate-Services.png)
-
-Start the Certificate Services configuration wizard
-{:.figcaption}
+![Start the Certificate Services configuration wizard]({{site.baseurl}}/media/2016/08/00-Root-CA-Certificate-Services.png)*Start the Certificate Services configuration wizard*
 
 Set the credentials to be used while configuring Certificate Services. In this case, we're configuring CA on a stand-alone machine and I'm logged on as local Administrator.
 
-![Certificate Services wizard - configuration credentials]({{site.baseurl}}/media/2016/08/01-Root-CA-Certificate-Services.png)
-
-Certificate Services wizard - configuration credentials
-{:.figcaption}
+![Certificate Services wizard - configuration credentials]({{site.baseurl}}/media/2016/08/01-Root-CA-Certificate-Services.png)*Certificate Services wizard - configuration credentials*
 
 For the Root CA, we have only one role to configure.
 
-![Certificate Services wizard - roles to configure]({{site.baseurl}}/media/2016/08/02-Root-CA-Certificate-Services.png)
-
-Certificate Services wizard - roles to configure
-{:.figcaption}
+![Certificate Services wizard - roles to configure]({{site.baseurl}}/media/2016/08/02-Root-CA-Certificate-Services.png)*Certificate Services wizard - roles to configure*
 
 This certificate authority is being configured on a stand-alone server not a member of Active Directory, so we'll only be able to configure a Standalone CA.
 
-![Certificate Services wizard - configure a standalone CA]({{site.baseurl}}/media/2016/08/03-Root-CA-Certificate-Services.png)
-
-Certificate Services wizard - configure a standalone CA
-{:.figcaption}
+![Certificate Services wizard - configure a standalone CA]({{site.baseurl}}/media/2016/08/03-Root-CA-Certificate-Services.png)*Certificate Services wizard - configure a standalone CA*
 
 This is the first CA in our environment, so be sure to configure this as a **root CA**.
 
-!["Certificate Services wizard - configure as a root CA]({{site.baseurl}}/media/2016/08/04-Root-CA-Certificate-Services.png)
-
-Certificate Services wizard - configure as a root CA
-{:.figcaption}
+!["Certificate Services wizard - configure as a root CA]({{site.baseurl}}/media/2016/08/04-Root-CA-Certificate-Services.png)*Certificate Services wizard - configure as a root CA*
 
 With the first CA in the environment, we'll won't have an existing private key, so must choose to create a new one.
 
-![Certificate Services wizard - choose a new private key]({{site.baseurl}}/media/2016/08/06-Root-CA-Certificate-Services.png)
-
-Certificate Services wizard - choose a new private key
-{:.figcaption}
+![Certificate Services wizard - choose a new private key]({{site.baseurl}}/media/2016/08/06-Root-CA-Certificate-Services.png)*Certificate Services wizard - choose a new private key*
 
 When selecting a cryptographic provider and a hash algorithm, SHA1 will be the default hashing algorithm; however, Windows will no longer accept certificates signed with [SHA1 after 1st of January 2017](http://social.technet.microsoft.com/wiki/contents/articles/32288.windows-enforcement-of-authenticode-code-signing-and-timestamping.aspx), so be sure to [choose at least SHA256](https://blogs.technet.microsoft.com/askds/2015/10/26/sha1-key-migration-to-sha256-for-a-two-tier-pki-hierarchy/).
 
-![Certificate Services wizard - choosing cryptographic options]({{site.baseurl}}/media/2016/08/07-Root-CA-Certificate-Services.png)
-
-Certificate Services wizard - choosing cryptographic options
-{:.figcaption}
+![Certificate Services wizard - choosing cryptographic options]({{site.baseurl}}/media/2016/08/07-Root-CA-Certificate-Services.png)*Certificate Services wizard - choosing cryptographic options*
 
 Specify a name for the new certificate authority. I'd recommend keeping this simple using the ANSI character set, using a meaningful name.
 
-![Certificate Services wizard - specify a CA name]({{site.baseurl}}/media/2016/08/08-Root-CA-Certificate-Services.png)
-
-Certificate Services wizard - specify a CA name
-{:.figcaption}
+![Certificate Services wizard - specify a CA name]({{site.baseurl}}/media/2016/08/08-Root-CA-Certificate-Services.png)*Certificate Services wizard - specify a CA name*
 
 Select the validity period - perhaps the default is the best to choose; however, this can be customised based on your requirements. This is a topic that is a whole security conversation in itself; however, renewing CA certificates isn't something that you want to be doing too often. Considerations for setting the validity period should include business risk, the size and complexity of the environment you are installing the PKI into, and how mature the IT organisation is.
 
-![Certificate Services wizard – select the CA certificate validity period ]({{site.baseurl}}/media/2016/08/09-Root-CA-Certificate-Services.png)
-
-Certificate Services wizard – select the CA certificate validity period
-{:.figcaption}
+![Certificate Services wizard – select the CA certificate validity period ]({{site.baseurl}}/media/2016/08/09-Root-CA-Certificate-Services.png)*Certificate Services wizard – select the CA certificate validity period*
 
 On the next page of the wizard, you can choose the location of the certificate services database and logs location (`C:\Windows\System32\Certlog`), which can be changed depending on your specific environment.
 
 On the last page, you will see a summary of the configuration before committing it to the local certificate services.
 
-![Certificate Services wizard – summary page]({{site.baseurl}}/media/2016/08/11-Root-CA-Certificate-Services.png)
-
-Certificate Services wizard – summary page
-{:.figcaption}
+![Certificate Services wizard – summary page]({{site.baseurl}}/media/2016/08/11-Root-CA-Certificate-Services.png)*Certificate Services wizard – summary page*
 
 ### Configuring the Root CA
 
@@ -149,17 +112,11 @@ Now that certificate services have been installed and the base configuration is 
 
 If you open the Certificate Authority management console, you can view the properties of the certificate authority and the Root CA's certificate:
 
-![The freshly installed and configured certificate authority]({{site.baseurl}}/media/2016/08/12-Root-CA-Certificate-Services.png)
-
-The freshly installed and configured certificate authority
-{:.figcaption}
+![The freshly installed and configured certificate authority]({{site.baseurl}}/media/2016/08/12-Root-CA-Certificate-Services.png)*The freshly installed and configured certificate authority*
 
 Check the details and ensure the certificate hash algorithm is SHA256:
 
-![Certificate authority with SHA256 hashing algorithm]({{site.baseurl}}/media/2016/08/11a-Root-CA-Certificate-Services.png)
-
-Certificate authority with SHA256 hashing algorithm
-{:.figcaption}
+![Certificate authority with SHA256 hashing algorithm]({{site.baseurl}}/media/2016/08/11a-Root-CA-Certificate-Services.png)*Certificate authority with SHA256 hashing algorithm*
 
 #### Configure CA Extensions
 
@@ -167,10 +124,7 @@ Before we take any further steps, including deploying a subordinate CA for issui
 
 In the properties of the CA, select the **Extensions** tab to view the CRL Distribution Points. By default, the `ldap://` and `file://` locations will be the default distribution points. These, of course, won't work for the reasons I've just stated, and because these locations are embedded in the properties of certificates issued by this CA, we should change them.
 
-![Configuring the Certificate Revocation List settings]({{site.baseurl}}/media/2016/08/13-Root-CA-Certificate-Services.png)
-
-Configuring the Certificate Revocation List settings
-{:.figcaption}
+![Configuring the Certificate Revocation List settings]({{site.baseurl}}/media/2016/08/13-Root-CA-Certificate-Services.png)*Configuring the Certificate Revocation List settings*
 
 The default CRL distribution points are as below. These can be copied by selecting each from within the dialog box and pressing Ctrl-C.
 
@@ -190,22 +144,19 @@ Before that we'll want to do two things:
 
 Now add a new CRL location, using the same HTTP location value included by default; however, change `<ServerDNSName>` for the FQDN for the host that will serve the CRL. In my example, I've changed:
 
-```powershell
+```
 http://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl
 ```
 
 to
 
-```powershell
+```
 http://crl.home.stealthpuppy.com/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl
 ```
 
 This FQDN is an alias for the subordinate certificate authority that I'll be deploying to actually issue certificates to clients. This CA will be online with IIS installed, so will be available to serve the CRLs.
 
-![Adding a new CRL distribution point]({{site.baseurl}}/media/2016/08/14-Root-CA-Certificate-Services.png)
-
-Adding a new CRL distribution point
-{:.figcaption}
+![Adding a new CRL distribution point]({{site.baseurl}}/media/2016/08/14-Root-CA-Certificate-Services.png)*Adding a new CRL distribution point*
 
 Repeat the same process for the [Authority Information Access](https://technet.microsoft.com/en-us/library/cc753754(v=ws.11).aspx) (AIA) locations:
 
@@ -213,17 +164,11 @@ Repeat the same process for the [Authority Information Access](https://technet.m
   2. Copy the existing `http://` location
   3. Add a new `http://` location, changing `<ServerDNSName>` for the FQDN of the alias also used for the CRL distribution point
 
-![Adding an Authority Information Access location]({{site.baseurl}}/media/2016/08/18-Root-CA-Certificate-Services.png)
-
-Adding an Authority Information Access location
-{:.figcaption}
+![Adding an Authority Information Access location]({{site.baseurl}}/media/2016/08/18-Root-CA-Certificate-Services.png)*Adding an Authority Information Access location*
 
 Apply the changes, and you will be prompted to restart Active Directory Certificate Services. If you don't remember to manually restart the service later.
 
-![Applying the changes will require restarting the CA service]({{site.baseurl}}/media/2016/08/19-Root-CA-Certificate-Services.png)
-
-Applying the changes will require restarting the CA service
-{:.figcaption}
+![Applying the changes will require restarting the CA service]({{site.baseurl}}/media/2016/08/19-Root-CA-Certificate-Services.png)*Applying the changes will require restarting the CA service*
 
 #### Configure CRL Publishing
 
@@ -231,24 +176,15 @@ Before publishing the CRL set the Publication Interval to something other than t
 
 Open the properties of the **Revoked Certificates** node and set the **CRL publication interval** to something suitable for the environment you have installed the CA into. Remember that you'll need to boot the Root CA and publish a new CRL before the end of this interval.
 
-![Setting the CRL Publication Interval on the Root CA]({{site.baseurl}}/media/2016/08/rootCASettingCRLPublishingInterval.png)
-
-Setting the CRL Publication Interval on the Root CA
-{:.figcaption}
+![Setting the CRL Publication Interval on the Root CA]({{site.baseurl}}/media/2016/08/rootCASettingCRLPublishingInterval.png)*Setting the CRL Publication Interval on the Root CA*
 
 Ensure that the Certificate Revocation list is published to the to the file system - right-click **Revoked Certificates**, select **All Tasks** / **Publish**. We will then copy these to the subordinate CA.
 
-![Publish the Certificate Revocation list]({{site.baseurl}}/media/2016/08/20a-Root-CA-Certificate-Services.png)
-
-Publish the Certificate Revocation list
-{:.figcaption}
+![Publish the Certificate Revocation list]({{site.baseurl}}/media/2016/08/20a-Root-CA-Certificate-Services.png)*Publish the Certificate Revocation list*
 
 Browse to C:\Windows\System32\CertSrv\CertEnroll to view the CRL and the root CA certificate.
 
-![Certificates and CRL published to C:\Windows\System32\CertSrv\CertEnroll]({{site.baseurl}}/media/2016/08/22-Root-CA-Certificate-Services.png)
-
-Certificates and CRL published to C:\Windows\System32\CertSrv\CertEnroll
-{:.figcaption}
+![Certificates and CRL published to C:\Windows\System32\CertSrv\CertEnroll]({{site.baseurl}}/media/2016/08/22-Root-CA-Certificate-Services.png)*Certificates and CRL published to C:\Windows\System32\CertSrv\CertEnroll*
 
 #### Setting the Issued Certificate Validity Period
 
@@ -258,33 +194,27 @@ As we'll only be issuing subordinate CA certificates from this root CA, 1 year i
 
 To change the validity period, open Registry Editor and navigate to the following key:
 
-```powershell
+```
 HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\<certification authority name>
 ```
 
 In my lab, this path is:
 
-```powershell
+```
 HKLM\SYSTEM\CurrentControlSet\Services\CertSvc\Configuration\stealthpuppy Offline Root CA
 ```
 
 Here I can see two values that define how long issued certificates are valid for - ValidityPeriod (defaults to 1) and ValidityPeriodUnits (defaults to "Years").
 
-![Viewing the Root CA certificate validity lifetime]({{site.baseurl}}/media/2016/08/rootCAValidityUnits.png)
-
-Viewing the Root CA certificate validity lifetime
-{:.figcaption}
+![Viewing the Root CA certificate validity lifetime]({{site.baseurl}}/media/2016/08/rootCAValidityUnits.png)*Viewing the Root CA certificate validity lifetime*
 
 Open ValidityPeriodUnits and change this to the desired value. My recommendation would be to make this 1/2 the lifetime of Root CA's certificate validity period, so if you've configured the Root CA for 10 years, set this to 5 years. You'll need to restart the Certificate Authority service for this to take effect.
 
-![Setting the Root CA's ValidityUnits]({{site.baseurl}}/media/2016/08/SettingrootCAValidityUnits.png)
-
-Setting the Root CA's ValidityUnits
-{:.figcaption}
+![Setting the Root CA's ValidityUnits]({{site.baseurl}}/media/2016/08/SettingrootCAValidityUnits.png)*Setting the Root CA's ValidityUnits*
 
 An alternative to editing the registry directly is to set this value to certutil.exe. To change the validity period to 5 years run:
 
-```powershell
+```
 certutil -setreg ca\ValidityPeriodUnits "5"
 ```
 

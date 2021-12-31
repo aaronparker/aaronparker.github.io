@@ -1,10 +1,10 @@
 ---
-
+id: 2696
 title: Migrating packages from App-V 4.x to App-V 5.0
 date: 2012-04-06T18:50:26+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2696
 permalink: /migrating-packages-from-app-v-4-x-to-app-v-5-0/
 Hide SexyBookmarks:
   - "0"

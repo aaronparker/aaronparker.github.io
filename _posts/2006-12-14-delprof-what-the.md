@@ -1,10 +1,10 @@
 ---
-
+id: 130
 title: 'DELPROF: What The?'
 date: 2006-12-14T23:36:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/delprof-what-the
 permalink: /delprof-what-the/
 categories:
   - Applications

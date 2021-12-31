@@ -1,10 +1,10 @@
 ---
-
+id: 4087
 title: 3 Months with the Microsoft Surface 3
 date: 2015-09-07T19:03:17+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy/?p=4087
 permalink: /microsoft-surface-3-review/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -22,9 +22,9 @@ Here's a review of my experiences with the [Microsoft Surface 3](http://www.micr
 
 During the Windows 10 beta, I found myself not having any hardware that I could run the new version of Windows on natively and certainly nothing with touch capabilities. Of course, that's a great excuse to go out a purchase a new laptop or tablet/convertible capable of running Windows 10.
 
-I still have the original Surface RT. It's interesting to power up every now and then (install 50 updates) and play around with it for a bit. The RT has a nice look and feel to the hardware and is a great form-factor for watching movies or videos due to the 16:9 aspect ratio, and I even used it for a month as my primary desktop when my original MacBook Pro failed a couple of years ago. I may yet turn the Surface RT into a digital photo frame.
+I still have the original Surface RT. It's interesting to power up every now and then (install 50 updates) and play around with it for a bit. The RT has a nice look and feel to the hardware and is a great form-factor for watching movies or videos due to the 16:9 aspect ratio, and I even used it for a month as my primary desktop when my original MacBook Pro failed a couple of years ago. I may yet turn the Surface RT into a digital photo frame.
 
-When Windows 8 and the Surface RT was released, I had high hopes for such a device as a blended thin-client. The limited application capability could have been a boon as a locked down thin client with managed applications coming from the Windows Store including Citrix Receiver or the VMware Client etc. Manage it with MDM, and we could have had a device with some interesting local capabilities with legacy applications delivered from the data centre.
+When Windows 8 and the Surface RT was released, I had high hopes for such a device as a blended thin-client. The limited application capability could have been a boon as a locked down thin client with managed applications coming from the Windows Store including Citrix Receiver or the VMware Client etc. Manage it with MDM, and we could have had a device with some interesting local capabilities with legacy applications delivered from the data centre.
 
 Unfortunately this hasn't happened. Whether that's due to Windows 8 or the hardware (OK, it's probably the OS), Citrix's and VMware's (and even Microsoft's) commitment to a well performing Windows Store app for remote app and desktop connections has been lacking. Perhaps the demand just hasn't been there.
 
@@ -40,9 +40,9 @@ I travel quite a bit, especially long haul flights to the US or South-east Asia 
 
 Ultimately I purchased the Surface 2 with 2GB RAM, 64GB SSD with a blue Type Cover. Not the inexpensive option when compared to the Dell and Lenovo devices. The keyboard is an optional extra and I didn't get the pen either. I considered purchasing the pen; however given that I would use it so irregularly, I decided against it. The pen would be very useful for drawing architectures over GoToMeeting, but other than that, I haven't seen a use for it for myself.
 
-In short, the Surface is a beautiful device to look at and  hold. Carrying the Surface with a Type Cover closed feels like carrying a really nice hard cover book. It just feels great in the hand. I can throw it my bag and be confident that it's not going to end up scratching easily or just carry it with me comfortably if I have nothing to put it into.
+In short, the Surface is a beautiful device to look at and  hold. Carrying the Surface with a Type Cover closed feels like carrying a really nice hard cover book. It just feels great in the hand. I can throw it my bag and be confident that it's not going to end up scratching easily or just carry it with me comfortably if I have nothing to put it into.
 
-Opening the Surface is generally a 2-step action - after putting the Surface on the table face down, I flip the stand and lift it up leaving the Type Cover on the table surface. A bit different from a laptop, but perhaps simpler than my iPad with a Logitech Bluetooth keyboard.
+Opening the Surface is generally a 2-step action - after putting the Surface on the table face down, I flip the stand and lift it up leaving the Type Cover on the table surface. A bit different from a laptop, but perhaps simpler than my iPad with a Logitech Bluetooth keyboard.
 
 ## Using the Surface
 
@@ -56,7 +56,7 @@ A single USB 3.0 port is very handy to have; however there is the odd occasion t
 
 ## Keyboard
 
-I find the Type Cover generally good. When compared to the iPad with a Bluetooth keyboard, the Type Cover integration with the Surface is a winner. No extra charging required and backlit keys since the Surface 3/3 Pro. Typing is had good feel to it, but the flex in the Type Cover is something to get used to. The biggest let down is the trackpad, it's just too small. Windows 10 introduces new gestures, but the hardware itself still needs improvement. After having used a MacBook for about 5 years, the Apple trackpad sets a very high bar and I wish PC manufacturers would match it.
+I find the Type Cover generally good. When compared to the iPad with a Bluetooth keyboard, the Type Cover integration with the Surface is a winner. No extra charging required and backlit keys since the Surface 3/3 Pro. Typing is had good feel to it, but the flex in the Type Cover is something to get used to. The biggest let down is the trackpad, it's just too small. Windows 10 introduces new gestures, but the hardware itself still needs improvement. After having used a MacBook for about 5 years, the Apple trackpad sets a very high bar and I wish PC manufacturers would match it.
 
 ## Touch Screen
 
@@ -72,12 +72,9 @@ In short, the hardware is beautiful, a extra USB port would be nice and the keyb
 
 ## Software
 
-There's nothing installed on the Surface that differentiates it from other Windows 8.1/10 tablets, so from a software perspective you get all of the same operating system features and application software as any other Windows device. There is a Universal Surface app which provides you an overview of the device's features and from there you can calibrate touch and the pen and a couple of other settings. One the best features of the Surface from a software perspective is that you get just Windows and none of the extra unnecessary crap that typically comes with 3rd party hardware.
+There's nothing installed on the Surface that differentiates it from other Windows 8.1/10 tablets, so from a software perspective you get all of the same operating system features and application software as any other Windows device. There is a Universal Surface app which provides you an overview of the device's features and from there you can calibrate touch and the pen and a couple of other settings. One the best features of the Surface from a software perspective is that you get just Windows and none of the extra unnecessary crap that typically comes with 3rd party hardware.
 
-![I have no idea what this feature does]({{site.baseurl}}/media/2015/09/Surface-app.png)
-
-I have no idea what this feature does.
-{:.figcaption}
+![I have no idea what this feature does]({{site.baseurl}}/media/2015/09/Surface-app.png)*I have no idea what this feature does.*
 
 ## What I Use
 
@@ -109,10 +106,7 @@ Windows 10 has certainly improved since the first public beta and I'm now runnin
 
 Continuum is a pretty cool feature that with the changes in the Start menu and the way that Windows 10 handles Windows Store / Universal apps in desktop vs. tablet mode, works very well. This feature certainly improved as the Windows 10 builds have improved - it consistently switches between modes with adding or removing the keyboard. Desktop mode makes sense on a larger screen, I find that on the Surface 10&#8243; screen that I can often stick with tablet mode even with the keyboard attached.
 
-![Continuum in action]({{site.baseurl}}/media/2015/09/ContinuumInAction.png)
-
-Continuum in action
-{:.figcaption}
+![Continuum in action]({{site.baseurl}}/media/2015/09/ContinuumInAction.png)*Continuum in action*
 
 ## Cortana
 
@@ -120,11 +114,11 @@ Cortana has only recently (last week) been made available to additional countrie
 
 ## Performance
 
-The configuration I purchased is the [Intel Atom x7-Z8700](http://ark.intel.com/products/85475/Intel-Atom-x7-Z8700-Processor-2M-Cache-up-to-2_40-GHz), 2GB RAM and 64GB SSD. That's not a great deal of RAM or local storage space, but I've gone with that configuration based on what I my intended use case is. Given that the Surface is already an expensive device, the 4GB/128GB SSD version would have pushed the cost over $1000AU.
+The configuration I purchased is the [Intel Atom x7-Z8700](http://ark.intel.com/products/85475/Intel-Atom-x7-Z8700-Processor-2M-Cache-up-to-2_40-GHz), 2GB RAM and 64GB SSD. That's not a great deal of RAM or local storage space, but I've gone with that configuration based on what I my intended use case is. Given that the Surface is already an expensive device, the 4GB/128GB SSD version would have pushed the cost over $1000AU.
 
 I've not done any synthetic testing and if I did, I wouldn't expect stellar results. My intended usage of the device is to keep concurrent running applications to 2 or 3. By sticking with Windows Store applications as much as possible, RAM utilisation should be minimised and without AV or extra apps running in the background, Windows should (in theory) be OK with 2GB RAM. I run Windows in a VM with 1.2GB RAM on my MacBook and it runs quite well. With fast local storage, any swapping shouldn't affect performance of the device.
 
-So what's performance like after 3 months? In short, very good. In day-to-day usage, I haven't noticed any slow performance and general performance is what I expect from the Atom processor. I don't think this device would be suitable for more demanding users, but that's what the Surface Pro is for. As a device for general users, perhaps with some legacy applications delivered remotely, this would be an excellent choice.
+So what's performance like after 3 months? In short, very good. In day-to-day usage, I haven't noticed any slow performance and general performance is what I expect from the Atom processor. I don't think this device would be suitable for more demanding users, but that's what the Surface Pro is for. As a device for general users, perhaps with some legacy applications delivered remotely, this would be an excellent choice.
 
 ## Conclusion
 

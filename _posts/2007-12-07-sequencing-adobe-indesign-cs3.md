@@ -1,10 +1,10 @@
 ---
-
+id: 384
 title: Sequencing Adobe InDesign CS3
 date: 2007-12-07T00:12:30+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/sequencing-adobe-indesign-cs3
 permalink: /sequencing-adobe-indesign-cs3/
 dsq_thread_id:
   - "195379862"

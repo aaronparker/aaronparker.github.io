@@ -1,10 +1,10 @@
 ---
-
+id: 541
 title: Comparing eSATA To USB For External Drives
 date: 2008-04-27T21:25:22+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/hardware/comparing-esata-to-usb-for-external-drives
 permalink: /comparing-esata-to-usb-for-external-drives/
 dsq_thread_id:
   - "195380529"

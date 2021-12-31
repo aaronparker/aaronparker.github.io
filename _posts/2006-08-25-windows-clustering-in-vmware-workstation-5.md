@@ -1,10 +1,10 @@
 ---
-
+id: 208
 title: Windows Clustering in VMware Workstation 5
 date: 2006-08-25T05:50:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/windows-clustering-in-vmware-workstation-5
 permalink: /windows-clustering-in-vmware-workstation-5/
 dsq_thread_id:
   - "195378935"

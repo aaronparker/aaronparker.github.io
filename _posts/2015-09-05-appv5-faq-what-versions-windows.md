@@ -1,10 +1,10 @@
 ---
-
+id: 4080
 title: 'App-V 5 FAQ: What versions of Windows is App-V 5 supported on?'
 date: 2015-09-05T21:14:43+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy.com/?p=4080
 permalink: /appv5-faq-what-versions-windows/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -30,7 +30,7 @@ Operating system support for App-V is ultimately determined by the [Microsoft Pr
 
 ## RDS Client
 
-[The App-V 5.1 RDS client is supported on](https://technet.microsoft.com/en-us/library/mt346547.aspx):
+[The App-V 5.1 RDS client is supported on](https://technet.microsoft.com/en-us/library/mt346547.aspx):
 
   * Windows Server 2012 R2
   * Windows Server 2012
@@ -62,7 +62,7 @@ Operating system support for App-V is ultimately determined by the [Microsoft Pr
 
 # Additional Resources
 
-More details on the full system requirements for Application Virtualization 5 are documented in full on Microsoft TechNet here:
+More details on the full system requirements for Application Virtualization 5 are documented in full on Microsoft TechNet here:
 
   * [App-V 5.1 Prerequisites](https://technet.microsoft.com/en-us/library/mt346482.aspx)
   * [App-V 5.1 Supported Configurations](https://technet.microsoft.com/en-us/library/mt346547.aspx)

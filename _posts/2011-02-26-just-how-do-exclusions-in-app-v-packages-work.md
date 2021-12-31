@@ -1,10 +1,10 @@
 ---
-
+id: 2168
 title: Just how do Exclusions in App-V packages work?
 date: 2011-02-26T01:27:51+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/just-how-do-exclusions-in-app-v-packages-work/
 permalink: /just-how-do-exclusions-in-app-v-packages-work/
 has_been_twittered:
   - 'yes'

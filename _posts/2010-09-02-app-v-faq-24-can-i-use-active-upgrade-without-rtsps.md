@@ -1,10 +1,10 @@
 ---
-
+id: 1848
 title: 'App-V FAQ: Can I use Active Upgrade without RTSP(S)?'
 date: 2010-09-02T11:00:00+10:00
 author: Justin Zarb
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/app-v-faq-24-can-i-use-active-upgrade-without-rtsps
 permalink: /app-v-faq-24-can-i-use-active-upgrade-without-rtsps/
 dsq_thread_id:
   - "195590996"

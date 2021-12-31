@@ -1,10 +1,10 @@
 ---
-
+id: 2716
 title: 'BriForum talk - Office and App-V'
 date: 2012-05-18T14:12:18+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2716
 permalink: /briforum-talk-office-and-app-v/
 Hide SexyBookmarks:
   - "0"

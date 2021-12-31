@@ -1,10 +1,10 @@
 ---
-
+id: 3045
 title: Prepare Mozilla Firefox for Enterprise Deployment and Virtualization
 date: 2013-03-15T09:30:35+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=3045
 permalink: /prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/
 dsq_thread_id:
   - "1138465668"

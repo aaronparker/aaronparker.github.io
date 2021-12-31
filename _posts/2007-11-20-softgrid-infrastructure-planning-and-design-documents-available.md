@@ -1,10 +1,10 @@
 ---
-
+id: 374
 title: SoftGrid Infrastructure Planning and Design documents available
 date: 2007-11-20T12:02:02+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/off-site-news/softgrid-infrastructure-planning-and-design-documents-available
 permalink: /softgrid-infrastructure-planning-and-design-documents-available/
 categories:
   - Microsoft

@@ -1,10 +1,10 @@
 ---
-
+id: 4135
 title: 'App-V 5 FAQ: How Do I Deliver Microsoft Office with App-V?'
 date: 2015-09-28T20:48:53+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy/?p=4135
 permalink: /appv5-faq-deliver-office/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -17,7 +17,7 @@ tags:
   - App-V
   - Office
 ---
-Here's is a list of articles and resources for delivering the currently supported versions of Microsoft Office with App-V 5.
+Here's is a list of articles and resources for delivering the currently supported versions of Microsoft Office with App-V 5.
 
 ## General Resources
 
@@ -45,9 +45,9 @@ Additional resources:
   * [Download Click to Run for Office 365 products by using the Office Deployment Tool](https://technet.microsoft.com/en-us/library/jj219424(v=office.15))
   * [Deploy Click-to-Run for Office 365 products by using the Office Deployment Tool](https://technet.microsoft.com/en-us/library/jj219423(v=office.15))
 
-## Microsoft Office 2013
+## Microsoft Office 2013
 
-Microsoft introduced the Click-to-Run tool with Office 2013. This was the first version of Office that leveraged what is a modified, self-contained version of App-V to deliver Office. While the Windows Installer version of Office is still available, the Click-to-Run version is preferred for retail and Office 365 customers.
+Microsoft introduced the Click-to-Run tool with Office 2013. This was the first version of Office that leveraged what is a modified, self-contained version of App-V to deliver Office. While the Windows Installer version of Office is still available, the Click-to-Run version is preferred for retail and Office 365 customers.
 
   * [Deploying Microsoft Office 2013 by Using App-V](https://technet.microsoft.com/en-au/library/dn817830.aspx)
   * [How to deploy and manage Office 2013 on App-V 5.0](http://support.microsoft.com/kb/2915745)
@@ -57,9 +57,9 @@ Microsoft introduced the Click-to-Run tool with Office 2013. This was the first 
   * [Office 365 ProPlus: Click-to-run deployment and management](https://technet.microsoft.com/en-au/video/tdbe13-office-365-proplus-click-to-run-deployment-and-management.aspx)
   * [Deploying and Updating Microsoft Office 365 ProPlus with Click-to-Run](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/OUC-B302#fbid=)
 
-## Microsoft Office 2010
+## Microsoft Office 2010
 
-An Office 2010 package will need to be created via the App-V Sequencer. Information on how to do so can be found here:
+An Office 2010 package will need to be created via the App-V Sequencer. Information on how to do so can be found here:
 
   * [Microsoft Office 2010 Sequencing Kit for Microsoft Application Virtualization 5.0](http://go.microsoft.com/fwlink/p/?LinkId=330681)
   * [Known issues when you create or use an App-V 5.0 Office 2010 package](http://go.microsoft.com/fwlink/p/?LinkId=330682)

@@ -1,10 +1,10 @@
 ---
-
+id: 6100
 title: Thunderbolt end-user experience macOS vs. Windows
 date: 2018-08-07T14:01:52+10:00
 author: Aaron Parker
 layout: post
-
+guid: https://stealthpuppy/?p=6100
 permalink: /thunderbolt-experience-macos-windows/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -16,28 +16,19 @@ tags:
   - Thunderbolt
   - Windows
 ---
-* this unordered seed list will be replaced by the toc
-{:toc}
-
 Thunderbolt 3 (and USB-C) are here to provide [a single cable for everything]({{site.baseurl}}/thunderbolt-3/), although your experience with this technology will differ depending on your choice of operating system. Here's a quick look at the end-user experience of TB on macOS and Windows.
 
 ## Thunderbolt 3 on macOS
 
 Thunderbolt [on macOS just works](https://www.apple.com/thunderbolt/) - plug-in a TB device and off you go. This makes sense given that the standard was [designed by Intel and Apple](https://en.wikipedia.org/wiki/Thunderbolt_(interface)). Unpacking and plugging in a Thunderbolt dock with external displays, ethernet, audio etc., on macOS in just about every case will work without installing drivers.
 
-![Thunderbolt ports on the MacBook Pro]({{site.baseurl}}/media/2018/08/macbook-pro-spgray-psl-closed.jpg)
-
-Thunderbolt ports on the MacBook Pro
-{:.figcaption}
+![Thunderbolt ports on the MacBook Pro]({{site.baseurl}}/media/2018/08/macbook-pro-spgray-psl-closed.jpg)*Thunderbolt ports on the MacBook Pro*
 
 Here's Apple's dirty (not so) secret though - excluding the MacBook Air (and the Mini that comes with TB2), all current Macs have TB3 ports, [except for the MacBook](https://support.apple.com/en-au/HT207443). It has a single USB-C port only. Maybe that's OK - the TB target market is likely to be purchasing the Pro line anyway, but Apple isn't a fan of labelling their ports, so caveat emptor.
 
 macOS provides a good look at the devices plugged into your TB ports:
 
-![macOS System Report showing Thunderbolt devices]({{site.baseurl}}/media/2018/08/macOS-SystemReport-Thunderbolt.png)
-
-macOS System Report showing Thunderbolt devices
-{:.figcaption}
+![macOS System Report showing Thunderbolt devices]({{site.baseurl}}/media/2018/08/macOS-SystemReport-Thunderbolt.png)*macOS System Report showing Thunderbolt devices*
 
 Note that while the MacBook Pro with Touch Bar has 4 Thunderbolt 3 ports, these are divided across 2 busses. If you have more than one device plugged in, ensure they're plugged into either side of the laptop for best performance.
 
@@ -51,24 +42,15 @@ Windows PCs equipped with Thunderbolt ports will have the driver and software in
 
 With the software installed and a device plugged in, the user sees a message box asking to approve the connection to a Thunderbolt device. Management actions such as approving or removing a device requires administrator rights on the PC. Pluggable has a good article on the entire [user experience and troubleshooting](https://plugable.com/thunderbolt-3/support/).
 
-![Approving connection to TB devices on Windows 10]({{site.baseurl}}/media/2018/08/Thunderbolt-ApprovePopup.png)
-
-Approving connection to TB devices on Windows 10
-{:.figcaption}
+![Approving connection to TB devices on Windows 10]({{site.baseurl}}/media/2018/08/Thunderbolt-ApprovePopup.png)*Approving connection to TB devices on Windows 10*
 
 Once approved, the device can then be viewed and managed.
 
-![Viewing attached TB devices on Windows 10]({{site.baseurl}}/media/2018/08/Thunderbolt-AttachedDevices.png)
-
-Viewing attached TB devices on Windows 10
-{:.figcaption}
+![Viewing attached TB devices on Windows 10]({{site.baseurl}}/media/2018/08/Thunderbolt-AttachedDevices.png)*Viewing attached TB devices on Windows 10*
 
 Of course, once plugged in, Windows sees the peripherals and connects to them as usual.
 
-![Peripherals plugged into a TB dock on Windows 10]({{site.baseurl}}/media/2018/08/Thunderbolt-WIndowsDevices.png)
-
-Peripherals plugged into a TB dock on Windows 10
-{:.figcaption}
+![Peripherals plugged into a TB dock on Windows 10]({{site.baseurl}}/media/2018/08/Thunderbolt-WIndowsDevices.png)*Peripherals plugged into a TB dock on Windows 10*
 
 Thunderbolt on Windows isn't as simple as it could be. It would be great to see drivers installed directly from Windows Update instead of being available separately, but once installed everything works as you would expect.
 

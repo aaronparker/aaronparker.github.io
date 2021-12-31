@@ -1,10 +1,10 @@
 ---
-
+id: 534
 title: Getting Rid Of That Unblock Button
 date: 2008-04-21T17:51:36+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/windows/getting-rid-of-that-unblock-button
 permalink: /getting-rid-of-that-unblock-button/
 categories:
   - Microsoft

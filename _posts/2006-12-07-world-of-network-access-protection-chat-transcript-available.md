@@ -1,10 +1,10 @@
 ---
-
+id: 135
 title: World of Network Access Protection Chat Transcript Available
 date: 2006-12-07T20:26:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/world-of-network-access-protection-chat-transcript-available
 permalink: /world-of-network-access-protection-chat-transcript-available/
 categories:
   - Microsoft

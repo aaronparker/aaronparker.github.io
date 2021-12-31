@@ -1,10 +1,10 @@
 ---
-
+id: 382
 title: Sequencing Adobe Illustrator CS3
 date: 2007-12-04T20:00:56+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/sequencing-adobe-illustrator-cs3
 permalink: /sequencing-adobe-illustrator-cs3/
 dsq_thread_id:
   - "195379841"

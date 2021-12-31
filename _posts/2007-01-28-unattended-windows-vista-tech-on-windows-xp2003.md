@@ -1,10 +1,10 @@
 ---
-
+id: 113
 title: Unattended Windows Vista tech. on Windows XP/2003
 date: 2007-01-28T00:05:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/unattended-windows-vista-tech-on-windows-xp2003
 permalink: /unattended-windows-vista-tech-on-windows-xp2003/
 dsq_thread_id:
   - "195378786"

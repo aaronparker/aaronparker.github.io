@@ -1,10 +1,10 @@
 ---
-
+id: 205
 title: Windows Vista, Windows Update and 0x8024402C
 date: 2006-08-25T05:58:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/windows-vista-windows-update-and-0x8024402c
 permalink: /windows-vista-windows-update-and-0x8024402c/
 dsq_thread_id:
   - "195378922"

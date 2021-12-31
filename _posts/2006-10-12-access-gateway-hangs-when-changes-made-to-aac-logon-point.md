@@ -1,10 +1,10 @@
 ---
-
+id: 165
 title: Access Gateway Hangs When Changes Made to AAC Logon Point
 date: 2006-10-12T18:46:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/access-gateway-hangs-when-changes-made-to-aac-logon-point
 permalink: /access-gateway-hangs-when-changes-made-to-aac-logon-point/
 categories:
   - Citrix

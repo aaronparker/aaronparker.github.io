@@ -1,10 +1,10 @@
 ---
-
+id: 677
 title: WSUS Update for Server Manager in Windows 2008
 date: 2008-08-27T14:40:01+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/windows/wsus-update-for-server-manager-in-windows-2008
 permalink: /wsus-update-for-server-manager-in-windows-2008/
 categories:
   - Microsoft

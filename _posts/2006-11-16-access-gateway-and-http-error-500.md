@@ -1,10 +1,10 @@
 ---
-
+id: 154
 title: Access Gateway and HTTP Error 500
 date: 2006-11-16T17:51:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/access-gateway-and-http-error-500
 permalink: /access-gateway-and-http-error-500/
 categories:
   - Citrix

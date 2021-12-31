@@ -1,10 +1,10 @@
 ---
-
+id: 175
 title: Strengthening OWA Authentication with ISA 2006 and RSA SecurID
 date: 2006-09-28T23:12:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/strengthening-owa-authentication-with-isa-2006-and-rsa-securid
 permalink: /strengthening-owa-authentication-with-isa-2006-and-rsa-securid/
 aktt_notify_twitter:
   - 'yes'

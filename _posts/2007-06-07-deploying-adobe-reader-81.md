@@ -1,10 +1,10 @@
 ---
-
+id: 309
 title: Deploying Adobe Reader 8
 date: 2007-06-07T01:50:28+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/deploying-adobe-reader-81
 permalink: /deploying-adobe-reader-81/
 aktt_notify_twitter:
   - 'no'

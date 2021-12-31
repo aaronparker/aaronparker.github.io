@@ -1,10 +1,10 @@
 ---
-
+id: 1691
 title: 'App-V FAQ: Can I use Application Compatibility Shims with App-V?'
 date: 2010-07-21T11:00:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-7-can-i-use-application-compatibility-shims-with-app-v
 permalink: /app-v-faq-8-can-i-use-application-compatibility-shims-with-app-v/
 has_been_twittered:
   - 'yes'

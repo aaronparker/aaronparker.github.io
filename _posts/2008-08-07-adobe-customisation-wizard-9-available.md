@@ -1,10 +1,10 @@
 ---
-
+id: 639
 title: Adobe Customisation Wizard 9 Available
 date: 2008-08-07T21:28:23+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/deployment/adobe-customisation-wizard-9-available
 permalink: /adobe-customisation-wizard-9-available/
 aktt_notify_twitter:
   - 'yes'

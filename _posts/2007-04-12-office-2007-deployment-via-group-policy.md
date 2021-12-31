@@ -1,10 +1,10 @@
 ---
-
+id: 65
 title: Office 2007 Deployment via Group Policy
 date: 2007-04-12T05:36:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/office-2007-deployment-via-group-policy
 permalink: /office-2007-deployment-via-group-policy/
 thesis_description:
   - How to deploy Microsoft Office 2007 via the Group Policy Software Installation feature

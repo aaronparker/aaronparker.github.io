@@ -1,10 +1,10 @@
 ---
-
+id: 657
 title: Managing Control Panel in Windows Vista
 date: 2008-08-19T22:46:19+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=657
 permalink: /managing-control-panel-in-windows-vista/
 dsq_thread_id:
   - "195380951"

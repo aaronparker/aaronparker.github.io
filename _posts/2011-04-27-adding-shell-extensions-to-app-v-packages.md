@@ -1,10 +1,10 @@
 ---
-
+id: 2246
 title: Adding Shell Extensions to App-V Packages
 date: 2011-04-27T20:28:07+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=2246
 permalink: /adding-shell-extensions-to-app-v-packages/
 has_been_twittered:
   - 'yes'

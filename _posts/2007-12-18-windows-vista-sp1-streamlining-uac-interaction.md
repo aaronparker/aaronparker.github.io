@@ -1,10 +1,10 @@
 ---
-
+id: 390
 title: 'Windows Vista SP1 - Streamlining UAC Interaction'
 date: 2007-12-18T23:47:50+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/windows/windows-vista-sp1-streamlining-uac-interaction
 permalink: /windows-vista-sp1-streamlining-uac-interaction/
 categories:
   - Microsoft

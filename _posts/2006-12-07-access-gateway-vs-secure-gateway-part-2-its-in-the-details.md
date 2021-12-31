@@ -1,10 +1,10 @@
 ---
-
+id: 137
 title: "Access Gateway vs. Secure Gateway Part 2: It's In The Details"
 date: 2006-12-07T06:24:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: 'http://blog.stealthpuppy.com/uncategorized/access-gateway-vs-secure-gateway-part-2-it%e2%80%99s-in-the-details'
 permalink: /access-gateway-vs-secure-gateway-part-2-its-in-the-details/
 categories:
   - Citrix

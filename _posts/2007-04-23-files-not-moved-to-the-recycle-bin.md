@@ -1,10 +1,10 @@
 ---
-
+id: 57
 title: Files Not Moved to the Recycle Bin?
 date: 2007-04-23T06:51:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/files-not-moved-to-the-recycle-bin
 permalink: /files-not-moved-to-the-recycle-bin/
 categories:
   - Automation

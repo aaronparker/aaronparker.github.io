@@ -1,10 +1,10 @@
 ---
-
+id: 69
 title: A Quick Look at the Windows Vista MMC Consoles
 date: 2007-04-08T05:59:07+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/a-quick-look-at-the-windows-vista-mmc-consoles
 permalink: /a-quick-look-at-the-windows-vista-mmc-consoles/
 categories:
   - Microsoft

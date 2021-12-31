@@ -1,10 +1,10 @@
 ---
-
+id: 59
 title: Unattended Presentation Server 4.5
 date: 2007-04-19T06:22:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/unattended-presentation-server-45
 permalink: /unattended-presentation-server-45/
 views:
   - "1"

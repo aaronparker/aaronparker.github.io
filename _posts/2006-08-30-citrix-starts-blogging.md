@@ -1,10 +1,10 @@
 ---
-
+id: 192
 title: Citrix Starts Blogging
 date: 2006-08-30T22:20:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/citrix-starts-blogging
 permalink: /citrix-starts-blogging/
 categories:
   - Citrix

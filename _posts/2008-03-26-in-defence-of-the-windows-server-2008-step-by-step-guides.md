@@ -1,10 +1,10 @@
 ---
-
+id: 509
 title: In Defence Of The Windows Server 2008 Step-by-Step Guides
 date: 2008-03-26T17:50:45+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/general/in-defence-of-the-windows-server-2008-step-by-step-guides
 permalink: /in-defence-of-the-windows-server-2008-step-by-step-guides/
 dsq_thread_id:
   - "195380311"
@@ -43,7 +43,7 @@ I like these document because they focus on a particular feature or scenario and
   * Windows Server 2008 Foundation Network Guide
   * Windows Server 2008 Step-by-Step Guide for DNS in Small Networks
   * Windows Server 2008 TS Gateway Server Step-By-Step Setup Guide
-  * Windows  Server Active Directory Rights Management Services Step-by-Step Guide
+  * Windows  Server Active Directory Rights Management Services Step-by-Step Guide
   * Windows Server 2008 Terminal Services RemoteApp Step-by-Step Guide
   * Windows Server 2008 TS Licensing Step-By-Step Setup Guide
   * Windows Server 2008 TS Session Broker Load Balancing Step-By-Step Guide

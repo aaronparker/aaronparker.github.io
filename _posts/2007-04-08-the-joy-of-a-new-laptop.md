@@ -1,10 +1,10 @@
 ---
-
+id: 70
 title: The Joy of a New Laptop
 date: 2007-04-08T02:41:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/the-joy-of-a-new-laptop
 permalink: /the-joy-of-a-new-laptop/
 categories:
   - Hardware

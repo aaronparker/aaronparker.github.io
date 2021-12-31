@@ -1,10 +1,10 @@
 ---
-
+id: 770
 title: Juggling Sun Java Runtimes in App-V
 date: 2008-10-22T11:39:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/?p=770
 permalink: /juggling-sun-java-runtimes-in-app-v/
 aktt_notify_twitter:
   - 'yes'

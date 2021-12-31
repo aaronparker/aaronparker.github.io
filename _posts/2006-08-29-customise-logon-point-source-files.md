@@ -1,10 +1,10 @@
 ---
-
+id: 193
 title: Customise Logon Point Source Files
 date: 2006-08-29T17:02:00+10:00
 author: Aaron Parker
 layout: post
-
+guid: http://blog.stealthpuppy.com/uncategorized/customise-logon-point-source-files
 permalink: /customise-logon-point-source-files/
 categories:
   - Citrix
