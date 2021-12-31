@@ -425,4 +425,5 @@ jekyll_compose:
 
 
 cloudflare_analytics: "0c32f75715e341388bffae9f1e6b046d"
-repository: aaronparker/aaronparker.github.io
+github: [metadata]
+# repository: aaronparker/aaronparker.github.io
