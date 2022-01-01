@@ -5,8 +5,6 @@ description: >
   A boutique Jekyll theme for hackers, nerds, and academics,
   with a focus on personal sites that are meant to impress.
 hide_description: true
-redirect_from:
-  - /download/
 ---
 
 # About
@@ -101,7 +99,3 @@ Below is a list of publications that I've written, co-authored or contributed to
 ## About stealthpuppy.com
 
 This site (generally) focuses on end-user computing and enterprise mobility and is a way for me to not only write about interesting topics, but a way to give back the IT community. If I've been able to help you in your work in any way, that provides me with much satisfaction.
-
-## Disclaimer
-
-The views expressed on this blog are mine alone and not (necessarily) those of any current, future or former client or employer. As I reserve the right to review my position based on future evidence, they may not even reflect my own views by the time you read them. If in doubt, ask.

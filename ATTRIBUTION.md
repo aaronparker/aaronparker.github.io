@@ -1,5 +1,5 @@
 ---
-layout: plain
+layout: about
 description: Attributions for images and content used on this site.
 sitemap: false
 ---

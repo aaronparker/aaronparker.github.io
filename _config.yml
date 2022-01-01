@@ -63,11 +63,13 @@ legal:
     url:               /license/
   - title:             ATTRIBUTION
     url:               /attribution/
+  - title:             DISCLAIMER
+    url:               /disclaimer/
   - title:             VCREDIST
     url:               https://vcredist.com
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2021. All rights reserved.
+copyright:             © 2022. All rights reserved.
 
 # Format of the permalinks
 permalink:             /:categories/:year-:month-:day-:title/
@@ -232,7 +234,7 @@ hydejack:
   no_third_column:     false
 
   # Set to `true` if you don't like oversized headlines on large screens.
-  no_large_headings:   false
+  no_large_headings:   true
 
   # Set to `true` if you do not want to expose your resume and projects
   # in machine-readable formats.
@@ -350,8 +352,8 @@ plugins:
 #   yandex:              <verification-id>
 
 # Used for twitter cards
-# twitter:
-#   username:            <username>
+twitter:
+   username:            stealthpuppy
 
 # Used for facebook open graph
 # facebook:
@@ -360,11 +362,11 @@ plugins:
 #   admins:              <id>
 
 # Used on index and about sites
-# social:
-#   name:                <firstname> <lastname>
-#   links:
-#     - https://twitter.com/<username>
-#     - https://github.com/<username>
+social:
+   name:                Aaron Parker
+   links:
+     - https://twitter.com/stealthpuppy
+     - https://github.com/aaronparker
 
 
 # Plugin Configs
