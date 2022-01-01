@@ -1,7 +1,7 @@
 ---
-layout: about
+layout: plain
 description: Site disclaimer.
-sitemap: false
+sitemap: true
 ---
 
 # DISCLAIMER
