@@ -18,7 +18,7 @@ on:
       - '**.xml'
       - '_config.yml'
     branches:
-      - hydejack # or master before October 2020
+      - main # or master before October 2020
   workflow_dispatch:
 
 jobs:
