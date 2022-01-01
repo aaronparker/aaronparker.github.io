@@ -59,10 +59,10 @@ menu:
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if applicable), etc..
 legal:
-  - title:             LICENSE
-    url:               /license/
+  - title:             LICENCE
+    url:               /licence/index.html
   - title:             ATTRIBUTION
-    url:               /attribution/
+    url:               /attribution/index.html
   - title:             DISCLAIMER
     url:               /disclaimer/
   - title:             VCREDIST
