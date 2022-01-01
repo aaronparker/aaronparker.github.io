@@ -1,10 +1,10 @@
 ---
-id: 1748
+
 title: 'Windows Server 2008 R2 SP1: What’s in it for Remote Desktop Session Host?'
 date: 2010-07-14T15:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/terminal-server/windows-server-2008-r2-sp1-whats-in-it-for-remote-desktop-session-host
+
 permalink: /windows-server-2008-r2-sp1-whats-in-it-for-remote-desktop-session-host/
 has_been_twittered:
   - 'yes'

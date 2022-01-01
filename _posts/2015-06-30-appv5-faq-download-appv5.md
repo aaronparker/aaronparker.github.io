@@ -1,10 +1,10 @@
 ---
-id: 3995
+
 title: 'App-V 5 FAQ: Where Can I Download App-V 5.0?'
 date: 2015-06-30T08:00:12+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=3995
+
 permalink: /appv5-faq-download-appv5/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -18,7 +18,7 @@ tags:
 ---
 Microsoft Application Virtualization (App-V) can be downloaded in a number of locations; however you will first require access to these locations which are typically via a paid subscription or because you have paid for licenses.
 
-App-V is available via the following downloads, usually as ISOs:
+App-V is available via the following downloads, usually as ISOs:
 
   * Microsoft Desktop Optimization Pack (MDOP)
   * Application Virtualization for Remote Desktop Services
@@ -28,7 +28,7 @@ Each of the downloads includes the App-V client (either for desktops or RDS host
 
 # Microsoft Volume License
 
-If you have purchased the Microsoft Desktop Optimization Pack or Remote Desktop Services Client Access Licenses (CALs), the downloads will be available to you on the [Microsoft Volume License](https://licensing.microsoft.com) site. Search for "Microsoft Desktop Optimisation Pack" or select 'Software Insurance' under All Products to filter for all Software Assurance downloads.
+If you have purchased the Microsoft Desktop Optimization Pack or Remote Desktop Services Client Access Licenses (CALs), the downloads will be available to you on the [Microsoft Volume License](https://licensing.microsoft.com) site. Search for "Microsoft Desktop Optimisation Pack" or select 'Software Insurance' under All Products to filter for all Software Assurance downloads.
 
 # Microsoft Developer Network (MSDN)
 
@@ -39,11 +39,11 @@ If you have an [MSDN](http://msdn.microsoft.com) subscription, App-V is availabl
 
 # Additional Downloads
 
-Additional downloads for App-V are available here: [Microsoft Desktop Optimization Pack Group Policy Administrative Templates](http://go.microsoft.com/fwlink/p/?LinkId=393941)
+Additional downloads for App-V are available here: [Microsoft Desktop Optimization Pack Group Policy Administrative Templates](http://go.microsoft.com/fwlink/p/?LinkId=393941)
 
 # Evaluating App-V
 
-No evaluation version of App-V or MDOP appears to exist; however the following evaluation lab is available on TechNet: [MDOP Application Virtualization Deep Dive](http://www.microsoftvirtualacademy.com/training-courses/mdop-application-virtualization-deep-dive)
+No evaluation version of App-V or MDOP appears to exist; however the following evaluation lab is available on TechNet: [MDOP Application Virtualization Deep Dive](http://www.microsoftvirtualacademy.com/training-courses/mdop-application-virtualization-deep-dive)
 
 # Previously
 

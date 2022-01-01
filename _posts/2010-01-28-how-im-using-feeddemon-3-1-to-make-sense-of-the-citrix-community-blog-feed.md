@@ -1,10 +1,10 @@
 ---
-id: 1267
+
 title: "How I'm using FeedDemon 3.1 to make sense of the Citrix Community Blog feed"
 date: 2010-01-28T23:07:37+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/general/how-im-using-feeddemon-3-1-to-make-sense-of-the-citrix-community-blog-feed
+
 permalink: /how-im-using-feeddemon-3-1-to-make-sense-of-the-citrix-community-blog-feed/
 dsq_thread_id:
   - "195382150"

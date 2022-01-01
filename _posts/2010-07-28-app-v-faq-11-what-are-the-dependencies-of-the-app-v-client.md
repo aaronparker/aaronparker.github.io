@@ -1,10 +1,10 @@
 ---
-id: 1697
+
 title: 'App-V FAQ: What are the dependencies of the App-V Client?'
 date: 2010-07-28T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-11-what-are-the-dependencies-of-the-app-v-client
+
 permalink: /app-v-faq-11-what-are-the-dependencies-of-the-app-v-client/
 dsq_thread_id:
   - "195382932"

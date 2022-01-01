@@ -1,10 +1,10 @@
 ---
-id: 507
+
 title: Remote Server Administration Tools Available
 date: 2008-03-25T21:48:48+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/windows/remote-server-administration-tools-available
+
 permalink: /remote-server-administration-tools-available/
 dsq_thread_id:
   - "195380280"

@@ -1,24 +1,25 @@
 ---
-id: 6216
 title: Default Start Menu Customisation via Intune
+description: Improve the end-user experience on Windows Autopilot provisioned, and Microsoft Intune managed Windows PCs.
 date: 2018-12-18T22:28:30+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=6216
 permalink: /custom-default-start-menu-intune/
 image: media/2018/12/Windows10ProDefaultStartMenu1080.png
 categories:
   - Microsoft
-tags:
-  - Enrolment Status Page
-  - Intune
-  - Start Menu
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 The promise of a modern management approach to deployment and management of Windows 10 is that you no longer create and manage a custom SOE image. User experience is still important though and a large part of that experience in an enterprise environment, is the default Start menu.
 
 The default Start menu, especially on Windows 10 Pro, is far from enterprise ready right? Take a look at this mess:
 
-![Windows 10 Pro 1809 default Start menu]({{site.baseurl}}/media/2018/12/StartMenu.png)*Windows 10 Pro 1809 default Start menu*
+![Windows 10 Pro 1809 default Start menu]({{site.baseurl}}/media/2018/12/StartMenu.png)
+
+Windows 10 Pro 1809 default Start menu
+{:.figcaption}
 
 Over-the-air provisioning of PCs via Windows AutoPilot & Azure AD, Microsoft Intune (or insert your MDM solution here), limits the possibilities of customising the target PC before the user logs on. The administrator can [define a Start menu](https://docs.microsoft.com/en-us/windows/configuration/customize-windows-10-start-screens-by-using-mobile-device-management), but that's a policy, not a preference. One size does not fit all, and users should be able to customise the Start menu to suit their style.
 
@@ -58,9 +59,9 @@ And add the `LayoutModification.xml` file that you've exported with `Export-Star
 
 For this package, I've configured the following install parameters:
 
-  * Package type - 64-bit package
-  * Installation type - Per-machine only
-  * Reboot behaviour - Suppress all reboots and Reboot prompts
+* Package type - 64-bit package
+* Installation type - Per-machine only
+* Reboot behaviour - Suppress all reboots and Reboot prompts
 
 ![Configure Install Parameters in Advanced Installer]({{site.baseurl}}/media/2018/12/AdvancedInstaller02a-InstallParameters.png)
 
@@ -84,7 +85,7 @@ Today the ESP [tracks specific application deployments](https://docs.microsoft.c
 
 ## User Experience
 
-Most of my testing is on Windows 10 1809 - with a PC enrolled into Azure AD and Microsoft Intune during the out of box experience, the Enrolment Status Page tracks the installation of policies and applications, including our Start menu customisation. 
+Most of my testing is on Windows 10 1809 - with a PC enrolled into Azure AD and Microsoft Intune during the out of box experience, the Enrolment Status Page tracks the installation of policies and applications, including our Start menu customisation.
 
 After the enrollment and deployment is complete, the user sees a customised Start menu after first logon. There's a few tiles that didn't remain pinned from the default customisation, but this is much cleaner and enterprise ready than what we end up with out of the box.
 

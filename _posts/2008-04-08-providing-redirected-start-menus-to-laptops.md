@@ -1,10 +1,10 @@
 ---
-id: 528
+
 title: Providing Redirected Start Menus To Laptops
 date: 2008-04-08T22:12:16+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/windows/providing-redirected-start-menus-to-laptops
+
 permalink: /providing-redirected-start-menus-to-laptops/
 dsq_thread_id:
   - "195380425"

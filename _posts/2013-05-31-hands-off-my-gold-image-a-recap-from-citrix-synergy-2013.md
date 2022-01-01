@@ -1,10 +1,10 @@
 ---
-id: 3321
+
 title: Hands off my gold image! A recap from Citrix Synergy 2013
 date: 2013-05-31T14:30:56+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3321
+
 permalink: /hands-off-my-gold-image-a-recap-from-citrix-synergy-2013/
 dsq_thread_id:
   - "1343814052"
@@ -16,7 +16,7 @@ tags:
   - MDT
   - PVS
 ---
-Here's an overview of my talk from Citrix Synergy 2013 - [Hands off my gold image!](https://citrix.g2planet.com/synergylosangeles2013/public_session_view.php?agenda_session_id=274&conference=synergy)  If you were unable to attend Synergy or missed my session, this is a short version of the talk, but hopefully it will give you an idea of what was covered.
+Here's an overview of my talk from Citrix Synergy 2013 - [Hands off my gold image!](https://citrix.g2planet.com/synergylosangeles2013/public_session_view.php?agenda_session_id=274&conference=synergy)  If you were unable to attend Synergy or missed my session, this is a short version of the talk, but hopefully it will give you an idea of what was covered.
 
 ![Slide01.png]({{site.baseurl}}/media/2013/05/Slide01.png)
 
@@ -46,13 +46,13 @@ At what point though, do you spend too much time trying to automate the desktop 
 
 ![Slide12.png](http://xkcd.com/1205/ "Thanks to xkcd for a timely and awesome comic. Click the image for the original page.")
 
-For a solutions provider or consulting practice, build automation speeds many of the common tasks required for a desktop environment. This is why a framework such as MDT is so important - it  provides faster deployment times but only as long as you've put the work in to start with.
+For a solutions provider or consulting practice, build automation speeds many of the common tasks required for a desktop environment. This is why a framework such as MDT is so important - it  provides faster deployment times but only as long as you've put the work in to start with.
 
-In an engagement for smaller environments, automation can sometimes be a tough sell. There will invariably many additional tasks that might be time consuming to automate (typically application installs) and it's not uncommon to find a single task that takes an inordinate amount of time to get right.
+In an engagement for smaller environments, automation can sometimes be a tough sell. There will invariably many additional tasks that might be time consuming to automate (typically application installs) and it's not uncommon to find a single task that takes an inordinate amount of time to get right.
 
 Perhaps in some environments, it's important to strive to automate as much as is possible within a reasonable amount of time and deal with the remaining tasks manually, i.e. use the [80/20](http://en.wikipedia.org/wiki/Pareto_principle) rule to achieve the best bang for your buck.
 
-Here's an excellent example of where build automation can directly impact the user experience. Here's the default user experience of a Windows Server 2008 R2 Remote Desktop Session Host server with the Desktop Experience feature enabled:
+Here's an excellent example of where build automation can directly impact the user experience. Here's the default user experience of a Windows Server 2008 R2 Remote Desktop Session Host server with the Desktop Experience feature enabled:
 
 ![Slide14.png]({{site.baseurl}}/media/2013/05/Slide14.png)
 
@@ -109,7 +109,7 @@ MDT has several major components:
 * WinPE boot image - you can use the MDT console to create custom boot images used to start an OS deployment. Alternatively you could use [Windows Deployment Services](http://technet.microsoft.com/en-us/windowsserver/dd448616.aspx) to boot the WinPE image across the network
 * The target PC - a single task sequence in MDT can be used to deploy Windows to either physical or virtual machines (on any hypervisor), providing consistency across machine types
 
-I have spent quite some time building our MDT deployment share out to become not only a standardised framework but also a library of core application installs. MDT allows anyone to build this in their own environments.
+I have spent quite some time building our MDT deployment share out to become not only a standardised framework but also a library of core application installs. MDT allows anyone to build this in their own environments.
 
 ![MDT.png]({{site.baseurl}}/media/2013/05/MDT.png)
 

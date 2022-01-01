@@ -1,10 +1,10 @@
 ---
-id: 160
+
 title: "Now That's Not What I Expected"
 date: 2006-10-31T00:22:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/now-thats-not-what-i-expected
+
 permalink: /now-thats-not-what-i-expected/
 categories:
   - Applications

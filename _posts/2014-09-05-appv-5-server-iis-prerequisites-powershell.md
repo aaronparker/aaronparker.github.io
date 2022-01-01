@@ -1,10 +1,10 @@
 ---
-id: 3696
+
 title: Configuring IIS Prerequisites for the App-V 5 Server with PowerShell
 date: 2014-09-05T01:04:23+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3696
+
 permalink: /appv-5-server-iis-prerequisites-powershell/
 dsq_thread_id:
   - "2987858354"
@@ -14,7 +14,10 @@ tags:
   - App-V
   - PowerShell
 ---
-![App-V Server 5.0 Setup with missing prerequisites]({{site.baseurl}}/media/2014/09/AppV-Prereqs.png)*App-V Server 5.0 Setup with missing prerequisites*
+![App-V Server 5.0 Setup with missing prerequisites]({{site.baseurl}}/media/2014/09/AppV-Prereqs.png)
+
+App-V Server 5.0 Setup with missing prerequisites
+{:.figcaption}
 
 While I'd much rather recommend that you configure a Windows Server that will host the App-V 5.0 server components via [a solution such as MDT]({{site.baseurl}}/briforum-2014-hands-off-my-gold-image-the-slides/) with the required IIS components enabled in an automated build, here's how to add the components with PowerShell.
 
@@ -40,7 +43,7 @@ If ($Features.Success -eq $True) {
 }
 ```
 
-To keep an App-V 5.0 environment as simple as possible, you should be use port 80 for the Publishing Server. This ensures that the standard HTTP port is used for publishing and no-one has to remember or configure an obscure port on the App-V client.
+To keep an App-V 5.0 environment as simple as possible, you should be use port 80 for the Publishing Server. This ensures that the standard HTTP port is used for publishing and no-one has to remember or configure an obscure port on the App-V client.
 
 As an added bonus, I've created some PowerShell code to change the IIS configuration to move an existing web site off port 80 to another port. In most cases that will be the Default Web Site.
 

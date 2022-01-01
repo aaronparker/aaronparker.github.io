@@ -1,10 +1,10 @@
 ---
-id: 215
+
 title: Migrate a certificate from Secure Gateway to Access Gateway
 date: 2006-08-20T23:44:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/migrate-a-certificate-from-secure-gateway-to-access-gateway
+
 permalink: /migrate-a-certificate-from-secure-gateway-to-access-gateway/
 categories:
   - Citrix

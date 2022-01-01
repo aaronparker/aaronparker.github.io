@@ -1,10 +1,10 @@
 ---
-id: 88
+
 title: Windows Vista Previous Versions, System Restore and Disk Space
 date: 2007-03-04T15:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/windows-vista-previous-versions-system-restore-and-disk-space
+
 permalink: /windows-vista-previous-versions-system-restore-and-disk-space/
 dsq_thread_id:
   - "195378617"

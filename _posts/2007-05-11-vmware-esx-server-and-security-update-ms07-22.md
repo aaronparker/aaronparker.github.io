@@ -1,10 +1,10 @@
 ---
-id: 43
+
 title: VMware ESX Server and Security Update MS07-22
 date: 2007-05-11T00:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/vmware-esx-server-and-security-update-ms07-22
+
 permalink: /vmware-esx-server-and-security-update-ms07-22/
 aktt_notify_twitter:
   - 'yes'

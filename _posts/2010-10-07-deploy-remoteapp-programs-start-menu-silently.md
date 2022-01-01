@@ -1,10 +1,10 @@
 ---
-id: 1973
+
 title: How to silently deploy RemoteApp Programs to the Start Menu
 date: 2010-10-07T14:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/deploying-remoteapp-programs-to-the-start-menu-silently/
+
 permalink: /deploy-remoteapp-programs-start-menu-silently/
 has_been_twittered:
   - 'yes'

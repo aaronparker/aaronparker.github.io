@@ -1,10 +1,10 @@
 ---
-id: 609
+
 title: Customise the Windows Vista Default User Profile
 date: 2008-07-31T22:05:24+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=609
+
 permalink: /customise-the-windows-vista-default-user-profile/
 dsq_thread_id:
   - "195378115"
@@ -35,7 +35,7 @@ Be sure to set the CopyProfile value to False in the UNATTEND.XML, otherwise the
 ```cmd
 @ECHO OFF  
 REM ----------------------
-REM  Script configures the Default User Profile in a Windows Vista/2008 image  
+REM  Script configures the Default User Profile in a Windows Vista/2008 image  
 REM ----------------------
 
 REM Mount the Windows image  

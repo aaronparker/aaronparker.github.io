@@ -1,10 +1,10 @@
 ---
-id: 571
+
 title: Intel vPro and Network Access Protection
 date: 2008-06-09T17:43:16+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/access-control/intel-vpro-and-network-access-protection
+
 permalink: /intel-vpro-and-network-access-protection/
 categories:
   - Microsoft

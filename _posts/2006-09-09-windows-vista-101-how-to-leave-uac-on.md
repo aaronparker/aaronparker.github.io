@@ -1,10 +1,10 @@
 ---
-id: 185
+
 title: 'Windows Vista 101: How to leave UAC on'
 date: 2006-09-09T07:27:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/windows-vista-101-how-to-leave-uac-on
+
 permalink: /windows-vista-101-how-to-leave-uac-on/
 categories:
   - Microsoft

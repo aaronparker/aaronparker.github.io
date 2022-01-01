@@ -1,10 +1,10 @@
 ---
-id: 275
+
 title: We Don't Need No Stinking Anti-Virus
 date: 2006-05-22T23:22:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/we-dont-need-no-stinking-anti-virus
+
 permalink: /we-dont-need-no-stinking-anti-virus/
 categories:
   - Microsoft

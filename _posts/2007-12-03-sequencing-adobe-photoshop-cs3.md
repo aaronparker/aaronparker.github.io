@@ -1,10 +1,10 @@
 ---
-id: 379
+
 title: Sequencing Adobe Photoshop CS3
 date: 2007-12-03T18:21:15+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/sequencing-adobe-photoshop-cs3
+
 permalink: /sequencing-adobe-photoshop-cs3/
 dsq_thread_id:
   - "195379832"

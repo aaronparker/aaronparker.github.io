@@ -1,15 +1,9 @@
 ---
-id: 5792
 title: Simple Country of Origin Control for NetScaler with Azure AD
 date: 2017-09-28T16:29:39+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=5792
 permalink: /country-of-origin-control-netscaler-azuread/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
-dsq_thread_id:
-  - "6176240262"
 image: /media/2017/09/8439088143_259e3f274f_k.jpg
 categories:
   - Citrix
@@ -18,6 +12,9 @@ tags:
   - Conditional Access
   - NetScaler
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Great news! [Microsoft has enabled a number of available conditions and custom controls in Azure AD](https://blogs.technet.microsoft.com/enterprisemobility/2017/09/27/whats-new-with-azure-active-directory-ignite-2017/) for use in Conditional Access making these policies even more useful. This includes a simple method to control access to Citrix NetScaler by country of origin.
 
 Back in March of this year, I was working on a project to design a solution for hosting applications in an Azure data centre, with access provided by Citrix XenApp and NetScaler. This particular customer needed to control access to both Office 365 applications and XenApp from specific locations only.
@@ -40,9 +37,9 @@ Doing so allows IT to control access to any application, whether that be legacy 
 
 The new conditions and controls should be available now, in preview, for just about everyone. These include:
 
-  * Custom controls - JSON for customised controls from 3rd party claim providers. This should enable just about any type of user or device control in a CA policy
-  * Terms of use - require a user to consent to your organisation’s terms of use before they get access to an application
-  * VPN connectivity - force device compliance (for Windows 10 devices) before being allowed access to a corporate VPN
+* Custom controls - JSON for customised controls from 3rd party claim providers. This should enable just about any type of user or device control in a CA policy
+* Terms of use - require a user to consent to your organisation’s terms of use before they get access to an application
+* VPN connectivity - force device compliance (for Windows 10 devices) before being allowed access to a corporate VPN
 
 ![New conditions and controls in preview]({{site.baseurl}}/media/2017/09/AzureAD-CA-Policies-Zoom.png)
 

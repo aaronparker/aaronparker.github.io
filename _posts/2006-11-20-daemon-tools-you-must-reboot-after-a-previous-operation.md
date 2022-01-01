@@ -1,10 +1,10 @@
 ---
-id: 151
+
 title: 'Daemon Tools: You must reboot after a previous operation'
 date: 2006-11-20T22:20:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/daemon-tools-you-must-reboot-after-a-previous-operation
+
 permalink: /daemon-tools-you-must-reboot-after-a-previous-operation/
 dsq_thread_id:
   - "195378845"

@@ -1,10 +1,10 @@
 ---
-id: 4185
+
 title: 'App-V 5 FAQ: Visual C++ Redistributable as local installs or allow App-V to deploy as needed?'
 date: 2015-10-29T21:21:32+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=4185
+
 permalink: /appv5-faq-visualc-redistributables/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'

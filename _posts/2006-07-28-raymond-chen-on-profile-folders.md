@@ -1,10 +1,10 @@
 ---
-id: 261
+
 title: Raymond Chen on Profile Folders
 date: 2006-07-28T11:31:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/raymond-chen-on-profile-folders
+
 permalink: /raymond-chen-on-profile-folders/
 categories:
   - Microsoft

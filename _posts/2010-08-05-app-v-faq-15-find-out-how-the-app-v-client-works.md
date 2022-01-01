@@ -1,10 +1,10 @@
 ---
-id: 1718
+
 title: 'App-V FAQ: Where do I go to find out how the App-V Client works?'
 date: 2010-08-05T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-15-where-do-i-found-out-how-the-app-v-client-works
+
 permalink: /app-v-faq-15-find-out-how-the-app-v-client-works/
 has_been_twittered:
   - 'yes'

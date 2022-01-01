@@ -1,15 +1,9 @@
 ---
-id: 5827
 title: Improving Ivanti Application Control Message Boxes
 date: 2017-12-02T23:37:34+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=5827
 permalink: /ivanti-application-control-message-boxes/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
-dsq_thread_id:
-  - "6324381112"
 image: /media/2017/11/tim-mossholder-322350.jpg
 categories:
   - General
@@ -18,6 +12,9 @@ tags:
   - UX
   - Whitelisting
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Ivanti Application Control (previously [AppSense Application Manager](https://www.ivanti.com.au/products/application-control)) is an application whitelisting and privilege management solution; however, I think you're likely aware of that since you're reading this article. Application Control has a number of customisable message boxes that are displayed to the end-user for Windows application whitelisting or privilege elevation scenarios. In this article, I'll discuss improving the end-user experience with some visual flair and text.
 
 ## Default Message Boxes
@@ -34,13 +31,13 @@ Here's another message box - this one is shown for privilege escalation. Similar
 
 There are several scenarios where Application Control may display a message to the end user:
 
-  * Access Denied - execution of an application is denied
-  * Application Limits Exceeded - the end-user is prevented from running multiple instances of an application
-  * Self-Elevation - an end-user can elevate an application via Application Control instead of being granted administrative rights
-  * System Controls - the user can be prevented from uninstalling an application, clearing specific event logs or stopping services
-  * Time Limits - time limits can be put on application execution
-  * Self-Authorization - end-user can be given the ability to whitelist an application themselves
-  * Network Connections - controls can be placed on network destinations, paths or ports
+* Access Denied - execution of an application is denied
+* Application Limits Exceeded - the end-user is prevented from running multiple instances of an application
+* Self-Elevation - an end-user can elevate an application via Application Control instead of being granted administrative rights
+* System Controls - the user can be prevented from uninstalling an application, clearing specific event logs or stopping services
+* Time Limits - time limits can be put on application execution
+* Self-Authorization - end-user can be given the ability to whitelist an application themselves
+* Network Connections - controls can be placed on network destinations, paths or ports
 
 So, potentially a reasonable level of interaction with the end-user and thus Application Control can have some impact on the perception of a user's everyday experience. Fortunately, each of these message boxes is almost fully customisable - Ivanti provides the administrator with the ability to control both the appearance and text in the message to something that may suit a specific requirement or the environment into which it is deployed.
 
@@ -52,9 +49,9 @@ Application Control supports [customising the messages as well as the UI with HT
 
 When customising these I recommend paying careful attention to the language and tone of the text. Empowering a user to take the right, or no, action without generating unnecessary service desk calls is important. Here are my 3 recommendations for customising these messages boxes for an environment:
 
-  * Ensure the message boxes fit with Microsoft UX guidelines for Windows - apart from not visually assaulting the senses, fitting in with the standard Windows visual style will provide users with a sense that these messages are a part of the normal Windows desktop workflow
-  * Don't overwhelm the user with explanatory text that they aren't going to read anyway - avoid [dialogue box fatigue](https://blogs.msdn.microsoft.com/oldnewthing/20060526-03/?p=31063). If you can, provide a link to more information, so that the user can choose to read up on why the system has been implemented
-  * Don't assume the user is doing the wrong thing. Taking a default hostile stance via the language or wording used in the messages won't foster a sense of trust. Yes, [insider threats are often the main cause of security breaches](https://www.tripwire.com/state-of-security/security-data-protection/insider-threats-main-security-threat-2017/), but IT can do its part in building team trust
+* Ensure the message boxes fit with Microsoft UX guidelines for Windows - apart from not visually assaulting the senses, fitting in with the standard Windows visual style will provide users with a sense that these messages are a part of the normal Windows desktop workflow
+* Don't overwhelm the user with explanatory text that they aren't going to read anyway - avoid [dialogue box fatigue](https://blogs.msdn.microsoft.com/oldnewthing/20060526-03/?p=31063). If you can, provide a link to more information, so that the user can choose to read up on why the system has been implemented
+* Don't assume the user is doing the wrong thing. Taking a default hostile stance via the language or wording used in the messages won't foster a sense of trust. Yes, [insider threats are often the main cause of security breaches](https://www.tripwire.com/state-of-security/security-data-protection/insider-threats-main-security-threat-2017/), but IT can do its part in building team trust
 
 I believe these to be reasonable principles to consider, but of course, some environments may have specific requirements.
 
@@ -68,7 +65,10 @@ Microsoft has specific message boxes in User Account Control that I've used as t
 
 [UAC (and SmartScreen) displays various message boxes](https://en.wikipedia.org/wiki/User_Account_Control) depending on the action taken that have different colours to better provide the user with an immediate visual feedback.
 
-![From top to bottom: blocked app, app with unknown publisher, app with a known/trusted publisher]({{site.baseurl}}/media/2017/11/User_Account_Control.png)*From top to bottom: blocked app, app with unknown publisher, app with a known/trusted publisher*
+![From top to bottom: blocked app, app with unknown publisher, app with a known/trusted publisher]({{site.baseurl}}/media/2017/11/User_Account_Control.png)
+
+From top to bottom: blocked app, app with unknown publisher, app with a known/trusted publisher
+{:.figcaption}
 
 Sticking with an established visual style, we can use these colours in our Application Control message boxes. I haven't found documentation on the colours from Microsoft, so the hex values below might not be 100% accurate.
 
@@ -88,7 +88,7 @@ Sticking with an established visual style, we can use these colours in our Appli
   I've used a softer red (#bf3235) background from the Ivanti Application Control console instead of UAC
 </div>
 
-In addition to the visual style, we can use these as examples of the language to use in our customised Application Control message boxes. 
+In addition to the visual style, we can use these as examples of the language to use in our customised Application Control message boxes.
 
 ## Updating Ivanti Application Control Message Boxes
 

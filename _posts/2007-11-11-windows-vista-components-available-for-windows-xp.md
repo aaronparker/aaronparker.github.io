@@ -1,10 +1,10 @@
 ---
-id: 364
+
 title: Windows Vista components available for Windows XP
 date: 2007-11-11T16:51:19+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/windows/windows-vista-components-available-for-windows-xp
+
 permalink: /windows-vista-components-available-for-windows-xp/
 dsq_thread_id:
   - "195379583"
@@ -42,7 +42,7 @@ Here's a list of components developed for Windows Vista or during the same devel
     </td>
     
     <td width="299" valign="top">
-       
+       
     </td>
   </tr>
   
@@ -52,7 +52,7 @@ Here's a list of components developed for Windows Vista or during the same devel
     </td>
     
     <td width="299" valign="top">
-       
+       
     </td>
   </tr>
   
@@ -82,7 +82,7 @@ Here's a list of components developed for Windows Vista or during the same devel
     </td>
     
     <td width="299" valign="top">
-       
+       
     </td>
   </tr>
   
@@ -142,7 +142,7 @@ Here's a list of components developed for Windows Vista or during the same devel
     </td>
     
     <td width="299" valign="top">
-       
+       
     </td>
   </tr>
   
@@ -292,7 +292,7 @@ Here's a list of components developed for Windows Vista or during the same devel
     </td>
     
     <td width="299" valign="top">
-       
+       
     </td>
   </tr>
   
@@ -302,7 +302,7 @@ Here's a list of components developed for Windows Vista or during the same devel
     </td>
     
     <td width="299" valign="top">
-       
+       
     </td>
   </tr>
   

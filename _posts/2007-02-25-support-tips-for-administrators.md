@@ -1,10 +1,10 @@
 ---
-id: 96
+
 title: Support Tips for Administrators
 date: 2007-02-25T18:21:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/support-tips-for-administrators
+
 permalink: /support-tips-for-administrators/
 categories:
   - Community

@@ -1,10 +1,10 @@
 ---
-id: 47
+
 title: Access Gateway Advanced and Outlook Web Access 2007
 date: 2007-05-09T00:05:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/access-gateway-advanced-and-outlook-web-access-2007
+
 permalink: /access-gateway-advanced-and-outlook-web-access-2007/
 categories:
   - Citrix

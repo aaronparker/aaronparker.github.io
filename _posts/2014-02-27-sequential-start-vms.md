@@ -1,10 +1,10 @@
 ---
-id: 3578
+
 title: Sequential Starting of a List of VMs
 date: 2014-02-27T12:16:51+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=3578
+
 permalink: /sequential-start-vms/
 dsq_thread_id:
   - "2329759710"
@@ -13,17 +13,17 @@ categories:
 tags:
   - PowerShell
 ---
-In my lab environment, I often want to start a list of virtual machines, but without taxing the system in the process by starting them all at the same time.  I could do that manually, but that's no fun.
+In my lab environment, I often want to start a list of virtual machines, but without taxing the system in the process by starting them all at the same time.  I could do that manually, but that's no fun.
 
 Here's a short function I wrote to sequentially start a list of virtual machines - the script will start a VM and wait for that VM to boot before starting the next VM. You can optionally also wait additional time before starting the next VM to give the first one some time to finish starting it's services etc.
 
 This version currently supports Hyper-V only. The script does not currently return anything, but has a number of parameters:
 
-  * ComputerName - the name of the Hyper-V host. Specify "." for the local machine (without quotes)
-  * VM - specify a comma separated list of VMs
-  * Wait - the number of seconds to wait between starting a VM after the previous VM. Specify the number of VMs as a number (integer) only. This will default to 180 seconds
-  * ShowProgress - Specify whether to show progress while starting the VMs. This is cosmetic only, but does give some indication as to how far through the boot process the script is.
-  * Other standard parameters such as Verbose are supported.
+* ComputerName - the name of the Hyper-V host. Specify "." for the local machine (without quotes)
+* VM - specify a comma separated list of VMs
+* Wait - the number of seconds to wait between starting a VM after the previous VM. Specify the number of VMs as a number (integer) only. This will default to 180 seconds
+* ShowProgress - Specify whether to show progress while starting the VMs. This is cosmetic only, but does give some indication as to how far through the boot process the script is.
+* Other standard parameters such as Verbose are supported.
 
 ```powershell
 Function Start-SequentialVMs {
@@ -119,4 +119,4 @@ Function Start-SequentialVMs {
 }
 ```
 
-Save the script as _Start-SequentialVMs.ps1_ and run it or add the function to your [PowerShell profile](http://technet.microsoft.com/en-us/library/ee692764.aspx) so that the function is available when starting PowerShell. Use Get-Help to see the full syntax and examples from within a PowerShell window.
+Save the script as _Start-SequentialVMs.ps1_ and run it or add the function to your [PowerShell profile](http://technet.microsoft.com/en-us/library/ee692764.aspx) so that the function is available when starting PowerShell. Use Get-Help to see the full syntax and examples from within a PowerShell window.

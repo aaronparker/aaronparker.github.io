@@ -1,10 +1,10 @@
 ---
-id: 222
+
 title: 'Diary of an Exchange 2007 Upgrade: Part 1'
 date: 2007-05-22T14:32:52+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/exchange/diary-of-an-exchange-2007-upgrade-part-1
+
 permalink: /diary-of-an-exchange-2007-upgrade-part-1/
 dsq_thread_id:
   - "195378977"

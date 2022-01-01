@@ -1,10 +1,10 @@
 ---
-id: 515
+
 title: Access-Based Enumeration in Windows Server
 date: 2008-04-04T17:52:16+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/windows/access-based-enumeration-in-windows-server
+
 permalink: /access-based-enumeration-in-windows-server/
 dsq_thread_id:
   - "195380343"

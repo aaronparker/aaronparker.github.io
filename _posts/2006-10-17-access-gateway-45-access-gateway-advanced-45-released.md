@@ -1,10 +1,10 @@
 ---
-id: 164
+
 title: Access Gateway 4.5 / Access Gateway Advanced 4.5 Released
 date: 2006-10-17T16:45:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/access-gateway-45-access-gateway-advanced-45-released
+
 permalink: /access-gateway-45-access-gateway-advanced-45-released/
 categories:
   - Citrix

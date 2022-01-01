@@ -1,10 +1,10 @@
 ---
-id: 475
+
 title: Planning and Deploying Group Policy? This Is For You
 date: 2008-02-19T23:00:18+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/group-policy/planning-and-deploying-group-policy-this-is-for-you
+
 permalink: /planning-and-deploying-group-policy-this-is-for-you/
 dsq_thread_id:
   - "195380154"

@@ -1,10 +1,10 @@
 ---
-id: 270
+
 title: Applications, Vendors and Citrix Presentation Server
 date: 2006-06-16T10:09:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/applications-vendors-and-citrix-presentation-server
+
 permalink: /applications-vendors-and-citrix-presentation-server/
 categories:
   - Citrix

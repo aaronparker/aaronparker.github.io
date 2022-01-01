@@ -1,13 +1,9 @@
 ---
-id: 3727
 title: Updating an MCS-based XenDesktop Machine Catalog with PowerShell
 date: 2014-10-27T23:34:50+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=3727
 permalink: /xendesktop-update-mcs-machine-catalog-powershell/
-dsq_thread_id:
-  - "3161316057"
 image: /media/2014/10/powershell_ise.png
 categories:
   - Automation
@@ -15,11 +11,11 @@ tags:
   - PowerShell
   - XenDesktop
 ---
-I wrote previously about [automating the creation of an MCS-based machine catalog in XenDesktop with PowerShell]({{site.baseurl}}/xendesktop-mcs-machine-catalog-powershell/), so in this article I'll cover updating that machine catalog via PowerShell.
+I wrote previously about [automating the creation of an MCS-based machine catalog in XenDesktop with PowerShell]({{site.baseurl}}/xendesktop-mcs-machine-catalog-powershell/), so in this article I'll cover updating that machine catalog via PowerShell.
 
 Separate to this article would be the process of creating the updated image - that could be done manually (by updating the existing master image), or by [automating a new master image deployment with MDT]({{site.baseurl}}/briforum-2014-hands-off-my-gold-image-the-slides/), or any other method that you can think of.
 
-Just as with creating the machine catalog, the PowerShell output from Studio when updating a catalog is a place to start - the code provided isn't reusable without some effort to make it work.
+Just as with creating the machine catalog, the PowerShell output from Studio when updating a catalog is a place to start - the code provided isn't reusable without some effort to make it work.
 
 ## Linking the Code to the UI
 
@@ -27,7 +23,7 @@ I'll walk briefly through the wizards to show, in part, how the code relates to 
 
 In this case, I've already created the machine catalog and updated my master image and created a snapshot. The hypervisor isn't important because Citrix Studio abstracts this from the process when performing the update (I do need to be using the same infrastructure as the target catalog).
 
-To find the snapshot to use, I’ve obtained the path to the master image and a specified snapshot via the _Get-ChildItem_ command (on the path XDHyp:\HostingUnits\<Storage Resource>). This is essentially a path/directory that I can parse - I've explicitly specified the master image and the snapshot to use. I need the path to the snapshot so that I can use that in the publish step for the image update.
+To find the snapshot to use, I’ve obtained the path to the master image and a specified snapshot via the _Get-ChildItem_ command (on the path XDHyp:\HostingUnits\<Storage Resource>). This is essentially a path/directory that I can parse - I've explicitly specified the master image and the snapshot to use. I need the path to the snapshot so that I can use that in the publish step for the image update.
 
 ```powershell
 Get-ChildItem "XDHyp:\HostingUnits\"
@@ -42,12 +38,12 @@ I can choose from a couple of rollout strategies for the image update - I can ch
 [Start-BrokerRebootCycle](http://support.citrix.com/proddocs/topic/citrix-broker-admin-v2-xd75/start-brokerrebootcycle-xd75.html) is used to control the the reboot cycle, but this is called at the end of the script to ensure the update process is completed first.
 
 ```powershell
-Start-BrokerRebootCycle -InputObject @(<Machine Catalog Name>) -RebootDuration 120 -WarningDuration 15 -WarningMessage <message> -WarningTitle <message>
+Start-BrokerRebootCycle -InputObject @(<Machine Catalog Name>) -RebootDuration 120 -WarningDuration 15 -WarningMessage <message> -WarningTitle <message>
 ```
 
 ![Rollout]({{site.baseurl}}/media/2014/10/02-Rollout-02.png)
 
-[Publish-ProvMasterVmImage](http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/publish-provmastervmimage-xd75.html) is used to publish the image. The process can then be monitored by getting updates for the process via [Get-ProvTask]("http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/get-provtask-xd75.html). I've opted to show a progress bar while the update is on-going before initiating the desktop reboot.
+[Publish-ProvMasterVmImage](http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/publish-provmastervmimage-xd75.html) is used to publish the image. The process can then be monitored by getting updates for the process via [Get-ProvTask]("http://support.citrix.com/proddocs/topic/citrix-machinecreation-admin-v2-xd75/get-provtask-xd75.html). I've opted to show a progress bar while the update is on-going before initiating the desktop reboot.
 
 ![Catalog update summary]({{site.baseurl}}/media/2014/10/04-Summary.png)
 

@@ -1,15 +1,9 @@
 ---
-id: 5441
 title: Install-VisualCRedistributables.ps1 – Now with ConfigMgr Support!
 date: 2017-05-08T23:25:28+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=5441
 permalink: /visual-c-redistributable-installer-configmgr/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
-dsq_thread_id:
-  - "5797643210"
 image: /media/2017/05/VCredist_ConfigMgr.png
 categories:
   - Microsoft
@@ -22,9 +16,9 @@ I recently [posted an article]({{site.baseurl}}/visual-c-redistributable-install
 
 Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you can [download from the releases page](https://github.com/aaronparker/Install-VisualCRedistributables/releases) and includes the following updates:
 
-  * VisualCRedistributables.xml updated with MSI Product codes for the redistributables
-  * Install-VisualCRedistributables.ps1 updated with ConfigMgr support - create applications for the redistributables in ConfigMgr
-  * Updated with additional parameter validation, parameter sets, inline comments
+* VisualCRedistributables.xml updated with MSI Product codes for the redistributables
+* Install-VisualCRedistributables.ps1 updated with ConfigMgr support - create applications for the redistributables in ConfigMgr
+* Updated with additional parameter validation, parameter sets, inline comments
 
 ## Overview
 
@@ -59,11 +53,11 @@ Each major version of the redistributables is grouped by that defines the major 
 
 The properties of each redistributable are defined in each node:
 
-  * Name - the name of the redistributable as displayed on the download page. Not used in the script, but useful for reading the XML file.
-  * ShortName - the redistributable will be downloaded to Release\Architecture\ShortName
-  * URL - this is the URL to the page at microsoft.com/downloads. Not used in the script, but useful for referencing the download as needed
-  * ProductCode - this is the MSI Product Code for the specified VC++ App that will be used to import the package into Configuration Manager
-  * Download - this is the URL to the installer so that the script can download each redistributable
+* Name - the name of the redistributable as displayed on the download page. Not used in the script, but useful for reading the XML file.
+* ShortName - the redistributable will be downloaded to Release\Architecture\ShortName
+* URL - this is the URL to the page at microsoft.com/downloads. Not used in the script, but useful for referencing the download as needed
+* ProductCode - this is the MSI Product Code for the specified VC++ App that will be used to import the package into Configuration Manager
+* Download - this is the URL to the installer so that the script can download each redistributable
 
 ### Parameters
 
@@ -113,9 +107,7 @@ The Redistributables will installed in the order specified in the XML file.
 
 Here is an example of the end result with the Redistributables installed. Note that 2015 and 2017 are the same major version (14.x), so once 2017 is installed, 2015 will not be displayed in the programs list.
 
-
 Visual C++ Redistributables 2005 to 2017 (including 2015) installed:
-
 
 #### ConfigMgr
 
@@ -137,13 +129,12 @@ Example: Download Visual C++ Redistributables listed in VisualCRedistributables.
 
 This will look similar to the following in the Configuration Manager console:
 
-
 ## Finally
 
 Work is proceeding on additional updates including the following:
 
-  * Provide arguments for specifying processor architectures (x86, x64) and platforms (2005, 2012, 2017, etc.) to enable only those specified for download, install etc. without having to modify the XML file
-  * Add software versions for import into ConfigMgr applications
-  * Specify a folder for creating the ConfigMgr applications in. Currently, applications are created in the top level Applications node
+* Provide arguments for specifying processor architectures (x86, x64) and platforms (2005, 2012, 2017, etc.) to enable only those specified for download, install etc. without having to modify the XML file
+* Add software versions for import into ConfigMgr applications
+* Specify a folder for creating the ConfigMgr applications in. Currently, applications are created in the top level Applications node
 
 Feedback and bug reports welcome.

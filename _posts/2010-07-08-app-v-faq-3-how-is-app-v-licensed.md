@@ -1,10 +1,10 @@
 ---
-id: 1674
+
 title: 'App-V FAQ: How is App-V licensed?'
 date: 2010-07-08T08:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-3-how-app-v-licensed
+
 permalink: /app-v-faq-3-how-is-app-v-licensed/
 has_been_twittered:
   - 'yes'
@@ -48,9 +48,9 @@ If you have a [TechNet](http://technet.microsoft.com/en-us/subscriptions/default
 
 ## App-V Management Server and Streaming Server
 
-No additional licensing requirements are required for the Management Server or the Streaming Server; however you will still need to meet separate licensing requirements for the platform on which the Management Server and the Streaming Server run on.
+No additional licensing requirements are required for the Management Server or the Streaming Server; however you will still need to meet separate licensing requirements for the platform on which the Management Server and the Streaming Server run on.
 
-The Management Server will require [Windows Server](http://www.microsoft.com/windowsserver2008/en/us/licensing-faq.aspx) and [SQL Server licenses](http://www.microsoft.com/sqlserver/2008/en/us/licensing-faq.aspx). The Streaming Server requires only a Windows Server license as it does not connect to a data store.
+The Management Server will require [Windows Server](http://www.microsoft.com/windowsserver2008/en/us/licensing-faq.aspx) and [SQL Server licenses](http://www.microsoft.com/sqlserver/2008/en/us/licensing-faq.aspx). The Streaming Server requires only a Windows Server license as it does not connect to a data store.
 
 ## Are any of the components available separately?
 

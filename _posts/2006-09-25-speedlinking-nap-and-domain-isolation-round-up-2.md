@@ -1,10 +1,10 @@
 ---
-id: 180
+
 title: 'The Short NAP: September 25th 2006'
 date: 2006-09-25T16:58:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/speedlinking-nap-and-domain-isolation-round-up-2
+
 permalink: /speedlinking-nap-and-domain-isolation-round-up-2/
 categories:
   - Microsoft

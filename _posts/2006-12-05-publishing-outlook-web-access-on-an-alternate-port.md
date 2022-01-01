@@ -1,10 +1,10 @@
 ---
-id: 141
+
 title: Publishing Outlook Web Access on an Alternate Port
 date: 2006-12-05T18:39:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/publishing-outlook-web-access-on-an-alternate-port
+
 permalink: /publishing-outlook-web-access-on-an-alternate-port/
 categories:
   - Microsoft

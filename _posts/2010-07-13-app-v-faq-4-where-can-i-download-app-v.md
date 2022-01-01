@@ -1,10 +1,10 @@
 ---
-id: 1676
+
 title: 'App-V FAQ: Where can I download App-V?'
 date: 2010-07-13T08:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-4-where-can-i-download-app-v
+
 permalink: /app-v-faq-4-where-can-i-download-app-v/
 has_been_twittered:
   - 'yes'
@@ -47,8 +47,8 @@ If you have a TechNet or MSDN subscription you can download several versions of 
 
   * Login into [TechNet](http://technet.microsoft.com/) or [MSDN](http://msdn.microsoft.com/) with your Windows Live ID
   * Navigate to _Downloads and Product Keys_
-  * App-V for RDS can be found under _Product Categories_ / _Servers_ / _Application Virtualization_.
-  * App-V for Desktops be found under _<em style="line-height: 24px;">Product Categories / </em>Servers_ / _Microsoft Desktop Optimization Pack_ or _Servers_ / _Application Virtualization_.
+  * App-V for RDS can be found under _Product Categories_ / _Servers_ / _Application Virtualization_.
+  * App-V for Desktops be found under _<em style="line-height: 24px;">Product Categories / </em>Servers_ / _Microsoft Desktop Optimization Pack_ or _Servers_ / _Application Virtualization_.
 
 The following downloads should be available to TechNet and MSDN subscribers
 

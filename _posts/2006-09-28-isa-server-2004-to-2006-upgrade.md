@@ -1,10 +1,10 @@
 ---
-id: 177
+
 title: ISA Server 2004 to 2006 Upgrade
 date: 2006-09-28T04:15:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/isa-server-2004-to-2006-upgrade
+
 permalink: /isa-server-2004-to-2006-upgrade/
 categories:
   - Microsoft

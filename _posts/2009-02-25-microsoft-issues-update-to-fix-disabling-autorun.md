@@ -1,10 +1,10 @@
 ---
-id: 936
+
 title: Microsoft issues update to fix disabling Autorun
 date: 2009-02-25T08:30:36+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=936
+
 permalink: /microsoft-issues-update-to-fix-disabling-autorun/
 aktt_notify_twitter:
   - 'yes'
@@ -30,7 +30,7 @@ On Windows XP/2003 the update does two things - updates SHELL32.DLL and creates 
   * [Update for Windows Server 2003 for Itanium-based Systems (KB950582)](http://www.microsoft.com/downloads/details.aspx?FamilyId=5795F63E-1FD9-4A13-9650-1015E14B6D11)
   * [Update for Windows 2000 (KB950582)](http://www.microsoft.com/downloads/details.aspx?FamilyId=C192EDCF-CA3D-44E3-8ECC-49C5F4DA5405)
 
-For Windows Vista and Windows Server 2008, this issue was addressed in Microsoft [Security Bulletin MS08-038](http://www.microsoft.com/technet/security/bulletin/ms08-038.mspx), released July last year. You've deployed that update right?
+For Windows Vista and Windows Server 2008, this issue was addressed in Microsoft [Security Bulletin MS08-038](http://www.microsoft.com/technet/security/bulletin/ms08-038.mspx), released July last year. You've deployed that update right?
 
 So the question is then, does Autorun have a place in corporate environments? I think the answer is no - a little tradeoff in usability for a big gain in security. Here's a few interesting articles by Steve Riley and Jesper Johasson on the subject:
 

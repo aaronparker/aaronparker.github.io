@@ -1,10 +1,10 @@
 ---
-id: 604
+
 title: Windows Update 80092026 plus Certificate Crypto Operation Failed
 date: 2008-07-17T18:21:28+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/general/windows-update-80092026-plus-certificate-crypto-operation-failed
+
 permalink: /windows-update-80092026-plus-certificate-crypto-operation-failed/
 categories:
   - Microsoft

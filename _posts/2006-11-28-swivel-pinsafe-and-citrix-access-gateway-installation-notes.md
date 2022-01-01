@@ -1,10 +1,10 @@
 ---
-id: 146
+
 title: Swivel PINsafe and Citrix Access Gateway Installation Notes
 date: 2006-11-28T16:50:25+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/swivel-pinsafe-and-citrix-access-gateway-installation-notes
+
 permalink: /swivel-pinsafe-and-citrix-access-gateway-installation-notes/
 categories:
   - Microsoft

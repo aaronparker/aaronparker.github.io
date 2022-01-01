@@ -1,10 +1,10 @@
 ---
-id: 376
+
 title: 'The Short NAP: Friday November 22 2007'
 date: 2007-11-23T06:00:31+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/access-control/the-short-nap-friday-november-22-2007
+
 permalink: /the-short-nap-friday-november-22-2007/
 dsq_thread_id:
   - "195379759"

@@ -1,10 +1,10 @@
 ---
-id: 89
+
 title: Print Migrator utility included in Windows Vista/Longhorn Server
 date: 2007-03-03T22:13:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/print-migrator-utility-included-in-windows-vistalonghorn-server
+
 permalink: /print-migrator-utility-included-in-windows-vistalonghorn-server/
 categories:
   - Microsoft

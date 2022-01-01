@@ -1,10 +1,10 @@
 ---
-id: 117
+
 title: 'Shameless Self Promotion: Unattended Install Scripts'
 date: 2007-01-22T21:52:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/shameless-self-promotion-unattended-install-scripts
+
 permalink: /shameless-self-promotion-unattended-install-scripts/
 categories:
   - Automation

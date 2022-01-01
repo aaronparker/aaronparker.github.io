@@ -1,10 +1,10 @@
 ---
-id: 199
+
 title: The Ten Commandments of Exchange Server
 date: 2006-08-25T06:09:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/the-ten-commandments-of-exchange-server
+
 permalink: /the-ten-commandments-of-exchange-server/
 categories:
   - Microsoft

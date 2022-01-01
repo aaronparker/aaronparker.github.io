@@ -1,13 +1,9 @@
 ---
-id: 5893
 title: Folder Redirection to OneDrive on Windows 10 with Intune
 date: 2017-12-27T22:07:40+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=5893
 permalink: /onedrive-intune-folder-redirection/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
 image: /media/2017/12/andrew-pons-6488.jpg
 categories:
   - Microsoft
@@ -54,11 +50,11 @@ Because we also need to move the folder contents, I've forked the script and add
 
 My version updates the **Set-KnownFolderPath** function to ensure all known folders for Documents, Pictures etc. are covered and adds:
 
-  * **Get-KownFolderPath** - we need to know what the existing physical path is before redirecting the folder
-  * **Move-Files** - a wrapper for Robocopy.exe. Rather than implement the same functionality of Robocopy in PowerShell, the script references it directly to move the contents of the folder to the new location. This function ensures that we also get a full log of all files moved to the new path.
-  * **Redirect-Folder** - this function wraps some testing around the redirect + move functionality
-  * Reads the OneDrive for Business sync folder from the registry to avoid hard-coding the target path
-  * Implements redirection for the Desktop, Documents and Pictures folders.
+* **Get-KnownFolderPath** - we need to know what the existing physical path is before redirecting the folder
+* **Move-Files** - a wrapper for Robocopy.exe. Rather than implement the same functionality of Robocopy in PowerShell, the script references it directly to move the contents of the folder to the new location. This function ensures that we also get a full log of all files moved to the new path.
+* **Redirect-Folder** - this function wraps some testing around the redirect + move functionality
+* Reads the OneDrive for Business sync folder from the registry to avoid hard-coding the target path
+* Implements redirection for the Desktop, Documents and Pictures folders.
 
 My script could do with some additional error checking and robustness; however, it provides the functionality required to redirect specific folders into the OneDrive folder and can be re-run as necessary to enforce redirection for each folder.
 
@@ -66,7 +62,10 @@ My script could do with some additional error checking and robustness; however, 
 
 Intune allows you to implement PowerShell scripts that run in the user context or Local System contexts.
 
-![Intune PowerShell script settings, OneDrive]({{site.baseurl}}/media/2017/12/ScriptSettings.png)*Intune PowerShell script settings - user context. Not what we want.*
+![Intune PowerShell script settings, OneDrive]({{site.baseurl}}/media/2017/12/ScriptSettings.png)
+
+Intune PowerShell script settings - user context. Not what we want.
+{:.figcaption}
 
 Implementing the redirection script in the user context though fails when adding the SHSetKnownFolderPath class to the script session. Additionally, deploying the script in this manner will only run the script once - if the OneDrive client is not configured correctly when the script runs, the folder redirection will then never work.
 
@@ -82,19 +81,31 @@ Right now this script is quite simple - it will need to be updated to remove or 
 
 To deploy the script via Intune, save it locally as Set-RedirectOneDriveTask.ps1 and add as a new PowerShell script under Device Configuration. Ensure that the scheduled task is created successfully with the script run as Local System by setting 'Run this script using the logged on credentials' to No.
 
-![Adding the Create OneDrive Redirect Task script to Intune]({{site.baseurl}}/media/2017/12/CreateOneDriveRedirectTask.png)*Adding the Create OneDrive Redirect Task script to Intune*
+![Adding the Create OneDrive Redirect Task script to Intune]({{site.baseurl}}/media/2017/12/CreateOneDriveRedirectTask.png)
+
+Adding the Create OneDrive Redirect Task script to Intune
+{:.figcaption}
 
 Assign the script to a user or device group and track deployment progress in the Overview blade. A successful deployment will result in a scheduled task on the target PCs.
 
-![OneDrive Folder Redirection Task Properties]({{site.baseurl}}/media/2017/12/RedirectTaskProperties.png)*OneDrive Folder Redirection Task Properties*
+![OneDrive Folder Redirection Task Properties]({{site.baseurl}}/media/2017/12/RedirectTaskProperties.png)
+
+OneDrive Folder Redirection Task Properties
+{:.figcaption}
 
 When the Intune Management Extension runs the script and creates the task, you'll see the script and a transcript in `C:\ProgramData\Scripts`.
 
-![The downloaded folder redirection script]({{site.baseurl}}/media/2017/12/Scripts.png)*The downloaded folder redirection script*
+![The downloaded folder redirection script]({{site.baseurl}}/media/2017/12/Scripts.png)
+
+The downloaded folder redirection script
+{:.figcaption}
 
 When the folder redirection script runs Robocopy to move documents, it will log those moves to `%LocalAppData%\RedirectLogs`.
 
-![Data copy/move logs]({{site.baseurl}}/media/2017/12/RedirectLogs.png)*Data copy/move logs*
+![Data copy/move logs]({{site.baseurl}}/media/2017/12/RedirectLogs.png)
+
+Data copy/move logs
+{:.figcaption}
 
 When implemented in this way, the script will run at user login and successfully enable folder redirection into the OneDrive for Business sync folder. The user will see a PowerShell script window - pointing the scheduled task trigger to a VBscript wrapper could fix this.
 
@@ -110,7 +121,10 @@ In this article, I've outlined an approach to implementing folder redirection wi
 
 Redirecting the Desktop, Documents and Pictures to OneDrive should protect key user folders via data synchronisation. While redirecting additional folders is possible, they can often contain data that would be less this ideal for synchronising to OneDrive.
 
-![Redirected Documents folder in the OneDrive sync folder]({{site.baseurl}}/media/2017/12/RedirectedDocumentsFolder.png)*Redirected Documents folder in the OneDrive sync folder*
+![Redirected Documents folder in the OneDrive sync folder]({{site.baseurl}}/media/2017/12/RedirectedDocumentsFolder.png)
+
+Redirected Documents folder in the OneDrive sync folder
+{:.figcaption}
 
 These scripts are provided as-is, and I highly recommend testing carefully before implementing in production.
 

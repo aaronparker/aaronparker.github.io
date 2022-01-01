@@ -1,10 +1,10 @@
 ---
-id: 834
+
 title: App-V Sequencer fails to install
 date: 2008-12-10T14:13:44+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-sequencer-fails-to-install
+
 permalink: /app-v-sequencer-fails-to-install/
 dsq_thread_id:
   - "195381362"

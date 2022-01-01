@@ -1,10 +1,10 @@
 ---
-id: 2745
+
 title: Sequencing Mozilla Firefox with App-V 4.6
 date: 2012-06-28T22:20:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2745
+
 permalink: /sequencing-mozilla-firefox-13-with-app-v-4-6/
 Hide SexyBookmarks:
   - "0"
@@ -18,11 +18,11 @@ tags:
   - App-V
   - Firefox
 ---
-It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I've previously shown you how to sequence [Firefox 8]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-8/), [Firefox 7]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-7/) and [Firefox 5]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-5/). Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features..
+It's a simple task to virtualize Firefox, as it lends itself well to application virtualization; however getting it right takes a little more effort. I've previously shown you how to sequence [Firefox 8]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-8/), [Firefox 7]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-7/) and [Firefox 5]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-5/). Before embarking on sequencing Firefox, please refer to this companion article - [Prepare Mozilla Firefox for Enterprise Deployment and Virtualization]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/) - which covers configuring a Firefox installation for virtualizing. It's important that Firefox is configured correctly for virtualization by disabling specific features..
 
 ## User Experience
 
-Typically, virtualizing an application changes the user experience due to the introduction of isolation. Virtualizing Firefox with App-V 4.6 will isolate the application from the OS, so the following features will not be available once Firefox has been sequenced:
+Typically, virtualizing an application changes the user experience due to the introduction of isolation. Virtualizing Firefox with App-V 4.6 will isolate the application from the OS, so the following features will not be available once Firefox has been sequenced:
 
   * The ability set the browser as default - isolation prevents this from working
   * Firefox Jump Lists in the Start Menu and Taskbar do work, but they don't display icons correctly
@@ -31,15 +31,15 @@ Typically, virtualizing an application changes the user experience due to the in
 
 There are a couple of features that should be disabled when running Firefox under App-V:
 
-  * Default browser check – _Options / Advanced / General - Always check to see if Firefox is the default browser on startup_. Once Firefox is isolated from the OS, the user won't be able to make it the default browser
-  * Automatic updates for Firefox – _Options / Advanced / Update / Firefox updates._ Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
+  * Default browser check – _Options / Advanced / General - Always check to see if Firefox is the default browser on startup_. Once Firefox is isolated from the OS, the user won't be able to make it the default browser
+  * Automatic updates for Firefox – _Options / Advanced / Update / Firefox updates._ Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
   * _Mozilla Maintenance Service_ - [Firefox installs an updater service](http://support.mozilla.org/en-US/kb/what-mozilla-maintenance-service) that allows updating whilst avoiding UAC prompts. This service should be disabled or not installed
 
 I will cover using a couple of customisations to ensure these user features are disabled in the UI for any new Firefox profile. This service is simple enough to handle by disabling it
 
 ## Managing the Firefox profile
 
-[Firefox stores preferences, extensions and other user data](http://kb.mozillazine.org/Profile_folder_-_Firefox) in:
+[Firefox stores preferences, extensions and other user data](http://kb.mozillazine.org/Profile_folder_-_Firefox) in:
 
   * %APPDATA%\Mozilla (preferences, bookmarks etc.); and
   * %LOCALAPPDATA%\Mozilla (browser cache)
@@ -108,6 +108,6 @@ If the steps above have been followed for exclusions, installation and configura
 
 ## Finally
 
-Save your package and deploy. With compression enabled, the package should be around 24Mb. For a walkthrough of the sequencing process, using the installation script outlined in [the Firefox deployment article]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/), see the following screenshots:
+Save your package and deploy. With compression enabled, the package should be around 24Mb. For a walkthrough of the sequencing process, using the installation script outlined in [the Firefox deployment article]({{site.baseurl}}/deployment/prepare-mozilla-firefox-for-enterprise-deployment-and-virtualization/), see the following screenshots:
 
 [nggallery id=1]

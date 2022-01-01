@@ -1,10 +1,10 @@
 ---
-id: 494
+
 title: Export Your Product Keys Before Your TechNet Subscription Expires
 date: 2008-03-03T20:00:41+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/general/export-your-product-keys-before-your-technet-subscription-expires
+
 permalink: /export-your-product-keys-before-your-technet-subscription-expires/
 categories:
   - Microsoft

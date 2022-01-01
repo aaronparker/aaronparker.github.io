@@ -1,10 +1,10 @@
 ---
-id: 1101
+
 title: Windows 7 on a Dell Latitiude XT2
 date: 2009-05-17T13:13:29+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1101
+
 permalink: /windows-7-on-a-dell-latitiude-xt2/
 aktt_notify_twitter:
   - 'yes'
@@ -53,9 +53,9 @@ There were a few drivers and updates that I've had to download. Keeping to the a
 
 Broadcom USH CV w/ Fingerprint Swipe Sensor. This was marked as an unknown device named 5880 in Device Manager. Download the [ControlPoint Security Manager driver](http://support.euro.dell.com/support/downloads/format.aspx?c=uk&l=en&s=gen&deviceid=16358&libid=25&releaseid=R210495&vercnt=2&formatcnt=0&SystemID=LAT_XT2&servicetag=&os=WLH&osl=en&catid=-1&impid=-1) for this device.
 
-Dell Wireless 5530 HSPA Mobile Broadband Minicard Device. Dell Wireless 5530 broadband package is a part of the [ControlPoint Connection Manager](http://support.euro.dell.com/support/downloads/format.aspx?c=uk&l=en&s=gen&deviceid=15971&libid=25&releaseid=R214454&vercnt=3&formatcnt=0&SystemID=LAT_XT2&servicetag=&os=WLH&osl=en&catid=-1&impid=-1). I've avoided the Connection Manager itself and have installed just the driver package.
+Dell Wireless 5530 HSPA Mobile Broadband Minicard Device. Dell Wireless 5530 broadband package is a part of the [ControlPoint Connection Manager](http://support.euro.dell.com/support/downloads/format.aspx?c=uk&l=en&s=gen&deviceid=15971&libid=25&releaseid=R214454&vercnt=3&formatcnt=0&SystemID=LAT_XT2&servicetag=&os=WLH&osl=en&catid=-1&impid=-1). I've avoided the Connection Manager itself and have installed just the driver package.
 
-Windows 7 will enable touch input for the display by default; however the [N-trig DuoSense Multi-Touch package for Windows 7](http://www.n-trig.com/Data/Uploads/Misc/SW Package 2.59 LatitudeXT2.zip) (information page [here](http://www.n-trig.com/Content.aspx?Page=Multi_Touch)) beta drivers are required for multi-touch input. The beta driver package ran a firmware upgrade on my screen - oddly enough only after several installs (I've reinstalled Windows a few times while checking the drivers).
+Windows 7 will enable touch input for the display by default; however the [N-trig DuoSense Multi-Touch package for Windows 7](http://www.n-trig.com/Data/Uploads/Misc/SW Package 2.59 LatitudeXT2.zip) (information page [here](http://www.n-trig.com/Content.aspx?Page=Multi_Touch)) beta drivers are required for multi-touch input. The beta driver package ran a firmware upgrade on my screen - oddly enough only after several installs (I've reinstalled Windows a few times while checking the drivers).
 
 Until you install the beta drivers, an unknown device will be shown in Device Manager. Once installed, multi-touch is enabled:
 
@@ -63,7 +63,7 @@ Until you install the beta drivers, an unknown device will be shown in Device Ma
 
 After loading the driver for the screen, calibration is required to improve accuracy. Whilst pen input appears to be fairly accurate out of the box, touch input improves with calibration.
 
-Two devices, listed as PCI Serial Port and PCI Simple Communications Controller, are the [Intel AMT SOL](http://support.euro.dell.com/support/downloads/download.aspx?c=uk&l=en&s=gen&releaseid=R192787&SystemID=LAT_XT2&servicetag=&os=WLH&osl=en&deviceid=12178&devlib=0&typecnt=0&vercnt=1&catid=-1&impid=-1&formatcnt=1&libid=27&fileid=265133) and the [Intel AMT HECI](http://support.euro.dell.com/support/downloads/download.aspx?c=uk&l=en&s=gen&releaseid=R192786&SystemID=LAT_XT2&servicetag=&os=WLH&osl=en&deviceid=12177&devlib=0&typecnt=0&vercnt=1&catid=-1&impid=-1&formatcnt=1&libid=27&fileid=265132) respectively.
+Two devices, listed as PCI Serial Port and PCI Simple Communications Controller, are the [Intel AMT SOL](http://support.euro.dell.com/support/downloads/download.aspx?c=uk&l=en&s=gen&releaseid=R192787&SystemID=LAT_XT2&servicetag=&os=WLH&osl=en&deviceid=12178&devlib=0&typecnt=0&vercnt=1&catid=-1&impid=-1&formatcnt=1&libid=27&fileid=265133) and the [Intel AMT HECI](http://support.euro.dell.com/support/downloads/download.aspx?c=uk&l=en&s=gen&releaseid=R192786&SystemID=LAT_XT2&servicetag=&os=WLH&osl=en&deviceid=12177&devlib=0&typecnt=0&vercnt=1&catid=-1&impid=-1&formatcnt=1&libid=27&fileid=265132) respectively.
 
 The [Dell ControlPoint System Manager](http://support.euro.dell.com/support/downloads/format.aspx?c=uk&l=en&s=gen&deviceid=16381&libid=25&releaseid=R218880&vercnt=3&formatcnt=0&SystemID=LAT_XT2&servicetag=&os=WLH&osl=en&catid=-1&impid=-1) is required for various functions including managing the screen orientation, the ambient light sensor, additional power settings, keyboard hot keys and
 
@@ -93,6 +93,6 @@ Switching from pen to touch input is very quick and responsive. The digitizer do
 
 The pen is great for writing input (obviously), but also more pinpoint accuracy than you would get with a finger. Using touch input however, is great for scrolling through documents in Word or a web browser. Internet Explorer does a better job of being controlled by pen or touch than does Chrome or Firefox. You can use touch input to move the page up and down directly, whereas the other browsers can only be controlled with flicks (which will page up/page down).
 
-[FeedDemon](http://www.newsgator.com/Individuals/FeedDemon/Default.aspx) works well with both touch and pen input; however it would be nice to be able to make the FeedDemon UI a little larger to better accommodate touch input. Thankfully I've got skinny fingers so it's workable.
+[FeedDemon](http://www.newsgator.com/Individuals/FeedDemon/Default.aspx) works well with both touch and pen input; however it would be nice to be able to make the FeedDemon UI a little larger to better accommodate touch input. Thankfully I've got skinny fingers so it's workable.
 
 Being able to control the computer with touch input is very convenient, especially when you are reading documents or RSS feeds. Whether touch is just a bit of a gimmick or a valid method of input a little more usage will reveal, but it certaintly is convenient.

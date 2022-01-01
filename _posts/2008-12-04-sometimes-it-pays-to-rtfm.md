@@ -1,10 +1,10 @@
 ---
-id: 828
+
 title: Sometimes it pays to RTFM..
 date: 2008-12-04T22:37:57+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/sometimes-it-pays-to-rtfm
+
 permalink: /sometimes-it-pays-to-rtfm/
 categories:
   - Microsoft

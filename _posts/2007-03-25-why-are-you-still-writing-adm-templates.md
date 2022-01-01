@@ -1,10 +1,10 @@
 ---
-id: 75
+
 title: Why Are You Still Writing ADM Templates?
 date: 2007-03-25T15:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/why-are-you-still-writing-adm-templates
+
 permalink: /why-are-you-still-writing-adm-templates/
 dsq_thread_id:
   - "195378569"

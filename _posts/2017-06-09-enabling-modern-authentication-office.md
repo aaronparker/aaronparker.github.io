@@ -1,15 +1,9 @@
 ---
-id: 5447
 title: Enabling Modern Authentication for Office
 date: 2017-06-09T23:24:44+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=5447
 permalink: /enabling-modern-authentication-office/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
-dsq_thread_id:
-  - "5894819110"
 image: /media/2017/06/14553462732_548befbd46_k.jpg
 categories:
   - Microsoft
@@ -19,15 +13,18 @@ tags:
   - Office
   - Office 365
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Enabling Azure AD and Office 365 features including multi-factor authentication and Conditional Access will impact your users because they'll need utilise [App Passwords](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/end-user/multi-factor-authentication-end-user-app-passwords) (one time passwords used for authentication with legacy applications). Unfortunately this will only serve to confuse users and result in calls to your service desk. Modern authentication is, of course, the way to improve user experience but it's not enabled by default.
 
 ## Enabling Modern Authentication
 
 Office applications previous to 2013 aren't capable of modern authentication, but if you're deploying Office 365 your likely deploying Office 365 ProPlus - 2013 or later. However it's not enough just to deploy a recent version of Office, modern authentication (or [OAuth](https://en.wikipedia.org/wiki/OAuth)) needs to be enabled in your tenant. Microsoft has described how modern authentication [works in Office 2013 and 2016 client applications](https://support.office.com/en-us/article/How-modern-authentication-works-for-Office-2013-and-Office-2016-client-apps-e4c45989-4b1a-462e-a81b-2a13191cf517). In that article we can see that modern authentication is:
 
-  * Turned off for Exchange Online by default.
-  * Turned on for SharePoint Online by default.
-  * Turned off for Skype for Business Online by default.
+* Turned off for Exchange Online by default.
+* Turned on for SharePoint Online by default.
+* Turned off for Skype for Business Online by default.
 
 Why this is, I'm not sure, but you'll need to enable modern authentication for Exchange Online and Skype for Business for this feature to work on the client end.
 
@@ -68,9 +65,12 @@ Note that [this article lists required registry configuration](https://support.o
 
 ## Single Sign-on with Azure AD Connect
 
-If you've deployed [Active Directory Federation Services (ADFS), single sign-on](https://blogs.technet.microsoft.com/canitpro/2015/09/11/step-by-step-setting-up-ad-fs-and-enabling-single-sign-on-to-office-365/) should already be enabled and users should see applications such as Outlook auto-configure and sign in automatically; however, if you only have AD Connect and rely on Azure AD directly for authentication, you can enable Pass-through Authentication and Single Sign-On with AD Connect version 1.1.484.0 or above. 
+If you've deployed [Active Directory Federation Services (ADFS), single sign-on](https://blogs.technet.microsoft.com/canitpro/2015/09/11/step-by-step-setting-up-ad-fs-and-enabling-single-sign-on-to-office-365/) should already be enabled and users should see applications such as Outlook auto-configure and sign in automatically; however, if you only have AD Connect and rely on Azure AD directly for authentication, you can enable Pass-through Authentication and Single Sign-On with AD Connect version 1.1.484.0 or above.
 
-![AD Connect Single Sign-On for Modern Authentication]({{site.baseurl}}/media/2017/06/ADConnectSingleSignOn.png)*AD Connect Single Sign-On for Modern Authentication*
+![AD Connect Single Sign-On for Modern Authentication]({{site.baseurl}}/media/2017/06/ADConnectSingleSignOn.png)
+
+AD Connect Single Sign-On for Modern Authentication
+{:.figcaption}
 
 Full details for enabling this configuration are available in this article: [Azure Active Directory Seamless Single Sign On](https://docs.microsoft.com/en-au/azure/active-directory/connect/active-directory-aadconnect-sso). With only AD Connect and Azure AD (instead of with ADFS), the steps for deploying this configuration are surprisingly simple and elegant.
 
@@ -82,23 +82,35 @@ Now that the configuration is complete, we can see that from the user perspectiv
 
 When starting Outlook for the first time, the user sees the initial configuration wizard, but can click Next through the wizard without entering account details manually.
 
-![Outlook auto-configuration with modern authentication complete]({{site.baseurl}}/media/2017/06/OutlookConfigureComplete.png)*Outlook auto-configuration with modern authentication complete*
+![Outlook auto-configuration with modern authentication complete]({{site.baseurl}}/media/2017/06/OutlookConfigureComplete.png)
+
+Outlook auto-configuration with modern authentication complete
+{:.figcaption}
 
 Activating Office 365 ProPlus will still require the user to manually enter their email address.
 
-![Office activation unfortunately isn't autoconfigured]({{site.baseurl}}/media/2017/06/OfficeActivation.png)*Office activation unfortunately isn't auto-configured*
+![Office activation unfortunately isn't autoconfigured]({{site.baseurl}}/media/2017/06/OfficeActivation.png)
+
+Office activation unfortunately isn't auto-configured
+{:.figcaption}
 
 ### Skype for Business
 
 Skype for Business will prompt for a username or sign-in address; however, then click on Sign In, the user is not prompted to authenticate to Skype for Business Online.
 
-![Skype for Business - enter your email address]({{site.baseurl}}/media/2017/06/SkypeSignIn.png)*Skype for Business - enter your email address*
+![Skype for Business - enter your email address]({{site.baseurl}}/media/2017/06/SkypeSignIn.png)
+
+Skype for Business - enter your email address
+{:.figcaption}
 
 ### OneDrive for Business
 
 Similarly for OneDrive for Business - the user is required to enter their email address and click Sign in, but no further authentication prompts are seen.
 
-![OneDrive for Business - enter your email address]({{site.baseurl}}/media/2017/06/OneDriveSignIn.png)*OneDrive for Business - enter your email address*
+![OneDrive for Business - enter your email address]({{site.baseurl}}/media/2017/06/OneDriveSignIn.png)
+
+OneDrive for Business - enter your email address
+{:.figcaption}
 
 ## Conclusion
 

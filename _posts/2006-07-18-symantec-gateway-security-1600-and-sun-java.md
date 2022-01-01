@@ -1,10 +1,10 @@
 ---
-id: 264
+
 title: Symantec Gateway Security 1600 and Sun Java
 date: 2006-07-18T16:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/symantec-gateway-security-1600-and-sun-java
+
 permalink: /symantec-gateway-security-1600-and-sun-java/
 categories:
   - Applications

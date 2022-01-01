@@ -1,10 +1,10 @@
 ---
-id: 93
+
 title: Install the Windows Deployment Services Console on Vista
 date: 2007-02-28T21:23:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/install-the-windows-deployment-services-console-on-vista
+
 permalink: /install-the-windows-deployment-services-console-on-vista/
 categories:
   - Applications

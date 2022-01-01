@@ -1,10 +1,10 @@
 ---
-id: 523
+
 title: Building Dynamic Start Menus With Access-Based Enumeration
 date: 2008-04-06T22:27:24+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/terminal-server/building-dynamic-start-menus-with-access-based-enumeration
+
 permalink: /building-dynamic-start-menus-with-access-based-enumeration/
 dsq_thread_id:
   - "195380381"

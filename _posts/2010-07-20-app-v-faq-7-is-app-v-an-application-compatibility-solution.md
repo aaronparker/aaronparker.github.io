@@ -1,10 +1,10 @@
 ---
-id: 1690
+
 title: 'App-V FAQ: Is App-V an Application Compatibility solution?'
 date: 2010-07-20T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-7-is-app-v-an-application-compatibility-solution
+
 permalink: /app-v-faq-7-is-app-v-an-application-compatibility-solution/
 has_been_twittered:
   - 'yes'

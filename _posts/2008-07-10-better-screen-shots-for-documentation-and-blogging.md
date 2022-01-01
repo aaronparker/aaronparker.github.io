@@ -1,10 +1,10 @@
 ---
-id: 581
+
 title: Better Screen Shots For Documentation And Blogging
 date: 2008-07-10T22:34:08+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=581
+
 permalink: /better-screen-shots-for-documentation-and-blogging/
 categories:
   - General

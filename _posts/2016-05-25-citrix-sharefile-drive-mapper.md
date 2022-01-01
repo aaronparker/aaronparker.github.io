@@ -1,13 +1,11 @@
 ---
-id: 4413
+
 title: Hands On with the Citrix ShareFile Drive Mapper
 date: 2016-05-25T02:43:59+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=4413
+
 permalink: /citrix-sharefile-drive-mapper/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
 enclosure:
   - |
     {{site.baseurl}}/media/2016/05/ShareFileDriveMapperBrowsing.mp4
@@ -28,9 +26,6 @@ enclosure:
     {{site.baseurl}}/media/2016/05/ShareFileDriveRightClick.webm
     0
     video/webm
-    
-dsq_thread_id:
-  - "4854213077"
 image: /media/2016/05/2749278085_ab1b43f2d9_o.jpg
 categories:
   - Citrix
@@ -42,7 +37,7 @@ tags:
 
 In this article, I'll provide an overview of the installation, configuration and how the client works. I've tested version 3.2.112.0 of the Drive Mapper on Windows 10 64-bit (build 14342).
 
-Note that this article has been written from what I can gather by installing and testing the client into a local Windows virtual machine. This is my interpretation which could be flawed.
+Note that this article has been written from what I can gather by installing and testing the client into a local Windows virtual machine. This is my interpretation which could be flawed.
 
 ## Using the Drive Mapper
 
@@ -70,7 +65,7 @@ Simple enough, so far and the user experience is much as I would expect. Let's l
 
 ## Enabling the Citrix ShareFile Drive Mapper
 
-This client won't be enabled by default within ShareFile. Before installing on a client PC, enable in the Admin section in the ShareFile website under _Admin / Power Tools_:
+This client won't be enabled by default within ShareFile. Before installing on a client PC, enable in the Admin section in the ShareFile website under _Admin / Power Tools_:
 
 ![Enabling the ShareFile Driver Mapper]({{site.baseurl}}/media/2016/05/ShareFileAdminEnableDriveMapper.png)
 
@@ -94,11 +89,11 @@ The ShareFile Drive Mapper client is made up of two main components of interest 
 
 ![Citrix ShareFile Drive Mapper Binaries]({{site.baseurl}}/media/2016/05/ShareFileDriveMapperBinaries.png)
 
-[The filter driver](https://msdn.microsoft.com/en-us/library/windows/hardware/ff541610%28v=vs.85%29.aspx) is a [legacy filter driver, rather than a minifilter driver](https://blogs.msdn.microsoft.com/ntdebugging/2013/03/25/understanding-file-system-minifilter-and-legacy-filter-load-order/). I assume the reason for this is that you need to [request an altitude for minifilters from Microsoft](https://msdn.microsoft.com/en-us/library/windows/hardware/dn508284(v=vs.85).aspx), so perhaps in this initial version, Citrix has decided to make this tool available without having delays due to Microsoft processes (similar to the lack of WHQL certification).
+[The filter driver](https://msdn.microsoft.com/en-us/library/windows/hardware/ff541610%28v=vs.85%29.aspx) is a [legacy filter driver, rather than a minifilter driver](https://blogs.msdn.microsoft.com/ntdebugging/2013/03/25/understanding-file-system-minifilter-and-legacy-filter-load-order/). I assume the reason for this is that you need to [request an altitude for minifilters from Microsoft](https://msdn.microsoft.com/en-us/library/windows/hardware/dn508284(v=vs.85).aspx), so perhaps in this initial version, Citrix has decided to make this tool available without having delays due to Microsoft processes (similar to the lack of WHQL certification).
 
 ![Showing loaded filter drivers and the ShareFile filter driver]({{site.baseurl}}/media/2016/05/ShareFileFilterDriver.png)
 
-The ShareFileDriveMapper executable then provides the user interface. If this executable is not running, the drive does disappear from Explorer, so something to watch out for.
+The ShareFileDriveMapper executable then provides the user interface. If this executable is not running, the drive does disappear from Explorer, so something to watch out for.
 
 ### Client Settings
 
@@ -112,9 +107,9 @@ These settings can be managed with Group Policy as we'll see later.
 
 The client uses a number of locations on a machine:
 
-  * `HKEY\_CURRENT\_USER\SOFTWARE\Citrix\ShareFile\DriveMapper`
-  * `%APPDATA%\Citrix\DriveMapper3`
-  * `%LOCALAPPDATA%\Citrix\DriveMapper3`
+* `HKEY\_CURRENT\_USER\SOFTWARE\Citrix\ShareFile\DriveMapper`
+* `%APPDATA%\Citrix\DriveMapper3`
+* `%LOCALAPPDATA%\Citrix\DriveMapper3`
 
 These locations include settings for the client and the local cache.
 
@@ -154,16 +149,16 @@ In the video below you can see the effect of right clicking on this large, un-ca
 
 ![Right click]({{site.baseurl}}/media/2016/05/ShareFileDriveRightClick.mp4)
 
-While the behaviour of this client might work as in the example above, one of the key features looks to be reducing the local disk footprint, so downloading stubs or the entire file in the background may be counter-productive to that goal.
+While the behaviour of this client might work as in the example above, one of the key features looks to be reducing the local disk footprint, so downloading stubs or the entire file in the background may be counter-productive to that goal.
 
 ## Final Thoughts
 
 I've only taken a short look at the ShareFile Drive Mapper client and it's a very interesting way to provide users with a familiar method of accessing their data.
 
-  * Citrix should fix WHQL certification for the driver, making it easier when deploying the client
-  * I haven't tested identity federation and SSO, but I'm certain it should work to reduce user authentication interaction
-  * Citrix has called out support for XenApp and XenDesktop; however, I've not had a chance to test in a non-persistent environment. 3rd party layering solution will alleviate any challenges with caching files.
-  * Redirecting user data folders to this location should be workable, but understand how the client works - caveat emptor.
-  * Upcoming improvements in the client should improve the user experience. I would assume that Citrix will be stepping up the release cadence of the client.
+* Citrix should fix WHQL certification for the driver, making it easier when deploying the client
+* I haven't tested identity federation and SSO, but I'm certain it should work to reduce user authentication interaction
+* Citrix has called out support for XenApp and XenDesktop; however, I've not had a chance to test in a non-persistent environment. 3rd party layering solution will alleviate any challenges with caching files.
+* Redirecting user data folders to this location should be workable, but understand how the client works - caveat emptor.
+* Upcoming improvements in the client should improve the user experience. I would assume that Citrix will be stepping up the release cadence of the client.
 
-I've heard from the ShareFile team that a number of improvements are planned, so I'm looking forward to seeing how Citrix evolves this client over time.
+I've heard from the ShareFile team that a number of improvements are planned, so I'm looking forward to seeing how Citrix evolves this client over time.

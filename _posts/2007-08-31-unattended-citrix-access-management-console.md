@@ -1,10 +1,10 @@
 ---
-id: 340
+
 title: Unattended Citrix Access Management Console
 date: 2007-08-31T11:13:55+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/deployment/unattended-citrix-access-management-console
+
 permalink: /unattended-citrix-access-management-console/
 dsq_thread_id:
   - "195379403"

@@ -1,10 +1,10 @@
 ---
-id: 1694
+
 title: 'App-V FAQ: Does App-V allow me to run applications on Linux or Mac OS X?'
 date: 2010-07-27T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-10-does-app-v-allow-me-to-run-applications-on-linux-or-mac-os
+
 permalink: /app-v-faq-10-does-app-v-allow-me-to-run-applications-on-linux-or-mac-os/
 categories:
   - FAQs

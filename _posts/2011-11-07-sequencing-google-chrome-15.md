@@ -1,10 +1,10 @@
 ---
-id: 2466
+
 title: Sequencing Google Chrome 15
 date: 2011-11-07T15:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2466
+
 permalink: /sequencing-google-chrome-15/
 Hide SexyBookmarks:
   - "0"

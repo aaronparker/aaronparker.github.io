@@ -1,10 +1,10 @@
 ---
-id: 1826
+
 title: Configuring an Automatic Resolution Policy for Offline Files in Windows 7
 date: 2010-08-25T16:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1826
+
 permalink: /configuring-an-automatic-resolution-policy-for-offline-files-in-windows-7/
 has_been_twittered:
   - 'yes'
@@ -38,7 +38,7 @@ Last week I came across a knowledgebase article that Microsoft recently updated 
 An automatic resolution policy for Offline Files is implemented by adding a registry value for each network share for which you wish to control synchronisation, then specifying the policy for automatic resolution.
 
   1. Click **Start**, type **regedit** in the **Start Search** box, and then press ENTER
-  2. Locate and then click the following registry subkey: _HKEY\_LOCAL\_MACHINE\Software\Microsoft\Windows\CurrentVersion\NetCache_ 
+  2. Locate and then click the following registry subkey: _HKEY\_LOCAL\_MACHINE\Software\Microsoft\Windows\CurrentVersion\NetCache_ 
   3. On the **Edit** menu, point to **New**, and then click **Key**. Type **SyncConflictHandling**, and then press ENTER
   4. Right-click **SyncConflictHandling**, point to **New**, and then click **Expandable String Value**. Type the path of the network share as the value name (for example \\servername\share)
   5. Right-click the value name, and then click **Modify**. In the **Value** data box, enter a value listed in the table below, and then click **OK**

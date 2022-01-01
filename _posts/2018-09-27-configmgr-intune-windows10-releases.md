@@ -1,10 +1,10 @@
 ---
-id: 6179
+
 title: Visualising ConfigMgr, Intune and Windows 10 Releases
 date: 2018-09-27T01:06:31+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=6179
+
 permalink: /configmgr-intune-windows10-releases/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
@@ -32,7 +32,10 @@ In my session, I demonstrated this with current Microsoft products - System Cent
 
 Here's the slide I created to visualise this theme.
 
-![Visualising ConfigMgr, Intune and Windows 10 Releases]({{site.baseurl}}/media/2018/09/MicrosoftReleases.png)*Visualising ConfigMgr, Intune and Windows 10 Releases*
+![Visualising ConfigMgr, Intune and Windows 10 Releases]({{site.baseurl}}/media/2018/09/MicrosoftReleases.png)
+
+Visualising ConfigMgr, Intune and Windows 10 Releases
+{:.figcaption}
 
 ## Download the Slide
 

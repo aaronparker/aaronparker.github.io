@@ -1,10 +1,10 @@
 ---
-id: 254
+
 title: 'Vista: Restarting with Applications Open'
 date: 2006-08-17T10:56:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/vista-restarting-with-applications-open
+
 permalink: /vista-restarting-with-applications-open/
 categories:
   - Microsoft

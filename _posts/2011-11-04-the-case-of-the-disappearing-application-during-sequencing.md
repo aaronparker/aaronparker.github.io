@@ -1,10 +1,10 @@
 ---
-id: 2452
+
 title: The Case of the Disappearing Application during Sequencing
 date: 2011-11-04T10:52:42+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2452
+
 permalink: /the-case-of-the-disappearing-application-during-sequencing/
 Hide SexyBookmarks:
   - "0"
@@ -36,14 +36,14 @@ In this file I can see a number of lines where the Sequencer is attempting to co
 ```log
 [11/03/2011 21:45:34 VRB VFSX\] ...failed getting long path name for the file (C:\Program Files\Google\Chrome). Error: 2  
 [11/03/2011 21:45:34 VRB CORE] GetShortPathName failure using: C:\Program Files\Google\Chrome. Error is: 2  
-[11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
+[11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
 [11/03/2011 21:45:34 VRB VFSX] ...failed getting long path name for the file (C:\Program Files\Google\Chrome\Application). Error: 3  
 [11/03/2011 21:45:34 VRB CORE] GetShortPathName failure using: C:\Program Files\Google\Chrome. Error is: 2  
-[11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
+[11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
 [11/03/2011 21:45:34 VRB CORE] CopyResourceToVFS failed.  
 [11/03/2011 21:45:34 VRB VFSX] ...failed getting long path name for the file (C:\Program Files\Google\Chrome\Application\15.0.874.106). Error: 3  
 [11/03/2011 21:45:34 VRB CORE] GetShortPathName failure using: C:\Program Files\Google\Chrome. Error is: 2  
-[11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
+[11/03/2011 21:45:34 VRB CORE] Could not copy C:\Program Files\Google\Chrome to Q:\Google Chrome\VFS\CSIDL\_PROGRAM\_FILES\Google\Chrome.  Error is: 2.  
 [11/03/2011 21:45:34 VRB CORE] CopyResourceToVFS failed.
 ```
 
@@ -53,7 +53,7 @@ A few lines previous to these is this line:
 [11/03/2011 21:45:26 VRB RTSK\] Reboot processing detected need to delete \??\C:\Program Files\Google\Chrome.
 ```
 
-The Sequencer is doing exactly what's it being told to do – process a reboot task at the end of the monitoring phase and delete the application. Interestingly though, only the Application sub-folder is being deleted, not the entire Chrome parent folder.
+The Sequencer is doing exactly what's it being told to do – process a reboot task at the end of the monitoring phase and delete the application. Interestingly though, only the Application sub-folder is being deleted, not the entire Chrome parent folder.
 
 To get an idea of why, I've used [WhyReboot](http://exodusdev.com/products/whyreboot), a fantastic free tool for finding out why a reboot has been requested. How many times have you suspected that an application installer asks to reboot Windows when it's not actually needed?
 

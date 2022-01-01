@@ -1,10 +1,10 @@
 ---
-id: 149
+
 title: Windows XP, Internet Explorer 7 and SharePoint
 date: 2006-11-22T21:50:04+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/windows-xp-internet-explorer-7-and-sharepoint
+
 permalink: /windows-xp-internet-explorer-7-and-sharepoint/
 categories:
   - Applications

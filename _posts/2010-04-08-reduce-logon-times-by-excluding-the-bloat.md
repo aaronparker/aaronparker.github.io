@@ -1,15 +1,9 @@
 ---
-id: 1456
 title: Reduce logon times by excluding the bloat
 date: 2010-04-08T20:00:01+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1456
 permalink: /reduce-logon-times-by-excluding-the-bloat/
-has_been_twittered:
-  - 'yes'
-dsq_thread_id:
-  - "195382304"
 categories:
   - Microsoft
 tags:
@@ -29,7 +23,7 @@ Here’s iTunes storing **161**Mb in **3295** files in AppData\Roaming – imagi
 
 I’ve been spending some time with some of the user profile virtualisation (or _user virtualisation_ / _user environment management_ / _user workspace virtualisation_ ) products lately and have started to compile a list of profile folders that I’ve needed to exclude from being managed.
 
-Profile virtualisation products like [this one](http://www.appsense.com/products/environmentmanager/) and [this one](http://www.ressoftware.com/pm-products.aspx?PageID=174) can optimise what is roamed; however exclusions may still be required and are necessary if are using standard Windows roaming profiles or less complex virtualisation solutions such as Citrix Profile Management.
+Profile virtualisation products like [this one](https://www.appsense.com/products/environmentmanager/) and [this one](https://www.ressoftware.com/pm-products.aspx?PageID=174) can optimise what is roamed; however exclusions may still be required and are necessary if are using standard Windows roaming profiles or less complex virtualisation solutions such as Citrix Profile Management.
 
 Most of these products are very easy to install and configure and for the most part are ‘fire and forget’; however adding some exclusions is a simple way to improve logon and logoff times by reducing the amount of managed data.
 
@@ -60,7 +54,7 @@ Next is a list of folders from various applications that either store large file
 |Folder|Description|
 |------|-----------|
 |.VirtualBox|Sun VirtualBox; Default configuration and storage folder|
-|Tracing|Windows Live Messenger, Office Communicator; tracing logs. Info how to change that location [here](http://stealthpuppy.com/windows/keeping-the-windows-vista-user-folder-clean)|
+|Tracing|Windows Live Messenger, Office Communicator; tracing logs. Info how to change that location [here]({{site.baseurl}}/keeping-the-windows-vista-user-folder-clean)|
 |Podcasts|Zune; Podcasts folder|
 |Virtual Machines|Windows Virtual PC; default configuration and storage folder|
 |AppData\Roaming\Apple Computer\MobileSync|Apple iTunes; Folder used to store device backups|
@@ -70,7 +64,7 @@ Next is a list of folders from various applications that either store large file
 |AppData\Roaming\Microsoft Shared\LiveMeeting Shared|Microsoft Live Meeting; shared folder|
 |AppData\Roaming\Microsoft\XDE|Microsoft Visual Studio; Windows Mobile 7 emulator images|
 |AppData\Roaming\Macromedia\Flash Player\macromedia.com\support\flashplayer\sys|Adobe Flash; Cookies and settings|
-|AppData\Roaming\Macromedia\Flash Player\#SharedObjects|Adobe Flash; Cookies|
+|AppData\Roaming\Macromedia\Flash Player#SharedObjects|Adobe Flash; Cookies|
 |AppData\Roaming\Adobe\Flash Player\AssetCache|Adobe Flash; cache folder|
 |AppData\Roaming\Vodafone\Vodafone Mobile Connect\Log|Vodafone Mobile Connect|
 |AppData\Roaming\Microsoft\Windows\Recent|Windows; recent files and folders; lots of small files can increase logon/logoff times|

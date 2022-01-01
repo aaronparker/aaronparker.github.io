@@ -1,10 +1,10 @@
 ---
-id: 872
+
 title: Go Deep with AppVirt
 date: 2009-02-10T18:59:19+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/go-deep-with-appvirt
+
 permalink: /go-deep-with-appvirt/
 aktt_notify_twitter:
   - 'no'

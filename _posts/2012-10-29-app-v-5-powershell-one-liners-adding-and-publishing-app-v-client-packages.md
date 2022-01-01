@@ -1,10 +1,10 @@
 ---
-id: 2878
+
 title: App-V 5 PowerShell One Liners – Adding and Publishing App-V Client Packages
 date: 2012-10-29T13:04:55+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2878
+
 permalink: /app-v-5-powershell-one-liners-adding-and-publishing-app-v-client-packages/
 Hide SexyBookmarks:
   - "0"

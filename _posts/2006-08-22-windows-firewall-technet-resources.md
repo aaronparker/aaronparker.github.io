@@ -1,10 +1,10 @@
 ---
-id: 210
+
 title: Windows Firewall Technet Resources
 date: 2006-08-22T16:20:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/windows-firewall-technet-resources
+
 permalink: /windows-firewall-technet-resources/
 categories:
   - Microsoft

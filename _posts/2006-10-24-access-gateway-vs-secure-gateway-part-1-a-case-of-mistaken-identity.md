@@ -1,10 +1,10 @@
 ---
-id: 161
+
 title: 'Access Gateway vs. Secure Gateway Part 1: A Case of Mistaken Identity'
 date: 2006-10-24T05:29:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/access-gateway-vs-secure-gateway-part-1-a-case-of-mistaken-identity
+
 permalink: /access-gateway-vs-secure-gateway-part-1-a-case-of-mistaken-identity/
 categories:
   - Citrix

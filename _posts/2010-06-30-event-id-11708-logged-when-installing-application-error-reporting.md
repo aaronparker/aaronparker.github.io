@@ -1,15 +1,9 @@
 ---
-id: 1682
 title: Event ID 11708 logged when installing Application Error Reporting
 date: 2010-06-30T17:18:15+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/deployment/event-id-11708-logged-when-installing-application-error-reporting
 permalink: /event-id-11708-logged-when-installing-application-error-reporting/
-has_been_twittered:
-  - 'yes'
-dsq_thread_id:
-  - "195382716"
 categories:
   - Applications
 tags:

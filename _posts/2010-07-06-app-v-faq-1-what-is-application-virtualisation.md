@@ -1,10 +1,10 @@
 ---
-id: 1722
+
 title: 'App-V FAQ: What is Application Virtualisation?'
 date: 2010-07-06T10:44:52+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1722
+
 permalink: /app-v-faq-1-what-is-application-virtualisation/
 has_been_twittered:
   - 'yes'

@@ -1,10 +1,10 @@
 ---
-id: 2623
+
 title: 'Reducing Profile Size with a Profile Clean Up Script - PowerShell Edition'
 date: 2012-01-05T16:09:55+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2623
+
 permalink: /reducing-profile-size-with-a-profile-clean-up-script-powershell-edition/
 Hide SexyBookmarks:
   - "0"

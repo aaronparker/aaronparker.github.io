@@ -1,10 +1,10 @@
 ---
-id: 3399
+
 title: A Quick Look at Work Folders in Windows Server 2012 R2
 date: 2013-06-30T10:52:03+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3399
+
 permalink: /a-quick-look-at-work-folders-in-windows-server-2012-r2/
 dsq_thread_id:
   - "1451001302"

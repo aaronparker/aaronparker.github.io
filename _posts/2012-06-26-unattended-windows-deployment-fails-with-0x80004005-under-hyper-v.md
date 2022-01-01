@@ -1,10 +1,10 @@
 ---
-id: 2739
+
 title: Unattended Windows deployment fails with 0x80004005 under Hyper-V
 date: 2012-06-26T18:45:05+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2739
+
 permalink: /unattended-windows-deployment-fails-with-0x80004005-under-hyper-v/
 Hide SexyBookmarks:
   - "0"

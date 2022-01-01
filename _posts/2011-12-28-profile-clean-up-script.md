@@ -1,10 +1,10 @@
 ---
-id: 2593
+
 title: Reducing Profile Size with a Profile Clean Up Script
 date: 2011-12-28T09:00:17+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2593
+
 permalink: /profile-clean-up-script/
 Hide SexyBookmarks:
   - "0"

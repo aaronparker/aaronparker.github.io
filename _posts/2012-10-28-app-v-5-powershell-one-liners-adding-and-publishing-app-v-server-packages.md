@@ -1,10 +1,10 @@
 ---
-id: 2871
+
 title: 'App-V 5 PowerShell One Liners - Adding and Publishing App-V Server Packages'
 date: 2012-10-28T21:36:12+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2871
+
 permalink: /app-v-5-powershell-one-liners-adding-and-publishing-app-v-server-packages/
 Hide SexyBookmarks:
   - "0"

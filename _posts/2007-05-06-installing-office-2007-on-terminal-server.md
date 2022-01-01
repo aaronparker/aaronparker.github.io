@@ -1,10 +1,10 @@
 ---
-id: 49
+
 title: Installing Office 2007 on Terminal Server
 date: 2007-05-06T07:18:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/installing-office-2007-on-terminal-server
+
 permalink: /installing-office-2007-on-terminal-server/
 thesis_description:
   - What you should know when deploying Office 2007 to Windows Terminal Server
@@ -24,7 +24,7 @@ When install Office 2007 on your Terminal Servers there are a few things you'll 
 
 There are a number of options I recommend setting by using the [Office Customisation Tool](http://technet2.microsoft.com/Office/en-us/library/8faae8a0-a12c-4f7b-839c-24a66a531bb51033.mspx) (SETUP.EXE /ADMIN). These first couple of options aren't really Terminal Server specific and are worth setting for all Office deployments. You can enforce these via Group Policy, however if you configure them with a custom installation they will be the default settings:
 
-* Disable the Customer Experience Improvement Program from running when users start an Office application: _Modify user settings - Microsoft Office 2007 system / Privacy / Trust Center / Enable Customer Experience Improvement Program_
+* Disable the Customer Experience Improvement Program from running when users start an Office application: _Modify user settings - Microsoft Office 2007 system / Privacy / Trust Center / Enable Customer Experience Improvement Program_
 * Disable Outlook from prompting users to archive their mailboxes: _Modify user settings - Microsoft Office Outlook 2007 / Tools | Options.. / Other / AutoArchive / AutoArchive Settings_
 
 ![]({{site.baseurl}}/media/2007/05/1000.14.1390.ModifyUserSettings.png)

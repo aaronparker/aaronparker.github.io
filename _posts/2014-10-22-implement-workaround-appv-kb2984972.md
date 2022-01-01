@@ -1,10 +1,10 @@
 ---
-id: 3715
+
 title: Implementing a Workaround for issue affecting the App-V Client in KB2984972
 date: 2014-10-22T18:07:30+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy.com/?p=3715
+
 permalink: /implement-workaround-appv-kb2984972/
 dsq_thread_id:
   - "3143075597"
@@ -28,17 +28,20 @@ A recent [security update for the Remote Desktop Connection client in Windows 7 
 
 This [issue was reported in the forums](https://social.technet.microsoft.com/Forums/en-US/c90212b0-b32c-4488-9753-fb952112828c/warning-kb2984972-and-autodeskrelated-46-appv-packages?forum=mdopappv) as well and seems to affect a number of applications.
 
-Microsoft have updated the KB article for the security update to provide a workaround (see the known issues section). Another KB article is on the way, targeted more directly at the App-V client. No word at the time of writing as to a more permanent fix.
+Microsoft have updated the KB article for the security update to provide a workaround (see the known issues section). Another KB article is on the way, targeted more directly at the App-V client. No word at the time of writing as to a more permanent fix.
 
 The workaround requires implementing a Registry change to the App-V client to add an additional item to the global events that are excluded by the virtualization layer in App-V. Full details are in the KB article and I recommend reading that before continue with this article.
 
 ## Implementing the Workaround
 
-There's a few ways that you could implement the fix - Group Policy Preferences, scripting etc. You will need to pay attention to the entires in the `HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions` (for App-V 5.0) or `HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\SystemGuard\ObjExclusions` (for App-V 4.6) as each entry requires a unique value name - you don't want to overwrite an existing entry.
+There's a few ways that you could implement the fix - Group Policy Preferences, scripting etc. You will need to pay attention to the entires in the `HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions` (for App-V 5.0) or `HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\SystemGuard\ObjExclusions` (for App-V 4.6) as each entry requires a unique value name - you don't want to overwrite an existing entry.
 
 Here's the ObjExclusions key on an App-V 5.0 client:
 
-![AppV Client ObjExclusions registry key]({{site.baseurl}}/media/2014/10/AppV-Client-ObjExclusions.png)*AppV Client ObjExclusions registry key*
+![AppV Client ObjExclusions registry key]({{site.baseurl}}/media/2014/10/AppV-Client-ObjExclusions.png)
+
+AppV Client ObjExclusions registry key
+{:.figcaption}
 
 Most environments will have the default entries (92 for App-V 5.0, 94 for App-V 4.6). For customised environments you would need to ensure that a unique value is used (perhaps above 93).
 
@@ -54,7 +57,7 @@ I recommend enabling _Item-level targeting_ to ensure the value is added to the 
 
 ![Enabling Item Level Targeting]({{site.baseurl}}/media/2014/10/2984972-ItemLevelTargeting.png)
 
-For example, only apply the update if the HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions key actually exists. This ensures the value is only added once the App-V client is installed.
+For example, only apply the update if the HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions key actually exists. This ensures the value is only added once the App-V client is installed.
 
 ![Adding a Key Exists match to Item Level Targeting]({{site.baseurl}}/media/2014/10/2984972-TargetingEditor.png)
 

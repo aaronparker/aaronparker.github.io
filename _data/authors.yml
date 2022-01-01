@@ -1,0 +1,64 @@
+# The primary author of this blog.
+# Must be the same as `author` in `_config.yml`.
+# Change `author1` to your shortname.
+author1:
+  name:              Aaron Parker
+  email:             aaron@stealthpuppy.com
+
+  # Used at the bottom of each page and at the top of the `about` layout
+  # Markdown enabled, can use multiple paragraphs (enabled by `|`)
+  about:             |
+    Aaron Parker is an **end-user computing specialist** with 25+ years experience in consulting, architecture, design, and implementation of virtual desktops, modern device management, and enterprise mobility. Aaron is the **Principal Modern Workplace Architect** at [@Insentra](https://www.insentragroup.com).
+
+  # This photo will be used in the about section
+  picture:
+    path:            /assets/img/headshot.jpg
+    # srcset is optional, but can be used to provide higher res versions for retina displays
+    srcset:
+      1x:            /assets/img/headshot.jpg
+      2x:            /assets/img/headshot.jpg
+
+  # Social media icons in sidebar
+  # Comment/uncommet to show/hide
+  # Rearrange to change the order in which they appear
+  social:
+    rss:             https://stealthpuppy.com/feed.xml
+    twitter:         stealthpuppy
+    github:          aaronparker
+    # email:           <mail@domain.tld>
+    # facebook:        <username>
+    # google:          <number>
+    # vk:              <username>
+    # youtube:         <string_string_string>
+    # vimeo:           <username>
+    # vine:            <username>
+    linkedin:        aaronedwardparker
+    spotify:         user/stealthpuppy
+    #soundcloud:      stealthpuppy
+    # lastfm:          <username>
+    # instagram:       <username>
+    # flickr:          <string@string>
+    # 500px:           <username>
+    # dribbble:        <username>
+    # behance:         <username>
+    # deviantart:      <username>
+    # ello:            <username>
+    # twitch:          <username>
+    # steam:           <number>
+    # reddit:          <username>
+    # tumblr:          <username>
+    # pinterest:       <username>
+    # foursquare:      <number>
+    # yelp:            <string>
+    # stackoverflow:   <number/username>
+    # npm:             <username>
+    # hackernews:      <username>
+    # trello:          <firstnamelastname>
+    # xing:            <firstname_lastname_counter>
+    # blogger:         <number>
+    # delicious:       <username>
+    # stumbleupon:     <username>
+    # paypal:          <username>
+    # download:        <url>
+    # keybase          <username>
+

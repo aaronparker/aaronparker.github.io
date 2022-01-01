@@ -1,10 +1,10 @@
 ---
-id: 893
+
 title: Flex Profiles 6 is available
 date: 2009-02-19T19:52:39+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=893
+
 permalink: /flex-profiles-6-is-available/
 categories:
   - Applications

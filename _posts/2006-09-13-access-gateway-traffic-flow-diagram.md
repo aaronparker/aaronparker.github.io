@@ -1,10 +1,10 @@
 ---
-id: 184
+
 title: Access Gateway Traffic Flow Diagram
 date: 2006-09-13T01:22:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/access-gateway-traffic-flow-diagram
+
 permalink: /access-gateway-traffic-flow-diagram/
 categories:
   - Citrix

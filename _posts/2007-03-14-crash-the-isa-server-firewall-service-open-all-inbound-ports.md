@@ -1,10 +1,10 @@
 ---
-id: 81
+
 title: 'Crash the ISA Server Firewall Service - Open All Inbound Ports'
 date: 2007-03-14T15:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: 'http://blog.stealthpuppy.com/uncategorized/crash-the-isa-server-firewall-service-%e2%80%93-open-all-inbound-ports'
+
 permalink: /crash-the-isa-server-firewall-service-open-all-inbound-ports/
 categories:
   - Microsoft

@@ -1,10 +1,10 @@
 ---
-id: 2893
+
 title: App-V 5 PowerShell One Liners – Sequencing an application
 date: 2012-11-01T23:43:55+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2893
+
 permalink: /app-v-5-powershell-one-liners-sequencing-an-application/
 Hide SexyBookmarks:
   - "0"

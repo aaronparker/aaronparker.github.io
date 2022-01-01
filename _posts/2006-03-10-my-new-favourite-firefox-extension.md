@@ -1,10 +1,10 @@
 ---
-id: 278
+
 title: My new favourite Firefox extension
 date: 2006-03-10T11:20:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/my-new-favourite-firefox-extension
+
 permalink: /my-new-favourite-firefox-extension/
 categories:
   - Applications

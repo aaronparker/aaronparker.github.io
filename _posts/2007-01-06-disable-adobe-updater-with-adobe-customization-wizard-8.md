@@ -1,10 +1,10 @@
 ---
-id: 126
+
 title: Disable Adobe Updater with Adobe Customization Wizard 8
 date: 2007-01-06T01:32:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/disable-adobe-updater-with-adobe-customization-wizard-8
+
 permalink: /disable-adobe-updater-with-adobe-customization-wizard-8/
 views:
   - "3"

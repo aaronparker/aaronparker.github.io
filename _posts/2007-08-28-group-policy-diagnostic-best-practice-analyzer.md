@@ -1,10 +1,10 @@
 ---
-id: 338
+
 title: Group Policy Diagnostic Best Practice Analyzer
 date: 2007-08-28T19:18:23+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/off-site-news/group-policy-diagnostic-best-practice-analyzer
+
 permalink: /group-policy-diagnostic-best-practice-analyzer/
 categories:
   - Microsoft

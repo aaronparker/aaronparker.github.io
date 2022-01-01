@@ -1,10 +1,10 @@
 ---
-id: 102
+
 title: Tech Support in the Middle Ages
 date: 2007-02-17T18:58:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/tech-support-in-the-middle-ages
+
 permalink: /tech-support-in-the-middle-ages/
 categories:
   - General

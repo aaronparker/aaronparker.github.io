@@ -1,10 +1,10 @@
 ---
-id: 543
+
 title: May User Group Presentations
 date: 2008-04-28T23:15:37+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/community/may-user-group-presentations
+
 permalink: /may-user-group-presentations/
 categories:
   - Community

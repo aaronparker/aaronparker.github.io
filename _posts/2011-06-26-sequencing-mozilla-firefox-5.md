@@ -1,10 +1,10 @@
 ---
-id: 2331
+
 title: Sequencing Mozilla Firefox 5
 date: 2011-06-26T12:20:26+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2331
+
 permalink: /sequencing-mozilla-firefox-5/
 dsq_thread_id:
   - "342561694"
@@ -34,7 +34,7 @@ Virtualizing Firefox with App-V will isolate the application from the OS, so the
 
 The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this is a good thing and I don't recommend removing this exclusion.
 
-%APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla_ to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time.
+%APPDATA% will be included by default and whether you leave this location included in the package will depend on your specific deployment requirements; however my recommendation is to exclude this location by adding _%CSIDL_APPDATA%\Mozilla_ to the exclusion list in your sequence. On the client, Firefox will then create a new profile in the real file system when the user starts the browser for the first time.
 
 There are several reasons why this approach is a good idea:
 
@@ -63,13 +63,13 @@ There are a couple of features that should be disabled when running Firefox unde
 
 [_user.js_](http://kb.mozillazine.org/User.js_file) is used to configure Firefox options and enforce them and [_UserChrome.css_](http://www-archive.mozilla.org/unix/customizing.html) is used to remove those options from the user interface.
 
-Available below is a copy of _user.js_ that disables automatic updates of Firefox and checking whether it is the default browser:
+Available below is a copy of _user.js_ that disables automatic updates of Firefox and checking whether it is the default browser:
 
 <p class="download">
   [download id="44&#8243; format="1&#8243;]
 </p>
 
-Here is a copy of _userChrome.css_ that will remove updates and default browser options from user interface:
+Here is a copy of _userChrome.css_ that will remove updates and default browser options from user interface:
 
 <p class="download">
   [download id="45&#8243; format="1&#8243;]

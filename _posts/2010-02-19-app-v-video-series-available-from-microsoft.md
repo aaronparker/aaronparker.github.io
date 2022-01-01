@@ -1,10 +1,10 @@
 ---
-id: 1354
+
 title: App-V Video Series available from Microsoft
 date: 2010-02-19T10:21:23+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-video-series-available-from-microsoft
+
 permalink: /app-v-video-series-available-from-microsoft/
 has_been_twittered:
   - 'yes'

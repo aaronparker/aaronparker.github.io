@@ -1,10 +1,10 @@
 ---
-id: 1764
+
 title: Someone on the Internet is wrong about Hyper-V and I must correct them
 date: 2010-07-21T01:36:21+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1764
+
 permalink: /someone-on-the-internet-is-wrong-about-hyper-v-and-i-must-correct-them/
 has_been_twittered:
   - 'yes'

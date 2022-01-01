@@ -1,10 +1,10 @@
 ---
-id: 817
+
 title: Learning to live in harmony with the SCCM and App-V Clients
 date: 2008-11-24T23:18:37+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/learning-to-live-in-harmony-with-the-sccm-and-app-v-clients
+
 permalink: /learning-to-live-in-harmony-with-the-sccm-and-app-v-clients/
 dsq_thread_id:
   - "195381277"

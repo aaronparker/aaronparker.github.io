@@ -1,10 +1,10 @@
 ---
-id: 1708
+
 title: 'App-V FAQ: Where can I find information on sequencing applications?'
 date: 2010-08-10T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-13-where-can-i-find-information-on-sequencing-applications
+
 permalink: /app-v-faq-16-where-can-i-find-information-on-sequencing-applications/
 has_been_twittered:
   - 'yes'

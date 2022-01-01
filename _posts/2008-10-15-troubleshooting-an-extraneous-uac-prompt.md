@@ -1,10 +1,10 @@
 ---
-id: 751
+
 title: Troubleshooting an Extraneous UAC Prompt
 date: 2008-10-15T11:00:06+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=751
+
 permalink: /troubleshooting-an-extraneous-uac-prompt/
 dsq_thread_id:
   - "195381189"

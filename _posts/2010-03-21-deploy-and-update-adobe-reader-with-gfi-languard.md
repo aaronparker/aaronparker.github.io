@@ -1,10 +1,10 @@
 ---
-id: 1132
+
 title: Deploy and update Adobe Reader with GFI LANguard
 date: 2010-03-21T22:57:33+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1132
+
 permalink: /deploy-and-update-adobe-reader-with-gfi-languard/
 dsq_thread_id:
   - "195381909"
@@ -18,7 +18,7 @@ This post has been sitting in my drafts since June 2009 and for whatever reason 
 
 I have used LANguard in the past for vulnerability testing and network discovery but frankly that's kind of boring stuff. What is interesting in the latest version is the ability to deploy software.
 
-[LANguard 9](http://www.gfi.com/lannetscan) includes application deployment functions that make deploying software to remote machines quite simple.  I'm going to detail deploying Adobe Reader 9, using the deployment notes outlined in my [Deploying Adobe Reader 9]({{site.baseurl}}/deployment/deploying-adobe-reader-9-for-windows) post, then deploy the Reader 9.1.1 update, using that functionality.
+[LANguard 9](http://www.gfi.com/lannetscan) includes application deployment functions that make deploying software to remote machines quite simple.  I'm going to detail deploying Adobe Reader 9, using the deployment notes outlined in my [Deploying Adobe Reader 9]({{site.baseurl}}/deployment/deploying-adobe-reader-9-for-windows) post, then deploy the Reader 9.1.1 update, using that functionality.
 
 I'm going to skip over most of the details of installing LANguard - it's a simple process, you'll just need to choose the type of datebase you
 
@@ -30,7 +30,7 @@ In my test environment I have configured three machines:
 
 To deploy software to a remote machine, I need to be able to authenticate to that machine. Because I am using a domain, authentication is made simple; however I could actually deploy software to workgroup machines if I know an admin username and password for that those machines.
 
-The deployment feature of LANguard is geared around installing a single file with parameters; however it's simple enough to deploy applications like Office or Reader by using a batch file:
+The deployment feature of LANguard is geared around installing a single file with parameters; however it's simple enough to deploy applications like Office or Reader by using a batch file:
 
 ![addcustomsoftware]({{site.baseurl}}/media/2009/05/addcustomsoftware.png)
 
@@ -60,13 +60,13 @@ Deploying software is a three step process:
 
 ![Deploy]({{site.baseurl}}/media/2009/05/deploycustomsoftware-1b.png)
 
-So how is this actually working? The deployment feature on LANguard is not dissimilar to the Sysinternals tool PSEXEC, where a temporary service is installed on the remote machine to deliver the install commands. Essentially to deploy Adobe Reader 9, I am using LANguard to remotely execute INSTALL.CMD. I need admin rights on the target computers and LANguard does the rest. I even get to see the progress of the deployment:
+So how is this actually working? The deployment feature on LANguard is not dissimilar to the Sysinternals tool PSEXEC, where a temporary service is installed on the remote machine to deliver the install commands. Essentially to deploy Adobe Reader 9, I am using LANguard to remotely execute INSTALL.CMD. I need admin rights on the target computers and LANguard does the rest. I even get to see the progress of the deployment:
 
 ![deploymenprogess]({{site.baseurl}}/media/2009/05/deploymenprogess.png)
 
 I can also use the same process to update Reader 9.1 with the 9.11. update patch.
 
-I have downloaded the [Adobe Reader 9.1.1 Update](http://www.adobe.com/support/downloads/detail.jsp?ftpID=4452) (which comes as a Windows Installer Patch file - .MSP) and added it to the the same deployment location (`\\dc\common\Adobe\Reader911Update`). Again I have created a batch file that will install the 9.1.1 update from the same location:
+I have downloaded the [Adobe Reader 9.1.1 Update](http://www.adobe.com/support/downloads/detail.jsp?ftpID=4452) (which comes as a Windows Installer Patch file - .MSP) and added it to the the same deployment location (`\\dc\common\Adobe\Reader911Update`). Again I have created a batch file that will install the 9.1.1 update from the same location:
 
 ```powershell
 @ECHO OFF

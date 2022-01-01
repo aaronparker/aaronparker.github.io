@@ -1,15 +1,9 @@
 ---
-id: 5357
 title: Tips for Enabling SSO with Salesforce and Azure AD
 date: 2016-12-24T13:38:49+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/?p=5357
 permalink: /tips-enabling-sso-salesforce-azure-ad/
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
-dsq_thread_id:
-  - "5406365380"
 image: /media/2016/12/slide_407618_5105758_free.jpg
 categories:
   - Microsoft
@@ -18,11 +12,14 @@ tags:
   - Salesforce
   - SSO
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 I was recently testing out the setup of single sign-on (SSO) and user provisioning with [Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis) and Salesforce via the Azure Resource Manager portal and came across a couple of minor hiccups that I wanted to share. With Salesforce being as popular as it is, it's a great target for enabling SSO in any organisation and improving the user experience.
 
 ## Azure Active Directory
 
-If you happen to be new to Azure Active Directory (Azure AD), whether you're an IT Pro looking to learn more about it or an organisation that is managing cloud-based or SaaS applications, Azure AD is a Microsoft technology that most certainly in your future. 
+If you happen to be new to Azure Active Directory (Azure AD), whether you're an IT Pro looking to learn more about it or an organisation that is managing cloud-based or SaaS applications, Azure AD is a Microsoft technology that most certainly in your future.
 
 You can [create an Azure tenant and set up Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-howto-tenant) using the free tier, [integrating your on-premises identities](https://docs.microsoft.com/en-au/azure/active-directory/connect/active-directory-aadconnect) and start [configuring single sign-on](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-integrate-saas-apps) for [cloud-based applications](https://azure.microsoft.com/en-us/resources/videos/overview-of-single-sign-on/) without spending any money with Microsoft. Great for IT Pros with home labs and any organisation getting started on their cloud journey.
 
@@ -40,13 +37,16 @@ Setting up SSO for Salesforce is straight-forward; however due to a certificate 
 
 There are several articles on setting up SSO with Salesforce:
 
-  * For [the Azure Classic Portal a tutorial with videos on Azure Active Directory integration](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-saas-salesforce-tutorial)
-  * From Salesforce, an article on [Login with Azure AD](https://developer.salesforce.com/page/Login_with_Azure_AD), also covering the Classic portal
-  * When configuring Salesforce in the Azure RM portal, a blade is provided that includes the steps for configuring SSO
+* For [the Azure Classic Portal a tutorial with videos on Azure Active Directory integration](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-saas-salesforce-tutorial)
+* From Salesforce, an article on [Login with Azure AD](https://developer.salesforce.com/page/Login_with_Azure_AD), also covering the Classic portal
+* When configuring Salesforce in the Azure RM portal, a blade is provided that includes the steps for configuring SSO
 
 To configure SSO for Salesforce, log into the Azure Portal and open [the Azure Active Directory blade](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview), click on **Enterprise Applications**, click **Add**, find and select Salesforce then click **Add**. Once the application has been added, click on **Single sign-on** to start the configuration steps.
 
-![Configuring SSO for Salesforce in the Azure RM portal]({{site.baseurl}}/media/2016/12/ConfigureSalesforceSSO.png)*Configuring SSO for Salesforce in the Azure RM portal*
+![Configuring SSO for Salesforce in the Azure RM portal]({{site.baseurl}}/media/2016/12/ConfigureSalesforceSSO.png)
+
+Configuring SSO for Salesforce in the Azure RM portal
+{:.figcaption}
 
 During the Salesforce SAML configuration, I came across an issue with [the SAML signing certificate issued by Azure](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-sso-certs).
 
@@ -58,13 +58,19 @@ When configuring SAML from within Salesforce using the certificate from Azure, t
 
 Which looks like this:
 
-![Receiving &quot;Uploaded file isn't a certificate. (Related field: Identity Provider Certificate)&quot; when saving the Salesforce SSO settings]({{site.baseurl}}/media/2016/12/Error-SalesforceCertificate.png)*Receiving "Uploaded file isn't a certificate. (Related field: Identity Provider Certificate)" when saving the Salesforce SSO settings*
+![Receiving &quot;Uploaded file isn't a certificate. (Related field: Identity Provider Certificate)&quot; when saving the Salesforce SSO settings]({{site.baseurl}}/media/2016/12/Error-SalesforceCertificate.png)
+
+Receiving "Uploaded file isn't a certificate. (Related field: Identity Provider Certificate)" when saving the Salesforce SSO settings
+{:.figcaption}
 
 This was a little disconcerting as the certificate is automatically generated by Azure, but not recognised by Salesforce. In this case, I'm using the Azure RM portal rather than the Classic portal, so perhaps there's an issue with the generation of certificates through the new portal.
 
 The certificate properties don't reveal anything out of the ordinary.
 
-![Azure SAML certificate properties]({{site.baseurl}}/media/2016/12/AzureSAMLCertificateProperties.png)*Azure SAML certificate properties*
+![Azure SAML certificate properties]({{site.baseurl}}/media/2016/12/AzureSAMLCertificateProperties.png)
+
+Azure SAML certificate properties
+{:.figcaption}
 
 I thought it worth exporting the certificate to DER format to test. Open the certificate, click **Details** / **Copy to File...** (as shown above) and export it to **DER encoded binary X.509 format**. Use that version of the certificate when configuring SAML in Salesforce and it will save successfully.
 
@@ -72,10 +78,10 @@ I thought it worth exporting the certificate to DER format to test. Open the cer
 
 When configuring SAML single sign-on in Salesforce here's a quick list of my recommendations:
 
-  * Export the SAML signing certificate generated by Azure to DER format
-  * Set the **Request Signature Method** to RSA-SHA256. Note in the screenshot above that the signature algorithm and signature hash algorithm are in SHA256. 
-  * The **Name** field in the Salesforce Single Sign-on settings will be displayed to end-users on the Salesforce login page. Use text here that is descriptive to ensure users ("Azure AD" might not make sense)
-  * **SAML Identity Type** needs to be set to **Assertion contains the User's salesforce.com username**. When configuring account provisioning, this must instead be set to **Assertion contains the Federation ID from the User object**
+* Export the SAML signing certificate generated by Azure to DER format
+* Set the **Request Signature Method** to RSA-SHA256. Note in the screenshot above that the signature algorithm and signature hash algorithm are in SHA256.
+* The **Name** field in the Salesforce Single Sign-on settings will be displayed to end-users on the Salesforce login page. Use text here that is descriptive to ensure users ("Azure AD" might not make sense)
+* **SAML Identity Type** needs to be set to **Assertion contains the User's salesforce.com username**. When configuring account provisioning, this must instead be set to **Assertion contains the Federation ID from the User object**
 
 This then leads me to enabling account provisioning.
 
@@ -97,16 +103,19 @@ In the Azure portal, navigate to **Azure AD**, **Enterprise applications**, Sale
 
 Add a new mapping with these values:
 
-  * Mapping Type: Direct
-  * Source Attribute: userPrincipalName
-  * Default Value: `<blank>`
-  * Source Attribute: FederationIdentifier
-  * Match objects using this attribute: No
-  * Apply this mapping: Always
+* Mapping Type: Direct
+* Source Attribute: userPrincipalName
+* Default Value: `<blank>`
+* Source Attribute: FederationIdentifier
+* Match objects using this attribute: No
+* Apply this mapping: Always
 
 This should look similar to the screenshot below:
 
-![Adding the FederationIdentity Attribute Mapping for Salesforce]({{site.baseurl}}/media/2016/12/SalesforceAttributeMapping.png)*Adding the FederationIdentity Attribute Mapping for Salesforce*
+![Adding the FederationIdentity Attribute Mapping for Salesforce]({{site.baseurl}}/media/2016/12/SalesforceAttributeMapping.png)
+
+Adding the FederationIdentity Attribute Mapping for Salesforce
+{:.figcaption}
 
 Save the configuration and start the provisioning synchronisation and single sign-ins should now work.
 

@@ -1,10 +1,10 @@
 ---
-id: 2366
+
 title: Is it legal to virtualize Apple iTunes?
 date: 2011-09-16T11:55:23+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2366
+
 permalink: /is-it-legal-to-virtualize-apple-itunes/
 Hide SexyBookmarks:
   - "0"
@@ -40,7 +40,7 @@ Based on [my recipe for iTunes]({{site.baseurl}}/virtualisation/sequencing-apple
 
 I could configure my package such that the user still needs to accept the license agreement, but in a corporate environment do you really want to have to let users do that?
 
-I could also deliver the iTunes and QuickTime shortcuts to the user's desktop, but most users already have enough shortcuts and files on their desktops, I'm not going to force more on them. Forcing desktop shortcuts on users isn't great user experience and quite frankly, Apple's not going to dictate the user experience in my environment.
+I could also deliver the iTunes and QuickTime shortcuts to the user's desktop, but most users already have enough shortcuts and files on their desktops, I'm not going to force more on them. Forcing desktop shortcuts on users isn't great user experience and quite frankly, Apple's not going to dictate the user experience in my environment.
 
 But ultimately it's point 1 that has me concerned - if you interpret the agreement to the letter, then it sounds like application virtualization is breaking that agreement.
 

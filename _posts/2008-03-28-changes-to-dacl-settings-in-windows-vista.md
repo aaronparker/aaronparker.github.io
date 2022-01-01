@@ -1,10 +1,10 @@
 ---
-id: 510
+
 title: Changes To DACL Settings In Windows Vista
 date: 2008-03-28T18:53:17+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/windows/changes-to-dacl-settings-in-windows-vista
+
 permalink: /changes-to-dacl-settings-in-windows-vista/
 categories:
   - Microsoft

@@ -1,10 +1,10 @@
 ---
-id: 2633
+
 title: 'Mailbag - Deploying multiple editions of Office 2010 with App-V'
 date: 2012-02-15T17:45:14+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2633
+
 permalink: /mailbag-deploying-multiple-editions-of-office-2010-with-app-v/
 Hide SexyBookmarks:
   - "0"

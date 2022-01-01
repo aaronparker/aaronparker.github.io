@@ -1,10 +1,10 @@
 ---
-id: 134
+
 title: Web Interface for Resource Manager 2.1 Available
 date: 2006-12-07T21:02:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/web-interface-for-resource-manager-21-available
+
 permalink: /web-interface-for-resource-manager-21-available/
 categories:
   - Citrix

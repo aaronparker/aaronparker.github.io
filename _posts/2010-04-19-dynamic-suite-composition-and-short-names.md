@@ -1,10 +1,10 @@
 ---
-id: 1468
+
 title: Dynamic Suite Composition and short names
 date: 2010-04-19T10:00:05+10:00
 author: Nicke Källén
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1468
+
 permalink: /dynamic-suite-composition-and-short-names/
 has_been_twittered:
   - 'yes'
@@ -17,7 +17,7 @@ tags:
   - dsc
   - dynamic suite composition
 ---
-_This is a guest post from Nicke Källén, an_ [_App-V MVP_](https://mvp.support.microsoft.com/profile=DEDA5599-4A38-46A1-A4B0-479D4A945793) _from Sweden. He posts as [Znack](http://social.technet.microsoft.com/Profile/en-US/?user=znack&referrer=http%3a%2f%2fsocial.technet.microsoft.com%2fForums%2fen-US%2fappvclients%2fthread%2fba1a1e3b-b14e-45aa-9373-ba83601b67e9%3foutputas%3dxml&rh=tWq%2byX14GBUU1nKZoHcORYkqCJLPYn4mhXSrzDpr8kk%3d&sp=forums) on the [TechNet Forums](http://social.technet.microsoft.com/Forums/en-gb/category/appvirtualization), where he's consistently the  most active answerer in App-V topics. You can find his blog_ [_here_](http://www.viridisit.se/eng/blog/)_._ 
+_This is a guest post from Nicke Källén, an_ [_App-V MVP_](https://mvp.support.microsoft.com/profile=DEDA5599-4A38-46A1-A4B0-479D4A945793) _from Sweden. He posts as [Znack](http://social.technet.microsoft.com/Profile/en-US/?user=znack&referrer=http%3a%2f%2fsocial.technet.microsoft.com%2fForums%2fen-US%2fappvclients%2fthread%2fba1a1e3b-b14e-45aa-9373-ba83601b67e9%3foutputas%3dxml&rh=tWq%2byX14GBUU1nKZoHcORYkqCJLPYn4mhXSrzDpr8kk%3d&sp=forums) on the [TechNet Forums](http://social.technet.microsoft.com/Forums/en-gb/category/appvirtualization), where he's consistently the  most active answerer in App-V topics. You can find his blog_ [_here_](http://www.viridisit.se/eng/blog/)_._ 
 
 ![AppVLogo]({{site.baseurl}}/media/2010/04/AppVLogo.png) After looking for information in all my usual channels during the last few months and banging my head against the wall for not understanding why I always run into problems in specific scenarios I finally came to a breakthrough in solving an issue that had been bugging me since early 2009.
 

@@ -1,17 +1,21 @@
 ---
 layout: post
 title: Goodbye WordPress. Hello, Jekyll!
+description: How I moved steatlhpuppy.com from WordPress to Jekyll and GitHub pages and host this site for free.
 date: 2019-04-18 12:30 +1000
 permalink: /goodbye-wordpess-hello-jekyll/
+image:
+  path:    /assets/img/hello/image.jpg
+  srcset:
+    1920w: /assets/img/hello/image.jpg
+    960w:  /assets/img/hello/image@0,5x.jpg
+    480w:  /assets/img/hello/image@0,25x.jpg
 categories:
   - General
-tags:
-  - GitHub Pages
-  - Jekyll
-  - Visual Studio Code
-  - Markdown
-  - Cloudflare
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 With a hosting renewal pending I thought it past time to migrate to a new platform for stealthpuppy.com. While I've found WordPress to be OK with plenty of support for extensibility through plug-ins, I'm not keen on paying for a blogging platform that I don't actively make an income from, nor do I want to deal with the hassle of a multi-tier platform using MySQL, PHP and WordPress itself.
 
 Over the past week or so, I've migrated stealthpuppy.com from WordPress to [Jekyll](https://jekyllrb.com/) and to say that I'm impressed with the results is a massive understatement. The affect on the performance of my site has been phenomenal.

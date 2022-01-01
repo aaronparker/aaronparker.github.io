@@ -1,10 +1,10 @@
 ---
-id: 290
+
 title: Presentation Server and the Sun Java VM
 date: 2005-10-05T14:50:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/presentation-server-and-the-sun-java-vm
+
 permalink: /presentation-server-and-the-sun-java-vm/
 dsq_thread_id:
   - "195379043"

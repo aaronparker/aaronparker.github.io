@@ -1,10 +1,10 @@
 ---
-id: 561
+
 title: Citrix Enters The Profile Management Space
 date: 2008-05-21T00:13:42+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/workspace-management/citrix-enters-the-profile-management-space
+
 permalink: /citrix-enters-the-profile-management-space/
 categories:
   - Citrix

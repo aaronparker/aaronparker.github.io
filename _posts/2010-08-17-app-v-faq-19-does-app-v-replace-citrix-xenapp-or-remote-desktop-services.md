@@ -1,10 +1,10 @@
 ---
-id: 1776
+
 title: 'App-V FAQ: Does App-V replace Citrix XenApp or Remote Desktop Services?'
 date: 2010-08-17T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/deployment/app-v-faq-19-does-app-v-replace-citrix-xenapp-or-remote-desktop-services
+
 permalink: /app-v-faq-19-does-app-v-replace-citrix-xenapp-or-remote-desktop-services/
 dsq_thread_id:
   - "195383196"

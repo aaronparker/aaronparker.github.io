@@ -1,10 +1,10 @@
 ---
-id: 987
+
 title: Start Menu in Windows 7 7048
 date: 2009-03-10T22:01:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/windows/start-menu-in-windows-7-7048
+
 permalink: /start-menu-in-windows-7-7048/
 aktt_notify_twitter:
   - 'yes'

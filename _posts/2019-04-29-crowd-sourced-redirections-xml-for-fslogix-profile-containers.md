@@ -1,14 +1,21 @@
 ---
 layout: post
 title: Crowd Sourced Redirections.xml for FSLogix Profile Containers
+description: A project to maintain a list of folder exclusions to assist in managing the size of FSLogix Profile Containers.
 date: 2019-04-29 17:50 +1000
 permalink: "/fslogix-profile-containers-redirections/"
+image:
+  path:    /assets/img/crowd/image.jpg
+  srcset:
+    1920w: /assets/img/crowd/image.jpg
+    960w:  /assets/img/crowd/image@0,5x.jpg
+    480w:  /assets/img/crowd/image@0,25x.jpg
 categories:
 - Microsoft
-tags:
-- FSLogix
-- Profile Container
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Here's a new tool that I've [pushed to the PowerShell Gallery](https://www.powershellgallery.com/packages/ConvertTo-RedirectionsXml/) - `ConvertTo-RedirectionsXml` for generating a `Redirections.Xml` for use with Profile Container. This makes the task of generating a new `Redirections.xml` as simple as running two PowerShell commands:
 
 [![Installing and using the ConvertTo-RedirectionsXml]({{site.baseurl}}/media/2019/04/ConvertTo-RedirectionsXml.PNG)]({{site.baseurl}}/media/2019/04/ConvertTo-RedirectionsXml.PNG)

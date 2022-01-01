@@ -1,10 +1,10 @@
 ---
-id: 206
+
 title: Slow Program Neighbourhood Agent?
 date: 2006-08-25T05:57:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/uncategorized/slow-program-neighbourhood-agent
+
 permalink: /slow-program-neighbourhood-agent/
 categories:
   - Citrix

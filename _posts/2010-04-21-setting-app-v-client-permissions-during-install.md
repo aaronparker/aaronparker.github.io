@@ -1,10 +1,10 @@
 ---
-id: 1491
+
 title: Setting App-V client permissions during install
 date: 2010-04-21T22:03:43+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=1491
+
 permalink: /setting-app-v-client-permissions-during-install/
 has_been_twittered:
   - 'yes'
@@ -17,7 +17,7 @@ tags:
 ---
 However, I generally recommend configuring as many settings as you can during install so that you don't have to rely on external tools (e.g. Group Policy) that may not apply in a timely manner.
 
-I have had to set permissions during install to make changes to the default permission set. Those permissions aren't documented on TechNet, so I have listed them here. The following table lists the permissions that you can modify by passing parameters to Setup or via Windows Installer
+I have had to set permissions during install to make changes to the default permission set. Those permissions aren't documented on TechNet, so I have listed them here. The following table lists the permissions that you can modify by passing parameters to Setup or via Windows Installer
 
 |Parameter|Values|Description|FIELD4                                                                                                                                                                                  |
 |---------|------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

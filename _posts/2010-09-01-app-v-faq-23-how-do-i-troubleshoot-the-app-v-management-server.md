@@ -1,10 +1,10 @@
 ---
-id: 1853
+
 title: 'App-V FAQ: How do I troubleshoot the App-V Management Server?'
 date: 2010-09-01T11:00:00+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/virtualisation/app-v-faq-23-how-do-i-troubleshoot-the-app-v-management-server
+
 permalink: /app-v-faq-23-how-do-i-troubleshoot-the-app-v-management-server/
 dsq_thread_id:
   - "195464115"
@@ -50,7 +50,7 @@ The App-V Management Server event log is located in:
 
 ![]({{site.baseurl}}/media/2010/08/AppVServerLogfilelocation.png)
 
-There are a couple of great posts on using the log files to troubleshoot issues with the log file: [Troubleshooting App-V with log files](http://blogs.technet.com/b/appv/archive/2009/01/26/troubleshooting-app-v-with-log-files.aspx)  and [Getting to Grip with the App-V Server Log File (sft-server.log)](http://blogs.technet.com/b/virtualworld/archive/2009/04/10/getting-to-grip-with-the-app-v-server-log-file-sft-server-log.aspx).
+There are a couple of great posts on using the log files to troubleshoot issues with the log file: [Troubleshooting App-V with log files](http://blogs.technet.com/b/appv/archive/2009/01/26/troubleshooting-app-v-with-log-files.aspx)  and [Getting to Grip with the App-V Server Log File (sft-server.log)](http://blogs.technet.com/b/virtualworld/archive/2009/04/10/getting-to-grip-with-the-app-v-server-log-file-sft-server-log.aspx).
 
 Although you can use Telnet to check connectivity issues, you should first reach for the App-V Ping Tool by [Immidio](http://immidio.com/). This command-line application comes as a part of the [Immidio Resource Kit](http://immidio.com/resourcekit/), which is free. I can’t speak highly enough of the App-V Ping Tool, it’s the fastest and easiest way to determine whether the Management Server is contactable.
 

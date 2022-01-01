@@ -1,10 +1,10 @@
 ---
-id: 2828
+
 title: Replacing Redirected Folders and Offline Files with AppSense DataNow
 date: 2012-08-08T20:34:34+10:00
 author: Aaron Parker
 layout: post
-guid: http://blog.stealthpuppy.com/?p=2828
+
 permalink: /replacing-redirected-folders-and-offline-files-with-appsense-datanow/
 Hide SexyBookmarks:
   - "0"

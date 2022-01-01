@@ -1,10 +1,10 @@
 ---
-id: 1652
+
 title: Virtualising Apple Safari 5
 date: 2010-06-22T21:29:54+10:00
 author: Aaron Parker
 layout: post
-guid: https://stealthpuppy/virtualisation/virtualising-apple-safari-5
+
 permalink: /virtualising-apple-safari-5/
 has_been_twittered:
   - 'yes'
