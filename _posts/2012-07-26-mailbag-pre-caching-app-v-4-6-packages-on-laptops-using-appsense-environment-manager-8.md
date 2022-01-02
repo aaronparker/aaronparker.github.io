@@ -106,6 +106,4 @@ I've included a sample configuration below that uses each of these approaches by
 
 Download the configuration shown above from here:
 
-<p class="important">
-  [download id="57&#8243; format="1&#8243;]
-</p>
+[Pre-CacheConfig.aemp]({{site.baseurl}}/downloads/2012/07/Pre-CacheConfig.aemp)

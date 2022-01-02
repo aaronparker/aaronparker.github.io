@@ -130,9 +130,7 @@ There’s no reason why you couldn’t install and configure QuickTime and iTune
 
 You can download the script here:
 
-<p class="download">
-  [download id="41&#8243; format="1&#8243;]
-</p>
+[iTunesAppVInstallScript.txt]({{site.baseurl}}/downloads/2011/06/iTunesAppVInstallScript.txt)
 
 Place the script into the same folder as the iTunes Windows Installer files as it will attempt to run the MSI files from the same location.
 
@@ -155,9 +153,7 @@ There are a number of locations that we need to exclude from capture during sequ
 
 I have included these in a Package Template for iTunes that you can download from here:
 
-<p class="download">
-  [download id="40&#8243; format="1&#8243;]
-</p>
+[iTunesPackageTemplate.sprt]({{site.baseurl}}/downloads/2011/06/iTunesPackageTemplate.sprt)
 
 ## Sequencing iTunes
 
@@ -203,9 +199,7 @@ Add a script to the iTunes OSD file to create the AppData folder structure that 
 
 For an example of what to add to the OSD file, download the example here:
 
-<p class="download">
-  [download id="42&#8243; format="1&#8243;]
-</p>
+[iTunesAppVScriptBody.txt]({{site.baseurl}}/downloads/2011/06/iTunesAppVScriptBody.txt)
 
 **iPod Service**: Set the `iPod Service` to Automatic. This will ensure that the service is ready as soon as iTunes starts.
 
@@ -215,7 +209,7 @@ For an example of what to add to the OSD file, download the example here:
 
 ![]({{site.baseurl}}/media/2011/06/10ProcExp.png)
 
-On occasion these processes may remain running after iTunes has exited, if this is the case (and you may have already seen this behaviour when building the Primary Feature block) set TERMINATECHILDREN to True in the iTunes OSD.
+On occasion these processes may remain running after iTunes has exited, if this is the case (and you may have already seen this behaviour when building the Primary Feature block) set `TERMINATECHILDREN` to True in the iTunes OSD.
 
 ![]({{site.baseurl}}/media/2011/06/iTunesTerminateChildren.png)
 
@@ -231,7 +225,7 @@ While I've been able to test iTunes successfully running on an App-V Client, the
 
 ![]({{site.baseurl}}/media/2011/06/AppleMobileDeviceService.png)
 
-Although iTunes reports this error and I can confirm that the service is started (it's running natively, not within the package), once acknowledged device sync works anyway. I've tested with LOCALINTERACTIONALLOWED which hasn't helped. I'll update this post if I find a solution.
+Although iTunes reports this error and I can confirm that the service is started (it's running natively, not within the package), once acknowledged device sync works anyway. I've tested with `LOCALINTERACTIONALLOWED` which hasn't helped. I'll update this post if I find a solution.
 
 Last, but not least, for media sharing to work, firewall exceptions will be required for the following processes:
 

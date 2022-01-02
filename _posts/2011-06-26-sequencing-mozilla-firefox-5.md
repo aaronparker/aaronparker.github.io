@@ -65,15 +65,11 @@ There are a couple of features that should be disabled when running Firefox unde
 
 Available below is a copy of _user.js_ that disables automatic updates of Firefox and checking whether it is the default browser:
 
-<p class="download">
-  [download id="44&#8243; format="1&#8243;]
-</p>
+[user.js]({{site.baseurl}}/downloads/2011/06/user.js)
 
 Here is a copy of _userChrome.css_ that will remove updates and default browser options from user interface:
 
-<p class="download">
-  [download id="45&#8243; format="1&#8243;]
-</p>
+[UserChrome.css]({{site.baseurl}}/downloads/2011/06/UserChrome.css)
 
 ## Sequencing Platform
 
@@ -97,9 +93,7 @@ If you are adding Adobe Flash Player to the package, add these exclusions as wel
 
 I have included these in a Package Template for Firefox that you can download from here:
 
-<p class="download">
-  [download id="46&#8243; format="1&#8243;]
-</p>
+[Firefox5Template.sprt]({{site.baseurl}}/downloads/2011/06/Firefox5Template.sprt)
 
 ## Installing Firefox
 
@@ -119,9 +113,7 @@ Automating this process as much as possible will create a cleaner package and ma
 
 For an example script that will automate the install and configuration of Firefox, see the script below:
 
-<p class="download">
-  [download id="47&#8243; format="1&#8243;]
-</p>
+[InstallFirefoxAppV.txt]({{site.baseurl}}/downloads/2011/06/InstallFirefoxAppV.txt)
 
 ## Shortcuts
 

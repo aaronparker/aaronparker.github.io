@@ -60,6 +60,4 @@ When deploying the client via Group Policy, there's a good chance that you'll fi
 
 Unfortunately the transform file provided by Citrix doesn't work with the Presentation Server Client 10, so I've recreated it to work with version 10. Here's the file for you to download and test in your own environment. Just a quick word of warning - I've only performed some very quick testing at this stage. Before you use this, test it out to ensure it works for you in your network.
 
-<p class="download">
-  <a href="{{site.baseurl}}/media/2007/03/slfregfix2.mst">Transform to enable Pass-through authentication</a>
-</p>
+[Transform to enable Pass-through authentication]({{site.baseurl}}/media/2007/03/slfregfix2.mst)

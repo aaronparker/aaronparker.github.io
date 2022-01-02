@@ -44,7 +44,7 @@ I've previously covered [how to create a customised deployment of Reader X]({{si
 Here's my recommendations for settings that you should configure when creating a transform to install Reader during sequencing:
 
 * _Personalisation Options_: change the install path if required. You can choose to install to the virtual drive; however a VFS install will work as well
-* _Installation Options_: disable the caching of the Reader installer files to reduce the size of the package. Choose an unattended install and supress reboot
+* _Installation Options_: disable the caching of the Reader installer files to reduce the size of the package. Choose an unattended install and suppress reboot
 * _Files and Folders_: add the JavaScript (HideItems.js) to disable additional toolbar buttons and menu items
 * _Registry_: add the bProtectedMode value to the Policies key to disable Protected Mode (more on that below)
 * _Shortcuts_: disable the shortcut added to the Desktop
@@ -76,10 +76,6 @@ Copy the Reader setup files, the Windows Installer transform and the script into
 There are no additional requirements or dependencies for virtualizing Reader X and I have successfully created an App-V package on Windows 7 x86 and deployed to both x86 and x64 platforms using the custom installation and script outlined above.
 
 I have provided here a copy of the App-V 4.6 SP1 Package Template which includes a number of exclusions that do not need to be captured in a Reader package.
-
-<p class="download">
-  [download id="43&#8243; format="1&#8243;]
-</p>
 
 There is one issue though – the Adobe Reader Protected Mode doesn't like running under App-V. During the monitoring phase the application may not launch on first run and on the second launch the following dialog box will be displayed:
 

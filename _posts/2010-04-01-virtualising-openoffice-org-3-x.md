@@ -28,9 +28,7 @@ Virtualising OpenOffice is a basic three-step process:
 
 To install the JRE, download the latest offline installer - [Sun JRE 1.6 Update 18 offline installer](http://javadl.sun.com/webapps/download/AutoDL?BundleId=37981) and use this install script:
 
-<p class="download">
-  [download id="33&#8243; format="1&#8243;]
-</p>
+[Install-JRE-AppV.txt]({{site.baseurl}}/download/2010/03/Install-JRE-AppV.txt)
 
 The script will install the JRE to the virtual drive letter, install just the core Java components, disable the updater and ensure the quick starter service is removed.
 
@@ -51,9 +49,7 @@ The screenshot below shows the available components for OpenOffice 3.2, with the
 
 The [unattended reference for OpenOffice](http://wiki.services.openoffice.org/wiki/Documentation/How`Tos/Automatic`Installation`on`Windows) appears to be based on OpenOffice 2, so you may have to refer to the MSI itself when customising the install. See the Feature table for the names for each of the components. I prefer to do everything on  the command-line, instead of creating a transform where I can, so my OpenOffice install looks like this:
 
-<p class="download">
-  [download id="34&#8243; format="1&#8243;]
-</p>
+[Install-OpenOffice-AppV.txt]({{site.baseurl}}/download/2010/03/Install-OpenOffice-AppV.txt)
 
 ## Virtualising (or Sequencing) OpenOffice
 

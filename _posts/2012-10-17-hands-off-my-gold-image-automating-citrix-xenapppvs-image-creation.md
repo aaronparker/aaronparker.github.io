@@ -92,7 +92,7 @@ During this step there are a number of items to complete in order:
 So that you don't need to reinvent the wheel completely, I've made available here the following components:
 
   * A sample CustomSettings.ini that includes the customisations used in this deployment
-  * The Windows Server 2008 R2/Citrix XenApp 6.5 task sequence and unattend.xml
+  * The Windows Server 2008 R2/Citrix XenApp 6.5 task sequence and `unattend.xml`
   * Citrix XenApp installation and configuration script
   * The Citrix XenApp Hotfixes script
   * Microsoft .NET Framework 4 installation script
@@ -100,9 +100,7 @@ So that you don't need to reinvent the wheel completely, I've made available her
   * Citrix XenConvert install script
   * XenConvert/PVS image conversion script
 
-<p class="important">
-  [download id="58&#8243; format="1&#8243;]
-</p>
+[MDT-XenApp-PVS-automation1.zip]({{site.baseurl}}/downloads/2012/10/MDT-XenApp-PVS-automation1.zip)
 
 ## Finally
 

@@ -64,17 +64,13 @@ Mozilla has made it easy to deploy custom default settings and preferences – b
 
 To enforce user settings we can leverage [_user.js_](http://kb.mozillazine.org/User.js_file) and the use [_UserChrome.css_](http://www-archive.mozilla.org/unix/customizing.html) to remove those user interface elements. Available below is a copy of _user.js_ that disables automatic updates of Firefox and checking whether it is the default browser:
 
-<p class="download">
-  [download id="44&#8243; format="1&#8243;]
-</p>
+[user.js]({{site.baseurl}}/downloads/2011/06/user.js)
 
 A simple approach to extending the options in [user.js](http://kb.mozillazine.org/User.js_file) and [prefs.js](http://kb.mozillazine.org/Prefs.js_file) is to install Firefox and configure it the way you would like. Then open prefs.js from the new profile and use the entries to create custom versions.
 
-Available here is a copy of _userChrome.css_ that will remove from the user interface the options to enable browser updates and set Firefox as the default browser:
+Available here is a copy of `userChrome.css` that will remove from the user interface the options to enable browser updates and set Firefox as the default browser:
 
-<p class="download">
-  [download id="45&#8243; format="1&#8243;]
-</p>
+[UserChrome.css]({{site.baseurl}}/downloads/2011/06/UserChrome.css)
 
 ## Sequencing Platform
 
@@ -98,9 +94,7 @@ If you are adding Adobe Flash Player to the package, add these exclusions as wel
 
 I have included these in a Package Template for Firefox that you can download from here:
 
-<p class="download">
-  [download id="46&#8243; format="1&#8243;]
-</p>
+[Firefox5Template.sprt]({{site.baseurl}}/downloads/2011/06/Firefox5Template.sprt)
 
 ## Installing Firefox
 

@@ -43,9 +43,7 @@ Unfortunately the updater component is in process so it is difficult to remove f
 
 I have included a sample script below, that shows the unattended options that I have used during sequencing:
 
-<p class="download">
-  [download id=37 format=1]
-</p>
+[InstallPaintDotNet.txt]({{site.baseurl}}/download/2010/05/InstallPaintDotNet.txt)
 
 ## Virtualising (or Sequencing) Paint.NET
 

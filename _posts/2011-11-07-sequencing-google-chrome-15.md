@@ -89,9 +89,7 @@ If a Chrome profile is not virtualized within the package any options set during
 
 For information on what these master preferences are, see the [Chromium administrators documentation on master preferences](http://www.chromium.org/administrators/configuring-other-preferences). I've included a sample **master_preferences** file in which I have set several defaults including removing the default browser check, preventing Google from adding a shortcut to the user's desktop on first run and setting a home page.
 
-<p class="download">
-  [download id="51&#8243; format="1&#8243;]
-</p>
+[master_preferences.txt]({{site.baseurl}}/downloads/2011/11/master_preferences.txt)
 
 Remove the .txt file extension to use
 
@@ -114,9 +112,7 @@ The last two exclusions will prevent Google Update related binaries from being c
 
 I have included these options in a Package Template for Chrome that you can download here:
 
-<p class="download">
-  [download id="52&#8243; format="1&#8243;]
-</p>
+[GoogleChrome.sprt]({{site.baseurl}}/downloads/2011/11/GoogleChrome.sprt)
 
 ## Sequencing Chrome
 

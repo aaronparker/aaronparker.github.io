@@ -148,13 +148,11 @@ sc config MozillaMaintenance start= disabled
 
 If the installation has been configured correctly, Firefox should start and not display the Import Wizard or any of the other prompts and start-up tabs. Additionally, if you navigate to about:config, a number of preferences should be listed as locked:
 
-![FirefoxSettings_thumb.png]({{site.baseurl}}/media/2013/03/FirefoxSettings.png)
+![FirefoxSettings.png]({{site.baseurl}}/media/2013/03/FirefoxSettings.png)
 
 To make it easier, I've included the configuration files and the installation script listed above in a single ZIP file that you can download here:
 
-<p class="download">
-  [download id="60&#8243; format="1&#8243;]
-</p>
+[MozillaFirefoxInstallAndConfigure.zip]({{site.baseurl}}/downloads/2013/03/MozillaFirefoxInstallAndConfigure.zip)
 
 ## Finally
 
@@ -166,5 +164,5 @@ This is also a key approach to use when virtualising Firefox. Controlling the br
 
 Here’s some other articles from around the tubes that cover this topic and are also useful references:
 
-  * [Customizing the Firefox Installer on Windows (2012)](http://mike.kaply.com/2012/02/14/customizing-the-firefox-installer-on-windows-2012/)
-  * [Install and Configure Firefox 18 silently](http://www.mockbox.net/configmgr-sccm/174-install-and-configure-firefox-silently)
+* [Customizing the Firefox Installer on Windows (2012)](http://mike.kaply.com/2012/02/14/customizing-the-firefox-installer-on-windows-2012/)
+* [Install and Configure Firefox 18 silently](http://www.mockbox.net/configmgr-sccm/174-install-and-configure-firefox-silently)

@@ -74,9 +74,7 @@ If you are adding Adobe Flash Player to the package, add these exclusions as wel
 
 I have included these in a Package Template for Firefox that you can download from here:
 
-<p class="download">
-  [download id="46&#8243; format="1&#8243;]
-</p>
+[Firefox5Template.sprt]({{site.baseurl}}/downloads/2011/06/Firefox5Template.sprt)
 
 ## Installing Firefox
 

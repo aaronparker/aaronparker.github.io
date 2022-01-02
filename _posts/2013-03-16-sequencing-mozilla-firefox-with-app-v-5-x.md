@@ -60,9 +60,7 @@ Before sequencing, add the following recommended exclusions. :
 
 Download the following Sequencer Template as a starting point for your Firefox sequence:
 
-<p class="download">
-  [download id="61&#8243; format="1&#8243;]
-</p>
+[AppV5SequencerTemplate.appvt1.zip]({{site.baseurl}}/downloads/2013/03/AppV5SequencerTemplate.appvt1.zip)
 
 ## Installing Firefox
 
@@ -97,7 +95,7 @@ If the steps above have been followed for exclusions, installation and configura
 With the provided script, sequencing Firefox with the App-V 5 PowerShell module is very simple. Use the PowerShell script below to create a Firefox package based on the steps outlined above.
 
 ```powershell
-Import-Module AppvSequencera
+Import-Module AppvSequencer
 New-Item -Path C:\Packages\MozillaFirefox19 -ItemType Directory
 CD C:\Packages\Firefox19
 New-AppvSequencerPackage -Name "Mozilla Firefox 19" -TemplateFilePath .\AppV5SequencerTemplate.appvt -OutputPath C:\Packages -PrimaryVirtualApplicationDirectory C:\MozillaFirefox -Installer .\InstallFirefox.cmd

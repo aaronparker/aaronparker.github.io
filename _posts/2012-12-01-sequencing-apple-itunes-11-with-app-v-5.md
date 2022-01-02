@@ -60,9 +60,7 @@ It is highly recommended to exclude %APPDATA% in the iTunes package to avoid thi
 
 There are a number of locations that should be excluded from the package during sequencing, including %APPDATA%. I have included these in a Package Template for iTunes that you can download from here:
 
-<p class="download">
-  [download id="59&#8243; format="1&#8243;]
-</p>
+[iTunes-AppV5SequencerTemplate.appvt]({{site.baseurl}}/downloads/2012/12/iTunes-AppV5SequencerTemplate.appvt)
 
 ## Installing iTunes
 

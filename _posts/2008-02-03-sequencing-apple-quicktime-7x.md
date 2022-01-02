@@ -50,12 +50,6 @@ Automating the installation of QuickTime is very simple once you know how. An ex
 * Delete the `QTTASK.EXE` application from the Run registry key
 * Ensure users are not prompted to reclaim file associations by the ActiveX control
 
-Download the copy of the install script here:
-
-<p class="download">
-  [download id=36 format=1]
-</p>
-
 ## QuickTime preferences
 
 There are a number of settings that you should consider in your QuickTime package, which can include registration information for QuickTime Pro:
