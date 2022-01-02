@@ -275,7 +275,7 @@ To find the complete list of preferences for Reader and Acrobat you should refer
 
 > The Administrator's Information Manager (AIM) is an auto-updating and customizable AIR application containing the Preference Reference. AIM also includes and a growing list of other resources of interest to administrators in enterprise settings.
 
-![AdminInformaitonManager]({{site.baseurl}}/media/2010/10/AdminInformaitonManager.png
+![AdminInformaitonManager]({{site.baseurl}}/media/2010/10/AdminInformaitonManager.png)
 
 ## Additional Reading
 

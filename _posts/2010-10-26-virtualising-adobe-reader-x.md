@@ -79,7 +79,7 @@ I have provided here a copy of the App-V 4.6 SP1 Package Template which includes
 
 There is one issue though – the Adobe Reader Protected Mode doesn't like running under App-V. During the monitoring phase the application may not launch on first run and on the second launch the following dialog box will be displayed:
 
-![AdobeReaderProtectedModePrompt]({{site.baseurl}}/media/2010/10/AdobeReaderProtectedModePrompt)
+![AdobeReaderProtectedModePrompt]({{site.baseurl}}/media/2010/10/AdobeReaderProtectedModePrompt.png)
 
 Choosing the option 'Always open with Protected Mode disabled' will save the setting in HKCU in the Registry, but until a fix is found (either by Adobe or Microsoft) you can disable Protected Mode using the following Registry key:
 
