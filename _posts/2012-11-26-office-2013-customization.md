@@ -36,26 +36,26 @@ Note that if you are [deploying Office 2013 with Click-to-Run (App-V)](http://te
 
 To manage an Office 2013 deployment, copy the Office source files to a folder and ensure you've downloaded the latest updates and service packs. [Extract these and copy into your Office setup folder under Updates](http://technet.microsoft.com/en-us/library/cc178995.aspx). These will then be installed along side Office during setup.
 
-  * [Service Pack 1 for Microsoft Office 2013 (KB2817430) 32-Bit Edition](http://www.microsoft.com/en-us/download/details.aspx?id=42017)
-  * [Service Pack 1 for Microsoft Office 2013 (KB2817430) 64-Bit Edition](http://www.microsoft.com/en-us/download/details.aspx?id=42006)
+* [Service Pack 1 for Microsoft Office 2013 (KB2817430) 32-Bit Edition](http://www.microsoft.com/en-us/download/details.aspx?id=42017)
+* [Service Pack 1 for Microsoft Office 2013 (KB2817430) 64-Bit Edition](http://www.microsoft.com/en-us/download/details.aspx?id=42006)
 
 To create an Office Setup Customization, download the  [Office 2013 Administrative Template files (ADMX/ADML) and Office Customization Tool](http://www.microsoft.com/en-us/download/details.aspx?id=35554). After extracting the Office Customization Tool download, [copy the Admin folder to your copy of Office 2013 setup](http://technet.microsoft.com/en-us/library/cc179121.aspx) and create a new Setup Customization File for Office 2013, by running: `SETUP /ADMIN`
 
 The Office Customization Tool will launch:
 
-![CreateCustomizationFile]({{site.baseurl}}/media/2012/11/CreateCustomizationFile_thumb.png]({{site.baseurl}}/media/2012/11/CreateCustomizationFile.png)
+![CreateCustomizationFile]({{site.baseurl}}/media/2012/11/CreateCustomizationFile.png)
 
 Choose the default file types:
 
-![FileTypes]({{site.baseurl}}/media/2012/11/FileTypes_thumb.png)
+![FileTypes]({{site.baseurl}}/media/2012/11/FileTypes.png)
 
 Set licensing options and the display level of the setup UI. These options will vary dependant on whether you're using KMS or MAK licensing and how you’re deploying Office:
 
-![Licensing]({{site.baseurl}}/media/2012/11/Licensing_thumb.png)
+![Licensing]({{site.baseurl}}/media/2012/11/Licensing.png)
 
 Navigate to the ‘Modify user settings’ page and set the options applicable to your environment. This is the section where the administrator can make changes to the default user experience:
 
-![UserSettings]({{site.baseurl}}/media/2012/11/UserSettings_thumb.png)
+![UserSettings]({{site.baseurl}}/media/2012/11/UserSettings.png)
 
 When saving your customization file, you can choose to save it to the Updates folder where it will run automatically, or [use SETUP.EXE to run a specific customization file](http://technet.microsoft.com/en-us/library/cc178956.aspx).
 

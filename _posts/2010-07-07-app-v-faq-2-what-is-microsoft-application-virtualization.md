@@ -17,7 +17,7 @@ tags:
   - App-V
   - AppVFAQ
 ---
-![AppV-FAQ-Logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo1.png)](http://www.microsoft.com/windows/enterprise/products/mdop/app-v.aspx)
+![AppV-FAQ-Logo]({{site.baseurl}}/media/2010/06/AppVFAQLogo1.png)
 
 Application Virtualization (App-V) is Microsoft’s entry into the application virtualisation space. Originally developed by Softricity, who were bought by Microsoft in 2006, App-V is now an integral part of Microsoft application delivery offerings.
 
@@ -41,13 +41,13 @@ The image below gives you an overview of all of the App-V components (an actual 
 
 Sources and Links to more information about App-V:
 
-  * <sup>1</sup> [Application Virtualization Overview](http://technet.microsoft.com/en-us/library/ee958112.aspx)
-  * <sup>2</sup> [Microsoft Application Virtualization Technical Overview](http://www.microsoft.com/systemcenter/appv/techoverview.mspx)
-  * [Application Virtualization](http://www.microsoft.com/systemcenter/appv/default.mspx) product page
-  * [Microsoft Application Virtualization Getting Started Guide](http://technet.microsoft.com/en-gb/library/ee958103.aspx)
-  * MDOP: [Application Virtualization](http://www.microsoft.com/windows/enterprise/products/mdop/app-v.aspx)
-  * [Application Virtualization TechCentre](http://technet.microsoft.com/en-gb/appvirtualization/default.aspx) on Microsoft TechNet
-  * [Microsoft Application Virtualization](http://en.wikipedia.org/wiki/Microsoft_Application_Virtualization) at Wikipedia
-  * [App-V 4.6 Release Q & A](http://windowsteamblog.com/windows/b/springboard/archive/2010/02/22/app-v-4-6-release-q-amp-a.aspx)
-  * [Inside the Grid: Part 1](http://blogs.technet.com/b/appv/archive/2007/08/02/inside-the-grid-part-1.aspx)
+* <sup>1</sup> [Application Virtualization Overview](http://technet.microsoft.com/en-us/library/ee958112.aspx)
+* <sup>2</sup> [Microsoft Application Virtualization Technical Overview](http://www.microsoft.com/systemcenter/appv/techoverview.mspx)
+* [Application Virtualization](http://www.microsoft.com/systemcenter/appv/default.mspx) product page
+* [Microsoft Application Virtualization Getting Started Guide](http://technet.microsoft.com/en-gb/library/ee958103.aspx)
+* MDOP: [Application Virtualization](http://www.microsoft.com/windows/enterprise/products/mdop/app-v.aspx)
+* [Application Virtualization TechCentre](http://technet.microsoft.com/en-gb/appvirtualization/default.aspx) on Microsoft TechNet
+* [Microsoft Application Virtualization](http://en.wikipedia.org/wiki/Microsoft_Application_Virtualization) at Wikipedia
+* [App-V 4.6 Release Q & A](http://windowsteamblog.com/windows/b/springboard/archive/2010/02/22/app-v-4-6-release-q-amp-a.aspx)
+* [Inside the Grid: Part 1](http://blogs.technet.com/b/appv/archive/2007/08/02/inside-the-grid-part-1.aspx)
   

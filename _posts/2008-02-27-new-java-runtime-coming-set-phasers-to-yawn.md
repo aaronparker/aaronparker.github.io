@@ -15,7 +15,7 @@ tags:
 ---
  for release later this year and there's a couple of changes to this version that have some bearing on deployment. I can't imagine there is an enterprise out there that doesn't have to deal with Java applications.
 
-The biggest change is that from this new version onwards, the point releases (read: updates, like 1.6.0\_3, 1.6.0\_2 etc) will be a thing of the past. New updates will be installed on top of existing installed versions, so you will only see a single version installed to: `C:\Program Files\Java\jre6`. New releases would then be installed to `C:\Program Files\Java\jre7` etc. This is good news as we should no longer have applications that expect a specific point release of the JRE.
+The biggest change is that from this new version onwards, the point releases (read: updates, like `1.6.0_3`, `1.6.0_2` etc) will be a thing of the past. New updates will be installed on top of existing installed versions, so you will only see a single version installed to: `C:\Program Files\Java\jre6`. New releases would then be installed to `C:\Program Files\Java\jre7` etc. This is good news as we should no longer have applications that expect a specific point release of the JRE.
 
 Here's what Sun has to say about the new update process:
 
@@ -31,7 +31,7 @@ This is installed on Windows XP and even though there are [indications that the 
 
 Great, now we're lumped with yet another application with a quick launch process. To me bundling a quick launch executable that continually runs in the background, is a sign that your application is bloated. If you believe the hype though, your applications run faster with Java. Faster than what? Certainly not native applications.
 
-![fasterwithjava]("{{site.baseurl}}/media/2008/02/fasterwithjava.png)
+![fasterwithjava]({{site.baseurl}}/media/2008/02/fasterwithjava.png)
 
 Amazingly this service runs as Local System. That's just asking for trouble, wouldn't [Local Service be a better option](http://www.microsoft.com/technet/security/guidance/serversecurity/serviceaccount/sspgch02.mspx#EBH)? If you want to continue running the Quick Starter service, keep an eye on any security bulletins for the JRE. Owning the service will give you full access to the users machine.
 
@@ -39,7 +39,7 @@ Amazingly this service runs as Local System. That's just asking for trouble, wou
 
 Scripting the installation of the runtime is very simple. It uses the same Windows Installer based setup as previous versions, so you can pass properties to it on the command line.
 
-In testing the JAVAUPDATE property is actually ignored as it is with previous versions, so you will need to add some registry entries to disable the auto-update component. Additionally, I could find no property in the MSI that will prevent the installation of the Java Quick Starter services, it must be removed after installation.
+In testing the `JAVAUPDATE` property is actually ignored as it is with previous versions, so you will need to add some registry entries to disable the auto-update component. Additionally, I could find no property in the MSI that will prevent the installation of the Java Quick Starter services, it must be removed after installation.
 
 This script will install the Sun JRE, remove the Java Quick Starter service and disable the automatic updater. You could improve on this script by creating your own transform file to set the custom properties and actions instead.
 

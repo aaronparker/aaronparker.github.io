@@ -11,4 +11,4 @@ categories:
 ---
 Check out the battery life on my IBM ThinkPad T41p. There's way too much FUD out there about Windows Vista shortening battery life, this is almost two working weeks from a single charge..
 
-~[Battery life]({{site.baseurl}}/media/2006/09/1000.14.86.BatteryLife.png")
+![Battery life]({{site.baseurl}}/media/2006/09/1000.14.86.BatteryLife.png)

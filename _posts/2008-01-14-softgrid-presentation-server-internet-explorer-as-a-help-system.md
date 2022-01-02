@@ -35,4 +35,4 @@ The registry keys that the article states to change this behaviour do indeed imp
 
 Fortunately through a little bit of digging around and testing, I've found that by adding the following registry entry to your OSD files will execute Internet Explorer directly and keep the process within the protected environment, allowing the user to view Help:
 
-![]({{site.baseurl}}/media/2008/05/softgridiereg1.png)
+![]({{site.baseurl}}/media/2008/05/softgridiereg.png)
