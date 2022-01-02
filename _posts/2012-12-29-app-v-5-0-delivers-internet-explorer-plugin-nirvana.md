@@ -98,6 +98,6 @@ Once the key is created and populated, start or restart the target process and t
 
 ## The End to installing Plugins?
 
-RunVirtual is a great new feature of App-V 5.0 that has only been possible with the re-architecture of App-V. The ability to provide add-ons or plugins for installed software without changing the user experience is brilliant. A feature that agent-less application virtalization solutions won't be able to match.
+RunVirtual is a great new feature of App-V 5.0 that has only been possible with the re-architecture of App-V. The ability to provide add-ons or plugins for installed software without changing the user experience is brilliant. A feature that agent-less application virtualization solutions won't be able to match.
 
 However it's still early days for App-V 5.0, so it remains to be seen how widely this feature will be used. At this point, it only works with global (i.e. not user targeted) packages and requires a change to the real registry. It is though, a feature with a lot of promise and I'm looking forward to it simplifying desktop images.

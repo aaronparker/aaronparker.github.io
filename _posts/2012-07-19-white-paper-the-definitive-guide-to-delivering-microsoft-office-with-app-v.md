@@ -26,14 +26,12 @@ Microsoft has some great guidance on using App-V 4.6 to deliver various versions
 
 I'm extremely happy to make this white paper available, which is the result of a lot of time and effort and a companion piece to [a talk that I gave at BriForum London back in May]({{site.baseurl}}/community/briforum-talk-office-and-app-v/).
 
-<p class="important">
-  [download id="56&#8243; format="1&#8243;]
-</p>
+[Download the whitepaper]({{site.baseurl}}/downloads/2012/07/The-Definitive-Guide-to-Delivering-Microsoft-Office-with-App-V-1.01.pdf)
 
 The paper is divided into two parts:
 
-  * _Part 1: To virtualize or not to virtualize_ - a discussion on the pros and cons of  virtualizing Office and what you should be considering if you are going to virtualize Office rather than deliver it as a component of your core gold image
-  * _Part 2: Virtualizing Office with App-V_ - a detailed walkthrough that goes beyond the Microsoft documentation for sequencing and delivering Office 2010, 2007 and 2003 with App-V 4.6
+* _Part 1: To virtualize or not to virtualize_ - a discussion on the pros and cons of  virtualizing Office and what you should be considering if you are going to virtualize Office rather than deliver it as a component of your core gold image
+* _Part 2: Virtualizing Office with App-V_ - a detailed walkthrough that goes beyond the Microsoft documentation for sequencing and delivering Office 2010, 2007 and 2003 with App-V 4.6
 
 The aim of this document is to be the best resource for virtualizing Office 2010, 2007 and 2003 with App-V 4.6 SP1 & SP2 available. Feedback, corrections and criticisms are welcome.
 

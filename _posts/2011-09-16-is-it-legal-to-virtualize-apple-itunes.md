@@ -18,7 +18,7 @@ tags:
   - App-V
   - iTunes
 ---
-_Preface_: I don't speak legalese and this post is based on my own intepretation of the iTunes distribution agreement.
+_Preface_: I don't speak legalese and this post is based on my own interpretation of the iTunes distribution agreement.
 
 I've previously talked about [virtualizing Apple iTunes with App-V]({{site.baseurl}}/virtualisation/sequencing-apple-itunes-10/); however after taking a look through the distribution agreements that you're supposed to accept, I'm under the impression that doing so doesn't adhere to the agreement.
 
@@ -34,9 +34,9 @@ And here's a quote from the corporate site license:
 
 Based on [my recipe for iTunes]({{site.baseurl}}/virtualisation/sequencing-apple-itunes-10/), I understand the process of virtualising the application to be breaking the agreement because we are doing a few things:
 
-  * Extracting the MSI's from the iTunes installer - breaking the Apple installer
-  * Accepting the End User Agreement during the monitoring phase
-  * Probably not delivering the iTunes and QuickTime shortcuts to the desktop
+* Extracting the MSI's from the iTunes installer - breaking the Apple installer
+* Accepting the End User Agreement during the monitoring phase
+* Probably not delivering the iTunes and QuickTime shortcuts to the desktop
 
 I could configure my package such that the user still needs to accept the license agreement, but in a corporate environment do you really want to have to let users do that?
 

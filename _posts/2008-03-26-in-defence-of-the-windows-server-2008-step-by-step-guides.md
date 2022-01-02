@@ -15,7 +15,7 @@ tags:
 ---
  and I'm left scratching my head. His beef with the guides is that they haven't yet been updated for RTM and still include some older terminology:
 
-> In this manual, they still talk about €œWindows Server virtualization (wsv)€ even though wsv was already renamed to Hyper-V in November. It seems as if even Microsoft€™s own employees can€™t keep up with the pace by which their marketing renames their products. Even worse is that this paper doesn€™t mention that Hyper-V is still in beta. I wonder if the author of this paper was aware of this fact. Of course, the reader is also kept in the dark that there meanwhile is an update of Hyper-V which has to be downloaded separately.
+> In this manual, they still talk about €œWindows Server virtualization (wsv)€ even though wsv was already renamed to Hyper-V in November. It seems as if even Microsoft's own employees can't keep up with the pace by which their marketing renames their products. Even worse is that this paper doesn't mention that Hyper-V is still in beta. I wonder if the author of this paper was aware of this fact. Of course, the reader is also kept in the dark that there meanwhile is an update of Hyper-V which has to be downloaded separately.
 
 I subscribe to Michael's blog and enjoy reading what he's got to say, but I think in this case he's missing the big picture. The Step-by-Step "library" contains a list of 24 documents, with the earliest document dated May 2007. Windows Server 2008 was feature complete by Beta 3 in April 2007. This means that, for the most part, these documents will applicable to the final release of Windows 2008.
 

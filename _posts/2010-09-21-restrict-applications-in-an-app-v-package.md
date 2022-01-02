@@ -40,11 +40,11 @@ If you aren't deploying Windows 7 or Windows Server 2008 R2 there are 3rd party 
 
 ## Resources
 
-  * [App-V and AppLocker](http://www.brianmadden.com/blogs/timmangan/archive/2009/10/28/AppV-and-AppLocker.aspx)
-  * [Windows 7 AppLocker Executive Overview](http://technet.microsoft.com/en-us/library/dd548340(WS.10).aspx)
-  * [AppLocker Documentation for Windows 7 and Windows Server 2008 R2](http://technet.microsoft.com/en-us/library/dd723678(WS.10).aspx)
-  * [AppLocker Step-by-Step Guide](http://technet.microsoft.com/en-us/library/dd723686(WS.10).aspx)
-  * [Windows AppLocker](http://technet.microsoft.com/en-us/library/dd759117.aspx)
-  * [Application Virtualization with AppLocker Executable Rules](http://technet.microsoft.com/en-us/windows/ee532032.aspx) (video)
-  * [AppSense Application Manager](http://www.appsense.com/products/applicationmanager.aspx)
-  * [RES PowerFuse](http://www.ressoftware.com/pagina/72/res-powerfuse.aspx)
+* [App-V and AppLocker](http://www.brianmadden.com/blogs/timmangan/archive/2009/10/28/AppV-and-AppLocker.aspx)
+* [Windows 7 AppLocker Executive Overview](http://technet.microsoft.com/en-us/library/dd548340(WS.10).aspx)
+* [AppLocker Documentation for Windows 7 and Windows Server 2008 R2](http://technet.microsoft.com/en-us/library/dd723678(WS.10).aspx)
+* [AppLocker Step-by-Step Guide](http://technet.microsoft.com/en-us/library/dd723686(WS.10).aspx)
+* [Windows AppLocker](http://technet.microsoft.com/en-us/library/dd759117.aspx)
+* [Application Virtualization with AppLocker Executable Rules](http://technet.microsoft.com/en-us/windows/ee532032.aspx) (video)
+* [AppSense Application Manager](http://www.appsense.com/products/applicationmanager.aspx)
+* [RES PowerFuse](http://www.ressoftware.com/pagina/72/res-powerfuse.aspx)

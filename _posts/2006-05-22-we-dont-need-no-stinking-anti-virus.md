@@ -13,7 +13,7 @@ I've recently had conversations about running anti-virus software on some specia
 
   1. The server should utilise a known, good configuration. That is, a scripted build so that installation can be repeated or easily documented, and good change management;
   2. Other than services, code should not be executed on the server. The administrator should never browse the Internet on the server, for example;
-  3. A patch managment process should be in place to keep the operating system and applications current;
+  3. A patch management process should be in place to keep the operating system and applications current;
   4. A host-based firewall should be implemented (ISA Server 2004 firewalls all interfaces). Firewall rules should be stringent, only allowing trusted traffic to the host;
   5. Management of the servers should be performed remotely with the administration tools installed on an administrators workstation. It could be argued, however, that for ISA Server, perhaps only allowing RDP inbound would be more secure.
 

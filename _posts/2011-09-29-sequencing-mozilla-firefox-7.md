@@ -24,15 +24,15 @@ It's easy to virtualize [Firefox with App-V]({{site.baseurl}}/virtualisation/seq
 
 Virtualizing Firefox with App-V will isolate the application from the OS, so the following features will not be available once Firefox has been sequenced:
 
-  * Firefox Jump Lists in the Start Menu and Taskbar
-  * The ability set the browser as default
+* Firefox Jump Lists in the Start Menu and Taskbar
+* The ability set the browser as default
 
 ## Managing the Firefox profile – virtualize or not?
 
 [Firefox stores preferences, extensions and other user data](http://kb.mozillazine.org/Profile_folder_-_Firefox) in:
 
-  * %APPDATA%\Mozilla (preferences, bookmarks etc.); and
-  * %LOCALAPPDATA%\Mozilla (browser cache)
+* %APPDATA%\Mozilla (preferences, bookmarks etc.); and
+* %LOCALAPPDATA%\Mozilla (browser cache)
 
 The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this is a good thing and I don't recommend removing this exclusion.
 
@@ -40,9 +40,9 @@ The default behaviour of the App-V Sequencer is to exclude %LOCALAPPDATA% - this
 
 There are several reasons why this approach is a good idea:
 
-  * Some of the configuration files within the Firefox profile include hard-codes paths – challenging if your App-V virtual drive changes between clients
-  * Virtualizing the profile increases the complexity of upgrading Firefox packages especially challenging given [Mozilla's new approach to Firefox releases](http://www.zdnet.com/blog/bott/mozilla-to-enterprise-customers-drop-dead/3497). By storing the Firefox profile on the real file system, Firefox can be deployed via completely unrelated packages – no need to create upgrade versions
-  * Users can potentially create multiple Firefox profiles, with each stored in the users' PKG file. The minimum size for a new Firefox profile is 12Mb – the PKG file will grow by 12Mb for each new Firefox profile created
+* Some of the configuration files within the Firefox profile include hard-codes paths – challenging if your App-V virtual drive changes between clients
+* Virtualizing the profile increases the complexity of upgrading Firefox packages especially challenging given [Mozilla's new approach to Firefox releases](http://www.zdnet.com/blog/bott/mozilla-to-enterprise-customers-drop-dead/3497). By storing the Firefox profile on the real file system, Firefox can be deployed via completely unrelated packages – no need to create upgrade versions
+* Users can potentially create multiple Firefox profiles, with each stored in the users' PKG file. The minimum size for a new Firefox profile is 12Mb – the PKG file will grow by 12Mb for each new Firefox profile created
 
 By excluding %APPDATA% and not virtualizing the user profile you will gain some flexibility with your Firefox deployment.
 
@@ -54,14 +54,14 @@ Mozilla has made it easy to deploy custom default settings and preferences – b
 
 I will walk through adding a couple of files to this location for to ensure that any new Firefox profile receives the required ; however you can find more detailed documentation on this feature in the following articles:
 
-  * [Enterprise Build Of Firefox For Deployment](http://www.binaryturf.com/enterprise-build-firefox-deployment/)
+* [Enterprise Build Of Firefox For Deployment](http://www.binaryturf.com/enterprise-build-firefox-deployment/)
 
 ## Firefox features to disable
 
 There are a couple of features that should be disabled when running Firefox under App-V:
 
-  * Automatic updates for Firefox – _Options / Advanced / Update - Automatically check for updates to: Firefox_. Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
-  * Default browser check – _Options / Advanced / General - Always check to see if Firefox is the default browser on startup_. Once Firefox is isolated from the OS, the user won't be able to make it the default browser
+* Automatic updates for Firefox – _Options / Advanced / Update - Automatically check for updates to: Firefox_. Firefox updates should be delivered via new App-V packages. Updates for Add-ons and Search Engines should be OK as these are written to the user profile
+* Default browser check – _Options / Advanced / General - Always check to see if Firefox is the default browser on startup_. Once Firefox is isolated from the OS, the user won't be able to make it the default browser
 
 [_user.js_](http://kb.mozillazine.org/User.js_file) is used to configure Firefox options and enforce them and [_UserChrome.css_](http://www-archive.mozilla.org/unix/customizing.html) is used to remove those options from the user interface.
 
@@ -79,15 +79,15 @@ I've used a VFS install, so I have configured a second virtual hard disk to host
 
 Before Sequencing, add the following exclusions:
 
-  * %CSIDL_APPDATA%\Mozilla
-  * %CSIDL\_COMMON\_APPDATA%\Microsoft\RAC
-  * \REGISTRY\USER\%SFT_SID%\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+* %CSIDL_APPDATA%\Mozilla
+* %CSIDL\_COMMON\_APPDATA%\Microsoft\RAC
+* \REGISTRY\USER\%SFT_SID%\Software\Microsoft\Windows\CurrentVersion\Internet Settings
 
 If you are adding Adobe Flash Player to the package, add these exclusions as well:
 
-  * %CSIDL_APPDATA%\Adobe
-  * %CSIDL_APPDATA%\Macromedia
-  * %CSIDL_WINDOWS%\Installer
+* %CSIDL_APPDATA%\Adobe
+* %CSIDL_APPDATA%\Macromedia
+* %CSIDL_WINDOWS%\Installer
 
 I have included these in a Package Template for Firefox that you can download from here:
 
@@ -95,17 +95,17 @@ I have included these in a Package Template for Firefox that you can download fr
 
 Download the [Firefox installer in your target language from the Mozilla site](http://www.mozilla.com/firefox/all.html). Sequencing Firefox will require the following steps:
 
-  * Install Firefox
-  * Configure profile defaults
-  * Optionally add global add-ons and install plug-ins such as Adobe Flash Player
+* Install Firefox
+* Configure profile defaults
+* Optionally add global add-ons and install plug-ins such as Adobe Flash Player
 
 Automating this process as much as possible will create a cleaner package and make it faster to re-create a new Firefox package if required.
 
-  * Mozilla [Firefox installer command line arguments](https://wiki.mozilla.org/Installer:Command_Line_Arguments) – use the INI file approach to control where Firefox is installed and to prevent the addition of a desktop shortcut, if required
-  * After installing Firefox, copy _user.js_ to _%ProgramFiles%\Mozilla Firefox\defaults\profile_
-  * Copy _userChrome.css_ to _%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome_
-  * Firefox also allows you to [add global add-ons by adding them to the Extensions sub-folder](http://kb.mozillazine.org/Installing_extensions) of the Firefox installation folder
-  * If you are including Adobe Flash player in the package, be sure to [disable the auto-update notification](http://kb2.adobe.com/cps/167/16701594.html)
+* Mozilla [Firefox installer command line arguments](https://wiki.mozilla.org/Installer:Command_Line_Arguments) – use the INI file approach to control where Firefox is installed and to prevent the addition of a desktop shortcut, if required
+* After installing Firefox, copy _user.js_ to _%ProgramFiles%\Mozilla Firefox\defaults\profile_
+* Copy _userChrome.css_ to _%ProgramFiles%\Mozilla Firefox\defaults\profile\chrome_
+* Firefox also allows you to [add global add-ons by adding them to the Extensions sub-folder](http://kb.mozillazine.org/Installing_extensions) of the Firefox installation folder
+* If you are including Adobe Flash player in the package, be sure to [disable the auto-update notification](http://kb2.adobe.com/cps/167/16701594.html)
 
 For an example script that will automate the install and configuration of Firefox, see the script below:
 

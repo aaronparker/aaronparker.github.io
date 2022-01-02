@@ -94,7 +94,7 @@ The table below lists they most common settings to modify based on my experience
 |Microsoft Word 2010|Word Options - Save                       |Default file format                                       |Enabled, Word Document (*.docx)          |
 |Microsoft Office 2010|Global Options - Customize                |Allow roaming of all user customisations                  |Enabled                                  |
 |Microsoft Office 2010|Privacy - Trust Center                    |Disable Opt-in Wizard on first run                        |Enabled                                  |
-|Microsoft Office 2010|Privacy - Trust Center                    |Enable Customer Experirnce Improvement Program            |Disabled / Enabled                       |
+|Microsoft Office 2010|Privacy - Trust Center                    |Enable Customer Experience Improvement Program            |Disabled / Enabled                       |
 |Microsoft Office 2010|Privacy - Trust Center                    |Automatically receive small updates to improve reliability|Disabled / Enabled                       |
 |Microsoft Office 2010|Office Live Workspace                     |Turn Off Office Live Workspace Integration                |Enabled                                  |
 |Microsoft Office 2010|Services - Fax                            |Disable Internet Fax feature                              |Enabled                                  |

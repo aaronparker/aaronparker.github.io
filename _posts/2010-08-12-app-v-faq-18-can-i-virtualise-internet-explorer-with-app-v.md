@@ -42,19 +42,11 @@ There’s no technical reason why App-V can’t virtualise Internet Explorer; ho
 
 Microsoft does offer several solutions for running older versions of Internet Explorer on current operating systems. These are outlined in the white paper [Solutions for Virtualizing Internet Explorer](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=495934c8-5684-451c-a16e-5ceb50706a42) and include:
 
-  * [Terminal Services](http://www.microsoft.com/windowsserver2003/technologies/terminalservices/default.mspx) – using Terminal Services built into Windows Server 2003, Internet Explorer 6 or 7 can be delivered centrally. [Citrix XenApp](http://www.citrix.com/xenapp) or [Quest vWorkspace](http://www.vworkspace.com/solutions/vas/vas.aspx) would required to deliver Internet Explorer as a seamless window. An overview video of this method is [available on TechNet Edge](http://edge.technet.com/Media/Internet-Explorer-Virtualization-Terminal-Services/).
-
-
-
-  * [MED-V](http://www.microsoft.com/windows/enterprise/products/mdop/med-v.aspx) – Windows XP running in a virtual machine managed with MED-V can be used to deliver Internet Explorer locally. MED-V offers URL redirection so that you can control which sites are directed to the older versions of IE. MED-V is only available as a component of [MDOP](http://www.microsoft.com/windows/enterprise/products/mdop/). An overview video of this method is [available on TechNet Edge](http://edge.technet.com/Media/Internet-Explorer-Virtualization-with-MED-V/):
-
-
-
-  * [Windows Virtual PC](http://www.microsoft.com/windows/virtual-pc/) – teamed with [Windows XP Mode](http://www.microsoft.com/windows/virtual-pc/download.aspx), available to customers with Windows 7 Professional, Enterprise and Ultimate. Windows Virtual PC and Windows XP Mode are available to Windows customers at no additional cost, but may require a little more management overhead that the previous solutions.
+* [Terminal Services](http://www.microsoft.com/windowsserver2003/technologies/terminalservices/default.mspx) – using Terminal Services built into Windows Server 2003, Internet Explorer 6 or 7 can be delivered centrally. [Citrix XenApp](http://www.citrix.com/xenapp) or [Quest vWorkspace](http://www.vworkspace.com/solutions/vas/vas.aspx) would required to deliver Internet Explorer as a seamless window. An overview video of this method is [available on TechNet Edge](http://edge.technet.com/Media/Internet-Explorer-Virtualization-Terminal-Services/).
+* [MED-V](http://www.microsoft.com/windows/enterprise/products/mdop/med-v.aspx) – Windows XP running in a virtual machine managed with MED-V can be used to deliver Internet Explorer locally. MED-V offers URL redirection so that you can control which sites are directed to the older versions of IE. MED-V is only available as a component of [MDOP](http://www.microsoft.com/windows/enterprise/products/mdop/). An overview video of this method is [available on TechNet Edge](http://edge.technet.com/Media/Internet-Explorer-Virtualization-with-MED-V/):
+* [Windows Virtual PC](http://www.microsoft.com/windows/virtual-pc/) – teamed with [Windows XP Mode](http://www.microsoft.com/windows/virtual-pc/download.aspx), available to customers with Windows 7 Professional, Enterprise and Ultimate. Windows Virtual PC and Windows XP Mode are available to Windows customers at no additional cost, but may require a little more management overhead that the previous solutions.
 
 A overview video of all of the Microsoft solutions is [available here](http://edge.technet.com/Media/Internet-Explorer-Virtualization-Overview/):
-
-
 
 Microsoft does provide developers with tools for running the Internet Explorer 6 and 7 render engines on Windows 7 with [Expression Web](http://www.microsoft.com/expression/products/Web_Overview.aspx).  Although the full Expression Web is a paid product, a free version is available: [Microsoft Expression Web SuperPreview for Windows Internet Explorer](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=8e6ac106-525d-45d0-84db-dccff3fae677). If you are looking to provide developers a method of viewing sites in the older render engines, Expression Web is the recommend solution.
 
@@ -62,9 +54,9 @@ Microsoft does provide developers with tools for running the Internet Explorer 6
 
 There are some other ways that you could consider for delivering older versions of Internet Explorer:
 
-  * [RemoteApp]({{site.baseurl}}/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces) – Internet Explorer can be published from Windows XP or Windows Vista using RemoteApp. The older operating systems could be running in a local or remote virtual machine.
-  * [VMware Workstation](http://www.vmware.com/products/workstation/) – Unity mode can be used to provide a seamless Internet Explorer on the host operating system.
-  * [Oracle VirtualBox](http://www.virtualbox.org) – VirtualBox also offers a seamless window mode.
+* [RemoteApp]({{site.baseurl}}/virtualisation/remoteapp-for-windows-xp-and-windows-vista-the-missing-pieces) – Internet Explorer can be published from Windows XP or Windows Vista using RemoteApp. The older operating systems could be running in a local or remote virtual machine.
+* [VMware Workstation](http://www.vmware.com/products/workstation/) – Unity mode can be used to provide a seamless Internet Explorer on the host operating system.
+* [Oracle VirtualBox](http://www.virtualbox.org) – VirtualBox also offers a seamless window mode.
 
 ### Conclusion
 
@@ -74,4 +66,4 @@ Although you cannot deliver older versions of Internet Explorer with App-V, Micr
 
 ### Resources
 
-  * [Addressing Application Compatibility When Migrating to Internet Explorer 8 - Information for Corporate Developers](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=60017d66-4da9-4455-a092-7c7253559a8e&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+MicrosoftDownloadCenter+(Microsoft+Download+Center)#tm)
+* [Addressing Application Compatibility When Migrating to Internet Explorer 8 - Information for Corporate Developers](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=60017d66-4da9-4455-a092-7c7253559a8e&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+MicrosoftDownloadCenter+(Microsoft+Download+Center)#tm)

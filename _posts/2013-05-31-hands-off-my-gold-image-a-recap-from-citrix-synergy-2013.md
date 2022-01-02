@@ -20,7 +20,7 @@ Here's an overview of my talk from Citrix Synergy 2013 - [Hands off my gold imag
 
 ![Slide01.png]({{site.baseurl}}/media/2013/05/Slide01.png)
 
-In this session I've covered three main topics - why I believe that automating your gold iamges is important, who is and who isn't automating their gold images based on the results of [a poll]({{site.baseurl}}/community/take-part-in-the-os-deployment-automation-survey/) that I conducted earlier this year, and then an overview of how to achieve automation with the [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-gb/solutionaccelerators/dd407791.aspx).
+In this session I've covered three main topics - why I believe that automating your gold images is important, who is and who isn't automating their gold images based on the results of [a poll]({{site.baseurl}}/community/take-part-in-the-os-deployment-automation-survey/) that I conducted earlier this year, and then an overview of how to achieve automation with the [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-gb/solutionaccelerators/dd407791.aspx).
 
 ![Slide03.png]({{site.baseurl}}/media/2013/05/Slide03.png)
 

@@ -49,7 +49,6 @@ The following table lists the old profile path and the corresponding new path un
 |Documents and Settings\All Users\Documents\My Pictures           |Users\Public\Pictures                                               |
 |Documents and Settings\All Users\Documents\My Videos             |Users\Public\Videos                                                 |
 
-
 Folders to take note of here are the folders in the All Users path. Many older applications that use out of date methods to resolve system folders, will resolve paths under \ProgramData when looking for common locations. For example the common desktop may be resolved as `\ProgramData\Desktop`, however this is actually a junction point for `\Users\Public\Desktop`. A DIR /A:H listing in `\ProgramData` folder reveals the following junction points:
 
 |Path                                                             |Points To                                                           |

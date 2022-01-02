@@ -26,4 +26,4 @@ tags:
 
 I've not had time yet to go through the tool in detail, but I'm definitely adding this one to my toolkit. Thanks Ment!
 
-<img class="aligncenter size-full wp-image-920" title="App-V 4.5 Client Config and Diag tool screenshot" src="{{site.baseurl}}/media/2009/02/appvclientdiagtool1.png" alt="App-V 4.5 Client Config and Diag tool screenshot" width="590" height="389" srcset="{{site.baseurl}}/media/2009/02/appvclientdiagtool1.png 590w, {{site.baseurl}}/media/2009/02/appvclientdiagtool1-300x197.png 300w" sizes="(max-width: 590px) 100vw, 590px" />
+![App-V 4.5 Client Config and Diag tool screenshot]({{site.baseurl}}/media/2009/02/appvclientdiagtool1.png)

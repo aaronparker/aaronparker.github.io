@@ -30,3 +30,4 @@ Mitchell Ashley is CTO and VP Customer Experience at [StillSecure](http://www.st
   * Identity management
   * Misconceptions about NAP
   * Where will Microsoft be demoing NAP? (only useful if you live in the US)
+  

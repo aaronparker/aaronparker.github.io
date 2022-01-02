@@ -88,7 +88,7 @@ We do continue to recommend looking at alternatives to AppData redirection - the
 
 ### Determining the Version of SMB Negotiated
 
-If you are using Windows 8 and above, PowerShell now includes a cmdlet to determine the version of SMB that is negotiated for each connection - [Get-SmbConnection](https://technet.microsoft.com/en-us/library/jj635713). PoweShell must be elevated, but this will show all connections from the local client.
+If you are using Windows 8 and above, PowerShell now includes a cmdlet to determine the version of SMB that is negotiated for each connection - [Get-SmbConnection](https://technet.microsoft.com/en-us/library/jj635713). PowerShell must be elevated, but this will show all connections from the local client.
 
 ![Use PowerShell to View SMB Connections]({{site.baseurl}}/media/2015/08/get-smbconnection2.png)
 

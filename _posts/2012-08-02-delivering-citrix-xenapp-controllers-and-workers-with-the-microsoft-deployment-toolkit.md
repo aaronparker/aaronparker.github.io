@@ -20,8 +20,8 @@ Let's assume that you are automating the deployment of your XenApp image using M
 
 The use of a custom task sequence variable can provide a method of controlling which role is deployed, but I've first defined installation scripts for XenApp as applications in MDT. I have two applications:
 
-  * Citrix XenApp Controller 6.5
-  * Citrix XenApp Worker 6.5
+* Citrix XenApp Controller 6.5
+* Citrix XenApp Worker 6.5
 
 Behind the scenes, these applications run a script that will install and configure XenApp. For the XenApp Worker, the script defines _[/ImaWorkerMode:True](http://support.citrix.com/proddocs/topic/xenapp65-install/ps-config-command-syntax-2.html)_ when running [XenAppConfigConsole.exe](http://support.citrix.com/proddocs/topic/xenapp65-install/ps-config-command-line.html)__ to configure XenApp after installation. Both applications have been added to a single task sequence that will automate the installation of Windows Server 2008 R2 with Citrix XenApp 6.5 (along with dependencies and applications).
 

@@ -58,7 +58,7 @@ Setting up an Azure tenant is quite simple, just be sure to pay attention to the
 The Azure subscription is ready to use
 {:.figcaption}
 
-Before configuring anything else in the new Azure tenant, configure a custom domain. You'll notice that the default domain will be <domain>.onemicrosoft.com.
+Before configuring anything else in the new Azure tenant, configure a custom domain. You'll notice that the default domain will be <domain>.onmicrosoft.com.
 
 ### Configure a Domain
 

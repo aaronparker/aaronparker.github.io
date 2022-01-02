@@ -106,7 +106,7 @@ The basic iTunes experience hasn't changed much on the new device.
 
 [iTunes Movies on the Apple TV 4](https://www.youtube.com/watch?v=K75z2WxPii8)
 
-Here's a look at Infuse connecting to my NAS to browse movies I have stored there. Infuse is automatically recongising each video and applying cover photos and synopsis.
+Here's a look at Infuse connecting to my NAS to browse movies I have stored there. Infuse is automatically recognising each video and applying cover photos and synopsis.
 
 [Infuse on the Apple TV 4](https://www.youtube.com/watch?v=r3i7wy0mLjc)
 

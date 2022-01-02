@@ -76,4 +76,4 @@ The Choose Defaults options are available from the Tool drop down button on the 
 
 Virtualising Paint.NET should be very quick and can be sequenced on 32-bit and 64-bit Windows. Even if sequenced on 32-bit Windows, Paint.NET will execute as a 64-bit application under Windows x64 - no re-sequencing required.
 
-One final item to fix up when creating the package is the file type icon that is extracted from the Paint.NET executable is only a 32&#215;32 pixel icon. To make associated files look better under Windows Vista and Windows 7, you could replace this with an icon that includes a 256&#215;256 pixel size image.
+One final item to fix up when creating the package is the file type icon that is extracted from the Paint.NET executable is only a 32x32 pixel icon. To make associated files look better under Windows Vista and Windows 7, you could replace this with an icon that includes a 256x256 pixel size image.

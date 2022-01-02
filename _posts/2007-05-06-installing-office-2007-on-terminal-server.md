@@ -51,7 +51,7 @@ An install script for Office might look something like this:
 CHANGE USER /INSTALL  
 START /WAIT \domain.localdfsapplicationsOffice2007EnterpriseSetup.exe  
 CHANGE USER /EXECUTE  
-REG DELETE "HKLMSOFTWAREMicrosoftWindows NTCurrentVersionTerminal ServerInstallSoftwareMicrosoftOffice" /f  
+REG DELETE "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Office" /f  
 REGSVR32 /U %SYSTEMROOT%SYSTEM32MSCTF.DLL /S
 ```
 

@@ -13,8 +13,8 @@ categories:
 ---
 This:
 
-<img border="0" alt="CutePDF" src="{{site.baseurl}}/media/2008/05/cutepdf.png" width="393" height="140" /> 
+![]({{site.baseurl}}/media/2008/05/cutepdf.png)
 
 is obviously not the case:
 
-<img border="0" alt="CutePDFError" src="{{site.baseurl}}/media/2008/05/cutepdferror.png" width="521" height="244" />
+![]({{site.baseurl}}/media/2008/05/cutepdferror.png)

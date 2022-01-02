@@ -24,9 +24,9 @@ Here's how to successfully sequence Google Chrome 15; however the same approach 
 
 Virtualizing Chrome with App-V will isolate the application from the OS, so the following features will not be available once Chrome has been sequenced:
 
-  * Chrome Jump Lists in the Start Menu and Taskbar
-  * The ability set the browser as default
-  * The Chrome [sandbox](http://dev.chromium.org/developers/design-documents/sandbox) (maybe)
+* Chrome Jump Lists in the Start Menu and Taskbar
+* The ability set the browser as default
+* The Chrome [sandbox](http://dev.chromium.org/developers/design-documents/sandbox) (maybe)
 
 **Note**: Note that disabling the sandbox will reduce the browser security. This is not recommended and as such, I actually do not recommend virtualizing Chrome, if it is to be your regular browser.
 
@@ -34,16 +34,16 @@ Virtualizing Chrome with App-V will isolate the application from the OS, so the 
 
 [Chrome stores preferences, extensions and other user data](http://www.chromium.org/user-experience/user-data-directory)in:
 
-  * %LOCALAPPDATA%\Google\Chrome\User Data\Default (preferences, bookmarks etc. **and** browser cache)
+* `%LOCALAPPDATA%\Google\Chrome\User Data\Default` (preferences, bookmarks etc. **and** browser cache)
 
-I don't know why Google has chosen this location by default, however I suspect that it may be to encourage users to signup for a Google account to enable the [native syncing features of the browser](http://www.google.com/support/chrome/bin/answer.py?hl=en&answer=165139&topic=1693469). The Chrome User Data folder can become very large and that's without the Cache folder. You could potentially hit the limit of the user PKG file size.
+I don't know why Google has chosen this location by default, however I suspect that it may be to encourage users to sign up for a Google account to enable the [native syncing features of the browser](http://www.google.com/support/chrome/bin/answer.py?hl=en&answer=165139&topic=1693469). The Chrome User Data folder can become very large and that's without the Cache folder. You could potentially hit the limit of the user PKG file size.
 
 Whether you the Chrome user profile in the package will depend on your specific deployment requirements; however my recommendation is to use this sync feature and leave the User Data outside of the App-V package.
 
 There are a couple of reasons why this approach is a good idea:
 
-  * Some of the configuration files within the Chrome profile include hard-codes paths – challenging if your App-V virtual drive changes between clients
-  * Virtualizing the profile increases the complexity of upgrading Chrome packages especially challenging given how often the browser is updated. By storing the Chrome profile on the real file system, Chrome can be deployed via completely unrelated packages – no need to create upgrade versions
+* Some of the configuration files within the Chrome profile include hard-codes paths – challenging if your App-V virtual drive changes between clients
+* Virtualizing the profile increases the complexity of upgrading Chrome packages especially challenging given how often the browser is updated. By storing the Chrome profile on the real file system, Chrome can be deployed via completely unrelated packages – no need to create upgrade versions
 
 By not virtualizing the user profile you will gain some flexibility with your Chrome deployment.
 
@@ -60,9 +60,9 @@ chrome -user-data-dir=%AppData%\Google\Chrome\User Data -disk-cache-dir=%LocalAp
 
 The second approach doesn't require any command line parameters, but it will require modifying the default Sequencer exclusions and some scripting:
 
-  * Remove the default exclusions of _%CSIDL\_LOCAL\_APPDATA%_ and _%CSIDL_PROFILE%\Local Settings_
-  * Add an exclusion for _%CSIDL\_LOCAL\_APPDATA%\Google\Chrome\User Data\Default\Cache_ or _%CSIDL_PROFILE%\Local Settings\Google\Chrome\User Data\Default\Cache_, depending on the operating system you are sequencing on
-  * Post sequencing, set the folder to Merge with Local and add a pre-launch script that creates the Cache folder outside of the virtual environment
+* Remove the default exclusions of `%CSIDL_LOCAL_APPDATA%` and `%CSIDL_PROFILE%\Local Settings`
+* Add an exclusion for `%CSIDL_LOCAL_APPDATA%\Google\Chrome\User Data\Default\Cache` or `%CSIDL_PROFILE%\Local Settings\Google\Chrome\User Data\Default\Cache`, depending on the operating system you are sequencing on
+* Post sequencing, set the folder to Merge with Local and add a pre-launch script that creates the Cache folder outside of the virtual environment
 
 The first approach would be the easiest way to go.
 
@@ -70,8 +70,8 @@ The first approach would be the easiest way to go.
 
 There are a couple of features that should be disabled when running Chrome under App-V:
 
-  * Browser auto updates. Chrome updates should be delivered via new App-V packages
-  * Default browser check. Once Chrome is isolated from the OS, the user won't be able to make it the default browser
+* Browser auto updates. Chrome updates should be delivered via new App-V packages
+* Default browser check. Once Chrome is isolated from the OS, the user won't be able to make it the default browser
 
 [Disabling browser auto updates](http://www.chromium.org/administrators/turning-off-auto-updates) on Windows requires setting a policy. This can be done via Group Policy, delivered post sequence, or placing the policy directly into the package. To [deliver the setting via Group Policy](http://www.google.com/support/installer/bin/answer.py?answer=146164), ensure that the Policies key is not captured in the package.
 
@@ -103,12 +103,12 @@ I have sequenced Google Chrome 15.0.874.106 on a clean Windows 7 SP1 x86 VM with
 
 Before Sequencing, add the following exclusions:
 
-  * \REGISTRY\USER\%SFT_SID%\Software\Microsoft\Windows\CurrentVersion\Internet Settings
-  * %CSIDL\_COMMON\_APPDATA%\Microsoft\RAC
-  * %CSIDL_WINDOWS%\Microsoft.NET
-  * %CSIDL_WINDOWS%\Installer
-  * %CSIDL\_PROGRAM\_FILES%\Google\Update
-  * %CSIDL_WINDOWS%\Tasks
+* \REGISTRY\USER\%SFT_SID%\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+* %CSIDL_COMMON_APPDATA%\Microsoft\RAC
+* %CSIDL_WINDOWS%\Microsoft.NET
+* %CSIDL_WINDOWS%\Installer
+* %CSIDL_PROGRAM_FILES%\Google\Update
+* %CSIDL_WINDOWS%\Tasks
 
 The last two exclusions will prevent Google Update related binaries from being captured. Additionally disable the option to "Allow Virtualization of Services" to prevent the capture of the Google Update services.
 
@@ -143,19 +143,19 @@ Automating this process as much as possible will create a cleaner package and ma
 START /WAIT GoogleChromeStandaloneEnterprise.MSI ALLUSERS=TRUE /QB-  
 RD /Q /S "%ProgramFiles%\Google\Chrome\Application\15.0.874.106\Installer"  
 ROBOCOPY "%ProgramFiles%\Google\Chrome\Application\15.0.874.106" "%ProgramFiles%\Google\Chrome\Application" /mov /e  
-COPY master\_preferences "%ProgramFiles%\Google\Chrome\Application\master\_preferences  
+COPY master_preferences "%ProgramFiles%\Google\Chrome\Application\master_preferences  
 REG ADD HKLM\SOFTWARE\Policies\Google\Update /v AutoUpdateCheckPeriodMinutes /d 0 /t REG_SZ /f  
-REG ADD "HKLM\System\CurrentControlSet\Control\Session Manager" /v PendingFileRenameOperations /d "" /t REG\_MULTI\_SZ /f
+REG ADD "HKLM\System\CurrentControlSet\Control\Session Manager" /v PendingFileRenameOperations /d "" /t REG_MULTI_SZ /f
 ```
 
 ## Shortcuts
 
 For Chrome to run successfully under App-V there are a few additional command line parameters that will need to be added to the Chrome shortcut at the configure applications stage:
 
-  * -disable-custom-jumplist: Disables the Windows 7 Jump List, which doesn't work once Chrome is virtualized any way
-  * -no-default-browser-check: A further flag to prevent the browser from prompting the user to set it as default
-  * -in-process-plugins: Run plugins inside the renderer process. May be optional, but [has been required in the past when virtualizing Chrome](http://www.viridisit.se/eng/blog/sequence-google-chrome-5-beta/)
-  * -no-sandbox: Not required; however I have found that extensions do not install if this parameter has not been added
+* -disable-custom-jumplist: Disables the Windows 7 Jump List, which doesn't work once Chrome is virtualized any way
+* -no-default-browser-check: A further flag to prevent the browser from prompting the user to set it as default
+* -in-process-plugins: Run plugins inside the renderer process. May be optional, but [has been required in the past when virtualizing Chrome](http://www.viridisit.se/eng/blog/sequence-google-chrome-5-beta/)
+* -no-sandbox: Not required; however I have found that extensions do not install if this parameter has not been added
 
 For the full list of command-line parameters for Chrome and Chromium see this page: [List of Chromium Command Line Switches](http://peter.sh/experiments/chromium-command-line-switches/)
 

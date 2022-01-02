@@ -26,6 +26,6 @@ Using PowerShell to drive the App-V Client opens up plenty of great scenarios. H
 Add-AppvClientPackage -Path "\\Server\Packages\MozillaFirefox16_pkg\MozillaFirefox16.appv" | Publish-AppvClientPackage -Global | Mount-AppvClientPackage -Verbose
 ```
 
-The Path property on the Add-AppvClientPackage command should take any local, UNC or HTTP path. This is a quick and dirty method of importing and testing App-V 5 packages into a machine for testing.
+The Path property on the `Add-AppvClientPackage` command should take any local, UNC or HTTP path. This is a quick and dirty method of importing and testing App-V 5 packages into a machine for testing.
 
 This example command should be easy enough to extend to import and publish a number of packages stored in target folder.

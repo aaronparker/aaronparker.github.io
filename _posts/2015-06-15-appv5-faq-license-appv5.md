@@ -42,11 +42,11 @@ Because App-V cannot be licensed on its own, understanding App-V licensing for y
 
 ## Additional Resources
 
-  * [Microsoft Volume Licensing](http://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) site
-  * [Software Assurance at a glance](http://download.microsoft.com/download/5/c/7/5c727885-ec15-4920-818b-4d140ec6c38a/Software-Assurance-at-a-Glance.pdf) (PDF)
-  * [Microsoft Software Assurance Interactive Benefits Chart](https://www.microsoft.com/en-us/download/details.aspx?id=1732)
-  * [Volume Licensing Product Use Rights (PUR)](https://www.microsoft.com/en-us/licensing/product-licensing/products.aspx) document
+* [Microsoft Volume Licensing](http://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) site
+* [Software Assurance at a glance](http://download.microsoft.com/download/5/c/7/5c727885-ec15-4920-818b-4d140ec6c38a/Software-Assurance-at-a-Glance.pdf) (PDF)
+* [Microsoft Software Assurance Interactive Benefits Chart](https://www.microsoft.com/en-us/download/details.aspx?id=1732)
+* [Volume Licensing Product Use Rights (PUR)](https://www.microsoft.com/en-us/licensing/product-licensing/products.aspx) document
 
 ### Previously
 
-  * [App-V 4.x FAQ: How is App-V licensed?]({{site.baseurl}}/deployment/app-v-faq-3-how-is-app-v-licensed)
+* [App-V 4.x FAQ: How is App-V licensed?]({{site.baseurl}}/deployment/app-v-faq-3-how-is-app-v-licensed)

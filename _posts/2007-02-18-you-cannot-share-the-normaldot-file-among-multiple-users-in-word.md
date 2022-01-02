@@ -17,7 +17,7 @@ On a semi-regular basis I see an issue on customer networks whereby users receiv
 
 > Word cannot save changes to the global template because it was opened with read-only access. Do you want to save the changes in a template with a different name?
 
-<img style="border: 0px initial initial;" src="{{site.baseurl}}/media/2007/02/1000.14.925.WordError1.png" border="0" alt="" width="573" height="86" /> 
+![]({{site.baseurl}}/media/2007/02/1000.14.925.WordError1.png)
 
 This is caused when a NORMAL.DOT is located in the Workgroup templates location. If a Word template with this name exists in this location, Word will open this file first and will not open the users NORMAL.DOT or will not create one if it does not already exist. This is obviously an issue when multiple users open Word or if they don't have write access to the Workgroup templates location. The solution is to ensure that NORMAL.DOT never exists in the Workgroup templates location.
 

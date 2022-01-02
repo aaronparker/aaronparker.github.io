@@ -19,8 +19,9 @@ categories:
 tags:
   - RemoteApp
 ---
-You may recall from [my last post on RemoteApp]({{site.baseurl}}/virtualisation/remoteapp-for-hyper-v-hyper-what), that we can get RemoteApp for Hyper-V works on other platforms too. While it was straight-forward publishing applications from a Windows 7 host, the client would report this error when connecting to Windows XP and Windows Vista hosts:  
-<img style="display: inline; margin-top: 5px;" title="RemoteAppNotSupported" src="{{site.baseurl}}/media/2009/12/RemoteAppNotSupported.png" alt="RemoteAppNotSupported" width="430" height="203" border="0" /> 
+You may recall from [my last post on RemoteApp]({{site.baseurl}}/virtualisation/remoteapp-for-hyper-v-hyper-what), that we can get RemoteApp for Hyper-V works on other platforms too. While it was straight-forward publishing applications from a Windows 7 host, the client would report this error when connecting to Windows XP and Windows Vista hosts: 
+
+![]({{site.baseurl}}/media/2009/12/RemoteAppNotSupported.png)
 
 Kind of annoying, because the original [RemoteApp for Hyper-V post](http://blogs.msdn.com/rds/archive/2009/12/15/remoteapp-for-hyper-v.aspx) on the RDS blog, showed us something cool but left out the important part on how to get it working. Well, thanks to [Justin](http://blogs.technet.com/virtualworld) and [this comment](http://blogs.msdn.com/rds/archive/2009/12/15/remoteapp-for-hyper-v.aspx#9964757), I’ve been able to fix the issue and get RemoteApp running on XP and Vista (unfortunately I can’t take any of the credit).
 
@@ -41,7 +42,8 @@ When configuring the host, I’ve been using been using a 1-to-1 setup, I haven�
 
 To enable RemoteApp on the host, install the hotfix, then configure the `TsAppAllowList` key in the registry. In this example, I've configured the required entries for running Calculator. Here's a listing of the registry values I added with the pertinent values highlighted.
 
-\[code highlight="2,9,12&#8243; wraplines="true"\]\[HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\TSAppAllowList\]  
+```
+[HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\TSAppAllowList\]  
 "fDisabledAllowList"=dword:00000001
 
 [HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\TSAppAllowList\Applications\calc]  
@@ -53,7 +55,8 @@ To enable RemoteApp on the host, install the hotfix, then configure the `TsAppAl
 "VPath"="%SYSTEMDRIVE%\\Windows\\system32\\calc.exe"  
 "ShowInTSWA"=dword:00000001  
 "Name"="Calculator"  
-"SecurityDescriptor"=""[/code]
+"SecurityDescriptor"=""
+```
 
 The simplest method of discovering the required registry keys for each RemoteApp entry is to configure the applications on Windows XP Mode or Windows Server 2008 running Remote Desktop Services.
 
@@ -65,7 +68,8 @@ The important entries for connecting to Windows XP and Windows Vista, that you m
 
 An .RDP file to connect to a RemoteApp program then looks like this (the added lines are highlighted):
 
-[code highlight="23,24&#8243;]redirectclipboard:i:1  
+```
+redirectclipboard:i:1  
 redirectposdevices:i:0  
 redirectprinters:i:1  
 redirectcomports:i:1  
@@ -115,7 +119,8 @@ gatewayhostname:s:
 gatewayusagemethod:i:4  
 gatewaycredentialssource:i:4  
 gatewayprofileusagemethod:i:0  
-use redirection server name:i:0[/code]
+use redirection server name:i:0
+```
 
 ### RemoteApp in Action
 
@@ -131,7 +136,7 @@ If the client is Windows XP or above and the host is Windows Vista or above, you
 
 So finally with all of the pieces in place, here’s what you’ll see with applications running via RemoteApp. In this screenshot I have Calculator running remotely from Windows XP and Windows Vista next to the local version.
 
-[<img style="display: inline; border: 0px;" title="DesktopWithCalculator" src="{{site.baseurl}}/media/2010/02/DesktopWithCalculator_thumb.png" alt="DesktopWithCalculator]({{site.baseurl}}/media/2010/02/DesktopWithCalculator.png)
+![DesktopWithCalculator]({{site.baseurl}}/media/2010/02/DesktopWithCalculator.png)
 
 One thing to note is that the remote applications are all group together on the taskbar; in this screenshot, the two remote Calculators are grouped with Remote Desktop Connection – users' won’t see separate remote buttons as you get in competing products.
 

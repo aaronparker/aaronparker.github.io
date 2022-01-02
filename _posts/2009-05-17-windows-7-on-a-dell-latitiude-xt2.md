@@ -17,15 +17,13 @@ categories:
 tags:
   - Windows 7
 ---
-<img class="alignnone size-full wp-image-1109" title="delllatitudext21" src="{{site.baseurl}}/media/2009/05/delllatitudext21.jpg" alt="delllatitudext21" width="585" height="252" srcset="{{site.baseurl}}/media/2009/05/delllatitudext21.jpg 585w, {{site.baseurl}}/media/2009/05/delllatitudext21-150x64.jpg 150w, {{site.baseurl}}/media/2009/05/delllatitudext21-300x129.jpg 300w" sizes="(max-width: 585px) 100vw, 585px" />
-
 I've been looking to get a tablet PC for some time now and I've just recently picked up a Dell Latitude XT2, which includes multi-touch support. It arrived the same day as the Windows 7 Release Candidate, so the default Windows Vista install, disappeared pretty quickly.
 
 I must say though, it's a little disappointing to see the amount of packaging the laptop was shipped in compared to what you're actually left with. Here's a couple of photos to give you an idea of the packaging - here's [what's in the box](http://cid-74b5baa3414de283.skydrive.live.com/self.aspx/Dell%20Latitude%20XT2/DSCF3122.jpg), and here's the wasted space [inside the accessories box](http://cid-74b5baa3414de283.skydrive.live.com/self.aspx/Dell%20Latitude%20XT2/DSCF3123.jpg). Surely Dell could do better in the packaging department.
 
 ### Hardware
 
-My main aims for this machine is to go with something in an ultra-portable form-factor for good battery life and prability and the tablet PC screen for reading. Here's the hardware:
+My main aims for this machine is to go with something in an ultra-portable form-factor for good battery life and portability and the tablet PC screen for reading. Here's the hardware:
 
   * Mobile Intel 45 Express Chipset with Intel vPro
   * ULV Intel Core 2 Duo U9400 (1.4Ghz, 800Mhz FSB, 3MB cache)
@@ -40,14 +38,13 @@ My main aims for this machine is to go with something in an ultra-portable form-
 
 Windows 7 (x86) installed from a USB memory stick in a little under 10 minutes and the laptop has a not too shabby performance rating - I'm pretty pleased that the hard disk gets a rating of 6.7:
 
-<img class="alignnone size-full wp-image-1114" title="xt2performanceinformation2" src="{{site.baseurl}}/media/2009/05/xt2performanceinformation2.png" alt="xt2performanceinformation2" width="567" height="194" srcset="{{site.baseurl}}/media/2009/05/xt2performanceinformation2.png 567w, {{site.baseurl}}/media/2009/05/xt2performanceinformation2-150x51.png 150w, {{site.baseurl}}/media/2009/05/xt2performanceinformation2-300x102.png 300w" sizes="(max-width: 567px) 100vw, 567px" /> 
-
+![]({{site.baseurl}}/media/2009/05/xt2performanceinformation2.png)
 ### Drivers & Software
 
 Windows Update offered the following updates:
 
-  * Driver for Mobile Intel 45 Express Chipset family (beta WDDM 1.1 display drivers)
-  * Dell Tablet PC key buttons
+* Driver for Mobile Intel 45 Express Chipset family (beta WDDM 1.1 display drivers)
+* Dell Tablet PC key buttons
 
 There were a few drivers and updates that I've had to download. Keeping to the absolute minimum, I installed the following:
 
@@ -59,7 +56,7 @@ Windows 7 will enable touch input for the display by default; however the [N-tri
 
 Until you install the beta drivers, an unknown device will be shown in Device Manager. Once installed, multi-touch is enabled:
 
-<img class="alignnone size-full wp-image-1118" title="system1" src="{{site.baseurl}}/media/2009/05/system1.png" alt="system1" width="498" height="149" srcset="{{site.baseurl}}/media/2009/05/system1.png 498w, {{site.baseurl}}/media/2009/05/system1-150x44.png 150w, {{site.baseurl}}/media/2009/05/system1-300x89.png 300w" sizes="(max-width: 498px) 100vw, 498px" /> 
+![]({{site.baseurl}}/media/2009/05/system1.png)
 
 After loading the driver for the screen, calibration is required to improve accuracy. Whilst pen input appears to be fairly accurate out of the box, touch input improves with calibration.
 
@@ -69,7 +66,7 @@ The [Dell ControlPoint System Manager](http://support.euro.dell.com/support/down
 
 ### Dell ControlPoint
 
-The ControlPoint software encompasses a number of modules - System Manager (control of the tablet and display & other devices), Security Manager (manages the TPM, fingerprint sensor and other security functions) and Connection Manager (controls wireless LAN and broadband functions). As is usual for most of this type of software, it contains many components that mimic functionality already built into Windows Vista and 7, making the software largley redundant.
+The ControlPoint software encompasses a number of modules - System Manager (control of the tablet and display & other devices), Security Manager (manages the TPM, fingerprint sensor and other security functions) and Connection Manager (controls wireless LAN and broadband functions). As is usual for most of this type of software, it contains many components that mimic functionality already built into Windows Vista and 7, making the software largely redundant.
 
 Why manufactures continue to include second rate alternatives to the far more elegant tools in the OS, I can't quite fathom. Perhaps they're worried you'll forget what brand of machine you've bought and want every possible opportunity to shove their logo in your face - user experience be damned..
 
@@ -95,4 +92,4 @@ The pen is great for writing input (obviously), but also more pinpoint accuracy 
 
 [FeedDemon](http://www.newsgator.com/Individuals/FeedDemon/Default.aspx) works well with both touch and pen input; however it would be nice to be able to make the FeedDemon UI a little larger to better accommodate touch input. Thankfully I've got skinny fingers so it's workable.
 
-Being able to control the computer with touch input is very convenient, especially when you are reading documents or RSS feeds. Whether touch is just a bit of a gimmick or a valid method of input a little more usage will reveal, but it certaintly is convenient.
+Being able to control the computer with touch input is very convenient, especially when you are reading documents or RSS feeds. Whether touch is just a bit of a gimmick or a valid method of input a little more usage will reveal, but it certainly is convenient.

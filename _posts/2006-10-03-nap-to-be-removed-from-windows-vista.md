@@ -13,7 +13,7 @@ tags:
 ---
 Via [Steve Riley](http://blogs.technet.com/steriley/archive/2006/10/03/Must-be-a-slow-news-day_3A00_-reporter-writes-100_2500_-crap.aspx) and from the [Today Tonight](http://au.yahoo.com/todaytonight/) school of journalism comes [NAP to be 'kicked out' of Vista](http://www.itweek.co.uk/itweek/news/2165364/nap-kicked-vista). Here's a couple of snippets:
 
-> Microsoft€™s Network Access Protection (NAP) technology may be dropped from its forthcoming Windows Vista operating system, while the industry remains divided over the definition of network access control (NAC) and the problems it is trying to solve.
+> Microsoft's Network Access Protection (NAP) technology may be dropped from its forthcoming Windows Vista operating system, while the industry remains divided over the definition of network access control (NAC) and the problems it is trying to solve.
 
 and
 

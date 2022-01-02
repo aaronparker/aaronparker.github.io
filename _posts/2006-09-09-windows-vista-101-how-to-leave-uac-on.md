@@ -29,29 +29,30 @@ Fortunately there are a couple of methods that can be used to make life with UAC
 **Run a Command Prompt As Administrator**  
 Now this one will require returning to your command line roots or learning how to use the command line if you don't already know how. But that's a good thing (You'll be surprised how much faster you can get things done via the command line). There are two ways to run a command prompt as Administrator:
 
-  * Right click the Command Prompt icon and choose 'Run as administrator'. This is the long way that requires an extra click; or
-  * Modify a shortcut for the command prompt so that it will always launch as an Administrator.
+* Right click the Command Prompt icon and choose 'Run as administrator'. This is the long way that requires an extra click; or
+* Modify a shortcut for the command prompt so that it will always launch as an Administrator.
 
 This will result in a Command Prompt window with the text "Administrator" in the title bar. Using the second option is easy, just open the properties of the Command Prompt shortcut, click Advanced and place a tick in the checkbox labelled "Run as administrator". Click on the screenshots below to see the shortcut properties and the resulting Command Prompt in more detail:
 
-<img border="0" src="{{site.baseurl}}/media/2006/09/1000.14.93.RunAsAdministrator.PNG" />  
-<img border="0" src="{{site.baseurl}}/media/2006/09/1000.14.94.AdministratorCommandPrompt.PNG" /> 
+![]({{site.baseurl}}/media/2006/09/1000.14.93.RunAsAdministrator.PNG")
+
+![]({{site.baseurl}}/media/2006/09/1000.14.94.AdministratorCommandPrompt.PNG")
 
 The benefit of the approach is that applications launched via the elevated command prompt will also be elevated.
 
 **Run an Explorer Window As Administrator**  
 Most of the frustrations with UAC will stem from the requirement to click the UAC prompt when performing file system tasks in Windows Explorer that require administrative tasks. Fortunately there is an easy way to get around this without disabling UAC:
 
-  * Open an Explorer window and click 'Organise';
-  * Click 'Folder and Search Options' and click the 'View' tab;
-  * Place a tick next to 'Launch folder windows in a separate process'.
+* Open an Explorer window and click 'Organise';
+* Click 'Folder and Search Options' and click the 'View' tab;
+* Place a tick next to 'Launch folder windows in a separate process'.
 
 The following screenshot shows this option:
 
-<img border="0" src="{{site.baseurl}}/media/2006/09/1000.14.92.SeperateProcess.PNG" /> 
+![]({{site.baseurl}}/media/2006/09/1000.14.92.SeperateProcess.PNG")
 
 Now you can right click a Windows Explorer shortcut and choose 'Run as administrator' to elevate that window to perform administrative tasks from that single window without multiple UAC prompts.
 
 These are just a couple of ways to make life with UAC easier and I encourage everyone to leave UAC on. In twelve months after Vista has been out for some time things will be different again. More applications will be Vista aware and the number of UAC prompts should be reduced.
 
-<span style="font-size: 7pt">*I'm generalising, I know; **This is conjecture drawn from purely anecdotal evidence, but I think its correct 😉</span>
+I'm generalising, I know; **This is conjecture drawn from purely anecdotal evidence, but I think its correct 😉

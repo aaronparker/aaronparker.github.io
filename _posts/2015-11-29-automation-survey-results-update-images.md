@@ -76,7 +76,7 @@ In this question we asked respondents to use Other, if their patching schedules 
 * Depends on request cycle
 * Depends on application updates
 * As needed depending on criticality of updates or need
-* Vaires
+* Varies
 * VDI every 3 months. XenApp when new version release
 * Every 2 weeks
 * Weekly

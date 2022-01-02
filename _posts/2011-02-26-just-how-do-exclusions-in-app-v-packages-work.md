@@ -23,9 +23,9 @@ I’ve spent some time working out how folder and Registry exclusions and Merge/
 
 When virtualising an application, we may need to avoid capturing specific paths for several reasons:
 
-  * Reduce the size of the package (installers often put files down that aren’t required for an application to execute, such as cached setup files)
-  * Prevent conflicts with data already on the client (preventing a virtualised view of specific paths so that a virtualised application does not see different data to application running outside of App-V)
-  * When running an operating system component such as Internet Explorer inside the bubble, we may want to ensure that the application sees the same data inside and outside the bubble
+* Reduce the size of the package (installers often put files down that aren’t required for an application to execute, such as cached setup files)
+* Prevent conflicts with data already on the client (preventing a virtualised view of specific paths so that a virtualised application does not see different data to application running outside of App-V)
+* When running an operating system component such as Internet Explorer inside the bubble, we may want to ensure that the application sees the same data inside and outside the bubble
 
 ## Exclusions Apply at Sequencing Time Only
 
@@ -35,10 +35,10 @@ Understanding how an application interacts with the operating system and other a
 
 These paths might include, but are not limited to:
 
-  * MAPI profiles (the Windows Messaging Subsystem key)
-  * Printers (stored in the HKCU\Printers)
-  * ODBC connections (stored in HKCU\Software\ODBC)
-  * Windows 7 Libraries (%APPDATA%\Microsoft\Windows\Libraries)
+* MAPI profiles (the Windows Messaging Subsystem key)
+* Printers (stored in the HKCU\Printers)
+* ODBC connections (stored in HKCU\Software\ODBC)
+* Windows 7 Libraries (%APPDATA%\Microsoft\Windows\Libraries)
 
 I’ll discuss some of these in more detail later.
 
@@ -134,7 +134,7 @@ These are just a few examples and I’m sure there are plenty more.
 
 The App-V client includes a Registry key at HKLM\SOFTWARE\Wow6432Node\Microsoft\SoftGrid\4.5\SystemGuard\Overrides with a couple of interesting values – _VirtualRegistryPassthrough_ and _VirtualRegistryPassthroughEx_.
 
-VirtualRegistryPassthrough is used to allow a local process pass up into the virtual Registry. You can read more about this value in this knowledgebase article: [How to print to an Adobe PDF writer printer from SoftGrid-enabled applications](http://support.microsoft.com/kb/931191). Any detailed documentation beyond this article does not appear to be publically available.
+VirtualRegistryPassthrough is used to allow a local process pass up into the virtual Registry. You can read more about this value in this knowledgebase article: [How to print to an Adobe PDF writer printer from SoftGrid-enabled applications](http://support.microsoft.com/kb/931191). Any detailed documentation beyond this article does not appear to be publicly available.
 
 The second value of interest VirtualRegistryPassthroughEx, can be used in the opposite way. It can be used to ensure a specific key will always pass through to the real Registry. [A web search draws a complete blank on this one](http://www.google.com/search?hl=en&source=hp&biw=1280&bih=699&q=VirtualRegistryPassthroughEx&btnG=Google+Search&aq=f&aqi=&aql=&oq=), so until Microsoft comes out with better documentation on TechNet, I recommend testing this value carefully.
 
@@ -146,11 +146,11 @@ There are a couple of caveats with this approach:
 
 VirtualRegistryPassthroughEx is a multi-string value (REG\_MULTI\_SZ) to which you add Registry keys to, one for each line. The default keys included here are:
 
-  * HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT
-  * HKEY\_LOCAL\_MACHINE\System\CurrentControlSet\services\eventlog\Application
-  * HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger
-  * HKEY\_CURRENT\_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings
-  * HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib
+* HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WINEVT
+* HKEY\_LOCAL\_MACHINE\System\CurrentControlSet\services\eventlog\Application
+* HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger
+* HKEY\_CURRENT\_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+* HKEY\_LOCAL\_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Perflib
 
 Add the key or keys that you want to exclude from the bubble. No restart is required for this to take effect.
 

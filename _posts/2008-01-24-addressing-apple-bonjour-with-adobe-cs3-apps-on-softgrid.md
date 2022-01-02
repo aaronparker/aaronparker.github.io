@@ -14,7 +14,7 @@ tags:
   - Adobe
   - SoftGrid
 ---
-<img align="left" src="{{site.baseurl}}/media/2008/02/bonjour-softgridbox.png" alt="bonjour-softgridbox.png" />The Adobe CS3 products include the [Apple Bonjour](http://www.apple.com/macosx/technology/bonjour.html) service for use with the [Adobe Version Cue](http://www.adobe.com/products/creativesuite/versioncue/) server. You can view information on this implementation here: [Adobe Creative Suite 3 and Creative Suite 3 components install Bonjour (Windows)](http://www.adobe.com/go/kb400982)
+The Adobe CS3 products include the [Apple Bonjour](http://www.apple.com/macosx/technology/bonjour.html) service for use with the [Adobe Version Cue](http://www.adobe.com/products/creativesuite/versioncue/) server. You can view information on this implementation here: [Adobe Creative Suite 3 and Creative Suite 3 components install Bonjour (Windows)](http://www.adobe.com/go/kb400982)
 
 > When you install any edition of the Adobe Creative Suite 3 family or a Creative Suite 3 component on Windows, Bonjour for Windows is installed as a service on the machine. Bonjour is Apple's open source implementation of zero-configuration networking software. It is used by Adobe Version Cue CS3 client applications to dynamically discover Version Cue Servers on the local network.
 
@@ -24,7 +24,9 @@ The issue with allowing this service to run inside the bubble is that multiple c
 
 This means that we need to remove the service from inside the bubble. Directly after installing a CS3 application and before clicking on _Stop Monitoring_, remove the Bonjour service by running the following command:
 
-[quickcode:noclick]"%ProgramFiles%\Bonjour\mDNSResponder.exe" -remove[/quickcode]
+```
+"%ProgramFiles%\Bonjour\mDNSResponder.exe" -remove
+```
 
 Then delete the Bonjour folder - _%ProgramFiles%\Bonjour_. Users can then connect to the Version Cue Servers manually when running a CS3 application:
 
@@ -36,4 +38,6 @@ If automatic discovery is required, perform a native install of [Bonjour for Win
   2. Copy these files to _%ProgramFiles%\Bonjour_
   3. Run this command to install the service:
 
-[quickcode:noclick]"%ProgramFiles%\Bonjour\mDNSResponder.exe" -install[/quickcode]
+```
+"%ProgramFiles%\Bonjour\mDNSResponder.exe" -install
+```

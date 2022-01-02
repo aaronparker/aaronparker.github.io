@@ -19,7 +19,7 @@ Many implementations of the Citrix Access Gateway appliance will be replacing ex
   1. Download the Win32 version of OpenSSL from [SourceForge](http://gnuwin32.sourceforge.net/packages/openssl.htm)
   2. Extract the package to a folder e.g. C:\OPENSSL
   3. Export the certificate including the private key from the Windows server in PKCS12 format. This will require creating a password to protect the private key
-  4. Convert the certifcate to PEM format using OpenSLL with the following command:<font face="Courier New" size="2">c:\openssl\bin\openssl pkcs12 -in <EXPORTED-CERTIFICATE>.pfx -out <NEWFORMAT-CERTIFICATE>.pem -nodes</font>
+  4. Convert the certifcate to PEM format using OpenSLL with the following command: `c:\openssl\bin\openssl pkcs12 -in <EXPORTED-CERTIFICATE>.pfx -out <NEWFORMAT-CERTIFICATE>.pem -nodes`
   5. You will be prompted for the password for the certificate
   6. Enter the password and the certificate will be converted to PEM format
   7. Upload the certificate to the Access Gateway

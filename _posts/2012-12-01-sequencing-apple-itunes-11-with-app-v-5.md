@@ -22,7 +22,7 @@ Two recent releases presents an opportunity to revisit the state of virtualizing
 
 ## iTunes 10 with App-V 4.6
 
-Previously delivering [iTunes 10 with App-V 4.6]({{site.baseurl}}/virtualisation/sequencing-apple-itunes-10/), resulted in some loss of functionality and some minor annoyances with benign error messages. A lack of the Jumpt List under Windows 7 changed the user experience. App-V 5 now fixes this.
+Previously delivering [iTunes 10 with App-V 4.6]({{site.baseurl}}/virtualisation/sequencing-apple-itunes-10/), resulted in some loss of functionality and some minor annoyances with benign error messages. A lack of the Jump List under Windows 7 changed the user experience. App-V 5 now fixes this.
 
 ## iTunes Components
 

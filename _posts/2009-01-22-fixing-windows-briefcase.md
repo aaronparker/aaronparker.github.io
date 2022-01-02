@@ -33,7 +33,7 @@ Extract this icon to a local folder - I usually place custom icons in `C:\Window
 
 Once you have updated the registry (you may have to logoff and back on to see the changes), Briefcase will look much smarter:
 
-[<img style="border-right-width: 0px; display: inline; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" title="NewMenu" src="{{site.baseurl}}/media/2009/01/newmenu-thumb.png" border="0" alt="NewMenu]({{site.baseurl}}/media/2009/01/newbriefcase.png)
+![]({{site.baseurl}}/media/2009/01/newbriefcase.png)
 
 If you want to script this change, here are the command lines to do it:
 

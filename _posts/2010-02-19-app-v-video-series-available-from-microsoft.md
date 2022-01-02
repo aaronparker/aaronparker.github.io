@@ -69,8 +69,6 @@ categories:
 tags:
   - App-V
 ---
-<img style="margin: 0px 0px 10px 10px; display: inline" title="SoftGrid Closed Box" border="0" alt="SoftGrid Closed Box" align="right" src="{{site.baseurl}}/media/2008/12/softgridclosedbox.png" width="96" height="96" /> 
-
 Microsoft has made available a set of 11 videos on App-V. These are mainly introductory, but are still worth watching even if you’ve been working with App-V for some time.
 
 > Microsoft Application Virtualization (App-V) separates the application from the operating system preventing application conflicts and enabling the ability to run multiple versions of an application of the same desktop. Virtual applications can be delivered in many ways – streaming by assigning applications to user, delivering to machines via Configuration Manager or by using file streaming from removable media. 

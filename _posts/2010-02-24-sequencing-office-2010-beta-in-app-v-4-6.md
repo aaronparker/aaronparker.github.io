@@ -16,7 +16,7 @@ tags:
 ---
 A new knowledge-base article, released on the 22nd, is available from Microsoft for sequencing Office 2010 (32-bit and 64-bit) with App-V 4.6:
 
-<a href="http://support.microsoft.com/kb/980861" mce_href="http://support.microsoft.com/kb/980861">Prescriptive guidance for sequencing the Beta version of the 2010 Office system in Microsoft App-V</a>
+[Prescriptive guidance for sequencing the Beta version of the 2010 Office system in Microsoft App-V](http://support.microsoft.com/kb/980861)
 
 It's interesting to note that the article states that this is not the only way to sequence Office 2010. Does the Office team have something else up their sleeve?
 

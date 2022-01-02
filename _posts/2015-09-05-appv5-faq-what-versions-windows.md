@@ -18,57 +18,57 @@ tags:
 ---
 Operating system support for App-V is ultimately determined by the [Microsoft Product Support Lifecycle](https://support.microsoft.com/en-us/lifecycle). You can search the Product Support Lifecycle page for ["Application Virtualization" to return the product lifecycle for all versions of App-V](https://support.microsoft.com/en-us/lifecycle/search?sort=PN&alpha=application%20virtualization&Filter=FilterNO). This FAQ covers the most recent version of App-V: 5.1.
 
-# Application Virtualization Components
+## Application Virtualization Components
 
-## Desktop Client
+### Desktop Client
 
 [The App-V 5.1 desktop client is supported on](https://technet.microsoft.com/en-us/library/mt346547.aspx):
 
-  * Windows 10 x86, x64
-  * Windows 8.1 x86, x64
-  * Windows 7 SP1 x86, x64
+* Windows 10 x86, x64
+* Windows 8.1 x86, x64
+* Windows 7 SP1 x86, x64
 
-## RDS Client
+### RDS Client
 
 [The App-V 5.1 RDS client is supported on](https://technet.microsoft.com/en-us/library/mt346547.aspx):
 
-  * Windows Server 2012 R2
-  * Windows Server 2012
-  * Windows Server 2008 R2 SP1
+* Windows Server 2012 R2
+* Windows Server 2012
+* Windows Server 2008 R2 SP1
 
-## Management Server
+### Management Server
 
 [The App-V 5.1 Management Server is supported on](https://technet.microsoft.com/en-us/library/mt346547.aspx):
 
-  * Windows Server 2012 R2
-  * Windows Server 2012
-  * Windows Server 2008 R2 SP1
+* Windows Server 2012 R2
+* Windows Server 2012
+* Windows Server 2008 R2 SP1
 
-## Publishing Server
+### Publishing Server
 
 [The App-V 5.1 Publishing Server is supported on](https://technet.microsoft.com/en-us/library/mt346547.aspx):
 
-  * Windows Server 2012 R2
-  * Windows Server 2012
-  * Windows Server 2008 R2 SP1
+* Windows Server 2012 R2
+* Windows Server 2012
+* Windows Server 2008 R2 SP1
 
-## Reporting Server
+### Reporting Server
 
 [The App-V 5.1 Reporting Server is supported on](https://technet.microsoft.com/en-us/library/mt346547.aspx):
 
-  * Windows Server 2012 R2
-  * Windows Server 2012
-  * Windows Server 2008 R2 SP1
+* Windows Server 2012 R2
+* Windows Server 2012
+* Windows Server 2008 R2 SP1
 
-# Additional Resources
+## Additional Resources
 
 More details on the full system requirements for Application Virtualization 5 are documented in full on Microsoft TechNet here:
 
-  * [App-V 5.1 Prerequisites](https://technet.microsoft.com/en-us/library/mt346482.aspx)
-  * [App-V 5.1 Supported Configurations](https://technet.microsoft.com/en-us/library/mt346547.aspx)
-  * [App-V 5.0 SP3 Prerequisites](https://technet.microsoft.com/en-us/library/jj713458.aspx)
-  * [App-V 5.0 SP3 Supported Configurations](https://technet.microsoft.com/en-us/library/dn858695.aspx)
+* [App-V 5.1 Prerequisites](https://technet.microsoft.com/en-us/library/mt346482.aspx)
+* [App-V 5.1 Supported Configurations](https://technet.microsoft.com/en-us/library/mt346547.aspx)
+* [App-V 5.0 SP3 Prerequisites](https://technet.microsoft.com/en-us/library/jj713458.aspx)
+* [App-V 5.0 SP3 Supported Configurations](https://technet.microsoft.com/en-us/library/dn858695.aspx)
 
-## Previously
+### Previously
 
-  * [App-V 4.x FAQ: What are the system requirements for App-V?]({{site.baseurl}}/app-v-faq-6-what-are-the-system-requirements-for-app-v/)
+* [App-V 4.x FAQ: What are the system requirements for App-V?]({{site.baseurl}}/app-v-faq-6-what-are-the-system-requirements-for-app-v/)

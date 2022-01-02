@@ -72,6 +72,6 @@ Both tools allow you to extend the launch menu with additional executables.
 
 ## Resources
 
-  * [App-V: New command line for running CMD prompts inside the bubble](http://blogs.technet.com/b/appv/archive/2008/09/25/app-v-new-command-line-for-running-cmd-prompts-inside-the-bubble.aspx)
-  * [How to run scripts in an .osd file in Microsoft SoftGrid](http://support.microsoft.com/kb/939085)
-  * [Scripting within an OSD file](http://blogs.technet.com/b/appv/archive/2007/10/11/scripting-within-an-osd-file.aspx)
+* [App-V: New command line for running CMD prompts inside the bubble](http://blogs.technet.com/b/appv/archive/2008/09/25/app-v-new-command-line-for-running-cmd-prompts-inside-the-bubble.aspx)
+* [How to run scripts in an .osd file in Microsoft SoftGrid](http://support.microsoft.com/kb/939085)
+* [Scripting within an OSD file](http://blogs.technet.com/b/appv/archive/2007/10/11/scripting-within-an-osd-file.aspx)

@@ -11,11 +11,11 @@ categories:
 ---
 Over the past week, I've been creating an internal Exchange best practice/check list document so that we can standardise on how we configure Exchange servers for our clients. This document includes a number of items including information on configuring AV scanners to exclude certain Exchange folders. I thought it best to provide the reader of this document direct links to knowledgebase articles on various AV products. I attempted to cover the following vendors:
 
-  * Symantec;
-  * Sophos;
-  * McAfee;
-  * Trend Micro; and
-  * CA
+* Symantec;
+* Sophos;
+* McAfee;
+* Trend Micro; and
+* CA
 
 Now finding this information was harder than I thought, the steps taken to find the relevant articles was not straightforward. First I had to find out the current product versions (I still can't find a product version number for the Trend Micro AV), then I used each support site to search for the terms 'exchange' and 'mdbdata'. I used these terms because I knew that the \mdbdata folder is one of the folders to exclude. Here are the steps taken to find each document for each vendor. As you can see some are easier to find than others.
 

@@ -15,7 +15,7 @@ I've seen some Visio resources popup around the place recently and though that t
 
 First up, check out the [Visio Toolbox](http://visiotoolbox.com) site where you [learn](http://visiotoolbox.com/traininglanding.aspx) how to use Visio, download some [connectors](http://visiotoolbox.com/downloads.aspx?resourceid=2) and check out some [whitepapers](http://visiotoolbox.com/downloads.aspx?resourceid=2).&#160; A free version of [SolarWinds LANsurveyor Express](http://www.solarwinds.com/visio_promo/index.aspx?CMP=LEC-Visio-Toolbox-HP-LSE-DL) (available until June 30) is also available:
 
-<img border="0" alt="LANsurveyorExpress" src="{{site.baseurl}}/media/2008/04/lansurveyorexpress.png" width="359" height="459" /> 
+![]({{site.baseurl}}/media/2008/04/lansurveyorexpress.png)
 
 A few other Visio related tools have been made available recently on the Microsoft Downloads site:
 
@@ -29,7 +29,7 @@ A few other Visio related tools have been made available recently on the Microso
 
 [Microsoft Office Visio 2007 Pro - Storage Management for Servers (NRTM) Connector](http://www.microsoft.com/downloads/details.aspx?FamilyID=b3ee9327-e393-4718-a3b4-6bc860b65634&DisplayLang=en)
 
-> The Data Center Disk Space Monitoring Connector for Microsoft Office Visio&#174; 2007 uses Visio data graphics to display the results of server monitoring. The connector enables effective integration of Microsoft Office Visio 2007 with the service management solution System Center Operations Manager 2007. The connector helps to view the results of monitoring servers in a clear, comprehensive Visio network diagram.
+> The Data Center Disk Space Monitoring Connector for Microsoft Office Visio 2007 uses Visio data graphics to display the results of server monitoring. The connector enables effective integration of Microsoft Office Visio 2007 with the service management solution System Center Operations Manager 2007. The connector helps to view the results of monitoring servers in a clear, comprehensive Visio network diagram.
 
 [Microsoft Office Visio 2007 Pro SCOM & SCCM Connectors](http://www.microsoft.com/downloads/details.aspx?FamilyID=521b3884-1eda-4b9d-8ad7-67d00fe9ce8a&DisplayLang=en)
 

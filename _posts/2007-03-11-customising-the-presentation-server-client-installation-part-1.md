@@ -16,11 +16,11 @@ The Citrix Presentation Server Client provides the ability to customise the clie
 
 To start the customisation, download the standard [Citrix Presentation Server Client Packager](http://www.citrix.com/English/SS/downloads/details.asp?dID=2755&downloadID=683986&pID=186) from the Citrix web site. This process will work for both version 10.0 and version 9.x of the client.
 
-Start the packager customisation wizard with the Windows Installer command line. This will start an administrative installation of the packager (For a full list of MSIEXEC command line switches you can run <font face="courier new,courier">MSIEXEC /?</font>).
+Start the packager customisation wizard with the Windows Installer command line. This will start an administrative installation of the packager (For a full list of MSIEXEC command line switches you can run `MSIEXEC /?`).
 
-<p class="console">
-  [quickcode:noclick]MSIEXEC /A ICA32PKG.MSI[/quickcode]
-</p>
+```
+MSIEXEC /A ICA32PKG.MSI
+```
 
 If you are doing this on Windows Vista you will need to run this command line from an elevated command prompt, otherwise you will be prompted for elevation during the packager wizard.
 

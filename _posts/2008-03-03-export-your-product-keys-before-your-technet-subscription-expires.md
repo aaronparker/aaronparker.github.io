@@ -9,7 +9,7 @@ permalink: /export-your-product-keys-before-your-technet-subscription-expires/
 categories:
   - Microsoft
 ---
-With Windows Vista and Windows Server 2008 requiring activation for all versions, the days of grabbing the corporate key for home use have gone.&#160; 
+With Windows Vista and Windows Server 2008 requiring activation for all versions, the days of grabbing the corporate key for home use have gone.
 
 My subscription expired last Friday so I've immediately lost access to my products keys. I was a bit disappointed to not receive notification of the impending expiration, but I was chuffed to see that the product keys would still activate. So now while I wait for my renewal to come through, it would have been great to have access to those keys offline to continue setting up my test environment.
 

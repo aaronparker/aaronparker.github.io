@@ -18,6 +18,6 @@ tags:
   - PowerShell
   - Server Core
 ---
-<img src="{{site.baseurl}}/media/2008/04/servercorepowershell1.png" alt="PowerShell running on Server Core" width="678" height="534" border="0" />
+![PowerShell running on Server Core]({{site.baseurl}}/media/2008/04/servercorepowershell1.png)
 
 PowerShell running directly on Windows Server Core - no need to wait for Windows Server 2008 R2...  If you look closely you can see how I got it working.

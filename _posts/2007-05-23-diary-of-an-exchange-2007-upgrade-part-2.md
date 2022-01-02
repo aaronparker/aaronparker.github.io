@@ -29,11 +29,11 @@ After manually installing Windows Server 2003 R2 Enterprise Edition x64 to all f
 
 **Organisation Upgrade**
 
-Before moving too much further, I checked the Exchange 2007 readiness of the organisation with the Exchange Server Best Practice Analyser. The only issue found with the organisation was a recommedation to [suppress link state changes](http://technet.microsoft.com/en-us/library/875ae7f8-446d-4786-85d2-719ac7093cf6.aspx). As this organisation is highly centralised, I've skipped making those changes and proceeded to updating the organisation. Updating the schema and preparing the domain was straightforward, no issuse there.
+Before moving too much further, I checked the Exchange 2007 readiness of the organisation with the Exchange Server Best Practice Analyser. The only issue found with the organisation was a recommendation to [suppress link state changes](http://technet.microsoft.com/en-us/library/875ae7f8-446d-4786-85d2-719ac7093cf6.aspx). As this organisation is highly centralised, I've skipped making those changes and proceeded to updating the organisation. Updating the schema and preparing the domain was straightforward, no issue there.
 
 **Client Access Servers**
 
-Installation of the Client Access, Hub Transport and Unified Messaging roles on the two IBM 336 was simple enough, but I ran into all sorts of trouble when I my concentration slipped and I accidently installed the Mailbox role on a server that wasn't intended to be a mailbox server.
+Installation of the Client Access, Hub Transport and Unified Messaging roles on the two IBM 336 was simple enough, but I ran into all sorts of trouble when I my concentration slipped and I accidentally installed the Mailbox role on a server that wasn't intended to be a mailbox server.
 
 To remove the mailbox role, I first had to remove the Public Folder replicas contained on that server. Attempting to remove the role would produce this error:
 

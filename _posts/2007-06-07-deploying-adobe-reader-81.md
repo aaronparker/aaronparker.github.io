@@ -41,23 +41,19 @@ Simplifying Adobe Reader in an enterprise environment is something that we're al
 * Stops _Beyond Reader_ from displaying at startup
 * Disables the Adobe Online Services
 
-<p class="download">
-  <a href="{{site.baseurl}}/media/2007/06/Reader8xBasic.mst">Adobe Reader 8.1.x Basic transform file</a>
-</p>
+[Adobe Reader 8.1.x Basic transform file]({{site.baseurl}}/media/2007/06/Reader8xBasic.mst)
 
 The second transform provides the same settings as above in addition to completely preventing the installation of Adobe Updater:
 
-<p class="download">
-  <a href="{{site.baseurl}}/media/2007/06/Reader8xAdvanced.mst">Adobe Reader 8.1.x Advanced transform file</a>
-</p>
+[Adobe Reader 8.1.x Advanced transform file]({{site.baseurl}}/media/2007/06/Reader8xAdvanced.mst")
 
 ## Terminal Servers and Browser Integration
 
-When installing Adobe Reader on Terminal Servers, it might be advantageous to disable browser integration, i.e. opening PDF files from within the browser window. The reason for this is that the Reader executable (ACRORD32.EXE) does not exit until the browser is closed. This will cause Reader to continue to consume memory even though it is not in use. To disable browser integration set the **DISABLE\_BROWSER\_INTEGRATION** property to **YES** when installing Reader on Terminal Servers. You can do this by editing the transform or using DISABLE\_BROWSER\_INTEGRATION=YES on the command line. If the command line is not for you, I've created another transform which you can get here:
+When installing Adobe Reader on Terminal Servers, it might be advantageous to disable browser integration, i.e. opening PDF files from within the browser window. The reason for this is that the Reader executable (ACRORD32.EXE) does not exit until the browser is closed. This will cause Reader to continue to consume memory even though it is not in use. To disable browser integration set the **DISABLE_BROWSER_INTEGRATION** property to **YES** when installing Reader on Terminal Servers. You can do this by editing the transform or using DISABLE\_BROWSER\_INTEGRATION=YES on the command line. If the command line is not for you, I've created another transform which you can get here:
 
 ## Hiding Menu Items
 
-Thanks to [David for the information]({{site.baseurl}}/deployment/deploying-adobe-reader-81#comment-609), you can remove a few more of the menu items in Reader that you might not want hanging around, such as the _Beyond Adobe Reader_ link. Why Adobe has resorted to using JavaScript files to modify the interface is just beyond me. On one hand we can restrict some of the interface via the registry (which even uses the HKLMSoftwarePolicies key) but on the other we need to resort to a method that must be managed on each individual machine. Sometimes developers just floor me with their stupidity.The first listing here is code you can use to find the name of the menu or toolbar button. The second listing shows you the code required to hide the items. Copy the code and save them to Program FilesAdobeReader 8.0ReaderJavascripts.
+Thanks to [David for the information]({{site.baseurl}}/deployment/deploying-adobe-reader-81#comment-609), you can remove a few more of the menu items in Reader that you might not want hanging around, such as the _Beyond Adobe Reader_ link. Why Adobe has resorted to using JavaScript files to modify the interface is just beyond me. On one hand we can restrict some of the interface via the registry (which even uses the HKLMSoftwarePolicies key) but on the other we need to resort to a method that must be managed on each individual machine. Sometimes developers just floor me with their stupidity.The first listing here is code you can use to find the name of the menu or toolbar button. The second listing shows you the code required to hide the items. Copy the code and save them to `Program Files\Adobe\Reader 8.0\Reader\Javascripts`.
 
 List menu items:
 

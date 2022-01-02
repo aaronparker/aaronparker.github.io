@@ -17,3 +17,4 @@ Citrix have updated the Win32 [Presentation Server Client Package to version 9.2
   * If a computer is running Windows 98, the real printer properties are not inherited for new user accounts;
   * If more than 100 printers are configured on the client device, a printer goes offline when receiving a print job;
   * When the client starts an application in Program Neighborhood and is logging on using single sign-on and smart cards, the Connection Established, Negotiating Capabilities window does not disappear.
+  

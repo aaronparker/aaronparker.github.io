@@ -17,6 +17,6 @@ I've never previously had to change the font face in Web Interface, but I've had
 
 To change the font face you will need to edit one of the language files. In my case this was the English language file - **common_strings.properties**. At about line 374 you will find the following line which you modify to change the font:
 
-<span style="font-family: 'courier new', courier;">FontFace=Verdana, Arial, Helvetica, sans-serif</span>
+`FontFace=Verdana, Arial, Helvetica, sans-serif`
 
-The default location for the language file for Web Interface 4.5 is _C:\Program Files\Citrix\Web Interface\4.5\languages_.
+The default location for the language file for Web Interface 4.5 is `C:\Program Files\Citrix\Web Interface\4.5\languages`.

@@ -13,10 +13,10 @@ tags:
 ---
 I promise this won't become yet another blog just reposting links to other sites (more original posts to come), but here a link to a new document on the Microsoft Download site that's worth mentioning. This document goes into the various methods that can be used to protect your network from unmanaged clients. This includes:
 
-  * Domain and Server Isolation with IPSec;
-  * VPN Quarantine services;
-  * 802.1X for wireless clients; and
-  * Using SMS to detect and remediate unmanaged clients.
+* Domain and Server Isolation with IPSec;
+* VPN Quarantine services;
+* 802.1X for wireless clients; and
+* Using SMS to detect and remediate unmanaged clients.
 
 Check out page 22 for "Identifying Levels of Trust". This is a good starting point to start thinking about levels of trust in your Internal network. The days of having complete trust in our internal networks is over. There is also only a single paragraph on NAP because this document details technologies that you can implement today.
 

@@ -53,8 +53,8 @@ or
   * A second shortcut is now added to the Startup group - **Adobe Reader Synchronizer** as well as the **Adobe Reader Speed Launch** shortcut;
   * At launch, Adobe Reader reads the `HKLMSystemCurrentControlSetControlTerminal Server` registry key. Will it perform differently on a Terminal Server?
   * It appears to launch quite quickly;
-  * It also reads this registry key `HKLMSOFTWAREPoliciesAdobeAcrobat Reader8.0FeatureLockdown` which could mean that an ADM/ADMX file exists or is coming to manage Adobe Reader via Group Policy;
-  * You can set this DWORD value in the registry: `HKCUSoftwareAdobeAcrobat Reader8.0AVGeneralbDocumentsInTaskbar`, to force Reader to display a separate window for each document, just like Microsoft Office;
+  * It also reads this registry key `HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\8.0FeatureLockdown` which could mean that an ADM/ADMX file exists or is coming to manage Adobe Reader via Group Policy;
+  * You can set this DWORD value in the registry: `HKCU\Software\Adobe\Acrobat Reader\8.0\AV\General\bDocumentsInTaskbar`, to force Reader to display a separate window for each document, just like Microsoft Office;
   * There are no ads in the toolbar as in previous versions;
   * It includes nice new fancy 256 x 256 pixel icons (click each one for a larger view):
 

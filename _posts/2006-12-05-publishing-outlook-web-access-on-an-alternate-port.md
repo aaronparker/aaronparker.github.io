@@ -28,4 +28,4 @@ and
 
 ![]({{site.baseurl}}/media/2006/12/1000.14.221.OWAError2.PNG)
 
-The solution to this was to configure IIS on the Exchange server to use TCP 444 for HTTPS/SSL and reconfigure the ISA Server web publishing rule to specify TCP 444 for SSL for the web listenter and the published server. I presume this has something to do with the dynamic nature of the Outlook Web Access application, but I've not had a chance to investigate any deeper.
+The solution to this was to configure IIS on the Exchange server to use TCP 444 for HTTPS/SSL and reconfigure the ISA Server web publishing rule to specify TCP 444 for SSL for the web listener and the published server. I presume this has something to do with the dynamic nature of the Outlook Web Access application, but I've not had a chance to investigate any deeper.

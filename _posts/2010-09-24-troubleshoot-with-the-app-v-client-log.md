@@ -98,12 +98,12 @@ If the problem is not immediately apparent in the log, start looking for a solut
 
 ### Resources
 
-  * [Log File for the Application Virtualization Client](http://technet.microsoft.com/en-us/library/cc817103.aspx)
-  * [How to Configure the Client Log File](http://technet.microsoft.com/en-us/library/cc817165.aspx)
-  * [Troubleshooting App-V with log files](http://blogs.technet.com/b/appv/archive/2009/01/26/troubleshooting-app-v-with-log-files.aspx)
-  * [﻿﻿How to use the Process Monitor tool to generate a log file for an application in the App-V virtual environment](http://support.microsoft.com/kb/939896/)
-  * [System Center Configuration Manager 2007 Toolkit V2](http://www.microsoft.com/downloads/en/details.aspx?displaylang=en&FamilyID=5a47b972-95d2-46b1-ab14-5d0cbce54eb8)
-  * [Application Virtualization Client Log Parser Utility](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=72876c60-3a87-4705-b722-f73eb56219bf) (and [how to use it](http://blogs.technet.com/b/appv/archive/2008/11/06/app-v-4-5-resource-kit-application-virtualization-client-log-parser-utility.aspx))
-  * [App-V Application Publishing and Client Interaction](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/AppPubandClientInteraction.docx)
-  * [App-V Client Error Codes](http://www.kirx.org/app-v/read/error-codes-en.html)
-  * [App-V Error Codes search](http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code) on Microsoft Support
+* [Log File for the Application Virtualization Client](http://technet.microsoft.com/en-us/library/cc817103.aspx)
+* [How to Configure the Client Log File](http://technet.microsoft.com/en-us/library/cc817165.aspx)
+* [Troubleshooting App-V with log files](http://blogs.technet.com/b/appv/archive/2009/01/26/troubleshooting-app-v-with-log-files.aspx)
+* [﻿﻿How to use the Process Monitor tool to generate a log file for an application in the App-V virtual environment](http://support.microsoft.com/kb/939896/)
+* [System Center Configuration Manager 2007 Toolkit V2](http://www.microsoft.com/downloads/en/details.aspx?displaylang=en&FamilyID=5a47b972-95d2-46b1-ab14-5d0cbce54eb8)
+* [Application Virtualization Client Log Parser Utility](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=72876c60-3a87-4705-b722-f73eb56219bf) (and [how to use it](http://blogs.technet.com/b/appv/archive/2008/11/06/app-v-4-5-resource-kit-application-virtualization-client-log-parser-utility.aspx))
+* [App-V Application Publishing and Client Interaction](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/AppPubandClientInteraction.docx)
+* [App-V Client Error Codes](http://www.kirx.org/app-v/read/error-codes-en.html)
+* [App-V Error Codes search](http://support.microsoft.com/search/default.aspx?query=%22app-v%22+error+code) on Microsoft Support

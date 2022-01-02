@@ -16,9 +16,9 @@ tags:
 ---
 If you follow any of the following guidance from Microsoft for sequencing Office with App-V:
 
-  * [Prescriptive Guidance for Sequencing Office 2010 in App-V 4.6 SP1](http://support.microsoft.com/kb/2627274)
-  * [Prescriptive guidance for sequencing Office 2010 using Microsoft App-V 4.5 or 4.6](http://support.microsoft.com/kb/983462)
-  * [Prescriptive guidance for sequencing 2007 Office programs in Microsoft App-V](http://support.microsoft.com/kb/939796)
+* [Prescriptive Guidance for Sequencing Office 2010 in App-V 4.6 SP1](http://support.microsoft.com/kb/2627274)
+* [Prescriptive guidance for sequencing Office 2010 using Microsoft App-V 4.5 or 4.6](http://support.microsoft.com/kb/983462)
+* [Prescriptive guidance for sequencing 2007 Office programs in Microsoft App-V](http://support.microsoft.com/kb/939796)
 
 you will end up with a package that will include the following folders in the virtualized user profile (those folders captured during sequencing that will end up in the PKG file):
 

@@ -28,6 +28,6 @@ Using PowerShell to drive the App-V Management Server opens up plenty of great s
 Import-AppvServerPackage -PackagePath "\\Server\Packages\MozillaFirefox16_pkg\MozillaFirefox16.appv" | Publish-AppvServerPackage -Verbose | Grant-AppvServerPackage -Groups "lab\Domain Users" -Verbose
 ```
 
-The PackagePath property on the Import-AppvServerPackage command should take any UNC or HTTP path, just like the Management Server UI.
+The PackagePath property on the `Import-AppvServerPackage` command should take any UNC or HTTP path, just like the Management Server UI.
 
 This example command should be easy enough to extend to import and publish a number of packages stored in target folder.

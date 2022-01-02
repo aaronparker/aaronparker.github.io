@@ -239,9 +239,9 @@ Param (
 )
 ```
 
-A full listing of the script can be found here:
+A full listing of the script can be [found here](https://gist.github.com/aaronparker/74fae5b7887b4e46040a6adc194ab383):
 
-<script src="https://gist.github.com/aaronparker/74fae5b7887b4e46040a6adc194ab383.js"></script>
+{% gist 74fae5b7887b4e46040a6adc194ab383 %}
 
 #### Run the script on endpoints
 
@@ -314,9 +314,9 @@ Here's another example of the table (or grid) view. In this view, I've formatted
 Known Folder Move status report
 {:.figcaption}
 
-Here's the code for the entire workbook that you can copy directly into a new workbook in your target Log Analytics workspace. If you make some improvements to the workbook be sure to let me know what you've updated.
+Here's the [code for the entire workbook](https://gist.github.com/aaronparker/0ac0d58e2dc780df4d7d3a9e82eb8dcc) that you can copy directly into a new workbook in your target Log Analytics workspace. If you make some improvements to the workbook be sure to let me know what you've updated.
 
-<script src="https://gist.github.com/aaronparker/0ac0d58e2dc780df4d7d3a9e82eb8dcc.js"></script>
+{% gist 0ac0d58e2dc780df4d7d3a9e82eb8dcc %}
 
 ## Finally
 

@@ -51,7 +51,10 @@ For the chart I've simplified the responses, so here's what we actually asked in
 
 This means that over 75% of respondents are utilising some form of automation and I would read from this, that with roughly 52% of organisations leaving some manual tasks, that getting to 100% is either too time consuming so not worth the effort, or perhaps some tasks can't be automated.
 
-![Slide12" width="720" height="405" srcset="{{site.baseurl}}/media/2013/05/Slide12.png 720w, {{site.baseurl}}/media/2013/05/Slide12-150x84.png 150w, {{site.baseurl}}/media/2013/05/Slide12-300x168.png 300w, {{site.baseurl}}/media/2013/05/Slide12-624x351.png 624w" sizes="(max-width: 720px) 100vw, 720px" />*xkcd sums the problem up nicely.*
+![xkcd sums the problem up nicely]({{site.baseurl}}/media/2013/05/Slide12.png)
+
+xkcd sums the problem up nicely.
+{:.figcaption}
 
 What we didn't ask is what are the blockers to automation - so perhaps if we get to run the survey again, this is question that we can pose to get some idea.
 

@@ -34,13 +34,13 @@ SELECT Version FROM Win32_OperatingSystem WHERE Version >= '6'
 
 Edit the GPO and enable these settings (here's the [full GPO report]({{site.baseurl}}/media/2008/04/WindowsVistaStartMenu.htm)):
 
-  * Computer Configuration / Administrative Templates / System / Group Policy / User Group Policy loopback processing mode
-  * User Configuration / Windows Settings / Folder Redirection / Start Menu / Basic (Redirect everyone's folder to the same location) / Redirect to the following path: In my test environment, I'm using this DFS path: _\dev.localPublicStartMenusWindowsVista_
-  * Grant user exclusive rights to Start Menu
-  * Move the contents of Start Menu to the new location
-  * Redirect the folder back to the local userprofile location when policy is removed
-  * User Configuration / Administrative Templates / Start Menu and Taskbar / Remove common program groups from Start Menu
-  * User Configuration / Administrative Templates / Network / Offline Files / Administratively assigned offline files: `\\dev.local\Public\StartMenus\WindowsVista`
+* Computer Configuration / Administrative Templates / System / Group Policy / User Group Policy loopback processing mode
+* User Configuration / Windows Settings / Folder Redirection / Start Menu / Basic (Redirect everyone's folder to the same location) / Redirect to the following path: In my test environment, I'm using this DFS path: _\dev.localPublicStartMenusWindowsVista_
+* Grant user exclusive rights to Start Menu
+* Move the contents of Start Menu to the new location
+* Redirect the folder back to the local userprofile location when policy is removed
+* User Configuration / Administrative Templates / Start Menu and Taskbar / Remove common program groups from Start Menu
+* User Configuration / Administrative Templates / Network / Offline Files / Administratively assigned offline files: `\\dev.local\Public\StartMenus\WindowsVista`
 
 The last setting will ensure that the Start Menu will be cached by the workstation and available to the user offline. Here's my configured folder which has been cached locally:
 

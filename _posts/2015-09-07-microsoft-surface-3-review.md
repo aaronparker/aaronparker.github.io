@@ -66,7 +66,7 @@ A few times now the touch screen has gone haywire as shown in the graphic below.
 
 ![Touch in Windows 10 on the Surface 3 going haywire]({{site.baseurl}}/media/2015/09/Windows10-Jitter.gif)
 
-The screen itself is awesome - it has a 1920&#215;1280 resolution in a 10.1&#8243; screen, so the pixel density is very high. Windows runs best at 150% scaling which works out well even for most desktop applications.
+The screen itself is awesome - it has a 1920x1280 resolution in a 10.1" screen, so the pixel density is very high. Windows runs best at 150% scaling which works out well even for most desktop applications.
 
 In short, the hardware is beautiful, a extra USB port would be nice and the keyboard is great but let down by the trackpad. When travelling, this is an excellent device for cramped spaces and switch uses - from writing to watching videos. The kick stand and removable keyboard is a better solution that adding a hardware keyboard to an iPad.
 

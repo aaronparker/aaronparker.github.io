@@ -29,7 +29,7 @@ This is installed on Windows XP and even though there are [indications that the 
 
 > The Quick Starter feature will prefetch portions of the JRE into memory, substantially decreasing the average JRE cold start-up time (the time that it takes to launch a Java application for the first time after a fresh reboot of a PC).
 
-Great, now we're lumped with yet another application with a quick launch process. To me bundling a quick launch executable that continually runs in the background, is a sign that your application is bloated. If you believe the hype though, your applications run faster with Java. Faster than what? Certaintly not native applications.
+Great, now we're lumped with yet another application with a quick launch process. To me bundling a quick launch executable that continually runs in the background, is a sign that your application is bloated. If you believe the hype though, your applications run faster with Java. Faster than what? Certainly not native applications.
 
 ![fasterwithjava]("{{site.baseurl}}/media/2008/02/fasterwithjava.png)
 
@@ -54,6 +54,4 @@ REG ADD "HKLM\SOFTWARE\JavaSoft\Java Update\Policy" /v NotifyDownload /t REG_DWO
 REG ADD "HKLM\SOFTWARE\JavaSoft\Java Update\Policy" /v NotifyInstall /t REG_DWORD /d 0 /f
 ```
 
-<p class="important">
-  The information in this article is based on beta code. Hopefully it also applies to the final code when released but who can tell the future? If I could I certaintly wouldn't be writing about Java.
-</p>
+The information in this article is based on beta code. Hopefully it also applies to the final code when released but who can tell the future? If I could I certainly wouldn't be writing about Java.

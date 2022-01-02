@@ -14,7 +14,7 @@ tags:
   - Adobe
   - SoftGrid
 ---
-<img src="{{site.baseurl}}/media/2008/02/illustrator-softgridbox.png" align="left" alt="illustrator-softgridbox.png" />As with my earlier posts on sequencing [Adobe Acrobat 8]({{site.baseurl}}/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far) and [Adobe Photoshop CS3]({{site.baseurl}}/virtualisation/sequencing-adobe-photoshop-cs3), I've struck the same manifest issues with Illustrator CS3. Here's a quick breakdown on what I needed to do to get this application working:
+As with my earlier posts on sequencing [Adobe Acrobat 8]({{site.baseurl}}/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far) and [Adobe Photoshop CS3]({{site.baseurl}}/virtualisation/sequencing-adobe-photoshop-cs3), I've struck the same manifest issues with Illustrator CS3. Here's a quick breakdown on what I needed to do to get this application working:
 
 ### Sequencing Illustrator CS3
 
@@ -26,12 +26,13 @@ J.C. Hornbeck has [posted a solution that involves editing DLL files](http://blo
 
 You will need to create these manifest files:
 
-  * Q:\<Asset Folder>\Adobe\Adobe Bridge CS3\fileinfo.dll.manifest
-  * Q:\<Asset Folder>\Adobe\Adobe Illustrator CS3\Support Files\Contents\Windows\fileinfo.dll.manifest
+* `Q:\<Asset Folder>\Adobe\Adobe Bridge CS3\fileinfo.dll.manifest`
+* `Q:\<Asset Folder>\Adobe\Adobe Illustrator CS3\Support Files\Contents\Windows\fileinfo.dll.manifest`
 
 And the contents of the manifest files should look like this:
 
-[code lang="xml"]<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
 <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
 <assemblyIdentity  
 name="Adobe.Acrobat.fileinfo.dll"  
@@ -51,7 +52,8 @@ language="*"
 />  
 </dependentAssembly>  
 </dependency>  
-</assembly>[/code]
+</assembly>
+```
 
 ### Running Illustrator CS3 on the client
 

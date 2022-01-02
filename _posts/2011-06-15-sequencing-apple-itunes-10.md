@@ -21,9 +21,9 @@ Here’s a nut I’ve been trying to crack for some time – successfully virtua
 
 Because virtualizing iTunes with App-V will isolate the application from the OS, the following features will not be available once iTunes has been sequenced:
 
-  * The iTunes Jump List
-  * The iTunes toolbar integration into the Taskbar
-  * Windows Firewall exclusions (manual changes will be required to support media sharing)
+* The iTunes Jump List
+* The iTunes toolbar integration into the Taskbar
+* Windows Firewall exclusions (manual changes will be required to support media sharing)
 
 ## iTunes Components
 
@@ -31,13 +31,13 @@ To start at the beginning requires taking a look at the components of iTunes. No
 
 Extracting [the iTunes installer](http://www.apple.com/itunes/download/) results in several files:
 
-  * AppleSoftwareUpdate.msi – Software Update is used to download and Apple software and updates
-  * SetupAdmin.exe – the setup wrapper application
-  * AppleApplicationSupport.msi – all Apple applications on Windows require this as a dependency
-  * AppleMobileDeviceSupport.msi – required for Apple mobile device support (iPhone, iPad etc.). This installer includes the drivers for Apple’s devices
-  * QuickTime.msi – iTunes uses QuickTime for video codec support
-  * Bonjour.msi - [iTunes uses Bonjour](http://support.apple.com/kb/HT2250) to find shared music libraries, to find AirPort Express devices for streaming music to, and to find Apple TVs
-  * iTunes.msi – the iTunes installer itself
+* AppleSoftwareUpdate.msi – Software Update is used to download and Apple software and updates
+* SetupAdmin.exe – the setup wrapper application
+* AppleApplicationSupport.msi – all Apple applications on Windows require this as a dependency
+* AppleMobileDeviceSupport.msi – required for Apple mobile device support (iPhone, iPad etc.). This installer includes the drivers for Apple’s devices
+* QuickTime.msi – iTunes uses QuickTime for video codec support
+* Bonjour.msi - [iTunes uses Bonjour](http://support.apple.com/kb/HT2250) to find shared music libraries, to find AirPort Express devices for streaming music to, and to find Apple TVs
+* iTunes.msi – the iTunes installer itself
 
 It is important that _Apple Software Update_ is not included in the App-V package – allowing the applications in the package to update will at best fail and at worst, most likely bloat the package if it were allowed to run after deployment. Before copying the iTunes setup files into your sequencing VM, delete _AppleSoftwareUpdate.msi_ and _SetupAdmin.exe_. This will prevent the iTunes installer from automatically installing Software Update during sequencing.
 
@@ -76,18 +76,18 @@ In this article I will demonstrate how to take approach number 2. If you would p
 
 To work around the large amount of data that iTunes stores in the profile, create the following folders before sequencing:
 
-  * %AppData%\Apple Computer\iTunes\iPad Software Updates
-  * %AppData%\Apple Computer\iTunes\iPad Updater Logs
-  * %AppData%\Apple Computer\iTunes\iPhone Carrier Support
-  * %AppData%\Apple Computer\iTunes\iPhone Software Updates
-  * %AppData%\Apple Computer\iTunes\iPhone Updater Logs
-  * %AppData%\Apple Computer\iTunes\iPod Software Updates
-  * %AppData%\Apple Computer\iTunes\iPod Updater Logs
-  * %AppData%\Apple Computer\WebKit
-  * %AppData%\Apple Computer\iTunes\Apple Mobile Device Sync Diagnostics Logs
-  * %AppData%\Apple Computer\Logs
-  * %AppData%\Apple Computer\MobileSync
-  * %AppData%\Apple Computer\SyncServices\Local
+* %AppData%\Apple Computer\iTunes\iPad Software Updates
+* %AppData%\Apple Computer\iTunes\iPad Updater Logs
+* %AppData%\Apple Computer\iTunes\iPhone Carrier Support
+* %AppData%\Apple Computer\iTunes\iPhone Software Updates
+* %AppData%\Apple Computer\iTunes\iPhone Updater Logs
+* %AppData%\Apple Computer\iTunes\iPod Software Updates
+* %AppData%\Apple Computer\iTunes\iPod Updater Logs
+* %AppData%\Apple Computer\WebKit
+* %AppData%\Apple Computer\iTunes\Apple Mobile Device Sync Diagnostics Logs
+* %AppData%\Apple Computer\Logs
+* %AppData%\Apple Computer\MobileSync
+* %AppData%\Apple Computer\SyncServices\Local
 
 By creating these folder before sequencing will make it simpler to set Merge with Local attributes on the captured folders. The paths above will then also be excluded from the package and must be created on the App-V client computer at runtime.
 
@@ -97,22 +97,22 @@ By creating these folder before sequencing will make it simpler to set Merge wit
 
 Sequencing is as simple as capturing the installation of the following files and configuring iTunes the way we want:
 
-  * Bonjour.msi
-  * iTunes.msi
-  * QuickTime.msi
+* Bonjour.msi
+* iTunes.msi
+* QuickTime.msi
 
 However, iTunes and QuickTime store preferences in less than ideal locations. Here are the default locations for those preferences:
 
-  * Most iTunes preferences are stored here: `%AppData%\Apple Computer\iTunes\iTunesPrefs.xml`
-  * Some computer specific preferences are stored here: `%LocalAppData%\Apple Computer\iTunes\iTunesPrefs.xml`
-  * QuickTime preferences are stored here: `%LocalAppData%Low\Apple Computer\QuickTime\QuickTime.qtp`
-  * QuickTime Player preferences are stored here: `%LocalAppData%\Apple Computer\QuickTime\QTPlayerSession.xml`
+* Most iTunes preferences are stored here: `%AppData%\Apple Computer\iTunes\iTunesPrefs.xml`
+* Some computer specific preferences are stored here: `%LocalAppData%\Apple Computer\iTunes\iTunesPrefs.xml`
+* QuickTime preferences are stored here: `%LocalAppData%Low\Apple Computer\QuickTime\QuickTime.qtp`
+* QuickTime Player preferences are stored here: `%LocalAppData%\Apple Computer\QuickTime\QTPlayerSession.xml`
 
 Ideally these would all be located under %AppData%. Unfortunately the only preference file that we can move is for QuickTime (`%LocalAppData%Low\Apple Computer\QuickTime\QuickTime.qtp`).
 
 To change the QuickTime preferences location, change the path under the following Registry value:
 
-  * HKCU\Software\Apple Computer, Inc.\QuickTime\LocalUserPreferences\FolderPath
+* HKCU\Software\Apple Computer, Inc.\QuickTime\LocalUserPreferences\FolderPath
 
 I do not recommend attempting to include the %LocalAppData% or %LocalAppData%Low locations as these end up containing cache files which we need to avoid capturing to keep the package size to a minimum.
 
@@ -120,13 +120,13 @@ I do not recommend attempting to include the %LocalAppData% or %LocalAppData%Low
 
 There’s no reason why you couldn’t install and configure QuickTime and iTunes during sequencing manually; however I think that scripting the process as much as possible will help create a more successful package. I have a script that performs the following:
 
-  * Installs QuickTime and iTunes with updates and desktop shortcuts disabled
-  * Installs Bonjour
-  * Perform some clean-up actions including removing unneeded shortcuts
-  * Changes the QuickTime configuration file location to %AppData% (instead of the AppData\LocalLow folder)
-  * Copy in a pre-configured QuickTime configuration file
-  * Create the folders in %AppData% that we want to capture in the package
-  * Start QuickTime Player and then iTunes to provide an opportunity to configure each application (first-run tasks)
+* Installs QuickTime and iTunes with updates and desktop shortcuts disabled
+* Installs Bonjour
+* Perform some clean-up actions including removing unneeded shortcuts
+* Changes the QuickTime configuration file location to %AppData% (instead of the AppData\LocalLow folder)
+* Copy in a pre-configured QuickTime configuration file
+* Create the folders in %AppData% that we want to capture in the package
+* Start QuickTime Player and then iTunes to provide an opportunity to configure each application (first-run tasks)
 
 You can download the script here:
 
@@ -140,18 +140,18 @@ Place the script into the same folder as the iTunes Windows Installer files as i
 
 There are a number of locations that we need to exclude from capture during sequencing:
 
-  * %CSIDL_APPDATA%\Apple Computer\iTunes\iPad Software Updates
-  * %CSIDL_APPDATA%\Apple Computer\iTunes\iPad Updater Logs
-  * %CSIDL_APPDATA%\Apple Computer\iTunes\iPhone Carrier Support
-  * %CSIDL_APPDATA%\Apple Computer\iTunes\iPhone Software Updates
-  * %CSIDL_APPDATA%\Apple Computer\iTunes\iPhone Updater Logs
-  * %CSIDL_APPDATA%\Apple Computer\iTunes\Apple Mobile Device Sync Diagnostics Logs
-  * %CSIDL_APPDATA%\Apple Computer\Logs
-  * %CSIDL_APPDATA%\Apple Computer\MobileSync
-  * %CSIDL_APPDATA%\Apple Computer\SyncServices
-  * \REGISTRY\USER\%SFT_SID%\Software\Microsoft\Windows\CurrentVersion\Internet Settings
-  * \REGISTRY\USER\%SFT\_SID%\_Classes\Local Settings\Software\Microsoft\Windows\Shell
-  * %CSIDL_PROFILE%\Music
+* %CSIDL_APPDATA%\Apple Computer\iTunes\iPad Software Updates
+* %CSIDL_APPDATA%\Apple Computer\iTunes\iPad Updater Logs
+* %CSIDL_APPDATA%\Apple Computer\iTunes\iPhone Carrier Support
+* %CSIDL_APPDATA%\Apple Computer\iTunes\iPhone Software Updates
+* %CSIDL_APPDATA%\Apple Computer\iTunes\iPhone Updater Logs
+* %CSIDL_APPDATA%\Apple Computer\iTunes\Apple Mobile Device Sync Diagnostics Logs
+* %CSIDL_APPDATA%\Apple Computer\Logs
+* %CSIDL_APPDATA%\Apple Computer\MobileSync
+* %CSIDL_APPDATA%\Apple Computer\SyncServices
+* \REGISTRY\USER\%SFT_SID%\Software\Microsoft\Windows\CurrentVersion\Internet Settings
+* \REGISTRY\USER\%SFT\_SID%\_Classes\Local Settings\Software\Microsoft\Windows\Shell
+* %CSIDL_PROFILE%\Music
 
 I have included these in a Package Template for iTunes that you can download from here:
 
@@ -175,19 +175,19 @@ To sequence iTunes, follow the basic outline here:
 
 6. First Run tasks
 
-  * QuickTime – follow the recommendations for configuration in this article: [Virtualising Apple QuickTime 7.x]({{site.baseurl}}/virtualisation/sequencing-apple-quicktime-7x/)
-  * iTunes – iTunes will prompt to make itself the default for media files – set this if required and be sure to disable the option 'Warn me if iTunes is not the default player for audio files'
+* QuickTime – follow the recommendations for configuration in this article: [Virtualising Apple QuickTime 7.x]({{site.baseurl}}/virtualisation/sequencing-apple-quicktime-7x/)
+* iTunes – iTunes will prompt to make itself the default for media files – set this if required and be sure to disable the option 'Warn me if iTunes is not the default player for audio files'
 
 7. Customize shortcuts
 
-  * Remove the _About Bonjour_ & _PictureViewer_ shortcuts (I recommend removing all shortcuts, leaving only QuickTime and iTunes)
-  * Remove QuickTime shortcut unless required
-  * Place all shortcuts under _\Programs\iTunes_ in the Start Menu
+* Remove the _About Bonjour_ & _PictureViewer_ shortcuts (I recommend removing all shortcuts, leaving only QuickTime and iTunes)
+* Remove QuickTime shortcut unless required
+* Place all shortcuts under _\Programs\iTunes_ in the Start Menu
 
 8. Primary Feature block
 
-  * Run iTunes, you may have to force exit of child processes if required
-  * No need to run QuickTime Player unless required
+* Run iTunes, you may have to force exit of child processes if required
+* No need to run QuickTime Player unless required
 
 ## Post-Sequencing
 
@@ -235,7 +235,7 @@ Although iTunes reports this error and I can confirm that the service is started
 
 Last, but not least, for media sharing to work, firewall exceptions will be required for the following processes:
 
-  * iTunes - `Q:\Apple iTunes 10 x86\VFS\CSIDL\_PROGRAM\_FILES\iTunes\iTunes.exe`
-  * Bonjour service - `Q:\Apple iTunes 10 x86\VFS\CSIDL\_PROGRAM\_FILES\Bonjour\mDNSResponder.exe`
+* iTunes - `Q:\Apple iTunes 10 x86\VFS\CSIDL\_PROGRAM\_FILES\iTunes\iTunes.exe`
+* Bonjour service - `Q:\Apple iTunes 10 x86\VFS\CSIDL\_PROGRAM\_FILES\Bonjour\mDNSResponder.exe`
 
 The path to the processes may change depending where you install iTunes and dependent components.

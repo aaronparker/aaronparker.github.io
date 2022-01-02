@@ -13,8 +13,6 @@ categories:
 tags:
   - TechEd EMEA 2008
 ---
-</p> 
-
 This session was about DirectAccess in Windows 7 and Windows Serve 2008 R2 as well as ~~Terminal Services~~ Remote Desktop Services changes in Windows Server 2008 R2. The DirectAccess feature looks pretty compelling but it will take some time to get to there. However, the Remote Desktop Services stuff was actually pretty cool.
 
 ## DirectAccess
@@ -45,16 +43,16 @@ I was glad to hear the speaker stress that Terminal Server is more scalable than
 
 There was a quick list of improvements to Remote Desktop Services (you should be able to get a more detailed list soon)
 
-  * Remote Desktop Services Gateway security improvements (this was a bit vague)
-  * True multi-monitor support – up to 10 monitors supported
-  * Bi-directional audio (a bit late to the party with this one)
-  * Consent signing support i.e. a usage policy that users must consent to before logging in
-  * 2D and 3D remoting for DirectX 10.1
-  * DXGI, which is a replacement for GDI, which I gather has better support for remoting standard WinForms type applications
-  * RemoteApp language bar support – this mean that your remote application can integrate with your local language settings
-  * Integrated single sign (I assume this is an improvement over Windows Vista and Windows Server 2008)
-  * User Profile Cache Quota (applies a global quota for profile directory and removes the need to delete profiles at logoff)
-  * Application install improvement – no more Install mode to install applications
+* Remote Desktop Services Gateway security improvements (this was a bit vague)
+* True multi-monitor support – up to 10 monitors supported
+* Bi-directional audio (a bit late to the party with this one)
+* Consent signing support i.e. a usage policy that users must consent to before logging in
+* 2D and 3D remoting for DirectX 10.1
+* DXGI, which is a replacement for GDI, which I gather has better support for remoting standard WinForms type applications
+* RemoteApp language bar support – this mean that your remote application can integrate with your local language settings
+* Integrated single sign (I assume this is an improvement over Windows Vista and Windows Server 2008)
+* User Profile Cache Quota (applies a global quota for profile directory and removes the need to delete profiles at logoff)
+* Application install improvement – no more Install mode to install applications
 
 At this stage there are no concrete details on what features will make it into the updated Remote Desktop Client for Windows Vista and Windows XP, but there will most certainly be some features dependant on Windows 7 as the client.
 
@@ -66,8 +64,9 @@ There was also some improved RemoteApp integration. In Windows 7 there is an add
 
 Finally there were a few other random points:
 
-  * The speaker spoke of folder redirection as ‘profile virtualisation’, which just made me cringe
-  * Still no user based filtering in the Web Access at this time and it sounds like there are no plans to add this for RTM
-  * Microsoft are not doing anything to RDP to cope with high latency in this release
-  * There will be no changes to licensing requirement; however it sounded like there might be some technical changes, but don’t quote me on that one..
+* The speaker spoke of folder redirection as ‘profile virtualisation’, which just made me cringe
+* Still no user based filtering in the Web Access at this time and it sounds like there are no plans to add this for RTM
+* Microsoft are not doing anything to RDP to cope with high latency in this release
+* There will be no changes to licensing requirement; however it sounded like there might be some technical changes, but don’t quote me on that one..
+
   

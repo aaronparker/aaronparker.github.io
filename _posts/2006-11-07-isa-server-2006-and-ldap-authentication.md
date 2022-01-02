@@ -22,4 +22,4 @@ This is an excellent feature of ISA Server 2006 because it allows scenarios wher
 
 ![WebListener]({{site.baseurl}}/media/2006/11/1000.14.176.WebListener.png)
 
-I think that this is a bit of an oversight by the ISA Server team so it would be great to get this feature into an ISA Server 2006 Service Pack or the next version of ISA Server (2008, codename Nitrogen). If this is a feature that you might find compelling you can get feature requests into Micrsoft through their partners (if your aren't one yourself) or look out for the next ISA Server beta when it pops up on [Microsoft Connect](http://connect.microsoft.com/).
+I think that this is a bit of an oversight by the ISA Server team so it would be great to get this feature into an ISA Server 2006 Service Pack or the next version of ISA Server (2008, codename Nitrogen). If this is a feature that you might find compelling you can get feature requests into Microsoft through their partners (if your aren't one yourself) or look out for the next ISA Server beta when it pops up on [Microsoft Connect](http://connect.microsoft.com/).

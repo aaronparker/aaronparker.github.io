@@ -15,6 +15,6 @@ tags:
 ---
 The Service Pack 2 Administration Tools pack has been released as a stand alone package. I'm fairly certain this is new - I don't recall seeing this download before and [the knowledgebase article](http://support.microsoft.com/kb/304718) was updated just yesterday.
 
-  * [Windows Server 2003 Service Pack 2 Administration Tools Pack for x86 editions](http://www.microsoft.com/downloads/details.aspx?FamilyID=86b71a4f-4122-44af-be79-3f101e533d95&DisplayLang=en)
-  * [Windows Server 2003 Service Pack 2 Administration Tools Pack for x64 editions](http://www.microsoft.com/downloads/details.aspx?FamilyID=514bd06e-f3bc-4054-8429-c49f51e2190b&DisplayLang=en)
-  * [How to use the Administration Tools Pack to remotely administer computers that are running Windows Server 2003, Windows XP, or Windows 2000](http://support.microsoft.com/kb/304718)
+* [Windows Server 2003 Service Pack 2 Administration Tools Pack for x86 editions](http://www.microsoft.com/downloads/details.aspx?FamilyID=86b71a4f-4122-44af-be79-3f101e533d95&DisplayLang=en)
+* [Windows Server 2003 Service Pack 2 Administration Tools Pack for x64 editions](http://www.microsoft.com/downloads/details.aspx?FamilyID=514bd06e-f3bc-4054-8429-c49f51e2190b&DisplayLang=en)
+* [How to use the Administration Tools Pack to remotely administer computers that are running Windows Server 2003, Windows XP, or Windows 2000](http://support.microsoft.com/kb/304718)

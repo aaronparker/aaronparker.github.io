@@ -39,10 +39,10 @@ And the Remote Desktop client on OS X 10.11:
 
 I won't cover installing and configuring an enterprise certificate authority here; however, here are a number of articles worth reading on this topic:
 
-  * [Certification Authority Guidance](https://technet.microsoft.com/en-us/library/hh831574(v=ws.11).aspx)
-  * [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services (Part 1 of 2)](https://blogs.technet.microsoft.com/yungchou/2013/10/21/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2/)
-  * [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services (Part 2 of 2)](https://blogs.technet.microsoft.com/yungchou/2013/10/22/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-2-of-2/)
-  * [Using certificates in Remote Desktop Services](https://technet.microsoft.com/en-us/library/dn781533(v=ws.11).aspx)
+* [Certification Authority Guidance](https://technet.microsoft.com/en-us/library/hh831574(v=ws.11).aspx)
+* [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services (Part 1 of 2)](https://blogs.technet.microsoft.com/yungchou/2013/10/21/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2/)
+* [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services (Part 2 of 2)](https://blogs.technet.microsoft.com/yungchou/2013/10/22/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-2-of-2/)
+* [Using certificates in Remote Desktop Services](https://technet.microsoft.com/en-us/library/dn781533(v=ws.11).aspx)
 
 To configure a certificate for use with Remote Desktop Services (or RDP into any Windows PC), you'll need to create a new certificate template and enable both the Server Authentication and the Remote Desktop Authentication application policies. This was key for OS X clients - both of these policies must exist. Some articles will walk through this configuration and recommend removing the Server Authentication policy; however, the certificates will then not work on non-Windows clients.
 
@@ -82,9 +82,9 @@ Once a Group Poliy refresh occurs or on the next boot, the target Windows machin
 
 Now that my Remote Desktop certificates are configured for autoentrollment and Windows machines are picking up the certificates, I can import the root CA certificate into my MacBook running OS X.
 
-Navigate to the URL of your certificate server (e.g. http://cert1/certsrv) and download the certificate via 'Download a CA certificate, certificate chain, or CRL'. Download the CA certificate in DER format. Find the downloaded certificate in Finder and open the certificate to install it into Keychain.
+Navigate to the URL of your certificate server (e.g. `http://cert1/certsrv`) and download the certificate via 'Download a CA certificate, certificate chain, or CRL'. Download the CA certificate in DER format. Find the downloaded certificate in Finder and open the certificate to install it into Keychain.
 
-Once installed the certificate is not automatically trused as you can see below:
+Once installed the certificate is not automatically trusted as you can see below:
 
 ![OSX root CA certificate]({{site.baseurl}}/media/2016/05/OSX-root-CA-certificate.png)
 

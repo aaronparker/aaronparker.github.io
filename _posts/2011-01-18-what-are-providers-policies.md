@@ -21,11 +21,11 @@ Provider Policies are ‘rules’ that apply when users launch virtual applicati
 
 The ‘rules’ allow App-V administrators to control the following settings:
 
-  * **Server access -** The Active Directory group that can connect to the server through the Provider Policy.
-  * **Authentication -** If authentication is required to connect to the server or the use of applications.
-  * **Logging -** Record application usage data in the App-V data store.
-  * **Licensing -** Whether or not to audit or enforce application licenses.
-  * **Client refresh behaviour -** At which interval and events the client checks with the server for application changes. For example new applications and shortcuts, removed or disabled applications. At a refresh, the client will also communicate the application usage logging with the server if configured.
+* **Server access -** The Active Directory group that can connect to the server through the Provider Policy.
+* **Authentication -** If authentication is required to connect to the server or the use of applications.
+* **Logging -** Record application usage data in the App-V data store.
+* **Licensing -** Whether or not to audit or enforce application licenses.
+* **Client refresh behaviour -** At which interval and events the client checks with the server for application changes. For example new applications and shortcuts, removed or disabled applications. At a refresh, the client will also communicate the application usage logging with the server if configured.
 
 ### Why would I use them?
 
@@ -77,12 +77,12 @@ Any Provider Policy specifically assigned in an OSD file will overrule the Provi
 
 ### Additional Resources
 
-  * [How to Customize an Application Virtualization System in the Server Management Console](http:// http://technet.microsoft.com/en-us/library/cc817174.aspx)
-  * For more information on App-V infrastructure scenarios take a look at the [App-V FAQ #20]({{site.baseurl}}/deployment/app-v-faq-20-what-are-the-deployment-methods-for-app-v/)
-  * [The Ultimate Guide to Application Licensing and Provider Policies for Application Virtualization 4.5](http://blogs.technet.com/b/appv/archive/2011/05/19/the-ultimate-guide-to-application-licensing-and-provider-policies-for-application-virtualization-4-5.aspx)
+* [How to Customize an Application Virtualization System in the Server Management Console](http:// http://technet.microsoft.com/en-us/library/cc817174.aspx)
+* For more information on App-V infrastructure scenarios take a look at the [App-V FAQ #20]({{site.baseurl}}/deployment/app-v-faq-20-what-are-the-deployment-methods-for-app-v/)
+* [The Ultimate Guide to Application Licensing and Provider Policies for Application Virtualization 4.5](http://blogs.technet.com/b/appv/archive/2011/05/19/the-ultimate-guide-to-application-licensing-and-provider-policies-for-application-virtualization-4-5.aspx)
 
 For more information on streaming, publishing and client configuration when using HTTP take a look at these links:
 
-  * [A guide to App-V publishing and streaming using IIS](http://blogs.technet.com/b/appv/archive/2010/06/14/a-guide-to-app-v-publishing-and-streaming-using-iis.aspx)
-  * [HTTP Publishing in App-V (Part 1)](http://blogs.msdn.com/b/johnsheehan/archive/2009/03/24/http-publishing-in-app-v-part-1.aspx)
-  * [Support for Client Reporting over HTTP](http://technet.microsoft.com/en-us/library/ee956912.aspx)
+* [A guide to App-V publishing and streaming using IIS](http://blogs.technet.com/b/appv/archive/2010/06/14/a-guide-to-app-v-publishing-and-streaming-using-iis.aspx)
+* [HTTP Publishing in App-V (Part 1)](http://blogs.msdn.com/b/johnsheehan/archive/2009/03/24/http-publishing-in-app-v-part-1.aspx)
+* [Support for Client Reporting over HTTP](http://technet.microsoft.com/en-us/library/ee956912.aspx)

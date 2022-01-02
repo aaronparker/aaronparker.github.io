@@ -21,9 +21,9 @@ Inspired by a post on the ThinApp blog on [Adding Shell Extensions to ThinApp Pa
 
 There are several caveats to keep in mind:
 
-  * By default, App-V only adds file type associations so that you can double click on a file to open it in a virtual package. This approach is not changing that behaviour
-  * This will only work for file or folder right-click menu options, it won't get other shell integration working
-  * As we are editing the package Windows Installer file, your App-V deployment must use the MSI file to install the package. You could use an OSD script to integrate these changes, but the user would need to run the package at least once for the script to execute
+* By default, App-V only adds file type associations so that you can double click on a file to open it in a virtual package. This approach is not changing that behaviour
+* This will only work for file or folder right-click menu options, it won't get other shell integration working
+* As we are editing the package Windows Installer file, your App-V deployment must use the MSI file to install the package. You could use an OSD script to integrate these changes, but the user would need to run the package at least once for the script to execute
 
 ## Right-click Items for WinRAR
 
@@ -31,9 +31,9 @@ In this example, I'm using [WinRAR](http://www.rarlab.com/download.htm) (just li
 
 In this example, I will add the following right-click options:
 
-  * _Add to archive..._ to folders
-  * _Compress and email..._ to folders
-  * _Extract files..._ to .RAR files
+* _Add to archive..._ to folders
+* _Compress and email..._ to folders
+* _Extract files..._ to .RAR files
 
 Viewing the properties of the WINRAR.EXE process displays the command line used for each item:
 
@@ -45,10 +45,10 @@ To add these right-click items, I'm using my favourite MSI editor [InstEd](http:
 
 There are four tables in the MSI where I need to make changes:
 
-  * Component
-  * Registry
-  * FeatureComponents
-  * InstallExecuteSequence
+* Component
+* Registry
+* FeatureComponents
+* InstallExecuteSequence
 
 ## Component Table
 
@@ -68,18 +68,18 @@ The Registry table, which is empty by default, will require one entry per additi
 
 The entries will each need to use the following items:
 
-  * _Registry_: this requires a unique value
-  * _Root_: the value corresponds to HKLM
-  * _Key_: the key path will be dependent on the menu item; however each key will require the \Command path
-  * _Name_: this is the Registry value being added, in this example we are editing the default value, so leave this as null
-  * _Value_: the command that the item will run. This passes command line arguments to SFTTRAY which will launch the application and then pass the command line to WinRAR. 
-  * _Component__: use the component name created in the previous step
+* _Registry_: this requires a unique value
+* _Root_: the value corresponds to HKLM
+* _Key_: the key path will be dependent on the menu item; however each key will require the \Command path
+* _Name_: this is the Registry value being added, in this example we are editing the default value, so leave this as null
+* _Value_: the command that the item will run. This passes command line arguments to SFTTRAY which will launch the application and then pass the command line to WinRAR. 
+* _Component__: use the component name created in the previous step
 
 The command stored in the Value column must launch the application via the App-V Client and pass parameters to that application:
 
-  * I can reference the App-V Client install folder as [SGINSTALLPATH] as this is a property in the MSI
-  * I need to use the application name as listed in the App-V shortcut. In my example I can use [ProductName] because the App-V package name and the application name are the same; however this may not be the case for all packages. The application name may need to be hard coded into the MSI here. You could create a new entry in the Property table for the application name and reference it here
-  * The rest of the command is what is passed to the application by SFTTRAY.EXE
+* I can reference the App-V Client install folder as [SGINSTALLPATH] as this is a property in the MSI
+* I need to use the application name as listed in the App-V shortcut. In my example I can use [ProductName] because the App-V package name and the application name are the same; however this may not be the case for all packages. The application name may need to be hard coded into the MSI here. You could create a new entry in the Property table for the application name and reference it here
+* The rest of the command is what is passed to the application by SFTTRAY.EXE
 
 ![Registry-Table]({{site.baseurl}}/media/2011/04/Registry-Table.png)
 

@@ -22,7 +22,7 @@ Mark Plettenberg, the lead developer of Login VSI. This new module looks very in
 
 ## What is Login VSI?
 
-If you're not familiar with [Login VSI](http://www.loginvsi.com/en/product-overview), it's essentially the gold standard in vendor independent testing suite for measuring the performance and scalability of desktop virtualization evironments (hosted virtual desktop and session-based desktops).
+If you're not familiar with [Login VSI](http://www.loginvsi.com/en/product-overview), it's essentially the gold standard in vendor independent testing suite for measuring the performance and scalability of desktop virtualization environments (hosted virtual desktop and session-based desktops).
 
 Login VSI was developed to solve the problem of sizing an environment correctly. Login VSI allows you to test and compare different hardware and software configurations in your environment. The results of those tests will ensure that you can scale your infrastructure confidently as well as understand the impact of changes to your environment.
 

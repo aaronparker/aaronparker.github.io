@@ -12,6 +12,9 @@ tags:
   - PowerShell
   - Visual C++ Redistributable
 ---
+This approach has now been replaced with the VcRedist PowerShell module. For more information on VcRedist, see the [VcRedist docs](https://vcredist.com).
+{:.note title="Attention"}
+
 I recently [posted an article]({{site.baseurl}}/visual-c-redistributable-installer/) on a script I've written for downloading and installing the Microsoft [Visual C++ Redistributables](https://github.com/aaronparker/Install-VisualCRedistributables). Thanks to [Cornelius Schuchardt](https://twitter.com/techdecline), the script now supports creating applications for each redistributable in Configuration Manager (ConfigMgr).
 
 Install-VisualCRedistributables.ps1 has been updated to version 1.1, which you can [download from the releases page](https://github.com/aaronparker/Install-VisualCRedistributables/releases) and includes the following updates:

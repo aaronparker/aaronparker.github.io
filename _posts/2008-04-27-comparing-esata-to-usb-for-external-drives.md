@@ -23,16 +23,16 @@ Before I read Mark's post about [USB attached hard drive performance in his note
 
 Here's what I ended up ordering:
 
-  * [Seagate Momentus 7200.2 200GB SATA 300 7200RPM 16MB 2.5"](http://www.seagate.com/ww/v/index.jsp?locale=en-US&name=mod_ST9200420AS&vgnextoid=cb31213b5a5e3110VgnVCM100000f5ee0a0aRCRD&vgnextchannel=c021a47948a3d010VgnVCM100000dd04090aRCRD&reqPage=Model) 
-  * [Akasa Integral 2.5"&#160; IDE/SATA External Enclosure](http://www.akasa.co.uk/akasa_english/spec_page/storage/spec_ak_enp2nes_bl.htm) 
-  * [Belkin SATA II ExpressCard](http://catalog.belkin.com/IWCatProductPage.process?Product_Id=278303) 
+* [Seagate Momentus 7200.2 200GB SATA 300 7200RPM 16MB 2.5"](http://www.seagate.com/ww/v/index.jsp?locale=en-US&name=mod_ST9200420AS&vgnextoid=cb31213b5a5e3110VgnVCM100000f5ee0a0aRCRD&vgnextchannel=c021a47948a3d010VgnVCM100000dd04090aRCRD&reqPage=Model)
+* [Akasa Integral 2.5"&#160; IDE/SATA External Enclosure](http://www.akasa.co.uk/akasa_english/spec_page/storage/spec_ak_enp2nes_bl.htm)
+* [Belkin SATA II ExpressCard](http://catalog.belkin.com/IWCatProductPage.process?Product_Id=278303)
 
 To power this drive I have to connect the included USB power lead. I'm not sure if I used a better quality eSATA cable that it would provide enough power, but carrying the extra cable is not too much of a hassle. I've performed these tests on my laptop which has the following hardware:
 
-  * Dell Vostro 1400 
-  * Intel Core 2 Duo (2.2GHz, 4MB Cache) 
-  * 4GB RAM 
-  * Windows Vista x64 
+* Dell Vostro 1400
+* Intel Core 2 Duo (2.2GHz, 4MB Cache)
+* 4GB RAM
+* Windows Vista x64
 
 To test the performance of my disk setup, I've used [HD Tune](http://www.hdtune.com/) because they offer a free version and it's easy to use. I tested the performance of my original hard disk ([Seagate Momentus 5400.3 80GB ATA/100 5400RPM 16MB 2.5"](http://www.seagate.com/ww/v/index.jsp?locale=en-US&name=Momentus_5400.3_80_GB&vgnextoid=c83f99f4fa74c010VgnVCM100000dd04090aRCRD&vgnextchannel=b450d3a0140fc010VgnVCM100000dd04090aRCRD&reqPage=Model)) connected to this laptop via USB. The result stays consistent right up until the end of the test:
 

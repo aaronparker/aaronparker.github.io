@@ -25,15 +25,11 @@ The process for creating a custom administrator account and setting privileges g
 
 As you can see the process isn't completed in a single step, there are actually three separate steps to setting privileges. The first is setting privileges on the objects outlined here in this screenshot (those objects in colour):
 
-<p style="text-align: center">
-  <img src="{{site.baseurl}}/media/2007/08/ctx-privsset1.png" alt="ctx-privsset1.png" />
-</p>
+![]({{site.baseurl}}/media/2007/08/ctx-privsset1.png)
 
 The next steps set the permissions on the folder objects rather than the administrator object as outlined in this screenshot (those objects in colour):
 
-<p style="text-align: center">
-  <img src="{{site.baseurl}}/media/2007/08/ctx-privsset2.png" alt="ctx-privsset2.png" />
-</p>
+![]({{site.baseurl}}/media/2007/08/ctx-privsset2.png)
 
 Something I should note here though, is that I've not been able to set permissions on the Monitoring Profiles folder. I could be wrong but from what I can tell you can't currently access these types of folders.
 

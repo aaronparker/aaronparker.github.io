@@ -17,7 +17,7 @@ I have previously detailed some efforts on sequencing some of the Adobe CS3 appl
 
 During initial testing I found that I could not get multiple CS3 application bubbles executing because the FLEXnet service in the second bubble would fail. Exactly why we're unsure, but I had found that stopping the service post launch would allow multiple CS3 applications to run successfully. Unfortunately that assumption was incorrect.
 
-<img src="{{site.baseurl}}/media/2008/06/flexnet.png" border="0" alt="FlexNet" width="599" height="28" /> 
+![]({{site.baseurl}}/media/2008/06/flexnet.png)
 
 My mate [Doug](http://www.dougandjodie.com/), who's now working with us, has taken up the challenge and come up with a solution. This involves installing the FLEXnet licensing service natively on the sequencer before sequencing and ensuring this service is deployed to your client machines.
 

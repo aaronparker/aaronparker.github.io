@@ -125,9 +125,9 @@ REG ADD "%HKEY%\Software\Microsoft\Command Processor" /v PathCompletionChar /t R
 REG ADD "%HKEY%\Software\Microsoft\Windows NT\CurrentVersion\Network\Persistent Connections" /v SaveConnections /d "no" /t REG_SZ /f
 
 REM Language bar - only apply if using single regional settings
-REM	REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v ShowStatus /t REG_DWORD /d 3 /f
-REM	REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v Label /t REG_DWORD /d 1 /f
-REM	REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v ExtraIconsOnMinimized /t REG_DWORD /d 0 /f
+REM REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v ShowStatus /t REG_DWORD /d 3 /f
+REM REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v Label /t REG_DWORD /d 1 /f
+REM REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v ExtraIconsOnMinimized /t REG_DWORD /d 0 /f
 
 REM Windows Explorer and Start Menu
 REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v SeparateProcess /t REG_DWORD /d 1 /f
@@ -166,8 +166,8 @@ REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\TabbedBrowsing" /v PopupsUs
 REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\PhishingFilter" /v Enabled /t REG_DWORD /d 1 /f
 REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\Main" /v "Enable AutoImageResize" /t REG_SZ /d YES /f
 REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\PhishingFilter" /v Enabled /t REG_DWORD /d 2 /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\domain.local" /v * /t REG_DWORD /d 1 /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\New Windows\Allow" /v *.domain.local /t REG_BINARY /d 0000 /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\domain.local" /v * /t REG_DWORD /d 1 /f
+REM REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\New Windows\Allow" /v *.domain.local /t REG_BINARY /d 0000 /f
 
 REM Windows Media Player
 REG ADD "%HKEY%\Software\Microsoft\MediaPlayer\Setup\UserOptions" /v DesktopShortcut /d No /t REG_SZ /f
@@ -234,9 +234,9 @@ REG ADD "%HKEY%\Console" /v QuickEdit /t REG_DWORD /d 1 /f
 REG ADD "%HKEY%\Software\Microsoft\Windows NT\CurrentVersion\Network\Persistent Connections" /v SaveConnections /d "no" /t REG_SZ /f
 
 REM Language bar - only apply if using single regional settings
-REM	REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v ShowStatus /t REG_DWORD /d 3 /f
-REM	REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v Label /t REG_DWORD /d 1 /f
-REM	REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v ExtraIconsOnMinimized /t REG_DWORD /d 0 /f
+REM REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v ShowStatus /t REG_DWORD /d 3 /f
+REM REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v Label /t REG_DWORD /d 1 /f
+REM REG ADD "%HKEY%\Software\Microsoft\CTF\LangBar" /v ExtraIconsOnMinimized /t REG_DWORD /d 0 /f
 
 REM Windows Explorer
 REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v SeparateProcess /t REG_DWORD /d 1 /f
@@ -251,30 +251,30 @@ REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage" /v
 REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\StartPage" /v MonitorOverride /t REG_DWORD /d 0 /f
 
 REM Set IE as default browser, prevent prompting user
-REM	REG ADD "%HKEY%\Software\Clients\StartmenuInternet" /ve /d "IEXPLORE.EXE" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.mht\UserChoice" /v Progid /d "IE.AssocFile.MHT" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.html\UserChoice" /v Progid /d "IE.AssocFile.HTM" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.htm\UserChoice" /v Progid /d "IE.AssocFile.HTM" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.url\UserChoice" /v Progid /d "IE.AssocFile.URL" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.mhtml\UserChoice" /v Progid /d "IE.AssocFile.MHT" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.xht\UserChoice" /v Progid /d "IE.AssocFile.XHT" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.svg\UserChoice" /v Progid /d "IE.AssocFile.SVG" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.partial\UserChoice" /v Progid /d "IE.AssocFile.PARTIAL" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.website\UserChoice" /v Progid /d "IE.AssocFile.WEBSITE" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.xhtml\UserChoice" /v Progid /d "IE.AssocFile.XHT" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice" /v Progid /d "IE.HTTPS" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\ftp\UserChoice" /v Progid /d "IE.FTP" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice" /v Progid /d "IE.HTTP" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\Shell\Associations\MIMEAssociations\message\rfc822\UserChoice" /v Progid /d "IE.message/rfc822" /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\Shell\Associations\MIMEAssociations\text\html\UserChoice" /v Progid /d "IE.text/html" /f
+REM REG ADD "%HKEY%\Software\Clients\StartmenuInternet" /ve /d "IEXPLORE.EXE" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.mht\UserChoice" /v Progid /d "IE.AssocFile.MHT" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.html\UserChoice" /v Progid /d "IE.AssocFile.HTM" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.htm\UserChoice" /v Progid /d "IE.AssocFile.HTM" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.url\UserChoice" /v Progid /d "IE.AssocFile.URL" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.mhtml\UserChoice" /v Progid /d "IE.AssocFile.MHT" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.xht\UserChoice" /v Progid /d "IE.AssocFile.XHT" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.svg\UserChoice" /v Progid /d "IE.AssocFile.SVG" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.partial\UserChoice" /v Progid /d "IE.AssocFile.PARTIAL" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.website\UserChoice" /v Progid /d "IE.AssocFile.WEBSITE" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.xhtml\UserChoice" /v Progid /d "IE.AssocFile.XHT" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\https\UserChoice" /v Progid /d "IE.HTTPS" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\ftp\UserChoice" /v Progid /d "IE.FTP" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice" /v Progid /d "IE.HTTP" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\Shell\Associations\MIMEAssociations\message\rfc822\UserChoice" /v Progid /d "IE.message/rfc822" /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\Shell\Associations\MIMEAssociations\text\html\UserChoice" /v Progid /d "IE.text/html" /f
 
 REM Additional Internet Explorer options
-REM	REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\TabbedBrowsing" /v PopupsUseNewWindow /t REG_DWORD /d 0 /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\PhishingFilter" /v Enabled /t REG_DWORD /d 1 /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\Main" /v "Enable AutoImageResize" /t REG_SZ /d YES /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\PhishingFilter" /v Enabled /t REG_DWORD /d 2 /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\domain.local" /v * /t REG_DWORD /d 1 /f
-REM	REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\New Windows\Allow" /v *.domain.local /t REG_BINARY /d 0000 /f
+REM REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\TabbedBrowsing" /v PopupsUseNewWindow /t REG_DWORD /d 0 /f
+REM REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\PhishingFilter" /v Enabled /t REG_DWORD /d 1 /f
+REM REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\Main" /v "Enable AutoImageResize" /t REG_SZ /d YES /f
+REM REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\PhishingFilter" /v Enabled /t REG_DWORD /d 2 /f
+REM REG ADD "%HKEY%\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\domain.local" /v * /t REG_DWORD /d 1 /f
+REM REG ADD "%HKEY%\Software\Microsoft\Internet Explorer\New Windows\Allow" /v *.domain.local /t REG_BINARY /d 0000 /f
 
 REM Windows Media Player
 REG ADD "%HKEY%\Software\Microsoft\MediaPlayer\Setup\UserOptions" /v DesktopShortcut /d No /t REG_SZ /f
@@ -298,7 +298,7 @@ COPY /Y ShLib.exe "%ProgramFiles%\Scripts\ShLib.exe"
 
 MD "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 ECHO @ECHO OFF &gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
-REM	ECHO cscript.exe "%ProgramFiles%\Scripts\ExecuteVerbAction.vbs" "%ProgramData%\Microsoft\Windows\Start Menu\Programs\Windows Media Player.lnk" UnpinFromTaskbar &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
+REM ECHO cscript.exe "%ProgramFiles%\Scripts\ExecuteVerbAction.vbs" "%ProgramData%\Microsoft\Windows\Start Menu\Programs\Windows Media Player.lnk" UnpinFromTaskbar &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
 ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Libraries\Documents.library-ms" %PUBLIC%\Documents &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
 ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Libraries\Music.library-ms" %PUBLIC%\Music &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"
 ECHO "%ProgramFiles%\Scripts\shlib" remove "%%APPDATA%%\Microsoft\Windows\Libraries\Pictures.library-ms" %PUBLIC%\Pictures &gt;&gt; "%SystemDrive%\Users\Default\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\PinnedItemsLibraries.cmd"

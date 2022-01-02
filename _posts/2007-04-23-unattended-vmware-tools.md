@@ -41,6 +41,6 @@ objReg.SetDWORDValue HKEY\_LOCAL\_MACHINE,RIGHT(RegValueData, 82),"Acceleration.
 Installing VMware tools is straightforward. The following commands will install VMware Tools using the custom transform file and then remove the VMware Tools icon from the system tray, something which I think is essential on a Terminal Server.
 
 ```cmd
-START /WAIT MSIEXEC /I "VMware Tools.msi" TRANSFORMS=VMwareTools-TerminalServer.MST ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
+START /WAIT MSIEXEC /I "VMware Tools.msi" TRANSFORMS=VMwareTools-TerminalServer.MST ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
 REG DELETE HKLMSOFTWAREMicrosoftWindowsCurrentVersionRun /v "VMware Tools" /f
 ```

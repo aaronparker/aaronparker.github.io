@@ -21,7 +21,7 @@ Access to unauthenticated web sites was being blocked and displaying the followi
 
 Which looked like this in the browser:
 
-<img border="1" src="{{site.baseurl}}/media/2006/09/1000.14.124.403Forbidden.png" /> 
+![]({{site.baseurl}}/media/2006/09/1000.14.124.403Forbidden.png")
 
 <a target="_blank" href="http://www.trustedaccess.info/photos/images/images/124/original.aspx"></a>
 
@@ -31,4 +31,4 @@ The standard configuration for publishing public web sites via ISA Server 2004 w
 
 **2. Routing and Remote Access** 
 
-The Routing and Remote Access configuration was hosed and the service was actually un-configured. To renable this configuration I opened the VPN configuration properties, reset it, then applied the configuration. I then also had to re-add our pre-existing DHCP Relay configuration as well. (We have a couple of quarantined subnets to which the ISA Server relays DHCP addresses)
+The Routing and Remote Access configuration was hosed and the service was actually un-configured. To re-enable this configuration I opened the VPN configuration properties, reset it, then applied the configuration. I then also had to re-add our pre-existing DHCP Relay configuration as well. (We have a couple of quarantined subnets to which the ISA Server relays DHCP addresses).

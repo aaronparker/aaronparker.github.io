@@ -22,13 +22,13 @@ Microsoft recommends sequencing applications on the same operating system as the
 
 However, in practice it is often advisable to sequence on the lowest common denominator. In the example with Windows XP and Windows 7 clients, sequencing should be performed on Windows XP. In the event that a package does not then execute correctly on Windows 7, then the application should be re-sequenced on Windows 7.
 
-The same applies to x86 and x64 processor architectures – if you are deliverying 32-bit applications to both x86 and x64 Windows, you should sequence in a 32-bit Windows environment. If you find that a 32-bit virtual application package executes OK on x86 Windows but not on x64 Windows, you will have to create two packages, one for each processor architecture.
+The same applies to x86 and x64 processor architectures – if you are delivering 32-bit applications to both x86 and x64 Windows, you should sequence in a 32-bit Windows environment. If you find that a 32-bit virtual application package executes OK on x86 Windows but not on x64 Windows, you will have to create two packages, one for each processor architecture.
 
 There are several reasons for this, but they’re out of scope of a discussion on profile management; however what this highlights is that if you have multiple packages for the same application due to different operating systems and/or processor architectures, again the only way to improve the user experience is to rely on a third party profile management solution that works independently of the App-V package.
 
 ### App-V and User Profiles
 
-The default behaviour of App-V is to not only virtualize the application, but also the user profile locations for that application (HKEY\_CURRENT\_USER and %APPDATA%). This means that that profile information for the Microsoft Office packages will be stored, in its entirety, in the PKG.
+The default behaviour of App-V is to not only virtualize the application, but also the user profile locations for that application (HKEY_CURRENT_USER and %APPDATA%). This means that that profile information for the Microsoft Office packages will be stored, in its entirety, in the PKG.
 
 The implication of this is that the settings for a virtualized Office package will be specific to that package – that is, a user’s Office settings will not only be specific to a version of Office but also specific to an individual Office package.
 

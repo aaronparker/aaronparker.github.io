@@ -47,17 +47,21 @@ In my test environment, I have a number of legacy packages that I'm going to con
 
 To test these packages before conversion, I can run the following command against a legacy package:
 
-\[code language="ps"]Test-AppvLegacyPackage -SourcePath [path to legacy package\]\[/code\]
+```powershell
+Test-AppvLegacyPackage -SourcePath [path to legacy package]
+```
 
-One of my packages results in a warning when running Test-AppvLegacyPackage against it, in this case an issue that won't prevent conversion:
+One of my packages results in a warning when running `Test-AppvLegacyPackage` against it, in this case an issue that won't prevent conversion:
 
 ![]({{site.baseurl}}/media/2012/04/Screen-Shot-2012-04-06-at-13.16.271.png)
 
 To test all of my packages and convert those without errors (but include those with warnings), I can use the following example code:
 
-[code language="ps"]$Source = "Y:\Packages"  
+```powershell
+$Source = "Y:\Packages"  
 $Dest = "Y:\Packages.v5"  
-Get-ChildItem -Path $Source | Test-AppvLegacyPackage | Where-Object {$_.Errors.Count -eq 0 } | ConvertFrom-AppvLegacyPackage -DestinationPath $Dest[/code]
+Get-ChildItem -Path $Source | Test-AppvLegacyPackage | Where-Object {$_.Errors.Count -eq 0 } | ConvertFrom-AppvLegacyPackage -DestinationPath $Dest
+```
 
 This will result in the packages being converted into the new format in the destination folder. In this example, the conversion process took a little over an hour.
 

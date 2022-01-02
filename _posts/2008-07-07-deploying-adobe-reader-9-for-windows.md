@@ -35,13 +35,13 @@ The good news though, is Reader 9.x is fast. I hadn’t ever found Reader 8 to b
 
 Adobe Reader 9.1 is available for download for many languages, including:
 
-  * [Adobe Reader 9.1 English US/UK](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/enu/AdbeRdr910_en_US.exe)
-  * [Adobe Reader 9.1 Français](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/fra/AdbeRdr910_fr_FR.exe)
-  * [Adobe Reader 9.1 Deutsch](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/deu/AdbeRdr910_de_DE.exe)
-  * [Adobe Reader 9.1 Nederlands](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/nld/AdbeRdr910_nl_NL.exe)
-  * [Adobe Reader 9.1 Italiano](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/ita/AdbeRdr910_it_IT.exe)
-  * [Adobe Reader 9.1 Español](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/esp/AdbeRdr910_es_ES.exe)
-  * [Adobe Reader 9.1 日本語](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/jpn/AdbeRdr910_ja_JP.exe)
+* [Adobe Reader 9.1 English US/UK](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/enu/AdbeRdr910_en_US.exe)
+* [Adobe Reader 9.1 Français](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/fra/AdbeRdr910_fr_FR.exe)
+* [Adobe Reader 9.1 Deutsch](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/deu/AdbeRdr910_de_DE.exe)
+* [Adobe Reader 9.1 Nederlands](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/nld/AdbeRdr910_nl_NL.exe)
+* [Adobe Reader 9.1 Italiano](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/ita/AdbeRdr910_it_IT.exe)
+* [Adobe Reader 9.1 Español](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/esp/AdbeRdr910_es_ES.exe)
+* [Adobe Reader 9.1 日本語](http://ardownload.adobe.com/pub/adobe/reader/win/9.x/9.1/jpn/AdbeRdr910_ja_JP.exe)
 
 Adobe AIR is only bundled with the English and German versions of Reader 9 so far.
 
@@ -61,8 +61,8 @@ REG ADD "HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\9.0\FeatureLockdown" /v bUp
 
 Alternatively, to completely remove Adobe Updater, after installation, delete this folder:
 
-  * `C:\Program Files\Common Files\AdobeUpdater\6` (32-bit Windows)
-  * `C:\Program Files (x86)\Common Files\AdobeUpdater\6` (64-bit Windows)
+* `C:\Program Files\Common Files\AdobeUpdater\6` (32-bit Windows)
+* `C:\Program Files (x86)\Common Files\AdobeUpdater\6` (64-bit Windows)
 
 If Adobe Reader is running as a standard (or limited) user account, Adobe Updater won’t run at all, so it shouldn’t be an issue if you don’t give users administrative access to their workstations.
 
@@ -70,14 +70,14 @@ If you are virtualising Adobe Reader, then disabling or removing Updater is a mu
 
 ## Extracting Reader Setup Files
 
-Before deploying Reader 9, you will want to extract the files from the file you’ve downloaded, so that you can create a custom tranform file. To extract the file, run the following command line:
+Before deploying Reader 9, you will want to extract the files from the file you’ve downloaded, so that you can create a custom transform file. To extract the file, run the following command line:
 
 ```AdbeRdr910\_en\_US\_Std.exe -nos\_ne```
 
 You will then find the extracted file in these locations:
 
-  * `%LOCALAPPDATA%AdobeReader 9.1Setup Files` (on Windows Vista/2008)
-  * `%USERPROFILE%Local SettingsApplication DataAdobeReader 9.1Setup Files` (on Windows XP/2003)
+* `%LOCALAPPDATA%AdobeReader 9.1Setup Files` (on Windows Vista/2008)
+* `%USERPROFILE%Local SettingsApplication DataAdobeReader 9.1Setup Files` (on Windows XP/2003)
 
 Once extracted, you will have the setup files for both Reader and AIR. The setup files for Reader are in a sub-folder called ‘Reader9’.
 
@@ -85,41 +85,41 @@ Once extracted, you will have the setup files for both Reader and AIR. The setup
 
 When deploying Reader there are some customisations that I recommend making to the installation, including:
 
-  * Prevent the installation of Adobe Updater 6 (If you want control over the version of Reader)
-  * Prevent the Adobe Acrobat SpeedLauncher from being added to the Run key in the registry
-  * Prevent the ‘Adobe Reader 9’ shortcut from being added to the desktop (Keep the desktop and tidy)
-  * Prevent the installation of the [Adobe Syncronizer](http://blogs.adobe.com/barnaby.james/2006/12/the_adobe_synch_1.html) [See [this comment]({{site.baseurl}}/deployment/deploying-adobe-reader-9-for-windows#comment-13491) before removing Syncronizer]
-  * Accept the EULA
+* Prevent the installation of Adobe Updater 6 (If you want control over the version of Reader)
+* Prevent the Adobe Acrobat SpeedLauncher from being added to the Run key in the registry
+* Prevent the ‘Adobe Reader 9’ shortcut from being added to the desktop (Keep the desktop and tidy)
+* Prevent the installation of the [Adobe Syncronizer](http://blogs.adobe.com/barnaby.james/2006/12/the_adobe_synch_1.html) [See [this comment]({{site.baseurl}}/deployment/deploying-adobe-reader-9-for-windows#comment-13491) before removing Syncronizer]
+* Accept the EULA
 
-Adobe usually provide a customisation tool for automating the installation of Reader, however the [Customisation Wizard for Reader and Acrobat 8](http://www.adobe.com/support/downloads/detail.jsp?ftpID=3564=ZQRI) wasn’t released until 6 months after the products themselves were released. To customise the installation I’ve used the excellent [InstEd](http://www.instedit.com/) instead. 
+Adobe usually provide a customisation tool for automating the installation of Reader, however the [Customisation Wizard for Reader and Acrobat 8](http://www.adobe.com/support/downloads/detail.jsp?ftpID=3564=ZQRI) wasn’t released until 6 months after the products themselves were released. To customise the installation I’ve used the excellent [InstEd](http://www.instedit.com/) instead.
 
 Here’s what I’ve configured as a minimum in my transform:
 
 **Prevent Adobe Updater Installation**
 
-  * In the _Component_ table, drop any row containing ‘AdobeUpdater’ or ‘Adobe_Updater’
-  * In the _Feature_ table, drop any row containing ‘AUM’ or ‘Updater’
-  * In the _FeatureComponents_ table, drop any row containing ‘AUM’ or ‘Updater’
-  * In the _File_ table, drop any row containing ‘AdobeUpdater’ or ‘Adobe_Updater’
-  * In the _ModuleComponents_ table, drop any row containing ‘AdobeUpdater’ or ‘Adobe_Updater’
-  * In the _MsiFileHash_ table, drop any row containing ‘AdobeUpdater’
-  * In the _Registry_ table, drop any row containing ‘Adobe_Updater’
+* In the _Component_ table, drop any row containing ‘AdobeUpdater’ or ‘Adobe_Updater’
+* In the _Feature_ table, drop any row containing ‘AUM’ or ‘Updater’
+* In the _FeatureComponents_ table, drop any row containing ‘AUM’ or ‘Updater’
+* In the _File_ table, drop any row containing ‘AdobeUpdater’ or ‘Adobe_Updater’
+* In the _ModuleComponents_ table, drop any row containing ‘AdobeUpdater’ or ‘Adobe_Updater’
+* In the _MsiFileHash_ table, drop any row containing ‘AdobeUpdater’
+* In the _Registry_ table, drop any row containing ‘Adobe_Updater’
 
 **Prevent Adobe Acrobat SpeedLauncher At Startup**
 
-  * In the _Registry_ table, drop the row containing ‘Registry838’
+* In the _Registry_ table, drop the row containing ‘Registry838’
 
 **Prevent the Adobe Reader 9 Desktop Shortcut**
 
-  * In the _Shortcut_ table, drop the row containing ‘SC\_READER\_DT’
+* In the _Shortcut_ table, drop the row containing ‘SC\_READER\_DT’
 
 **Prevent Adobe Syncronizer Installation**
 
-  * In the _Property_ table, set the value for SYNCHRONIZER to YES
+* In the _Property_ table, set the value for SYNCHRONIZER to YES
 
 **Accept the EULA**
 
-  * In the _Property_ table, set the value for EULA_ACCEPT to YES
+* In the _Property_ table, set the value for EULA_ACCEPT to YES
 
 Also in the Property table, you could set the value of DISABLE\_BROWSER\_INTEGRATION to YES, to prevent Reader from opening within the browser. This would be beneficial in Terminal Server environments. When a PDF file is opened within the browser and the user then browses to a different page, the Reader components are stay in memory until the browser is closed.
 
@@ -135,63 +135,63 @@ Adobe have recently released the [Adobe Customisation Wizard 9](http://www.adobe
 
 Under _Installation Options_ set:
 
-  * <div>
+* <div>
       <em>Run Installation</em> to <em>Unattended</em>
     </div>
 
-  * <div>
+* <div>
       <em>If reboot required at the end of installation</em> to <em>Suppress reboot</em>
     </div>
 
 Under Files and Folders:
 
-  * <div>
+* <div>
       Add <em>HideMenuItems.js</em>, listed below, to <em>ProgramFilesFolder / Adobe / Reader 9.0 / Reader / JavaScripts</em>
     </div>
 
 Under _Shortcuts_:
 
-  * <div>
+* <div>
       Remove the <em>Adobe Reader 9</em> shortcut added to the <em>Desktop</em>
     </div>
 
 Under _EULA and Document Status_ set
 
-  * <div>
+* <div>
       <em>Suppress display of End User License Agreement</em> to enabled
     </div>
 
 Under _Online and Acrobat.com Features_ set
 
-  * <div>
+* <div>
       <em>Disable all updates</em> to enabled to disable Adobe Updater
     </div>
 
-  * <div>
+* <div>
       <em>When launching PDF in Internet Explorer, prompt user with Open/Save dialog</em> to enabled for Terminal Server environments
     </div>
 
-  * <div>
+* <div>
       <em>In Adobe Reader, disable Help > Purchase Adobe Acrobat</em> to enabled
     </div>
 
-  * <div>
+* <div>
       <em>Disable Help > Digital Editions</em> to enabled
     </div>
 
-  * <div>
+* <div>
       <em>Disable Product Improvement Program</em> to enabled
     </div>
 
-  * <div>
+* <div>
       <em>Disable Viewing of PDF with Ads for Adobe PDF</em> to enabled
     </div>
 
-  * <div>
+* <div>
       <em>Display PDF in browser</em> to <em>Disable & Lock</em> for Terminal Server environments
     </div>
 
-  * <div>
+* <div>
       <em>Disable all Acrobat.Com access, including initiation and participation</em> to enabled
     </div>
 
@@ -297,8 +297,8 @@ I've also created my own custom Administrative template, which you can download 
 
 I would recommend updating to Reader 9 if you can. There’s doesn’t look to be any fantastic new features to get excited over, but the performance improvements should make it worthwhile.
 
-  * [11/03/2009] Updated for Adobe Reader 9.1
-  * [29/07/2008] Adobe have posted a [Deploying Adobe Reader 9](http://www.adobe.com/devnet/acrobat/pdfs/deploying_reader9.pdf) document that has some excellent details.
-  * [07/08/2008] Updated for the release of Adobe Customisation Wizard 9.
-  * [08/08/2008] Added version 0.1 of custom ADM/ADMX for managing policy settings.
+* [11/03/2009] Updated for Adobe Reader 9.1
+* [29/07/2008] Adobe have posted a [Deploying Adobe Reader 9](http://www.adobe.com/devnet/acrobat/pdfs/deploying_reader9.pdf) document that has some excellent details.
+* [07/08/2008] Updated for the release of Adobe Customisation Wizard 9.
+* [08/08/2008] Added version 0.1 of custom ADM/ADMX for managing policy settings.
   

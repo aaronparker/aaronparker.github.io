@@ -13,9 +13,9 @@ tags:
 ---
 I'll file this under "Stupid Things I Didn't Know". Citrix Presentation Server relies on the PATH variable for core components to run. I was adding to the PATH variable, in a scripted build after the CPS install and before a reboot, with a command like this:
 
-<p class="console">
-  C:\REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /d "%PATH%;%ProgramFiles%\Sysinternals" /f
-</p>
+```cmd
+REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Environment" /v Path /d "%PATH%;%ProgramFiles%\Sysinternals" /f
+```
 
 Unfortunately, that additions to the PATH that the CPS Setup program has added aren't seen because I'm calling all this from the same session of CMD.EXE. After a reboot the server would not load the logon dialog and show this error instead:
 

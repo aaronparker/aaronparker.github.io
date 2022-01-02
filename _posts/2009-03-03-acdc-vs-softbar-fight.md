@@ -19,7 +19,7 @@ Two great tools for managing App-V applications have appeared in the last few we
 
 Both tools are aimed at anyone virtualising applications with App-V and make it a snap to get into those applications for testing and troubleshooting as well as managing the App-V client. Here's SoftBar and ACDC in action:
 
-<img class="size-full wp-image-963 alignnone" title="Softbar and ACDC screenshot" src="{{site.baseurl}}/media/2009/03/softbar-acdc-screenshot.png" alt="Softbar and ACDC screenshot" width="590" height="432" srcset="{{site.baseurl}}/media/2009/03/softbar-acdc-screenshot.png 590w, {{site.baseurl}}/media/2009/03/softbar-acdc-screenshot-300x219.png 300w" sizes="(max-width: 590px) 100vw, 590px" /> 
+![]({{site.baseurl}}/media/2009/03/softbar-acdc-screenshot.png)
 
 I thought it might be interesting to give you an idea of their feature sets and how each tool compares to the other. So this table is the result of my completely un-scientific (and probably flawed) comparison:
 

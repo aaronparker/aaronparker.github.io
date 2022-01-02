@@ -20,6 +20,9 @@ tags:
 * this unordered seed list will be replaced by the toc
 {:toc}
 
+This approach has now been replaced with the VcRedist PowerShell module. For more information on VcRedist, see the [VcRedist docs](https://vcredist.com).
+{:.note title="Attention"}
+
 In updating my [MDT]({{site.baseurl}}/tag/mdt/) deployment shares recently, I got tired of having to do something about the Visual C++ Redistributable installers and finally decided to do something about it, so I've written a script that will download the installers and optionally install them - [Install-VisualCRedistributables.ps1](https://github.com/aaronparker/Install-VisualCRedistributables).
 
 This script reads [an external XML file](https://github.com/aaronparker/Install-VisualCRedistributables/blob/master/bin/VisualCRedistributablesSupported.xml) that contains the installer information for each of the Visual C++ Redistributables so that changes to URLs, install options and new redistributables can be made without making changes to the script. The XML file lists the download URL and install instructions for each installer and looks like this:

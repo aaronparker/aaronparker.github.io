@@ -23,9 +23,9 @@ Virtualizing an application via App-V can help with older applications by virtua
 There are two primary methods for suppressing these UAC prompts:
 
   1. Creating an application compatibility shim using the Microsoft Application Compatibility Toolkit
-  2. Setting the _\_COMPAT\_LAYER environment variable
+  2. Setting the __COMPAT_LAYER environment variable
 
 There are two excellent resources on each of these methods:
 
-  * [On Application Compatibility and Shims with Regards to Applications Virtualized with App-V 4.x and 5.x](http://blogs.technet.com/b/gladiatormsft/archive/2013/10/09/app-v-on-application-compatibility-and-shims-with-regards-to-applications-virtualized-with-app-v-4-x-and-5-x.aspx) by [Steve Thomas](https://twitter.com/madvirtualizer)
-  * [Suppressing UAC Prompts In App-V 5 With _\_COMPAT\_LAYER](http://packageology.com/2014/08/supressing-uac-prompts-in-appv5-with-compat-layer/) by [Dan Gough](https://twitter.com/packageologist)
+* [On Application Compatibility and Shims with Regards to Applications Virtualized with App-V 4.x and 5.x](http://blogs.technet.com/b/gladiatormsft/archive/2013/10/09/app-v-on-application-compatibility-and-shims-with-regards-to-applications-virtualized-with-app-v-4-x-and-5-x.aspx) by [Steve Thomas](https://twitter.com/madvirtualizer)
+* [Suppressing UAC Prompts In App-V 5 With _\_COMPAT\_LAYER](http://packageology.com/2014/08/supressing-uac-prompts-in-appv5-with-compat-layer/) by [Dan Gough](https://twitter.com/packageologist)

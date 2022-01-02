@@ -21,9 +21,9 @@ The list of application shortcuts are cached in a file called SHORTCUTS_EX.DAT s
 
 ![]({{site.baseurl}}/media/2008/04/shortcuts-exdatfilecontents.png)
 
-During the user session, the SoftGrid client works on a temporary copy of SHORTCUTS_EX.DAT . This file is not written to disk until the SoftGrid client, specifically SFTDCC.EXE, exits.
+During the user session, the SoftGrid client works on a temporary copy of SHORTCUTS_EX.DAT . This file is not written to disk until the SoftGrid client, specifically `SFTDCC.EXE`, exits.
 
-In those instances where you see application shortcuts created in the users' Start Menu, even though those applications may be disabled or deleted, SHORTCUTS_EX.DAT will continue to contain the shortcut information. 
+In those instances where you see application shortcuts created in the users' Start Menu, even though those applications may be disabled or deleted, SHORTCUTS_EX.DAT will continue to contain the shortcut information.
 
 Why this happens I'm not really sure, perhaps this is a bug or the client is not able to save the file correctly in some circumstances. A work around is to delete SHORTCUTS_EX.DAT once the user logs off, thus forcing the client to recreate a 'clean' list of applications. Be sure to test this work around for laptop users.
 

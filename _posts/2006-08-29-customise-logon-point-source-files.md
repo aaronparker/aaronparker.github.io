@@ -19,7 +19,7 @@ Customising Logon points in Advanced Access Control is a fairly easy process. Cu
   4. Make all customisation to the Logon Point files. See [here](http://support.citrix.com/article/CTX108617&searchID=20966991) and [here](http://www.jasonconger.com/ShowPost.aspx?strID=9efce8af-b7a3-4836-a0f5-cc6478909654) for information on customising the Logon Point.
   5. Download CABSDK.EXE from [Microsoft Cabinet Software Development Kit](http://support.microsoft.com/kb/310618) (Surely there's a better tool around..)
   6. Extract CABSDK.EXE and copy the files from \BIN to C:\Temp.
-  7. Run the following command-line to pack the Logon Point source files back into a .CAB file: <font face="courier new,courier">CABARC.EXE -p -r -P Temp\ -P LogonAgentApp\ N LogonAgentApp.CAB LogonAgentApp\*.*</font>
+  7. Run the following command-line to pack the Logon Point source files back into a .CAB file: `CABARC.EXE -p -r -P Temp\ -P LogonAgentApp\ N LogonAgentApp.CAB LogonAgentApp\*.*`
   8. Copy the new .CAB file to \Program Files\Citrix\Access Gateway\WebServicesCabContent.
   9. Deploy your Logon Points with customisations intact.
 
@@ -31,8 +31,7 @@ The CABSDK is quite old but it does the trick. Documentation for CABARC.EXE in i
 
 -P This command is used to script the \Temp and \LogonAgentApp folders from the paths. Otherwise the .CAB file will list the files with an additional path
 
-N This command tells CABARC to create a new .CAB file. In this instance LogonAgentApp.CAB
+This command tells CABARC to create a new .CAB file. In this instance LogonAgentApp.CAB
 
-<p class="important">
-  NOTE: I doubt that this would be supported by Citrix, so make sure you keep a copy of the original .CAB file.
-</p>
+I doubt that this would be supported by Citrix, so make sure you keep a copy of the original .CAB file.
+{:.note title="Note"}

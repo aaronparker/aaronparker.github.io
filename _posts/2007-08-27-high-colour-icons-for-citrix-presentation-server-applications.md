@@ -13,7 +13,7 @@ categories:
 tags:
   - Presentation-Server
 ---
-Citrix have released (and even re-released) whole slew of updates in the past few weeks that finally get's a feature of Presentation Server working that's close to my heart - high colour icons. Yes, high colour icons - the single most important feature that Citrix could add to Presentation Server! Forget application streaming, the new killer feautre is high colour icons!
+Citrix have released (and even re-released) whole slew of updates in the past few weeks that finally get's a feature of Presentation Server working that's close to my heart - high colour icons. Yes, high colour icons - the single most important feature that Citrix could add to Presentation Server! Forget application streaming, the new killer feature is high colour icons!
 
 Well perhaps a little perspective is in order ;), but I do think this is an important feature for usability. Here's what you get - before:
 

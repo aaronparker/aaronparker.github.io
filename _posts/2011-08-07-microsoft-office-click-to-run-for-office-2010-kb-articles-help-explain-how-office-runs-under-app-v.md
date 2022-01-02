@@ -18,17 +18,17 @@ A number of knowledgebase articles have been updated recently that are interesti
 
 Articles that detail limitations and workarounds that have been updated recently include:
 
-  * [Click-to-Run: Known issues](http://office2010.microsoft.com/en-us/excel-help/click-to-run-known-issues-HA101850565.aspx)
-  * [In Office Click-to-Run 2010, some functionality is unavailable, or an Office add-in does not run correctly](http://support.microsoft.com/kb/983266/)
-  * [When Office Click-to-Run 2010 is installed, Microsoft Word is not listed as an application when you right-click an .htm file or an .mhtml file and then click "Open with"](http://support.microsoft.com/kb/982259/)
-  * [You cannot use the "send to" feature of an external application together with Office Click-to-Run for Outlook 2010](http://support.microsoft.com/kb/982430/)
-  * [Office 2010 Click-to-Run compatibility with add-ins](http://support.microsoft.com/kb/982431/)
-  * ["This product must be installed to Q:" error message when you try to install Office 2010 that is delivered by Click-to-Run](http://support.microsoft.com/kb/982757/)
-  * [How to use command-line switches in Office Click-to-Run for Office 2010](http://support.microsoft.com/kb/982432/)
+* [Click-to-Run: Known issues](http://office2010.microsoft.com/en-us/excel-help/click-to-run-known-issues-HA101850565.aspx)
+* [In Office Click-to-Run 2010, some functionality is unavailable, or an Office add-in does not run correctly](http://support.microsoft.com/kb/983266/)
+* [When Office Click-to-Run 2010 is installed, Microsoft Word is not listed as an application when you right-click an .htm file or an .mhtml file and then click "Open with"](http://support.microsoft.com/kb/982259/)
+* [You cannot use the "send to" feature of an external application together with Office Click-to-Run for Outlook 2010](http://support.microsoft.com/kb/982430/)
+* [Office 2010 Click-to-Run compatibility with add-ins](http://support.microsoft.com/kb/982431/)
+* ["This product must be installed to Q:" error message when you try to install Office 2010 that is delivered by Click-to-Run](http://support.microsoft.com/kb/982757/)
+* [How to use command-line switches in Office Click-to-Run for Office 2010](http://support.microsoft.com/kb/982432/)
 
 There's even an article on getting into the virtual environment (which is good for a laugh):
 
-  * [How to access the registry information of Office 2010 that is delivered by Click-to-Run](http://support.microsoft.com/kb/982429/)
+* [How to access the registry information of Office 2010 that is delivered by Click-to-Run](http://support.microsoft.com/kb/982429/)
 
 For even more articles on Click-to-Run, start with [this search on the Microsoft Support site](http://support.microsoft.com/search/default.aspx?query=Click-to-Run&catalog=LCID%3D1033&mode=r).
 

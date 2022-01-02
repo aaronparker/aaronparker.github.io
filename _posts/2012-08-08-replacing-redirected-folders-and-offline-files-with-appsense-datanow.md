@@ -46,9 +46,9 @@ The idea being that this approach should provide users with a consistent view of
 
 When installing the DataNow client, the user's data is synchronised locally to a DataNow folder – similar in approach to Dropbox or SkyDrive. Here's three ways that I could aggregate my local folders (Documents, Desktop etc.) with the DataNow folder:
 
-  * Leverage Windows 7 Libraries – include folders below the DataNow folder in the Documents, Music, Pictures and Videos Libraries. This will work, there's even methods of [scripting changes to the Libraries](http://windowslibrariespsh.codeplex.com/), but we miss out on important folders such as Favorites and the Desktop
-  * Create Junction Points – create junction points for each of the user folders to folders in the DataNow folder. This will cover all user folders, but junction points aren't a very elegant solution
-  * Use Folder Redirection delivered by AppSense Environment Manager (EM) – redirect each of the user folders below the DataNow folder
+* Leverage Windows 7 Libraries – include folders below the DataNow folder in the Documents, Music, Pictures and Videos Libraries. This will work, there's even methods of [scripting changes to the Libraries](http://windowslibrariespsh.codeplex.com/), but we miss out on important folders such as Favorites and the Desktop
+* Create Junction Points – create junction points for each of the user folders to folders in the DataNow folder. This will cover all user folders, but junction points aren't a very elegant solution
+* Use Folder Redirection delivered by AppSense Environment Manager (EM) – redirect each of the user folders below the DataNow folder
 
 The first two approaches are far from ideal whilst using Folder Redirection with EM holds the most promise, as Folder Redirection is arguably the easiest to implement and undo.
 
@@ -56,12 +56,12 @@ The first two approaches are far from ideal whilst using Folder Redirection with
 
 To ensure that this will work, I've configured the following in a lab environment:
 
-  * A home directory configured on the user account in Active Directory. I've started with a clean home directory
-  * An AppSense DataNow appliance hosted on vSphere, configured for Active Directory in the lab environment. Configuring DataNow is out of scope of this article, however I've first ensured that DataNow is running correctly
-  * Two Windows 7 VMs – one with x86 Windows and the other with x64 Windows
-  * Both Windows 7 VMs are running the AppSense Environment Manager and DataNow agents
-  * The DataNow folder is stored at `%USERPROFILE%\DataNow`
-  * An Environment Manager configuration that will redirect the user folders below the DataNow folder at `%USERPROFILE%\DataNow`. For example, the Documents folder is redirected to `%USERPROFILE%\DataNow\Documents`
+* A home directory configured on the user account in Active Directory. I've started with a clean home directory
+* An AppSense DataNow appliance hosted on vSphere, configured for Active Directory in the lab environment. Configuring DataNow is out of scope of this article, however I've first ensured that DataNow is running correctly
+* Two Windows 7 VMs – one with x86 Windows and the other with x64 Windows
+* Both Windows 7 VMs are running the AppSense Environment Manager and DataNow agents
+* The DataNow folder is stored at `%USERPROFILE%\DataNow`
+* An Environment Manager configuration that will redirect the user folders below the DataNow folder at `%USERPROFILE%\DataNow`. For example, the Documents folder is redirected to `%USERPROFILE%\DataNow\Documents`
 
 You may wonder why I haven't used Group Policy to perform folder redirection – this is because Group Policy won't allow you to redirect a user folder to a sub-folder of `%USERPROFILE%`. I guess Microsoft doesn't want us creating a quantum singularity by redirecting `%USERPROFILE%\Documents` to `%USERPROFILE%\Documents\Documents`.
 
@@ -87,4 +87,4 @@ Generally speaking though, this approach gives me what I'm after- synchronisatio
 
 DataNow is currently in beta and by no means is the only product I could have used for this test, but in its current form, it's let me give the kick in the teeth that Folder Redirection (to the network) and Offline Files deserves. This is really just a proof-of-concept, but hopefully with time this should become more robust and with any luck the default approach for providing data offline on laptops without changing or impacting the user experience.
 
-**Note**: under no circumstances should you take this article as a recommendation from me for synchronising the _AppData\Roaming_ folder – synchronising or redirecting AppData should never be undertaken lightly as it is not a solution, it is delayed failure.
+**Note**: under no circumstances should you take this article as a recommendation from me for synchronising the `AppData\Roaming` folder – synchronising or redirecting AppData should never be undertaken lightly as it is not a solution, it is delayed failure.

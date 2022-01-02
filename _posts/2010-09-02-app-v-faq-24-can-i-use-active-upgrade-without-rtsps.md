@@ -30,17 +30,17 @@ HTTP/FILE streaming is a little different – there is no middleman so the clien
 
 An admin would have added the updated SFT and OSDs to Content and on the next Desktop Refresh the updated OSD with _HREF=http://websvr/content/Visio/Visio_2.sft_ would come down and on the next launch the updates will stream. Still an active upgrade, but only after a refresh. NOTE: Streaming is not tied to a publishing method, so a refresh can be:
 
-  * App-V Management Server over RTSP
-  * IIS with ASP over HTTP (rare as you must [code your own provisioning logic](http://blogs.msdn.com/b/johnsheehan/archive/2009/03/24/http-publishing-in-app-v-part-1.aspx))
-  * MSI with MODE=STREAMING via [ESD](http://technet.microsoft.com/en-us/library/cc843643.aspx)
-  * SFTMIME commands via ESD
+* App-V Management Server over RTSP
+* IIS with ASP over HTTP (rare as you must [code your own provisioning logic](http://blogs.msdn.com/b/johnsheehan/archive/2009/03/24/http-publishing-in-app-v-part-1.aspx))
+* MSI with MODE=STREAMING via [ESD](http://technet.microsoft.com/en-us/library/cc843643.aspx)
+* SFTMIME commands via ESD
 
 ## Resources
 
-  * [App-V Application Publishing and Client Interaction](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/AppPubandClientInteraction.docx)
-  * [Methods for Upgrading or Updating Virtualized Applications](http://blogs.technet.com/b/appv/archive/2007/09/25/methods-for-upgrading-or-updating-virtualized-applications.aspx)
-  * [App-V: Sequencing and Deploying Using MSI and Active Upgrade, a video from BriForum 2009](http://www.brianmadden.com/blogs/videos/archive/2009/08/25/App_2D00_V_3A00_-Sequencing-and-Deploying-Using-MSI-and-Active-Upgrade_2C00_-a-video-from-BriForum-2009.aspx)
-  * [How to Configure the App-V System for Package Upgrade](http://technet.microsoft.com/en-us/library/ee704533.aspx)
-  * [How Do I: Updating and Upgrading a Sequenced Application Using Microsoft App-V?](http://technet.microsoft.com/en-us/windows/dd443654.aspx)
-  * [TechNet Virtual Lab: Learning App-V Intermediate Skills](http://go.microsoft.com/?linkid=9713043)
-  * [How to Use the Differential SFT File](http://technet.microsoft.com/en-us/library/dd351395.aspx)
+* [App-V Application Publishing and Client Interaction](http://download.microsoft.com/download/f/7/8/f784a197-73be-48ff-83da-4102c05a6d44/AppPubandClientInteraction.docx)
+* [Methods for Upgrading or Updating Virtualized Applications](http://blogs.technet.com/b/appv/archive/2007/09/25/methods-for-upgrading-or-updating-virtualized-applications.aspx)
+* [App-V: Sequencing and Deploying Using MSI and Active Upgrade, a video from BriForum 2009](http://www.brianmadden.com/blogs/videos/archive/2009/08/25/App_2D00_V_3A00_-Sequencing-and-Deploying-Using-MSI-and-Active-Upgrade_2C00_-a-video-from-BriForum-2009.aspx)
+* [How to Configure the App-V System for Package Upgrade](http://technet.microsoft.com/en-us/library/ee704533.aspx)
+* [How Do I: Updating and Upgrading a Sequenced Application Using Microsoft App-V?](http://technet.microsoft.com/en-us/windows/dd443654.aspx)
+* [TechNet Virtual Lab: Learning App-V Intermediate Skills](http://go.microsoft.com/?linkid=9713043)
+* [How to Use the Differential SFT File](http://technet.microsoft.com/en-us/library/dd351395.aspx)

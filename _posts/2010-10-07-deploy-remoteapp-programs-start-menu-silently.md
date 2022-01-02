@@ -30,10 +30,10 @@ But what if you want to deliver the connection silently? Fortunately that's easy
 
 There are some excellent resources for setting up RemoteApp sources, Remote Desktop Web Access and publishing applications, so there's no need to cover those again. If you haven't already configured the [Remote Desktop Session Host](http://technet.microsoft.com/en-us/library/cc742822.aspx) servers, [Remote Desktop Virtualization Host](http://technet.microsoft.com/en-us/library/dd759170.aspx) servers (for publishing virtual desktops) and the [Remote Desktop Connection Broker](http://technet.microsoft.com/en-us/library/cc771419.aspx) see these [step-by-step guides](http://www.microsoft.com/downloads/en/results.aspx?freetext=remote+desktop+step-by-step&displaylang=en&stype=s_basic) first:
 
-  * [Deploying Remote Desktop Web Access with Remote Desktop Connection Broker Step-by-Step Guide](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=906b5769-07a2-452a-9783-30137b0d650a)
-  * [Deploying Personal Virtual Desktops by Using Remote Desktop Web Access Step-by-Step Guide](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=0d278f5c-37fa-43fb-8032-614c7bf1d617)
-  * [Deploying Virtual Desktop Pools by Using Remote Desktop Web Access Step-by-Step Guide](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=e33b0953-e89a-4b97-a6fe-60da44add5c7)
-  * [Deploying RemoteApp Programs to the Start Menu by Using RemoteApp and Desktop Connection Step-by-Step Guide](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=b00819e6-70e2-4a9e-9224-26804eb0ba4e)
+* [Deploying Remote Desktop Web Access with Remote Desktop Connection Broker Step-by-Step Guide](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=906b5769-07a2-452a-9783-30137b0d650a)
+* [Deploying Personal Virtual Desktops by Using Remote Desktop Web Access Step-by-Step Guide](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=0d278f5c-37fa-43fb-8032-614c7bf1d617)
+* [Deploying Virtual Desktop Pools by Using Remote Desktop Web Access Step-by-Step Guide](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=e33b0953-e89a-4b97-a6fe-60da44add5c7)
+* [Deploying RemoteApp Programs to the Start Menu by Using RemoteApp and Desktop Connection Step-by-Step Guide](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=b00819e6-70e2-4a9e-9224-26804eb0ba4e)
 
 Now that you've configured your RemoteApp and Desktop sources and RD Web Access and confirmed that you can manually add a RemoteApp and Desktop Connection source to your client machine, you'll need to create the [RemoteApp and Desktop Connections Configuration File](http://technet.microsoft.com/en-us/library/ee216782.aspx).
 

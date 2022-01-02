@@ -23,7 +23,7 @@ I recently wrote a couple of articles on setting up and [Root Certification Auth
 
 You might find your certificate authority, in this case, a subordinate certificate authority that is not started, perhaps after a server reboot. Attempting to start the CA, results in this message:
 
-> The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT\_E\_REVOCATION_OFFLINE)
+> The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT_E_REVOCATION_OFFLINE)
 
 Which looks like this:
 
@@ -31,11 +31,11 @@ Which looks like this:
 
 In the Application log on the subordinate CA, I can see event id 100 from source CertificationAuthority:
 
-> Active Directory Certificate Services did not start: Could not load or verify the current CA certificate.  stealthpuppy Issuing CA The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT\_E\_REVOCATION_OFFLINE).
+> Active Directory Certificate Services did not start: Could not load or verify the current CA certificate.  stealthpuppy Issuing CA The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT_E_REVOCATION_OFFLINE).
 
 As well as, event id 48 from the same source, CertificationAuthority:
 
-> Revocation status for a certificate in the chain for CA certificate 0 for stealthpuppy Issuing CA could not be verified because a server is currently unavailable.  The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT\_E\_REVOCATION_OFFLINE).
+> Revocation status for a certificate in the chain for CA certificate 0 for stealthpuppy Issuing CA could not be verified because a server is currently unavailable.  The revocation function was unable to check revocation because the revocation server was offline. 0x80092013 (-2146885613 CRYPT_E_REVOCATION_OFFLINE).
 
 Certificate 0 is the subordinate CA's certificate, issued by the offline Root CA.
 
@@ -73,7 +73,7 @@ http://crl.home.stealthpuppy.com/CertEnroll/stealthpuppy Offline Root CA.crl
 
 Through having spent some time recently with setting up an Enterprise PKI in my lab and for a project, I've come to know the command line tool [`certutil.exe`](https://technet.microsoft.com/en-us/library/cc732443(v=ws.11).aspx). This tool is available in all versions of Windows and should be the first tool to use to troubleshoot and manage certificates and certificate authorities on Windows.
 
-Certutil can be used to perform many functions, one of which is to verify a CRL. I know the path to the CRL file because I can view the CRLs on the file system (in C:\Windows\System32\certsrv\CertEnroll) and I've [previously configured CRLs for both CAs]({{site.baseurl}}/deploy-enterprise-subordinate-certificate-authority/).
+Certutil can be used to perform many functions, one of which is to verify a CRL. I know the path to the CRL file because I can view the CRLs on the file system (in `C:\Windows\System32\certsrv\CertEnroll`) and I've [previously configured CRLs for both CAs]({{site.baseurl}}/deploy-enterprise-subordinate-certificate-authority/).
 
 To verify the CRL, use the -URL switch with the HTTP (or LDAP) path to the CRL:
 

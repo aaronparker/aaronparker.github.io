@@ -14,7 +14,7 @@ tags:
   - Adobe
   - SoftGrid
 ---
-<img src="{{site.baseurl}}/media/2008/02/adobeacrobat-softgridbox.png" alt="adobeacrobat-softgridbox.png" align="left" />I'm not completely convinced that Adobe Acrobat (not Reader) is the best candidate for deploying via application virtualisation techniques, but if you're looking to do it you're in for a bit of a ride.
+I'm not completely convinced that Adobe Acrobat (not Reader) is the best candidate for deploying via application virtualisation techniques, but if you're looking to do it you're in for a bit of a ride.
 
 Getting this one as far as I have has taken the better part of three days and I still have some challenges on the client to solve. For this sequence you will need access to the [volume license version of the media](http://www.adobe.com/aboutadobe/openoptions/), otherwise you will find that the application will prompt for activation when run on your client machines.
 

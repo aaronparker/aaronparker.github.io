@@ -14,7 +14,7 @@ tags:
   - Adobe
   - SoftGrid
 ---
-<img border="0" align="left" src="{{site.baseurl}}/media/2008/02/photoshop-softgridbox.png" alt="photoshop-softgridbox.png" />Deploying Adobe applications with SoftGrid/Microsoft Application Virtualisation certainly takes a lot of patience, because like [Adobe Acrobat]({{site.baseurl}}/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far), Photoshop took quite a long time to sequence and troubleshoot. Sequencing the application alone will take around 6 hours, but your mileage may vary.
+Deploying Adobe applications with SoftGrid/Microsoft Application Virtualisation certainly takes a lot of patience, because like [Adobe Acrobat]({{site.baseurl}}/virtualisation/softgrid-sequencing-adobe-acrobat-8-%e2%80%93-the-story-so-far), Photoshop took quite a long time to sequence and troubleshoot. Sequencing the application alone will take around 6 hours, but your mileage may vary.
 
 ### Sequencing Photoshop CS3
 
@@ -27,12 +27,13 @@ You can find information on performing a silent installation of the Adobe CS3 pr
 
 When sequencing Photoshop CS3 you will run into errors as the Sequencer is going through the post-monitoring phase. You will see the sequencer fail and report "`SystemGuard download failed (error code 53256)`". The solution to this, is to create manifest files for FILEINFO.DLL and copy them to the installation folder just after installing the application. These are standard XML files that the Sequencer will read and then process the files using [UTF-8 instead of their native UTF-16](http://blogs.technet.com/softgrid/archive/2007/10/25/update-error-53256-sequencing-adobe-cs3.aspx).
 
-  * Q:\<Asset Folder>\Adobe\Adobe Bridge CS3\fileinfo.dll.manifest
-  * Q:\<Asset Folder>\Adobe\Adobe Photoshop CS3\fileinfo.dll.manifest
+* `Q:\<Asset Folder>\Adobe\Adobe Bridge CS3\fileinfo.dll.manifest`
+* `Q:\<Asset Folder>\Adobe\Adobe Photoshop CS3\fileinfo.dll.manifest`
 
 The contents of the manifest file should look like this:
 
-[code lang="xml"]<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>  
 <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">  
 <assemblyIdentity  
 name="Adobe.Acrobat.fileinfo.dll"  
@@ -52,18 +53,19 @@ language="*"
 />  
 </dependentAssembly>  
 </dependency>  
-</assembly>[/code]
+</assembly>
+```
 
 ### Running Photoshop CS3 on the client
 
 Photoshop looks to run quite well on the client; however I ran into an issue on my test machine that I did not see on production machines. Adobe Photoshop CS3 installs the following applications and all but Photoshop itself would run on my test machine:
 
-  * Adobe Photoshop CS3
-  * Adobe Bridge CS3
-  * Adobe Stock Photos CS3
-  * Adobe Device Central CS3
-  * Adobe ExtendScript Toolkit 2
-  * Adobe DNG Converter 4.3
+* Adobe Photoshop CS3
+* Adobe Bridge CS3
+* Adobe Stock Photos CS3
+* Adobe Device Central CS3
+* Adobe ExtendScript Toolkit 2
+* Adobe DNG Converter 4.3
 
 When launching Photoshop the SoftGrid client would fail and produce this error:
 
@@ -79,7 +81,7 @@ The problem with the second solution, which involves copying the files out of th
 
 In this case we are looking at ensuring these files exist on the target workstations by deploying them via an MSI package. You may not have the same issue as I did when deploying Photoshop, but if you do, here are the files you need to ensure exist on your workstations:
 
-  * C:\Windows\WinSxS\Manifests\x86\_Microsoft.VC80.CRT\_1fc8b3b9a1e18e3b\_8.0.50727.163\_x-ww_681e29fb.manifest
-  * C:\Windows\WinSxS\Manifests\x86\_Microsoft.VC80.CRT\_1fc8b3b9a1e18e3b\_8.0.50727.163\_x-ww_681e29fb.cat
-  * C:\Windows\WinSxS\Policies\x86\_policy.8.0.Microsoft.VC80.CRT\_1fc8b3b9a1e18e3b\_x-ww\_77c24773\8.0.50727.163.policy
-  * C:\Windows\WinSxS\Policies\x86\_policy.8.0.Microsoft.VC80.CRT\_1fc8b3b9a1e18e3b\_x-ww\_77c24773\8.0.50727.163.cat
+* C:\Windows\WinSxS\Manifests\x86\_Microsoft.VC80.CRT\_1fc8b3b9a1e18e3b\_8.0.50727.163\_x-ww_681e29fb.manifest
+* C:\Windows\WinSxS\Manifests\x86\_Microsoft.VC80.CRT\_1fc8b3b9a1e18e3b\_8.0.50727.163\_x-ww_681e29fb.cat
+* C:\Windows\WinSxS\Policies\x86\_policy.8.0.Microsoft.VC80.CRT\_1fc8b3b9a1e18e3b\_x-ww\_77c24773\8.0.50727.163.policy
+* C:\Windows\WinSxS\Policies\x86\_policy.8.0.Microsoft.VC80.CRT\_1fc8b3b9a1e18e3b\_x-ww\_77c24773\8.0.50727.163.cat

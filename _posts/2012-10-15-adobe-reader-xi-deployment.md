@@ -19,22 +19,22 @@ tags:
 ---
 [Adobe Reader XI](http://get.adobe.com/reader/) is now available and along with this release comes some interesting tools for deployment:
 
-  * Citrix XenApp enhancements for better performance (it's not clear whether this specifically XenApp or RDS enhancements. Hopefully this means reduced memory requirements)
-  * New App-V support, including a Package Accelerator (presumably this is App-V 4.6, not 5.0)
-  * GPO Template for the most common enterprise settings (this includes a hand full of settings; however removing menu and toolbar items still requires resorting to Javascript)
+* Citrix XenApp enhancements for better performance (it's not clear whether this specifically XenApp or RDS enhancements. Hopefully this means reduced memory requirements)
+* New App-V support, including a Package Accelerator (presumably this is App-V 4.6, not 5.0)
+* GPO Template for the most common enterprise settings (this includes a hand full of settings; however removing menu and toolbar items still requires resorting to Javascript)
 
 There's a full list of new features in this blog post: [Announcing Adobe Reader XI](http://blogs.adobe.com/adobereader/2012/10/announcing-adobe-reader-xi.html). All of the bits that are currently available can be downloaded here:
 
-  * [Adobe Reader XI installers in available languages](ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/)
-  * [Reader XI Administrative Template](ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/misc/ReaderADMTemplate.zip)
-  * [Acrobat XI Administrative Template](ftp://ftp.adobe.com/pub/adobe/acrobat/win/11.x/11.0.00/misc/AcrobatADMTemplate.zip)
+* [Adobe Reader XI installers in available languages](ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/)
+* [Reader XI Administrative Template](ftp://ftp.adobe.com/pub/adobe/reader/win/11.x/11.0.00/misc/ReaderADMTemplate.zip)
+* [Acrobat XI Administrative Template](ftp://ftp.adobe.com/pub/adobe/acrobat/win/11.x/11.0.00/misc/AcrobatADMTemplate.zip)
 
 ## Customisation
 
 Customisation of Reader XI with the Adobe Customization Wizard XI is the same approach as previous versions and I have a comprehensive post on [deploying Adobe Reader X]({{site.baseurl}}/deployment/deploying-adobe-reader-x/) which will largely apply to XI, but Adobe does have customisation and deployment documentation available:
 
-  * [Enterprise Toolkit for Acrobat Products](http://www.adobe.com/devnet-docs/acrobatetk/#)
-  * [Adobe Customization Wizard XI documentation](http://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/Customization%20Wizard%2011%20for%20Windows.pdf)
+* [Enterprise Toolkit for Acrobat Products](http://www.adobe.com/devnet-docs/acrobatetk/#)
+* [Adobe Customization Wizard XI documentation](http://www.adobe.com/devnet-docs/acrobatetk/tools/Wizard/Customization%20Wizard%2011%20for%20Windows.pdf)
 
 The [Adobe Customization Wizard XI for Windows](http://www.adobe.com/support/downloads/thankyou.jsp?ftpID=5515&fileID=5526) is now available and the administration experience does not change massively (or at all) from [previous versions]({{site.baseurl}}/deployment/deploying-adobe-reader-x/).
 

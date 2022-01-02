@@ -12,7 +12,7 @@ tags:
   - SoftGrid
   - Terminal Server
 ---
-<img border="0" alt="SoftGridAppCompat" align="left" src="{{site.baseurl}}/media/2008/03/softgridappcompat.png" width="140" height="128" />If there's ever a great example of the benefits of application virtualisation it can often be found in the little things.
+If there's ever a great example of the benefits of application virtualisation it can often be found in the little things.
 
 One of the guys in our team has been sequencing [Volo View](http://usa.autodesk.com/adsk/servlet/index?id=3239384&siteID=123112), which isn't a particularly well behaved piece of software to begin with. It has a menu option that launches Windows Explorer to view some config files and when  run under Terminal Services, this fails to launch Explorer.
 
@@ -22,6 +22,8 @@ If you've been working with Terminal Server for any length of time, you might kn
 
 Fortunately there's a few [application compatibility tricks built into Terminal Server](http://support.microsoft.com/kb/186498) that we can take advantage of to work around issues like this. To fix this issue we can implement a registry value to modify this behaviour for this application. To help Volo View out, we can implement this registry value so that Windows will return the real folder when GetWindowsDirectory is called:
 
-[quickcode:noclick]HKLM\Software\Microsoft\Windows NT\CurrentVersion\Terminal Server\Compatibility\Applications\VPLT\Flags=dword:00000408[/quickcode]
+```
+HKLM\Software\Microsoft\Windows NT\CurrentVersion\Terminal Server\Compatibility\Applications\VPLT\Flags=dword:00000408
+```
 
 The benefit that application virtualisation brings to our toolset (and this is probably not a SoftGrid exclusive), is that we can implement this registry value within the SoftGrid bubble. No changes are required on the Terminal Server itself, instead the fix follows the application where ever it is executed. Very cool.

@@ -19,21 +19,21 @@ Ideally you should be obtaining a [Distribution Agreement](http://www.adobe.com/
 
 Here what I've found so far - happy downloading 😉
 
-  * [Adobe Reader 8.1 US English](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/enu/AdbeRdr810_en_US.exe)
-  * [Adobe Reader 8.1 Deutsch](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/deu/AdbeRdr810_de_DE.exe)
-  * [Adobe Reader 8.1 FranÃ§ais](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/fra/AdbeRdr810_fr_FR.exe)
-  * [Adobe Reader 8.1 æ—¥æœ¬èªž](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/jpn/AdbeRdr810_ja_JP.exe)
+* [Adobe Reader 8.1 US English](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/enu/AdbeRdr810_en_US.exe)
+* [Adobe Reader 8.1 Deutsch](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/deu/AdbeRdr810_de_DE.exe)
+* [Adobe Reader 8.1 FranÃ§ais](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/fra/AdbeRdr810_fr_FR.exe)
+* [Adobe Reader 8.1 æ—¥æœ¬èªž](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/jpn/AdbeRdr810_ja_JP.exe)
 
 **Update:** Here's a few more
 
-  * [Adobe Reader 8.1 Italiano](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/ita/AdbeRdr810_it_IT.exe) (Thanks Francesco)
-  * [Adobe Reader 8.1 EspaÃ±ol](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/esp/AdbeRdr810_es_ES.exe)
-  * [Adobe Reader 8.1 Danish](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/dan/AdbeRdr810_da_DK.exe)
-  * [Adobe Reader 8.1 Chinese Simplified](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/chs/AdbeRdr810_zh_CN.exe)
-  * [Adobe Reader 8.1 Chinese Traditional](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/cht/AdbeRdr810_zh_TW.exe)
-  * [Adobe Reader 8.1 Dutch](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/nld/AdbeRdr810_nl_NL.exe)
-  * [Adobe Reader 8.1 Finnish](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/suo/AdbeRdr810_fi_FI.exe)
-  * [Adobe Reader 8.1 í•œêµ­ì–´](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/kor/AdbeRdr810_ko_KR.exe)
-  * [Adobe Reader 8.1 Norwegian](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/nor/AdbeRdr810_nb_NO.exe)
-  * [Adobe Reader 8.1 Portuguese](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/ptb/AdbeRdr810_pt_BR.exe)
-  * [Adobe Reader 8.1 Swedish](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/ptb/AdbeRdr810_pt_BR.exe)
+* [Adobe Reader 8.1 Italiano](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/ita/AdbeRdr810_it_IT.exe) (Thanks Francesco)
+* [Adobe Reader 8.1 EspaÃ±ol](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/esp/AdbeRdr810_es_ES.exe)
+* [Adobe Reader 8.1 Danish](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/dan/AdbeRdr810_da_DK.exe)
+* [Adobe Reader 8.1 Chinese Simplified](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/chs/AdbeRdr810_zh_CN.exe)
+* [Adobe Reader 8.1 Chinese Traditional](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/cht/AdbeRdr810_zh_TW.exe)
+* [Adobe Reader 8.1 Dutch](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/nld/AdbeRdr810_nl_NL.exe)
+* [Adobe Reader 8.1 Finnish](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/suo/AdbeRdr810_fi_FI.exe)
+* [Adobe Reader 8.1 í•œêµ­ì–´](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/kor/AdbeRdr810_ko_KR.exe)
+* [Adobe Reader 8.1 Norwegian](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/nor/AdbeRdr810_nb_NO.exe)
+* [Adobe Reader 8.1 Portuguese](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/ptb/AdbeRdr810_pt_BR.exe)
+* [Adobe Reader 8.1 Swedish](http://ardownload.adobe.com/pub/adobe/reader/win/8.x/8.1/ptb/AdbeRdr810_pt_BR.exe)

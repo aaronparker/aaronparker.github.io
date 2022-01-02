@@ -11,7 +11,7 @@ categories:
 tags:
   - Access-Gateway
 ---
-[Martijn Kools](http://www.brianmadden.com/forum/showProfile.aspx?memid=2688) has very kindly let me repost his instructions for enabling SSH on the Access Gateway and scheduling a reboot. WARNING: This is a totally unsupported method for enabling SSH. Be sure to have a backup of the config of the AG and access to the Access Gatway CD to be able to perform a reinstall if required.
+[Martijn Kools](http://www.brianmadden.com/forum/showProfile.aspx?memid=2688) has very kindly let me repost his instructions for enabling SSH on the Access Gateway and scheduling a reboot. WARNING: This is a totally unsupported method for enabling SSH. Be sure to have a backup of the config of the AG and access to the Access Gateway CD to be able to perform a reinstall if required.
 
   1. Download a Linux Live CD such as [Ubuntu](http://www.ubuntu.com/download) or [Knoppix](http://www.knopper.net/knoppix/index-en.html). These instructions are based on Ubuntu.
   2. Boot the Access Gateway from the CD and choose the Safe VGA option.
@@ -45,7 +45,7 @@ tags:
 
 `umount /cag`
 
-  1. Reboot the Access Gateway and use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) to log into the applicance via SSH.
+  1. Reboot the Access Gateway and use [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) to log into the appliance via SSH.
 
 Now that SSH is enabled, we can schedule a reboot of the Access Gateway.
 
@@ -58,7 +58,7 @@ Now that SSH is enabled, we can schedule a reboot of the Access Gateway.
 
 `0<tab>0<tab>*<tab>*<tab>*<tab>reboot`
 
-The first 0 displays the minute the command is being executed (0-59), the second 0 is the hour the command is executed (0-23), the first \* is the day of the month (1-31), the second \* is the month (1-12), the third * is the day of the week (0-6, sunday=0). So in this case the Access Gateway will reboot at 2am everyday.
+The first 0 displays the minute the command is being executed (0-59), the second 0 is the hour the command is executed (0-23), the first `*` is the day of the month (1-31), the second `*` is the month (1-12), the third * is the day of the week (0-6, sunday=0). So in this case the Access Gateway will reboot at 2am everyday.
 
   1. Press Esc to leave insert mode and then :wq and Enter to save the changes and quit.
 

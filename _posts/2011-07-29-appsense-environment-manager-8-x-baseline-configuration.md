@@ -44,22 +44,19 @@ Each download is a ZIP file containing the configuration and documentation to he
 
 **Current version**
 
-
 Change log:
 
-  * Added create folder actions on application and Desktop Settings export as a workaround for when the export fails to complete. Child actions of the delete folder action don’t fire if the delete folder action fails
-  * Added Pin/Unpin to Taskbar/Start Menu on first logon. See reusable node ‘Desktop Settings policy actions’
-  * Added create %LOCALAPPDATA% variable if user logs onto Windows XP / Windows Server 2003
-  * Swapped User Process actions using RegEx queries back to individual processes – Office 2010 etc. RegEx queries don’t appear to be working in every scenario
-  * Added roaming for Lync 2010
-  * Added Office 2007 and Office 2003 examples for App-V delivery
-  * Disabled example nodes (except above)
-  * Added create folder action: %PROFILE\_CACHE% before copy of %PROFILE\_SOURCE%\COMPUTER.TXT
-  * Disabled Reusable Condition ‘If Laptop (WMI)’ because it’s not currently used in the config
-  * Updated Notes on various action and conditions
+* Added create folder actions on application and Desktop Settings export as a workaround for when the export fails to complete. Child actions of the delete folder action don’t fire if the delete folder action fails
+* Added Pin/Unpin to Taskbar/Start Menu on first logon. See reusable node ‘Desktop Settings policy actions’
+* Added create %LOCALAPPDATA% variable if user logs onto Windows XP / Windows Server 2003
+* Swapped User Process actions using RegEx queries back to individual processes – Office 2010 etc. RegEx queries don’t appear to be working in every scenario
+* Added roaming for Lync 2010
+* Added Office 2007 and Office 2003 examples for App-V delivery
+* Disabled example nodes (except above)
+* Added create folder action: %PROFILE\_CACHE% before copy of %PROFILE\_SOURCE%\COMPUTER.TXT
+* Disabled Reusable Condition ‘If Laptop (WMI)’ because it’s not currently used in the config
+* Updated Notes on various action and conditions
 
 **Previous versions**
 
-
 **Note**: Version 3.0 or 3.1 are not compatible with EM 8.0, use version 2.1 below:
-

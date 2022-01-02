@@ -18,8 +18,9 @@ After adding my laptop running Windows Vista to our AD domain, Windows Update wa
 
 > Windows could not search for new updates: 0x8024402C
 
-After much digging and hair pulling, I found that Windows Update won€™t synchronise from Microsoft once Group Policy has configured Windows to use WSUS. In my case Windows Update was attempting to update from our internal WSUS server and at this point we haven€™t yet upgraded to WSUS Service Pack 1. To get Windows Update working again delete the following registry key and restart the Windows Update service:
+After much digging and hair pulling, I found that Windows Update won't synchronise from Microsoft once Group Policy has configured Windows to use WSUS. In my case Windows Update was attempting to update from our internal WSUS server and at this point we haven't yet upgraded to WSUS Service Pack 1. To get Windows Update working again delete the following registry key and restart the Windows Update service:
 
-<font face="Courier New">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate</font>
+```HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
+```
 
-Of course, next time Group Policy refreshes you€™ll have the same issue, so modify Group Policy or update to WSUS SP1.
+Of course, next time Group Policy refreshes you'll have the same issue, so modify Group Policy or update to WSUS SP1.
