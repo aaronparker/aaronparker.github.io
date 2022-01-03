@@ -18,6 +18,9 @@ tags:
   - Office
   - Office 2013
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 User settings that might impact the default Office experience or may require special consideration in your environment, are worth investing in planning time because you’ll often have only one chance to get deployment right.
 
 ## Use Preference over Policy

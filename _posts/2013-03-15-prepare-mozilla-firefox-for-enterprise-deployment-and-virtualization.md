@@ -13,6 +13,9 @@ categories:
 tags:
   - Firefox
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 I’ve previously written articles on [virtualizing Mozilla Firefox]({{site.baseurl}}/virtualisation/sequencing-mozilla-firefox-13-with-app-v-4-6/), but with Firefox releases more regular these days and the release of App-V 5, it makes sense to split details on configuring Firefox for an enterprise deployment and virtualizing Firefox into separate articles.
 
 Whilst this article will cover some recommendations for configuring a Firefox deployment in an enterprise that can be used when virtualizing Firefox with various solutions, including App-V.

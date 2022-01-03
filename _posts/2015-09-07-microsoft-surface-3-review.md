@@ -16,6 +16,9 @@ categories:
 tags:
   - Surface
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Here's a review of my experiences with the [Microsoft Surface 3](http://www.microsoft.com/surface/en-us/products/surface-3) and some thoughts on the hardware and running Windows 10 on the device.
 
 ## Background

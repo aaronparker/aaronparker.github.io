@@ -14,6 +14,9 @@ tags:
   - PowerShell
   - XenDesktop
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Driving XenDesktop with PowerShell is a challenge to say the least. While [documentation for the XenDesktop PowerShell modules](http://support.citrix.com/proddocs/topic/xenapp-xendesktop-75/cds-sdk-cmdlet-help.html) is OK and Citrix Studio outputs PowerShell code after you've completed a task in the console, there's still plenty of work to get that code into something usable.
 
 As part of an ongoing series of articles themed around automating virtual desktop deployment, I've written some PowerShell code to automate the creation of an non-persistent, MCS-based Machine Catalog based on [a specific Windows image, that we've already automated]({{site.baseurl}}/briforum-2014-hands-off-my-gold-image-the-slides/) with a solution such as MDT.

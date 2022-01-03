@@ -11,6 +11,9 @@ tags:
   - Microsoft Deployment Toolkit
   - PowerShell
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 A couple of months back, I sent an email to the [Microsoft MVP](https://mvp.microsoft.com/) mailing list to see if anyone knew of a JSON feed of Windows 10 updates from Microsoft. I'd found a way to [grab the latest Firefox version via PowerShell](https://gist.github.com/aaronparker/ea999b2955b525b1b68cbe0b0de16e21) and was hoping to do something similar for Windows 10. [Keith Garner](https://twitter.com/keithga1) responded with something even better - [a working script](https://gist.github.com/keithga/1ad0abd1f7ba6e2f8aff63d94ab03048) that pulls from a JSON resource on the [Windows 10 and Windows Server 2016 Update History](https://support.microsoft.com/en-ph/help/4000825/windows-10-windows-server-2016-update-history) page, to [return the most recent cumulative update](https://keithga.wordpress.com/2017/05/21/new-tool-get-the-latest-windows-10-cumulative-updates/).
 
 So this gave me what I needed - a way to pull the latest update which I could then import into an MDT share, ensuring that a machine is deployed with the latest cumulative update at deployment time or ideal for creating reference images.

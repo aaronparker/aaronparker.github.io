@@ -13,6 +13,9 @@ categories:
 tags:
   - Office 2010
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 The Office 2010 [planning, deployment and configuration documentation](http://technet.microsoft.com/en-gb/library/cc303401(office.14).aspx) is far better than what was available for Office 2007 at launch, however it’s worth updating my [Office 2007 deployment]({{site.baseurl}}/tag/office-2007) notes for the changes in Office 2007.
 
 Here’s a walkthrough of the Office 2010 customisation process and some of the key considerations you should make when you’re ready to create your custom Office 2010 deployment.
@@ -31,7 +34,7 @@ Taking a look at the Office installation source, you’ll notice that the _Admin
 
 Volume license editions of Office should include this folder; however to obtain the _Admin_ folder and the files necessary to run the OCT, you will need to first download the [Office 2010 Administrative Template files (ADM, ADMX/ADML) and Office Customization Tool](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=64b837b6-0aa0-4c07-bc34-bec3990a7956) (read [more about this download here](http://technet.microsoft.com/en-us/library/cc178992(office.14).aspx)). Files for 32-bit and 64-bit versions of Office 2010 are available; so download the file to suit the version of Office you are deploying.
 
-Extract the files by running AdminTemplates\_32.exe or AdminTemplates\_64.exe (or use the `/extract:<folder path> /quiet` switches), then copy the _Admin_ folder to the Office 2010 installation source.
+Extract the files by running `AdminTemplates_32.exe` or `AdminTemplates_64.exe` (or use the `/extract:<folder path> /quiet` switches), then copy the _Admin_ folder to the Office 2010 installation source.
 
 [Office 2010 ADM, ADMX and Admin folders]({{site.baseurl}}/media/2010/05/Office2010Admin.png)
 

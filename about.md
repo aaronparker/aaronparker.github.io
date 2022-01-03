@@ -1,14 +1,10 @@
 ---
 layout: about
-image: /assets/img/blog/hydejack-9.jpg
-description: >
-  A boutique Jekyll theme for hackers, nerds, and academics,
-  with a focus on personal sites that are meant to impress.
+# image: /assets/img/blog/hydejack-9.jpg
+title: About
+description: About Aaron Parker and this site.
 hide_description: true
 ---
-
-# About
-
 <!--author-->
 
 I'm an **IT professional**, **consultant**, developer, and a **builder of things**. I enjoy using automation to provide continuous improvements to IT process. I have a wide set of experience and skills in Microsoft, Citrix and VMware-based solutions and have implemented these technologies across government, corporate & not-for-profit organizations, in **Australia**, the **UK** and the **US**.
@@ -17,14 +13,15 @@ I'm an **IT professional**, **consultant**, developer, and a **builder of things
 
 I have presented at events including **Citrix Synergy**, **BriForum** & **E2EVC** conferences in the US, Europe and Australia since 2011, writing here since 2004 and contributing to the community in a number of other areas. I am very fortunate to have been awarded the following community recognitions:
 
-| Logo | Award | Years |
-|:--|:--|:--|
+| Logo | Award | Years awarded |
+|:-:|:--|:--|
 | ![Citrix Technology Professional]({{site.baseurl}}/media/about/ctp.png) | [Citrix Technology Professional](https://www.citrix.com/community/ctp/awardees.html) | 2012 - 2021 |
-| ![Microsoft MVP]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523) Windows and Devices for IT (previously App-V) | 2011 - 2018 |
+| ![Microsoft MVP]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523) Windows & Devices for IT (previously App-V) | 2011 - 2018 |
 | ![VMware EUC Champion]({{site.baseurl}}/media/about/VMwareEUCChampion.png) | VMware EUC Champion | 2016 |
 | ![VMware vExpert]({{site.baseurl}}/media/about/VMwarevExpert.jpg) | [VMware vExpert](http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html) | 2016 |
 | ![AppSense Community Advisor]({{site.baseurl}}/media/about/AppSenseCommunityAdvisor.png) | [AppSense Community Advisor](http://blog.appsense.com/2012/11/appsense-community-advisor-program/) | 2012 - 2016 |
 | ![Microsoft Community Contributor]({{site.baseurl}}/media/about/MicrosoftCommunityContributor.png) | Microsoft Community Contributor | 2011 |
+{:.smaller}
 
 ## Speaking & Presentations
 

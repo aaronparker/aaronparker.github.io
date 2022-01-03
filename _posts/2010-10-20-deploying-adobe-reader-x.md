@@ -21,6 +21,9 @@ categories:
 tags:
   - Adobe Reader
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 For a Reader XI version of this document see: [Adobe Reader XI Deployment]({{site.baseurl}}/deployment/adobe-reader-xi-deployment/)
 
 Adobe Reader X [is here](http://blogs.adobe.com/adobereader/2010/11/adobe-reader-x-now-available.html) and with the [new protected mode feature](http://blogs.adobe.com/asset/2010/07/introducing-adobe-reader-protected-mode.html) to improve security you should be considering your deployment plans now.

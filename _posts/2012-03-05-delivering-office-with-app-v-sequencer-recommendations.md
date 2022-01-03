@@ -18,6 +18,9 @@ tags:
   - App-V
   - Office
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Having had to travel to Australia and the US recently, I've not had that much time to work on an upcoming white paper, but I have been posting some of the early versions of the chapters. So here's another in that series while I work on getting the paper finished.
 
 Creation of successful App-V packages requires building on a solid base – that base is the machine used to perform sequencing. This section details recommendations for creating the perfect sequencing machine. Follow these recommendations for the best chance at creating clean, successful App-V packages.

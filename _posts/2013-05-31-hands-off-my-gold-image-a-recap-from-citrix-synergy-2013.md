@@ -16,6 +16,9 @@ tags:
   - MDT
   - PVS
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Here's an overview of my talk from Citrix Synergy 2013 - [Hands off my gold image!](https://citrix.g2planet.com/synergylosangeles2013/public_session_view.php?agenda_session_id=274&conference=synergy)  If you were unable to attend Synergy or missed my session, this is a short version of the talk, but hopefully it will give you an idea of what was covered.
 
 ![Slide01.png]({{site.baseurl}}/media/2013/05/Slide01.png)

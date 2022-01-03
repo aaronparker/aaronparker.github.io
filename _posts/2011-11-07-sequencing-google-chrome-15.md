@@ -18,6 +18,9 @@ tags:
   - App-V
   - Google Chrome
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Here's how to successfully sequence Google Chrome 15; however the same approach should work for Chrome 13, 14 and 16 and maybe even some other versions.
 
 ## What you lose by virtualizing Chrome

@@ -15,6 +15,9 @@ tags:
   - Hyper-V
   - Lab
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 One of the great things I enjoyed about working at [Kelway](http://www.kelway.com/) was the access to a pretty solid lab environment. While I do have access to a lab environment at [Atlantis](http://www.atlantiscomputing.com) (3 in fact), now that I work primarily from home, I really prefer a lab environment that can provide me more flexibility. Only a local environment can do that.
 
 I originally started out with the aim of building a system that achieved 3 goals - low power consumption, enough grunt to deliver the workloads I'd like to run, plus be (relatively) quiet. As you can probably guess, I've achieved only two of those objectives (plus blowing my budget in the process).

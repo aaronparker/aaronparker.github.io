@@ -1,13 +1,24 @@
 ---
 layout: plain
 sitemap: true
-description: Content on this site is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0; however, this isn't a licence to steal my content.
+title: LICENSE
+description: Content on this site is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](https://creativecommons.org/licenses/by-nc/4.0/); however, this isn't a licence to steal my content.
 ---
-
-# LICENCE
 
 * this list will be replaced by the toc
 {:toc .large-only}
+
+## Summary
+
+You are free to:
+
+* **Share** — copy and redistribute the material in any medium or format
+* **Adapt** — remix, transform, and build upon the material
+
+Under the following terms:
+
+* **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+* **NonCommercial** — You may not use the material for commercial purposes.
 
 ## Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 

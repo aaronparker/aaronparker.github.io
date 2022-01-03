@@ -15,6 +15,9 @@ tags:
   - iTunes
   - QuickTime
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Here’s a nut I’ve been trying to crack for some time – successfully virtualizing Apple iTunes with App-V. I think a combination of iTunes 10 and App-V 4.6 SP1 did the trick. Here’s how to do it.
 
 ## What you lose by virtualizing iTunes

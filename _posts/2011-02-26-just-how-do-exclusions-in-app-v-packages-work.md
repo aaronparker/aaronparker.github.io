@@ -15,6 +15,9 @@ categories:
 tags:
   - App-V
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 Exactly how do folder and Registry exclusions work in App-V? I had presumed that exclusions for both folder and Registry paths would carry over to package execution. This is something that I had made some assumptions about and it’s only recently that I looked into exclusions in detail to get a better understanding.
 
 I’ve spent some time working out how folder and Registry exclusions and Merge/Override settings impact the package at runtime and this post is based on my findings. Although I believe that the details in this post are correct, I recommend testing out these behaviours for yourself.

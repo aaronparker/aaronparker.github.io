@@ -15,6 +15,9 @@ tags:
   - Transform
   - Unattend
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 As usual consumers will have the Google toolbar pushed on them if they don’t de-select that option when downloading Reader, and now you’ll also get Adobe [AIR](http://www.adobe.com/products/air/) along with Reader too. Awesome, more stuff we don’t really need. A default install leaves two icons on the desktop now – Adobe Reader 9 plus one for [Acrobat.com](https://www.acrobat.com/).
 
 The good news though, is Reader 9.x is fast. I hadn’t ever found Reader 8 to be slow, but version 9 certainty runs noticeably faster than previous versions.
