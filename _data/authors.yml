@@ -22,7 +22,6 @@ author1:
   # Comment/uncommet to show/hide
   # Rearrange to change the order in which they appear
   social:
-    rss:             https://stealthpuppy.com/feed.xml
     twitter:         stealthpuppy
     github:          aaronparker
     # email:           <mail@domain.tld>
@@ -33,7 +32,8 @@ author1:
     # vimeo:           <username>
     # vine:            <username>
     linkedin:        aaronedwardparker
-    spotify:         user/stealthpuppy
+    #spotify:         user/stealthpuppy
+    rss:             https://stealthpuppy.com/feed.xml
     #soundcloud:      stealthpuppy
     # lastfm:          <username>
     # instagram:       <username>

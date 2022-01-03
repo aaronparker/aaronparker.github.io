@@ -25,7 +25,7 @@ title:                 Aaron Parker
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Principal Modern Workplace Architect @Insentra, on end user computing, modern device management, and enterprise mobility.
+  Principal Modern Workplace Architect @Insentra, on end user computing, modern device management, enterprise mobility, and automation.
 
 # A shorter description for the sidebar.
 tagline:               End user computing, modern device management, enterprise mobility.
@@ -51,10 +51,10 @@ author:
 menu:
   - title:             About
     url:               /about/
-  - title:             Blog
-    url:               /posts/
   - title:             Projects
     url:               /projects/
+  - title:             Blog
+    url:               /posts/
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if applicable), etc..
@@ -67,6 +67,8 @@ legal:
     url:               /disclaimer/
   - title:             VCREDIST
     url:               https://vcredist.com
+  - title:             EVERGREEN
+    url:               https://stealthpuppy.com/evergreen
 
 # This text will appear in a `<small>` tag in the footer of every page.
 copyright:             © 2022. All rights reserved.
@@ -131,11 +133,11 @@ defaults:
     values:
       sitemap:         false
 
-#  - scope:
-#      path:            licenses/
-#    values:
-#      layout:          plain
-#      sitemap:         false
+  - scope:
+      path:            downloads/
+    values:
+      layout:          plain
+      sitemap:         false
 
   # # You can use the following to enable comments on all posts.
   # - scope:
@@ -397,7 +399,6 @@ sass:
 
 # Jekyll Compose Defaults
 # ---------------------------------------------------------------------------------------
-
 jekyll_compose:
   default_front_matter:
     drafts:
