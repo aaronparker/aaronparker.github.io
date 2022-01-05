@@ -407,7 +407,11 @@ jekyll_compose:
         A short ~160 character description of your post for search engines,
         social media previews, etc.
       image:
-        path: /assets/img/sidebar-bg.jpg
+        path:    /assets/img/folder/image.jpg
+        srcset:
+          1920w: /assets/img/folder/image.jpg
+          960w:  /assets/img/folder/image@0,5x.jpg
+          480w:  /assets/img/folder/image@0,25x.jpg
     posts:
       layout: post
       description: > 
