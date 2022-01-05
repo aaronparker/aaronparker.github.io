@@ -1,8 +1,7 @@
 ---
 layout: post
 title: Hosting a Patch My PC Publisher server in Microsoft Azure
-description: Hosting Patch My PC in Microsoft Azure is a cost-effective way to provision
-  applications into Microsoft Intune.
+description: How to host the Patch My PC Publisher on a virtual machine in Microsoft Azure, including costs, to provision applications into Microsoft Intune.
 permalink: "/patchmypc-azure/"
 image:
   path: "/assets/img/surface/image.jpg"
@@ -34,11 +33,11 @@ The customer does have presence in Microsoft Azure to run virtual machines for a
 The Patch My PC Publisher is a Windows service and console application that must, of course, run on Windows. The documentation covers the [system requirements](https://docs.patchmypc.com/installation-guides/intune/requirements). The real world environment that I'll cover in this article differs from the system requirements in two ways:
 
 1. 8 GB RAM - we've been able to deploy a VM with **4 GB RAM** and run the publisher comfortably. Available memory rarely dips below 2 GB
-2. Supported Windows - the publisher runs OK on **Windows Server 2022**, even though that version is not in the list of supported operating systems
+2. Supported Windows - the publisher runs OK on **Windows Server 2022**, ~~even though that version is not in the list of supported operating systems~~ - the documentation has been updated to reflect support for Windows Server 2022
 
 ## Azure Architecture
 
-The virtual machine used to host the Patch My PC Publisher service is hosted in a dedicated resource group and a dedicated virtual network in Australia East.
+The virtual machine used to host the Patch My PC Publisher service is hosted in a dedicated resource group and a **dedicated virtual network** in Australia East.
 
 [![A view of the Azure resource group hosting the Patch My PC resources]({{site.baseurl}}/media/2022/01/patchmypc-rg.png)]({{site.baseurl}}/media/2022/01/patchmypc-rg.png)
 
@@ -65,7 +64,7 @@ The network security group is configured with the default security rules but doe
 
 ## Virtual Machine
 
-The Patch My PC Publisher service is configured to check for updates and import application packages into the Intune tenant once per day at 7pm. This means that for the majority of the time it's not actually doing much.
+The Patch My PC Publisher service is configured to check for updates and import application packages into the Intune tenant once per day at 7pm. This means that for the majority of a 24-hour period the VM is not actually doing much.
 
 Here's a look at the performance of the virtual machine hosting the Patch My PC Publisher service over the past 30 days:
 
@@ -112,7 +111,7 @@ Here's a look at the variable costs - disk operations and egress traffic:
 Azure resource cost breakdown
 {:.figcaption}
 
-This equates to **17,050,000** disk operations and about **11 GB** internet egress traffic.
+This equates to approximately **17,050,000** disk operations and about **11 GB** internet egress traffic.
 
 The previous month, when the VM was originally set up, had very similar disk operations; however, costs related to internet egress traffic ($2.22AUD) amounted to approximately 18 GB worth of traffic.
 
