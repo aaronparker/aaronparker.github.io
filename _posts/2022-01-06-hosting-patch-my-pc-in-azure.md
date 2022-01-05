@@ -33,8 +33,8 @@ The customer does have presence in Microsoft Azure to run virtual machines for a
 
 The Patch My PC Publisher is a Windows service and console application that must, of course, run on Windows. The documentation covers the [system requirements](https://docs.patchmypc.com/installation-guides/intune/requirements). The real world environment that I'll cover in this article differs from the system requirements in two ways:
 
-1. 8GB RAM - we've been able to deploy a VM with 4GB RAM and run the publisher comfortably. Available memory rarely dips below 2.5GB
-2. Supported Windows - the publisher runs OK on Windows Server 2022, even though that version is not in the list of supported operating systems
+1. 8 GB RAM - we've been able to deploy a VM with **4 GB RAM** and run the publisher comfortably. Available memory rarely dips below 2 GB
+2. Supported Windows - the publisher runs OK on **Windows Server 2022**, even though that version is not in the list of supported operating systems
 
 ## Azure Architecture
 
@@ -59,7 +59,7 @@ This resource group contains the following objects:
 
 ### Networking
 
-The Patch My PC Publisher service does not require integration with any other services that might be hosted in Azure, thus the VM is hosted in dedicated virtual network with no routing to any existing vnets. Adding additional network controls such as Azure Firewall could be used to control outbound access to [required services](https://patchmypc.com/list-of-domains-used-for-downloads-in-patch-my-pc-update-catalog). If you're already running Azure Firewall or a 3rd party solution, then peering the virtual network to an existing vnet might be warranted.
+The Patch My PC Publisher service does not require integration with any other infrastructure services, thus the VM is hosted in dedicated virtual network with no routing to any existing vnets. Adding additional network controls such as Azure Firewall could be used to control outbound access to [required services](https://patchmypc.com/list-of-domains-used-for-downloads-in-patch-my-pc-update-catalog). If you're already running Azure Firewall or a 3rd party solution, then peering the virtual network to an existing vnet might be warranted.
 
 The network security group is configured with the default security rules but does include inbound access to the network for RDP access to the VM from a fixed IP address. The Patch My PC Publisher console is a Windows-based application, thus access to the VM is required. The inbound RDP access could be replaced with [Azure Bastion](https://azure.microsoft.com/en-au/services/azure-bastion/).
 
@@ -82,9 +82,9 @@ This use-case then lends itself well to a [B-series virtual machine](https://doc
 
 This virtual machine has a few notable configuration choices:
 
-* The VM size is a B2s, sized down from the original B2ms
-* This is a v2 virtual machine with a vTPM and Secure Boot configured
-* The OS disk is sized as the default E10 (127 GB) as Standard SSD
+* The VM size is a **B2s**, sized down from the original B2ms
+* This is a **v2** virtual machine with a **vTPM** and **Secure Boot** configured
+* The OS disk is sized as the default **E10** (127 GB) as **Standard SSD**
 * Windows Update is configured to be self-managed; however, [Update Management](https://docs.microsoft.com/en-us/azure/automation/update-management/overview) could be configured to centrally manage and report on updates
 * [Azure AD authentication](https://docs.microsoft.com/en-us/azure/active-directory/devices/howto-vm-sign-in-azure-ad-windows) to the virtual machine is enabled to allow authorised administrators to sign into the VM without needing to manage local accounts
 
@@ -114,14 +114,14 @@ Azure resource cost breakdown
 
 This equates to **17,050,000** disk operations and about **11 GB** internet egress traffic.
 
-The previous month, when the VM was orginally set up, had very similar disk operations; however, costs related to internet egress traffic ($2.22AUD) amounted to approximately 18 GB worth of traffic.
+The previous month, when the VM was originally set up, had very similar disk operations; however, costs related to internet egress traffic ($2.22AUD) amounted to approximately 18 GB worth of traffic.
 
 ## Patch My PC Configuration
 
 The configuration of the Patch My PC Publisher service is relatively standard across every environment. For deployment in Microsoft Azure, you may want to consider the following:
 
-* The Patch My PC Publisher [content folder](https://patchmypc.com/customize-content-download-and-log-save-location) location is configured with a path that's on the VM's temporary storage disk. This ensures that the OS isn't affected by disk performance during a packaging operation; however, keep in mind that a B2s has only **8 GB** of temp disk. This should be sufficient for most environments as application binaries are deleted after the pacakge is uploaded into Intune. If you need more temporary storage, you'll need to step up to a B2ms
-* [Azure Backup](https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction) could be configured for the virtual machine; however, it is possible to [backup and restore the Publisher settings](https://patchmypc.com/backup-and-restore-publisher-settings). The Patch My PC Publisher is largely stateless - if you were to lose the VM, you could deploy a new VM, install the Patch My PC Publisher, import the settings backup and configure the connection to Microsoft Intune. All that is needed is a method to backup the `settings.xml` - backup to a git repository would be a simple solution allowing you to track changes over time
+* The Patch My PC Publisher [content folder](https://patchmypc.com/customize-content-download-and-log-save-location) location is configured with a path that's on the VM's temporary storage disk. This ensures that the OS isn't affected by disk performance during a packaging operation; however, keep in mind that a B2s has only **8 GB** of temp disk. This should be sufficient for most environments as application binaries are deleted after the package is uploaded into Intune. If you need more temporary storage, you'll need to step up to a B2ms
+* [Azure Backup](https://docs.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction) could be configured for the virtual machine; however, it is possible to [backup and restore the Publisher settings](https://patchmypc.com/backup-and-restore-publisher-settings). The Patch My PC Publisher is largely stateless - if you were to lose the VM, you could deploy a new VM, install the Patch My PC Publisher, import the settings backup and configure the connection to Microsoft Intune. All that is needed is a method to backup the `settings.xml` - backup to a git repository would be a simple solution allowing you to track changes
 
 ## Automating Deployment of a Patch My PC Publisher VM
 
@@ -130,15 +130,15 @@ Now that we know what the environment looks like to host the Patch My PC Publish
 The following code uses the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/) to perform the following:
 
 1. Sign-in to an Azure subscription (replace the GUID)
-2. Create a resource group in Australia East
-3. Create a network security group - note that this code will not create an inbound RDP rule for you
-4. Create a virtual network
-5. Enable the Microsoft.Storage endpoint on the default subnet in the new vnet
-6. Create a storage account for VM diagnostics and ensure that it can only be access from the vnet
+2. Create a **resource group** in Australia East
+3. Create a **network security group** - note that this code will not create an inbound RDP rule for you
+4. Create an isolated **virtual network**
+5. Enable the **Microsoft.Storage** endpoint on the default subnet in the new vnet
+6. Create a **storage account** for VM diagnostics and ensure that it can only be access from the vnet
 7. Create a new virtual machine of size `Standard_B2s` running Windows Server 2022
-8. Enable Azure AD sign-in to the virtual machine
+8. Enable **Azure AD sign-in** to the virtual machine
 9. Enable the IaaS anti-malware extension
-10. Download and install the Patch My PC Publisher, configuring it for use with Intune only
+10. **Download and install** the Patch My PC Publisher, configuring it for use with Intune only
 11. Finally, display the public IP address of the new VM
 
 Here's the code:
