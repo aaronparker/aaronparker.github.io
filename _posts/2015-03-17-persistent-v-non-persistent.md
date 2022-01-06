@@ -96,5 +96,6 @@ Here's a short breakdown of the various differences between and considerations o
 |Some form of shared storage is required to ensure the desktop is highly available|Local (physical or software defined) or shared storage can be used                                  |
 |Folder redirection and user environment management may not be required but it is recommended to reduce the reliance on a specific virtual desktop|Folder redirection and user environment management is required. This will ensure user data (Documents, Desktop etc.) is accessible from different desktops and will provide the user with the look and feel of persistence|
 |More storage is required for persistent desktops as the desktop can grow to consume the size of the vDisk|Non-persistent desktops can be destroyed and recreated as required, thus reducing the amount of capacity required|
+{:.smaller}
 
 Understanding the types of desktops available to you is only the first step in determining how your VDI environment will be delivered.

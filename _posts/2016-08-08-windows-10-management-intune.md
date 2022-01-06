@@ -77,7 +77,7 @@ Intune with devices management via the client and potentially MDM
 
 First, let's take a look at an overview of the features available for the client and for Windows 10 MDM:
 
-|Feature|Intune Client                                                                                       |Windows 10 MDM|
+|Feature|Intune Client|Windows 10 MDM|
 |-------|----------------------------------------------------------------------------------------------------|--------------|
 |Auto Enrollment via Azure AD|✗                                                                                                   |✓             |
 |Software Deployment via Single MSI|✓                                                                                                   |✓             |
@@ -92,6 +92,7 @@ First, let's take a look at an overview of the features available for the client
 |Software License Management|✓                                                                                                   |✗             |
 |Hardware Inventory|✓                                                                                                   |Limited       |
 |Conditional Access|✗                                                                                                   |✓             |
+{:.smaller}
 
 Note 3 key items here - software deployment, Windows Update management and Endpoint Protection management:
 
@@ -132,6 +133,7 @@ Understanding the configuration policies possible with either approach is import
 |Windows Firewall Settings|✓                                                                                                   |✗             |
 |Exchange ActiveSync|✗                                                                                                   |✓             |
 |Mobile Device Security|✗                                                                                                   |✓             |
+{:.smaller}
 
 It's initially surprising to see most policy configuration possible only available to Windows 10 MDM, given that Intune has been available since before Windows 8 and Windows 10. It's important to note that policy configuration for Intune is a different approach than traditional Group Policy which can be filtered based on computer and user. With MDM policies, these will apply to all enrolled machines, regardless of which user is on the device.
 
@@ -149,6 +151,7 @@ Given the difference in supported features, the remote actions possible for each
 |Refresh Inventory|✓                                                                                                   |✗             |
 |Remote Lock  |✗                                                                                                   |✓             |
 |Passcode Reset|✗                                                                                                   |✗             |
+{:.smaller}
 
 ## Conclusion
 

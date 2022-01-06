@@ -105,6 +105,7 @@ Here's a list of my most used software and equivalents across both devices:
 |Dropbox|Dropbox                                                                                             |
 |OneDrive|OneDrive (built into Windows 10. The new version can't arrive soon enough)                          |
 |Netflix - via a browser|Netflix (Windows Store app)                                                                         |
+{:.smaller}
 
 Windows 10 has certainly improved since the first public beta and I'm now running the most recent builds and generally stick to the Windows Insider fast ring. Unfortunately it wasn't until [post 10130 builds that Windows 10 was compatible](https://twitter.com/GabeAul/status/608082912249061376) with the Surface 3, so an immediate upgrade from Windows 8.1 was not feasible. Since then though, I've been running Windows 10 full time on it.
 

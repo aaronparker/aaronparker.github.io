@@ -55,6 +55,7 @@ This resource group contains the following objects:
 | pmp-aue01_OsDisk_1 | Disk | Operating system virtual disk |
 | rgpatchmypcaustraliaeast | Storage account | Storage account for VM diagnostics |
 | vnet-PatchMyPC-AustraliaEast | Virtual network | The isolated virtual network for the VM |
+{:.smaller}
 
 ### Networking
 

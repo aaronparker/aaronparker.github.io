@@ -54,6 +54,7 @@ One very useful part from that article that I will replicate here is the paramet
 |-o       |Outstanding IOs or queue depth (per thread)                                                         |In RAID, SAN or Storage Spaces setups, a single disk can be made up of multiple physical disks. You can start with twice the number of physical disks used by the volume where the file sits. Using a higher number will increase your latency, but can get you more IOPs and throughput.|
 |-L       |Capture latency information                                                                         |Always important to know the average time to complete an IO, end-to-end.                                                                                                                                                                                                                 |
 |-h       |Disable hardware and software caching                                                               |No hardware or software buffering. Buffering plus a small file size will give you performance of the memory, not the disk.                                                                                                                                                               |
+{:.smaller}
 
 For the DiskSpd tests that I ran in my environment, I ran DiskSpd against a 256Mb file for 120 seconds with various block sizes with separate tests for read and write (i.e. I ran 100% read or 100% write). Here's two sample commands for running 4K block sizes and using read or write tests:
 

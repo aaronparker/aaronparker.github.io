@@ -106,6 +106,7 @@ The table below lists they most common settings to modify based on my experience
 |Microsoft Office 2010|Miscellaneous                             |Suppress recommended settings dialog                      |Enabled                                  |
 |Microsoft OneNote 2010|OneNote Options - Other                   |Add OneNote icon to the notification area                 |Disabled / Enabled                       |
 |Microsoft Visio 2010|Visio Options - Advanced - General Options|Put all settings in Windows registry                      |Enabled                                  |
+{:.smaller}
 
 Like user settings, feature installation states will impact on the default Office experience, so you will need to know in advance which features you are deploying. _Install on First Use_ for features is no longer available, so features will either be available or not once deployed, although you can [change feature states after deployment](http://technet.microsoft.com/en-gb/library/cc179141(office.14).aspx).
 

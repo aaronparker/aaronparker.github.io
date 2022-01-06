@@ -200,6 +200,7 @@ A number of options can be set in a sequencer template that may be required for 
 |\REGISTRY\USER\%SFT_SID%\Software\Microsoft\Windows\CurrentVersion\Internet Settings|User-level proxy server and other browser settings. Ensure that proxy settings aren't cached in the package|
 |\REGISTRY\USER\%SFT_SID%\Software\Microsoft\Internet Explorer|Internet Explorer settings. Ensure Internet Explorer settings aren't cached in the package|
 |\REGISTRY\USER\%SFT_SID%\Policies|User level Group Policies. Ensure that Group Policy can deliver Office policies post deployment|
+{:.smaller}
 
 ### Using the Sequencer Template
 

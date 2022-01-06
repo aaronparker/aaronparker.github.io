@@ -36,13 +36,14 @@ So to hide the IRM features in Office 2007 Professional Plus, Enterprise and Ult
 |31308|31308|16314     |15831  |
 |16137|     |          |       |
 |31308|     |          |       |
+{:.stretch-table}
 
 These are the policy settings you'll need to enable and add the IDs to:
 
-  * User Configuration / Policies / Administrative Templates / Microsoft Office Excel 2007 / Disable Items in User Interface / Custom / Disable commands
-  * User Configuration / Policies / Administrative Templates / Microsoft Office Outlook 2007 / Disable Items in User Interface / Custom / Disable command bar and menu items
-  * User Configuration / Policies / Administrative Templates / Microsoft Office PowerPoint 2007 / Disable Items in User Interface / Custom / Disable commands
-  * User Configuration / Policies / Administrative Templates / Microsoft Office Word 2007 / Disable Items in User Interface / Custom / Disable commands
+* User Configuration / Policies / Administrative Templates / Microsoft Office Excel 2007 / Disable Items in User Interface / Custom / Disable commands
+* User Configuration / Policies / Administrative Templates / Microsoft Office Outlook 2007 / Disable Items in User Interface / Custom / Disable command bar and menu items
+* User Configuration / Policies / Administrative Templates / Microsoft Office PowerPoint 2007 / Disable Items in User Interface / Custom / Disable commands
+* User Configuration / Policies / Administrative Templates / Microsoft Office Word 2007 / Disable Items in User Interface / Custom / Disable commands
 
 Which then results in something like this:
 

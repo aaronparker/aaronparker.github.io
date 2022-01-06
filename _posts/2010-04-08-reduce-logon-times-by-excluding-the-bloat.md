@@ -46,6 +46,7 @@ First up, here’s a list of the default user folders for Windows Vista and abov
 |Saved Games|Games saves|
 |Searches|Windows Explorer custom searches; usually redirected|
 |Videos|Videos folder; usually redirected|
+{:.stretch-table}
 
 If you are using folder redirection, you may not need to add these to your exclusion list; however if folder redirection did not apply then excluding these from the user profile will prevent them from becoming managed (potentially managing very large amounts of data).
 
@@ -80,5 +81,6 @@ Next is a list of folders from various applications that either store large file
 |AppData\Roaming\Mozilla\Firefox\Crash Reports|Firefox Crash Reports|
 |AppData\Roaming\McAfee\Common Framework|Various McAfee apps including VirusScan. Logs files and others|
 |AppData\Roaming\Spotify\Gracenote|Gracenote SDK DLLs used by Spotify|
+{:.smaller}
 
 If you have any additional folders to exclude, let me know and I’ll add them to the list.

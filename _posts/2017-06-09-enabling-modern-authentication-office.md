@@ -62,6 +62,7 @@ Note that [this article lists required registry configuration](https://support.o
 |-------------------------------------------------------------------------|---------|-------------|------|
 |HKCU\SOFTWARE\Microsoft\Office\15.0\Common\Identity                      |EnableADAL|REG_DWORD    |1     |
 |HKCU\SOFTWARE\Microsoft\Office\15.0\Common\Identity                      |Version  |REG_DWORD    |1     |
+{:.smaller}
 
 ## Single Sign-on with Azure AD Connect
 

@@ -1,17 +1,9 @@
 ---
-
 title: Prepare your Office 2013 Customizations for Better Deployments and User Experience
 date: 2012-11-26T09:00:00+10:00
 author: Aaron Parker
 layout: post
-
 permalink: /office-2013-customization/
-Hide SexyBookmarks:
-  - "0"
-Hide OgTags:
-  - "0"
-dsq_thread_id:
-  - "942660998"
 categories:
   - Applications
 tags:
@@ -107,3 +99,4 @@ The status of each setting will vary dependant on the environment. Use at your o
 |Microsoft Visio 2013|Visio Options - Advanced - General Options                                                          |Put all settings in Windows registry                                 |Enabled                                  |
 |Microsoft Word 2013|Word Options - Save                                                                                 |Default file format                                                  |Enabled, Word Document (*.docx)          |
 |Microsoft Word 2013|Miscellaneous                                                                                       |Disable the Office Start Screen for Word                             |Enabled &#124; Not Configured                 |
+{:.smaller}

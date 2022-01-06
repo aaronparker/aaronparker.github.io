@@ -35,6 +35,7 @@ The table below is filtered for just those fixes, each of which is available now
 |http://support.microsoft.com/kb/981156|RemoteApp applications are displayed as black windows when you restart the applications in a Remote desktop connection in Windows Server 2008 R2|
 |http://support.microsoft.com/kb/980393|Two users accounts that are logged on to the same computer cannot use Windows Photo Viewer at the same time in Windows 7 and in Windows Server 2008 R2|
 |http://support.microsoft.com/kb/981208|Poor performance when you transfer many small files on a computer that is running Windows 7 or Windows Server 2008 R2|
+{:.smaller}
 
 If you can't wait for SP1, a list of recommended updates for RDS is available here: [Recommended Updates for the Remote Desktop Services (Terminal Services) in Windows Server 2008 and Windows Server 2008 R2](http://support.microsoft.com/kb/2312539)
 

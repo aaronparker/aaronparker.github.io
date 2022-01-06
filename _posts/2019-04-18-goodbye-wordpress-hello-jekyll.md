@@ -168,6 +168,7 @@ Below are some rough notes and pointers for configuring GitHub Pages with Jekyll
 | Caching Level | Standard |
 | Browser Cache Expiration | Respect Existing Headers |
 | Always Online | On |
+{:.smaller}
 
 ### Page Rules
 

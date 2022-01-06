@@ -70,6 +70,7 @@ This comparison is intended as a starting point for looking at both solutions. Y
 |Application compatibility testing and migration tools|AppDNA                                                                                              |AppDNA                                                               |                                         |                                                       |
 |Microsoft System Center integration|*                                                                                                   |*                                                                    |                                         |                                                       |
 |Monitoring solution|XenDesktop Director, EdgeSight                                                                      |XenDesktop Director, EdgeSight                                       |VMware vCOPs                             |VMware vCOPs                                           |
+{:.smaller}
 
 Here's a set of additional XenApp and XenDesktop features that I'll move into the table as time permits. In the meantime some of them are significant features that can't be taken for granted.
 

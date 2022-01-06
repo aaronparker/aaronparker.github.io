@@ -52,7 +52,7 @@ There are four tables in the MSI where I need to make changes:
 
 ## Component Table
 
-Go to the Component table and create a new entry. This will require a unique name (I’ve used _AppVShellValues_) and GUID - your MSI editor should be able to generate the GUID for you.
+Go to the Component table and create a new entry. This will require a unique name (I’ve used `AppVShellValues`) and GUID - your MSI editor should be able to generate the GUID for you.
 
 ![Component-Table]({{site.baseurl}}/media/2011/04/Component-Table.png)
 
@@ -60,40 +60,41 @@ Go to the Component table and create a new entry. This will require a unique nam
 
 The Registry table, which is empty by default, will require one entry per addition to the Registry. In this example I have three entries:
 
-|Registry|Root                                      |Key                                                           |Name|Value                                                                                         |Component_     |
-|--------|------------------------------------------|--------------------------------------------------------------|----|----------------------------------------------------------------------------------------------|---------------|
-|ShellValue001|-1                                        |Software\Classes\Directory\shell\Add to archive...\Command    |null|"[SGINSTALLPATH]\sfttray.exe" /launch "[ProductName]" a -ep1  -scul -r0 -iext -- . "%1"       |AppVShellValues|
-|ShellValue002|-1                                        |Software\Classes\Directory\shell\Compress and email...\Command|null|"[SGINSTALLPATH]\sfttray.exe" /launch "[ProductName]" a -ieml. -ep1  -scul -r0 -iext -- . "%1"|AppVShellValues|
-|ShellValue003|-1                                        |Software\Classes\WinRAR\shell\Extract files...\Command        |null|"[SGINSTALLPATH]\sfttray.exe" /launch "[ProductName]" x -iext -ow -ver -- "%1" "?"            |AppVShellValues|
+|Registry|Root|Key|Name|Value|Component_|
+|--------|--------|--------|--------|--------|--------|
+|ShellValue001|-1|Software\Classes\Directory\shell\Add to archive...\Command|null|`"[SGINSTALLPATH]\sfttray.exe" /launch "[ProductName]" a -ep1  -scul -r0 -iext -- . "%1"`|AppVShellValues|
+|ShellValue002|-1|Software\Classes\Directory\shell\Compress and email...\Command|null|`"[SGINSTALLPATH]\sfttray.exe" /launch "[ProductName]" a -ieml. -ep1  -scul -r0 -iext -- . "%1"`|AppVShellValues|
+|ShellValue003|-1|Software\Classes\WinRAR\shell\Extract files...\Command|null|`"[SGINSTALLPATH]\sfttray.exe" /launch "[ProductName]" x -iext -ow -ver -- "%1" "?"`|AppVShellValues|
+{:.smaller}
 
 The entries will each need to use the following items:
 
-* _Registry_: this requires a unique value
-* _Root_: the value corresponds to HKLM
-* _Key_: the key path will be dependent on the menu item; however each key will require the \Command path
-* _Name_: this is the Registry value being added, in this example we are editing the default value, so leave this as null
-* _Value_: the command that the item will run. This passes command line arguments to SFTTRAY which will launch the application and then pass the command line to WinRAR. 
-* _Component__: use the component name created in the previous step
+* `Registry`: this requires a unique value
+* `Root`: the value corresponds to HKLM
+* `Key`: the key path will be dependent on the menu item; however each key will require the \Command path
+* `Name`: this is the Registry value being added, in this example we are editing the default value, so leave this as null
+* `Value`: the command that the item will run. This passes command line arguments to `SFTTRAY` which will launch the application and then pass the command line to WinRAR. 
+* `Component_`: use the component name created in the previous step
 
 The command stored in the Value column must launch the application via the App-V Client and pass parameters to that application:
 
-* I can reference the App-V Client install folder as [SGINSTALLPATH] as this is a property in the MSI
-* I need to use the application name as listed in the App-V shortcut. In my example I can use [ProductName] because the App-V package name and the application name are the same; however this may not be the case for all packages. The application name may need to be hard coded into the MSI here. You could create a new entry in the Property table for the application name and reference it here
-* The rest of the command is what is passed to the application by SFTTRAY.EXE
+* I can reference the App-V Client install folder as `[SGINSTALLPATH]` as this is a property in the MSI
+* I need to use the application name as listed in the App-V shortcut. In my example I can use `[ProductName]` because the App-V package name and the application name are the same; however this may not be the case for all packages. The application name may need to be hard coded into the MSI here. You could create a new entry in the Property table for the application name and reference it here
+* The rest of the command is what is passed to the application by `SFTTRAY.EXE`
 
 ![Registry-Table]({{site.baseurl}}/media/2011/04/Registry-Table.png)
 
 ## FeatureComponents Table
 
-Add a new entry to the FeatureComponents table - use _VirtualApp_ in the Feature_ column and select the same component used in the previous tables in the Component_ column
+Add a new entry to the FeatureComponents table - use `VirtualApp` in the `Feature_` column and select the same component used in the previous tables in the `Component_` column
 
 ![FeatureComponents-Table]({{site.baseurl}}/media/2011/04/FeatureComponents-Table.png)
 
 ## InstallExecuteSequence Table
 
-The last step is to ensure that the Registry entries added to the MSI are installed in the correct order. As the MSI file is really just a wrapper for the SFTMIME command, the Registry entries could be overwritten when the SFTMIME command adds the package.
+The last step is to ensure that the Registry entries added to the MSI are installed in the correct order. As the MSI file is really just a wrapper for the `SFTMIME` command, the Registry entries could be overwritten when the `SFTMIME` command adds the package.
 
-To change the sequence find the _WriteRegistryValues_ entry which will have a Sequence value of _5000_. Change this value to _6580_ which will ensure that our custom Registry entries are added after the package is added and loaded but before the installer completes its finalize tasks.
+To change the sequence find the _WriteRegistryValues_ entry which will have a Sequence value of `5000`. Change this value to _6580_ which will ensure that our custom Registry entries are added after the package is added and loaded but before the installer completes its finalize tasks.
 
 ![InstallExecuteSequence-Table]({{site.baseurl}}/media/2011/04/InstallExecuteSequence-Table.png)
 

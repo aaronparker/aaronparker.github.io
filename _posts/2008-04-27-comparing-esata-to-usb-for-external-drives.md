@@ -56,3 +56,5 @@ Overall I'm pretty happy with the performance of the new disk. It more than doub
 |Access time          |16.5ms        |15.1ms        |14.6ms          |
 |Burst rate           |19.6MBps      |22.9MBps      |75.1MBps        |
 |CPU utilisation      |13.6%         |17.1%         |3.4%            |
+{:.stretch-table}
+

@@ -24,7 +24,7 @@ There are a couple of [properties](http://technet.microsoft.com/en-us/library/cc
 |---------|------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |ALLOWINDEPENDENTFILESTREAMING|TRUE / FALSE                              |Indicates whether streaming from file will be enabled regardless of how the client has been configured with the APPLICATIONSOURCEROOT parameter. If set to FALSE, the transport will not enable streaming from files even if the OSD HREF or the APPLICATIONSOURCEROOT parameter contains a file path.|
 |REQUIREAUTHORIZATIONIFCACHED|TRUE / FALSE                              |Indicates whether authorization is always required, whether or not an application is already in cache.                                                                                                                                                                                                |
-
+{:.smaller}
 
 ## Importing a Package in Stand-Alone mode
 

@@ -59,6 +59,7 @@ Folders to take note of here are the folders in the All Users path. Many older a
 |ProgramData\Favorites                                            |Users\Public\Favorites                                              |
 |ProgramData\Start Menu                                           |ProgramData\Microsoft\Windows\Start Menu                            |
 |ProgramData\Templates                                            |ProgramData\Microsoft\Windows\Templates                             |
+{:.smaller}
 
 These junction points should offer backward compatibility for older applications, however I have found that some of my installation scripts are not cleaning up shortcuts from the public desktop as expected.
 

@@ -45,6 +45,7 @@ I have had to set permissions during install to make changes to the default perm
 |PERM_UNLOADAPP|[0,1] | Default: 0|Unload applications from the cache                                                                                                                                                      |
 |PERM_UPDATEOSDFILE|[0,1] | Default: 0|Change OSD files                                                                                                                                                                        |
 |PERM_VIEWALLAPPLICATIONS|[0,1] | Default: 0|View all applications                                                                                                                                                                   |
+{:.smaller}
 
 See the Property table inside SETUP.MSI for the complete list of additional client settings that you can pass to the installer.
 

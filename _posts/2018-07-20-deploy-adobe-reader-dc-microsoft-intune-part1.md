@@ -82,6 +82,7 @@ I won't go into a detailed step-by-step on how to use the Adobe Customization Wi
 |Shortcuts / Desktop                                                 |Remove the Adobe Reader DC shortcut (no one needs that one on the desktop...)|
 |Online Services and Features / Disable product updates              |Disabled (i.e. not ticked) - ensure Adobe Reader can update post-deployment  |
 |Online Services and Features / Disable Upsell                       |Enabled                                                                      |
+{:.smaller}
 
 As I've listed in the table, it's important to keep the Adobe Updater enabled, so that once Reader is deployed via Intune, end-points can manage updates themselves. I'll cover more on updates in the next article.
 

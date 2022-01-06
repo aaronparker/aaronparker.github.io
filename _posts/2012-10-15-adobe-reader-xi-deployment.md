@@ -111,7 +111,8 @@ To create a custom transform file, open the extracted AcroRead.msi, set your req
 |       |In Adobe Reader, disable Help > Purchase Adobe Acrobat [Enabled]                                    |
 |       |Disable Help > Digital Editions [Enabled]                                                           |
 |       |Disable Product Improvement Program [Enabled]                                                       |
-|       |Disable Viewin of PDF with Ads for Adobe PDF [Enabled]                                              |
+|       |Disable View in of PDF with Ads for Adobe PDF [Enabled]                                              |
+{:.smaller}
 
 ## Deployment
 

@@ -55,6 +55,7 @@ The possible values for SyncConflictHandling and a description of each value is 
 |5    |Write an entry to the sync conflict log and perform no further attempts at resolving the conflict. The interactive user will resolve the conflict through Sync Center at a later time.|
 |6    |Do not resolve the conflict. Do not record an entry in the sync conflict log|
 |7    |Cancel the synchronization operation      |
+{:.smaller}
 
 When added to the Registry, it will look something like this:
 

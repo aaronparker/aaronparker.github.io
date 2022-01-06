@@ -67,6 +67,7 @@ These values translate to following options and values in the table below:
 |                                                                    |              |14 days             |14           |
 |                                                                    |              |30 days             |30           |
 |                                                                    |              |60 days             |60           |
+{:.smaller}
 
 Now that we know what the options are, we can decide on what to deploy and deliver them to enrolled end-points.
 
