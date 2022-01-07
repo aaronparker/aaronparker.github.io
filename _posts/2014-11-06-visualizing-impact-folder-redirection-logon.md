@@ -1,16 +1,10 @@
 ---
-
 title: 'Visualizing the Impact of Folder Redirection - Logon and Application Launch'
 date: 2014-11-06T17:20:20+10:00
 author: Aaron Parker
 layout: post
-
 permalink: /visualizing-impact-folder-redirection-logon/
-dsq_thread_id:
-  - "3196341225"
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2014/11/demos-624x338.png
+image: /media/2014/11/demos.png
 categories:
   - Microsoft
 tags:

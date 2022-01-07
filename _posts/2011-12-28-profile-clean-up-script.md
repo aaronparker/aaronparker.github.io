@@ -32,11 +32,11 @@ As a part of [an upcoming version of this configuration]({{site.baseurl}}/genera
   1. Delete all files of a specific file type in a specified folder, including sub-folders
   2. Delete all files older than X days in a specified folder, including sub-folders
 
-So for example, you could use the script to delete all .log files below %APPDATA% or delete all Cookies older than 90 days.
+So for example, you could use the script to delete all .log files below `%APPDATA%` or delete all Cookies older than 90 days.
 
 The script is extremely simple on purpose and I recommend testing thoroughly before implementing - use at your own risk; however feedback is welcome.
 
-```powershell
+```vb
 ' Profile clean up - remove unneeded or old files before logoff
 ' --------------------------------------------------------------
 ' Original scripts:

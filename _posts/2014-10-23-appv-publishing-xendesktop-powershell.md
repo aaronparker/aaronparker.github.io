@@ -1,18 +1,10 @@
 ---
-
 title: Adding App-V Publishing Information to a XenDesktop Site with PowerShell
 date: 2014-10-23T22:49:04+10:00
 author: Aaron Parker
 layout: post
-
 permalink: /appv-publishing-xendesktop-powershell/
-dsq_thread_id:
-  - "3147403871"
-pd_rating:
-  - 'a:8:{s:4:"type";s:1:"0";s:5:"votes";s:1:"1";s:6:"total1";s:1:"0";s:6:"total2";s:1:"0";s:6:"total3";s:1:"0";s:6:"total4";s:1:"0";s:6:"total5";s:1:"1";s:7:"average";s:6:"5.0000";}'
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2014/10/AppV-XenDesktop-624x369.png
+image: /media/2014/10/AppV-XenDesktop.png
 categories:
   - Automation
 tags:
