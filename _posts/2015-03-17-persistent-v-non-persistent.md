@@ -1,16 +1,10 @@
 ---
-
 title: "VDI 101: Persistent vs. Non-persistent"
 date: 2015-03-17T18:12:39+10:00
 author: Aaron Parker
 layout: post
-
 permalink: /persistent-v-non-persistent/
-dsq_thread_id:
-  - "3602034218"
-layers:
-  - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2015/03/5905589199_bdf215ec44_b-624x416.jpg
+description: Just what is the difference between persistent (or personal) and non-persistent (or pooled) virtual desktops?
 categories:
   - Microsoft
 tags:
@@ -19,6 +13,9 @@ tags:
   - SBC
   - VDI
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 A conversation about desktop virtualisation will invariably turn to the topic of persistent vs. non-persistent. Anyone new to VDI or Server Based Computing (SBC), may need persistent and non-persistent defined in context. This is a discussion that I have on a semi-regular basis, so for easy reference, I’d thought I would put down a discussion on this topic into an article.
 
 I’ll avoid talking about any one particular desktop virtualization solution and instead discuss this topic as it applies to all environments.
@@ -27,7 +24,7 @@ I’ll avoid talking about any one particular desktop virtualization solution an
 
 I think it was [Harry Labana](https://twitter.com/harrylabana) that I originally heard this statement from - “Persistency is a measure of time”. This is absolutely true - what is the time between deploying and re-deploying that desktop? How long before that PC is rebuilt because of an unrecoverable error?
 
-If Windows is re-installed or the PC retired, the user must migrate to a new instance of Windows. If Windows is running on a persistent virtual machine, how long do you let that instance of Windows run before the size of the virtual hard disk becomes unmanageable? ([Perhaps you need dedupe?](http://www.atlantiscomputing.com/))
+If Windows is re-installed or the PC retired, the user must migrate to a new instance of Windows. If Windows is running on a persistent virtual machine, how long do you let that instance of Windows run before the size of the virtual hard disk becomes unmanageable?
 
 If we take persistency to mean a Windows install is immutable we live with a false sense of security. The same would apply to any general purpose OS - manage the data and configuration as though that install will fail tomorrow. If you can run all non-persistent desktops, you’re way ahead.
 
