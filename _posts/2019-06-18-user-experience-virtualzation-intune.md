@@ -13,6 +13,8 @@ image:
 categories:
 - Microsoft
 comments: true
+related_posts:
+  - _posts/2019-06-18-user-experience-virtualzation-intune.md
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}
@@ -89,6 +91,7 @@ The UE-V configuration settings enabled by `Set-Uev.ps` have been sourced from [
 | SettingsStoragePath | %OneDriveCommercial% | Specifies the path of the location where UE-V stores the user settings |
 | SyncMethod | External | Tells UE-V that OneDrive will manage sync |
 | WaitForSyncTimeoutInMilliseconds | 2000 | This is the default wait timeout value. Test various network scenarios before increasing |
+{:.smaller}
 
 With `%OneDrive%` or `%OneDriveCommercial%` as the target UE-V Settings Storage Path, the user's OneDrive sync folder will host a `SettingsPackages` folder that contains application settings.
 
@@ -158,4 +161,4 @@ While Office 365 ProPlus and Windows 10 provides their own mechanisms for roamin
 
 The PowerShell scripts I've provided can be [used with Microsoft Intune](https://docs.microsoft.com/en-us/intune/intune-management-extension) or a 3rd party management tool. Additionally, 3rd party sync tools (e.g., ShareFile or Dropbox) should also work.
 
-In a future article I'll discuss how UE-V can be used to provide a consistent application experience across physical and virtual desktops.
+In a future article I'll discuss how UE-V can be used to provide [a consistent application experience across physical and virtual desktops](https://stealthpuppy.com/user-experience-virtualzation-profile-container/).

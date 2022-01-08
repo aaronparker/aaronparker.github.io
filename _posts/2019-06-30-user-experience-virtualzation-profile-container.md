@@ -13,6 +13,8 @@ image:
 categories:
 - Microsoft
 comments: true
+related_posts:
+  - _posts/2019-06-30-user-experience-virtualzation-profile-container.md
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}
@@ -115,4 +117,4 @@ However, there are some limitations with only roaming the user profile in a Cont
 
 By teaming Profile Container with User Experience Virtualization, we can extract application preferences from the Container to share them across Windows versions, migrate between Profile Containers and even provide a consistent user experience across virtual and physical desktops.
 
-While UE-V may not be as fully featured as competing solutions or perhaps as widely used, but the entire stack now comes from Microsoft. That means no additional software licensing cost to improve the experience of user preferences across *all* of your Windows desktops.
+While UE-V may not be as fully featured as competing solutions or perhaps as widely used, the entire stack now comes from Microsoft. That means no additional software licensing cost to improve the experience of user preferences across *all* of your Windows desktops.
