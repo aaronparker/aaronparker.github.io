@@ -13,7 +13,7 @@ categories:
 tags:
   - Java
 ---
- for release later this year and there's a couple of changes to this version that have some bearing on deployment. I can't imagine there is an enterprise out there that doesn't have to deal with Java applications.
+There's a new JRE for release later this year and there's a couple of changes to this version that have some bearing on deployment. I can't imagine there is an enterprise out there that doesn't have to deal with Java applications.
 
 The biggest change is that from this new version onwards, the point releases (read: updates, like `1.6.0_3`, `1.6.0_2` etc) will be a thing of the past. New updates will be installed on top of existing installed versions, so you will only see a single version installed to: `C:\Program Files\Java\jre6`. New releases would then be installed to `C:\Program Files\Java\jre7` etc. This is good news as we should no longer have applications that expect a specific point release of the JRE.
 

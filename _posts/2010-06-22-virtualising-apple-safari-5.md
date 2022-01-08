@@ -16,7 +16,9 @@ tags:
   - App-V
   - Safari
 ---
-![AppV-Safari]({{site.baseurl}}/media/2010/06/AppVSafari.png) Safari 5.x with Microsoft Application Virtualization; however the same basic steps should apply to any application virtualisation product.
+![AppV-Safari]({{site.baseurl}}/media/2010/06/AppVSafari.png)
+
+Safari 5.x with Microsoft Application Virtualization; however the same basic steps should apply to any application virtualisation product.
 
 Virtualising Apple Safari is a two step process:
 
@@ -33,12 +35,12 @@ The default installation of Safari will install Apple Software Update so it's im
 
 There are a few ways to extract the Safari installer, but I find this process is simplest - [Download the Safari installer](http://www.apple.com/safari/download/) and execute it, but do not step through the installation. The setup files will be extracted to your Temp folder (%TEMP%), so grab a copy from there. The following files will be extracted:
 
-  * AppleApplicationSupport.msi
-  * AppleSoftwareUpdate.msi
-  * Bonjour.msi
-  * Bonjour64.msi
-  * Safari.msi
-  * SetupAdmin.exe
+* AppleApplicationSupport.msi
+* AppleSoftwareUpdate.msi
+* Bonjour.msi
+* Bonjour64.msi
+* Safari.msi
+* SetupAdmin.exe
 
 We don't need _AppleSoftwareUpdate.msi_ because automatic updates for this package will be disabled and we also don't need SetupAdmin.exe. Using the remaining files, we can script an installation of Safari and its' dependant components. The following script listing will automate the installation of Safari for sequencing with App-V:
 

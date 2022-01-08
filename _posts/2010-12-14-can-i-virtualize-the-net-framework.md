@@ -14,9 +14,10 @@ tags:
   - AppVFAQ
   - AppV
 ---
-_This is a guest post from Nicke Källén, an_ [_App-V MVP_](https://mvp.support.microsoft.com/profile=DEDA5599-4A38-46A1-A4B0-479D4A945793) _from Sweden. He posts as [Znack](http://social.technet.microsoft.com/Profile/en-US/?user=znack&referrer=http%3a%2f%2fsocial.technet.microsoft.com%2fForums%2fen-US%2fappvclients%2fthread%2fba1a1e3b-b14e-45aa-9373-ba83601b67e9%3foutputas%3dxml&rh=tWq%2byX14GBUU1nKZoHcORYkqCJLPYn4mhXSrzDpr8kk%3d&sp=forums) on the [TechNet Forums](http://social.technet.microsoft.com/Forums/en-gb/category/appvirtualization), and you can read more articles from Nicke at his blog_ [_here_](http://www.viridisit.se/eng/blog/)_._
+This is a guest post from Nicke Källén, an [App-V MVP](https://mvp.support.microsoft.com/profile=DEDA5599-4A38-46A1-A4B0-479D4A945793) from Sweden. He posts as [Znack](http://social.technet.microsoft.com/Profile/en-US/?user=znack&referrer=http%3a%2f%2fsocial.technet.microsoft.com%2fForums%2fen-US%2fappvclients%2fthread%2fba1a1e3b-b14e-45aa-9373-ba83601b67e9%3foutputas%3dxml&rh=tWq%2byX14GBUU1nKZoHcORYkqCJLPYn4mhXSrzDpr8kk%3d&sp=forums) on the [TechNet Forums](http://social.technet.microsoft.com/Forums/en-gb/category/appvirtualization), and you can read more articles from Nicke at his blog [here](http://www.viridisit.se/eng/blog/).
+{:.note}
 
-![AppVFAQLogo1]{{site.baseurl}}/media/2010/06/AppVFAQLogo1.png) The .NET Framework and Visual C++ Redistributables are components or application dependencies that have started to be considered as operating system components and the question of whether to include the .NET Framework and/or the Visual C++ Redistributables has been revisited quite a few times by Microsoft.
+The .NET Framework and Visual C++ Redistributables are components or application dependencies that have started to be considered as operating system components and the question of whether to include the .NET Framework and/or the Visual C++ Redistributables has been revisited quite a few times by Microsoft.
 
 Since the release of App-V 4.5 it has been recommended that all versions of the .NET Framework are installed natively, however since the release of App-V 4.5 Cumulative Update 1 this was subsequently revised for Windows XP and this allowed versions earlier than the .NET Framework 3.5 Service Pack 1 to be part the package.
 

@@ -17,7 +17,9 @@ tags:
   - TechNet
   - VAMT
 ---
-![ComputerTick]({{site.baseurl}}/media/2010/05/ComputerTick.png) I’ve been avoiding activating Windows installations in my home test environment with the product keys from my TechNet subscription because I’ve been afraid of running out of keys. Fortunately that fear has been mostly unfounded. I won’t go into what I really think about product activation but if you’re interested in how to manage your TechNet or MSDN keys, I have discussed how I’m doing that here.
+![ComputerTick]({{site.baseurl}}/media/2010/05/ComputerTick.png)
+
+I’ve been avoiding activating Windows installations in my home test environment with the product keys from my TechNet subscription because I’ve been afraid of running out of keys. Fortunately that fear has been mostly unfounded. I won’t go into what I really think about product activation but if you’re interested in how to manage your TechNet or MSDN keys, I have discussed how I’m doing that here.
 
 Microsoft delivered a webcast recently, entitled [Product Activation in Development Environments](https://msevents.microsoft.com/CUI/WebCastEventDetails.aspx?culture=en-US&EventID=1032448730), which discusses Windows Product Activation for development and test environments. Although aimed at developers using an MSDN subscription (IT Pros don’t have to worry about licensing and product activation?) the concepts discussed apply to TechNet subscriptions as well.
 
@@ -39,24 +41,24 @@ TechNet and MSDN subscriptions are not entitled to KMS keys, so you will have to
 
 To enable reuse of activations in the event of redeploying Windows to a virtual machine, there are a couple of steps you should follow:
 
-  1. Assign virtual machines by operating system, i.e. virtual machines should run Windows Server or Windows client operating systems 
+  1. Assign virtual machines by operating system, i.e. virtual machines should run Windows Server or Windows client operating systems
   2. Don’t delete your virtual machines (VHDs or VMDKs are OK to delete), instead reuse them 
 
 Reinstalling the same version and edition of Windows using the same product key on a machine should not count against your total activation account.
 
 **_Update_**: OK, my information in regards to MAK keys wasn't exactly correct. The TechNet site doesn't make it exactly clear as to what happens specifically with keys provided to subscribers; however it's worth reading this page: [Frequently Asked Questions About Volume License Keys](http://www.microsoft.com/licensing/existing-customers/product-activation-faq.aspx) for lot's of good information about activation. I was able to speak with TechNet technical support to get some answers on product activation, so I'll summarise here:
 
-  * MAK keys provide a set number of activations (in the case of the newer products, TechNet subscribers get 500 activations). This number is not directly related to what you are licensed to install - it's just a limit on the number of activations per key.
-  * Activations of MAK keys will count against the total activations whether you are reinstalling on the same hardware or not. The TechNet representative alluded to a current (as at May 2010) issue with activations in virtual environments. I couldn't get more information on that but I don't believe that this impacts MAK activations anyway.
-  * _However_: if you the VAMT to proxy activate your machines, those machines will use the same activation if you reload and proxy reactivate on the same hardware. When proxy activating you will must store the proxy activation information - if you loose that, you will lose the activations that you have completed.
-  * MAK keys provided in TechNet (and MSDN subscriptions) are the same as MAK keys provided to Volume License customers. So the same thing applied to where-ever you are using MAK keys.
-  * Retail keys (like those provided for Office 2010) should reactivate on the same hardware and not count against your total number of activations.
-  * The good news is that if you run out of activations for a particular MAK key or set of MAK keys, you can contact Microsoft to increase the number of activations as long as you are using those keys for installing products for testing purposes and not production. If you need to increase your activation counts just contact your TechNet Regional Service Centre and they'll be happy to help.
+* MAK keys provide a set number of activations (in the case of the newer products, TechNet subscribers get 500 activations). This number is not directly related to what you are licensed to install - it's just a limit on the number of activations per key.
+* Activations of MAK keys will count against the total activations whether you are reinstalling on the same hardware or not. The TechNet representative alluded to a current (as at May 2010) issue with activations in virtual environments. I couldn't get more information on that but I don't believe that this impacts MAK activations anyway.
+* _However_: if you the VAMT to proxy activate your machines, those machines will use the same activation if you reload and proxy reactivate on the same hardware. When proxy activating you will must store the proxy activation information - if you loose that, you will lose the activations that you have completed.
+* MAK keys provided in TechNet (and MSDN subscriptions) are the same as MAK keys provided to Volume License customers. So the same thing applied to where-ever you are using MAK keys.
+* Retail keys (like those provided for Office 2010) should reactivate on the same hardware and not count against your total number of activations.
+* The good news is that if you run out of activations for a particular MAK key or set of MAK keys, you can contact Microsoft to increase the number of activations as long as you are using those keys for installing products for testing purposes and not production. If you need to increase your activation counts just contact your TechNet Regional Service Centre and they'll be happy to help.
 
 If you would prefer not to activate Windows, you can do the following:
 
-  * Rearm Windows every 30 days, up to 3 times, to extend the pre-activation period to 120 days with the [SLMGR –rearm](http://www.google.co.uk/search?hl=en&source=hp&q=windows+activation+rearm&btnG=Google+Search&meta=&aq=f&oq=) command.
-  * Create unattended deployments using the Microsoft Deployment Toolkit (or even SCCM) so that you can redeploy Windows to those test machines once the pre-activation period is up. If you can separate the data from the machine, then reinstalling Windows shouldn’t be that much of an issue.
+* Rearm Windows every 30 days, up to 3 times, to extend the pre-activation period to 120 days with the [SLMGR –rearm](http://www.google.co.uk/search?hl=en&source=hp&q=windows+activation+rearm&btnG=Google+Search&meta=&aq=f&oq=) command.
+* Create unattended deployments using the Microsoft Deployment Toolkit (or even SCCM) so that you can redeploy Windows to those test machines once the pre-activation period is up. If you can separate the data from the machine, then reinstalling Windows shouldn’t be that much of an issue.
 
 Knowing that I have 500 activations for most of the products that are important to me, then perhaps activation isn’t that much of an issue. I am also fairly certain that when my current subscription expires on Wednesday and my new subscription kicks in, I will get a new set of keys – far more machines than I could get running on a single hypervisor with 12 GB of RAM.
 
@@ -76,12 +78,12 @@ By importing product keys into the VAMT, you can track the number of activations
 
 For more information on VAMT and how to use it to management production activation in your environment, see the following links:
 
-  * [Volume Activation Management Tool (VAMT) 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=ec7156d2-2864-49ee-bfcb-777b898ad582)
-  * [Product Activation Using VAMT 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=6e1377c3-9348-4b89-a92d-3e4801bcd2bf)
-  * [Manage Activation Using VAMT 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=a6d4ee56-a19e-4b62-a5c8-94eb8b9a4d78)
-  * [Manage Product Keys Using VAMT 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=812e96b3-5be5-448b-881f-d8ef9f89f37c)
-  * [Activation in Disconnected Environments Using VAMT 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=0bbd06d1-f483-4e6b-9fdc-beaf28edfe4a)
-  * [Reporting Activation Information Using VAMT 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=e0fb0042-4aee-4bb2-8b93-266fa29b8575)
+* [Volume Activation Management Tool (VAMT) 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=ec7156d2-2864-49ee-bfcb-777b898ad582)
+* [Product Activation Using VAMT 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=6e1377c3-9348-4b89-a92d-3e4801bcd2bf)
+* [Manage Activation Using VAMT 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=a6d4ee56-a19e-4b62-a5c8-94eb8b9a4d78)
+* [Manage Product Keys Using VAMT 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=812e96b3-5be5-448b-881f-d8ef9f89f37c)
+* [Activation in Disconnected Environments Using VAMT 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=0bbd06d1-f483-4e6b-9fdc-beaf28edfe4a)
+* [Reporting Activation Information Using VAMT 2.0](http://www.microsoft.com/downloads/details.aspx?displaylang=en&FamilyID=e0fb0042-4aee-4bb2-8b93-266fa29b8575)
 
 It is important to note that even if your TechNet or MSDN subscription expires you _should_ still have access to your keys, and can activate those that you might have saved. It is worth obtaining all of the keys that you are entitled to and exporting them from TechNet well [before your subscription expires]({{site.baseurl}}/general/export-your-product-keys-before-your-technet-subscription-expires).
 

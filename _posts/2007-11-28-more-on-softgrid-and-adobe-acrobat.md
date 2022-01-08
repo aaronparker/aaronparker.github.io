@@ -1,13 +1,9 @@
 ---
-
 title: More on SoftGrid and Adobe Acrobat
 date: 2007-11-28T14:50:12+10:00
 author: Aaron Parker
 layout: post
-
 permalink: /more-on-softgrid-and-adobe-acrobat/
-dsq_thread_id:
-  - "195379811"
 categories:
   - Applications
 tags:
