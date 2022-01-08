@@ -8,6 +8,7 @@ permalink: /custom-default-start-menu-intune/
 image: media/2018/12/Windows10ProDefaultStartMenu1080.png
 categories:
   - Microsoft
+comments: true
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

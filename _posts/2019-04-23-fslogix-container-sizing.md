@@ -12,6 +12,7 @@ image:
 categories:
 - Microsoft
 date: 2019-04-23 20:40 +1000
+comments: true
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

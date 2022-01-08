@@ -12,6 +12,7 @@ image:
 categories:
 - General
 date: 2022-01-06 00:20 +1100
+comments: true
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

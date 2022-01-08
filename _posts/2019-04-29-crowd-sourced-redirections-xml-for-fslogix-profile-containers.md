@@ -12,6 +12,7 @@ image:
     480w:  /assets/img/crowd/image@0,25x.jpg
 categories:
 - Microsoft
+comments: true
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

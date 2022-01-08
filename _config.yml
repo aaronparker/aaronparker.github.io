@@ -89,7 +89,7 @@ theme: jekyll-theme-hydejack
 #remote_theme: hydecorp/hydejack@v9
 
 
-# Customizaton
+# Customization
 # ----------------------------------------------------------------------------------------
  
 # Sidebar image and theme color of the site.
@@ -179,7 +179,7 @@ kramdown:
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
-# disqus:                <username>
+disqus:                aaronparker
 
 # Setting a tinyletter username will enable the newsletter subscription box.
 # PRO version only!

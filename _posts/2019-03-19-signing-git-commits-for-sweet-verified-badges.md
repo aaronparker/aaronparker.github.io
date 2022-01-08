@@ -1,5 +1,5 @@
 ---
-title: Signing Git Commits for Sweet Verified Badges
+title: Signing Git Commits for those sweet, sweet Verified Badges
 description: Signing your git commits is an important step in ensuring that your projects and code can be trusted.
 date: 2019-03-19T00:02:21+10:00
 author: Aaron Parker
@@ -8,6 +8,7 @@ permalink: /signing-git-commits-for-sweet-verified-badges/
 image: media/2019/03/helloquence-51716-unsplash.jpg
 categories:
   - General
+comments: true
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

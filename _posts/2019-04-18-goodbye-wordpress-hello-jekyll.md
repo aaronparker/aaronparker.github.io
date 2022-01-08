@@ -12,6 +12,7 @@ image:
     480w:  /assets/img/hello/image@0,25x.jpg
 categories:
   - General
+comments: true
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}
