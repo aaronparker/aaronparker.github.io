@@ -1,13 +1,9 @@
 ---
-
 title: Unattended Windows Vista tech. on Windows XP/2003
 date: 2007-01-28T00:05:00+10:00
 author: Aaron Parker
 layout: post
-
 permalink: /unattended-windows-vista-tech-on-windows-xp2003/
-dsq_thread_id:
-  - "195378786"
 categories:
   - Automation
 tags:
@@ -20,13 +16,13 @@ tags:
 
 With Microsoft releasing a number of applications developed for Windows Vista also available for Windows XP, I've put together a quick 'how to' guide for performing an unattended install for each application.
 
-* Windows Internet Explorer 7 [ [Windows XP 32-bit](http://download.microsoft.com/download/3/8/8/38889dc1-848c-4bf2-8335-86c573ad86d9/IE7-WindowsXP-x86-enu.exe) | [Windows Server 2003 32-bit](http://download.microsoft.com/download/d/1/3/d1346f12-f3a0-4ac6-8f5c-2bea2a184957/IE7-WindowsServer2003-x86-enu.exe) ]
-* Windows Media Player 11 [ [Windows XP 32-bit](http://download.microsoft.com/download/0/9/5/0953e553-3bb6-44b1-8973-106f1b7e5049/wmp11-windowsxp-x86-enu.exe) ]
-* Windows Defender 1.1 [ [Windows XP / Server 2003 32-bit](http://download.microsoft.com/download/e/d/0/ed099d5e-dc60-4740-8747-1c72f053b800/WindowsDefender.msi) ]
-* Microsoft .NET Framework 3.0 [ [Windows XP / Server 2003 32-bit](http://go.microsoft.com/fwlink/?LinkId=70848) ]
-* Windows Desktop Search 3.01 [ [Windows XP 32-bit](http://www.microsoft.com/downloads/info.aspx?na=90&p=&SrcDisplayLang=en&SrcCategoryId=&SrcFamilyId=738fc2de-49b9-4e69-9227-2206277ab7c9&u=http%3a%2f%2fdownload.microsoft.com%2fdownload%2f9%2fb%2fd%2f9bd9c91f-7a74-4084-9198-49d2cfab7947%2fWindowsDesktopSearch-KB917013-V301-XP-x86-enu.exe) | [Windows Server 2003 32-bit](http://www.microsoft.com/downloads/info.aspx?na=90&p=&SrcDisplayLang=en&SrcCategoryId=&SrcFamilyId=0e0423b4-d396-4986-a1bb-793122fcc65d&u=http%3a%2f%2fdownload.microsoft.com%2fdownload%2fa%2f9%2f0%2fa904410d-f3ed-4422-97b3-f5cff7c1eecc%2fWindowsDesktopSearch-KB917013-V301-Srv2K3-x86-enu.exe) ]
-* Remote Desktop Connection 6.0 [ [Windows XP 32-bit](http://download.microsoft.com/download/7/0/9/709358f0-4d6e-4d0d-bd41-9dde83446fed/WindowsXP-KB925876-x86-ENU.exe) | [Windows Server 2003 32-bit](http://download.microsoft.com/download/8/8/7/8879aabf-6352-4ffe-a65a-11b3f70eb6eb/WindowsServer2003-KB925876-x86-ENU.exe) ]
-* Link Layer Topology Discovery (LLTD) Responder [ [Windows XP 32-bit](http://download.microsoft.com/download/0/5/f/05fc30db-e7af-4488-a3a8-23999328e4bd/WindowsXP-KB922120-v5-x86-ENU.exe) ]
+* Windows Internet Explorer 7 [Windows XP 32-bit](http://download.microsoft.com/download/3/8/8/38889dc1-848c-4bf2-8335-86c573ad86d9/IE7-WindowsXP-x86-enu.exe) | [Windows Server 2003 32-bit](http://download.microsoft.com/download/d/1/3/d1346f12-f3a0-4ac6-8f5c-2bea2a184957/IE7-WindowsServer2003-x86-enu.exe)
+* Windows Media Player 11 [Windows XP 32-bit](http://download.microsoft.com/download/0/9/5/0953e553-3bb6-44b1-8973-106f1b7e5049/wmp11-windowsxp-x86-enu.exe)
+* Windows Defender 1.1 [Windows XP / Server 2003 32-bit](http://download.microsoft.com/download/e/d/0/ed099d5e-dc60-4740-8747-1c72f053b800/WindowsDefender.msi)
+* Microsoft .NET Framework 3.0 [Windows XP / Server 2003 32-bit](http://go.microsoft.com/fwlink/?LinkId=70848)
+* Windows Desktop Search 3.01 [Windows XP 32-bit](http://www.microsoft.com/downloads/info.aspx?na=90&p=&SrcDisplayLang=en&SrcCategoryId=&SrcFamilyId=738fc2de-49b9-4e69-9227-2206277ab7c9&u=http%3a%2f%2fdownload.microsoft.com%2fdownload%2f9%2fb%2fd%2f9bd9c91f-7a74-4084-9198-49d2cfab7947%2fWindowsDesktopSearch-KB917013-V301-XP-x86-enu.exe) | [Windows Server 2003 32-bit](http://www.microsoft.com/downloads/info.aspx?na=90&p=&SrcDisplayLang=en&SrcCategoryId=&SrcFamilyId=0e0423b4-d396-4986-a1bb-793122fcc65d&u=http%3a%2f%2fdownload.microsoft.com%2fdownload%2fa%2f9%2f0%2fa904410d-f3ed-4422-97b3-f5cff7c1eecc%2fWindowsDesktopSearch-KB917013-V301-Srv2K3-x86-enu.exe)
+* Remote Desktop Connection 6.0 [Windows XP 32-bit](http://download.microsoft.com/download/7/0/9/709358f0-4d6e-4d0d-bd41-9dde83446fed/WindowsXP-KB925876-x86-ENU.exe) | [Windows Server 2003 32-bit](http://download.microsoft.com/download/8/8/7/8879aabf-6352-4ffe-a65a-11b3f70eb6eb/WindowsServer2003-KB925876-x86-ENU.exe)
+* Link Layer Topology Discovery (LLTD) Responder [Windows XP 32-bit](http://download.microsoft.com/download/0/5/f/05fc30db-e7af-4488-a3a8-23999328e4bd/WindowsXP-KB922120-v5-x86-ENU.exe)
 
 The approach I've taken here are direct command lines for installing these applications as you would do with a custom Windows CD or installing after Windows is installed on the computer. You could fit these installs to tools such as Microsoft SMS or Altiris Deployment Solution. If you deploy via Group Policy then you'll have to take a different approach.
 
@@ -53,7 +49,7 @@ START /WAIT wmp11-windowsxp-x86-enu.exe /Q:A /C:"SETUP_WM.EXE /Q:A /R:N /P:#e"
 This command line will install Windows Defender silently prevent Windows Defender from running after setup is complete.
 
 ```cmd
-START /WAIT MSIEXEC /I WindowsDefender.MSI ALLUSERS=TRUE REBOOT=SUPRESS CHECK_WGA=0 LAUNCHPROGRAM=0 LAUNCHSCAN=0 /QB- 
+START /WAIT MSIEXEC /I WindowsDefender.MSI ALLUSERS=TRUE REBOOT=SUPPRESS CHECK_WGA=0 LAUNCHPROGRAM=0 LAUNCHSCAN=0 /QB- 
 ```
 
 ## Microsoft .NET Framework 3.0
@@ -82,7 +78,7 @@ START /WAIT WindowsXP-KB925876-x86-ENU.EXE /PASSIVE /NORESTART
 
 ## Link Layer Topology Discovery (LLTD) Responder
 
-The LLTD Responder will install via CMDLINES.TXT. Here's a description of what the [LLTD Responder](http://support.microsoft.com/?kbid=922120) is from the Microsoft web site:
+The LLTD Responder will install via `CMDLINES.TXT`. Here's a description of what the [LLTD Responder](http://support.microsoft.com/?kbid=922120) is from the Microsoft web site:
 
 > The network map on a computer running Windows Vista shows a graphical view of the computers and devices on your network and how they are connected by using the LLTD protocol. The LLTD responder must be installed on a computer running Windows XP before it can be detected and appear on the network map.
 
@@ -109,7 +105,7 @@ REM Windows Media Player 11
 START /WAIT wmp11-windowsxp-x86-enu.EXE /Q:A /C:"SETUP_WM.EXE /Q:A /R:N /P:#e"
 
 REM Windows Defender 1.1  
-START /WAIT MSIEXEC /I WindowsDefender.MSI ALLUSERS=TRUE REBOOT=SUPRESS CHECK_WGA=0 LAUNCHPROGRAM=0 LAUNCHSCAN=0 /QB-
+START /WAIT MSIEXEC /I WindowsDefender.MSI ALLUSERS=TRUE REBOOT=SUPPRESS CHECK_WGA=0 LAUNCHPROGRAM=0 LAUNCHSCAN=0 /QB-
 
 REM .NET Framework 3.5  
 START /WAIT dotnetfx35.EXE /PASSIVE /NORESTART
@@ -136,7 +132,7 @@ REM Windows PowerShell 1.0
 START /WAIT WindowsXP-KB926139-x86-ENU.EXE /PASSIVE /NORESTART
 
 REM XPS Essentials Pack  
-START /WAIT MSIEXEC /I "XPSEP XP and Server 2003 32 bit.MSI" ALLUSERS=TRUE REBOOT=SUPRESS /QB
+START /WAIT MSIEXEC /I "XPSEP XP and Server 2003 32 bit.MSI" ALLUSERS=TRUE REBOOT=SUPPRESS /QB
 
 REM Peer Name Resolution Protocol (PNRP) version 2.0  
 START /WAIT WindowsXP-KB920342-x86-ENU.EXE /PASSIVE /NORESTART

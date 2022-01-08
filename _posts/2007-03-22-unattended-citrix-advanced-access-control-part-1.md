@@ -61,7 +61,7 @@ I wanted to use the [latest version](http://www.microsoft.com/downloads/details.
 MD %CD%\SQLExpress  
 START /WAIT SQLEXPR32 /X:%CD%\SQLExpress  
 START /WAIT %CD%\SQLExpress\SETUP INSTANCENAME=CitrixAAC /QB  
-START /WAIT MSIEXEC /I SQLServer2005_SSMSEE.MSI ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+START /WAIT MSIEXEC /I SQLServer2005_SSMSEE.MSI ALLUSERS=TRUE REBOOT=SUPPRESS /QB-
 ```
 
 ## Visual J# Version 2.0 Redistributable
@@ -77,10 +77,10 @@ START /WAIT VJREDIST.EXE /Q:A /C:"INSTALL.EXE /Q"
 The different components of the Access Management Console are Windows Installer files so the installation is pretty straightforward. Here I'm installing the components that come on the AAC CD as well as the Web Interface plug-in:
 
 ```cmd
-START /WAIT MSIEXEC /I ASC_Framework.msi ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I ASC_Diagnostics.msi ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I ASC_Licensing.msi ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I ASC_WebInterface ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+START /WAIT MSIEXEC /I ASC_Framework.msi ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I ASC_Diagnostics.msi ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I ASC_Licensing.msi ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I ASC_WebInterface ALLUSERS=TRUE REBOOT=SUPPRESS /QB-
 ```
 
 ## Web Interface 4.5

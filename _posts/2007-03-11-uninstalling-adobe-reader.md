@@ -33,7 +33,7 @@ This command line should work with all versions of Adobe Reader 5.x. For more in
 With Reader 6, Adobe started using Windows Installer. This means that each version of the application will have a GUID listed in the registry. For Adobe Reader 6.0.1 this is _HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{AC76BA86-7AD7-1033-7B44-A00000000001}_. For other versions of 6 you will need to check the GUID because this will have changed. This command line will perform a silent uninstall of Adobe Reader 6.0.1 only displaying a progress bar:
 
 ```
-MSIEXEC /UNINSTALL {AC76BA86-7AD7-1033-7B44-A00000000001} REBOOT=SUPRESS /QB-
+MSIEXEC /UNINSTALL {AC76BA86-7AD7-1033-7B44-A00000000001} REBOOT=SUPPRESS /QB-
 ```
 
 ## Adobe Reader 7.0.9
@@ -41,7 +41,7 @@ MSIEXEC /UNINSTALL {AC76BA86-7AD7-1033-7B44-A00000000001} REBOOT=SUPRESS /QB-
 For Adobe Reader 7 here is the uninstall registry key: _HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{AC76BA86-7AD7-1033-7B44-A70900000002}_. This is similar to version 6, but with this version you can see that the GUID contains the application version (A709). So if you have other versions of Reader 7 installed you should be able change the GUID to match the version number. Here's the uninstall command:
 
 ```
-MSIEXEC /UNINSTALL {AC76BA86-7AD7-1033-7B44-A70900000002} REBOOT=SUPRESS /QB-
+MSIEXEC /UNINSTALL {AC76BA86-7AD7-1033-7B44-A70900000002} REBOOT=SUPPRESS /QB-
 ```
 
 ## Adobe Reader 8.0
@@ -49,7 +49,7 @@ MSIEXEC /UNINSTALL {AC76BA86-7AD7-1033-7B44-A70900000002} REBOOT=SUPRESS /QB-
 If you're already looking to uninstall Reader 8, here's the uninstall key: _HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{AC76BA86-7AD7-1033-7B44-A80000000002}_. Just like version 7 the application version is included in the GUID and should be updated as we see point releases for this version.
 
 ```
-MSIEXEC /UNINSTALL {AC76BA86-7AD7-1033-7B44-A80000000002} REBOOT=SUPRESS /QB-
+MSIEXEC /UNINSTALL {AC76BA86-7AD7-1033-7B44-A80000000002} REBOOT=SUPPRESS /QB-
 ```
 
 ## Uninstall Strategies
@@ -61,7 +61,7 @@ To remove these applications you will have to look at something like SMS or Alti
 I also tested a remote uninstall using [PSEXEC from Sysinternals](http://www.microsoft.com/technet/sysinternals/ProcessesAndThreads/PsExec.mspx). Uninstalling Adobe Reader 5 in this manner just didn't get far as the ISUNINST.EXE process just sat there indefinitely, but remotely uninstalling Adobe Reader 7 was successful. This is the command line I used, nice and simple:
 
 ```
-PSEXEC \\REMOTEMACHINE MSIEXEC /UNINSTALL {AC76BA86-7AD7-1033-7B44-A70900000002} REBOOT=SUPRESS /QB-
+PSEXEC \\REMOTEMACHINE MSIEXEC /UNINSTALL {AC76BA86-7AD7-1033-7B44-A70900000002} REBOOT=SUPPRESS /QB-
 ```
 
 **Update 1**: Thanks to David, here are the commands for uninstalling Adobe Reader 3.0 and 4.0:

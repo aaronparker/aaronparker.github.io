@@ -20,27 +20,27 @@ The following table lists the old profile path and the corresponding new path un
 |Documents and Settings\All Users\Application Data                |ProgramData                                                         |
 |Documents and Settings\All Users\Start Menu                      |ProgramData\Microsoft\Windows\Start Menu                            |
 |Documents and Settings\All Users\Templates                       |ProgramData\Microsoft\Windows\Templates                             |
-|Documents and Settings\{username}\Local Settings\Application Data|Users\{username}\AppData\Local                                      |
-|N/A                                                              |Users\{username}\AppData\LocalLow                                   |
-|Documents and Settings\{username}\Application Data               |Users\{username}\AppData\Roaming                                    |
-|Documents and Settings\{username}\Cookies                        |Users\{username}\AppData\Roaming\Microsoft\Windows\Cookies          |
-|Documents and Settings\{username}\NetHood                        |Users\{username}\AppData\Roaming\Microsoft\Windows\Network Shortcuts|
-|Documents and Settings\{username}\PrintHood                      |Users\{username}\AppData\Roaming\Microsoft\Windows\Printer Shortcuts|
-|Documents and Settings\{username}\Recent                         |Users\{username}\AppData\Roaming\Microsoft\Windows\Recent           |
-|Documents and Settings\{username}\SendTo                         |Users\{username}\AppData\Roaming\Microsoft\Windows\SendTo           |
-|Documents and Settings\{username}\Start Menu                     |Users\{username}\AppData\Roaming\Microsoft\Windows\Start Menu       |
-|Documents and Settings\{username}\Templates                      |Users\{username}\AppData\Roaming\Microsoft\Windows\Templates        |
-|N/A                                                              |Users\{username}\Contacts                                           |
-|Documents and Settings\{username}\Desktop                        |Users\{username}\Desktop                                            |
-|Documents and Settings\{username}\My Documents                   |Users\{username}\Documents                                          |
-|N/A                                                              |Users\{username}\Downloads                                          |
-|Documents and Settings\{username}\Favorites                      |Users\{username}\Favorites                                          |
-|N/A                                                              |Users\{username}\Links                                              |
-|Documents and Settings\{username}\My Documents\My Music          |Users\{username}\Music                                              |
-|Documents and Settings\{username}\My Documents\My Pictures       |Users\{username}\Pictures                                           |
-|N/A                                                              |Users\{username}\Saved Games                                        |
-|N/A                                                              |Users\{username}\Searches                                           |
-|Documents and Settings\{username}\My Documents\My Videos         |Users\{username}\Videos                                             |
+|Documents and Settings\\{username}\Local Settings\Application Data|Users\\{username}\AppData\Local                                      |
+|N/A                                                              |Users\\{username}\AppData\LocalLow                                   |
+|Documents and Settings\\{username}\Application Data               |Users\\{username}\AppData\Roaming                                    |
+|Documents and Settings\\{username}\Cookies                        |Users\\{username}\AppData\Roaming\Microsoft\Windows\Cookies          |
+|Documents and Settings\\{username}\NetHood                        |Users\\{username}\AppData\Roaming\Microsoft\Windows\Network Shortcuts|
+|Documents and Settings\\{username}\PrintHood                      |Users\\{username}\AppData\Roaming\Microsoft\Windows\Printer Shortcuts|
+|Documents and Settings\\{username}\Recent                         |Users\\{username}\AppData\Roaming\Microsoft\Windows\Recent           |
+|Documents and Settings\\{username}\SendTo                         |Users\\{username}\AppData\Roaming\Microsoft\Windows\SendTo           |
+|Documents and Settings\\{username}\Start Menu                     |Users\\{username}\AppData\Roaming\Microsoft\Windows\Start Menu       |
+|Documents and Settings\\{username}\Templates                      |Users\\{username}\AppData\Roaming\Microsoft\Windows\Templates        |
+|N/A                                                              |Users\\{username}\Contacts                                           |
+|Documents and Settings\\{username}\Desktop                        |Users\\{username}\Desktop                                            |
+|Documents and Settings\\{username}\My Documents                   |Users\\{username}\Documents                                          |
+|N/A                                                              |Users\\{username}\Downloads                                          |
+|Documents and Settings\\{username}\Favorites                      |Users\\{username}\Favorites                                          |
+|N/A                                                              |Users\\{username}\Links                                              |
+|Documents and Settings\\{username}\My Documents\My Music          |Users\\{username}\Music                                              |
+|Documents and Settings\\{username}\My Documents\My Pictures       |Users\\{username}\Pictures                                           |
+|N/A                                                              |Users\\{username}\Saved Games                                        |
+|N/A                                                              |Users\\{username}\Searches                                           |
+|Documents and Settings\\{username}\My Documents\My Videos         |Users\\{username}\Videos                                             |
 |Documents and Settings\All Users                                 |Users\Public                                                        |
 |Documents and Settings\All Users\Desktop                         |Users\Public\Desktop                                                |
 |Documents and Settings\All Users\Documents                       |Users\Public\Documents                                              |
@@ -48,8 +48,9 @@ The following table lists the old profile path and the corresponding new path un
 |Documents and Settings\All Users\Documents\My Music              |Users\Public\Music                                                  |
 |Documents and Settings\All Users\Documents\My Pictures           |Users\Public\Pictures                                               |
 |Documents and Settings\All Users\Documents\My Videos             |Users\Public\Videos                                                 |
+{:.smaller}
 
-Folders to take note of here are the folders in the All Users path. Many older applications that use out of date methods to resolve system folders, will resolve paths under \ProgramData when looking for common locations. For example the common desktop may be resolved as `\ProgramData\Desktop`, however this is actually a junction point for `\Users\Public\Desktop`. A DIR /A:H listing in `\ProgramData` folder reveals the following junction points:
+Folders to take note of here are the folders in the All Users path. Many older applications that use out of date methods to resolve system folders, will resolve paths under \ProgramData when looking for common locations. For example the common desktop may be resolved as `C:\ProgramData\Desktop`, however this is actually a junction point for `\Users\Public\Desktop`. A DIR /A:H listing in `C:\ProgramData` folder reveals the following junction points:
 
 |Path                                                             |Points To                                                           |
 |-----------------------------------------------------------------|--------------------------------------------------------------------|

@@ -31,8 +31,8 @@ Adobe has details of [extracting the installation files for enterprise deploymen
 
 Simplifying Adobe Reader in an enterprise environment is something that we're all looking to do, including disabling the infamous Adobe Updater 5. Disabling features is best done by creating custom transform files. I have instructions on [creating your own transform files using the Adobe Customisation Wizard]({{site.baseurl}}/deployment/disable-adobe-updater-with-adobe-customization-wizard-8), or you can use the transforms files listed here:First up I have a basic transform that sets the following options:
 
-* Supresses the EULA
-* Supresses any reboots after installation (I've had mixed results with this)
+* SUPPRESSes the EULA
+* SUPPRESSes any reboots after installation (I've had mixed results with this)
 * Stops the _Adobe Reader 8_ icon from being added to the Desktop
 * Removes the _Help/Check for updates_ menu item and prevents the Updater from running automatically
 * Removes the _Help/Purchase Adobe Acrobat_ menu item

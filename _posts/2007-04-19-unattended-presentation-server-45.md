@@ -104,16 +104,16 @@ The last line here installs Presentation Server using the Windows Installer file
 The Presentation Server Console will be installed along with Presentation Server, however the Access Management Console (AMC) must be installed seperately. The AMC comes as a number of Windows Installer files - the console itself plus plugins. The last line here is commended out; if you aren't installing Web Interface on your Terminal Server, keep this one out.
 
 ```cmd
-START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_Framework.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_Diagnostics.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_HotfixManagement.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_KnowledgeBase.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_Legacy.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_Licensing.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_PresentationServer.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_PSReports.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_ReportCenter.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
-REM START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_WebInterface.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-  
+START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_Framework.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_Diagnostics.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_HotfixManagement.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_KnowledgeBase.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_Legacy.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_Licensing.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_PresentationServer.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_PSReports.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_ReportCenter.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
+REM START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_WebInterface.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  
 ```
 
 ## Configuring Presentation Server

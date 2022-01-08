@@ -11,10 +11,10 @@ categories:
 ---
 Yay! (it is so very geeky to get excited over a scripting tool isn't it?) Microsoft have released PowerShell 1.0 for Windows Vista today. It comes as a [Microsoft Update Standalone Package](http://support.microsoft.com/kb/928636).
 
-  * [Windows PowerShell 1.0 Installation Package for Windows Vista (KB928439)](http://www.microsoft.com/downloads/details.aspx?FamilyID=c6ef4735-c7de-46a2-997a-ea58fdfcba63&DisplayLang=en)
-  * [ [Direct link](http://download.microsoft.com/download/4/b/8/4b8e4fac-bf73-49d0-8b98-ce1f58ba26b8/Windows6.0-KB928439-x86.msu) ]
-  * [Windows PowerShell 1.0 Installation Package for Windows Vista x64 (KB928439)](http://www.microsoft.com/downloads/details.aspx?FamilyID=af37d87d-5de6-4af1-80f4-740f625cd084&DisplayLang=en)
-  * [ [Direct link](http://download.microsoft.com/download/c/d/f/cdfb3b08-f9bc-48c2-92fa-214b5e684cff/Windows6.0-KB928439-x64.msu) ]
+* [Windows PowerShell 1.0 Installation Package for Windows Vista (KB928439)](http://www.microsoft.com/downloads/details.aspx?FamilyID=c6ef4735-c7de-46a2-997a-ea58fdfcba63&DisplayLang=en)
+  * [Direct link](http://download.microsoft.com/download/4/b/8/4b8e4fac-bf73-49d0-8b98-ce1f58ba26b8/Windows6.0-KB928439-x86.msu)
+* [Windows PowerShell 1.0 Installation Package for Windows Vista x64 (KB928439)](http://www.microsoft.com/downloads/details.aspx?FamilyID=af37d87d-5de6-4af1-80f4-740f625cd084&DisplayLang=en)
+  * [Direct link](http://download.microsoft.com/download/c/d/f/cdfb3b08-f9bc-48c2-92fa-214b5e684cff/Windows6.0-KB928439-x64.msu)
 
 > #### Overview
 > 

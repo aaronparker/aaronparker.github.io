@@ -18,22 +18,22 @@ After working on sequencing Adobe Acrobat 8 Professional for the better part of 
 
 First up, this is what I've found does work from within SoftGrid:
 
-  * Adobe Acrobat Professional. This will successfully create a PDF or edit an existing PDF document.
-  * Adobe LiveCycle Designer. This will successfully create a PDF form that can be opened in Acrobat.
+* Adobe Acrobat Professional. This will successfully create a PDF or edit an existing PDF document.
+* Adobe LiveCycle Designer. This will successfully create a PDF form that can be opened in Acrobat.
 
 These applications work as expected because they don't need to talk to other applications outside of the bubble and other application don't need to make calls to these applications that SoftGrid does not support.
 
 Here's what is not working:
 
-  * Adobe Distiller does not behave within SoftGrid. This application will utilise 100% CPU when running and most times the GUI is not displayed. I have not found a cause for this behaviour but it will do this consistently.
-  * Integration between the Adobe PDF printer and Distiller. This will never work while Distiller lives inside the bubble because there is no way for the printer driver to talk to Distiller.
-  * Office plug-ins. The plug-ins that Acrobat installs into Office will not be installed unless Office is sequenced within the same package as Acrobat.
+* Adobe Distiller does not behave within SoftGrid. This application will utilise 100% CPU when running and most times the GUI is not displayed. I have not found a cause for this behaviour but it will do this consistently.
+* Integration between the Adobe PDF printer and Distiller. This will never work while Distiller lives inside the bubble because there is no way for the printer driver to talk to Distiller.
+* Office plug-ins. The plug-ins that Acrobat installs into Office will not be installed unless Office is sequenced within the same package as Acrobat.
 
 An approach to get Acrobat working with SoftGrid could work like this:
 
-  * Extract the Adobe PDF printer driver, Adobe Distiller and the licensing components from the original installation package.
-  * Install and configure the Adobe PDF printer, Adobe Distiller and the licensing components natively on the client workstation.
-  * Sequence the remaining applications and components of Adobe Acrobat.
+* Extract the Adobe PDF printer driver, Adobe Distiller and the licensing components from the original installation package.
+* Install and configure the Adobe PDF printer, Adobe Distiller and the licensing components natively on the client workstation.
+* Sequence the remaining applications and components of Adobe Acrobat.
 
 The problem with taking this approach is that you then have half the application installed natively while the other half exists within the SoftGrid bubble. When it comes time to deploy updates to Acrobat you will have to take care of both locations. You may even find that you are not able to install the updates at all because the update will expect to see the whole application.
 
@@ -41,9 +41,8 @@ Acrobat is generally a well behaved application and given the issues I've had wi
 
 (Just to see if it would run, I packaged Acrobat up in Altiris SVS and it worked without too much hassle)
 
-**Further Reading  
-** 
+### Further Reading
 
-  * [SoftGridGuru: Gotchas and Adobe Acrobat](http://www.softgridguru.com/viewtopic.php?t=2606&start=0&postdays=0&postorder=asc&highlight=)
-  * [SoftGridGuru: Adobe Acrobat Professional 7](http://www.softgridguru.com/viewtopic.php?t=1990&start=0&postdays=0&postorder=asc&highlight=)
-  * [SoftGridGuru: Adobe CS3 Apps](http://www.softgridguru.com/viewtopic.php?t=2211&start=0&postdays=0&postorder=asc&highlight=)
+* [SoftGridGuru: Gotchas and Adobe Acrobat](http://www.softgridguru.com/viewtopic.php?t=2606&start=0&postdays=0&postorder=asc&highlight=)
+* [SoftGridGuru: Adobe Acrobat Professional 7](http://www.softgridguru.com/viewtopic.php?t=1990&start=0&postdays=0&postorder=asc&highlight=)
+* [SoftGridGuru: Adobe CS3 Apps](http://www.softgridguru.com/viewtopic.php?t=2211&start=0&postdays=0&postorder=asc&highlight=)

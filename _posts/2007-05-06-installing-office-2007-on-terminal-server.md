@@ -1,19 +1,10 @@
 ---
-
 title: Installing Office 2007 on Terminal Server
 date: 2007-05-06T07:18:00+10:00
 author: Aaron Parker
 layout: post
-
 permalink: /installing-office-2007-on-terminal-server/
-thesis_description:
-  - What you should know when deploying Office 2007 to Windows Terminal Server
-aktt_notify_twitter:
-  - 'yes'
-views:
-  - "1"
-dsq_thread_id:
-  - "195378353"
+description: What you should know when deploying Office 2007 to Windows Terminal Server
 categories:
   - Automation
 tags:
@@ -22,10 +13,10 @@ tags:
 ---
 When install Office 2007 on your Terminal Servers there are a few things you'll need to be aware of. The first of which is that you will need an [Enterprise or Volume License key](http://support.microsoft.com/kb/828378), i.e. those keys that use [Volume Activation 1.0](http://www.microsoft.com/licensing/resources/vol/default.mspx) and do not require activation. There is also some configuration and installation options that I recommend you set before and after installation.
 
-There are a number of options I recommend setting by using the [Office Customisation Tool](http://technet2.microsoft.com/Office/en-us/library/8faae8a0-a12c-4f7b-839c-24a66a531bb51033.mspx) (SETUP.EXE /ADMIN). These first couple of options aren't really Terminal Server specific and are worth setting for all Office deployments. You can enforce these via Group Policy, however if you configure them with a custom installation they will be the default settings:
+There are a number of options I recommend setting by using the [Office Customisation Tool](http://technet2.microsoft.com/Office/en-us/library/8faae8a0-a12c-4f7b-839c-24a66a531bb51033.mspx) (`SETUP.EXE /ADMIN`). These first couple of options aren't really Terminal Server specific and are worth setting for all Office deployments. You can enforce these via Group Policy, however if you configure them with a custom installation they will be the default settings:
 
-* Disable the Customer Experience Improvement Program from running when users start an Office application: _Modify user settings - Microsoft Office 2007 system / Privacy / Trust Center / Enable Customer Experience Improvement Program_
-* Disable Outlook from prompting users to archive their mailboxes: _Modify user settings - Microsoft Office Outlook 2007 / Tools | Options.. / Other / AutoArchive / AutoArchive Settings_
+* Disable the Customer Experience Improvement Program from running when users start an Office application: Modify user settings - Microsoft Office 2007 system / Privacy / Trust Center / Enable Customer Experience Improvement Program
+* Disable Outlook from prompting users to archive their mailboxes: Modify user settings - Microsoft Office Outlook 2007 / Tools | Options.. / Other / AutoArchive / AutoArchive Settings
 
 ![]({{site.baseurl}}/media/2007/05/1000.14.1390.ModifyUserSettings.png)
 
@@ -52,7 +43,7 @@ CHANGE USER /INSTALL
 START /WAIT \domain.localdfsapplicationsOffice2007EnterpriseSetup.exe  
 CHANGE USER /EXECUTE  
 REG DELETE "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Terminal Server\Install\Software\Microsoft\Office" /f  
-REGSVR32 /U %SYSTEMROOT%SYSTEM32MSCTF.DLL /S
+REGSVR32 /U %SYSTEMROOT%\SYSTEM32\MSCTF.DLL /S
 ```
 
 TechNet has more detail on Office 2007 on Terminal Server:

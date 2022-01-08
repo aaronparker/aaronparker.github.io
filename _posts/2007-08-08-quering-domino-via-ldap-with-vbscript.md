@@ -11,12 +11,12 @@ categories:
 tags:
   - VBscript
 ---
-I don't really want to admit to interacting with [Lotus Notes](http://lotusnotessucks.4t.com/) but that's a part of what I'm doing currently. More specificially I'm attempting to query Domino via LDAP with a VBS script. It turns out that this is a fairly simple process and you can use the Active Directory Provider built into Windows.
+I don't really want to admit to interacting with [Lotus Notes](http://lotusnotessucks.4t.com/) but that's a part of what I'm doing currently. More specifically I'm attempting to query Domino via LDAP with a VBS script. It turns out that this is a fairly simple process and you can use the Active Directory Provider built into Windows.
 
 The TechNet script centre has a [two-part](http://http://www.microsoft.com/technet/scriptcenter/resources/tales/sg0405.mspx), [detailed article](http://www.microsoft.com/technet/scriptcenter/resources/tales/sg0505.mspx) on how to query Active Directory which is a great resource for this type of query. Here a script I've used to query Notes for user objects and return their e-mail addresses. The LDAP query includes a server name so that it will connect to a specific server. This will attempt an anonymous query so you will have to extend this script to make an authenticated query.
 
 ```vb
-Const ADS\_SCOPE\_SUBTREE = 2  
+Const ADS_SCOPE_SUBTREE = 2  
 Set objConnection = CreateObject("ADODB.Connection")  
 Set objCommand = CreateObject("ADODB.Command")  
 objConnection.Provider = "ADsDSOObject"  
@@ -45,7 +45,7 @@ You can also find information and example for querying 3rd party LDAP servers wi
 
 Here's a function that uses a different query method that will return an array of user distinguished names based on the search string passed to it. For example, if you pass the following string "OU=Sales,O=DominoOrg" it will only return users in the Sales OU below the DominoOrg organisation:
 
-```vbscript
+```vb
 'Return the distinguished name of all of the user objects below the specified organisation  
 Function fReturnDominoDNs(sDominoServer, sDominoScope)  
 Dim aArray()  

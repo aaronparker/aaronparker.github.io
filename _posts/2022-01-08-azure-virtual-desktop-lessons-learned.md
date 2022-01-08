@@ -10,6 +10,8 @@ image:
     1920w: "/assets/img/four/image.jpg"
     960w: "/assets/img/four/image@0,5x.jpg"
     480w: "/assets/img/four/image@0,25x.jpg"
+categories:
+- Microsoft
 comments: true
 date: 2022-01-08 12:44 +1100
 ---

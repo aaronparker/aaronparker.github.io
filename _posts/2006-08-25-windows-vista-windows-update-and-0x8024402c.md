@@ -20,7 +20,8 @@ After adding my laptop running Windows Vista to our AD domain, Windows Update wa
 
 After much digging and hair pulling, I found that Windows Update won't synchronise from Microsoft once Group Policy has configured Windows to use WSUS. In my case Windows Update was attempting to update from our internal WSUS server and at this point we haven't yet upgraded to WSUS Service Pack 1. To get Windows Update working again delete the following registry key and restart the Windows Update service:
 
-```HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate
 ```
 
 Of course, next time Group Policy refreshes you'll have the same issue, so modify Group Policy or update to WSUS SP1.

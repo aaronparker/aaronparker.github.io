@@ -48,7 +48,7 @@ Now that [Adobe Reader 8 has been released](http://www.adobe.com/products/acroba
 
 or  
 
-`MSIEXEC /I AcroRead.msi ALLUSERS=TRUE EULA\_ACCEPT=YES SUPPRESS\_APP_LAUNCH=YES REBOOT=REALLYSUPRESS /QB-`
+`MSIEXEC /I AcroRead.msi ALLUSERS=TRUE EULA\_ACCEPT=YES SUPPRESS\_APP_LAUNCH=YES REBOOT=REALLYSUPPRESS /QB-`
 
   * A second shortcut is now added to the Startup group - **Adobe Reader Synchronizer** as well as the **Adobe Reader Speed Launch** shortcut;
   * At launch, Adobe Reader reads the `HKLMSystemCurrentControlSetControlTerminal Server` registry key. Will it perform differently on a Terminal Server?
@@ -67,7 +67,7 @@ There are a lot of things left to find and I'll update this post as I find them.
 ## UPDATES
 
   * AppDeploy.com has been updated with an Adobe Reader 8 specific entry: <http://www.appdeploy.com/packages/detail.asp?id=915>
-  * Set this DWORD value to 1 `HKEY_LOCAL_MACHINESoftwareAdobeAcrobat Reader8.0DowntownbDontShowAtLaunch`> and this DWORD value to 0 `HKEY_LOCAL_MACHINESoftwareAdobeAcrobat Reader8.0DowntownbGoOnline`>, to supress the Beyond Adobe Reader window and feature;
+  * Set this DWORD value to 1 `HKEY_LOCAL_MACHINESoftwareAdobeAcrobat Reader8.0DowntownbDontShowAtLaunch`> and this DWORD value to 0 `HKEY_LOCAL_MACHINESoftwareAdobeAcrobat Reader8.0DowntownbGoOnline`>, to SUPPRESS the Beyond Adobe Reader window and feature;
   * The Adobe Updater is installed along with Reader to here: `%CommonProgramFiles%AdobeUpdater5`>
   * Adobe Updater has created a folder in my Documents folder: `DocumentsUpdater5AdobeUpdaterreader8rdr-en_US`>
   * So Joe... has an excellent post on installing Adobe Reader 8: [A Step-by-Step Guide to Silently Installing and Configuring Adobe Reader 8](http://sojoe.info/2006/12/09/a-step-by-step-guide-to-silently-installing-and-configuring-adobe-reader-8/)

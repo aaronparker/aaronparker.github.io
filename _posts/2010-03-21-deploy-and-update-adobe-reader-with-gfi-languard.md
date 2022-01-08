@@ -45,7 +45,7 @@ INSTALL.CMD looks like this:
 ```powershell
 @ECHO OFF
 SET SOURCE=\\dc\Common\Adobe\Reader91
-MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALLUSERS=TRUE REBOOT=SUPRESS /QB
+MSIEXEC /I %SOURCE%\AcroRead.msi TRANSFORMS=%SOURCE%\AdobeReader91Custom.mst ALLUSERS=TRUE REBOOT=SUPPRESS /QB
 ```
 
 The script will install Adobe Reader directly from the network, so the only file being copied to the remote machine is the script. Here's what the install source for Adobe Reader looks like:
@@ -71,7 +71,7 @@ I have downloaded the [Adobe Reader 9.1.1 Update](http://www.adobe.com/support/d
 ```powershell
 @ECHO OFF
 SET SOURCE=\\dc\common\Adobe\Reader911Update
-MSIEXEC /P %SOURCE%\AdbeRdrUpd911_all_incr.msp ALLUSERS=TRUE REBOOT=SUPRESS /QB
+MSIEXEC /P %SOURCE%\AdbeRdrUpd911_all_incr.msp ALLUSERS=TRUE REBOOT=SUPPRESS /QB
 ```
 
 By going through the same deployment configuration, but instead using the batch file that will install the update, I can deploy to the machines that have Reader 9.1.
