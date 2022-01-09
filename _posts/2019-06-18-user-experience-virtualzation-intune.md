@@ -10,8 +10,7 @@ image:
     1920w: /assets/img/user/image.jpg
     960w:  /assets/img/user/image@0,5x.jpg
     480w:  /assets/img/user/image@0,25x.jpg
-categories:
-- Microsoft
+categories: [Microsoft]
 comments: true
 related_posts:
   - _posts/2019-06-18-user-experience-virtualzation-intune.md

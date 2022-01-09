@@ -91,7 +91,7 @@ Below is a list of publications that I've written, co-authored or contributed to
 
 * May 2016: [Ultimate Desktop Virtualization Best Practices Guide](http://community.atlantiscomputing.com/blog/Atlantis/May-2016/Ultimate-Virtualization-Best-Practices-Guide)
 * October 2013: [User Environment Management Smackdown](http://www.brianmadden.com/opinion/Fight-Appsense-Citrix-Immidio-Microsoft-Liquidware-Labs-PolicyPak-RES-Scense-and-others)
-* July 2012: [The Definitive Guide to Delivering Microsoft Office with App-V](https://stealthpuppy.com/white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/)
+* July 2012: [The Definitive Guide to Delivering Microsoft Office with App-V]({{site.baseurl}}/white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/)
 
 ## About stealthpuppy.com
 

@@ -5,8 +5,6 @@ date: 2020-01-28 12:00 +1000
 permalink: "/igel-disrupt-nashville/"
 image:
     path: /media/2020/01/disrupt.jpeg
-categories:
-- IGEL
 ---
 I'm here in [Nashville for IGEL Disrupt](https://disrupteuc.com/nashville) over the next few days and I'm looking forward to a number of sessions. While the main event starts on the Tuesday (28th) the first day (Monday 27th) has a couple of sessions on.
 

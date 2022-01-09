@@ -10,8 +10,7 @@ image:
     1920w: /assets/img/folder/image.jpg
     960w:  /assets/img/folder/image@0,5x.jpg
     480w:  /assets/img/folder/image@0,25x.jpg
-categories:
-- Microsoft
+categories: [Microsoft]
 comments: true
 ---
 * this unordered seed list will be replaced by the toc

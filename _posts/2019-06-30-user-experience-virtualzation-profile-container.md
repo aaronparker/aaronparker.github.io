@@ -10,8 +10,7 @@ image:
     1920w: /assets/img/platform/image.jpg
     960w:  /assets/img/platform/image@0,5x.jpg
     480w:  /assets/img/platform/image@0,25x.jpg
-categories:
-- Microsoft
+categories: [Microsoft]
 comments: true
 related_posts:
   - _posts/2019-06-30-user-experience-virtualzation-profile-container.md

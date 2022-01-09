@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 image: /media/2018/08/linda-xu-366558-unsplash.jpg
 categories:
-  - Hardware
+  - General
 tags:
   - macOS
   - Thunderbolt

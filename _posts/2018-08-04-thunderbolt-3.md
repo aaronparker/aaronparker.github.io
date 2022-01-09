@@ -10,7 +10,7 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 image: /media/2018/08/angela-compagnone-371298-unsplash.jpg
 categories:
-  - Hardware
+  - General
 tags:
   - 4K
   - Caldigit

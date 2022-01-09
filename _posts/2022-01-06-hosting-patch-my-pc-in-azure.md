@@ -9,8 +9,7 @@ image:
     1920w: "/assets/img/surface/image.jpg"
     960w: "/assets/img/surface/image@0,5x.jpg"
     480w: "/assets/img/surface/image@0,25x.jpg"
-categories:
-- General
+categories: [Microsoft]
 date: 2022-01-06 00:20 +1100
 comments: true
 ---

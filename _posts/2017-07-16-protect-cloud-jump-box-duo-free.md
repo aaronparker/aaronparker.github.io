@@ -8,7 +8,6 @@ image: /media/2017/07/6512196829_862d3de0d2_b.jpg
 categories:
   - Microsoft
 tags:
-  - AWS
   - Azure
   - Duo
   - MFA

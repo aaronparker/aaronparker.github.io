@@ -141,10 +141,10 @@ defaults:
       sitemap:         false
 
   # # You can use the following to enable comments on all posts.
-  # - scope:
-  #     type:            posts
-  #   values:
-  #     comments:        true
+#  - scope:
+#      type:            posts
+#      values:
+#        comments:        true
 
   # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
   # but we want them to be `WebPage`s:
@@ -299,13 +299,13 @@ collections:
     permalink:         /:name/
     output:            true
 
-  featured_tags:
-    permalink:         /tag-:name/
-    output:            true
+#  featured_tags:
+#    permalink:         /tag-:name/
+#    output:            true
 
-  projects:
-    permalink:         /projects/:path/
-    output:            true
+#  projects:
+#    permalink:         /projects/:path/
+#    output:            true
 
 
 # File inclusion/exclusion

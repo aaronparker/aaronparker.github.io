@@ -14,7 +14,7 @@ tags:
   - XenApp
   - XenDesktop
 ---
-Now that we've covered the main questions in the survey - [which hypervisors are in use]({{site.baseurl}}/automation-survey-results-hypervisor/), the [VDI solutions are run on those hypervisors]({{site.baseurl}}/automation-survey-results-vdi-platforms/), [how gold images are built]({{site.baseurl}}/automation-survey-results-build-gold-images/), [the automation solutions used to build images](http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/) and the [solutions used to deliver images to SBC and VDI environments]({{site.baseurl}}/automation-survey-results-deliver-images/), we'll take a short look at how often gold images are updated.
+Now that we've covered the main questions in the survey - [which hypervisors are in use]({{site.baseurl}}/automation-survey-results-hypervisor/), the [VDI solutions are run on those hypervisors]({{site.baseurl}}/automation-survey-results-vdi-platforms/), [how gold images are built]({{site.baseurl}}/automation-survey-results-build-master-images/), [the automation solutions used to build images](http://xenappblog.com/2015/os-automation-survey-results-automation-solutions/) and the [solutions used to deliver images to SBC and VDI environments]({{site.baseurl}}/automation-survey-results-deliver-images/), we'll take a short look at how often gold images are updated.
 
 ## Updating Gold Images
 
