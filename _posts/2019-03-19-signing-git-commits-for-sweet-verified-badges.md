@@ -5,7 +5,7 @@ date: 2019-03-19T00:02:21+10:00
 author: Aaron Parker
 layout: post
 permalink: /signing-git-commits-for-sweet-verified-badges/
-image: media/2019/03/helloquence-51716-unsplash.jpg
+image: /media/2019/03/helloquence-51716-unsplash.jpg
 categories:
   - General
 comments: true
