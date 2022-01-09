@@ -18,8 +18,8 @@ The [Microsoft Deployment Toolkit](http://technet.microsoft.com/en-gb/solutionac
 
 Here's a couple of sample videos that demonstrate the use of PowerShell to automate OS deployments using MDT task sequences. Both of these examples are utilising [the monitoring feature in MDT 2012](http://blogs.technet.com/b/mniehaus/archive/2012/03/09/mdt-2012-new-feature-monitoring.aspx) to watch the progress of each task sequence to enable managing the complete deployment, both before and after the task sequence.
 
-* [PowerShell, MDT, Atlantis ILIO and XenDesktop deployment]({{site.baseurl}}/community/hands-off-my-gold-image-video-powershell-mdt-atlantis-ilio-and-xendesktop-deployment/)
-* [Windows 8 zero-touch deployment]({{site.baseurl}}/community/hands-off-my-gold-image-video-windows-8-zero-touch-deployment/)
+* [PowerShell, MDT, Atlantis ILIO and XenDesktop deployment]({{site.baseurl}}/hands-off-my-gold-image-video-powershell-mdt-atlantis-ilio-and-xendesktop-deployment/)
+* [Windows 8 zero-touch deployment]({{site.baseurl}}/hands-off-my-gold-image-video-windows-8-zero-touch-deployment/)
 
 ## Using PowerShell with MDT
 
