@@ -191,4 +191,4 @@ For existing enterprises moving to Windows 10, extending your on-premises identi
 
 I've not covered online or offline Universal app deployment or VDI/SBC use-cases in this article, but I will cover integration of the Windows Store for Business with device management solutions in future articles.
 
-Read the next article for details on [managing Universal apps with Microsoft Intune]({{site.baseurl}}/managing-universal-apps-intune/).
+Read the next article for details on [managing Universal apps with Microsoft Intune]({{site.baseurl}}/managing-universal-apps-microsoft-intune/).

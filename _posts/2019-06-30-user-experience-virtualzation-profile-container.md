@@ -24,7 +24,7 @@ Profile Container encapsulates the entirety of the user profile (i.e., everythin
 
 With this approach in mind, it's my view that the role of Profile Container is to do only the job of roaming the profile and do that well. Which of course it does.
 
-The result is a solution that's [simple to deploy](https://www.insentra.com.au/fslogix-profile-containers-and-office-365-containers-deployment-guide/) and manage and opens up application scenarios in a virtual desktop that were previously difficult to implement. However, just as with anything in tech, Profile Container comes with a trade-off.
+The result is a solution that's [simple to deploy](https://www.insentragroup.com/au/insights/geek-speak/modern-workplace/fslogix-profile-containers-and-office-365-containers-deployment-guide/) and manage and opens up application scenarios in a virtual desktop that were previously difficult to implement. However, just as with anything in tech, Profile Container comes with a trade-off.
 
 ## Windows Profiles Version Considerations
 

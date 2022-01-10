@@ -38,7 +38,7 @@ Azure AD-join and Autopilot enable a consistent provisioning experience for Wind
 
 ### OneDrive for Business as a Sync Mechanism
 
-Most organisations [we](https://www.insentra.com.au/) see deploying Windows 10 in a modern management context with Microsoft Intune are also Office 365 customers. This naturally makes OneDrive for Business available as a sync mechanism and it's [a solution that Microsoft even mentions in the UE-V documentation](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-sync-methods). Any enterprise file and sync solution could be used including Citrix ShareFile or Dropbox.
+Most organisations [we](https://www.insentragroup.com/) see deploying Windows 10 in a modern management context with Microsoft Intune are also Office 365 customers. This naturally makes OneDrive for Business available as a sync mechanism and it's [a solution that Microsoft even mentions in the UE-V documentation](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-sync-methods). Any enterprise file and sync solution could be used including Citrix ShareFile or Dropbox.
 
 ### Managing UE-V with Microsoft Intune
 

@@ -39,9 +39,9 @@ Visualising ConfigMgr, Intune and Windows 10 Releases
 
 ## Download the Slide
 
-A number of people have asked about using the slide, so I'm making it available here for download to use in your own presentations. Download here in PowerPoint format: [Visualising ConfigMgr, Intune and Windows 10 Releases]({{site.baseurl}}.sharefile.com/d-se48ec490d4c485f8).
+A number of people have asked about using the slide, so I'm making it available here for download to use in your own presentations. Download here in PowerPoint format: [Visualising ConfigMgr, Intune and Windows 10 Releases](https://stealthpuppy.sharefile.com/d-se48ec490d4c485f8).
 
-Note that this is covered under the same license as all content on this site - a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>. If you use the slide, please keep the attribution intact. I welcome any updates or improvements you might have.
+Note that this is covered under the same license as all content on this site - a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). If you use the slide, please keep the attribution intact. I welcome any updates or improvements you might have.
 
 ## View the Session
 

@@ -21,7 +21,7 @@ I am excited about the opportunities that managing Windows 10 devices with [Azur
 
 Consider that with Windows 10, an organisation can provision and manage Windows 10 PCs [without a custom SOE](https://technet.microsoft.com/en-us/itpro/windows/deploy/provisioning-packages) and with a fully [cloud-based authentication](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis) and management solution, requiring no infrastructure (other than networking) on-premises. This approach comes with some caveats today, of course, but PC and application lifecycle can be achieved without exhaustive architectural consideration or deployment of complex management solutions.
 
-Using Intune to manage Windows 10 PCs (and Windows 10 mobile devices) along with the [Windows Store for Business]({{site.baseurl}}/setup-windows-store-for-business/) will enable you to manage Universal apps on these devices. With Intune, you can deploy and remove apps by targeting users or devices.
+Using Intune to manage Windows 10 PCs (and Windows 10 mobile devices) along with the [Windows Store for Business]({{site.baseurl}}/setting-up-windows-store-for-business/) will enable you to manage Universal apps on these devices. With Intune, you can deploy and remove apps by targeting users or devices.
 
 ## Requirements for Microsoft Intune
 
@@ -29,7 +29,7 @@ Deploying and configuring Microsoft Intune requires two things - Azure AD and li
 
 ### Azure Active Directory
 
-Like the [Windows Store for Business]({{site.baseurl}}/setup-windows-store-for-business/) (WSfB), Intune relies on Azure Active Directory for user identities. As with my previous article, I recommend setting up an Azure tenant as your first step before integrating any additional solutions. That process may, or may not, include synchronising identities with AD Connect. This approach to application deployment and device management can be achieved with cloud-based identities only.
+Like the [Windows Store for Business]({{site.baseurl}}/setting-up-windows-store-for-business/) (WSfB), Intune relies on Azure Active Directory for user identities. As with my previous article, I recommend setting up an Azure tenant as your first step before integrating any additional solutions. That process may, or may not, include synchronising identities with AD Connect. This approach to application deployment and device management can be achieved with cloud-based identities only.
 
 ### Licensing Microsoft Intune
 
@@ -37,7 +37,7 @@ While Intune can be licensed on its own, the ideal way of licensing Intune is as
 
 For this solution, we're interested in:
 
-* **Azure Active Directory Premium** - this enables a[utomatic MDM enrollment](https://blogs.technet.microsoft.com/enterprisemobility/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/) when a device is provisioned and connected to Azure AD. Additionally Azure AD Premium provides branding customisation which improves the sign on user experience; multi-factor authentication onto devices as well as cloud applications and conditional access to protect resources such as Exchange and SharePoint Online.
+* **Azure Active Directory Premium** - this enables [automatic MDM enrollment](https://blogs.technet.microsoft.com/enterprisemobility/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/) when a device is provisioned and connected to Azure AD. Additionally Azure AD Premium provides branding customisation which improves the sign on user experience; multi-factor authentication onto devices as well as cloud applications and conditional access to protect resources such as Exchange and SharePoint Online.
 * **Microsoft Intune** - Intune is included in the EMS license which is the primary reason for deploying modern management.
 
 Additional components that make sense in a cloud-based management approach include [Azure Information Protection](https://www.microsoft.com/en-au/cloud-platform/azure-information-protection) and [Microsoft Advanced Threat Analytics](https://www.microsoft.com/en-au/cloud-platform/advanced-threat-analytics). These are entire topics on their own, so I won't be covering those in the context of this article.
@@ -50,7 +50,7 @@ Once you have Azure AD and Intune provisioned, we can connect Intune to the Wind
 
 ## Connect Intune to the Windows Store for Business
 
-To start managing Universal apps with Intune, we need to first [associate our Intune deployment](https://docs.microsoft.com/en-us/intune/deploy-use/manage-apps-you-purchased-from-the-windows-store-for-business-with-microsoft-intune) with [the Windows Store for Business that we set up previously]({{site.baseurl}}/setup-windows-store-for-business/). This is a 3-step process:
+To start managing Universal apps with Intune, we need to first [associate our Intune deployment](https://docs.microsoft.com/en-us/intune/deploy-use/manage-apps-you-purchased-from-the-windows-store-for-business-with-microsoft-intune) with [the Windows Store for Business that we set up previously]({{site.baseurl}}/setting-up-windows-store-for-business/). This is a 3-step process:
 
 * Ensure that you sign into the Business Store using the same tenant account you use to sign into Intune
 * In the Business Store, choose **Settings** > **Management tools**
