@@ -32,7 +32,7 @@ Microsoft's approach to building AVD has been to build a virtual desktop solutio
 
 Being successful requires planning your AVD deployment by building upon an [Azure adoption framework](https://azure.microsoft.com/en-us/cloud-adoption-framework/). There are many Azure components that should be planned and deployed correctly, including identity, regions, networks, management, and security frameworks that are key to success when deploying any workload into Azure.
 
-A Azure Virtual Desktop deployment will rely primarily on three things — choosing the right region for your desktops, configuring your virtual network virtual networks for access to applications and data, and storage to ensure good performance. All of these things you will have had to consider when deploying services into Azure before starting on AVD.
+An Azure Virtual Desktop deployment will rely primarily on three things — choosing the right region for your desktops, configuring your virtual networks for access to applications and data, and storage to ensure good performance. All of these things you will have had to consider when deploying services into Azure before starting on AVD.
 
 ## Ensure AVD Service URLs Aren't Blocked
 
