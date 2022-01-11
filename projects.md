@@ -24,6 +24,12 @@ featured:        true
 
 [Windows Customised Defaults](https://stealthpuppy.com/image-customise/) is a solution for customising a Windows image to change the settings from the Microsoft defaults to something more enterprise ready. The solution will update the Windows default profile, including configuring the default Start menu, and configure Windows feature states.
 
+## Windows 365
+
+![w365 icon](/assets/projects/w365.png)
+
+A script to build a quick and dirty image for [Windows 365](https://stealthpuppy.com/w365/)
+
 ## FSLogix
 
 [FSLogix](https://stealthpuppy.com/fslogix/) - documentation for various PowerShell scripts and resources that I've built for managing FSLogix Container and App Masking.
