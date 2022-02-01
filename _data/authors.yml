@@ -19,7 +19,7 @@ author1:
       2x:            /assets/img/headshot.jpg
 
   # Social media icons in sidebar
-  # Comment/uncommet to show/hide
+  # Comment/uncomment to show/hide
   # Rearrange to change the order in which they appear
   social:
     twitter:         stealthpuppy
@@ -32,6 +32,7 @@ author1:
     # vimeo:           <username>
     # vine:            <username>
     linkedin:        aaronedwardparker
+    kofi:            stealthpuppy
     #spotify:         user/stealthpuppy
     rss:             https://stealthpuppy.com/feed.xml
     #soundcloud:      stealthpuppy
@@ -43,7 +44,7 @@ author1:
     # behance:         <username>
     # deviantart:      <username>
     # ello:            <username>
-    # twitch:          <username>
+    # twitch:          stealthpuppy
     # steam:           <number>
     # reddit:          <username>
     # tumblr:          <username>
@@ -60,5 +61,5 @@ author1:
     # stumbleupon:     <username>
     # paypal:          <username>
     # download:        <url>
-    # keybase          <username>
+    # keybase:          <username>
 

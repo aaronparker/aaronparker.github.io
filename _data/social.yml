@@ -206,3 +206,7 @@ keybase:
 download:
   name: Download
   icon: icon-box-add
+kofi:
+  name: Ko-fi
+  icon: icon-ko-fi
+  prepend: "https://ko-fi.com/"

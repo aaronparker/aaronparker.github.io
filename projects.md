@@ -6,6 +6,10 @@ description: A list of projects and additional resources.
 #show_collection: projects
 featured:        true
 ---
+If you've found any of the projects below useful and wish to show support, I'm partial to a good coffee:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T5A9D44)
+
 ## Evergreen
 
 ![evergreen icon](/assets/projects/evergreen.png)
