@@ -41,7 +41,6 @@ Here's a few use cases that can be solved with custom solution to dynamic device
 * Create a collection of devices that don't have a TPM enabled or only have a TPM v1.2
 * Create a collection of Lenovo PCs that have a specific BIOS version
 
-
 ## Dynamic Device Collections without ConfigMgr
 
 Until Microsoft expands on device hardware inventory capabilities in Intune and exposes additional hardware properties to Filters, we need to build our own. Here's how to build a cloud-only solution for advanced dynamic device collections using [Proactive Remediations](https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations), [Azure Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial), and [Azure Logic Apps](https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview) providing advanced targeting capabilities for policies and apps in Microsoft Intune, all without ConfigMgr.
@@ -51,7 +50,7 @@ This solution is currently a Proof of Concept. There are specific considerations
 
 ### Components
 
-The approach to building a dynamice device collection for Microsoft Intune builds on several components:
+The approach to building a dynamic device collection for Microsoft Intune builds on several components:
 
 * **Microsoft Intune Endpoint Analytics Proactive Remediations** - collects hardware and software inventory from manage devices
 * **Azure Log Analytics** - stores hardware and software inventory data
@@ -71,7 +70,7 @@ An Azure Workbook displaying the hardware inventory report
 
 With this inventory solution sending data to Log Analytics, we have a source data set to query for our dynamic device collections.
 
-The smallest window that a Protactive Remediation script can be run is one per hour. Thus we are only going to see hardware changes reflected in the inventory data within the previous 1-2 hours, depending on hardware changes and when the script executes on the device.
+The smallest window that a Protective Remediation script can be run is one per hour. Thus we are only going to see hardware changes reflected in the inventory data within the previous 1-2 hours, depending on hardware changes and when the script executes on the device.
 {:.note title="Note"}
 
 ### KQL Queries
@@ -122,8 +121,8 @@ We need the `Object Id` property from the target group to reference in the Logic
 
 Let's build the Azure Logic App that will manage the membership of the Azure AD group. Here's the basic flow of the Logic App:
 
-1. **Run the Logic App on a schedule**. Remember that the Proactive Remeditation script can run at most once per hour, thus the Logic Should not need to run any less than once per hour as well. The Logic App makes calls to the Microsoft Graph API, so we need to consider how scale could affect performance
-2. **Retrieve exsiting group members from the target Azure AD group**
+1. **Run the Logic App on a schedule**. Remember that the Proactive Remediation script can run at most once per hour, thus the Logic Should not need to run any less than once per hour as well. The Logic App makes calls to the Microsoft Graph API, so we need to consider how scale could affect performance
+2. **Retrieve existing group members from the target Azure AD group**
 3. **Remove the existing members from the Azure AD group**. Validation before moving group members would be prudent
 4. **Query Log Analytics for matching devices**, returning the list of device display names
 5. **Query the Microsoft Graph for the `Object Id` property for each device**. This currently makes a call to the API per device, thus performance may degrade as the number of devices increases. This could be resolved by updating the hardware inventory collection script to return the `Object Id` property and store that in Log Analytics
