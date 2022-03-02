@@ -1,11 +1,10 @@
 ---
 layout: post
 title: Automate Microsoft Intune As-Built Documentation on GitHub
-description: Using GitHub Workflows to automate the backup of Microsoft Intune and
-  generate an as-built document.
+description: Using GitHub Workflows to automate the backup of Microsoft Intune and generate an as-built document.
 permalink: "/automate-intune-documentation-github/"
 categories:
-- Microsoft
+  - Microsoft
 image:
   path: "/assets/img/documents/image.jpg"
   srcset:
@@ -14,6 +13,7 @@ image:
     480w: "/assets/img/documents/image@0,25x.jpg"
 comments: true
 related_posts:
+- _posts/2022-03-02-automate-intune-documentation-azure.md
 - _posts/2021-10-01-onedrive-knownfoldermove-loganalytics.md
 - _posts/2022-01-06-hosting-patch-my-pc-in-azure.md
 date: 2022-03-02 14:17 +1100
@@ -27,7 +27,7 @@ If change is constant, what value is there in manually creating an as-built docu
 
 What is more valuable to an IT operational team, is to track changes made to the Intune tenant allowing the administrator to make a before and after comparison when troubleshooting, report on configuration changes, and perhaps even looking for who to blame when something goes wrong. OK, don't do the last one - the blame game is not healthy.
 
-How should you generate documentation? What is a better approach?
+How should you generate documentation and track changes? What is a better approach?
 {:.lead}
 
 ## Backup your Intune Configurations
@@ -89,10 +89,10 @@ Using a [GitHub Workflow](https://docs.github.com/en/actions/using-workflows), w
 It's vitally important that the repository is set to _private_, because the Intune backup will contain sensitive information. Even if the configuration backup does not include passwords, it does provide a detailed view of how you secure your devices.
 {:.note title="Important"}
 
-Using a GitHub repository with the workflows covered below, the backup and as-built will be generated, and we can we can compare changes across commits to track changes to the tenant:
+Using a GitHub repository with the workflows covered below, the backup and as-built will be generated, and we can we can compare commits to track changes to the tenant:
 
 <video controls>
-  <source src="/media/2022/02/CompareReleases.mp4" type="video/webm">
+  <source src="/media/2022/02/CompareReleases.mp4" type="video/mp4">
 </video>
 
 Compare configurations across tags and releases in a GitHub repository.
@@ -100,7 +100,7 @@ Compare configurations across tags and releases in a GitHub repository.
 
 For GitHub, I've created two workflows - the first workflow performs the following steps:
 
-1. Backup the Intune configuration using a schedule
+1. Backup the Intune configuration on a schedule
 2. Generate an as-built document in markdown and covert the document to PDF format
 3. Tag the updated configuration, enabling us to create a release
 
@@ -157,20 +157,20 @@ Here's the code listing for each workflow:
 
 [This workflow](https://gist.github.com/aaronparker/f69f82223271f63eb6c0d1d3850aa7ed) performs the following tasks:
 
-* Backup stage
+* **Backup stage**
   * Check out the repository
   * Import the GPG key and configure git commit credentials
   * Install IntuneCD
   * Backup the Intune configuration
   * Commit changes to the repository
-* Document stage
+* **Document stage**
   * Check out the repository
   * Import the GPG key and configure git commit credentials
   * Install IntuneCD
   * Create the as-built in markdown format
   * Convert the markdown to PDF format
   * Commit changes to the repository
-* Tag stage
+* **Tag stage**
   * Check out the repository
   * Import the GPG key and configure git commit credentials
   * Tag the repository
@@ -181,7 +181,7 @@ Here's the code listing for each workflow:
 
 [This workflow](https://gist.github.com/aaronparker/b5383bfb5a1fec9af372596c4051674b) performs the following tasks:
 
-* Release stage
+* **Release stage**
   * Check out the repository
   * Import the GPG key and configure git commit credentials
   * Create a release using the as-built document
