@@ -155,7 +155,7 @@ Here's the code listing for each workflow:
 
 #### Backup, Document, Tag
 
-This workflow performs the following tasks:
+[This workflow](https://gist.github.com/aaronparker/f69f82223271f63eb6c0d1d3850aa7ed) performs the following tasks:
 
 * Backup stage
   * Check out the repository
@@ -179,7 +179,7 @@ This workflow performs the following tasks:
 
 #### Release
 
-This workflow performs the following tasks:
+[This workflow](https://gist.github.com/aaronparker/b5383bfb5a1fec9af372596c4051674b) performs the following tasks:
 
 * Release stage
   * Check out the repository
