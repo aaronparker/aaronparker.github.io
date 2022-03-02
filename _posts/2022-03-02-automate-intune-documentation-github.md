@@ -66,7 +66,7 @@ md-to-pdf ./as-built.md --pdf-options '{ "format": "A4", "margin": "10mm", "prin
 
 These commands can be run locally on any system that supports Python and Node.js; however, a better approach would be to automate the entire process via a pipeline that performs the backup and generation of the documentation on a schedule.
 
-## Pipeline Hosting Options
+## Code and Pipeline Hosting Options
 
 Hosting the exported configurations in a [Git](https://git-scm.com/) repository provides an ideal solution for change tracking and portability. IntuneCD outputs Intune configurations in JSON or YAML, thus the output suits management in a version control system. Configuration output files are plain text, so comparing changes across Git version history is easy.
 
@@ -198,4 +198,4 @@ In the next article, I will cover the same process using Azure DevOps to host th
 
 ### GitHub Repository Template
 
-Rather than having to build all of this from scratch, I have created a template repository on GitHub that you can clone to start building in your own environment. Hop over to GitHub to get started: [intune-backup-template](https://github.com/aaronparker/intune-backup-template).
+Rather than having to build all of this from scratch, I have created a template repository on GitHub that you can clone or fork to start building in your own environment. Hop over to GitHub to get started: [intune-backup-template](https://github.com/aaronparker/intune-backup-template).
