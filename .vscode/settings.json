@@ -4,6 +4,7 @@
         "aaronparker",
         "APAC",
         "autoenrollment",
+        "DATEF",
         "helaili",
         "HKEY",
         "HSTS",
@@ -13,12 +14,15 @@
         "kusto",
         "linkedin",
         "loganalytics",
+        "mkdir",
         "odata",
         "onedrive",
         "PNGOUT",
         "Reciever",
         "Remediations",
         "seperate",
-        "srcset"
+        "srcset",
+        "startbackup",
+        "startdocumentation"
     ]
 }

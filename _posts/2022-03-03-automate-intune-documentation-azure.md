@@ -185,34 +185,55 @@ jobs:
       persistCredentials: true
 
     # Set git global settings
-    - bash: |
-        git config --global user.name $(USER_NAME)
-        git config --global user.email $(USER_EMAIL)
+    - task: Bash@3
       displayName: Configure Git
+      inputs:
+        targetType: 'inline'
+        script: |
+          git config --global user.name $(USER_NAME)
+          git config --global user.email $(USER_EMAIL)
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
 
     # Install IntuneCD
     # https://github.com/almenscorner/IntuneCD
-    - bash: |
-        pip3 install IntuneCD
+    - task: Bash@3
       displayName: Install IntuneCD
+      inputs:
+        targetType: 'inline'
+        script: |
+          pip3 install IntuneCD
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
 
     # Backup the latest configuration, using the current directory
-    - bash: |
-        IntuneCD-startbackup -m 1 -o yaml -p "$(REPO_DIR)/prod-backup"
+    - task: Bash@3
+      displayName: IntuneCD backup
+      inputs:
+        targetType: 'inline'
+        script: |
+          mkdir -p "$(REPO_DIR)/prod-backup"
+          IntuneCD-startbackup -m 1 -o yaml -p "$(REPO_DIR)/prod-backup"
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
       env:
         REPO_DIR: $(REPO_DIR)
         TENANT_NAME: $(TENANT_NAME)
         CLIENT_ID: $(CLIENT_ID)
         CLIENT_SECRET: $(CLIENT_SECRET)
-      displayName: IntuneCD backup
 
     # Commit changes and push to repo
-    - bash: |
+    - task: Bash@3
+      displayName: Commit changes
+      inputs:
+        targetType: 'inline'
+        script: |
           DATEF=`date +%Y.%m.%d`
           git add --all
           git commit -m "Intune backup $DATEF"
           git push origin HEAD:main
-      displayName: Commit changes
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: false
 
   - job: document
     displayName: document
@@ -225,46 +246,62 @@ jobs:
       persistCredentials: true
 
     # Set git global settings
-    - bash: |
-        git config --global user.name $(USER_NAME)
-        git config --global user.email $(USER_EMAIL)
+    - task: Bash@3
       displayName: Configure Git
+      inputs:
+        targetType: 'inline'
+        script: |
+          git config --global user.name $(USER_NAME)
+          git config --global user.email $(USER_EMAIL)
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
 
-    - bash: |
-        git pull origin main
-      displayName: Pull
+    - task: Bash@3
+      displayName: Pull origin
+      inputs:
+        targetType: 'inline'
+        script: |
+          git pull origin main
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: false
 
     # Install IntuneCD
     # https://github.com/almenscorner/IntuneCD
-    - bash: |
-        pip3 install IntuneCD
+    - task: Bash@3
       displayName: Install IntuneCD
+      inputs:
+        targetType: 'inline'
+        script: |
+          pip3 install IntuneCD
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
 
     # Create markdown documentation
-    - bash: |
-        IntuneCD-startdocumentation -p "$(REPO_DIR)/prod-backup" -o "$(REPO_DIR)/prod-as-built.md" -t $TENANT_NAME -i 'Generated documentation'
+    # Install IntuneCD
+    # https://github.com/almenscorner/IntuneCD
+    - task: Bash@3
+      displayName: Generate markdown document
+      inputs:
+        targetType: 'inline'
+        script: |
+          IntuneCD-startdocumentation -p "$(REPO_DIR)/prod-backup" -o "$(REPO_DIR)/prod-as-built.md" -t $TENANT_NAME -i 'Generated documentation'
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
       env:
         TENANT_NAME: $(TENANT_NAME)
-      displayName: Generate markdown document
-
-    # Install md-to-pdf
-    # https://github.com/simonhaenisch/md-to-pdf
-    - bash: |
-        npm i -g md-to-pdf
-      displayName: Install md-to-pdf
-
-    # Convert markdown document to PDF
-    - bash: |
-        cat "$(REPO_DIR)/prod-as-built.md" | md-to-pdf --pdf-options '{ "format": "A4", "margin": "10mm", "printBackground": false }' > "$(REPO_DIR)/prod-as-built.pdf"
-      displayName: Convert markdown to PDF
 
     # Commit changes and push to repo
-    - bash: |
+    - task: Bash@3
+      displayName: Commit changes
+      inputs:
+        targetType: 'inline'
+        script: |
           DATEF=`date +%Y.%m.%d`
           git add --all
           git commit -m "Intune documentation $DATEF"
           git push origin HEAD:main
-      displayName: Commit changes
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: false
 
   - job: tag
     displayName: tag
@@ -277,21 +314,36 @@ jobs:
       persistCredentials: true
 
     # Set git global settings
-    - bash: |
-        git config --global user.name $(USER_NAME)
-        git config --global user.email $(USER_EMAIL)
+    - task: Bash@3
       displayName: Configure Git
+      inputs:
+        targetType: 'inline'
+        script: |
+          git config --global user.name $(USER_NAME)
+          git config --global user.email $(USER_EMAIL)
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
 
-    - bash: |
-        git pull origin main
-      displayName: Pull
+    - task: Bash@3
+      displayName: Pull origin
+      inputs:
+        targetType: 'inline'
+        script: |
+          git pull origin main
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: false
 
     # Commit changes and push to repo
-    - bash: |
+    - task: Bash@3
+      displayName: Git tag
+      inputs:
+        targetType: 'inline'
+        script: |
           DATEF=`date +%Y.%m.%d`
           git tag -a "v$DATEF" -m "Intune documentation $DATEF"
           git push origin "v$DATEF"
-      displayName: Git tag
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: false
 
   - job: publish
     displayName: publish
@@ -304,14 +356,45 @@ jobs:
       persistCredentials: true
 
     # Set git global settings
-    - bash: |
-        git config --global user.name $(USER_NAME)
-        git config --global user.email $(USER_EMAIL)
+    - task: Bash@3
       displayName: Configure Git
+      inputs:
+        targetType: 'inline'
+        script: |
+          git config --global user.name $(USER_NAME)
+          git config --global user.email $(USER_EMAIL)
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
 
-    - bash: |
-        git pull origin main
-      displayName: Pull
+    - task: Bash@3
+      displayName: Pull origin
+      inputs:
+        targetType: 'inline'
+        script: |
+          git pull origin main
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: false
+
+    # Install md-to-pdf
+    # https://github.com/simonhaenisch/md-to-pdf
+    - task: Bash@3
+      displayName: Install md-to-pdf
+      inputs:
+        targetType: 'inline'
+        script: |
+          npm i -g md-to-pdf
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
+
+    # Convert markdown document to PDF
+    - task: Bash@3
+      displayName: Convert markdown to PDF
+      inputs:
+        targetType: 'inline'
+        script: |
+          cat "$(REPO_DIR)/prod-as-built.md" | md-to-pdf --pdf-options '{ "format": "A4", "margin": "10mm", "printBackground": false }' > "$(REPO_DIR)/prod-as-built.pdf"
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
 
     - task: PublishBuildArtifacts@1
       inputs:
