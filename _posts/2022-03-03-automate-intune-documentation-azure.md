@@ -206,6 +206,15 @@ jobs:
         workingDirectory: '$(Build.SourcesDirectory)'
         failOnStderr: true
 
+    - task: Bash@3
+      displayName: Remove prod-backup directory
+      inputs:
+        targetType: 'inline'
+        script: |
+          rm -f -r -v "$(REPO_DIR)/prod-backup"
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: false
+
     # Backup the latest configuration, using the current directory
     - task: Bash@3
       displayName: IntuneCD backup
