@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Use GitHub Actions' cache to shorten build times and decrease load on servers
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ${{ github.workspace }}/vendor
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
