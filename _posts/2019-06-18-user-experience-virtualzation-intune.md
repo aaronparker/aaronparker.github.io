@@ -3,7 +3,7 @@ layout: post
 title: Manage User Experience Virtualization on the Modern Desktop
 description: Use Microsoft User Experience Virtualization on Azure AD-joined Windows desktops to roam user's Windows and applications preferences between devices.
 date: 2019-06-19 23:00 +1000
-permalink: "/user-experience-virtualzation-intune/"
+permalink: "/user-experience-virtualization-intune/"
 image:
   path:    /assets/img/user/image.jpg
   srcset:
@@ -13,18 +13,21 @@ image:
 categories: [Microsoft]
 comments: true
 related_posts:
-  - _posts/2019-06-18-user-experience-virtualzation-intune.md
+  - _posts/2019-06-18-user-experience-virtualization-intune.md
 ---
+Since this article was written, Microsoft has enabled Proactive Remediations and the Settings Catalog in Endpoint Manager. This means that a scheduled task is no longer required, and  User Experience Virtualization can be configured directly via policy. For an update approach to this implementation, see the new scripts here: [User Experience Virtualization scripts](https://github.com/aaronparker/intune/tree/main/Uev).
+{:.note title="Update"}
+
 * this unordered seed list will be replaced by the toc
 {:toc}
 
-On the modern Windows 10 desktop with Office 365 and Azure AD Premium, application preferences are roamed by two components - the Office 2013+ desktop applications [roam settings when used with Office 365](https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/jj733593\(v=office.15\)#roaming-settings-for-office-2013) and when enabled, Enterprise State Roaming [synchronises specific settings](https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-windows-settings-reference).
+On the modern Windows 10/11 desktop with Office 365 and Azure AD Premium, application preferences are roamed by two components - the Office 2013+ / Microsoft 365 desktop applications [roam settings when used with Office 365](https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/jj733593\(v=office.15\)#roaming-settings-for-office-2013) and when enabled, Enterprise State Roaming [synchronises specific settings](https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-windows-settings-reference).
 
 Before you ask - yes, [User Experience Virtualization](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-for-windows) is still a thing. UE-V is a component of Windows 10 Enterprise that can roam a user's application preferences across desktops. UE-V works by defining user profile locations specific to an application and importing and exporting those settings into and out of the profile at login /logout or application launch / close.
 
 ## Why
 
-User-driven device provisioning can make a Windows 10 PC, provisioned via Windows Autopilot, ready for the user in about an hour. This includes their applications, and preferences I've covered above.
+User-driven device provisioning can make a Windows PC, provisioned via Windows Autopilot, ready for the user in about an hour. This includes their applications, and preferences I've covered above.
 
 When a user signs into a new PC, their key Windows and Office settings will sync, but not preferences for any application that Enterprise State Roaming does not manage.
 
@@ -34,7 +37,7 @@ Consider a common example such as Google Chrome. Chrome implements its own sync 
 
 ## How
 
-Azure AD-join and Autopilot enable a consistent provisioning experience for Windows 10 PCs regardless of location, but unlike a traditional domain-joined PC, you lose management features including Group Policy. UE-V would typically be [enabled with Group Policy](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-deploy-required-features#enable-the-ue-v-service) and [a file share](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-deploy-required-features#deploy-a-ue-v-settings-storage-location), but our target PCs are often not used within the corporate network, so synchronising application preferences between PCs requires another mechanism. Additionally we need to re-think enabling UE-V on the end-point and delivering UE-V templates to those devices.
+Azure AD-join and Windows Autopilot enable a consistent provisioning experience for Windows PCs regardless of location, but unlike a traditional domain-joined PC, you lose management features including Group Policy. UE-V would typically be [enabled with Group Policy](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-deploy-required-features#enable-the-ue-v-service) and [a file share](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-deploy-required-features#deploy-a-ue-v-settings-storage-location), but our target PCs are often not used within the corporate network, so synchronising application preferences between PCs requires another mechanism. Additionally we need to re-think enabling UE-V on the end-point and delivering UE-V templates to those devices.
 
 ### OneDrive for Business as a Sync Mechanism
 

@@ -104,7 +104,7 @@ Replication for business continuity can be handled by [Windows Server 2019 Stora
 
 #### OneDrive for Business for Cross Platform Consistency
 
-I have written previously on [using UE-V on a modern Windows 10 desktop](https://stealthpuppy.com/user-experience-virtualzation-intune/) with an approach that uses OneDrive for Business as the storage location. FSLogix Profile Container and Office 365 Container enables the native OneDrive sync client in virtual desktops including non-persistent desktops, so it stands to reason that we can use OneDrive for Business as a sync location.
+I have written previously on [using UE-V on a modern Windows 10 desktop](https://stealthpuppy.com/user-experience-virtualization-intune/) with an approach that uses OneDrive for Business as the storage location. FSLogix Profile Container and Office 365 Container enables the native OneDrive sync client in virtual desktops including non-persistent desktops, so it stands to reason that we can use OneDrive for Business as a sync location.
 
 What's great about using OneDrive as the settings storage location, is that now application preferences are not locked in the data centre and end-users have a more consistent experience across Windows, everywhere. OneDrive handles synchronising preferences between different desktops, making those preferences highly available for business continuity. Additionally, because UE-V is saving settings into the Container, it removes any storage performance challenge associated with a file server.
 
