@@ -4,6 +4,8 @@ title: Manage User Experience Virtualization on the Modern Desktop
 description: Use Microsoft User Experience Virtualization on Azure AD-joined Windows desktops to roam user's Windows and applications preferences between devices.
 date: 2019-06-19 23:00 +1000
 permalink: "/user-experience-virtualization-intune/"
+redirect_from:
+  - "/user-experience-virtualzation-intune/"
 image:
   path:    /assets/img/user/image.jpg
   srcset:
