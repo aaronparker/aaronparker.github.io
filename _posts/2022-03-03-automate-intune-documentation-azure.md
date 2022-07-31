@@ -154,9 +154,17 @@ Create a `.gitignore` file, so the temporary markdown document isn't committed t
 
 ```yml
 #file: ".gitignore"
-# Markdown files used during report creation
-as-built.md
-prod-as-built.md
+## Ignore files for macOS
+.DS_Store
+
+## You can specify authentication details for IntuneCD in a JSON file
+auth.json
+
+## Pipeline files
+# prod-as-built.pdf is the as-built document output from the pipeline
+# this file is added as an artifact on a release, so it could excluded from commits
+prod-as-built.pdf  
+prod-as-built.html
 ```
 
 Add the pipeline as `intune-backup.yml` in the root of the repository:
@@ -170,9 +178,6 @@ schedules:
     branches:
       include:
       - main
-
-variables:
-  REPO_DIR: $(Build.SourcesDirectory)
 
 jobs:
   - job: backup
@@ -195,6 +200,15 @@ jobs:
         workingDirectory: '$(Build.SourcesDirectory)'
         failOnStderr: true
 
+    - task: Bash@3
+      displayName: Remove existing prod-backup directory
+      inputs:
+        targetType: 'inline'
+        script: |
+          rm -f -r -v "$(Build.SourcesDirectory)/prod-backup"
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: false
+
     # Install IntuneCD
     # https://github.com/almenscorner/IntuneCD
     - task: Bash@3
@@ -206,27 +220,22 @@ jobs:
         workingDirectory: '$(Build.SourcesDirectory)'
         failOnStderr: true
 
-    - task: Bash@3
-      displayName: Remove prod-backup directory
-      inputs:
-        targetType: 'inline'
-        script: |
-          rm -f -r -v "$(REPO_DIR)/prod-backup"
-        workingDirectory: '$(Build.SourcesDirectory)'
-        failOnStderr: false
-
     # Backup the latest configuration, using the current directory
     - task: Bash@3
       displayName: IntuneCD backup
       inputs:
         targetType: 'inline'
         script: |
-          mkdir -p "$(REPO_DIR)/prod-backup"
-          IntuneCD-startbackup -m 1 -o yaml -p "$(REPO_DIR)/prod-backup"
+          mkdir -p "$(Build.SourcesDirectory)/prod-backup"
+          IntuneCD-startbackup \
+              --mode=1 \
+              --output=json \
+              --path="$(Build.SourcesDirectory)/prod-backup"
+              #--localauth=./auth.json
+              #--exclude=assignments
         workingDirectory: '$(Build.SourcesDirectory)'
         failOnStderr: true
       env:
-        REPO_DIR: $(REPO_DIR)
         TENANT_NAME: $(TENANT_NAME)
         CLIENT_ID: $(CLIENT_ID)
         CLIENT_SECRET: $(CLIENT_SECRET)
@@ -239,7 +248,7 @@ jobs:
         script: |
           DATEF=`date +%Y.%m.%d`
           git add --all
-          git commit -m "Intune backup $DATEF"
+          git commit -m "Intune config backup $DATEF"
           git push origin HEAD:main
         workingDirectory: '$(Build.SourcesDirectory)'
         failOnStderr: false
@@ -293,7 +302,13 @@ jobs:
       inputs:
         targetType: 'inline'
         script: |
-          IntuneCD-startdocumentation -p "$(REPO_DIR)/prod-backup" -o "$(REPO_DIR)/prod-as-built.md" -t $TENANT_NAME -i 'Generated documentation'
+          INTRO="Endpoint Manager backup and documentation generated at $(Build.Repository.Uri) <img align=\"right\" width=\"96\" height=\"96\" src=\"./logo.png\">"
+          IntuneCD-startdocumentation \
+              --path="$(Build.SourcesDirectory)/prod-backup" \
+              --outpath="$(Build.SourcesDirectory)/prod-as-built.md" \
+              --tenantname=$TENANT_NAME \
+              --intro="$INTRO" \
+              #--split=Y
         workingDirectory: '$(Build.SourcesDirectory)'
         failOnStderr: true
       env:
@@ -307,7 +322,7 @@ jobs:
         script: |
           DATEF=`date +%Y.%m.%d`
           git add --all
-          git commit -m "Intune documentation $DATEF"
+          git commit -m "MEM config as-built $DATEF"
           git push origin HEAD:main
         workingDirectory: '$(Build.SourcesDirectory)'
         failOnStderr: false
@@ -349,7 +364,7 @@ jobs:
         targetType: 'inline'
         script: |
           DATEF=`date +%Y.%m.%d`
-          git tag -a "v$DATEF" -m "Intune documentation $DATEF"
+          git tag -a "v$DATEF" -m "Microsoft Endpoint Manager configuration snapshot $DATEF"
           git push origin "v$DATEF"
         workingDirectory: '$(Build.SourcesDirectory)'
         failOnStderr: false
@@ -391,9 +406,24 @@ jobs:
       inputs:
         targetType: 'inline'
         script: |
-          npm i -g md-to-pdf
+          npm i --location=global md-to-pdf
         workingDirectory: '$(Build.SourcesDirectory)'
         failOnStderr: true
+
+    # Convert markdown document to HTML
+    - task: Bash@3
+      displayName: Convert markdown to HTML
+      inputs:
+        targetType: 'inline'
+        script: |
+          cat "$(Build.SourcesDirectory)/prod-as-built.md" | md-to-pdf --config-file "$(Build.SourcesDirectory)/md2pdf/pdfconfig.json" --as-html > "$(Build.SourcesDirectory)/prod-as-built.html"
+        workingDirectory: '$(Build.SourcesDirectory)'
+        failOnStderr: true
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathToPublish: "$(Build.SourcesDirectory)/prod-as-built.html"
+        artifactName: "prod-as-built.html"
 
     # Convert markdown document to PDF
     - task: Bash@3
@@ -401,13 +431,13 @@ jobs:
       inputs:
         targetType: 'inline'
         script: |
-          cat "$(REPO_DIR)/prod-as-built.md" | md-to-pdf --pdf-options '{ "format": "A4", "margin": "10mm", "printBackground": false }' > "$(REPO_DIR)/prod-as-built.pdf"
+          cat "$(Build.SourcesDirectory)/prod-as-built.md" | md-to-pdf --config-file "$(Build.SourcesDirectory)/md2pdf/pdfconfig.json" > "$(Build.SourcesDirectory)/prod-as-built.pdf"
         workingDirectory: '$(Build.SourcesDirectory)'
         failOnStderr: true
 
     - task: PublishBuildArtifacts@1
       inputs:
-        pathToPublish: "$(REPO_DIR)/prod-as-built.pdf"
+        pathToPublish: "$(Build.SourcesDirectory)/prod-as-built.pdf"
         artifactName: "prod-as-built.pdf"
 ```
 

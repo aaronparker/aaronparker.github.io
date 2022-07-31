@@ -23,19 +23,22 @@ Since this article was written, Microsoft has enabled Proactive Remediations and
 * this unordered seed list will be replaced by the toc
 {:toc}
 
-On the modern Windows 10/11 desktop with Office 365 and Azure AD Premium, application preferences are roamed by two components - the Office 2013+ / Microsoft 365 desktop applications [roam settings when used with Office 365](https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/jj733593\(v=office.15\)#roaming-settings-for-office-2013) and when enabled, Enterprise State Roaming [synchronises specific settings](https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-windows-settings-reference).
+On the modern Windows 10/11 desktop with Office 365 and Azure AD Premium, application preferences are roamed by two components - the Microsoft 365 desktop applications [roam settings when used with Office 365](https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/jj733593\(v=office.15\)#roaming-settings-for-office-2013) and when enabled, Enterprise State Roaming [synchronises specific settings](https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-windows-settings-reference).
 
-Before you ask - yes, [User Experience Virtualization](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-for-windows) is still a thing. UE-V is a component of Windows 10 Enterprise that can roam a user's application preferences across desktops. UE-V works by defining user profile locations specific to an application and importing and exporting those settings into and out of the profile at login /logout or application launch / close.
+Before you ask - yes, [User Experience Virtualization](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-for-windows) is still a thing. UE-V is a component of Windows 10 Enterprise that can roam a user's application preferences across desktops. UE-V works by defining user profile locations specific to an application and importing and exporting those settings into and out of the profile at login / logout or application launch / close.
 
 ## Why
 
-User-driven device provisioning can make a Windows PC, provisioned via Windows Autopilot, ready for the user in about an hour. This includes their applications, and preferences I've covered above.
+User-driven device provisioning via Windows Autopilot can make a Windows PC ready for the user in about an hour. This includes their applications, and preferences I've covered above.
 
 When a user signs into a new PC, their key Windows and Office settings will sync, but not preferences for any application that Enterprise State Roaming does not manage.
 
-Application preferences *not* roaming to a newly provisioned PC is likely to be a disruptive experience. User Experience Virtualization can be configured to roam those application settings even in a modern management scenario.
+Application preferences *not* roamed to a newly provisioned PC is likely to be a disruptive experience. User Experience Virtualization can be configured to roam those application settings on an Azure AD-joined PC using the right synchronisation tool.
 
-Consider a common example such as Google Chrome. Chrome implements its own sync mechanism via Google accounts, but this often means that users will log into Chrome with their personal Google accounts. Further, Chrome and ChromeOS can be managed via [Chrome Enterprise](https://cloud.google.com/chrome-enterprise/browser-management/) where it is possible to use Azure AD as the IdP source. The browser can then be managed across your PC estate; however, this requires a licensing cost. If Google isn't a strategic play, then UE-V can capture Chrome settings and ensure a consistent experience across managed Windows 10 devices.
+Consider a common example such as Google Chrome. Chrome implements its own sync mechanism via Google accounts, but this often means that users will sign into Chrome with their personal Google accounts. Chrome and ChromeOS can be managed via [Chrome Enterprise](https://cloud.google.com/chrome-enterprise/browser-management/) where it is possible to use Azure AD as the IdP source. The browser can then be managed across your PC estate; however, this requires Google Workspace licensing. If Google isn't a strategic play, then UE-V can capture Chrome settings and ensure a consistent experience across managed Windows devices.
+
+I highly recommend that you migrate from Google Chrome to Microsoft Edge. Edge supports signing into the browser with a Microsoft 365 account, enabling the you to better secure corporate credentials, while roaming the end-user's preferences between devices.
+{:.note title="Use Microsoft Edge instead"}
 
 ## How
 
