@@ -73,13 +73,13 @@ The scripts will determine whether the UE-V settings templates located in `C:\Pr
 
 Import these scripts and assign to your target devices. The status of the clients will then be reported in the Endpoint Manager admin center:
 
-![Intune proactive remediation status](https://{{site.baseurl}}/media/2019/06/proactiveremediationsstatus.jpeg)
+![Intune proactive remediation status]({{site.baseurl}}/media/2019/06/proactiveremediationsstatus.jpeg)
 
 ### Settings Catalog Configuration Profile
 
 The UE-V client can be configured using a Settings Catalog configuration profile. [`UserExperienceVirtualization-Profile.json`](https://github.com/aaronparker/intune/blob/main/Uev/UserExperienceVirtualization-Profile.json) is an export of a configured profile in my own tenant that you can import into your own tenant for testing.
 
-![Settings Catalog Device Configuration Profile](https://{{site.baseurl}}/media/2019/06/uevconfigprofile.jpeg)
+![Settings Catalog Device Configuration Profile]({{site.baseurl}}/media/2019/06/uevconfigprofile.jpeg)
 
 This profile includes several key settings to ensure the UE-V agent is configured to match the script and store user settings in OneDrive:
 
