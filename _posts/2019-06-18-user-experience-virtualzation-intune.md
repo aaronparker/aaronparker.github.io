@@ -50,55 +50,62 @@ Most organisations [we](https://www.insentragroup.com/) see deploying Windows 10
 
 ### Managing UE-V with Microsoft Intune
 
-To manage UE-V on Windows 10 PCs via Microsoft Intune, we need to implement a few things:
+To manage UE-V on Windows PCs via Microsoft Intune, we need to implement a few things:
 
-1. Windows 10 Enterprise - UE-V is only a feature of Windows 10 Enterprise devices. This might be implemented by Intune via the [Upgrade Windows 10 Edition configuration profile](https://docs.microsoft.com/en-us/intune/edition-upgrade-configure-windows-10) or via a Microsoft 365 / Windows 10 Enterprise E3/E5 license
-2. A PowerShell script to enable the UE-V service and configure a scheduled task to download the UE-V templates
-3. A public HTTPS location to host UE-V templates. In my test configuration, I've used an Azure Storage Account so that I can use the [`List Containers`](https://docs.microsoft.com/en-us/rest/api/storageservices/list-containers2) API to query the storage for the templates to download
+1. Windows 10/11 Enterprise - UE-V is only a feature of Windows 10/11 Enterprise devices. This might be implemented by Intune via the [Upgrade Windows 10 Edition configuration profile](https://docs.microsoft.com/en-us/intune/edition-upgrade-configure-windows-10) or via a Microsoft 365 / Windows 10/11 Enterprise E3/E5 license
+2. UE-V [settings templates](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-deploy-uev-for-custom-applications) - these define the profile locations for application preferences to roam
+3. A public HTTPS location to host UE-V templates. In my test configuration, I've used an Azure Storage Account so that I can use the [`List Containers`](https://docs.microsoft.com/en-us/rest/api/storageservices/list-containers2) API to query the storage for the templates to download. This location will only host XML files that clients will download, but uploads should be controlled and validated
+4. Intune [proactive remediations](https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations) to download the UE-V templates on managed clients
+5. A Settings Catalog configuration profile to configure the UE-V client
 
 To this end, I've written [a script to enable UE-V](https://github.com/aaronparker/intune/tree/master/Uev) on managed PCs and setup [a second script](https://github.com/aaronparker/uev/tree/master/scripts) that runs as a scheduled task to download the UE-V templates.
 
-## Deploy the UE-V script via Intune
+## Deploy UE-V via Intune
 
-`New-UevTask.ps1` has been written to initiate the deployment by downloading a second script from blob storage on an Azure Storage account and register a scheduled task that runs the second script to download the UE-V templates.
+### Proactive Remediations
 
-Deploy the script from Intune and ensure that it runs in the System context:
+Proactive remediations is used to detect the status of the UE-V service on the client and ensure the require UE-V settings templates are downloaded.
 
-![Adding the UE-V deployment script via Intune]({{site.baseurl}}/media/2019/06/UevPowerShellScriptIntune.png)
+* [`Detect-Uev.ps1`](https://github.com/aaronparker/intune/blob/main/Uev/Detect-Uev.ps1) - a Proactive remediation script to detect the status of the UE-V client including the UE-V service and the settings catalog XML files
+* [`Invoke-Uev.ps1`](https://github.com/aaronparker/intune/blob/main/Uev/Invoke-Uev.ps1) - a Proactive remediation script that enables the UE-V client, and downloads a set of UE-V settings templates from an Azure storage account
 
-`New-UevTask.ps1` has a `-Uri` parameter that will need to be changed to target a storage account that you manage.
+The scripts will determine whether the UE-V settings templates located in `C:\ProgramData\Microsoft\UEV\CustomTemplates` match those stored on the specified Azure storage account. If they don't match, `Invoke-Uev.ps1` will ensure they do.
 
-When the script runs on an end-point, it will register the schedule task and run it so that UE-V is enabled.
+Import these scripts and assign to your target devices. The status of the clients will then be reported in the Endpoint Manager admin center:
 
-## UE-V Scheduled Task
+![Intune proactive remediation status](https://{{site.baseurl}}/media/2019/06/proactiveremediationsstatus.jpeg)
 
-`Set-Uev.ps1` is executed by the scheduled task and ensures that the UE-V service is running, configures UE-V to use OneDrive as the sync engine and downloads a set of UE-V templates from blob storage on an Azure Storage account.
+### Settings Catalog Configuration Profile
 
-`Set-Uev.ps1` also has a `-Uri` parameter that will need to be changed to target a storage account that you manage, that hosts your UE-V templates.
+The UE-V client can be configured using a Settings Catalog configuration profile. [`UserExperienceVirtualization-Profile.json`](https://github.com/aaronparker/intune/blob/main/Uev/UserExperienceVirtualization-Profile.json) is an export of a configured profile in my own tenant that you can import into your own tenant for testing.
 
-The scheduled task will be located in `Microsoft\UEV` folder:
+![Settings Catalog Device Configuration Profile](https://{{site.baseurl}}/media/2019/06/uevconfigprofile.jpeg)
 
-![UE-V Scheduled Task]({{site.baseurl}}/media/2019/06/UevScheduledTask.png)
+This profile includes several key settings to ensure the UE-V agent is configured to match the script and store user settings in OneDrive:
 
-The challenge with this approach is that the UE-V service requires a reboot after being enabled. Because PowerShell scripts are not currently [tracked by the Enrollment Status Page](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/enrollment-status#installation-progress-tracking), the service will only be enabled after the user signs into the device. An alternative approach would be to create a custom Windows Installer package that enables the service and the scheduled task instead.
+* Configure Sync Method - Enabled
+* Sync Method: (Device) - External
+* Enable UE-V - Enabled
+* Settings storage path - `%OneDriveCommercial%`
+* Settings template catalog path (Device) - `%ProgramData%\Microsoft\UEV\CustomTemplates`
 
-## UE-V via OneDrive
-
-The UE-V configuration settings enabled by `Set-Uev.ps` have been sourced from [Settings and data roaming FAQ](https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-faqs) and [Set-UevConfiguration](https://docs.microsoft.com/en-us/powershell/module/uev/set-uevconfiguration?view=win10-ps).
+Review the following documentation on UE-V to understand how the client could be configured in your environment - [Settings and data roaming FAQ](https://docs.microsoft.com/en-us/azure/active-directory/devices/enterprise-state-roaming-faqs) and [Set-UevConfiguration](https://docs.microsoft.com/en-us/powershell/module/uev/set-uevconfiguration?view=win10-ps).
 
 | Setting | Value | Notes |
 |:--|:--|:--|
 | Computer | True | Applies the settings to all users on the computer. |
-| DisableSyncProviderPing | True | Disables the synchronization provider from pinging the network. Not needed for OneDrive.  |
-| DisableSyncUnlistedWindows8Apps | True | Disables the synchronization of unlisted Windows Store apps. Assuming ESR is used |
-| EnableDontSyncWindows8AppSettings | True | UE-V does not synchronize Windows Store app settings. Assuming ESR is used |
-| EnableSettingsImportNotify | True | If the settings import takes longer than the amount of time that you specify for the SettingsImportNotifyDelayInSecond parameter, UE-V notifies the user |
-| EnableSync | True | UE-V synchronizes the settings that are defined in the settings location templates that you have enabled |
-| EnableWaitForSyncOnApplicationStart | True | Ensures that application settings are synced locally and imported before starting the app |
-| SettingsStoragePath | %OneDriveCommercial% | Specifies the path of the location where UE-V stores the user settings |
-| SyncMethod | External | Tells UE-V that OneDrive will manage sync |
-| WaitForSyncTimeoutInMilliseconds | 2000 | This is the default wait timeout value. Test various network scenarios before increasing |
+| `DisableSyncProviderPing` | True | Disables the synchronization provider from pinging the network. Not needed for OneDrive.  |
+| `DisableSyncUnlistedWindows8Apps` | True | Disables the synchronization of unlisted Windows Store apps. Assuming ESR is used |
+| `EnableDontSyncWindows8AppSettings` | True | UE-V does not synchronize Windows Store app settings. Assuming ESR is used |
+| `EnableSettingsImportNotify` | True | If the settings import takes longer than the amount of time that you specify for the `SettingsImportNotifyDelayInSecond` parameter, UE-V notifies the user |
+| `EnableSync` | True | UE-V synchronizes the settings that are defined in the settings location templates that you have enabled |
+| `EnableWaitForSyncOnApplicationStart` | True | Ensures that application settings are synced locally and imported before starting the app |
+| `SettingsStoragePath` | %OneDriveCommercial% | Specifies the path of the location where UE-V stores the user settings |
+| `SyncMethod` | External | Tells UE-V that OneDrive will manage sync |
+| `WaitForSyncTimeoutInMilliseconds` | 2000 | This is the default wait timeout value. Test various network scenarios before increasing |
 {:.smaller}
+
+## Results
 
 With `%OneDrive%` or `%OneDriveCommercial%` as the target UE-V Settings Storage Path, the user's OneDrive sync folder will host a `SettingsPackages` folder that contains application settings.
 
@@ -108,64 +115,101 @@ With OneDrive Files On Demand, settings packages will download as applications a
 
 ## Continuous Deployment to Azure Blob Storage
 
-As a location for storing scripts and UE-V templates, Azure Blob storage enables us to create a continuous deployment solution for new UE-V templates and updates to the `Set-Uev.ps1` script.
+As a location for storing scripts and UE-V templates, Azure Blob storage enables us to create a continuous deployment solution for new UE-V templates. As these settings templates are added, modified, or removed, automatic validation of the template, upload to blob storage, then reflection of these changes on clients will ensure the entire end-to-end process can be automated.
 
-To perform some basic validation and upload templates and scripts to Azure blob storage, I've setup a continuous deployment solution using GitHub and AppVeyor. You can see how this process works by taking look at my [UE-V repository on GitHub](https://github.com/aaronparker/uev).
+I'm using an [Azure Pipeline](https://docs.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines) with a connection to the scripts and templates stored on GitHub (the code could also be stored in Azure DevOps). The project uses [service connections](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/service-endpoints) to GitHub to retrieve the code and templates, and to the Azure subscription for rights to the target storage account.
 
-The code in the repository manages the process via several components:
+The pipeline performs two tasks:
 
-1. [Templates](https://github.com/aaronparker/uev/tree/master/templates). These are the UE-V templates that define application settings, created with the [UE-V Generator](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-working-with-custom-templates-and-the-uev-generator).
-2. [`Set-Uev.ps1`](https://github.com/aaronparker/uev/tree/master/scripts). The script that enables UE-V and downloads templates on the Windows 10 Enterprise end-point
-3. [AppVeyor project configuration file](https://github.com/aaronparker/uev/blob/master/appveyor.yml). This defines the [AppVeyor project](https://www.appveyor.com/docs/build-configuration/) that runs validation on the UE-V templates and the `Set-Uev.ps1`. If validation is successful, the [artefacts are uploaded to Azure](https://www.appveyor.com/docs/deployment/azure-blob/)
-4. [Tests](https://github.com/aaronparker/uev/tree/master/tests). AppVeyor executes a set of PowerShell scripts that run Pester tests on `Set-Uev.ps1` and validates the UE-V templates against the [schema](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-application-template-schema-reference)
+1. Validate the UE-V settings templates against the [template schema](https://docs.microsoft.com/en-us/windows/configuration/ue-v/uev-application-template-schema-reference). This ensures that clients only receive valid templates
+2. Upload the UE-V settings templates to the target Azure storage account using the [Azure File Copy task](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-file-copy), only if the settings templates pass validation
 
-Each time a commit and push is made to the repository, [AppVeyor will run tests to validate](https://ci.appveyor.com/project/aaronparker/uev) the templates and script and if successful, upload to Azure blog storage.
+Here's the pipeline which includes a trigger to run any time the settings templates are updated:
 
-![AppVeyor tests output]({{site.baseurl}}/media/2019/06/AppVeyorOutput.png)
+```yaml
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    include:
+    - Uev/templates/*
+    - Uev/tests/*
+    - Uev/Publish-Templates.yml
+
+jobs:
+- job: push_templates
+  pool:
+    vmImage: windows-latest
+  steps:
+  - checkout: self
+    persistCredentials: true
+
+  - task: PowerShell@2
+    displayName: "Install Pester"
+    inputs:
+      targetType: 'inline'
+      script: |
+        Install-Module -Name "Pester" -Force -Confirm:$False
+      verbosePreference: 'SilentlyContinue'
+      pwsh: true
+      workingDirectory: '$(Build.SourcesDirectory)'
+
+  - task: PowerShell@2
+    displayName: "Validate templates against UE-V schema"
+    inputs:
+      targetType: 'inline'
+      script: |
+        Import-Module -Name "Pester" -Force
+        $Config = [PesterConfiguration]::Default
+        $Config.Run.Path = '$(Build.SourcesDirectory)\Uev\tests'
+        $Config.Run.PassThru = $True
+        $Config.CodeCoverage.Enabled = $False
+        $Config.TestResult.Enabled = $True
+        $Config.TestResult.OutputFormat = "NUnitXml"
+        $Config.TestResult.OutputPath = ".\TestResults.xml"
+        Invoke-Pester -Configuration $Config
+      verbosePreference: 'SilentlyContinue'
+      pwsh: true
+      workingDirectory: '$(Build.SourcesDirectory)\Uev\tests'
+
+  - task: AzureFileCopy@4
+    displayName: "Push templates to storage account"
+    inputs:
+      sourcePath: '$(Build.SourcesDirectory)\Uev\templates\*.xml'
+      azureSubscription: 'Visual Studio Enterprise Subscription(63e8f660-f6a4-4ac5-ad4e-623268509f20)'
+      destination: 'AzureBlob'
+      storage: 'stpydeviceause'
+      containerName: 'uev'
+      additionalArgumentsForBlobCopy: '--log-level=INFO'
+```
+
+The pipeline execution relies on a few components:
+
+* [UE-V settings templates](https://github.com/aaronparker/intune/tree/main/Uev/templates) - storing these in a git repository allows you to track changes and use branches to test the templates before pushing to production
+* [Template tests via Pester](https://github.com/aaronparker/intune/tree/main/Uev/tests) - this approach is used to validate the templates against the schema and save the test output for reporting purposes
+* [The Azure Pipeline](https://github.com/aaronparker/intune/blob/main/Uev/Publish-Templates.yml) - the pipeline is stored here in YAML format for easy deployment to new tenants
+
+Each time a commit and push is made to the templates in the repository, the Azure Pipeline will execute, validate the templates, upload to Azure blog storage. Clients will then check for updated templates and download them.
+
+![Azure Pipelines output]({{site.baseurl}}/media/2019/06/azure-devops-pipeline.jpeg)
 
 ### Azure Blob Storage Configuration
 
 For this configuration, I've created an [Azure storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview) to store the files on [blob storage](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction). Microsoft provides [5 GB of blob storage free for 12-months](https://azure.microsoft.com/en-gb/free/free-account-faq/), so it's simple to get started.
 
-In my lab environment, I've created two containers - one for the UE-V templates and another to store scripts. 
+![Azure blob storage containers]({{site.baseurl}}/media/2019/06/AzureBlobContainers.jpeg)
 
-![Azure blob storage containers]({{site.baseurl}}/media/2019/06/AzureBlobContainers.png)
+[Anonymous read access](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-manage-access-to-resources) is enabled on each of these containers, so that the UE-V templates can be downloaded to end-points, without having to storage secure access keys in each PowerShell script.
 
-[Anonymous read access](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-manage-access-to-resources) is enabled on each of these containers, so that `Set-Uev.ps1` and the UE-V templates can be downloaded on end-points, without having to storage secure access keys in each PowerShell script. 
-
-![Azure blob storage container access level configuration]({{site.baseurl}}/media/2019/06/AzureBlobContainerAccessLevel.png) 
-
-To allow AppVeyor to upload to these containers, storage account [access keys can be encrypted](https://www.appveyor.com/docs/how-to/secure-files/). My `appveyor.yml` file contains provider settings that define the Azure blob storage containers and the secured access keys.
-
-```yaml
-- provider: AzureBlob
-  storage_account_name: stealthpuppy
-  storage_access_key:
-    secure: No4/BI8lrkv/775GwkL82PPYuaX1hzYa
-  container: uevtemplates
-  artifact: templates
-  unzip: true
-  set_content_type: true
-  on:
-    branch: master
-- provider: AzureBlob
-  storage_account_name: stealthpuppy
-  storage_access_key:
-    secure: No4/BI8lrkv/775GwkL82PPYuaX1hzYa
-  container: scripts
-  artifact: scripts
-  unzip: true
-  set_content_type: false
-  on:
-    branch: master
-```
+![Azure blob storage container access level configuration]({{site.baseurl}}/media/2019/06/AzureBlobContainerAccessLevel.png)
 
 ## Summary
 
-In this article I've outlined an approach to roaming additional application settings on a Windows 10 modern desktop with User Experience Virtualization and OneDrive for Business.
+In this article I've outlined an approach to roaming additional application settings on a Windows 10/11 modern desktop with User Experience Virtualization and OneDrive for Business.
 
-While Office 365 ProPlus and Windows 10 provides their own mechanisms for roaming user preferences, UE-V can roam preferences for those additional applications that matter to your users. Alternatively, UE-V could handle roaming of all Windows and application settings if you're not keen to use those cloud-native features.
+While the Microsoft 365 Apps, Microsoft Edge, and Windows 10 provides their own mechanisms for roaming user preferences, UE-V can roam preferences for those additional applications that matter to your users. Alternatively, UE-V could handle roaming of all Windows and application settings if you're not keen to use those cloud-native features.
 
-The PowerShell scripts I've provided can be [used with Microsoft Intune](https://docs.microsoft.com/en-us/intune/intune-management-extension) or a 3rd party management tool. Additionally, 3rd party sync tools (e.g., ShareFile or Dropbox) should also work.
+The PowerShell scripts I've provided can be [used with Microsoft Intune](https://docs.microsoft.com/en-us/intune/intune-management-extension) or a 3rd party management tool. Additionally, 3rd party sync tools (e.g., Dropbox) should also work.
 
-In a future article I'll discuss how UE-V can be used to provide [a consistent application experience across physical and virtual desktops](https://stealthpuppy.com/user-experience-virtualzation-profile-container/).
+In another article on this topic, I'll discuss how UE-V can be used to provide [a consistent application experience across physical and virtual desktops](https://stealthpuppy.com/user-experience-virtualzation-profile-container/).
