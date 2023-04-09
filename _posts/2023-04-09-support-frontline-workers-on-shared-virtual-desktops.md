@@ -13,6 +13,9 @@ image:
 comments: true
 date: 2023-04-09 23:56 +1000
 ---
+* this unordered seed list will be replaced by the toc
+{:toc}
+
 The [Microsoft 365 F1/F3 and Office 365 F3 licenses](https://learn.microsoft.com/en-us/microsoft-365/frontline/flw-licensing-options) are aimed at frontline workers. These licenses do not include the desktop versions of the Microsoft 365 Apps, so users with these licenses cannot run those applications.
 
 You could create two images - one with the Microsoft 365 Apps to support licensed users and one without to support frontline users; however, the result will be less than optimal use of your VDI compute capacity by requiring more session hosts for the same number of concurrent users.
