@@ -1,7 +1,8 @@
 ---
 layout: post
 title: Support Frontline Workers on Shared Virtual Desktops
-description: "Configuring virtual desktops to supporting frontline workers using Microsoft 365 F1/F3 etc. alongside users licensed for Microsoft 365 E3/E5."
+description: Configuring virtual desktops to supporting frontline workers using Microsoft
+  365 F1/F3 etc. alongside users licensed for Microsoft 365 E3/E5.
 permalink: "/m365apps-frontline-workers/"
 image:
   path: "/assets/img/hardhat/image.jpg"
@@ -10,6 +11,7 @@ image:
     960w: "/assets/img/hardhat/image@0,5x.jpg"
     480w: "/assets/img/hardhat/image@0,25x.jpg"
 comments: true
+date: 2023-04-09 23:56 +1000
 ---
 The [Microsoft 365 F1/F3 and Office 365 F3 licenses](https://learn.microsoft.com/en-us/microsoft-365/frontline/flw-licensing-options) are aimed at frontline workers. These licenses do not include the desktop versions of the Microsoft 365 Apps, so users with these licenses cannot run those applications.
 
