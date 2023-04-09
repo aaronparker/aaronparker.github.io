@@ -20,7 +20,7 @@ The [Microsoft 365 F1/F3 and Office 365 F3 licenses](https://learn.microsoft.com
 
 You could create two images - one with the Microsoft 365 Apps to support licensed users and one without to support frontline users; however, the result will be less than optimal use of your VDI compute capacity by requiring more session hosts for the same number of concurrent users.
 
-The Microsoft 365 Apps support a [viewer mode](https://learn.microsoft.com/en-us/deployoffice/overview-viewer-mode) which until recently put the applications into a view-only mode for all users on same session host. Fortunately Microsoft changed how this feature works in August 2022. For the purposes of this article, I will assume your environment is on the Microsoft 365 Apps for enterprise Semi-Annual Channel 2208 or later. This minimum version mean that only a single policy configuration is required and all supported applications work as expected.
+The Microsoft 365 Apps support a [viewer mode](https://learn.microsoft.com/en-us/deployoffice/overview-viewer-mode) which until recently put the applications into a view-only mode for all users on same session host. Fortunately, Microsoft changed how this feature works in August 2022. For the purposes of this article, I will assume your environment is on the Microsoft 365 Apps for enterprise Semi-Annual Channel 2208 or later. This minimum version means that only a single policy configuration is required and all supported applications work as expected.
 
 ## Supporting Frontline Workers on a Single Image
 
@@ -41,7 +41,7 @@ The Microsoft 365 Apps in viewer mode will allow a frontline worker to view and 
 
 Viewer mode is supported for version 1902 or later of Word, Excel, and PowerPoint, and version 2005 or later of Project and Visio. At the time of writing, the latest supported version of the Microsoft 365 Apps is 2202. Given the [recent vulnerability in Outlook](https://msrc.microsoft.com/blog/2023/03/microsoft-mitigates-outlook-elevation-of-privilege-vulnerability/), all environments should be current and be able to use viewer mode.
 
-To optimise the solution outlined in this article, it's important to be on current version, because:
+To optimise the solution outlined in this article, it is important to have deployed a current version of the Microsoft 365 Apps, because:
 
 > For version 2205 and later, if viewer mode is enabled, but the user has a license for the product, such as Visio, then the user will have an activated, fully functional version of that product. The other unlicensed products on the device, such as Project, will remain in viewer mode.
 {:.lead}
@@ -108,7 +108,7 @@ Here's Outlook for the web running as a desktop application:
 
 [![Outlook web application]({{site.baseurl}}/media/2023/04/OutlookPwa.png)]({{site.baseurl}}/media/2023/04/OutlookPwa.png)
 
-Microsoft Outlook as a web application. The application experience is very similar to the preview of the new Outlook desktop application.
+Microsoft Outlook as a web application. The application experience is similar to the preview of the new Outlook desktop application.
 {:.figcaption}
 
 OneNote requires a user specific URL, so adding OneNote as a web application doesn't work as intended, so I've not included it in the example approach here.
@@ -151,7 +151,7 @@ To ensure the web apps are added after first sign-in, enable the following polic
 - In a Group Policy Object assigned to the organisational unit containing the target user accounts (or via loopback on the computer account OU), enable the **Enable startup boost** policy setting under **User Configuration / Policies / Administrative Templates / Microsoft Edge / Performance**
 - In Intune, create a device configuration profile using the Settings Catalog, and enable **Enable startup boost (User)** under **Microsoft Edge / Performance**. Assign the policy to an Azure AD user group
 
-This policy will cause several Microsoft Edge process to start at sign-in and the web apps will be created to be available soon after sign-in. If you're concerned about CPU and RAM consumption, this may be a trade-off for an improved user experience.
+This policy will cause several Microsoft Edge processes to start at sign-in and the web apps will be created to be available soon after sign-in. If you're concerned about CPU and RAM consumption, this may be a trade-off for an improved user experience.
 
 A successful authentication to Microsoft 365 / Azure AD is required for the Outlook web app to complete its configuration including the shortcut icon and registering as a mail handler. Authentication should occur after any instance of Edge is started and signed into.
 {:.note title="Important"}
@@ -169,4 +169,4 @@ Setting this option on behalf of the user could be a challenge due to timing. It
 
 ## Wrap Up
 
-Providing frontline workers who using a Windows desktop, an application experience that is familiar will make it easier on the organisation to support these important users. Additionally, being able to optimise the delivery of mixed user personas on the same virtual desktop image will help you avoid a less than optimal use of compute resources.
+Supplying frontline workers, who using a Windows desktop, an application experience that is familiar will make it easier on the organisation to support these important users. Additionally, being able to optimise the delivery of mixed user personas on the same virtual desktop image will help you avoid a less than optimal use of compute resources.
