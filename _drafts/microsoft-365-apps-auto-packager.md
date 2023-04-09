@@ -2,7 +2,7 @@
 layout: post
 title: Building a Package Factory for the Microsoft 365 Apps
 description: 'Using GitHub Workflows to automate the packaging of the Microsoft 365 Apps and import into an Intune tenant.'
-permalink: "/m365apps-github-workflows/"
+permalink: "/m365apps-package-factory/"
 image:
   path: "/assets/img/package/image.jpg"
   srcset:
