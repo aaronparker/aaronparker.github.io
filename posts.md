@@ -2,6 +2,6 @@
 layout: list
 title: Articles
 description: >
-  Blog articles on end user computing, modern management and enterprise mobility.
+  Full list of articles on end user computing, modern management, enterprise mobility, and automation.
 grouped: true
 ---
