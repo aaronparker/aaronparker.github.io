@@ -80,7 +80,7 @@ To make the solution effective for frontline workers, we need to remove these ap
 
 To remove access to the desktop versions of Outlook and OneNote, FSLogix Apps Masking can be used to define these applications and hide them from the end user. I won't go into full detail here on how App Masking works, but I will provide an approach to easily create an App Masking rule set for Outlook and OneNote.
 
-`New-MicrosoftOfficeRuleset.ps1` can be used to generate an App Masking rule set for individual applications in the Microsoft 365 Apps suite. The script is hosted on GitHub in my [fslogix](https://github.com/aaronparker/fslogix/tree/main/Rules) repository and for details on how to use the script review the [FSLogix App masking](https://stealthpuppy.com/fslogix/applicationkeys/) documentation for this script.
+`New-MicrosoftOfficeRuleset.ps1` can be used to generate an App Masking rule set for individual applications in the Microsoft 365 Apps suite. The script is hosted on GitHub in my [fslogix](https://github.com/aaronparker/fslogix/tree/main/Rules) repository and for details on how to use the script review the [FSLogix App masking](https://stealthpuppy.com/fslogix/applicationkeys/) documentation.
 
 To use the script to generate App Masking rule sets for Outlook and OneDrive, use the following PowerShell commands on a virtual machine with a Microsoft 365 Apps for enterprise installation:
 
@@ -91,7 +91,7 @@ Install-Module -Name "FSLogix.PowerShell.Rules"
 ```
 
 Review the generated App Masking rule set and validate in a test environment before implementing in production.
-{:.note}
+{:.note title="Important"}
 
 Configure assignments on the rule set so that an Active Directory group is targeted to the rule similar to the example below. Here we are using an AD group that is also used to manage license assignments in Azure AD.
 
@@ -134,7 +134,7 @@ Each policy accepts a JSON representation of the web apps as defined in the Micr
 ]
 ```
 
-Below is an example of the Start menu after the web apps have been added.
+Before pasting into the policy, [minify](https://jsonformatter.org/json-minify) the JSON string. After the policy is applied, the application shortcuts will be added to the Start menu as in the example below.
 
 [![Start menu showing the installed web apps]({{site.baseurl}}/media/2023/04/StartMenu.png)]({{site.baseurl}}/media/2023/04/StartMenu.png)
 
@@ -144,14 +144,14 @@ Start menu on Windows Server 2022, showing the installed web apps including Micr
 The shortcut name for Outlook will be renamed to **Outlook (PWA)** because this it what is defined in the PWA definition by Microsoft. Until Microsoft Edge 112 is released, the `custom_name` value in the JSON will not take effect. The overall experience of this solution should be improved with Edge 112.
 {:.note title="Important"}
 
-After the policy is applied, the web apps will not be created until Microsoft Edge is launched. The policy is browser specific and not tied to the OS, thus it is not read until the browser is launched.
+After the policy is applied, the web apps will not be created until Microsoft Edge is launched. The policy is browser specific and not tied to the OS, thus it is not read until the browser is started.
 
-To ensure the web apps are added after first sign-in, enable the following policy:
+To ensure the web apps are added after sign-in without waiting for the user to start Edge, enable the following policy:
 
 - In a Group Policy Object assigned to the organisational unit containing the target user accounts (or via loopback on the computer account OU), enable the **Enable startup boost** policy setting under **User Configuration / Policies / Administrative Templates / Microsoft Edge / Performance**
 - In Intune, create a device configuration profile using the Settings Catalog, and enable **Enable startup boost (User)** under **Microsoft Edge / Performance**. Assign the policy to an Azure AD user group
 
-This policy will cause several Microsoft Edge processes to start at sign-in and the web apps will be created to be available soon after sign-in. If you're concerned about CPU and RAM consumption, this may be a trade-off for an improved user experience.
+This policy will cause several Microsoft Edge processes to start at sign-in and the web apps will be created soon after. If you're concerned about CPU and RAM consumption, this may be a trade-off for an improved user experience.
 
 A successful authentication to Microsoft 365 / Azure AD is required for the Outlook web app to complete its configuration including the shortcut icon and registering as a mail handler. Authentication should occur after any instance of Edge is started and signed into.
 {:.note title="Important"}
@@ -165,7 +165,7 @@ The Outlook web app can be set as the default mail handler. The user can choose 
 The Outlook web app asking the user to be the default main handler.
 {:.figcaption}
 
-Setting this option on behalf of the user could be a challenge due to timing. It's worth testing whether the Outlook web app can be set as the default mail client after the user launches the application.
+Setting this option on behalf of the user could be a challenge due to timing. It's worth testing whether the Outlook web app can be set as the default mail client, after the user launches the application, via Group Policy, [SetUserFTA](https://kolbi.cz/blog/2017/10/25/setuserfta-userchoice-hash-defeated-set-file-type-associations-per-user/), or [PS-SFTA](https://github.com/DanysysTeam/PS-SFTA).
 
 ## Wrap Up
 

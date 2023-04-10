@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building a Package Factory for the Microsoft 365 Apps
-description: 'Using GitHub Workflows to automate the packaging of the Microsoft 365 Apps and import into an Intune tenant.'
+description: "Using GitHub Workflows to automate the packaging of the Microsoft 365 Apps and import into an Intune tenant."
 permalink: "/m365apps-package-factory/"
 image:
   path: "/assets/img/package/image.jpg"
@@ -14,7 +14,8 @@ related_posts:
 - _posts/2022-03-02-automate-intune-documentation-github.md
 - _posts/2022-03-02-automate-intune-documentation-azure.md
 ---
-* this unordered seed list will be replaced by the toc
+
+- this unordered seed list will be replaced by the toc
 {:toc}
 
 Deploying the [Microsoft 365 Apps via Microsoft Intune]({{site.baseurl}}/office-365-proplus-deploy-intune/) is as simple as [using using the built in tools to create a package](https://docs.microsoft.com/en-us/mem/intune/apps/apps-add-office365) without having to manually package any binaries.
@@ -26,13 +27,13 @@ Creating a Microsoft 365 Apps package in the Microsoft Endpoint Manager admin ce
 
 This approach works great for new devices, particularly PCs deployed via Windows Autopilot; however, the in-built Microsoft 365 Apps package doesn't consistently upgrade older versions of Microsoft Office. [We've](https://insentragroup.com) seen issues with failed deployments due to a failure in the package upgrading over existing Microsoft Office installations in several customer environments.
 
-Additionally, the in-built Microsoft 365 Apps package cannot be used as a depedency by another Win32 application package (e.g., ensure the Microsoft 365 Apps is installed before an add-in package is installed).
+Additionally, the in-built Microsoft 365 Apps package cannot be used as a dependency by another Win32 application package (e.g., ensure the Microsoft 365 Apps is installed before an add-in package is installed).
 
-If your environment experiences upgrade issues or you need to use the Dependecies feature, you'll need to create [a custom Win32 application package](https://docs.microsoft.com/en-us/mem/intune/apps/apps-win32-app-management) to deploy the Microsoft 365 Apps.
+If your environment experiences upgrade issues or you need to use the Dependencies feature, you'll need to create [a custom Win32 application package](https://docs.microsoft.com/en-us/mem/intune/apps/apps-win32-app-management) to deploy the Microsoft 365 Apps.
 
 For small environments, creating a custom package could be a one off action, thus the package can be created manually; however, for larger environments you may multiple packages, and could have a team of engineers creating packages. This could be in house engineers, or consultant or managed services engineers working across multiple customer environments. In these environments, it's important to ensure consistency across multiple packages - without packages built to a common standard, your devices could experience inconsistent deployments and you'll spend more time troubleshooting issues.
 
-How do we ensure standardisation and provide a simple method for teams creating Microsoft 365 Apps packages? *With automation, of course*.
+How do we ensure standardisation and provide a simple method for teams creating Microsoft 365 Apps packages? _With automation, of course_.
 
 Here's how I built a proof of concept for a packaging factory solution for the Microsoft 365 Apps and Microsoft Intune using GitHub Workflows.
 
@@ -40,10 +41,10 @@ Here's how I built a proof of concept for a packaging factory solution for the M
 
 Let's start by taking a look at what should be included in a custom Microsoft 365 Apps Win32 package:
 
-* A `configuration.xml` that defines the Microsoft 365 Apps package. Create the configuration XMl files in the [Office Customization Tool](https://docs.microsoft.com/en-us/deployoffice/admincenter/overview-office-customization-tool)
-* An `uninstall.xml` that defines removal of the Microsoft 365 Apps from a target PC
-* `setup.exe` from the [Office Deployment Tool](https://www.microsoft.com/en-au/download/details.aspx?id=49117). This will process the `configuration.xml` and the `uninstall.xml` to install or uninstall the Microsoft 365 Apps
-* A detection method for Intune to determine whether the application is installed. Microsoft lists the existance of the `HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\O365ProPlusRetail - en-us` registry key [in the documentation](https://docs.microsoft.com/en-us/deployoffice/deploy-microsoft-365-apps-configuration-manager-2012r2); however, this is a very simple approach and you may want instead use registry keys or values unique to your package, or a version comparison for an executable installed in the Microsoft 365 Apps (e.g. `OUTLOOK.EXE`)
+- A `configuration.xml` that defines the Microsoft 365 Apps package. Create the configuration XMl files in the [Office Customization Tool](https://docs.microsoft.com/en-us/deployoffice/admincenter/overview-office-customization-tool)
+- An `uninstall.xml` that defines removal of the Microsoft 365 Apps from a target PC
+- `setup.exe` from the [Office Deployment Tool](https://www.microsoft.com/en-au/download/details.aspx?id=49117). This will process the `configuration.xml` and the `uninstall.xml` to install or uninstall the Microsoft 365 Apps
+- A detection method for Intune to determine whether the application is installed. Microsoft lists the existence of the `HKLM\Software\Microsoft\Windows\CurrentVersion\Uninstall\O365ProPlusRetail - en-us` registry key [in the documentation](https://docs.microsoft.com/en-us/deployoffice/deploy-microsoft-365-apps-configuration-manager-2012r2); however, this is a very simple approach and you may want instead use registry keys or values unique to your package, or a version comparison for an executable installed in the Microsoft 365 Apps (e.g. `OUTLOOK.EXE`)
 
 For upgrade scenarios, Microsoft provides [scripts that are useful for uninstalling and cleaning](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/tree/master/Office-ProPlus-Deployment/Deploy-OfficeClickToRun) up older versions of Microsoft Office. These VBScripts provide a more consistent result than relying on the Office Deployment Tool to complete the uninstall and upgrade.
 
@@ -57,7 +58,7 @@ A Git repository is a natural choice for teams managing the Microsoft 365 Apps t
 
 For this POC, I've created three workflows:
 
-1. **update-binaries** - this workflow is scheduled to run weeekly, and will download updates to the Office Deployment Tool, the Microsoft Win32 Content Prep Tool, and the PSAppDeployToolkit
+1. **update-binaries** - this workflow is scheduled to run weekly, and will download updates to the Office Deployment Tool, the Microsoft Win32 Content Prep Tool, and the PSAppDeployToolkit
 2. **new-autopackage** - this workflow will package the Microsoft 365 Apps using a specified configuration file as an input and import the package into a single tenant
 3. **new-package** - this workflow will accept authentication details for any tenant and import the Microsoft 365 Apps package
 
@@ -81,18 +82,18 @@ When creating a repository from this template, follow this checklist to set up y
 
 The following secrets are required by all workflows:
 
-* `COMMIT_EMAIL` - email address used for commits
-* `COMMIT_NAME` - user name used for commits
-* `GPGKEY` - [GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) to sign commits
-* `GPGPASSPHRASE` - passphrase to unlock the GPG key
+- `COMMIT_EMAIL` - email address used for commits
+- `COMMIT_NAME` - user name used for commits
+- `GPGKEY` - [GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key) to sign commits
+- `GPGPASSPHRASE` - passphrase to unlock the GPG key
 
 The **update-binaries** workflow will update executables and scripts required by the solution and commit changes to the repository, thus signed commits are recommended. Signing commits ensures that commits to the repository from people in your team adding, Microsoft 365 Apps configurations to the repository, are verified.
 
 The **new-autopackage** workflow that will package and import the Microsoft 365 Apps package into a single tenant each time the workflow is run. The following secrets are required for this workflow:
 
-* `TENANT_ID` - the target tenant ID
-* `CLIENT_ID` - the Azure AD [app registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) client ID used to authenticate to the target tenent
-* `CLIENT_SECRET` - password used by to authenticate to the target tenent
+- `TENANT_ID` - the target tenant ID
+- `CLIENT_ID` - the Azure AD [app registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) client ID used to authenticate to the target tenent
+- `CLIENT_SECRET` - password used by to authenticate to the target tenent
 
 ## Azure AD App Registration
 
