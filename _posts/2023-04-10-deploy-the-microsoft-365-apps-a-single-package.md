@@ -1,8 +1,7 @@
 ---
 layout: post
-title: Deploy the Microsoft 365 Apps a Single Package
-description: Deploy the Microsoft 365 Apps for enterprise as a single package including
-  Visio and Project to simplify management
+title: Deploy a Single Microsoft 365 Apps Package Everywhere All At Once
+description: Viewer mode the Microsoft 365 Apps for enterprise will enable you to deploy a single package without needing seperate packages for Visio and Project, simplifying management.
 permalink: "/m365apps-single-package/"
 image:
   path: "/assets/img/single/image.jpg"
