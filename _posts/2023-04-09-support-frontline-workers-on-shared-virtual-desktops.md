@@ -141,7 +141,7 @@ Before pasting into the policy, [minify](https://jsonformatter.org/json-minify) 
 Start menu on Windows Server 2022, showing the installed web apps including Microsoft Outlook (Outlook PWA).
 {:.figcaption}
 
-The shortcut name for Outlook will be renamed to **Outlook (PWA)** because this it what is defined in the PWA definition by Microsoft. Until Microsoft Edge 112 is released, the `custom_name` value in the JSON will not take effect. The overall experience of this solution should be improved with Edge 112.
+The shortcut name for Outlook will be renamed to **Outlook (PWA)** because this it what is defined in the PWA definition by Microsoft. The `custom_name` value in the JSON will not take effect unless your image is running Microsoft Edge 112. The overall experience of this solution should be improved with Edge 112 or higher
 {:.note title="Important"}
 
 After the policy is applied, the web apps will not be created until Microsoft Edge is launched. The policy is browser specific and not tied to the OS, thus it is not read until the browser is started.
