@@ -64,16 +64,16 @@ With this policy in place on any device type, you can now manage a single packag
 There is one application that could force you to deploy multiple packages - Microsoft Access. There are a few approaches you could take managing access to Access.
 
 1. Don't include Access in your package - hopefully the default for most environments
-2. Create a default package without access (or with the Access Runtime) if you need it, and a seperate package that includes Access. I'm assuming that Access is required on a small number of machines, so it shouldn't be to difficult to maintain two packages. This would be the simplest approach for physical PCs
-3. Include Access in your single Microsoft 365 Apps package and use FSLogix App Masking to control who can use Access. This approach would be needed for virtual desktops, but could also be used for virtual desktops
+2. Create a default package without Access (or with the Access Runtime) if you need it, and a seperate package that includes Access. I'm assuming that Access is only required on a small number of machines, so it shouldn't be too difficult to maintain a seperate package. This would be the simplest approach for physical PCs
+3. Include Access in your single Microsoft 365 Apps package and use FSLogix App Masking to control who can use Access. This approach would be needed for shared virtual desktops, but could also be used for physical desktops
 
 ### FSLogix App Masking for Access
 
-To create an FSLogix Apps Masking rule set for Access, the rule set can define the minimum components for Access, including the Access shortcut and `MSACCESS.EXE`. Creation of the rule set can be simplified with `New-MicrosoftOfficeRuleset.ps1`. I won't go into full detail here on how App Masking works, but I will provide an approach to easily create an App Masking rule set for Access.
+To create an FSLogix Apps Masking rule set for Access, the rule set can define the minimum components for Access, including the Access shortcut and `MSACCESS.EXE`.  I won't go into full detail here on how App Masking works, but I will provide an approach to easily create an App Masking rule set for Access.
 
-The `New-MicrosoftOfficeRuleset.ps1` script is hosted on GitHub in my [fslogix](https://github.com/aaronparker/fslogix/tree/main/Rules) repository and for details on how to use the script review the [FSLogix App masking](https://stealthpuppy.com/fslogix/applicationkeys/) documentation.
+Creation of the rule set can be simplified with `New-MicrosoftOfficeRuleset.ps1` - this script is hosted on GitHub in my [fslogix](https://github.com/aaronparker/fslogix/tree/main/Rules) repository and for details on how to use the script, review the [FSLogix App masking](https://stealthpuppy.com/fslogix/applicationkeys/) documentation.
 
-To use the script to generate App Masking rule set for Access, use the following PowerShell commands on a virtual machine with a Microsoft 365 Apps for enterprise installation:
+To generate App Masking rule set for Access, use the following PowerShell commands on a virtual machine with a Microsoft 365 Apps for enterprise installation:
 
 ```powershell
 Install-Module -Name "FSLogix.PowerShell.Rules"
@@ -85,6 +85,8 @@ Review the generated App Masking rule set and validate in a test environment bef
 
 ## Wrap Up
 
-Providing a view or read-only mode for the Microsoft Office or Microsoft 365 Apps is not new, but a common challenge. Although not without some specific challenges (see [here re:Outlook and OneNote](https://stealthpuppy.com/m365apps-frontline-workers/#enable-the-microsoft-365-apps-in-viewer-mode)), viewer mode for the Microsoft 365 Apps now makes it much easier to deploy the Microsoft 356 Apps.
+Providing a view or read-only mode for the Microsoft Office or Microsoft 365 Apps is not new, but a common challenge. In the past Microsoft has provided dedicated Office viewer applications; however, beyond Visio, these apps no longer exist.
+
+Although not without some specific challenges (see [here re:Outlook and OneNote](https://stealthpuppy.com/m365apps-frontline-workers/#enable-the-microsoft-365-apps-in-viewer-mode)), viewer mode for the Microsoft 365 Apps now makes it much easier to deploy the Microsoft 356 Apps and cater for mixed use-cases or environments with mixed licensing.
 
 For many organisations, or at least the majority of corporate Windows desktops, a one size fits all approach deployment is now possible.
