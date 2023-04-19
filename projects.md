@@ -38,6 +38,12 @@ If you've found any of the projects below useful and wish to show support, I'm p
 
 [Windows Customised Defaults](https://stealthpuppy.com/image-customise/) is a solution for customising a Windows image to change the settings from the Microsoft defaults to something more enterprise ready. The solution will update the Windows default profile, including configuring the default Start menu, and configure Windows feature states.
 
+## Microsoft 365 Apps packager
+
+![Microsoft 365 icon](/assets/projects/m365.png)
+
+[Microsoft 365 Apps packager](https://github.com/aaronparker/m365apps) is a PowerShell script and workflow for creating and importing a Win32 package into Intune for the Microsoft 365 Apps.
+
 ## FSLogix
 
 [FSLogix](https://stealthpuppy.com/fslogix/) - documentation for various PowerShell scripts and resources that I've built for managing FSLogix Container and App Masking.
