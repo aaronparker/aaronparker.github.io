@@ -1,7 +1,8 @@
 ---
 layout: post
 title: A Package Factory for the Microsoft 365 Apps and Intune
-description: "Using PowerShell and GitHub Actions to automate the packaging of the Microsoft 365 Apps and import into an Intune tenant."
+description: Using PowerShell and GitHub Actions to automate the packaging of the
+  Microsoft 365 Apps and import into an Intune tenant.
 permalink: "/m365apps-package-factory/"
 image:
   path: "/assets/img/package/image.jpg"
@@ -13,8 +14,8 @@ comments: true
 related_posts:
 - _posts/2023-04-09-support-frontline-workers-on-shared-virtual-desktops.md
 - _posts/2023-04-10-deploy-the-microsoft-365-apps-a-single-package.md
+date: 2023-04-20 23:58 +1000
 ---
-
 - this unordered seed list will be replaced by the toc
 {:toc}
 
