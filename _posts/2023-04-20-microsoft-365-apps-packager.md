@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Package Factory for the Microsoft 365 Apps and Intune
+title: An Intune Package Factory for the Microsoft 365 Apps
 description: Using PowerShell and GitHub Actions to automate the packaging of the
   Microsoft 365 Apps and import into an Intune tenant.
 permalink: "/m365apps-package-factory/"
@@ -14,7 +14,7 @@ comments: true
 related_posts:
 - _posts/2023-04-09-support-frontline-workers-on-shared-virtual-desktops.md
 - _posts/2023-04-10-deploy-the-microsoft-365-apps-a-single-package.md
-date: 2023-04-20 23:58 +1000
+date: 2023-04-21 09:00 +1000
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}
@@ -121,8 +121,8 @@ Use `New-Microsoft365AppsPackage.ps1` by authenticating with an Intune Administr
 ```powershell
 Connect-MSIntuneGraph -TenantID "lab.stealthpuppy.com"
 $params = @{
-    Path             = "E:\project\m365Apps"
-    ConfigurationFile = "E:\project\m365Apps\configs\O365ProPlus.xml"
+    Path             = "E:\project\m365apps"
+    ConfigurationFile = "E:\project\m365apps\configs\O365ProPlus.xml"
     Channel          = "Current"
     CompanyName      = "stealthpuppy"
     TenantId         = "6cdd8179-23e5-43d1-8517-b6276a8d3189"
@@ -131,9 +131,11 @@ $params = @{
 .\New-Microsoft365AppsPackage.ps1 @params
 ```
 
-[![The Microsoft 365 Apps package imported into Intune]({{site.baseurl}}/media/2023/04/intune-package.png)]({{site.baseurl}}/media/2023/04/intune-package.png)
+Which will look similar to this when run in Terminal on Windows 11:
 
-The Microsoft 365 Apps package imported into Intune
+[![Running New-Microsoft365AppsPackage.ps1 on Windows 11]({{site.baseurl}}/media/2023/04/New-Microsoft365AppsPackage.png)]({{site.baseurl}}/media/2023/04/New-Microsoft365AppsPackage.png)
+
+Running `New-Microsoft365AppsPackage.ps1` on Windows 11
 {:.figcaption}
 
 When `New-Microsoft365AppsPackage.ps1` has successfully completed, the `package\output` folder will contain the `setup.intunewin` package, a copy of the configuration XML file in the package, and `m365apps.json` that is used by `Create-Win32App.ps1` to import the package into Intune.
@@ -142,6 +144,23 @@ When `New-Microsoft365AppsPackage.ps1` has successfully completed, the `package\
 
 Contents of the `package\output` folder once the package has been created
 {:.figcaption}
+
+If `-Import` is specified when running `New-Microsoft365AppsPackage.ps1`, a standardised Microsoft 365 Apps package will be imported into the target Intune tenant:
+
+[![The Microsoft 365 Apps package imported into Intune]({{site.baseurl}}/media/2023/04/intune-package.png)]({{site.baseurl}}/media/2023/04/intune-package.png)
+
+The Microsoft 365 Apps package imported into Intune
+{:.figcaption}
+
+If `-Import` is not specified, the package can be imported into Intune manually or by running `Create-Win32App.ps1`:
+
+```powershell
+$params = @{
+    Json        = "E:\project\m365apps\output\m365apps.json"
+    PackageFile = "E:\project\m365apps\output\setup.intunewin"
+}
+& "E:\project\m365apps\scripts\Create-Win32App.ps1" @params
+```
 
 ### Usage via App Registration
 
