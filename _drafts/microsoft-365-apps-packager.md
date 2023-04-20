@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building a Package Factory for the Microsoft 365 Apps
+title: A Package Factory for the Microsoft 365 Apps and Intune
 description: "Using PowerShell and GitHub Actions to automate the packaging of the Microsoft 365 Apps and import into an Intune tenant."
 permalink: "/m365apps-package-factory/"
 image:
@@ -11,8 +11,8 @@ image:
     480w: "/assets/img/package/image@0,25x.jpg"
 comments: true
 related_posts:
-- _posts/2022-03-02-automate-intune-documentation-github.md
-- _posts/2022-03-02-automate-intune-documentation-azure.md
+- _posts/2023-04-09-support-frontline-workers-on-shared-virtual-desktops.md
+- _posts/2023-04-10-deploy-the-microsoft-365-apps-a-single-package.md
 ---
 
 - this unordered seed list will be replaced by the toc
@@ -20,12 +20,12 @@ related_posts:
 
 Deploying the [Microsoft 365 Apps via Microsoft Intune]({{site.baseurl}}/office-365-proplus-deploy-intune/) is as simple as [using using the built in tools to create a package](https://docs.microsoft.com/en-us/mem/intune/apps/apps-add-office365) without having to manually package any binaries.
 
-[![Creating a Microsoft 365 Apps package in Intune]({{site.baseurl}}/media/2022/04/m365apps.jpeg)]({{site.baseurl}}/media/2022/04/m365apps.jpeg)
+[![Creating a Microsoft 365 Apps package in Intune]({{site.baseurl}}/media/2023/04/m365apps.jpeg)]({{site.baseurl}}/media/2023/04/m365apps.jpeg)
 
-Creating a Microsoft 365 Apps package in the Microsoft Endpoint Manager admin center
+Creating a Microsoft 365 Apps package in the Microsoft Intune admin center
 {:.figcaption}
 
-This approach works great for new devices, particularly PCs deployed via Windows Autopilot.
+This approach works great for new devices, particularly PCs deployed via Windows Autopilot. However, there are challenges with the in-built package solution.
 
 ## The Problem
 
@@ -37,7 +37,7 @@ If your environment experiences upgrade issues or you need to use the Dependenci
 
 For small environments, creating a custom package could be a one off action, thus the package can be created manually; however, for larger environments you could create multiple packages, and could have a team of engineers creating packages. This could be in house engineers, or consultant or managed services engineers working across multiple customer environments. In these environments, it's important to ensure consistency across multiple packages - without packages built to a common standard, your devices could experience inconsistent deployments and you'll spend more time troubleshooting issues.
 
-How do we ensure standardisation and provide a simple method for teams creating Microsoft 365 Apps packages? _With automation, of course_.
+How do we ensure standardisation and a simple method for creating Microsoft 365 Apps packages? _With automation, of course_.
 {:.note title="Consider this"}
 
 ## Anatomy of a Microsoft 365 Apps Win32 Package
@@ -53,12 +53,14 @@ Let's start by taking a look at what should be included in a custom Microsoft 36
 
 ## The Solution
 
-To solve this challenge, I've built PowerShell packaging factory solution for the Microsoft 365 Apps and Microsoft Intune that can be run locally or via GitHub Actions.
+To solve this challenge, I've built PowerShell packaging factory for the Microsoft 365 Apps and Microsoft Intune, that can be run locally or via GitHub Actions.
 
-The [Microsoft 365 Apps packager repository](https://github.com/aaronparker/m365apps) consists of the following 
+The [Microsoft 365 Apps packager repository](https://github.com/aaronparker/m365apps) consists of the following:
 
 * `New-Microsoft365AppsPackage.ps1` - This is the key script that creates and imports a Microsoft 365 Apps package into Intune. The script can be run on a Windows machine in a copy of the repository or via GitHub Actions (if you clone the repository)
 * `Create-Win32App.ps1` imports the intunewin package into the target Intune tenant, using `App.json` as the template. This script uses the `IntuneWin32App` PowerShell module and is called by `New-Microsoft365AppsPackage.ps1` to import the package into an Intune tenant
+* Template Microsoft 365 Apps deployment configurations - deployment configurations are created in the [Microsoft 365 Apps admin center](https://config.office.com/), but every organisation is going to deploy a similar configuration, so these templates should be suitable for the most common deployments
+* A GitHub workflow that uses `New-Microsoft365AppsPackage.ps1` to package the Microsoft 365 Apps on a GitHub hosted runner - the workflow can import the package into an Intune tenant. It also uploads the generated Microsoft 365 Apps package [a workflow artifact](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts) for importing into Intune manually
 
 ### Requirements
 
@@ -74,6 +76,24 @@ The [Microsoft 365 Apps packager repository](https://github.com/aaronparker/m365
 | ClientId | The client id (GUID) of the target Azure AD app registration. | No |
 | ClientSecret | Client secret used to authenticate against the app registration. | No |
 | Import | Switch parameter to specify that the the package should be imported into the Microsoft Intune tenant. | No |
+
+#### PowerShell modules
+
+These PowerShell modules are required:
+
+* [Evergreen](https://www.powershellgallery.com/packages/Evergreen/)
+* [IntuneWin32App](https://www.powershellgallery.com/packages/IntuneWin32App/)
+* [MSAL.PS](https://www.powershellgallery.com/packages/MSAL.PS/)
+
+If you are running the packager locally, install the modules with:
+
+```powershell
+Install-Module -Name Evergreen, MSAL.PS, IntuneWin32App -SkipPublisherCheck
+```
+
+### Clone the repository
+
+If you're not familiar with clone a repository, use [GitHub Desktop to clone the repository](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop) and keep your local copy up to date with changes to the source repository.
 
 ### Configuration Files
 
@@ -110,14 +130,21 @@ $params = @{
 .\New-Microsoft365AppsPackage.ps1 @params
 ```
 
-![The Microsoft 365 Apps package imported into Intune]({{site.baseurl}}/media/2023/04/intune-package.png)
+[![The Microsoft 365 Apps package imported into Intune]({{site.baseurl}}/media/2023/04/intune-package.png)]({{site.baseurl}}/media/2023/04/intune-package.png)
 
 The Microsoft 365 Apps package imported into Intune
 {:.figcaption}
 
+When `New-Microsoft365AppsPackage.ps1` has successfully completed, the `package\output` folder will contain the `setup.intunewin` package, a copy of the configuration XML file in the package, and `m365apps.json` that is used by `Create-Win32App.ps1` to import the package into Intune.
+
+[![Package output]({{site.baseurl}}/media/2023/04/package-output.png)]({{site.baseurl}}/media/2023/04/package-output.png)
+
+Contents of the `package\output` folder once the package has been created
+{:.figcaption}
+
 ### Usage via App Registration
 
-Use `New-Microsoft365AppsPackage.ps1` to create a new package by passing credentials to an Azure AD app registration that has rights to import applications into Microsoft Intune. This approach can be modified for use within a pipeline:
+Use `New-Microsoft365AppsPackage.ps1` to create a new package by passing credentials to an Azure AD app registration that has rights to import applications into Microsoft Intune. This approach can be modified for use within a [GitHub workflow](https://docs.github.com/en/actions/using-workflows):
 
 ```powershell
 $params = @{
@@ -133,7 +160,7 @@ $params = @{
 .\New-Microsoft365AppsPackage.ps1 @params
 ```
 
-### Azure AD App Registration
+#### Azure AD App Registration
 
 The workflows must authenticate to the Microsoft Graph API using a non-interactive authentication method. Create an Azure AD app registration and enable the [`DeviceManagementApps.ReadWrite.All`](https://docs.microsoft.com/en-us/graph/api/intune-shared-devicemanagement-update) permission.
 
@@ -144,7 +171,7 @@ The app registration requires the following API permissions:
 | DeviceManagementApps.ReadAll | Application | Read Microsoft Intune apps | Yes |
 | DeviceManagementApps.ReadWriteAll | Application | Read and write Microsoft Intune apps | Yes |
 
-[![Assigning the DeviceManagementApps.ReadWrite.All API to the app registration]({{site.baseurl}}/media/2022/04/graphapi.jpeg)]({{site.baseurl}}/media/2022/04/graphapi.jpeg)
+[![Assigning the DeviceManagementApps.ReadWrite.All API to the app registration]({{site.baseurl}}/media/2023/04/graphapi.jpeg)]({{site.baseurl}}/media/2023/04/graphapi.jpeg)
 
 Assigning the DeviceManagementApps.ReadWrite.All API to the app registration
 {:.figcaption}
@@ -157,45 +184,49 @@ A Git repository is a natural choice for teams managing the Microsoft 365 Apps t
 
 This solution includes two pipelines:
 
-1. **update-binaries** - this workflow is scheduled to run weekly, and will download updates to the Office Deployment Tool, the Microsoft Win32 Content Prep Tool, and the PSAppDeployToolkit
-2. **new-package** - this workflow will accept authentication details for any tenant and import the Microsoft 365 Apps package
+1. **update-binaries** - this workflow is scheduled to run weekly, and will update the repository with new versions of the Office Deployment Tool, the Microsoft Win32 Content Prep Tool, and the PSAppDeployToolkit
+2. **new-package** - this workflow will create a package for the Microsoft 365 Apps, import the package into an Intune tenant (with app registration details stored securely in repository secrets), and upload the package as a workflow artifact
 
 ### New Package Workflow
 
 Here's what running the **new-package** workflow looks like - the repository hosts several configurations from which a package can be created.
 
-[![Microsoft 365 Apps configuration packages in the repository]({{site.baseurl}}/media/2022/04/m365-package-01.jpeg)]({{site.baseurl}}/media/2022/04/m365-package-01.jpeg)
+[![Microsoft 365 Apps configuration packages in the repository]({{site.baseurl}}/media/2023/04/m365-configurationxml.jpeg)]({{site.baseurl}}/media/2023/04/m365-configurationxml.jpeg)
 
 Microsoft 365 Apps configuration packages in the repository
 {:.figcaption}
 
 The **new-package** workflow is run from the Actions tab on the repository on GitHub. The **Run workflow** action will provide a prompt for several inputs:
 
-1. Configuration XML - this file must exist in the repository before running the workflow
-2. The target tenant id
-3. The application id of the app registration used to authenticate to the target tenant
-4. The client secret used to authenticate to the app registration
+1. Configuration XML - select from a list of configuration files stored in the repository
+2. Update channel - select the Microsoft 365 Apps update channel to apply to the package
+3. Company name - a string that will be injected into the Company value in the configuration XML file
+4. Import - choose to import the package into the target Intune tenant
 
-The client secret is added as an input in clear text. To ensure the target tenant remains secure, change the client secret after the workflow has been used to import the package.
-{:.note title="Important"}
-
-[![Starting the workflow and selecting inputs]({{site.baseurl}}/media/2022/04/m365-package-02.jpeg)]({{site.baseurl}}/media/2022/04/m365-package-02.jpeg)
+[![Starting the workflow and selecting inputs]({{site.baseurl}}/media/2023/04/run-new-package.jpeg)]({{site.baseurl}}/media/2023/04/run-new-package.jpeg)
 
 Starting the workflow and selecting inputs
 {:.figcaption}
 
 The workflow should run to create the Microsoft 365 Apps package and import it into the target tenant.
 
-[![The workflow run after completing successfully]({{site.baseurl}}/media/2022/04/m365-package-03.jpeg)]({{site.baseurl}}/media/2022/04/m365-package-03.jpeg)
+[![The workflow run after completing successfully]({{site.baseurl}}/media/2023/04/workflow-run.jpeg)]({{site.baseurl}}/media/2023/04/workflow-run.jpeg)
 
 The workflow run after completing successfully
 {:.figcaption}
 
 Once the workflow has run successfully, you should see a new Win32 package in your Intune tenant.
 
-[![A Microsoft 365 Apps package imported into Microsoft Intune]({{site.baseurl}}/media/2022/04/m365-package-04.jpeg)]({{site.baseurl}}/media/2022/04/m365-package-04.jpeg)
+[![A Microsoft 365 Apps package imported into Microsoft Intune]({{site.baseurl}}/media/2023/04/m365-package.jpeg)]({{site.baseurl}}/media/2023/04/m365-package.jpeg)
 
 A Microsoft 365 Apps package imported into Microsoft Intune
+{:.figcaption}
+
+Finally, once the workflow is finished, the result and details of the package it created, are saved to the workflow summary:
+
+[![Workflow summary results]({{site.baseurl}}/media/2023/04/new-package-workflow-result.jpeg)]({{site.baseurl}}/media/2023/04/new-package-workflow-result.jpeg)
+
+The workflow is updated with a summary of the results of that run including details of the package.
 {:.figcaption}
 
 #### Workflow Secrets
@@ -229,4 +260,6 @@ This workflow uses the following secrets to configure and sign commits:
 
 ## Wrap Up
 
-This is.
+While Intune includes a simple solution to creating a Microsoft 365 Apps package to deploy to Windows devices. Using that in-built solution is not without its drawbacks and limitations. Deploying the Microsoft 365 Apps to managed devices via a Win32 package will provide a more consistent result.
+
+The [Microsoft 365 Apps packager for Intune](https://github.com/aaronparker/m365apps), provides a consistent and repeatable process for creating a Win32 version of the package, whether you're importing packages into a single Intune tenant or multiple tenants.
