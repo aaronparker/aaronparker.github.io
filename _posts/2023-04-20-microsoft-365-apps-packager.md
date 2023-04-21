@@ -78,7 +78,7 @@ The [Microsoft 365 Apps packager repository](https://github.com/aaronparker/m365
 | ClientSecret | Client secret used to authenticate against the app registration. | No |
 | Import | Switch parameter to specify that the the package should be imported into the Microsoft Intune tenant. | No |
 
-#### PowerShell modules
+### PowerShell modules
 
 These PowerShell modules are required:
 
@@ -91,10 +91,6 @@ If you are running the packager locally, install the modules with:
 ```powershell
 Install-Module -Name Evergreen, MSAL.PS, IntuneWin32App -SkipPublisherCheck
 ```
-
-### Clone the repository
-
-If you're not familiar with clone a repository, use [GitHub Desktop to clone the repository](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop) and keep your local copy up to date with changes to the source repository.
 
 ### Configuration Files
 
@@ -114,7 +110,15 @@ When the package is generated, the following properties will be updated:
 * Tenant Id - the target Azure AD tenant ID
 * Channel - the [Microsoft 365 Apps update channel](https://learn.microsoft.com/en-us/deployoffice/updates/overview-update-channels)
 
-### Usage via Administrator Sign-in
+### Using the Packager
+
+If you're looking to download and use the Packager locally, follow these steps:
+
+#### Clone the repository
+
+If you're not familiar with clone a repository, use [GitHub Desktop to clone the repository](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop) and keep your local copy up to date with changes to the source repository.
+
+#### Usage via Administrator Sign-in
 
 Use `New-Microsoft365AppsPackage.ps1` by authenticating with an Intune Administrator account before running the script. Run `Connect-MSIntuneGraph` to authenticate with administrator credentials using a sign-in window or device login URL.
 
@@ -162,9 +166,9 @@ $params = @{
 & "E:\project\m365apps\scripts\Create-Win32App.ps1" @params
 ```
 
-### Usage via App Registration
+#### Usage via App Registration
 
-Use `New-Microsoft365AppsPackage.ps1` to create a new package by passing credentials to an Azure AD app registration that has rights to import applications into Microsoft Intune. This approach can be modified for use within a [GitHub workflow](https://docs.github.com/en/actions/using-workflows):
+Use `New-Microsoft365AppsPackage.ps1` to create a new package by passing credentials to an Azure AD app registration (see below) that has rights to import applications into Microsoft Intune:
 
 ```powershell
 $params = @{
@@ -179,6 +183,10 @@ $params = @{
 }
 .\New-Microsoft365AppsPackage.ps1 @params
 ```
+
+### Automating the Packager
+
+The Microsoft 365 Apps Packager can be automated in multiple ways; however, the repository includes a method based on [workflows](https://docs.github.com/en/actions/using-workflows) and GitHub Actions. To use this approach [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the repository and configure in your own GitHub account.
 
 #### Azure AD App Registration
 
@@ -196,7 +204,7 @@ The app registration requires the following API permissions:
 Assigning the DeviceManagementApps.ReadWrite.All API to the app registration
 {:.figcaption}
 
-### Git and GitHub Actions
+#### Git and GitHub Actions
 
 A Git repository is a natural choice for teams managing the Microsoft 365 Apps to maintain a library of configurations and track changes to packages. A repository could be hosted on several providers; however, Azure DevOps or GitHub are my go-to for hosting Git repositories. For internal teams, Azure DevOps could be the better choice for authentication and authorisation via Azure AD.
 
@@ -207,7 +215,7 @@ This solution includes two pipelines:
 1. **update-binaries** - this workflow is scheduled to run weekly, and will update the repository with new versions of the Office Deployment Tool, the Microsoft Win32 Content Prep Tool, and the PSAppDeployToolkit
 2. **new-package** - this workflow will create a package for the Microsoft 365 Apps, import the package into an Intune tenant (with app registration details stored securely in repository secrets), and upload the package as a workflow artifact
 
-### New Package Workflow
+#### New Package Workflow
 
 Here's what running the **new-package** workflow looks like - the repository hosts several configurations from which a package can be created.
 
@@ -249,15 +257,7 @@ Finally, once the workflow is finished, the result and details of the package it
 The workflow is updated with a summary of the results of that run including details of the package.
 {:.figcaption}
 
-#### Workflow Secrets
-
-The **new-package** workflow that will package and import the Microsoft 365 Apps package into a single tenant each time the workflow is run. The following secrets are required for this workflow:
-
-- `TENANT_ID` - the target tenant ID
-- `CLIENT_ID` - the Azure AD [app registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) client ID used to authenticate to the target tenent
-- `CLIENT_SECRET` - password used by to authenticate to the target tenent
-
-### Update Binaries Workflow
+#### Update Binaries Workflow
 
 The repository includes copies of the following binaries and support files that are automatically kept updated with the latest versions:
 
@@ -268,6 +268,12 @@ The repository includes copies of the following binaries and support files that 
 If you have cloned this repository, ensure that you synchronise changes to update binaries to the latest version releases.
 
 #### Workflow Secrets
+
+The **new-package** workflow that will package and import the Microsoft 365 Apps package into a single tenant each time the workflow is run. The following secrets are required for this workflow:
+
+- `TENANT_ID` - the target tenant ID
+- `CLIENT_ID` - the Azure AD [app registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) client ID used to authenticate to the target tenent
+- `CLIENT_SECRET` - password used by to authenticate to the target tenent
 
 The **update-binaries** workflow will update executables and scripts required by the solution and commit changes to the repository, thus signed commits are recommended. Signing commits ensures that commits to the repository from people in your team adding, Microsoft 365 Apps configurations to the repository, are verified.
 
