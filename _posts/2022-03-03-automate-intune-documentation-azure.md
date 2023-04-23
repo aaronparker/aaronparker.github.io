@@ -490,3 +490,7 @@ In this article, I've provided the foundations for using IntuneCD to automate th
 For an IT operational team, service desk or managed service, automatically performing these tasks would be far better time spent that manually creating an as-built document.
 
 If you haven't read the article already, I've also covered the [same process using GitHub and GitHub Workflows](https://stealthpuppy.com/automate-intune-documentation-github/).
+
+### GitHub Repository Template
+
+Rather than having to build all of this from scratch, I have created a template repository on GitHub that you can clone or fork to start building in your own environment. Hop over to GitHub to get started: [intune-backup-template](https://github.com/aaronparker/intune-backup-template).
