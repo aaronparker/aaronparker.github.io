@@ -18,7 +18,7 @@ Pooled virtual desktops that are deployed, destroyed and re-deployed from a a go
 BUILD > USER ACCEPTANCE TESTING > PRODUCTION > UPDATE
 {:.lead}
 
-The gold image build and change process can be automated on any platform and version of Windows - it can be a time consuming process, but investing in an image automation process will save your bacon when it counts.
+The gold image build and change process can be automated on any platform and version of Windows, but automation can be a time consuming process. Investing in an image automation process will save your bacon when it counts.
 
 When a gold image is updated and deployed, most organisations will rely on manual user acceptance testing before promoting that image into production. There are several commercial solutions that can automate application testing (e.g., [Rimo3](https://www.rimo3.com/)), but you also have several free tools that can be used to automate part of your user acceptance testing.
 
