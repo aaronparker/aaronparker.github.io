@@ -25,6 +25,7 @@
         "srcset",
         "startbackup",
         "startdocumentation",
-        "virtualzation"
+        "virtualzation",
+        "winget"
     ]
 }
