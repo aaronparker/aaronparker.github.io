@@ -32,7 +32,7 @@ In this article, I'll cover the steps to install and configure the prerequisites
 
 The scripts below can be used to backup your Intune tenant and create a new as-built document in PDF and HTML formats. This approach is useful where you might not want to go as far as creating a pipeline to automate the entire process. These scripts can be used for an adhoc approach to backup and document generation.
 
-Below is the script in PowerShell format which has been tested on Windows:
+Below is the script in PowerShell format which has been tested on Windows. You can find the original source in my [template repository on GitHub](https://github.com/aaronparker/intune-backup-template).
 
 ```powershell
 New-Item -Path "$PWD\prod-backup" -ItemType "Directory"
@@ -40,7 +40,7 @@ IntuneCD-startbackup --mode=1 --output=json --path="$PWD\prod-backup" --localaut
 
 # Generate the as-built document in markdown
 $Auth = Get-Content -Path "$PWD\auth.json" | ConvertFrom-Json
-$INTRO="Endpoint Manager backup and documentation generated locally. <img align=`"right`" width=`"96`" height=`"96`" src=`"./logo.png`">"
+$INTRO="Intune backup and documentation generated locally. <img align=`"right`" width=`"96`" height=`"96`" src=`"./logo.png`">"
 IntuneCD-startdocumentation --path="$PWD\prod-backup" --outpath="$PWD\prod-as-built.md" --tenantname="$($Auth.TENANT_NAME)" --intro="$INTRO"
 
 # Generate a PDF document from the as-built markdown
@@ -58,7 +58,7 @@ IntuneCD-startbackup --mode=1 --output=json --path="$PWD/prod-backup" --localaut
 
 # Generate the as-built document in markdown
 TENANT=$(jq .params.TENANT_NAME $PWD/auth.json | tr -d \")
-INTRO="Endpoint Manager backup and documentation generated locally. <img align=\"right\" width=\"96\" height=\"96\" src=\"./logo.png\">"
+INTRO="Intune backup and documentation generated locally. <img align=\"right\" width=\"96\" height=\"96\" src=\"./logo.png\">"
 IntuneCD-startdocumentation --path="$PWD/prod-backup" --outpath="$PWD/prod-as-built.md" --tenantname="$TENANT" --intro="$INTRO"
 
 # Generate a PDF document from the as-built markdown
