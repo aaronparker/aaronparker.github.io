@@ -29,8 +29,11 @@ gem "kramdown-math-katex"
 # A JavaScript runtime for ruby that helps with running the katex gem above.
 gem "duktape"
 
+# https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll?platform=mac
+# gem "github-pages", "~> 228", group: :jekyll_plugins
+
 # Fixes `jekyll serve` in ruby 3
-gem "webrick"
+# gem "webrick"
 
 group :jekyll_plugins do
   gem "jekyll-default-layout"
