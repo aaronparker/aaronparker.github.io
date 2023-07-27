@@ -166,13 +166,13 @@ defaults:
         type:          WebPage
 
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll
-lsi: false
-safe: true
-source: /
-incremental: false
-highlighter: rouge
-gist:
-  noscript: false
+# lsi: false
+# safe: true
+# source: /
+# incremental: false
+# highlighter: rouge
+# gist:
+#   noscript: false
 
 kramdown:
   math_engine:         mathjax
