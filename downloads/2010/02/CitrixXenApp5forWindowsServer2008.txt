@@ -1,0 +1,138 @@
+@ECHO OFF
+REM Set a source location on the network
+SET SOURCE=\\domain.local\Public\Apps\Citrix\XenApp5
+
+REM Install Hosted client before XenApp (upgrade to latest post-install)
+START /WAIT MSIEXEC /I "%SOURCE%\Clients\XenAppHosted.msi" ENABLESSON=Yes ENABLE_SSON=Yes SERVER_LOCATION="https://rdsbroker.domain.local" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-
+
+REM XenApp setup properties: http://support.citrix.com/proddocs/topic/xenapp5fp-w2k8/ps-install-prop-summaries-v2.html
+REM The options below are configured for a join farm scenario
+SET OPTIONS=
+SET OPTIONS=CTX_ADDLOCAL="MetaFrame_XP,CTX_MF_MetaFrame_Core,CTX_MF_IMA_Core,CTX_MF_ICA_Shell_Editor,CTX_SMA,CTX_MF_CTXCPU,CTX_MF_CTXSFO,CTX_MF_RM"	
+REM	SET OPTIONS=%OPTIONS% CTX_CONFIGMGR_USER
+REM	SET OPTIONS=%OPTIONS% CTX_CONFIGMGR_USER_PASSWORD 
+REM	SET OPTIONS=%OPTIONS% CTX_CPSVC_SERVICE_USER_NAME
+REM	SET OPTIONS=%OPTIONS% CTX_CPSVC_SERVICE_USER_PASSWORD
+REM	SET OPTIONS=%OPTIONS% CTX_MALOO_SERVICE_USER
+REM	SET OPTIONS=%OPTIONS% CTX_MALOO_SERVICE_USER_PASSWORD
+SET OPTIONS=%OPTIONS% CTX_MF_ADD_ANON_USERS="No"
+SET OPTIONS=%OPTIONS% CTX_MF_ADD_LOCAL_ADMIN="Yes"
+SET OPTIONS=%OPTIONS% CTX_MF_CREATE_FARM_DB_CHOICE="Direct"
+SET OPTIONS=%OPTIONS% CTX_MF_CREATE_REMOTE_DESKTOP_USERS="AddEveryone"
+REM	SET OPTIONS=%OPTIONS% CTX_MF_DOMAIN_NAME
+REM	SET OPTIONS=%OPTIONS% CTX_MF_ENABLE_VIRTUAL_SCRIPTS
+SET OPTIONS=%OPTIONS% CTX_MF_FARM_SELECTION="Join"
+REM	SET OPTIONS=%OPTIONS% CTX_MF_INDIRECT_JOIN_DOMAIN_NAME
+REM	SET OPTIONS=%OPTIONS% CTX_MF_INDIRECT_JOIN_PASSWORD
+REM	SET OPTIONS=%OPTIONS% CTX_MF_INDIRECT_JOIN_USER_NAME
+REM	SET OPTIONS=%OPTIONS% CTX_MF_JOIN_FARM_DB_CHOICE
+REM	SET OPTIONS=%OPTIONS% CTX_MF_JOIN_FARM_SERVER_NAME
+REM	SET OPTIONS=%OPTIONS% CTX_MF_JOIN_FARM_SERVER_PORT
+SET OPTIONS=%OPTIONS% CTX_MF_LIC_CHOICE_FOR_CREATE="Point"
+SET OPTIONS=%OPTIONS% CTX_MF_LIC_CHOICE_FOR_JOIN_OR_UPGRADE="UseFarmSettings"
+SET OPTIONS=%OPTIONS% CTX_MF_LICENSE_SERVER_NAME="rdsbroker.domain.local"
+SET OPTIONS=%OPTIONS% CTX_MF_LICENSE_SERVER_PORT="27000"
+SET OPTIONS=%OPTIONS% CTX_MF_LICENSE_SERVER_PORT_DEFAULT="1"
+REM	SET OPTIONS=%OPTIONS% CTX_MF_LOCAL_DATABASE
+REM	SET OPTIONS=%OPTIONS% CTX_MF_MSDE_INSTANCE_NAME
+REM	SET OPTIONS=%OPTIONS% CTX_MF_NEW_FARM_NAME
+REM	SET OPTIONS=%OPTIONS% CTX_MF_ODBC_DRIVER
+SET OPTIONS=%OPTIONS% CTX_MF_ODBC_PASSWORD="password"
+SET OPTIONS=%OPTIONS% CTX_MF_ODBC_USER_NAME="DOMAIN\dbaccount"
+SET OPTIONS=%OPTIONS% CTX_MF_ONLY_LAUNCH_PUBLISHED_APPS="No"
+SET OPTIONS=%OPTIONS% CTX_MF_SERVER_TYPE="P"
+SET OPTIONS=%OPTIONS% CTX_MF_SHADOW_PROHIBIT_NO_LOGGING="No"
+SET OPTIONS=%OPTIONS% CTX_MF_SHADOW_PROHIBIT_NO_NOTIFICATION="No"
+SET OPTIONS=%OPTIONS% CTX_MF_SHADOW_PROHIBIT_REMOTE_ICA="No"
+SET OPTIONS=%OPTIONS% CTX_MF_SHADOWING_CHOICE="Yes"
+SET OPTIONS=%OPTIONS% CTX_MF_SILENT_DSNFILE="%SOURCE%\MF20.DSN"
+REM	SET OPTIONS=%OPTIONS% CTX_MF_USER_NAME
+SET OPTIONS=%OPTIONS% CTX_MF_XML_CHOICE="Separate"
+SET OPTIONS=%OPTIONS% CTX_MF_XML_PORT_NUMBER="80"
+REM	SET OPTIONS=%OPTIONS% CTX_MF_ZONE_NAME
+REM	SET OPTIONS=%OPTIONS% CTX_PROTECT_KEY_PATH
+REM	SET OPTIONS=%OPTIONS% CTX_PROTECT_KEY_TYPE
+REM	SET OPTIONS=%OPTIONS% CTX_PROTECT_NEW_KEY_PATH
+SET OPTIONS=%OPTIONS% CTX_RDP_DISABLE_PROMPT_FOR_PASSWORD="Yes"
+REM	SET OPTIONS=%OPTIONS% CTX_REMOVE_WI_TURNKEY
+REM	SET OPTIONS=%OPTIONS% CTX_SERV_MALOO_LOGON
+SET OPTIONS=%OPTIONS% CTX_USE_EXISTING_JRE="Yes"
+REM	SET OPTIONS=%OPTIONS% REINSTALLMODE
+SET OPTIONS=%OPTIONS% INSTALLDIR="%ProgramFiles%\Citrix"
+SET OPTIONS=%OPTIONS% ALLUSERS=TRUE REBOOT="ReallySuppress" /L "%SYSTEMROOT%\Temp\XenApp.log" /QB-
+
+REM Install XenApp
+IF "%PROCESSOR_ARCHITECTURE%"=="AMD64" START /WAIT MSIEXEC /I %SOURCE%\w2k8x64\MPS.msi %OPTIONS%
+IF "%PROCESSOR_ARCHITECTURE%"=="x86" START /WAIT MSIEXEC /I %SOURCE%\w2k8x86\MPS.msi %OPTIONS%
+
+REM Check that XenApp has been installed, script will only continue if install was successfull
+REG QUERY "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fDisableEXE
+IF "%ERRORLEVEL%"=="0" (
+
+REM Install the Access Management Console and plugins
+IF EXIST "%SOURCE%\Administration\Access Management Console\Setup\ASC_Framework.msi" (
+ECHO Citrix Access Management Console Console..
+REM	START /WAIT MSIEXEC /I "%SOURCE%\Administration\Access Management Console\Setup\ASC_Framework.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+REM	START /WAIT MSIEXEC /I "%SOURCE%\Administration\Access Management Console\Setup\ASC_Diagnostics.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+REM	START /WAIT MSIEXEC /I "%SOURCE%\Administration\Access Management Console\Setup\ASC_HotfixManagement.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+REM	START /WAIT MSIEXEC /I "%SOURCE%\Administration\Access Management Console\Setup\ASC_KnowledgeBase.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+REM	START /WAIT MSIEXEC /I "%SOURCE%\Administration\Access Management Console\Setup\ASC_Legacy.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+REM	START /WAIT MSIEXEC /I "%SOURCE%\Administration\Access Management Console\Setup\ASC_Licensing.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+REM	START /WAIT MSIEXEC /I "%SOURCE%\Administration\Access Management Console\Setup\ASC_PresentationServer.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+REM	START /WAIT MSIEXEC /I "%SOURCE%\Administration\Access Management Console\Setup\ASC_PSReports.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+REM	START /WAIT MSIEXEC /I "%SOURCE%\Administration\Access Management Console\Setup\ASC_ReportCenter.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+REM	START /WAIT MSIEXEC /I "%SOURCE%\Administration\Access Management Console\Setup\ASC_WebInterface.msi" ALLUSERS=TRUE REBOOT=SUPRESS /QB-
+START /D "%SOURCE%\Administration\Access Management Console" /WAIT CtxInstall.exe /silent
+START /WAIT MSIEXEC /I "%SOURCE%\Administration\XenApp Advanced Configuration\CMC.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-
+)
+
+REM Remove XenApp client shortcuts
+REM	IF EXIST "%ALLUSERSPROFILE%\Desktop\Program Neighborhood.LNK" DEL "%ALLUSERSPROFILE%\Desktop\Program Neighborhood.LNK"
+REM	IF EXIST "%ALLUSERSPROFILE%\Start Menu\Programs\Startup\Program Neighborhood Agent.LNK" DEL "%ALLUSERSPROFILE%\Start Menu\Programs\Startup\Program Neighborhood Agent.LNK"
+REM	IF EXIST "%PUBLIC%\Desktop\Program Neighborhood.LNK" DEL "%PUBLIC%\Desktop\Program Neighborhood.LNK"
+REM	IF EXIST "%ProgramData%\Microsoft\Windows\Start Menu\Programs\Startup\Citrix XenApp.LNK" DEL "%ProgramData%\Microsoft\Windows\Start Menu\Programs\Startup\Citrix XenApp.LNK"
+
+REM Disable Anonymous users created by XenApp
+NET USER | FIND "Anon" > %SYSTEMROOT%\TEMP\USERS1.TXT
+FOR /F "tokens=1,2,3" %%u IN (%SYSTEMROOT%\TEMP\USERS1.TXT) DO ECHO %%u >> %SYSTEMROOT%\TEMP\USERS2.TXT & ECHO %%v >> %SYSTEMROOT%\TEMP\USERS2.TXT & ECHO %%w >> %SYSTEMROOT%\TEMP\USERS2.TXT
+TYPE %SYSTEMROOT%\TEMP\USERS2.TXT | FIND "Anon" > %SYSTEMROOT%\TEMP\USERS3.TXT
+FOR /F %%u IN (%SYSTEMROOT%\TEMP\USERS3.TXT) DO NET USER %%u /ACTIVE:NO > NUL
+
+REM Configure XenApp options
+REM	REG DELETE HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v ICABAR /f
+REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Citrix\ClientPrinterProperties /v fPurgeAnyWay /t REG_DWORD /d 0x00000001 /f
+REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Citrix\ClientPrinterProperties /v fNotInheritKeepPrintedJobs /t REG_DWORD /d 0x00000001 /f
+
+REM Edit the ICA-tcp Settings
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritAutoLogon /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritResetBroken /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritReconnectSame /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritInitialProgram /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritCallback /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritCallbackNumber /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritShadow /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritMaxSessionTime /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritMaxDisconnectionTime /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritMaxIdleTime /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritAutoClient /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritSecurity /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fPromptForPassword /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fInheritColorDepth /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fResetBroken /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fReconnectSame /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fLogonDisabled /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fAutoClientDrives /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fAutoClientLpts /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fForceClientLptDef /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fDisableEncryption /d 0x00000001 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fDisableCpm /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fDisableCdm /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fDisableCcm /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fDisableLPT /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fDisableClip /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fDisableExe /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v fDisableCam /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v Shadow /d 0x00000002 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v KeyboardLayout /d 0x00000000 /t REG_DWORD /f
+REM	REG ADD "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\ICA-tcp" /v ColorDepth /d 0x00000000 /t REG_DWORD /f
+)

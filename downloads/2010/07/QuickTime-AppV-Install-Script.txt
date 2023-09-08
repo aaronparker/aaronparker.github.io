@@ -1,0 +1,16 @@
+@ECHO OFF
+SET SOURCE=%~dp0 
+SET SOURCE=%SOURCE:~0,-2%
+
+REM QuickTime
+MSIEXEC /I %SOURCE%\AppleApplicationSupport.msi ALLUSERS=TRUE REBOOT=SUPRESS /QB
+MSIEXEC /I %SOURCE%\Quicktime.msi INSTALLDIR=Q:\QTIME7.X\QuickTime REGSRCH_DESKTOP_SHORTCUTS=0 SCHEDULE_ASUW=0 ALLUSERS=TRUE REBOOT=SUPRESS /QB
+DEL /Q "Q:\QTIME7.X\QuickTime\QTTask.exe"
+REG DELETE HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v "QuickTime Task" /f
+IF EXIST "%ProgramData%\Microsoft\Windows\Start Menu\Programs\QuickTime\About QuickTime.lnk" DEL /Q /F "%ProgramData%\Microsoft\Windows\Start Menu\Programs\QuickTime\About QuickTime.lnk"
+IF EXIST "%ProgramData%\Microsoft\Windows\Start Menu\Programs\QuickTime\PictureViewer.lnk" DEL /Q /F "%ProgramData%\Microsoft\Windows\Start Menu\Programs\QuickTime\PictureViewer.lnk"
+IF EXIST "%ProgramData%\Microsoft\Windows\Start Menu\Programs\QuickTime\Uninstall QuickTime.lnk" DEL /Q /F "%ProgramData%\Microsoft\Windows\Start Menu\Programs\QuickTime\Uninstall QuickTime.lnk"
+IF EXIST "%ALLUSERSPROFILE%\Start Menu\Programs\QuickTime\About QuickTime.lnk" DEL /Q /F "%ALLUSERSPROFILE%\Start Menu\Programs\QuickTime\About QuickTime.lnk"
+IF EXIST "%ALLUSERSPROFILE%\Start Menu\Programs\QuickTime\PictureViewer.lnk" DEL /Q /F "%ALLUSERSPROFILE%\Start Menu\Programs\QuickTime\PictureViewer.lnk"
+IF EXIST "%ALLUSERSPROFILE%\Start Menu\Programs\QuickTime\Uninstall QuickTime.lnk" DEL /Q /F "%ALLUSERSPROFILE%\Start Menu\Programs\QuickTime\Uninstall QuickTime.lnk"
+REM	COPY %SOURCE%\QuickTime.qtp "%USERPROFILE%\AppData\LocalLow\Apple Computer\QuickTime"

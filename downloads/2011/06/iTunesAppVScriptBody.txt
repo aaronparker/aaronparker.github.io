@@ -1,0 +1,14 @@
+<SCRIPT EVENT="LAUNCH" PROTECT="FALSE" TIMING="PRE" WAIT="TRUE" EXTERN="TRUE">
+<SCRIPTBODY LANGUAGE="Batch">@MD "%AppData%\Apple Computer\iTunes\iPad Software Updates" \n
+MD "%AppData%\Apple Computer\iTunes\iPad Updater Logs" \n
+MD "%AppData%\Apple Computer\iTunes\iPhone Carrier Support" \n
+MD "%AppData%\Apple Computer\iTunes\iPhone Software Updates" \n
+MD "%AppData%\Apple Computer\iTunes\iPhone Updater Logs" \n
+MD "%AppData%\Apple Computer\iTunes\iPod Software Updates" \n
+MD "%AppData%\Apple Computer\iTunes\iPod Updater Logs" \n
+MD "%AppData%\Apple Computer\WebKit" \n
+MD "%AppData%\Apple Computer\iTunes\Apple Mobile Device Sync Diagnostics Logs" \n
+MD "%AppData%\Apple Computer\Logs" \n
+MD "%AppData%\Apple Computer\MobileSync" \n
+MD "%AppData%\Apple Computer\SyncServices\Local"</SCRIPTBODY>
+</SCRIPT>
