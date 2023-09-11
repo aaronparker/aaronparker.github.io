@@ -36,7 +36,7 @@ gem "duktape"
 # gem "webrick"
 
 group :jekyll_plugins do
-  gem "github-pages"
+  #gem "github-pages"
   gem "jekyll-default-layout"
   gem "jekyll-feed"
   gem "jekyll-optional-front-matter"
