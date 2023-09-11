@@ -8,7 +8,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.1"
+#gem "jekyll", "~> 4.1"
 
 gem "jekyll-theme-hydejack", "~> 9.1"
 
@@ -36,7 +36,7 @@ gem "duktape"
 # gem "webrick"
 
 group :jekyll_plugins do
-  #gem "github-pages"
+  gem "github-pages"
   gem "jekyll-default-layout"
   gem "jekyll-feed"
   gem "jekyll-optional-front-matter"
