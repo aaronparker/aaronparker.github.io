@@ -24,16 +24,19 @@ gem "jekyll-theme-hydejack", "~> 9.1"
 #    For details, see <https://github.com/kramdown/math-katex#documentation>
 #
 # If you're using the MathJax math engine instead, free to remove the line below:
-gem "kramdown-math-katex"
+# gem "kramdown-math-katex"
 
 # A JavaScript runtime for ruby that helps with running the katex gem above.
-gem "duktape"
+# gem "duktape"
 
 # https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll?platform=mac
 # gem "github-pages", "~> 228", group: :jekyll_plugins
 
 # Fixes `jekyll serve` in ruby 3
 # gem "webrick"
+
+# Fix GitHub Pages issue "To use retry middleware with Faraday v2.0+, install `faraday-retry` gem"
+gem "faraday-retry"
 
 group :jekyll_plugins do
   gem "github-pages"

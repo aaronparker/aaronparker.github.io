@@ -18,7 +18,7 @@ on:
       - '**.xml'
       - '_config.yml'
     branches:
-      - main # or master before October 2020
+      - main
   workflow_dispatch:
 
 permissions:
@@ -55,5 +55,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        with:
-          timeout: 1800000
