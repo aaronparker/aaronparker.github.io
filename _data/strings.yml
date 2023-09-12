@@ -14,7 +14,7 @@ home:                  Home
 pages:                 Pages
 posts:                 Posts
 about:                 About
-related_posts:         Related Posts
+related_posts:         Related…
 other_projects:        Other Projects
 comments:              Comments
 jump_to:               Jump to
@@ -31,7 +31,7 @@ permalink:             Permalink
 permalink_icon:        'content-hash'
 templates:             Templates (for web app)
 present:               present
-toc:                   Table of Contents
+toc:                   Contents
 note:                  Note
 description:           Description
 search:                Search

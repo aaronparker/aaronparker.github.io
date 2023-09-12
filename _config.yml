@@ -17,7 +17,7 @@ baseurl:               '/'
 
 # Language of your content in 2-letter code, e.g.: en, de.
 # You may also provide a location, e.g.: en-us, de_AT.
-lang:                  en
+lang:                  en-au
 
 # The title of your blog. Used in the sidebar and the browser tab.
 title:                 Aaron Parker
@@ -73,7 +73,7 @@ legal:
     url:               https://stealthpuppy.com/evergreen
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2023. All rights reserved.
+copyright:             © 2005 - 2023. All rights reserved.
 
 # Format of the permalinks
 permalink:             /:categories/:year-:month-:day-:title/
