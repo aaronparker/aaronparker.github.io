@@ -33,7 +33,7 @@ gem "jekyll-theme-hydejack", "~> 9.1"
 # gem "github-pages", "~> 228", group: :jekyll_plugins
 
 # Fixes `jekyll serve` in ruby 3
-# gem "webrick"
+gem "webrick"
 
 # Fix GitHub Pages issue "To use retry middleware with Faraday v2.0+, install `faraday-retry` gem"
 gem "faraday-retry"
