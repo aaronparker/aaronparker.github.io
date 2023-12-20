@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Validate UAT Images with Azure Pipelines and Pester
-description: 'Automated validation of VDI images for user acceptance testing with Azure Pipelines and self-hosted agents running Pester to perform automated tests with Evergreen.'
+description: Automated validation of VDI images for user acceptance testing with Azure
+  Pipelines and self-hosted agents running Pester to perform automated tests with
+  Evergreen.
 permalink: "/vdi-uat-testing-azure-pipelines/"
 image:
   path: "/assets/img/test/image.jpg"
@@ -10,6 +12,7 @@ image:
     960w: "/assets/img/test/image@0,5x.jpg"
     480w: "/assets/img/test/image@0,25x.jpg"
 comments: true
+date: 2023-12-20 11:03 +1100
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}
