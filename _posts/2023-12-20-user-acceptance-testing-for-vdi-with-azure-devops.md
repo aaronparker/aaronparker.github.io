@@ -17,31 +17,33 @@ date: 2023-12-20 11:03 +1100
 - this unordered seed list will be replaced by the toc
 {:toc}
 
-As with any desktop environment, virtual desktops undergo regular change - monthly OS and application updates, new applications, and configurations all add to the variation. Change must be managed and should be well tested to ensure business services are not impacted with a new image.
+As with any desktop environment, virtual desktops undergo regular change - monthly OS and application updates, new applications, and configurations all add to the variation. Change must be managed and should be well tested to ensure business services are not impacted with a new or updated image.
 
 Pooled virtual desktops that are deployed from a gold image are useful for managing change at scale - the user environment is separate from the desktop and users can connect to any available desktop in a pool, so all virtual machines must run the same image. 
 
-A management and validation process is required to test changes. This will look similar to the process below:
+The gold image build and change process can be automated on any platform and version of Windows, but automation can be a time consuming process. Investing in an image automation process will save your bacon when it counts.
+
+A management and validation process is required to manage an image and this process will look similar to this:
 
 BUILD > VALIDATE > USER ACCEPTANCE TESTING > DEPLOY
 {:.lead}
 
-The gold image build and change process can be automated on any platform and version of Windows, but automation can be a time consuming process. Investing in an image automation process will save your bacon when it counts.
+When a gold image is updated and deployed, most organisations will rely on manual user acceptance testing before promoting that image into production. Adding automated testing in the VALIDATE phase ensures you can capture things users won't, or speed the mundane task of manually validating your images.
 
-When a gold image is updated and deployed, most organisations will rely on manual user acceptance testing before promoting that image into production. Adding automated testing ensures you can capture things users won't, or speed the mundane task of manually validating your images.
-
-There are several commercial solutions that can automate application testing (for example, [Rimo3](https://www.rimo3.com/)), but you may want to augment these with additional testing or completely roll your own framework.
+There are several commercial solutions that can automate application testing (for example, [Rimo3](https://www.rimo3.com/)), but you may want to augment these with additional valiatdation tests. For example, testing that your image includes the intended applications, application versions, files, registry settings or service status.
 
 ## Pester + Azure Pipelines
 
-Rolling your own framework is fun - with Pester and Azure Pipelines, you can create an image test framework that runs on a target virtual machine and generates reports that you can use to see and track results. Here's a look at what we're going to build:
+With Pester and Azure Pipelines, we can create an image test framework that runs on a target virtual machine and generates reports to track the results. This approach uses a standard and well supported test framework, along with Azure Pipelines which is available in most enterprises (although, you could replace Azure Pipelines with just about any CI/CD service).
+
+Here's a look at what we're going to build:
 
 [![A screenshot of a successful Azure Pipeline run]({{site.baseurl}}/media/2023/12/PesterTestsPassed100.jpeg)]({{site.baseurl}}/media/2023/12/PesterTestsPassed100.jpeg)
 
 Azure Pipelines result with 100% of tests passed.
 {:.figcaption}
 
-Building this solution will involve a few things:
+Building this solution will involve a few components:
 
 * PowerShell and [Pester](https://pester.dev), the testing framework in which we can write our tests
 * [Evergreen](https://stealthpuppy.com/evergreen/) to provide application version numbers - regardless of how you install applications, Evergreen enables you to query an image to determine whether it's running the latest version of an application
@@ -49,13 +51,13 @@ Building this solution will involve a few things:
 * Azure DevOps to store the tests and code
 * Azure Pipelines and [self-hosted agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=yaml%2Cbrowser#install) to run tests against our UAT images
 
-Note that what I'm building here is on Azure Virtual Desktop; however, this approach will work with any VDI solution including those deployed on-premises or in a public cloud platform.
+Note that in this example, I'm using Azure Virtual Desktop and Nerdio Manager to create images and run session hosts; however, this approach will work with any VDI solution including those deployed on-premises or in a public cloud platform.
 
 ## Testing with Pester
 
 ### Single Application Test
 
-Pester can be used to perform an application configuration test. Here's a simple example of using Pester to ensure that the default configuration for Microsoft Edge has been set in the image. 
+Pester can be used to perform an application configuration test. Here's a simple example of using Pester to ensure that the default home page for Microsoft Edge has been set in the image. 
 
 ```powershell
 Describe "Microsoft Edge" {
@@ -67,11 +69,13 @@ Describe "Microsoft Edge" {
 }
 ```
 
-This will generate a pass / fail result allowing us to determine whether the image has the correct configuration for Edge. If it fails, we know our image can't be pushed into production.
+This will generate a pass / fail result allowing us to determine whether the image has the correct configuration for Edge. If it fails, we know our image isn't ready for UAT and can't be pushed into production.
+
+Additional tests can be written just like this example. Storing application tests in one Pester file per application can be a way to ensure those tests are highly portable between image configurations.
 
 ### Multiple Application Tests
 
-There will be instances where you would create a Pester file for a specific application; however, tests will be more scalable if a single script can take input that defines tests for multiple applications. We can scale out our test results for each application without having to write additional code.
+Our tests will be more scalable if a single script can take input that defines tests for multiple applications. We can scale out our test results for each application without having to write additional code.
 
 [![Pester testing of applications]({{site.baseurl}}/media/2023/12/Pester02.png)]({{site.baseurl}}/media/2023/12/Pester02.png)
 
@@ -167,7 +171,7 @@ An Azure Virtual Desktop session host as a self-hosted agent for Azure Pipelines
 
 ### Agent Pool
 
-I won't cover creating an agent pool in detail here, instead refer to the documentation - [Create and manage agent pools](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops&tabs=yaml%2Cbrowser). The agent pool name is important though as it needs to be referred to in the pipeline and the agent install script.
+I won't cover creating an agent pool in detail here, instead refer to the documentation - [Create and manage agent pools](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops&tabs=yaml%2Cbrowser). The agent pool name is important though as it needs to be referred to in the pipeline file and the agent install script.
 
 ### Pipeline
 
@@ -239,9 +243,9 @@ Nerdio Manager also makes it simple to pass secure strings into the agent instal
 The install script requires the following variables to be set in [Scripted Actions Global Secure Variables](https://nmw.zendesk.com/hc/en-us/articles/4731671517335-Scripted-Actions-Global-Secure-Variables)
 
 * `DevOpsUrl` - the URL to our DevOps organisation
-* `DevOpsPat` - the Personal Access Token used to authenticate to Azure DevOps
+* `DevOpsPat` - the [Personal Access Token](https://learn.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate) used to authenticate to Azure DevOps
 * `DevOpsPool` - the agent pool that the self-hosted agent will register with
-* `DevOpsUser` - the local user account name the install script will create
+* `DevOpsUser` - the local user account name the install script will create. This account will be added to the local administrators group on the target session host; therefore, I recommend you do not deploy this to production workloads
 * `DevOpsPassword` - the password for the local user account
 
 [![Nerdio Manager Secure Variables for the Azure Pipelines agent]({{site.baseurl}}/media/2023/12/NerdioSecureVariables.jpeg)]({{site.baseurl}}/media/2023/12/NerdioSecureVariables.jpeg)
@@ -249,7 +253,7 @@ The install script requires the following variables to be set in [Scripted Actio
 Nerdio Manager Secure Variables for the Azure Pipelines agent.
 {:.figcaption}
 
-The block below lists the code for the installing the Azure Pipelines agent:
+The block below lists the code for the installing the Azure Pipelines agent. This uses Evergreen to find the latest version and download into the session host:
 
 ```powershell
 #description: Installs the Microsoft Azure Pipelines agent to enable automated testing via Azure Pipelines. Do not run on production session hosts.
@@ -302,9 +306,13 @@ $params = @{
 Start-Process @params
 ```
 
+This script should be imported into Nerdio Manager as a scripted action, and added to the VM Deployment settings on the host pool, so that the agent is installed when a session host is deployed.
+
 ### Running the Pipeline
 
-When you have a new version of a gold image, deploy the image to a UAT host pool, then manually run the Azure Pipeline to validate the image. Right now, it's a manual process to start the pipeline because we don't have a self-hosted agent running until a new image has been deployed. With some additional configuration this could be automated so the pipeline kicks off when a new image is deployed.
+When you have a new version of a gold image, deploy the image to a UAT host pool, then manually run the Azure Pipeline to validate the image.
+
+Right now, it's a manual process to start the pipeline because we don't have a self-hosted agent running until a new image has been deployed. With some additional configuration this could be automated so the pipeline kicks off when a new image is deployed. The pipeline could be run via an API call to Azure DevOps when an a new session host is deployed via some external orchestration host.
 
 [![Starting the pipeline]({{site.baseurl}}/media/2023/12/RunPipeline.jpeg)]({{site.baseurl}}/media/2023/12/RunPipeline.jpeg)
 
@@ -313,7 +321,7 @@ Manually starting the pipeline on a new image.
 
 ## Results
 
-A pipeline run only takes a few seconds and the results can be tracked across runs.
+A pipeline run only takes a few seconds and the results can be tracked across runs. Update your retention settings to retain reports for longer.
 
 [![A screenshot of a failed Azure Pipeline run]({{site.baseurl}}/media/2023/12/PesterTestsPassed97.jpeg)]({{site.baseurl}}/media/2023/12/PesterTestsPassed97.jpeg)
 
@@ -329,4 +337,8 @@ Artifacts stored on the pipeline.
 
 ## Getting Started
 
-To get started with this solution, you can fork the code in my `vdi-uat` repository here: [https://github.com/aaronparker/vdi-uat](https://github.com/aaronparker/vdi-uat).
+In this article, I've assumed you have an understanding of PowerShell, Pester, and Azure DevOps / Pipelines. If any of the concepts aren't clear, comment below, and I'll might be able to expand on some details in future articles.
+
+To get the most out of this approach, I highly recommended that you are also automating the build of new gold images. The framework outlined in this article could also be run at the end of an automated build; however, even if you are manually building images, this approach can assist in validation.
+
+To get started with this test and validation solution, you can fork the code in my `vdi-uat` repository here: [https://github.com/aaronparker/vdi-uat](https://github.com/aaronparker/vdi-uat).
