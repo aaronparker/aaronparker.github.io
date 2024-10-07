@@ -8,7 +8,7 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    Aaron Parker (stealthpuppy) is an **end-user computing specialist** with 25+ years experience in consulting, architecture, design, and implementation of virtual desktops, modern device management, and enterprise mobility. Aaron is the **Principal Modern Workplace Architect** at [@Insentra](https://www.insentragroup.com).
+    Aaron Parker (stealthpuppy) is an **end-user computing specialist** with 25+ years experience in consulting, architecture, design, and implementation of virtual desktops, modern device management, and enterprise mobility. Aaron is a Senior Staff Engineer in the Office of the CTO at [Nerdio](https://getnerdio.com).
 
   # This photo will be used in the about section
   picture:

@@ -161,7 +161,7 @@ With the prepared package, [create a new line-of-business app in the Intune port
 * Category - Business or Productivity
 * Information URL - https://docs.citrix.com/en-us/citrix-workspace-app-for-mac.html
 * Privacy URL - https://www.citrix.com.au/about/legal.html
-* Logo - download the Workspace app [icon in PNG format here](https://github.com/Insentra/intune-icons/blob/master/icons/citrix-workspace-app.png)
+* Logo - download the Workspace app [icon in PNG format here](https://github.com/aaronparker/icons/blob/main/icons/citrix-workspace-app.png)
 
 Once the details have been added, click OK to create the application. I initially had issues with uploading the application on Chrome on macOS. I was successful on Internet Explorer.
 
@@ -218,7 +218,7 @@ The process for deploying Citrix Workspace app or Citrix Receiver on Android fol
 6. Minimum operating system - Android 4.4 (Kitkat)
 7. Category - Business or Productivity
 8. Privacy URL - https://www.citrix.com.au/about/legal.html
-9. Logo - download the Workspace app [icon in PNG format here](https://github.com/Insentra/intune-icons/blob/master/icons/citrix-workspace-app.png)
+9. Logo - download the Workspace app [icon in PNG format here](https://github.com/aaronparker/icons/blob/main/icons/citrix-workspace-app.png)
 
 Assign the application and it will be available to users in the Intune Company Portal.
 

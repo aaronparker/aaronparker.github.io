@@ -34,6 +34,7 @@ The good news is that [Microsoft is working on this](https://twitter.com/DeviceD
 ## Which scenarios is Endpoint Privilege Management good for?
 
 **Staff who require administrative access to Windows to complete tasks** – typically IT professionals or developers. EPM will allow you to remove standing administrator access and require users to elevate with a gate for business justification. In this scenario you might allow elevation of applications such as PowerShell or Visual Studio that can be used to make any change to the system; however, these users require elevation of the tools to complete their work.
+
 Insentra is a great example of this scenario – as a professional and [managed services](https://www.insentragroup.com/au/services/) business, we have a number of consultants who need administrative access on occasions to complete tasks.
 
 In effect, this approach should allow simpler delegation of administrative powers where users are restricted to this elevation action on an approved list of devices or desktops. Users only elevate for specific purposes, as required.
