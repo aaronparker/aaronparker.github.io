@@ -12,17 +12,17 @@ author1:
 
   # This photo will be used in the about section
   picture:
-    path:            /assets/img/stealthpuppy-512-white.png
+    path:            /assets/img/headshot.jpg
     # srcset is optional, but can be used to provide higher res versions for retina displays
     srcset:
-      1x:            /assets/img/stealthpuppy-256-white.png
-      2x:            /assets/img/stealthpuppy-512-white.png
+      1x:            /assets/img/headshot.jpg
+      2x:            /assets/img/headshot.jpg
 
   # Social media icons in sidebar
   # Comment/uncomment to show/hide
   # Rearrange to change the order in which they appear
   social:
-    twitter:         stealthpuppy
+    # twitter:         stealthpuppy
     github:          aaronparker
     # email:           <mail@domain.tld>
     # facebook:        <username>
@@ -33,7 +33,7 @@ author1:
     # vine:            <username>
     linkedin:        aaronedwardparker
     kofi:            stealthpuppy
-    #spotify:         user/stealthpuppy
+    spotify:         user/stealthpuppy
     rss:             https://stealthpuppy.com/feed.xml
     #soundcloud:      stealthpuppy
     # lastfm:          <username>

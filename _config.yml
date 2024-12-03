@@ -37,7 +37,7 @@ keywords:              [PowerShell, Automation, Microsoft, Windows, macOS, Azure
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
-logo:                  /assets/img/headshot.jpg
+logo:                  /assets/img/512x512.png
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
@@ -369,8 +369,8 @@ plugins:
 #   yandex:              <verification-id>
 
 # Used for twitter cards
-twitter:
-   username:            stealthpuppy
+# twitter:
+#   username:            stealthpuppy
 
 # Used for facebook open graph
 # facebook:
