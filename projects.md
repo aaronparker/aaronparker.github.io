@@ -47,9 +47,3 @@ If you've found any of the projects below useful and wish to show support, I'm p
 ## FSLogix
 
 [FSLogix](https://stealthpuppy.com/fslogix/) - documentation for various PowerShell scripts and resources that I've built for managing FSLogix Container and App Masking.
-
-## Packer
-
-![packer icon](/assets/projects/packer.png)
-
-[Packer](https://stealthpuppy.com/packer/) - dynamically generated application inventory reporting for tracking changes across Windows image builds via Azure DevOps and Packer.
