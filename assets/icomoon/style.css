@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?eqgt9r');
-  src:  url('fonts/icomoon.eot?eqgt9r#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?eqgt9r') format('truetype'),
-    url('fonts/icomoon.woff?eqgt9r') format('woff'),
-    url('fonts/icomoon.svg?eqgt9r#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?smj5ci');
+  src:  url('fonts/icomoon.eot?smj5ci#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?smj5ci') format('truetype'),
+    url('fonts/icomoon.woff?smj5ci') format('woff'),
+    url('fonts/icomoon.svg?smj5ci#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-visualstudiocode:before {
+  content: "\e90a";
+  color: #007acc;
+}
+.icon-xbox1:before {
+  content: "\e90b";
+  color: #107c10;
+}
+.icon-ko-fi:before {
+  content: "\e900";
+  color: #ffffff;
+}
 .icon-signal:before {
   content: "\e906";
 }
@@ -114,6 +126,7 @@
 }
 .icon-heart:before {
   content: "\e9da";
+  color: #ffffff;
 }
 .icon-new-tab:before {
   content: "\ea7e";
@@ -351,8 +364,4 @@
 }
 .icon-history:before {
   content: "\1f552";
-}
-.icon-ko-fi:before {
-  content: "\e900";
-  color: #ffffff;
 }
