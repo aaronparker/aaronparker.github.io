@@ -210,3 +210,7 @@ kofi:
   name: Ko-fi
   icon: icon-ko-fi
   prepend: "https://ko-fi.com/"
+bluesky:
+  name: Bluesky
+  icon: icon-bluesky
+  prepend: "https://bsky.app"

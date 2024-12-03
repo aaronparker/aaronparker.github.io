@@ -23,7 +23,10 @@ author1:
   # Rearrange to change the order in which they appear
   social:
     # twitter:         stealthpuppy
+    bluesky:         stealthpuppy.com
+    linkedin:        aaronedwardparker
     github:          aaronparker
+    spotify:         user/stealthpuppy
     # email:           <mail@domain.tld>
     # facebook:        <username>
     # google:          <number>
@@ -31,9 +34,7 @@ author1:
     # youtube:         <string_string_string>
     # vimeo:           <username>
     # vine:            <username>
-    linkedin:        aaronedwardparker
     kofi:            stealthpuppy
-    spotify:         user/stealthpuppy
     rss:             https://stealthpuppy.com/feed.xml
     #soundcloud:      stealthpuppy
     # lastfm:          <username>
