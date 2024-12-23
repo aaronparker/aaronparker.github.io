@@ -12,6 +12,9 @@ image:
 comments: true
 date: 2024-12-23 11:00 +1100
 ---
+- this unordered seed list will be replaced by the toc
+{:toc}
+
 macOS isn't built to run as a server, but with a few tweaks you can get it to run quite well.
 
 ## I need a new server
