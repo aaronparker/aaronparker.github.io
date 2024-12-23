@@ -57,29 +57,29 @@ Initially I was running this without being logged in, but [I found](https://bsky
 
 I've configured the following settings to either reduce power consumption or improve performance when accessing the Mac remotely. I don't have hard proof for every setting here, but these logically make sense based on the potential for local or remote access performance.
 
-* Disable Wi-Fi and Bluetooth - I have no need for these on this machine and disabling these will help to save on power consumption
+* Disable Wi-Fi and Bluetooth - **Off**. I have no need for these on this machine and disabling these will help to save on power consumption
 * System Settings / Energy / Prevent automatic sleeping with the display is off, Wake for network access, Start up automatically after network failure. These settings are enabled to ensure the device does not got to sleep
-* System Settings / Accessibility / Display / Reduce motion, Reduce transparency - Set to On
-* System Settings / Appearance / Allow wallpaper tinting in windows - Set to Off
-* System Settings / Apple Intelligence & Siri - Off. This feature is certainly not required on a server
-* System Settings / Desktop & Dock / Minimise windows using (Scale effect), Animate opening applications - Set to On
-* System Settings / Spotlight / Search results - Disable all options. Once the initial indexing is complete, Spotlight probably won't use too much in terms of resources, but turning it off will eke out that little extra performance or avoid performance issues.
+* System Settings / Accessibility / Display / Reduce motion, Reduce transparency - **On**
+* System Settings / Appearance / Allow wallpaper tinting in windows - **Off**
+* System Settings / Apple Intelligence & Siri - **Off**. This feature is certainly not required on a server
+* System Settings / Desktop & Dock / Minimise windows using (Scale effect), Animate opening applications - **On**
+* System Settings / Spotlight / Search results - **Disable all options**. Once the initial indexing is complete, Spotlight probably won't use too much in terms of resources, but turning it off will eke out that little extra performance or avoid performance issues.
 
-Spotlight can be completely disabled with `sudo mdutil -v -E -i off /`. Keep in mind that this will likely reduce the effectiveness of searching on mounted shared from remote machines.
+Spotlight can be completely disabled with `sudo mdutil -v -E -i off /`. Keep in mind that this will likely reduce the effectiveness of searching on mounted shares from remote machines.
 
 * System Settings / Wallpaper / Choose a solid colour
-* System Settings / Notifications / Show previews (Never), Allow notifications when the display is sleeping (Off), Allow notifications when the screen is locked (Off)
-* System Settings / Sound / Play sound on startup, Play user interface sound effects - Set to Off. The Mac mini has a built in speaker, but doesn't need to be making sound in the lounge room
-* System Settings / Lock Screen / Start Screen Saver when inactive (Never), Turn display off when inactive (For 5 minutes), Require password after screen saver begins or display is turned off (Never), Show large clock (Never) - these settings make sure that the screen saver won't kick in to consume CPU, but the screen, even with the HDMI headless adapter, will turn off to reduce power consumption
-* System Settings / Game Center (Off) - I won't be gaming on this machine
+* System Settings / Notifications / Show previews (**Never**), Allow notifications when the display is sleeping (**Off**), Allow notifications when the screen is locked (**Off**)
+* System Settings / Sound / Play sound on startup, Play user interface sound effects - **Off**. The Mac mini has a built in speaker, but doesn't need to be making sound in the lounge room
+* System Settings / Lock Screen / Start Screen Saver when inactive (**Never**), Turn display off when inactive (**For 5 minutes**), Require password after screen saver begins or display is turned off (**Never**), Show large clock (**Never**) - these settings make sure that the screen saver won't kick in to consume CPU, but the screen, even with the HDMI headless adapter, will turn off to reduce power consumption
+* System Settings / Game Center (**Off**) - I won't be gaming on this machine
 
 ### Sharing Settings
 
 Here's how I've configured [sharing settings](https://support.apple.com/en-au/guide/mac-mini/apd05a94454f/mac) in macOS:
 
-* System Settings / General / Sharing / File Sharing - On. I don't need large amounts of remote file storage, but this is for convenience
-* System Settings / General / Sharing / Media Sharing - Home Sharing. I've copied my music library to this device and this enables remote sharing from the Apple TV etc.
-* System Settings / General / Sharing / Screen Sharing - On. This allows remote access to the device via the Screen Sharing app
+* System Settings / General / Sharing / File Sharing - **On**. I don't need large amounts of remote file storage, but this is for convenience
+* System Settings / General / Sharing / Media Sharing - **Home Sharing**. I've copied my music library to this device and this enables remote sharing from the Apple TV etc.
+* System Settings / General / Sharing / Screen Sharing - **On**. This allows remote access to the device via the Screen Sharing app
 * System Settings / General / Sharing / Content Caching - Storage (cache location is on an external drive), 
     Clients / Devices using the same public IP address, use ony public IP address. 
 
@@ -87,8 +87,8 @@ Content Cache stats aren't fantastic just yet, but over time this will increase.
 
 ![AssetCacheManagerUtil status]({{site.baseurl}}/media/2024/12/AssetCacheManagerUtil.png)
 
-* System Settings / General / Sharing / Remote Login - On. This enables SSH access to perform simple remote management tasks
-* System Settings / General / Software Update / Automatic Updates - Download new updates when available, Install macOS updates, Install application updates from the App Store, Install Security Responses and system files
+* System Settings / General / Sharing / Remote Login - **On**. This enables SSH access to perform simple remote management tasks
+* System Settings / General / Software Update / Automatic Updates - Download new updates when available, Install macOS updates, Install application updates from the App Store, Install Security Responses and system files - **On**
 
 ## Homebrew
 
