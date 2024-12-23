@@ -90,7 +90,7 @@ Content Cache stats aren't fantastic just yet, but over time this will increase.
 * System Settings / General / Sharing / Remote Login - **On**. This enables SSH access to perform simple remote management tasks
 * System Settings / General / Software Update / Automatic Updates - Download new updates when available, Install macOS updates, Install application updates from the App Store, Install Security Responses and system files - **On**
 
-## Homebrew
+### Homebrew
 
 Before installing any software, I've installed [Homebrew](https://brew.sh), giving me a package manager for macOS that I can use at the command line.
 
@@ -100,13 +100,13 @@ To make updating packages with Homebrew simpler, I've added this alias to my `.z
 alias drink="brew update && brew upgrade && brew cleanup"
 ```
 
-## DNS filtering with AdGuard Home
+### DNS filtering with AdGuard Home
 
 Installing AdGuard Home on macOS is straight-forward - I followed the [automated install instructions](https://github.com/AdguardTeam/AdGuardHome?tab=readme-ov-file#automated-install-linux-and-mac) to install directly onto macOS (i.e. no Docker etc.).
 
 Before setup, I've configured external DNS servers in macOS to be able to complete the download and install of AdGuard, then post setup, the device is using my router as the DNS server, which is how all devices on my network are configured. The router then points to AdGuard for all DNS services.
 
-## Extending Apple HomeKit with HomeBridge
+### Extending Apple HomeKit with HomeBridge
 
 The install instructions for [HomeBridge on macOS](https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-macOS) are easy to follow; however, HomeBridge requires Node and that's more complex to install correctly.
 
