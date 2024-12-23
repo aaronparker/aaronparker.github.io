@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'A Mac mini as a home server
+title: 'A Mac mini as a home server'
 description: 'Setting up macOS on a Mac mini M1 as a home server.'
 permalink: "/mac-mini-home-server/"
 image:
