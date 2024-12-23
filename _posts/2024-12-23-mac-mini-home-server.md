@@ -160,9 +160,10 @@ One issue I've found with the remote access interface, is that I need to access 
 
 ## Usage and Observations
 
-I've only been running this server for a week, but so far it's looking like it performs really well.
+I've only been running this server for a week, but so far it performs really well.
 
-* CPU sits at around **3-5%** utilisation for normal operation. This increases for various activities including installing updates, Plex Server doing transcoding, etc. CPU does also increase when connecting to the server via Screen Sharing, so I don't keep a session connected for too long
+* CPU utilisation sits at around **3-5%** for normal operation. This increases for various activities including installing updates, Plex Server doing transcoding, etc. CPU does also increase when connecting to the server via Screen Sharing, so I don't keep a session connected for too long
+* CPU, GPU, etc., temperatures stay cool, with the CPU barely getting above **30C**
 * RAM usage is typically around **2.6 - 2.8GB** with all services running and [Memory Pressure](https://support.apple.com/en-au/guide/activity-monitor/actmntr1004/mac) at around 49%. Most importantly, swap is at 0 bytes. For these services I'm running right now, 8GB of RAM looks to be plenty; however, at 16GB RAM model of the Mac mini would provide plenty of future capacity - [Check if your Mac needs more RAM in Activity Monitor](https://support.apple.com/en-au/guide/activity-monitor/actmntr34865/mac)
 * Disk space should be OK for this device - 256GB capacity for the primary OS disk isn't a lot these days; however, for this device specifically, I'm keeping used space on the OS disk to a minimum by offloading to external storage
 * Power consumption is great at around **6W** when idle. This increases to around 7W when watching a 4K video via Plex, and I've seen this peak at around 10W. I'm really happy with this power consumption for a device that's going to be on 24/7 - this replaces the 12-14W the Intel NUC was using at idle
