@@ -38,6 +38,9 @@ gem "webrick"
 # Fix GitHub Pages issue "To use retry middleware with Faraday v2.0+, install `faraday-retry` gem"
 gem "faraday-retry"
 
+# CSV support for Ruby
+gem "csv"
+
 group :jekyll_plugins do
   gem "github-pages"
   gem "jekyll-default-layout"
