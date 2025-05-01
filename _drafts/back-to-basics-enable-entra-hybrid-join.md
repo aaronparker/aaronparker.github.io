@@ -45,17 +45,17 @@ This issue of single sign-on failing or users being prompted to sign into their 
 The fix is of course to enable Entra hybrid join on your virtual desktops (and physical). Let's dig into why enabling Entra hybrid join is important.
 
 
-To fix this issue the correct solution is to enable Entra hybrid join (EHJ). No special Azure AD licensing is required, and enabling EHJ should be done even when third party IdP's are in play (e.g., Okta).
+To fix this issue the correct solution is to enable Entra hybrid join (EHJ). No special Entra ID licensing is required, and enabling EHJ should be done even when third party IdP's are in play (e.g., Okta).
 
-Entra hybrid join is a state where a Windows device is joined to both Active Directory and Azure Active Directory (so this is different to Azure AD join).
+Entra hybrid join is a state where a Windows device is joined to both Active Directory and Azure Active Directory (so this is different to Entra ID join).
 
-Without Entra hybrid join (EHJ) enabled for these desktops, there is no method for a user signing into Active Directory to get single sign on into Azure Active Directory. Entra hybrid join provides the user a Primary Refresh Token which is the key to getting single sign-on to Azure AD.
+Without Entra hybrid join (EHJ) enabled for these desktops, there is no method for a user signing into Active Directory to get single sign on into Azure Active Directory. Entra hybrid join provides the user a Primary Refresh Token which is the key to getting single sign-on to Entra ID.
 
 We should ensure that enabling EHJ is a requirement in our pre-engagement checklists.
 
 Most VDI environments haven't been integrated with solutions that require EHJ previously (e.g., Intune, ConfigMgr, Windows Hello, Azure Virtual Desktop etc.) thus EHJ won't have been enabled. EHJ is become more common place, but there are environments where it still hasn't been enabled.
 
-Note: customers might have Azure AD Seamless Single Sign-on (SSSO) enabled instead, but customers should be actively removing Azure AD SSSO and using EHJ. More on that in another post.
+Note: customers might have Entra ID Seamless Single Sign-on (SSSO) enabled instead, but customers should be actively removing Entra ID SSSO and using EHJ. More on that in another post.
 
 ## The Background
 
@@ -63,9 +63,9 @@ Here is a list of the key articles on the concept of Entra hybrid join:
 
 Read details on Entra hybrid join:
 
-Entra hybrid joined devicesHow it works: Device registrationTroubleshoot hybrid Azure AD-joined devicesIt is worth understanding what the Primary Refresh Token is and what it does: What is a Primary Refresh Token?
+Entra hybrid joined devicesHow it works: Device registrationTroubleshoot hybrid Entra ID-joined devicesIt is worth understanding what the Primary Refresh Token is and what it does: What is a Primary Refresh Token?
 
-A Primary Refresh Token (PRT) is a key artifact of Azure AD authentication on Windows 10 or newer, Windows Server 2016 and later versions, iOS, and Android devices. It's a JSON Web Token (JWT) specially issued to Microsoft first party token brokers to enable single sign-on (SSO) across the applications used on those devices.
+A Primary Refresh Token (PRT) is a key artifact of Entra ID authentication on Windows 10 or newer, Windows Server 2016 and later versions, iOS, and Android devices. It's a JSON Web Token (JWT) specially issued to Microsoft first party token brokers to enable single sign-on (SSO) across the applications used on those devices.
 
 
 
