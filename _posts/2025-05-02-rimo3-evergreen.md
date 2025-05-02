@@ -1,7 +1,8 @@
 ---
 layout: post
-title: 'Streamlining App Management with Evergreen & Rimo3'
-description: 'Using Evergreen and the Rimo3 API to automatically import applications into Rimo3 for discovery, baseline and testing.'
+title: Streamlining App Management with Evergreen & Rimo3
+description: Using Evergreen and the Rimo3 API to automatically import applications
+  into Rimo3 for discovery, baseline and testing.
 permalink: "/rimo3-evergreen/"
 image:
   path: "/assets/img/rimo3/image.jpg"
@@ -10,6 +11,7 @@ image:
     960w: "/assets/img/rimo3/image@0,5x.jpg"
     480w: "/assets/img/rimo3/image@0,25x.jpg"
 comments: true
+date: 2025-05-02 17:36 +1000
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}
@@ -29,7 +31,6 @@ Rimo3 is a comprehensive platform designed for modernizing and managing enterpri
 At its core, Rimo3 automates several key tasks that traditionally require significant manual effort. It automatically discovers the full inventory of applications within an organization, ensuring that nothing is overlooked. Once apps are identified, the platform systematically validates them against specific environmental criteria to check for compatibility and performance, which is crucial before any change is deployed. After validation, Rimo3 helps package the applications into modern deployment formats (like Win32 or MSIX) that align with contemporary management frameworks. Finally, it streamlines patch management by automating the testing and deployment of application updates, reducing the likelihood of disruptions or performance issues that can arise from manual patching processes.
 
 By employing automation at each stage—from discovery through to patch deployment — Rimo3 transforms what is often a complex, error-prone manual process into a smooth and efficient workflow. This not only bolsters security and operational continuity but also frees IT teams to focus on more strategic tasks, reducing downtime and minimizing risk across the entire application ecosystem.
-
 
 ## About Evergreen
 
