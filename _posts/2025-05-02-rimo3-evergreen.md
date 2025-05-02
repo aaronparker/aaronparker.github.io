@@ -148,7 +148,7 @@ The approach taken in this project is similar to my [PSPackageFactory for Intune
 
 ### Authenticating to the Rimo3 API
 
-Authenticating to the Rimo3 API requires constructing of a form with credentials to the API. You can find details in this article [Rimo3 API - New endpoint for generating an API Access Token](https://learn.rimo3.com/knowledge-base/rimo3-public-api-token-migration).
+Authenticating to the Rimo3 API requires constructing a form with credentials to the API. You can find details in this article [Rimo3 API - New endpoint for generating an API Access Token](https://learn.rimo3.com/knowledge-base/rimo3-public-api-token-migration).
 
 Here's how this looks - the client ID and secret used to authenticate to the API should be securely stored. In this example, these values have been passed to the script, encoded and used with **Invoke-WebRequest** to post the credentials and return an authentication token.
 
