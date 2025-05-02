@@ -40,12 +40,14 @@ To use this in your own environment, fork the repository or copy the code and mo
 
 ### Purpose
 
-The workflow provides a way to upload pre-configured application packages to the Rimo3 Cloud using a manual trigger. So any application supported by Evergreen can be used in the workflow and imported into Rimo3.
+The workflow provides a way to upload pre-configured application packages to the Rimo3 Cloud using a manual trigger. So any application supported by Evergreen can be used with workflow by creating an install wrapper with the PSAppDeployToolkit and imported into Rimo3. As new versions of applications are made available, import into Rimo3 is made simple with automated discovery with Evergreen.
+
+## Components
 
 The workflow can be run via GitHub Actions or Azure Pipelines and uses the following components:
 
 * Evergreen - you can view the list of supported applications in the [Evergreen App Tracker](https://stealthpuppy.com/apptracker/)
-* PSAppDeployToolkit - this provides an install wrapper for the target application and simplifies the application definition when importing into Rimo3
+* PSAppDeployToolkit - this provides an install wrapper for the target application and simplifies the application definition when importing into Rimo3. Additionally, standardising on the PSAppDeployToolkit for application installs enables a consistent approach and the ability to interest with the [end-user during an application install](https://psappdeploytoolkit.com/docs/getting-started/faq)
 * Rimo3 Cloud and the Rimo3 API - the API is leveraged to import application packages into Rimo3, including defining how the application package should be processed (Import + Discovery + Baseline + Test)
 
 When a new version of an application is available, the workflow can be re-run to import the new version into Rimo3 for testing and validation.
@@ -98,6 +100,27 @@ $AppJson = Get-Content -Path "$PSScriptRoot\App.json" | ConvertFrom-Json
 # Get the installer file specified in the App.json
 $Global:Installer = Get-ChildItem -Path $AppJson.PackageInformation.SetupFile -Recurse
 ```
+
+### Application list
+
+The project repository includes the following applications:
+
+* Audacity
+* Citrix Workspace App (Current release)
+* Cyberduck
+* Foxit Reader
+* Google Chrome
+* ImageGlass
+* Microsoft PowerToys
+* Microsoft SQL Server Management Studio
+* Microsoft Visual Studio Code
+* Microsoft Azure Virtual Desktop Remote Desktop Client
+* Mozilla Firefox
+* Notepad++
+* Paint.NET
+* ScreenToGif
+* Tracker Software PDFX Change Editor
+* VideoLan VLC Player
 
 ### Authenticating to the Rimo3 API
 
@@ -167,19 +190,39 @@ Once the application package has been imported, you can view its details. Note t
 Application packages details in Rimo3 Cloud.
 {:.figcaption}
 
-## Secrets
+## Orchestration
+
+There are many way that you can orchestrate the import of application packages. I typically default to Azure Pipelines or GitHub Actions because these platforms integrate with the code repository and make it simple to schedule workflow execution.
+
+The workflow to import an application package into Rimo3 has been included for [Azure Pipelines](https://github.com/aaronparker/rimo3/blob/main/.azure/pipelines/packageupload.yml) and [GitHub Actions](https://github.com/aaronparker/rimo3/blob/main/.github/workflows/packageupload.yml). By default this workflow is run manually and allows you to select an application to import.
+
+Here's the Azure Pipelines version:
+
+[![Running the package import workflow in Azure Pipelines]({{site.baseurl}}/media/2025/04/azure-pipelines.jpeg)]({{site.baseurl}}/media/2025/04/azure-pipelines.jpeg)
+
+Running the package import workflow in Azure Pipelines.
+{:.figcaption}
+
+And here is the GitHub Actions version:
+
+[![Running the package import workflow in GitHub Actions]({{site.baseurl}}/media/2025/04/github-workflow.jpeg)]({{site.baseurl}}/media/2025/04/github-workflow.jpeg)
+
+Running the package import workflow in GitHub Actions.
+{:.figcaption}
+
+### Secrets
 
 Add the required secrets to the repository to enable the `Start-PackageUpload.ps1` script to authenticate to the Rimo3 API:
 
 * `CLIENT_ID` - Authentication client ID
 * `CLIENT_SECRET` - secret value to authenticate with the client ID
 
-The following secrets are used by the `update-packagejson` workflow to sign git commits:
+The following secrets are used by the `update-packagejson` workflow to commit changes and sign git commits:
 
 * `COMMIT_EMAIL` - Email address used for commits
 * `COMMIT_NAME` - Display name used for commits
-* `GPGKEY` - Signing key for commits (optional)
-* `GPGPASSPHRASE` - Passphrase used to unlock the key during commits (optional)
+* `GPGKEY` - Signing key for commits (optional - remove signing options from the workflow if required)
+* `GPGPASSPHRASE` - Passphrase used to unlock the key during commits (optional - remove signing options from the workflow if required)
 
 If you're running the solution in GitHub Actions, configure the repository secrets:
 
