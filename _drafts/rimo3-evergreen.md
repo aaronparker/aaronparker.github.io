@@ -34,6 +34,26 @@ By employing automation at each stage—from discovery through to patch deployme
 
 [Evergreen](https://stealthpuppy.com/evergreen) is a PowerShell module that automatically retrieves the latest version information and download URLs for a range of common Windows applications by directly querying the vendors’ update APIs. Rather than relying on third-party aggregators, the module pulls data directly from the source, ensuring that the information is both current and trustworthy. This enables you to import application packages into Rimo3 with full visibility into the application sources and reduce supply chain attacks.
 
+Here's an example - let's use Evergreen to find the latest version of the Microsoft SQL Server Management Studio. Using the `Get-EvergreenApp` command, Evergreen will query the Microsoft site and return a list of the available installers. With this detail, we can check whether the latest version is already imported into Rimo3 and if not, download, package, and import into Rimo3 Cloud:
+
+```powershell
+Get-EvergreenApp -Name "MicrosoftSsms"
+
+Version   Date     Language              URI
+-------   ----     --------              ---
+20.1.10.0 3/4/2024 English               https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-ENU.exe
+20.1.10.0 3/4/2024 French                https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-FRA.exe
+20.1.10.0 3/4/2024 German                https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-DEU.exe
+20.1.10.0 3/4/2024 Italian               https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-ITA.exe
+20.1.10.0 3/4/2024 Japanese              https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-JPN.exe
+20.1.10.0 3/4/2024 Korean                https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-KOR.exe
+20.1.10.0 3/4/2024 Portuguese (Brazil)   https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-PTB.exe
+20.1.10.0 3/4/2024 Russian               https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-RUS.exe
+20.1.10.0 3/4/2024 Spanish               https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-ESN.exe
+20.1.10.0 3/4/2024 Chinese (Simplified)  https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-CHS.exe
+20.1.10.0 3/4/2024 Chinese (Traditional) https://download.microsoft.com/download/7519f0ff-997c-4f36-b5aa-9a51d47dd34c/SSMS-Setup-CHT.exe
+```
+
 ## About the solution
 
 This solution demonstrates to customers of Rimo3 Cloud how to use Evergreen in an automated workflow to download the latest version of an application, wrap the installer with the [PowerShell App Deployment Toolkit](https://psappdeploytoolkit.com/), and import into Rimo3 Cloud.
