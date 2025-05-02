@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Automating Import into Rimo3 Cloud with Evergreen'
+title: 'Streamlining App Management with Evergreen & Rimo3'
 description: 'Using Evergreen and the Rimo3 API to automatically import applications into Rimo3 Cloud for discovery, baseline and testing.'
 permalink: "/rimo3-evergreen/"
 image:
@@ -16,7 +16,11 @@ comments: true
 
 I'm really pleased to release a solution that integrates the [Evergreen PowerShell module](https://stealthpuppy.com/evergreen) with [Rimo3 Cloud](https://www.rimo3.com/products). This enables you to use Evergreen as a trusted source for your application packages and Rimo3 Cloud to test and validate those applications before importing them into Microsoft Intune or Configuration Manager. 
 
+## Purpose
+
 This solution enables organisations to have direct visibility into their application sources - because Evergreen runs in your environment and only communicates with approved vendor source locations, you can guarantee the trustworthiness of the application binaries before import.
+
+The workflow provides a way to upload pre-configured application packages to the Rimo3 Cloud using a manual trigger. So any application supported by Evergreen can be used with workflow by creating an install wrapper with the PSAppDeployToolkit and imported into Rimo3. As new versions of applications are made available, import into Rimo3 is made simple with automated discovery with Evergreen.
 
 ## About Rimo3 Cloud
 
@@ -28,7 +32,7 @@ By employing automation at each stage—from discovery through to patch deployme
 
 ## About Evergreen
 
-[Evergreen](https://stealthpuppy.com/evergreen) is a PowerShell module that automatically retrieves the latest version information and download URLs for a range of common Windows applications by directly querying the vendors’ update APIs. This means that rather than relying on third-party aggregators, the module pulls data directly from the source, ensuring that the information is both current and trustworthy. This means that you can import application packages into Rimo3 without relying on a third party and reduce supply chain attacks.
+[Evergreen](https://stealthpuppy.com/evergreen) is a PowerShell module that automatically retrieves the latest version information and download URLs for a range of common Windows applications by directly querying the vendors’ update APIs. Rather than relying on third-party aggregators, the module pulls data directly from the source, ensuring that the information is both current and trustworthy. This enables you to import application packages into Rimo3 with full visibility into the application sources and reduce supply chain attacks.
 
 ## About the solution
 
@@ -38,11 +42,7 @@ The solution is provided in [a GitHub repository](https://github.com/aaronparker
 
 To use this in your own environment, fork the repository or copy the code and modify to run on your platform of choice.
 
-### Purpose
-
-The workflow provides a way to upload pre-configured application packages to the Rimo3 Cloud using a manual trigger. So any application supported by Evergreen can be used with workflow by creating an install wrapper with the PSAppDeployToolkit and imported into Rimo3. As new versions of applications are made available, import into Rimo3 is made simple with automated discovery with Evergreen.
-
-## Components
+### Components
 
 The workflow can be run via GitHub Actions or Azure Pipelines and uses the following components:
 
@@ -57,7 +57,7 @@ When a new version of an application is available, the workflow can be re-run to
 Application packages imported into Rimo3 Cloud.
 {:.figcaption}
 
-## Workflow process
+### Workflow process
 
 The repository includes workflows for GitHub Actions and Azure Pipelines and supports the import of a single application package; however, multiple packages can be provided to `Start-PackageUpload.ps1`.
 
@@ -101,7 +101,7 @@ $AppJson = Get-Content -Path "$PSScriptRoot\App.json" | ConvertFrom-Json
 $Global:Installer = Get-ChildItem -Path $AppJson.PackageInformation.SetupFile -Recurse
 ```
 
-### Application list
+### Initial application list
 
 The project repository includes the following applications:
 
@@ -121,6 +121,8 @@ The project repository includes the following applications:
 * ScreenToGif
 * Tracker Software PDFX Change Editor
 * VideoLan VLC Player
+
+The approach taken in this project is similar to my [PSPackageFactory for Intune](https://github.com/aaronparker/packagefactory), thus more applications can be added quite easily.
 
 ### Authenticating to the Rimo3 API
 
@@ -183,7 +185,7 @@ Invoke-RestMethod @params
 
 Note the value for `progressStep` in this sample - the workflow defaults to a value of **2** - Import + Discovery + Baseline. This value needs to be changed to **3** to enable Import + Discovery + Baseline + Test.
 
-Once the application package has been imported, you can view its details. Note that you'll see all applications with the same install and uninstall command lines because all applications
+Once the application package has been imported, you can view its details. Note the file name and install command in the screenshot below, showing the PSAppDeployToolkit components and syntax.
 
 [![Application details in Rimo3 Cloud]({{site.baseurl}}/media/2025/04/rimo3-02.jpeg)]({{site.baseurl}}/media/2025/04/rimo3-02.jpeg)
 
@@ -191,6 +193,8 @@ Application packages details in Rimo3 Cloud.
 {:.figcaption}
 
 ## Orchestration
+
+### Workflow execution
 
 There are many way that you can orchestrate the import of application packages. I typically default to Azure Pipelines or GitHub Actions because these platforms integrate with the code repository and make it simple to schedule workflow execution.
 
@@ -209,6 +213,10 @@ And here is the GitHub Actions version:
 
 Running the package import workflow in GitHub Actions.
 {:.figcaption}
+
+### Updating packages
+
+The repository includes a workflow (update-packagejson) that leverages Evergreen to update the `App.json` file for each application. This currently runs once every 24 hours, checks for application updates with Evergreen, and commits changes back to the repository. This process can be done at packaging time; however, it enables a trigger that can be used to start import on detection of a new version of an application.
 
 ### Secrets
 
