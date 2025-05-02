@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Streamlining App Management with Evergreen & Rimo3'
-description: 'Using Evergreen and the Rimo3 API to automatically import applications into Rimo3 Cloud for discovery, baseline and testing.'
+description: 'Using Evergreen and the Rimo3 API to automatically import applications into Rimo3 for discovery, baseline and testing.'
 permalink: "/rimo3-evergreen/"
 image:
   path: "/assets/img/rimo3/image.jpg"
@@ -14,27 +14,28 @@ comments: true
 - this unordered seed list will be replaced by the toc
 {:toc}
 
-I'm really pleased to release a solution that integrates the [Evergreen PowerShell module](https://stealthpuppy.com/evergreen) with [Rimo3 Cloud](https://www.rimo3.com/products). This enables you to use Evergreen as a trusted source for your application packages and Rimo3 Cloud to test and validate those applications before importing them into Microsoft Intune or Configuration Manager. 
+I'm really pleased to release a solution that integrates the [Evergreen PowerShell module](https://stealthpuppy.com/evergreen) with [Rimo3](https://www.rimo3.com/products). This enables you to use Evergreen as a trusted source for your application packages and Rimo3 to test and validate those applications before importing them into Microsoft Intune.
 
 ## Purpose
 
 This solution enables organisations to have direct visibility into their application sources - because Evergreen runs in your environment and only communicates with approved vendor source locations, you can guarantee the trustworthiness of the application binaries before import.
 
-The workflow provides a way to upload pre-configured application packages to the Rimo3 Cloud using a manual trigger. So any application supported by Evergreen can be used with workflow by creating an install wrapper with the PSAppDeployToolkit and imported into Rimo3. As new versions of applications are made available, import into Rimo3 is made simple with automated discovery with Evergreen.
+The workflow provides a way to upload pre-configured application packages to the Rimo3 platform using a manual trigger. So any application supported by Evergreen can be used with workflow by creating an install wrapper with the PSAppDeployToolkit and imported into Rimo3. As new versions of applications are made available, import into Rimo3 is made simple with automated discovery with Evergreen.
 
-## About Rimo3 Cloud
+## About Rimo3
 
-Rimo3 Cloud is a comprehensive platform designed for modernizing and managing enterprise workspaces, ensuring that IT teams can transition smoothly to modern environments like Windows 365, Windows 11, Azure Virtual Desktop, and Intune. One of its standout features is its robust approach to application lifecycle management — a process that covers every phase of an application’s existence within an IT ecosystem.
+Rimo3 is a comprehensive platform designed for modernizing and managing enterprise workspaces, ensuring that IT teams can transition smoothly to modern environments like Windows 365, Windows 11, Azure Virtual Desktop, and Intune. One of its standout features is its robust approach to application lifecycle management — a process that covers every phase of an application’s existence within an IT ecosystem.
 
-At its core, Rimo3 Cloud automates several key tasks that traditionally require significant manual effort. It automatically discovers the full inventory of applications within an organization, ensuring that nothing is overlooked. Once apps are identified, the platform systematically validates them against specific environmental criteria to check for compatibility and performance, which is crucial before any change is deployed. After validation, Rimo3 Cloud helps package the applications into modern deployment formats (like Win32 or MSIX) that align with contemporary management frameworks. Finally, it streamlines patch management by automating the testing and deployment of application updates, reducing the likelihood of disruptions or performance issues that can arise from manual patching processes.
+At its core, Rimo3 automates several key tasks that traditionally require significant manual effort. It automatically discovers the full inventory of applications within an organization, ensuring that nothing is overlooked. Once apps are identified, the platform systematically validates them against specific environmental criteria to check for compatibility and performance, which is crucial before any change is deployed. After validation, Rimo3 helps package the applications into modern deployment formats (like Win32 or MSIX) that align with contemporary management frameworks. Finally, it streamlines patch management by automating the testing and deployment of application updates, reducing the likelihood of disruptions or performance issues that can arise from manual patching processes.
 
-By employing automation at each stage—from discovery through to patch deployment — Rimo3 Cloud transforms what is often a complex, error-prone manual process into a smooth and efficient workflow. This not only bolsters security and operational continuity but also frees IT teams to focus on more strategic tasks, reducing downtime and minimizing risk across the entire application ecosystem.
+By employing automation at each stage—from discovery through to patch deployment — Rimo3 transforms what is often a complex, error-prone manual process into a smooth and efficient workflow. This not only bolsters security and operational continuity but also frees IT teams to focus on more strategic tasks, reducing downtime and minimizing risk across the entire application ecosystem.
+
 
 ## About Evergreen
 
 [Evergreen](https://stealthpuppy.com/evergreen) is a PowerShell module that automatically retrieves the latest version information and download URLs for a range of common Windows applications by directly querying the vendors’ update APIs. Rather than relying on third-party aggregators, the module pulls data directly from the source, ensuring that the information is both current and trustworthy. This enables you to import application packages into Rimo3 with full visibility into the application sources and reduce supply chain attacks.
 
-Here's an example - let's use Evergreen to find the latest version of the Microsoft SQL Server Management Studio. Using the `Get-EvergreenApp` command, Evergreen will query the Microsoft site and return a list of the available installers. With this detail, we can check whether the latest version is already imported into Rimo3 and if not, download, package, and import into Rimo3 Cloud:
+Here's an example - let's use Evergreen to find the latest version of the Microsoft SQL Server Management Studio. Using the `Get-EvergreenApp` command, Evergreen will query the Microsoft site and return a list of the available installers. With this detail, we can check whether the latest version is already imported into Rimo3 and if not, download, package, and import into Rimo3:
 
 ```powershell
 Get-EvergreenApp -Name "MicrosoftSsms"
@@ -56,7 +57,7 @@ Version   Date     Language              URI
 
 ## About the solution
 
-This solution demonstrates to customers of Rimo3 Cloud how to use Evergreen in an automated workflow to download the latest version of an application, wrap the installer with the [PowerShell App Deployment Toolkit](https://psappdeploytoolkit.com/), and import into Rimo3 Cloud.
+This solution demonstrates to customers of Rimo3 how to use Evergreen in an automated workflow to download the latest version of an application, wrap the installer with the [PowerShell App Deployment Toolkit](https://psappdeploytoolkit.com/), and import into Rimo3.
 
 The solution is provided in [a GitHub repository](https://github.com/aaronparker/rimo3) and includes workflows for GitHub and Azure Pipelines. The workflows run the `Start-PackageUpload.ps1` script which can be run outside of the workflow process (on other platforms or manually).
 
@@ -68,13 +69,13 @@ The workflow can be run via GitHub Actions or Azure Pipelines and uses the follo
 
 * Evergreen - you can view the list of supported applications in the [Evergreen App Tracker](https://stealthpuppy.com/apptracker/)
 * PSAppDeployToolkit - this provides an install wrapper for the target application and simplifies the application definition when importing into Rimo3. Additionally, standardising on the PSAppDeployToolkit for application installs enables a consistent approach and the ability to interest with the [end-user during an application install](https://psappdeploytoolkit.com/docs/getting-started/faq)
-* Rimo3 Cloud and the Rimo3 API - the API is leveraged to import application packages into Rimo3, including defining how the application package should be processed (Import + Discovery + Baseline + Test)
+* Rimo3 and the Rimo3 API - the API is leveraged to import application packages into Rimo3, including defining how the application package should be processed (Import + Discovery + Baseline + Test + Export to Intune)
 
-When a new version of an application is available, the workflow can be re-run to import the new version into Rimo3 for testing and validation.
+When a new version of an application is available, the workflow can be re-run to import the new version into Rimo3 for testing and validation, and if validation is successful, export to Intune.
 
-[![Application packages imported into Rimo3 Cloud]({{site.baseurl}}/media/2025/04/rimo3-01.jpeg)]({{site.baseurl}}/media/2025/04/rimo3-01.jpeg)
+[![Application packages imported into Rimo3]({{site.baseurl}}/media/2025/04/rimo3-01.jpeg)]({{site.baseurl}}/media/2025/04/rimo3-01.jpeg)
 
-Application packages imported into Rimo3 Cloud.
+Application packages imported into Rimo3.
 {:.figcaption}
 
 ### Workflow process
@@ -88,13 +89,13 @@ Here's a high-level look at the workflow process:
 3. The workflow will first check whether the same version of the application has already been imported. If it finds a matching version it will not continue.
 4. Each application package includes an `App.json` file that describes the application including the filter that Evergreen should use to determine the application installer to use
 5. The PSAppDeployToolkit 4 is used, and application install and uninstall logic is included in `Invoke-AppDeployToolkit.ps1` for each package.
-6. The workflow supports EXE, MSI, and MSIX installers, including installers that may be provided as zip files (which require extracting before packaging and sending to Rimo3 Cloud)
-7. During packaging, the latest installer is downloaded and included with the PSAppDeployToolkit. The workflow readies the package for Rimo3 and uploads the package to Rimo3 Cloud for processing
-8. When the package is successfully uploaded to Rimo3 Cloud, you can then monitor the processing of the application in the Rimo3 console
+6. The workflow supports EXE, MSI, and MSIX installers, including installers that may be provided as zip files (which require extracting before packaging and sending to Rimo3)
+7. During packaging, the latest installer is downloaded and included with the PSAppDeployToolkit. The workflow readies the package for Rimo3 and uploads the package to Rimo3 for processing
+8. When the package is successfully uploaded to Rimo3, you can then monitor the processing of the application in the Rimo3 console
 
-[![Application processing in Rimo3 Cloud]({{site.baseurl}}/media/2025/04/rimo3-03.jpeg)]({{site.baseurl}}/media/2025/04/rimo3-03.jpeg)
+[![Application processing in Rimo3]({{site.baseurl}}/media/2025/04/rimo3-03.jpeg)]({{site.baseurl}}/media/2025/04/rimo3-03.jpeg)
 
-Application packages actively being imported into Rimo3 Cloud.
+Application packages actively being imported into Rimo3.
 {:.figcaption}
 
 ## Under the hood
@@ -207,16 +208,16 @@ Note the value for `progressStep` in this sample - the workflow defaults to a va
 
 Once the application package has been imported, you can view its details. Note the file name and install command in the screenshot below, showing the PSAppDeployToolkit components and syntax.
 
-[![Application details in Rimo3 Cloud]({{site.baseurl}}/media/2025/04/rimo3-02.jpeg)]({{site.baseurl}}/media/2025/04/rimo3-02.jpeg)
+[![Application details in Rimo3]({{site.baseurl}}/media/2025/04/rimo3-02.jpeg)]({{site.baseurl}}/media/2025/04/rimo3-02.jpeg)
 
-Application packages details in Rimo3 Cloud.
+Application packages details in Rimo3.
 {:.figcaption}
 
 ## Orchestration
 
 ### Workflow execution
 
-There are many way that you can orchestrate the import of application packages. I typically default to Azure Pipelines or GitHub Actions because these platforms integrate with the code repository and make it simple to schedule workflow execution.
+There are many ways that you can orchestrate the import of application packages. I typically default to Azure Pipelines or GitHub Actions because these platforms integrate with the code repository and make it simple to schedule workflow execution.
 
 The workflow to import an application package into Rimo3 has been included for [Azure Pipelines](https://github.com/aaronparker/rimo3/blob/main/.azure/pipelines/packageupload.yml) and [GitHub Actions](https://github.com/aaronparker/rimo3/blob/main/.github/workflows/packageupload.yml). By default this workflow is run manually and allows you to select an application to import.
 
@@ -268,6 +269,6 @@ Azure Pipelines secrets required by the solution, including secrets used by work
 
 ## Summary
 
-Evergreen is a natural complement to the Rimo3 Cloud platform, providing you with a trusted source for your application packages. With the solution provided here, you leverage Evergreen and Rimo3 Cloud to test, validate and modernise your application lifecycle management.
+Evergreen is a natural complement to the Rimo3 platform, providing you with a trusted source for your application packages. With the solution provided here, you leverage Evergreen and Rimo3 to discover, validate and modernise your application lifecycle management.
 
-Star, fork and contribute to the project on GitHub here: [Rimo3 Cloud + Evergreen](https://github.com/aaronparker/rimo3).
+Star, fork and contribute to the project on GitHub here: [Rimo3 + Evergreen](https://github.com/aaronparker/rimo3).
