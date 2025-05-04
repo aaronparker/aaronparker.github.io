@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.4.1"
+gem "jekyll" #, "~> 4.4.1"
 gem "jekyll-theme-hydejack", "~> 9.1"
 
 # Fixes `jekyll serve` in ruby 3
