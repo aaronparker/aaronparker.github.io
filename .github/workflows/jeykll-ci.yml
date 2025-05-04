@@ -46,13 +46,13 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Build with Jekyll
+      - name: jekyll install
         # Outputs to the './_site' directory by default
         run: bundle install
         env:
           JEKYLL_ENV: production
 
-      - name: Build with Jekyll
+      - name: jekyll build
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:

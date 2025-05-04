@@ -35,13 +35,6 @@ nbproject
 *.sublime-workspace
 .idea
 
-# Komodo
-*.komodoproject
-.komodotools
-
-# grunt-html-validation
-validation-status.json
-validation-report.json
 
 # Folders to ignore
 node_modules
@@ -58,5 +51,5 @@ _zip
 raft
 rafts
 
-/assets/js/*hydejack-*
-/_sass/*/__*__/*
+# /assets/js/*hydejack-*
+# /_sass/*/__*__/*
