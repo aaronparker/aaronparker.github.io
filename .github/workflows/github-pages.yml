@@ -1,24 +1,24 @@
 name: Jekyll build
 
 on:
-  push:
-    paths:
-      - '.github/workflows/**'
-      - '_data/**'
-      - '_includes/**'
-      - '_layouts/**'
-      - '_posts/**'
-      - 'assets/**'
-      - 'media/**'
-      - '**.gemspec'
-      - 'Gem**'
-      - 'index.md'
-      - 'posts.md'
-      - '**.html'
-      - '**.xml'
-      - '_config.yml'
-    branches:
-      - main
+  # push:
+  #   paths:
+  #     - '.github/workflows/**'
+  #     - '_data/**'
+  #     - '_includes/**'
+  #     - '_layouts/**'
+  #     - '_posts/**'
+  #     - 'assets/**'
+  #     - 'media/**'
+  #     - '**.gemspec'
+  #     - 'Gem**'
+  #     - 'index.md'
+  #     - 'posts.md'
+  #     - '**.html'
+  #     - '**.xml'
+  #     - '_config.yml'
+  #   branches:
+  #     - main
   workflow_dispatch:
 
 permissions:
