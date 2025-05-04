@@ -10,6 +10,8 @@ image:
     960w: "/assets/img/macmini/image@0,5x.jpg"
     480w: "/assets/img/macmini/image@0,25x.jpg"
 comments: true
+related_posts:
+- _posts/2016-04-10-intel-nuc6i5syb-home-lab.md
 date: 2024-12-23 11:00 +1100
 ---
 - this unordered seed list will be replaced by the toc

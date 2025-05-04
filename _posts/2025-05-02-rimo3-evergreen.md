@@ -12,6 +12,8 @@ image:
     480w: "/assets/img/rimo3/image@0,25x.jpg"
 comments: true
 date: 2025-05-02 17:36 +1000
+related_posts:
+- 2023-12-20-user-acceptance-testing-for-vdi-with-azure-devops.md
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}
