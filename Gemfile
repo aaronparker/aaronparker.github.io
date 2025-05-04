@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll" #, "~> 4.4.1"
+gem "jekyll", "~> 4.4.1"
 gem "jekyll-theme-hydejack", "~> 9.1"
 
 # Fixes `jekyll serve` in ruby 3
@@ -13,7 +13,7 @@ gem "faraday-retry"
 gem "csv"
 
 group :jekyll_plugins do
-  gem "github-pages"
+  #gem "github-pages"
   gem "jekyll-default-layout"
   gem "jekyll-feed"
   gem "jekyll-optional-front-matter"
