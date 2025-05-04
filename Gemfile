@@ -8,7 +8,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-#gem "jekyll", "~> 4.1"
+gem "jekyll", "~> 4.4.1"
 
 gem "jekyll-theme-hydejack", "~> 9.1"
 
@@ -58,6 +58,7 @@ group :jekyll_plugins do
   # Non-Github Pages plugins:
   gem "jekyll-last-modified-at"
   gem "jekyll-compose"
+  gem "jekyll-timeago", "~> 0.13.1"
 
   # Added gems
   gem "jekyll-gist"
@@ -66,4 +67,3 @@ end
 
 gem 'wdm' if Gem.win_platform?
 gem "tzinfo-data" if Gem.win_platform?
-
