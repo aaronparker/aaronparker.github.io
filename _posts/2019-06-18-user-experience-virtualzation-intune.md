@@ -17,7 +17,7 @@ comments: true
 related_posts:
   - _posts/2019-06-18-user-experience-virtualization-intune.md
 ---
-Since this article was written, Microsoft has enabled Proactive Remediations and the Settings Catalog in Endpoint Manager. This means that a scheduled task is no longer required, and  User Experience Virtualization can be configured directly via policy. For an update approach to this implementation, see the new scripts here: [User Experience Virtualization scripts](https://github.com/aaronparker/intune/tree/main/Uev).
+Since this article was written, Microsoft has enabled Proactive Remediations and the Settings Catalog in Endpoint Manager. This means that a scheduled task is no longer required, and  User Experience Virtualization can be configured directly via policy. For an update approach to this implementation, see the new scripts here: [User Experience Virtualization scripts](https://github.com/aaronparker/remediations/tree/main/UserExperienceVirtualization).
 {:.note title="Update"}
 
 * this unordered seed list will be replaced by the toc
@@ -58,7 +58,7 @@ To manage UE-V on Windows PCs via Microsoft Intune, we need to implement a few t
 4. Intune [proactive remediations](https://docs.microsoft.com/en-us/mem/analytics/proactive-remediations) to download the UE-V templates on managed clients
 5. A Settings Catalog configuration profile to configure the UE-V client
 
-To this end, I've written [a script to enable UE-V](https://github.com/aaronparker/intune/tree/master/Uev) on managed PCs and setup [a second script](https://github.com/aaronparker/uev/tree/master/scripts) that runs as a scheduled task to download the UE-V templates.
+To this end, I've written [a script to enable UE-V](https://github.com/aaronparker/remediations/tree/main/UserExperienceVirtualization) on managed PCs and setup a second script that runs as a scheduled task to download the UE-V templates.
 
 ## Deploy UE-V via Intune
 
@@ -66,10 +66,10 @@ To this end, I've written [a script to enable UE-V](https://github.com/aaronpark
 
 Proactive remediations is used to detect the status of the UE-V service on the client and ensure the require UE-V settings templates are downloaded.
 
-* [`Detect-Uev.ps1`](https://github.com/aaronparker/intune/blob/main/Uev/Detect-Uev.ps1) - a Proactive remediation script to detect the status of the UE-V client including the UE-V service and the settings catalog XML files
-* [`Invoke-Uev.ps1`](https://github.com/aaronparker/intune/blob/main/Uev/Invoke-Uev.ps1) - a Proactive remediation script that enables the UE-V client, and downloads a set of UE-V settings templates from an Azure storage account
+* [`Detect-Uev.ps1`](https://github.com/aaronparker/remediations/blob/main/UserExperienceVirtualization/Detect-Uev.ps1) - a Proactive remediation script to detect the status of the UE-V client including the UE-V service and the settings catalog XML files
+* [`Remediate-Uev.ps1`](https://github.com/aaronparker/remediations/blob/main/UserExperienceVirtualization/Remediate-Uev.ps1) - a Proactive remediation script that enables the UE-V client, and downloads a set of UE-V settings templates from an Azure storage account
 
-The scripts will determine whether the UE-V settings templates located in `C:\ProgramData\Microsoft\UEV\CustomTemplates` match those stored on the specified Azure storage account. If they don't match, `Invoke-Uev.ps1` will ensure they do.
+The scripts will determine whether the UE-V settings templates located in `C:\ProgramData\Microsoft\UEV\CustomTemplates` match those stored on the specified Azure storage account. If they don't match, `Remediate-Uev.ps1` will ensure they do.
 
 Import these scripts and assign to your target devices. The status of the clients will then be reported in the Endpoint Manager admin center:
 
