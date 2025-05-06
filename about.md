@@ -5,7 +5,7 @@ title: About
 description: About Aaron Parker and this site.
 hide_description: true
 ---
-<!--author-->
+I'm an **end-user computing specialist** with 30 years experience in pre-sales, design, implementation, and support of end-user computing environments (virtual desktops, modern device management, and enterprise mobility). I've also spent around 20 years in the IT community speaking, presenting, blogging and running open-source projects. I'm currently the Senior Staff Engineer in the Office of the CTO @ [Nerdio](https://getnerdio.com).
 
 I'm an **IT professional**, **consultant**, developer, and a **builder of things**. I enjoy using automation to provide continuous improvements to IT process. I have a wide set of experience and skills in Microsoft, Citrix and VMware-based solutions and have implemented these technologies across government, corporate & not-for-profit organizations, in **Australia**, the **UK** and the **US**.
 
