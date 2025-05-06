@@ -25,11 +25,11 @@ title:                 Aaron Parker
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Senior Staff Engineer, Office of the CTO at Nerdio - on end user computing, virtualisation, modern device management, enterprise mobility, & automation
+  Senior Staff Engineer, Office of the CTO @ Nerdio - on end user computing & automation.
 
 # A shorter description for the sidebar.
 tagline:               >
-  Senior Staff Engineer, Office of the CTO at Nerdio - on end user computing, virtualisation, modern device management, enterprise mobility, & automation
+  Senior Staff Engineer, Office of the CTO @ Nerdio - on end user computing, virtualisation, modern device management, enterprise mobility, & automation.
 
 # A list of keywords for your blog
 keywords:              [PowerShell, Automation, Microsoft, Windows, macOS, Azure Virtual Desktop, Intune, Citrix, DaaS]
