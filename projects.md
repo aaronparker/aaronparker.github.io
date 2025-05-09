@@ -26,23 +26,23 @@ If you've found any of the projects below useful and wish to show support, I'm p
 
 [VcRedist](https://vcredist.com/) is a PowerShell module for lifecycle management of the Microsoft Visual C++ Redistributables.
 
-## PSPackageFactory
-
-![PSPackageFactory icon](/assets/projects/deployment.png)
-
-[PSPackageFactory](https://stealthpuppy.com/packagefactory/) integrates Evergreen, VcRedist, and IntuneWin32App to create a packaging factory for Microsoft Intune.
-
-## Windows Customised Defaults
+## Windows Enterprise Defaults
 
 ![image-customise icon](/assets/projects/image-customise.png)
 
-[Windows Customised Defaults](https://stealthpuppy.com/image-customise/) is a solution for customising a Windows image to change the settings from the Microsoft defaults to something more enterprise ready. The solution will update the Windows default profile, including configuring the default Start menu, and configure Windows feature states.
+[Windows Enterprise Defaults](https://stealthpuppy.com/image-customise/) is a solution for making a Windows image enterprise-ready. Supports physical PCs (including via Windows Autopilot), Virtual desktops and Windows 365. Customises the image, including removing in-box Store apps and the default user profile to create a great end-user experience.
 
 ## Microsoft 365 Apps packager
 
 ![Microsoft 365 icon](/assets/projects/m365.png)
 
 [Microsoft 365 Apps packager](https://github.com/aaronparker/m365apps) is a PowerShell script and workflow for creating and importing a Win32 package into Intune for the Microsoft 365 Apps.
+
+## PSPackageFactory
+
+![PSPackageFactory icon](/assets/projects/deployment.png)
+
+[PSPackageFactory](https://stealthpuppy.com/packagefactory/) integrates Evergreen, VcRedist, and IntuneWin32App to create a packaging factory for Microsoft Intune.
 
 ## FSLogix
 
