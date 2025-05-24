@@ -30,7 +30,19 @@ If you've found any of the projects below useful and wish to show support, I'm p
 
 ![image-customise icon](/assets/projects/image-customise.png)
 
-[Windows Enterprise Defaults](https://stealthpuppy.com/image-customise/) is a solution for making a Windows image enterprise-ready. Supports physical PCs (including via Windows Autopilot), Virtual desktops and Windows 365. Customises the image, including removing in-box Store apps and the default user profile to create a great end-user experience.
+[Windows Enterprise Defaults](https://stealthpuppy.com/defaults/) is a solution for making a Windows image enterprise-ready. Supports physical PCs (including via Windows Autopilot), Virtual desktops and Windows 365. Customises the image, including removing in-box Store apps and the default user profile to create a great end-user experience.
+
+## Intune Remediations
+
+![intune icon](/assets/projects/intune.png)
+
+[Intune Remediations](https://github.com/aaronparker/remediations/) is a set of scripts to use with [Microsoft Intune Remediations](https://learn.microsoft.com/en-us/intune/intune-service/fundamentals/remediations).
+
+## Nerdio Manager scripts
+
+![nerdio icon](/assets/projects/nerdio.png)
+
+[Nerdio Manager scripts](https://github.com/aaronparker/nerdio-actions/) is a set of scripts and tools to use with [Nerdio](https://getnerdio.com) Manager for Enterprise and Nerdio Manager for MSP.
 
 ## Microsoft 365 Apps packager
 
