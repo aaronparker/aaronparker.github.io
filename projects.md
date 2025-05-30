@@ -18,7 +18,7 @@ If you've found any of the projects below useful and wish to show support, I'm p
 
 ### Evergreen App Version Tracker
 
-[Evergreen App Version Tracker](https://stealthpuppy.com/apptracker/) is a site that uses Evergreen to track the latest version and download URLs for applications supported by Evergreen. The site is updated every 4 hours.
+[Evergreen App Version Tracker](https://stealthpuppy.com/apptracker/) is a site that uses Evergreen to track the latest version and download URLs for applications supported by Evergreen. The site is updated every 12 hours.
 
 ## VcRedist
 
