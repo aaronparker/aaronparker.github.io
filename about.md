@@ -15,8 +15,9 @@ I have presented at events including **Citrix Synergy**, **BriForum** & **E2EVC*
 
 | Logo | Award | Years awarded |
 |:-:|:--|:--|
+| ![Microsoft MVP]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-US/mvp/profile/1f9e30d8-1051-47f1-a03d-1f0371cda373) Windows & Devices | 2025+ |
 | ![Citrix Technology Professional]({{site.baseurl}}/media/about/ctp.png) | [Citrix Technology Professional](https://www.citrix.com/community/ctp/awardees.html) | 2012 - 2021 |
-| ![Microsoft MVP]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523) Windows & Devices for IT (previously App-V) | 2011 - 2018 |
+| ![Microsoft MVP]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523) Windows & Devices (previously App-V) | 2011 - 2018 |
 | ![VMware EUC Champion]({{site.baseurl}}/media/about/VMwareEUCChampion.png) | VMware EUC Champion | 2016 |
 | ![VMware vExpert]({{site.baseurl}}/media/about/VMwarevExpert.jpg) | [VMware vExpert](http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html) | 2016 |
 | ![AppSense Community Advisor]({{site.baseurl}}/media/about/AppSenseCommunityAdvisor.png) | [AppSense Community Advisor](http://blog.appsense.com/2012/11/appsense-community-advisor-program/) | 2012 - 2016 |
