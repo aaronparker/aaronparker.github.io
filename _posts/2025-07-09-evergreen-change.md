@@ -46,7 +46,7 @@ For a long time, I've been looking at seperating the per-application functions f
 
 An upcoming change to Evergreen will address this issue by seperating the per-application functions and manifests from the core module, by storing these in a seperate repository and including a method to download and update a locally cached copy of these functions.
 
-Here's how I'm proposing to make these changes and I'm welcoming comments and feedback before this change is implemented.
+Here's how I'm proposing to make these changes, and **I'm welcoming comments and feedback before this change is implemented**.
 
 ### Move Evergreen to a GitHub organisation
 
@@ -91,7 +91,7 @@ To facilite downloading and updating the per-application functions and to ensure
 
 1. Per-application functions and manifests will be stored in the the following default locations - on Windows in `%LocalAppData%\Evergreen` and on macOS or Linux in `~/.evergreen`.
 2. These locations can be overridden by setting an environment variable named `EVERGREEN_APPS_PATH` pointing to a path of your choice.
-3. The locally cached per-application functions and manifests are checked against the list of expected SHA256 hashes (store [here](https://github.com/EUCPilots/evergreen-apps/blob/main/sha256_hashes.csv)). If the hashes do not match, the administrator is prompted to run `Update-Evergreen -Force` - they won't automatically be updated unless there is a new version on the `evergreen-apps` repository.
+3. The locally cached per-application functions and manifests are checked against the list of expected SHA256 hashes (stored [here](https://github.com/EUCPilots/evergreen-apps/blob/main/sha256_hashes.csv)). If the hashes do not match, the administrator is prompted to run `Update-Evergreen -Force` - they won't automatically be updated unless there is a new version on the `evergreen-apps` repository.
 4. The updated version of the per-application functions and manifests is downloaded from the latest release (i.e. the zip file).
 5. The downloaded zip file is compared against the SHA256 hash stored on the GtiHub release object
 6. After downloading unpacking the zip file, the included files are compared against the expected SHA256 hashes. If they do not match, the locally cached copies are not updated.
