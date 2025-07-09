@@ -102,15 +102,19 @@ To facilite downloading and updating the per-application functions and to ensure
 ## FAQs
 
 **Q**. When will this happen?
+
 **A**. I'm not 100% certain, but it's likely to be around 6-8 weeks from the posting of this article (toward the end of August 2025).
 
 **Q**. Why download the zip file rather than update individual functions?
+
 **A**. I think this is the simplest approach - it enables the per-application functions and manifests to be tracked as a specific release and reduces the calls to GitHub (unautheticated calls to api.github.com are limited to 60 per hour). It also simplifies downloading the files by doing so in a single action. If required, `Update-Evergreen` could perhaps support downloading a specific release rather than the latest release.
 
 **Q**. Can I test these changes before release?
+
 **A**. Yes, view and test the changes in the [split-repo](https://github.com/aaronparker/evergreen/tree/split-repo) branch on the Evergreen repository. Please provide bugs and feedback so that I can make improvements before release.
 
 **Q**. What will I need to do to update my scripts?
+
 **A**. Update scripts to run the `Update-Evergreen` function before using any further Evergeen functions. For example:
 
 ```powershell
