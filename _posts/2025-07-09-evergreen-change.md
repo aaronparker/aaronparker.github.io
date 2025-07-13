@@ -75,7 +75,7 @@ Any time changes are pushed to the `main` branch in this repository, a new relea
 
 When importing the Evergreen module, you'll be prompted to download the per-application fuctions:
 
-![Importing Evergreen and being prompted to run Update-Evergreen](/media/2025/07/import-evergreen.gif)
+![Importing Evergreen and being prompted to run Update-Evergreen](/media/2025/07/import-evergreen.png)
 
 A new function has been added to Evergreen named `Update-Evergreen`. This downloads the latest release from the `evergreen-apps` repository, unpacks the files and stores them locally.
 
@@ -84,6 +84,10 @@ A new function has been added to Evergreen named `Update-Evergreen`. This downlo
 This function supports the `-Force` parameter to force the download of the latest release of the per-application functions even if you already have these locally. This approach should enable the administrator to update Evergreen where the locally cached copies of the functions are perhaps broken.
 
 ![Running Update-Evergreen with the -Force parameter](/media/2025/07/update-evergreen-force.gif)
+
+When importing Evergreen where the local cache is out of date, you will be prompted to update:
+
+![Importing Evergreen and being prompted to run Update-Evergreen](/media/2025/07/import-evergreen.gif)
 
 ### How Update-Evergreen works
 
