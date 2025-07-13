@@ -75,7 +75,7 @@ Any time changes are pushed to the `main` branch in this repository, a new relea
 
 When importing the Evergreen module, you'll be prompted to download the per-application fuctions:
 
-![Importing Evergreen and being prompted to run Update-Evergreen](/media/2025/07/import-module.png)
+![Importing Evergreen and being prompted to run Update-Evergreen](/media/2025/07/import-evergreen.gif)
 
 A new function has been added to Evergreen named `Update-Evergreen`. This downloads the latest release from the `evergreen-apps` repository, unpacks the files and stores them locally.
 
