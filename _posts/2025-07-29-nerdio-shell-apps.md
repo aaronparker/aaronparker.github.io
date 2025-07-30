@@ -12,7 +12,7 @@ image:
 comments: true
 date: 2025-07-29 16:00 +1000
 related_posts:
-- 2025-05-02-rimo3-evergreen.md
+- 2025-07-29-nerdio-shell-apps-p2.md
 - 2023-12-20-user-acceptance-testing-for-vdi-with-azure-devops.md
 ---
 - this unordered seed list will be replaced by the toc
@@ -27,6 +27,8 @@ Nerdio Manager supports deployment of applications via Winget with [Unified Appl
 There's an inevitable comparison then between using Winget or Shell Apps + Evergreen to deploy applications. Winget is certainly the simpler approach and supports a wide range of applications, but relies on application deployment from the internet. Nerdio Manager can create private Winget repositories to keep application deployment within the customer tenant; however, private repositories require several Azure resources including a Cosmos database.
 
 Shell Apps with Evergreen requires just an Azure storage account, keeping application binaries within the customer tenant while using the simplest architecture possible. Additionally, using Evergreen provides you with clear visibility into and auditing of application discovery and download, all within your environment.
+
+Using Evergreen as a source for discovery of application version and installers, enables the deployment of Shell Apps from [a library of 374 applications and 6712 unique application installers](https://stealthpuppy.com/apptracker/).
 
 ## PowerShell Module
 
