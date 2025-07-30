@@ -59,7 +59,7 @@ After you have created an Azure DevOps project with a Git repository, you'll nee
     * **Install.ps1** - installs the Shell App
     * **Uninstall.ps1** - uninstalls the Shell App
 
-The `app` directory can be organised how you like, for example, applications can be organised as sub-directories in a directory for each application vendor, but this is not a hard requirement. Just ensure that each application is organised in its own directory.
+The `apps` directory can be organised how you like, for example, applications can be organised as sub-directories in a directory for each application vendor, but this is not a hard requirement. Just ensure that each application is organised in its own directory.
 
 ![An Azure DevOps project repository showing the list of files in the repo](/media/2025/07/azure-repo.jpeg)
 
