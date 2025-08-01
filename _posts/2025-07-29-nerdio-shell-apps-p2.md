@@ -18,7 +18,7 @@ related_posts:
 - this unordered seed list will be replaced by the toc
 {:toc}
 
-In the previous article, we explored how to automate the creation of Nerdio Manager [Shell Apps](https://nmehelp.getnerdio.com/hc/en-us/articles/25499430784909-UAM-Shell-apps-overview-and-usage) with [Evergreen](https://stealthpuppy.com).
+In the [previous article](https://stealthpuppy.com/nerdio-shell-apps-p1/), we explored how to automate the creation of Nerdio Manager [Shell Apps](https://nmehelp.getnerdio.com/hc/en-us/articles/25499430784909-UAM-Shell-apps-overview-and-usage) with [Evergreen](https://stealthpuppy.com).
 
 Although running a PowerShell script that runs through a list of applications and creates Shell Apps might be fun to watch in an interactive console window, we can take this further and use Azure Pipelines to create a fully automated pipeline. The pipeline can now run on a schedule to import new version of applications or as new application definitions are added to the repository.
 

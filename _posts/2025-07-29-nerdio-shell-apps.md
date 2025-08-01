@@ -249,4 +249,4 @@ Using this approach, we can define a set of application to import as Shell Apps 
 Nerdio Manager Shell Apps imported via PowerShell.
 {:.figcaption}
 
-In this article, I've shown you how to interactively import a set of applications to Nerdio Manager Shell Apps; however, we don't really want to be sitting in front of a console and running this each time we want to import new apps. In the next artcile, I'll cover updating this workflow for use in an Azure Pipeline to automate the entire process.
+In this article, I've shown you how to interactively import a set of applications to Nerdio Manager Shell Apps; however, we don't really want to be sitting in front of a console and running this each time we want to import new apps. In [the next artcile](https://stealthpuppy.com/nerdio-shell-apps-p2/), I'll cover updating this workflow for use in an Azure Pipeline to automate the entire process.
