@@ -69,13 +69,115 @@ In the `definition.json`, I have specified a URL that is publically available an
 }
 ```
 
+### Detection script
+
+The detection script I've written for this, validates that the file `C:\ProgramFiles (x86)\Configuration Manager Support Center\ConfigMgrSupportCenterViewer.exe` exists and matches the expected version or is higher. An alternative approach could query for the installed application.
+
+```powershell
+# Variables
+[System.String] $FilePath = "${Env:ProgramFiles(x86)}\Configuration Manager Support Center\ConfigMgrSupportCenterViewer.exe"
+
+# Detection logic
+if ([System.String]::IsNullOrEmpty($Context.TargetVersion)) {
+    # This should be an uninstall action
+    if (Test-Path -Path $FilePath) { return $true }
+    else {
+        if ($Context.Versions -is [System.Array]) { return $null } else { return $false }
+    }
+}
+else {
+    # This should be an install action, so we need to check the file version
+    if (Test-Path -Path $FilePath) {
+        $Context.Log("File found: $FilePath")
+        $FileItem = Get-ChildItem -Path $FilePath -ErrorAction "SilentlyContinue"
+        $FileInfo = [Diagnostics.FileVersionInfo]::GetVersionInfo($FileItem.FullName)
+        $Context.Log("File product version: $($FileInfo.ProductVersion)")
+        $Context.Log("Target Shell App version: $($Context.TargetVersion)")
+        if ([System.Version]::Parse($FileInfo.ProductVersion) -ge [System.Version]::Parse($Context.TargetVersion)) {
+            $Context.Log("No update required. Found '$($FileInfo.ProductVersion)' against '$($Context.TargetVersion)'.")
+            if ($Context.Versions -is [System.Array]) { return $FileInfo.ProductVersion } else { return $true }
+        }
+        else {
+            $Context.Log("Update required. Found '$($FileInfo.ProductVersion)' less than '$($Context.TargetVersion)'.")
+            if ($Context.Versions -is [System.Array]) { return $null } else { return $false }
+        }
+    }
+    else {
+        $Context.Log("File does not exist at: $($FilePath)")
+        if ($Context.Versions -is [System.Array]) { return $null } else { return $false }
+    }
+}
+```
+
+### Install script
+
+The install script performs a simple Windows Installer install - no additional command lines are required for this package:
+
+```powershell
+$Context.Log("Installing package: $($Context.GetAttachedBinary())")
+$params = @{
+    FilePath     = "$Env:SystemRoot\System32\msiexec.exe"
+    ArgumentList = "/package `"$($Context.GetAttachedBinary())`" /quiet"
+    Wait         = $true
+    NoNewWindow  = $true
+    PassThru     = $true
+    ErrorAction  = "Stop"
+}
+$result = Start-Process @params
+$Context.Log("Install complete. Return code: $($result.ExitCode)")
+```
+
+### Uninstall script
+
+The uninstall script uses a function to dynamically find the MSI product code for this package and then call msiexec to uninstall the package using the discovered code.
+
+```powershell
+function Get-InstalledSoftware {
+    $UninstallKeys = @(
+        "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*",
+        "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
+    )
+
+    $Apps = @()
+    foreach ($Key in $UninstallKeys) {
+        try {
+            $propertyNames = "DisplayName", "DisplayVersion", "Publisher", "UninstallString", "PSPath", "WindowsInstaller", "InstallDate", "InstallSource", "HelpLink", "Language", "EstimatedSize", "SystemComponent"
+            $Apps += Get-ItemProperty -Path $Key -Name $propertyNames -ErrorAction "SilentlyContinue" | `
+                . { process { if ($null -ne $_.DisplayName) { $_ } } } | `
+                Where-Object { $_.SystemComponent -ne 1 } | `
+                Select-Object -Property @{n = "Name"; e = { $_.DisplayName } }, @{n = "Version"; e = { $_.DisplayVersion } }, "Publisher", "UninstallString", @{n = "RegistryPath"; e = { $_.PSPath -replace "Microsoft.PowerShell.Core\\Registry::", "" } }, "PSChildName", "WindowsInstaller", "InstallDate", "InstallSource", "HelpLink", "Language", "EstimatedSize" | `
+                Sort-Object -Property "DisplayName", "Publisher"
+        }
+        catch {
+            throw $_.Exception.Message
+        }
+    }
+    return $Apps
+}
+
+Get-InstalledSoftware | Where-Object { $_.Name -match "Configuration Manager Support Center*" } | ForEach-Object {
+    $Context.Log("Uninstalling Windows Installer: $($_.PSChildName)")
+    $params = @{
+        FilePath     = "$Env:SystemRoot\System32\msiexec.exe"
+        ArgumentList = "/uninstall `"$($_.PSChildName)`" /quiet /norestart"
+        Wait         = $true
+        PassThru     = $true
+        NoNewWindow  = $true
+        ErrorAction  = "Stop"
+    }
+    $result = Start-Process @params
+    $Context.Log("Uninstall complete. Return code: $($result.ExitCode)")
+}
+```
+
+
 ## Preparing a package
 
-Packages can come from any source; however for applications with mutliple files in the install package, they will need to be first compressed into a single zip file to enable Shell Apps to download the binaries during install. Don't forget to enable `"fileUnzip": true` in the `definition.json` file.
+Packages can come from any source; however for applications with mutliple files in the install package, they will need to be first compressed into a single zip file to enable Shell Apps to download the binaries during install. Don't forget to enable `"fileUnzip": true` in the `definition.json` file so that the zip file is automatically extracted before running the install script.
 
 This approach should enable you to utilise existing packages that include install and uninstall scripts, including those that might already be leveraging the [PowerShell App Deployment Toolkit](https://psappdeploytoolkit.com/).
 
-Shell Apps will require you to create a new `detect.ps1` script to enable detection of the application, but this can be done using the existing metadata from these applications.
+Shell Apps will require you to create a new `detect.ps1` script to enable detection of the application, but this could be done using the existing metadata from these applications sources (e.g. Configuration Manager detection info, PSASDT detection funtions etc.).
 
 ## Summary
 

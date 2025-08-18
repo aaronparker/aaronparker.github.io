@@ -13,6 +13,7 @@ comments: true
 date: 2025-07-29 16:00 +1000
 related_posts:
 - 2025-07-29-nerdio-shell-apps-p2.md
+- 2025-07-29-nerdio-shell-apps-p3.md
 - 2023-12-20-user-acceptance-testing-for-vdi-with-azure-devops.md
 ---
 - this unordered seed list will be replaced by the toc
