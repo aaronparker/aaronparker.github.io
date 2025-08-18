@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Automating Nerdio Manager Shell Apps with Evergreen, Part 2
+title: Automating Nerdio Manager Shell Apps, with Evergreen, Part 2
 description: Using Azure Pipelines and Evergreen for hands off creation of Shell Apps in Nerdio Manager.
 permalink: "/nerdio-shell-apps-p2/"
 image:

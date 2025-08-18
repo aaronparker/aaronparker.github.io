@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Automating Nerdio Manager Shell Apps with Evergreen, Part 1
+title: Automating Nerdio Manager Shell Apps, with Evergreen, Part 1
 description: An automated pipeline for creating and updating Nerdio Manager Shell Apps with Evergreen.
 permalink: "/nerdio-shell-apps-p1/"
 image:
