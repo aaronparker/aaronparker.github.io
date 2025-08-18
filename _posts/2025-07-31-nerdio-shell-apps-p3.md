@@ -111,7 +111,9 @@ else {
 
 ### Install script
 
-The install script performs a simple Windows Installer install - no additional command lines are required for this package:
+The install script performs a simple Windows Installer install - no additional command lines are required for this package. If this was an existing package with an install script that already exists, this script could be a simple wrapper to call that script.
+
+If this was an existing package with an uninstall script that already exists, this script could be a simple wrapper to call that script. If you were to use a PSADT package and leverage the existing `Invoke-AppDeployToolkit.ps1` script, update that script to call the installer with `$Context.GetAttachedBinary()`.
 
 ```powershell
 $Context.Log("Installing package: $($Context.GetAttachedBinary())")
