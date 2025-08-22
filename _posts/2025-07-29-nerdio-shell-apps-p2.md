@@ -139,6 +139,7 @@ The pipeline code is listed below and is available [here](https://github.com/aar
 * Run every 24 hours to update existing Shell Apps with new application versions
 * It queries for existing Shell Apps to determine whether the app already exists
 * If the Shell App does exist, it then determines whether a new version is available before updating the existing Shell App with a new version
+* Old version of Shell Apps will be pruned to ensure only 3 version exist (change this number to keep more versions)
 * Finally, the list of Shell Apps in Nerdio Manager will be displayed, along with the lasted version of each Shell App
 
 ```yaml
@@ -166,9 +167,9 @@ pool:
 
 # Variables - the credentials group and the service connection name
 variables:
-- group: 'Credentials'
+- group: 'Credentials' # Update to match your environment
 - name: service
-  value: 'sc-rg-Avd1Images-aue'
+  value: 'sc-rg-Avd1Images-aue' # Update to match your environment
 
 jobs:
 - job: Import
@@ -181,7 +182,7 @@ jobs:
 
   # Install the required PowerShell modules
   - pwsh: |
-      Install-Module -Name "Evergreen" -AllowClobber -Force -Scope CurrentUser
+      Install-Module -Name "Evergreen", "VcRedist" -AllowClobber -Force -Scope CurrentUser
     name: modules
     displayName: 'Install Modules'
     workingDirectory: $(build.sourcesDirectory)
@@ -212,7 +213,6 @@ jobs:
       ScriptType: 'InlineScript'
       Inline: |
         $InformationPreference = "Continue"
-        Import-Module -Name "Az.Accounts", "Az.Storage", "Evergreen" -Force
         Import-Module -Name "./NerdioShellApps.psm1" -Force
         Set-AzContext -SubscriptionId $(SubscriptionId) -TenantId $(TenantId)
         $params = @{
@@ -233,26 +233,86 @@ jobs:
         $Paths = Get-ChildItem -Path $Path -Include "Definition.json" -Recurse | ForEach-Object { $_ | Select-Object -ExpandProperty "DirectoryName" }
         foreach ($Path in $Paths) {
             $Def = Get-ShellAppDefinition -Path $Path
-            $App = Get-EvergreenAppDetail -Definition $Def
+            $App = Get-AppMetadata -Definition $Def
             $ShellApp = Get-ShellApp | ForEach-Object {
-                $_.items | Where-Object { $_.name -eq $Def.name }
+                $_ | Where-Object { $_.name -eq $Def.name }
             }
             if ($null -eq $ShellApp) {
                 Write-Information -MessageData "$($PSStyle.Foreground.Cyan)Importing: $($Def.name)"
-                New-ShellApp -Definition $Def -AppDetail $App
+                $NewApp = New-ShellApp -Definition $Def -AppMetadata $App
+                $NewApp.job.status
             }
             else {
+                Write-Information -MessageData "$($PSStyle.Foreground.Cyan)Updating Shell App: $($Def.name)"
+                $UpdateApp = Update-ShellApp -Id $ShellApp.Id -Definition $Def
+                $UpdateApp.job.status
                 $ExistingVersions = Get-ShellAppVersion -Id $ShellApp.Id | ForEach-Object {
-                    $_.items | Where-Object { $_.name -eq $App.Version }
+                    $_ | Where-Object { $_.name -eq $App.Version }
                 }
                 if ($null -eq $ExistingVersions -or [System.Version]$ExistingVersions.name -lt [System.Version]$App.Version) {
-                    New-ShellAppVersion -Id $ShellApp.Id -AppDetail $App
+                    $NewAppVersion = New-ShellAppVersion -Id $ShellApp.Id -AppMetadata $App
+                    $NewAppVersion.job.status
                 }
                 else {
                     Write-Information -MessageData "$($PSStyle.Foreground.Yellow)Shell app version exists: '$($Def.name) $($App.Version)'. No action taken."
                 }
             }
         }
+        Remove-NerdioManagerSecretsFromMemory
+      azurePowerShellVersion: 'LatestVersion'
+      errorActionPreference: stop
+      pwsh: true
+      workingDirectory: $(build.sourcesDirectory)
+
+  # Prune Shell Apps versions
+  - task: AzurePowerShell@5
+    name: prune
+    displayName: 'Prune Shell Apps versions'
+    inputs:
+      azureSubscription: '$(service)'
+      ScriptType: 'InlineScript'
+      Inline: |
+        $InformationPreference = "Continue"
+        Import-Module -Name "Az.Accounts", "Az.Storage", "Evergreen", "VcRedist" -Force
+        Import-Module -Name "./NerdioShellApps.psm1" -Force
+        Set-AzContext -SubscriptionId $(SubscriptionId) -TenantId $(TenantId)
+        $params = @{
+            ClientId           = "$(ClientId)"
+            ClientSecret       = "$(ClientSecret)"
+            TenantId           = "$(TenantId)"
+            ApiScope           = "$(ApiScope)"
+            SubscriptionId     = "$(SubscriptionId)"
+            OAuthToken         = "$(OAuthToken)"
+            ResourceGroupName  = "$(resourceGroupName)"
+            StorageAccountName = "$(storageAccountName)"
+            ContainerName      = "$(containerName)"
+            NmeHost            = "$(nmeHost)"
+        }
+        Set-NmeCredentials @params
+        Connect-Nme
+        $KeepCount = 3
+        Get-ShellApp | ForEach-Object {
+            $ExistingVersions = Get-ShellAppVersion -Id $_.id | `
+                Where-Object { $_.isPreview -eq $false } | `
+                Sort-Object -Property @{ Expression = { [System.Version]$_.Version }; Descending = $true }
+            if ($ExistingVersions.Count -gt $KeepCount) {
+                $VersionsToRemove = $ExistingVersions | Select-Object -Skip ($ExistingVersions.Count - $KeepCount)
+                foreach ($Version in $VersionsToRemove) {
+                    Write-Information -MessageData "$($PSStyle.Foreground.Cyan)Removing Shell App Version: $($_.id) $($Version.name)"
+                    $Result = Remove-ShellAppVersion -Id $_.id -Name $Version.name -Confirm:$false
+                    $Result.job.status
+                    if ($Result.job.status -eq "Completed") {
+                        $File = $Version.file.sourceUrl -split "\?"
+                        $FileName = $File -split "/" | Select-Object -Last 1
+                        Remove-AzStorageBlob -Container $(containerName) -Blob $FileName -Confirm:$false
+                    }
+                }
+            }
+            else {
+                Write-Information -MessageData "$($PSStyle.Foreground.Yellow)No versions to remove for Shell App: $($_.id)"
+            }
+        }
+        Remove-NerdioManagerSecretsFromMemory
       azurePowerShellVersion: 'LatestVersion'
       errorActionPreference: stop
       pwsh: true
@@ -281,20 +341,22 @@ jobs:
         }
         Set-NmeCredentials @params
         Connect-Nme
-        (Get-ShellApp).items | ForEach-Object {
+        Get-ShellApp | ForEach-Object {
+            $ExistingVersions = Get-ShellAppVersion -Id $_.id | `
+                Where-Object { $_.isPreview -eq $false } | `
+                Sort-Object -Property @{ Expression = { [System.Version]$_.Version }; Descending = $true }
             [PSCustomObject]@{
                 publisher     = $_.publisher
                 name          = $_.name
-                latestVersion = ((Get-ShellAppVersion -Id $_.id).items | `
-                        Where-Object { $_.isPreview -eq $false } | `
-                        Sort-Object -Property @{ Expression = { [System.Version]$_.Version }; Descending = $true } | `
-                        Select-Object -First 1).name
+                versionCount  = $ExistingVersions | Measure-Object | Select-Object -ExpandProperty "Count"
+                latestVersion = ($ExistingVersions | Select-Object -First 1).name
                 createdAt     = $_.createdAt
                 fileUnzip      = $_.fileUnzip
                 isPublic      = $_.isPublic
                 id            = $_.id
             }
         } | Format-Table -AutoSize
+        Remove-NerdioManagerSecretsFromMemory
       azurePowerShellVersion: 'LatestVersion'
       errorActionPreference: stop
       pwsh: true
