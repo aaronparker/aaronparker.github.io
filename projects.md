@@ -32,6 +32,12 @@ If you've found any of the projects below useful and wish to show support, I'm p
 
 [Windows Enterprise Defaults](https://stealthpuppy.com/defaults/) is a solution for making a Windows image enterprise-ready. Supports physical PCs (including via Windows Autopilot), Virtual desktops and Windows 365. Customises the image, including removing in-box Store apps and the default user profile to create a great end-user experience.
 
+## EUC Pilots
+
+![EUC Pilots](/assets/projects/eucpilots.png)
+
+[EUC Pilots](https://eucpilots.com) - GitHub organisation for hosting and managing a range of stealthpuppy projects.
+
 ## Intune Remediations
 
 ![intune icon](/assets/projects/intune.png)
