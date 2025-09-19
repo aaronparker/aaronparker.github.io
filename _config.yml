@@ -139,9 +139,8 @@ defaults:
       sitemap:         false
 
   - scope:
-      path:            downloads/
+      path:            media/
     values:
-      layout:          plain
       sitemap:         false
 
   # # You can use the following to enable comments on all posts.
