@@ -91,7 +91,8 @@ Enabling this session control also requires you to update the CA policy to suppo
 
 This type of policy is typically required for highly secure environments and isn't necessarily used to support general access to Azure Virtual Desktop or Windows 365 for most users. To improve the authentication experience, here's a few considerations:
 
-* Scope the policy to Entra ID administrator roles - policies that include strict sign-in frequency requirements would be best scoped to accounts with privileged roles with a seperate policy for longer sign-in frequency for general users.
-* Use seperate Azure Virtual Desktop host pools for general end-users and administrator accounts. Users with access to both could then have a simplifed sign-in experience on a corporate desktop with stricter sign-in to an administrator desktop.
-* All users should use at least password-less authentication with the Microsoft Authenticator to speed, simplify and secure sign-ins.
+* **Scope the policy** to Entra ID administrator roles - policies that include strict sign-in frequency requirements would be best scoped to accounts with privileged roles with a seperate policy for longer sign-in frequency for general users.
+* Use **seperate Azure Virtual Desktop host pools** for general end-users and administrator accounts. Users with access to both could then have a simplifed sign-in experience on a corporate desktop with stricter sign-in to an administrator desktop.
+* All users should use at least **password-less authentication with the Microsoft Authenticator** to speed, simplify and secure sign-ins.
+* Don't use **Sign-in frequency** with high sign-in frequencies without **number matching** or **password-less authentication** in the Microsoft Authenticator. Making it easier on users to sign-in will help balance experience with security.
 * Follow the recommended authentication scenarios from Microsoft: [Conditional Access adaptive session lifetime policies](https://learn.microsoft.com/en-au/entra/identity/conditional-access/concept-session-lifetime).
