@@ -57,11 +57,11 @@ To configure authentication requirements, let's create a new [Conditional Access
 
 ## User Experience
 
-Here's a look at the end-user experience. In this demo, I'm signing into the Windows 365 web client and authenticating with a FIDO2 key for strong authentication and connecting to my Cloud PC a couple of times. You'll see that the sign-in experience is fast and simple and connecting to the Cloud PC is fast, but I am not asked for reauthentication at any time.
+Here's a look at the end-user experience. In this demo, I'm signing into the Windows 365 web client and authenticating with a FIDO2 key for strong authentication and connecting to my Cloud PC a couple of times. You'll see that the sign-in experience is fast and simple, but I am not asked to reauthenticate each time I launch a Cloud PC:
 
 ![](/media/2025/09/windows-app-experience.mp4)
 
-Let's try again after a period of time - this time we can see that I am asked to re-authenticate to access my Cloud PC.
+Let's try again after a period of time - this time we can see that I am asked to re-authenticate to access my Cloud PC:
 
 ![](/media/2025/09/windows-app-reauth.mp4)
 
@@ -81,15 +81,17 @@ So after 10 minutes, the lifetime expires and the user is asked to re-authentica
 
 In scenarios where the requirement for re-authentication cannot be met and access to Azure Virtual Desktop or Windows 365 needs to be protected, you could consider implementing additional requirements:
 
-**Grant** - where you are protecting access to sensitive information and privileged access workstations, select **Require device to be marked as compliant** in addition to **Require authentication strength**. This ensures that access is only allowed from a trusted, managed device that meets Intune compliance policies.
+**Grant** controls - where you are protecting access to sensitive information and privileged access workstations, select **Require device to be marked as compliant** in addition to **Require authentication strength**. This ensures that access is only allowed from a trusted, managed device that meets Intune compliance policies.
 
-**Session** - enable **Require token protection for sign-in sessions**. This feature can further protect from token theft, and supports the Windows App on a Windows client OS now (with macOS is preview): [Token Protection in Microsoft Entra Conditional Access](https://learn.microsoft.com/en-au/entra/identity/conditional-access/concept-token-protection).
+**Session** controls - enable **Require token protection for sign-in sessions**. This feature can further protect from token theft, and supports the Windows App on a Windows client OS now (with macOS is preview): [Token Protection in Microsoft Entra Conditional Access](https://learn.microsoft.com/en-au/entra/identity/conditional-access/concept-token-protection).
 
-Enabling this feature also requires you to update the policy to support only Windows, macOS, and iOS, so you may then need to block other platforms. This requirement will also prevent users from using the windows 365 web client. I also had issues getting this to work with the current Windows app on macOS (I haven't tested with a preview client).
+Enabling this session control also requires you to update the CA policy to support only Windows, macOS, and iOS (optionally, with a seperate policy that blocks other platforms). This requirement will also prevent users from using the Windows 365 web client. I did encounter issues getting this to work with the current Windows app on macOS (I haven't tested with a preview client).
 
 ## Improving the End-user Experience
 
-This type of policy is typically required for highly secure environments and isn't necessarily used to support access to Azure Virtual Desktop or Windows 365 on kiosk devices. 
+This type of policy is typically required for highly secure environments and isn't necessarily used to support general access to Azure Virtual Desktop or Windows 365 for most users. To improve the authentication experience, here's a few considerations:
 
-* Scope the policy to Entra ID administrator roles - everyone should be phishing-resistant MFA where possible, but even if you can, it's likely to be adopted in a phased approach. Start with people who have access to administrative roles who must be protected.
-* Use at least password-less authentication with the Microsoft Authenticator and follow the recommended authentication scenarios from Microsoft: [Conditional Access adaptive session lifetime policies](https://learn.microsoft.com/en-au/entra/identity/conditional-access/concept-session-lifetime).
+* Scope the policy to Entra ID administrator roles - policies that include strict sign-in frequency requirements would be best scoped to accounts with privileged roles with a seperate policy for longer sign-in frequency for general users.
+* Use seperate Azure Virtual Desktop host pools for general end-users and administrator accounts. Users with access to both could then have a simplifed sign-in experience on a corporate desktop with stricter sign-in to an administrator desktop.
+* All users should use at least password-less authentication with the Microsoft Authenticator to speed, simplify and secure sign-ins.
+* Follow the recommended authentication scenarios from Microsoft: [Conditional Access adaptive session lifetime policies](https://learn.microsoft.com/en-au/entra/identity/conditional-access/concept-session-lifetime).
