@@ -59,11 +59,17 @@ To configure authentication requirements, let's create a new [Conditional Access
 
 Here's a look at the end-user experience. In this demo, I'm signing into the Windows 365 web client and authenticating with a FIDO2 key for strong authentication and connecting to my Cloud PC a couple of times. You'll see that the sign-in experience is fast and simple, but I am not asked to reauthenticate each time I launch a Cloud PC:
 
-![](/media/2025/09/windows-app-experience.mp4)
+<video controls>
+  <source src="/media/2025/09/windows-app-experience.webm" type="video/webm">
+Your browser does not support the video tag.
+</video>
 
 Let's try again after a period of time - this time we can see that I am asked to re-authenticate to access my Cloud PC:
 
-![](/media/2025/09/windows-app-reauth.mp4)
+<video controls>
+  <source src="/media/2025/09/windows-app-reauth.webm" type="video/webm">
+Your browser does not support the video tag.
+</video>
 
 ## Why No Prompts for Re-Authn?
 
