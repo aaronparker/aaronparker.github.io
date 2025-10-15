@@ -59,24 +59,13 @@ To solve this challenge, I've built PowerShell packaging factory for the Microso
 The [Microsoft 365 Apps packager repository](https://github.com/aaronparker/m365apps) consists of the following:
 
 * `New-Microsoft365AppsPackage.ps1` - This is the key script that creates and imports a Microsoft 365 Apps package into Intune. The script can be run on a Windows machine in a copy of the repository or via GitHub Actions (if you clone the repository)
-* `Create-Win32App.ps1` imports the intunewin package into the target Intune tenant, using `App.json` as the template. This script uses the `IntuneWin32App` PowerShell module and is called by `New-Microsoft365AppsPackage.ps1` to import the package into an Intune tenant
+* `New-Microsoft365AppsPackage.psm1` - Contains functions used by `New-Microsoft365AppsPackage.ps1`
 * Template Microsoft 365 Apps deployment configurations - deployment configurations are created in the [Microsoft 365 Apps admin center](https://config.office.com/), but every organisation is going to deploy a similar configuration, so these templates should be suitable for the most common deployments
 * A GitHub workflow that uses `New-Microsoft365AppsPackage.ps1` to package the Microsoft 365 Apps on a GitHub hosted runner - the workflow can import the package into an Intune tenant. It also uploads the generated Microsoft 365 Apps package [a workflow artifact](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts) for importing into Intune manually
 
 ### Requirements
 
-`New-Microsoft365AppsPackage.ps1` must be run on a supported Windows version, and has been written for PowerShell 5.1. Parameters for `New-Microsoft365AppsPackage.ps1` are:
-
-| Parameter | Description | Required |
-|:--|:--|:--|
-| Path | Path to the top level directory of the m365apps repository on a local Windows machine. | No |
-| ConfigurationFile | Full path to the [Microsoft 365 Apps package configuration file](https://learn.microsoft.com/en-us/deployoffice/office-deployment-tool-configuration-options). Specify the full path to a configuration file included in the repository or the path to an external configuration file. | Yes |
-| Channel | A supported Microsoft 365 Apps release channel. | No. Defaults to MonthlyEnterprise |
-| CompanyName | Company name to include in the configuration.xml. | No. Defaults to stealthpuppy |
-| TenantId | The tenant id (GUID) of the target Azure AD tenant. | Yes |
-| ClientId | The client id (GUID) of the target Azure AD app registration. | No |
-| ClientSecret | Client secret used to authenticate against the app registration. | No |
-| Import | Switch parameter to specify that the the package should be imported into the Microsoft Intune tenant. | No |
+`New-Microsoft365AppsPackage.ps1` must be run on a supported Windows version, and has been written for PowerShell 5.1 - the IntuneWin32App module and IntuneWinAppUtil.exe require Windows.
 
 ### PowerShell modules
 
@@ -89,25 +78,34 @@ These PowerShell modules are required:
 If you are running the packager locally, install the modules with:
 
 ```powershell
-Install-Module -Name Evergreen, MSAL.PS, IntuneWin32App -SkipPublisherCheck
+Install-Module -Name "Evergreen", "MSAL.PS", "IntuneWin32App", "PSAppDeployToolkit"
+Import-Module -Name "Evergreen"
+Update-Evergreen
 ```
 
 ### Configuration Files
 
 Microsoft 365 Apps configuration files are included in the repository - these files can be used to create packages for any target tenant as some key options will be updated dynamically by `New-Microsoft365AppsPackage.ps1`.
 
-* `O365BusinessRetail.xml` - Configuration file for Microsoft 365 Apps for business
-* `O365BusinessRetail-VDI.xml` - Configuration file for Microsoft 365 Apps for business with shared licensing enabled, and OneDrive and Teams excluded
+* `O365Business.xml` - Configuration file for Microsoft 365 Apps for business
+* `O365Business-VDI.xml` - Configuration file for Microsoft 365 Apps for business with shared licensing enabled, and OneDrive and Teams excluded
 * `O365ProPlus.xml` - Configuration file for Microsoft 365 Apps for enterprise
 * `O365ProPlus-VDI.xml` - Configuration file for Microsoft 365 Apps for enterprise with shared licensing enabled, and OneDrive and Teams excluded
-* `O365ProPlusVisioProRetailProjectProRetail.xml` - Configuration file for Microsoft 365 Apps for enterprise, Visio, and Project
-* `O365ProPlusVisioProRetailProjectProRetail-VDI.xml` - Configuration file for Microsoft 365 Apps for enterprise, Visio, and Project with shared licensing enabled, and OneDrive and Teams excluded
+* `O365ProPlusVisioProProjectPro.xml` - Configuration file for Microsoft 365 Apps for enterprise, Visio, and Project
+* `O365ProPlusVisioProProjectPro-VDI.xml` - Configuration file for Microsoft 365 Apps for enterprise, Visio, and Project with shared licensing enabled, and OneDrive and Teams excluded
+* `O365ProPlusOutlookVisioProProjectPro.xml` - Configuration file for Microsoft 365 Apps for enterprise, Visio, and Project. Excludes the classic Outlook application and installs the new Outlook app
+* `O365ProPlusOutlookVisioProProjectPro-VDI.xml` - Configuration file for Microsoft 365 Apps for enterprise, Visio, and Project with shared licensing enabled, and OneDrive and Teams excluded. Excludes the classic Outlook application and installs the new Outlook app
 * `Uninstall-Microsoft365Apps.xml` - A configuration that will uninstall all Microsoft 365 Apps
+
+**Note** - these configurations make a couple of assumptions:
+
+* The new Outlook is currently excluded for install with these configurations. Remove the exclusion - `<ExcludeApp ID="OutlookForWindows" />` - if you want to install the new Outlook. You can modify the configuration to exclude the classic Outlook client by updating this value to `<ExcludeApp ID="Outlook" />`
+* The VDI specific configurations assume that you will install or update OneDrive and Teams separately to the Microsoft 365 Apps install
 
 When the package is generated, the following properties will be updated:
 
 * Company Name - this is the organisation name that sets the Company property on Office documents
-* Tenant Id - the target Azure AD tenant ID
+* Tenant Id - the target Entra ID tenant ID
 * Channel - the [Microsoft 365 Apps update channel](https://learn.microsoft.com/en-us/deployoffice/updates/overview-update-channels)
 
 ### Using the Packager
@@ -118,24 +116,51 @@ If you're looking to download and use the Packager locally, follow these steps:
 
 If you're not familiar with clone a repository, use [GitHub Desktop to clone the repository](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop) and keep your local copy up to date with changes to the source repository.
 
-#### Usage via Administrator Sign-in
+#### Authentication
 
-Use `New-Microsoft365AppsPackage.ps1` by authenticating with an Intune Administrator account before running the script. Run `Connect-MSIntuneGraph` to authenticate with administrator credentials using a sign-in window or device login URL.
+Authenticating to Intune is required before importing an package with `New-Microsoft365AppsPackage.ps1`. Use an Entra ID app registration
 
 ```powershell
-Connect-MSIntuneGraph -TenantID "lab.stealthpuppy.com"
 $params = @{
-    Path             = "E:\project\m365apps"
-    ConfigurationFile = "E:\project\m365apps\configs\O365ProPlus.xml"
+    TenantId     = "6cdd8179-23e5-43d1-8517-b6276a8d3189"
+    ClientId     = "5e9f991e-748d-4a32-818e-7ddc2cb22ee0"
+    ClientSecret = "<secret>"
+}
+Connect-MSIntuneGraph @params
+```
+
+#### Entra ID App Registration
+
+Authenticatation must be via an app registration to the Microsoft Graph API using a non-interactive authentication method. Create an Entra ID app registration and enable the [`DeviceManagementApps.ReadWrite.All`](https://docs.microsoft.com/en-us/graph/api/intune-shared-devicemanagement-update) permission.
+
+The app registration requires the following API permissions:
+
+| API / Permissions name | Type | Description | Admin consent required |
+|:--|:--|:--|:--|
+| DeviceManagementApps.ReadWriteAll | Application | Read and write Microsoft Intune apps | Yes |
+
+[![Assigning the DeviceManagementApps.ReadWrite.All API to the app registration]({{site.baseurl}}/media/2023/04/graphapi.jpeg)]({{site.baseurl}}/media/2023/04/graphapi.jpeg)
+
+Assigning the DeviceManagementApps.ReadWrite.All API to the app registration
+{:.figcaption}
+
+#### Import a package
+
+To import packages, specify the required parameters for `New-Microsoft365AppsPackage.ps1` including the target configuration file:
+
+```powershell
+$params = @{
+    Path             = "E:\projects\m365Apps"
+    ConfigurationFile = "E:\projects\m365Apps\configs\O365ProPlus.xml"
     Channel          = "Current"
-    CompanyName      = "stealthpuppy"
     TenantId         = "6cdd8179-23e5-43d1-8517-b6276a8d3189"
-    Import           = $true 
+    CompanyName      = "Contoso"
+    UsePsadt         = $true
 }
 .\New-Microsoft365AppsPackage.ps1 @params
 ```
 
-Which will look similar to this when run in Terminal on Windows 11:
+Running the script will look similar to this when run in Terminal on Windows 11:
 
 [![Running New-Microsoft365AppsPackage.ps1 on Windows 11]({{site.baseurl}}/media/2023/04/New-Microsoft365AppsPackage.png)]({{site.baseurl}}/media/2023/04/New-Microsoft365AppsPackage.png)
 
@@ -149,64 +174,33 @@ When `New-Microsoft365AppsPackage.ps1` has successfully completed, the `package\
 Contents of the `package\output` folder once the package has been created
 {:.figcaption}
 
-If `-Import` is specified when running `New-Microsoft365AppsPackage.ps1`, a standardised Microsoft 365 Apps package will be imported into the target Intune tenant:
+A standardised Microsoft 365 Apps package will be imported into the target Intune tenant, unless the `-SkipImport` parameter is specified:
 
 [![The Microsoft 365 Apps package imported into Intune]({{site.baseurl}}/media/2023/04/intune-package.png)]({{site.baseurl}}/media/2023/04/intune-package.png)
 
 The Microsoft 365 Apps package imported into Intune
 {:.figcaption}
 
-If `-Import` is not specified, the package can be imported into Intune manually or by running `Create-Win32App.ps1`:
+If `-SkipImport` is specified, the package can be imported into Intune manually.
 
-```powershell
-$params = @{
-    Json        = "E:\project\m365apps\output\m365apps.json"
-    PackageFile = "E:\project\m365apps\output\setup.intunewin"
-}
-& "E:\project\m365apps\scripts\Create-Win32App.ps1" @params
-```
+#### Package version
 
-#### Usage via App Registration
+The version number configured on the target package is the version of the Office Deployment Tool (setup.exe), not the version of the Microsoft 365 Apps. This means that packages only need to be updated when a new version of the Office Deployment Tool is released.
 
-Use `New-Microsoft365AppsPackage.ps1` to create a new package by passing credentials to an Azure AD app registration (see below) that has rights to import applications into Microsoft Intune:
+#### Assignments and Supersedence
 
-```powershell
-$params = @{
-    Path             = "E:\project\m365Apps"
-    ConfigurationFile = "E:\project\m365Apps\configs\O365ProPlus.xml"
-    Channel          = "MonthlyEnterprise"
-    CompanyName      = "stealthpuppy"
-    TenantId         = "6cdd8179-23e5-43d1-8517-b6276a8d3189"
-    ClientId         = "60912c81-37e8-4c94-8cd6-b8b90a475c0e"
-    ClientSecret     = "<secret>"
-    Import           = $true 
-}
-.\New-Microsoft365AppsPackage.ps1 @params
-```
+Assignments and supersedence are automatically configured:
+
+* See `scripts/App.json` and `scripts/AppNoPsadt.json` for assignments. These files can be updated to set additional or different assignments
+* Supersedence is configured automatically on a matching packages when a new version is imported
 
 ### Automating the Packager
 
 The Microsoft 365 Apps Packager can be automated in multiple ways; however, the repository includes a method based on [workflows](https://docs.github.com/en/actions/using-workflows) and GitHub Actions. To use this approach [fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) the repository and configure in your own GitHub account.
 
-#### Azure AD App Registration
-
-The workflows must authenticate to the Microsoft Graph API using a non-interactive authentication method. Create an Azure AD app registration and enable the [`DeviceManagementApps.ReadWrite.All`](https://docs.microsoft.com/en-us/graph/api/intune-shared-devicemanagement-update) permission.
-
-The app registration requires the following API permissions:
-
-| API / Permissions name | Type | Description | Admin consent required |
-|:--|:--|:--|:--|
-| DeviceManagementApps.ReadAll | Application | Read Microsoft Intune apps | Yes |
-| DeviceManagementApps.ReadWriteAll | Application | Read and write Microsoft Intune apps | Yes |
-
-[![Assigning the DeviceManagementApps.ReadWrite.All API to the app registration]({{site.baseurl}}/media/2023/04/graphapi.jpeg)]({{site.baseurl}}/media/2023/04/graphapi.jpeg)
-
-Assigning the DeviceManagementApps.ReadWrite.All API to the app registration
-{:.figcaption}
-
 #### Git and GitHub Actions
 
-A Git repository is a natural choice for teams managing the Microsoft 365 Apps to maintain a library of configurations and track changes to packages. A repository could be hosted on several providers; however, Azure DevOps or GitHub are my go-to for hosting Git repositories. For internal teams, Azure DevOps could be the better choice for authentication and authorisation via Azure AD.
+A Git repository is a natural choice for teams managing the Microsoft 365 Apps to maintain a library of configurations and track changes to packages. A repository could be hosted on several providers; however, Azure DevOps or GitHub are my go-to for hosting Git repositories. For internal teams, Azure DevOps could be the better choice for authentication and authorisation via Entra ID.
 
 [GitHub Workflows](https://docs.github.com/en/actions/using-workflows) is an easy platform built into GitHub repositories for automating a workflow that creates a Win32 package in [intunewin](https://github.com/Microsoft/Microsoft-Win32-Content-Prep-Tool) format and imports it into an Intune tenant. The approach in this article could be used with [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) if preferred; however, Azure Pipelines variables are not as flexible as inputs in GitHub Workflows.
 
@@ -229,7 +223,8 @@ The **new-package** workflow is run from the Actions tab on the repository on Gi
 1. Configuration XML - select from a list of configuration files stored in the repository
 2. Update channel - select the Microsoft 365 Apps update channel to apply to the package
 3. Company name - a string that will be injected into the Company value in the configuration XML file
-4. Import - choose to import the package into the target Intune tenant
+4. Use the PSAppDeployToolkit - the package will include the PSAppDeployToolkit, otherwise it will use setup.exe directly
+5. Import - choose to import the package into the target Intune tenant
 
 [![Starting the workflow and selecting inputs]({{site.baseurl}}/media/2023/04/run-new-package.jpeg)]({{site.baseurl}}/media/2023/04/run-new-package.jpeg)
 
@@ -272,7 +267,7 @@ If you have cloned this repository, ensure that you synchronise changes to updat
 The **new-package** workflow that will package and import the Microsoft 365 Apps package into a single tenant each time the workflow is run. The following secrets are required for this workflow:
 
 - `TENANT_ID` - the target tenant ID
-- `CLIENT_ID` - the Azure AD [app registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) client ID used to authenticate to the target tenent
+- `CLIENT_ID` - the Entra ID [app registration](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) client ID used to authenticate to the target tenent
 - `CLIENT_SECRET` - password used by to authenticate to the target tenent
 
 The **update-binaries** workflow will update executables and scripts required by the solution and commit changes to the repository, thus signed commits are recommended. Signing commits ensures that commits to the repository from people in your team adding, Microsoft 365 Apps configurations to the repository, are verified.
