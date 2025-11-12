@@ -48,7 +48,7 @@ If you've found any of the projects below useful and wish to show support, I'm p
 
 ![nerdio icon](/assets/projects/nerdio.png)
 
-[Nerdio Manager scripts](https://github.com/aaronparker/nerdio-actions/) is a set of scripts and tools to use with [Nerdio](https://getnerdio.com) Manager for Enterprise and Nerdio Manager for MSP.
+[Nerdio Manager scripts](https://github.com/aaronparker/nerdio/) is a set of scripts and tools to use with [Nerdio](https://getnerdio.com) Manager for Enterprise and Nerdio Manager for MSP.
 
 ## Microsoft 365 Apps packager
 

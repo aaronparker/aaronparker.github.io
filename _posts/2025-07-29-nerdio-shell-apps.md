@@ -35,9 +35,9 @@ Using Evergreen as a source for discovery of application version and installers,
 
 To create this integration, I've created a custom PowerShell module - the official [Nerdio Manager PowerShell module](https://nmehelp.getnerdio.com/hc/en-us/articles/26124355338893-PowerShell-Module-Tutorial) will be updated in the future and may replace some of the functions in this custom module.
 
-The custom module is hosted in my [nerdio-actions](https://github.com/aaronparker/nerdio-actions/tree/main/shell-apps) repository on GitHub -  see `NerdioShellApps.psm1`. The repository also includes files for a set of supported applications that can be imported into Shell Apps.
+The custom module is hosted in my [nerdio](https://github.com/aaronparker/nerdio/tree/main/shell-apps) repository on GitHub -  see `NerdioShellApps.psm1`. The repository also includes files for a set of supported applications that can be imported into Shell Apps.
 
-[Create-ShellApps.ps1](https://github.com/aaronparker/nerdio-actions/blob/main/shell-apps/Create-ShellApps.ps1) demonstrates how to use the module to import applications into Nerdio Manager Shell Apps.
+[Create-ShellApps.ps1](https://github.com/aaronparker/nerdio/blob/main/shell-apps/Create-ShellApps.ps1) demonstrates how to use the module to import applications into Nerdio Manager Shell Apps.
 
 These support modules are also required: Az.Accounts, Az.Storage, Evergreen.
 
@@ -133,8 +133,8 @@ The following credentials, secrets and values are required - in my lab environme
 Because I'm storing these credentials locally, authentication looks like the code below where I'm reading the stored values from JSON files and passing them to `Set-NmeCredentials`. This function stores the credentials, secrets and values for use later with other functions.
 
 ```powershell
-$EnvironmentFile = "/Users/aaron/projects/nerdio-actions/api/environment.json"
-$CredentialsFile = "/Users/aaron/projects/nerdio-actions/api/creds.json"
+$EnvironmentFile = "/Users/aaron/projects/nerdio/api/environment.json"
+$CredentialsFile = "/Users/aaron/projects/nerdio/api/creds.json"
 $Env = Get-Content -Path $EnvironmentFile | ConvertFrom-Json
 $Creds = Get-Content -Path $CredentialsFile | ConvertFrom-Json
 $params = @{
@@ -165,7 +165,7 @@ Token expires: 29/7/2025 5:17:18 pm
 Our first step after authentication is to read the application definition. `Get-ShellAppDefinition` accepts a path to a directory that contains the `Definition.json`, `Detect.ps`, `Install.ps1`, and `Uninstall.ps1` files, and returns a single object which is the application definition (still with some placeholder values).
 
 ```powershell
-$Path = "/Users/aaron/projects/nerdio-actions/shell-apps/Microsoft/VisualStudioCode"
+$Path = "/Users/aaron/projects/nerdio/shell-apps/Microsoft/VisualStudioCode"
 $Def = Get-ShellAppDefinition -Path $Path
 ```
 
@@ -243,7 +243,7 @@ Shell App version created successfully. Id: 20623
 
 ## Summary
 
-Using this approach, we can define a set of application to import as Shell Apps into Nerdio Manager and use a script that reads each application definition, finds the latest application version, downloads the binaries, uploads to the Azure storage account and creates the Shell App in Nerdio Manager. See the sample script here: [Create-ShellApps.ps1](https://github.com/aaronparker/nerdio-actions/blob/main/shell-apps/Create-ShellApps.ps1).
+Using this approach, we can define a set of application to import as Shell Apps into Nerdio Manager and use a script that reads each application definition, finds the latest application version, downloads the binaries, uploads to the Azure storage account and creates the Shell App in Nerdio Manager. See the sample script here: [Create-ShellApps.ps1](https://github.com/aaronparker/nerdio/blob/main/shell-apps/Create-ShellApps.ps1).
 
 ![](/media/2025/07/nerdio-manager-shell-apps.jpeg)
 

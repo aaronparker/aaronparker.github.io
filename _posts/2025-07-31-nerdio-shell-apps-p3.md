@@ -37,7 +37,7 @@ When the application source is updated, the `definition.json` file can be modifi
 
 Here's a simple example of a custom application using the Microsoft Configuration Manager Support Center available from the ConfigMgr ISO. This is updated  every so often and requires downloading the updated ISO or extracting the MSI file from a ConfigMgr install.
 
-In the `definition.json`, I have specified a URL that is publically available and have manually determined the application version number from installing the application on a test machine. this is a basic MSI file, so the [install script performs a silent install](https://github.com/aaronparker/nerdio-actions/tree/main/shell-apps/Microsoft/SupportCenter). 
+In the `definition.json`, I have specified a URL that is publically available and have manually determined the application version number from installing the application on a test machine. this is a basic MSI file, so the [install script performs a silent install](https://github.com/aaronparker/nerdio/tree/main/shell-apps/Microsoft/SupportCenter). 
 
 ```json
 {

@@ -133,7 +133,7 @@ The pipeline should now be ready to execute and import Shell Apps into Nerdio Ma
 
 ## Pipeline Code
 
-The pipeline code is listed below and is available [here](https://github.com/aaronparker/nerdio-actions/tree/main/shell-apps). The pipeline essentially does the following:
+The pipeline code is listed below and is available [here](https://github.com/aaronparker/nerdio/tree/main/shell-apps). The pipeline essentially does the following:
 
 * Run when new or modified application definitions are added to the `apps` directory in the `main` branch
 * Run every 24 hours to update existing Shell Apps with new application versions
