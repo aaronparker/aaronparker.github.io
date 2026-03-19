@@ -42,14 +42,14 @@ The Web Workbench takes a slightly different angle — it provides a read-only v
 
 Both editions are open source and available on GitHub:
 
-- **Desktop Workbench:** [EUCPilots/evergreen-ui](https://github.com/EUCPilots/evergreen-ui) — MIT licence
-- **Web Workbench:** [EUCPilots/workbench](https://github.com/EUCPilots/workbench) — MIT licence
+- **Desktop Workbench:** [EUCPilots/evergreen-ui](https://github.com/EUCPilots/evergreen-ui)
+- **Web Workbench:** [EUCPilots/workbench](https://github.com/EUCPilots/workbench)
 
 Here's how they compare:
 
 | | Desktop Workbench | Web Workbench |
 |---|---|---|
-| **Platform** | Windows (WPF) | Any modern browser |
+| **Platform** | Windows | Any modern browser |
 | **Install** | PowerShell Gallery (`EvergreenUI`) | Hosted at [https://eucpilots.com/workbench](https://eucpilots.com/workbench) |
 | **Browse apps** | Yes | Yes |
 | **Search and filter** | Yes | Yes |
