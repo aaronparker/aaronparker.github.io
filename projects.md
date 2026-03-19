@@ -14,11 +14,15 @@ If you've found any of the projects below useful and wish to show support, I'm p
 
 ### Evergreen
 
-![evergreen icon](/assets/projects/evergreen.png) [Evergreen](https://stealthpuppy.com/evergreen/) is a PowerShell module that returns the latest version and download URLs for a set of common Windows applications.
+![evergreen icon](/assets/projects/evergreen.png) [Evergreen](https://eucpilots.com/evergreen-docs/) is a PowerShell module that returns the latest version and download URLs for a set of common Windows applications.
 
-### Evergreen App Version Tracker
+### EvergreenUI
 
-[Evergreen App Version Tracker](https://stealthpuppy.com/apptracker/) is a site that uses Evergreen to track the latest version and download URLs for applications supported by Evergreen. The site is updated every 12 hours.
+![evergreen icon](/assets/projects/evergreen.png) [EvergreenUI](https://eucpilots.com/evergreen-docs/workbench/) is a PowerShell module that provides a GUI for the Evergreen module with the Evergreen Workbench. The module supports Windows only.
+
+### Evergreen (web) Workbench
+
+[Evergreen (web) Workbench](https://eucpilots.com/workbench/) is a web version of the desktop Workbench. This site uses Evergreen to track the latest version and download URLs for applications supported by Evergreen. The site is updated every 24 hours.
 
 ### VcRedist
 

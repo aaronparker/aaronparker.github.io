@@ -5,9 +5,17 @@ title: About
 description: About Aaron Parker and this site.
 hide_description: true
 ---
-I'm an **end-user computing specialist** with 30 years experience in pre-sales, design, implementation, and support of end-user computing environments (virtual desktops, modern device management, and enterprise mobility). I've also spent around 20 years in the IT community speaking, presenting, blogging and running open-source projects. I'm currently the Senior Staff Engineer in the Office of the CTO @ [Nerdio](https://getnerdio.com).
+I'm an **end-user computing specialist** with 30 years experience in pre-sales, design, implementation, and support of end-user computing environments (virtual desktops, modern device management, and enterprise mobility). I've also spent around 20 years in the IT community speaking, presenting, blogging and running open-source projects.
 
 Over my career, I've been an IT engineer, consultant, pre-sales achitect, solution architect, developer, and mentor. I enjoy using automation to provide continuous improvements to IT process. I have a wide set of experience and skills in Microsoft, Citrix and VMware-based solutions and have implemented these technologies across government, corporate & not-for-profit organizations, in **Australia**, the **UK** and the **US**.
+
+I am a Senior PM Architect at Nerdio, focusing on research, development, and strategic product innovation across the Nerdio platform. In this role, I act as the bridge between the Core Engineering teams and the Research and Development team.
+
+My role sits at the intersection of engineering, product, and customer reality. I explore emerging capabilities across Microsoft Azure, Azure Virtual Desktop, Windows 365, and Microsoft Intune, translating real-world operational challenges into practical platform features. This work includes technical research, prototyping, and early-stage design of new capabilities that later become part of Nerdio Manager.
+
+In addition to research and development, I contribute to product direction by collaborating with engineering and product teams to define, refine, and implement new features. I regularly perform product discovery, feature design, and technical validation to ensure new capabilities align with how IT teams actually deploy and manage modern workplace environments.
+
+I work closely with Nerdio technical leadership to explore future platform opportunities, helping evaluate new technologies, architectural approaches, and automation scenarios that can simplify cloud and endpoint management for customers.
 
 ## Awards
 
