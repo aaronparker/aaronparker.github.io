@@ -1,0 +1,965 @@
+/* =============================================================================
+   stealthpuppy.com — Custom theme CSS
+   Built with Tailwind CSS v4 + @tailwindcss/typography
+   ============================================================================= */
+
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Class-based dark mode — toggles via .dark on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Self-hosted Geist fonts */
+@import "../../assets/fonts/geist/index.css";
+@import "../../assets/fonts/geist-mono/index.css";
+
+/* Tailwind will scan these paths for utility classes */
+@source "../../_layouts/**/*.html";
+@source "../../_includes/**/*.html";
+@source "../../_posts/**/*.md";
+@source "../../_featured_categories/**/*.md";
+@source "../../*.md";
+@source "../../*.html";
+@source "../../assets/js/**/*.js";
+
+/* =============================================================================
+   Theme tokens
+   ============================================================================= */
+
+@theme {
+  /* Fonts */
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "Cascadia Code", monospace;
+
+  /* Accent colour — indigo-400 */
+  --color-accent: #818cf8;         /* indigo-400 */
+  --color-accent-dark: #6366f1;    /* indigo-500 */
+
+  /* Sidebar width */
+  --sidebar-width: 280px;
+}
+
+/* =============================================================================
+   Base overrides
+   ============================================================================= */
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  code, pre, kbd, samp {
+    font-family: var(--font-mono);
+  }
+
+  /* Dark mode font smoothing */
+  .dark body {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Focus ring using accent colour */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+/* =============================================================================
+   Layout
+   ============================================================================= */
+
+@layer components {
+
+  /* --- Sidebar --- */
+  .sidebar {
+    @apply fixed top-0 left-0 h-full overflow-y-auto flex flex-col
+           bg-slate-950 border-r border-slate-700 z-30;
+    width: var(--sidebar-width);
+  }
+
+  .sidebar__avatar {
+    @apply rounded-full ring-2 ring-indigo-400/30;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .sidebar__name {
+    @apply text-slate-50 font-semibold text-base leading-tight;
+  }
+
+  .sidebar__tagline {
+    @apply text-slate-400 text-xs leading-snug;
+  }
+
+  .sidebar__nav-link {
+    @apply flex items-center gap-2.5 px-3 py-2 rounded-md text-sm text-slate-300
+           hover:text-slate-50 hover:bg-slate-800 transition-colors;
+  }
+
+  .sidebar__nav-link--active {
+    @apply text-slate-50 bg-slate-800;
+  }
+
+  .sidebar__nav-link svg {
+    @apply w-4 h-4 flex-shrink-0;
+  }
+
+  .sidebar__social-link {
+    @apply p-2 rounded-md text-slate-400 hover:text-slate-50 hover:bg-slate-800 transition-colors;
+  }
+
+  .sidebar__social-link svg {
+    @apply w-5 h-5;
+  }
+
+  /* --- Main content area --- */
+  .main-content {
+    @apply min-h-screen;
+    margin-left: var(--sidebar-width);
+  }
+
+  /* On mobile, sidebar is hidden; main content takes full width */
+  @media (max-width: 1023px) {
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+    }
+    .sidebar--open {
+      transform: translateX(0);
+    }
+    .main-content {
+      margin-left: 0;
+    }
+  }
+
+  /* --- Mobile top bar --- */
+  .topbar {
+    @apply sticky top-0 z-20 flex items-center justify-between
+           px-4 h-14 bg-slate-950/90 backdrop-blur border-b border-slate-700
+           lg:hidden;
+  }
+
+  /* --- TOC sidebar column --- */
+  #toc-container {
+    @apply hidden xl:block sticky top-8 self-start
+           ml-8 pl-4 border-l border-slate-700
+           min-w-[200px] max-w-[240px] flex-shrink-0;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+
+  #toc-container .toc-title {
+    @apply text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3;
+  }
+
+  #toc-container ul, #toc-container ol {
+    @apply space-y-1 list-none p-0 m-0;
+  }
+
+  #toc-container li {
+    @apply m-0 p-0;
+  }
+
+  #toc-container a {
+    @apply block text-sm text-slate-400 hover:text-slate-50 transition-colors
+           py-0.5 no-underline;
+  }
+
+  #toc-container a.toc-active {
+    color: var(--color-accent);
+    @apply font-medium;
+  }
+
+  /* --- View toggle active state --- */
+  .view-btn--active {
+    @apply text-slate-50 bg-slate-700;
+  }
+
+  /* --- Post card --- */
+  .post-card {
+    @apply flex flex-col rounded-lg border border-slate-700
+           bg-slate-800 hover:border-slate-500 transition-colors overflow-hidden;
+  }
+
+
+  .post-card__image {
+    @apply aspect-video overflow-hidden bg-slate-700;
+  }
+
+  .post-card__image img {
+    @apply w-full h-full object-cover transition-transform duration-300;
+  }
+
+  .post-card:hover .post-card__image img {
+    transform: scale(1.02);
+  }
+
+  .post-card__body {
+    @apply flex flex-col flex-1 p-5 gap-2;
+  }
+
+  .post-card__category {
+    @apply text-xs font-semibold uppercase tracking-wider;
+    color: var(--color-accent);
+  }
+
+  .post-card__title {
+    @apply text-slate-50 font-semibold text-base leading-snug transition-colors line-clamp-2;
+  }
+
+  .post-card:hover .post-card__title {
+    color: var(--color-accent);
+  }
+
+  .post-card__excerpt {
+    @apply text-slate-400 text-sm line-clamp-2 flex-1;
+  }
+
+  .post-card__meta {
+    @apply text-slate-500 text-xs flex items-center gap-1.5 mt-auto;
+  }
+
+  /* --- Hero image --- */
+  .post-hero {
+    @apply w-full aspect-[21/9] overflow-hidden bg-slate-800;
+  }
+
+  .post-hero img {
+    @apply w-full h-full object-cover;
+  }
+
+  /* --- Post metadata bar --- */
+  .post-meta {
+    @apply flex flex-wrap items-center gap-x-4 gap-y-1
+           text-sm text-slate-400 my-4;
+  }
+
+  .post-meta__item {
+    @apply flex items-center gap-1.5;
+  }
+
+  .post-meta__item svg {
+    @apply w-3.5 h-3.5 flex-shrink-0;
+  }
+
+  .post-meta__category {
+    @apply font-medium;
+    color: var(--color-accent);
+  }
+
+  /* --- Post summary callout --- */
+  .post-summary {
+    @apply bg-slate-800 border-l-4 border-indigo-500
+           text-slate-300 text-base leading-relaxed
+           rounded-r-lg px-5 py-4 mb-8
+           italic;
+  }
+
+  /* --- Related posts --- */
+  .related-posts {
+    @apply mt-12 pt-8 border-t border-slate-700;
+  }
+
+  .related-posts__title {
+    @apply text-sm font-semibold uppercase tracking-widest text-slate-500 mb-4;
+  }
+}
+
+/* =============================================================================
+   Content / Typography
+   ============================================================================= */
+
+@layer components {
+
+  /* prose customisation — dark mode defaults */
+  .post-content {
+    @apply prose prose-invert prose-slate max-w-none
+           prose-headings:font-semibold prose-headings:tracking-tight
+           prose-a:text-indigo-400 prose-a:no-underline
+           prose-code:font-mono prose-code:text-sm
+           prose-code:before:content-none prose-code:after:content-none
+           prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-700;
+  }
+
+  /* Prose link — block highlight on hover */
+  .post-content a {
+    padding: 0.05em 0.25em;
+    margin: 0 -0.1em;
+    border-radius: 0.2em;
+    transition: background-color 150ms ease, color 150ms ease;
+    text-decoration: none;
+  }
+
+  .post-content a:hover {
+    background-color: #4f46e5;   /* indigo-600 */
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  /* Inline code — pill style (not inside pre) */
+  .post-content :not(pre) > code {
+    @apply bg-slate-800 text-indigo-300 rounded px-1.5 py-0.5 text-[0.85em];
+  }
+
+  /* Light mode prose */
+  html:not(.dark) .post-content {
+    @apply prose-slate;
+    color: #1e293b;
+  }
+
+  html:not(.dark) .post-content :not(pre) > code {
+    @apply bg-slate-100 text-indigo-700;
+  }
+
+  /* --- .note callouts ({:.note title="..."}) --- */
+  .note {
+    @apply relative my-6 rounded-r-lg border-l-4 p-4 pl-12;
+    border-color: var(--color-accent);
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  }
+
+  .note::before {
+    content: '';
+    @apply absolute left-3.5 top-4 w-5 h-5 bg-current opacity-60;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 16v-4m0-4h.01'/%3E%3C/svg%3E");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    color: var(--color-accent);
+  }
+
+  /* Note title */
+  .note [data-title]::before,
+  .note-title {
+    @apply block text-xs font-semibold uppercase tracking-wider mb-1;
+    color: var(--color-accent);
+  }
+
+  /* --- .figcaption --- */
+  .figcaption {
+    @apply block text-center text-sm text-slate-500 italic mt-2 mb-6;
+  }
+
+  /* --- .lead --- */
+  .lead {
+    @apply text-xl text-slate-300 leading-relaxed font-light;
+  }
+
+  /* --- .smaller --- */
+  .smaller {
+    @apply text-sm;
+  }
+
+  /* --- .stretch-table --- */
+  .stretch-table {
+    @apply w-full overflow-x-auto;
+  }
+
+  /* --- Video embeds --- */
+  .post-content video {
+    @apply w-full rounded-lg border border-slate-700 my-4;
+  }
+
+  /* --- Zoomable images --- */
+  .post-content img:not(.no-zoom) {
+    @apply cursor-zoom-in rounded border border-slate-700;
+  }
+}
+
+/* =============================================================================
+   Code blocks
+   ============================================================================= */
+
+@layer components {
+
+  .highlight {
+    @apply relative rounded-lg overflow-hidden my-4;
+  }
+
+  /* Language badge — real <span> injected by code-blocks.js */
+  .code-lang-badge {
+    @apply absolute top-2 left-3 text-xs text-slate-400
+           font-mono px-2 py-0.5 rounded bg-slate-800/80
+           pointer-events-none select-none z-10;
+  }
+
+  /* Copy button */
+  .code-copy-btn {
+    @apply absolute top-2 right-2 opacity-0 transition-opacity
+           p-1.5 rounded bg-slate-700 hover:bg-slate-600 text-slate-400
+           hover:text-slate-50 z-20;
+  }
+
+  .highlight:hover .code-copy-btn {
+    @apply opacity-100;
+  }
+
+  .code-copy-btn--copied {
+    @apply opacity-100 text-green-400;
+  }
+
+  .code-copy-btn svg {
+    @apply w-3.5 h-3.5;
+  }
+
+  /* Rouge syntax highlighting — dark (Monokai-inspired) */
+  .highlight pre { @apply p-4 overflow-x-auto text-sm leading-relaxed m-0; background: #1e293b; }
+  .highlight pre code { background: transparent; padding: 0; }
+  .highlight .c, .highlight .c1, .highlight .cm { color: #64748b; }   /* Comment — slate-500 */
+  .highlight .k, .highlight .kd, .highlight .kn { color: #93c5fd; }   /* Keyword — blue-300 */
+  .highlight .s, .highlight .s1, .highlight .s2 { color: #86efac; }   /* String — green-300 */
+  .highlight .o { color: #f9a8d4; }                                    /* Operator — pink-300 */
+  .highlight .n { color: #e2e8f0; }                                    /* Name — slate-200 */
+  .highlight .nf { color: #a5b4fc; }                                   /* Function — indigo-300 */
+  .highlight .nc { color: #a5b4fc; }                                   /* Class — indigo-300 */
+  .highlight .mi, .highlight .mf { color: #fda4af; }                  /* Number — rose-300 */
+  .highlight .kc { color: #93c5fd; }                                   /* Keyword constant */
+  .highlight .nb { color: #93c5fd; }                                   /* Built-in */
+  .highlight .na { color: #a5b4fc; }                                   /* Attribute — indigo-300 */
+  .highlight .nv, .highlight .vi { color: #e2e8f0; }                  /* Variable */
+  .highlight .p { color: #cbd5e1; }                                    /* Punctuation — slate-300 */
+  .highlight .nt { color: #f9a8d4; }                                   /* Tag — pink-300 */
+  .highlight .err { color: #fca5a5; background: transparent; }        /* Error — red-300 */
+
+  /* Light mode syntax overrides */
+  html:not(.dark) .highlight { @apply border border-gray-200; }
+  html:not(.dark) .highlight pre { background: #f8fafc; color: #1e293b; }
+  html:not(.dark) .highlight pre code { color: #1e293b; }
+  html:not(.dark) .highlight span { color: #1e293b; }    /* default all tokens dark */
+  html:not(.dark) .highlight .c,
+  html:not(.dark) .highlight .c1,
+  html:not(.dark) .highlight .cm  { color: #64748b; }    /* comment — slate-500 */
+  html:not(.dark) .highlight .k,
+  html:not(.dark) .highlight .kd,
+  html:not(.dark) .highlight .kn,
+  html:not(.dark) .highlight .kc  { color: #7c3aed; }    /* keyword — violet-700 */
+  html:not(.dark) .highlight .s,
+  html:not(.dark) .highlight .s1,
+  html:not(.dark) .highlight .s2  { color: #065f46; }    /* string — emerald-900 */
+  html:not(.dark) .highlight .o   { color: #b45309; }    /* operator — amber-700 */
+  html:not(.dark) .highlight .n,
+  html:not(.dark) .highlight .nv,
+  html:not(.dark) .highlight .vi  { color: #1e293b; }    /* name/variable — slate-900 */
+  html:not(.dark) .highlight .nf  { color: #1d4ed8; }    /* function — blue-700 */
+  html:not(.dark) .highlight .nc  { color: #6f42c1; }    /* class — purple */
+  html:not(.dark) .highlight .mi,
+  html:not(.dark) .highlight .mf  { color: #9f1239; }    /* number — rose-900 */
+  html:not(.dark) .highlight .nb  { color: #1d4ed8; }    /* built-in — blue-700 */
+  html:not(.dark) .highlight .nt  { color: #be123c; }    /* tag — rose-700 */
+  html:not(.dark) .highlight .na  { color: #4338ca; }    /* attribute — indigo-700 */
+  html:not(.dark) .highlight .p   { color: #374151; }    /* punctuation — gray-700 */
+  html:not(.dark) .highlight .err { color: #b91c1c; background: transparent; } /* error */
+}
+
+/* =============================================================================
+   Projects page cards
+   ============================================================================= */
+
+@layer components {
+
+  .project-grid {
+    @apply grid gap-5 my-8;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .project-card {
+    @apply flex flex-col rounded-lg border border-slate-700 bg-slate-800
+           hover:border-slate-500 transition-colors overflow-hidden;
+  }
+
+  .project-card__image {
+    @apply flex items-center justify-center p-8 bg-slate-700/50
+           min-h-[140px];
+  }
+
+  .project-card__image img {
+    @apply max-w-[80px] h-auto;
+  }
+
+  .project-card__body {
+    @apply flex flex-col flex-1 p-5 gap-3;
+  }
+
+  .project-card__body h3 {
+    @apply text-slate-50 font-semibold text-base m-0;
+  }
+
+  .project-card__body p {
+    @apply text-slate-400 text-sm flex-1 m-0 leading-relaxed;
+  }
+
+  .project-card__link {
+    @apply inline-flex items-center gap-1.5 px-4 py-2 rounded
+           text-sm font-medium text-white no-underline
+           transition-opacity self-start;
+    background-color: var(--color-accent);
+  }
+
+  .project-card__link:hover {
+    @apply opacity-85 no-underline;
+  }
+}
+
+/* =============================================================================
+   About page — resume timeline
+   ============================================================================= */
+
+@layer components {
+
+  .resume-timeline {
+    @apply my-6 pl-6 space-y-8;
+    border-left: 2px solid var(--color-accent);
+  }
+
+  .resume-entry {
+    @apply relative;
+  }
+
+  .resume-entry::before {
+    content: '';
+    @apply absolute -left-[calc(1.5rem+5px)] top-1.5
+           w-2.5 h-2.5 rounded-full ring-2 ring-slate-900;
+    background-color: var(--color-accent);
+  }
+
+  .resume-entry__header {
+    @apply flex items-start justify-between gap-4 mb-2;
+  }
+
+  .resume-entry__title {
+    @apply font-semibold text-slate-50 text-base m-0;
+  }
+
+  .resume-entry__company {
+    @apply text-sm text-slate-400 mt-0.5;
+  }
+
+  .resume-entry__dates {
+    @apply text-xs font-semibold uppercase tracking-wider text-slate-500
+           whitespace-nowrap flex-shrink-0 mt-1;
+  }
+
+  .resume-entry__description {
+    @apply text-slate-400 text-sm leading-relaxed m-0;
+  }
+}
+
+/* =============================================================================
+   Search modal
+   ============================================================================= */
+
+@layer components {
+
+  .search-overlay {
+    @apply fixed inset-0 z-50 flex items-start justify-center pt-[10vh]
+           bg-black/60 backdrop-blur-sm;
+  }
+
+  .search-modal {
+    @apply w-full max-w-xl mx-4 rounded-xl border border-slate-700
+           bg-slate-900 shadow-2xl overflow-hidden;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-3.5 bg-transparent text-slate-50 placeholder-slate-500
+           text-base outline-none border-b border-slate-700;
+    font-family: var(--font-sans);
+  }
+
+  .search-results {
+    @apply max-h-[60vh] overflow-y-auto;
+  }
+
+  .search-result-item {
+    @apply block px-4 py-3 hover:bg-slate-800 transition-colors no-underline
+           border-b border-slate-700/50 last:border-0;
+  }
+
+  .search-result-item:focus {
+    @apply bg-slate-800 outline-none;
+  }
+
+  .search-result-title {
+    @apply block text-slate-50 font-medium text-sm;
+  }
+
+  .search-result-excerpt {
+    @apply block text-slate-400 text-xs mt-0.5 line-clamp-2;
+  }
+
+  .search-hint {
+    @apply px-4 py-3 text-xs text-slate-500;
+  }
+}
+
+/* =============================================================================
+   Dark mode toggle
+   ============================================================================= */
+
+@layer components {
+
+  .dark-toggle {
+    @apply p-2 rounded-md text-slate-400 hover:text-slate-50 hover:bg-slate-800
+           transition-colors;
+  }
+
+  .dark-toggle svg {
+    @apply w-4 h-4;
+  }
+
+}
+
+/* =============================================================================
+   Homepage
+   ============================================================================= */
+
+@layer components {
+
+  .home-hero {
+    @apply px-8 py-16 border-b border-slate-700
+           relative overflow-hidden;
+    background-image: radial-gradient(circle, rgb(99 102 241 / 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .home-hero__title {
+    @apply text-4xl font-bold text-slate-50 tracking-tight;
+  }
+
+  .home-hero__subtitle {
+    @apply text-slate-400 text-lg mt-2;
+  }
+
+  .section-title {
+    @apply text-xs font-semibold uppercase tracking-widest text-slate-500 mb-6;
+  }
+
+  .category-pill {
+    @apply px-4 py-2 rounded-full border border-slate-700 text-slate-300
+           text-sm hover:border-indigo-400 hover:text-indigo-400 transition-colors
+           no-underline;
+  }
+}
+
+/* =============================================================================
+   Misc content helpers (ported from my-style.scss)
+   ============================================================================= */
+
+@layer components {
+
+  /* .dl-table — download table with Gumroad buttons */
+  .dl-table a {
+    text-underline-offset: 0.8rem;
+  }
+
+  .dl-table .gumroad-button {
+    @apply my-4;
+  }
+}
+
+/* =============================================================================
+   Utilities
+   ============================================================================= */
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* =============================================================================
+   Light mode — surface, border, and text overrides
+   (Dark mode is the default; these rules apply when .dark is absent from <html>)
+   ============================================================================= */
+
+@layer components {
+
+  /* --- Layout surfaces --- */
+  html:not(.dark) .sidebar {
+    @apply bg-gray-50 border-gray-200;
+  }
+
+  html:not(.dark) .sidebar__name {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .sidebar__tagline {
+    @apply text-gray-500;
+  }
+
+  html:not(.dark) .sidebar__social-link {
+    @apply text-gray-500 hover:text-gray-900 hover:bg-gray-100;
+  }
+
+  html:not(.dark) .sidebar__nav-link {
+    @apply text-gray-600 hover:text-gray-900 hover:bg-gray-100;
+  }
+
+  html:not(.dark) .sidebar__nav-link--active {
+    @apply text-gray-900 bg-gray-100;
+  }
+
+
+  html:not(.dark) .topbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    @apply border-gray-200;
+  }
+
+  html:not(.dark) .topbar a,
+  html:not(.dark) .topbar span {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .dark-toggle {
+    @apply text-gray-500 hover:text-gray-900 hover:bg-gray-100;
+  }
+
+  html:not(.dark) .view-btn--active {
+    @apply text-gray-900 bg-gray-200;
+  }
+
+  /* Bottom border in sidebar */
+  html:not(.dark) .sidebar > div > div:last-child {
+    @apply border-gray-200;
+  }
+
+  /* --- Post cards --- */
+  html:not(.dark) .post-card {
+    @apply bg-white border-gray-200 hover:border-gray-400;
+  }
+
+  html:not(.dark) .post-card__image {
+    @apply bg-gray-100;
+  }
+
+  html:not(.dark) .post-card__title {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .post-card:hover .post-card__title {
+    color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .post-card__excerpt {
+    @apply text-gray-500;
+  }
+
+  html:not(.dark) .post-card__meta {
+    @apply text-gray-400;
+  }
+
+  /* --- Post summary --- */
+  html:not(.dark) .post-summary {
+    @apply bg-indigo-50 border-indigo-400 text-gray-700;
+  }
+
+  /* --- Post hero + meta --- */
+  html:not(.dark) .post-hero {
+    @apply bg-gray-100;
+  }
+
+  html:not(.dark) .post-meta {
+    @apply text-gray-500;
+  }
+
+  html:not(.dark) .related-posts {
+    @apply border-gray-200;
+  }
+
+  html:not(.dark) .related-posts__title {
+    @apply text-gray-400;
+  }
+
+  /* --- TOC --- */
+  html:not(.dark) #toc-container {
+    @apply border-gray-200;
+  }
+
+  html:not(.dark) #toc-container a {
+    @apply text-gray-500 hover:text-gray-900;
+  }
+
+  /* --- Note callouts --- */
+  html:not(.dark) .note {
+    background: color-mix(in srgb, var(--color-accent) 8%, white);
+  }
+
+  /* --- Code blocks --- */
+  html:not(.dark) .code-copy-btn {
+    @apply bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-700;
+  }
+
+  html:not(.dark) .code-lang-badge {
+    @apply bg-gray-100/80 text-gray-400;
+  }
+
+  /* --- Project cards --- */
+  html:not(.dark) .project-card {
+    @apply bg-white border-gray-200 hover:border-gray-400;
+  }
+
+  html:not(.dark) .project-card__image {
+    @apply bg-gray-50;
+  }
+
+  html:not(.dark) .project-card__body h3 {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .project-card__body p {
+    @apply text-gray-500;
+  }
+
+  /* --- Resume timeline --- */
+  html:not(.dark) .resume-timeline {
+    border-left-color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .resume-entry::before {
+    @apply ring-white;
+    background-color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .resume-entry__title {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .resume-entry__company {
+    @apply text-gray-500;
+  }
+
+  html:not(.dark) .resume-entry__dates {
+    @apply text-gray-400;
+  }
+
+  html:not(.dark) .resume-entry__description {
+    @apply text-gray-500;
+  }
+
+  /* --- Search modal --- */
+  html:not(.dark) .search-modal {
+    @apply bg-white border-gray-200;
+  }
+
+  html:not(.dark) .search-input {
+    @apply text-gray-900 placeholder-gray-400 border-gray-200;
+  }
+
+  html:not(.dark) .search-result-item {
+    @apply hover:bg-gray-50 border-gray-100;
+  }
+
+  html:not(.dark) .search-result-title {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .search-result-excerpt {
+    @apply text-gray-500;
+  }
+
+  html:not(.dark) .search-hint {
+    @apply text-gray-400;
+  }
+
+  /* --- Homepage --- */
+  html:not(.dark) .home-hero {
+    background-image: radial-gradient(circle, rgb(99 102 241 / 0.08) 1px, transparent 1px);
+    @apply border-gray-200;
+  }
+
+  html:not(.dark) .home-hero__title {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .home-hero__subtitle {
+    @apply text-gray-500;
+  }
+
+  html:not(.dark) .section-title {
+    @apply text-gray-400;
+  }
+
+  html:not(.dark) .category-pill {
+    @apply border-gray-300 text-gray-600 hover:border-indigo-500 hover:text-indigo-600;
+  }
+
+  /* --- Prose (post content) --- */
+  html:not(.dark) .post-content {
+    @apply prose-slate;
+    color: #1e293b;
+  }
+}
+
+/* =============================================================================
+   Unlayered overrides — beat @layer utilities (Tailwind Typography)
+   ============================================================================= */
+
+/* Image-only paragraphs:
+   margin-top: -20px cancels the preceding <p>'s 20px margin-bottom via collapse,
+   padding-top: 8px then adds back exactly 8px (padding doesn't collapse).
+   line-height: 0 eliminates the phantom inline gap that <img> creates inside a <p>. */
+.post-content p:has(> img),
+.post-content p:has(> a > img) {
+  margin-top: -20px;
+  padding-top: 0.5rem;  /* 8px */
+  margin-bottom: 0;
+  padding-bottom: 0;
+  line-height: 0;
+}
+
+/* Make the wrapping <a> block to avoid inline whitespace */
+.post-content p > a:has(> img) {
+  display: block;
+  line-height: 0;
+}
+
+/* Image: no extra margins — the parent <p> handles all spacing */
+.post-content p > img,
+.post-content p > a > img {
+  margin-top: 0;
+  margin-bottom: 0.5rem; /* 8px below */
+}
+
+#search-btn-sidebar {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* List view — unlayered to beat sm:grid-cols-2 / xl:grid-cols-3 utilities */
+#posts-container.posts-list {
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+#posts-container.posts-list .post-card {
+  flex-direction: row;
+}
+
+#posts-container.posts-list .post-card__image {
+  width: 9rem;
+  flex-shrink: 0;
+  aspect-ratio: auto;
+}
+
+#posts-container.posts-list .post-card__image img {
+  height: 100%;
+}
+
+#posts-container.posts-list .post-card__body {
+  padding: 1rem;
+  gap: 0.25rem;
+}
+
+#posts-container.posts-list .post-card__excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Post content heading sizes — override Tailwind Typography */
+.post-content h1 { font-size: 2.25rem;  font-weight: 700; } /* 36px */
+.post-content h2 { font-size: 1.75rem;  font-weight: 700; } /* 28px, was 24px/600 */
+.post-content h3 { font-size: 1.375rem; font-weight: 700; } /* 22px, was 20px/600 */
+.post-content h4 { font-size: 1.125rem; font-weight: 700; } /* 18px, was 600 */

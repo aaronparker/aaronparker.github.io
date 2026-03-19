@@ -1,46 +1,51 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-layout: base
+layout: default
 ---
 
-<article class="page mb6" role="article">
-  {% if content contains "<!--author-->" %}
-    {% assign plugins = site.plugins | default:site.gems %}
-    {% assign author = site.data.authors[page.author] | default:site.data.authors.first[1] | default:site.author %}
-    {% capture author_x %}
-      {% if author.picture %}
-        {% include_cached components/hy-img.html class="avatar" img=author.picture alt=author.name %}
-      {% elsif plugins contains 'jekyll-avatar' %}
-        {% assign avatar = author.social.github | default:author.github.username | default:author.github %}
-        {% include components/avatar-tag.html user=avatar %}
-      {% endif %}
+<div class="px-6 lg:px-10 py-8 max-w-4xl">
 
-      {{ author.about | markdownify }}
-    {% endcapture %}
-    {% assign content = content | replace:"<!--author-->", author_x %}
+  <!-- Profile header -->
+  {% assign author = site.data.authors[site.author] | default: site.data.authors.first[1] %}
+  {% if author %}
+  <div class="flex items-start gap-6 mb-10 pb-8 border-b border-gray-200 dark:border-slate-700">
+    {% if author.picture.path %}
+    <img src="{{ author.picture.path | relative_url }}"
+         alt="{{ author.name }}"
+         class="w-24 h-24 rounded-full object-cover flex-shrink-0 ring-2"
+         style="ring-color: var(--color-accent)">
+    {% endif %}
+    <div>
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-slate-50 leading-tight">{{ author.name }}</h1>
+      {% if site.description %}
+      <p class="text-gray-600 dark:text-slate-400 mt-1">{{ site.description }}</p>
+      {% endif %}
+      <!-- Social links -->
+      <div class="flex items-center gap-4 mt-3">
+        {% if author.social.github %}
+        <a href="https://github.com/{{ author.social.github }}"
+           class="sidebar__social-link" aria-label="GitHub" target="_blank" rel="noopener">
+          {% include icons/github.svg %}
+        </a>
+        {% endif %}
+        {% if author.social.linkedin %}
+        <a href="https://linkedin.com/in/{{ author.social.linkedin }}"
+           class="sidebar__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+          {% include icons/linkedin.svg %}
+        </a>
+        {% endif %}
+        {% if author.social.bluesky %}
+        <a href="https://bsky.app/profile/{{ author.social.bluesky }}"
+           class="sidebar__social-link" aria-label="Bluesky" target="_blank" rel="noopener">
+          {% include icons/bluesky.svg %}
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
   {% endif %}
 
-  <header>
-    <h1 class="page-title">{{ page.title }}</h1>
-    {% include components/message.html text=page.description hide=page.hide_description %}
-  </header>
+  <div class="post-content">
+    {{ content }}
+  </div>
 
-  {{ content }}
-</article>
-
-{% include components/dingbat.html %}
-{% include body/comments.html %}
+</div>

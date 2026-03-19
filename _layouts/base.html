@@ -1,34 +1,47 @@
----
-# Copyright (c) 2019 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-layout: compress
----
-
-{% assign plugins = site.plugins | default:site.gems %}
-
-{% assign author = site.data.authors[page.author] | default:site.data.authors.first[1] | default:site.author %}
-
-{% assign image       = page.accent_image | default:site.accent_image | default:'/assets/img/sidebar-bg.jpg' %}
-{% assign color       = page.accent_color | default:site.accent_color | default:'rgb(79,177,186)' %}
-{% assign theme_color = page.theme_color  | default:site.theme_color  | default:'rgb(8,46,57)' %}
-
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}" class="dark" data-baseurl="{{ site.baseurl }}">
 <head>
-  {% include head/index.html %}
+  {% include head.html %}
 </head>
+<body class="bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-300 antialiased">
 
-<body class="{% include_cached base-classes %}">
-  {% include body/index.html %}
+  <!-- Dark mode flash prevention: applied synchronously before paint -->
+  <script>
+    (function() {
+      var stored = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'light' || (!stored && !prefersDark)) {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  {{ content }}
+
+  <!-- Core JS -->
+  <script src="{{ '/assets/js/dark-mode.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/sidebar.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/vendor/lunr.min.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/code-blocks.js' | relative_url }}" defer></script>
+  {% if page.no_toc != true %}
+  <script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
+  {% endif %}
+  {% if page.image_zoom != false %}
+  <script src="{{ '/assets/js/vendor/medium-zoom.min.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/zoom.js' | relative_url }}" defer></script>
+  {% endif %}
+
+  {% include my-body.html %}
+  {% include my-scripts.html %}
+
+  <!-- Cloudflare Web Analytics -->
+  {% if jekyll.environment == 'production' and site.cloudflare_analytics %}
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+          data-cf-beacon='{"token": "{{ site.cloudflare_analytics }}"}'></script>
+  {% endif %}
+
 </body>
+</html>

@@ -1,40 +1,36 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-layout: page
+layout: default
 ---
 
-{{ content }}
+<div class="px-6 lg:px-10 py-8">
 
-{% assign posts = site.categories[page.slug] | default:site.tags[page.slug] | default:site.posts %}
+  <header class="mb-8">
+    <p class="text-xs font-semibold uppercase tracking-widest mb-1"
+       style="color: var(--color-accent)">Category</p>
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-slate-50">{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="text-gray-600 dark:text-slate-400 mt-2">{{ page.description }}</p>
+    {% endif %}
+  </header>
 
-{% assign date_formats  = site.data.strings.date_formats               %}
-{% assign list_group_by = date_formats.list_group_by | default:"%Y"    %}
-{% assign list_entry    = date_formats.list_entry    | default:"%d %b" %}
+  {{ content }}
 
-{% assign prev_date = 0 %}
-{% if page.no_groups %}<ul class="related-posts">{% endif %}
-{% for post in posts %}
-  {% assign current_date = post.date | date:list_group_by %}
-  {% unless page.no_groups %}{% if current_date != prev_date %}
-    {% unless forloop.first %}</ul>{% endunless %}
-    <h2 id="{{ list_group_by | slugify }}-{{ current_date | slugify }}" class="hr-bottom">{{ current_date }}</h2>
-    <ul class="related-posts">
-    {% assign prev_date = current_date %}
-  {% endif %}{% endunless %}
-  {% include_cached components/post-list-item.html post=post format=list_entry %}
-  {% if forloop.last %}</ul>{% endif %}
-{% endfor %}
+  {% assign category_posts = site.posts | where_exp: "post", "post.categories contains page.slug" %}
+  {% assign category_posts_alt = site.categories[page.slug] %}
+  {% if category_posts.size > 0 %}
+    {% assign display_posts = category_posts %}
+  {% else %}
+    {% assign display_posts = category_posts_alt %}
+  {% endif %}
+
+  {% if display_posts.size > 0 %}
+  <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    {% for post in display_posts %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-gray-600 dark:text-slate-400">No posts in this category yet.</p>
+  {% endif %}
+
+</div>

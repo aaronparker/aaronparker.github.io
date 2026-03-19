@@ -1,0 +1,36 @@
+# Work history timeline — edit roles, dates, and descriptions as needed
+# Each entry: title, company, location, start, end (or "Present"), description
+
+- title: Senior PM Architect
+  company: Nerdio
+  location: Remote (Australia)
+  start: 2022
+  end: Present
+  description: >
+    Research, development, and strategic product innovation across the Nerdio platform. Act as the
+    bridge between Core Engineering and the Research and Development team. Explore emerging capabilities
+    across Microsoft Azure, Azure Virtual Desktop, Windows 365, and Microsoft Intune, translating
+    real-world operational challenges into practical platform features. Contribute to product direction
+    by collaborating with engineering and product teams on feature design, technical validation, and
+    prototyping.
+
+- title: Senior Solutions Architect / Technical Product Manager
+  company: Nerdio
+  location: Remote (Australia)
+  start: 2020
+  end: 2022
+  description: >
+    Technical pre-sales, solution architecture, and customer advisory for Azure Virtual Desktop
+    and Windows 365 deployments. Contributed to product feedback loops and feature development
+    based on real-world customer scenarios.
+
+- title: Senior Consultant / Solutions Architect
+  company: Various (Consulting)
+  location: Australia / UK / US
+  start: 2005
+  end: 2020
+  description: >
+    IT consultant, solution architect, and pre-sales engineer across government, corporate, and
+    not-for-profit organisations. Specialised in Citrix, VMware, and Microsoft-based end-user
+    computing environments including virtual desktops, application delivery, and enterprise mobility.
+    Clients across Australia, the UK, and the US.

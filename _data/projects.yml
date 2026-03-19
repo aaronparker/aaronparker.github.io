@@ -1,0 +1,88 @@
+- title: Evergreen
+  description: >
+    A PowerShell module that returns the latest version and download URLs for a set of common
+    Windows applications. Used for automating application lifecycle management and gold image maintenance.
+  image: /assets/projects/evergreen.png
+  url: https://eucpilots.com/evergreen-docs/
+  tags: [PowerShell, Windows, Automation]
+
+- title: EvergreenUI
+  description: >
+    A PowerShell module providing a GUI for Evergreen via the Evergreen Workbench desktop application.
+    Simplifies browsing and downloading application versions. Supports Windows only.
+  image: /assets/projects/evergreen.png
+  url: https://eucpilots.com/evergreen-docs/workbench/
+  tags: [PowerShell, Windows, GUI]
+
+- title: Evergreen Web Workbench
+  description: >
+    A web-based version of the Evergreen desktop Workbench. Tracks the latest version and download
+    URLs for all applications supported by Evergreen. Updated every 24 hours.
+  image: /assets/projects/evergreen.png
+  url: https://eucpilots.com/workbench/
+  tags: [Web, Evergreen]
+
+- title: VcRedist
+  description: >
+    A PowerShell module for lifecycle management of the Microsoft Visual C++ Redistributables.
+    Simplifies importing, installing, and managing all supported VC++ Redistributable versions.
+  image: /assets/projects/vcredist.png
+  url: https://vcredist.com/
+  tags: [PowerShell, Windows, Intune]
+
+- title: Windows Enterprise Defaults
+  description: >
+    A solution for making a Windows image enterprise-ready. Supports physical PCs (including
+    Autopilot), virtual desktops, and Windows 365. Removes in-box Store apps and customises the
+    default user profile for a great end-user experience.
+  image: /assets/projects/defaults.png
+  url: https://stealthpuppy.com/defaults/
+  tags: [PowerShell, Windows, Automation]
+
+- title: EUC Pilots
+  description: >
+    GitHub organisation hosting and managing a range of stealthpuppy open-source projects focused
+    on end-user computing, automation, and enterprise mobility tooling.
+  image: /assets/projects/eucpilots.png
+  url: https://eucpilots.com
+  tags: [Community, EUC]
+
+- title: Intune Remediations
+  description: >
+    A set of detection and remediation scripts for use with Microsoft Intune Remediations (now
+    Endpoint analytics proactive remediations). Covers common Windows management scenarios.
+  image: /assets/projects/intune.png
+  url: https://github.com/aaronparker/remediations/
+  tags: [PowerShell, Intune, Windows]
+
+- title: Nerdio Manager Scripts
+  description: >
+    A collection of scripts and tools for use with Nerdio Manager for Enterprise and Nerdio Manager
+    for MSP, extending automation capabilities for Azure Virtual Desktop and Windows 365.
+  image: /assets/projects/nerdio.png
+  url: https://github.com/aaronparker/nerdio/
+  tags: [PowerShell, Azure, Nerdio]
+
+- title: Microsoft 365 Apps Packager
+  description: >
+    A PowerShell script and GitHub Actions workflow for creating and importing a Win32 package
+    into Microsoft Intune for the Microsoft 365 Apps, keeping deployments current automatically.
+  image: /assets/projects/m365.png
+  url: https://github.com/aaronparker/m365apps
+  tags: [PowerShell, Intune, M365]
+
+- title: PSPackageFactory
+  description: >
+    Integrates Evergreen, VcRedist, and IntuneWin32App to create an automated packaging factory
+    for Microsoft Intune. Generates packages for common Windows applications on a recurring schedule.
+  image: /assets/projects/deployment.png
+  url: https://stealthpuppy.com/packagefactory/
+  tags: [PowerShell, Intune, Automation]
+
+- title: FSLogix
+  description: >
+    Documentation and PowerShell scripts for managing FSLogix Profile Containers and App Masking.
+    Covers configuration, troubleshooting, and automation for FSLogix deployments.
+  image: /assets/projects/defaults.png
+  url: https://stealthpuppy.com/fslogix/
+  tags: [PowerShell, FSLogix, EUC]

@@ -140,11 +140,11 @@ Install-Module -Name EvergreenUI -AllowPrerelease
 
 The Evergreen module is listed as a dependency, so if you don't already have it installed, PowerShell will pull it in automatically.
 
-Once installed, import the module and run `Start-EvergreenUI`:
+Once installed, import the module and run `Start-EvergreenWorkbench`:
 
 ```powershell
-Import-Module EvergreenUI
-Start-EvergreenUI
+Import-Module -Name EvergreenUI
+Start-EvergreenWorkbench
 ```
 
 The workbench opens to the Apps view by default. You can change the startup view and other preferences in Settings.

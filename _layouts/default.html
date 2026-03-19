@@ -1,56 +1,36 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 layout: base
 ---
 
-{% assign strings = site.data.strings %}
+<!-- Mobile top bar -->
+<header class="topbar">
+  <a href="{{ '/' | relative_url }}" class="text-gray-900 dark:text-slate-50 font-semibold text-sm no-underline truncate">
+    {{ site.title }}
+  </a>
+  <div class="flex items-center gap-1">
+    <button id="search-btn" class="dark-toggle" aria-label="Search">
+      {% include icons/search.svg %}
+    </button>
+    <button id="dark-toggle-mobile" class="dark-toggle" aria-label="Toggle dark mode">
+      <span class="dark:hidden">{% include icons/moon.svg %}</span>
+      <span class="hidden dark:inline">{% include icons/sun.svg %}</span>
+    </button>
+    <button id="sidebar-toggle" class="dark-toggle" aria-label="Open navigation">
+      {% include icons/menu.svg %}
+    </button>
+  </div>
+</header>
 
-<article class="page" role="article">
-  <header>
-    <h1 class="page-title">{{ page.title | default:strings.home | default:"Home" }}</h1>
-    {% include components/message.html text=page.description hide=page.hide_description %}
-  </header>
+<!-- Sidebar overlay (mobile) -->
+<div id="sidebar-overlay" class="fixed inset-0 bg-black/60 z-20 hidden lg:hidden" aria-hidden="true"></div>
 
+<!-- Sidebar -->
+{% include sidebar.html %}
+
+<!-- Main content area (offset by sidebar width on desktop) -->
+<main class="main-content">
   {{ content }}
+</main>
 
-  <hr class="dingbat related"/>
-
-  {% if site.posts.size > 0 %}
-    <h2 class="hr-bottom">{{ strings.posts | default:"Posts" }}</h2>
-    <ul class="related-posts">
-      {% for post in site.posts limit:5 %}
-        {% include_cached components/post-list-item.html post=post %}
-      {% endfor %}
-    </ul>
-  {% endif %}
-
-  {% assign pages = site.html_pages | where:"layout","page" | where_exp:"page","page.sitemap != false" %}
-  {% if pages.size > 0 %}
-    <h2 class="hr-bottom">{{ strings.pages | default:"Pages" }}</h2>
-    <ul class="related-posts">
-      {% for page in pages limit:5 %}
-        {% if page.layout == 'page' %}
-          <li class="h4">
-            <a href="{{ page.url | relative_url }}" class="flip-title">
-              <span>{{ page.title }}</span>
-            </a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  {% endif %}
-</article>
+<!-- Search modal -->
+{% include search-modal.html %}
