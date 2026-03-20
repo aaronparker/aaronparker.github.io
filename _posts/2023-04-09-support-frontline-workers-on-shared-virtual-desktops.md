@@ -4,6 +4,8 @@ title: Support Frontline Workers on Shared Virtual Desktops
 description: Configuring virtual desktops to supporting frontline workers using Microsoft
   365 F1/F3 etc. alongside users licensed for Microsoft 365 E3/E5.
 permalink: "/m365apps-frontline-workers/"
+categories:
+  - Microsoft
 image:
   path: "/assets/img/hardhat/image.jpg"
   srcset:

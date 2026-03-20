@@ -1,0 +1,185 @@
+# Speaking engagements and presentations, grouped by year
+# Fields per talk: title, event, location (optional), date (optional), url (optional)
+
+- year: 2021
+  talks:
+    - title: Secure and Manage Windows Virtual Desktop with Microsoft Endpoint Manager
+      event: Microsoft meets Community — Windows Virtual Desktop
+      url: https://christiaanbrinkhoff.com/2021/04/12/4-microsoft-meets-community-windows-virtual-desktop-fourth-one-year-anniversary-edition-recap-and-content-sharing/
+
+    - title: Keep Your Gold Images Current With Evergreen
+      event: UK Citrix User Group
+      url: https://www.mycugc.org/events/event-description?CalendarEventKey=8924f17e-0c9c-47f6-a8f8-3a678405995a&CommunityKey=02c43d72-1ef5-40e7-9049-b2bba8fc884d&Home=%2fevents%2flocal-events
+
+- year: 2020
+  talks:
+    - title: FSLogix Containers for WVD deep dive
+      event: ANZ WVD user group
+      date: September 2020
+
+    - title: Image Automation for Public Cloud
+      event: Citrix User Group
+      location: Melbourne
+      date: July 2020
+
+    - title: "Migrate PVS image to MCS, Geek Speak Round table"
+      event: Citrix User Group
+      location: Melbourne
+      date: July 2020
+
+    - title: Windows Virtual Desktop update and architecture approach and overview
+      event: Citrix User Group
+      location: Melbourne
+      date: May 2020
+
+    - title: Citrix Cloud and Windows Virtual Desktop updates
+      event: Citrix User Group
+      location: Melbourne
+      date: March 2020
+
+    - title: CTP panel discussion
+      event: IGEL Disrupt
+      location: Nashville
+      date: January 2020
+
+- year: 2019
+  talks:
+    - title: The identity centric universe
+      event: Citrix C-Tomorrow
+      location: Sydney
+
+- year: 2018
+  talks:
+    - title: "Windows Server 2019 is here, what's in it? When are you going to adopt it?"
+      event: Citrix User Group
+      location: Melbourne
+      date: December 2018
+
+    - title: "Citrix Cloud Unfiltered: Insights into real-world Citrix Cloud deployments"
+      event: Citrix User Group
+      location: Melbourne
+      date: December 2018
+
+    - title: "The 2018-2020 Desktop — Three Experts Duke it out for the Best Way to Deploy Windows"
+      event: MyCUGC webinar
+      date: October 2018
+
+    - title: The Modern Management Methodology Imaginarium
+      event: xenappblog.com VirtualExpo webinar
+      date: September 2018
+
+    - title: "Geek Speak with guests: Richard Parnell, Aaron Parker, Michael Lang"
+      event: IGEL Disrupt
+      location: Melbourne
+      date: March 2018
+
+    - title: Industry Panel — Future of EUC
+      event: IGEL Disrupt
+      location: Melbourne
+      date: March 2018
+
+- year: 2017
+  talks:
+    - title: Citrix XenDesktop Machine Creation Services Deep Dive
+      event: E2EVC Sydney
+      date: March 2017
+      url: http://www.e2evc.com/home/HomeEU.aspx#SYDNEY
+
+    - title: Modern Management for Windows 10
+      event: Experts Live Melbourne
+      date: April 2017
+      url: https://www.expertslive.org.au/
+
+    - title: Citrix Synergy Orlando
+      event: Citrix Synergy
+      location: Orlando
+      date: May 2017
+
+- year: 2016
+  talks:
+    - title: Managing the Modern User Experience in a Hybrid World
+      event: Virtual Expo
+      date: April 2016
+
+    - title: "UX and the Enterprise Desktop: Like Oil and Water?"
+      event: Citrix Synergy
+      location: Las Vegas
+      date: May 2016
+      url: https://youtu.be/8TpXl80fkKQ
+
+    - title: Managing the Modern User Experience in a Hybrid World
+      event: E2EVC
+      location: Las Vegas
+      date: May 2016
+
+    - title: "UX and the Enterprise Desktop: Like Oil and Water?"
+      event: BriForum
+      location: Boston
+      date: July 2016
+      url: http://briforum.com/2016/US/
+
+    - title: Managing the Modern User Experience in a Hybrid World
+      event: BriForum
+      location: Boston
+      date: July 2016
+      url: http://briforum.com/2016/US/
+
+    - title: Managing the Modern User Experience in a Hybrid World
+      event: Melbourne VMUG
+      date: August 2016
+      url: http://vmug.com/melbourne
+
+    - title: "UX and the Enterprise Desktop: Like Oil and Water?"
+      event: Virtual Expo
+      date: September 2016
+      url: https://xenapptraining.leadpages.co/xbve092016/
+
+    - title: VMware EUC Champion round table
+      event: VMUG Virtual Event
+      date: December 2016
+      url: https://www.vmug.com/Attend/VMUG-Virtual-Event
+
+- year: 2015
+  talks:
+    - title: How to Right-Size File Servers
+      event: VMware vForum
+      location: Sydney
+      date: October 2015
+      url: https://www.youtube.com/watch?v=v-bpqq2Xxq4
+
+    - title: "I've got 99 Problems and Folder Redirection is Every One of Them"
+      event: BriForum
+      location: Denver
+      date: July 2015
+      url: http://www.brianmadden.com/video/BriForum-2015-Ive-Got-99-Problems-and-Folder-Redirection-is-Every-One-of-Them
+
+    - title: "I've got 99 Problems and Folder Redirection is Every One of Them"
+      event: Citrix Synergy
+      location: Orlando
+      date: May 2015
+      url: https://www.mycugc.org/p/do/sd/sid=25
+
+    - title: "I've got 99 Problems and Folder Redirection is Every One of Them"
+      event: Citrix TechXperts
+      date: May 2015
+
+    - title: How Folder Redirection Impacts User Experience and Breaks Applications
+      event: xenappblog.com Webcast
+      date: January 2015
+
+- year: 2014
+  talks:
+    - title: How Folder Redirection Impacts User Experience and Breaks Applications
+      event: BriForum
+      location: Boston
+      date: July 2014
+      url: http://www.brianmadden.com/video/BriForum-2014-Boston-How-Folder-Redirection-Impacts-User-Experience-and-Breaks-Applications
+
+    - title: Hands Off My Gold Image!
+      event: BriForum
+      location: Boston
+      date: July 2014
+
+    - title: Hands Off My Gold Image!
+      event: Citrix Synergy
+      location: Los Angeles

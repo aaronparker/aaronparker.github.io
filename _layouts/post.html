@@ -71,6 +71,20 @@ layout: default
           </span>
           {% endif %}
         </div>
+
+        <!-- Tags -->
+        {% if page.tags.size > 0 %}
+        <div class="flex flex-wrap gap-1.5 mt-3">
+          {% for tag in page.tags %}
+          {% assign tag_page = site.featured_tags | where: "slug", tag | first %}
+          {% if tag_page %}
+          <a href="{{ tag_page.url | relative_url }}" class="post-tag-pill">{{ tag }}</a>
+          {% else %}
+          <span class="post-tag-pill">{{ tag }}</span>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
       </header>
 
       <!-- Summary / description -->
@@ -84,6 +98,57 @@ layout: default
       <div class="post-content" itemprop="articleBody">
         {{ content }}
       </div>
+
+      <!-- Share buttons -->
+      <div class="post-share">
+        <span class="post-share__label">Share</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}"
+           target="_blank" rel="noopener noreferrer"
+           class="post-share__btn" aria-label="Share on LinkedIn">
+          {% include icons/linkedin.svg %}
+          LinkedIn
+        </a>
+        <a href="https://bsky.app/intent/compose?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}"
+           target="_blank" rel="noopener noreferrer"
+           class="post-share__btn" aria-label="Share on Bluesky">
+          {% include icons/bluesky.svg %}
+          Bluesky
+        </a>
+        <button id="copy-url-btn" class="post-share__btn" aria-label="Copy link"
+                data-url="{{ page.url | absolute_url }}">
+          <span id="copy-url-icon">{% include icons/link.svg %}</span>
+          <span id="copy-url-label">Copy link</span>
+        </button>
+      </div>
+
+      <!-- Author bio -->
+      {% assign author = site.data.authors[site.author] | default: site.data.authors.first[1] %}
+      {% if author %}
+      <div class="author-bio">
+        {% if author.picture.path %}
+        <img src="{{ author.picture.path | relative_url }}" alt="{{ author.name }}" class="author-bio__avatar">
+        {% endif %}
+        <div>
+          <p class="author-bio__name">{{ author.name }}</p>
+          {% if author.about %}
+          <div class="author-bio__about">{{ author.about | markdownify }}</div>
+          {% endif %}
+          {% if author.social %}
+          <div class="author-bio__social">
+            {% if author.social.github %}
+            <a href="https://github.com/{{ author.social.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">{% include icons/github.svg %}</a>
+            {% endif %}
+            {% if author.social.linkedin %}
+            <a href="https://linkedin.com/in/{{ author.social.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">{% include icons/linkedin.svg %}</a>
+            {% endif %}
+            {% if author.social.bluesky %}
+            <a href="https://bsky.app/profile/{{ author.social.bluesky }}" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">{% include icons/bluesky.svg %}</a>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
 
       <!-- Related posts -->
       {% if page.related_posts.size > 0 %}
@@ -99,6 +164,27 @@ layout: default
         </div>
       </div>
       {% endif %}
+
+      <!-- Copy link JS -->
+      <script>
+      (function() {
+        var btn = document.getElementById('copy-url-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+          var url = btn.getAttribute('data-url');
+          navigator.clipboard.writeText(url).then(function() {
+            var label = document.getElementById('copy-url-label');
+            var icon  = document.getElementById('copy-url-icon');
+            label.textContent = 'Copied!';
+            btn.classList.add('post-share__btn--copied');
+            setTimeout(function() {
+              label.textContent = 'Copy link';
+              btn.classList.remove('post-share__btn--copied');
+            }, 2000);
+          });
+        });
+      })();
+      </script>
 
       <!-- Comments -->
       {% if page.comments %}

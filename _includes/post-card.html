@@ -1,7 +1,7 @@
 {% assign words = include.post.content | number_of_words %}
 {% assign reading_time = words | divided_by: 200 | plus: 1 %}
 
-<article class="post-card">
+<article class="post-card" data-category="{{ include.post.categories.first | downcase }}">
   <!-- Hero image thumbnail -->
   {% if include.post.image.path %}
   <a href="{{ include.post.url | relative_url }}" class="post-card__image no-underline" tabindex="-1" aria-hidden="true">

@@ -4,45 +4,12 @@ layout: default
 
 <div class="px-6 lg:px-10 py-8 max-w-4xl">
 
-  <!-- Profile header -->
-  {% assign author = site.data.authors[site.author] | default: site.data.authors.first[1] %}
-  {% if author %}
-  <div class="flex items-start gap-6 mb-10 pb-8 border-b border-gray-200 dark:border-slate-700">
-    {% if author.picture.path %}
-    <img src="{{ author.picture.path | relative_url }}"
-         alt="{{ author.name }}"
-         class="w-24 h-24 rounded-full object-cover flex-shrink-0 ring-2"
-         style="ring-color: var(--color-accent)">
+  <header class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-slate-50 leading-tight">{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="text-gray-600 dark:text-slate-400 mt-2 text-lg">{{ page.description }}</p>
     {% endif %}
-    <div>
-      <h1 class="text-3xl font-bold text-gray-900 dark:text-slate-50 leading-tight">{{ author.name }}</h1>
-      {% if site.description %}
-      <p class="text-gray-600 dark:text-slate-400 mt-1">{{ site.description }}</p>
-      {% endif %}
-      <!-- Social links -->
-      <div class="flex items-center gap-4 mt-3">
-        {% if author.social.github %}
-        <a href="https://github.com/{{ author.social.github }}"
-           class="sidebar__social-link" aria-label="GitHub" target="_blank" rel="noopener">
-          {% include icons/github.svg %}
-        </a>
-        {% endif %}
-        {% if author.social.linkedin %}
-        <a href="https://linkedin.com/in/{{ author.social.linkedin }}"
-           class="sidebar__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-          {% include icons/linkedin.svg %}
-        </a>
-        {% endif %}
-        {% if author.social.bluesky %}
-        <a href="https://bsky.app/profile/{{ author.social.bluesky }}"
-           class="sidebar__social-link" aria-label="Bluesky" target="_blank" rel="noopener">
-          {% include icons/bluesky.svg %}
-        </a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-  {% endif %}
+  </header>
 
   <div class="post-content">
     {{ content }}

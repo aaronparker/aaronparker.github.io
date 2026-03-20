@@ -5,6 +5,8 @@ description: Configuring strong authentication requirements using Entra Conditio
   Access to protect access to Azure Virtual Desktop and Windows 365 and understanding
   the resulting behaviours.
 permalink: "/avd-w365-secure-authentication/" 
+categories:
+  - Microsoft
 image:
   path: "/assets/img/authn/image.jpg"
   srcset:

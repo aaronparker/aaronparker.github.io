@@ -5,9 +5,14 @@
   const overlay = document.getElementById('search-overlay');
   const input = document.getElementById('search-input');
   const results = document.getElementById('search-results');
+  const status = document.getElementById('search-status');
   const closeBtn = document.getElementById('search-close');
 
   if (!overlay || !input || !results) return;
+
+  function announce(msg) {
+    if (status) status.textContent = msg;
+  }
 
   let index = null;
   let documents = [];
@@ -58,13 +63,17 @@
     document.body.classList.remove('overflow-hidden');
     input.value = '';
     results.innerHTML = '';
+    announce('');
   }
 
   function renderResults(hits) {
     if (!hits.length) {
       results.innerHTML = '<p class="px-4 py-3 text-sm text-gray-500">No results found.</p>';
+      announce('No results found.');
       return;
     }
+    const shown = Math.min(hits.length, 8);
+    announce(shown + ' result' + (shown === 1 ? '' : 's') + ' found.');
     results.innerHTML = hits.slice(0, 8).map(function (hit) {
       const doc = documents.find(d => d.id === hit.ref);
       if (!doc) return '';

@@ -1,22 +1,39 @@
 ---
 layout: page
 title: Projects
-description: Open source projects and tools for end-user computing, device management, and automation.
+description: Projects and tools for end-user computing, device management, and automation.
 featured: true
+hide_description: true
 ---
 
-If you've found any of the projects below useful and wish to show support, I'm partial to a good coffee:
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T5A9D44)
-
-<div class="project-grid">
-{% for project in site.data.projects %}
-<div class="project-card">
-  {% if project.image %}
-  <div class="project-card__image">
-    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" loading="lazy" class="no-zoom">
+<header class="mb-8 flex items-start justify-between gap-4">
+  <div>
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-slate-50">Projects</h1>
+    <p class="text-gray-600 dark:text-slate-400 mt-1">Projects and tools for end-user computing, device management, and automation.</p>
   </div>
-  {% endif %}
+  <!-- View toggle -->
+  <div class="flex items-center gap-1 mt-1">
+    <button id="proj-grid-btn" class="dark-toggle" aria-label="Grid view" title="Grid view">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+      </svg>
+    </button>
+    <button id="proj-list-btn" class="dark-toggle" aria-label="List view" title="List view">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div id="project-grid" class="project-grid">
+{% for project in site.data.projects %}
+{% if project.url %}
+<a href="{{ project.url }}" class="project-card no-underline" target="_blank" rel="noopener noreferrer">
+{% else %}
+<div class="project-card">
+{% endif %}
   <div class="project-card__body">
     <h3 class="project-card__title">{{ project.title }}</h3>
     <p class="project-card__description">{{ project.description }}</p>
@@ -27,20 +44,33 @@ If you've found any of the projects below useful and wish to show support, I'm p
       {% endfor %}
     </div>
     {% endif %}
-    <a href="{{ project.url }}" class="project-card__link" target="_blank" rel="noopener noreferrer">
-      View project {% include icons/external-link.svg %}
-    </a>
   </div>
+{% if project.url %}
+</a>
+{% else %}
 </div>
+{% endif %}
 {% endfor %}
 </div>
 
-## Projects at Nerdio
+<script>
+(function () {
+  var grid    = document.getElementById('project-grid');
+  var gridBtn = document.getElementById('proj-grid-btn');
+  var listBtn = document.getElementById('proj-list-btn');
+  var KEY     = 'projects-view';
 
-Here's a sample of projects or features that I've worked on at Nerdio:
+  function setView(view) {
+    var isList = view === 'list';
+    grid.classList.toggle('project-list', isList);
+    gridBtn.classList.toggle('view-btn--active', !isList);
+    listBtn.classList.toggle('view-btn--active', isList);
+    localStorage.setItem(KEY, isList ? 'list' : 'grid');
+  }
 
-![nerdio icon](/assets/projects/nerdio.png)
+  gridBtn.addEventListener('click', function () { setView('grid'); });
+  listBtn.addEventListener('click', function () { setView('list'); });
 
-* **Operational Efficiency dashboard** - shows the active time and effort savings that Nerdio Manager provides to a customer in their environment for Azure Virtual Desktop, Windows 365, and Intune
-* **Windows 365 migration** - Nerdio Manager enables customers to migrate suitable Azure Virtual Desktop workloads to Windows 365, simplifying personal desktop management without user interruption
-* **Nerdio Migrate** - Nerdio Manager simplifies migration of legacy VDI workloads to Azure Virtual Desktop and Windows 365
+  setView(localStorage.getItem(KEY) || 'grid');
+})();
+</script>

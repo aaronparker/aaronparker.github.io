@@ -3,34 +3,32 @@
 
 - title: Senior PM Architect
   company: Nerdio
-  location: Remote (Australia)
-  start: 2022
+  location: Australia
+  start: Oct 2024
   end: Present
   description: >
-    Research, development, and strategic product innovation across the Nerdio platform. Act as the
-    bridge between Core Engineering and the Research and Development team. Explore emerging capabilities
-    across Microsoft Azure, Azure Virtual Desktop, Windows 365, and Microsoft Intune, translating
-    real-world operational challenges into practical platform features. Contribute to product direction
-    by collaborating with engineering and product teams on feature design, technical validation, and
-    prototyping.
+    Research, development, and strategic product innovation across the Nerdio platform. Act as the bridge between Core Engineering and the Research and Development team. Explore emerging capabilities across Microsoft Azure, Azure Virtual Desktop, Windows 365, and Microsoft Intune, translating real-world operational challenges into practical platform features. Contribute to product direction by collaborating with engineering and productteams on feature design, technical validation, and prototyping.
 
-- title: Senior Solutions Architect / Technical Product Manager
-  company: Nerdio
-  location: Remote (Australia)
-  start: 2020
-  end: 2022
+- title: Principal Modern Workplace Architect and EUC practice owner
+  company: Insentra
+  location: Australia
+  start: Apr 2016
+  end: Oct 2024
   description: >
-    Technical pre-sales, solution architecture, and customer advisory for Azure Virtual Desktop
-    and Windows 365 deployments. Contributed to product feedback loops and feature development
-    based on real-world customer scenarios.
+    Primary technical owner of all things Microsoft and Citrix Modern Workplace. I draw on my 20+ years experience in this space and to collaborate with my team, professional services delivery management, sales, our CTO office and managed services to enable Insentra to lead within the Modern Workplace, across ANZ, the UK and the US. Technology responsibility includes security, identity and management solutions including Microsoft Azure, Azure AD, Windows Virtual Desktop, Endpoint Manager / Intune as well as Citrix Cloud, Citrix Virtual Apps and Desktops and just about everything in between.
 
-- title: Senior Consultant / Solutions Architect
-  company: Various (Consulting)
-  location: Australia / UK / US
-  start: 2005
-  end: 2020
+- title: Solution Architect
+  company: Atlantis Computing
+  location: Australia
+  start: Jan 2014
+  end: Apr 2016
   description: >
-    IT consultant, solution architect, and pre-sales engineer across government, corporate, and
-    not-for-profit organisations. Specialised in Citrix, VMware, and Microsoft-based end-user
-    computing environments including virtual desktops, application delivery, and enterprise mobility.
-    Clients across Australia, the UK, and the US.
+    In this role, my responsibilities included driving the technical pre-sales and design of software-defined storage and hyper-converged solutions on Atlantis ILIO, USX and HyperScale in the ANZ and APJ regions. Delivering partner enablement in-person and remote across ANZ, Singapore, Japan and Korea. Running POCs, writing proposals and tender responses both with partners and direct to customers. Providing feature and usability feedback to the CTO office, product management and field enablement teams to further improve the Atlantis offerings. Representing Atlantis at conferences and speaking engagements including VMware vForum and Citrix Synergy.
+
+- title: Solution Architect - End User Computing
+  company: Kelway Ltd (CDW UK)
+  location: United Kingdom
+  start: Aug 2011
+  end: Nov 2013
+  description: >
+    Supported Kelway in building a first class consulting and solutions business by providing pre-sales, project consulting and design of desktop and application delivery solutions for commercial, government and education customers. Ran workshops with customers to develop their EUC strategies and deploy best of breed solutions to best serve their users. Worked with the sales teams to respond to tenders and proposals and co-ordinated POCs and projects with project management and EUC delivery team. Developed deployment and automation frameworks to assist the EUC delivery team in improving project quality and delivery. Provided technical mentorship and training to the EUC delivery team. Represented Kelway at external speaking engagements.

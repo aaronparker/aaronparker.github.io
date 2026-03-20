@@ -3,6 +3,8 @@ layout: post
 title: Introducing the Evergreen Workbench
 description: After more than six years, Evergreen now has a graphical interface. Here's a look at the Evergreen Workbench — a Windows desktop app and a browser-based web app for exploring application version data.
 permalink: "/evergreen-workbench/"
+categories:
+  - Evergreen
 image:
   path: "/assets/img/workbench/image.jpg"
   srcset:

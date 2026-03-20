@@ -31,13 +31,25 @@
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono Variable", ui-monospace, "Cascadia Code", monospace;
 
-  /* Accent colour — indigo-400 */
-  --color-accent: #818cf8;         /* indigo-400 */
-  --color-accent-dark: #6366f1;    /* indigo-500 */
+  /* Accent colour — indigo (default) */
+  --color-accent: #818cf8;         /* indigo-400 — used on dark backgrounds */
+  --color-accent-dark: #6366f1;    /* indigo-500 — used on light backgrounds */
 
   /* Sidebar width */
   --sidebar-width: 280px;
 }
+
+/* =============================================================================
+   Colour themes — override accent tokens per html.theme-* class
+   ============================================================================= */
+
+html.theme-blue   { --color-accent: #60a5fa; --color-accent-dark: #2563eb; }
+html.theme-purple { --color-accent: #c084fc; --color-accent-dark: #9333ea; }
+html.theme-pink   { --color-accent: #f472b6; --color-accent-dark: #db2777; }
+html.theme-red    { --color-accent: #f87171; --color-accent-dark: #dc2626; }
+html.theme-orange { --color-accent: #fb923c; --color-accent-dark: #ea580c; }
+html.theme-amber  { --color-accent: #fbbf24; --color-accent-dark: #d97706; }
+html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
 
 /* =============================================================================
    Base overrides
@@ -80,10 +92,11 @@
   }
 
   .sidebar__avatar {
-    @apply rounded-full ring-2 ring-indigo-400/30;
+    @apply rounded-full;
     width: 80px;
     height: 80px;
     object-fit: cover;
+    box-shadow: 0 0 0 3px var(--color-accent), 0 0 0 5px color-mix(in srgb, var(--color-accent) 20%, transparent);
   }
 
   .sidebar__name {
@@ -108,17 +121,34 @@
   }
 
   .sidebar__social-link {
-    @apply p-2 rounded-md text-slate-400 hover:text-slate-50 hover:bg-slate-800 transition-colors;
+    @apply flex items-center gap-2.5 px-3 py-2 rounded-md text-sm text-slate-300
+           hover:text-slate-50 hover:bg-slate-800 transition-colors;
   }
 
   .sidebar__social-link svg {
-    @apply w-5 h-5;
+    @apply w-4 h-4 flex-shrink-0;
+  }
+
+  /* --- Colour theme swatches --- */
+  .accent-swatch {
+    @apply w-5 h-5 rounded-full flex-shrink-0 cursor-pointer transition-transform hover:scale-110;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+
+  .accent-swatch[aria-pressed="true"] {
+    outline-color: #f8fafc; /* slate-50 — visible on dark sidebar */
+  }
+
+  html:not(.dark) .accent-swatch[aria-pressed="true"] {
+    outline-color: #374151; /* gray-700 — visible on light sidebar */
   }
 
   /* --- Main content area --- */
   .main-content {
     @apply min-h-screen;
     margin-left: var(--sidebar-width);
+    padding-bottom: 5rem; /* clearance for fixed back-to-top button */
   }
 
   /* On mobile, sidebar is hidden; main content takes full width */
@@ -181,7 +211,11 @@
   /* --- Post card --- */
   .post-card {
     @apply flex flex-col rounded-lg border border-slate-700
-           bg-slate-800 hover:border-slate-500 transition-colors overflow-hidden;
+           bg-slate-800 transition-colors overflow-hidden;
+  }
+
+  .post-card:hover {
+    border-color: var(--color-accent);
   }
 
 
@@ -252,10 +286,9 @@
 
   /* --- Post summary callout --- */
   .post-summary {
-    @apply bg-slate-800 border-l-4 border-indigo-500
-           text-slate-300 text-base leading-relaxed
-           rounded-r-lg px-5 py-4 mb-8
-           italic;
+    @apply bg-slate-800 border-l-4 border-slate-600
+           text-slate-300 text-sm leading-relaxed
+           rounded-r-lg px-5 py-4 mb-8;
   }
 
   /* --- Related posts --- */
@@ -278,14 +311,15 @@
   .post-content {
     @apply prose prose-invert prose-slate max-w-none
            prose-headings:font-semibold prose-headings:tracking-tight
-           prose-a:text-indigo-400 prose-a:no-underline
+           prose-a:no-underline
            prose-code:font-mono prose-code:text-sm
            prose-code:before:content-none prose-code:after:content-none
            prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-700;
   }
 
-  /* Prose link — block highlight on hover */
+  /* Prose link — colour + block highlight on hover */
   .post-content a {
+    color: var(--color-accent);
     padding: 0.05em 0.25em;
     margin: 0 -0.1em;
     border-radius: 0.2em;
@@ -294,14 +328,15 @@
   }
 
   .post-content a:hover {
-    background-color: #4f46e5;   /* indigo-600 */
+    background-color: var(--color-accent-dark);
     color: #ffffff;
     text-decoration: none;
   }
 
   /* Inline code — pill style (not inside pre) */
   .post-content :not(pre) > code {
-    @apply bg-slate-800 text-indigo-300 rounded px-1.5 py-0.5 text-[0.85em];
+    @apply bg-slate-800 rounded px-1.5 py-0.5 text-[0.85em];
+    color: var(--color-accent);
   }
 
   /* Light mode prose */
@@ -311,7 +346,8 @@
   }
 
   html:not(.dark) .post-content :not(pre) > code {
-    @apply bg-slate-100 text-indigo-700;
+    @apply bg-slate-100;
+    color: var(--color-accent-dark);
   }
 
   /* --- .note callouts ({:.note title="..."}) --- */
@@ -466,16 +502,19 @@
 
   .project-card {
     @apply flex flex-col rounded-lg border border-slate-700 bg-slate-800
-           hover:border-slate-500 transition-colors overflow-hidden;
+           transition-colors overflow-hidden;
+  }
+
+  .project-card:hover {
+    border-color: var(--color-accent);
   }
 
   .project-card__image {
-    @apply flex items-center justify-center p-8 bg-slate-700/50
-           min-h-[140px];
+    @apply block overflow-hidden h-[160px];
   }
 
   .project-card__image img {
-    @apply max-w-[80px] h-auto;
+    @apply w-full h-full object-cover;
   }
 
   .project-card__body {
@@ -488,6 +527,11 @@
 
   .project-card__body p {
     @apply text-slate-400 text-sm flex-1 m-0 leading-relaxed;
+  }
+
+  /* When the whole card is an <a>, suppress link colour on body text */
+  a.project-card {
+    color: inherit;
   }
 
   .project-card__link {
@@ -638,8 +682,23 @@
 
   .category-pill {
     @apply px-4 py-2 rounded-full border border-slate-700 text-slate-300
-           text-sm hover:border-indigo-400 hover:text-indigo-400 transition-colors
-           no-underline;
+           text-sm transition-colors no-underline;
+  }
+
+  .category-pill:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .project-card__tags .category-pill {
+    @apply px-2 py-0.5 text-xs border-transparent text-white;
+    background-color: var(--color-accent);
+  }
+
+  .project-card__tags .category-pill:hover {
+    background-color: var(--color-accent-dark);
+    border-color: transparent;
+    color: white;
   }
 }
 
@@ -656,6 +715,229 @@
 
   .dl-table .gumroad-button {
     @apply my-4;
+  }
+}
+
+/* =============================================================================
+   Archive page
+   ============================================================================= */
+
+@layer components {
+  .archive-year {
+    @apply text-xl font-bold text-gray-900 dark:text-slate-50 mt-10 mb-3
+           pb-2 border-b border-gray-200 dark:border-slate-700;
+  }
+
+  .archive-list {
+    @apply space-y-1 list-none p-0 m-0;
+  }
+
+  .archive-item {
+    @apply flex items-baseline gap-3 py-1;
+  }
+
+  .archive-item__date {
+    @apply text-xs font-mono text-gray-400 dark:text-slate-500 flex-shrink-0 w-12;
+  }
+
+  .archive-item__title {
+    @apply text-sm text-gray-800 dark:text-slate-300 hover:text-gray-900
+           dark:hover:text-slate-50 no-underline flex-1 min-w-0 truncate;
+  }
+
+  .archive-item__cat {
+    @apply text-xs font-semibold uppercase tracking-wider flex-shrink-0;
+    color: var(--color-accent);
+  }
+}
+
+/* =============================================================================
+   Author bio block
+   ============================================================================= */
+
+@layer components {
+  .author-bio {
+    @apply flex gap-5 mt-8 pt-6 border-t border-slate-700
+           bg-slate-800 rounded-lg p-5;
+  }
+
+  .author-bio__avatar {
+    @apply rounded-full flex-shrink-0 object-cover;
+    width: 64px;
+    height: 64px;
+  }
+
+  .author-bio__name {
+    @apply font-semibold text-slate-50 text-base mb-1;
+  }
+
+  .author-bio__about {
+    @apply text-slate-400 text-sm leading-relaxed;
+  }
+
+  .author-bio__about p { @apply m-0; }
+
+  .author-bio__about a {
+    color: var(--color-accent);
+  }
+
+  .author-bio__social {
+    @apply flex gap-3 mt-3;
+  }
+
+  .author-bio__social a {
+    @apply text-slate-400 hover:text-slate-50 transition-colors;
+  }
+
+  .author-bio__social svg {
+    @apply w-4 h-4;
+  }
+
+  html:not(.dark) .author-bio {
+    @apply bg-gray-50 border-gray-200;
+  }
+
+  html:not(.dark) .author-bio__name {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .author-bio__about {
+    @apply text-gray-600;
+  }
+
+  html:not(.dark) .author-bio__social a {
+    @apply text-gray-500 hover:text-gray-900;
+  }
+}
+
+/* =============================================================================
+   Category filter (blog page)
+   ============================================================================= */
+
+@layer components {
+  .cat-filter {
+    @apply flex flex-wrap gap-2 mb-6;
+  }
+
+  .cat-filter-btn {
+    @apply px-3 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer
+           border-slate-600 text-slate-400 bg-transparent hover:border-slate-400 hover:text-slate-200;
+  }
+
+  .cat-filter-btn.active {
+    @apply border-transparent text-white;
+    background-color: var(--color-accent);
+  }
+
+  html:not(.dark) .cat-filter-btn {
+    @apply border-gray-300 text-gray-500 hover:border-gray-400 hover:text-gray-700;
+  }
+
+  html:not(.dark) .cat-filter-btn.active {
+    @apply border-transparent text-white;
+    background-color: var(--color-accent-dark);
+  }
+}
+
+/* =============================================================================
+   Post tag pills
+   ============================================================================= */
+
+@layer components {
+  .post-tag-pill {
+    @apply inline-block px-2.5 py-0.5 rounded-full text-xs font-medium
+           border border-slate-600 text-slate-400 no-underline
+           transition-colors;
+  }
+
+  a.post-tag-pill:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  html:not(.dark) .post-tag-pill {
+    @apply border-gray-300 text-gray-500;
+  }
+
+  html:not(.dark) a.post-tag-pill:hover {
+    border-color: var(--color-accent-dark);
+    color: var(--color-accent-dark);
+  }
+}
+
+/* =============================================================================
+   Skip link (accessibility)
+   ============================================================================= */
+
+.skip-link {
+  @apply absolute -top-full left-4 z-50 px-4 py-2 rounded text-sm font-medium text-white
+         focus:top-4 transition-none;
+  background-color: var(--color-accent);
+}
+
+/* =============================================================================
+   Back-to-top button
+   ============================================================================= */
+
+@layer components {
+
+  .back-to-top {
+    @apply fixed bottom-6 right-6 z-40 p-2.5 rounded-full shadow-lg text-white
+           opacity-0 pointer-events-none transition-opacity duration-300;
+    background-color: var(--color-accent);
+  }
+
+  .back-to-top.back-to-top--visible {
+    @apply opacity-100 pointer-events-auto;
+  }
+
+  .back-to-top:hover {
+    opacity: 0.85;
+  }
+
+  html:not(.dark) .back-to-top {
+    background-color: var(--color-accent-dark);
+  }
+}
+
+/* =============================================================================
+   Post share buttons
+   ============================================================================= */
+
+@layer components {
+
+  .post-share {
+    @apply flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-slate-700;
+  }
+
+  .post-share__label {
+    @apply text-xs font-semibold uppercase tracking-widest text-slate-500 mr-1;
+  }
+
+  .post-share__btn {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm
+           text-slate-300 bg-slate-800 border border-slate-700
+           hover:text-slate-50 hover:border-slate-500 transition-colors no-underline;
+  }
+
+  .post-share__btn svg {
+    @apply w-4 h-4 flex-shrink-0;
+  }
+
+  .post-share__btn--copied {
+    color: #4ade80; /* green-400 */
+  }
+
+  html:not(.dark) .post-share {
+    @apply border-gray-200;
+  }
+
+  html:not(.dark) .post-share__label {
+    @apply text-gray-400;
+  }
+
+  html:not(.dark) .post-share__btn {
+    @apply text-gray-600 bg-white border-gray-300 hover:text-gray-900 hover:border-gray-400;
   }
 }
 
@@ -689,7 +971,7 @@
   }
 
   html:not(.dark) .sidebar__social-link {
-    @apply text-gray-500 hover:text-gray-900 hover:bg-gray-100;
+    @apply text-gray-600 hover:text-gray-900 hover:bg-gray-100;
   }
 
   html:not(.dark) .sidebar__nav-link {
@@ -726,7 +1008,11 @@
 
   /* --- Post cards --- */
   html:not(.dark) .post-card {
-    @apply bg-white border-gray-200 hover:border-gray-400;
+    @apply bg-white border-gray-200;
+  }
+
+  html:not(.dark) .post-card:hover {
+    border-color: var(--color-accent-dark);
   }
 
   html:not(.dark) .post-card__image {
@@ -751,7 +1037,7 @@
 
   /* --- Post summary --- */
   html:not(.dark) .post-summary {
-    @apply bg-indigo-50 border-indigo-400 text-gray-700;
+    @apply bg-gray-100 border-gray-400 text-gray-700;
   }
 
   /* --- Post hero + meta --- */
@@ -796,12 +1082,13 @@
 
   /* --- Project cards --- */
   html:not(.dark) .project-card {
-    @apply bg-white border-gray-200 hover:border-gray-400;
+    @apply bg-white border-gray-200;
   }
 
-  html:not(.dark) .project-card__image {
-    @apply bg-gray-50;
+  html:not(.dark) .project-card:hover {
+    border-color: var(--color-accent-dark);
   }
+
 
   html:not(.dark) .project-card__body h3 {
     @apply text-gray-900;
@@ -881,7 +1168,23 @@
   }
 
   html:not(.dark) .category-pill {
-    @apply border-gray-300 text-gray-600 hover:border-indigo-500 hover:text-indigo-600;
+    @apply border-gray-300 text-gray-600;
+  }
+
+  html:not(.dark) .category-pill:hover {
+    border-color: var(--color-accent-dark);
+    color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .project-card__tags .category-pill {
+    @apply border-transparent text-white;
+    background-color: var(--color-accent);
+  }
+
+  html:not(.dark) .project-card__tags .category-pill:hover {
+    background-color: var(--color-accent-dark);
+    border-color: transparent;
+    color: white;
   }
 
   /* --- Prose (post content) --- */
@@ -958,8 +1261,118 @@
   overflow: hidden;
 }
 
+/* Project list view — unlayered to beat auto-fill grid */
+#project-grid.project-list {
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+#project-grid.project-list .project-card {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+#project-grid.project-list .project-card__body {
+  padding: 0.75rem 1rem;
+  gap: 0.25rem;
+}
+
 /* Post content heading sizes — override Tailwind Typography */
 .post-content h1 { font-size: 2.25rem;  font-weight: 700; } /* 36px */
 .post-content h2 { font-size: 1.75rem;  font-weight: 700; } /* 28px, was 24px/600 */
 .post-content h3 { font-size: 1.375rem; font-weight: 700; } /* 22px, was 20px/600 */
 .post-content h4 { font-size: 1.125rem; font-weight: 700; } /* 18px, was 600 */
+
+/* Inline images inside list items — remove prose image margins */
+.post-content li > img { margin-top: 0; margin-bottom: 0; }
+.post-content ul li:has(> img) { margin-top: 0.25rem; margin-bottom: 0.25rem; }
+
+/* =============================================================================
+   Print styles
+   ============================================================================= */
+
+@media print {
+  /* Hide navigation and UI chrome */
+  .sidebar,
+  .topbar,
+  #sidebar-overlay,
+  .search-overlay,
+  #back-to-top,
+  .post-share,
+  .related-posts,
+  #toc-container,
+  [id^="search-btn"],
+  #dark-toggle-sidebar,
+  #dark-toggle-mobile,
+  .accent-swatch {
+    display: none !important;
+  }
+
+  /* Full-width content — remove sidebar offset */
+  .main-content {
+    margin-left: 0 !important;
+  }
+
+  /* Remove backgrounds and shadows */
+  body,
+  .post-content,
+  .post-summary,
+  .highlight pre,
+  .post-hero {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure links are readable when printed */
+  .post-content a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #444;
+  }
+
+  /* Keep code blocks legible */
+  .highlight {
+    border: 1px solid #ccc !important;
+  }
+
+  .highlight pre {
+    white-space: pre-wrap !important;
+  }
+
+  /* Page breaks */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}
+
+/* =============================================================================
+   Reduced motion — respect user OS preference
+   ============================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Disable all transitions and animations */
+  .sidebar,
+  .post-card,
+  .post-card__image img,
+  .project-card,
+  .sidebar__nav-link,
+  .sidebar__social-link,
+  .dark-toggle,
+  .accent-swatch,
+  .back-to-top,
+  .post-share__btn,
+  .code-copy-btn {
+    transition: none;
+    animation: none;
+  }
+}

@@ -81,6 +81,8 @@ for (const [outName, slug] of Object.entries(simpleIcons)) {
     } else {
       svg = svg.replace(/(<svg[^>]*)\bfill="[^"]*"/, '$1fill="currentColor"');
     }
+    // Strip <title> so screen readers don't double-read when a text label is present.
+    svg = svg.replace(/<title>[^<]*<\/title>/, '');
     fs.writeFileSync(dest, svg);
     simpleCount++;
   } else {

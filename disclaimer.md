@@ -1,5 +1,5 @@
 ---
-layout: plain
+layout: page
 description: Site disclaimer.
 sitemap: true
 ---

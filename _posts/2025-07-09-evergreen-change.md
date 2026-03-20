@@ -3,6 +3,8 @@ layout: post
 title: Prepare for Change - Upcoming Evergreen Changes
 description: Some big changes are coming to Evergreen, so be prepared to update your scripts and pipelines to ensure things don't break.
 permalink: "/evergreen-change-2025/"
+categories:
+  - Evergreen
 image:
   path: "/assets/img/evergreen/image.jpg"
   srcset:

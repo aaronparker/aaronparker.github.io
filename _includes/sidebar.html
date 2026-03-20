@@ -42,50 +42,84 @@
     <!-- Spacer -->
     <div class="flex-1"></div>
 
-    <!-- Social icons -->
-    {% if author.social %}
-    <div class="grid grid-cols-3 justify-items-center gap-1">
+    <!-- Pages + social links -->
+    <nav class="flex flex-col gap-1" aria-label="Pages and social links">
+      <a href="{{ '/' | relative_url }}" class="sidebar__social-link">
+        {% include icons/house.svg %}
+        Home
+      </a>
+      <a href="{{ '/about/' | relative_url }}" class="sidebar__social-link">
+        {% include icons/user.svg %}
+        About
+      </a>
+      <a href="{{ '/projects/' | relative_url }}" class="sidebar__social-link">
+        {% include icons/folder-open.svg %}
+        Projects
+      </a>
+      <a href="{{ '/archive/' | relative_url }}" class="sidebar__social-link">
+        {% include icons/calendar.svg %}
+        Archive
+      </a>
+      {% if author.social %}
+      <hr class="border-t border-gray-200 dark:border-slate-700 my-1">
       {% if author.social.github %}
       <a href="https://github.com/{{ author.social.github }}"
-         class="sidebar__social-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
         {% include icons/github.svg %}
+        GitHub
       </a>
       {% endif %}
       {% if author.social.linkedin %}
       <a href="https://linkedin.com/in/{{ author.social.linkedin }}"
-         class="sidebar__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
         {% include icons/linkedin.svg %}
+        LinkedIn
       </a>
       {% endif %}
       {% if author.social.bluesky %}
       <a href="https://bsky.app/profile/{{ author.social.bluesky }}"
-         class="sidebar__social-link" aria-label="Bluesky" target="_blank" rel="noopener noreferrer">
+         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
         {% include icons/bluesky.svg %}
+        Bluesky
       </a>
       {% endif %}
       {% if author.social.kofi %}
       <a href="https://ko-fi.com/{{ author.social.kofi }}"
-         class="sidebar__social-link" aria-label="Ko-fi" target="_blank" rel="noopener noreferrer">
+         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
         {% include icons/kofi.svg %}
+        Ko-fi
       </a>
       {% endif %}
       {% if author.social.spotify %}
       <a href="https://open.spotify.com/user/{{ author.social.spotify }}"
-         class="sidebar__social-link" aria-label="Spotify" target="_blank" rel="noopener noreferrer">
+         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
         {% include icons/spotify.svg %}
+        Spotify
       </a>
       {% endif %}
       {% if author.social.rss %}
-      <a href="{{ author.social.rss | relative_url }}"
-         class="sidebar__social-link" aria-label="RSS feed">
+      <a href="{{ author.social.rss | relative_url }}" class="sidebar__social-link">
         {% include icons/rss.svg %}
+        RSS Feed
       </a>
       {% endif %}
+      {% endif %}
+    </nav>
+
+    <!-- Colour theme swatches -->
+    <div class="flex flex-wrap gap-2 px-1 pt-6 pb-0 border-t border-gray-200 dark:border-slate-700">
+      <button class="accent-swatch" data-accent="indigo" aria-label="Indigo theme" style="background-color:#818cf8"></button>
+      <button class="accent-swatch" data-accent="blue"   aria-label="Blue theme"   style="background-color:#60a5fa"></button>
+      <button class="accent-swatch" data-accent="purple" aria-label="Purple theme" style="background-color:#c084fc"></button>
+      <button class="accent-swatch" data-accent="pink"   aria-label="Pink theme"   style="background-color:#f472b6"></button>
+      <button class="accent-swatch" data-accent="red"    aria-label="Red theme"    style="background-color:#f87171"></button>
+      <button class="accent-swatch" data-accent="orange" aria-label="Orange theme" style="background-color:#fb923c"></button>
+      <button class="accent-swatch" data-accent="amber"  aria-label="Amber theme"  style="background-color:#fbbf24"></button>
+      <button class="accent-swatch" data-accent="green"  aria-label="Green theme"  style="background-color:#4ade80"></button>
     </div>
-    {% endif %}
 
     <!-- Dark mode toggle + search -->
-    <div class="flex items-center justify-between pt-2 border-t border-gray-200 dark:border-slate-700">
+    <div class="flex items-center justify-between border-gray-200 dark:border-slate-700">
       <button id="search-btn-sidebar" class="dark-toggle flex items-center" aria-label="Search (Cmd+K)">
         {% include icons/search.svg %}
         <span class="text-xs text-gray-500 ml-1 hidden lg:inline">⌘K</span>

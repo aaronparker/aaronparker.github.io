@@ -5,7 +5,9 @@
 </head>
 <body class="bg-white dark:bg-slate-900 text-gray-900 dark:text-slate-300 antialiased">
 
-  <!-- Dark mode flash prevention: applied synchronously before paint -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Flash prevention: dark mode + accent theme applied synchronously before paint -->
   <script>
     (function() {
       var stored = localStorage.getItem('theme');
@@ -15,6 +17,8 @@
       } else {
         document.documentElement.classList.add('dark');
       }
+      var accent = localStorage.getItem('accent-theme');
+      if (accent) document.documentElement.classList.add('theme-' + accent);
     })();
   </script>
 
@@ -22,10 +26,12 @@
 
   <!-- Core JS -->
   <script src="{{ '/assets/js/dark-mode.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/accent-theme.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/sidebar.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/vendor/lunr.min.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/code-blocks.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/back-to-top.js' | relative_url }}" defer></script>
   {% if page.no_toc != true %}
   <script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
   {% endif %}

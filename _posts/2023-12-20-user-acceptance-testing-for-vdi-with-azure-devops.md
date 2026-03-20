@@ -5,6 +5,8 @@ description: Automated validation of VDI images for user acceptance testing with
   Pipelines and self-hosted agents running Pester to perform automated tests with
   Evergreen.
 permalink: "/vdi-uat-testing-azure-pipelines/"
+categories:
+  - Microsoft
 image:
   path: "/assets/img/test/image.jpg"
   srcset:

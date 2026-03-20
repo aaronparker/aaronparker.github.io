@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div class="px-6 lg:px-10 py-8">
+
+  <header class="mb-8">
+    <p class="text-xs font-semibold uppercase tracking-widest mb-1"
+       style="color: var(--color-accent)">Tag</p>
+    <h1 class="text-3xl font-bold text-gray-900 dark:text-slate-50">{{ page.title }}</h1>
+    {% if page.description %}
+    <p class="text-gray-600 dark:text-slate-400 mt-2">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  {{ content }}
+
+  {% assign tag_posts = site.posts | where_exp: "post", "post.tags contains page.slug" %}
+  {% if tag_posts.size > 0 %}
+  <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    {% for post in tag_posts %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="text-gray-600 dark:text-slate-400">No posts tagged with this yet.</p>
+  {% endif %}
+
+</div>
