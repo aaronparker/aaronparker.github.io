@@ -3,6 +3,8 @@ layout: post
 title: Automating Nerdio Manager Shell Apps, with Custom apps, Part 3
 description: Using Azure Pipelines and the Nerdio Manager REST API to automate import of custom applications.
 permalink: "/nerdio-shell-apps-p3/"
+categories:
+  - Evergreen
 image:
   path: "/assets/img/shell/image.jpg"
   srcset:

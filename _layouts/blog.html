@@ -1,34 +1,108 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-layout: base
+layout: default
 ---
 
-{% assign plugins = site.plugins | default:site.gems %}
+<div class="px-6 lg:px-10 py-8">
 
-{% if plugins contains 'jekyll-paginate' %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.categories[page.slug] | default:site.tags[page.slug] | default:site.posts %}
-{% endif %}
-  
-{% for post in posts %}
-  {% include_cached components/post.html post=post no_link_title=page.no_link_title no_excerpt=page.no_excerpt hide_image=page.hide_image %}
-{% endfor %}
+  <header class="mb-8 flex items-start justify-between gap-4">
+    <div>
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-slate-50">Blog</h1>
+      <p class="text-gray-600 dark:text-slate-400 mt-1">{{ site.posts | size }} articles</p>
+    </div>
+    <!-- View toggle -->
+    <div class="flex items-center gap-1 mt-1">
+      <button id="view-grid-btn" class="dark-toggle" aria-label="Grid view" title="Grid view">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+        </svg>
+      </button>
+      <button id="view-list-btn" class="dark-toggle" aria-label="List view" title="List view">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </header>
 
-{% if plugins contains 'jekyll-paginate' %}
-  {% include components/pagination.html %}
-{% endif %}
+  {{ content }}
+
+  <!-- Category filter -->
+  {% if site.featured_categories.size > 0 %}
+  <div class="cat-filter" id="cat-filter" role="group" aria-label="Filter by category">
+    <button class="cat-filter-btn active" data-cat="all">All</button>
+    {% assign sorted_cats = site.featured_categories | sort: "title" %}
+    {% for cat in sorted_cats limit: 7 %}
+    <button class="cat-filter-btn" data-cat="{{ cat.slug | downcase }}">{{ cat.title }}</button>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div id="posts-container" class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+    {% for post in paginator.posts %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  {% if paginator.total_pages > 1 %}
+  <nav class="flex items-center justify-between mt-10 pt-6 border-t border-gray-200 dark:border-slate-700"
+       aria-label="Blog pagination">
+    <div>
+      {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}"
+         class="text-sm font-medium no-underline text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-slate-50 transition-colors">
+        ← Newer
+      </a>
+      {% endif %}
+    </div>
+    <span class="text-sm text-gray-500">
+      Page {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+    <div>
+      {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}"
+         class="text-sm font-medium no-underline text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-slate-50 transition-colors">
+        Older →
+      </a>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
+
+</div>
+
+<script>
+(function () {
+  const container = document.getElementById('posts-container');
+  const gridBtn   = document.getElementById('view-grid-btn');
+  const listBtn   = document.getElementById('view-list-btn');
+  const STORAGE_KEY = 'blog-view';
+
+  function setView(view) {
+    const isGrid = view !== 'list';
+    container.classList.toggle('posts-list', !isGrid);
+    gridBtn.classList.toggle('view-btn--active', isGrid);
+    listBtn.classList.toggle('view-btn--active', !isGrid);
+    localStorage.setItem(STORAGE_KEY, isGrid ? 'grid' : 'list');
+  }
+
+  gridBtn.addEventListener('click', () => setView('grid'));
+  listBtn.addEventListener('click', () => setView('list'));
+
+  // Restore saved preference
+  setView(localStorage.getItem(STORAGE_KEY) || 'grid');
+
+  // Category filter
+  document.querySelectorAll('.cat-filter-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.cat-filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      var cat = this.dataset.cat;
+      document.querySelectorAll('#posts-container .post-card').forEach(function (card) {
+        card.style.display = (cat === 'all' || card.dataset.category === cat) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>

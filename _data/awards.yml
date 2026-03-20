@@ -1,0 +1,37 @@
+# Community awards and recognitions
+# Fields: name, category (optional), url (optional), logo, years
+
+- name: Microsoft Most Valuable Professional
+  category: Windows & Devices
+  url: https://mvp.microsoft.com/en-US/mvp/profile/1f9e30d8-1051-47f1-a03d-1f0371cda373
+  logo: /media/about/MicrosoftMVP.png
+  years: "2025+"
+
+- name: Citrix Technology Professional
+  url: https://www.citrix.com/community/ctp/awardees.html
+  logo: /media/about/ctp.png
+  years: "2012-2021"
+
+- name: Microsoft Most Valuable Professional
+  category: "Windows & Devices (previously App-V)"
+  url: https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523
+  logo: /media/about/MicrosoftMVP.png
+  years: "2011-2018"
+
+- name: VMware EUC Champion
+  logo: /media/about/VMwareEUCChampion.png
+  years: "2016"
+
+- name: VMware vExpert
+  url: http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html
+  logo: /media/about/VMwarevExpert.jpg
+  years: "2016"
+
+- name: AppSense Community Advisor
+  url: http://blog.appsense.com/2012/11/appsense-community-advisor-program/
+  logo: /media/about/AppSenseCommunityAdvisor.png
+  years: "2012-2016"
+
+- name: Microsoft Community Contributor
+  logo: /media/about/MicrosoftCommunityContributor.png
+  years: "2011"

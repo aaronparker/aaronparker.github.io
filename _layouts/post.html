@@ -1,43 +1,209 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-layout: base
+layout: default
 ---
 
-{% assign version = jekyll.version | split:'.' %}
-{% assign major = version[0] | plus:0 %}
-{% assign minor = version[1] | plus:0 %}
-{% assign patch = version[2] | plus:0 %}
+{% assign words = content | number_of_words %}
+{% assign reading_time = words | divided_by: 200 | plus: 1 %}
 
-{% include_cached components/post.html post=page no_link_title=true no_excerpt=true hide_image=page.hide_image hide_description=page.hide_description %}
+<article itemscope itemtype="http://schema.org/BlogPosting">
 
-{% include components/dingbat.html %}
+  <!-- Hero image -->
+  {% if page.image.path %}
+  <div class="post-hero">
+    <picture>
+      {% if page.image.srcset %}
+      <source
+        srcset="{{ page.image.srcset['1920w'] | relative_url }} 1920w,
+                {{ page.image.srcset['960w'] | relative_url }} 960w,
+                {{ page.image.srcset['480w'] | relative_url }} 480w"
+        sizes="(max-width: 1023px) 100vw, calc(100vw - 280px)">
+      {% endif %}
+      <img src="{{ page.image.path | relative_url }}"
+           alt="{{ page.title | escape }}"
+           itemprop="image"
+           class="w-full h-full object-cover">
+    </picture>
+  </div>
+  {% endif %}
 
-{% assign addons = page.addons | default:site.hydejack.post_addons %}
-{% unless addons %}{% assign addons = "about,newsletter,related,random" | split:"," %}{% endunless %}
-{% for addon in addons %}
-  {% case addon %}
-  {% when 'about' %}
-     {% include_cached components/about.html author=page.author %}
-  {% when 'related' %}
-    {% include if-non-null try="components/related-posts.html" %}
-  {% when 'comments' %}
-    {% include body/comments.html %}
-  {% else %}
-  {% endcase %}
-{% endfor %}
+  <!-- Post header + body -->
+  <div class="flex gap-0 xl:gap-8 px-6 lg:px-10 py-8">
 
-{% include utterances-comment.html %}
+    <!-- Main content -->
+    <div class="min-w-0 flex-1 max-w-3xl">
+
+      <header class="mb-6">
+        <!-- Category -->
+        {% if page.categories.size > 0 %}
+        <div class="mb-2">
+          {% for cat in page.categories %}
+          <a href="{{ '/' | append: cat | downcase | relative_url }}"
+             class="text-xs font-semibold uppercase tracking-wider no-underline"
+             style="color: var(--color-accent)">{{ cat }}</a>
+          {% unless forloop.last %}&nbsp;·&nbsp;{% endunless %}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-slate-50 leading-tight mb-4"
+            itemprop="name headline">{{ page.title }}</h1>
+
+        <!-- Metadata bar -->
+        <div class="post-meta">
+          <span class="post-meta__item">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {{ page.date | date: "%b %-d, %Y" }}
+            </time>
+          </span>
+          <span class="post-meta__item">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            {{ reading_time }} min read
+          </span>
+          {% if page.categories.size > 0 %}
+          <span class="post-meta__item">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            {% for cat in page.categories %}
+            <a href="{{ '/' | append: cat | downcase | relative_url }}"
+               class="post-meta__category no-underline">{{ cat }}</a>
+            {% unless forloop.last %},&nbsp;{% endunless %}
+            {% endfor %}
+          </span>
+          {% endif %}
+        </div>
+
+        <!-- Tags -->
+        {% if page.tags.size > 0 %}
+        <div class="flex flex-wrap gap-1.5 mt-3">
+          {% for tag in page.tags %}
+          {% assign tag_page = site.featured_tags | where: "slug", tag | first %}
+          {% if tag_page %}
+          <a href="{{ tag_page.url | relative_url }}" class="post-tag-pill">{{ tag }}</a>
+          {% else %}
+          <span class="post-tag-pill">{{ tag }}</span>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </header>
+
+      <!-- Summary / description -->
+      {% if page.description %}
+      <div class="post-summary" itemprop="description">
+        {{ page.description }}
+      </div>
+      {% endif %}
+
+      <!-- Article body -->
+      <div class="post-content" itemprop="articleBody">
+        {{ content }}
+      </div>
+
+      <!-- Share buttons -->
+      <div class="post-share">
+        <span class="post-share__label">Share</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}"
+           target="_blank" rel="noopener noreferrer"
+           class="post-share__btn" aria-label="Share on LinkedIn">
+          {% include icons/linkedin.svg %}
+          LinkedIn
+        </a>
+        <a href="https://bsky.app/intent/compose?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}"
+           target="_blank" rel="noopener noreferrer"
+           class="post-share__btn" aria-label="Share on Bluesky">
+          {% include icons/bluesky.svg %}
+          Bluesky
+        </a>
+        <button id="copy-url-btn" class="post-share__btn" aria-label="Copy link"
+                data-url="{{ page.url | absolute_url }}">
+          <span id="copy-url-icon">{% include icons/link.svg %}</span>
+          <span id="copy-url-label">Copy link</span>
+        </button>
+      </div>
+
+      <!-- Author bio -->
+      {% assign author = site.data.authors[site.author] | default: site.data.authors.first[1] %}
+      {% if author %}
+      <div class="author-bio">
+        {% if author.picture.path %}
+        <img src="{{ author.picture.path | relative_url }}" alt="{{ author.name }}" class="author-bio__avatar">
+        {% endif %}
+        <div>
+          <p class="author-bio__name">{{ author.name }}</p>
+          {% if author.about %}
+          <div class="author-bio__about">{{ author.about | markdownify }}</div>
+          {% endif %}
+          {% if author.social %}
+          <div class="author-bio__social">
+            {% if author.social.github %}
+            <a href="https://github.com/{{ author.social.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">{% include icons/github.svg %}</a>
+            {% endif %}
+            {% if author.social.linkedin %}
+            <a href="https://linkedin.com/in/{{ author.social.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">{% include icons/linkedin.svg %}</a>
+            {% endif %}
+            {% if author.social.bluesky %}
+            <a href="https://bsky.app/profile/{{ author.social.bluesky }}" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">{% include icons/bluesky.svg %}</a>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Related posts -->
+      {% if page.related_posts.size > 0 %}
+      <div class="related-posts">
+        <h2 class="related-posts__title">Related Posts</h2>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {% for related_path in page.related_posts %}
+            {% assign related = site.posts | where_exp: "post", "post.path contains related_path" | first %}
+            {% if related %}
+              {% include post-card.html post=related %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Copy link JS -->
+      <script>
+      (function() {
+        var btn = document.getElementById('copy-url-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+          var url = btn.getAttribute('data-url');
+          navigator.clipboard.writeText(url).then(function() {
+            var label = document.getElementById('copy-url-label');
+            var icon  = document.getElementById('copy-url-icon');
+            label.textContent = 'Copied!';
+            btn.classList.add('post-share__btn--copied');
+            setTimeout(function() {
+              label.textContent = 'Copy link';
+              btn.classList.remove('post-share__btn--copied');
+            }, 2000);
+          });
+        });
+      })();
+      </script>
+
+      <!-- Comments -->
+      {% if page.comments %}
+      <div class="mt-12 pt-8 border-t border-gray-200 dark:border-slate-700">
+        {% include utterances-comment.html %}
+      </div>
+      {% endif %}
+
+    </div><!-- /main content -->
+
+    <!-- TOC column — populated by toc.js -->
+    {% if page.no_toc != true %}
+    <aside class="hidden xl:block flex-shrink-0">
+      <div id="toc-container">
+        <p class="toc-title">On this page</p>
+      </div>
+    </aside>
+    {% endif %}
+
+  </div><!-- /flex -->
+
+</article>

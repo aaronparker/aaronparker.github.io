@@ -1,8 +1,10 @@
 ---
 layout: post
-title: 'A Mac mini as a home server'
-description: 'Setting up macOS on a Mac mini M1 as a home server.'
+title: "A Mac mini as a home server"
+description: "Setting up macOS on a Mac mini M1 as a home server. macOS isn't built to run as a server, but with a few tweaks you can get it to run quite well."
 permalink: "/mac-mini-home-server/"
+categories:
+  - Hardware
 image:
   path: "/assets/img/macmini/image.jpg"
   srcset:
@@ -16,8 +18,6 @@ date: 2024-12-23 11:00 +1100
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}
-
-macOS isn't built to run as a server, but with a few tweaks you can get it to run quite well.
 
 ## I need a new server
 

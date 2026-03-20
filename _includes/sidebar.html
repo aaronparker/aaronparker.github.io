@@ -1,0 +1,134 @@
+{% assign author = site.data.authors[site.author] | default: site.data.authors.first[1] %}
+
+<nav id="sidebar" class="sidebar" aria-label="Site navigation">
+  <div class="flex flex-col h-full p-6 gap-6">
+
+    <!-- Avatar + name + tagline -->
+    <div class="flex flex-col items-center text-center pt-2">
+      {% if author.picture.path %}
+      <a href="{{ '/' | relative_url }}" tabindex="-1" aria-hidden="true">
+        <img src="{{ author.picture.path | relative_url }}"
+             alt="{{ author.name }}"
+             class="sidebar__avatar mb-3">
+      </a>
+      {% endif %}
+      <a href="{{ '/' | relative_url }}" class="sidebar__name no-underline hover:opacity-80 transition-opacity">
+        {{ author.name | default: site.title }}
+      </a>
+      {% if site.description %}
+      <p class="sidebar__tagline mt-1">{{ site.description }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Navigation links -->
+    <nav class="flex flex-col gap-1" aria-label="Main navigation">
+      {% assign nav_pages = site.data.nav | default: site.nav %}
+      {% for link in site.nav %}
+      <a href="{{ link.url | relative_url }}"
+         class="sidebar__nav-link {% if page.url == link.url or page.url contains link.url %}sidebar__nav-link--active{% endif %}"
+         {% if page.url == link.url or page.url contains link.url %}aria-current="page"{% endif %}>
+        {% case link.title %}
+        {% when 'Blog', 'Posts' %}{% include icons/file-text.svg %}
+        {% when 'Projects' %}{% include icons/folder-open.svg %}
+        {% when 'About' %}{% include icons/user.svg %}
+        {% else %}
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+        {% endcase %}
+        {{ link.title }}
+      </a>
+      {% endfor %}
+    </nav>
+
+    <!-- Spacer -->
+    <div class="flex-1"></div>
+
+    <!-- Pages + social links -->
+    <nav class="flex flex-col gap-1" aria-label="Pages and social links">
+      <a href="{{ '/' | relative_url }}" class="sidebar__social-link">
+        {% include icons/house.svg %}
+        Home
+      </a>
+      <a href="{{ '/about/' | relative_url }}" class="sidebar__social-link">
+        {% include icons/user.svg %}
+        About
+      </a>
+      <a href="{{ '/projects/' | relative_url }}" class="sidebar__social-link">
+        {% include icons/folder-open.svg %}
+        Projects
+      </a>
+      <a href="{{ '/archive/' | relative_url }}" class="sidebar__social-link">
+        {% include icons/calendar.svg %}
+        Archive
+      </a>
+      {% if author.social %}
+      <hr class="border-t border-gray-200 dark:border-slate-700 my-1">
+      {% if author.social.github %}
+      <a href="https://github.com/{{ author.social.github }}"
+         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
+        {% include icons/github.svg %}
+        GitHub
+      </a>
+      {% endif %}
+      {% if author.social.linkedin %}
+      <a href="https://linkedin.com/in/{{ author.social.linkedin }}"
+         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
+        {% include icons/linkedin.svg %}
+        LinkedIn
+      </a>
+      {% endif %}
+      {% if author.social.bluesky %}
+      <a href="https://bsky.app/profile/{{ author.social.bluesky }}"
+         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
+        {% include icons/bluesky.svg %}
+        Bluesky
+      </a>
+      {% endif %}
+      {% if author.social.kofi %}
+      <a href="https://ko-fi.com/{{ author.social.kofi }}"
+         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
+        {% include icons/kofi.svg %}
+        Ko-fi
+      </a>
+      {% endif %}
+      {% if author.social.spotify %}
+      <a href="https://open.spotify.com/user/{{ author.social.spotify }}"
+         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
+        {% include icons/spotify.svg %}
+        Spotify
+      </a>
+      {% endif %}
+      {% if author.social.rss %}
+      <a href="{{ author.social.rss | relative_url }}" class="sidebar__social-link">
+        {% include icons/rss.svg %}
+        RSS Feed
+      </a>
+      {% endif %}
+      {% endif %}
+    </nav>
+
+    <!-- Colour theme swatches -->
+    <div class="flex flex-wrap gap-2 px-1 pt-6 pb-0 border-t border-gray-200 dark:border-slate-700">
+      <button class="accent-swatch" data-accent="indigo" aria-label="Indigo theme" style="background-color:#818cf8"></button>
+      <button class="accent-swatch" data-accent="blue"   aria-label="Blue theme"   style="background-color:#60a5fa"></button>
+      <button class="accent-swatch" data-accent="purple" aria-label="Purple theme" style="background-color:#c084fc"></button>
+      <button class="accent-swatch" data-accent="pink"   aria-label="Pink theme"   style="background-color:#f472b6"></button>
+      <button class="accent-swatch" data-accent="red"    aria-label="Red theme"    style="background-color:#f87171"></button>
+      <button class="accent-swatch" data-accent="orange" aria-label="Orange theme" style="background-color:#fb923c"></button>
+      <button class="accent-swatch" data-accent="amber"  aria-label="Amber theme"  style="background-color:#fbbf24"></button>
+      <button class="accent-swatch" data-accent="green"  aria-label="Green theme"  style="background-color:#4ade80"></button>
+    </div>
+
+    <!-- Dark mode toggle + search -->
+    <div class="flex items-center justify-between border-gray-200 dark:border-slate-700">
+      <button id="search-btn-sidebar" class="dark-toggle flex items-center" aria-label="Search (Cmd+K)">
+        {% include icons/search.svg %}
+        <span class="text-xs text-gray-500 ml-1 hidden lg:inline">⌘K</span>
+      </button>
+      <button id="dark-toggle-sidebar" class="dark-toggle" aria-label="Toggle dark mode">
+        <span class="dark:hidden">{% include icons/moon.svg %}</span>
+        <span class="hidden dark:inline">{% include icons/sun.svg %}</span>
+      </button>
+    </div>
+
+  </div>
+</nav>

@@ -1,23 +1,20 @@
----
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-layout: base
----
-
-<div class="page">
-  <h1 class="page-title">{{ site.data.strings.redirecting | default:"Redirecting…" }}</h1>
-  <p class="lead"><a href="{{ page.redirect.to }}">{{ page.redirect.to }}</a></p>
-</div>
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redirecting… · {{ site.title }}</title>
+  <link rel="canonical" href="{{ page.redirect.to }}">
+  <meta http-equiv="refresh" content="0; url={{ page.redirect.to }}">
+  <meta name="robots" content="noindex">
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0a0a0a; color: #d1d5db;
+           display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+    a { color: #22d3ee; }
+  </style>
+</head>
+<body>
+  <p>Redirecting to <a href="{{ page.redirect.to }}">{{ page.redirect.to }}</a>&hellip;</p>
+  <script>window.location.replace("{{ page.redirect.to }}");</script>
+</body>
+</html>

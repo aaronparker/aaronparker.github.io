@@ -1,0 +1,4 @@
+---
+layout: null
+---
+[{% for post in site.posts %}{"id":"{{ post.url | relative_url }}","url":"{{ post.url | relative_url }}","title":{{ post.title | jsonify }},"excerpt":{{ post.description | default: post.excerpt | strip_html | truncate: 200 | jsonify }},"categories":{{ post.categories | join: " " | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]

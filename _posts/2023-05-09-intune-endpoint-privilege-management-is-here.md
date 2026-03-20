@@ -5,6 +5,8 @@ description: The Endpoint Privilege Management preview is available in your Intu
   tenant and it may well become a key tool for removing administrator access from
   managed Windows PCs.
 permalink: "/intune-endpoint-privilege-management/"
+categories:
+  - Microsoft
 image:
   path: "/assets/img/road/image.jpg"
   srcset:
@@ -14,6 +16,9 @@ image:
 comments: true
 date: 2023-05-09 17:47 +1000
 ---
+- this unordered seed list will be replaced by the toc
+{:toc}
+
 Microsoft recently released the preview of Endpoint Privilege Management in Microsoft Intune which is a powerful capability for removing administrative privileges from end users on managed Windows desktops. In its current preview form, it is worth considering carefully how it should be implemented.
 
 Here’s why.

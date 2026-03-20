@@ -1,43 +1,56 @@
-<!-- Add HTML tags here to be included in the head. You can delete the below: -->
+<!-- Gumroad embed — lazy-loaded when product embeds or buttons scroll into view -->
 <link rel="dns-prefetch" href="https://assets.gumroad.com">
-<script type="module">
-  const loadJS = x => new Promise(r => window.loadJS(x).addEventListener('load', r));
+<script>
+(function () {
+  var embedLoaded = false;
+  var overlayLoaded = false;
 
-  let p1, p2, io1, io2, embedCreated, overlayCreated;
-  document.querySelector('hy-push-state').addEventListener('load', () => {
-    io1 ||= new IntersectionObserver(async (entries) => {
-      if (entries.some(x => x.isIntersecting)) {
-        p1 = p1 || loadJS('https://gumroad.com/js/gumroad-embed.js');
-        await p1;
-        !embedCreated && await new Promise(function check1(res) {
-          if (typeof createGumroadEmbed !== 'undefined')  {
-            embedCreated = 1;
-            res(createGumroadEmbed());
-          }
-          else setTimeout(() => check1(res), 200);
-        });
-        await new Promise(function check2(res) {
-          if (typeof GumroadEmbed !== 'undefined') res(GumroadEmbed.reload());
-          else setTimeout(() => check2(res), 200);
-        });
+  function loadScript(src, callback) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.async = true;
+    if (callback) s.onload = callback;
+    document.head.appendChild(s);
+  }
+
+  function initGumroad() {
+    var embedEls = document.querySelectorAll('.gumroad-product-embed');
+    var buttonEls = document.querySelectorAll('.gumroad-button');
+
+    if (!embedEls.length && !buttonEls.length) return;
+
+    var io1 = new IntersectionObserver(function (entries) {
+      if (entries.some(function (e) { return e.isIntersecting; })) {
+        if (!embedLoaded) {
+          embedLoaded = true;
+          loadScript('https://gumroad.com/js/gumroad-embed.js', function () {
+            if (typeof createGumroadEmbed !== 'undefined') createGumroadEmbed();
+          });
+        } else if (typeof GumroadEmbed !== 'undefined') {
+          GumroadEmbed.reload();
+        }
       }
     }, { rootMargin: '1440px' });
 
-    io2 ||= new IntersectionObserver(async (entries) => {
-      if (entries.some(x => x.isIntersecting)) {
-        p2 = p2 || loadJS('https://gumroad.com/js/gumroad.js');
-        await p2;
-        !overlayCreated && await new Promise(function check(res) {
-          if (typeof createGumroadOverlay !== 'undefined') {
-            overlayCreated = 1;
-            res(createGumroadOverlay());
-          }
-          else setTimeout(() => check(res), 200);
-        });
+    var io2 = new IntersectionObserver(function (entries) {
+      if (entries.some(function (e) { return e.isIntersecting; })) {
+        if (!overlayLoaded) {
+          overlayLoaded = true;
+          loadScript('https://gumroad.com/js/gumroad.js', function () {
+            if (typeof createGumroadOverlay !== 'undefined') createGumroadOverlay();
+          });
+        }
       }
     }, { rootMargin: '300px' });
 
-    document.querySelectorAll('.gumroad-product-embed').forEach(el => io1.observe(el));
-    document.querySelectorAll('.gumroad-button').forEach(el => io2.observe(el));
-  });
+    embedEls.forEach(function (el) { io1.observe(el); });
+    buttonEls.forEach(function (el) { io2.observe(el); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGumroad);
+  } else {
+    initGumroad();
+  }
+})();
 </script>

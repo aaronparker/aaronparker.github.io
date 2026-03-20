@@ -1,0 +1,51 @@
+{% assign words = include.post.content | number_of_words %}
+{% assign reading_time = words | divided_by: 200 | plus: 1 %}
+
+<article class="post-card" data-category="{{ include.post.categories.first | downcase }}">
+  <!-- Hero image thumbnail -->
+  {% if include.post.image.path %}
+  <a href="{{ include.post.url | relative_url }}" class="post-card__image no-underline" tabindex="-1" aria-hidden="true">
+    <picture>
+      {% if include.post.image.srcset %}
+      <source srcset="{{ include.post.image.srcset['480w'] | relative_url }} 480w,
+                      {{ include.post.image.srcset['960w'] | relative_url }} 960w"
+              sizes="(max-width: 640px) 100vw, 400px">
+      {% endif %}
+      <img src="{{ include.post.image.path | relative_url }}"
+           alt="{{ include.post.title | escape }}"
+           loading="lazy"
+           class="no-zoom">
+    </picture>
+  </a>
+  {% endif %}
+
+  <div class="post-card__body">
+    <!-- Category -->
+    {% if include.post.categories.size > 0 %}
+    <p class="post-card__category">{{ include.post.categories.first }}</p>
+    {% endif %}
+
+    <!-- Title -->
+    <h3 class="post-card__title m-0">
+      <a href="{{ include.post.url | relative_url }}" class="post-card__title no-underline">
+        {{ include.post.title }}
+      </a>
+    </h3>
+
+    <!-- Excerpt -->
+    {% if include.post.description %}
+    <p class="post-card__excerpt">{{ include.post.description }}</p>
+    {% elsif include.post.excerpt %}
+    <p class="post-card__excerpt">{{ include.post.excerpt | strip_html | truncate: 120 }}</p>
+    {% endif %}
+
+    <!-- Meta: date + reading time -->
+    <div class="post-card__meta">
+      <time datetime="{{ include.post.date | date_to_xmlschema }}">
+        {{ include.post.date | date: "%b %-d, %Y" }}
+      </time>
+      <span>·</span>
+      <span>{{ reading_time }} min</span>
+    </div>
+  </div>
+</article>

@@ -4,6 +4,8 @@ title: Setting Up a Local Environment for IntuneCD
 description: Setting up a local Windows, WSL2, Linux or macOS environment to use IntuneCD
   to backup and document an Intune tenant.
 permalink: "/intunecd-local-environment/"
+categories:
+  - Microsoft
 image:
   path: "/assets/img/intunecd/image.jpg"
   srcset:

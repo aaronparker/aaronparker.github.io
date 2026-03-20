@@ -1,106 +1,66 @@
 ---
 layout: about
-# image: /assets/img/blog/hydejack-9.jpg
-title: About
-description: About Aaron Parker and this site.
+title: About Me
+description: 
 hide_description: true
 ---
 I'm an **end-user computing specialist** with 30 years experience in pre-sales, design, implementation, and support of end-user computing environments (virtual desktops, modern device management, and enterprise mobility). I've also spent around 20 years in the IT community speaking, presenting, blogging and running open-source projects.
 
-Over my career, I've been an IT engineer, consultant, pre-sales achitect, solution architect, developer, and mentor. I enjoy using automation to provide continuous improvements to IT process. I have a wide set of experience and skills in Microsoft, Citrix and VMware-based solutions and have implemented these technologies across government, corporate & not-for-profit organizations, in **Australia**, the **UK** and the **US**.
+Over my career, I've been an IT engineer, consultant, pre-sales architect, solution architect, developer, and mentor. I enjoy using automation to provide continuous improvements to IT process. I have a wide set of experience and skills in Microsoft, Citrix and VMware-based solutions and have implemented these technologies across government, corporate & not-for-profit organizations, in **Australia**, the **UK** and the **US**.
 
 I am a Senior PM Architect at Nerdio, focusing on research, development, and strategic product innovation across the Nerdio platform. In this role, I act as the bridge between the Core Engineering teams and the Research and Development team.
 
 My role sits at the intersection of engineering, product, and customer reality. I explore emerging capabilities across Microsoft Azure, Azure Virtual Desktop, Windows 365, and Microsoft Intune, translating real-world operational challenges into practical platform features. This work includes technical research, prototyping, and early-stage design of new capabilities that later become part of Nerdio Manager.
 
-In addition to research and development, I contribute to product direction by collaborating with engineering and product teams to define, refine, and implement new features. I regularly perform product discovery, feature design, and technical validation to ensure new capabilities align with how IT teams actually deploy and manage modern workplace environments.
+#### Projects at Nerdio
 
-I work closely with Nerdio technical leadership to explore future platform opportunities, helping evaluate new technologies, architectural approaches, and automation scenarios that can simplify cloud and endpoint management for customers.
+Here's a sample of projects or features that I've worked on at Nerdio:
+
+* **Operational Efficiency dashboard** - shows the active time and effort savings that Nerdio Manager provides to a customer in their environment for Azure Virtual Desktop, Windows 365, and Intune
+* **Windows 365 migration** - Nerdio Manager enables customers to migrate suitable Azure Virtual Desktop workloads to Windows 365, simplifying personal desktop management without user interruption
+* **Nerdio Migrate** - Nerdio Manager simplifies migration of legacy VDI workloads to Azure Virtual Desktop and Windows 365
+
+## Work History
+
+<div class="resume-timeline">
+{% for role in site.data.resume %}
+<div class="resume-entry">
+  <div class="resume-entry__header">
+    <div>
+      <h3 class="resume-entry__title">{{ role.title }}</h3>
+      <p class="resume-entry__company">{{ role.company }}{% if role.location %} &middot; {{ role.location }}{% endif %}</p>
+    </div>
+    <span class="resume-entry__dates">{{ role.start }}–{{ role.end }}</span>
+  </div>
+  <p class="resume-entry__description">{{ role.description }}</p>
+</div>
+{% endfor %}
+</div>
 
 ## Awards
 
 I have presented at events including **Citrix Synergy**, **BriForum** & **E2EVC** conferences in the US, Europe and Australia since 2011, writing here since 2004 and contributing to the community in a number of other areas. I am very fortunate to have been awarded the following community recognitions:
 
-| Logo | Award | Years awarded |
-|:-:|:--|:--|
-| ![Microsoft MVP]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-US/mvp/profile/1f9e30d8-1051-47f1-a03d-1f0371cda373) Windows & Devices | 2025+ |
-| ![Citrix Technology Professional]({{site.baseurl}}/media/about/ctp.png) | [Citrix Technology Professional](https://www.citrix.com/community/ctp/awardees.html) | 2012 - 2021 |
-| ![Microsoft MVP]({{site.baseurl}}/media/about/MicrosoftMVP.png) | [Microsoft Most Valuable Professional](https://mvp.microsoft.com/en-us/mvp/Aaron%20%20Parker-4030523) Windows & Devices (previously App-V) | 2011 - 2018 |
-| ![VMware EUC Champion]({{site.baseurl}}/media/about/VMwareEUCChampion.png) | VMware EUC Champion | 2016 |
-| ![VMware vExpert]({{site.baseurl}}/media/about/VMwarevExpert.jpg) | [VMware vExpert](http://blogs.vmware.com/vmtn/2016/02/vexpert-2016-award-announcement.html) | 2016 |
-| ![AppSense Community Advisor]({{site.baseurl}}/media/about/AppSenseCommunityAdvisor.png) | [AppSense Community Advisor](http://blog.appsense.com/2012/11/appsense-community-advisor-program/) | 2012 - 2016 |
-| ![Microsoft Community Contributor]({{site.baseurl}}/media/about/MicrosoftCommunityContributor.png) | Microsoft Community Contributor | 2011 |
-{:.smaller}
+{% for award in site.data.awards %}* <img src="{{ award.logo | prepend: site.baseurl }}" alt="{{ award.name }}" style="height:1.25rem;display:inline;vertical-align:middle;margin-right:0.4rem;"> {% if award.url %}[{{ award.name }}]({{ award.url }}){% else %}{{ award.name }}{% endif %}{% if award.category %} — {{ award.category }}{% endif %} ({{ award.years }})
+{% endfor %}
 
 ## Speaking & Presentations
 
 Below is a selection of speaking engagements and recordings, where available:
 
-### 2021
+{% for year_group in site.data.presentations %}
+### {{ year_group.year }}
 
-* Microsoft meets Community: Windows Virtual Desktop - [Secure and Manage Windows Virtual Desktop with Microsoft Endpoint Manager](https://christiaanbrinkhoff.com/2021/04/12/4-microsoft-meets-community-windows-virtual-desktop-fourth-one-year-anniversary-edition-recap-and-content-sharing/)
-* UK Citrix User Group - [Keep Your Gold Images Current With Evergreen](https://www.mycugc.org/events/event-description?CalendarEventKey=8924f17e-0c9c-47f6-a8f8-3a678405995a&CommunityKey=02c43d72-1ef5-40e7-9049-b2bba8fc884d&Home=%2fevents%2flocal-events)
-
-### 2020
-
-* ANZ WVD user group, September 2020 - FSLogix Containers for WVD deep dive
-* Citrix User Group, Melbourne, July 2020 - Image Automation for Public Cloud (automating Windows 10, Windows 10 multi-session, Windows Server images for Azure / Citrix Cloud / WVD)
-* Citrix User Group, Melbourne, July 2020 - Migrate PVS image to MCS, Geek Speak Round table
-* Citrix User Group, Melbourne, May 2020 - Windows Virtual Desktop update and architecture approach and overview
-* Citrix User Group, Melbourne, March 2020 - Citrix Cloud and Windows Virtual Desktop updates
-* IGEL Disrupt, Nashville, January 2020 - CTP panel discussion at the Nashville CUGC Meeting host at Disrupt
-
-### 2019
-
-* Citrix C-Tomorrow, Sydney, July 2020 - The identity centric universe
-
-### 2018
-
-* Citrix User Group, Melbourne, December 2018 - Windows Server 2019 is here, what's in it? when are you going to adopt it?
-* Citrix User Group, Melbourne, December 2018 - Citrix Cloud Unfiltered. Insights into real-world Citrix Cloud deployments
-* MyCUGC webinar, October 2018 - The 2018-2020 Desktop–Three Experts Duke it out for the Best Way to Deploy Windows
-* xenappblog.com VirtualExpo webinar, September 2018 - The Modern Management Methodology Imaginarium
-* IGEL Disrupt, Melbourne, March 2018 - Geek Speak with guests: Richard Parnell, Aaron Parker, Michael Lang
-* IGEL Disrupt, Melbourne, March 2018 - Industry Panel – Future of EUC, Moderated by Doug Keeley
-
-### 2017
-
-* [E2EVC Sydney](http://www.e2evc.com/home/HomeEU.aspx#SYDNEY), March 2017, Citrix XenDesktop Machine Creation Services Deep Dive
-* [Experts Live Melbourne](https://www.expertslive.org.au/), April 2017, Modern Management for Windows 10
-* Citrix Synergy Orlando, May 2017
-
-### 2016
-
-* Virtual Expo, April 2016: Managing the Modern User Experience in a Hybrid World
-* Citrix Synergy Las Vegas, May 2016: [UX and the Enterprise Desktop: Like Oil and Water?](https://youtu.be/8TpXl80fkKQ)
-* E2EVC Las Vegas, May 2016: Managing the Modern User Experience in a Hybrid World
-* BriForum Boston, July 2016: [UX and the Enterprise Desktop: Like Oil and Water?](http://briforum.com/2016/US/)
-* BriForum Boston, July 2016: [Managing the Modern User Experience in a Hybrid World](http://briforum.com/2016/US/)
-* Melbourne VMUG, August 2016: [Managing the Modern User Experience in a Hybrid World](http://vmug.com/melbourne)
-* Virtual Expo, September 2016: [UX and the Enterprise Desktop: Like Oil and Water?](https://xenapptraining.leadpages.co/xbve092016/)
-* VMUG Virtual Event, December 2016, [VMware EUC Champion round table](https://www.vmug.com/Attend/VMUG-Virtual-Event)
-
-### 2015
-
-* VMware vForum Sydney, October 2015: [How to Right-Size File Servers](https://www.youtube.com/watch?v=v-bpqq2Xxq4)
-* BriForum Denver, July 2015: [I've got 99 Problems and Folder Redirection is Every One of Them](http://www.brianmadden.com/video/BriForum-2015-Ive-Got-99-Problems-and-Folder-Redirection-is-Every-One-of-Them)
-* Citrix Synergy Orlando, May 2015: [I've got 99 Problems and Folder Redirection is Every One of Them](https://www.mycugc.org/p/do/sd/sid=25)
-* Citrix TechXperts, May 2015: I've got 99 Problems and Folder Redirection is Every One of Them
-* xenappblog.com Webcast, January 2015: How Folder Redirection Impacts User Experience and Breaks Applications
-
-### 2014
-
-* BriForum Boston, July 2014 - [How Folder Redirection Impacts User Experience and Breaks Applications](http://www.brianmadden.com/video/BriForum-2014-Boston-How-Folder-Redirection-Impacts-User-Experience-and-Breaks-Applications)
-* BriForum Boston, July 2014 - Hands Off My Gold Image!
-* Citrix Synergy, Los Angeles - Hands Off My Gold Image!
+{% for talk in year_group.talks %}* {% if talk.url %}[{{ talk.title }}]({{ talk.url }}){% else %}{{ talk.title }}{% endif %} — {{ talk.event }}{% if talk.location %}, {{ talk.location }}{% endif %}{% if talk.date %}, {{ talk.date }}{% endif %}
+{% endfor %}
+{% endfor %}
 
 ## Publications
 
 Below is a list of publications that I've written, co-authored or contributed to:
 
-* May 2016: [Ultimate Desktop Virtualization Best Practices Guide](http://community.atlantiscomputing.com/blog/Atlantis/May-2016/Ultimate-Virtualization-Best-Practices-Guide)
-* October 2013: [User Environment Management Smackdown](http://www.brianmadden.com/opinion/Fight-Appsense-Citrix-Immidio-Microsoft-Liquidware-Labs-PolicyPak-RES-Scense-and-others)
-* July 2012: [The Definitive Guide to Delivering Microsoft Office with App-V]({{site.baseurl}}/white-paper-the-definitive-guide-to-delivering-microsoft-office-with-app-v/)
+{% for pub in site.data.publications %}* {{ pub.date }}: {% if pub.url %}[{{ pub.title }}]({{ pub.url }}){% else %}{{ pub.title }}{% endif %}
+{% endfor %}
 
 ## About stealthpuppy.com
 

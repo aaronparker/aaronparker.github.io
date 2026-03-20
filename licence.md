@@ -1,5 +1,5 @@
 ---
-layout: plain
+layout: page
 sitemap: true
 title: LICENSE
 description: Content on this site is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0](https://creativecommons.org/licenses/by-nc/4.0/); however, this isn't a licence to steal my content.

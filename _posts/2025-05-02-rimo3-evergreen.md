@@ -4,6 +4,8 @@ title: Streamlining App Management with Evergreen & Rimo3
 description: Using Evergreen and the Rimo3 API to automatically import applications
   into Rimo3 for discovery, baseline and testing.
 permalink: "/rimo3-evergreen/"
+categories:
+  - Evergreen
 image:
   path: "/assets/img/rimo3/image.jpg"
   srcset:
