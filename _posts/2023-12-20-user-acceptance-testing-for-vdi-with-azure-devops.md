@@ -7,6 +7,7 @@ description: Automated validation of VDI images for user acceptance testing with
 permalink: "/vdi-uat-testing-azure-pipelines/"
 categories:
   - Microsoft
+mermaid: true
 image:
   path: "/assets/img/test/image.jpg"
   srcset:
@@ -27,8 +28,13 @@ The gold image build and change process can be automated on any platform and ver
 
 A management and validation process is required to manage an image and this process will look similar to this:
 
-BUILD > VALIDATE > USER ACCEPTANCE TESTING > DEPLOY
-{:.lead}
+```mermaid
+flowchart LR
+    A[Build]
+    A --> B[Validate]
+    B --> C[Validate]
+    C --> D[Validate]
+```
 
 When a gold image is updated and deployed, most organisations will rely on manual user acceptance testing before promoting that image into production. Adding automated testing in the VALIDATE phase ensures you can capture things users won't, or speed the mundane task of manually validating your images.
 

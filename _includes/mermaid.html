@@ -1,0 +1,21 @@
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+// Kramdown renders fenced ```mermaid blocks as <pre><code class="language-mermaid">.
+// Convert those to <pre class="mermaid"> so Mermaid can find them.
+document.querySelectorAll('pre code.language-mermaid').forEach(function (code) {
+  var pre = document.createElement('pre');
+  pre.className = 'mermaid';
+  pre.textContent = code.textContent;
+  code.parentElement.replaceWith(pre);
+});
+
+var isDark = document.documentElement.classList.contains('dark');
+mermaid.initialize({
+  startOnLoad: true,
+  theme: isDark ? 'dark' : 'default',
+  themeVariables: isDark ? {
+    lineColor: '#94a3b8'   /* slate-400 — visible on slate-900 background */
+  } : {}
+});
+</script>

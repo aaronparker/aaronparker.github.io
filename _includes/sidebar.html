@@ -22,7 +22,6 @@
 
     <!-- Navigation links -->
     <nav class="flex flex-col gap-1" aria-label="Main navigation">
-      {% assign nav_pages = site.data.nav | default: site.nav %}
       {% for link in site.nav %}
       <a href="{{ link.url | relative_url }}"
          class="sidebar__nav-link {% if page.url == link.url or page.url contains link.url %}sidebar__nav-link--active{% endif %}"

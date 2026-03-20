@@ -140,9 +140,6 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
     width: 56px;
     height: 56px;
   }
-  .sidebar__tagline {
-    display: none;
-  }
   .sidebar__nav-link,
   .sidebar__social-link {
     padding-top: 0.25rem;
@@ -154,6 +151,12 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
   }
   #sidebar [class*="pt-6"] {
     padding-top: 0.5rem;
+  }
+}
+
+@media (max-height: 719px) {
+  .sidebar__tagline {
+    display: none;
   }
 }
 
@@ -415,7 +418,7 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
 
   /* --- .lead --- */
   .lead {
-    @apply text-xl text-slate-300 leading-relaxed font-light;
+    @apply text-xl text-gray-600 dark:text-slate-300 leading-relaxed font-light;
   }
 
   /* --- .smaller --- */
@@ -1473,10 +1476,11 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
    Reduced motion — respect user OS preference
    ============================================================================= */
 
-@media (prefers-reduced-motion: reduce) {
 @media print {
   .site-footer { display: none; }
 }
+
+@media (prefers-reduced-motion: reduce) {
 
 html {
     scroll-behavior: auto;
@@ -1497,4 +1501,25 @@ html {
     transition: none;
     animation: none;
   }
+}
+
+/* =============================================================================
+   Mermaid diagrams — reset prose pre styling
+   ============================================================================= */
+
+/* Strip code-block styles that prose applies to all <pre> elements */
+.post-content pre.mermaid {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow: visible;
+}
+
+/* Light mode: add a subtle border so the diagram reads as a distinct block */
+html:not(.dark) .post-content pre.mermaid {
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.5rem;
+  padding: 1rem !important;
 }

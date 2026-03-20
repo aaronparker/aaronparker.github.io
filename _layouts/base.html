@@ -25,6 +25,9 @@
   <script src="{{ '/assets/js/vendor/medium-zoom.min.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/zoom.js' | relative_url }}" defer></script>
   {% endif %}
+  {% if page.mermaid %}
+  {% include mermaid.html %}
+  {% endif %}
 
   {% include keyboard-shortcuts-modal.html %}
   {% include my-body.html %}
