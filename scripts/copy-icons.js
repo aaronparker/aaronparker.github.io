@@ -16,7 +16,6 @@ const lucideIcons = [
   'file-text',       // Nav: Blog
   'folder-open',     // Nav: Projects
   'user',            // Nav: About
-  'rss',             // Social: RSS
   'calendar',        // Post: Date
   'clock',           // Post: Reading time
   'tag',             // Post: Category
@@ -61,6 +60,7 @@ const simpleIcons = {
   'bluesky': 'bluesky',
   'kofi': 'kofi',
   'spotify': 'spotify',
+  'rss': 'rss',
 };
 
 // Inline SVGs for icons no longer in simple-icons
