@@ -365,7 +365,7 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
     text-decoration: none;
   }
 
-  .post-content a:hover {
+  .post-content a:not(.project-card):hover {
     background-color: var(--color-accent-dark);
     color: #ffffff;
     text-decoration: none;
