@@ -90,9 +90,6 @@ paginate_path:         /:num/
 # ---------------------------------------------------------------------------------------
 # Custom local theme — no remote_theme. Layouts and includes are in this repo.
 
-# theme-color meta tag for mobile browsers
-theme_color: "#0a0a0a"
-
 defaults:
   # Don't include documents in assets in the sitemap
   - scope:
