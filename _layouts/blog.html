@@ -27,18 +27,7 @@ layout: default
 
   {{ content }}
 
-  <!-- Category filter -->
-  {% if site.featured_categories.size > 0 %}
-  <div class="cat-filter" id="cat-filter" role="group" aria-label="Filter by category">
-    <button class="cat-filter-btn active" data-cat="all">All</button>
-    {% assign sorted_cats = site.featured_categories | sort: "title" %}
-    {% for cat in sorted_cats limit: 7 %}
-    <button class="cat-filter-btn" data-cat="{{ cat.slug | downcase }}">{{ cat.title }}</button>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  <div id="posts-container" class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+<div id="posts-container" class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
     {% for post in paginator.posts %}
       {% include post-card.html post=post %}
     {% endfor %}
@@ -92,17 +81,5 @@ layout: default
 
   // Restore saved preference
   setView(localStorage.getItem(STORAGE_KEY) || 'grid');
-
-  // Category filter
-  document.querySelectorAll('.cat-filter-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.cat-filter-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      var cat = this.dataset.cat;
-      document.querySelectorAll('#posts-container .post-card').forEach(function (card) {
-        card.style.display = (cat === 'all' || card.dataset.category === cat) ? '' : 'none';
-      });
-    });
-  });
 })();
 </script>
