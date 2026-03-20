@@ -1,9 +1,20 @@
+<!-- Theme init: runs before CSS loads to prevent flash -->
+<script>
+  (function() {
+    var stored = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (stored === 'light' || (!stored && !prefersDark)) {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+    var accent = localStorage.getItem('accent-theme');
+    if (accent) document.documentElement.classList.add('theme-' + accent);
+  })();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>
-  {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
-</title>
 
 {% seo %}
 
