@@ -4,8 +4,9 @@ layout: base
 
 <!-- Mobile top bar -->
 <header class="topbar">
-  <a href="{{ '/' | relative_url }}" class="text-gray-900 dark:text-slate-50 font-semibold text-sm no-underline truncate">
+  <a href="{{ '/' | relative_url }}" class="flex items-center gap-2 text-gray-900 dark:text-slate-50 font-semibold text-sm no-underline truncate">
     {{ site.title }}
+    <img src="{{ '/media/stealthpuppy.png' | relative_url }}" alt="" aria-hidden="true" class="w-6 h-6 rounded-sm flex-shrink-0">
   </a>
   <div class="flex items-center gap-1">
     <button id="search-btn" class="dark-toggle" aria-label="Search">
@@ -15,7 +16,7 @@ layout: base
       <span class="dark:hidden">{% include icons/moon.svg %}</span>
       <span class="hidden dark:inline">{% include icons/sun.svg %}</span>
     </button>
-    <button id="sidebar-toggle" class="dark-toggle" aria-label="Open navigation">
+    <button id="sidebar-toggle" class="dark-toggle lg:hidden" aria-label="Open navigation">
       {% include icons/menu.svg %}
     </button>
   </div>

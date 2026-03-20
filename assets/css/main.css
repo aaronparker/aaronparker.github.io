@@ -180,6 +180,13 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
     padding-bottom: 5rem; /* clearance for fixed back-to-top button */
   }
 
+  /* On desktop, offset topbar past sidebar */
+  @media (min-width: 1024px) {
+    .topbar {
+      margin-left: var(--sidebar-width);
+    }
+  }
+
   /* On mobile, sidebar is hidden; main content takes full width */
   @media (max-width: 1023px) {
     .sidebar {
@@ -194,11 +201,10 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
     }
   }
 
-  /* --- Mobile top bar --- */
+  /* --- Top bar (mobile full-width, desktop offset by sidebar) --- */
   .topbar {
     @apply sticky top-0 z-20 flex items-center justify-between
-           px-4 h-14 bg-slate-950/90 backdrop-blur border-b border-slate-700
-           lg:hidden;
+           px-4 h-14 bg-slate-950/90 backdrop-blur border-b border-slate-700;
   }
 
   /* --- TOC sidebar column --- */
@@ -665,6 +671,53 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
   .search-hint {
     @apply px-4 py-3 text-xs text-slate-500;
   }
+
+  /* --- Keyboard shortcut key pills --- */
+  .kbd {
+    @apply inline-flex items-center justify-center px-1.5 py-0.5 rounded text-xs font-mono
+           bg-slate-700 text-slate-200 border border-slate-600;
+    min-width: 1.5rem;
+    line-height: 1.2;
+  }
+
+  /* --- Keyboard shortcuts help modal --- */
+  .shortcuts-modal {
+    @apply fixed inset-0 z-50 flex items-start justify-center pt-[10vh]
+           bg-black/60 backdrop-blur-sm;
+  }
+
+  .shortcuts-panel {
+    @apply w-full max-w-md mx-4 rounded-xl border border-slate-700
+           bg-slate-900 shadow-2xl overflow-hidden;
+  }
+
+  .shortcuts-panel__header {
+    @apply flex items-center justify-between px-5 py-4 border-b border-slate-700;
+  }
+
+  .shortcuts-panel__title {
+    @apply text-sm font-semibold text-slate-50;
+  }
+
+  .shortcuts-table {
+    @apply w-full text-sm;
+  }
+
+  .shortcuts-table tr {
+    @apply border-b border-slate-700/50 last:border-0;
+  }
+
+  .shortcuts-table td {
+    @apply px-5 py-2.5;
+  }
+
+  .shortcuts-table td:first-child {
+    @apply text-slate-300 w-full;
+  }
+
+  .shortcuts-table td:last-child {
+    @apply text-right whitespace-nowrap;
+  }
 }
 
 /* =============================================================================
@@ -771,11 +824,12 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
 
   .archive-item__title {
     @apply text-sm text-gray-800 dark:text-slate-300 hover:text-gray-900
-           dark:hover:text-slate-50 no-underline flex-1 min-w-0 truncate;
+           dark:hover:text-slate-50 no-underline min-w-0 truncate;
+    flex: 0 1 auto;
   }
 
   .archive-item__cat {
-    @apply text-xs font-semibold uppercase tracking-wider flex-shrink-0;
+    @apply text-xs font-semibold uppercase tracking-wider flex-shrink-0 ml-auto;
     color: var(--color-accent);
   }
 }
@@ -1166,6 +1220,10 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
     @apply hover:bg-gray-50 border-gray-100;
   }
 
+  html:not(.dark) .search-result-item:focus {
+    @apply bg-gray-100 outline-none;
+  }
+
   html:not(.dark) .search-result-title {
     @apply text-gray-900;
   }
@@ -1176,6 +1234,37 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
 
   html:not(.dark) .search-hint {
     @apply text-gray-400;
+  }
+
+  html:not(.dark) .kbd {
+    @apply bg-gray-100 text-gray-700 border-gray-300;
+  }
+
+  html:not(.dark) .shortcuts-panel {
+    @apply bg-white border-gray-200;
+  }
+
+  html:not(.dark) .shortcuts-panel__header {
+    @apply border-gray-200;
+  }
+
+  html:not(.dark) #pref-theme,
+  html:not(.dark) #pref-accent,
+  html:not(.dark) #pref-blog-view,
+  html:not(.dark) #pref-projects-view {
+    @apply text-gray-400;
+  }
+
+  html:not(.dark) .shortcuts-panel__title {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .shortcuts-table tr {
+    @apply border-gray-100;
+  }
+
+  html:not(.dark) .shortcuts-table td:first-child {
+    @apply text-gray-700;
   }
 
   /* --- Homepage --- */

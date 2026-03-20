@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Archive
-description: All posts, grouped by year.
+description: All articles, grouped by year.
 sitemap: false
 no_toc: true
 ---

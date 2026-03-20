@@ -20,16 +20,16 @@
 lang:                  en-au
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Aaron Parker
+title:                 stealthpuppy
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Senior PM Architect @ Nerdio - on end user computing, virtualisation, modern device management, enterprise mobility, & automation.
+  Aaron Parker, Senior PM Architect @ Nerdio - on end user computing, virtualisation, modern device management, enterprise mobility, & automation.
 
 # A shorter description for the sidebar.
 tagline:               >
-  Senior PM Architect @ Nerdio - on end user computing & automation
+  Aaron Parker on end user computing & automation
 
 # A list of keywords for your blog
 keywords:              [PowerShell, Automation, Microsoft, Windows, macOS, Azure Virtual Desktop, Windows 365, Intune, Citrix, DaaS, Nerdio]

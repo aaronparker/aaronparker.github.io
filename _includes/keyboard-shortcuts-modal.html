@@ -1,0 +1,68 @@
+<div id="keyboard-shortcuts-modal" class="shortcuts-modal hidden" aria-modal="true" aria-hidden="true" role="dialog" aria-label="Keyboard shortcuts">
+  <div class="shortcuts-panel">
+    <div class="shortcuts-panel__header">
+      <span class="shortcuts-panel__title">Keyboard Shortcuts</span>
+      <button id="keyboard-shortcuts-close" class="dark-toggle" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="overflow-y-auto max-h-[60vh]">
+      <table class="shortcuts-table">
+        <tbody>
+          <tr>
+            <td>Open search</td>
+            <td><kbd class="kbd">/</kbd> or <kbd class="kbd">⌘K</kbd></td>
+          </tr>
+          <tr>
+            <td>Toggle dark mode</td>
+            <td><kbd class="kbd">d</kbd></td>
+          </tr>
+          <tr>
+            <td>Older posts</td>
+            <td><kbd class="kbd">→</kbd></td>
+          </tr>
+          <tr>
+            <td>Newer posts</td>
+            <td><kbd class="kbd">←</kbd></td>
+          </tr>
+          <tr>
+            <td>Close modal / sidebar</td>
+            <td><kbd class="kbd">Esc</kbd></td>
+          </tr>
+          <tr>
+            <td>Show this help</td>
+            <td><kbd class="kbd">?</kbd></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Stored preferences -->
+      <div class="shortcuts-panel__header border-t border-slate-700 dark:border-slate-700 mt-0">
+        <span class="shortcuts-panel__title">Stored Preferences</span>
+        <button id="prefs-reset-btn" class="text-xs text-red-400 hover:text-red-300 transition-colors" aria-label="Reset all preferences to defaults">
+          Reset all
+        </button>
+      </div>
+      <table class="shortcuts-table">
+        <tbody>
+          <tr>
+            <td>Colour theme</td>
+            <td id="pref-theme" class="text-slate-400 dark:text-slate-400">—</td>
+          </tr>
+          <tr>
+            <td>Accent colour</td>
+            <td id="pref-accent" class="text-slate-400 dark:text-slate-400">—</td>
+          </tr>
+          <tr>
+            <td>Blog view</td>
+            <td id="pref-blog-view" class="text-slate-400 dark:text-slate-400">—</td>
+          </tr>
+          <tr>
+            <td>Projects view</td>
+            <td id="pref-projects-view" class="text-slate-400 dark:text-slate-400">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
