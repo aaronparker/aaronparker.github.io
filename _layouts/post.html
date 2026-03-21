@@ -9,20 +9,43 @@ layout: default
 
   <!-- Hero image -->
   {% if page.image.path %}
-  <div class="post-hero">
-    <picture>
-      {% if page.image.srcset %}
-      <source
-        srcset="{{ page.image.srcset['1920w'] | relative_url }} 1920w,
-                {{ page.image.srcset['960w'] | relative_url }} 960w,
-                {{ page.image.srcset['480w'] | relative_url }} 480w"
-        sizes="(max-width: 1023px) 100vw, calc(100vw - 280px)">
-      {% endif %}
-      <img src="{{ page.image.path | relative_url }}"
-           alt="{{ page.title | escape }}"
-           itemprop="image"
-           class="w-full h-full object-cover">
-    </picture>
+  <div class="post-hero-wrap">
+    <div class="post-hero">
+      <picture>
+        {% if page.image.srcset %}
+        <source
+          srcset="{{ page.image.srcset['1920w'] | relative_url }} 1920w,
+                  {{ page.image.srcset['960w'] | relative_url }} 960w,
+                  {{ page.image.srcset['480w'] | relative_url }} 480w"
+          sizes="(max-width: 1023px) 100vw, calc(100vw - 280px)">
+        {% endif %}
+        <img src="{{ page.image.path | relative_url }}"
+             alt="{{ page.title | escape }}"
+             itemprop="image"
+             class="w-full h-full object-cover">
+      </picture>
+    </div>
+    {% if page.image.attribution %}
+    {% assign attr = page.image.attribution %}
+    <div class="post-hero-credit">
+      <a href="{{ attr.source_url | default: attr.photographer_url | escape }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="post-hero-credit__icon"
+         aria-label="Photo by {{ attr.photographer | escape }}{% if attr.source %} on {{ attr.source | escape }}{% endif %}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 16v-4"/>
+          <path d="M12 8h.01"/>
+        </svg>
+        <span class="post-hero-credit__tooltip" role="tooltip">
+          Photo by {{ attr.photographer | escape }}{% if attr.source %} on {{ attr.source | escape }}{% endif %}
+        </span>
+      </a>
+    </div>
+    {% endif %}
   </div>
   {% endif %}
 

@@ -295,12 +295,46 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
   }
 
   /* --- Hero image --- */
+  .post-hero-wrap {
+    @apply relative w-full;
+  }
+
   .post-hero {
     @apply w-full aspect-[21/9] overflow-hidden bg-slate-800;
   }
 
   .post-hero img {
     @apply w-full h-full object-cover;
+  }
+
+  .post-hero-credit {
+    @apply absolute bottom-3 right-3 z-10;
+  }
+
+  .post-hero-credit__icon {
+    @apply relative flex items-center justify-center
+           w-7 h-7 rounded-full
+           bg-black/50 text-white
+           hover:bg-black/70
+           transition-colors cursor-pointer;
+  }
+
+  .post-hero-credit__icon svg {
+    @apply w-4 h-4 flex-shrink-0;
+  }
+
+  .post-hero-credit__tooltip {
+    @apply absolute bottom-full right-0 mb-2
+           px-3 py-1.5 rounded
+           text-xs text-white whitespace-nowrap
+           pointer-events-none opacity-0
+           transition-opacity duration-150;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  .post-hero-credit__icon:hover .post-hero-credit__tooltip,
+  .post-hero-credit__icon:focus-visible .post-hero-credit__tooltip {
+    @apply opacity-100;
   }
 
   /* --- Post metadata bar --- */
@@ -1131,6 +1165,10 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
     @apply bg-gray-100;
   }
 
+  html:not(.dark) .post-hero-credit__icon {
+    @apply bg-black/40 hover:bg-black/60;
+  }
+
   html:not(.dark) .post-meta {
     @apply text-gray-500;
   }
@@ -1478,6 +1516,7 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
 
 @media print {
   .site-footer { display: none; }
+  .post-hero-credit { display: none !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1497,7 +1536,9 @@ html {
   .accent-swatch,
   .back-to-top,
   .post-share__btn,
-  .code-copy-btn {
+  .code-copy-btn,
+  .post-hero-credit__icon,
+  .post-hero-credit__tooltip {
     transition: none;
     animation: none;
   }
