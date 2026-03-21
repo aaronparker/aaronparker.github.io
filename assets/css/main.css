@@ -546,6 +546,25 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
   .post-content img:not(.no-zoom) {
     @apply cursor-zoom-in rounded border border-slate-700;
   }
+
+  /* --- Image zoom overlay — full viewport, blurred backdrop (matches search modal) --- */
+  .img-zoom-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center
+           bg-black/60 backdrop-blur-sm
+           cursor-zoom-out opacity-0
+           transition-opacity duration-200;
+  }
+
+  .img-zoom-overlay--visible {
+    @apply opacity-100;
+  }
+
+  .img-zoom-enlarged {
+    max-width: 95vw;
+    max-height: 95vh;
+    object-fit: contain;
+    @apply rounded shadow-2xl;
+  }
 }
 
 /* =============================================================================
@@ -1651,7 +1670,8 @@ html {
   .post-share__btn,
   .code-copy-btn,
   .post-hero-credit__icon,
-  .post-hero-credit__tooltip {
+  .post-hero-credit__tooltip,
+  .img-zoom-overlay {
     transition: none;
     animation: none;
   }
