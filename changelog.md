@@ -29,6 +29,30 @@ Added targeted colour highlights across the theme to improve visual clarity with
 - Added an attribution icon overlay on hero images linking to the original photographer
 - Removed the separate attribution page in favour of per-post attribution data in front matter
 
+### Image zoom
+
+- Replaced [medium-zoom](https://github.com/francoischalifour/medium-zoom) with a lightweight custom implementation — removes the vendor script dependency
+- Zoomed image is capped at 95 vw × 95 vh and centred in the viewport
+- Backdrop uses `backdrop-blur-sm` and `bg-black/60` — matching the search modal blur effect
+- Fixed navigation hijack caused by images wrapped in `<a>` links (common in Markdown): click is intercepted and `preventDefault()` called so the browser no longer navigates to the raw image URL
+
+### Mermaid diagrams
+
+- Fixed arrow and edge colours in dark mode — `lineColor` overridden to `slate-400` (`#94a3b8`) so connecting lines are visible against the dark background
+
+### Table of contents
+
+- Active heading link now renders in the current accent colour in light mode — previously the light-mode override rule had higher specificity and suppressed the accent colour
+
+### Sharing
+
+- Fixed LinkedIn share button — updated from the deprecated `/shareArticle` endpoint to `/sharing/share-offsite/`, which correctly pre-populates the LinkedIn post composer with the page URL and Open Graph metadata
+
+### Footer
+
+- Removed the separate attribution page link from the footer
+- Added a link to the site changelog
+
 ## 2026-03-20
 
 ### Keyboard shortcuts
@@ -80,7 +104,7 @@ Replaced the [Hydejack 9.x](https://hydejack.com/) theme with a fully custom Jek
 | `dark-mode.js` | Class-based dark mode toggle with `localStorage` persistence |
 | `search.js` | `⌘K` / `Ctrl+K` modal with live fuzzy search via Lunr.js |
 | `toc.js` | Dynamic table of contents from article headings with IntersectionObserver active-link tracking |
-| `zoom.js` | [medium-zoom](https://github.com/francoischalifour/medium-zoom) image lightbox |
+| `zoom.js` | Custom image zoom lightbox (originally medium-zoom; replaced 2026-03-21) |
 | `code-blocks.js` | Language badge injection and one-click copy button on code blocks |
 | `sidebar.js` | Mobile sidebar open/close with overlay |
 
