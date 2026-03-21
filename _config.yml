@@ -102,11 +102,11 @@ defaults:
     values:
       sitemap:         false
 
-  # # You can use the following to enable comments on all posts.
-#  - scope:
-#      type:            posts
-#      values:
-#        comments:        true
+  # Enable comments on all posts by default (can be overridden per-post with comments: false)
+  - scope:
+      type:            posts
+    values:
+      comments:        true
 
   # `jekyll-seo-tag` will mark collection outputs as `BlogPosting`,
   # but we want them to be `WebPage`s:
@@ -296,17 +296,13 @@ jekyll_compose:
         - title: Project Link
           url: https://example.com
 
-
 cloudflare_analytics: "0c32f75715e341388bffae9f1e6b046d"
 repository: aaronparker/aaronparker.github.io
 github: [metadata]
 
 # To use Utterance comments,  you can going to https://utteranc.es/ get more parameters interpretation.
 utterance:
-  # Note: Make sure the repo is public, otherwise your readers will not be able to view the issues/comments.
-  # Make sure the [utterances app](https://github.com/apps/utterances) is installed on the repo, otherwise users will not be able to post comments.
-  #  If your repo is a fork, navigate to it's settings tab and confirm the issues feature is turned on.
-  repo:  aaronparker/aaronparker.github.io # Your GitHub repo where the issues will be created.
-  issue-term: title   # Choose the mapping between blog posts and GitHub issues. 
-  theme: preferred-color-scheme # Choose an Utterances theme that matches your blog. 'github-light' is default
-  label:  comment # Choose the label that will be assigned to issues created by Utterances.
+  repo: aaronparker/aaronparker.github.io
+  issue-term: title
+  theme: preferred-color-scheme
+  label: comment
