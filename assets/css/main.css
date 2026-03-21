@@ -1310,6 +1310,10 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
     @apply text-gray-500 hover:text-gray-900;
   }
 
+  html:not(.dark) #toc-container a.toc-active {
+    color: var(--color-accent);
+  }
+
   /* --- Note callouts --- */
   html:not(.dark) .note {
     background: color-mix(in srgb, var(--color-accent) 8%, white);
