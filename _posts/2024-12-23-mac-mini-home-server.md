@@ -64,7 +64,7 @@ Initially I was running this without being logged in, but [I found](https://bsky
 
 I've configured the following settings to either reduce power consumption or improve performance when accessing the Mac remotely. I don't have hard proof for every setting here, but these logically make sense based on the potential for local or remote access performance.
 
-* Disable Wi-Fi and Bluetooth - **Off**. I have no need for these on this machine and disabling these will help to save on power consumption
+* ~~Disable Wi-Fi and Bluetooth - **Off**. I have no need for these on this machine and disabling these will help to save on power consumption~~ I found that after some time, the system would end up not being accessible remotely, even over ethernet, until Wi-Fi was enabled
 * System Settings / Energy / Prevent automatic sleeping with the display is off, Wake for network access, Start up automatically after network failure. These settings are enabled to ensure the device does not got to sleep
 * System Settings / Accessibility / Display / Reduce motion, Reduce transparency - **On**
 * System Settings / Appearance / Allow wallpaper tinting in windows - **Off**
@@ -113,7 +113,10 @@ Installing AdGuard Home on macOS is straight-forward - I followed the [automated
 
 Before setup, I've configured external DNS servers in macOS to be able to complete the download and install of AdGuard, then post setup, the device is using my router as the DNS server, which is how all devices on my network are configured. The router then points to AdGuard for all DNS services.
 
-### Extending Apple HomeKit with HomeBridge
+### ~~Extending Apple HomeKit with HomeBridge~~
+
+I have replaced Homebridge with Home Assistant - I had too many issues with Homebridge and Home Assistant supports Homekit integration, so I have something more stable. I've installed the Home Assistant Operating System in a VM [using UTM](https://community.home-assistant.io/t/guide-home-assistant-on-apple-silicon-mac-using-ha-os-aarch64-image/444785).
+{:.note}
 
 The install instructions for [HomeBridge on macOS](https://github.com/homebridge/homebridge/wiki/Install-Homebridge-on-macOS) are easy to follow; however, HomeBridge requires Node and that's more complex to install correctly.
 
