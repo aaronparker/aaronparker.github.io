@@ -63,41 +63,41 @@
       <hr class="border-t border-gray-200 dark:border-slate-700 my-1">
       {% if author.social.github %}
       <a href="https://github.com/{{ author.social.github }}"
-         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
+         class="sidebar__social-link" data-social="github" target="_blank" rel="noopener noreferrer">
         {% include icons/github.svg %}
         GitHub
       </a>
       {% endif %}
       {% if author.social.linkedin %}
       <a href="https://linkedin.com/in/{{ author.social.linkedin }}"
-         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
+         class="sidebar__social-link" data-social="linkedin" target="_blank" rel="noopener noreferrer">
         {% include icons/linkedin.svg %}
         LinkedIn
       </a>
       {% endif %}
       {% if author.social.bluesky %}
       <a href="https://bsky.app/profile/{{ author.social.bluesky }}"
-         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
+         class="sidebar__social-link" data-social="bluesky" target="_blank" rel="noopener noreferrer">
         {% include icons/bluesky.svg %}
         Bluesky
       </a>
       {% endif %}
       {% if author.social.kofi %}
       <a href="https://ko-fi.com/{{ author.social.kofi }}"
-         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
+         class="sidebar__social-link" data-social="kofi" target="_blank" rel="noopener noreferrer">
         {% include icons/kofi.svg %}
         Ko-fi
       </a>
       {% endif %}
       {% if author.social.spotify %}
       <a href="https://open.spotify.com/user/{{ author.social.spotify }}"
-         class="sidebar__social-link" target="_blank" rel="noopener noreferrer">
+         class="sidebar__social-link" data-social="spotify" target="_blank" rel="noopener noreferrer">
         {% include icons/spotify.svg %}
         Spotify
       </a>
       {% endif %}
       {% if author.social.rss %}
-      <a href="{{ author.social.rss | relative_url }}" class="sidebar__social-link">
+      <a href="{{ author.social.rss | relative_url }}" class="sidebar__social-link" data-social="rss">
         {% include icons/rss.svg %}
         RSS Feed
       </a>

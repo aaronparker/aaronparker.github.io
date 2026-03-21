@@ -127,13 +127,13 @@ layout: default
         <span class="post-share__label">Share</span>
         <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url | url_encode }}"
            target="_blank" rel="noopener noreferrer"
-           class="post-share__btn" aria-label="Share on LinkedIn">
+           class="post-share__btn" data-social="linkedin" aria-label="Share on LinkedIn">
           {% include icons/linkedin.svg %}
           LinkedIn
         </a>
         <a href="https://bsky.app/intent/compose?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}"
            target="_blank" rel="noopener noreferrer"
-           class="post-share__btn" aria-label="Share on Bluesky">
+           class="post-share__btn" data-social="bluesky" aria-label="Share on Bluesky">
           {% include icons/bluesky.svg %}
           Bluesky
         </a>
@@ -159,13 +159,13 @@ layout: default
           {% if author.social %}
           <div class="author-bio__social">
             {% if author.social.github %}
-            <a href="https://github.com/{{ author.social.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">{% include icons/github.svg %}</a>
+            <a href="https://github.com/{{ author.social.github }}" target="_blank" rel="noopener noreferrer" data-social="github" aria-label="GitHub">{% include icons/github.svg %}</a>
             {% endif %}
             {% if author.social.linkedin %}
-            <a href="https://linkedin.com/in/{{ author.social.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">{% include icons/linkedin.svg %}</a>
+            <a href="https://linkedin.com/in/{{ author.social.linkedin }}" target="_blank" rel="noopener noreferrer" data-social="linkedin" aria-label="LinkedIn">{% include icons/linkedin.svg %}</a>
             {% endif %}
             {% if author.social.bluesky %}
-            <a href="https://bsky.app/profile/{{ author.social.bluesky }}" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">{% include icons/bluesky.svg %}</a>
+            <a href="https://bsky.app/profile/{{ author.social.bluesky }}" target="_blank" rel="noopener noreferrer" data-social="bluesky" aria-label="Bluesky">{% include icons/bluesky.svg %}</a>
             {% endif %}
           </div>
           {% endif %}
