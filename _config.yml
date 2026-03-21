@@ -303,6 +303,6 @@ github: [metadata]
 # To use Utterance comments,  you can going to https://utteranc.es/ get more parameters interpretation.
 utterance:
   repo: aaronparker/aaronparker.github.io
-  issue-term: title
+  issue-term: url
   theme: preferred-color-scheme
   label: comment
