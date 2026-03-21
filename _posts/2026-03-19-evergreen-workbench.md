@@ -7,6 +7,8 @@ categories:
   - Evergreen
 image:
   path: "/assets/img/workbench/image.jpg"
+  width: 1920
+  height: 1005
   srcset:
     1920w: "/assets/img/workbench/image.jpg"
     960w: "/assets/img/workbench/image@0,5x.jpg"
