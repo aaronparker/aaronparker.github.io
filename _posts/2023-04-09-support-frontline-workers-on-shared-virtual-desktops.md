@@ -12,6 +12,11 @@ image:
     1920w: "/assets/img/hardhat/image.jpg"
     960w: "/assets/img/hardhat/image@0,5x.jpg"
     480w: "/assets/img/hardhat/image@0,25x.jpg"
+  attribution:
+    photographer:     "Eskay Lim"
+    photographer_url: "https://unsplash.com/@eskaylim"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/white-and-gray-plastic-pump-bottle-IjFnqf3dPCM"
 comments: true
 date: 2023-04-09 23:56 +1000
 ---

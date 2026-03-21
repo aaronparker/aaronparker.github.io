@@ -13,6 +13,11 @@ image:
     1920w: "/assets/img/road/image.jpg"
     960w: "/assets/img/road/image@0,5x.jpg"
     480w: "/assets/img/road/image@0,25x.jpg"
+  attribution:
+    photographer:     "William Bossen"
+    photographer_url: "https://unsplash.com/@william_bossen"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/photo-of-boardwalk-between-body-of-water-CeL6SfbXCx8"
 comments: true
 date: 2023-05-09 17:47 +1000
 ---

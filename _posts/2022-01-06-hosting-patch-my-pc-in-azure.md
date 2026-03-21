@@ -9,6 +9,11 @@ image:
     1920w: "/assets/img/surface/image.jpg"
     960w: "/assets/img/surface/image@0,5x.jpg"
     480w: "/assets/img/surface/image@0,25x.jpg"
+  attribution:
+    photographer:     "Ashkan Forouzani"
+    photographer_url: "https://unsplash.com/@ashkfor121"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/white-arcelik-split-type-air-conditioner-zSy6SuVZXFo"
 categories: [Microsoft]
 date: 2022-01-06 00:20 +1100
 comments: true

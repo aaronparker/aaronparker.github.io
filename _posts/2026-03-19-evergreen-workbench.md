@@ -11,6 +11,11 @@ image:
     1920w: "/assets/img/workbench/image.jpg"
     960w: "/assets/img/workbench/image@0,5x.jpg"
     480w: "/assets/img/workbench/image@0,25x.jpg"
+  attribution:
+    photographer:     "Hal Gatewood"
+    photographer_url: "https://unsplash.com/@halacious"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/black-and-yellow-rotary-tool-v7WyjiyXNr4"
 comments: true
 date: 2026-03-19 10:00 +1100
 related_posts:

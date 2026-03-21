@@ -11,6 +11,11 @@ image:
     1920w: "/assets/img/macmini/image.jpg"
     960w: "/assets/img/macmini/image@0,5x.jpg"
     480w: "/assets/img/macmini/image@0,25x.jpg"
+  attribution:
+    photographer:     "Charles Patterson"
+    photographer_url: "https://unsplash.com/@charlespatterson"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/silver-macbook-on-black-table-O2ZD0JhVD5g"
 comments: true
 related_posts:
 - _posts/2016-04-10-intel-nuc6i5syb-home-lab.md

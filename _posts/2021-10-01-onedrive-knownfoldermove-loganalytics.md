@@ -10,6 +10,11 @@ image:
     1920w: /assets/img/folder/image.jpg
     960w:  /assets/img/folder/image@0,5x.jpg
     480w:  /assets/img/folder/image@0,25x.jpg
+  attribution:
+    photographer:     "David Bruno Silva"
+    photographer_url: "https://unsplash.com/@brlimaproj"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/blue-yellow-red-and-green-papers-Z19vToWBDIc"
 categories: [Microsoft]
 comments: true
 ---

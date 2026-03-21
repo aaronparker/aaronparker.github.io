@@ -13,6 +13,11 @@ image:
     1920w: "/assets/img/authn/image.jpg"
     960w: "/assets/img/authn/image@0,5x.jpg"
     480w: "/assets/img/authn/image@0,25x.jpg"
+  attribution:
+    photographer:     "Towfiqu barbhuiya"
+    photographer_url: "https://unsplash.com/@towfiqu999999"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/a-golden-padlock-sitting-on-top-of-a-keyboard-FnA5pAzqhMM"
 related_posts:
 - 2022-01-08-azure-virtual-desktop-lessons-learned.md
 date: 2025-09-22 13:45 +1000

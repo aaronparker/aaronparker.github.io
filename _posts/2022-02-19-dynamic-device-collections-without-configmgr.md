@@ -11,6 +11,11 @@ image:
     1920w: "/assets/img/collection/image.jpg"
     960w: "/assets/img/collection/image@0,5x.jpg"
     480w: "/assets/img/collection/image@0,25x.jpg"
+  attribution:
+    photographer:     "Eran Menashri"
+    photographer_url: "https://unsplash.com/@chesnutt"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/stack-of-books-on-white-table-Ae7pSsfzEHs"
 categories:
 - Microsoft
 comments: true

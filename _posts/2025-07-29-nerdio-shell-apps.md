@@ -11,6 +11,11 @@ image:
     1920w: "/assets/img/shell/image.jpg"
     960w: "/assets/img/shell/image@0,5x.jpg"
     480w: "/assets/img/shell/image@0,25x.jpg"
+  attribution:
+    photographer:     "Content Pixie"
+    photographer_url: "https://unsplash.com/@contentpixie"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/a-sea-shell-is-seen-from-above-on-a-beige-background-loZ_0TCJNUY"
 comments: true
 date: 2025-07-29 16:00 +1000
 related_posts:

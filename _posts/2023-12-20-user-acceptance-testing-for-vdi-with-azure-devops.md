@@ -14,6 +14,11 @@ image:
     1920w: "/assets/img/test/image.jpg"
     960w: "/assets/img/test/image@0,5x.jpg"
     480w: "/assets/img/test/image@0,25x.jpg"
+  attribution:
+    photographer:     "David Travis"
+    photographer_url: "https://unsplash.com/@dtravisphd"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/person-holding-pink-sticky-note-WC6MJ0kRzGw"
 comments: true
 date: 2023-12-20 11:03 +1100
 ---

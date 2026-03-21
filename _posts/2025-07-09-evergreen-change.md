@@ -11,6 +11,11 @@ image:
     1920w: "/assets/img/evergreen/image.jpg"
     960w: "/assets/img/evergreen/image@0,5x.jpg"
     480w: "/assets/img/evergreen/image@0,25x.jpg"
+  attribution:
+    photographer:     "Elimende Inagella"
+    photographer_url: "https://unsplash.com/@elimendeinagella"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/green-leaf-with-water-droplets-lYj0dLgMHmA"
 comments: true
 date: 2025-07-09 10:00 +1000
 related_posts:

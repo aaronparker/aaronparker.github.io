@@ -12,6 +12,11 @@ image:
     1920w: "/assets/img/intunecd/image.jpg"
     960w: "/assets/img/intunecd/image@0,5x.jpg"
     480w: "/assets/img/intunecd/image@0,25x.jpg"
+  attribution:
+    photographer:     "Devin Pickell"
+    photographer_url: "https://unsplash.com/@nextiva"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/macbook-pro-on-white-table-1eRS74C-alQ"
 comments: true
 related_posts:
 - _posts/2022-03-02-automate-intune-documentation-azure.md

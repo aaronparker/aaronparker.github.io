@@ -12,6 +12,11 @@ image:
     1920w: "/assets/img/package/image.jpg"
     960w: "/assets/img/package/image@0,5x.jpg"
     480w: "/assets/img/package/image@0,25x.jpg"
+  attribution:
+    photographer:     "Jiawei Zhao"
+    photographer_url: "https://unsplash.com/@jiaweizhao"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/tuxedo-cat-in-brown-cardboard-box-W-ypTC6R7_k"
 comments: true
 related_posts:
 - _posts/2023-04-09-support-frontline-workers-on-shared-virtual-desktops.md
