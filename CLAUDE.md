@@ -1,4 +1,6 @@
-# Claude Memory — stealthpuppy.com Jekyll Theme
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
 Custom Jekyll 4.4.1 theme for stealthpuppy.com, built with Tailwind CSS v4 and `@tailwindcss/typography`.
@@ -8,7 +10,9 @@ Custom Jekyll 4.4.1 theme for stealthpuppy.com, built with Tailwind CSS v4 and `
 npm run build           # fonts + icons + css (full build)
 npm run build:css       # Tailwind only — run after ANY HTML or CSS change
 npm run build:icons     # Regenerates SVG icons from npm packages (OVERWRITES manual edits)
+npm run watch           # Tailwind watch mode — auto-recompiles CSS on change
 bundle exec jekyll serve  # Dev server with auto-rebuild on file changes
+bundle exec jekyll build  # Production build to _site/
 ```
 
 **Important:** After changing any HTML template, always run `npm run build:css` so Tailwind JIT picks up new utility classes.
@@ -49,7 +53,53 @@ bundle exec jekyll serve  # Dev server with auto-rebuild on file changes
 ### Key Includes
 - `_includes/sidebar.html` — fixed sidebar with avatar, nav, social icons (3×2 grid), search + dark-mode toggle
 - `_includes/post-card.html` — card used in grid and list views
-- `_includes/search-modal.html` — ⌘K modal
+- `_includes/search-modal.html` — ⌘K modal (Lunr.js, index at `assets/js/search-index.json`)
+- `_includes/utterances-comment.html` — Utterances GitHub-issue comments (configured in `_config.yml` under `utterance:`)
+- `_includes/mermaid.html` — Mermaid diagram support (included per-post)
+
+### JavaScript Modules (`assets/js/`)
+Each file is standalone (no bundler):
+- `dark-mode.js` — persists `.dark` class to `localStorage`
+- `toc.js` — moves kramdown TOC into sidebar, IntersectionObserver-based active highlight
+- `search.js` — Lunr.js search powering the ⌘K modal
+- `zoom.js` — medium-zoom image lightbox
+- `code-blocks.js` — copy-to-clipboard for `<pre>` blocks
+- `sidebar.js` — mobile sidebar open/close
+- `keyboard-shortcuts.js` — keyboard shortcut modal
+- `back-to-top.js` / `accent-theme.js` — scroll-to-top button, accent colour picker
+
+### Collections & Permalinks
+- `featured_categories` → `/:name/` — category landing pages in `_featured_categories/`
+- `featured_tags` → `/tag-:name/` — tag pages in `_featured_tags/`
+- Posts permalink: `/:categories/:year-:month-:day-:title/`
+- Pagination: 10 posts per page at `/:num/`
+
+### Data Files (`_data/`)
+- `authors.yml` — author profiles (name, picture, social links)
+- `resume.yml`, `publications.yml`, `presentations.yml`, `awards.yml` — used on the About/resume page
+- `projects.yml` — project listing data
+
+### Post Front Matter
+```yaml
+layout: post
+description: >
+  A short ~160 character description for SEO/social previews.
+permalink: "/url/"
+categories:
+  - Evergreen
+image:
+  path: /assets/img/folder/image.jpg
+  srcset:
+    1920w: /assets/img/folder/image.jpg
+    960w:  /assets/img/folder/image@0,5x.jpg
+    480w:  /assets/img/folder/image@0,25x.jpg
+  attribution:
+    photographer:     "First Last"
+    photographer_url: "https://unsplash.com/@name"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/photourl"
+comments: true   # default true for posts; set false to disable Utterances
+```
 
 ## Resolved Issues & Patterns
 
@@ -93,4 +143,3 @@ Both `.dark-toggle` and `.sidebar__social-link` use the same hover pattern: `p-2
 
 ### TOC (Table of Contents)
 `toc.js` moves kramdown's `#markdown-toc` into `#toc-container` on `DOMContentLoaded`, then uses IntersectionObserver (`rootMargin: '0px 0px -60% 0px'`) to highlight the topmost visible heading. The aside uses `hidden xl:block` — `xl:block` overrides `hidden` at xl+ viewports (correct). Verified working after layout refactors.
-
