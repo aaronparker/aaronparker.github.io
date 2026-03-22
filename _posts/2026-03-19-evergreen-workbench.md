@@ -45,7 +45,7 @@ This is something I've wanted to do for some time, but the honest answer is that
 
 The Workbench is an attempt to aggregate that functionality into a single place that's easier to discover and use. Rather than knowing the right cmdlet or digging through GitHub repos to find the right script, the goal is to make that functionality visible in a UI - whether that's browsing available app versions, managing a local library, or eventually importing a package into Intune or Nerdio Manager.
 
-The Web Workbench takes a slightly different angle - it provides a read-only view of all Evergreen-tracked applications without requiring PowerShell or Windows at all. It's useful for looking up a download URL, checking what versions are tracked, or keeping an eye on recent application updates via RSS. This is basically a new version of the Evergreen App Tracker.
+The Web Workbench takes a different angle - it provides a read-only view of all Evergreen-tracked applications without requiring PowerShell and can run on any platform. It's useful for looking up a download URL, checking what versions are tracked, or keeping an eye on recent application updates via RSS. This is essentially a new version of the Evergreen App Tracker.
 
 ## The Workbench editions
 
@@ -87,7 +87,7 @@ The Dashboard gives you an at-a-glance view of everything Evergreen tracks.
 The Web Workbench Dashboard.
 {:.figcaption}
 
-At the top you'll see the headline numbers: total applications tracked, total version records, distinct architectures, installer file types, and applications updated in the last 48 hours. Below that, two horizontal bar charts break down the data by CPU architecture and installer file type - useful for getting a sense of what Evergreen is actually tracking. There's also a URI lookup field where you can paste a download URL to find which application it belongs to, and a recent activity list showing the applications with the most recent data updates.
+At the top you'll see the headline numbers: total applications tracked, total version records, distinct architectures, installer file types, and applications updated in the last 48 hours. Below that, bar charts break down the data by CPU architecture and installer file type - useful for getting a sense of what Evergreen is actually tracking. There's also a URI lookup field where you can paste a download URL to find which application it belongs to, and a recent activity list showing the applications with the most recent data updates.
 
 ### Browsing and filtering apps
 
@@ -105,7 +105,7 @@ Each column in the version table has a text filter below the header, and checkbo
 Column filters and architecture checkboxes working together to narrow results.
 {:.figcaption}
 
-The toolbar above the table includes a copy button for the `Get-EvergreenApp` PowerShell command to retrieve the same data - a nice bridge between the UI and the module itself.
+The toolbar above the table includes a copy button for the `Get-EvergreenApp` PowerShell command to retrieve the same data - making it simpler to discover function usage in Evergreen.
 
 ### Searching
 
@@ -187,7 +187,7 @@ Downloads are processed sequentially and tracked with a progress bar. You can re
 
 ### Library management
 
-If you have an existing Evergreen library, the Library view provides a GUI for browsing and updating it. Browse to your library path to load the contents - a table of applications with version counts and paths, and version detail for the selected application including file size and SHA256 hash.
+If you have an existing Evergreen library, the Library view provides a GUI for browsing and updating it. Browse to your library path to load the contents - a table of applications with version counts and paths, and version detail for the selected application which will include the details for that application.
 
 [![The Library view showing library contents and version details for Microsoft Edge]({{site.baseurl}}/media/2026/03/ui/evergreen-workbench-library.png)]({{site.baseurl}}/media/2026/03/ui/evergreen-workbench-library.png)
 
@@ -198,10 +198,10 @@ From the toolbar you can create a new library (`New-EvergreenLibrary`), refresh 
 
 ### Import - Microsoft Intune and Nerdio Manager
 
-The Import tab is where some of the more ambitious integration work lives, with sub-tabs for Microsoft Intune Win32 Apps and Nerdio Manager Shell Apps.
-
 The Nerdio Manager Shell Apps import is functional but not yet validated in production. The Microsoft Intune import is still in development.
 {:.note title="In development"}
+
+The Import tab is where some of the more ambitious integration work lives, with sub-tabs for Microsoft Intune Win32 Apps and Nerdio Manager Shell Apps.
 
 The idea here is that you point the workbench at a directory containing package definitions, it compares those definitions against what's currently in your Microsoft Intune tenant or Nerdio Manager environment, and you can import new apps or update existing ones from the UI.
 
@@ -226,12 +226,12 @@ The Authentication sub-tab for configuring tenant and API connections.
 
 This is the integration work that is the most complex components, but also the area that still needs the most development and testing. If you're using Intune and/or Nerdio Manager and want to help test or contribute, I'd love to hear from you.
 
-### Install view
-
-The Install view compares package definitions against what's currently installed on the machine, letting you install or update applications directly from the workbench.
+### Install
 
 This feature is in development and may not function as expected.
 {:.note title="In development"}
+
+The Install view compares package definitions against what's currently installed on the machine, letting you install or update applications directly from the workbench.
 
 [![The Install view comparing installed and latest application versions]({{site.baseurl}}/media/2026/03/ui/evergreen-workbench-install.png)]({{site.baseurl}}/media/2026/03/ui/evergreen-workbench-install.png)
 
