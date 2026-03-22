@@ -3,8 +3,15 @@
   var btn = document.getElementById('back-to-top');
   if (!btn) return;
 
+  // Hidden by default — keep out of tab order until visible
+  btn.setAttribute('aria-hidden', 'true');
+  btn.setAttribute('tabindex', '-1');
+
   window.addEventListener('scroll', function () {
-    btn.classList.toggle('back-to-top--visible', window.scrollY > 400);
+    var visible = window.scrollY > 400;
+    btn.classList.toggle('back-to-top--visible', visible);
+    btn.setAttribute('aria-hidden', visible ? 'false' : 'true');
+    btn.setAttribute('tabindex', visible ? '0' : '-1');
   }, { passive: true });
 
   btn.addEventListener('click', function () {

@@ -252,7 +252,7 @@ html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
     color: var(--color-accent);
     border-left-color: var(--color-accent);
     padding-left: 0.75rem;
-    @apply font-medium;
+    @apply font-semibold;
   }
 
   /* --- View toggle active state --- */
@@ -1770,4 +1770,52 @@ html:not(.dark) .post-content pre.mermaid {
   border: 1px solid #e5e7eb !important;
   border-radius: 0.5rem;
   padding: 1rem !important;
+}
+
+/* =============================================================================
+   High contrast mode — prefers-contrast: more
+   Increases borders, text brightness, and focus rings for users with OS
+   high-contrast settings enabled (macOS Increased Contrast, Windows HCM).
+   ============================================================================= */
+
+@media (prefers-contrast: more) {
+  /* Sharpen body text */
+  body { color: #000; }
+  .dark body { color: #fff; }
+
+  /* Heavier borders throughout */
+  .sidebar, .topbar, .post-card, .search-modal,
+  .shortcuts-panel, #toc-container {
+    border-width: 2px;
+    border-color: currentColor;
+  }
+
+  /* Stronger focus ring */
+  :focus-visible {
+    outline-width: 3px;
+    outline-offset: 3px;
+  }
+
+  /* Ensure links are always underlined */
+  a:not(.no-underline):not(.sidebar__nav-link):not(.sidebar__social-link) {
+    text-decoration: underline;
+  }
+
+  /* Post meta and muted text — boost contrast */
+  .post-meta, .post-meta__item,
+  #toc-container .toc-title {
+    color: inherit;
+    opacity: 1;
+  }
+
+  /* Dark mode overrides */
+  .dark body { background-color: #000; }
+  .dark .sidebar { background-color: #000; border-color: #fff; }
+  .dark #toc-container a { color: #e2e8f0; }
+  .dark #toc-container a.toc-active { color: #fff; font-weight: 700; }
+
+  /* Light mode overrides */
+  html:not(.dark) #toc-container a { color: #111827; }
+  html:not(.dark) #toc-container a.toc-active { color: #000; font-weight: 700; }
+  html:not(.dark) .post-meta { color: #374151; }
 }

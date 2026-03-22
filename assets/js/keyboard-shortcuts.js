@@ -6,6 +6,18 @@
   }
 
   const modal = document.getElementById('keyboard-shortcuts-modal');
+  var lastFocus = null;
+
+  // Focus trap
+  const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  function trapTab(e) {
+    if (e.key !== 'Tab') return;
+    var els = modal ? Array.from(modal.querySelectorAll(FOCUSABLE)) : [];
+    if (!els.length) { e.preventDefault(); return; }
+    var first = els[0], last = els[els.length - 1];
+    if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+    else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+  }
 
   function setText(id, value) {
     var el = document.getElementById(id);
@@ -21,17 +33,24 @@
 
   function openHelp() {
     if (!modal) return;
+    lastFocus = document.activeElement;
     refreshPrefs();
     modal.classList.remove('hidden');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('overflow-hidden');
+    modal.addEventListener('keydown', trapTab);
+    var closeBtn = document.getElementById('keyboard-shortcuts-close');
+    if (closeBtn) closeBtn.focus();
   }
 
   function closeHelp() {
     if (!modal) return;
+    modal.removeEventListener('keydown', trapTab);
     modal.classList.add('hidden');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('overflow-hidden');
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+    lastFocus = null;
   }
 
   function helpIsOpen() {

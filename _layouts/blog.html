@@ -11,14 +11,14 @@ layout: default
     </div>
     <!-- View toggle -->
     <div class="flex items-center gap-1 mt-1">
-      <button id="view-grid-btn" class="dark-toggle" aria-label="Grid view" title="Grid view">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button id="view-grid-btn" class="dark-toggle" aria-label="Grid view" aria-pressed="true" title="Grid view">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
           <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
         </svg>
       </button>
-      <button id="view-list-btn" class="dark-toggle" aria-label="List view" title="List view">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button id="view-list-btn" class="dark-toggle" aria-label="List view" aria-pressed="false" title="List view">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/>
         </svg>
       </button>
@@ -40,7 +40,8 @@ layout: default
     <div>
       {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path | relative_url }}"
-         class="text-sm font-medium no-underline text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-slate-50 transition-colors">
+         class="text-sm font-medium no-underline text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-slate-50 transition-colors"
+         aria-label="Newer posts">
         ← Newer
       </a>
       {% endif %}
@@ -51,7 +52,8 @@ layout: default
     <div>
       {% if paginator.next_page %}
       <a href="{{ paginator.next_page_path | relative_url }}"
-         class="text-sm font-medium no-underline text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-slate-50 transition-colors">
+         class="text-sm font-medium no-underline text-gray-600 dark:text-slate-300 hover:text-gray-900 dark:hover:text-slate-50 transition-colors"
+         aria-label="Older posts">
         Older →
       </a>
       {% endif %}
@@ -73,6 +75,8 @@ layout: default
     container.classList.toggle('posts-list', !isGrid);
     gridBtn.classList.toggle('view-btn--active', isGrid);
     listBtn.classList.toggle('view-btn--active', !isGrid);
+    gridBtn.setAttribute('aria-pressed', isGrid ? 'true' : 'false');
+    listBtn.setAttribute('aria-pressed', isGrid ? 'false' : 'true');
     localStorage.setItem(STORAGE_KEY, isGrid ? 'grid' : 'list');
   }
 
