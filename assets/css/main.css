@@ -108,6 +108,10 @@ html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
     @apply text-slate-400 text-xs leading-snug;
   }
 
+  .sidebar__section-label {
+    @apply px-3 pt-2 pb-0.5 text-xs font-semibold uppercase tracking-widest text-slate-500 select-none;
+  }
+
   .sidebar__nav-link {
     @apply flex items-center gap-2.5 px-3 py-2 rounded-md text-sm text-slate-300
            hover:text-slate-50 hover:bg-slate-800 transition-colors;
@@ -1279,6 +1283,10 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
 
   html:not(.dark) .sidebar__tagline {
     @apply text-gray-500;
+  }
+
+  html:not(.dark) .sidebar__section-label {
+    @apply text-gray-400;
   }
 
   html:not(.dark) .sidebar__social-link {
