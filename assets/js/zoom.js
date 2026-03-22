@@ -13,11 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
       e.preventDefault();
       e.stopPropagation();
 
+      var lastFocus = document.activeElement;
+
       var overlay = document.createElement('div');
       overlay.className = 'img-zoom-overlay';
       overlay.setAttribute('role', 'dialog');
       overlay.setAttribute('aria-modal', 'true');
-      overlay.setAttribute('aria-label', 'Zoomed image — press Escape to close');
+      overlay.setAttribute('aria-label', 'Zoomed image — press Escape or click to close');
+      overlay.setAttribute('tabindex', '-1');
 
       var enlarged = document.createElement('img');
       enlarged.src = img.currentSrc || img.src;
@@ -30,12 +33,14 @@ document.addEventListener('DOMContentLoaded', function () {
       // Animate in on next frame so the CSS transition fires
       requestAnimationFrame(function () {
         overlay.classList.add('img-zoom-overlay--visible');
+        overlay.focus();
       });
 
       function close() {
         overlay.classList.remove('img-zoom-overlay--visible');
         overlay.addEventListener('transitionend', function () {
           overlay.remove();
+          if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
         }, { once: true });
       }
 

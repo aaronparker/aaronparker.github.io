@@ -8,13 +8,22 @@
   }
 })();
 
+function updateDarkToggles(isDark) {
+  document.querySelectorAll('[id^="dark-toggle"]').forEach(function (btn) {
+    btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  });
+}
+
 function toggleDark() {
   const isDark = document.documentElement.classList.toggle('dark');
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  updateDarkToggles(isDark);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  const isDark = document.documentElement.classList.contains('dark');
   document.querySelectorAll('[id^="dark-toggle"]').forEach(function (btn) {
+    btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
     btn.addEventListener('click', toggleDark);
   });
 });

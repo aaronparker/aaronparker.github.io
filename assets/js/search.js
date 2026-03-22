@@ -10,6 +10,18 @@
 
   if (!overlay || !input || !results) return;
 
+  // Focus trap helpers
+  const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  function getFocusable() { return Array.from(overlay.querySelectorAll(FOCUSABLE)); }
+  function trapTab(e) {
+    if (e.key !== 'Tab') return;
+    const els = getFocusable();
+    if (!els.length) { e.preventDefault(); return; }
+    const first = els[0], last = els[els.length - 1];
+    if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+    else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+  }
+
   function announce(msg) {
     if (status) status.textContent = msg;
   }
@@ -18,6 +30,7 @@
   let documents = [];
   let indexLoaded = false;
   let loading = false;
+  let lastFocus = null;
 
   // Load search index on demand
   function loadIndex(callback) {
@@ -48,9 +61,11 @@
   }
 
   function openSearch() {
+    lastFocus = document.activeElement;
     overlay.classList.remove('hidden');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.classList.add('overflow-hidden');
+    overlay.addEventListener('keydown', trapTab);
     input.focus();
     loadIndex(function () {
       if (input.value) runSearch(input.value);
@@ -58,6 +73,7 @@
   }
 
   function closeSearch() {
+    overlay.removeEventListener('keydown', trapTab);
     overlay.classList.add('search-overlay--closing');
     setTimeout(function () {
       overlay.classList.add('hidden');
@@ -67,6 +83,8 @@
       input.value = '';
       results.innerHTML = '';
       announce('');
+      if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+      lastFocus = null;
     }, 150);
   }
 
@@ -82,7 +100,7 @@
       const doc = documents.find(d => d.id === hit.ref);
       if (!doc) return '';
       return (
-        '<a href="' + doc.url + '" class="search-result-item" role="option">' +
+        '<a href="' + doc.url + '" class="search-result-item">' +
           '<span class="search-result-title">' + escapeHtml(doc.title) + '</span>' +
           (doc.excerpt ? '<span class="search-result-excerpt">' + escapeHtml(doc.excerpt.slice(0, 100)) + '…</span>' : '') +
         '</a>'
