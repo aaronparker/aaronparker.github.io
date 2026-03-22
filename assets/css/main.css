@@ -384,7 +384,7 @@ html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
   .post-summary {
     @apply bg-slate-800 border-l-4 border-slate-600
            text-slate-300 text-sm leading-relaxed
-           rounded-r-lg px-5 py-4 mb-8;
+           rounded-lg px-5 py-4 mb-8;
   }
 
   /* --- Related posts --- */
@@ -423,7 +423,7 @@ html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
     text-decoration: none;
   }
 
-  .post-content a:not(.project-card):hover {
+  .post-content a:not(.project-card):not(:has(> img)):hover {
     background-color: var(--color-accent-dark);
     color: #ffffff;
     text-decoration: none;
@@ -448,7 +448,7 @@ html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
 
   /* --- .note callouts ({:.note title="..."}) --- */
   .note {
-    @apply relative my-6 rounded-r-lg border-l-4 p-4 pl-12;
+    @apply relative my-6 rounded-lg border-l-4 p-4 pl-12;
     border-color: var(--color-accent);
     background: color-mix(in srgb, var(--color-accent) 10%, transparent);
   }
@@ -471,7 +471,7 @@ html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
 
   /* --- .warning callout --- */
   .warning {
-    @apply relative my-6 rounded-r-lg border-l-4 p-4 pl-12;
+    @apply relative my-6 rounded-lg border-l-4 p-4 pl-12;
     border-color: #fbbf24;
     background: color-mix(in srgb, #fbbf24 10%, transparent);
   }
@@ -493,7 +493,7 @@ html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
 
   /* --- .tip callout --- */
   .tip {
-    @apply relative my-6 rounded-r-lg border-l-4 p-4 pl-12;
+    @apply relative my-6 rounded-lg border-l-4 p-4 pl-12;
     border-color: #4ade80;
     background: color-mix(in srgb, #4ade80 10%, transparent);
   }
@@ -515,7 +515,7 @@ html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
 
   /* --- .danger callout --- */
   .danger {
-    @apply relative my-6 rounded-r-lg border-l-4 p-4 pl-12;
+    @apply relative my-6 rounded-lg border-l-4 p-4 pl-12;
     border-color: #f87171;
     background: color-mix(in srgb, #f87171 10%, transparent);
   }
@@ -591,38 +591,69 @@ html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
 
 @layer components {
 
-  .highlight {
+  div.highlight {
     @apply relative rounded-lg overflow-hidden my-4;
   }
 
-  /* Language badge — real <span> injected by code-blocks.js */
-  .code-lang-badge {
-    @apply absolute top-2 left-3 text-xs text-slate-400
-           font-mono px-2 py-0.5 rounded bg-slate-800/80
-           pointer-events-none select-none z-10;
+  /* Code block header — language label only (copy button floats in the listing below) */
+  .code-header {
+    display: flex;
+    align-items: center;
+    padding: 0.2rem 0.75rem;
+    /* Light mode: solid accent background */
+    background-color: var(--color-accent-dark);
   }
 
-  /* Copy button */
+  /* Dark mode: tinted dark background so bright accents don't overwhelm */
+  .dark .code-header {
+    background: color-mix(in srgb, var(--color-accent) 35%, #1e293b);
+  }
+
+  .code-lang-label {
+    @apply font-mono text-xs font-semibold tracking-wide select-none;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Copy button — inside header (always visible) */
   .code-copy-btn {
-    @apply absolute top-2 right-2 opacity-0 transition-opacity
-           p-1.5 rounded bg-slate-700 hover:bg-slate-600 text-slate-400
-           hover:text-slate-50 z-20;
+    @apply p-1.5 rounded transition-colors;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.65);
   }
 
-  .highlight:hover .code-copy-btn {
-    @apply opacity-100;
+  .code-copy-btn:hover {
+    color: rgba(255, 255, 255, 1);
   }
 
   .code-copy-btn--copied {
-    @apply opacity-100 text-green-400;
+    @apply text-green-300;
   }
 
   .code-copy-btn svg {
     @apply w-3.5 h-3.5;
   }
 
+  /* Floating copy button — shown on hover inside the code listing */
+  .code-copy-btn--floating {
+    @apply absolute top-2 right-2 opacity-0 transition-opacity
+           bg-slate-700 hover:bg-slate-600 text-slate-400 hover:text-slate-50 z-20;
+  }
+
+  /* When there's a language header, push the button down below it */
+  .has-header .code-copy-btn--floating {
+    top: 1.75rem;
+  }
+
+  .highlight:hover .code-copy-btn--floating {
+    @apply opacity-100;
+  }
+
+  .code-copy-btn--floating.code-copy-btn--copied {
+    @apply opacity-100 text-green-400;
+  }
+
   /* Rouge syntax highlighting — dark (Monokai-inspired) */
-  .highlight pre { @apply p-4 overflow-x-auto text-sm leading-relaxed m-0; background: #1e293b; }
+  .highlight pre { @apply p-4 overflow-x-auto text-sm leading-relaxed m-0; background: #1e293b; border-radius: 0; }
   .highlight pre code { background: transparent; padding: 0; }
   .highlight .c, .highlight .c1, .highlight .cm { color: #64748b; }   /* Comment — slate-500 */
   .highlight .k, .highlight .kd, .highlight .kn { color: #93c5fd; }   /* Keyword — blue-300 */
@@ -641,7 +672,6 @@ html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
   .highlight .err { color: #fca5a5; background: transparent; }        /* Error — red-300 */
 
   /* Light mode syntax overrides */
-  html:not(.dark) .highlight { @apply border border-gray-200; }
   html:not(.dark) .highlight pre { background: #f8fafc; color: #1e293b; }
   html:not(.dark) .highlight pre code { color: #1e293b; }
   html:not(.dark) .highlight span { color: #1e293b; }    /* default all tokens dark */
@@ -1375,6 +1405,11 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
   }
 
   /* --- Code blocks --- */
+  /* Label text must stay white in light mode — override the span reset above */
+  html:not(.dark) .code-header .code-lang-label {
+    color: white;
+  }
+
   html:not(.dark) .code-copy-btn {
     @apply bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-700;
   }
@@ -1549,10 +1584,38 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
   line-height: 0;
 }
 
-/* Make the wrapping <a> block to avoid inline whitespace */
+/* Make the wrapping <a> block to avoid inline whitespace; host the zoom icon overlay */
 .post-content p > a:has(> img) {
   display: block;
   line-height: 0;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background: none !important;
+}
+
+/* Zoom icon — appears on hover to signal the image is zoomable */
+.post-content p > a:has(> img)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3Cpath d='M11 8v6M8 11h6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.375rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.post-content p > a:has(> img):hover::after {
+  opacity: 1;
 }
 
 /* Image: no extra margins — the parent <p> handles all spacing */
@@ -1614,6 +1677,9 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
   padding: 0.75rem 1rem;
   gap: 0.25rem;
 }
+
+/* Code block pre — reset border-radius/border so parent overflow-hidden handles the corners */
+div.highlight pre { border-radius: 0; border: none; }
 
 /* Post content heading sizes — override Tailwind Typography */
 .post-content h1 { font-size: 2.25rem;  font-weight: 700; } /* 36px */

@@ -156,19 +156,6 @@ layout: default
           {% if author.about %}
           <div class="author-bio__about">{{ author.about | markdownify }}</div>
           {% endif %}
-          {% if author.social %}
-          <div class="author-bio__social">
-            {% if author.social.github %}
-            <a href="https://github.com/{{ author.social.github }}" target="_blank" rel="noopener noreferrer" data-social="github" aria-label="GitHub">{% include icons/github.svg %}</a>
-            {% endif %}
-            {% if author.social.linkedin %}
-            <a href="https://linkedin.com/in/{{ author.social.linkedin }}" target="_blank" rel="noopener noreferrer" data-social="linkedin" aria-label="LinkedIn">{% include icons/linkedin.svg %}</a>
-            {% endif %}
-            {% if author.social.bluesky %}
-            <a href="https://bsky.app/profile/{{ author.social.bluesky }}" target="_blank" rel="noopener noreferrer" data-social="bluesky" aria-label="Bluesky">{% include icons/bluesky.svg %}</a>
-            {% endif %}
-          </div>
-          {% endif %}
         </div>
       </div>
       {% endif %}
