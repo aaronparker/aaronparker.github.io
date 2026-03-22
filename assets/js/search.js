@@ -58,12 +58,16 @@
   }
 
   function closeSearch() {
-    overlay.classList.add('hidden');
-    overlay.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('overflow-hidden');
-    input.value = '';
-    results.innerHTML = '';
-    announce('');
+    overlay.classList.add('search-overlay--closing');
+    setTimeout(function () {
+      overlay.classList.add('hidden');
+      overlay.classList.remove('search-overlay--closing');
+      overlay.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('overflow-hidden');
+      input.value = '';
+      results.innerHTML = '';
+      announce('');
+    }, 150);
   }
 
   function renderResults(hits) {

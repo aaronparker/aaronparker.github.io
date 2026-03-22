@@ -8,6 +8,33 @@ permalink: /changelog/
 
 This changelog covers changes to the site theme and design. It does not track changes to individual blog posts or article content.
 
+## 2026-03-22
+
+### Accent colour swatches
+
+- Removed the indigo swatch and replaced it with a blue swatch as the first option
+- Updated all swatch colours to more vivid, saturated values matching standard Tailwind 500-level palette
+- Added a gray swatch as the eighth option
+- Updated `accent-theme.js` to reflect the new swatch set — blue is now the default fallback theme when no preference is stored
+
+### Topbar glass effect
+
+- Upgraded the top navigation bar from a near-opaque frosted background to a proper glassmorphism effect:
+  - Background opacity reduced from 90% to 60% (dark) / 65% (light) so page content bleeds through the blur
+  - Blur increased from `backdrop-blur` (~8px) to `backdrop-blur-lg` (16px)
+  - Added `backdrop-saturate-150` to boost the colour richness of blurred content behind the bar
+  - Softened border opacity to 50–60%
+  - Added a hairline inset top-edge highlight (`box-shadow: inset 0 1px 0 rgba(255,255,255,0.06)`) characteristic of glass surfaces
+
+### UI effects and micro-interactions
+
+Added four new interaction effects, all disabled for users with `prefers-reduced-motion: reduce`:
+
+- **Post cards** — cards lift 3px (`translateY(-3px)`) and gain a shadow on hover; hero image zoom increased from 1.02 to 1.05
+- **Search modal** — the ⌘K modal now animates open (scale + fade in, 180ms) and closed (scale + fade out, 150ms) instead of appearing instantly
+- **TOC active indicator** — the active heading link in the table of contents shows a 2px accent-coloured left border that transitions in, with a subtle `padding-left` nudge to the link text
+- **Icon micro-interactions** — the dark mode toggle SVG rotates 15° on hover; sidebar social link icons lift 2px on hover
+
 ## 2026-03-21
 
 ### Colour highlights

@@ -50,6 +50,7 @@ html.theme-red    { --color-accent: #f87171; --color-accent-dark: #dc2626; }
 html.theme-orange { --color-accent: #fb923c; --color-accent-dark: #ea580c; }
 html.theme-amber  { --color-accent: #fbbf24; --color-accent-dark: #d97706; }
 html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
+html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
 
 /* =============================================================================
    Base overrides
@@ -127,6 +128,11 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
 
   .sidebar__social-link svg {
     @apply w-4 h-4 flex-shrink-0;
+    transition: transform 150ms ease;
+  }
+
+  .sidebar__social-link:hover svg {
+    transform: translateY(-2px);
   }
 }
 
@@ -207,7 +213,11 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
   /* --- Top bar (mobile full-width, desktop offset by sidebar) --- */
   .topbar {
     @apply sticky top-0 z-20 flex items-center justify-between
-           px-4 h-14 bg-slate-950/90 backdrop-blur border-b border-slate-700;
+           px-4 h-14
+           bg-slate-900/60
+           backdrop-blur-lg backdrop-saturate-150
+           border-b border-slate-700/50
+           shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)];
   }
 
   /* --- TOC sidebar column --- */
@@ -232,12 +242,16 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
   }
 
   #toc-container a {
-    @apply block text-sm text-slate-400 hover:text-slate-50 transition-colors
-           py-0.5 no-underline;
+    @apply block text-sm text-slate-400 hover:text-slate-50 py-0.5 no-underline;
+    border-left: 2px solid transparent;
+    padding-left: 0.5rem;
+    transition: border-color 150ms ease, padding-left 150ms ease, color 150ms ease;
   }
 
   #toc-container a.toc-active {
     color: var(--color-accent);
+    border-left-color: var(--color-accent);
+    padding-left: 0.75rem;
     @apply font-medium;
   }
 
@@ -254,11 +268,15 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
   /* --- Post card --- */
   .post-card {
     @apply flex flex-col rounded-lg border border-slate-700
-           bg-slate-800 transition-colors overflow-hidden;
+           bg-slate-800 overflow-hidden;
+    transition: transform 200ms ease, box-shadow 200ms ease,
+                border-color 200ms ease, background-color 200ms ease;
   }
 
   .post-card:hover {
     border-color: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);
   }
 
 
@@ -271,7 +289,7 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
   }
 
   .post-card:hover .post-card__image img {
-    transform: scale(1.02);
+    transform: scale(1.05);
   }
 
   .post-card__body {
@@ -754,6 +772,20 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
 }
 
 /* =============================================================================
+   Keyframe animations
+   ============================================================================= */
+
+@keyframes modal-in {
+  from { opacity: 0; transform: scale(0.96) translateY(-6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes modal-out {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to   { opacity: 0; transform: scale(0.96) translateY(-6px); }
+}
+
+/* =============================================================================
    Search modal
    ============================================================================= */
 
@@ -767,6 +799,11 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
   .search-modal {
     @apply w-full max-w-xl mx-4 rounded-xl border border-slate-700
            bg-slate-900 shadow-2xl overflow-hidden;
+    animation: modal-in 180ms ease forwards;
+  }
+
+  .search-overlay--closing .search-modal {
+    animation: modal-out 150ms ease forwards;
   }
 
   .search-input {
@@ -861,6 +898,11 @@ html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
 
   .dark-toggle svg {
     @apply w-4 h-4;
+    transition: transform 200ms ease;
+  }
+
+  .dark-toggle:hover svg {
+    transform: rotate(15deg);
   }
 
 }
@@ -1223,8 +1265,8 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
 
 
   html:not(.dark) .topbar {
-    background-color: rgba(255, 255, 255, 0.9);
-    @apply border-gray-200;
+    background-color: rgba(255, 255, 255, 0.65);
+    @apply border-gray-200/60 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.8)];
   }
 
   html:not(.dark) .topbar a,
@@ -1253,6 +1295,7 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
 
   html:not(.dark) .post-card:hover {
     border-color: var(--color-accent-dark);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
   }
 
   html:not(.dark) .post-card__image {
@@ -1678,6 +1721,33 @@ html {
   .img-zoom-overlay {
     transition: none;
     animation: none;
+  }
+
+  /* New motion additions */
+  .post-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .search-modal,
+  .search-overlay--closing .search-modal {
+    animation: none !important;
+  }
+
+  #toc-container a {
+    transition: color 0ms;
+    padding-left: 0.5rem !important;
+    border-left-color: transparent !important;
+  }
+
+  #toc-container a.toc-active {
+    padding-left: 0.5rem !important;
+  }
+
+  .dark-toggle svg,
+  .sidebar__social-link svg {
+    transition: none;
+    transform: none !important;
   }
 }
 
