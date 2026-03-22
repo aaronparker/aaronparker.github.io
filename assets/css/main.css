@@ -50,6 +50,7 @@ html.theme-red    { --color-accent: #f87171; --color-accent-dark: #dc2626; }
 html.theme-orange { --color-accent: #fb923c; --color-accent-dark: #ea580c; }
 html.theme-amber  { --color-accent: #fbbf24; --color-accent-dark: #d97706; }
 html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
+html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
 
 /* =============================================================================
    Base overrides

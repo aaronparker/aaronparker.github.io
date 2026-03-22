@@ -4,15 +4,13 @@
   if (t) document.documentElement.classList.add('theme-' + t);
 })();
 
-var ACCENT_THEMES = ['indigo', 'blue', 'purple', 'pink', 'red', 'orange', 'amber', 'green'];
+var ACCENT_THEMES = ['blue', 'purple', 'pink', 'red', 'orange', 'amber', 'green', 'gray'];
 
 function setAccentTheme(name) {
   ACCENT_THEMES.forEach(function (t) {
     document.documentElement.classList.remove('theme-' + t);
   });
-  if (name !== 'indigo') {
-    document.documentElement.classList.add('theme-' + name);
-  }
+  document.documentElement.classList.add('theme-' + name);
   localStorage.setItem('accent-theme', name);
   document.querySelectorAll('[data-accent]').forEach(function (btn) {
     var active = btn.dataset.accent === name;
@@ -21,7 +19,7 @@ function setAccentTheme(name) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  var current = localStorage.getItem('accent-theme') || 'indigo';
+  var current = localStorage.getItem('accent-theme') || 'blue';
   document.querySelectorAll('[data-accent]').forEach(function (btn) {
     btn.setAttribute('aria-pressed', btn.dataset.accent === current);
     btn.addEventListener('click', function () {
