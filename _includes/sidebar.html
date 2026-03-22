@@ -1,121 +1,125 @@
 {% assign author = site.data.authors[site.author] | default: site.data.authors.first[1] %}
 
 <nav id="sidebar" class="sidebar" aria-label="Site navigation">
-  <div class="flex flex-col h-full p-6 gap-6">
+  <div class="flex flex-col h-full overflow-hidden">
 
-    <!-- Avatar + name + tagline -->
-    <div class="flex flex-col items-center text-center pt-2">
-      {% if author.picture.path %}
-      <a href="{{ '/' | relative_url }}" tabindex="-1" aria-hidden="true">
-        <img src="{{ author.picture.path | relative_url }}"
-             alt="{{ author.name }}"
-             class="sidebar__avatar mb-3">
-      </a>
-      {% endif %}
-      <a href="{{ '/' | relative_url }}" class="sidebar__name no-underline hover:opacity-80 transition-opacity">
-        {{ author.name | default: site.title }}
-      </a>
-      {% if site.description %}
-      <p class="sidebar__tagline mt-1">{{ site.description }}</p>
-      {% endif %}
-    </div>
+    <!-- Header: avatar + name + tagline + main nav -->
+    <div class="sidebar__header">
+      <div class="flex flex-col items-center text-center">
+        {% if author.picture.path %}
+        <a href="{{ '/' | relative_url }}" tabindex="-1" aria-hidden="true">
+          <img src="{{ author.picture.path | relative_url }}"
+               alt="{{ author.name }}"
+               class="sidebar__avatar mb-3">
+        </a>
+        {% endif %}
+        <a href="{{ '/' | relative_url }}" class="sidebar__name no-underline hover:opacity-80 transition-opacity">
+          {{ author.name | default: site.title }}
+        </a>
+        {% if site.description %}
+        <p class="sidebar__tagline mt-1">{{ site.description }}</p>
+        {% endif %}
+      </div>
 
-    <!-- Navigation links -->
-    <nav class="flex flex-col gap-1" aria-label="Main navigation">
-      {% for link in site.nav %}
-      <a href="{{ link.url | relative_url }}"
-         class="sidebar__nav-link {% if page.url == link.url or page.url contains link.url %}sidebar__nav-link--active{% endif %}"
-         {% if page.url == link.url or page.url contains link.url %}aria-current="page"{% endif %}>
-        {% case link.title %}
-        {% when 'Blog', 'Posts' %}{% include icons/file-text.svg %}
-        {% when 'Projects' %}{% include icons/folder-open.svg %}
-        {% when 'About' %}{% include icons/user.svg %}
-        {% else %}
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
-        {% endcase %}
-        {{ link.title }}
-      </a>
-      {% endfor %}
-    </nav>
-
-    <!-- Spacer -->
-    <div class="flex-1"></div>
-
-    <!-- Internal site navigation -->
-    <div>
-      <p class="sidebar__section-label">Navigate</p>
-      <nav class="flex flex-col gap-1" aria-label="Site pages">
-        <a href="{{ '/' | relative_url }}" class="sidebar__social-link">
-          {% include icons/house.svg %}
-          Home
+      <!-- Navigation links -->
+      <nav class="flex flex-col gap-1 w-full" aria-label="Main navigation">
+        {% for link in site.nav %}
+        <a href="{{ link.url | relative_url }}"
+           class="sidebar__nav-link {% if page.url == link.url or page.url contains link.url %}sidebar__nav-link--active{% endif %}"
+           {% if page.url == link.url or page.url contains link.url %}aria-current="page"{% endif %}>
+          {% case link.title %}
+          {% when 'Blog', 'Posts' %}{% include icons/file-text.svg %}
+          {% when 'Projects' %}{% include icons/folder-open.svg %}
+          {% when 'About' %}{% include icons/user.svg %}
+          {% else %}
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          {% endcase %}
+          {{ link.title }}
         </a>
-        <a href="{{ '/about/' | relative_url }}" class="sidebar__social-link">
-          {% include icons/user.svg %}
-          About
-        </a>
-        <a href="{{ '/projects/' | relative_url }}" class="sidebar__social-link">
-          {% include icons/folder-open.svg %}
-          Projects
-        </a>
-        <a href="{{ '/archive/' | relative_url }}" class="sidebar__social-link">
-          {% include icons/calendar.svg %}
-          Archive
-        </a>
+        {% endfor %}
       </nav>
     </div>
 
-    <!-- External / social links -->
-    {% if author.social %}
-    <div>
-      <p class="sidebar__section-label">Connect</p>
-      <nav class="flex flex-col gap-1" aria-label="Social links">
-        {% if author.social.github %}
-        <a href="https://github.com/{{ author.social.github }}"
-           class="sidebar__social-link" data-social="github" target="_blank" rel="noopener noreferrer">
-          {% include icons/github.svg %}
-          GitHub
-        </a>
-        {% endif %}
-        {% if author.social.linkedin %}
-        <a href="https://linkedin.com/in/{{ author.social.linkedin }}"
-           class="sidebar__social-link" data-social="linkedin" target="_blank" rel="noopener noreferrer">
-          {% include icons/linkedin.svg %}
-          LinkedIn
-        </a>
-        {% endif %}
-        {% if author.social.bluesky %}
-        <a href="https://bsky.app/profile/{{ author.social.bluesky }}"
-           class="sidebar__social-link" data-social="bluesky" target="_blank" rel="noopener noreferrer">
-          {% include icons/bluesky.svg %}
-          Bluesky
-        </a>
-        {% endif %}
-        {% if author.social.kofi %}
-        <a href="https://ko-fi.com/{{ author.social.kofi }}"
-           class="sidebar__social-link" data-social="kofi" target="_blank" rel="noopener noreferrer">
-          {% include icons/kofi.svg %}
-          Ko-fi
-        </a>
-        {% endif %}
-        {% if author.social.spotify %}
-        <a href="https://open.spotify.com/{{ author.social.spotify }}"
-           class="sidebar__social-link" data-social="spotify" target="_blank" rel="noopener noreferrer">
-          {% include icons/spotify.svg %}
-          Spotify
-        </a>
-        {% endif %}
-        {% if author.social.rss %}
-        <a href="{{ author.social.rss | relative_url }}" class="sidebar__social-link" data-social="rss">
-          {% include icons/rss.svg %}
-          RSS Feed
-        </a>
-        {% endif %}
-      </nav>
-    </div>
-    {% endif %}
+    <!-- Scrollable nav section -->
+    <div class="sidebar__nav">
 
-    <!-- Colour theme swatches -->
-    <div class="flex flex-wrap gap-2 px-1 pt-6 pb-0 border-t border-gray-200 dark:border-slate-700">
+      <!-- Internal site navigation -->
+      <div>
+        <p class="sidebar__section-label">Navigate</p>
+        <nav class="flex flex-col gap-1" aria-label="Site pages">
+          <a href="{{ '/' | relative_url }}" class="sidebar__social-link">
+            {% include icons/house.svg %}
+            Home
+          </a>
+          <a href="{{ '/about/' | relative_url }}" class="sidebar__social-link">
+            {% include icons/user.svg %}
+            About
+          </a>
+          <a href="{{ '/projects/' | relative_url }}" class="sidebar__social-link">
+            {% include icons/folder-open.svg %}
+            Projects
+          </a>
+          <a href="{{ '/archive/' | relative_url }}" class="sidebar__social-link">
+            {% include icons/calendar.svg %}
+            Archive
+          </a>
+        </nav>
+      </div>
+
+      <!-- External / social links -->
+      {% if author.social %}
+      <div class="mt-4">
+        <p class="sidebar__section-label">Connect</p>
+        <nav class="flex flex-col gap-1" aria-label="Social links">
+          {% if author.social.github %}
+          <a href="https://github.com/{{ author.social.github }}"
+             class="sidebar__social-link" data-social="github" target="_blank" rel="noopener noreferrer">
+            {% include icons/github.svg %}
+            GitHub
+          </a>
+          {% endif %}
+          {% if author.social.linkedin %}
+          <a href="https://linkedin.com/in/{{ author.social.linkedin }}"
+             class="sidebar__social-link" data-social="linkedin" target="_blank" rel="noopener noreferrer">
+            {% include icons/linkedin.svg %}
+            LinkedIn
+          </a>
+          {% endif %}
+          {% if author.social.bluesky %}
+          <a href="https://bsky.app/profile/{{ author.social.bluesky }}"
+             class="sidebar__social-link" data-social="bluesky" target="_blank" rel="noopener noreferrer">
+            {% include icons/bluesky.svg %}
+            Bluesky
+          </a>
+          {% endif %}
+          {% if author.social.kofi %}
+          <a href="https://ko-fi.com/{{ author.social.kofi }}"
+             class="sidebar__social-link" data-social="kofi" target="_blank" rel="noopener noreferrer">
+            {% include icons/kofi.svg %}
+            Ko-fi
+          </a>
+          {% endif %}
+          {% if author.social.spotify %}
+          <a href="https://open.spotify.com/{{ author.social.spotify }}"
+             class="sidebar__social-link" data-social="spotify" target="_blank" rel="noopener noreferrer">
+            {% include icons/spotify.svg %}
+            Spotify
+          </a>
+          {% endif %}
+          {% if author.social.rss %}
+          <a href="{{ author.social.rss | relative_url }}" class="sidebar__social-link" data-social="rss">
+            {% include icons/rss.svg %}
+            RSS Feed
+          </a>
+          {% endif %}
+        </nav>
+      </div>
+      {% endif %}
+
+    </div><!-- /sidebar__nav -->
+
+    <!-- Footer: accent swatches (always full size, always visible) -->
+    <div class="sidebar__footer">
       <button class="accent-swatch" data-accent="blue"   aria-label="Blue theme"   style="background-color:#3b82f6"></button>
       <button class="accent-swatch" data-accent="purple" aria-label="Purple theme" style="background-color:#a855f7"></button>
       <button class="accent-swatch" data-accent="pink"   aria-label="Pink theme"   style="background-color:#ec4899"></button>
