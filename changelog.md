@@ -8,6 +8,58 @@ permalink: /changelog/
 
 This changelog covers changes to the site theme and design. It does not track changes to individual blog posts or article content.
 
+## 2026-03-23
+
+### Accessibility
+
+Improvements for screen readers, keyboard users, and users with visual preferences:
+
+- **Focus management** — focus traps and focus restoration added to search modal, keyboard shortcuts modal, and mobile sidebar; image zoom overlay now uses `role="dialog"` with focus trapped inside and restored on close
+- **ARIA fixes** — search results corrected from `role="listbox"`/`role="option"` to `role="list"` (appropriate for link-based results); removed incorrect `role="tooltip"` from hero image credit span
+- **ARIA additions** — `aria-label` added to search input (placeholder alone is insufficient for screen readers); `aria-pressed` added to dark mode toggle, grid/list view toggle, and accent swatch buttons; `aria-expanded` added to mobile sidebar toggle; `aria-label` added to TOC aside (`role="navigation"`); descriptive `aria-label` added to blog pagination links
+- **Decorative SVGs** — `aria-hidden="true"` added to decorative icons in post metadata (calendar, clock, tag) so screen readers skip them
+- **Back-to-top button** — removed from tab order when visually hidden (`aria-hidden` + `tabindex` toggled in JS)
+- **Non-colour active state** — TOC active heading link bumped to `font-semibold` so the active state is distinguishable without relying on colour alone
+- **High-contrast mode** — added `@media (prefers-contrast: more)` block with stronger borders and text for OS high-contrast mode
+
+### Code blocks
+
+- Language label in the header bar is now white in light mode (previously inherited body text colour)
+- Moved the copy-to-clipboard button from the header bar into the code listing itself, floating in the top-right corner below the header
+- Reduced header bar height with tighter padding
+- Fixed corner radii: header top corners are rounded, the join between header and code listing is flush (no gap or double radius), code listing bottom corners are rounded
+
+### Post summary
+
+- Changed from right-side-only rounded corners to fully rounded on all four corners, matching the callout style
+
+### Callouts
+
+- Note, tip, warning, and danger callouts changed from right-side-only rounded corners to fully rounded on all four corners
+
+### Author bio
+
+- Removed social links (GitHub, LinkedIn, Bluesky) from the author bio card at the bottom of posts — social links remain in the sidebar
+
+### Images in posts
+
+- Removed the link hover highlight colour on images wrapped in anchor tags
+- Added a magnifying glass icon overlay that appears on hover to indicate the image can be zoomed/enlarged
+
+### Sidebar navigation
+
+- Split the single combined navigation list into two labelled sections: **Navigate** (internal site pages) and **Connect** (external social links)
+
+### Sidebar responsive layout
+
+- Restructured the sidebar into three explicit zones:
+  - **Header** (avatar, name, tagline, main nav) — fixed, shrinks at short viewport heights
+  - **Navigation** (Navigate + Connect sections) — scrollable when content overflows
+  - **Footer** (accent swatches) — fixed, always visible at full size regardless of viewport height
+- Accent colour swatches no longer resize at short viewport heights (≤780px) — they remain 20px and centred at the bottom of the sidebar
+- Sidebar tagline continues to hide at very short viewports (≤719px)
+- Swatches centred horizontally in the footer
+
 ## 2026-03-22
 
 ### Accent colour swatches
