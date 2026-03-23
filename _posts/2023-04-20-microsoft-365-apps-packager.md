@@ -22,6 +22,10 @@ related_posts:
 - _posts/2023-04-09-support-frontline-workers-on-shared-virtual-desktops.md
 - _posts/2023-04-10-deploy-the-microsoft-365-apps-a-single-package.md
 date: 2023-04-21 09:00 +1000
+tags:
+  - Office
+  - Intune
+  - Automation
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

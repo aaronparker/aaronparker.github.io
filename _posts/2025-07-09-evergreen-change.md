@@ -21,6 +21,10 @@ date: 2025-07-09 10:00 +1000
 related_posts:
 - 2025-05-02-rimo3-evergreen.md
 - 2023-12-20-user-acceptance-testing-for-vdi-with-azure-devops.md
+tags:
+  - Evergreen
+  - PowerShell
+  - Automation
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

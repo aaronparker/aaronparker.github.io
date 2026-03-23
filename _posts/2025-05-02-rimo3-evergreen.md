@@ -16,6 +16,10 @@ comments: true
 date: 2025-05-02 17:36 +1000
 related_posts:
 - 2023-12-20-user-acceptance-testing-for-vdi-with-azure-devops.md
+tags:
+  - Evergreen
+  - Automation
+  - Deployment
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

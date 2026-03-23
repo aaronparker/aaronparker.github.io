@@ -17,6 +17,10 @@ image:
     source_url:       "https://unsplash.com/photos/blue-yellow-red-and-green-papers-Z19vToWBDIc"
 categories: [Microsoft]
 comments: true
+tags:
+  - Intune
+  - PowerShell
+  - Azure
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

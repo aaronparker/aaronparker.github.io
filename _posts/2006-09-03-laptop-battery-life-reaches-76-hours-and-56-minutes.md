@@ -8,6 +8,9 @@ layout: post
 permalink: /laptop-battery-life-reaches-76-hours-and-56-minutes/
 categories:
   - Microsoft
+tags:
+  - Windows-Vista
+  - Hardware
 ---
 Check out the battery life on my IBM ThinkPad T41p. There's way too much FUD out there about Windows Vista shortening battery life, this is almost two working weeks from a single charge..
 

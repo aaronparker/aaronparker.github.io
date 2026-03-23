@@ -21,6 +21,10 @@ image:
     source_url:       "https://unsplash.com/photos/person-holding-pink-sticky-note-WC6MJ0kRzGw"
 comments: true
 date: 2023-12-20 11:03 +1100
+tags:
+  - AVD
+  - Automation
+  - Testing
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

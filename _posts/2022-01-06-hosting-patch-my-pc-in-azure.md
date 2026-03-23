@@ -17,6 +17,10 @@ image:
 categories: [Microsoft]
 date: 2022-01-06 00:20 +1100
 comments: true
+tags:
+  - Azure
+  - Intune
+  - Deployment
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

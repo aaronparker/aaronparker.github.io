@@ -8,6 +8,9 @@ layout: post
 permalink: /wsus-build-numbers/
 categories:
   - Microsoft
+tags:
+  - Windows
+  - Deployment
 ---
 I've recently updated a few WSUS servers with WSUS SP1. The admin tool shows build numbers but does not state if the version is RTM or SP1. For reference these build numbers are:
 

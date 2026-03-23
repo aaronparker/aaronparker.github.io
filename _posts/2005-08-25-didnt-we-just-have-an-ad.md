@@ -8,6 +8,9 @@ layout: post
 permalink: /didnt-we-just-have-an-ad/
 categories:
   - General
+tags:
+  - Firefox
+  - Security
 ---
 There are 3 reasons why I use Firefox:
 

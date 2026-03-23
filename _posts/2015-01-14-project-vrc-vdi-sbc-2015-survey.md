@@ -13,6 +13,9 @@ layers:
 image: /media/2015/01/vrc_logo_gr.gif
 categories:
   - Community
+tags:
+  - Citrix
+  - XenDesktop
 ---
 The independent R&D project ‘[Virtual Reality Check](http://www.projectvrc.com)’ (VRC) was started in early 2009 by Ruben Spruijt ([@rspruijt](https://twitter.com/rspruijt)) of PQR and Jeroen van de Kamp ([@thejeroen](https://twitter.com/thejeroen)) of Login Consultants, and focuses on research in the desktop and application virtualization market. Several white papers with [Login VSI](http://www.loginvsi.com) test results were published about the performance and best practices of different hypervisors, Microsoft Office versions, application virtualization solutions, Windows Operating Systems in server hosted desktop solutions and the impact of antivirus in VDI environments.
 

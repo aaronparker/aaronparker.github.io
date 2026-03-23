@@ -11,6 +11,9 @@ layers:
 image: /media/2018/09/florian-perennes-583674-unsplash.jpg
 categories:
   - Microsoft
+tags:
+  - Windows-10
+  - Intune
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

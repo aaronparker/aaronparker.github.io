@@ -8,6 +8,9 @@ layout: post
 permalink: /wsus-update-for-server-manager-in-windows-2008/
 categories:
   - Microsoft
+tags:
+  - Windows
+  - Deployment
 ---
 Microsoft have made available an update for Windows Server 2008 that integrates the WSUS 3.0 console into Server Manager. 
 

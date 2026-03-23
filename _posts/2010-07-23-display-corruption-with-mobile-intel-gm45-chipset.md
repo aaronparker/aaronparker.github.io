@@ -14,6 +14,8 @@ pd_rating:
   - 'a:8:{s:4:"type";s:1:"0";s:5:"votes";s:1:"1";s:6:"total1";s:1:"0";s:6:"total2";s:1:"0";s:6:"total3";s:1:"0";s:6:"total4";s:1:"0";s:6:"total5";s:1:"1";s:7:"average";s:6:"5.0000";}'
 categories:
   - Hardware
+tags:
+  - Hardware
 ---
 I have a [Dell Latitude XT2]({{site.baseurl}}/hardware/windows-7-on-a-dell-latitiude-xt2), which includes the [Mobile Intel GM45 Chipset](http://www.intel.com/products/notebook/chipsets/gm45/gm45-overview.htm) (and the Mobile Intel Graphics Media Accelerator 4500MHD). On occasion I’ve experienced display corruptions issues that make working with the laptop somewhat difficult.
 

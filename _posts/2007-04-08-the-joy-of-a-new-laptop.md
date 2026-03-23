@@ -8,6 +8,9 @@ layout: post
 permalink: /the-joy-of-a-new-laptop/
 categories:
   - Hardware
+tags:
+  - Hardware
+  - Windows-Vista
 ---
 A couple of months back my old Toshiba TE2100 laptop that my wife has been using packed it in and it was time to look at a new one. I settled on a Dell and took delivery of a [Dell XPS M1210](http://www1.ap.dell.com/content/products/productdetails.aspx/xps_m1210?c=au&cs=audhs1&l=en&s=dhs) laptop last week. So far I'm pretty impressed. Here's a breakdown of the features that I picked up for AU $2840:
 

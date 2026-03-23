@@ -10,6 +10,9 @@ dsq_thread_id:
   - "195379488"
 categories:
   - Applications
+tags:
+  - Applications
+  - Troubleshooting
 ---
 Don't get me started on the ridiculousness of wrapping an MMC console around a web application served by Apache Tomcat to administer McAfee's ePolicy Orchestrator (surely one or the other, not both), but you may see this error after you log into the console instead of seeing the expected settings window:
 

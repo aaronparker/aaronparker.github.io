@@ -8,6 +8,9 @@ layout: post
 permalink: /forefront-client-security-beta-available/
 categories:
   - Microsoft
+tags:
+  - Security
+  - NAP
 ---
 Microsoft has made available a general beta for the Forefront Client Security product. Here's a quote from the download to give you an idea of what Client Security is about:
 

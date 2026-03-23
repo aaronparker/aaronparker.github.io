@@ -18,6 +18,10 @@ image:
 categories: [Microsoft]
 comments: true
 date: 2022-01-08 12:44 +1100
+tags:
+  - AVD
+  - Azure
+  - Performance
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

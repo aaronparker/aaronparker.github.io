@@ -8,6 +8,9 @@ layout: post
 permalink: /support-site-woes/
 categories:
   - Applications
+tags:
+  - Exchange
+  - Documentation
 ---
 Over the past week, I've been creating an internal Exchange best practice/check list document so that we can standardise on how we configure Exchange servers for our clients. This document includes a number of items including information on configuring AV scanners to exclude certain Exchange folders. I thought it best to provide the reader of this document direct links to knowledgebase articles on various AV products. I attempted to cover the following vendors:
 

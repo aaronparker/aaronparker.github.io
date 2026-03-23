@@ -8,6 +8,9 @@ layout: post
 permalink: /ui-consistency-and-microsoft-sans-serif/
 categories:
   - Microsoft
+tags:
+  - Windows-Vista
+  - UI
 ---
 When Microsoft released Windows 2000, the new default UI font was changed to Tahoma from Microsoft Sans Serif. Unfortunately, not every team involved in developing Windows got the memo detailing this change. (There's a whole team for the Display properties applet right?). I think it was also the same teams that then forgot to change the font in various dialogs in Windows XP. It still haunts us in various locations in Windows Vista as of build 5456 for which the new UI font is [Segoe UI](http://msdn.microsoft.com/library/en-us/UxGuide/UXGuide/Visuals/Fonts/Fonts.asp?frame=true). Well if you're picky like me and just want to see the same font across all UI elements, you can get most of the way there with a couple of registry edits. Navigate to:
 

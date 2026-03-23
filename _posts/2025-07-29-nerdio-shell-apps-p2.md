@@ -22,6 +22,10 @@ related_posts:
 - 2025-07-29-nerdio-shell-apps.md
 - 2025-07-29-nerdio-shell-apps-p3.md
 - 2023-12-20-user-acceptance-testing-for-vdi-with-azure-devops.md
+tags:
+  - Evergreen
+  - Automation
+  - Azure
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

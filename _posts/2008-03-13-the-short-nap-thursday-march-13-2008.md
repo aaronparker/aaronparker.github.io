@@ -8,6 +8,9 @@ layout: post
 permalink: /the-short-nap-thursday-march-13-2008/
 categories:
   - Microsoft
+tags:
+  - NAP
+  - Security
 ---
 Network Access Protection is a great new feature of Windows Server 2008 that will help you understand the health of your client machines (Windows Vista and Windows XP Service Pack 3) and increase the trust in your network.
 

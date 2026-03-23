@@ -13,6 +13,9 @@ categories:
 related_posts:
   - _posts/2016-08-22-deploy-enterprise-subordinate-certificate-authority.md
   - _posts/2016-08-21-deploy-enterprise-root-certificate-authority.md
+tags:
+  - Security
+  - Active-Directory
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

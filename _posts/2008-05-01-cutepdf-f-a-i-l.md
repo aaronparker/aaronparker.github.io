@@ -10,6 +10,8 @@ dsq_thread_id:
   - "195380592"
 categories:
   - Applications
+tags:
+  - Applications
 ---
 This:
 

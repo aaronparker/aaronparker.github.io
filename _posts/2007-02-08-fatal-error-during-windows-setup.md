@@ -8,6 +8,10 @@ layout: post
 permalink: /fatal-error-during-windows-setup/
 categories:
   - Microsoft
+tags:
+  - Windows
+  - Troubleshooting
+  - Unattended
 ---
 I received the following error (in a dialog box) from Windows Setup on a Terminal Server running Windows Server 2003 not long after GUI-mode setup started:
 

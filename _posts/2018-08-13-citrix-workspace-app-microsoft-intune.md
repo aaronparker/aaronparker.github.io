@@ -7,6 +7,10 @@ permalink: /citrix-workspace-app-microsoft-intune/
 image: /media/2018/08/rawpixel-550994-unsplash.jpg
 categories:
   - Citrix
+tags:
+  - Citrix
+  - Intune
+  - Deployment
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

@@ -19,6 +19,10 @@ image:
     source_url:       "https://unsplash.com/photos/white-and-gray-plastic-pump-bottle-IjFnqf3dPCM"
 comments: true
 date: 2023-04-09 23:56 +1000
+tags:
+  - AVD
+  - Office
+  - FSLogix
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

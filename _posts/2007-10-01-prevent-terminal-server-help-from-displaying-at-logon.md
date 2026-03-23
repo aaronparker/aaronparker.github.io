@@ -10,6 +10,9 @@ dsq_thread_id:
   - "195379461"
 categories:
   - Microsoft
+tags:
+  - Terminal-Server
+  - Automation
 ---
 ![]({{site.baseurl}}/media/2007/10/terminalserverhelp.png)
 

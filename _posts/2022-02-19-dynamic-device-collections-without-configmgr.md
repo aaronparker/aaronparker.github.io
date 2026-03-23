@@ -22,6 +22,10 @@ comments: true
 related_posts:
 - _posts/2021-10-01-onedrive-knownfoldermove-loganalytics.md
 date: 2022-02-19 10:21 +1100
+tags:
+  - Intune
+  - Automation
+  - Azure
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

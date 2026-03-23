@@ -10,6 +10,9 @@ dsq_thread_id:
   - "195380695"
 categories:
   - Microsoft
+tags:
+  - Windows
+  - Security
 ---
 Windows XP Service Pack 2 and Windows Server 2003 Service Pack 1 made some changes to the way Windows handles specific file types opened or downloaded from certain locations, which results in Open File – Security Warning prompts like these:
 

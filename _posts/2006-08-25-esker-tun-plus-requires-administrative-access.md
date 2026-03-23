@@ -10,6 +10,9 @@ dsq_thread_id:
   - "195378882"
 categories:
   - Applications
+tags:
+  - Applications
+  - Security
 ---
 Today's entrant into the Hall of Shame is Esker Tun PLUS which can be used to provide an ActiveX based terminal emulator via the web. This product downloads no less than 11 ActiveX controls and then wants the user to run an application named TRUST.EXE from a page that has the following text:
 

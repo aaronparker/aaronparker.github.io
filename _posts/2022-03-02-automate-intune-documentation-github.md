@@ -22,6 +22,10 @@ related_posts:
 - _posts/2021-10-01-onedrive-knownfoldermove-loganalytics.md
 - _posts/2022-01-06-hosting-patch-my-pc-in-azure.md
 date: 2022-03-02 14:17 +1100
+tags:
+  - Intune
+  - Automation
+  - PowerShell
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

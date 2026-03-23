@@ -8,6 +8,10 @@ permalink: /dynamic-software-update-rings/
 image: /media/2018/10/mathew-schwartz-397471-unsplash.jpg
 categories:
   - Microsoft
+tags:
+  - Intune
+  - Windows-10
+  - Deployment
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

@@ -16,6 +16,9 @@ categories: [Microsoft]
 comments: true
 related_posts:
   - _posts/2019-06-18-user-experience-virtualization-intune.md
+tags:
+  - Intune
+  - Profile-Management
 ---
 Since this article was written, Microsoft has enabled Proactive Remediations and the Settings Catalog in Endpoint Manager. This means that a scheduled task is no longer required, and  User Experience Virtualization can be configured directly via policy. For an update approach to this implementation, see the new scripts here: [User Experience Virtualization scripts](https://github.com/aaronparker/remediations/tree/main/UserExperienceVirtualization).
 {:.note title="Update"}

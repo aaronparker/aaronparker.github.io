@@ -10,6 +10,10 @@ dsq_thread_id:
   - "195380731"
 categories:
   - Microsoft
+tags:
+  - Windows
+  - Security
+  - Internet-Explorer
 ---
 Last week I wrote about [avoiding Explorer's Security Warning prompts]({{site.baseurl}}/windows/avoiding-explorers-security-warning-prompts), this time around I want to document a related fix that I've had to implement because Explorer's expected behaviour was not just not working.
 

@@ -10,6 +10,8 @@ dsq_thread_id:
   - "195380975"
 categories:
   - Applications
+tags:
+  - Applications
 ---
 I thought 25 character product keys where a pain in the proverbial, but this one takes the cake. I won’t tell you which application this authorisation code is for, but it’s a whopping 93 characters long..
 

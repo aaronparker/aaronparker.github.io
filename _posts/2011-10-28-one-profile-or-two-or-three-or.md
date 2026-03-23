@@ -14,6 +14,10 @@ dsq_thread_id:
   - "455521583"
 categories:
   - Community
+tags:
+  - Profile-Management
+  - XenDesktop
+  - Citrix
 ---
 Surely one of the main goals of any good desktop delivery project is to remove the user's reliance on any single device?
 

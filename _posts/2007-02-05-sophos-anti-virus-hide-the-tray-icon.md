@@ -10,6 +10,9 @@ dsq_thread_id:
   - "195378743"
 categories:
   - Automation
+tags:
+  - Automation
+  - Terminal-Server
 ---
 During my quest to disable as many tray icons as I possibly can, I've had to track down how to disable the tray icon for Sophos Anti-Virus in a Terminal Server environment. This one is pretty easy, it's just a single DWORD registry value:
 

@@ -20,6 +20,9 @@ comments: true
 related_posts:
 - _posts/2016-04-10-intel-nuc6i5syb-home-lab.md
 date: 2024-12-23 11:00 +1100
+tags:
+  - Hardware
+  - Performance
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

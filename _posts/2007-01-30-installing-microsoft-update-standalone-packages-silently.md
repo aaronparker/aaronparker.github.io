@@ -10,6 +10,10 @@ dsq_thread_id:
   - "195378759"
 categories:
   - Automation
+tags:
+  - Windows
+  - Automation
+  - Deployment
 ---
 ![]({{site.baseurl}}/media/2007/01/1000.14.770.UpdatePackage.png)
 

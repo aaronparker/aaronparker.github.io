@@ -8,6 +8,9 @@ layout: post
 permalink: /windows-vista-tips/
 categories:
   - Microsoft
+tags:
+  - Windows-Vista
+  - Tips
 ---
 Here's a couple of nifty tips for Windows Vista that I've learnt this week and wanted to share:
 

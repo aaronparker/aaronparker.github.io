@@ -8,6 +8,10 @@ layout: post
 permalink: /securing-the-network-using-microsoft-isa-server-2004/
 categories:
   - Microsoft
+tags:
+  - ISA-Server
+  - Security
+  - Firewall
 ---
 This is a great article discussing the features of ISA Server as a layer 7 firewall (without the usual zealous bubble from Dr T. Shinder)
 

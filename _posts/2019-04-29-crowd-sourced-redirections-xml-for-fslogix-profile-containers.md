@@ -13,6 +13,10 @@ image:
 categories:
 - Microsoft
 comments: true
+tags:
+  - FSLogix
+  - Profile-Management
+  - PowerShell
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

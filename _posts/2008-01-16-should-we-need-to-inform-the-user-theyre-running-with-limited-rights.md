@@ -8,6 +8,9 @@ layout: post
 permalink: /should-we-need-to-inform-the-user-theyre-running-with-limited-rights/
 categories:
   - Applications
+tags:
+  - Applications
+  - Security
 ---
 Expecting an application to execute correctly when run with limited user privileges should be something that we take for granted. Alas in the real world this is not the case, but things are getting better, if slowly.
 

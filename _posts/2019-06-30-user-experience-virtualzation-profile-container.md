@@ -14,6 +14,9 @@ categories: [Microsoft]
 comments: true
 related_posts:
   - _posts/2019-06-30-user-experience-virtualzation-profile-container.md
+tags:
+  - FSLogix
+  - Profile-Management
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

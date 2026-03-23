@@ -8,6 +8,9 @@ layout: post
 permalink: /event-search/
 categories:
   - Microsoft
+tags:
+  - Windows
+  - Tools
 ---
 Has Microsoft realised the power of [EventID.Net](http://www.eventid.net)? They've added an '<span id="lblPageHeader"><a href="http://www.microsoft.com/technet/support/ee/ee_advanced.aspx">Events and Errors Message Center' </a>page @ TechNet. </span>
 

@@ -10,6 +10,9 @@ dsq_thread_id:
   - "195378696"
 categories:
   - Applications
+tags:
+  - Windows
+  - Troubleshooting
 ---
 I've recently noticed a DLL file from Intel that keep reappearing on my system drive and I've tracked this down to the display software on my laptop - I've recently moved to a Dell laptop that has an Intel 945GM display adapter. Here's the DLL in question:
 

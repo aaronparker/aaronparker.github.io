@@ -8,6 +8,9 @@ layout: post
 permalink: /the-short-nap-friday-september-28-2007/
 categories:
   - Microsoft
+tags:
+  - NAP
+  - Security
 ---
 The Short NAP is a (semi-regular) quick list of Microsoft Network Access Protection and Server/Domain Isolation related links from around the web. Here are the links for Friday the 28th of September 2007:
 

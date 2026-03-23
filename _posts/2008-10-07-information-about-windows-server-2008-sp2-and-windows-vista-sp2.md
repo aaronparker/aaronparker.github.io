@@ -10,6 +10,9 @@ dsq_thread_id:
   - "195381144"
 categories:
   - Microsoft
+tags:
+  - Windows
+  - Deployment
 ---
 Well actually, there's none at the moment, but a there is [a knowledgebase article available on SP2](http://support.microsoft.com/kb/948465) as a place holder for future information:
 

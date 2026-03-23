@@ -8,6 +8,9 @@ layout: post
 permalink: /microsoft-deployment-available-on-download-centre/
 categories:
   - Microsoft
+tags:
+  - MDT
+  - Deployment
 ---
 [Microsoft Deployment](http://www.microsoft.com/downloads/details.aspx?FamilyID=3bd8561f-77ac-4400-a0c1-fe871c461a89&DisplayLang=en) looks to have made it's way to version 1.0 and is available on Microsoft's Download Centre. There's no real confirmation that this is the RTM/RTW release but it's just been posted so I can only assume.
 

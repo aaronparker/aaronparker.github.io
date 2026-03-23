@@ -13,6 +13,9 @@ image:
 categories:
   - General
 comments: true
+tags:
+  - Jekyll
+  - Automation
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

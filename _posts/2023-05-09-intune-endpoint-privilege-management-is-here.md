@@ -20,6 +20,10 @@ image:
     source_url:       "https://unsplash.com/photos/photo-of-boardwalk-between-body-of-water-CeL6SfbXCx8"
 comments: true
 date: 2023-05-09 17:47 +1000
+tags:
+  - Intune
+  - Security
+  - Windows
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

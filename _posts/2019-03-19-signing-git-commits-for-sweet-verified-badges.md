@@ -9,6 +9,9 @@ image: /media/2019/03/helloquence-51716-unsplash.jpg
 categories:
   - General
 comments: true
+tags:
+  - Automation
+  - Git
 ---
 * this unordered seed list will be replaced by the toc
 {:toc}

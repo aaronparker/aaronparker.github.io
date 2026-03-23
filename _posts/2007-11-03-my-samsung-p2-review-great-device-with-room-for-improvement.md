@@ -10,6 +10,8 @@ dsq_thread_id:
   - "195379526"
 categories:
   - Hardware
+tags:
+  - Hardware
 ---
 Any review of a touch screen digital audio player or phone is going to inevitably compare to the iPhone/iPod touch, but touch interfaces are the way forward because they just make sense. So here's my quick and dirty review of the [Samsung P2](http://uk.samsungplay.com/product/mp3_player_detail.jsp) which turned up this morning.
 

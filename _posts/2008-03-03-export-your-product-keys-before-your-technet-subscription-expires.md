@@ -8,6 +8,9 @@ layout: post
 permalink: /export-your-product-keys-before-your-technet-subscription-expires/
 categories:
   - Microsoft
+tags:
+  - Windows
+  - Deployment
 ---
 With Windows Vista and Windows Server 2008 requiring activation for all versions, the days of grabbing the corporate key for home use have gone.
 

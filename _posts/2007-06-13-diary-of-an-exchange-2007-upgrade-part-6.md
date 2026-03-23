@@ -8,6 +8,9 @@ layout: post
 permalink: /diary-of-an-exchange-2007-upgrade-part-6/
 categories:
   - Microsoft
+tags:
+  - Exchange
+  - Deployment
 ---
 Dear Diary,
 

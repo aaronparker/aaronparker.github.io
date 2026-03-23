@@ -6,6 +6,9 @@ layout: post
 permalink: /app-v-5-sequencer-template/
 categories:
   - Applications
+tags:
+  - App-V
+  - Deployment
 ---
 The App-V 5 Sequencer, just [like version 4.6 SP1](http://blogs.technet.com/b/appv/archive/2011/05/04/app-v-4-6-sp1-sequencer-project-template-improvements.aspx), includes support for [Sequencer Templates](http://technet.microsoft.com/en-gb/library/jj684290.aspx). These are an ideal approach for ensuring the use of the same set of Sequencer settings and exclusions across all packages.
 

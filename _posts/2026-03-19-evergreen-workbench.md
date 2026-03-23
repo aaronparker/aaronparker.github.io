@@ -24,6 +24,10 @@ related_posts:
 - 2025-07-29-nerdio-shell-apps.md
 - 2025-07-29-nerdio-shell-apps-p2.md
 - 2025-07-09-evergreen-change.md
+tags:
+  - Evergreen
+  - Automation
+  - PowerShell
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

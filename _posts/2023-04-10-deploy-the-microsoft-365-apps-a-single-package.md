@@ -13,6 +13,10 @@ image:
     480w: "/assets/img/single/image@0,25x.jpg"
 comments: true
 date: 2023-04-10 23:07 +1000
+tags:
+  - Office
+  - Deployment
+  - Intune
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

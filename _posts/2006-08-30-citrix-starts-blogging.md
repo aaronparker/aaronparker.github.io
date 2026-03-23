@@ -8,5 +8,7 @@ layout: post
 permalink: /citrix-starts-blogging/
 categories:
   - Citrix
+tags:
+  - Citrix
 ---
 Citrix (other than [Jay Tomlin](http://www.jaytomlin.com/blog)) have finally got their act together and started blogging. You can view the blogs at <http://citrite.org/blogs/>.

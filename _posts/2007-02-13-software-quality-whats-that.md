@@ -8,6 +8,9 @@ layout: post
 permalink: /software-quality-whats-that/
 categories:
   - Applications
+tags:
+  - Applications
+  - Deployment
 ---
 I've seen some dumb software in my travels and [Mercury Quality Center](http://www.mercury.com/us/products/quality-center/) is no exception; however this one has got me scratching my head.
 

@@ -8,6 +8,9 @@ layout: post
 permalink: /objective-7-error-logging-access-denied/
 categories:
   - Applications
+tags:
+  - Applications
+  - Security
 ---
 Objective is an [Enterprise Content Management system from Objective](http://www.objective.com/Products/Platform/index.html) that uses a Win32 client that plugs into Office and can also be used as a stand-alone application for access to documents. I'm not a user of the application so I don't really have an opinion on its effectiveness but organisations buy it so it must do the job.
 

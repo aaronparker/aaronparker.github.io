@@ -10,6 +10,9 @@ dsq_thread_id:
   - "195379557"
 categories:
   - Automation
+tags:
+  - Automation
+  - Windows
 ---
 Looking to write to CD or DVD media via a script? Did you know that Windows includes an API to do just that? Version 2.0 of this API that is included in Windows Vista has also been made available for Windows XP and Windows Server 2003: [Image Mastering API v2.0](http://www.microsoft.com/technet/scriptcenter/newswire/imapi2xp.mspx)
 

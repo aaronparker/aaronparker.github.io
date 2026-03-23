@@ -8,6 +8,9 @@ layout: post
 permalink: /isa-client-spy/
 categories:
   - Microsoft
+tags:
+  - ISA-Server
+  - Tools
 ---
 Found this via [Stanislas Quastana's](http://blogs.msdn.com/squasta/archive/2005/08/22/454608.aspx) blog: [ISA Client Spy](http://www.isaservertools.com/ISAClientSpy). Free tools for ISA Server are great and this one, should be an excellent troubleshooting tool.
 

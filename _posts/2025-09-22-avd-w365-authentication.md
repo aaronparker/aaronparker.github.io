@@ -21,6 +21,10 @@ image:
 related_posts:
 - 2022-01-08-azure-virtual-desktop-lessons-learned.md
 date: 2025-09-22 13:45 +1000
+tags:
+  - AVD
+  - Security
+  - Azure
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

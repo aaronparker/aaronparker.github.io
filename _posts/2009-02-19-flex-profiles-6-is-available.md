@@ -8,6 +8,9 @@ layout: post
 permalink: /flex-profiles-6-is-available/
 categories:
   - Applications
+tags:
+  - Profile-Management
+  - Citrix
 ---
 A press release from [Immidio](http://www.immidio.com/) landed in by inbox today - Flex Profiles, formerly by [Login Consultants](http://www.loginconsultants.com/), has been updated to [version 6](http://www.immidio.com/flexprofiles/). It comes as [a free Express version](http://www.immidio.com/initiate_download.asp?download=Flex) and from what I can tell, you can pay for support.
 

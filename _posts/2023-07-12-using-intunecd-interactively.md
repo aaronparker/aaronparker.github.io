@@ -22,6 +22,10 @@ related_posts:
 - _posts/2022-03-02-automate-intune-documentation-azure.md
 - _posts/2022-03-02-automate-intune-documentation-github.md
 date: 2023-07-12 00:24 +1000
+tags:
+  - Intune
+  - PowerShell
+  - Automation
 ---
 - this unordered seed list will be replaced by the toc
 {:toc}

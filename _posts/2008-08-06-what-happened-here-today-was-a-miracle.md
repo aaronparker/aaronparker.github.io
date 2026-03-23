@@ -10,6 +10,9 @@ dsq_thread_id:
   - "195380913"
 categories:
   - Applications
+tags:
+  - Applications
+  - UI
 ---
 “and I want you to f**king [acknowledge it](http://en.wikiquote.org/wiki/Pulp_Fiction#Jules_Winnfield)!”
 

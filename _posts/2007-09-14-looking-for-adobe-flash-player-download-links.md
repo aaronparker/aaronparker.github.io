@@ -28,6 +28,9 @@ Hide OgTags:
   - "0"
 categories:
   - Applications
+tags:
+  - Adobe
+  - Deployment
 ---
 **Update** [November 2011]: Adobe has released Flash Player 11 in both 32-bit and 64-bit packages. The links below will only  provide you with Flash Player 10. To obtain the installers for Flash Player 11, see the following articles:
 

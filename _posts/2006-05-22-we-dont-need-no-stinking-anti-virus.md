@@ -8,6 +8,10 @@ layout: post
 permalink: /we-dont-need-no-stinking-anti-virus/
 categories:
   - Microsoft
+tags:
+  - ISA-Server
+  - Security
+  - Performance
 ---
 I've recently had conversations about running anti-virus software on some specialised servers. Specifically Windows Servers running ISA Server 2004 or VMware Server (or Virtual Server). The argument for installing anti-virus software on these servers is to ensure they are protected against viruses and worms. I've been arguing against installing anti-virus software to ensure maximum performance. The reasons I have argued against are the following:
 

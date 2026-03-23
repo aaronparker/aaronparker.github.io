@@ -10,6 +10,9 @@ dsq_thread_id:
   - "195381118"
 categories:
   - Community
+tags:
+  - UAC
+  - Windows-Vista
 ---
 At the next [Vista Squad](http://vistasquad.co.uk/Default.aspx) meeting [tomorrow night (Wednesday 15th October)](http://vistasquad.co.uk/blogs/announcements/archive/2008/09/18/vista-squad-rise-of-the-machines-15th-oct-2008.aspx), along with [Ray Booysen](http://vistasquad.co.uk/blogs/nondestructive/default.aspx), I’ll be presenting on User Account Control and developing & running as non-admin. There's a few things we'll cover, including:
 
