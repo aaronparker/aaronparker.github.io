@@ -9,6 +9,9 @@
 /* Class-based dark mode — toggles via .dark on <html> */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Accessible high-contrast theme — toggles via .accessible on <html> */
+@custom-variant accessible (&:where(.accessible, .accessible *));
+
 /* Self-hosted Geist fonts */
 @import "../../assets/fonts/geist/index.css";
 @import "../../assets/fonts/geist-mono/index.css";
@@ -51,6 +54,9 @@ html.theme-orange { --color-accent: #fb923c; --color-accent-dark: #ea580c; }
 html.theme-amber  { --color-accent: #fbbf24; --color-accent-dark: #d97706; }
 html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
 html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
+
+/* Accessible theme overrides accent tokens with high-visibility yellow */
+html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
 
 /* =============================================================================
    Base overrides
@@ -1327,6 +1333,11 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
     @apply text-gray-900;
   }
 
+  /* Prevent the topbar span rule bleeding into icon spans inside toggle buttons */
+  html:not(.dark) .topbar .dark-toggle span {
+    color: inherit;
+  }
+
   html:not(.dark) .dark-toggle {
     @apply text-gray-500 hover:text-gray-900 hover:bg-gray-100;
   }
@@ -1907,4 +1918,388 @@ html:not(.dark) .post-content pre.mermaid {
   html:not(.dark) #toc-container a { color: #111827; }
   html:not(.dark) #toc-container a.toc-active { color: #000; font-weight: 700; }
   html:not(.dark) .post-meta { color: #374151; }
+}
+
+/* =============================================================================
+   Accessible theme toggle button — active-state indicator
+   ============================================================================= */
+
+/* All themes: accent-coloured background when pressed */
+[id^="accessible-toggle"][aria-pressed="true"] {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* Accessible theme: yellow bg + black icon (visible against yellow) */
+html.accessible [id^="accessible-toggle"][aria-pressed="true"] {
+  background-color: #fde047;
+  color: #000 !important;
+}
+
+html.accessible [id^="accessible-toggle"][aria-pressed="true"] svg {
+  color: #000 !important;
+}
+
+/* =============================================================================
+   Accessible high-contrast theme — html.accessible
+   Yellow (#fde047) on black (#000) gives ~15:1 contrast ratio (WCAG AAA).
+   Designed for low vision and colour-blind users.
+   ============================================================================= */
+
+html.accessible body {
+  background-color: #000;
+  color: #fde047;
+  font-size: 106.25%; /* ~17px base */
+  line-height: 1.7;
+}
+
+/* Page headings outside post-content (e.g. blog index, archive, category pages) */
+html.accessible h1,
+html.accessible h2,
+html.accessible h3,
+html.accessible h4,
+html.accessible h5,
+html.accessible h6 {
+  color: #fde047;
+}
+
+/* Sidebar */
+html.accessible .sidebar {
+  background-color: #0d0d00 !important;
+  border-right: 2px solid #fde047;
+  color: #fde047;
+}
+
+html.accessible .sidebar__header {
+  border-bottom-color: #fde047;
+}
+
+html.accessible .sidebar__footer {
+  border-top-color: #fde047 !important;
+}
+
+html.accessible .sidebar__section-label {
+  color: #fde047;
+  opacity: 0.7;
+}
+
+html.accessible .sidebar__nav-link {
+  color: #fde047;
+}
+
+html.accessible .sidebar__nav-link:hover,
+html.accessible .sidebar__nav-link[aria-current="page"] {
+  background-color: #fde047;
+  color: #000;
+}
+
+html.accessible .sidebar__nav-link:hover svg,
+html.accessible .sidebar__nav-link[aria-current="page"] svg {
+  color: #000 !important;
+}
+
+html.accessible .sidebar__social-link {
+  color: #fde047 !important;
+}
+
+html.accessible .sidebar__social-link:hover {
+  background-color: #fde047;
+  color: #000 !important;
+}
+
+html.accessible .sidebar__social-link:hover svg {
+  color: #000 !important;
+}
+
+/* Suppress brand colour overrides on social links */
+html.accessible [data-social] {
+  color: #fde047 !important;
+}
+
+/* Override [data-social] !important during hover */
+html.accessible [data-social]:hover {
+  color: #000 !important;
+}
+
+/* Avatar */
+html.accessible .sidebar__avatar img {
+  box-shadow: 0 0 0 3px #fde047, 0 0 0 5px #000;
+}
+
+/* View toggle buttons (grid/list) — active state: black bg + yellow border + yellow icon */
+html.accessible .view-btn--active {
+  background-color: #000 !important;
+  color: #fde047 !important;
+  border: 2px solid #fde047;
+}
+
+html.accessible .view-btn--active svg {
+  color: #fde047 !important;
+}
+
+/* Accent swatches — irrelevant in accessible mode */
+html.accessible .sidebar__footer {
+  display: none;
+}
+
+/* Top bar */
+html.accessible .topbar {
+  background-color: #000 !important;
+  border-bottom: 2px solid #fde047;
+  color: #fde047;
+}
+
+/* Override html:not(.dark) .topbar span/a { text-gray-900 } which also matches accessible mode.
+   !important needed because that rule uses an explicit declaration that beats inheritance. */
+html.accessible .topbar a,
+html.accessible .topbar span,
+html.accessible .topbar svg {
+  color: #fde047 !important;
+}
+
+html.accessible .dark-toggle,
+html.accessible .dark-toggle span,
+html.accessible .dark-toggle svg {
+  color: #fde047 !important;
+}
+
+html.accessible .dark-toggle:hover {
+  background-color: #fde047;
+  color: #000 !important;
+}
+
+html.accessible .dark-toggle:hover span,
+html.accessible .dark-toggle:hover svg {
+  color: #000 !important;
+}
+
+/* Focus ring — very prominent */
+html.accessible :focus-visible {
+  outline: 4px solid #fde047 !important;
+  outline-offset: 3px !important;
+}
+
+/* All links underlined and yellow */
+html.accessible a {
+  color: #fde047;
+  text-decoration: underline;
+}
+
+html.accessible a:hover {
+  color: #000;
+  background-color: #fde047;
+  text-decoration: underline;
+}
+
+/* Post content */
+html.accessible .post-content {
+  color: #fde047;
+  prose-invert: unset;
+}
+
+html.accessible .post-content h1,
+html.accessible .post-content h2,
+html.accessible .post-content h3,
+html.accessible .post-content h4,
+html.accessible .post-content h5,
+html.accessible .post-content h6 {
+  color: #fff; /* white headings for visual hierarchy against yellow body */
+}
+
+html.accessible .post-content a {
+  color: #fde047;
+  text-decoration: underline;
+}
+
+html.accessible .post-content a:hover {
+  color: #000;
+  background-color: #fde047;
+}
+
+html.accessible .post-content strong {
+  color: #fff;
+}
+
+html.accessible .post-content blockquote {
+  border-left-color: #fde047;
+  color: #fde047;
+  background-color: #1a1400;
+}
+
+/* Code */
+html.accessible .post-content code,
+html.accessible code {
+  background-color: #1a1400 !important;
+  color: #fde047 !important;
+  border: 1px solid #fde047;
+}
+
+html.accessible .highlight,
+html.accessible pre {
+  background-color: #1a1400 !important;
+  border: 1px solid #fde047 !important;
+  color: #fde047;
+}
+
+html.accessible .highlight * {
+  color: #fde047 !important;
+  background-color: transparent !important;
+}
+
+/* Post cards */
+html.accessible .post-card {
+  background-color: #0d0d00;
+  border: 2px solid #fde047;
+  color: #fde047;
+}
+
+html.accessible .post-card:hover {
+  border-color: #fff;
+}
+
+html.accessible .post-card__title {
+  color: #fff;
+}
+
+html.accessible .post-card__excerpt,
+html.accessible .post-meta,
+html.accessible .post-meta__item {
+  color: #fde047;
+  opacity: 1;
+}
+
+html.accessible .post-card__category {
+  color: #fde047;
+  background-color: #1a1400;
+  border: 1px solid #fde047;
+}
+
+/* Callout boxes */
+html.accessible .note,
+html.accessible .warning,
+html.accessible .tip,
+html.accessible .danger {
+  background-color: #1a1400;
+  border-color: #fde047;
+  color: #fde047;
+}
+
+html.accessible .note strong,
+html.accessible .warning strong,
+html.accessible .tip strong,
+html.accessible .danger strong {
+  color: #fff;
+}
+
+/* TOC */
+html.accessible #toc-container {
+  background-color: #0d0d00;
+  border: 2px solid #fde047;
+}
+
+html.accessible #toc-container a {
+  color: #fde047;
+}
+
+html.accessible #toc-container a.toc-active {
+  color: #fff;
+  font-weight: 700;
+}
+
+html.accessible .toc-title {
+  color: #fde047;
+  opacity: 1;
+}
+
+/* Search modal */
+html.accessible .search-modal {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+html.accessible .search-panel {
+  background-color: #0d0d00;
+  border: 2px solid #fde047;
+  color: #fde047;
+}
+
+html.accessible #search-input {
+  background-color: #000;
+  color: #fde047;
+  border-color: #fde047;
+}
+
+html.accessible #search-input::placeholder {
+  color: #fde047;
+  opacity: 0.6;
+}
+
+html.accessible .search-result-item {
+  color: #fde047;
+  border-bottom-color: #fde047;
+}
+
+html.accessible .search-result-item:hover,
+html.accessible .search-result-item.active {
+  background-color: #fde047;
+  color: #000;
+}
+
+/* Keyboard shortcuts modal */
+html.accessible .shortcuts-modal {
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+html.accessible .shortcuts-panel {
+  background-color: #0d0d00;
+  border: 2px solid #fde047;
+  color: #fde047;
+}
+
+html.accessible .kbd {
+  background-color: #1a1400;
+  color: #fde047;
+  border-color: #fde047;
+}
+
+/* Back to top */
+html.accessible .back-to-top {
+  background-color: #fde047;
+  color: #000;
+  border: 2px solid #000;
+}
+
+/* Main content area */
+html.accessible .main-content {
+  background-color: #000;
+}
+
+/* Post hero image — reduce saturation for colour-blind users */
+html.accessible .post-hero img {
+  filter: saturate(0.3) contrast(1.2);
+}
+
+/* Horizontal rules */
+html.accessible hr {
+  border-color: #fde047;
+  opacity: 0.5;
+}
+
+/* Tables */
+html.accessible .post-content table {
+  border-color: #fde047;
+  color: #fde047;
+}
+
+html.accessible .post-content th {
+  background-color: #1a1400;
+  color: #fff;
+  border-color: #fde047;
+}
+
+html.accessible .post-content td {
+  border-color: #fde047;
+}
+
+html.accessible .post-content tr:nth-child(even) td {
+  background-color: #0d0d00;
 }

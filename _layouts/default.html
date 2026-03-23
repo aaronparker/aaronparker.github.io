@@ -12,9 +12,12 @@ layout: base
     <button id="search-btn" class="dark-toggle" aria-label="Search">
       {% include icons/search.svg %}
     </button>
-    <button id="dark-toggle-mobile" class="dark-toggle" aria-label="Toggle dark mode">
+    <button id="dark-toggle-mobile" class="dark-toggle" aria-label="Switch to dark mode">
       <span class="dark:hidden">{% include icons/moon.svg %}</span>
       <span class="hidden dark:inline">{% include icons/sun.svg %}</span>
+    </button>
+    <button id="accessible-toggle-mobile" class="dark-toggle" aria-label="Enable accessible theme" aria-pressed="false">
+      {% include icons/eye.svg %}
     </button>
     <button id="sidebar-toggle" class="dark-toggle lg:hidden" aria-label="Open navigation">
       {% include icons/menu.svg %}

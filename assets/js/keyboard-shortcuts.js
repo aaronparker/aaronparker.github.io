@@ -101,7 +101,7 @@
       return;
     }
 
-    // 'd' — toggle dark mode
+    // 'd' — cycle theme (light → dark → accessible → light)
     if (e.key === 'd') {
       if (typeof toggleDark === 'function') toggleDark();
       return;

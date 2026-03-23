@@ -6,9 +6,33 @@ no_toc: false
 permalink: /changelog/
 ---
 
-This changelog covers changes to the site theme and design. It does not track changes to individual blog posts or article content.
+This changelog covers changes to the site theme and design. It does not track changes to individual blog posts or article content. **Note**: the site theme is not licensed for copying or modification.
 
 ## 2026-03-23
+
+### Accessible theme
+
+A new high-contrast accessible theme designed for low vision and colour-blind users:
+
+- **Yellow-on-black palette** — foreground `#fde047` on `#000` background; contrast ratio ~15:1 (exceeds WCAG AAA 7:1 requirement)
+- **Dedicated toggle button** — eye icon button in the topbar and sidebar, separate from the light/dark toggle; button shows a filled/pressed state when active
+- **Always-underlined links** — all links show underlines regardless of hover, removing colour as the sole link indicator
+- **Yellow borders** — all card, callout, sidebar, and code block borders switched to yellow for visibility
+- **Visible focus rings** — focus outlines use yellow and are always shown, not suppressed by `:focus-visible`
+- **Desaturated hero images** — post hero images rendered in greyscale to reduce visual noise
+- **Accent swatches hidden** — the colour accent picker is hidden in accessible mode (accent colour is fixed to yellow)
+- **Accessible state persists across reloads** — stored in `localStorage` under key `accessible`, independent of the dark/light `theme` key
+- **New icon** — `_includes/icons/eye.svg` (Lucide eye) added for the accessible toggle button
+
+### Theme toggle
+
+- Separated into two independent controls: a binary light/dark toggle (moon/sun icons) and a dedicated accessible theme button (eye icon)
+- Previously the single toggle cycled through three states; it is now a simple light ↔ dark binary, with accessible mode enabled and disabled via its own button
+- Exiting accessible mode via the dark toggle enters dark mode; exiting via the accessible button restores the previously saved light/dark preference
+
+### Topbar icon consistency
+
+- Fixed a CSS specificity issue where the `<span>` wrappers around moon/sun icons inherited a different colour than the unwrapped search icon in light mode; all three topbar icons now render at the same muted colour
 
 ### Accessibility
 
