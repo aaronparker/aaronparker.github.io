@@ -39,7 +39,7 @@ I found that I need to add _Q:\System Volume Information_ to the list of exclusi
 
 I am using the setup source for the Management Server (not the Streaming Server) and I have chosen to install only the Management Console (we don’t want to capture the Management Server or web service). I am installing into a folder on the Q: drive; however this isn’t a requirement – you can install to the default Program Files location if you like.
 
-![UnableToCreaAppVManagementConsoleInstallerteNewDocument2]("{{site.baseurl}}/media/2011/01/AppVManagementConsoleInstaller.png)
+![UnableToCreaAppVManagementConsoleInstallerteNewDocument2]({{site.baseurl}}/media/2011/01/AppVManagementConsoleInstaller.png)
 
 Setup requests a reboot when finished, but the Sequencer will handle the reboot automatically.
 

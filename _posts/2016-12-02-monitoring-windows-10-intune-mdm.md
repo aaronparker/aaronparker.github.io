@@ -111,7 +111,7 @@ To enable PCs to report data to the OMS workspace, we need to deploy the Microso
 
 From the OMS console download the agent - **Settings** / **Connected Sources** / **Windows Servers** / **Download Windows Agent**. This is an executable, so we need to extract the agent to obtain the embedded MSI to deploy to Windows 10 via MDM. Use /? on the executable to view the command line options. To extract it, use the /T option to extract to a specified folder and /C to extract files from the executable.
 
-```cmd
+```powershell
 MMASetup-AMD64.exe /T:C:\OMS /C
 ```
 

@@ -67,7 +67,7 @@ Additionally Process Explorer can be useful for tracking down a process that mig
 
 To make direct registry edits to the default user profile, the REG command line utility is used to load the default profile registry hive, change a registry value and then unload the hive, saving it back to the default profile. The following lines show a rough example of how this is done:
 
-```cmd
+```powershell
 REG LOAD HKU\DefaultUser %SystemDrive%\Users\Default\NTUSER.DAT
 REG ADD HKU\DefaultUser\Software\KeyName /v ValueName /d Data /t REG_SZ /f
 REG UNLOAD HKU\DefaultUser

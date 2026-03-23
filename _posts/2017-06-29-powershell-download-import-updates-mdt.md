@@ -53,7 +53,7 @@ Get-LatestUpdate.ps1 supports a number of parameters, all of which are optional:
 
 Get-LatestUpdate.ps1 will output an object that includes details about the update that has been gathered, including the KB article, the description of the update, the URL to the download. If the Download parameter is used this will also return the update file name and the path where the update has been saved. This object can then be passed to Import-Update.ps1 that will use the UpdatePath property to import updates stored in that folder (note that it will import all updates from that folder).
 
-```cmd
+```powershell
 KB         : KB4022716
 Note       : 2017-06 Cumulative Update for Windows 10 Version 1703 for x64-based Systems (KB4022716)
 URL        : http://download.windowsupdate.com/d/msdownload/update/software/updt/2017/06/windows10.0-kb4022716-x64_72cab17aeb72f4e36df375505ba7325c90044119.msu
