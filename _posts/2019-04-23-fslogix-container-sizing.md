@@ -9,6 +9,11 @@ image:
     1920w: /assets/img/containers/image.jpg
     960w:  /assets/img/containers/image@0,5x.jpg
     480w:  /assets/img/containers/image@0,25x.jpg
+  attribution:
+    photographer:     "Erwan Hesry"
+    photographer_url: "https://unsplash.com/@erwanhesry"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/several-cargo-containers-RJjY5Hpnifk"
 categories:
 - Microsoft
 date: 2019-04-23 20:40 +1000

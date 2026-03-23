@@ -12,6 +12,11 @@ image:
     1920w: "/assets/img/rimo3/image.jpg"
     960w: "/assets/img/rimo3/image@0,5x.jpg"
     480w: "/assets/img/rimo3/image@0,25x.jpg"
+  attribution:
+    photographer:     "Scott Webb"
+    photographer_url: "https://unsplash.com/@scottwebb"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/landscape-of-grass-field-under-blue-sky-3LsocYqXWpM"
 comments: true
 date: 2025-05-02 17:36 +1000
 related_posts:

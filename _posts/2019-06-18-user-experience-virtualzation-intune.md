@@ -12,6 +12,11 @@ image:
     1920w: /assets/img/user/image.jpg
     960w:  /assets/img/user/image@0,5x.jpg
     480w:  /assets/img/user/image@0,25x.jpg
+  attribution:
+    photographer:     "Kelly Sikkema"
+    photographer_url: "https://unsplash.com/@kellysikkema"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/person-writing-on-white-paper-v9FQR4tbIq8"
 categories: [Microsoft]
 comments: true
 related_posts:

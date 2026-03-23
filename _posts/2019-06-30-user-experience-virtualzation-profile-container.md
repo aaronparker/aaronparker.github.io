@@ -10,6 +10,11 @@ image:
     1920w: /assets/img/platform/image.jpg
     960w:  /assets/img/platform/image@0,5x.jpg
     480w:  /assets/img/platform/image@0,25x.jpg
+  attribution:
+    photographer:     "Charles Forerunner"
+    photographer_url: "https://unsplash.com/@charles_forerunner"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/photo-of-train-station-gapYVvUg1M8"
 categories: [Microsoft]
 comments: true
 related_posts:

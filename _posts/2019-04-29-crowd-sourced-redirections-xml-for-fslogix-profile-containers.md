@@ -10,6 +10,11 @@ image:
     1920w: /assets/img/crowd/image.jpg
     960w:  /assets/img/crowd/image@0,5x.jpg
     480w:  /assets/img/crowd/image@0,25x.jpg
+  attribution:
+    photographer:     "Davide Ragusa"
+    photographer_url: "https://unsplash.com/@davideragusa"
+    source:           "Unsplash"
+    source_url:       "https://unsplash.com/photos/grayscale-photo-of-people-sitting-on-chair-gcDwzUGuUoI"
 categories:
 - Microsoft
 comments: true
