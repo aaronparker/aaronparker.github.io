@@ -4,7 +4,8 @@ date: 2018-08-13T14:55:54+10:00
 author: Aaron Parker
 layout: post
 permalink: /citrix-workspace-app-microsoft-intune/
-image: /media/2018/08/rawpixel-550994-unsplash.jpg
+image:
+  path:    /media/2018/08/rawpixel-550994-unsplash.jpg
 categories:
   - Citrix
 tags:

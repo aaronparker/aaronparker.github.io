@@ -4,7 +4,8 @@ date: 2018-01-09T12:57:10+10:00
 author: Aaron Parker
 layout: post
 permalink: /latest-receiver-version-powershell/
-image: /media/2018/01/marc-liu-255460.jpg
+image:
+  path:    /media/2018/01/marc-liu-255460.jpg
 categories:
   - Citrix
 tags:

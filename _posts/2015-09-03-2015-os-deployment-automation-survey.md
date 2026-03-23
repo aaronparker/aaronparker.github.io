@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "4093203421"
-image: /media/2015/09/WeNeedYouToTakeTheSurvey.png
+image:
+  path:    /media/2015/09/WeNeedYouToTakeTheSurvey.png
 categories:
   - Community
 tags:

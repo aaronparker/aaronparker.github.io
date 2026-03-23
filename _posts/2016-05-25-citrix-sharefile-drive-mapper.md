@@ -26,7 +26,8 @@ enclosure:
     {{site.baseurl}}/media/2016/05/ShareFileDriveRightClick.webm
     0
     video/webm
-image: /media/2016/05/2749278085_ab1b43f2d9_o.jpg
+image:
+  path:    /media/2016/05/2749278085_ab1b43f2d9_o.jpg
 categories:
   - Citrix
 tags:

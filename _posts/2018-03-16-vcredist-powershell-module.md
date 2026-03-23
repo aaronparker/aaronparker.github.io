@@ -8,7 +8,8 @@ layout: post
 permalink: /vcredist-powershell-module/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2018/03/alexey-ruban-103990-unsplash.jpg
+image:
+  path:    /media/2018/03/alexey-ruban-103990-unsplash.jpg
 categories:
   - Microsoft
 tags:

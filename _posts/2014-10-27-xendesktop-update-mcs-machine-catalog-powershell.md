@@ -4,7 +4,8 @@ date: 2014-10-27T23:34:50+10:00
 author: Aaron Parker
 layout: post
 permalink: /xendesktop-update-mcs-machine-catalog-powershell/
-image: /media/2014/10/powershell_ise.png
+image:
+  path:    /media/2014/10/powershell_ise.png
 categories:
   - Automation
 tags:

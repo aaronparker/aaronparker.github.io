@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "4227139958"
-image: /media/2015/10/8755184025_26238d1d37_k.jpg
+image:
+  path:    /media/2015/10/8755184025_26238d1d37_k.jpg
 categories:
   - Community
 tags:

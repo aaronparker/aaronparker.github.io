@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "5988469328"
-image: /media/2017/07/Office-2016-Preview.png
+image:
+  path:    /media/2017/07/Office-2016-Preview.png
 categories:
   - Microsoft
 tags:

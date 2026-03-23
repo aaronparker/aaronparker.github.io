@@ -4,7 +4,8 @@ date: 2015-05-15T01:52:35+10:00
 author: Aaron Parker
 layout: post
 permalink: /replicate-2015-folder-redirection-test/
-image: /media/2015/05/test_boxes.jpg
+image:
+  path:    /media/2015/05/test_boxes.jpg
 categories:
   - Microsoft
 tags:

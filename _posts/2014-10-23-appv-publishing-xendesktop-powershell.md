@@ -4,7 +4,8 @@ date: 2014-10-23T22:49:04+10:00
 author: Aaron Parker
 layout: post
 permalink: /appv-publishing-xendesktop-powershell/
-image: /media/2014/10/AppV-XenDesktop.png
+image:
+  path:    /media/2014/10/AppV-XenDesktop.png
 categories:
   - Automation
 tags:

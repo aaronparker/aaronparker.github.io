@@ -4,7 +4,8 @@ date: 2014-11-06T17:20:20+10:00
 author: Aaron Parker
 layout: post
 permalink: /visualizing-impact-folder-redirection-logon/
-image: /media/2014/11/demos.png
+image:
+  path:    /media/2014/11/demos.png
 categories:
   - Microsoft
 tags:

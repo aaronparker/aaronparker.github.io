@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "5000131405"
-image: /media/2016/07/BusinessStoreWIndows10Enterprise1607.png
+image:
+  path:    /media/2016/07/BusinessStoreWIndows10Enterprise1607.png
 categories:
   - Microsoft
 tags:

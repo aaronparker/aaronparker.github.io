@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "4196414069"
-image: /media/2015/10/keyboard.jpg
+image:
+  path:    /media/2015/10/keyboard.jpg
 categories:
   - Community
 tags:

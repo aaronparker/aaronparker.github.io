@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "3746232935"
-image: /media/2015/05/SYN502-Folder-Redirection-Citrix-Synergy-2015.png
+image:
+  path:    /media/2015/05/SYN502-Folder-Redirection-Citrix-Synergy-2015.png
 categories:
   - Community
 tags:

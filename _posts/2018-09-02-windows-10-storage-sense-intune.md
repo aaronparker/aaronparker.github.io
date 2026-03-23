@@ -8,7 +8,8 @@ layout: post
 permalink: /windows-10-storage-sense-intune/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2018/09/florian-perennes-583674-unsplash.jpg
+image:
+  path:    /media/2018/09/florian-perennes-583674-unsplash.jpg
 categories:
   - Microsoft
 tags:

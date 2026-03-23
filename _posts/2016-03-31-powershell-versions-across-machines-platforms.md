@@ -4,7 +4,8 @@ date: 2016-03-31T22:17:46+10:00
 author: Aaron Parker
 layout: post
 permalink: /powershell-versions-across-machines-platforms/
-image: /media/2016/03/GitHub-Code-Listing.png
+image:
+  path:    /media/2016/03/GitHub-Code-Listing.png
 categories:
   - Automation
 tags:

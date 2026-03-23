@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "5295209984"
-image: /media/2016/11/MelbourneCUCG-white.png
+image:
+  path:    /media/2016/11/MelbourneCUCG-white.png
 categories:
   - Community
 tags:

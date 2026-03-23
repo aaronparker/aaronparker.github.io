@@ -6,7 +6,8 @@ author: Aaron Parker
 layout: post
 
 permalink: /synergy-2015-replay/
-image: /media/2015/05/SYN502-Folder-Redirection-Citrix-Synergy-2015.png
+image:
+  path:    /media/2015/05/SYN502-Folder-Redirection-Citrix-Synergy-2015.png
 categories:
   - Community
 tags:

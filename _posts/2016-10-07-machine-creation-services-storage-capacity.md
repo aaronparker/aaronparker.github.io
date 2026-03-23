@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "5203419491"
-image: /media/2016/08/storage.jpg
+image:
+  path:    /media/2016/08/storage.jpg
 categories:
   - Citrix
 tags:

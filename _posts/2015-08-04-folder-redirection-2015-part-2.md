@@ -4,7 +4,8 @@ date: 2015-08-04T19:30:41+10:00
 author: Aaron Parker
 layout: post
 permalink: /folder-redirection-2015-part-2/
-image: /media/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png
+image:
+  path:    /media/2015/07/IveGot99ProblemsAndFolderRedirectionIsEveryOneOfThem.png
 categories:
   - Microsoft
 tags:

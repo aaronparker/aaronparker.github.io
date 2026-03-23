@@ -4,7 +4,8 @@ date: 2015-11-29T18:28:13+10:00
 author: Aaron Parker
 layout: post
 permalink: /automation-survey-results-update-images/
-image: /media/2015/11/16638657367_33486a6676_k.jpg
+image:
+  path:    /media/2015/11/16638657367_33486a6676_k.jpg
 categories:
   - Community
 tags:

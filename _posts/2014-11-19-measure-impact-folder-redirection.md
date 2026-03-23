@@ -4,7 +4,8 @@ date: 2014-11-19T09:29:42+10:00
 author: Aaron Parker
 layout: post
 permalink: /measure-impact-folder-redirection/
-image: /media/2014/11/measure.png
+image:
+  path:    /media/2014/11/measure.png
 categories:
   - Microsoft
 tags:

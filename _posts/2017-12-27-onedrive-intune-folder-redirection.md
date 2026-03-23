@@ -4,7 +4,8 @@ date: 2017-12-27T22:07:40+10:00
 author: Aaron Parker
 layout: post
 permalink: /onedrive-intune-folder-redirection/
-image: /media/2017/12/andrew-pons-6488.jpg
+image:
+  path:    /media/2017/12/andrew-pons-6488.jpg
 categories:
   - Microsoft
 tags:

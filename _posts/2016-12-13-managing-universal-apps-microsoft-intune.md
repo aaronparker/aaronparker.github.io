@@ -4,7 +4,8 @@ date: 2016-12-13T09:00:48+10:00
 author: Aaron Parker
 layout: post
 permalink: /managing-universal-apps-microsoft-intune/
-image: /media/2016/12/10017151914_3be1e6364c_k.jpg
+image:
+  path:    /media/2016/12/10017151914_3be1e6364c_k.jpg
 categories:
   - Microsoft
 tags:

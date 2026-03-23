@@ -4,7 +4,8 @@ date: 2016-12-24T13:38:49+10:00
 author: Aaron Parker
 layout: post
 permalink: /tips-enabling-sso-salesforce-azure-ad/
-image: /media/2016/12/slide_407618_5105758_free.jpg
+image:
+  path:    /media/2016/12/slide_407618_5105758_free.jpg
 categories:
   - Microsoft
 tags:

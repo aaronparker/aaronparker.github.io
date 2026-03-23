@@ -4,7 +4,8 @@ date: 2017-06-09T23:24:44+10:00
 author: Aaron Parker
 layout: post
 permalink: /enabling-modern-authentication-office/
-image: /media/2017/06/14553462732_548befbd46_k.jpg
+image:
+  path:    /media/2017/06/14553462732_548befbd46_k.jpg
 categories:
   - Microsoft
 tags:

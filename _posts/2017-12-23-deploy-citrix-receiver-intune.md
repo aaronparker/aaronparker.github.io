@@ -4,7 +4,8 @@ date: 2017-12-23T12:47:22+10:00
 author: Aaron Parker
 layout: post
 permalink: /deploy-citrix-receiver-intune/
-image: /media/2017/12/christian-fregnan-408973.jpg
+image:
+  path:    /media/2017/12/christian-fregnan-408973.jpg
 categories:
   - Microsoft
 tags:

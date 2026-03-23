@@ -4,7 +4,8 @@ date: 2016-02-03T17:09:15+10:00
 author: Aaron Parker
 layout: post
 permalink: /apple-tv-4-media-center/
-image: /media/2016/01/Apple-TV-4-Home-Screen.png
+image:
+  path:    /media/2016/01/Apple-TV-4-Home-Screen.png
 categories:
   - Hardware
 tags:

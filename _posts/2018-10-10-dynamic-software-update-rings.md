@@ -5,7 +5,8 @@ date: 2018-10-10T13:27:43+10:00
 author: Aaron Parker
 layout: post
 permalink: /dynamic-software-update-rings/
-image: /media/2018/10/mathew-schwartz-397471-unsplash.jpg
+image:
+  path:    /media/2018/10/mathew-schwartz-397471-unsplash.jpg
 categories:
   - Microsoft
 tags:

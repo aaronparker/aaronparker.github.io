@@ -4,7 +4,8 @@ date: 2017-07-16T11:28:39+10:00
 author: Aaron Parker
 layout: post
 permalink: /protect-cloud-jump-box-duo-free/
-image: /media/2017/07/6512196829_862d3de0d2_b.jpg
+image:
+  path:    /media/2017/07/6512196829_862d3de0d2_b.jpg
 categories:
   - Microsoft
 tags:

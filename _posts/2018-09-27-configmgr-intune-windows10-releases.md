@@ -8,7 +8,8 @@ layout: post
 permalink: /configmgr-intune-windows10-releases/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2018/09/alex-litvin-790876-unsplash.jpg
+image:
+  path:    /media/2018/09/alex-litvin-790876-unsplash.jpg
 categories:
   - Microsoft
 tags:

@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "5775624876"
-image: /media/2017/05/2005-2017.png
+image:
+  path:    /media/2017/05/2005-2017.png
 categories:
   - Automation
 tags:

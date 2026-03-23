@@ -8,7 +8,8 @@ layout: post
 permalink: /thunderbolt-experience-macos-windows/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2018/08/linda-xu-366558-unsplash.jpg
+image:
+  path:    /media/2018/08/linda-xu-366558-unsplash.jpg
 categories:
   - General
 tags:

@@ -5,7 +5,8 @@ date: 2016-08-22T00:49:16+10:00
 author: Aaron Parker
 layout: post
 permalink: /deploy-enterprise-subordinate-certificate-authority/
-image: /media/2016/08/parchment-11299780361Z1G.jpg
+image:
+  path:    /media/2016/08/parchment-11299780361Z1G.jpg
 categories:
   - Microsoft
 tags:

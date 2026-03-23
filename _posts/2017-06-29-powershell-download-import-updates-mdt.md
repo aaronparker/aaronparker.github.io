@@ -4,7 +4,8 @@ date: 2017-06-29T19:03:33+10:00
 author: Aaron Parker
 layout: post
 permalink: /powershell-download-import-updates-mdt/
-image: /media/2017/06/MDT-Deployment.png
+image:
+  path:    /media/2017/06/MDT-Deployment.png
 categories:
   - Microsoft
 tags:

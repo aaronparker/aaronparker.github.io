@@ -4,7 +4,8 @@ date: 2016-10-24T11:57:54+10:00
 author: Aaron Parker
 layout: post
 permalink: /mcs-capacity-sizing-hyper-v/
-image: /media/2016/10/363468958_68baf091f1_o.jpg
+image:
+  path:    /media/2016/10/363468958_68baf091f1_o.jpg
 categories:
   - Citrix
 tags:

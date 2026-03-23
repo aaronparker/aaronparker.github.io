@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "4105514958"
-image: /media/2015/09/MySurface3.jpg
+image:
+  path:    /media/2015/09/MySurface3.jpg
 categories:
   - Hardware
 tags:

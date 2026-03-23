@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "3650883360"
-image: /media/2015/04/folder-binder.jpg
+image:
+  path:    /media/2015/04/folder-binder.jpg
 categories:
   - Microsoft
 tags:

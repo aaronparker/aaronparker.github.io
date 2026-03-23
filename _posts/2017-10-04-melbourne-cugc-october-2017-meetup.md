@@ -6,7 +6,8 @@ author: Aaron Parker
 layout: post
 
 permalink: /melbourne-cugc-october-2017-meetup/
-image: /media/2016/11/MelbourneCUCG-white.png
+image:
+  path:    /media/2016/11/MelbourneCUCG-white.png
 categories:
   - Community
 tags:

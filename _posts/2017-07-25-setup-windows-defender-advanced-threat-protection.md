@@ -4,7 +4,8 @@ date: 2017-07-25T18:21:27+10:00
 author: Aaron Parker
 layout: post
 permalink: /setup-windows-defender-advanced-threat-protection/
-image: /media/2017/07/2349074645_46778ebfef_b.jpg
+image:
+  path:    /media/2017/07/2349074645_46778ebfef_b.jpg
 categories:
   - Microsoft
 tags:

@@ -8,7 +8,8 @@ layout: post
 permalink: /deploy-adobe-reader-dc-intune-part2/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2018/07/russ-mccabe-5461-unsplash.jpg
+image:
+  path:    /media/2018/07/russ-mccabe-5461-unsplash.jpg
 categories:
   - Applications
 tags:

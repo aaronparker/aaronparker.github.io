@@ -4,7 +4,8 @@ date: 2016-12-12T08:00:31+10:00
 author: Aaron Parker
 layout: post
 permalink: /setting-up-windows-store-for-business/
-image: /media/2016/12/14992123054_8295b89b82_k.jpg
+image:
+  path:    /media/2016/12/14992123054_8295b89b82_k.jpg
 categories:
   - Microsoft
 tags:

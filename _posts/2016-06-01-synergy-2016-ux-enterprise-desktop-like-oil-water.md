@@ -4,7 +4,8 @@ date: 2016-06-01T12:13:00+10:00
 author: Aaron Parker
 layout: post
 permalink: /synergy-2016-ux-enterprise-desktop-like-oil-water/
-image: /media/2016/06/SYN239-UX-and-the-Enterprise-Desktop-Like-Oil-and-Water-v1.0.png
+image:
+  path:    /media/2016/06/SYN239-UX-and-the-Enterprise-Desktop-Like-Oil-and-Water-v1.0.png
 categories:
   - Community
 tags:

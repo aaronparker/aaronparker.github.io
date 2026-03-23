@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "6113877109"
-image: /media/2017/09/CompanyPortalMacOS.png
+image:
+  path:    /media/2017/09/CompanyPortalMacOS.png
 categories:
   - Microsoft
 tags:

@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "4740755105"
-image: /media/2016/04/PowerShell-Windows10-Version.png
+image:
+  path:    /media/2016/04/PowerShell-Windows10-Version.png
 categories:
   - Microsoft
 tags:

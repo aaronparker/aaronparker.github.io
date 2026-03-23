@@ -10,7 +10,8 @@ dsq_thread_id:
   - "3462530604"
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2015/01/Outlook.png
+image:
+  path:    /media/2015/01/Outlook.png
 categories:
   - Applications
 tags:

@@ -4,7 +4,8 @@ date: 2016-04-10T14:04:12+10:00
 author: Aaron Parker
 layout: post
 permalink: /intel-nuc6i5syb-home-lab/
-image: /media/2016/04/Intel-NUC6i5SYB.jpg
+image:
+  path:    /media/2016/04/Intel-NUC6i5SYB.jpg
 categories:
   - Hardware
 tags:

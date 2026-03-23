@@ -4,7 +4,8 @@ date: 2016-08-08T00:12:32+10:00
 author: Aaron Parker
 layout: post
 permalink: /windows-10-management-intune/
-image: /media/2016/08/choose-your-own-adventure.jpg
+image:
+  path:    /media/2016/08/choose-your-own-adventure.jpg
 categories:
   - Microsoft
 tags:

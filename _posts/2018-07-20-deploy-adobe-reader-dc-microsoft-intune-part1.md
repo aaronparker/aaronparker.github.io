@@ -8,7 +8,8 @@ layout: post
 permalink: /deploy-adobe-reader-dc-microsoft-intune-part1/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2018/07/larry-costales-523576-unsplash.jpg
+image:
+  path:    /media/2018/07/larry-costales-523576-unsplash.jpg
 categories:
   - Applications
 tags:

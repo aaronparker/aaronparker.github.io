@@ -4,7 +4,8 @@ date: 2017-03-15T09:00:59+10:00
 author: Aaron Parker
 layout: post
 permalink: /netscaler-azure-ad-conditional-access/
-image: /media/2017/03/15950623571_4d4acacfb8_k.jpg
+image:
+  path:    /media/2017/03/15950623571_4d4acacfb8_k.jpg
 categories:
   - Citrix
 tags:

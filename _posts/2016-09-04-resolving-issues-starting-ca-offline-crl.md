@@ -7,7 +7,8 @@ layout: post
 permalink: /resolving-issues-starting-ca-offline-crl/
 dsq_thread_id:
   - "5118425385"
-image: /media/2016/09/13740073235_b8a4ec0ffc_k.jpg
+image:
+  path:    /media/2016/09/13740073235_b8a4ec0ffc_k.jpg
 categories:
   - Microsoft
 related_posts:

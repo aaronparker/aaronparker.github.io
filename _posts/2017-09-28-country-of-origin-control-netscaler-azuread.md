@@ -4,7 +4,8 @@ date: 2017-09-28T16:29:39+10:00
 author: Aaron Parker
 layout: post
 permalink: /country-of-origin-control-netscaler-azuread/
-image: /media/2017/09/8439088143_259e3f274f_k.jpg
+image:
+  path:    /media/2017/09/8439088143_259e3f274f_k.jpg
 categories:
   - Citrix
 tags:

@@ -4,7 +4,8 @@ date: 2017-05-08T23:25:28+10:00
 author: Aaron Parker
 layout: post
 permalink: /visual-c-redistributable-installer-configmgr/
-image: /media/2017/05/VCredist_ConfigMgr.png
+image:
+  path:    /media/2017/05/VCredist_ConfigMgr.png
 categories:
   - Microsoft
 tags:

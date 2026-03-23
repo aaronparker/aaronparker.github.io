@@ -4,7 +4,8 @@ date: 2017-12-02T23:37:34+10:00
 author: Aaron Parker
 layout: post
 permalink: /ivanti-application-control-message-boxes/
-image: /media/2017/11/tim-mossholder-322350.jpg
+image:
+  path:    /media/2017/11/tim-mossholder-322350.jpg
 categories:
   - General
 tags:

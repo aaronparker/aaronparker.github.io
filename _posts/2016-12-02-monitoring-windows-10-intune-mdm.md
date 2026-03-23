@@ -4,7 +4,8 @@ date: 2016-12-02T09:46:06+10:00
 author: Aaron Parker
 layout: post
 permalink: /monitoring-windows-10-intune-mdm/
-image: /media/2016/12/10635423343_2ea0d045dc_h.jpg
+image:
+  path:    /media/2016/12/10635423343_2ea0d045dc_h.jpg
 categories:
   - Microsoft
 tags:

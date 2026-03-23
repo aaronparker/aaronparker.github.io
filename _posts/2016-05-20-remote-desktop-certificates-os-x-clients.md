@@ -10,7 +10,8 @@ layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
 dsq_thread_id:
   - "4840662853"
-image: /media/2016/05/RemoteDesktop.png
+image:
+  path:    /media/2016/05/RemoteDesktop.png
 categories:
   - Microsoft
 tags:

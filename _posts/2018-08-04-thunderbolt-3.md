@@ -8,7 +8,8 @@ layout: post
 permalink: /thunderbolt-3/
 layers:
   - 'a:1:{s:9:"video-url";s:0:"";}'
-image: /media/2018/08/angela-compagnone-371298-unsplash.jpg
+image:
+  path:    /media/2018/08/angela-compagnone-371298-unsplash.jpg
 categories:
   - General
 tags:
