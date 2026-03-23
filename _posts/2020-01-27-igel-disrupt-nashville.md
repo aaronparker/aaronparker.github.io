@@ -3,6 +3,7 @@ layout: post
 title: IGEL Disrupt Nashville
 date: 2020-01-28 12:00 +1000
 permalink: "/igel-disrupt-nashville/"
+categories: [Community]
 image:
     path: /media/2020/01/disrupt.jpeg
 ---
