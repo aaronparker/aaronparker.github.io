@@ -18,7 +18,7 @@ tags:
 ---
 As you should hopefully know by now [App-V is not a compatibility solution]({{site.baseurl}}/virtualisation/app-v-faq-7-is-app-v-an-application-compatibility-solution), which means that you can’t use App-V to run applications that aren’t compatible with a specific version of Windows, you’ll need to [use other means to do that]({{site.baseurl}}/deployment/app-v-faq-8-can-i-use-application-compatibility-shims-with-app-v).
 
-The next question then is do you need to sequence an application on each of your target operating systems? This will, of course, be dependant on the application. If it’s a well behaved application that is compatible with each target OS, uses [correct calls to find special folder paths](http://go.microsoft.com/fwlink/?LinkId=71501), stores application settings in the registry and dependencies can be suitably managed (e.g. DLLs and runtimes), then there is a good chance that you can sequence once and deploy everywhere.
+The next question then is do you need to sequence an application on each of your target operating systems? This will, of course, be dependent on the application. If it’s a well behaved application that is compatible with each target OS, uses [correct calls to find special folder paths](http://go.microsoft.com/fwlink/?LinkId=71501), stores application settings in the registry and dependencies can be suitably managed (e.g. DLLs and runtimes), then there is a good chance that you can sequence once and deploy everywhere.
 
 The basic process you should follow then, is sequence on the lowest common denominator, test on the target operating systems and re-sequence the application if you have issues on specific versions of Windows.
 

@@ -57,7 +57,7 @@ DNS publishing enabled
 KMS priority: Normal
 ```
 
-Now your KMS server should be running you can deploy Windows Vista using the same KMS key. Windows Vista will query DNS to find your KMS server and activate against it. Give DNS time to replicate and you can then see if your KMS server is registred correctly with NSLOOKUP:
+Now your KMS server should be running you can deploy Windows Vista using the same KMS key. Windows Vista will query DNS to find your KMS server and activate against it. Give DNS time to replicate and you can then see if your KMS server is registered correctly with NSLOOKUP:
 
 ```powershell
 C:\> nslookup -type=srv _vlmcs._tcp
@@ -71,7 +71,7 @@ svr hostname = kmshost.company.local
 kmshost.company.local internet address = 192.168.1.23
 ```
 
-As alternative to quering DNS to find the KMS host, you can hard code a client to use a particular KMS host:
+As alternative to querying DNS to find the KMS host, you can hard code a client to use a particular KMS host:
 
 ```powershell
 C:\Windows\System32\cscript slmgr.vbs -skms <KMS_FQDN>[:port]

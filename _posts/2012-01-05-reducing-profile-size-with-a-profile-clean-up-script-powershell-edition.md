@@ -43,7 +43,7 @@ function remove-itembyage {
         this function removes items older than a specified age from the target folder
 
         .PARAMETER Days
-        Specifies the ammount of days since the file was last written to you wish to filter on.
+        Specifies the amount of days since the file was last written to you wish to filter on.
 
         .PARAMETER Path
         Specifies the path to the folder you wish to search recursively.

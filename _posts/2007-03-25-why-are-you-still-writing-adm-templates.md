@@ -14,7 +14,7 @@ tags:
   - Group Policy
   - PolicyMaker
 ---
-Microsoft have pulled the PolicyMaker Regsitry Extension download. This product is part of what is now known as [Group Policy Preferences](http://technet.microsoft.com/en-us/library/cc731892%28WS.10%29.aspx), a new [feature of Windows Server 2008](http://www.microsoft.com/downloads/details.aspx?FamilyID=42e30e3f-6f01-4610-9d6e-f6e0fb7a0790&displaylang=en) and 2008 R2.
+Microsoft have pulled the PolicyMaker Registry Extension download. This product is part of what is now known as [Group Policy Preferences](http://technet.microsoft.com/en-us/library/cc731892%28WS.10%29.aspx), a new [feature of Windows Server 2008](http://www.microsoft.com/downloads/details.aspx?FamilyID=42e30e3f-6f01-4610-9d6e-f6e0fb7a0790&displaylang=en) and 2008 R2.
 
 If you are still writing custom ADM templates for your application deployments and haven't heard of DesktopStandard [PolicyMaker Registry Extension](http://www.desktopstandard.com/PolicyMakerRegistryExtension.aspx), then it's definitely something you should be looking at. It reduces the need to create time consuming ADM templates and offers much more over non-managed policies.
 

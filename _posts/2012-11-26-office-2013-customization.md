@@ -44,7 +44,7 @@ Choose the default file types:
 
 ![FileTypes]({{site.baseurl}}/media/2012/11/FileTypes.png)
 
-Set licensing options and the display level of the setup UI. These options will vary dependant on whether you're using KMS or MAK licensing and how you’re deploying Office:
+Set licensing options and the display level of the setup UI. These options will vary dependent on whether you're using KMS or MAK licensing and how you’re deploying Office:
 
 ![Licensing]({{site.baseurl}}/media/2012/11/Licensing.png)
 
@@ -60,7 +60,7 @@ If you save the customization file to the Updates folder, use a descriptive name
 
 The following table lists a number of user settings across each of the Office 2013 applications that I recommend you take a look at. This is just a small subset of the total number of settings, but includes some of the most important ones.
 
-The status of each setting will vary dependant on the environment. Use at your own risk.
+The status of each setting will vary dependent on the environment. Use at your own risk.
 
 |Product|Path                                                                                                |Setting                                                              |Recommended Values                       |
 |-------|----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|-----------------------------------------|

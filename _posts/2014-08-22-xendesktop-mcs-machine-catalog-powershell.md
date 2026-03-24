@@ -194,7 +194,7 @@ If (Test-ProvSchemeNameAvailable -AdminAddress $adminAddress -ProvisioningScheme
       Write-Verbose "Associating controllers $xdControllers to the provisioning scheme."
       Add-ProvSchemeControllerAddress -AdminAddress $adminAddress -ControllerAddress @($xdControllers) -ProvisioningSchemeName $provScheme.ProvisioningSchemeName
 
-      # Provisiong the actual machines and map them to AD accounts, track the progress while this is happening
+      # Provisioning the actual machines and map them to AD accounts, track the progress while this is happening
       Write-Verbose "Creating the machine accounts in AD."
       $adAccounts = New-AcctADAccount -AdminAddress $adminAddress -Count 5 -IdentityPoolUid $identPool.IdentityPoolUid
       Write-Verbose "Creating the virtual machines."

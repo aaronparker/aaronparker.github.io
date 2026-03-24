@@ -101,7 +101,7 @@ The last line here installs Presentation Server using the Windows Installer file
 
 ## Installing the Access Management Console
 
-The Presentation Server Console will be installed along with Presentation Server, however the Access Management Console (AMC) must be installed seperately. The AMC comes as a number of Windows Installer files - the console itself plus plugins. The last line here is commended out; if you aren't installing Web Interface on your Terminal Server, keep this one out.
+The Presentation Server Console will be installed along with Presentation Server, however the Access Management Console (AMC) must be installed separately. The AMC comes as a number of Windows Installer files - the console itself plus plugins. The last line here is commended out; if you aren't installing Web Interface on your Terminal Server, keep this one out.
 
 ```cmd
 START /WAIT MSIEXEC /I "AdministrationAccess Management ConsoleSetupASC_Framework.msi" ALLUSERS=TRUE REBOOT=SUPPRESS /QB-  

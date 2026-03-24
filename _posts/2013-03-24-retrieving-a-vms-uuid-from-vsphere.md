@@ -70,7 +70,7 @@ Function Get-vSphereVMUUID {
     #>
     [CmdletBinding(SupportsShouldProcess = $True)]  
     Param(  
-        [Parameter(Mandatory = $True, ValueFromPipeline = $True, HelpMessage = "Specify the VM to retrive the UUID from.")]  
+        [Parameter(Mandatory = $True, ValueFromPipeline = $True, HelpMessage = "Specify the VM to retrieve the UUID from.")]  
         [System.Object]$VM  
     )
 
@@ -78,7 +78,7 @@ Function Get-vSphereVMUUID {
     }
 
     PROCESS {  
-        # Retrive UUID from vSphere  
+        # Retrieve UUID from vSphere  
         $UUID = $VM | ForEach-Object { (Get-View $_.Id).config.UUID }
 
         #Transpose UUID into expected format  

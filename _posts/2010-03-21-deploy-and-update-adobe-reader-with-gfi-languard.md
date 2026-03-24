@@ -20,7 +20,7 @@ I have used LANguard in the past for vulnerability testing and network discovery
 
 [LANguard 9](http://www.gfi.com/lannetscan) includes application deployment functions that make deploying software to remote machines quite simple.  I'm going to detail deploying Adobe Reader 9, using the deployment notes outlined in my [Deploying Adobe Reader 9]({{site.baseurl}}/deployment/deploying-adobe-reader-9-for-windows) post, then deploy the Reader 9.1.1 update, using that functionality.
 
-I'm going to skip over most of the details of installing LANguard - it's a simple process, you'll just need to choose the type of datebase you
+I'm going to skip over most of the details of installing LANguard - it's a simple process, you'll just need to choose the type of database you
 
 In my test environment I have configured three machines:
 
@@ -55,7 +55,7 @@ The script will install Adobe Reader directly from the network, so the only file
 Deploying software is a three step process:
 
   1. add the file to deploy to the remote machines (in this case the batch file which will do the work);
-  2. add the machines (by specifiying the hostname) to deploy the software to;
+  2. add the machines (by specifying the hostname) to deploy the software to;
   3. then deploy immediately or choose to install using a schedule:
 
 ![Deploy]({{site.baseurl}}/media/2009/05/deploycustomsoftware-1b.png)

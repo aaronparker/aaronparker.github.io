@@ -116,6 +116,6 @@ Drilling down a bit further, I can see the data stored in my Work Folders and ac
 
 ## Conclusion
 
-The entrenched players in this space, don't have much to be concerned about with version 1 of Work Folders; theres no access from a browser, no ability to share files and no integration with Outlook. Updates will be tied to Windows Server releases and it's encouraging to see that Microsoft will deliver clients for operating system other than Windows 8.1.
+The entrenched players in this space, don't have much to be concerned about with version 1 of Work Folders; there's no access from a browser, no ability to share files and no integration with Outlook. Updates will be tied to Windows Server releases and it's encouraging to see that Microsoft will deliver clients for operating system other than Windows 8.1.
 
 Considering that this feature is built into the operating system, it's just a matter of time (and maybe waiting for v3) until Work Folders becomes the de facto standard for synchronising user data to Windows devices at least. Maybe, just maybe, the writing is on the wall for Offline Files.

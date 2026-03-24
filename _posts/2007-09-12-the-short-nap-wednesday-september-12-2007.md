@@ -17,7 +17,7 @@ What Microsoft is saying about NAP:
 
   * [Louisiana State University Deploys NAP](https://www119.livemeeting.com/cc/mseventsbmo/view?id=1032344626&pw=8388166E): Webcast about a real world NAP deployment
   * [Network Access Protection (NAP) Deployment Planning](http://blogs.technet.com/nap/archive/2007/07/28/network-access-protection-deployment-planning.aspx): If there's only one NAP post you read this year, make it this one.
-  * [Microsoft IT: 120,000 NAP Clients deployed - it's just too darn easy!](http://blogs.technet.com/nap/archive/2007/08/13/microsoft-it-120-000-nap-clients-deployed-it-s-just-too-darn-easy.aspx): Impressive stats takes alot of planning.
+  * [Microsoft IT: 120,000 NAP Clients deployed - it's just too darn easy!](http://blogs.technet.com/nap/archive/2007/08/13/microsoft-it-120-000-nap-clients-deployed-it-s-just-too-darn-easy.aspx): Impressive stats takes a lot of planning.
   * [TechEd NAP and SCCM Session Question](http://blogs.technet.com/mkleef/archive/2007/08/10/teched-nap-and-sccm-session-question.aspx): Ebony and Ivory? 802.1x and WOL?
   * [SCCM 2007 RC1 and NAP integration first thoughts](http://blogs.technet.com/mkleef/archive/2007/07/24/sccm-2007-rc1-and-nap-integration-first-thoughts.aspx): Kleefy looks at NAP integration with SCCM 2007.
   * [Network Access Protection with Cisco switches Blogcast](http://blogs.technet.com/mkleef/archive/2007/09/03/network-access-protection-with-cisco-switches-blogcast.aspx): Kleefy does NAP home videos on Cisco and 802.1x

@@ -1,6 +1,6 @@
 ---
 
-title: Quering Domino via LDAP with VBscript
+title: Querying Domino via LDAP with VBscript
 date: 2007-08-08T08:33:16+10:00
 author: Aaron Parker
 layout: post

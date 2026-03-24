@@ -15,7 +15,7 @@ A reader e-mailed me the other day about the KEEPCURRENTSETTINGS property of the
 
 It turns out, I was using the KEEPCURRENTSETTINGS property, but I did have it set to 0 – just the existence of KEEPCURRENTSETTINGS was enabling Setup to ignore the other command line parameters.
 
-Of course, this behaviour is documented, [in the release notes](http://technet.microsoft.com/en-us/library/cc817171.aspx), in this document: [Application Virtualization Client Installer Command-Line Parameters](http://technet.microsoft.com/en-us/library/cc843737.aspx), and there’s even a knowledgebase article dedicated to this parameter: [Client installer command line parameters are ignored when used in conjunction with KEEPCURRENTSETTINGS=1 in Microsoft Application Virualization 4.5](http://support.microsoft.com/kb/959521/).
+Of course, this behaviour is documented, [in the release notes](http://technet.microsoft.com/en-us/library/cc817171.aspx), in this document: [Application Virtualization Client Installer Command-Line Parameters](http://technet.microsoft.com/en-us/library/cc843737.aspx), and there’s even a knowledgebase article dedicated to this parameter: [Client installer command line parameters are ignored when used in conjunction with KEEPCURRENTSETTINGS=1 in Microsoft Application Virtualization 4.5](http://support.microsoft.com/kb/959521/).
 
 Having tested this, I would recommend avoiding the KEEPCURRENTSETTINGS if you can. Use [a WMI filter to prevent Group Policy from applying]({{site.baseurl}}/virtualisation/unable-to-set-security-descriptor-on-global-package-files-on-app-v-client-upgrade) to workstations until they are all running the 4.5 client.
 

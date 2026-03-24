@@ -58,7 +58,7 @@ Function Start-SequentialVMs {
         [string]$ComputerName = $(throw = "Please specify a remote Hyper-V host to start VMs on."),
 
         [Parameter(Mandatory=$true, Position=1,HelpMessage="List of VMs to start.")]
-        [string[]]$VMList = $(throw = "Please specifiy a list of VMs to start"),
+        [string[]]$VMList = $(throw = "Please specify a list of VMs to start"),
 
         [Parameter(Mandatory=$false)]
         [int]$Wait = 180,

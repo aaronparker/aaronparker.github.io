@@ -22,7 +22,7 @@ _This is the second in a series of articles on folder redirection by Aaron Parke
 * Part four: [Measuring the Impact of Folder Redirection – User Logon]({{site.baseurl}}/measure-impact-folder-redirection/)
 * Part five: [Measuring the Impact of Folder Redirection – Application Launch & SMB Version](https://helgeklein.com/blog/2014/12/measuring-impact-folder-redirection-application-launch-smb-version/)
 
-## Vizualizing Impact on User Experience
+## Visualizing Impact on User Experience
 
 In the previous article, [Helge covered the under the hood details of folder redirection](https://helgeklein.com/blog/2014/10/folder-redirection-impacts-ux-breaks-applications). Now let's look at some possible scenarios that show the impact on the user experience with folder redirection enabled. In this article we'll focus on the initial logon and application launch.
 

@@ -21,7 +21,7 @@ I've been speedlinking some interesting Network Access Protection links in the p
     Add the chat to your calendar [here](http://www.microsoft.com/communities/chats/vcs/07_0419_TN_DHCP.ics).
   * Previous chat - [Deploying NAP end to end in your Enterprise](http://blogs.technet.com/ianhamer/archive/2007/03/12/it-s-nap-chat-time-again-march-13th.aspx)  
     Keep an eye out for the transcript on the [TechNet Chat Transcripts](http://www.microsoft.com/technet/community/chats/trans/default.mspx) page.
-  * [NAP compliancy rates at Redmond above 80%](http://blogs.technet.com/nap/archive/2007/03/16/time-for-your-nap-follow-up-corrections.aspx)  
+  * [NAP compliance rates at Redmond above 80%](http://blogs.technet.com/nap/archive/2007/03/16/time-for-your-nap-follow-up-corrections.aspx)  
     Jeff Sigmans follow up to [Adam Carter's original post](http://blogs.technet.com/nap/archive/2007/03/01/time-for-your-nap.aspx) about the rollout of NAP at Redmond.
   * [D-Link announces support for NAP](http://www.dlink.com/press/pr/?prid=319)  
     Even D-Link? Who'd have thought?

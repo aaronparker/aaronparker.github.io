@@ -64,7 +64,7 @@ Function Set-CtxAppvConfig {
         [string]$AppvPubSvr = $(throw = "Please specify an App-V Publishing Server address."),
 
         [Parameter(Mandatory = $true, Position = 2, HelpMessage = "App-V publishing configuration description.")]
-        [string]$Description = $(throw = "Specify a description to apply to the App-V publishing information. Specify 'Created by Studio' to set the App-V publishing inforamtion viewed in Citrix Studio.")
+        [string]$Description = $(throw = "Specify a description to apply to the App-V publishing information. Specify 'Created by Studio' to set the App-V publishing information viewed in Citrix Studio.")
     )
 
     Function Add-AppvConfig {

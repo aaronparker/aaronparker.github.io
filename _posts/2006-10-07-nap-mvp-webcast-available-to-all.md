@@ -17,7 +17,7 @@ tags:
   * Demo NAP working by turning off anti-virus with manual remediation and turning off Windows Update settings with automatic remediation
   * Using DHCP requires no client side configuration (compared to IPSec), easiest way to implement NAP, but least secure
   * 3<sup>rd</sup> party DHCP server vendors can license the statement of health protocol to interoperate with NAP
-  * NAP uses WMI to determine status of antivirus, firewall and anti-spyware products. All venders should be using proper APIs to notify WMI. NAP is reliant on the Windows Security Centre
+  * NAP uses WMI to determine status of antivirus, firewall and anti-spyware products. All vendors should be using proper APIs to notify WMI. NAP is reliant on the Windows Security Centre
   * [Cisco NAC](http://www.cisco.com/en/US/netsol/ns466/networking_solutions_package.html) and NAP interoperate by allowing NAP to use NAC (for example implemented in a Cisco switch) as an enforcement tool instead of DHCP or Microsoft's IPSec/802.1X
   * When Using DHCP, NPS (Network Policy Server) and DHCP must co-exist on the same server
   * NAP client may be included in Windows XP Service Pack 3

@@ -27,7 +27,7 @@ Receiver can be silent installed using a command-line like this:
 CitrixReceiverEnterprise.exe /noreboot /silent /includeSSON SERVER_LOCATION="http://storefront.demolab.test/Citrix/DemoLabStore/PNAgent/config.xml"
 ```
 
-Taking a look at the installer's log file (search in %TEMP% for the logs with the prefix CtxInstall- or TrollyExpress-) gives an indication of what the issue is. Looking for any time discrepancies, reveals a large gap between actions (which matchs the installer kicking off and me interacting with the target VM)
+Taking a look at the installer's log file (search in %TEMP% for the logs with the prefix CtxInstall- or TrollyExpress-) gives an indication of what the issue is. Looking for any time discrepancies, reveals a large gap between actions (which matches the installer kicking off and me interacting with the target VM)
 
 ```
 15:12:29: Information - CInstallationManager::InstallComponent(426) - Running InstallComponent method for: USB.  

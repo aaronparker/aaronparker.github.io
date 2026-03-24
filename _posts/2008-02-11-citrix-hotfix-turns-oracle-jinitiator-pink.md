@@ -14,7 +14,7 @@ tags:
   - Oracle
   - Presentation-Server
 ---
-A [workaround](http://support.citrix.com/forums/thread.jspa?forumID=137&threadID=98610&messageID=698788&start=0&#698788) has been posted in the forums. Run the following command to exclude Internet Explorer from the [multiple montior hooks](http://support.citrix.com/article/CTX110301) that Presentation Server provides:
+A [workaround](http://support.citrix.com/forums/thread.jspa?forumID=137&threadID=98610&messageID=698788&start=0&#698788) has been posted in the forums. Run the following command to exclude Internet Explorer from the [multiple monitor hooks](http://support.citrix.com/article/CTX110301) that Presentation Server provides:
   
 `REG ADD "HKLM\SOFTWARE\Citrix\CtxHook\AppInit_Dlls\Multiple Monitor Hook" /v Exclude /d "iexplore.exe" /t REG_SZ /f`
 

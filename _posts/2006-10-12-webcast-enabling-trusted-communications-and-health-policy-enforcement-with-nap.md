@@ -45,7 +45,7 @@ Gene Ferioli, a Program Manager with the Customer Connection Team at Microsoft d
   * Covers Cisco NAC, Microsoft NAP interoperability 
       * _Windows Vista only scenario_
       * Describes the NAP/NAC interoperability architecture and process
-      * NAP client APIs on Windows Vista support NAC (no seperate NAC client required)
+      * NAP client APIs on Windows Vista support NAC (no separate NAC client required)
       * Deploy Cisco EAP modules through Windows Update/WSUS
       * You can deploy NAC today and add NAP once Longhorn Server is released
   * The NAP team is working on a provisioning service for a guest access scenarios (hotels, airport, contractors etc)

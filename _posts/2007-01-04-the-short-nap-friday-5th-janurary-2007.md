@@ -1,6 +1,6 @@
 ---
 
-title: 'The Short NAP: Friday 5th Janurary 2007'
+title: 'The Short NAP: Friday 5th January 2007'
 date: 2007-01-04T18:00:00+10:00
 author: Aaron Parker
 layout: post

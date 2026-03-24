@@ -21,7 +21,7 @@ So instead of Hyper-V, here’s Internet Explorer published as a RemoteApp from 
 
 ![RemoteAppUsingVirtualBox]({{site.baseurl}}/media/2009/12/RemoteAppUsingVirtualBox.png)
 
-This demonstrates that the RemoteApp feature is not dependant on the hypervisor. You can therefore, use RemoteApp on any hypervisor or even on Windows clients running directly on hardware.
+This demonstrates that the RemoteApp feature is not dependent on the hypervisor. You can therefore, use RemoteApp on any hypervisor or even on Windows clients running directly on hardware.
 
 Also, contrary to what the blog post says, Windows 7 is not required for the client, this capability can be extended to Windows XP and Windows Vista, as long as they have the Remote Desktop Connection 7.0 client installed. Here’s Internet Explorer 8 running as a RemoteApp on a Windows XP client:
 

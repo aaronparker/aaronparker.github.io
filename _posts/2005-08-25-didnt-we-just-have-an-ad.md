@@ -18,7 +18,7 @@ There are 3 reasons why I use Firefox:
   2. Tabs;
   3. [Adblock](http://adblock.mozdev.org/).
 
-Adblock makes using the Internet usable again by blocking unwanted elements in web pages and it does this very well. Unfortunately there is no version for Internet Explorer, and I'm painfully reminded of that everytime I go back to IE. You can utilise the HOSTS file but this is a little cumbersome. However I found [HostsMan](http://hostsman.abelhadigital.com/) via [MVPS.org](http://www.mvps.org/winhelp2002/hosts.htm) yesterday. This is a very well designed tool that works extremely well and allows for automatically downloading HOSTS lists from MVPS.org and [hpHosts](http://www.hosts-file.net/), integrating this into your local HOSTS file and for quickly editing the hosts file. It even includes a HTTP server for serving a page for the blocked host (It listens on 127.0.0.x only).
+Adblock makes using the Internet usable again by blocking unwanted elements in web pages and it does this very well. Unfortunately there is no version for Internet Explorer, and I'm painfully reminded of that every time I go back to IE. You can utilise the HOSTS file but this is a little cumbersome. However I found [HostsMan](http://hostsman.abelhadigital.com/) via [MVPS.org](http://www.mvps.org/winhelp2002/hosts.htm) yesterday. This is a very well designed tool that works extremely well and allows for automatically downloading HOSTS lists from MVPS.org and [hpHosts](http://www.hosts-file.net/), integrating this into your local HOSTS file and for quickly editing the hosts file. It even includes a HTTP server for serving a page for the blocked host (It listens on 127.0.0.x only).
 
 ![hostsman](http://pwp.netcabo.pt/0413933601/abelhadigital/pics/hostsman201.jpg)
 

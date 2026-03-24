@@ -54,7 +54,7 @@ There was a quick list of improvements to Remote Desktop Services (you should be
 * User Profile Cache Quota (applies a global quota for profile directory and removes the need to delete profiles at logoff)
 * Application install improvement – no more Install mode to install applications
 
-At this stage there are no concrete details on what features will make it into the updated Remote Desktop Client for Windows Vista and Windows XP, but there will most certainly be some features dependant on Windows 7 as the client.
+At this stage there are no concrete details on what features will make it into the updated Remote Desktop Client for Windows Vista and Windows XP, but there will most certainly be some features dependent on Windows 7 as the client.
 
 The Web Access feature gets a make over (a big improvement over Windows Server 2008 if you ask me) plus forms-based authentication – much better than the auth dialog you see today. There’s also some client side interaction too, after you successfully authenticate you get a system tray notification that handles status information and allows you to disconnect (similar to what Citrix has today).
 

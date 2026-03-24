@@ -34,7 +34,7 @@ The workaround requires implementing a Registry change to the App-V client to ad
 
 ## Implementing the Workaround
 
-There's a few ways that you could implement the fix - Group Policy Preferences, scripting etc. You will need to pay attention to the entires in the `HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions` (for App-V 5.0) or `HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\SystemGuard\ObjExclusions` (for App-V 4.6) as each entry requires a unique value name - you don't want to overwrite an existing entry.
+There's a few ways that you could implement the fix - Group Policy Preferences, scripting etc. You will need to pay attention to the entries in the `HKLM\SOFTWARE\Microsoft\AppV\Subsystem\ObjExclusions` (for App-V 5.0) or `HKLM\SOFTWARE\Microsoft\SoftGrid\4.5\SystemGuard\ObjExclusions` (for App-V 4.6) as each entry requires a unique value name - you don't want to overwrite an existing entry.
 
 Here's the ObjExclusions key on an App-V 5.0 client:
 
@@ -63,7 +63,7 @@ For example, only apply the update if the HKLM\SOFTWARE\Microsoft\AppV\Subsystem
 
 ## PowerShell
 
-PowerShell makes it easy to generate a unique number by first counting the exiting entries. Here's some code that will count the existing entires and use that count as the unique number Note the _(Default)_ entry is also returned, so I can be confident that I'm using a value that is one higher than the existing entries.
+PowerShell makes it easy to generate a unique number by first counting the exiting entries. Here's some code that will count the existing entries and use that count as the unique number Note the _(Default)_ entry is also returned, so I can be confident that I'm using a value that is one higher than the existing entries.
 
 ```powershell
 $items = Get-Item -Path Registry::HKLM\Software\Microsoft\AppV\Subsystem\ObjExclusions

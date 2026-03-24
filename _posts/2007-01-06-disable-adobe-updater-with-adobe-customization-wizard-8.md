@@ -34,7 +34,7 @@ REG ADD "HKLMSOFTWAREPoliciesAdobeAcrobat Reader8.0FeatureLockdown" /v bUpdater 
 
 ## Creating a Transform File
 
-If you are invovled in deploying Adobe Reader or want an automated method of disabling Updater, you'll need to create a transform file. Editing the transform to remove Updater 5 is a simple process. You will have to extract the installation files from the download of Adobe Reader 8 before beginning:
+If you are involved in deploying Adobe Reader or want an automated method of disabling Updater, you'll need to create a transform file. Editing the transform to remove Updater 5 is a simple process. You will have to extract the installation files from the download of Adobe Reader 8 before beginning:
 
   1. Launch the Adobe Customization Wizard and then open an Adobe Reader 8 install package (the .MSI file)
   2. Click **Direct** **Editor** and choose **File** under Tables

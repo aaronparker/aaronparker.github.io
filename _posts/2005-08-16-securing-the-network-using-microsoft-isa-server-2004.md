@@ -20,7 +20,7 @@ This is a great article discussing the features of ISA Server as a layer 7 firew
 
 Whilst on the subject of layer 7 - here's why outbound HTTP/S should be authenticated (and users should not have admin access to their workstations)- _HTTP Tunnels_:
 
-[HTTP Tunnel](http://www.http-tunnel.com/)  (I think this one is particularly insidious, because they sell it as a "service", lets hope the CEO does'nt stumble across this site)  
+[HTTP Tunnel](http://www.http-tunnel.com/)  (I think this one is particularly insidious, because they sell it as a "service", lets hope the CEO doesn't stumble across this site)  
 [Zebedee](http://www.winton.org.uk/zebedee/)
 
 HTTP tunnel software allows for tunneling almost any protocol over HTTP. For example, a user could use a HTTP tunnel to bypass the firewall to use their peer-to-peer software and download stuff from the Internet.

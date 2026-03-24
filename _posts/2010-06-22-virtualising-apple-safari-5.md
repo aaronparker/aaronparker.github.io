@@ -42,7 +42,7 @@ There are a few ways to extract the Safari installer, but I find this process is
 * Safari.msi
 * SetupAdmin.exe
 
-We don't need _AppleSoftwareUpdate.msi_ because automatic updates for this package will be disabled and we also don't need SetupAdmin.exe. Using the remaining files, we can script an installation of Safari and its' dependant components. The following script listing will automate the installation of Safari for sequencing with App-V:
+We don't need _AppleSoftwareUpdate.msi_ because automatic updates for this package will be disabled and we also don't need SetupAdmin.exe. Using the remaining files, we can script an installation of Safari and its' dependent components. The following script listing will automate the installation of Safari for sequencing with App-V:
 
 ```powershell
 @ECHO OFF  
