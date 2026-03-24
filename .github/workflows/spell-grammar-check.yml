@@ -1,0 +1,200 @@
+name: Spell & Grammar Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_posts/**"
+      - "_drafts/**"
+  pull_request:
+    paths:
+      - "_posts/**"
+      - "_drafts/**"
+  workflow_dispatch:
+    inputs:
+      all_posts:
+        description: Check all posts rather than just changed files
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  spell-grammar:
+    name: Spell & Grammar Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Identify changed Markdown files
+        id: files
+        run: |
+          if [ "${{ inputs.all_posts }}" = "true" ]; then
+            CHANGED=$(find _posts _drafts -name '*.md' -type f 2>/dev/null | sort || true)
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            CHANGED=$(git diff --name-only --diff-filter=AM \
+              "${{ github.event.pull_request.base.sha }}" \
+              "${{ github.event.pull_request.head.sha }}" \
+              -- _posts/ _drafts/ | grep '\.md$' || true)
+          else
+            BASE="${{ github.event.before }}"
+            # Handle initial push to repo (before SHA is all zeros)
+            if echo "$BASE" | grep -qE '^0+$'; then
+              BASE=$(git rev-list --max-parents=0 HEAD)
+            fi
+            CHANGED=$(git diff --name-only --diff-filter=AM \
+              "$BASE" "${{ github.sha }}" \
+              -- _posts/ _drafts/ | grep '\.md$' || true)
+          fi
+
+          {
+            echo "files<<FILELIST_EOF"
+            echo "$CHANGED"
+            echo "FILELIST_EOF"
+          } >> "$GITHUB_OUTPUT"
+
+          if [ -n "$(echo "$CHANGED" | tr -d '[:space:]')" ]; then
+            echo "any_changed=true" >> "$GITHUB_OUTPUT"
+            echo "Changed Markdown files:"
+            echo "$CHANGED"
+          else
+            echo "any_changed=false" >> "$GITHUB_OUTPUT"
+            echo "No changed Markdown files found."
+          fi
+
+      - name: Install codespell
+        if: steps.files.outputs.any_changed == 'true'
+        run: pip install codespell==2.4.2
+
+      - name: Install Vale
+        if: steps.files.outputs.any_changed == 'true'
+        run: |
+          VALE_VER="3.14.1"
+          wget -q "https://github.com/errata-ai/vale/releases/download/v${VALE_VER}/vale_${VALE_VER}_Linux_64-bit.tar.gz" \
+            -O vale.tar.gz
+          tar -xzf vale.tar.gz vale
+          sudo mv vale /usr/local/bin/vale
+          vale --version
+
+      - name: Sync Vale styles
+        if: steps.files.outputs.any_changed == 'true'
+        run: vale sync
+
+      - name: Ensure issue labels exist
+        if: steps.files.outputs.any_changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create "spelling" \
+            --color "e11d48" \
+            --description "Spelling error in a post" \
+            --force
+          gh label create "grammar" \
+            --color "7c3aed" \
+            --description "Grammar issue in a post" \
+            --force
+
+      - name: Check files and create/update issues
+        if: steps.files.outputs.any_changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPO="${{ github.repository }}"
+          RUN_URL="${{ github.server_url }}/$REPO/actions/runs/${{ github.run_id }}"
+
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            [ ! -f "$file" ] && continue
+
+            echo "::group::Checking $file"
+
+            SPELL=$(codespell "$file" --ignore-words=.codespell-ignore 2>&1 || true)
+            GRAMMAR=$(vale --no-wrap "$file" 2>&1 | sed 's/\x1b\[[0-9;]*m//g' || true)
+
+            SPELL_COUNT=$(echo "$SPELL"   | grep -c '==>'            || true)
+            GRAMMAR_COUNT=$(echo "$GRAMMAR" | grep -cE '\s+(warning|error)\s+' || true)
+
+            echo "Spelling errors:  $SPELL_COUNT"
+            echo "Grammar issues:   $GRAMMAR_COUNT"
+            echo "::endgroup::"
+
+            [ "$SPELL_COUNT" -eq 0 ] && [ "$GRAMMAR_COUNT" -eq 0 ] && continue
+
+            TITLE="Spell/grammar: ${file}"
+
+            # Build issue body
+            {
+              echo "## Spell & Grammar Issues"
+              echo ""
+              echo "**File:** \`${file}\`"
+              echo "**Workflow run:** [${GITHUB_RUN_ID}](${RUN_URL})"
+              echo ""
+              echo "---"
+              echo ""
+
+              if [ "$SPELL_COUNT" -gt 0 ]; then
+                echo "### Spelling (${SPELL_COUNT} issue(s))"
+                echo ""
+                echo '```'
+                echo "$SPELL"
+                echo '```'
+                echo ""
+                echo "> **Fix:** \`codespell \"${file}\" --ignore-words=.codespell-ignore --write-changes\`"
+                echo ""
+              fi
+
+              if [ "$GRAMMAR_COUNT" -gt 0 ]; then
+                echo "### Grammar (${GRAMMAR_COUNT} issue(s))"
+                echo ""
+                # Cap output to first 80 lines to avoid oversized issue bodies
+                GRAMMAR_HEAD=$(echo "$GRAMMAR" | head -80)
+                echo '```'
+                echo "$GRAMMAR_HEAD"
+                if [ "$GRAMMAR_COUNT" -gt 20 ]; then
+                  echo ""
+                  echo "... ${GRAMMAR_COUNT} issues total. Run Vale locally for the full list."
+                fi
+                echo '```'
+                echo ""
+              fi
+
+              echo "---"
+              echo "_Close this issue once the post is updated. Add false-positives to \`.codespell-ignore\` or \`.vale.ini\`._"
+            } > /tmp/issue-body.md
+
+            # Build comma-separated label string
+            LABELS=""
+            [ "$SPELL_COUNT"   -gt 0 ] && LABELS="spelling"
+            [ "$GRAMMAR_COUNT" -gt 0 ] && LABELS="${LABELS:+$LABELS,}grammar"
+
+            # Find an existing open issue with the same title to avoid duplicates
+            EXISTING=$(gh issue list \
+              --repo "$REPO" \
+              --state open \
+              --search "in:title \"${TITLE}\"" \
+              --json number,title \
+              --jq ".[] | select(.title == \"${TITLE}\") | .number" \
+              | head -1)
+
+            if [ -n "$EXISTING" ]; then
+              gh issue edit "$EXISTING" \
+                --repo "$REPO" \
+                --body-file /tmp/issue-body.md \
+                --add-label "$LABELS"
+              echo "Updated issue #$EXISTING for ${file}"
+            else
+              gh issue create \
+                --repo "$REPO" \
+                --title "$TITLE" \
+                --body-file /tmp/issue-body.md \
+                --label "$LABELS"
+              echo "Created issue for ${file}"
+            fi
+
+          done <<< "${{ steps.files.outputs.files }}"
