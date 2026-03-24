@@ -58,3 +58,7 @@ assets/js/vendor/
 
 # Legacy bower components — not used by new theme
 assets/bower_components/
+
+# Spell/grammar review artefacts
+grammar-report.md
+.vale/

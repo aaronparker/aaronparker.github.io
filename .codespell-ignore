@@ -1,0 +1,75 @@
+# codespell custom ignore wordlist
+# One word per line; codespell will not flag these as misspellings.
+# Use for technical terms that resemble known typo patterns.
+
+# Common IT/product false-positives
+Fo
+fo
+nd
+ba
+ans
+ist
+ser
+acompli
+comptible
+usern
+ue
+afe
+inuse
+
+# Technical terms that are real words but flagged by some codespell dictionaries
+Nutanix
+Citrix
+VMware
+vSphere
+vCenter
+vApp
+vDisk
+vDisk
+Intune
+Entra
+PowerShell
+cmdlet
+cmdlets
+AppData
+AppLocker
+AppSense
+AppV
+SAPgui
+PreferIP
+
+# The following are accepted UK/AU spellings
+colour
+colours
+behaviour
+behaviours
+organisation
+organisations
+analyse
+analysed
+favour
+favourite
+licence
+licences
+
+# Proper nouns / brands
+Aarons
+Stealthpuppy
+stealthpuppy
+Hydra
+Rimo3
+Evergreen
+NERDIO
+Nerdio
+Github
+GitHub
+Bitlocker
+BitLocker
+
+# Microsoft conference name (appears in URLs)
+TechEd
+
+# Software product names / brand domains
+InstEd
+Plugable
+plugable
