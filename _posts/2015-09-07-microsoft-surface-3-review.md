@@ -32,7 +32,7 @@ When Windows 8 and the Surface RT was released, I had high hopes for such a devi
 
 Unfortunately this hasn't happened. Whether that's due to Windows 8 or the hardware (OK, it's probably the OS), Citrix's and VMware's (and even Microsoft's) commitment to a well performing Windows Store app for remote app and desktop connections has been lacking. Perhaps the demand just hasn't been there.
 
-On the hardware side, Microsoft has a dock for the Surface Pro that has not been available for the Surface RT/2. This would have been an excellent solution for a thin-client/tablet device that could be docked when at your desk. Another odd choice on the original Surface models is that the RT has a mini-HDMI port, while [the Pro has a mini-DisplayPort](http://www.microsoft.com/surface/en-us/support/music-photos-and-video/connect-surface-to-a-tv-display-or-projector?os=windows-10), meaning seperate dongles are required for connecting to external monitors.
+On the hardware side, Microsoft has a dock for the Surface Pro that has not been available for the Surface RT/2. This would have been an excellent solution for a thin-client/tablet device that could be docked when at your desk. Another odd choice on the original Surface models is that the RT has a mini-HDMI port, while [the Pro has a mini-DisplayPort](http://www.microsoft.com/surface/en-us/support/music-photos-and-video/connect-surface-to-a-tv-display-or-projector?os=windows-10), meaning separate dongles are required for connecting to external monitors.
 
 ## Why the Surface 3?
 
@@ -133,6 +133,6 @@ So what's performance like after 3 months? In short, very good. In day-to-day us
 
 ## Conclusion
 
-The Surface 3 has replaced my iPad 4 as my tablet device, especially for travel - it's a similar form factor, but does more. While Windows 8 ran extremely well on the device, since running Windows 10 I miss some of the ways that you can interact with Windows 8 from a tablet perspective. Windows 10 however has made some interaction simpler, especially with Continuum. Windows Store / Universal apps have proven quite useable so far and I hope to see this continue as applications are updated for the new platform.
+The Surface 3 has replaced my iPad 4 as my tablet device, especially for travel - it's a similar form factor, but does more. While Windows 8 ran extremely well on the device, since running Windows 10 I miss some of the ways that you can interact with Windows 8 from a tablet perspective. Windows 10 however has made some interaction simpler, especially with Continuum. Windows Store / Universal apps have proven quite usable so far and I hope to see this continue as applications are updated for the new platform.
 
 The Surface 3 is not the cheapest device - you could find comparable specs for less; however I don't think anything else is quite as beautiful or would feel as nice in your hand. This device has worked well for my use case and if you don't mind the price, I can certainly recommend it.

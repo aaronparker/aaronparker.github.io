@@ -177,13 +177,13 @@ Like the OneDrive client, [Microsoft Teams installs into the user profile](https
 
 The [Microsoft Teams deployment documentation](https://docs.microsoft.com/en-us/microsoftteams/msi-deployment) recommends _3 GB for Teams, per-user_. This should be an outlier - my Teams folder is currently 543 MB. There are instances where Microsoft Teams can blow out the Container by 4GB on launch, but then still result in far less capacity consumed.
 
-Microsoft provides some guidance on excluding certain Teams folders from the Profile Contianer. The following locations can be added to your `Redirections.xml`. These are included in the output from `ConvertTo-RedirectionsXml`.
+Microsoft provides some guidance on excluding certain Teams folders from the Profile Container. The following locations can be added to your `Redirections.xml`. These are included in the output from `ConvertTo-RedirectionsXml`.
 
 * [%AppData%\Microsoft\Teams\media-stack](https://docs.microsoft.com/en-us/microsoftteams/teams-for-vdi#teams-cached-content-exclusion-list-for-non-persistent-setup)
 * [%AppData%\Microsoft\Teams\Service Worker](https://techcommunity.microsoft.com/t5/fslogix-blog/teams-setup-rapidly-grows-my-profile-disk/ba-p/1539064)
 * [%AppData%\Microsoft\Teams\meeting-addin\Cache](https://docs.microsoft.com/en-us/microsoftteams/teams-for-vdi#non-persistent-setup)
 
-To enable these redirections to work with Teams, you will need to configure your environment to store Microsoft Teams in the Profile Container. I recommend excplicitly setting [IncludeTeams](https://docs.microsoft.com/en-us/fslogix/office-container-configuration-reference#includeteams) to 0 or the equivalent Group Policy item to Disabled.
+To enable these redirections to work with Teams, you will need to configure your environment to store Microsoft Teams in the Profile Container. I recommend explicitly setting [IncludeTeams](https://docs.microsoft.com/en-us/fslogix/office-container-configuration-reference#includeteams) to 0 or the equivalent Group Policy item to Disabled.
 
 ## 3rd Party Apps
 
@@ -214,13 +214,13 @@ It's perhaps important to note that [data deduplication on ReFS is available on 
 
 #### Reporting on Container sizes
 
-To report on FSLogix Containers usage, you can use `Get-FileStats.ps1` to retrieve the file size, last write time, last modifed time and file owner for Containers (.vhdx, .vhdx) files in a target file share. The script is available in my [FSLogix GitHub repository](https://github.com/aaronparker/FSLogix/tree/master/Stats). This will retrieve details for container files in a target share and output the results to a Gridview window - for example:
+To report on FSLogix Containers usage, you can use `Get-FileStats.ps1` to retrieve the file size, last write time, last modified time and file owner for Containers (.vhdx, .vhdx) files in a target file share. The script is available in my [FSLogix GitHub repository](https://github.com/aaronparker/FSLogix/tree/master/Stats). This will retrieve details for container files in a target share and output the results to a Gridview window - for example:
 
 ```powershell
 .\Get-FileStats.ps1 -Path \\server\share\folder -Include *.vhd, *.vhdx | Out-GridView
 ```
 
-Outputing a view similar to this:
+Outputting a view similar to this:
 
 [![File stats for FSLogix Containers]({{site.baseurl}}/media/2019/04/FileStatsGridView.PNG)]({{site.baseurl}}/media/2019/04/FileStatsGridView.PNG)
 

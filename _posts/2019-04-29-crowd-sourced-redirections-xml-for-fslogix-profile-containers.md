@@ -49,7 +49,7 @@ There are two ways to contribute:
 
 ## Convert the List into Redirections.xml
 
-To simplify outputing the list into the required XML format, I've written `ConvertTo-RedirectionsXml` that is used to convert the CSV list for use with Profile Containers. This script will read the `Redirections.csv` from GitHub repo and output `Redirections.xml` locally. The script is available from the PowerShell Gallery for a simple install.
+To simplify outputting the list into the required XML format, I've written `ConvertTo-RedirectionsXml` that is used to convert the CSV list for use with Profile Containers. This script will read the `Redirections.csv` from GitHub repo and output `Redirections.xml` locally. The script is available from the PowerShell Gallery for a simple install.
 
 ### Install the Script
 
@@ -84,7 +84,7 @@ A custom path can be provided for the output file - for example, the following c
 ConvertTo-RedirectionsXml -OutFile C:\Temp\Redirections.xml
 ```
 
-If you have saved the script locally instead of installing from the PowerShell Gallery, remember to run the script with the correct synatx:
+If you have saved the script locally instead of installing from the PowerShell Gallery, remember to run the script with the correct syntax:
 
 ```powershell
 .\ConvertTo-RedirectionsXml.ps1
@@ -113,7 +113,7 @@ The resulting `Redirections.xml` will look something like this and will be ready
     <Exclude Copy="0">AppData\Local\CrashDumps</Exclude>
     <!--Omit if not using Remote Desktop Connection client inside a remote desktop-->
     <Exclude Copy="0">AppData\Local\Microsoft\Terminal Server Client</Exclude>
-    <!--Google Chrome brower cache-->
+    <!--Google Chrome browser cache-->
     <Exclude Copy="0">AppData\Local\Google\Chrome\User Data\Default\Cache</Exclude>
     <!--Microsoft Edge UWP browser cache-->
     <Exclude Copy="0">AppData\Local\Packages\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\AC\MicrosoftEdge\Cache</Exclude>
@@ -130,4 +130,4 @@ The resulting `Redirections.xml` will look something like this and will be ready
 
 ## Paths in Redirecitons.csv
 
-`Redirections.csv` is not a definitive list of paths to exclude or include in the Profile Container. You should assess each of the paths included in this list for your environment and undestand whether a path should be excluded or [cleaned up with alternative methods](https://github.com/aaronparker/FSLogix/tree/master/Profile-Cleanup). It is likely that additional paths can be added to the list. With community feedback, this list can be improved.
+`Redirections.csv` is not a definitive list of paths to exclude or include in the Profile Container. You should assess each of the paths included in this list for your environment and understand whether a path should be excluded or [cleaned up with alternative methods](https://github.com/aaronparker/FSLogix/tree/master/Profile-Cleanup). It is likely that additional paths can be added to the list. With community feedback, this list can be improved.

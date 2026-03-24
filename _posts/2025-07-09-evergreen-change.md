@@ -37,7 +37,7 @@ When the initial version of [Evergreen](https://stealthpuppy.com/evergreen) was 
 Get-Microsoft365Apps
 ```
 
-As the module grew to support additional applciations, this approach was not sustainable as discoverability of supported applciation was difficult. Therefore, the [approach was changed to include a single Get function](https://stealthpuppy.com/evergreen/changelog/#2104337) for applications. So this became:
+As the module grew to support additional applications, this approach was not sustainable as discoverability of supported application was difficult. Therefore, the [approach was changed to include a single Get function](https://stealthpuppy.com/evergreen/changelog/#2104337) for applications. So this became:
 
 ```powershell
 Get-EvergreenApp -Name Microsoft365Apps
@@ -53,9 +53,9 @@ This is time consuming and can sometimes create issues where someone hasn't upda
 
 ## Addressing the issue
 
-For a long time, I've been looking at seperating the per-application functions from the module so they can be updated on demand and newly supported applications or fixes to existing applications can be delivered faster.
+For a long time, I've been looking at separating the per-application functions from the module so they can be updated on demand and newly supported applications or fixes to existing applications can be delivered faster.
 
-An upcoming change to Evergreen will address this issue by seperating the per-application functions and manifests from the core module, by storing these in a seperate repository and including a method to download and update a locally cached copy of these functions.
+An upcoming change to Evergreen will address this issue by separating the per-application functions and manifests from the core module, by storing these in a separate repository and including a method to download and update a locally cached copy of these functions.
 
 Here's how I'm proposing to make these changes, and **I'm welcoming comments and feedback before this change is implemented**.
 
@@ -65,7 +65,7 @@ To simplify discoverability of the various code repositories related to Evergree
 
 I may move various Evergreen related sites (e.g. the documentation) away from https://stealthpuppy.com to https://eucpilots.com. I am also looking at moving [VcRedist](https://github.com/aaronparker/vcredist) to this organisation as well, as it's closely related to Evergreen.
 
-### Move per-application functions to a dedicated reppository
+### Move per-application functions to a dedicated repository
 
 The per-application functions and manifests will be moved to a dedicated repository in this organisation. You can see that repository here: [evergreen-apps](https://github.com/EUCPilots/evergreen-apps).
 
@@ -84,7 +84,7 @@ Any time changes are pushed to the `main` branch in this repository, a new relea
 
 ### Creating a method to download per-application functions
 
-When importing the Evergreen module, you'll be prompted to download the per-application fuctions:
+When importing the Evergreen module, you'll be prompted to download the per-application functions:
 
 ![Importing Evergreen and being prompted to run Update-Evergreen](/media/2025/07/import-evergreen.png)
 

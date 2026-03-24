@@ -46,7 +46,7 @@ Microsoft has introduced [Filters into Intune](https://docs.microsoft.com/en-us/
 Here's a few use cases that can be solved with custom solution to dynamic device collections for Intune:
 
 * Target Windows Hello policies only to a collection of devices that have biometric hardware capabilities
-* Create collections for Windows 10 or Windows 11 devices for targetting Feature update policies. Dynamic device groups and Intune filters make this challenging today
+* Create collections for Windows 10 or Windows 11 devices for targeting Feature update policies. Dynamic device groups and Intune filters make this challenging today
 * Create a collection of devices that don't have a TPM enabled or only have a TPM v1.2
 * Create a collection of Lenovo PCs that have a specific BIOS version
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Deploy a Single Microsoft 365 Apps Package Everywhere All At Once
-description: Viewer mode the Microsoft 365 Apps for enterprise will enable you to deploy a single package without needing seperate packages for Visio and Project, simplifying management.
+description: Viewer mode the Microsoft 365 Apps for enterprise will enable you to deploy a single package without needing separate packages for Visio and Project, simplifying management.
 permalink: "/m365apps-single-package/"
 categories:
   - Microsoft
@@ -29,7 +29,7 @@ In many organisations, packages for Microsoft Project and Visio may be deployed 
 
 Viewer mode now means that you can deploy a single Microsoft 365 Apps package including Project and Visio to all devices and enable viewer mode by default. Licensed users will be able to use a fully activated copy of the applications with full functionality, while unlicensed users will use viewer mode.
 
-No need for seperate packages, allowing users to install on-demand, targeted installs via device groups, or having to configure FSLogix App Masking to remove the applications from unlicensed users. If someone without a license needs to view and print a Word document they can. If another user needs to review a Visio document or project plan, but doesn't have a license for Visio or Project, they can do that too.
+No need for separate packages, allowing users to install on-demand, targeted installs via device groups, or having to configure FSLogix App Masking to remove the applications from unlicensed users. If someone without a license needs to view and print a Word document they can. If another user needs to review a Visio document or project plan, but doesn't have a license for Visio or Project, they can do that too.
 {:.note title="Consider this"}
 
 ## Viewer Mode
@@ -70,7 +70,7 @@ With this policy in place on any device type, you can now manage a single packag
 There is one application that could force you to deploy multiple packages - Microsoft Access. There are a few approaches you could take managing access to Access.
 
 1. Don't include Access in your package - hopefully the default for most environments
-2. Create a default package without Access (or with the Access Runtime) if you need it, and a seperate package that includes Access. I'm assuming that Access is only required on a small number of machines, so it shouldn't be too difficult to maintain a seperate package. This would be the simplest approach for physical PCs
+2. Create a default package without Access (or with the Access Runtime) if you need it, and a separate package that includes Access. I'm assuming that Access is only required on a small number of machines, so it shouldn't be too difficult to maintain a separate package. This would be the simplest approach for physical PCs
 3. Include Access in your single Microsoft 365 Apps package and use FSLogix App Masking to control who can use Access. This approach would be needed for shared virtual desktops, but could also be used for physical desktops
 
 ### FSLogix App Masking for Access

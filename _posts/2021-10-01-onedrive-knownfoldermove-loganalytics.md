@@ -265,7 +265,7 @@ Schedule the script to run once every 24 hours, which should be enough to captur
 
 ### Build a Workbook
 
-With the data collected and sent to the Log Analytics workspace, we can now build an [Azure Monitor workbook](https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview) to display the data in a useable format.
+With the data collected and sent to the Log Analytics workspace, we can now build an [Azure Monitor workbook](https://docs.microsoft.com/en-us/azure/azure-monitor/visualize/workbooks-overview) to display the data in a usable format.
 
 [![Known Folder Move status report]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus.jpeg)]({{site.baseurl}}/media/2021/10/KnownFolderMovestatus.jpeg)
 

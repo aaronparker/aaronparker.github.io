@@ -91,7 +91,7 @@ Here's how I've configured [sharing settings](https://support.apple.com/en-au/gu
 * System Settings / General / Sharing / Media Sharing - **Home Sharing**. I've copied my music library to this device and this enables remote sharing from the Apple TV etc.
 * System Settings / General / Sharing / Screen Sharing - **On**. This allows remote access to the device via the Screen Sharing app
 * System Settings / General / Sharing / Content Caching - Storage (cache location is on an external drive), 
-    Clients / Devices using the same public IP address, use ony public IP address. 
+    Clients / Devices using the same public IP address, use only public IP address. 
 
 Content Cache stats aren't fantastic just yet, but over time this will increase. On another machine I've seen this at around 45GB cached.
 

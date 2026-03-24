@@ -48,7 +48,7 @@ When the application source is updated, the `definition.json` file can be modifi
 
 Here's a simple example of a custom application using the Microsoft Configuration Manager Support Center available from the ConfigMgr ISO. This is updated  every so often and requires downloading the updated ISO or extracting the MSI file from a ConfigMgr install.
 
-In the `definition.json`, I have specified a URL that is publically available and have manually determined the application version number from installing the application on a test machine. this is a basic MSI file, so the [install script performs a silent install](https://github.com/aaronparker/nerdio/tree/main/shell-apps/Microsoft/SupportCenter). 
+In the `definition.json`, I have specified a URL that is publicly available and have manually determined the application version number from installing the application on a test machine. this is a basic MSI file, so the [install script performs a silent install](https://github.com/aaronparker/nerdio/tree/main/shell-apps/Microsoft/SupportCenter). 
 
 ```json
 {
@@ -188,11 +188,11 @@ Get-InstalledSoftware | Where-Object { $_.Name -match "Configuration Manager Sup
 
 ## Preparing a package
 
-Packages can come from any source; however for applications with mutliple files in the install package, they will need to be first compressed into a single zip file to enable Shell Apps to download the binaries during install. Don't forget to enable `"fileUnzip": true` in the `definition.json` file so that the zip file is automatically extracted before running the install script.
+Packages can come from any source; however for applications with multiple files in the install package, they will need to be first compressed into a single zip file to enable Shell Apps to download the binaries during install. Don't forget to enable `"fileUnzip": true` in the `definition.json` file so that the zip file is automatically extracted before running the install script.
 
 This approach should enable you to utilise existing packages that include install and uninstall scripts, including those that might already be leveraging the [PowerShell App Deployment Toolkit](https://psappdeploytoolkit.com/).
 
-Shell Apps will require you to create a new `detect.ps1` script to enable detection of the application, but this could be done using the existing metadata from these applications sources (e.g. Configuration Manager detection info, PSASDT detection funtions etc.).
+Shell Apps will require you to create a new `detect.ps1` script to enable detection of the application, but this could be done using the existing metadata from these applications sources (e.g. Configuration Manager detection info, PSASDT detection functions etc.).
 
 ## Summary
 

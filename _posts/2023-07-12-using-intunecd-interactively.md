@@ -141,7 +141,7 @@ However, you may need to weigh that against wasting hours of your life on gettin
 The script below will configure an environment, and assumes you are using WLS2 with Ubuntu or an Ubuntu virtual machine with a minimal installation:
 
 * Install required dependencies including [jq](https://jqlang.github.io/jq/) with `apt-get`
-* [Homebrew](https://brew.sh/) this will simplfy the installation of additional components including Python. I had issues installing Python with pyenv
+* [Homebrew](https://brew.sh/) this will simplify the installation of additional components including Python. I had issues installing Python with pyenv
 * Install Python with Homebrew
 * Install IntuneCD
 * Install [nvm](https://github.com/nvm-sh/nvm) and Node.js
@@ -152,7 +152,7 @@ The script below will configure an environment, and assumes you are using WLS2 w
 sudo apt-get update; sudo apt-get upgrade -y
 sudo apt install -y git curl build-essential jq
 
-# Install Node.js depdendencies
+# Install Node.js dependencies
 sudo apt-get install -y libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libasound2 libpango-1.0-0 libpangocairo-1.0-0 libpangoft2-1.0-0
 
 # Install Homebrew and Python
@@ -177,7 +177,7 @@ npm i -g md-to-pdf
 
 The script below will set up the required dependencies and tools on macOS. This assumes you are using the default zsh shell and will install the following:
 
-* [Homebrew](https://brew.sh/) which is the best package manger for macOS
+* [Homebrew](https://brew.sh/) which is the best package manager for macOS
 * [pyenv](https://github.com/pyenv/pyenv) to simplify the installation of Python. Follow the install instructions to set up pyenv for macOS and zsh
 * [jq](https://jqlang.github.io/jq/) and [GitHub CLI](https://cli.github.com/manual/gh_auth_login)
 * Install Python with pyenv and set the default version

@@ -41,7 +41,7 @@ Add a new app and select the 'Office 365 ProPlus Suite (Windows 10)' option:
 Select the Office 365 ProPlus App type
 {:.figcaption}
 
-This allows you to select the applications to include in this package - only selected applications will be included in the package. Note that if you have some users who require Project or Visio, create seperate packages that include these applications along with Office, rather than attempting to deploy them separately.
+This allows you to select the applications to include in this package - only selected applications will be included in the package. Note that if you have some users who require Project or Visio, create separate packages that include these applications along with Office, rather than attempting to deploy them separately.
 
 ![Select the app to be included in this package]({{site.baseurl}}/media/2017/07/03_SelectApps.png)
 

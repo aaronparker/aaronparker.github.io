@@ -54,7 +54,7 @@ In this article, I'm not going to run through the creation of these resources in
 
 ### A note on secure environments
 
-The pipeline covered in this article, assumes that you will use [Microsoft-hosted Azure Pipelines agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/hosted), which will require the target storage account to be publically accessible. If you have requirements to only access the storage account over private endpoints, you can use [self-hosted Azure Pipelines agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/linux-agent) that run in an Azure virtual network that has direct access to the storage account.
+The pipeline covered in this article, assumes that you will use [Microsoft-hosted Azure Pipelines agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/hosted), which will require the target storage account to be publicly accessible. If you have requirements to only access the storage account over private endpoints, you can use [self-hosted Azure Pipelines agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/linux-agent) that run in an Azure virtual network that has direct access to the storage account.
 
 Additionally, if you also have restrictions on internet access, the Evergreen API can be used to [list the required endpoints](https://stealthpuppy.com/evergreen/endpoints/) to detect and download application binaries.
 
@@ -108,7 +108,7 @@ Assign the 'Storage Blob Data Contributor' role on the storage account to the ma
 
 ## Configure Pipeline Variables
 
-The pipeline requires variables to be passed into during execution. These should be stored in a variable group named **Credential** in in [Asset library](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/?view=azure-devops). These variables can be stored directly in the libary or be linked from an Azure Key Vault.
+The pipeline requires variables to be passed into during execution. These should be stored in a variable group named **Credential** in in [Asset library](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/?view=azure-devops). These variables can be stored directly in the library or be linked from an Azure Key Vault.
 
 * **TenantId** - the Entra ID tenant
 * **ClientId** - the app registration client ID specified in Nerdio Manager (Settings / Environment / Integrations / REST API)
@@ -130,7 +130,7 @@ After creating the pipeline, enable access the variable group by authorising the
 
 ## Create the Pipeline
 
-With the code commited to the repository and resources configured, create the pipline:
+With the code committed to the repository and resources configured, create the pipeline:
 
 1. Select **Pipelines**
 2. Click **New Pipeline**
@@ -214,7 +214,7 @@ jobs:
       pwsh: true
       workingDirectory: $(build.sourcesDirectory)
 
-  # Authenticate to Nerdio Manager, set the Azure conext, and import the shell apps
+  # Authenticate to Nerdio Manager, set the Azure context, and import the shell apps
   # This code checks whether the app already exists before importing or updating it
   - task: AzurePowerShell@5
     name: import

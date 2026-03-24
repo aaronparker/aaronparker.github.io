@@ -40,7 +40,7 @@ I'm of course spoilt by having access to [a MacBook display](https://support.app
 
 ## Playing Hardware Roulette
 
-When I first started looking at simplifying my setup, I started with the monitor - originally I was looking at a USB-C or Thunderbolt monitor that could drive everything rather than the seperate dock and monitor that I've ended up with. The choices for USB-C monitors are still limited in 2018 and Thunderbolt even more so; however, it seems we're at an inflection point with USB-C and I suspect that within 12-months, USB-C will be everywhere. Thunderbolt 3 is even appearing in a good number of PCs.
+When I first started looking at simplifying my setup, I started with the monitor - originally I was looking at a USB-C or Thunderbolt monitor that could drive everything rather than the separate dock and monitor that I've ended up with. The choices for USB-C monitors are still limited in 2018 and Thunderbolt even more so; however, it seems we're at an inflection point with USB-C and I suspect that within 12-months, USB-C will be everywhere. Thunderbolt 3 is even appearing in a good number of PCs.
 
 To make a choice for what works for you, I would recommend starting with a display with a resolution and size that suits your needs, then consider ports and how you'll connect it to your MacBook or PC. However, unless you can test your hardware choices you're often playing roulette when purchasing tech devices, so relying on reviews and crossing my fingers is what I've done with this purchase.
 
@@ -78,7 +78,7 @@ The choices of 24&#8243; 4K monitors is even more limited and considering that I
 
 To drive a [4K monitor](https://thewirecutter.com/reviews/best-4k-monitors/), you have a choice of [DisplayPort or HDMI](https://www.techadvisor.co.uk/feature/digital-home/displayport-vs-hdmi-3535257/), but today, DisplayPort is your best choice - this might change soon though as HDMI 2.1 devices arrive. DisplayPort and HDMI are a bit of a mess right now with multiple versions that support different resolutions and frame rates. [HDMI 2.0](https://en.wikipedia.org/wiki/HDMI#Version_2.0) is needed at a minimum, but [DisplayPort 1.4](https://en.wikipedia.org/wiki/DisplayPort#1.4) is pretty common.
 
-With DisplayPort though, keep in mind you're likely to require [an Active DisplayPort cable](https://www.startech.com/au/faq/displayport_converter_dp_multi_mode) when connecting over DP from a dock. This might be monitor and dock dependant and there's no guarantee that the DP cable that comes with your monitor is an Active cable.
+With DisplayPort though, keep in mind you're likely to require [an Active DisplayPort cable](https://www.startech.com/au/faq/displayport_converter_dp_multi_mode) when connecting over DP from a dock. This might be monitor and dock dependent and there's no guarantee that the DP cable that comes with your monitor is an Active cable.
 
 ### Thunderbolt 3 Docks
 

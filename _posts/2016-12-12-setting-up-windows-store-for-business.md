@@ -170,7 +170,7 @@ Add even unwanted apps to the Windows Store for Business
 
 #### Assigning Apps
 
-[Applications can be assigned to people](https://technet.microsoft.com/en-au/itpro/windows/manage/assign-apps-to-employees) (and licenses managed) from the Window Store for Business. However, this is largely not scaleable as only individual users can be selected.
+[Applications can be assigned to people](https://technet.microsoft.com/en-au/itpro/windows/manage/assign-apps-to-employees) (and licenses managed) from the Window Store for Business. However, this is largely not scalable as only individual users can be selected.
 
 ![Assigning an app in the Windows Store for Business]({{site.baseurl}}/media/2016/12/AssignToPeople.png)
 

@@ -67,7 +67,7 @@ IntuneCD-startdocumentation -p ./backup-path -o ./as-built.md -t nameoftenant -i
 
 I tested a couple of Python python projects for converting markdown into a PDF document; however, these could not handle the markdown output from IntuneCD. Instead, I've found that [Markdown to PDF](https://www.npmjs.com/package/md-to-pdf), a Node.js command line tool, could handle the conversion without issue.
 
-To install md-to-pdf and covert the markdown into PDF, we can use the following commands:
+To install md-to-pdf and convert the markdown into PDF, we can use the following commands:
 
 ```bash
 npm i -g md-to-pdf
@@ -91,7 +91,7 @@ In this article, I'll cover the setup of a pipeline that will automate the backu
 
 ## Intune Backup and Document Pipeline with Azure DevOps
 
-Using an [Azure Pipline](https://docs.microsoft.com/en-au/azure/devops/pipelines/?view=azure-devops), we can schedule the backup and report generation of an Intune tenant. The first thing you'll need to do is [create a project](https://docs.microsoft.com/en-us/azure/devops/organizations/projects/create-project) ensuring the project is private.
+Using an [Azure Pipeline](https://docs.microsoft.com/en-au/azure/devops/pipelines/?view=azure-devops), we can schedule the backup and report generation of an Intune tenant. The first thing you'll need to do is [create a project](https://docs.microsoft.com/en-us/azure/devops/organizations/projects/create-project) ensuring the project is private.
 
 [![Creating a new Azure DevOps project]({{site.baseurl}}/media/2022/02/devops-newproject.jpeg)]({{site.baseurl}}/media/2022/02/devops-newproject.jpeg)
 
@@ -114,7 +114,7 @@ Compare configurations across tags and releases in an Azure DevOps project.
 
 The pipeline includes four stages - Backup (the Intune configurations are exported to YAML or JSON), Document (the as-built PDF document is generated), and [Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) (the repository is tagged for changes committed from that workflow), and publishes the as-built to the pipeline.
 
-[![Azure Pipline run]({{site.baseurl}}/media/2022/02/devops-pipelinerun.jpeg)]({{site.baseurl}}/media/2022/02/devops-pipelinerun.jpeg)
+[![Azure Pipeline run]({{site.baseurl}}/media/2022/02/devops-pipelinerun.jpeg)]({{site.baseurl}}/media/2022/02/devops-pipelinerun.jpeg)
 
 Azure Pipeline run for Intune backup, document, tag the repository and publishing the as-built.
 {:.figcaption}

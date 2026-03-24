@@ -48,7 +48,7 @@ This year, we focussed our testing on several areas:
 1. Comparing SMB 2.1 with SMB 3.02 - last year we tested primarily with Windows 7 as the client. In this round we've used Windows 8.1 as the client to see whether SMB 3.02 provides any improvements over SMB 2.1
 2. IO performance - does SMB 3.02 improve raw IO performance and throughput over SMB 2.1?
 3. Workload simulations - we've used the File Server Capacity Toolkit to model how users work with home folders to demonstrate the performance profiles of various scenarios and show you how you can do performance modelling for your file servers
-4. Folder redirection alternatives - newer file sync and share solutions that have been popular of the past several years may make interesting alternatives to folder redirection. I've [written about one of these previously]({{site.baseurl}}/folder-redirection-offline-files-appsense-datanow-35/) and we have covered several more alternatives. I'll cover some additional alternatives in seperate articles.
+4. Folder redirection alternatives - newer file sync and share solutions that have been popular of the past several years may make interesting alternatives to folder redirection. I've [written about one of these previously]({{site.baseurl}}/folder-redirection-offline-files-appsense-datanow-35/) and we have covered several more alternatives. I'll cover some additional alternatives in separate articles.
 
 All of our testing this year was performed with Windows 8.1 or Windows Server 2012 R2 on the client end, with Windows Server 2008 R2 or Windows Server 2012 R2 on the server end.
 

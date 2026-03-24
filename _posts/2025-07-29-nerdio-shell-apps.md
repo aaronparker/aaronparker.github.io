@@ -201,7 +201,7 @@ URI          : https://vscode.download.prss.microsoft.com/dbazure/download/stabl
 
 ### Create the Shell App
 
-Now that we have authenticated to the target environment and have the details requires to create the Shell App, we should first check whether the Shell App aleady exists before attempting to import. Right now we only match by the application name defined in the definition, so unless we first perform a check, we will have two Shell Apps imported with the same details.
+Now that we have authenticated to the target environment and have the details requires to create the Shell App, we should first check whether the Shell App already exists before attempting to import. Right now we only match by the application name defined in the definition, so unless we first perform a check, we will have two Shell Apps imported with the same details.
 
 The following code should either return null or an existing Shell App that matches the name defined in the application definition:
 
@@ -223,7 +223,7 @@ This function provides output that looks similar to the below. Note that file na
 
 ```powershell
 Downloaded file: /Users/aaron/Temp/shell-apps/VSCodeSetup-x64-1.102.2.exe
-Get storage acccount key from: rg-Avd-Images-wus3 / stavd7urlg3fm4odtn
+Get storage account key from: rg-Avd-Images-wus3 / stavd7urlg3fm4odtn
 Uploading file to blob: 6ba28b61c8aeb0cc506dff509d2e5d11.VSCodeSetup-x64-1.102.2.exe
 Uploaded file to blob: https://stavd7urlg3fm4odtn.blob.core.windows.net/shell-apps/6ba28b61c8aeb0cc506dff509d2e5d11.VSCodeSetup-x64-1.102.2.exe
 Using SAS token for source URL.
@@ -245,7 +245,7 @@ if ($null -eq $ExistingVersions -or [System.Version]$ExistingVersions.name -lt [
 
 ```powershell
 Downloaded file: /Users/aaron/Temp/shell-apps/VSCodeSetup-x64-1.202.2.exe
-Get storage acccount key from: rg-Avd-Images-wus3 / stavd7urlg3fm4odtn
+Get storage account key from: rg-Avd-Images-wus3 / stavd7urlg3fm4odtn
 Uploading file to blob: 6ba28b61c8aeb0cc506dff509d2e5d11.VSCodeSetup-x64-1.202.2.exe
 Uploaded file to blob: https://stavd7urlg3fm4odtn.blob.core.windows.net/shell-apps/6ba28b61c8aeb0cc506dff509d2e5d11.VSCodeSetup-x64-1.202.2.exe
 Using SAS token for source URL.
@@ -261,4 +261,4 @@ Using this approach, we can define a set of application to import as Shell Apps 
 Nerdio Manager Shell Apps imported via PowerShell.
 {:.figcaption}
 
-In this article, I've shown you how to interactively import a set of applications to Nerdio Manager Shell Apps; however, we don't really want to be sitting in front of a console and running this each time we want to import new apps. In [the next artcile](https://stealthpuppy.com/nerdio-shell-apps-p2/), I'll cover updating this workflow for use in an Azure Pipeline to automate the entire process.
+In this article, I've shown you how to interactively import a set of applications to Nerdio Manager Shell Apps; however, we don't really want to be sitting in front of a console and running this each time we want to import new apps. In [the next article](https://stealthpuppy.com/nerdio-shell-apps-p2/), I'll cover updating this workflow for use in an Azure Pipeline to automate the entire process.

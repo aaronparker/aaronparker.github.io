@@ -23,7 +23,7 @@ Having said that, I'm pretty sure I'm late to the party - [Anton van Pelt](https
 
 ## Modern Authentication for NetScaler
 
-The use of cloud services is gaining traction rapidly - I'd be hard pressed to meet a customer that is not using a SaaS application. Organisations migrating to Microsoft's cloud offerings, such as Office 365, have access to Azure AD and can therefore enable Single Sign-on to across all SaaS apps. This can leave remote access to hosted applications through NetScaler stand out with a different authentication experience. Additionally traditional NetScaler Gateway configurations will have seperate access and authorisation policies from those SaaS apps.
+The use of cloud services is gaining traction rapidly - I'd be hard pressed to meet a customer that is not using a SaaS application. Organisations migrating to Microsoft's cloud offerings, such as Office 365, have access to Azure AD and can therefore enable Single Sign-on to across all SaaS apps. This can leave remote access to hosted applications through NetScaler stand out with a different authentication experience. Additionally traditional NetScaler Gateway configurations will have separate access and authorisation policies from those SaaS apps.
 
 So, here's your traditional remote access front-end (with some nice branding, if you ask me).
 

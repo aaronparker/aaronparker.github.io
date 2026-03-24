@@ -66,7 +66,7 @@ IntuneCD-startdocumentation -p ./backup-path -o ./as-built.md -t nameoftenant -i
 
 I tested a couple of Python python projects for converting markdown into a PDF document; however, these could not handle the markdown output from IntuneCD. Instead, I've found that [Markdown to PDF](https://www.npmjs.com/package/md-to-pdf), a Node.js command line tool, could handle the conversion without issue.
 
-To install md-to-pdf and covert the markdown into PDF, we can use the following commands:
+To install md-to-pdf and convert the markdown into PDF, we can use the following commands:
 
 ```bash
 npm i -g md-to-pdf
@@ -110,7 +110,7 @@ Compare configurations across tags and releases in a GitHub repository.
 For GitHub, I've created two workflows - the first workflow performs the following steps:
 
 1. Backup the Intune configuration on a schedule
-2. Generate an as-built document in markdown and covert the document to PDF format
+2. Generate an as-built document in markdown and convert the document to PDF format
 3. Tag the updated configuration, enabling us to create a release
 
 [![Intune as-built release]({{site.baseurl}}/media/2022/02/intune-release.png)]({{site.baseurl}}/media/2022/02/intune-release.png)

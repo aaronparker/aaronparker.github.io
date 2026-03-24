@@ -67,7 +67,7 @@ SMB Negotiations Occur only Once Per Session
 
 ## Recommendations
 
-Folder redirection is a feature that most environments will not be able to avoid. The various reasons including abstracting data or specific architecture choices for virtual or physical desktops, means that folder redirection will remain an integral part of the enterprise desktop. While there are a number of 3rd party alternatives and approaches, I may cover those in seperate articles.
+Folder redirection is a feature that most environments will not be able to avoid. The various reasons including abstracting data or specific architecture choices for virtual or physical desktops, means that folder redirection will remain an integral part of the enterprise desktop. While there are a number of 3rd party alternatives and approaches, I may cover those in separate articles.
 
 To that end, here are our recommendations for getting the best out of folder redirection. In no particular order:
 

@@ -35,7 +35,7 @@ In my opinion this is the cleanest approach to runtimes that will give you the m
 
 ## 3. Manage runtimes on your base OS and leave the feature on
 
-This is a compromise approach whereby you actively manage runtimes locally on the OS but leave the App-V feature on “just incase”. This means your packages will pick up the runtimes into the App-V package but you will pro-actively reduce the instances where they will actually be needed to be dropped down on the client side. The downside of this approach is the safety net might end up too comforting and the pro-active approach will slowly fade out until you end up back at option 1!
+This is a compromise approach whereby you actively manage runtimes locally on the OS but leave the App-V feature on “just in case”. This means your packages will pick up the runtimes into the App-V package but you will pro-actively reduce the instances where they will actually be needed to be dropped down on the client side. The downside of this approach is the safety net might end up too comforting and the pro-active approach will slowly fade out until you end up back at option 1!
 
 Before you decide, check out the following resources:
 

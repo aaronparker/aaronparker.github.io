@@ -40,7 +40,7 @@ macOS provides a good look at the devices plugged into your TB ports:
 macOS System Report showing Thunderbolt devices
 {:.figcaption}
 
-Note that while the MacBook Pro with Touch Bar has 4 Thunderbolt 3 ports, these are divided across 2 busses. If you have more than one device plugged in, ensure they're plugged into either side of the laptop for best performance.
+Note that while the MacBook Pro with Touch Bar has 4 Thunderbolt 3 ports, these are divided across 2 buses. If you have more than one device plugged in, ensure they're plugged into either side of the laptop for best performance.
 
 ## Thunderbolt 3 on Windows
 
