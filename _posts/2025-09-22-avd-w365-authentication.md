@@ -31,9 +31,9 @@ tags:
 
 Here's a quick post on configuring strong authentication requirements for Azure Virtual Desktop and Windows 365 using Entra Conditional Access.
 
-Customers may want to protect access to these virtual desktop resources because these desktops provide access to sensitive resources. For example, you could be using AVD as a protected administrator workstation or providing access to internal applications. To provide confidence that these resources are protected, strong authentication requirements are needed.
+Customers may want to protect these virtual desktop resources because these desktops provide access to sensitive resources. For example, you could be using AVD as a protected administrator workstation or providing access to internal applications. To provide confidence that these resources are protected, strong authentication requirements are needed.
 
-In this article, I'll walk through configuring a Conditional Acess policy that requires strong multi-factor authentication everytime these resources are accessed, to govern access to virtual desktops.
+In this article, I'll walk through configuring a Conditional Access policy that requires strong multi-factor authentication every time these resources are accessed, to govern virtual desktop access.
 
 This configuration is specifically tailored for high security requirements, so I'll also demonstrate the client experience with this policy in place, along with some considerations.
 
@@ -44,7 +44,7 @@ This configuration is specifically tailored for high security requirements, so I
 To configure authentication requirements, let's create a new [Conditional Access policy](https://learn.microsoft.com/en-us/entra/identity/conditional-access/concept-conditional-access-policies):
 
 * **Policy name** - I've given this policy a descriptive name: **Require strong authentication for Azure Virtual Desktop and Windows 365**
-* **Users** - I want to target **All Users** with this policy so that any user with access to AVD or Windows 365 is covered with strong authentication. We could exclude a break glass account in this policy; however, there may be other methods to access to Entra ID, therefore there may not be a need to exclude specific accounts.
+* **Users** - I want to target **All Users** with this policy so that any user with access to AVD or Windows 365 is covered with strong authentication. We could exclude a break glass account in this policy; however, there may be other methods to access to Entra ID; therefore there may not be a need to exclude specific accounts.
 
 ![](/media/2025/09/ca-users.jpeg)
 
@@ -58,7 +58,7 @@ To configure authentication requirements, let's create a new [Conditional Access
 
 ### Access controls
 
-* **Grant** - select **Grant access**, choose **Require authentication strength** and select **Phishing-resistent MFA**, then choose **For multiple controls / Require all the selected controls**. The last setting is not necessarily required but a good practice in the event this policy is updated with additional controls.
+* **Grant** - select **Grant access**, choose **Require authentication strength** and select **Phishing-resistant MFA**, then choose **For multiple controls / Require all the selected controls**. The last setting is not necessarily required but a good practice in the event this policy is updated with additional controls.
 
 ![](/media/2025/09/ca-grant.jpeg)
 
@@ -100,16 +100,16 @@ In scenarios where the requirement for re-authentication cannot be met and acces
 
 **Grant** controls - where you are protecting access to sensitive information and privileged access workstations, select **Require device to be marked as compliant** in addition to **Require authentication strength**. This ensures that access is only allowed from a trusted, managed device that meets Intune compliance policies.
 
-**Session** controls - enable **Require token protection for sign-in sessions**. This feature can further protect from token theft, and supports the Windows App on a Windows client OS now (with macOS is preview): [Token Protection in Microsoft Entra Conditional Access](https://learn.microsoft.com/en-au/entra/identity/conditional-access/concept-token-protection).
+**Session** controls - enable **Require token protection for sign-in sessions**. This feature can further protect from token theft, and supports the Windows App on a Windows client OS now (with macOS in preview): [Token Protection in Microsoft Entra Conditional Access](https://learn.microsoft.com/en-au/entra/identity/conditional-access/concept-token-protection).
 
-Enabling this session control also requires you to update the CA policy to support only Windows, macOS, and iOS (optionally, with a seperate policy that blocks other platforms). This requirement will also prevent users from using the Windows 365 web client. I did encounter issues getting this to work with the current Windows app on macOS (I haven't tested with a preview client).
+Enabling this session control also requires you to update the CA policy to support only Windows, macOS, and iOS (optionally, with a separate policy that blocks other platforms). This requirement will also prevent users from using the Windows 365 web client. I did encounter issues getting this to work with the current Windows app on macOS (I haven't tested with a preview client).
 
 ## Improving the End-user Experience
 
-This type of policy is typically required for highly secure environments and isn't necessarily used to support general access to Azure Virtual Desktop or Windows 365 for most users. To improve the authentication experience, here's a few considerations:
+This type of policy is typically required for highly secure environments and isn't necessarily used to support general access to Azure Virtual Desktop or Windows 365 for most users. To improve the authentication experience, here are few considerations:
 
-* **Scope the policy** to Entra ID administrator roles - policies that include strict sign-in frequency requirements would be best scoped to accounts with privileged roles with a seperate policy for longer sign-in frequency for general users.
-* Use **seperate Azure Virtual Desktop host pools** for general end-users and administrator accounts. Users with access to both could then have a simplifed sign-in experience on a corporate desktop with stricter sign-in to an administrator desktop.
+* **Scope the policy** to Entra ID administrator roles - policies that include strict sign-in frequency requirements would be best scoped to accounts with privileged roles with a separate policy for longer sign-in frequency for general users.
+* Use **separate Azure Virtual Desktop host pools** for general end-users and administrator accounts. Users with access to both could then have a simplified sign-in experience on a corporate desktop with stricter sign-in to an administrator desktop.
 * All users should use at least **password-less authentication with the Microsoft Authenticator** to speed, simplify and secure sign-ins.
 * Don't use **Sign-in frequency** with high sign-in frequencies without **number matching** or **password-less authentication** in the Microsoft Authenticator. Making it easier on users to sign-in will help balance experience with security.
 * Follow the recommended authentication scenarios from Microsoft: [Conditional Access adaptive session lifetime policies](https://learn.microsoft.com/en-au/entra/identity/conditional-access/concept-session-lifetime).
