@@ -24,7 +24,7 @@ and
 
 > 502 Bad Gateway
 
-![]({{site.baseurl}}/media/2006/12/1000.14.220.OWAError1.PNG
+![]({{site.baseurl}}/media/2006/12/1000.14.220.OWAError1.PNG)
 
 ![]({{site.baseurl}}/media/2006/12/1000.14.221.OWAError2.PNG)
 
