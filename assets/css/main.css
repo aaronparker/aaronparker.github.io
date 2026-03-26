@@ -1284,9 +1284,8 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
   }
 
   .post-share__btn {
-    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm
-           text-slate-300 bg-slate-800 border border-slate-700
-           hover:text-slate-50 hover:border-slate-500 transition-colors no-underline;
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm font-medium
+           text-white transition-all no-underline;
   }
 
   .post-share__btn svg {
@@ -1294,7 +1293,8 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
   }
 
   .post-share__btn--copied {
-    color: #4ade80; /* green-400 */
+    background: #16a34a !important;
+    color: white;
   }
 
   html:not(.dark) .post-share {
@@ -1303,10 +1303,6 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
 
   html:not(.dark) .post-share__label {
     @apply text-gray-400;
-  }
-
-  html:not(.dark) .post-share__btn {
-    @apply text-gray-600 bg-white border-gray-300 hover:text-gray-900 hover:border-gray-400;
   }
 }
 
@@ -1332,9 +1328,13 @@ html:not(.dark) .sidebar__social-link[data-social="github"]:hover { color: #2429
 
 html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #24292e; }
 
-/* Share buttons — brand colour on hover */
-.post-share__btn[data-social="linkedin"]:hover { color: #0A66C2; border-color: #0A66C2; }
-.post-share__btn[data-social="bluesky"]:hover  { color: #1185FE; border-color: #1185FE; }
+/* Share buttons — filled brand colours */
+.post-share__btn[data-social="linkedin"]       { background: #0A66C2; }
+.post-share__btn[data-social="linkedin"]:hover { background: #004182; }
+.post-share__btn[data-social="bluesky"]        { background: #1185FE; }
+.post-share__btn[data-social="bluesky"]:hover  { background: #0a6fd8; }
+#copy-url-btn                                  { background: var(--color-accent); }
+#copy-url-btn:hover                            { opacity: 0.85; }
 
 /* =============================================================================
    Utilities
