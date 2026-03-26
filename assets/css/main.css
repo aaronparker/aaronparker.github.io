@@ -560,6 +560,65 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
     color: #f87171;
   }
 
+  /* --- Series navigation block --- */
+  .series-nav {
+    @apply my-6 rounded-lg border border-slate-200 dark:border-slate-700
+           bg-slate-50 dark:bg-slate-800/50 px-5 py-4 text-sm;
+  }
+
+  .series-nav__heading {
+    @apply flex items-center gap-2 text-xs font-semibold uppercase tracking-wider mb-3;
+    color: var(--color-accent);
+  }
+
+  .series-nav__heading svg {
+    @apply w-3.5 h-3.5 flex-shrink-0;
+  }
+
+  .series-nav__list {
+    @apply space-y-1.5 list-none m-0 p-0;
+  }
+
+  .series-nav__item {
+    @apply flex items-baseline gap-2 text-slate-500 dark:text-slate-400;
+  }
+
+  .series-nav__item a {
+    @apply text-slate-600 dark:text-slate-300 hover:underline;
+    color: inherit;
+  }
+
+  .series-nav__item--current {
+    @apply font-medium;
+    color: var(--color-accent);
+  }
+
+  .series-nav__item--current span {
+    color: var(--color-accent);
+  }
+
+  /* --- Outdated content notice --- */
+  .post-outdated {
+    @apply relative my-6 rounded-lg border-l-4 p-4 pl-12 text-sm leading-relaxed;
+    border-color: #fbbf24;
+    background: color-mix(in srgb, #fbbf24 10%, transparent);
+    color: color-mix(in srgb, #fbbf24 80%, currentColor);
+  }
+
+  .post-outdated::before {
+    content: '';
+    @apply absolute left-3.5 top-4 w-5 h-5 bg-current;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    color: #fbbf24;
+  }
+
+  .post-outdated strong {
+    @apply block text-xs font-semibold uppercase tracking-wider mb-1;
+    color: #fbbf24;
+  }
+
   /* --- .figcaption --- */
   .figcaption {
     @apply block text-center text-sm text-slate-500 italic mt-2 mb-6;
@@ -1153,7 +1212,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
 
 @layer components {
   .post-tag-pill {
-    @apply inline-block px-2.5 py-0.5 rounded-full text-xs font-medium
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium
            border border-slate-600 text-slate-400 no-underline
            transition-colors;
     background: color-mix(in srgb, var(--color-accent) 8%, transparent);
