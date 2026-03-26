@@ -17,6 +17,8 @@ image:
     source:           "Unsplash"
     source_url:       "https://unsplash.com/photos/a-sea-shell-is-seen-from-above-on-a-beige-background-loZ_0TCJNUY"
 comments: true
+series: "Automating Nerdio Manager Shell Apps"
+series_part: 3
 date: 2025-08-18 14:00 +1000
 related_posts:
 - 2025-07-29-nerdio-shell-apps.md
