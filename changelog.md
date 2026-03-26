@@ -8,6 +8,38 @@ permalink: /changelog/
 
 This changelog covers changes to the site theme and design. It does not track changes to individual blog posts or article content. **Note**: the site theme is not licensed for copying or modification.
 
+## 2026-03-26
+
+### Post metadata
+
+- **Updated date** — a "Updated" date now appears in the post header metadata strip, sourced from `page.last_modified_at` (via `jekyll-last-modified-at`), showing when the post file was last committed to git; it only renders when the updated date differs from the published date
+- **Category icon** — the category icon in post metadata changed from a price-tag shape to a folder icon, better representing the concept of a category
+- **Tag pills** — tag pills in the post header now include a small tag SVG icon before the tag name, and each pill links to its tag landing page
+
+### Outdated / content warning
+
+- A new front-matter flag `outdated: true` on a post renders a warning callout below the post header, alerting readers that the content may no longer be accurate
+- The warning text is configurable via `outdated_notice` in front matter; a default message is shown if the field is omitted
+
+### Series navigation
+
+- Posts that belong to a series can set `series` and `series_part` in front matter; a series navigation block listing all parts (with the current part highlighted) is rendered between the post summary and the article body
+- The duplicate series/part label that previously appeared in the post-meta strip has been removed — series information is now only shown in the dedicated series navigation block
+
+### Post layout order
+
+- The post summary (description callout) is now rendered above the series navigation block, so the description always appears immediately after the post header
+
+### Projects page
+
+- A page-level "Updated" date now appears in the Projects page header, showing when `projects.md` was last committed to git
+
+### Share buttons
+
+- Share buttons now use solid filled brand colours (LinkedIn `#0A66C2`, Bluesky `#1185FE`) instead of the previous ghost/outline style
+- The "Copy link" button uses the current accent colour; it briefly turns green on successful copy
+- Brand colours are consistent across light and dark modes
+
 ## 2026-03-23
 
 ### Accessible theme
