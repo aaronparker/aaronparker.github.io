@@ -8,6 +8,18 @@ permalink: /changelog/
 
 This changelog covers changes to the site theme and design. It does not track changes to individual blog posts or article content. **Note**: the site theme is not licensed for copying or modification.
 
+## 2026-04-03
+
+### Bug fixes
+
+- **Share buttons — full URL** — `url: https://stealthpuppy.com` is now set in `_config.yml` so Jekyll's `absolute_url` filter produces a full URL in LinkedIn and Bluesky share buttons; previously only the relative path (e.g. `/evergreen-workbench/`) was passed
+- **Utterances comments label** — the utterances `label` attribute was incorrectly set to `page.url` (a URL path) instead of `site.utterance.label` (`comment`); GitHub issues created by comments were not tagged with the correct label and did not appear in the repository issues list
+- **Dark mode flash on navigation** — an inline `<style>html.dark{background:#0f172a}</style>` is now injected in `<head>` immediately after the theme-init script, so the dark background colour is applied before `style.css` loads, eliminating the white flash visible when navigating between pages in dark mode
+
+### Accent themes
+
+- **Rainbow theme** — a new rainbow accent option replaces the gray swatch; when selected, all accent-coloured elements (links, active nav, focus rings, code highlights) smoothly cycle through the full colour spectrum via a CSS `@keyframes` animation on a registered `@property --accent-hue`; the swatch displays a conic gradient preview
+
 ## 2026-03-26
 
 ### Post metadata
