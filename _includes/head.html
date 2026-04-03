@@ -12,6 +12,8 @@
     if (accent) document.documentElement.classList.add('theme-' + accent);
   })();
 </script>
+<!-- Inline dark background prevents white flash before style.css loads -->
+<style>html.dark{background:#0f172a}</style>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
