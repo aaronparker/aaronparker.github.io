@@ -4,7 +4,7 @@
   if (t) document.documentElement.classList.add('theme-' + t);
 })();
 
-var ACCENT_THEMES = ['blue', 'purple', 'pink', 'red', 'orange', 'amber', 'green', 'gray'];
+var ACCENT_THEMES = ['blue', 'purple', 'pink', 'red', 'orange', 'amber', 'green', 'rainbow'];
 
 function setAccentTheme(name) {
   ACCENT_THEMES.forEach(function (t) {
