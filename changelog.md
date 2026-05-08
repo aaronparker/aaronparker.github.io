@@ -8,6 +8,18 @@ permalink: /changelog/
 
 This changelog covers changes to the site theme and design. It does not track changes to individual blog posts or article content. **Note**: the site theme is not licensed for copying or modification.
 
+## 2026-05-07
+
+### Accessibility & visual improvements
+
+- **Title hierarchy** — post page title bumped to `text-3xl sm:text-4xl lg:text-5xl` with `tracking-tight`; `.post-content h1` reduced from 36px to 30px so in-body H1s never exceed the page title; `about` and `blog` page titles gain `sm:text-4xl` for visual parity
+- **Accent contrast token** — a new `--color-accent-deepest` CSS token (one shade darker than `--color-accent-dark`) is defined for all eight themes, the rainbow theme, and the accessible theme; it is used for any background surface that pairs with white text or icons, bringing those surfaces to WCAG 2.1 AA contrast; affected components: view-toggle active state, skip link, back-to-top button, project card link, project card tags, category filter active button, copy-URL button, and code block language header
+- **Reading column width** — post main content area narrowed from `max-w-3xl` (~768px) to `max-w-[68ch]` for a more comfortable ~65–70 character line length; `text-wrap: balance` applied to all post and card headings; `text-wrap: pretty` applied to post body paragraphs and list items
+- **Sidebar navigation** — deduplicated the sidebar: the "Navigate" section (which duplicated main nav links) is replaced by a "More" section containing Archive and RSS Feed only; primary navigation (About, Blog, Projects) is now driven by `site.menu` in the sidebar header; RSS Feed link moved from the Connect section into More
+- **Theme-aware hero dots** — the homepage radial dot pattern used a hardcoded indigo colour regardless of the active accent theme; it now uses `color-mix(in srgb, var(--color-accent) 20%, transparent)` in dark mode and `var(--color-accent-dark) 12%` in light mode, so the dots shift colour when the accent theme is changed
+- **Code comment contrast** — dark-mode syntax comment colour raised from `#64748b` (slate-500, ~3.5:1) to `#94a3b8` (slate-400, ~5.4:1) against the `#1e293b` code background, clearing WCAG AA for body text
+- **Touch targets** — `.dark-toggle` gains `min-width: 44px; min-height: 44px`; `.accent-swatch` gains an invisible `::before` expanded hit area (~36px total); `.post-tag-pill` padding increased from `py-0.5` to `py-1.5` with `min-height: 32px`
+
 ## 2026-04-03
 
 ### Bug fixes
