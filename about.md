@@ -19,6 +19,7 @@ Here's a sample of projects or features that I've worked on at Nerdio:
 * **Operational Efficiency dashboard** - shows the active time and effort savings that Nerdio Manager provides to a customer in their environment for Azure Virtual Desktop, Windows 365, and Intune
 * **Windows 365 migration** - Nerdio Manager enables customers to migrate suitable Azure Virtual Desktop workloads to Windows 365, simplifying personal desktop management without user interruption
 * **Nerdio Migrate** - Nerdio Manager simplifies migration of legacy VDI workloads to Azure Virtual Desktop and Windows 365
+* **Nerdio Compass** - Compass connects to multiple data sources in your identity, end-user computing, VDI and endpoint management environments and provides recommendations for migration and cost / resource optimisation.
 
 ## Work History
 
