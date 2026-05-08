@@ -37,6 +37,7 @@
   /* Accent colour — indigo (default) */
   --color-accent: #818cf8;         /* indigo-400 — used on dark backgrounds */
   --color-accent-dark: #6366f1;    /* indigo-500 — used on light backgrounds */
+  --color-accent-deepest: #4f46e5; /* indigo-600 — for backgrounds under white text */
 
   /* Sidebar width */
   --sidebar-width: 280px;
@@ -46,14 +47,14 @@
    Colour themes — override accent tokens per html.theme-* class
    ============================================================================= */
 
-html.theme-blue   { --color-accent: #60a5fa; --color-accent-dark: #2563eb; }
-html.theme-purple { --color-accent: #c084fc; --color-accent-dark: #9333ea; }
-html.theme-pink   { --color-accent: #f472b6; --color-accent-dark: #db2777; }
-html.theme-red    { --color-accent: #f87171; --color-accent-dark: #dc2626; }
-html.theme-orange { --color-accent: #fb923c; --color-accent-dark: #ea580c; }
-html.theme-amber  { --color-accent: #fbbf24; --color-accent-dark: #d97706; }
-html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; }
-html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; }
+html.theme-blue   { --color-accent: #60a5fa; --color-accent-dark: #2563eb; --color-accent-deepest: #1d4ed8; }
+html.theme-purple { --color-accent: #c084fc; --color-accent-dark: #9333ea; --color-accent-deepest: #7e22ce; }
+html.theme-pink   { --color-accent: #f472b6; --color-accent-dark: #db2777; --color-accent-deepest: #be185d; }
+html.theme-red    { --color-accent: #f87171; --color-accent-dark: #dc2626; --color-accent-deepest: #b91c1c; }
+html.theme-orange { --color-accent: #fb923c; --color-accent-dark: #ea580c; --color-accent-deepest: #c2410c; }
+html.theme-amber  { --color-accent: #fbbf24; --color-accent-dark: #b45309; --color-accent-deepest: #92400e; }
+html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; --color-accent-deepest: #15803d; }
+html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; --color-accent-deepest: #475569; }
 
 /* Rainbow theme — animates accent hue through full spectrum */
 @property --accent-hue {
@@ -66,6 +67,7 @@ html.theme-rainbow {
   --accent-hue: 0;
   --color-accent: hsl(var(--accent-hue), 75%, 65%);
   --color-accent-dark: hsl(var(--accent-hue), 75%, 50%);
+  --color-accent-deepest: hsl(var(--accent-hue), 75%, 35%);
   animation: rainbow-hue 6s linear infinite;
 }
 
@@ -74,7 +76,7 @@ html.theme-rainbow {
 }
 
 /* Accessible theme overrides accent tokens with high-visibility yellow */
-html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
+html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --color-accent-deepest: #92400e; }
 
 /* =============================================================================
    Base overrides
@@ -215,6 +217,14 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
     @apply w-5 h-5 rounded-full flex-shrink-0 cursor-pointer transition-transform hover:scale-110;
     outline: 2px solid transparent;
     outline-offset: 2px;
+    position: relative;
+  }
+
+  /* Invisible expanded hit area — brings total to ~36px without changing visual size */
+  .accent-swatch::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
   }
 
   .accent-swatch[aria-pressed="true"] {
@@ -300,7 +310,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
 
   /* --- View toggle active state --- */
   .view-btn--active {
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-deepest);
   }
 
   /* Combined selector (0,2,0) beats .dark-toggle's text-slate-400 (0,1,0) */
@@ -703,7 +713,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
     align-items: center;
     padding: 0.2rem 0.75rem;
     /* Light mode: solid accent background */
-    background-color: var(--color-accent-dark);
+    background-color: var(--color-accent-deepest);
   }
 
   /* Dark mode: tinted dark background so bright accents don't overwhelm */
@@ -757,7 +767,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
   /* Rouge syntax highlighting — dark (Monokai-inspired) */
   .highlight pre { @apply p-4 overflow-x-auto text-sm leading-relaxed m-0; background: #1e293b; border-radius: 0; }
   .highlight pre code { background: transparent; padding: 0; }
-  .highlight .c, .highlight .c1, .highlight .cm { color: #64748b; }   /* Comment — slate-500 */
+  .highlight .c, .highlight .c1, .highlight .cm { color: #94a3b8; }   /* Comment — slate-400 (5.4:1 on slate-800) */
   .highlight .k, .highlight .kd, .highlight .kn { color: #93c5fd; }   /* Keyword — blue-300 */
   .highlight .s, .highlight .s1, .highlight .s2 { color: #86efac; }   /* String — green-300 */
   .highlight .o { color: #f9a8d4; }                                    /* Operator — pink-300 */
@@ -851,7 +861,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
     @apply inline-flex items-center gap-1.5 px-4 py-2 rounded
            text-sm font-medium text-white no-underline
            transition-opacity self-start;
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-deepest);
   }
 
   .project-card__link:hover {
@@ -1024,8 +1034,13 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
 @layer components {
 
   .dark-toggle {
-    @apply p-2 rounded-md text-slate-400 hover:text-slate-50 hover:bg-slate-800
+    @apply p-2.5 rounded-md text-slate-400 hover:text-slate-50 hover:bg-slate-800
            transition-colors;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .dark-toggle svg {
@@ -1048,7 +1063,11 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
   .home-hero {
     @apply px-8 py-16 border-b border-slate-700
            relative overflow-hidden;
-    background-image: radial-gradient(circle, rgb(99 102 241 / 0.15) 1px, transparent 1px);
+    background-image: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-accent) 20%, transparent) 1px,
+      transparent 1px
+    );
     background-size: 24px 24px;
   }
 
@@ -1076,7 +1095,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
 
   .project-card__tags .category-pill {
     @apply px-2 py-0.5 text-xs border-transparent text-white;
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-deepest);
   }
 
   .project-card__tags .category-pill:hover {
@@ -1211,7 +1230,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
 
   .cat-filter-btn.active {
     @apply border-transparent text-white;
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-deepest);
   }
 
   html:not(.dark) .cat-filter-btn {
@@ -1230,10 +1249,11 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
 
 @layer components {
   .post-tag-pill {
-    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium
+    @apply inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-medium
            border border-slate-600 text-slate-400 no-underline
            transition-colors;
     background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    min-height: 32px;
   }
 
   a.post-tag-pill:hover {
@@ -1259,7 +1279,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
 .skip-link {
   @apply absolute -top-full left-4 z-50 px-4 py-2 rounded text-sm font-medium text-white
          focus:top-4 transition-none;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-deepest);
 }
 
 /* =============================================================================
@@ -1271,7 +1291,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
   .back-to-top {
     @apply fixed bottom-6 right-6 z-40 p-2.5 rounded-full shadow-lg text-white
            opacity-0 pointer-events-none transition-opacity duration-300;
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-deepest);
   }
 
   .back-to-top.back-to-top--visible {
@@ -1283,7 +1303,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; }
   }
 
   html:not(.dark) .back-to-top {
-    background-color: var(--color-accent-dark);
+    background-color: var(--color-accent-deepest);
   }
 }
 
@@ -1351,7 +1371,7 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
 .post-share__btn[data-social="linkedin"]:hover { background: #004182; }
 .post-share__btn[data-social="bluesky"]        { background: #1185FE; }
 .post-share__btn[data-social="bluesky"]:hover  { background: #0a6fd8; }
-#copy-url-btn                                  { background: var(--color-accent); }
+#copy-url-btn                                  { background: var(--color-accent-deepest); }
 #copy-url-btn:hover                            { opacity: 0.85; }
 
 /* =============================================================================
@@ -1421,7 +1441,7 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
 
   html:not(.dark) .view-btn--active {
     color: white;
-    background-color: var(--color-accent-dark);
+    background-color: var(--color-accent-deepest);
   }
 
   /* Bottom border in sidebar */
@@ -1635,7 +1655,11 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
 
   /* --- Homepage --- */
   html:not(.dark) .home-hero {
-    background-image: radial-gradient(circle, rgb(99 102 241 / 0.08) 1px, transparent 1px);
+    background-image: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-accent-dark) 12%, transparent) 1px,
+      transparent 1px
+    );
     @apply border-gray-200;
   }
 
@@ -1662,7 +1686,7 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
 
   html:not(.dark) .project-card__tags .category-pill {
     @apply border-transparent text-white;
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-deepest);
   }
 
   html:not(.dark) .project-card__tags .category-pill:hover {
@@ -1792,8 +1816,23 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
 /* Code block pre — reset border-radius/border so parent overflow-hidden handles the corners */
 div.highlight pre { border-radius: 0; border: none; }
 
+/* Headline wrapping — balance avoids lonely last lines */
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-card__title,
+.home-hero__title {
+  text-wrap: balance;
+}
+
+/* Body paragraph wrapping — pretty avoids single-word last lines */
+.post-content p,
+.post-content li {
+  text-wrap: pretty;
+}
+
 /* Post content heading sizes — override Tailwind Typography */
-.post-content h1 { font-size: 2.25rem;  font-weight: 700; } /* 36px */
+.post-content h1 { font-size: 1.875rem; font-weight: 700; } /* 30px — never overrides the page title */
 .post-content h2 { font-size: 1.75rem;  font-weight: 700; } /* 28px, was 24px/600 */
 .post-content h3 { font-size: 1.375rem; font-weight: 700; } /* 22px, was 20px/600 */
 .post-content h4 { font-size: 1.125rem; font-weight: 700; } /* 18px, was 600 */

@@ -23,7 +23,7 @@
 
       <!-- Navigation links -->
       <nav class="flex flex-col gap-1 w-full" aria-label="Main navigation">
-        {% for link in site.nav %}
+        {% for link in site.menu %}
         <a href="{{ link.url | relative_url }}"
            class="sidebar__nav-link {% if page.url == link.url or page.url contains link.url %}sidebar__nav-link--active{% endif %}"
            {% if page.url == link.url or page.url contains link.url %}aria-current="page"{% endif %}>
@@ -43,25 +43,17 @@
     <!-- Scrollable nav section -->
     <div class="sidebar__nav">
 
-      <!-- Internal site navigation -->
+      <!-- Utility links not covered by main nav -->
       <div>
-        <p class="sidebar__section-label">Navigate</p>
-        <nav class="flex flex-col gap-1" aria-label="Site pages">
-          <a href="{{ '/' | relative_url }}" class="sidebar__social-link">
-            {% include icons/house.svg %}
-            Home
-          </a>
-          <a href="{{ '/about/' | relative_url }}" class="sidebar__social-link">
-            {% include icons/user.svg %}
-            About
-          </a>
-          <a href="{{ '/projects/' | relative_url }}" class="sidebar__social-link">
-            {% include icons/folder-open.svg %}
-            Projects
-          </a>
+        <p class="sidebar__section-label">More</p>
+        <nav class="flex flex-col gap-1" aria-label="Site utilities">
           <a href="{{ '/archive/' | relative_url }}" class="sidebar__social-link">
             {% include icons/calendar.svg %}
             Archive
+          </a>
+          <a href="{{ '/feed.xml' | relative_url }}" class="sidebar__social-link" data-social="rss">
+            {% include icons/rss.svg %}
+            RSS Feed
           </a>
         </nav>
       </div>
@@ -104,12 +96,6 @@
              class="sidebar__social-link" data-social="spotify" target="_blank" rel="noopener noreferrer">
             {% include icons/spotify.svg %}
             Spotify
-          </a>
-          {% endif %}
-          {% if author.social.rss %}
-          <a href="{{ author.social.rss | relative_url }}" class="sidebar__social-link" data-social="rss">
-            {% include icons/rss.svg %}
-            RSS Feed
           </a>
           {% endif %}
         </nav>
