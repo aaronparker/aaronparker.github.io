@@ -8,6 +8,13 @@ permalink: /changelog/
 
 This changelog covers changes to the site theme and design. It does not track changes to individual blog posts or article content. **Note**: the site theme is not licensed for copying or modification.
 
+## 2026-05-09
+
+### Post hero image
+
+- **Height capped across all display sizes** — the post hero image container previously used `aspect-[21/9]` with no maximum height, producing a 703px-tall hero at 1080p, 977px at 1440p, and 1526px at 4K; the aspect ratio has been replaced with `height: clamp(220px, 35vw, 480px)`, which scales smoothly from 220px on mobile (up from 161px — better visual impact) through ~350px at 720p, and caps at 480px at 1080p and above regardless of viewport width
+- **LCP performance attributes** — the hero `<img>` element now carries `fetchpriority="high"`, `loading="eager"`, and `decoding="auto"`, signalling to the browser that this is the Largest Contentful Paint element and should be loaded as a high-priority resource
+
 ## 2026-05-07
 
 ### Accessibility & visual improvements
