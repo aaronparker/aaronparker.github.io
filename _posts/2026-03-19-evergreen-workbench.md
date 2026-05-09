@@ -76,7 +76,7 @@ Here's how they compare:
 | **PWA install** | No | Yes |
 | **Theme** | Light / Dark | Light / Dark |
 
-Full documentation for both editions is available at [https://eucpilots.com/evergreen-docs/workbench](https://eucpilots.com/evergreen-docs/workbench).
+Full documentation for both editions is available at [https://eucpilots.com/evergreen/workbench](https://eucpilots.com/evergreen/workbench).
 
 ## The Web Workbench
 
@@ -162,7 +162,7 @@ Start-EvergreenWorkbench
 
 The workbench opens to the Apps view by default. You can change the startup view and other preferences in Settings.
 
-Requirements are Windows 10 or Server 2019 or later, PowerShell 5.1 or 7.0+, and .NET Framework 4.7.2+ (for PowerShell 5.1) or .NET 6+ (for PowerShell 7+). Full installation details are in the [documentation](https://eucpilots.com/evergreen-docs/workbench).
+Requirements are Windows 10 or Server 2019 or later, PowerShell 5.1 or 7.0+, and .NET Framework 4.7.2+ (for PowerShell 5.1) or .NET 6+ (for PowerShell 7+). Full installation details are in the [documentation](https://eucpilots.com/evergreen/workbench).
 
 ### Apps and downloads
 
@@ -259,7 +259,7 @@ The Settings view for configuring general preferences and provider connections.
 
 The Evergreen Workbench is something I've wanted to build for a while - a way to make Evergreen's capabilities more visible and accessible without replacing the PowerShell workflows that many environments already rely on. The Web Workbench is production-ready and a good starting point if you want a quick look at what Evergreen tracks. The Desktop Workbench is still in pre-release, but already functional for browsing apps, managing downloads, and working with libraries.
 
-Full documentation for both editions is at [https://eucpilots.com/evergreen-docs/workbench](https://eucpilots.com/evergreen-docs/workbench).
+Full documentation for both editions is at [https://eucpilots.com/evergreen/workbench](https://eucpilots.com/evergreen/workbench).
 
 If you try either edition and run into issues, have ideas for features, or want to help with development - particularly around the Intune and Nerdio Manager integrations - I'd love to hear from you. Leave a comment below or open an issue or Pull Request on GitHub. It's been more than six years since Evergreen's first release, and I think this is a genuinely exciting new direction for the project.
 

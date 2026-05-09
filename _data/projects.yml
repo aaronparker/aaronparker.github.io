@@ -3,7 +3,7 @@
     A PowerShell module that returns the latest version and download URLs for a set of common
     Windows applications. Used for automating application lifecycle management and gold image maintenance.
   image: /assets/projects/evergreen.jpeg
-  url: https://eucpilots.com/evergreen-docs/
+  url: https://eucpilots.com/evergreen/
   tags: [PowerShell, Windows, Automation]
 
 - title: EvergreenUI
@@ -11,7 +11,7 @@
     A PowerShell module providing a GUI for Evergreen via the Evergreen Workbench desktop application.
     Simplifies browsing and downloading application versions. Supports Windows only.
   image: /assets/projects/workbench.jpeg
-  url: https://eucpilots.com/evergreen-docs/workbench/
+  url: https://eucpilots.com/evergreen/workbench/
   tags: [PowerShell, Windows, GUI]
 
 - title: Evergreen Web Workbench
