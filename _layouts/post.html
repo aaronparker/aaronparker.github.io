@@ -22,6 +22,9 @@ layout: default
         <img src="{{ page.image.path | relative_url }}"
              alt="{{ page.title | escape }}"
              itemprop="image"
+             fetchpriority="high"
+             loading="eager"
+             decoding="auto"
              class="w-full h-full object-cover">
       </picture>
     </div>

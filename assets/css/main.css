@@ -376,7 +376,8 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
   }
 
   .post-hero {
-    @apply w-full aspect-[21/9] overflow-hidden bg-slate-800;
+    @apply w-full overflow-hidden bg-slate-800;
+    height: clamp(220px, 35vw, 480px);
   }
 
   .post-hero img {
