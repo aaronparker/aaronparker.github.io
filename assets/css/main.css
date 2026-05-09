@@ -372,12 +372,12 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
 
   /* --- Hero image --- */
   .post-hero-wrap {
-    @apply relative w-full;
+    @apply w-full px-6 pt-6 lg:px-10;
   }
 
   .post-hero {
-    @apply w-full overflow-hidden bg-slate-800;
-    height: clamp(220px, 35vw, 480px);
+    @apply relative w-full overflow-hidden bg-slate-800 rounded-xl shadow-md;
+    height: clamp(360px, 48vw, 580px);
   }
 
   .post-hero img {
@@ -385,7 +385,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
   }
 
   .post-hero-credit {
-    @apply absolute bottom-3 right-3 z-10;
+    @apply absolute top-3 right-3 z-10;
   }
 
   .post-hero-credit__icon {
@@ -401,7 +401,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
   }
 
   .post-hero-credit__tooltip {
-    @apply absolute bottom-full right-0 mb-2
+    @apply absolute top-full right-0 mt-2
            px-3 py-1.5 rounded
            text-xs text-white whitespace-nowrap
            pointer-events-none opacity-0
@@ -412,6 +412,23 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
   .post-hero-credit__icon:hover .post-hero-credit__tooltip,
   .post-hero-credit__icon:focus-visible .post-hero-credit__tooltip {
     @apply opacity-100;
+  }
+
+  .post-hero-overlay {
+    @apply absolute inset-x-0 bottom-0 px-6 pb-7 pt-28 lg:px-8;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.85) 100%);
+  }
+
+  .post-hero-overlay .post-meta {
+    @apply text-white/70 mt-3 mb-0;
+  }
+
+  .post-hero-overlay .post-meta__item svg {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .post-hero-overlay .post-meta__category {
+    color: rgba(255, 255, 255, 0.85);
   }
 
   /* --- Post metadata bar --- */
@@ -1496,6 +1513,18 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
 
   html:not(.dark) .post-meta {
     @apply text-gray-500;
+  }
+
+  html:not(.dark) .post-hero-overlay .post-meta {
+    @apply text-white/70;
+  }
+
+  html:not(.dark) .post-hero-overlay .post-meta__item svg {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  html:not(.dark) .post-hero-overlay .post-meta__category {
+    color: rgba(255, 255, 255, 0.85);
   }
 
   html:not(.dark) .related-posts {
