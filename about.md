@@ -21,7 +21,7 @@ Here's a sample of projects or features that I've worked on at Nerdio:
 * **Nerdio Migrate** - Nerdio Manager simplifies migration of legacy VDI workloads to Azure Virtual Desktop and Windows 365
 * **Nerdio Compass** - Compass connects to multiple data sources in your identity, end-user computing, VDI and endpoint management environments and provides recommendations for migration and cost / resource optimisation.
 
-## Work History
+## Selected Work History
 
 <div class="resume-timeline">
 {% for role in site.data.resume %}
@@ -49,12 +49,27 @@ I have presented at events including **Citrix Synergy**, **BriForum** & **E2EVC*
 
 Below is a selection of speaking engagements and recordings, where available:
 
-{% for year_group in site.data.presentations %}
-### {{ year_group.year }}
-
-{% for talk in year_group.talks %}* {% if talk.url %}[{{ talk.title }}]({{ talk.url }}){% else %}{{ talk.title }}{% endif %} — {{ talk.event }}{% if talk.location %}, {{ talk.location }}{% endif %}{% if talk.date %}, {{ talk.date }}{% endif %}
+<div class="presentation-timeline">
+{% assign grouped = site.data.presentations | group_by: "year" %}
+{% for group in grouped %}
+<div class="presentation-year-group">
+  <span class="presentation-year-group__year">{{ group.name }}</span>
+  <div class="presentation-year-group__talks">
+    {% for talk in group.items %}
+    <div class="presentation-entry">
+      <div class="presentation-entry__header">
+        <div>
+          <p class="presentation-entry__title">{% if talk.url %}<a href="{{ talk.url }}">{{ talk.title }}</a>{% else %}{{ talk.title }}{% endif %}</p>
+          <p class="presentation-entry__meta">{{ talk.event }}{% if talk.location %} &middot; {{ talk.location }}{% endif %}</p>
+        </div>
+        {% if talk.month_name %}<span class="presentation-entry__date">{{ talk.month_name }}</span>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endfor %}
-{% endfor %}
+</div>
 
 ## Publications
 

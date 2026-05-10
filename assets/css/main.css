@@ -932,6 +932,54 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
 }
 
 /* =============================================================================
+   About page — presentation timeline
+   ============================================================================= */
+
+@layer components {
+
+  .presentation-timeline {
+    @apply my-6 pl-6 space-y-8;
+    border-left: 2px solid var(--color-accent);
+  }
+
+  .presentation-year-group {
+    @apply relative;
+  }
+
+  .presentation-year-group::before {
+    content: '';
+    @apply absolute -left-[calc(1.5rem+5px)] top-1.5
+           w-2.5 h-2.5 rounded-full ring-2 ring-slate-900;
+    background-color: var(--color-accent);
+  }
+
+  .presentation-year-group__year {
+    @apply block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3;
+  }
+
+  .presentation-year-group__talks {
+    @apply space-y-3;
+  }
+
+  .presentation-entry__header {
+    @apply flex items-start justify-between gap-4 mb-0.5;
+  }
+
+  .presentation-entry__title {
+    @apply font-semibold text-slate-50 text-sm m-0;
+  }
+
+  .presentation-entry__meta {
+    @apply text-sm text-slate-400 mt-0.5;
+  }
+
+  .presentation-entry__date {
+    @apply text-xs font-semibold uppercase tracking-wider text-slate-500
+           whitespace-nowrap flex-shrink-0 mt-1;
+  }
+}
+
+/* =============================================================================
    Keyframe animations
    ============================================================================= */
 
@@ -1621,6 +1669,32 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
 
   html:not(.dark) .resume-entry__description {
     @apply text-gray-500;
+  }
+
+  /* --- Presentation timeline --- */
+  html:not(.dark) .presentation-timeline {
+    border-left-color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .presentation-year-group::before {
+    @apply ring-white;
+    background-color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .presentation-year-group__year {
+    @apply text-gray-400;
+  }
+
+  html:not(.dark) .presentation-entry__title {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .presentation-entry__meta {
+    @apply text-gray-500;
+  }
+
+  html:not(.dark) .presentation-entry__date {
+    @apply text-gray-400;
   }
 
   /* --- Search modal --- */
