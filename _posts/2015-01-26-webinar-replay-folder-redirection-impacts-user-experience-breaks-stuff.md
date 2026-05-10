@@ -5,7 +5,7 @@ author: Aaron Parker
 layout: post
 permalink: /webinar-replay-folder-redirection-impacts-user-experience-breaks-stuff/
 image:
-  path:    /media/2015/01/webinar25-01-624x351.png
+  path:    /media/2015/01/webinar25-01.png
 categories:
   - Community
 tags:
