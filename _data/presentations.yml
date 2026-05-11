@@ -157,15 +157,17 @@
   month: 4
   month_name: April
   title: Modern Management for Windows 10
-  event: Experts Live Melbourne
+  event: Experts Live
   url: https://www.expertslive.org.au/
+  location: Melbourne, Australia
 
 - year: 2017
   month: 3
   month_name: March
   title: Citrix XenDesktop Machine Creation Services Deep Dive
-  event: E2EVC Sydney
+  event: E2EVC
   url: http://www.e2evc.com/home/HomeEU.aspx#SYDNEY
+  location: Sydney, Australia
 
 - year: 2016
   month: 12
@@ -173,6 +175,7 @@
   title: VMware EUC Champion round table
   event: VMUG Virtual Event
   url: https://www.vmug.com/Attend/VMUG-Virtual-Event
+  location: Virtual
 
 - year: 2016
   month: 9
@@ -275,6 +278,11 @@
   url: http://www.brianmadden.com/video/BriForum-2014-Boston-How-Folder-Redirection-Impacts-User-Experience-and-Breaks-Applications
 
 - year: 2014
+  title: How Folder Redirection Impacts User Experience and Breaks Applications
+  event: BriForum
+  location: London, UK
+
+- year: 2014
   month: 7
   month_name: July
   title: Hands Off My Gold Image!
@@ -282,6 +290,25 @@
   location: Boston, Massachusetts
 
 - year: 2014
+  month: 5
+  month_name: May
+  title: Hands Off My Gold Image! Redux
+  event: Citrix Synergy
+  location: Anaheim, California
+
+- year: 2013
+  title: Hands Off My Gold Image!
+  event: Infrastructure Saturday
+  location: Brisbane, Australia
+
+- year: 2013
   title: Hands Off My Gold Image!
   event: Citrix Synergy
   location: Los Angeles, California
+
+- year: 2012
+  month: 5
+  month_name: May
+  title: User Environment Management Smackdown
+  event: Citrix Synergy
+  location: San Francisco, California

@@ -56,8 +56,8 @@ author:
 menu:
   - title:             About
     url:               /about/
-  # - title:             Blog
-  #   url:               /posts/
+  - title:             Community
+    url:               /community_review/
   - title:             Projects
     url:               /projects/
 
