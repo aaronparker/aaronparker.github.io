@@ -8,6 +8,32 @@ permalink: /changelog/
 
 This changelog covers changes to the site theme and design. It does not track changes to individual blog posts or article content. **Note**: the site theme is not licensed for copying or modification.
 
+## 2026-05-11
+
+### View transitions
+
+- **MPA page transitions** — `@view-transition { navigation: auto }` added to the CSS so the browser plays a cross-fade animation when navigating between pages; old and new root snapshots each animate for 250ms with `ease-out` timing; the entire effect is suppressed under `prefers-reduced-motion: reduce`
+- **Shared hero image transition** — the post-card thumbnail and the full-post hero image share a `view-transition-name` keyed to the post slug (`post-img-{slug}`), so the thumbnail morphs smoothly into the full hero image when opening a post
+- **Scroll anchor offset** — `scroll-padding-top: 4rem` added to `html` so anchor-linked headings clear the fixed topbar after a transition
+
+### Container queries
+
+- **Post card container** — `.post-card` now carries `container-type: inline-size; container-name: post-card`; the list-view layout rules (thumbnail width, body padding, excerpt clamp) are applied inside a `@container post-card (min-width: 480px)` query rather than a viewport media query, so cards adapt to their actual rendered width regardless of how the grid is configured
+
+### Focus ring refinement
+
+- **Consistent 3px outline** — the standard `:focus-visible` ring increased from 2px to 3px; the accessible-mode ring reduced from 4px to 3px, giving both a uniform thickness with a slightly larger offset
+
+### About & Community Review page — timeline components
+
+- **Presentations timeline** — the flat presentation list in `_data/presentations.yml` is now grouped by year via Liquid `group_by` and rendered as a visual vertical timeline with circular year markers and per-entry month badges; data fields changed from a single `date` string to structured `year`, `month`, and `month_name` fields
+- **Awards timeline** — the MVP award list in `_data/awards.yml` changed from a single `years` string to `start` / `end` integer fields (supporting `"Present"` as end value); rendered as a `.award-timeline` with logo, category, and date-range display
+- **Publications timeline** — the publications list on the Community Review page is now grouped by year (extracted from the existing `date` string) and rendered in the same vertical timeline style as presentations
+
+### Tailwind CSS
+
+- **Upgraded to v4.3.0** — `tailwindcss`, `@tailwindcss/cli`, `@tailwindcss/node`, and `@tailwindcss/oxide` updated to v4.3.0
+
 ## 2026-05-09
 
 ### Post hero image
