@@ -15,7 +15,7 @@ I am very fortunate to have been awarded the following community recognitions:
 <div class="award-entry">
   <div class="award-entry__header">
     <div class="award-entry__info">
-      <img src="{{ award.logo | prepend: site.baseurl }}" alt="{{ award.name }}" class="award-entry__logo">
+      <img src="{{ award.logo | prepend: site.baseurl }}" alt="{{ award.name }}" class="award-entry__logo no-zoom">
       <div>
         <p class="award-entry__name">{% if award.url %}<a href="{{ award.url }}">{{ award.name }}</a>{% else %}{{ award.name }}{% endif %}</p>
         {% if award.category %}<p class="award-entry__category">{{ award.category }}</p>{% endif %}

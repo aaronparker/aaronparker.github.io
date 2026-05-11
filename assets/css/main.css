@@ -1036,7 +1036,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
   }
 
   .award-entry__logo {
-    @apply h-8 w-auto flex-shrink-0 object-contain my-0;
+    @apply h-8 w-[84px] flex-shrink-0 object-contain object-left my-0 border-0 rounded-none;
   }
 
   .award-entry__name {
