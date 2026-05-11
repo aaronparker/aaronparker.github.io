@@ -22,12 +22,14 @@ layout: default
           sizes="(max-width: 1023px) calc(100vw - 48px), calc(100vw - 360px)">
         {% endif %}
         <img src="{{ page.image.path | relative_url }}"
-             alt="{{ page.title | escape }}"
+             alt=""
              itemprop="image"
              fetchpriority="high"
              loading="eager"
              decoding="auto"
-             class="w-full h-full object-cover">
+             class="w-full h-full object-cover"
+             style="view-transition-name: post-img-{{ page.slug }}"
+             >
       </picture>
 
       <!-- Title overlay -->

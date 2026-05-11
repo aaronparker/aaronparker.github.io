@@ -87,6 +87,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
   }
 
   code, pre, kbd, samp {
@@ -100,8 +101,30 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
 
   /* Focus ring using accent colour */
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 3px solid var(--color-accent);
     outline-offset: 2px;
+  }
+}
+
+/* =============================================================================
+   MPA View Transitions — blog card → post hero
+   ============================================================================= */
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 250ms;
+  animation-timing-function: ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
 
@@ -324,6 +347,8 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
            bg-slate-800 overflow-hidden;
     transition: transform 200ms ease, box-shadow 200ms ease,
                 border-color 200ms ease, background-color 200ms ease;
+    container-type: inline-size;
+    container-name: post-card;
   }
 
   .post-card:hover {
@@ -2007,30 +2032,31 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
   gap: 0.75rem;
 }
 
+/* flex-direction must be set on the card itself — container queries only reach descendants */
 #posts-container.posts-list .post-card {
   flex-direction: row;
 }
 
-#posts-container.posts-list .post-card__image {
-  width: 9rem;
-  flex-shrink: 0;
-  aspect-ratio: auto;
-}
-
-#posts-container.posts-list .post-card__image img {
-  height: 100%;
-}
-
-#posts-container.posts-list .post-card__body {
-  padding: 1rem;
-  gap: 0.25rem;
-}
-
-#posts-container.posts-list .post-card__excerpt {
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+/* Child element adjustments via container query (card is the container) */
+@container post-card (min-width: 480px) {
+  .post-card__image {
+    width: 9rem;
+    flex-shrink: 0;
+    aspect-ratio: auto;
+  }
+  .post-card__image img {
+    height: 100%;
+  }
+  .post-card__body {
+    padding: 1rem;
+    gap: 0.25rem;
+  }
+  .post-card__excerpt {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 /* Project list view — unlayered to beat auto-fill grid */
@@ -2242,9 +2268,8 @@ html:not(.dark) .post-content pre.mermaid {
     border-color: currentColor;
   }
 
-  /* Stronger focus ring */
+  /* Slightly larger offset under high contrast */
   :focus-visible {
-    outline-width: 3px;
     outline-offset: 3px;
   }
 
@@ -2425,9 +2450,9 @@ html.accessible .dark-toggle:hover svg {
   color: #000 !important;
 }
 
-/* Focus ring — very prominent */
+/* Focus ring */
 html.accessible :focus-visible {
-  outline: 4px solid #fde047 !important;
+  outline: 3px solid #fde047 !important;
   outline-offset: 3px !important;
 }
 

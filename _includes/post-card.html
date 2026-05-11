@@ -14,7 +14,9 @@
       <img src="{{ include.post.image.path | relative_url }}"
            alt="{{ include.post.title | escape }}"
            loading="lazy"
-           class="no-zoom">
+           class="no-zoom"
+           style="view-transition-name: post-img-{{ include.post.slug }}"
+           >
     </picture>
   </a>
   {% endif %}
