@@ -4,11 +4,11 @@ title: Community
 description: 
 hide_description: true
 ---
-Selected details of community related content.
+Selected details of community related content. I have presented at events including **Citrix Synergy**, **BriForum** & **E2EVC** conferences in the US, Europe and Australia since 2011, writing here since 2004 and contributing to the community in a number of other areas. 
 
 ## Awards
 
-I have presented at events including **Citrix Synergy**, **BriForum** & **E2EVC** conferences in the US, Europe and Australia since 2011, writing here since 2004 and contributing to the community in a number of other areas. I am very fortunate to have been awarded the following community recognitions:
+I am very fortunate to have been awarded the following community recognitions:
 
 {% for award in site.data.awards %}* <img src="{{ award.logo | prepend: site.baseurl }}" alt="{{ award.name }}" style="height:1.25rem;display:inline;vertical-align:middle;margin-right:0.4rem;"> {% if award.url %}[{{ award.name }}]({{ award.url }}){% else %}{{ award.name }}{% endif %}{% if award.category %} — {{ award.category }}{% endif %} ({{ award.years }})
 {% endfor %}
