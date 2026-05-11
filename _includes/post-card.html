@@ -9,7 +9,7 @@
       {% if include.post.image.srcset %}
       <source srcset="{{ include.post.image.srcset['480w'] | relative_url }} 480w,
                       {{ include.post.image.srcset['960w'] | relative_url }} 960w"
-              sizes="(max-width: 640px) 100vw, 400px">
+              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw">
       {% endif %}
       <img src="{{ include.post.image.path | relative_url }}"
            alt="{{ include.post.title | escape }}"
