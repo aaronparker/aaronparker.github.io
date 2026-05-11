@@ -1,7 +1,7 @@
 ---
 layout: about
 title: Community
-description: A list of community awards, and speaking engagements and presentations.
+description: 
 hide_description: true
 ---
 Selected details of community related content. I have presented at events including **Citrix Synergy**, **BriForum** & **E2EVC** conferences in the US, Europe and Australia since 2011, writing here since 2004 and contributing to the community in a number of other areas. 

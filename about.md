@@ -1,7 +1,7 @@
 ---
 layout: about
 title: About Me
-description: A page with more details about Aaron Parker.
+description: 
 hide_description: true
 ---
 I'm an **end-user computing specialist** with 30 years experience in pre-sales, design, implementation, and support of end-user computing environments (virtual desktops, modern device management, and enterprise mobility). I've also spent around 20 years in the IT community speaking, presenting, blogging and running open-source projects.
