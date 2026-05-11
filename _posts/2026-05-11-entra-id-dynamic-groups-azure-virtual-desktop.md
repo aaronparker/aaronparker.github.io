@@ -19,7 +19,7 @@ image:
     source:           "Unsplash"
     source_url:       "https://unsplash.com/photos/text-yAGNjU4rtss"
 categories:
-  - Entra
+  - Microsoft
 date: 2026-05-11 10:00 +1000
 tags:
   - Azure Virtual Desktop
