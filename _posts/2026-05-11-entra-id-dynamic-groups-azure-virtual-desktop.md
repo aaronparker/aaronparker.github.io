@@ -4,7 +4,7 @@ title: "Building Entra Dynamic Device Groups for AVD"
 description: >
   Use Entra ID dynamic device groups to automatically target Azure Virtual Desktop
   session hosts by subscription and resource group - with an interactive rule builder.
-permalink: "/entra-id/dynamic-groups-azure-virtual-desktop/"
+permalink: "/dynamic-groups-azure-virtual-desktop/"
 image:
   path: "/assets/img/group/image.jpg"
   width: 1920
