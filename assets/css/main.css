@@ -980,6 +980,94 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
 }
 
 /* =============================================================================
+   About page — award timeline
+   ============================================================================= */
+
+@layer components {
+
+  .award-timeline {
+    @apply my-4 pl-6 space-y-3;
+    border-left: 2px solid var(--color-accent);
+  }
+
+  .award-entry {
+    @apply relative;
+  }
+
+  .award-entry::before {
+    content: '';
+    @apply absolute -left-[calc(1.5rem+5px)] top-1.5
+           w-2.5 h-2.5 rounded-full ring-2 ring-slate-900;
+    background-color: var(--color-accent);
+  }
+
+  .award-entry__header {
+    @apply flex items-start justify-between gap-4;
+  }
+
+  .award-entry__info {
+    @apply flex items-center gap-3;
+  }
+
+  .award-entry__logo {
+    @apply h-8 w-auto flex-shrink-0 object-contain my-0;
+  }
+
+  .award-entry__name {
+    @apply font-semibold text-slate-50 text-sm m-0;
+  }
+
+  .award-entry__category {
+    @apply text-sm text-slate-400 mt-0.5 m-0;
+  }
+
+  .award-entry__dates {
+    @apply text-xs font-semibold uppercase tracking-wider text-slate-500
+           whitespace-nowrap flex-shrink-0 mt-1;
+  }
+}
+
+@layer components {
+
+  .publication-timeline {
+    @apply my-6 pl-6 space-y-8;
+    border-left: 2px solid var(--color-accent);
+  }
+
+  .publication-year-group {
+    @apply relative;
+  }
+
+  .publication-year-group::before {
+    content: '';
+    @apply absolute -left-[calc(1.5rem+5px)] top-1.5
+           w-2.5 h-2.5 rounded-full ring-2 ring-slate-900;
+    background-color: var(--color-accent);
+  }
+
+  .publication-year-group__year {
+    @apply block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3;
+  }
+
+  .publication-year-group__items {
+    @apply space-y-3;
+  }
+
+  .publication-entry__header {
+    @apply flex items-start justify-between gap-4 mb-0.5;
+  }
+
+  .publication-entry__title {
+    @apply font-semibold text-slate-50 text-sm m-0;
+  }
+
+  .publication-entry__date {
+    @apply text-xs font-semibold uppercase tracking-wider text-slate-500
+           whitespace-nowrap flex-shrink-0 mt-1;
+  }
+}
+
+/* =============================================================================
    Keyframe animations
    ============================================================================= */
 
@@ -1694,6 +1782,50 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
   }
 
   html:not(.dark) .presentation-entry__date {
+    @apply text-gray-400;
+  }
+
+  /* --- Award timeline --- */
+  html:not(.dark) .award-timeline {
+    border-left-color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .award-entry::before {
+    @apply ring-white;
+    background-color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .award-entry__name {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .award-entry__category {
+    @apply text-gray-500;
+  }
+
+  html:not(.dark) .award-entry__dates {
+    @apply text-gray-400;
+  }
+
+  /* --- Publication timeline --- */
+  html:not(.dark) .publication-timeline {
+    border-left-color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .publication-year-group::before {
+    @apply ring-white;
+    background-color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .publication-year-group__year {
+    @apply text-gray-400;
+  }
+
+  html:not(.dark) .publication-entry__title {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .publication-entry__date {
     @apply text-gray-400;
   }
 
