@@ -1,0 +1,478 @@
+<style>
+/* AVD Dynamic Group Rule Builder — scoped styles */
+.avd-dgb {
+  font-family: var(--font-sans);
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+html.dark .avd-dgb {
+  border-color: #334155;
+  background: #1e293b;
+}
+
+.avd-dgb__header {
+  margin-bottom: 1.25rem;
+}
+.avd-dgb__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.25rem 0;
+}
+html.dark .avd-dgb__title {
+  color: #f1f5f9;
+}
+.avd-dgb__subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+html.dark .avd-dgb__subtitle {
+  color: #94a3b8;
+}
+
+.avd-dgb__section {
+  margin-bottom: 1.25rem;
+}
+.avd-dgb__section:last-child {
+  margin-bottom: 0;
+}
+
+.avd-dgb__label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.375rem;
+}
+html.dark .avd-dgb__label {
+  color: #cbd5e1;
+}
+
+.avd-dgb__label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.avd-dgb__label-row .avd-dgb__label {
+  margin-bottom: 0;
+}
+
+.avd-dgb__input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background: #ffffff;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+html.dark .avd-dgb__input {
+  border-color: #334155;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+.avd-dgb__input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+.avd-dgb__input--error {
+  border-color: #f87171;
+}
+html.dark .avd-dgb__input--error {
+  border-color: #f87171;
+}
+.avd-dgb__input::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+html.dark .avd-dgb__input::placeholder {
+  color: #475569;
+}
+
+.avd-dgb__error {
+  display: block;
+  font-size: 0.75rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+  min-height: 1rem;
+}
+html.dark .avd-dgb__error {
+  color: #f87171;
+}
+
+.avd-dgb__rg-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  align-items: start;
+}
+.avd-dgb__rg-row .avd-dgb__input {
+  grid-column: 1;
+  grid-row: 1;
+}
+.avd-dgb__rg-row .avd-dgb__error {
+  grid-column: 1;
+  grid-row: 2;
+}
+.avd-dgb__remove-btn {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2.125rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  flex-shrink: 0;
+  padding: 0;
+}
+html.dark .avd-dgb__remove-btn {
+  border-color: #334155;
+  color: #64748b;
+}
+.avd-dgb__remove-btn:hover:not(:disabled) {
+  color: #ef4444;
+  border-color: #f87171;
+  background: color-mix(in srgb, #f87171 10%, transparent);
+}
+html.dark .avd-dgb__remove-btn:hover:not(:disabled) {
+  color: #f87171;
+  border-color: #f87171;
+}
+.avd-dgb__remove-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.avd-dgb__remove-btn svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.avd-dgb__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, opacity 0.15s;
+  white-space: nowrap;
+  line-height: 1.25;
+}
+.avd-dgb__btn svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+}
+
+/* Ghost — Add resource group */
+.avd-dgb__btn--ghost {
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  background: transparent;
+}
+.avd-dgb__btn--ghost:hover {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
+
+/* Accent — Copy */
+.avd-dgb__btn--accent {
+  border: 1px solid transparent;
+  background: var(--color-accent-deepest);
+  color: #ffffff;
+}
+.avd-dgb__btn--accent:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+}
+.avd-dgb__btn--accent:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Output section */
+.avd-dgb__output-wrap {
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+html.dark .avd-dgb__output-wrap {
+  border-color: #334155;
+}
+
+.avd-dgb__output {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #374151;
+  background: #ffffff;
+  overflow-x: auto;
+  min-height: 3.5rem;
+}
+html.dark .avd-dgb__output {
+  color: #94a3b8;
+  background: #0f172a;
+}
+.avd-dgb__output--ready {
+  color: #111827;
+}
+html.dark .avd-dgb__output--ready {
+  color: #e2e8f0;
+}
+</style>
+
+<div id="avd-dgb" class="not-prose avd-dgb">
+
+  <div class="avd-dgb__header">
+    <p class="avd-dgb__title">Dynamic Group Rule Builder</p>
+    <p class="avd-dgb__subtitle">Enter your Azure subscription ID and resource group names to generate the Entra ID dynamic device group membership rule.</p>
+  </div>
+
+  <!-- Subscription ID -->
+  <div class="avd-dgb__section">
+    <label for="avd-dgb-sub-id" class="avd-dgb__label">Azure Subscription ID</label>
+    <input
+      id="avd-dgb-sub-id"
+      type="text"
+      class="avd-dgb__input"
+      placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+      aria-describedby="avd-dgb-sub-id-error"
+      autocomplete="off"
+      spellcheck="false"
+    >
+    <span id="avd-dgb-sub-id-error" class="avd-dgb__error" role="alert" aria-live="polite"></span>
+  </div>
+
+  <!-- Resource Group Names -->
+  <div class="avd-dgb__section">
+    <div class="avd-dgb__label-row">
+      <span class="avd-dgb__label" id="avd-dgb-rg-label">Resource Group Names</span>
+      <button type="button" id="avd-dgb-add-rg" class="avd-dgb__btn avd-dgb__btn--ghost" aria-label="Add another resource group">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        Add
+      </button>
+    </div>
+    <div id="avd-dgb-rg-list" aria-labelledby="avd-dgb-rg-label" role="list"></div>
+  </div>
+
+  <!-- Output -->
+  <div class="avd-dgb__section">
+    <div class="avd-dgb__label-row">
+      <span class="avd-dgb__label">Generated Rule</span>
+      <button type="button" id="avd-dgb-copy-btn" class="avd-dgb__btn avd-dgb__btn--accent" aria-label="Copy rule to clipboard" disabled>
+        <svg id="avd-dgb-copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <span id="avd-dgb-copy-text">Copy</span>
+      </button>
+    </div>
+    <div class="avd-dgb__output-wrap" aria-live="polite" aria-atomic="true">
+      <pre id="avd-dgb-output" class="avd-dgb__output">Enter a Subscription ID and at least one Resource Group name to generate the rule.</pre>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var PLACEHOLDER_TEXT = 'Enter a Subscription ID and at least one Resource Group name to generate the rule.';
+  var NEEDS_RG_TEXT    = 'Add at least one Resource Group name to generate the rule.';
+
+  var subInput  = document.getElementById('avd-dgb-sub-id');
+  var subError  = document.getElementById('avd-dgb-sub-id-error');
+  var rgList    = document.getElementById('avd-dgb-rg-list');
+  var addBtn    = document.getElementById('avd-dgb-add-rg');
+  var copyBtn   = document.getElementById('avd-dgb-copy-btn');
+  var copyText  = document.getElementById('avd-dgb-copy-text');
+  var copyIcon  = document.getElementById('avd-dgb-copy-icon');
+  var outputPre = document.getElementById('avd-dgb-output');
+
+  var COPY_ICON  = '<rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>';
+  var CHECK_ICON = '<polyline points="20 6 9 17 4 12"/>';
+
+  var rowCounter = 0;
+
+  function isValidGuid(val) {
+    return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(val.trim());
+  }
+
+  function isValidRgName(val) {
+    var s = val.trim();
+    if (s.length < 1 || s.length > 90) return false;
+    if (!/^[-\w\.\(\)]+$/.test(s)) return false;
+    if (s.charAt(s.length - 1) === '.') return false;
+    return true;
+  }
+
+  function generateRule(subId, rgNames) {
+    return rgNames.map(function (rg) {
+      return '(device.devicePhysicalIds -any (_ -contains "[AzureResourceId]:/subscriptions/' +
+        subId.trim() + '/resourceGroups/' + rg.trim() + '"))';
+    }).join(' or ');
+  }
+
+  function updateOutput() {
+    var subVal   = subInput.value;
+    var subValid = isValidGuid(subVal);
+
+    // Subscription ID validation feedback
+    if (subVal.trim() === '') {
+      subInput.classList.remove('avd-dgb__input--error');
+      subError.textContent = '';
+    } else if (!subValid) {
+      subInput.classList.add('avd-dgb__input--error');
+      subError.textContent = 'Enter a valid GUID (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).';
+    } else {
+      subInput.classList.remove('avd-dgb__input--error');
+      subError.textContent = '';
+    }
+
+    // Collect and validate RG rows
+    var validRgs = [];
+    var rgRows   = rgList.querySelectorAll('.avd-dgb__rg-row');
+    rgRows.forEach(function (row) {
+      var input = row.querySelector('input');
+      var err   = row.querySelector('.avd-dgb__error');
+      var val   = input.value;
+
+      if (val.trim() === '') {
+        input.classList.remove('avd-dgb__input--error');
+        err.textContent = '';
+      } else if (!isValidRgName(val)) {
+        input.classList.add('avd-dgb__input--error');
+        err.textContent = 'Invalid name: 1–90 chars, letters/digits/-_.(). Cannot end with a period.';
+      } else {
+        input.classList.remove('avd-dgb__input--error');
+        err.textContent = '';
+        validRgs.push(val.trim());
+      }
+    });
+
+    // Generate output
+    if (!subValid) {
+      setOutput(PLACEHOLDER_TEXT, false);
+    } else if (validRgs.length === 0) {
+      setOutput(NEEDS_RG_TEXT, false);
+    } else {
+      setOutput(generateRule(subVal.trim(), validRgs), true);
+    }
+  }
+
+  function setOutput(text, isRule) {
+    outputPre.textContent = text;
+    if (isRule) {
+      outputPre.classList.add('avd-dgb__output--ready');
+      copyBtn.disabled = false;
+    } else {
+      outputPre.classList.remove('avd-dgb__output--ready');
+      copyBtn.disabled = true;
+    }
+  }
+
+  function updateRemoveButtons() {
+    var rows = rgList.querySelectorAll('.avd-dgb__rg-row');
+    rows.forEach(function (row) {
+      var btn = row.querySelector('.avd-dgb__remove-btn');
+      btn.disabled = (rows.length === 1);
+    });
+  }
+
+  function addRgRow(focusInput) {
+    var id = rowCounter++;
+
+    var row = document.createElement('div');
+    row.className = 'avd-dgb__rg-row';
+    row.setAttribute('role', 'listitem');
+
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.className = 'avd-dgb__input';
+    input.placeholder = 'rg-avd-sessionhosts';
+    input.id = 'avd-dgb-rg-' + id;
+    input.setAttribute('aria-label', 'Resource group name');
+    input.setAttribute('aria-describedby', 'avd-dgb-rg-err-' + id);
+    input.setAttribute('autocomplete', 'off');
+    input.setAttribute('spellcheck', 'false');
+    input.addEventListener('input', updateOutput);
+
+    var removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.className = 'avd-dgb__remove-btn';
+    removeBtn.setAttribute('aria-label', 'Remove this resource group');
+    removeBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+    removeBtn.addEventListener('click', function () {
+      row.remove();
+      updateOutput();
+      updateRemoveButtons();
+    });
+
+    var errorSpan = document.createElement('span');
+    errorSpan.id = 'avd-dgb-rg-err-' + id;
+    errorSpan.className = 'avd-dgb__error';
+    errorSpan.setAttribute('role', 'alert');
+    errorSpan.setAttribute('aria-live', 'polite');
+
+    row.appendChild(input);
+    row.appendChild(removeBtn);
+    row.appendChild(errorSpan);
+    rgList.appendChild(row);
+
+    updateRemoveButtons();
+
+    if (focusInput !== false) {
+      input.focus();
+    }
+  }
+
+  // Copy to clipboard
+  copyBtn.addEventListener('click', function () {
+    var text = outputPre.textContent;
+    navigator.clipboard.writeText(text).then(function () {
+      copyIcon.innerHTML = CHECK_ICON;
+      copyText.textContent = 'Copied!';
+      copyBtn.setAttribute('aria-label', 'Copied to clipboard');
+      setTimeout(function () {
+        copyIcon.innerHTML = COPY_ICON;
+        copyText.textContent = 'Copy';
+        copyBtn.setAttribute('aria-label', 'Copy rule to clipboard');
+      }, 2000);
+    });
+  });
+
+  addBtn.addEventListener('click', function () {
+    addRgRow(true);
+    updateOutput();
+  });
+
+  subInput.addEventListener('input', updateOutput);
+
+  // Initialise with one empty RG row
+  addRgRow(false);
+  updateOutput();
+}());
+</script>
