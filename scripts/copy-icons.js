@@ -16,6 +16,7 @@ const lucideIcons = [
   'file-text',       // Nav: Blog
   'folder-open',     // Nav: Projects
   'user',            // Nav: About
+  'users',           // Nav: Community
   'calendar',        // Post: Date
   'clock',           // Post: Reading time
   'tag',             // Post: Category
