@@ -304,5 +304,5 @@ github: [metadata]
 utterance:
   repo: aaronparker/aaronparker.github.io
   issue-term: url
-  theme: preferred-color-scheme
+  theme: github-light
   label: comment
