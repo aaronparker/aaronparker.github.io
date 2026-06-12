@@ -52,7 +52,7 @@ Import-Module -Name EvergreenUI
 Start-EvergreenWorkbench
 ```
 
-The workbench depends on these additional modules: 'Az.Accounts', 'Az.Resources', 'Az.Storage', 'IntuneWin32App', 'Microsoft.Graph.Authentication'. To install EvergreenUI and all depdendencies, use the following commands:
+The workbench depends on these additional modules: 'Az.Accounts', 'Az.Resources', 'Az.Storage', 'IntuneWin32App', 'Microsoft.Graph.Authentication'. To install EvergreenUI and all dependencies, use the following commands:
 
 ```powershell
 Install-Module -Name EvergreenUI, Evergreen, Az.Accounts, Az.Resources, Az.Storage, IntuneWin32App, Microsoft.Graph.Authentication
@@ -125,7 +125,7 @@ The Import Tab is where the workbench includes workflows for Microsoft Intune or
 
 Import-related modules are loaded when you first open the tab. Sign-in and import actions stay disabled until the required modules finish loading.
 
-Each of the tabs relies on application package definitions that can be found here: [https://github.com/EUCPilots/evergreen-packages](https://github.com/EUCPilots/evergreen-packages). This repository includes as set of package definitions for importing supported apps into Intune and Nerdio Manager, including the Microsoft 365 Apps. The Intune and Nerdio Manager packages are currently seperate, but I would like to combine these into a single package definition in the future. The Microsoft 365 Apps configuration files support both Intune and Nerdio Manager.
+Each of the tabs relies on application package definitions that can be found here: [https://github.com/EUCPilots/evergreen-packages](https://github.com/EUCPilots/evergreen-packages). This repository includes as set of package definitions for importing supported apps into Intune and Nerdio Manager, including the Microsoft 365 Apps. The Intune and Nerdio Manager packages are currently separate, but I would like to combine these into a single package definition in the future. The Microsoft 365 Apps configuration files support both Intune and Nerdio Manager.
 
 ### Microsoft Intune Win32 Apps
 
