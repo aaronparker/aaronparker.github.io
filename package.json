@@ -13,11 +13,11 @@
   "devDependencies": {
     "@fontsource-variable/geist": "^5.2.9",
     "@fontsource-variable/geist-mono": "^5.2.8",
-    "@tailwindcss/cli": "^4.3.0",
+    "@tailwindcss/cli": "^4.3.1",
     "@tailwindcss/typography": "^0.5.20",
-    "lucide-static": "^1.17.0",
-    "simple-icons": "^16.23.0",
-    "tailwindcss": "^4.3.0"
+    "lucide-static": "^1.21.0",
+    "simple-icons": "^16.24.0",
+    "tailwindcss": "^4.3.1"
   },
   "dependencies": {
     "lunr": "^2.3.9",
