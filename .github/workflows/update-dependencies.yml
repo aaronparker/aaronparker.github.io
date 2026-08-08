@@ -104,8 +104,18 @@ jobs:
 
       - name: Commit dependency updates
         if: steps.changes.outputs.changed == 'true'
+        id: commit
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore: update dependencies"
           commit_user_name: ${{ secrets.COMMIT_NAME }}
           commit_user_email: ${{ secrets.COMMIT_EMAIL }}
+
+      - name: Trigger Jekyll deployment
+        if: steps.commit.outputs.changes_detected == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST \
+            "repos/${{ github.repository }}/dispatches" \
+            -f event_type=dependencies-updated
