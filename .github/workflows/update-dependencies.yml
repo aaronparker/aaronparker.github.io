@@ -1,0 +1,111 @@
+name: Weekly Dependency Updates
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-dependency-updates
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Update and validate dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@d45b1a4e94b71acab930e56e79c6aa188764e7f9
+        with:
+          ruby-version: "3.4.3"
+          bundler-cache: true
+
+      - name: Update npm dependencies
+        run: |
+          npx --yes npm-check-updates@latest -u
+          npm install
+
+      - name: Update Jekyll constraint
+        run: |
+          ruby <<'RUBY'
+          require "json"
+          require "net/http"
+          require "rubygems"
+
+          versions = JSON.parse(
+            Net::HTTP.get(URI("https://rubygems.org/api/v1/versions/jekyll.json"))
+          )
+          latest = versions
+            .reject { |version| version["prerelease"] || version["yanked"] }
+            .max_by { |version| Gem::Version.new(version.fetch("number")) }
+            .fetch("number")
+
+          path = "Gemfile"
+          gemfile = File.read(path)
+          pattern = /^gem\s+["']jekyll["'].*$/
+          abort "Jekyll declaration not found in Gemfile" unless gemfile.match?(pattern)
+
+          File.write(path, gemfile.sub(pattern, %(gem "jekyll", "~> #{latest}")))
+          puts "Updated Jekyll constraint to ~> #{latest}"
+          RUBY
+
+      - name: Update Ruby Gems
+        run: bundle update
+
+      - name: Build CSS and assets
+        run: npm run build
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Validate generated site
+        run: |
+          gem install html-proofer --no-document
+          pages=(
+            ./_site/index.html
+            ./_site/posts/index.html
+            ./_site/about/index.html
+            ./_site/projects/index.html
+            ./_site/archive/index.html
+          )
+          for page in "${pages[@]}"; do
+            htmlproofer "$page" \
+              --root-dir "$PWD/_site" \
+              --disable-external \
+              --no-enforce-https
+          done
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit dependency updates
+        if: steps.changes.outputs.changed == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: update dependencies"
+          commit_user_name: ${{ secrets.COMMIT_NAME }}
+          commit_user_email: ${{ secrets.COMMIT_EMAIL }}
