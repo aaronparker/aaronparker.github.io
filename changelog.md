@@ -8,6 +8,39 @@ permalink: /changelog/
 
 This changelog covers changes to the site theme and design. It does not track changes to individual blog posts or article content. **Note**: the site theme is not licensed for copying or modification.
 
+## 2026-08-11
+
+### Reading experience
+
+- **Reading progress bar** — posts with a 6+ minute reading time now show a topbar progress indicator that fills as the article is scrolled; position is recalculated on scroll and resize, the topbar is made `sticky` so the bar stays visible, and the effect is skipped under `prefers-reduced-motion`
+- **Collapsible tablet TOC** — post pages gain a collapsible table of contents for tablet-width viewports; the TOC script now populates and keeps both the tablet and desktop navigation states in sync
+- **Copy-action toast feedback** — copying a post link or a code block now shows a toast notification, including a clearer failure message when clipboard access is unavailable
+
+### Navigation & accessibility
+
+- **Mobile nav toggle state** — the mobile sidebar toggle now supports distinct menu/close icons and truly toggles open/closed on each click; `aria-expanded` and `aria-label` are kept in sync with the current state
+- **Breadcrumbs on tag/category pages** — the category and tag listing layouts gain a breadcrumb trail styled for dark, light, and accessible themes, including hover states and a readable current-page label
+- **Accent swatch tooltips** — sidebar accent-theme swatches gain `data-theme-label` attributes and `::after` hover/focus-visible tooltips showing the theme name, with light-mode styling and reduced-motion-safe behaviour
+- **Decorative icons hidden from screen readers** — `aria-hidden="true"` added to non-informative SVG icons in the shortcuts modal, sidebar fallback icon, back-to-top button, and the home "View all posts" link
+
+### Code blocks
+
+- **Line numbers** — `code-blocks.js` now wraps each `<pre>` in a two-column shell and generates line numbers based on the block's actual line count; corresponding styles added for dark, light, and accessible themes; header insertion updated so language labels and copy controls still render correctly with the new wrapper
+
+### Search
+
+- **Loading state** — the search modal now shows a spinner while the Lunr index is fetched and built, hidden on success, failure, or modal close
+
+### Site structure
+
+- **Community page URL** — the Community nav link now points to `/community/`; the page file was renamed from `community_review.md` to `community.md` so the URL and source filename match
+
+## 2026-05-12
+
+### Community page
+
+- **Award logo sizing fixed** — award images gain a no-zoom class and `.award-entry__logo` now applies a fixed width (`w-[84px]`), left alignment, and resets border/radius, preventing inconsistent zoom/rounding across logos
+
 ## 2026-05-11
 
 ### View transitions
@@ -33,6 +66,11 @@ This changelog covers changes to the site theme and design. It does not track ch
 ### Tailwind CSS
 
 - **Upgraded to v4.3.0** — `tailwindcss`, `@tailwindcss/cli`, `@tailwindcss/node`, and `@tailwindcss/oxide` updated to v4.3.0
+
+### Post card image sizing
+
+- **Responsive `sizes` refinement** — post-card `<source>` sizes attribute gains a 1280px breakpoint (`50vw`) and a `33vw` fallback for larger grids
+- **List-view layout scoped to selectors** — the previous container-query-based list view rules were replaced with scoped `#posts-container.posts-list` selectors (fixed thumbnail width, no max-height, adjusted body padding, single-line excerpt truncation), keeping grid thumbnails consistent while avoiding container-query side effects in list view
 
 ## 2026-05-09
 
