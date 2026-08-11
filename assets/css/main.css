@@ -250,12 +250,36 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
     inset: -8px;
   }
 
+  .accent-swatch::after {
+    content: attr(data-theme-label);
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 0.5rem);
+    transform: translateX(-50%) translateY(4px);
+    @apply px-2 py-1 rounded text-xs font-medium whitespace-nowrap pointer-events-none opacity-0;
+    background-color: rgb(15 23 42 / 0.96);
+    color: #f8fafc;
+    transition: opacity 150ms ease, transform 150ms ease;
+  }
+
+  .accent-swatch:hover::after,
+  .accent-swatch:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
   .accent-swatch[aria-pressed="true"] {
     outline-color: #f8fafc; /* slate-50 — visible on dark sidebar */
   }
 
   html:not(.dark) .accent-swatch[aria-pressed="true"] {
     outline-color: #374151; /* gray-700 — visible on light sidebar */
+  }
+
+  html:not(.dark) .accent-swatch::after {
+    background-color: rgb(255 255 255 / 0.96);
+    color: #111827;
+    border: 1px solid #e5e7eb;
   }
 
   /* --- Main content area --- */
@@ -2318,6 +2342,11 @@ html {
 
   .toc-tablet__chevron {
     transition: none;
+  }
+
+  .accent-swatch::after {
+    transition: none;
+    transform: translateX(-50%) !important;
   }
 
   .dark-toggle svg,
