@@ -7,6 +7,7 @@
   const results = document.getElementById('search-results');
   const status = document.getElementById('search-status');
   const closeBtn = document.getElementById('search-close');
+  const loadingEl = document.getElementById('search-loading');
 
   if (!overlay || !input || !results) return;
 
@@ -37,6 +38,7 @@
     if (indexLoaded) { callback(); return; }
     if (loading) { return; }
     loading = true;
+    if (loadingEl) loadingEl.classList.remove('hidden');
 
     const baseUrl = document.documentElement.dataset.baseurl || '';
     fetch(baseUrl + '/assets/js/search-index.json')
@@ -52,10 +54,12 @@
         });
         indexLoaded = true;
         loading = false;
+        if (loadingEl) loadingEl.classList.add('hidden');
         callback();
       })
       .catch(function () {
         loading = false;
+        if (loadingEl) loadingEl.classList.add('hidden');
         results.innerHTML = '<p class="px-4 py-3 text-sm text-gray-500">Failed to load search index.</p>';
       });
   }
@@ -82,6 +86,7 @@
       document.body.classList.remove('overflow-hidden');
       input.value = '';
       results.innerHTML = '';
+      if (loadingEl) loadingEl.classList.add('hidden');
       announce('');
       if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
       lastFocus = null;

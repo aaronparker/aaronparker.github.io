@@ -2680,3 +2680,26 @@ html.accessible .post-content td {
 html.accessible .post-content tr:nth-child(even) td {
   background-color: #0d0d00;
 }
+
+  /* Loading spinner for search modal */
+  .search-loading {
+    @apply px-4 py-6 flex items-center justify-center gap-3 border-b border-slate-700;
+  }
+
+  .search-loading.hidden {
+    @apply hidden;
+  }
+
+  .search-loading-spinner {
+    @apply w-5 h-5 text-slate-400 flex-shrink-0;
+    animation: spin 1s linear infinite;
+  }
+
+  .search-loading-text {
+    @apply text-sm text-slate-400;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }

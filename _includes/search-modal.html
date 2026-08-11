@@ -18,6 +18,13 @@
         </svg>
       </button>
     </div>
+    <div id="search-loading" class="search-loading hidden" role="status" aria-live="polite">
+      <svg class="search-loading-spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 2a10 10 0 0 1 10 10"/>
+      </svg>
+      <span class="search-loading-text">Indexing posts…</span>
+    </div>
     <div id="search-results" class="search-results" role="list"></div>
     <div id="search-status" role="status" aria-live="polite" aria-atomic="true"
          class="sr-only"></div>
