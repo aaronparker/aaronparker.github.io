@@ -19,8 +19,9 @@ layout: base
     <button id="accessible-toggle-mobile" class="dark-toggle" aria-label="Enable accessible theme" aria-pressed="false">
       {% include icons/eye.svg %}
     </button>
-    <button id="sidebar-toggle" class="dark-toggle lg:hidden" aria-label="Open navigation">
-      {% include icons/menu.svg %}
+    <button id="sidebar-toggle" class="dark-toggle lg:hidden" aria-label="Open navigation" aria-expanded="false">
+      <span class="sidebar-toggle__icon sidebar-toggle__icon--menu" aria-hidden="true">{% include icons/menu.svg %}</span>
+      <span class="sidebar-toggle__icon sidebar-toggle__icon--close" aria-hidden="true">{% include icons/x.svg %}</span>
     </button>
   </div>
 </header>

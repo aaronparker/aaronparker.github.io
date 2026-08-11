@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay && overlay.classList.remove('hidden');
     document.body.classList.add('overflow-hidden');
     toggle && toggle.setAttribute('aria-expanded', 'true');
+    toggle && toggle.setAttribute('aria-label', 'Close navigation');
     sidebar && sidebar.addEventListener('keydown', trapTab);
     // Move focus to first focusable element inside sidebar
     if (sidebar) {
@@ -33,13 +34,18 @@ document.addEventListener('DOMContentLoaded', function () {
     overlay && overlay.classList.add('hidden');
     document.body.classList.remove('overflow-hidden');
     toggle && toggle.setAttribute('aria-expanded', 'false');
+    toggle && toggle.setAttribute('aria-label', 'Open navigation');
     sidebar && sidebar.removeEventListener('keydown', trapTab);
     // Restore focus to the toggle button
     if (toggle) toggle.focus();
   }
 
   toggle && toggle.setAttribute('aria-expanded', 'false');
-  toggle && toggle.addEventListener('click', openSidebar);
+  toggle && toggle.setAttribute('aria-label', 'Open navigation');
+  toggle && toggle.addEventListener('click', function () {
+    if (sidebar && sidebar.classList.contains('sidebar--open')) closeSidebar();
+    else openSidebar();
+  });
   overlay && overlay.addEventListener('click', closeSidebar);
 
   // Close on Escape
