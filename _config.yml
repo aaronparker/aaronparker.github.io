@@ -57,7 +57,7 @@ menu:
   - title:             About
     url:               /about/
   - title:             Community
-    url:               /community_review/
+    url:               /community/
   - title:             Projects
     url:               /projects/
 
