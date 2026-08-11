@@ -28,6 +28,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 2200);
   }
 
+  function getLineCount(text) {
+    if (!text) return 1;
+    var lines = text.replace(/\r\n/g, '\n').split('\n');
+    if (lines.length > 1 && lines[lines.length - 1] === '') lines.pop();
+    return Math.max(lines.length, 1);
+  }
+
   // Human-readable display names for common language identifiers
   var LANG_NAMES = {
     powershell: 'PowerShell', ps1: 'PowerShell',
@@ -52,6 +59,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // Opt out of Tailwind Typography plugin styles — they add unwanted borders/radius
     var pre = block.querySelector('pre');
     if (pre) pre.classList.add('not-prose');
+    var codeForLines = pre ? (pre.querySelector('code') || pre) : null;
+    if (pre && codeForLines) {
+      var lineCount = getLineCount(codeForLines.innerText);
+      var shell = document.createElement('div');
+      shell.className = 'code-block-shell';
+
+      var lineNumbers = document.createElement('ol');
+      lineNumbers.className = 'code-line-numbers';
+      lineNumbers.setAttribute('aria-hidden', 'true');
+      for (var i = 1; i <= lineCount; i++) {
+        var line = document.createElement('li');
+        line.textContent = i;
+        lineNumbers.appendChild(line);
+      }
+
+      pre.parentNode.insertBefore(shell, pre);
+      shell.appendChild(lineNumbers);
+      shell.appendChild(pre);
+    }
 
     // Language class is always on the parent .highlighter-rouge div
     var classes = Array.from(block.parentElement.classList);
@@ -105,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
       header.appendChild(label);
 
       var pre = block.querySelector('pre');
-      if (pre) block.insertBefore(header, pre);
+      if (pre) block.insertBefore(header, pre.parentElement || pre);
       else block.prepend(header);
 
       // Floating copy button sits in the code listing, below the header

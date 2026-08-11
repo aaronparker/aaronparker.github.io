@@ -879,6 +879,20 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
     @apply opacity-100 text-green-400;
   }
 
+  .code-block-shell {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .code-line-numbers {
+    @apply m-0 list-none py-4 pl-3 pr-2 text-right text-xs text-slate-500 bg-slate-800 border-r border-slate-700 select-none;
+  }
+
+  .code-line-numbers li {
+    @apply m-0 p-0;
+    line-height: 1.625;
+  }
+
   /* Rouge syntax highlighting — dark (Monokai-inspired) */
   .highlight pre { @apply p-4 overflow-x-auto text-sm leading-relaxed m-0; background: #1e293b; border-radius: 0; }
   .highlight pre code { background: transparent; padding: 0; }
@@ -899,6 +913,10 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
   .highlight .err { color: #fca5a5; background: transparent; }        /* Error — red-300 */
 
   /* Light mode syntax overrides */
+  html:not(.dark) .code-line-numbers {
+    @apply bg-gray-100 text-gray-500 border-gray-200;
+  }
+
   html:not(.dark) .highlight pre { background: #f8fafc; color: #1e293b; }
   html:not(.dark) .highlight pre code { color: #1e293b; }
   html:not(.dark) .highlight span { color: #1e293b; }    /* default all tokens dark */
@@ -1301,6 +1319,43 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
 
   .dark-toggle:hover svg {
     transform: rotate(15deg);
+  }
+
+  #sidebar-toggle {
+    position: relative;
+  }
+
+  #sidebar-toggle .sidebar-toggle__icon {
+    @apply absolute inset-0 flex items-center justify-center;
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  #sidebar-toggle .sidebar-toggle__icon svg {
+    transform: none;
+  }
+
+  #sidebar-toggle .sidebar-toggle__icon--menu {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  #sidebar-toggle .sidebar-toggle__icon--close {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.85);
+  }
+
+  #sidebar-toggle[aria-expanded="true"] .sidebar-toggle__icon--menu {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.85);
+  }
+
+  #sidebar-toggle[aria-expanded="true"] .sidebar-toggle__icon--close {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+
+  #sidebar-toggle:hover .sidebar-toggle__icon svg {
+    transform: none;
   }
 
 }
@@ -2386,6 +2441,10 @@ html {
     transition: none;
   }
 
+  #sidebar-toggle .sidebar-toggle__icon {
+    transition: none;
+  }
+
   .accent-swatch::after {
     transition: none;
     transform: translateX(-50%) !important;
@@ -2722,6 +2781,12 @@ html.accessible .post-card__category {
   color: #fde047;
   background-color: #1a1400;
   border: 1px solid #fde047;
+}
+
+html.accessible .code-line-numbers {
+  background-color: #1a1400;
+  color: #fde047;
+  border-right-color: #fde047;
 }
 
 html.accessible .breadcrumb-trail,
