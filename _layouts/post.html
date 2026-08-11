@@ -232,6 +232,20 @@ layout: default
       {% endif %}
       {% endif %}
 
+      {% if page.no_toc != true %}
+      <div class="toc-tablet xl:hidden" data-toc-shell>
+        <button id="toc-tablet-toggle"
+                class="toc-tablet__toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="toc-container-tablet">
+          <span>On this page</span>
+          <span class="toc-tablet__chevron" aria-hidden="true">{% include icons/chevron-right.svg %}</span>
+        </button>
+        <div id="toc-container-tablet" class="toc-tablet__panel hidden" role="navigation" aria-label="Table of contents"></div>
+      </div>
+      {% endif %}
+
       <!-- Article body -->
       <div class="post-content" itemprop="articleBody">
         {{ content }}
@@ -258,6 +272,7 @@ layout: default
           <span id="copy-url-label">Copy link</span>
         </button>
       </div>
+      <div id="copy-url-toast" class="copy-url-toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
       <!-- Author bio -->
       {% assign author = site.data.authors[site.author] | default: site.data.authors.first[1] %}
@@ -294,18 +309,38 @@ layout: default
       <script>
       (function() {
         var btn = document.getElementById('copy-url-btn');
+        var toast = document.getElementById('copy-url-toast');
+        var toastTimer = null;
+        var btnTimer = null;
         if (!btn) return;
+
+        function showToast(message) {
+          if (!toast) return;
+          toast.textContent = message;
+          toast.classList.remove('copy-url-toast--visible');
+          // Force reflow so visibility animation can restart on repeated clicks.
+          void toast.offsetWidth;
+          toast.classList.add('copy-url-toast--visible');
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(function() {
+            toast.classList.remove('copy-url-toast--visible');
+          }, 2200);
+        }
+
         btn.addEventListener('click', function() {
           var url = btn.getAttribute('data-url');
-          navigator.clipboard.writeText(url).then(function() {
+          navigator.clipboard.writeText(url).then(function () {
             var label = document.getElementById('copy-url-label');
-            var icon  = document.getElementById('copy-url-icon');
             label.textContent = 'Copied!';
             btn.classList.add('post-share__btn--copied');
-            setTimeout(function() {
+            showToast('Copied link to clipboard');
+            clearTimeout(btnTimer);
+            btnTimer = setTimeout(function() {
               label.textContent = 'Copy link';
               btn.classList.remove('post-share__btn--copied');
             }, 2000);
+          }).catch(function () {
+            showToast('Could not copy link. Please copy it manually.');
           });
         });
       })();
@@ -322,7 +357,7 @@ layout: default
 
     <!-- TOC column — populated by toc.js -->
     {% if page.no_toc != true %}
-    <aside class="hidden xl:block flex-shrink-0" role="navigation" aria-label="Table of contents">
+    <aside class="hidden xl:block flex-shrink-0" data-toc-shell role="navigation" aria-label="Table of contents">
       <div id="toc-container">
         <p class="toc-title">On this page</p>
       </div>

@@ -1,5 +1,32 @@
 // Code blocks — language header + copy-to-clipboard
 document.addEventListener('DOMContentLoaded', function () {
+  var toast = document.getElementById('copy-url-toast');
+  var toastTimer = null;
+
+  function ensureToast() {
+    if (toast) return toast;
+    toast = document.createElement('div');
+    toast.id = 'copy-url-toast';
+    toast.className = 'copy-url-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    toast.setAttribute('aria-atomic', 'true');
+    document.body.appendChild(toast);
+    return toast;
+  }
+
+  function showCopyToast(message) {
+    var el = ensureToast();
+    el.textContent = message;
+    el.classList.remove('copy-url-toast--visible');
+    // Restart animation for rapid consecutive copy actions.
+    void el.offsetWidth;
+    el.classList.add('copy-url-toast--visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      el.classList.remove('copy-url-toast--visible');
+    }, 2200);
+  }
 
   // Human-readable display names for common language identifiers
   var LANG_NAMES = {
@@ -56,11 +83,14 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.innerHTML = CHECK_ICON;
         btn.classList.add('code-copy-btn--copied');
         btn.setAttribute('aria-label', 'Copied!');
+        showCopyToast('Copied code to clipboard');
         setTimeout(function () {
           btn.innerHTML = COPY_ICON;
           btn.classList.remove('code-copy-btn--copied');
           btn.setAttribute('aria-label', 'Copy code');
         }, 2000);
+      }).catch(function () {
+        showCopyToast('Could not copy code. Please copy it manually.');
       });
     });
 

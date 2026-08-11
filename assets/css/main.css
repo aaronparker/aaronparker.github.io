@@ -331,6 +331,53 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
     @apply font-semibold;
   }
 
+  .toc-tablet {
+    @apply hidden md:block xl:hidden mb-6 rounded-lg border border-slate-700 bg-slate-900/60;
+  }
+
+  .toc-tablet__toggle {
+    @apply w-full flex items-center justify-between px-4 py-3 text-sm font-semibold text-slate-100;
+  }
+
+  .toc-tablet__chevron {
+    @apply w-4 h-4 text-slate-400 transition-transform duration-150;
+  }
+
+  .toc-tablet__toggle[aria-expanded="true"] .toc-tablet__chevron {
+    transform: rotate(90deg);
+  }
+
+  .toc-tablet__panel {
+    @apply px-4 pb-4;
+  }
+
+  .toc-tablet__panel.hidden {
+    @apply hidden;
+  }
+
+  .toc-tablet__panel ul,
+  .toc-tablet__panel ol {
+    @apply space-y-1 list-none p-0 m-0;
+  }
+
+  .toc-tablet__panel li {
+    @apply m-0 p-0;
+  }
+
+  .toc-tablet__panel a {
+    @apply block text-sm text-slate-400 hover:text-slate-50 py-0.5 no-underline;
+    border-left: 2px solid transparent;
+    padding-left: 0.5rem;
+    transition: border-color 150ms ease, padding-left 150ms ease, color 150ms ease;
+  }
+
+  .toc-tablet__panel a.toc-active {
+    color: var(--color-accent);
+    border-left-color: var(--color-accent);
+    padding-left: 0.75rem;
+    @apply font-semibold;
+  }
+
   /* --- View toggle active state --- */
   .view-btn--active {
     background-color: var(--color-accent-deepest);
@@ -1515,6 +1562,22 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
     color: white;
   }
 
+  .copy-url-toast {
+    @apply fixed left-1/2 -translate-x-1/2 bottom-6 z-50 px-4 py-2 rounded-md text-sm font-medium;
+    background-color: var(--color-accent-deepest);
+    color: #fff;
+    @apply shadow-2xl;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(10px);
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+
+  .copy-url-toast--visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
   html:not(.dark) .post-share {
     @apply border-gray-200;
   }
@@ -1522,6 +1585,7 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
   html:not(.dark) .post-share__label {
     @apply text-gray-400;
   }
+
 }
 
 /* =============================================================================
@@ -1702,11 +1766,31 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
     @apply border-gray-200;
   }
 
+  html:not(.dark) .toc-tablet {
+    @apply border-gray-200 bg-white;
+  }
+
+  html:not(.dark) .toc-tablet__toggle {
+    @apply text-gray-900;
+  }
+
+  html:not(.dark) .toc-tablet__chevron {
+    @apply text-gray-500;
+  }
+
   html:not(.dark) #toc-container a {
     @apply text-gray-500 hover:text-gray-900;
   }
 
+  html:not(.dark) .toc-tablet__panel a {
+    @apply text-gray-500 hover:text-gray-900;
+  }
+
   html:not(.dark) #toc-container a.toc-active {
+    color: var(--color-accent);
+  }
+
+  html:not(.dark) .toc-tablet__panel a.toc-active {
     color: var(--color-accent);
   }
 
@@ -2218,8 +2302,22 @@ html {
     border-left-color: transparent !important;
   }
 
+  .toc-tablet__panel a {
+    transition: color 0ms;
+    padding-left: 0.5rem !important;
+    border-left-color: transparent !important;
+  }
+
   #toc-container a.toc-active {
     padding-left: 0.5rem !important;
+  }
+
+  .toc-tablet__panel a.toc-active {
+    padding-left: 0.5rem !important;
+  }
+
+  .toc-tablet__chevron {
+    transition: none;
   }
 
   .dark-toggle svg,
@@ -2263,7 +2361,7 @@ html:not(.dark) .post-content pre.mermaid {
 
   /* Heavier borders throughout */
   .sidebar, .topbar, .post-card, .search-modal,
-  .shortcuts-panel, #toc-container {
+  .shortcuts-panel, #toc-container, .toc-tablet {
     border-width: 2px;
     border-color: currentColor;
   }
@@ -2290,10 +2388,14 @@ html:not(.dark) .post-content pre.mermaid {
   .dark .sidebar { background-color: #000; border-color: #fff; }
   .dark #toc-container a { color: #e2e8f0; }
   .dark #toc-container a.toc-active { color: #fff; font-weight: 700; }
+  .dark .toc-tablet__panel a { color: #e2e8f0; }
+  .dark .toc-tablet__panel a.toc-active { color: #fff; font-weight: 700; }
 
   /* Light mode overrides */
   html:not(.dark) #toc-container a { color: #111827; }
   html:not(.dark) #toc-container a.toc-active { color: #000; font-weight: 700; }
+  html:not(.dark) .toc-tablet__panel a { color: #111827; }
+  html:not(.dark) .toc-tablet__panel a.toc-active { color: #000; font-weight: 700; }
   html:not(.dark) .post-meta { color: #374151; }
 }
 
@@ -2574,11 +2676,29 @@ html.accessible #toc-container {
   border: 2px solid #fde047;
 }
 
+html.accessible .toc-tablet {
+  background-color: #0d0d00;
+  border: 2px solid #fde047;
+}
+
+html.accessible .toc-tablet__toggle {
+  color: #fff;
+}
+
 html.accessible #toc-container a {
   color: #fde047;
 }
 
+html.accessible .toc-tablet__panel a {
+  color: #fde047;
+}
+
 html.accessible #toc-container a.toc-active {
+  color: #fff;
+  font-weight: 700;
+}
+
+html.accessible .toc-tablet__panel a.toc-active {
   color: #fff;
   font-weight: 700;
 }

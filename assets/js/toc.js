@@ -1,25 +1,47 @@
 // TOC — move kramdown-generated list into sticky sidebar column, highlight active section
 document.addEventListener('DOMContentLoaded', function () {
-  const container = document.getElementById('toc-container');
-  if (!container) return;
+  const desktopContainer = document.getElementById('toc-container');
+  const tabletContainer = document.getElementById('toc-container-tablet');
+  const tabletToggle = document.getElementById('toc-tablet-toggle');
+  if (!desktopContainer && !tabletContainer) return;
 
   // Kramdown renders {: toc} as an <ul> with id="markdown-toc" inside .post-content
   const tocList = document.getElementById('markdown-toc');
   if (!tocList) {
-    container.closest('aside') && container.closest('aside').classList.add('hidden');
+    document.querySelectorAll('[data-toc-shell]').forEach(function (shell) {
+      shell.classList.add('hidden');
+    });
     return;
   }
 
-  // Move the TOC into the sidebar container
-  container.appendChild(tocList);
-  // Remove the empty <p> or sibling that kramdown sometimes leaves
-  const prev = tocList.previousElementSibling;
-  if (prev && prev.tagName === 'P' && prev.textContent.trim() === '') {
-    prev.remove();
+  if (desktopContainer) {
+    // Move the TOC into the desktop sidebar container
+    desktopContainer.appendChild(tocList);
+    // Remove the empty <p> or sibling that kramdown sometimes leaves
+    const prev = tocList.previousElementSibling;
+    if (prev && prev.tagName === 'P' && prev.textContent.trim() === '') {
+      prev.remove();
+    }
+  }
+
+  let tabletList = null;
+  if (tabletContainer) {
+    tabletList = tocList.cloneNode(true);
+    tabletContainer.appendChild(tabletList);
+
+    if (tabletToggle) {
+      tabletToggle.addEventListener('click', function () {
+        const isExpanded = tabletToggle.getAttribute('aria-expanded') === 'true';
+        tabletToggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+        tabletContainer.classList.toggle('hidden', isExpanded);
+      });
+    }
   }
 
   // Collect all heading anchors from TOC links
   const tocLinks = Array.from(tocList.querySelectorAll('a[href^="#"]'));
+  const tabletLinks = tabletList ? Array.from(tabletList.querySelectorAll('a[href^="#"]')) : [];
+  const allTocLinks = tocLinks.concat(tabletLinks);
   const headingIds = tocLinks.map(a => a.getAttribute('href').slice(1));
   const headings = headingIds
     .map(id => document.getElementById(id))
@@ -28,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!headings.length) return;
 
   function setActive(id) {
-    tocLinks.forEach(function (a) {
+    allTocLinks.forEach(function (a) {
       const active = a.getAttribute('href') === '#' + id;
       a.classList.toggle('toc-active', active);
     });
