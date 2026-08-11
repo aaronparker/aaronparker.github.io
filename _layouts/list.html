@@ -5,6 +5,13 @@ layout: default
 <div class="px-6 lg:px-10 py-8">
 
   <header class="mb-8">
+    <nav class="breadcrumb-trail" aria-label="Breadcrumb">
+      <a href="{{ '/' | relative_url }}" class="breadcrumb-trail__link">Home</a>
+      <span class="breadcrumb-trail__sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-trail__current">Category</span>
+      <span class="breadcrumb-trail__sep" aria-hidden="true">/</span>
+      <span class="breadcrumb-trail__current">{{ page.title }}</span>
+    </nav>
     <p class="text-xs font-semibold uppercase tracking-widest mb-1"
        style="color: var(--color-accent)">Category</p>
     <h1 class="text-3xl font-bold text-gray-900 dark:text-slate-50">{{ page.title }}</h1>

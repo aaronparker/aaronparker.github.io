@@ -1334,6 +1334,28 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
     @apply text-xs font-semibold uppercase tracking-widest text-slate-500 mb-6;
   }
 
+  .breadcrumb-trail {
+    @apply flex flex-wrap items-center gap-1.5 text-xs mb-2;
+    color: #94a3b8;
+  }
+
+  .breadcrumb-trail__link {
+    @apply no-underline transition-colors;
+    color: #cbd5e1;
+  }
+
+  .breadcrumb-trail__link:hover {
+    color: var(--color-accent);
+  }
+
+  .breadcrumb-trail__sep {
+    @apply text-slate-500;
+  }
+
+  .breadcrumb-trail__current {
+    @apply text-slate-400;
+  }
+
   .category-pill {
     @apply px-4 py-2 rounded-full border border-slate-700 text-slate-300
            text-sm transition-colors no-underline;
@@ -2045,6 +2067,26 @@ html:not(.dark) .author-bio__social a[data-social="github"]:hover { color: #2429
     @apply text-gray-400;
   }
 
+  html:not(.dark) .breadcrumb-trail {
+    color: #6b7280;
+  }
+
+  html:not(.dark) .breadcrumb-trail__link {
+    color: #374151;
+  }
+
+  html:not(.dark) .breadcrumb-trail__link:hover {
+    color: var(--color-accent-dark);
+  }
+
+  html:not(.dark) .breadcrumb-trail__sep {
+    color: #9ca3af;
+  }
+
+  html:not(.dark) .breadcrumb-trail__current {
+    color: #6b7280;
+  }
+
   html:not(.dark) .category-pill {
     @apply border-gray-300 text-gray-600;
   }
@@ -2680,6 +2722,21 @@ html.accessible .post-card__category {
   color: #fde047;
   background-color: #1a1400;
   border: 1px solid #fde047;
+}
+
+html.accessible .breadcrumb-trail,
+html.accessible .breadcrumb-trail__sep,
+html.accessible .breadcrumb-trail__current {
+  color: #fde047;
+  opacity: 1;
+}
+
+html.accessible .breadcrumb-trail__link {
+  color: #fff;
+}
+
+html.accessible .breadcrumb-trail__link:hover {
+  color: #fde047;
 }
 
 /* Callout boxes */
