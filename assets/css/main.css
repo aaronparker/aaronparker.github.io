@@ -318,6 +318,20 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
            backdrop-blur-lg backdrop-saturate-150
            border-b border-slate-700/50
            shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)];
+    position: sticky;
+  }
+
+  .reading-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    transform-origin: left center;
+    transform: scaleX(0);
+    background-color: var(--color-accent);
+    transition: transform 120ms linear;
+    pointer-events: none;
   }
 
   /* --- TOC sidebar column --- */
@@ -2401,6 +2415,7 @@ html {
   .code-copy-btn,
   .post-hero-credit__icon,
   .post-hero-credit__tooltip,
+  .reading-progress,
   .img-zoom-overlay {
     transition: none;
     animation: none;

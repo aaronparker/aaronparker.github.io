@@ -346,6 +346,38 @@ layout: default
       })();
       </script>
 
+      {% if reading_time >= 6 %}
+      <script>
+      (function() {
+        var bar = document.getElementById('reading-progress');
+        var article = document.getElementById('post-main');
+        if (!bar || !article) return;
+
+        bar.classList.remove('hidden');
+
+        function updateProgress() {
+          var rect = article.getBoundingClientRect();
+          var start = window.scrollY + rect.top;
+          var end = start + article.offsetHeight - window.innerHeight;
+          var progress;
+
+          if (end <= start) {
+            progress = 1;
+          } else {
+            progress = (window.scrollY - start) / (end - start);
+          }
+
+          progress = Math.max(0, Math.min(1, progress));
+          bar.style.transform = 'scaleX(' + progress + ')';
+        }
+
+        updateProgress();
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        window.addEventListener('resize', updateProgress);
+      })();
+      </script>
+      {% endif %}
+
       <!-- Comments -->
       {% if page.comments %}
       <div class="mt-12 pt-8 border-t border-gray-200 dark:border-slate-700">
