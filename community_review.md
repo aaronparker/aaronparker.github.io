@@ -1,6 +1,6 @@
 ---
 layout: about
-title: Community
+title: Community review
 description: 
 hide_description: true
 ---
