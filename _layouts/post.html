@@ -290,17 +290,16 @@ layout: default
       </div>
       {% endif %}
 
-      <!-- Related posts -->
-      {% if page.related_posts.size > 0 %}
+      <!-- Related posts: curated links first, then shared semantic topics. -->
+      {% assign has_related_topics = false %}
+      {% if page.tags.size > 0 %}
+        {% assign has_related_topics = true %}
+      {% endif %}
+      {% if page.related_posts.size > 0 or has_related_topics %}
       <div class="related-posts">
         <h2 class="related-posts__title">Related Posts</h2>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {% for related_path in page.related_posts %}
-            {% assign related = site.posts | where_exp: "post", "post.path contains related_path" | first %}
-            {% if related %}
-              {% include post-card.html post=related %}
-            {% endif %}
-          {% endfor %}
+          {% include related-posts.html %}
         </div>
       </div>
       {% endif %}

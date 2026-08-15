@@ -1,0 +1,38 @@
+{% assign related_limit = 6 %}
+{% assign related_count = 0 %}
+{% assign related_urls = '|' %}
+
+{% if page.related_posts.size > 0 %}
+  {% for related_path in page.related_posts %}
+    {% assign related = site.posts | where_exp: "post", "post.path contains related_path" | first %}
+    {% if related and related.url != page.url and related_count < related_limit %}
+      {% assign related_key = '|' | append: related.url | append: '|' %}
+      {% unless related_urls contains related_key %}
+        {% include post-card.html post=related %}
+        {% assign related_urls = related_urls | append: related.url | append: '|' %}
+        {% assign related_count = related_count | plus: 1 %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if page.tags.size > 0 and related_count < related_limit %}
+  {% for candidate in site.posts %}
+    {% if candidate.url != page.url and candidate.tags %}
+      {% assign shared_topic = false %}
+      {% for topic in page.tags %}
+        {% if candidate.tags contains topic %}
+          {% assign shared_topic = true %}
+        {% endif %}
+      {% endfor %}
+      {% if shared_topic and related_count < related_limit %}
+        {% assign related_key = '|' | append: candidate.url | append: '|' %}
+        {% unless related_urls contains related_key %}
+          {% include post-card.html post=candidate %}
+          {% assign related_urls = related_urls | append: candidate.url | append: '|' %}
+          {% assign related_count = related_count | plus: 1 %}
+        {% endunless %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
