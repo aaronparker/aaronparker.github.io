@@ -56,24 +56,35 @@ html.theme-amber  { --color-accent: #fbbf24; --color-accent-dark: #b45309; --col
 html.theme-green  { --color-accent: #4ade80; --color-accent-dark: #16a34a; --color-accent-deepest: #15803d; }
 html.theme-gray   { --color-accent: #94a3b8; --color-accent-dark: #64748b; --color-accent-deepest: #475569; }
 
-/* Rainbow theme — animates accent hue through full spectrum */
-@property --accent-hue {
-  syntax: '<number>';
-  initial-value: 0;
-  inherits: true;
-}
-
+/* Rainbow theme — assigns distinct hues to headings and links */
 html.theme-rainbow {
-  --accent-hue: 0;
-  --color-accent: hsl(var(--accent-hue), 75%, 65%);
-  --color-accent-dark: hsl(var(--accent-hue), 75%, 50%);
-  --color-accent-deepest: hsl(var(--accent-hue), 75%, 35%);
-  animation: rainbow-hue 6s linear infinite;
+  --color-accent: #818cf8;
+  --color-accent-dark: #6366f1;
+  --color-accent-deepest: #4338ca;
 }
 
-@keyframes rainbow-hue {
-  to { --accent-hue: 360; }
-}
+/* Rainbow: distribute distinct hues across links and headings */
+html.theme-rainbow a,
+html.theme-rainbow .sidebar__nav-link,
+html.theme-rainbow .sidebar__social-link { color: #0f766e; }
+
+html.theme-rainbow h1 { color: #60a5fa; }
+html.theme-rainbow h2 { color: #c084fc; }
+html.theme-rainbow h3 { color: #f472b6; }
+html.theme-rainbow h4 { color: #f87171; }
+html.theme-rainbow h5 { color: #fb923c; }
+html.theme-rainbow h6 { color: #fbbf24; }
+html.theme-rainbow h7,
+html.theme-rainbow h8,
+html.theme-rainbow h9 { color: #4ade80; }
+
+html.theme-rainbow a:hover,
+html.theme-rainbow .sidebar__nav-link:hover { color: #115e59; }
+
+/* Keep share badges legible on brand backgrounds in rainbow mode */
+html.theme-rainbow .post-share__btn,
+html.theme-rainbow .post-share__btn:hover,
+html.theme-rainbow .post-share__btn:visited { color: #fff; }
 
 /* Accessible theme overrides accent tokens with high-visibility yellow */
 html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --color-accent-deepest: #92400e; }
@@ -601,14 +612,31 @@ html.accessible   { --color-accent: #fde047; --color-accent-dark: #fde047; --col
     padding: 0.05em 0.25em;
     margin: 0 -0.1em;
     border-radius: 0.2em;
-    transition: background-color 150ms ease, color 150ms ease;
+    transition: background-color 150ms ease, background-image 150ms ease, color 150ms ease;
     text-decoration: none;
   }
 
-  .post-content a:not(.project-card):not(:has(> img)):hover {
+  html:not(.theme-rainbow) .post-content a:not(.project-card):not(:has(> img)):hover {
     background-color: var(--color-accent-dark);
     color: #ffffff;
     text-decoration: none;
+  }
+
+  html.theme-rainbow .post-content a:not(.project-card):not(:has(> img)):is(:hover, :focus-visible) {
+    background-image: linear-gradient(
+      90deg,
+      #60a5fa 0%,
+      #c084fc 16.66%,
+      #f472b6 33.33%,
+      #f87171 50%,
+      #fb923c 66.66%,
+      #fbbf24 83.33%,
+      #4ade80 100%
+    );
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   /* Inline code — pill style (not inside pre) */
